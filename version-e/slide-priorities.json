@@ -1,8 +1,8 @@
 {
-  "method": "Within-lecture review ranking: 60% best study-guide similarity, 25% direct quiz coverage weighted by the existing question priority, 15% direct essentials-guide reference; top 40% of sections per lecture.",
+  "method": "Guide and quiz ranking: 60% best study-guide similarity, 25% direct quiz coverage weighted by existing question priority, 15% direct essentials reference. Preserve previous red markers and the lecture top-40% baseline; add reviewed slide anchors for every substantive study-guide topic, all five assigned articles, and non-memory labs represented in the question bank.",
   "interpretation": "Must know identifies core review priorities. Scores are not probabilities of appearing on the exam.",
   "validated_prediction": false,
-  "source_material": "Supplied Exam 1 study guide, lecture scripts, existing 208-question bank and essentials guide. No external exam dataset.",
+  "source_material": "Supplied Exam 1 study guide, lecture scripts, 208-question bank, essentials guide, and existing guide-weighted question priorities using six supplied example questions. No external exam dataset.",
   "sections": [
     {
       "module": 3,
@@ -12,7 +12,11 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 3,
@@ -22,7 +26,8 @@
       "guideTopic": "The return of the mind",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -32,7 +37,8 @@
       "guideTopic": "What cognitive psychology studies; what “the mind” does (processes and representations)",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -42,7 +48,8 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -52,7 +59,8 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -62,7 +70,8 @@
       "guideTopic": "The return of the mind",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -74,7 +83,15 @@
         159
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "What cognitive psychology studies; what “the mind” does (processes and representations)"
+      ]
     },
     {
       "module": 3,
@@ -86,7 +103,8 @@
         160
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -98,7 +116,15 @@
         0
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Donders: reaction time and subtraction logic"
+      ]
     },
     {
       "module": 3,
@@ -110,7 +136,8 @@
         1
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -120,7 +147,8 @@
       "guideTopic": "Donders: reaction time and subtraction logic",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -130,7 +158,8 @@
       "guideTopic": "Inferring the mind from behavior",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -145,7 +174,15 @@
       "essentials": [
         "essential-5"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Donders: reaction time and subtraction logic"
+      ]
     },
     {
       "module": 3,
@@ -155,7 +192,8 @@
       "guideTopic": "Donders: reaction time and subtraction logic",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -167,7 +205,15 @@
         3
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Wundt and structuralism; analytic introspection (and the Titchener note from lecture)"
+      ]
     },
     {
       "module": 3,
@@ -179,7 +225,13 @@
         4
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Ebbinghaus: forgetting, savings, nonsense syllables"
+      ]
     },
     {
       "module": 3,
@@ -194,7 +246,15 @@
       "essentials": [
         "essential-6"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Ebbinghaus: forgetting, savings, nonsense syllables"
+      ]
     },
     {
       "module": 3,
@@ -204,7 +264,13 @@
       "guideTopic": "William James",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "William James"
+      ]
     },
     {
       "module": 3,
@@ -216,7 +282,15 @@
         6
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Watson's critique of introspection"
+      ]
     },
     {
       "module": 3,
@@ -226,7 +300,8 @@
       "guideTopic": "Manipulations, control and comparison conditions, and confounds",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -236,7 +311,11 @@
       "guideTopic": "Inferring the mind from behavior",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 3,
@@ -248,7 +327,15 @@
         7
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Classical conditioning (Pavlov, “Little Albert”) and operant conditioning (Skinner)"
+      ]
     },
     {
       "module": 3,
@@ -260,7 +347,15 @@
         163
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Classical conditioning (Pavlov, “Little Albert”) and operant conditioning (Skinner)"
+      ]
     },
     {
       "module": 3,
@@ -275,7 +370,15 @@
       "essentials": [
         "essential-7"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Classical conditioning (Pavlov, “Little Albert”) and operant conditioning (Skinner)"
+      ]
     },
     {
       "module": 3,
@@ -285,7 +388,8 @@
       "guideTopic": "Behaviorism",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -297,7 +401,13 @@
         9
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Tolman and cognitive maps"
+      ]
     },
     {
       "module": 3,
@@ -307,7 +417,8 @@
       "guideTopic": "Chomsky's critique of Skinner's account of language",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -317,7 +428,13 @@
       "guideTopic": "Tolman and cognitive maps",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Tolman and cognitive maps"
+      ]
     },
     {
       "module": 3,
@@ -327,7 +444,8 @@
       "guideTopic": "Chomsky's critique of Skinner's account of language",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -341,7 +459,15 @@
       "essentials": [
         "essential-8"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Chomsky's critique of Skinner's account of language"
+      ]
     },
     {
       "module": 3,
@@ -353,17 +479,33 @@
         11
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The cognitive revolution"
+      ]
     },
     {
       "module": 3,
       "page": 35,
       "title": "Computers and processing stages",
       "score": 0.264211,
-      "guideTopic": "The information-processing / computational approach",
+      "guideTopic": "The information-processing approach and the computer analogy",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The information-processing approach and the computer analogy"
+      ]
     },
     {
       "module": 3,
@@ -375,7 +517,15 @@
         165
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Dichotic listening and Broadbent's flow diagram"
+      ]
     },
     {
       "module": 3,
@@ -385,7 +535,13 @@
       "guideTopic": "Dichotic listening and Broadbent's flow diagram",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Dichotic listening and Broadbent's flow diagram"
+      ]
     },
     {
       "module": 3,
@@ -397,7 +553,13 @@
         166
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Early artificial intelligence (the 1956 conference; the Logic Theorist)"
+      ]
     },
     {
       "module": 3,
@@ -411,7 +573,15 @@
       "essentials": [
         "essential-9"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Early artificial intelligence (the 1956 conference; the Logic Theorist)"
+      ]
     },
     {
       "module": 3,
@@ -421,20 +591,29 @@
       "guideTopic": "Chomsky's critique of Skinner's account of language",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
       "page": 41,
       "title": "Structural and process models",
       "score": 0.524006,
-      "guideTopic": "Models: structural vs. process models",
+      "guideTopic": "Structural vs. process models",
       "questionIds": [
         13,
         155
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Structural vs. process models"
+      ]
     },
     {
       "module": 3,
@@ -444,7 +623,8 @@
       "guideTopic": "Models: structural vs. process models",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -456,7 +636,8 @@
         167
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -468,7 +649,8 @@
         14
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 3,
@@ -478,7 +660,8 @@
       "guideTopic": "Inferring the mind from behavior",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -488,7 +671,8 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -498,7 +682,8 @@
       "guideTopic": "What pattern of results would support or refute a theory",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -508,7 +693,8 @@
       "guideTopic": "Perception as inference",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -518,7 +704,8 @@
       "guideTopic": "Perception as inference",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -528,7 +715,8 @@
       "guideTopic": "Perception as inference",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -538,7 +726,8 @@
       "guideTopic": "Four approaches to object perception",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -548,7 +737,8 @@
       "guideTopic": "The inverse projection problem; hidden and blurred objects; viewpoint invariance",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -562,7 +752,15 @@
       "essentials": [
         "essential-10"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The inverse projection problem; hidden and blurred objects; viewpoint invariance"
+      ]
     },
     {
       "module": 5,
@@ -574,7 +772,13 @@
         16
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The inverse projection problem; hidden and blurred objects; viewpoint invariance"
+      ]
     },
     {
       "module": 5,
@@ -586,7 +790,15 @@
         17
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The inverse projection problem; hidden and blurred objects; viewpoint invariance"
+      ]
     },
     {
       "module": 5,
@@ -596,45 +808,73 @@
       "guideTopic": "Bottom-up vs. top-down processing",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 5,
       "page": 13,
       "title": "Bottom-up processing",
       "score": 0.316883,
-      "guideTopic": "Bottom-up vs. top-down processing",
+      "guideTopic": "Bottom-up vs. top-down; direct vs. constructive theories",
       "questionIds": [
         18
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Bottom-up vs. top-down; direct vs. constructive theories"
+      ]
     },
     {
       "module": 5,
       "page": 14,
       "title": "Top-down processing",
       "score": 0.50829,
-      "guideTopic": "Bottom-up vs. top-down processing",
+      "guideTopic": "Bottom-up vs. top-down; direct vs. constructive theories",
       "questionIds": [
         19
       ],
       "essentials": [
         "essential-0"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Bottom-up vs. top-down; direct vs. constructive theories"
+      ]
     },
     {
       "module": 5,
       "page": 15,
       "title": "Direct and constructive theories",
       "score": 0.226736,
-      "guideTopic": "Perception as inference",
+      "guideTopic": "Bottom-up vs. top-down; direct vs. constructive theories",
       "questionIds": [
         20
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Bottom-up vs. top-down; direct vs. constructive theories"
+      ]
     },
     {
       "module": 5,
@@ -648,7 +888,15 @@
       "essentials": [
         "essential-11"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Recognition-by-components"
+      ]
     },
     {
       "module": 5,
@@ -658,19 +906,28 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
       "page": 18,
       "title": "Context and object identity",
       "score": 0.283511,
-      "guideTopic": "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition",
+      "guideTopic": "Top-down examples: context and ambiguous objects, speech segmentation, pain",
       "questionIds": [
         22
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Top-down examples: context and ambiguous objects, speech segmentation, pain"
+      ]
     },
     {
       "module": 5,
@@ -682,7 +939,15 @@
         23
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Top-down examples: context and ambiguous objects, speech segmentation, pain"
+      ]
     },
     {
       "module": 5,
@@ -692,7 +957,8 @@
       "guideTopic": "Marr's three levels of analysis",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -706,7 +972,15 @@
       "essentials": [
         "essential-12"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Top-down examples: context and ambiguous objects, speech segmentation, pain"
+      ]
     },
     {
       "module": 5,
@@ -716,7 +990,11 @@
       "guideTopic": "Perception as inference",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 5,
@@ -728,7 +1006,15 @@
         25
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Helmholtz: unconscious inference and the likelihood principle"
+      ]
     },
     {
       "module": 5,
@@ -740,7 +1026,8 @@
         26
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -753,7 +1040,11 @@
         28
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 5,
@@ -765,7 +1056,8 @@
         29
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -775,7 +1067,8 @@
       "guideTopic": "Gestalt organization: the laws and the claim that they are built in",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -785,7 +1078,8 @@
       "guideTopic": "Built-in mechanisms vs. experience",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -797,7 +1091,11 @@
         30
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 5,
@@ -809,7 +1107,8 @@
         31
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -823,7 +1122,11 @@
       "essentials": [
         "essential-13"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 5,
@@ -835,7 +1138,8 @@
         33
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -845,7 +1149,8 @@
       "guideTopic": "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -855,7 +1160,8 @@
       "guideTopic": "Gestalt organization: the laws and the claim that they are built in",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -865,7 +1171,8 @@
       "guideTopic": "Using prior knowledge and environmental regularities to resolve ambiguity",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -878,7 +1185,11 @@
         153
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 5,
@@ -890,7 +1201,8 @@
         35
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -900,7 +1212,8 @@
       "guideTopic": "What pattern of results would support or refute a theory",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -910,7 +1223,8 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -920,7 +1234,8 @@
       "guideTopic": "What pattern of results would support or refute a theory",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -930,7 +1245,8 @@
       "guideTopic": "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -940,7 +1256,11 @@
       "guideTopic": "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 5,
@@ -950,7 +1270,11 @@
       "guideTopic": "Perception and action",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 5,
@@ -960,27 +1284,36 @@
       "guideTopic": "Movement and manual exploration in perception",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
       "page": 45,
       "title": "Ventral and dorsal pathways",
       "score": 0.283613,
-      "guideTopic": "Perception and action",
+      "guideTopic": "“What” and “where/how” pathways; lesion and neuropsychological evidence",
       "questionIds": [
         36,
         151
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "“What” and “where/how” pathways; lesion and neuropsychological evidence"
+      ]
     },
     {
       "module": 5,
       "page": 46,
       "title": "Patient D.F. and mirror neurons",
       "score": 0.455569,
-      "guideTopic": "Perception and action",
+      "guideTopic": "Mirror neurons, and which claims about them are debated",
       "questionIds": [
         37,
         38
@@ -989,7 +1322,16 @@
         "essential-4",
         "essential-17"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "“What” and “where/how” pathways; lesion and neuropsychological evidence",
+        "Mirror neurons, and which claims about them are debated"
+      ]
     },
     {
       "module": 5,
@@ -999,7 +1341,8 @@
       "guideTopic": "Perception as inference",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -1009,7 +1352,8 @@
       "guideTopic": "Helmholtz: unconscious inference and the likelihood principle",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 5,
@@ -1019,7 +1363,8 @@
       "guideTopic": "Perception as inference",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 2,
@@ -1031,7 +1376,15 @@
         168
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Gestalt organization: the laws and the claim that they are built in"
+      ]
     },
     {
       "module": 2,
@@ -1044,31 +1397,51 @@
         170
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition"
+      ]
     },
     {
       "module": 2,
       "page": 4,
       "title": "The oblique effect",
       "score": 0.119543,
-      "guideTopic": "Neurons and the environment",
+      "guideTopic": "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition",
       "questionIds": [
         171
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition"
+      ]
     },
     {
       "module": 2,
       "page": 5,
       "title": "Light from above",
       "score": 0.127262,
-      "guideTopic": "“What” and “where/how” pathways; lesion and neuropsychological evidence",
+      "guideTopic": "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition",
       "questionIds": [
         172
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition"
+      ]
     },
     {
       "module": 2,
@@ -1078,7 +1451,8 @@
       "guideTopic": "What pattern of results would support or refute a theory",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 2,
@@ -1088,7 +1462,8 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 2,
@@ -1100,7 +1475,15 @@
         173
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition"
+      ]
     },
     {
       "module": 2,
@@ -1115,7 +1498,15 @@
       "essentials": [
         "essential-14"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition"
+      ]
     },
     {
       "module": 2,
@@ -1127,7 +1518,8 @@
         175
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 2,
@@ -1139,21 +1531,35 @@
         176
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Bayesian inference: priors and likelihood"
+      ]
     },
     {
       "module": 2,
       "page": 12,
       "title": "Bayesian hypothesis testing",
       "score": 0.271541,
-      "guideTopic": "Using prior knowledge and environmental regularities to resolve ambiguity",
+      "guideTopic": "Bayesian inference: priors and likelihood",
       "questionIds": [
         177
       ],
       "essentials": [
         "essential-1"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Bayesian inference: priors and likelihood"
+      ]
     },
     {
       "module": 2,
@@ -1163,19 +1569,28 @@
       "guideTopic": "Bayesian inference: priors and likelihood",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 2,
       "page": 14,
       "title": "Four approaches to object perception",
       "score": 0.301575,
-      "guideTopic": "Four approaches to object perception",
+      "guideTopic": "How the four approaches compare",
       "questionIds": [
         178
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "How the four approaches compare"
+      ]
     },
     {
       "module": 2,
@@ -1185,7 +1600,8 @@
       "guideTopic": "Cross-cultural illusion findings; WEIRD samples; experience as a source of priors",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 2,
@@ -1198,19 +1614,33 @@
         179
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Cross-cultural illusion findings; WEIRD samples; experience as a source of priors"
+      ]
     },
     {
       "module": 2,
       "page": 17,
       "title": "Culture and perceptual priors",
       "score": 0.18143,
-      "guideTopic": "Culture and perception",
+      "guideTopic": "Cross-cultural illusion findings; WEIRD samples; experience as a source of priors",
       "questionIds": [
         180
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Cross-cultural illusion findings; WEIRD samples; experience as a source of priors"
+      ]
     },
     {
       "module": 2,
@@ -1225,7 +1655,15 @@
       "essentials": [
         "essential-15"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Cross-cultural illusion findings; WEIRD samples; experience as a source of priors"
+      ]
     },
     {
       "module": 2,
@@ -1235,19 +1673,26 @@
       "guideTopic": "Marr's three levels of analysis",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 2,
       "page": 20,
       "title": "Neural tuning",
       "score": 0.233154,
-      "guideTopic": "Neurons and the environment",
+      "guideTopic": "Experience-dependent plasticity",
       "questionIds": [
         182
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Experience-dependent plasticity"
+      ]
     },
     {
       "module": 2,
@@ -1259,7 +1704,15 @@
         42
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Experience-dependent plasticity"
+      ]
     },
     {
       "module": 2,
@@ -1271,7 +1724,13 @@
         183
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Face- and place-selective areas; expertise"
+      ]
     },
     {
       "module": 2,
@@ -1281,7 +1740,13 @@
       "guideTopic": "Face- and place-selective areas; expertise",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Face- and place-selective areas; expertise"
+      ]
     },
     {
       "module": 2,
@@ -1291,14 +1756,15 @@
       "guideTopic": "Recognition-by-components",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 2,
       "page": 25,
       "title": "Greeble training",
       "score": 0.456761,
-      "guideTopic": "Experience-dependent plasticity",
+      "guideTopic": "Face- and place-selective areas; expertise",
       "questionIds": [
         43,
         184
@@ -1306,7 +1772,15 @@
       "essentials": [
         "essential-16"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Face- and place-selective areas; expertise"
+      ]
     },
     {
       "module": 2,
@@ -1316,7 +1790,8 @@
       "guideTopic": "Face- and place-selective areas; expertise",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 2,
@@ -1326,7 +1801,8 @@
       "guideTopic": "Experience-dependent plasticity",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 2,
@@ -1338,7 +1814,15 @@
         185
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Movement and manual exploration in perception"
+      ]
     },
     {
       "module": 2,
@@ -1348,7 +1832,11 @@
       "guideTopic": "Perception and action",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 2,
@@ -1360,7 +1848,13 @@
         186
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Movement and manual exploration in perception"
+      ]
     },
     {
       "module": 2,
@@ -1374,7 +1868,15 @@
       "essentials": [
         "essential-18"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Perception and attention: integral vs. separable dimensions"
+      ]
     },
     {
       "module": 2,
@@ -1384,7 +1886,8 @@
       "guideTopic": "Experience-dependent plasticity",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1396,7 +1899,15 @@
         45
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Types of attention: selective, divided, distraction, attentional capture"
+      ]
     },
     {
       "module": 7,
@@ -1406,7 +1917,8 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1418,7 +1930,15 @@
         46
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Dichotic listening, shadowing, and the cocktail party effect"
+      ]
     },
     {
       "module": 7,
@@ -1430,7 +1950,15 @@
         47
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Dichotic listening, shadowing, and the cocktail party effect"
+      ]
     },
     {
       "module": 7,
@@ -1440,7 +1968,11 @@
       "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 7,
@@ -1450,19 +1982,26 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
       "page": 8,
       "title": "Broadbent's filter",
       "score": 0.145013,
-      "guideTopic": "Marr's three levels of analysis",
+      "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
       "questionIds": [
         48
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Early, intermediate, and late selection models and the evidence for and against each"
+      ]
     },
     {
       "module": 7,
@@ -1472,7 +2011,8 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1482,7 +2022,8 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1494,14 +2035,15 @@
         187
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
       "page": 12,
       "title": "Evidence against a strict filter",
       "score": 0.33661,
-      "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
+      "guideTopic": "Dichotic listening, shadowing, and the cocktail party effect",
       "questionIds": [
         49,
         188
@@ -1509,7 +2051,15 @@
       "essentials": [
         "essential-20"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Dichotic listening, shadowing, and the cocktail party effect"
+      ]
     },
     {
       "module": 7,
@@ -1519,7 +2069,13 @@
       "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Early, intermediate, and late selection models and the evidence for and against each"
+      ]
     },
     {
       "module": 7,
@@ -1529,7 +2085,8 @@
       "guideTopic": "Load theory: processing capacity and perceptual load",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1541,20 +2098,27 @@
         50
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
       "page": 16,
       "title": "The dictionary unit",
       "score": 0.189587,
-      "guideTopic": "Marr's three levels of analysis",
+      "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
       "questionIds": [
         51,
         189
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Early, intermediate, and late selection models and the evidence for and against each"
+      ]
     },
     {
       "module": 7,
@@ -1564,7 +2128,8 @@
       "guideTopic": "Marr's three levels of analysis",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1574,14 +2139,15 @@
       "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
       "page": 19,
       "title": "MacKay's findings",
       "score": 0.368954,
-      "guideTopic": "Where each shows up: perception, attention, word and speech perception, sentence and text comprehension",
+      "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
       "questionIds": [
         52,
         190
@@ -1589,7 +2155,15 @@
       "essentials": [
         "essential-21"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Early, intermediate, and late selection models and the evidence for and against each"
+      ]
     },
     {
       "module": 7,
@@ -1599,7 +2173,8 @@
       "guideTopic": "Load theory: processing capacity and perceptual load",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1609,19 +2184,33 @@
       "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Early, intermediate, and late selection models and the evidence for and against each"
+      ]
     },
     {
       "module": 7,
       "page": 22,
       "title": "Resolving the early–late debate",
       "score": 0.281033,
-      "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
+      "guideTopic": "How the early–late debate was resolved",
       "questionIds": [
         53
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "How the early–late debate was resolved"
+      ]
     },
     {
       "module": 7,
@@ -1631,7 +2220,8 @@
       "guideTopic": "Manipulations, control and comparison conditions, and confounds",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1641,7 +2231,13 @@
       "guideTopic": "Automatic vs. controlled processing; effects of practice; Stroop interference",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Automatic vs. controlled processing; effects of practice; Stroop interference"
+      ]
     },
     {
       "module": 7,
@@ -1653,7 +2249,15 @@
         54
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Load theory: processing capacity and perceptual load"
+      ]
     },
     {
       "module": 7,
@@ -1667,7 +2271,15 @@
       "essentials": [
         "essential-22"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Load theory: processing capacity and perceptual load"
+      ]
     },
     {
       "module": 7,
@@ -1682,21 +2294,37 @@
         192
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Overt vs. covert attention; saccades, fixations, the fovea"
+      ]
     },
     {
       "module": 7,
       "page": 28,
       "title": "Bottom-up salience",
       "score": 0.444514,
-      "guideTopic": "Directing attention",
+      "guideTopic": "Bottom-up salience vs. top-down guidance (scene schemas, task demands)",
       "questionIds": [
         57
       ],
       "essentials": [
         "essential-19"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Bottom-up salience vs. top-down guidance (scene schemas, task demands)"
+      ]
     },
     {
       "module": 7,
@@ -1708,7 +2336,15 @@
         58
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Bottom-up salience vs. top-down guidance (scene schemas, task demands)"
+      ]
     },
     {
       "module": 7,
@@ -1718,7 +2354,8 @@
       "guideTopic": "Bottom-up salience vs. top-down guidance (scene schemas, task demands)",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1730,7 +2367,13 @@
         59
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Bottom-up salience vs. top-down guidance (scene schemas, task demands)"
+      ]
     },
     {
       "module": 7,
@@ -1740,21 +2383,30 @@
       "guideTopic": "Directing attention",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
       "page": 33,
       "title": "Valid and invalid cues",
       "score": 0.393789,
-      "guideTopic": "Directing attention",
+      "guideTopic": "Precueing; object-based attention",
       "questionIds": [
         60
       ],
       "essentials": [
         "essential-23"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Precueing; object-based attention"
+      ]
     },
     {
       "module": 7,
@@ -1766,7 +2418,15 @@
         61
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Precueing; object-based attention"
+      ]
     },
     {
       "module": 7,
@@ -1776,7 +2436,8 @@
       "guideTopic": "Precueing; object-based attention",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1786,7 +2447,8 @@
       "guideTopic": "Types of attention: selective, divided, distraction, attentional capture",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1796,7 +2458,8 @@
       "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 7,
@@ -1808,17 +2471,31 @@
         62
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Automatic vs. controlled processing; effects of practice; Stroop interference"
+      ]
     },
     {
       "module": 7,
       "page": 39,
       "title": "Automaticity and resource use",
       "score": 0.1524,
-      "guideTopic": "Directing attention",
+      "guideTopic": "Automatic vs. controlled processing; effects of practice; Stroop interference",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Automatic vs. controlled processing; effects of practice; Stroop interference"
+      ]
     },
     {
       "module": 7,
@@ -1828,7 +2505,11 @@
       "guideTopic": "Automatic vs. controlled processing; effects of practice; Stroop interference",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 4,
@@ -1840,7 +2521,8 @@
         63
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -1852,7 +2534,8 @@
         193
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -1864,20 +2547,29 @@
         64
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
       "page": 5,
       "title": "Inattention before driving conflicts",
       "score": 0.223725,
-      "guideTopic": "How the early–late debate was resolved",
+      "guideTopic": "Divided attention in the real world: driving and phone use",
       "questionIds": [
         65,
         194
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Divided attention in the real world: driving and phone use"
+      ]
     },
     {
       "module": 4,
@@ -1887,7 +2579,8 @@
       "guideTopic": "Types of attention: selective, divided, distraction, attentional capture",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -1902,7 +2595,15 @@
       "essentials": [
         "essential-24"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Divided attention in the real world: driving and phone use"
+      ]
     },
     {
       "module": 4,
@@ -1917,7 +2618,15 @@
       "essentials": [
         "essential-25"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Inattentional blindness vs. change blindness"
+      ]
     },
     {
       "module": 4,
@@ -1929,7 +2638,15 @@
         68
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Inattentional blindness vs. change blindness"
+      ]
     },
     {
       "module": 4,
@@ -1939,7 +2656,8 @@
       "guideTopic": "Inattentional blindness vs. change blindness",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -1951,7 +2669,13 @@
         197
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome"
+      ]
     },
     {
       "module": 4,
@@ -1961,29 +2685,49 @@
       "guideTopic": "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome"
+      ]
     },
     {
       "module": 4,
       "page": 13,
       "title": "The preattentive stage",
       "score": 0.201694,
-      "guideTopic": "Precueing; object-based attention",
+      "guideTopic": "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome",
       "questionIds": [
         69
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome"
+      ]
     },
     {
       "module": 4,
       "page": 14,
       "title": "The focused-attention stage",
       "score": 0.180907,
-      "guideTopic": "Attention and perception",
+      "guideTopic": "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome"
+      ]
     },
     {
       "module": 4,
@@ -1993,7 +2737,8 @@
       "guideTopic": "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -2003,7 +2748,8 @@
       "guideTopic": "Attention and perception",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -2013,7 +2759,8 @@
       "guideTopic": "Directing attention",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -2023,7 +2770,8 @@
       "guideTopic": "What pattern of results would support or refute a theory",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -2035,7 +2783,8 @@
         198
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -2048,7 +2797,15 @@
         72
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome"
+      ]
     },
     {
       "module": 4,
@@ -2063,7 +2820,15 @@
       "essentials": [
         "essential-26"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome"
+      ]
     },
     {
       "module": 4,
@@ -2073,21 +2838,33 @@
       "guideTopic": "Precueing; object-based attention",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 4,
       "page": 23,
       "title": "Balint's syndrome",
       "score": 0.435304,
-      "guideTopic": "Precueing; object-based attention",
+      "guideTopic": "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome",
       "questionIds": [
         73
       ],
       "essentials": [
         "essential-27"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome"
+      ]
     },
     {
       "module": 4,
@@ -2099,7 +2876,11 @@
         74
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking"
+      ]
     },
     {
       "module": 4,
@@ -2112,7 +2893,15 @@
         156
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Physiology of attention: enhanced neural responding, topographic maps, decoding where attention is focused, attending to faces vs. houses"
+      ]
     },
     {
       "module": 4,
@@ -2122,7 +2911,8 @@
       "guideTopic": "Physiology of attention: enhanced neural responding, topographic maps, decoding where attention is focused, attending to faces vs. houses",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -2134,7 +2924,8 @@
         200
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
@@ -2144,17 +2935,24 @@
       "guideTopic": "The information-processing / computational approach",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 4,
       "page": 29,
       "title": "Attention changes location-specific activity",
       "score": 0.191273,
-      "guideTopic": "Directing attention",
+      "guideTopic": "Physiology of attention: enhanced neural responding, topographic maps, decoding where attention is focused, attending to faces vs. houses",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Physiology of attention: enhanced neural responding, topographic maps, decoding where attention is focused, attending to faces vs. houses"
+      ]
     },
     {
       "module": 4,
@@ -2166,7 +2964,15 @@
         76
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Physiology of attention: enhanced neural responding, topographic maps, decoding where attention is focused, attending to faces vs. houses"
+      ]
     },
     {
       "module": 4,
@@ -2181,7 +2987,15 @@
       "essentials": [
         "essential-28"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Physiology of attention: enhanced neural responding, topographic maps, decoding where attention is focused, attending to faces vs. houses"
+      ]
     },
     {
       "module": 4,
@@ -2191,7 +3005,8 @@
       "guideTopic": "Precueing; object-based attention",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
@@ -2203,7 +3018,15 @@
         202
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The questions psycholinguistics asks: comprehension, production, representation, acquisition"
+      ]
     },
     {
       "module": 8,
@@ -2215,7 +3038,13 @@
         78
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Phonemes and morphemes; the mental lexicon"
+      ]
     },
     {
       "module": 8,
@@ -2230,19 +3059,33 @@
       "essentials": [
         "essential-29"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Phonemes and morphemes; the mental lexicon"
+      ]
     },
     {
       "module": 8,
       "page": 5,
       "title": "The mental lexicon",
       "score": 0.222182,
-      "guideTopic": "Words",
+      "guideTopic": "Phonemes and morphemes; the mental lexicon",
       "questionIds": [
         80
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Phonemes and morphemes; the mental lexicon"
+      ]
     },
     {
       "module": 8,
@@ -2255,17 +3098,33 @@
         204
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Phonemic restoration; the word superiority effect"
+      ]
     },
     {
       "module": 8,
       "page": 7,
       "title": "Bottom-up and top-down word recognition",
       "score": 0.260871,
-      "guideTopic": "Bottom-up vs. top-down processing",
+      "guideTopic": "Bottom-up and top-down processes in recognizing words",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Bottom-up and top-down processes in recognizing words"
+      ]
     },
     {
       "module": 8,
@@ -2279,7 +3138,15 @@
       "essentials": [
         "essential-30"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Phonemic restoration; the word superiority effect"
+      ]
     },
     {
       "module": 8,
@@ -2289,7 +3156,8 @@
       "guideTopic": "Phonemic restoration; the word superiority effect",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
@@ -2301,20 +3169,29 @@
         205
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
       "page": 11,
       "title": "Corpora and frequency",
       "score": 0.35676,
-      "guideTopic": "Words",
+      "guideTopic": "Corpora, word frequency, lexical decision, eye movements in reading",
       "questionIds": [
         83,
         206
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Corpora, word frequency, lexical decision, eye movements in reading"
+      ]
     },
     {
       "module": 8,
@@ -2324,7 +3201,8 @@
       "guideTopic": "Language and thought",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
@@ -2338,7 +3216,15 @@
         158
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Corpora, word frequency, lexical decision, eye movements in reading"
+      ]
     },
     {
       "module": 8,
@@ -2350,7 +3236,8 @@
         86
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
@@ -2360,7 +3247,8 @@
       "guideTopic": "Lexical ambiguity: meaning dominance and the role of context",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
@@ -2370,7 +3258,8 @@
       "guideTopic": "Lexical ambiguity: meaning dominance and the role of context",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
@@ -2382,19 +3271,33 @@
         87
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Lexical ambiguity: meaning dominance and the role of context"
+      ]
     },
     {
       "module": 8,
       "page": 18,
       "title": "Fixation duration and ambiguity",
       "score": 0.169002,
-      "guideTopic": "Phonemic restoration; the word superiority effect",
+      "guideTopic": "Lexical ambiguity: meaning dominance and the role of context",
       "questionIds": [
         88
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Lexical ambiguity: meaning dominance and the role of context"
+      ]
     },
     {
       "module": 8,
@@ -2408,7 +3311,15 @@
       "essentials": [
         "essential-31"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Lexical ambiguity: meaning dominance and the role of context"
+      ]
     },
     {
       "module": 8,
@@ -2420,19 +3331,31 @@
         89
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Syntax vs. semantics"
+      ]
     },
     {
       "module": 8,
       "page": 21,
       "title": "Aphasia and sentence understanding",
       "score": 0.193932,
-      "guideTopic": "Chomsky's critique; Marr's levels of analysis; “Type I” problems and substrate dependence",
+      "guideTopic": "Neuropsychological and ERP evidence",
       "questionIds": [
         90
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Neuropsychological and ERP evidence"
+      ]
     },
     {
       "module": 8,
@@ -2442,14 +3365,15 @@
       "guideTopic": "Syntax vs. semantics",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
       "page": 23,
       "title": "N400 and P600",
       "score": 0.330757,
-      "guideTopic": "Manipulations, control and comparison conditions, and confounds",
+      "guideTopic": "Neuropsychological and ERP evidence",
       "questionIds": [
         91,
         92
@@ -2457,7 +3381,15 @@
       "essentials": [
         "essential-32"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Neuropsychological and ERP evidence"
+      ]
     },
     {
       "module": 8,
@@ -2470,7 +3402,15 @@
         208
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Parsing: garden-path sentences and temporary ambiguity"
+      ]
     },
     {
       "module": 8,
@@ -2482,7 +3422,8 @@
         94
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
@@ -2492,7 +3433,8 @@
       "guideTopic": "Prediction and experience in sentence processing",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
@@ -2502,7 +3444,8 @@
       "guideTopic": "Syntax vs. semantics",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 8,
@@ -2512,19 +3455,26 @@
       "guideTopic": "Words",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 1,
       "page": 2,
       "title": "Syntax-first parsing and late closure",
       "score": 0.194506,
-      "guideTopic": "Parsing: garden-path sentences and temporary ambiguity",
+      "guideTopic": "Syntax-first vs. interactionist approaches; visual-world evidence",
       "questionIds": [
         95
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Syntax-first vs. interactionist approaches; visual-world evidence"
+      ]
     },
     {
       "module": 1,
@@ -2536,14 +3486,15 @@
         209
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 1,
       "page": 4,
       "title": "Interactionist parsing",
       "score": 0.412385,
-      "guideTopic": "Syntax vs. semantics",
+      "guideTopic": "Syntax-first vs. interactionist approaches; visual-world evidence",
       "questionIds": [
         96,
         210
@@ -2551,7 +3502,15 @@
       "essentials": [
         "essential-33"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Syntax-first vs. interactionist approaches; visual-world evidence"
+      ]
     },
     {
       "module": 1,
@@ -2563,41 +3522,65 @@
         211
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Syntax-first vs. interactionist approaches; visual-world evidence"
+      ]
     },
     {
       "module": 1,
       "page": 6,
       "title": "Two apples and the instruction",
       "score": 0.095061,
-      "guideTopic": "Chomsky's critique; Marr's levels of analysis; “Type I” problems and substrate dependence",
+      "guideTopic": "Syntax-first vs. interactionist approaches; visual-world evidence",
       "questionIds": [
         97
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Syntax-first vs. interactionist approaches; visual-world evidence"
+      ]
     },
     {
       "module": 1,
       "page": 7,
       "title": "One apple and the instruction",
       "score": 0.092787,
-      "guideTopic": "The information-processing / computational approach",
+      "guideTopic": "Syntax-first vs. interactionist approaches; visual-world evidence",
       "questionIds": [
         212
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Syntax-first vs. interactionist approaches; visual-world evidence"
+      ]
     },
     {
       "module": 1,
       "page": 8,
       "title": "Prediction from environmental knowledge",
       "score": 0.118818,
-      "guideTopic": "How knowledge, expectation, and context shape what we perceive",
+      "guideTopic": "Prediction and experience in sentence processing",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Prediction and experience in sentence processing"
+      ]
     },
     {
       "module": 1,
@@ -2611,19 +3594,33 @@
       "essentials": [
         "essential-34"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Prediction and experience in sentence processing"
+      ]
     },
     {
       "module": 1,
       "page": 10,
       "title": "Inference while reading stories",
       "score": 0.164074,
-      "guideTopic": "Using prior knowledge and environmental regularities to resolve ambiguity",
+      "guideTopic": "Inference; situation models; simulation",
       "questionIds": [
         99
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Inference; situation models; simulation"
+      ]
     },
     {
       "module": 1,
@@ -2636,7 +3633,15 @@
         213
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Inference; situation models; simulation"
+      ]
     },
     {
       "module": 1,
@@ -2646,33 +3651,50 @@
       "guideTopic": "Inference; situation models; simulation",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 1,
       "page": 13,
       "title": "Neural evidence for simulation",
       "score": 0.292402,
-      "guideTopic": "Words",
+      "guideTopic": "Brain evidence that readers build models of situations",
       "questionIds": [
         214
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Brain evidence that readers build models of situations"
+      ]
     },
     {
       "module": 1,
       "page": 14,
       "title": "N400 and event knowledge",
       "score": 0.297545,
-      "guideTopic": "How knowledge, expectation, and context shape what we perceive",
+      "guideTopic": "Brain evidence that readers build models of situations",
       "questionIds": [
         101
       ],
       "essentials": [
         "essential-35"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Brain evidence that readers build models of situations"
+      ]
     },
     {
       "module": 1,
@@ -2685,7 +3707,15 @@
         215
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The given–new contract; syntactic coordination and priming"
+      ]
     },
     {
       "module": 1,
@@ -2695,7 +3725,15 @@
       "guideTopic": "The given–new contract; syntactic coordination and priming",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The given–new contract; syntactic coordination and priming"
+      ]
     },
     {
       "module": 1,
@@ -2707,7 +3745,8 @@
         216
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 1,
@@ -2721,31 +3760,53 @@
       "essentials": [
         "essential-36"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The given–new contract; syntactic coordination and priming"
+      ]
     },
     {
       "module": 1,
       "page": 19,
       "title": "Language and color categories",
       "score": 0.262927,
-      "guideTopic": "Language and thought",
+      "guideTopic": "The Sapir-Whorf hypothesis: color and space",
       "questionIds": [
         104
       ],
       "essentials": [],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The Sapir-Whorf hypothesis: color and space"
+      ]
     },
     {
       "module": 1,
       "page": 20,
       "title": "Visual field and language",
       "score": 0.260949,
-      "guideTopic": "Language and thought",
+      "guideTopic": "The Sapir-Whorf hypothesis: color and space",
       "questionIds": [
         217
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The Sapir-Whorf hypothesis: color and space"
+      ]
     },
     {
       "module": 1,
@@ -2755,41 +3816,62 @@
       "guideTopic": "The Sapir-Whorf hypothesis: color and space",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 1,
       "page": 22,
       "title": "Tzeltal uphill and downhill",
       "score": 0.2739,
-      "guideTopic": "Chomsky's critique; Marr's levels of analysis; “Type I” problems and substrate dependence",
+      "guideTopic": "The Sapir-Whorf hypothesis: color and space",
       "questionIds": [
         105
       ],
       "essentials": [
         "essential-37"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The Sapir-Whorf hypothesis: color and space"
+      ]
     },
     {
       "module": 1,
       "page": 23,
       "title": "Reference frames in spatial memory",
       "score": 0.046184,
-      "guideTopic": "Using prior knowledge and environmental regularities to resolve ambiguity",
+      "guideTopic": "The Sapir-Whorf hypothesis: color and space",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "The Sapir-Whorf hypothesis: color and space"
+      ]
     },
     {
       "module": 1,
       "page": 24,
       "title": "Language and the cognitive revolution",
       "score": 0.259808,
-      "guideTopic": "Language and the cognitive revolution",
+      "guideTopic": "Chomsky's critique; Marr's levels of analysis; “Type I” problems and substrate dependence",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Chomsky's critique; Marr's levels of analysis; “Type I” problems and substrate dependence"
+      ]
     },
     {
       "module": 1,
@@ -2801,14 +3883,20 @@
         218
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Chomsky's critique; Marr's levels of analysis; “Type I” problems and substrate dependence"
+      ]
     },
     {
       "module": 1,
       "page": 26,
       "title": "Marr's three levels",
       "score": 0.613454,
-      "guideTopic": "Marr's three levels of analysis",
+      "guideTopic": "Chomsky's critique; Marr's levels of analysis; “Type I” problems and substrate dependence",
       "questionIds": [
         106,
         157,
@@ -2817,7 +3905,15 @@
       "essentials": [
         "essential-2"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Chomsky's critique; Marr's levels of analysis; “Type I” problems and substrate dependence"
+      ]
     },
     {
       "module": 1,
@@ -2829,7 +3925,8 @@
         107
       ],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
     },
     {
       "module": 1,
@@ -2843,7 +3940,15 @@
       "essentials": [
         "essential-38"
       ],
-      "mustKnow": true
+      "mustKnow": true,
+      "reasons": [
+        "Existing core-review marker",
+        "Guide/quiz-weighted lecture ranking",
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Chomsky's critique; Marr's levels of analysis; “Type I” problems and substrate dependence"
+      ]
     },
     {
       "module": 1,
@@ -2853,7 +3958,863 @@
       "guideTopic": "Words",
       "questionIds": [],
       "essentials": [],
-      "mustKnow": false
+      "mustKnow": false,
+      "reasons": []
+    },
+    {
+      "module": 0,
+      "page": 1,
+      "title": "Signal Detection",
+      "score": 0.265811,
+      "guideTopic": "What pattern of results would support or refute a theory",
+      "questionIds": [
+        109,
+        110,
+        111,
+        112
+      ],
+      "essentials": [],
+      "mustKnow": true,
+      "reasons": [
+        "Non-memory lab in the practice-question bank"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 2,
+      "title": "Müller-Lyer Illusion and the Method of Constant Stimuli",
+      "score": 0.107187,
+      "guideTopic": "Manipulations, control and comparison conditions, and confounds",
+      "questionIds": [
+        113
+      ],
+      "essentials": [],
+      "mustKnow": true,
+      "reasons": [
+        "Non-memory lab in the practice-question bank"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 3,
+      "title": "Apparent Motion",
+      "score": 0.088746,
+      "guideTopic": "Marr's three levels of analysis",
+      "questionIds": [
+        114
+      ],
+      "essentials": [],
+      "mustKnow": true,
+      "reasons": [
+        "Non-memory lab in the practice-question bank"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 4,
+      "title": "Visual Search",
+      "score": 0.160167,
+      "guideTopic": "How knowledge, expectation, and context shape what we perceive",
+      "questionIds": [
+        115,
+        116
+      ],
+      "essentials": [],
+      "mustKnow": true,
+      "reasons": [
+        "Non-memory lab in the practice-question bank"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 5,
+      "title": "Stroop Effect",
+      "score": 0.13455,
+      "guideTopic": "Where each shows up: perception, attention, word and speech perception, sentence and text comprehension",
+      "questionIds": [
+        117
+      ],
+      "essentials": [],
+      "mustKnow": true,
+      "reasons": [
+        "Non-memory lab in the practice-question bank"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 6,
+      "title": "Attentional Blink",
+      "score": 0.116429,
+      "guideTopic": "Selective attention in emergency wayfinding (eye tracking in virtual reality)",
+      "questionIds": [
+        118
+      ],
+      "essentials": [],
+      "mustKnow": true,
+      "reasons": [
+        "Non-memory lab in the practice-question bank"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 7,
+      "title": "Inhibition of Return",
+      "score": 0.106375,
+      "guideTopic": "Media multitasking and attention across three samples",
+      "questionIds": [
+        119
+      ],
+      "essentials": [],
+      "mustKnow": true,
+      "reasons": [
+        "Non-memory lab in the practice-question bank"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 8,
+      "title": "Simon Effect",
+      "score": 0.227806,
+      "guideTopic": "Where each shows up: perception, attention, word and speech perception, sentence and text comprehension",
+      "questionIds": [
+        120
+      ],
+      "essentials": [
+        "essential-44"
+      ],
+      "mustKnow": true,
+      "reasons": [
+        "Non-memory lab in the practice-question bank"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 9,
+      "title": "Word Superiority",
+      "score": 0.175572,
+      "guideTopic": "Where each shows up: perception, attention, word and speech perception, sentence and text comprehension",
+      "questionIds": [
+        121
+      ],
+      "essentials": [],
+      "mustKnow": true,
+      "reasons": [
+        "Non-memory lab in the practice-question bank"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 10,
+      "title": "Phonological Similarity",
+      "score": 0.022678,
+      "guideTopic": "Marr's three levels of analysis",
+      "questionIds": [],
+      "essentials": [],
+      "mustKnow": false,
+      "reasons": []
+    },
+    {
+      "module": 0,
+      "page": 11,
+      "title": "Lexical Decision",
+      "score": 0.138569,
+      "guideTopic": "Where each shows up: perception, attention, word and speech perception, sentence and text comprehension",
+      "questionIds": [
+        124
+      ],
+      "essentials": [],
+      "mustKnow": true,
+      "reasons": [
+        "Non-memory lab in the practice-question bank"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 12,
+      "title": "Musical Training and Selective Listening at a Cocktail Party (Puschmann, Baillet, & Zatorre, 2019)",
+      "score": 0.610859,
+      "guideTopic": "Selective listening in a multi-talker (“cocktail party”) situation and musical training",
+      "questionIds": [
+        125,
+        126,
+        231,
+        232
+      ],
+      "essentials": [
+        "essential-39"
+      ],
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Selective listening in a multi-talker (“cocktail party”) situation and musical training"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 13,
+      "title": "Selective Attention in Emergency Wayfinding (Chen, Shi, & Li, 2023)",
+      "score": 0.639951,
+      "guideTopic": "Selective attention in emergency wayfinding (eye tracking in virtual reality)",
+      "questionIds": [
+        127,
+        233
+      ],
+      "essentials": [
+        "essential-43"
+      ],
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Selective attention in emergency wayfinding (eye tracking in virtual reality)"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 14,
+      "title": "The Baseword Frequency Effect in Children's Pseudohomophone Reading (Tiffin-Richards & Schroeder, 2018)",
+      "score": 0.595367,
+      "guideTopic": "Children's pseudohomophone reading and the verification of nonwords",
+      "questionIds": [
+        128,
+        129,
+        234
+      ],
+      "essentials": [
+        "essential-42"
+      ],
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Children's pseudohomophone reading and the verification of nonwords"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 15,
+      "title": "Media Multitasking and Attention Across Three Samples (Rioja, Cekic, Bavelier, & Baumgartner, 2023)",
+      "score": 0.709839,
+      "guideTopic": "Media multitasking and attention across three samples",
+      "questionIds": [
+        130,
+        131,
+        152,
+        235
+      ],
+      "essentials": [
+        "essential-3",
+        "essential-40"
+      ],
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Media multitasking and attention across three samples"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 16,
+      "title": "Do English and Mandarin Speakers Think About Time Differently? (Boroditsky, Fuhrman, & McCormick, 2011)",
+      "score": 0.717377,
+      "guideTopic": "Whether English and Mandarin speakers think about time differently",
+      "questionIds": [
+        132,
+        133,
+        236,
+        237
+      ],
+      "essentials": [
+        "essential-41"
+      ],
+      "mustKnow": true,
+      "reasons": [
+        "Explicit study-guide coverage"
+      ],
+      "guideTopics": [
+        "Whether English and Mandarin speakers think about time differently"
+      ]
+    },
+    {
+      "module": 0,
+      "page": 17,
+      "title": "Neighborhood Size Effect",
+      "score": 0.048767,
+      "guideTopic": "Where each shows up: perception, attention, word and speech perception, sentence and text comprehension",
+      "questionIds": [],
+      "essentials": [],
+      "mustKnow": false,
+      "reasons": []
+    },
+    {
+      "module": 0,
+      "page": 18,
+      "title": "Brown-Peterson",
+      "score": 0.103664,
+      "guideTopic": "The information-processing / computational approach",
+      "questionIds": [],
+      "essentials": [],
+      "mustKnow": false,
+      "reasons": []
+    },
+    {
+      "module": 0,
+      "page": 19,
+      "title": "Partial Report",
+      "score": 0.029329,
+      "guideTopic": "For each article, know the question it asked, what was measured, and the main result",
+      "questionIds": [],
+      "essentials": [],
+      "mustKnow": false,
+      "reasons": []
+    },
+    {
+      "module": 0,
+      "page": 20,
+      "title": "Position Error Effect",
+      "score": 0.026112,
+      "guideTopic": "The information-processing / computational approach",
+      "questionIds": [],
+      "essentials": [],
+      "mustKnow": false,
+      "reasons": []
+    },
+    {
+      "module": 0,
+      "page": 21,
+      "title": "Modality Effect",
+      "score": 0.02956,
+      "guideTopic": "The information-processing / computational approach",
+      "questionIds": [],
+      "essentials": [],
+      "mustKnow": false,
+      "reasons": []
+    }
+  ],
+  "guide_coverage": [
+    {
+      "guideTopic": "What cognitive psychology studies; what “the mind” does (processes and representations)",
+      "module": 3,
+      "pages": [
+        10
+      ]
+    },
+    {
+      "guideTopic": "Donders: reaction time and subtraction logic",
+      "module": 3,
+      "pages": [
+        12,
+        16
+      ]
+    },
+    {
+      "guideTopic": "Wundt and structuralism; analytic introspection (and the Titchener note from lecture)",
+      "module": 3,
+      "pages": [
+        18
+      ]
+    },
+    {
+      "guideTopic": "Ebbinghaus: forgetting, savings, nonsense syllables",
+      "module": 3,
+      "pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "guideTopic": "William James",
+      "module": 3,
+      "pages": [
+        21
+      ]
+    },
+    {
+      "guideTopic": "Watson's critique of introspection",
+      "module": 3,
+      "pages": [
+        22
+      ]
+    },
+    {
+      "guideTopic": "Classical conditioning (Pavlov, “Little Albert”) and operant conditioning (Skinner)",
+      "module": 3,
+      "pages": [
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "guideTopic": "Tolman and cognitive maps",
+      "module": 3,
+      "pages": [
+        29,
+        31
+      ]
+    },
+    {
+      "guideTopic": "Chomsky's critique of Skinner's account of language",
+      "module": 3,
+      "pages": [
+        33
+      ]
+    },
+    {
+      "guideTopic": "The cognitive revolution",
+      "module": 3,
+      "pages": [
+        34
+      ]
+    },
+    {
+      "guideTopic": "The information-processing approach and the computer analogy",
+      "module": 3,
+      "pages": [
+        35
+      ]
+    },
+    {
+      "guideTopic": "Dichotic listening and Broadbent's flow diagram",
+      "module": 3,
+      "pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "guideTopic": "Early artificial intelligence (the 1956 conference; the Logic Theorist)",
+      "module": 3,
+      "pages": [
+        38,
+        39
+      ]
+    },
+    {
+      "guideTopic": "Structural vs. process models",
+      "module": 3,
+      "pages": [
+        41
+      ]
+    },
+    {
+      "guideTopic": "The inverse projection problem; hidden and blurred objects; viewpoint invariance",
+      "module": 5,
+      "pages": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "guideTopic": "Bottom-up vs. top-down; direct vs. constructive theories",
+      "module": 5,
+      "pages": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "guideTopic": "Recognition-by-components",
+      "module": 5,
+      "pages": [
+        16
+      ]
+    },
+    {
+      "guideTopic": "Top-down examples: context and ambiguous objects, speech segmentation, pain",
+      "module": 5,
+      "pages": [
+        18,
+        19,
+        21
+      ]
+    },
+    {
+      "guideTopic": "Helmholtz: unconscious inference and the likelihood principle",
+      "module": 5,
+      "pages": [
+        23
+      ]
+    },
+    {
+      "guideTopic": "Gestalt organization: the laws and the claim that they are built in",
+      "module": 2,
+      "pages": [
+        2
+      ]
+    },
+    {
+      "guideTopic": "Regularities in the environment: physical vs. semantic; scene schemas; scene context and object recognition",
+      "module": 2,
+      "pages": [
+        3,
+        4,
+        5,
+        8,
+        9
+      ]
+    },
+    {
+      "guideTopic": "Bayesian inference: priors and likelihood",
+      "module": 2,
+      "pages": [
+        11,
+        12
+      ]
+    },
+    {
+      "guideTopic": "How the four approaches compare",
+      "module": 2,
+      "pages": [
+        14
+      ]
+    },
+    {
+      "guideTopic": "Cross-cultural illusion findings; WEIRD samples; experience as a source of priors",
+      "module": 2,
+      "pages": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "guideTopic": "Experience-dependent plasticity",
+      "module": 2,
+      "pages": [
+        20,
+        21
+      ]
+    },
+    {
+      "guideTopic": "Face- and place-selective areas; expertise",
+      "module": 2,
+      "pages": [
+        22,
+        23,
+        25
+      ]
+    },
+    {
+      "guideTopic": "Movement and manual exploration in perception",
+      "module": 2,
+      "pages": [
+        28,
+        30
+      ]
+    },
+    {
+      "guideTopic": "Perception and attention: integral vs. separable dimensions",
+      "module": 2,
+      "pages": [
+        31
+      ]
+    },
+    {
+      "guideTopic": "“What” and “where/how” pathways; lesion and neuropsychological evidence",
+      "module": 5,
+      "pages": [
+        45,
+        46
+      ]
+    },
+    {
+      "guideTopic": "Mirror neurons, and which claims about them are debated",
+      "module": 5,
+      "pages": [
+        46
+      ]
+    },
+    {
+      "guideTopic": "Types of attention: selective, divided, distraction, attentional capture",
+      "module": 7,
+      "pages": [
+        2
+      ]
+    },
+    {
+      "guideTopic": "Dichotic listening, shadowing, and the cocktail party effect",
+      "module": 7,
+      "pages": [
+        4,
+        5,
+        12
+      ]
+    },
+    {
+      "guideTopic": "Early, intermediate, and late selection models and the evidence for and against each",
+      "module": 7,
+      "pages": [
+        8,
+        13,
+        16,
+        19,
+        21
+      ]
+    },
+    {
+      "guideTopic": "How the early–late debate was resolved",
+      "module": 7,
+      "pages": [
+        22
+      ]
+    },
+    {
+      "guideTopic": "Load theory: processing capacity and perceptual load",
+      "module": 7,
+      "pages": [
+        25,
+        26
+      ]
+    },
+    {
+      "guideTopic": "Automatic vs. controlled processing; effects of practice; Stroop interference",
+      "module": 7,
+      "pages": [
+        24,
+        38,
+        39
+      ]
+    },
+    {
+      "guideTopic": "Overt vs. covert attention; saccades, fixations, the fovea",
+      "module": 7,
+      "pages": [
+        27
+      ]
+    },
+    {
+      "guideTopic": "Bottom-up salience vs. top-down guidance (scene schemas, task demands)",
+      "module": 7,
+      "pages": [
+        28,
+        29,
+        31
+      ]
+    },
+    {
+      "guideTopic": "Precueing; object-based attention",
+      "module": 7,
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "guideTopic": "Divided attention in the real world: driving and phone use",
+      "module": 4,
+      "pages": [
+        5,
+        7
+      ]
+    },
+    {
+      "guideTopic": "Inattentional blindness vs. change blindness",
+      "module": 4,
+      "pages": [
+        8,
+        9
+      ]
+    },
+    {
+      "guideTopic": "The binding problem; feature integration theory and its two stages; illusory conjunctions; Balint's syndrome",
+      "module": 4,
+      "pages": [
+        11,
+        12,
+        13,
+        14,
+        20,
+        21,
+        23
+      ]
+    },
+    {
+      "guideTopic": "Physiology of attention: enhanced neural responding, topographic maps, decoding where attention is focused, attending to faces vs. houses",
+      "module": 4,
+      "pages": [
+        25,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "guideTopic": "The questions psycholinguistics asks: comprehension, production, representation, acquisition",
+      "module": 8,
+      "pages": [
+        2
+      ]
+    },
+    {
+      "guideTopic": "Phonemes and morphemes; the mental lexicon",
+      "module": 8,
+      "pages": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "guideTopic": "Bottom-up and top-down processes in recognizing words",
+      "module": 8,
+      "pages": [
+        7
+      ]
+    },
+    {
+      "guideTopic": "Phonemic restoration; the word superiority effect",
+      "module": 8,
+      "pages": [
+        6,
+        8
+      ]
+    },
+    {
+      "guideTopic": "Corpora, word frequency, lexical decision, eye movements in reading",
+      "module": 8,
+      "pages": [
+        11,
+        13
+      ]
+    },
+    {
+      "guideTopic": "Lexical ambiguity: meaning dominance and the role of context",
+      "module": 8,
+      "pages": [
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "guideTopic": "Syntax vs. semantics",
+      "module": 8,
+      "pages": [
+        20
+      ]
+    },
+    {
+      "guideTopic": "Neuropsychological and ERP evidence",
+      "module": 8,
+      "pages": [
+        21,
+        23
+      ]
+    },
+    {
+      "guideTopic": "Parsing: garden-path sentences and temporary ambiguity",
+      "module": 8,
+      "pages": [
+        24
+      ]
+    },
+    {
+      "guideTopic": "Syntax-first vs. interactionist approaches; visual-world evidence",
+      "module": 1,
+      "pages": [
+        2,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "guideTopic": "Prediction and experience in sentence processing",
+      "module": 1,
+      "pages": [
+        8,
+        9
+      ]
+    },
+    {
+      "guideTopic": "Inference; situation models; simulation",
+      "module": 1,
+      "pages": [
+        10,
+        11
+      ]
+    },
+    {
+      "guideTopic": "Brain evidence that readers build models of situations",
+      "module": 1,
+      "pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "guideTopic": "The given–new contract; syntactic coordination and priming",
+      "module": 1,
+      "pages": [
+        15,
+        16,
+        18
+      ]
+    },
+    {
+      "guideTopic": "The Sapir-Whorf hypothesis: color and space",
+      "module": 1,
+      "pages": [
+        19,
+        20,
+        22,
+        23
+      ]
+    },
+    {
+      "guideTopic": "Chomsky's critique; Marr's levels of analysis; “Type I” problems and substrate dependence",
+      "module": 1,
+      "pages": [
+        24,
+        25,
+        26,
+        28
+      ]
+    },
+    {
+      "guideTopic": "Selective listening in a multi-talker (“cocktail party”) situation and musical training",
+      "module": 0,
+      "pages": [
+        12
+      ]
+    },
+    {
+      "guideTopic": "Media multitasking and attention across three samples",
+      "module": 0,
+      "pages": [
+        15
+      ]
+    },
+    {
+      "guideTopic": "Whether English and Mandarin speakers think about time differently",
+      "module": 0,
+      "pages": [
+        16
+      ]
+    },
+    {
+      "guideTopic": "Children's pseudohomophone reading and the verification of nonwords",
+      "module": 0,
+      "pages": [
+        14
+      ]
+    },
+    {
+      "guideTopic": "Selective attention in emergency wayfinding (eye tracking in virtual reality)",
+      "module": 0,
+      "pages": [
+        13
+      ]
     }
   ]
 }
