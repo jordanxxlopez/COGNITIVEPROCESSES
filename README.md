@@ -1,14 +1,13 @@
 # PSYC301 Study Studio
 
-Interactive Cognitive Processes study app with teaching notes, original lecture visuals, quizzes, and study timers.
+Open the study app: https://jordanxxlopez.github.io/COGNITIVEPROCESSES/
 
-## Open as a website
+- Full teaching notes and original visuals.
+- A 100-question combined practice exam, plus 60- and 65-question options.
+- Separate 25–30-question lecture quizzes.
+- 208 questions with answer explanations, source links, and retry queues.
+- Short-term memory excluded from every question set; its reference notes remain available.
 
-In this repository, open **Settings → Pages**, select **Deploy from a branch**, choose **main** and **/ (root)**, and save.
-
-After GitHub finishes deployment, the site will be available at:
-https://jordanxxlopez.github.io/COGNITIVEPROCESSES/
-
-Pages has not yet been enabled; the upload credentials cannot change this setting.
+The 100-question set covers Chapters 1, 3, 4, and 11 and the five assigned articles. Its topic allocation and sampling weights come from the supplied exam guide and six example questions. `exam_model.py` contains the study-priority model; `model-report.json` records its output. This is not a validated forecast of unseen professor questions or a model trained on USC exam archives.
 
 The self-contained `index.html` can also be downloaded and opened in a browser. Study progress is stored in that browser.
