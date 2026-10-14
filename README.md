@@ -3,6 +3,8 @@
 Open the study app: https://jordanxxlopez.github.io/COGNITIVEPROCESSES/
 
 - Full teaching notes and original visuals.
+- Original/Version B dropdown in collections 01–07: 246 fuller teaching scripts checked against slide text and figure labels. Notes, read checkmarks, and the current slide are shared between versions. Selections are saved per collection.
+- Version B additions are recorded by original source page in `version-b/`; the original explanations are retained in the app.
 - Roomy autosaved personal notes for each content section, shared across views.
 - An Experiments to know workspace guide: 67 lecture experiments, demonstrations, and case studies with 153 original slide references and an expanded transcript view.
 - Collection 08 uses 21 attributed original research figures and two verified supplementary research videos; other topics have no verified original video.
