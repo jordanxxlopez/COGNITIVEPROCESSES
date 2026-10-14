@@ -3,7 +3,8 @@
 Open the study app: https://jordanxxlopez.github.io/COGNITIVEPROCESSES/
 
 - Full teaching notes and original visuals.
-- Original/Version B/Version C/Version D dropdown in collections 01–07: 246 fuller teaching scripts checked against slide text and figure labels. Notes, read checkmarks, and the current slide are shared between versions. Selections are saved per collection.
+- Original/Version B/Version C/Version D/Version E dropdown in collections 01–07: 246 fuller teaching scripts checked against slide text and figure labels. Notes, read checkmarks, and the current slide are shared between versions. Selections are saved per collection.
+- Version E explains slide terminology and the actual course examples in complete teaching scripts, including the messages and actions in listening experiments. Red “Must know · core review” markers identify 102 guide- and quiz-based review priorities. Scripts and reproducible ranking details are in `version-e/`.
 - Version D follows the actual slide wording and order across all 246 sections, with short clarifications of the course concepts and examples. Full scripts are in `version-d/`.
 - Version C provides 246 complete teaching scripts, combining definitions, examples, and figure explanations without stacking the original text above them. Full scripts are recorded in `version-c/`.
 - Version B additions are recorded by original source page in `version-b/`; the original explanations are retained in the app.
