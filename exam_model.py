@@ -52,3 +52,19 @@ def attach(questions):
   q['priority']=round(1+3*guide_match+sample_match,6)
   q['examGroup']=group
  return {'method':'Guide-weighted topic smoothing and lexical relevance ranking','validated_prediction':False,'examples':6,'guide_counts':counts,'topic_shares':shares,'quotas100':[quotas[k] for k in GROUPS],'groups':list(GROUPS),'question_scores':{str(q['id']):q['priority'] for q in questions}}
+
+def rank_essentials(items,questions):
+ guide=tokens(' '.join(paragraphs))
+ sample=[tokens(s) for _,s in EXAMPLES]
+ for item in items:
+  text=tokens(item['title']+' '+item['keywords'])
+  item['priority']=round(1+3*cosine(text,guide)+max(cosine(text,v) for v in sample),6)
+  if item['group']=='Cross-chapter concepts':item['priority']+=2
+  mid,page=map(int,item['source'].split(':'))
+  scored=[]
+  for q in questions:
+   match=cosine(text,tokens(q['stem']+' '+q['options'][0]+' '+q['why']))
+   anchor=.25 if q['module']==mid and q['page']==page else 0
+   if match>.06 or anchor:scored.append((match+anchor,q['id']))
+  item['questionIds']=[qid for _,qid in sorted(scored,reverse=True)[:8]]
+ return items

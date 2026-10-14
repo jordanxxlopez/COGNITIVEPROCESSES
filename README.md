@@ -3,6 +3,8 @@
 Open the study app: https://jordanxxlopez.github.io/COGNITIVEPROCESSES/
 
 - Full teaching notes and original visuals.
+- Roomy autosaved personal notes for each content section, shared across views.
+- A comprehensive What to know by the end guide: 45 topics, readiness checks, and linked topic practice.
 - A 100-question combined practice exam, plus 60- and 65-question options.
 - Separate 25–30-question lecture quizzes.
 - 208 questions with answer explanations, source links, and retry queues.
