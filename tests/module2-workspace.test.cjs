@@ -8,7 +8,7 @@ for(const file of ['index.html','share.html']){
  const raw=html.match(/<script id="study-data" type="application\/json">(.*?)<\/script>/s)[1];
  const elements=new Map();
  const element=selector=>{if(!elements.has(selector))elements.set(selector,{dataset:{},textContent:'',innerHTML:'',value:'60',style:{setProperty(){}},classList:{add(){},remove(){},toggle(){}},setAttribute(){},querySelector(){return null},prepend(){},append(){}});return elements.get(selector)};
- const saved=JSON.stringify({read:['6:2'],personalNotes:{'6:2':'My existing note'},missed:[2001,1,2999]});
+ const saved=JSON.stringify({read:['6:2'],personalNotes:{'6:2':'My existing note'},missed:[3001,2001,1,2999]});
  element('#study-data').textContent=raw;
  const context=vm.createContext({console,window:{scrollTo(){}},document:{querySelector:element,getElementById:id=>element('#'+id),querySelectorAll:()=>[],addEventListener(){},createElement:()=>element('created'),documentElement:element('root'),body:element('body')},localStorage:{getItem:()=>saved,setItem(){}},setInterval(){},Date,URL,Blob});
  vm.runInContext(fs.readFileSync(path.join(root,'module2-data.js'),'utf8'),context);
@@ -19,7 +19,7 @@ for(const file of ['index.html','share.html']){
  const count=run('secondHalf.questions.length');
  assert(count>0);assert.equal(run('Q.length'),208+count);assert(!run('state.missed.includes(2999)'));
  assert.equal(run('state.personalNotes["6:2"]'),'My existing note');
- assert(run('state.missed.includes(2001)'));
+ assert(run('state.missed.includes(3001)'));assert(!run('state.missed.includes(2001)'));
  for(const [id] of run('secondTools')){
   run(`go('${id}')`);
   assert.match(element('#content').innerHTML,/MODULE 2/);
