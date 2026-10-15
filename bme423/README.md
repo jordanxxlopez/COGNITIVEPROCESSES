@@ -5,7 +5,7 @@ A separate static study application; the PSYC301 apps are unchanged.
 Open: https://jordanxxlopez.github.io/COGNITIVEPROCESSES/bme423/
 
 - All 17 original course PDFs, including 384 original lecture/review slide images.
-- 45 teaching topics organized from basic notation through the midterm methods; related source pages are grouped under a method explanation.
+- 45 teaching topics organized from basic notation through the midterm methods; Versions A/B group related source pages under a method explanation. Version C adds a distinct opening teaching script for every one of the 384 source slides.
 - 224 worked and numerical practice examples with labeled inputs, intermediate calculations, short methods, progressive hints, numeric checks, and saved working.
 - 327 quiz items; 20–30-question lecture quizzes and a 100-question combined test. Correct-letter adjacency is validated with rejection/reshuffling before display; grading uses canonical answer indices.
 - Two eight-question, 90-minute written practice exams, with three opening probability questions and worked solutions unlocked on completion.
@@ -47,3 +47,11 @@ Additional verification:
 `notes-coverage-report.json` reruns the evidence-score coverage audit against explicit professor emphasis, the review, and homework. All 43 included topic entries map to printed content; the two explicit exclusions stay excluded. These are preparation rankings, not probabilities of unseen questions. The PDF itself contains no source-reference lines or ranking metadata.
 
 Run `node bme423/tests/note-sheet.cjs` to verify print geometry, math sizing and the preview, and regenerate the PDF. Then run `python bme423/tests/verify_note_sheet.py` to verify the inherited numeric examples plus the new calculations, coverage, four physical letter pages, margins, and absence of printed citations.
+
+## Version C: individual slide teaching
+
+Select **Version C · slide-by-slide lecture + full work** in a collection or the expanded viewer. Each PDF page has its own three-paragraph lecture explanation, followed by the complete, unchanged Version B material: intuition, rendered equations, symbol definitions, worked steps, shortcuts, and practice links. In Version C, individual collections list every source page separately; A/B retain their existing topic grouping. Slide titles and the expanded-viewer selector follow the actual page. Notes retain their existing session/page keys.
+
+The 384 scripts (1,152 distinct paragraphs) are individually authored in `authoring/version-c/session*.md`, including outline, graph, calculation, review, and optional Session 14 pages. `authoring/build_version_c.py` packages those authored scripts into `version-c-data.js`; it does not synthesize explanations from topic templates. The build rejects missing pages, repeated paragraphs, or invalid paragraph counts. `version-c-coverage.json` records coverage and original-PDF hashes. Original lecture files, question banks, Versions A/B, math rendering, styles, and the four-page PDF are unchanged.
+
+Run `python bme423/authoring/build_version_c.py` to rebuild the content. With the repository served on port 8907, `node bme423/tests/version-c.cjs` checks all 384 page mappings and rendered scripts, exact A/B preservation against the prior revision, the unchanged Version B body below every C introduction, all 14 collections/viewers, previous/next navigation, version and note persistence, local math, mobile layout, and unchanged note-sheet assets. It does not regenerate the PDF.
