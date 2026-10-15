@@ -1,5 +1,6 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),vm=require('node:vm');
 const root=path.resolve(__dirname,'..');const app=fs.readFileSync(path.join(root,'app.js'),'utf8');const DATA=JSON.parse(fs.readFileSync(path.join(root,'data.js'),'utf8').replace(/^const DATA=/,'').trim().replace(/;$/,''));
+const V2=JSON.parse(fs.readFileSync(path.join(root,'v2-data.js'),'utf8').replace(/^const V2=/,'').trim().replace(/;$/,''));DATA.questions.push(...V2.questions);
 const s=vm.createContext({});vm.runInContext(app.slice(app.indexOf('function shuffleChoiceOrder('),app.indexOf('function startQuiz(')),s);const before=JSON.stringify(DATA.questions);const keys=new Set();
 for(let i=0;i<500;i++){const items=s.prepareQuizItems(DATA.questions);assert(s.validateAnswerKey(items));let key=items.map(q=>q.order.indexOf(q.correct));for(let j=1;j<key.length;j++)assert.notEqual(key[j],key[j-1]);keys.add(key.join(''))}assert.equal(keys.size,500);assert.equal(JSON.stringify(DATA.questions),before);
 const order=s.shuffleChoiceOrder;let draws=0,checks=0;const validator=s.validateAnswerKey;s.shuffleChoiceOrder=n=>++draws<=100?[0,1,2,3]:order(n);s.validateAnswerKey=items=>{checks++;return validator(items)};assert(validator(s.prepareQuizItems(DATA.questions.slice(0,100))));assert(checks>=2);

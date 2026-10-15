@@ -1,0 +1,560 @@
+{
+  "method": "Transparent evidence-score ranking; not a fitted predictor or question probability. Transcript explicit emphasis: 5; review-page inclusion: 3; HW1 method: 2; HW2 method: 3. Explicit exclusions override to zero. A low score does not remove included course content.",
+  "guidance": [
+    {
+      "title": "Coverage and materials",
+      "quote": "all the way through and including Session 13",
+      "detail": "Sessions 2\u201313; Session 14 errors/power is excluded. Two double-sided notes sheets; unannotated tables are separate; bring a calculator."
+    },
+    {
+      "title": "Probability questions",
+      "quote": "There'll be a couple on probability.",
+      "detail": "Discrete/continuous functions, cumulative probabilities, expectations, Normal conversions, and sampling means receive dedicated practice. The review slides specify 2\u20133 probability questions."
+    },
+    {
+      "title": "ANOVA inputs are supplied",
+      "quote": "We'll just give you the sample mean and sample standard deviations.",
+      "detail": "Practise converting supplied SDs to variances and building within/between estimates, rather than spending the limited exam route repeatedly averaging raw ANOVA observations."
+    },
+    {
+      "title": "Balanced ANOVA",
+      "quote": "it will be a so-called balanced study, the same number of subjects in each group",
+      "detail": "Use the balanced variance recipe. Do not spend this midterm route on hand sum-of-squares ANOVA."
+    },
+    {
+      "title": "R: use output, do not write programs",
+      "quote": "You're not going to have to write any code.",
+      "detail": "Read supplied ANOVA, t-test, or chi-square output; locate within variance/df/statistics/p and use them for the requested continuation or pairwise decisions."
+    },
+    {
+      "title": "Always apply the 2\u00d72 correction",
+      "quote": "So you should always use this correction.",
+      "detail": "Use Yates for the course\u2019s 2\u00d72 z/chi-square comparisons. Larger contingency tables use ordinary gaps."
+    },
+    {
+      "title": "Population conclusions and appropriate methods",
+      "quote": "our focus in this class is to try to say something about a population",
+      "detail": "Choose the test using data type and design; state the population null; calculate; use the matching table/df; conclude in the question\u2019s context."
+    },
+    {
+      "title": "Follow-up comparisons",
+      "quote": "you have to do each one at a smaller level",
+      "detail": "After an overall difference, identify the requested pair family; use Bonferroni or Holm, preserving the ANOVA noise/df for mean comparisons."
+    },
+    {
+      "title": "Association size and design",
+      "quote": "how big is that thing?",
+      "detail": "Distinguish significance from magnitude. Use risk ratios for prospective risks and odds ratios for case-control odds."
+    },
+    {
+      "title": "Homework 2 solutions",
+      "quote": "Probably early on Saturday morning.",
+      "detail": "The review updates the anticipated solutions release to early Saturday. The Friday 5 PM submission deadline remains firm."
+    }
+  ],
+  "topics": [
+    {
+      "topic": "rcode",
+      "score": 13,
+      "explicit": true,
+      "reviewPages": [
+        63
+      ],
+      "hw1": true,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "pooledt",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        38,
+        39,
+        40
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "onet",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        41,
+        42
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "posthoc",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        43
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "bonferroni",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        44
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "holm",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        45,
+        53
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "zprop",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        49
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "yates",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        50
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "chi",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        52
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "risk",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        56,
+        58
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "odds",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        62
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "classification",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        8
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "pmf",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        9,
+        10,
+        11
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "dcdf",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        12
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "expect",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        13,
+        14
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "variance",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        15
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "density",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        16
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "ccdf",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        18,
+        19
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "cexpect",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        17
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "normalprob",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        20,
+        21,
+        22
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "anova",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        33,
+        34,
+        35
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "sampling",
+      "score": 8,
+      "explicit": true,
+      "reviewPages": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "choose",
+      "score": 8,
+      "explicit": true,
+      "reviewPages": [
+        32,
+        36,
+        37,
+        46,
+        48,
+        51,
+        57,
+        64
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "binary",
+      "score": 8,
+      "explicit": true,
+      "reviewPages": [
+        47
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "contingency",
+      "score": 8,
+      "explicit": true,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false
+    },
+    {
+      "topic": "gof",
+      "score": 8,
+      "explicit": true,
+      "reviewPages": [
+        54,
+        55
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "normalquant",
+      "score": 7,
+      "explicit": true,
+      "reviewPages": [],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "summary",
+      "score": 5,
+      "explicit": false,
+      "reviewPages": [
+        3,
+        4,
+        31
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "percentile",
+      "score": 5,
+      "explicit": false,
+      "reviewPages": [
+        6,
+        7
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "integrate",
+      "score": 5,
+      "explicit": false,
+      "reviewPages": [
+        2
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "normal",
+      "score": 5,
+      "explicit": false,
+      "reviewPages": [
+        5
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "hypothesis",
+      "score": 5,
+      "explicit": true,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "start",
+      "score": 3,
+      "explicit": false,
+      "reviewPages": [
+        1,
+        2,
+        65
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "estimators",
+      "score": 3,
+      "explicit": false,
+      "reviewPages": [
+        30
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "nnt",
+      "score": 3,
+      "explicit": false,
+      "reviewPages": [
+        59,
+        60,
+        61
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "plots",
+      "score": 2,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "rbasics",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "random",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "independent",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "linear",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "uniform",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "distributions",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "anovaSS",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": true
+    },
+    {
+      "topic": "trials",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false
+    },
+    {
+      "topic": "power",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": true
+    }
+  ]
+}
