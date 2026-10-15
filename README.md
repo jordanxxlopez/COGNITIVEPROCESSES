@@ -2,6 +2,8 @@
 
 Open the study app: https://jordanxxlopez.github.io/COGNITIVEPROCESSES/
 
+- Module 2 is the current second-half workspace, starting with the existing 46-section Short-Term Memory collection.
+- Module 1 groups completed Exam 1 collections and study tools in a collapsed sidebar archive. Existing notes and progress retain their original storage keys.
 - Full teaching notes and original visuals.
 - Original/Version B/Version C/Version D/Version E dropdown in collections 01–07: 246 fuller teaching scripts checked against slide text and figure labels. Notes, read checkmarks, and the current slide are shared between versions. Selections are saved per collection.
 - Version E explains slide terminology and the actual course examples in complete teaching scripts, including the messages and actions in listening experiments. Red “Must know · core review” markers now identify 158 guide- and quiz-based priorities across collections 01–08. Scripts and reproducible ranking details are in `version-e/`.
