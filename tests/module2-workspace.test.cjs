@@ -25,6 +25,23 @@ for(const file of ['index.html','share.html']){
   assert.match(element('#content').innerHTML,/MODULE 2/);
   assert.doesNotMatch(element('#content').innerHTML,/Short-term memory excluded|100-question practice exam/);
  }
+ run("go('module',6)");
+ assert.match(element('#content').innerHTML, /09 · Short-Term Memory/);
+ const nav=element('#workspaceNav').innerHTML;
+ assert(nav.indexOf('Your workspace')<nav.indexOf('Individual collections'));
+ assert(nav.indexOf('data-view="m2test"')<nav.indexOf('Individual collections'));
+ assert(nav.indexOf('Individual collections')<nav.indexOf('data-module="6"'));
+ assert.match(nav, /navnum">09/);
+ assert(run('secondQuestions().every(q=>moduleBy(q.module).sections.find(s=>s.page===q.page).examPriorityE?.mustKnow)'));
+ assert.match(element('#content').innerHTML,/class="priority-e"/);
+ run("mode='teach';teachIndex=0;render()");
+ assert.match(element('#content').innerHTML,/Must know · core review/);
+ run("go('m2combined')");assert.match(element('#content').innerHTML,/class="priority-e"/);
+ run("go('m2core')");assert.match(element('#content').innerHTML,/data-second-core-expand/);
+ assert.equal((element('#content').innerHTML.match(/class="priority-e"/g)||[]).length,run('secondCoreModule().sections.length'));
+ run("view='m2coreExpanded';teachIndex=0;render()");assert.match(element('#content').innerHTML,/data-personal-note="6:2"/);
+ assert.match(element('#content').innerHTML,/class="priority-e"/);
+ run('exitExpandedView()');assert.equal(run('view'),'m2core');
  run("go('m2test');startQuiz('m2all')");
  assert.equal(run('quiz.items.length'),count);
  assert(run('quiz.items.every(q=>q.module===6 && moduleBy(q.module).sections.some(s=>s.page===q.page))'));

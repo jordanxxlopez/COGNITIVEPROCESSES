@@ -482,5 +482,8 @@ window.SECOND_HALF = {
     "source": "Student recollection of Exam 1 format; not a supplied exam or second-exam guide",
     "validated_prediction": false,
     "approach": "Balanced lecture coverage with researcher-linked interpretation, experimental design, application, and concise relational distinctions. Distractors use confounds, reversed relationships, overclaims, and competing explanations."
+  },
+  "lectureNumbers": {
+    "6": "09"
   }
 };
