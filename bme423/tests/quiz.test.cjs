@@ -7,3 +7,9 @@ vm.runInContext(app.slice(app.indexOf('function parseAnswer('),app.indexOf('func
 const jStat=require(path.join(root,'vendor/jstat.min.js')).jStat;
 for(const x of JSON.parse(fs.readFileSync(path.join(__dirname,'math-reference.json'),'utf8'))){const n=x.type==='normal'?jStat.normal.cdf(x.x,0,1):x.type==='t'?jStat.studentt.inv(x.p,x.df):x.type==='chi'?jStat.chisquare.inv(x.p,x.df):jStat.centralF.inv(x.p,x.df,x.df2);assert(Math.abs(n-x.expected)<=Math.max(.00002,Math.abs(x.expected)*.00002),JSON.stringify({x,actual:n}))}
 console.log('PASS: 500 validated full-bank random keys, deliberate key rejection/revalidation, immutable questions, safe numeric/fraction/percentage input, and browser distribution functions cross-checked against SciPy.');
+// Regression: aliases and numerical variants must not duplicate stems in the full exam.
+s.DATA=DATA;s.render=()=>{};s.window={scrollTo(){}};s.state={missed:[]};
+vm.runInContext(app.split('\n').find(x=>x.startsWith('function shuffle(a)')),s);
+vm.runInContext(app.split('\n').find(x=>x.startsWith('function startQuiz(')),s);
+for(let i=0;i<100;i++){s.startQuiz('100');assert.equal(s.quiz.items.length,100);assert.equal(new Set(s.quiz.items.map(q=>q.stem)).size,100);assert(validator(s.quiz.items))}
+console.log('PASS: 100 generated combined exams each contain 100 distinct question stems with valid answer keys.');
