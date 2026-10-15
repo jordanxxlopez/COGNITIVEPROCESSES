@@ -4,14 +4,14 @@ const secondModules = () => M.filter(m => secondHalf.modules.includes(m.id));
 const secondQuestions = () => Q.filter(q => secondHalf.questions.some(current => current.id === q.id));
 const secondTools = [['m2guide','What to know by the end'],['m2core','Must know · core review'],['m2experiments','Experiments to know'],['m2combined','Combined notes'],['m2test','Current practice test'],['m2lectures','Lecture quizzes'],['m2missed','Missed & uncertain'],['m2sources','Sources & coverage']];
 const inSecondHalf = () => view.startsWith('m2') || (view==='module' && secondHalf.modules.includes(selected)) || (view==='quiz' && quiz?.kind.startsWith('m2'));
-// Derive visible core markers from every curated topic, experiment, and current question source.
+// Core review is a curated subset; guide coverage and practice alone do not confer a red marker.
 for(const m of secondModules()){
  m.lectureNumber=secondHalf.lectureNumbers?.[m.id];
  if(m.lectureNumber)m.title=m.lectureNumber+' · '+m.title.replace(/^\d+ · /,'');
  for(const section of m.sections){
-  const groups=[...secondHalf.topics,...secondHalf.experiments].filter(g=>(g.module??6)===m.id&&g.pages.includes(section.page));
+  const groups=(secondHalf.coreReview||[]).filter(g=>(g.module??6)===m.id&&g.pages.includes(section.page));
   const questions=secondQuestions().filter(q=>q.module===m.id&&q.page===section.page);
-  if(groups.length||questions.length)section.examPriorityE={mustKnow:true,guideTopic:groups.map(g=>g.title).join(' · ')||'Current lecture practice coverage',questionIds:questions.map(q=>q.id),reasons:['Lecture-based core concepts and experimental evidence']};
+  section.examPriorityE={mustKnow:groups.length>0,guideTopic:groups.map(g=>g.title).join(' · '),questionIds:questions.map(q=>q.id),reasons:groups.length?['Selected essential distinction, finding, or experimental inference']:[]};
  }
 }
 const previousIsCore=isCoreE;
@@ -44,7 +44,7 @@ function secondScreen(){let content;
  switch(view){
  case 'm2guide':content=secondGuide();break;
  case 'm2coreExpanded':return `<div class="expanded-preview">${teach(secondCoreModule(),true)}</div>`;
- case 'm2core':content=`<h1>Must know · core review</h1><p>${secondCoreModule().sections.length} flagged sections · Key concepts, experiments, and practice-question sources. The same red markers appear in lecture notes and visual/transcript views.</p><button class="primary" data-second-core-expand>Expand visual + transcript · all core review</button>`+secondReview(secondModules().map(m=>({module:m.id,title:m.title,pages:m.sections.filter(s=>s.examPriorityE?.mustKnow).map(s=>s.page)})));break;
+ case 'm2core':content=`<h1>Must know · core review</h1><p>${secondCoreModule().sections.length} essential sections · Selected key distinctions, findings, and experimental designs. Supporting sections remain in the lecture and combined notes. The same red markers appear in lecture notes and visual/transcript views.</p><button class="primary" data-second-core-expand>Expand visual + transcript · all core review</button>`+secondReview(secondModules().map(m=>({module:m.id,title:m.title,pages:m.sections.filter(s=>s.examPriorityE?.mustKnow).map(s=>s.page)})));break;
  case 'm2experiments':content='<h1>Experiments to know</h1><p>Review the procedure, result, and inference for each study. Use “Teach this section” to open its visual and transcript.</p>'+secondReview(secondHalf.experiments);break;
  case 'm2combined':content='<h1>Combined teaching notes</h1>'+noteTools()+secondModules().map(m=>`<details class="guide" open><summary>${esc(m.title)}</summary>${header(m)}${m.sections.map((s,i)=>sectionHTML(m,s,i)).join('')}</details>`).join('');break;
  case 'm2test':content=secondTest();break;
