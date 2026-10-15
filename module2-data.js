@@ -485,5 +485,51 @@ window.SECOND_HALF = {
   },
   "lectureNumbers": {
     "6": "09"
-  }
+  },
+  "coreReview": [
+    {
+      "module": 6,
+      "title": "Memory systems and essential distinctions",
+      "pages": [
+        3,
+        4,
+        5,
+        11,
+        20,
+        23
+      ]
+    },
+    {
+      "module": 6,
+      "title": "Sperling: key findings and cue-delay evidence",
+      "pages": [
+        16,
+        18
+      ]
+    },
+    {
+      "module": 6,
+      "title": "Short-term retention, experimental control, and interference",
+      "pages": [
+        24,
+        29,
+        30,
+        32,
+        33
+      ]
+    },
+    {
+      "module": 6,
+      "title": "Capacity, complexity, and knowledge-based chunking",
+      "pages": [
+        34,
+        36,
+        37,
+        42,
+        43,
+        45,
+        46
+      ]
+    }
+  ]
 };
