@@ -1,10 +1,13 @@
 """Independently check source-based V2 worked values and scope/evidence rules."""
-import json,math,re
+import json,math,re,sys
 from pathlib import Path
 import numpy as np
 from scipy import stats,integrate,optimize
 R=Path(__file__).resolve().parents[1]
 v=json.loads((R/'v2-data.js').read_text().removeprefix('const V2=').strip().removesuffix(';'))
+if '--note-sheet' in sys.argv:
+ pack=json.loads((R/'note-sheet-data.js').read_text().removeprefix('const SHEET_PACK=').strip().removesuffix(';'))
+ v['blocks']=pack['blocks']
 nchecks=0
 def shown(block,text,expected):
  global nchecks

@@ -11,3 +11,6 @@
 .expanded main{display:flex;flex-direction:column}.expanded #content{display:flex;flex-direction:column;flex:1;min-height:0;width:100%}.expanded .viewer-controls{flex-shrink:0}.expanded .viewer-pair{flex:1;min-height:0;height:auto!important;width:100%;overflow:auto}.source-worked{min-width:0}.notes-preview{max-width:100%}
 nav button[data-view=minimum]{color:var(--red);font-weight:750}@media print{.notes-preview{overflow:visible;max-width:none}}
 .notes-preview{position:relative}.sheet-v2{position:relative}
+/* The note sheets alone use the requested top/bottom margins. */
+@page bme-notes{size:letter;margin:.3in .24in}
+@media print{.sheet-v2{page:bme-notes}.sheet-v2 header{margin-bottom:4pt;padding-bottom:3pt}.compact-block{margin-bottom:5pt}}

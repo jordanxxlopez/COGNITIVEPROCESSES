@@ -39,3 +39,11 @@ Additional verification:
 - `python bme423/tests/verify_v2.py`: 77 independent SciPy/NumPy checks of the new source-based worked values, table/Holm decisions, scope and source files.
 - `node bme423/tests/quiz.test.cjs`: complete augmented bank, rejection/reshuffling validation, canonical grading assumptions, 100 unique-stem combined exams, distribution calculations.
 - With the repository served on port 8907, `node bme423/tests/ui-v2.cjs`: both teaching versions, every collection, all math, notes persistence, grading, mobile layout, printable math >=7pt, and 12-column/four-page geometry. It regenerates `BME423-four-page-notes-v2.pdf`. The final PDF is checked separately as four 612×792pt pages with no literal LaTeX.
+
+## Expanded four-page sheet revision
+
+`authoring/build_note_sheet.py` creates an isolated `note-sheet-data.js` print pack. It does not rewrite the lecture scripts or question bank. The pack removes printed attributions and repeated housekeeping text; adds direct variance, discrete CDF endpoint rules, population and median formulas, the actual five-comparison Holm stop exercise, R function interpretation, a df reference, and labeled risk/odds and low-base-rate examples. It remains four letter pages with 0.30-inch top/bottom and 0.24-inch left/right margins, three columns and 7.5pt body text. The requested note-page rules use a named page and do not change other print views.
+
+`notes-coverage-report.json` reruns the evidence-score coverage audit against explicit professor emphasis, the review, and homework. All 43 included topic entries map to printed content; the two explicit exclusions stay excluded. These are preparation rankings, not probabilities of unseen questions. The PDF itself contains no source-reference lines or ranking metadata.
+
+Run `node bme423/tests/note-sheet.cjs` to verify print geometry, math sizing and the preview, and regenerate the PDF. Then run `python bme423/tests/verify_note_sheet.py` to verify the inherited numeric examples plus the new calculations, coverage, four physical letter pages, margins, and absence of printed citations.
