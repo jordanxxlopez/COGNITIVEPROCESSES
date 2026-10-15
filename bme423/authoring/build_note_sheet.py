@@ -62,12 +62,20 @@ B['output']['html']=p('Six pairs are printed, but only three control comparisons
 B['percent']['html']=B['percent']['html'].replace('Even sample: average the two middle values, giving median \\(70\\).','')
 B['percent']['html']+=B['median-rule']['html'].split('</p>',1)[1]
 B['decision']['html']=B['decision']['html'].replace('“Fail to reject” means a difference was not established, not that equality was proved.','')
-block('cdf-check','Valid CDF',eq(r'0\le F(x)\le1,\quad F(-\infty)=0,\quad F(\infty)=1')+p('Never decreases. Discrete jumps include their new mass; continuous CDFs accumulate density area.'))
+block('cdf-check','Valid CDF',eq(r'0\le F(x)\le1,\quad F(-\infty)=0,\quad F(\infty)=1')+p('Never decreases; each jump includes its new mass.'))
 
 block('df-lookup','Degrees of freedom: quick method check',eq(r'\begin{array}{l|l}\text{one-sample }t&n-1\\\text{pooled }t&n_1+n_2-2\\\text{ANOVA }F&(m-1,\ m(n-1))\\\text{post-ANOVA pairs}&N-m\ \text{(residual df)}\\\text{table }\chi^2&(r-1)(c-1)\\\text{specified GOF}&k-1\end{array}'))
 B['answer-check']['html']=B['answer-check']['html'].replace('<b>Rounding:</b> store intermediate values; round the final result. ','')
 B['ti']['html']+=p(strong('Negative entries:')+' use the (-) key for a negative bound. Use the subtraction key only for subtracting. Select functions from their menu, then check the inputs before calculating.')
 B['answer-check']['html']=B['answer-check']['html'].replace('<b>Signs:</b> a two-sided t decision uses magnitude; retain sign to name the direction. ','')
+
+# Make the density-to-CDF working explicit for questions that request the function itself.
+B['continuous']['html']=B['continuous']['html'].replace('<p><b>2. Accumulate area to a cutoff:</b></p>','<p><b>2. Accumulate area to a cutoff:</b></p>'+eq(r'F(x)=\int_0^x\frac{u}{2}\,du=\left[\frac{u^2}{4}\right]_0^x=\frac{x^2}{4}'))
+B['endpoint']['html']=B['endpoint']['html'].replace(' A constant density is flat: probability is requested width ÷ full width.','').replace('Evaluate upper antiderivative minus lower antiderivative.','Upper antiderivative value minus lower value.')
+B['normal']['html']=B['normal']['html'].replace('Density is bell-shaped; CDF rises smoothly from zero to one.','')+eq(r'F(x)=\int_{-\infty}^x\frac{e^{-(u-\mu)^2/(2\sigma^2)}}{\sigma\sqrt{2\pi}}\,du')
+
+B['trial']['html']+=p(strong('Parallel:')+' different people receive treatments. '+strong('Crossover:')+' same person, different periods; requires stable disease and no carryover. '+strong('Single-blind:')+' patient masked; '+strong('double:')+' patient and care team; '+strong('triple:')+' also statistical evaluators.')
+B['trial']['html']=B['trial']['html'].replace(' Ask separately: is a difference established (test), and how large is it (RR/OR/absolute change)?','')
 S=copy.deepcopy(v['sheets'])
 # Initial print grouping; the build/geometry check balances columns without shrinking type.
 S[0]['columns']=[['language','classify','describe','percent'],['discrete','variance-direct','cdf-endpoints','depend'],['continuous','endpoint','uniform-definition','cdf-check']]
