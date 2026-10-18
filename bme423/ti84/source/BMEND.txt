@@ -1,0 +1,87 @@
+ClrHome
+Float
+Normal
+Real
+Input "A IN A+B*X",B
+If not(B≥0)
+Then
+ClrHome
+Disp "CHECK A IN A+B*X"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "B IN A+B*X",C
+If not(C≥0)
+Then
+ClrHome
+Disp "CHECK B IN A+B*X"
+Disp "CHECK INPUTS"
+Stop
+End
+If not(B+C>0)
+Then
+ClrHome
+Disp "ZERO DENSITY"
+Disp "CHECK INPUTS"
+Stop
+End
+If C=0
+Then
+1/B→T
+Else
+2/(B+√(B^2+2*C))→T
+End
+ClrHome
+Output(1,1,"ENDPOINT C")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"C=")
+Output(2,3,θ)
+Output(3,1,"A*C+B*C^2/2=1")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"A=")
+Output(4,3,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"B=")
+Output(5,3,θ)
+B*T+C*T^2/2→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"AREA=")
+Output(6,6,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"POSITIVE ROOT")
+Output(2,1,"IF B>0:")
+Output(3,1,"C=2/(A+SQRT(")
+Output(4,1,"A^2+2*B))")
+√(B^2+2*C)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"ROOT=")
+Output(5,6,θ)
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"C=")
+Output(6,3,θ)
+Output(7,1,"IF B=0: C=1/A")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

@@ -1,0 +1,232 @@
+ClrHome
+Float
+Normal
+Real
+Input "EVENTS GROUP 1",B
+If not(B≥0 and B=int(B))
+Then
+ClrHome
+Disp "CHECK EVENTS GROUP 1"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "TOTAL GROUP 1",E
+If not(E≥1 and E=int(E) and E≥B)
+Then
+ClrHome
+Disp "CHECK TOTAL GROUP 1"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "EVENTS GROUP 2",C
+If not(C≥0 and C=int(C))
+Then
+ClrHome
+Disp "CHECK EVENTS GROUP 2"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "TOTAL GROUP 2",F
+If not(F≥1 and F=int(F) and F≥C)
+Then
+ClrHome
+Disp "CHECK TOTAL GROUP 2"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "ALPHA .05 ETC",A
+If not(A>0 and A<1)
+Then
+ClrHome
+Disp "CHECK ALPHA .05 ETC"
+Disp "CHECK INPUTS"
+Stop
+End
+B/E→G
+C/F→H
+(B+C)/(E+F)→Q
+If not(Q>0 and Q<1)
+Then
+ClrHome
+Disp "NO BINARY SPREAD"
+Disp "CHECK INPUTS"
+Stop
+End
+√(Q*(1-Q)*(1/E+1/F))→S
+.5*(1/E+1/F)→K
+max(0,abs(G-H)-K)→N
+N/S→T
+2*normalcdf(T,1ᴇ99,0,1)→P
+invNorm(1-A/2,0,1)→R
+ClrHome
+Output(1,1,"YATES Z TEST")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ABS Z=")
+Output(2,7,θ)
+If P<.000001
+Then
+Output(3,1,"P<0.000001")
+Else
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"P=")
+Output(3,3,θ)
+End
+R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"CRIT=")
+Output(4,6,θ)
+If P<A
+Then
+Output(5,1,"REJECT H0")
+Else
+Output(5,1,"DO NOT REJECT")
+End
+Output(6,1,"Z=CORR GAP/SE")
+T^2→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"CHI2=")
+Output(7,6,θ)
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(8,1,"GAP=")
+Output(8,5,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(9,1,"SE=")
+Output(9,4,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"PROPORTIONS")
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"P1=")
+Output(2,4,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"P2=")
+Output(3,4,θ)
+Q→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"POOL=")
+Output(4,6,θ)
+Output(5,1,"POOL=(M1+M2)/")
+Output(6,1,"(N1+N2)")
+B+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"M1+M2=")
+Output(7,7,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"POOLED NULL SE")
+Output(2,1,"SQRT(P*(1-P)*")
+Output(3,1,"(1/N1+1/N2))")
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"N1=")
+Output(4,4,θ)
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"N2=")
+Output(5,4,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"SE=")
+Output(6,4,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"CORRECT THE GAP")
+Output(2,1,"CORR=.5*(1/N1+")
+Output(3,1,"1/N2)")
+abs(G-H)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"RAWGAP=")
+Output(4,8,θ)
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"CORR=")
+Output(5,6,θ)
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"GAP=")
+Output(6,5,θ)
+Output(7,1,"NO NEGATIVE GAP")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"DIVIDE AND TEST")
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"GAP=")
+Output(2,5,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"SE=")
+Output(3,4,θ)
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"ABS Z=")
+Output(4,7,θ)
+R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"CRIT=")
+Output(5,6,θ)
+If P<A
+Then
+Output(6,1,"REJECT H0")
+Else
+Output(6,1,"DO NOT REJECT")
+End
+Output(7,1,"H0:P1=P2")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

@@ -1,0 +1,65 @@
+ClrHome
+Float
+Normal
+Real
+Input "OLD SEM",S
+If not(S≥0)
+Then
+ClrHome
+Disp "CHECK OLD SEM"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "OLD N",B
+If not(B≥1 and B=int(B))
+Then
+ClrHome
+Disp "CHECK OLD N"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "NEW N",C
+If not(C≥1 and C=int(C))
+Then
+ClrHome
+Disp "CHECK NEW N"
+Disp "CHECK INPUTS"
+Stop
+End
+S*√(B/C)→T
+ClrHome
+Output(1,1,"NEW SEM")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ANS=")
+Output(2,5,θ)
+Output(3,1,"OLD*SQRT(N0/N1)")
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"OLDSE=")
+Output(4,7,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"OLD N=")
+Output(5,7,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"NEW N=")
+Output(6,7,θ)
+√(B/C)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"RATIO=")
+Output(7,7,θ)
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

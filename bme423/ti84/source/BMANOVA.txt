@@ -1,0 +1,251 @@
+ClrHome
+Float
+Normal
+Real
+Input "HOW MANY GROUPS",K
+If not(K≥2 and K=int(K) and K≤50)
+Then
+ClrHome
+Disp "CHECK HOW MANY GROUPS"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "N IN EACH GROUP",N
+If not(N≥2 and N=int(N))
+Then
+ClrHome
+Disp "CHECK N IN EACH GROUP"
+Disp "CHECK INPUTS"
+Stop
+End
+K→dim(ʟBMM)
+K→dim(ʟBMS)
+For(I,1,K)
+ClrHome
+Disp "GROUP",I
+Input "GROUP MEAN",B
+Input "GROUP SD",C
+If not(C≥0)
+Then
+ClrHome
+Disp "CHECK GROUP SD"
+Disp "CHECK INPUTS"
+Stop
+End
+B→ʟBMM(I)
+C→ʟBMS(I)
+End
+Input "ALPHA .05 ETC",A
+If not(A>0 and A<1)
+Then
+ClrHome
+Disp "CHECK ALPHA .05 ETC"
+Disp "CHECK INPUTS"
+Stop
+End
+sum(ʟBMS^2)/K→S
+mean(ʟBMM)→M
+sum((ʟBMM-M)^2)→H
+N*H/(K-1)→B
+If not(S>0)
+Then
+ClrHome
+Disp "ZERO WITHIN VAR"
+Disp "CHECK INPUTS"
+Stop
+End
+B/S→F
+K-1→D
+K*(N-1)→E
+Fcdf(F,1ᴇ99,D,E)→P
+ClrHome
+Output(1,1,"BALANCED ANOVA")
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"F=")
+Output(2,3,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"DF1=")
+Output(3,5,θ)
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"DF2=")
+Output(4,5,θ)
+If P<.000001
+Then
+Output(5,1,"P<0.000001")
+Else
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"P=")
+Output(5,3,θ)
+End
+If P<A
+Then
+Output(6,1,"REJECT H0")
+Else
+Output(6,1,"DO NOT REJECT")
+End
+Output(7,1,"F=BETWEEN/WITHIN")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(8,1,"BETWEEN=")
+Output(8,9,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(9,1,"WITHIN=")
+Output(9,8,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"WITHIN + CENTER")
+Output(2,1,"WITHIN=SUM(SD^2)")
+Output(3,1,"/NUMBER GROUPS")
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"M=")
+Output(4,3,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"WITHIN=")
+Output(5,8,θ)
+Output(6,1,"GRAND=AVG(MEANS)")
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"GRAND=")
+Output(7,7,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"VAR OF MEANS")
+Output(2,1,"SS=SUM((MEAN-")
+Output(3,1,"GRAND)^2)")
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"SS=")
+Output(4,4,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"M-1=")
+Output(5,5,θ)
+H/D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"VAR M=")
+Output(6,7,θ)
+Output(7,1,"BETWEEN=N*VAR M")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"BUILD F")
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"N=")
+Output(2,3,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"BETWN=")
+Output(3,7,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"WITHIN=")
+Output(4,8,θ)
+Output(5,1,"F=BETWEEN/WITHIN")
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"F=")
+Output(6,3,θ)
+Output(7,1,"DF=(M-1,M*(N-1))")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+0→U
+1→V
+While Fcdf(0,V,D,E)<1-(A)
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If Fcdf(0,W,D,E)<1-(A)
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→C
+ClrHome
+Output(1,1,"UPPER TAIL TEST")
+A→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ALPHA=")
+Output(2,7,θ)
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"F=")
+Output(3,3,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"CRIT=")
+Output(4,6,θ)
+If P<A
+Then
+Output(5,1,"REJECT H0")
+Else
+Output(5,1,"DO NOT REJECT")
+End
+Output(6,1,"H0:MEANS EQUAL")
+Output(7,1,"PAIRS:USE WITHIN")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

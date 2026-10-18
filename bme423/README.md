@@ -73,3 +73,19 @@ Run the build script, then `node bme423/tests/follow-along-sheet.cjs` with the r
 `authoring/build_equation_guide.py` and `authoring/equation_slide_placements.py` contain the assignments. Unknown practice-step labels or invalid slide/display positions fail the build. The app's two percentile exercises, associated quiz choices/explanations, R type-7 reference and formula list now use the lecture rule `1 + p(n−1)/100`, consistently with the current four-page guide. Cached practice marks for those two exercises are rechecked against the corrected answers. Source slides, archived print sheets, current four-page guide, notes and navigation remain intact.
 
 Validation: `python bme423/tests/verify_equations.py` checks all 1,077 steps, independent values and symbolic identities, and content preservation. With the repository served on port 8907, `node bme423/tests/equations.cjs` checks equation-before-substitution order, all teaching versions, all question feedback, grading, hidden/revealed exam solutions, table lookups, expanded notes and mobile layouts. Existing numerical, random-key, Version C, study-navigation and four-page validation checks remain applicable; none of these equation checks rewrite a PDF.
+
+## TI-84 Plus CE Python programs
+
+The **TI-84 programs** workspace links to `ti84/`: 36 self-contained TI-BASIC calculation programs and an optional `BME423` chooser, supplied as native `.8xp` files and one ZIP. These run from **PRGM**, using the calculator's built-in statistics functions; the Python app is not required. Screens target the CE's 26-column, 10-row home screen. Results appear first, followed by equations and labeled intermediate values; ENTER advances a screen and CLEAR exits. The download page includes example inputs, captured example screens, program selection, and official TI Connect CE transfer instructions.
+
+The methods follow the existing review/homework evidence scores, without claiming probabilities of unseen questions. They include the course's percentile convention, balanced ANOVA, residual-df pair comparisons, Bonferroni/Holm adjustments, Yates-corrected two-proportion/2-by-2 tests, discrete/continuous probability, summaries, risk and odds. Each calculation works independently. Programs use A-Z, theta and named BM scratch lists; they leave L1-L6 alone. Existing lecture, quiz, notes, print-pack and progress data are unchanged.
+
+Build with `tivars==1.1.1` from `authoring/requirements-ti84.txt`, then run these in order:
+
+```sh
+python bme423/authoring/build_ti84.py
+python bme423/tests/verify_ti84.py
+python bme423/authoring/build_ti84.py --package
+```
+
+Verification checks native file lengths/checksums, model support and token round trips, then executes the decoded TI-BASIC using `tests/ti_basic_vm.py`. Independent NumPy/SciPy references cover all 222 numerical practice problems, source cases, critical values, endpoint rules and invalid inputs: 368 executions and 327 numerical comparisons. Two conceptual problems require written interpretation. This harness is not a TI ROM emulator; physical calculator testing remains necessary, with BMONE and BMZ transfer checks supplied in the guide. Packaging rejects a validation report whose manifest hash does not match. With the repository served on port 8907, `node bme423/tests/ti84-ui.cjs` checks every program download and calculation preview, screen navigation, ZIP download, filtering, saved notes, dark mode and mobile layout.

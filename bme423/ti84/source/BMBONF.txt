@@ -1,0 +1,216 @@
+ClrHome
+Float
+Normal
+Real
+Input "ALPHA .05 ETC",A
+If not(A>0 and A<1)
+Then
+ClrHome
+Disp "CHECK ALPHA .05 ETC"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "REQUESTED PAIRS",K
+If not(K≥1 and K=int(K))
+Then
+ClrHome
+Disp "CHECK REQUESTED PAIRS"
+Disp "CHECK INPUTS"
+Stop
+End
+A/K→G
+ClrHome
+Output(1,1,"BONFERRONI LEVEL")
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"PAIR A=")
+Output(2,8,θ)
+A→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"FAM A=")
+Output(3,7,θ)
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"PAIRS=")
+Output(4,7,θ)
+Output(5,1,"PAIR A=FAMILY A/K")
+G/2→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"EACH TAIL=")
+Output(6,11,θ)
+Output(7,1,"T:1-PAIR A/2")
+1-G/2→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(8,1,"LEFT AREA=")
+Output(8,11,θ)
+Output(9,1,"ENTER TO TEST A STATISTIC")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Input "1 T  2 CHISQ",L
+If not(L=1 or L=2)
+Then
+ClrHome
+Disp "CHECK 1 T  2 CHISQ"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "STATISTIC",T
+If not(L=1 or T≥0)
+Then
+ClrHome
+Disp "CHISQ NEEDS >=0"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "DF",D
+If not(D≥1 and D=int(D))
+Then
+ClrHome
+Disp "CHECK DF"
+Disp "CHECK INPUTS"
+Stop
+End
+If L=1
+Then
+min(1,2*tcdf(abs(T),1ᴇ99,D))→P
+Else
+χ²cdf(T,1ᴇ99,D)→P
+End
+min(1,K*P)→Q
+A/K→G
+ClrHome
+Output(1,1,"BONFERRONI")
+Q→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ADJ P=")
+Output(2,7,θ)
+If P<.000001
+Then
+Output(3,1,"P<0.000001")
+Else
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"P=")
+Output(3,3,θ)
+End
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"PAIR A=")
+Output(4,8,θ)
+If Q<A
+Then
+Output(5,1,"REJECT PAIR H0")
+Else
+Output(5,1,"DO NOT REJECT")
+End
+Output(6,1,"PAIR A=FAM A/K")
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"K=")
+Output(7,3,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+If L=1
+Then
+0→U
+1→V
+While tcdf(0,V,D)<(1-(G))/2
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If tcdf(0,W,D)<(1-(G))/2
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→R
+Else
+0→U
+1→V
+While χ²cdf(0,V,D)<1-(G)
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If χ²cdf(0,W,D)<1-(G)
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→R
+End
+ClrHome
+Output(1,1,"STATISTIC CUTOFF")
+abs(T)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ABS S=")
+Output(2,7,θ)
+R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"CRIT=")
+Output(3,6,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"DF=")
+Output(4,4,θ)
+Output(5,1,"ADJ P=MIN(1,K*P)")
+Q→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"ADJ P=")
+Output(6,7,θ)
+If Q<A
+Then
+Output(7,1,"REJECT PAIR H0")
+Else
+Output(7,1,"DO NOT REJECT")
+End
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

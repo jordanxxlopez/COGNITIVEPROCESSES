@@ -1,0 +1,86 @@
+ClrHome
+Float
+Normal
+Real
+Input "SAMPLE SD",S
+If not(S≥0)
+Then
+ClrHome
+Disp "CHECK SAMPLE SD"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "SAMPLE N",N
+If not(N≥2 and N=int(N))
+Then
+ClrHome
+Disp "CHECK SAMPLE N"
+Disp "CHECK INPUTS"
+Stop
+End
+S^2→B
+B*√(2/(N-1))→T
+S/√(N)→H
+ClrHome
+Output(1,1,"VARIANCE ESTIMATE")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"VAR=")
+Output(2,5,θ)
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"SEVAR=")
+Output(3,7,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"SEM=")
+Output(4,5,θ)
+Output(5,1,"SEVAR=VAR*SQRT(")
+Output(6,1,"2/(N-1))")
+Output(7,1,"NORMAL SETTING")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"KEEP TARGET CLEAR")
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"SD=")
+Output(2,4,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"VAR=")
+Output(3,5,θ)
+N-1→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"N-1=")
+Output(4,5,θ)
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"SEVAR=")
+Output(5,7,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"SEM=")
+Output(6,5,θ)
+Output(7,1,"SEVAR IS NOT SEM")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

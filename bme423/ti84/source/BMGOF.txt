@@ -1,0 +1,202 @@
+ClrHome
+Float
+Normal
+Real
+Input "HOW MANY CATS",K
+If not(K≥2 and K=int(K) and K≤100)
+Then
+ClrHome
+Disp "CHECK HOW MANY CATS"
+Disp "CHECK INPUTS"
+Stop
+End
+K→dim(ʟBMO)
+K→dim(ʟBMP)
+For(I,1,K)
+ClrHome
+Disp "CATEGORY",I
+Input "OBS COUNT",B
+If not(B≥0 and B=int(B))
+Then
+ClrHome
+Disp "CHECK OBS COUNT"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "TARGET PROB",C
+If not(C>0 and C≤1)
+Then
+ClrHome
+Disp "CHECK TARGET PROB"
+Disp "CHECK INPUTS"
+Stop
+End
+B→ʟBMO(I)
+C→ʟBMP(I)
+End
+If not(abs(sum(ʟBMP)-1)<.00000001)
+Then
+ClrHome
+Disp "PROBS MUST SUM 1"
+Disp "CHECK INPUTS"
+Stop
+End
+sum(ʟBMO)→N
+If not(N>0)
+Then
+ClrHome
+Disp "NO OBSERVATIONS"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "ALPHA .05 ETC",A
+If not(A>0 and A<1)
+Then
+ClrHome
+Disp "CHECK ALPHA .05 ETC"
+Disp "CHECK INPUTS"
+Stop
+End
+N*ʟBMP→ʟBME
+(ʟBMO-ʟBME)^2/ʟBME→ʟBMT
+sum(ʟBMT)→T
+K-1→D
+χ²cdf(T,1ᴇ99,D)→P
+ClrHome
+Output(1,1,"GOODNESS OF FIT")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CHI2=")
+Output(2,6,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"DF=")
+Output(3,4,θ)
+If P<.000001
+Then
+Output(4,1,"P<0.000001")
+Else
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"P=")
+Output(4,3,θ)
+End
+If P<A
+Then
+Output(5,1,"REJECT H0")
+Else
+Output(5,1,"DO NOT REJECT")
+End
+Output(6,1,"E=TOTAL*TARGET P")
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"TOTAL=")
+Output(7,7,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+For(I,1,K)
+ClrHome
+Output(1,1,"CATEGORY WORK")
+I→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CAT=")
+Output(2,5,θ)
+ʟBMO(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"O=")
+Output(3,3,θ)
+ʟBMP(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"PROB=")
+Output(4,6,θ)
+ʟBME(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"E=")
+Output(5,3,θ)
+Output(6,1,"TERM=(O-E)^2/E")
+ʟBMT(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"TERM=")
+Output(7,6,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+End
+0→U
+1→V
+While χ²cdf(0,V,D)<1-(A)
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If χ²cdf(0,W,D)<1-(A)
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→C
+ClrHome
+Output(1,1,"ADD TERMS DF=K-1")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CHI2=")
+Output(2,6,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"DF=")
+Output(3,4,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"CRIT=")
+Output(4,6,θ)
+If P<A
+Then
+Output(5,1,"REJECT H0")
+Else
+Output(5,1,"DO NOT REJECT")
+End
+If min(ʟBME)<5
+Then
+Output(6,1,"SMALL E:CHECK")
+Else
+Output(6,1,"FIXED TARGETS")
+End
+Output(7,1,"H0:TARGET PROBS")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

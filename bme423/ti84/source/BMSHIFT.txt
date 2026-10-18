@@ -1,0 +1,82 @@
+ClrHome
+Float
+Normal
+Real
+Input "SHIFT A",B
+Input "MULTIPLIER B",C
+Input "MEAN OF X",M
+B+C*M→T
+ClrHome
+Output(1,1,"TRANSFORMED MEAN")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"MEAN Y=")
+Output(2,8,θ)
+Output(3,1,"Y=A+B*X")
+Output(4,1,"E(Y)=A+B*E(X)")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"A=")
+Output(5,3,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"B=")
+Output(6,3,θ)
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"E(X)=")
+Output(7,6,θ)
+Output(8,1,"ENTER FOR VARIANCE")
+Output(9,1,"CLEAR IF ONLY MEAN NEEDED")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Input "VAR X NOT SD",S
+If not(S≥0)
+Then
+ClrHome
+Disp "CHECK VAR X NOT SD"
+Disp "CHECK INPUTS"
+Stop
+End
+C^2*S→H
+ClrHome
+Output(1,1,"TRANSFORMED SPREAD")
+Output(2,1,"VAR(Y)=B^2*VAR(X)")
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"B=")
+Output(3,3,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"VAR X=")
+Output(4,7,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"VAR Y=")
+Output(5,7,θ)
+√(H)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"SD Y=")
+Output(6,6,θ)
+Output(7,1,"SHIFT ADDS NO VAR")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

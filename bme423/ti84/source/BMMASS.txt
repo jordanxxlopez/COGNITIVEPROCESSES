@@ -1,0 +1,95 @@
+ClrHome
+Float
+Normal
+Real
+Input "HOW MANY WEIGHTS",N
+If not(N≥1 and N=int(N) and N≤100)
+Then
+ClrHome
+Disp "CHECK HOW MANY WEIGHTS"
+Disp "CHECK INPUTS"
+Stop
+End
+N→dim(ʟBMW)
+For(I,1,N)
+ClrHome
+Disp "ITEM",I
+Input "WEIGHT",X
+If not(X≥0)
+Then
+ClrHome
+Disp "CHECK WEIGHT"
+Disp "CHECK INPUTS"
+Stop
+End
+X→ʟBMW(I)
+End
+sum(ʟBMW)→B
+If not(B>0)
+Then
+ClrHome
+Disp "WEIGHTS ALL ZERO"
+Disp "CHECK INPUTS"
+Stop
+End
+1/B→C
+C*ʟBMW→ʟBMP
+ClrHome
+Output(1,1,"PMF CONSTANT")
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"C=")
+Output(2,3,θ)
+Output(3,1,"C=1/SUM(WEIGHTS)")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"SUM W=")
+Output(4,7,θ)
+Output(5,1,"PROB(I)=C*W(I)")
+sum(ʟBMP)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"SUM P=")
+Output(6,7,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+For(I,1,N)
+ClrHome
+Output(1,1,"NORMALIZED MASS")
+I→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ROW=")
+Output(2,5,θ)
+ʟBMW(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"WEIGHT=")
+Output(3,8,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"C=")
+Output(4,3,θ)
+ʟBMP(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"PROB=")
+Output(5,6,θ)
+Output(6,1,"P=C*WEIGHT")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+End
+Stop

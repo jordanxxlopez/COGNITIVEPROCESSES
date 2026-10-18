@@ -1,0 +1,207 @@
+ClrHome
+Float
+Normal
+Real
+Input "SAMPLE MEAN",M
+Input "SAMPLE SD",S
+If not(S>0)
+Then
+ClrHome
+Disp "CHECK SAMPLE SD"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "SAMPLE N",N
+If not(N≥2 and N=int(N))
+Then
+ClrHome
+Disp "CHECK SAMPLE N"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "REF MEAN MU0",B
+Input "ALPHA .05 ETC",A
+If not(A>0 and A<1)
+Then
+ClrHome
+Disp "CHECK ALPHA .05 ETC"
+Disp "CHECK INPUTS"
+Stop
+End
+S/√(N)→H
+M-B→G
+G/H→T
+N-1→D
+min(1,2*tcdf(abs(T),1ᴇ99,D))→P
+ClrHome
+Output(1,1,"ONE SAMPLE T")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"T=")
+Output(2,3,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"DF=")
+Output(3,4,θ)
+If P<.000001
+Then
+Output(4,1,"P<0.000001")
+Else
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"P=")
+Output(4,3,θ)
+End
+If P<A
+Then
+Output(5,1,"REJECT H0")
+Else
+Output(5,1,"DO NOT REJECT")
+End
+Output(6,1,"T=(MEAN-REF)/SE")
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"SE=")
+Output(7,4,θ)
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(8,1,"MEAN=")
+Output(8,6,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(9,1,"REF=")
+Output(9,5,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"SUBSTITUTE")
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"MEAN=")
+Output(2,6,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"REF=")
+Output(3,5,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"SD=")
+Output(4,4,θ)
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"N=")
+Output(5,3,θ)
+Output(6,1,"SE=SD/SQRT(N)")
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"SE=")
+Output(7,4,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"DIVIDE THE GAP")
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"GAP=")
+Output(2,5,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"SE=")
+Output(3,4,θ)
+Output(4,1,"T=GAP/SE")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"T=")
+Output(5,3,θ)
+Output(6,1,"DF=N-1")
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"DF=")
+Output(7,4,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+0→U
+1→V
+While tcdf(0,V,D)<(1-(A))/2
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If tcdf(0,W,D)<(1-(A))/2
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→C
+ClrHome
+Output(1,1,"TWO SIDED TEST")
+A→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ALPHA=")
+Output(2,7,θ)
+abs(T)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"ABS T=")
+Output(3,7,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"CRIT=")
+Output(4,6,θ)
+Output(5,1,"REJECT IF |T|>C")
+If P<A
+Then
+Output(6,1,"REJECT H0")
+Else
+Output(6,1,"DO NOT REJECT")
+End
+Output(7,1,"H0:MEAN=REF")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

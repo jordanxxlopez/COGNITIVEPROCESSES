@@ -1,0 +1,94 @@
+ClrHome
+Float
+Normal
+Real
+Input "BASE A",B
+Input "BASE B",C
+Input "SUPPORT LOW",D
+Input "SUPPORT HIGH",E
+If not(E>D)
+Then
+ClrHome
+Disp "CHECK SUPPORT HIGH"
+Disp "CHECK INPUTS"
+Stop
+End
+If not(B+C*D≥0 and B+C*E≥0)
+Then
+ClrHome
+Disp "NEGATIVE DENSITY"
+Disp "CHECK INPUTS"
+Stop
+End
+((B)*(E)^1/1+(C)*(E)^2/2)-((B)*(D)^1/1+(C)*(D)^2/2)→H
+If not(H>0)
+Then
+ClrHome
+Disp "ZERO AREA"
+Disp "CHECK INPUTS"
+Stop
+End
+1/H→K
+ClrHome
+Output(1,1,"NORMALIZE PDF")
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"C=")
+Output(2,3,θ)
+Output(3,1,"F(X)=C*(A+B*X)")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"A=")
+Output(4,3,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"B=")
+Output(5,3,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"AREA=")
+Output(6,6,θ)
+Output(7,1,"C*AREA=1")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"INTEGRATE BASE")
+Output(2,1,"G(X)=A*X+B*X^2/2")
+((B)*(E)^1/1+(C)*(E)^2/2)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"G(U)=")
+Output(3,6,θ)
+((B)*(D)^1/1+(C)*(D)^2/2)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"G(L)=")
+Output(4,6,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"AREA=")
+Output(5,6,θ)
+Output(6,1,"C=1/AREA")
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"C=")
+Output(7,3,θ)
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

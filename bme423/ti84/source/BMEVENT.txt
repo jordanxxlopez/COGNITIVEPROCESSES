@@ -1,0 +1,49 @@
+ClrHome
+Float
+Normal
+Real
+Input "P FIRST",B
+If not(B≥0 and B≤1)
+Then
+ClrHome
+Disp "CHECK P FIRST"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "P SECOND GIVEN 1",C
+If not(C≥0 and C≤1)
+Then
+ClrHome
+Disp "CHECK P SECOND GIVEN 1"
+Disp "CHECK INPUTS"
+Stop
+End
+B*C→P
+ClrHome
+Output(1,1,"BOTH EVENTS")
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ANS=")
+Output(2,5,θ)
+Output(3,1,"P(BOTH)=P1*P2")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"P(A)=")
+Output(4,6,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"P2=")
+Output(5,4,θ)
+Output(6,1,"NO REPLACEMENT:")
+Output(7,1,"UPDATE 2ND PROB")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

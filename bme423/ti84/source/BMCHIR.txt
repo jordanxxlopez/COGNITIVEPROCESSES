@@ -1,0 +1,265 @@
+ClrHome
+Float
+Normal
+Real
+Input "ROWS",K
+If not(K≥2 and K=int(K) and K≤20)
+Then
+ClrHome
+Disp "CHECK ROWS"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "COLUMNS",L
+If not(L≥2 and L=int(L) and L≤20)
+Then
+ClrHome
+Disp "CHECK COLUMNS"
+Disp "CHECK INPUTS"
+Stop
+End
+If not(K*L≤100 and K*L>4)
+Then
+ClrHome
+Disp "USE BMCHI2 2X2"
+Disp "CHECK INPUTS"
+Stop
+End
+K*L→dim(ʟBMO)
+K→dim(ʟBMR)
+L→dim(ʟBMC)
+For(I,1,K)
+For(J,1,L)
+ClrHome
+Disp "ROW",I,"COLUMN",J
+Input "OBS COUNT",X
+If not(X≥0 and X=int(X))
+Then
+ClrHome
+Disp "CHECK OBS COUNT"
+Disp "CHECK INPUTS"
+Stop
+End
+X→ʟBMO((I-1)*L+J)
+End
+End
+sum(ʟBMO)→N
+If not(N>0)
+Then
+ClrHome
+Disp "EMPTY TABLE"
+Disp "CHECK INPUTS"
+Stop
+End
+For(I,1,K)
+0→B
+For(J,1,L)
+B+ʟBMO((I-1)*L+J)→B
+End
+B→ʟBMR(I)
+End
+For(J,1,L)
+0→B
+For(I,1,K)
+B+ʟBMO((I-1)*L+J)→B
+End
+B→ʟBMC(J)
+End
+If not(min(ʟBMR)>0 and min(ʟBMC)>0)
+Then
+ClrHome
+Disp "ZERO MARGIN"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "ALPHA .05 ETC",A
+If not(A>0 and A<1)
+Then
+ClrHome
+Disp "CHECK ALPHA .05 ETC"
+Disp "CHECK INPUTS"
+Stop
+End
+K*L→dim(ʟBME)
+K*L→dim(ʟBMT)
+For(I,1,K)
+For(J,1,L)
+ʟBMR(I)*ʟBMC(J)/N→B
+B→ʟBME((I-1)*L+J)
+(ʟBMO((I-1)*L+J)-B)^2/B→ʟBMT((I-1)*L+J)
+End
+End
+sum(ʟBMT)→T
+(K-1)*(L-1)→D
+χ²cdf(T,1ᴇ99,D)→P
+ClrHome
+Output(1,1,"CONTINGENCY CHI2")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CHI2=")
+Output(2,6,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"DF=")
+Output(3,4,θ)
+If P<.000001
+Then
+Output(4,1,"P<0.000001")
+Else
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"P=")
+Output(4,3,θ)
+End
+If P<A
+Then
+Output(5,1,"REJECT H0")
+Else
+Output(5,1,"DO NOT REJECT")
+End
+Output(6,1,"NO YATES >2X2")
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"TOTAL=")
+Output(7,7,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+For(I,1,K)
+For(J,1,L)
+ClrHome
+Output(1,1,"EXPECTED COUNT")
+I→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ROW=")
+Output(2,5,θ)
+J→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"COL=")
+Output(3,5,θ)
+ʟBMR(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"RTOTAL=")
+Output(4,8,θ)
+ʟBMC(J)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"CTOTAL=")
+Output(5,8,θ)
+Output(6,1,"E=ROW*COL/TOTAL")
+ʟBME((I-1)*L+J)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"E=")
+Output(7,3,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"CELL TERM")
+ʟBMO((I-1)*L+J)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"O=")
+Output(2,3,θ)
+ʟBME((I-1)*L+J)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"E=")
+Output(3,3,θ)
+Output(4,1,"GAP=O-E")
+ʟBMO((I-1)*L+J)-ʟBME((I-1)*L+J)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"GAP=")
+Output(5,5,θ)
+Output(6,1,"TERM=GAP^2/E")
+ʟBMT((I-1)*L+J)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"TERM=")
+Output(7,6,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+End
+End
+0→U
+1→V
+While χ²cdf(0,V,D)<1-(A)
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If χ²cdf(0,W,D)<1-(A)
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→C
+ClrHome
+Output(1,1,"ADD CELL TERMS")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CHI2=")
+Output(2,6,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"DF=")
+Output(3,4,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"CRIT=")
+Output(4,6,θ)
+If P<A
+Then
+Output(5,1,"REJECT H0")
+Else
+Output(5,1,"DO NOT REJECT")
+End
+If min(ʟBME)<5
+Then
+Output(6,1,"SMALL E:CHECK")
+Else
+Output(6,1,"NO YATES >2X2")
+End
+Output(7,1,"DF=(R-1)*(C-1)")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

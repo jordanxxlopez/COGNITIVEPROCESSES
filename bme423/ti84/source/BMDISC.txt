@@ -1,0 +1,183 @@
+ClrHome
+Float
+Normal
+Real
+Input "HOW MANY VALUES",N
+If not(N≥1 and N=int(N) and N≤100)
+Then
+ClrHome
+Disp "CHECK HOW MANY VALUES"
+Disp "CHECK INPUTS"
+Stop
+End
+N→dim(ʟBMX)
+N→dim(ʟBMP)
+For(I,1,N)
+ClrHome
+Disp "ROW",I
+Input "VALUE",X
+Input "PROB 0..1",P
+If not(P≥0 and P≤1)
+Then
+ClrHome
+Disp "CHECK PROB 0..1"
+Disp "CHECK INPUTS"
+Stop
+End
+X→ʟBMX(I)
+P→ʟBMP(I)
+End
+sum(ʟBMP)→B
+If not(abs(B-1)<.00000001)
+Then
+ClrHome
+Disp "PROBS MUST SUM 1"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "CDF CUTOFF",C
+sum(ʟBMX*ʟBMP)→M
+sum(ʟBMX^2*ʟBMP)→Q
+max(0,Q-M^2)→S
+sum((ʟBMX≤C)*ʟBMP)→F
+sum((ʟBMX<C)*ʟBMP)→G
+ClrHome
+Output(1,1,"DISCRETE RESULTS")
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"MEAN=")
+Output(2,6,θ)
+Q→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"EX2=")
+Output(3,5,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"VAR=")
+Output(4,5,θ)
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"CDF=")
+Output(5,5,θ)
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"X< C=")
+Output(6,6,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"SUM P=")
+Output(7,7,θ)
+Output(8,1,"MEAN=SUM(X*P)")
+Output(9,1,"VAR=EX2-MEAN^2")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"WEIGHT VALUES")
+Output(2,1,"E(X)=SUM(X*P)")
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"MEAN=")
+Output(3,6,θ)
+Output(4,1,"EX2=SUM(X^2*P)")
+Q→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"EX2=")
+Output(5,5,θ)
+Output(6,1,"VAR=EX2-MEAN^2")
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"VAR=")
+Output(7,5,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"CDF ADDS X<=CUT")
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CUT=")
+Output(2,5,θ)
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"F(C)=")
+Output(3,6,θ)
+1-F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"X>C=")
+Output(4,5,θ)
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"X<C=")
+Output(5,5,θ)
+Output(6,1,"EQUALITY MATTERS")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+For(I,1,N)
+ClrHome
+Output(1,1,"WEIGHTED ROW")
+I→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ROW=")
+Output(2,5,θ)
+ʟBMX(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"X=")
+Output(3,3,θ)
+ʟBMP(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"P=")
+Output(4,3,θ)
+ʟBMX(I)*ʟBMP(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"X*P=")
+Output(5,5,θ)
+ʟBMX(I)^2*ʟBMP(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"X2*P=")
+Output(6,6,θ)
+(ʟBMX(I)-M)^2*ʟBMP(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"DEV2P=")
+Output(7,7,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+End
+Stop

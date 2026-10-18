@@ -1,0 +1,280 @@
+ClrHome
+Float
+Normal
+Real
+Input "MEAN I",B
+Input "MEAN J",C
+Input "N I",E
+If not(E≥1 and E=int(E))
+Then
+ClrHome
+Disp "CHECK N I"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "N J",F
+If not(F≥1 and F=int(F))
+Then
+ClrHome
+Disp "CHECK N J"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "ANOVA WITHIN VAR",S
+If not(S>0)
+Then
+ClrHome
+Disp "CHECK ANOVA WITHIN VAR"
+Disp "CHECK INPUTS"
+Stop
+End
+√(S*(1/E+1/F))→H
+abs(B-C)/H→T
+ClrHome
+Output(1,1,"ANOVA PAIR STATISTIC")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ABS T=")
+Output(2,7,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"SE=")
+Output(3,4,θ)
+abs(B-C)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"GAP=")
+Output(4,5,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"WITHIN=")
+Output(5,8,θ)
+Output(6,1,"T=ABS(MI-MJ)/SE")
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"N I=")
+Output(7,5,θ)
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(8,1,"N J=")
+Output(8,5,θ)
+Output(9,1,"ENTER FOR ADJUSTED TEST")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Input "ANOVA ERROR DF",D
+If not(D≥1 and D=int(D))
+Then
+ClrHome
+Disp "CHECK ANOVA ERROR DF"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "ALPHA .05 ETC",A
+If not(A>0 and A<1)
+Then
+ClrHome
+Disp "CHECK ALPHA .05 ETC"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "REQUESTED PAIRS",K
+If not(K≥1 and K=int(K))
+Then
+ClrHome
+Disp "CHECK REQUESTED PAIRS"
+Disp "CHECK INPUTS"
+Stop
+End
+A/K→G
+min(1,2*tcdf(T,1ᴇ99,D))→P
+min(1,K*P)→Q
+ClrHome
+Output(1,1,"ANOVA PAIR")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ABS T=")
+Output(2,7,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"DF=")
+Output(3,4,θ)
+If P<.000001
+Then
+Output(4,1,"P<0.000001")
+Else
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"P=")
+Output(4,3,θ)
+End
+Q→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"ADJ P=")
+Output(5,7,θ)
+If Q<A
+Then
+Output(6,1,"REJECT PAIR H0")
+Else
+Output(6,1,"DO NOT REJECT")
+End
+Output(7,1,"T=ABS(GAP)/SE")
+abs(B-C)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(8,1,"GAP=")
+Output(8,5,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(9,1,"SE=")
+Output(9,4,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"PAIR INPUTS")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"MEAN I=")
+Output(2,8,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"MEAN J=")
+Output(3,8,θ)
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"N I=")
+Output(4,5,θ)
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"N J=")
+Output(5,5,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"WITHIN=")
+Output(6,8,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"DF=")
+Output(7,4,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"PAIR WORK")
+Output(2,1,"SE=SQRT(WITHIN*")
+Output(3,1,"(1/NI+1/NJ))")
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"SE=")
+Output(4,4,θ)
+abs(B-C)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"GAP=")
+Output(5,5,θ)
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"T=")
+Output(6,3,θ)
+Output(7,1,"KEEP ANOVA DF")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+0→U
+1→V
+While tcdf(0,V,D)<(1-(G))/2
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If tcdf(0,W,D)<(1-(G))/2
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→R
+ClrHome
+Output(1,1,"BONFERRONI")
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"PAIRS=")
+Output(2,7,θ)
+A→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"FAM A=")
+Output(3,7,θ)
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"PAIR A=")
+Output(4,8,θ)
+R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"CRIT=")
+Output(5,6,θ)
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"ABS T=")
+Output(6,7,θ)
+If Q<A
+Then
+Output(7,1,"REJECT PAIR H0")
+Else
+Output(7,1,"DO NOT REJECT")
+End
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

@@ -1,0 +1,244 @@
+ClrHome
+Float
+Normal
+Real
+Input "TREAT RISK 0..1",B
+If not(B≥0 and B≤1)
+Then
+ClrHome
+Disp "CHECK TREAT RISK 0..1"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "CONTROL RISK",C
+If not(C≥0 and C≤1)
+Then
+ClrHome
+Disp "CHECK CONTROL RISK"
+Disp "CHECK INPUTS"
+Stop
+End
+C-B→H
+0→R
+If C>0
+B/C→R
+0→T
+0→K
+If H≠0
+Then
+1/abs(H)→T
+int(T)→K
+If T>K+.00000001
+K+1→K
+End
+ClrHome
+Output(1,1,"RISK RESULTS")
+If C>0
+Then
+R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"RR=")
+Output(2,4,θ)
+Else
+Output(2,1,"RR UNDEFINED:CONTROL=0")
+End
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"ARR=")
+Output(3,5,θ)
+If H≠0
+Then
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"NNT/NNH=")
+Output(4,9,θ)
+Else
+Output(4,1,"NNT/NNH NOT FINITE")
+End
+If H≠0
+Then
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"WHOLE=")
+Output(5,7,θ)
+Else
+Output(5,1,"ABSOLUTE GAP=0")
+End
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"RT=")
+Output(6,4,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"RC=")
+Output(7,4,θ)
+Output(8,1,"RR=RT/RC; ARR=RC-RT")
+Output(9,1,"NNT/NNH=1/ABS(ARR)")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+If C>0
+Then
+B/C→R
+ClrHome
+Output(1,1,"RELATIVE CHANGE")
+R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"RR=")
+Output(2,4,θ)
+Output(3,1,"RR=TREAT/CONTROL")
+Output(4,1,"RRR=1-RR")
+1-R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"RRR=")
+Output(5,5,θ)
+Output(6,1,"RISKS ON 0..1")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Else
+ClrHome
+Output(1,1,"CONTROL RISK=0")
+Output(2,1,"RR IS UNDEFINED")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"RT=")
+Output(3,4,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"RC=")
+Output(4,4,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+End
+If H>0
+Then
+1/H→T
+int(T)→K
+If T>K+.00000001
+K+1→K
+ClrHome
+Output(1,1,"NUMBER TO TREAT")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"NNT=")
+Output(2,5,θ)
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"WHOLE=")
+Output(3,7,θ)
+Output(4,1,"NNT=1/(RC-RT)")
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"RC=")
+Output(5,4,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"RT=")
+Output(6,4,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"ARR=")
+Output(7,5,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Else
+If H<0
+Then
+1/(B-C)→T
+int(T)→K
+If T>K+.00000001
+K+1→K
+ClrHome
+Output(1,1,"NUMBER TO HARM")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"NNH=")
+Output(2,5,θ)
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"WHOLE=")
+Output(3,7,θ)
+Output(4,1,"NNH=1/(RT-RC)")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"RT=")
+Output(5,4,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"RC=")
+Output(6,4,θ)
+B-C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"ARI=")
+Output(7,5,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Else
+ClrHome
+Output(1,1,"NO ABSOLUTE GAP")
+Output(2,1,"ARR=0")
+Output(3,1,"NNT/NNH INFINITE")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"RT=")
+Output(4,4,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"RC=")
+Output(5,4,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+End
+End
+Stop

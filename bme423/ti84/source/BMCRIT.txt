@@ -1,0 +1,168 @@
+ClrHome
+Float
+Normal
+Real
+Input "1 Z 2 T 3 F 4CHI",L
+If not(L≥1 and L≤4 and L=int(L))
+Then
+ClrHome
+Disp "CHECK 1 Z 2 T 3 F 4CHI"
+Disp "CHECK INPUTS"
+Stop
+End
+If L>1
+Then
+Input "DF OR NUM DF",D
+If not(D≥1 and D=int(D))
+Then
+ClrHome
+Disp "CHECK DF OR NUM DF"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+If L=3
+Then
+Input "DENOM DF",E
+If not(E≥1 and E=int(E))
+Then
+ClrHome
+Disp "CHECK DENOM DF"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+Input "ALPHA .05 ETC",A
+If not(A>0 and A<1)
+Then
+ClrHome
+Disp "CHECK ALPHA .05 ETC"
+Disp "CHECK INPUTS"
+Stop
+End
+If L=1
+invNorm(1-A/2,0,1)→C
+If L=2
+Then
+0→U
+1→V
+While tcdf(0,V,D)<(1-(A))/2
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If tcdf(0,W,D)<(1-(A))/2
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→C
+End
+If L=3
+Then
+0→U
+1→V
+While Fcdf(0,V,D,E)<1-(A)
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If Fcdf(0,W,D,E)<1-(A)
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→C
+End
+If L=4
+Then
+0→U
+1→V
+While χ²cdf(0,V,D)<1-(A)
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If χ²cdf(0,W,D)<1-(A)
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→C
+End
+ClrHome
+Output(1,1,"CRITICAL VALUE")
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CRIT=")
+Output(2,6,θ)
+A→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"ALPHA=")
+Output(3,7,θ)
+If L≤2
+Then
+Output(4,1,"Z/T: TWO SIDED")
+Else
+Output(4,1,"F/CHI:UPPER TAIL")
+End
+Output(5,1,"T TABLE:TOTAL A")
+Output(6,1,"INV T:AREA=1-A/2")
+Output(7,1,"MATCH ALL DF")
+If L>1
+Then
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(8,1,"DF=")
+Output(8,4,θ)
+Else
+Output(8,1,"Z HAS NO DF")
+End
+If L=3
+Then
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(9,1,"DENOM DF=")
+Output(9,10,θ)
+Else
+Output(9,1," ")
+End
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop
