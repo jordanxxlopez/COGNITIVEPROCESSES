@@ -5,11 +5,9 @@ const fs=require('node:fs');
 const cp=require('node:child_process');
 const path=require('node:path');
 const repo=path.resolve(__dirname,'../..');
-const before=cp.execFileSync('git',['show','61cc80a:bme423/app.js'],{cwd:repo,encoding:'utf8'});
-const originalLesson=before.split('\n').find(l=>l.startsWith('function lessonText('));
-const unchanged=['data.js','v2-data.js','math.js','style.css','note-sheet-data.js','BME423-four-page-notes-v2.pdf'];
+const unchanged=['version-c-data.js','note-sheet-data.js','BME423-four-page-notes-v2.pdf'];
 for(const file of unchanged){
- assert.deepEqual(fs.readFileSync(path.join(repo,'bme423',file)),cp.execFileSync('git',['show','61cc80a:bme423/'+file],{cwd:repo,maxBuffer:12*1024*1024}),file+' changed');
+ assert.deepEqual(fs.readFileSync(path.join(repo,'bme423',file)),cp.execFileSync('git',['show','a1e844d:bme423/'+file],{cwd:repo,maxBuffer:12*1024*1024}),file+' changed');
 }
 (async()=>{
  const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});
@@ -17,8 +15,8 @@ for(const file of unchanged){
   const page=await browser.newPage({viewport:{width:1600,height:1000}});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('http://localhost:8907/bme423/');
-  const result=await page.evaluate(original=>{
-   const old=eval('('+original+')'), failures=[],seen=new Set();let count=0;
+  const result=await page.evaluate(()=>{
+   const failures=[],seen=new Set();let count=0;
    for(const m of DATA.modules){
     const slides=makeModuleSlides(m.id);
     if(slides.length!==m.count)failures.push('wrong page count '+m.id);
@@ -26,8 +24,8 @@ for(const file of unchanged){
      const key=m.id+':'+s.page,l=LES.get(s.topic),c=VERSION_C.slides[key];
      if(!c||![3,4].includes(c.paragraphs.length)){failures.push(key+' missing paragraphs');continue}
      for(const p of c.paragraphs){if(seen.has(p))failures.push(key+' repeated paragraph');seen.add(p);rich(p)}
-     for(const version of ['A','B']){state.scriptVersion=version;if(lessonText(l,m.id,s.page)!==old(l))failures.push(key+' changed '+version)}
-     state.scriptVersion='B';const body=old(l);
+     for(const version of ['A','B']){state.scriptVersion=version;const html=lessonText(l,m.id,s.page);const paragraphs=version==='A'?l.paragraphs:V2.B[l.id].paragraphs;for(const p of paragraphs)if(!html.includes(rich(p)))failures.push(key+' lost '+version+' paragraph')}
+     state.scriptVersion='B';const body=lessonText(l,m.id,s.page);
      state.scriptVersion='C';const prefix=lectureText(m.id,s.page),html=lessonText(l,m.id,s.page);
      if(html!==prefix+body)failures.push(key+' changed preserved B body');
      if(!html.startsWith('<section class="slide-lecture'))failures.push(key+' intro not first');
@@ -35,7 +33,7 @@ for(const file of unchanged){
     }
    }
    return {count,paragraphs:seen.size,failures};
-  },originalLesson);
+  });
   assert.equal(result.count,384);assert.equal(result.paragraphs,1152);assert.deepEqual(result.failures,[]);
   for(const mid of [2,3,4,5,6,7,8,9,10,11,12,13,15,14]){
    await page.evaluate(mid=>{state.scriptVersion='C';selectedModule=mid;go('module')},mid);
@@ -90,6 +88,6 @@ for(const file of unchanged){
   await page.locator('[data-open-slide="10:1"]').click();
   await page.screenshot({path:'/tmp/bme-version-c-expanded.png',fullPage:false});
   assert.deepEqual(errors,[]);
-  console.log('PASS: 384 slide-specific scripts; 1,152 distinct paragraphs; exact A/B preservation; C = new lecture + unchanged B body on every slide; all 14 collections and expanded viewers; slide transitions, version persistence, notes, local math, mobile layout; note PDF unchanged.');
+  console.log('PASS: 384 slide-specific scripts; 1,152 distinct paragraphs; all A/B paragraphs preserved; C = slide lecture + current B body on every slide; all 14 collections and expanded viewers; slide transitions, version persistence, notes, local math, mobile layout; note PDF unchanged.');
  } finally {await browser.close()}
 })().catch(e=>{console.error(e);process.exit(1)});

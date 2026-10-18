@@ -19,8 +19,13 @@ def shown(block,text,expected):
 xs=np.array([65,69,59,64,62,67,68,62,64,65])
 for text,n in [('645',xs.sum()),('64.5',np.mean(xs)),('82.5',np.sum((xs-xs.mean())**2)),('9.1667',np.var(xs,ddof=1)),('3.0277',np.std(xs,ddof=1)),('0.95743',stats.sem(xs))]:shown('describe',text,n)
 ys=[66,67,69,69,70,70,71,71,72,72]
-shown('percent','71.25',stats.mstats.mquantiles(ys,[.75],alphap=0,betap=0)[0])
-shown('percent','68.5',stats.mstats.mquantiles(ys,[.25],alphap=0,betap=0)[0])
+if '--note-sheet' in sys.argv:  # Archived Version 2 retains its historical convention.
+ shown('percent','71.25',stats.mstats.mquantiles(ys,[.75],alphap=0,betap=0)[0])
+ shown('percent','68.5',stats.mstats.mquantiles(ys,[.25],alphap=0,betap=0)[0])
+else:
+ shown('percent','71',np.percentile(ys,75,method='linear'))
+ shown('percent','69',np.percentile(ys,25,method='linear'))
+ shown('percent','2',np.percentile(ys,75,method='linear')-np.percentile(ys,25,method='linear'))
 rv=stats.rv_discrete(values=([-1,2,3,7],[.55,.15,.1,.2]))
 shown('discrete','1.45',rv.mean());shown('discrete','11.85',rv.moment(2));shown('discrete','9.7475',rv.var())
 shown('continuous','.4375',integrate.quad(lambda x:x/2,1.5,2)[0])

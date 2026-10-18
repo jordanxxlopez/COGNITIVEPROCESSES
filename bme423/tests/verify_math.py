@@ -68,7 +68,7 @@ for p in d['problems']:
   events=g.get('m',g.get('events'));n=g.get('n',g.get('patients'));expected=stats.binom.std(n,events/n)/n
  elif pid=='population': expected=np.var([2,4,6],ddof=0)
  elif pid=='discrete': expected=stats.rv_discrete(values=([0,1,2],[.2,.5,.3])).var()
- elif t=='percentile': expected=stats.mstats.mquantiles([2,4,6,8,10,12,14] if pid=='percentile' else [2,4,6,8,10,12],prob=[g['p']/100],alphap=0,betap=0)[0]
+ elif t=='percentile': expected=np.percentile([2,4,6,8,10,12,14] if pid=='percentile' else [2,4,6,8,10,12],g['p'],method='linear')
  elif t=='normalquant': expected=stats.norm.isf(.025,loc=100,scale=15)
  else:
   expected={'classify':3,'coins':stats.binom.pmf(2,3,.5),'cards':stats.hypergeom.pmf(2,52,4,2),'pmf':1/sum([1,2,3]),'dcdf':stats.rv_discrete(values=([0,1,2],[.2,.5,.3])).cdf(1.5),'linear':4*9+9*1,'normalize':optimize.brentq(lambda c:integrate.quad(lambda x:.5+x,0,c)[0]-1,.1,2),'sem':3*math.sqrt(16/64),'holm':3,'holmstop':1,'nnh':1/(.08-.03),'trial':2,'rout':int(.0223<.05)}[pid]

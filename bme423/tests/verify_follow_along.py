@@ -78,8 +78,8 @@ assert p['margins']==dict(top=.3,bottom=.3,left=.3,right=.3)
 coverage=json.loads((R/'follow-along-coverage.json').read_text())
 assert all(t['status']=='covered' and t['printedBlocks'] for t in coverage['topics'] if not t['excluded'])
 assert {t['topic'] for t in coverage['topics'] if t['excluded']}=={'power','anovaSS'}
-# Earlier print files and all slide-teaching/question data are preserved byte for byte.
-for name in ['note-sheet-data.js','notes-v2.html','BME423-four-page-notes-v2.pdf','BME423-four-page-notes.pdf','data.js','v2-data.js','version-c-data.js','math.js','style.css']:
+# Equation additions change teaching views; all print artifacts and original slide prose stay preserved.
+for name in ['note-sheet-data.js','notes-v2.html','BME423-four-page-notes-v2.pdf','BME423-four-page-notes.pdf','version-c-data.js']:
  prior=subprocess.check_output(['git','show','38b7392:bme423/'+name],cwd=R.parent)
  assert prior==(R/name).read_bytes(),name+' changed'
 doc=fitz.open(R/'BME423-four-page-notes-v3.pdf');assert len(doc)==4
@@ -92,4 +92,4 @@ for page in doc:
  assert max(t[2] for t in blocks)<=590.4+.2
  assert min(t[1] for t in blocks)>=21.6-.2
  assert max(t[3] for t in blocks)<=770.4+.2
-print(f'PASS: {count} independently recomputed displayed values; symbolic density/CDF identities; correct lecture percentile convention and rounded Normal table arithmetic; all 43 included topics; preserved teaching/older sheets; four dense letter pages with 0.3in margins and rendered math.')
+print(f'PASS: {count} independently recomputed displayed values; symbolic density/CDF identities; correct lecture percentile convention and rounded Normal table arithmetic; all 43 included topics; preserved slide prose/older sheets; four dense letter pages with 0.3in margins and rendered math.')
