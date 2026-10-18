@@ -168,6 +168,7 @@ class VM:
         if line=='ClrHome':self.grid=[' '*26 for _ in range(10)];return
         if line=='Stop':raise Halt()
         if line.startswith('Lbl '):return
+        if line.startswith('Goto '):raise Jump(line[5:])
         if line.startswith('Menu('):
             args=split_args(line[5:-1]);choice=next(self.menus,1)
             raise Jump(args[2*choice])
