@@ -969,6 +969,98 @@
       "status": "equations inserted before substitutions"
     }
   ],
+  "supplements": [
+    {
+      "block": "answer-frame",
+      "side": 1,
+      "column": 1,
+      "sources": [
+        "session15.pdf:32\u201364",
+        "midterm-review-transcript.txt"
+      ],
+      "purpose": "Provides a fill-in answer sequence, population wording, and contextual conclusion."
+    },
+    {
+      "block": "quartile-work",
+      "side": 2,
+      "column": 2,
+      "sources": [
+        "hw1.pdf:3",
+        "session5.pdf:9"
+      ],
+      "purpose": "Adds the missing numerical substitution between the existing z quartiles and their answers."
+    },
+    {
+      "block": "central-range",
+      "side": 2,
+      "column": 3,
+      "sources": [
+        "session5.pdf:9",
+        "hw1.pdf:3",
+        "session15.pdf:23\u201329"
+      ],
+      "purpose": "Works the central-range question through tail allocation and both endpoints."
+    },
+    {
+      "block": "t-output-work",
+      "side": 3,
+      "column": 1,
+      "sources": [
+        "session8.pdf:22",
+        "hw2.pdf:1",
+        "session15.pdf:63"
+      ],
+      "purpose": "Derives output fields from the already worked course values; these are calculated examples, not a transcription of unseen output."
+    },
+    {
+      "block": "residual-work",
+      "side": 3,
+      "column": 2,
+      "sources": [
+        "session7.pdf:39"
+      ],
+      "purpose": "Shows the conversion between the two actual lecture output formats."
+    },
+    {
+      "block": "t-p-range",
+      "side": 3,
+      "column": 3,
+      "sources": [
+        "tables/t_table.pdf:1",
+        "session8.pdf:22"
+      ],
+      "purpose": "Makes the table-to-p-range procedure concrete without needing a calculator command."
+    },
+    {
+      "block": "same-counts-check",
+      "side": 4,
+      "column": 1,
+      "sources": [
+        "session11.pdf:19\u201320",
+        "session12.pdf:9\u201311"
+      ],
+      "purpose": "Makes an algebraic check between the two existing worked methods for the same source table; verified independently."
+    },
+    {
+      "block": "rounded-proportions",
+      "side": 4,
+      "column": 2,
+      "sources": [
+        "hw2.pdf:2"
+      ],
+      "purpose": "Addresses the actual homework format with rounded proportions and an exact combined event count."
+    },
+    {
+      "block": "folate-risk",
+      "side": 4,
+      "column": 3,
+      "sources": [
+        "hw2.pdf:2",
+        "session13.pdf:4\u201310"
+      ],
+      "purpose": "Applies event/risk denominators to the other supplied homework table without repeating the original NNT examples."
+    }
+  ],
   "margins": {
     "top": 0.3,
     "bottom": 0.3,
@@ -990,7 +1082,10 @@
       "printedBlocks": [
         "r-probability",
         "t-output",
+        "t-output-work",
         "anova-output",
+        "residual-work",
+        "t-p-range",
         "chi-holm"
       ],
       "status": "covered"
@@ -1009,7 +1104,8 @@
       "excluded": false,
       "printedBlocks": [
         "two-t",
-        "ti-tests"
+        "ti-tests",
+        "t-output-work"
       ],
       "status": "covered"
     },
@@ -1026,7 +1122,9 @@
       "excluded": false,
       "printedBlocks": [
         "one-t",
-        "ti-tests"
+        "ti-tests",
+        "t-output-work",
+        "t-p-range"
       ],
       "status": "covered"
     },
@@ -1042,6 +1140,7 @@
       "excluded": false,
       "printedBlocks": [
         "anova-output",
+        "residual-work",
         "posthoc",
         "bonferroni",
         "holm"
@@ -1093,7 +1192,9 @@
       "hw2": true,
       "excluded": false,
       "printedBlocks": [
-        "z"
+        "z",
+        "same-counts-check",
+        "rounded-proportions"
       ],
       "status": "covered"
     },
@@ -1109,7 +1210,9 @@
       "excluded": false,
       "printedBlocks": [
         "z",
-        "chi2"
+        "chi2",
+        "same-counts-check",
+        "rounded-proportions"
       ],
       "status": "covered"
     },
@@ -1125,6 +1228,7 @@
       "excluded": false,
       "printedBlocks": [
         "chi2",
+        "same-counts-check",
         "large",
         "chi-holm"
       ],
@@ -1144,7 +1248,8 @@
       "printedBlocks": [
         "risk",
         "odds",
-        "nnh"
+        "nnh",
+        "folate-risk"
       ],
       "status": "covered"
     },
@@ -1159,7 +1264,8 @@
       "hw2": true,
       "excluded": false,
       "printedBlocks": [
-        "odds"
+        "odds",
+        "folate-risk"
       ],
       "status": "covered"
     },
@@ -1330,7 +1436,8 @@
       "excluded": false,
       "printedBlocks": [
         "anova",
-        "anova-no"
+        "anova-no",
+        "residual-work"
       ],
       "status": "covered"
     },
@@ -1352,7 +1459,8 @@
       "excluded": false,
       "printedBlocks": [
         "sampling",
-        "sampling-rules"
+        "sampling-rules",
+        "central-range"
       ],
       "status": "covered"
     },
@@ -1374,7 +1482,8 @@
       "hw2": false,
       "excluded": false,
       "printedBlocks": [
-        "choose"
+        "choose",
+        "answer-frame"
       ],
       "status": "covered"
     },
@@ -1433,7 +1542,9 @@
       "excluded": false,
       "printedBlocks": [
         "quantile",
-        "ti-probability"
+        "quartile-work",
+        "ti-probability",
+        "central-range"
       ],
       "status": "covered"
     },
@@ -1467,7 +1578,8 @@
       "hw2": false,
       "excluded": false,
       "printedBlocks": [
-        "percentile"
+        "percentile",
+        "quartile-work"
       ],
       "status": "covered"
     },
@@ -1515,6 +1627,7 @@
       "excluded": false,
       "printedBlocks": [
         "choose",
+        "answer-frame",
         "one-t",
         "two-t",
         "t-output",

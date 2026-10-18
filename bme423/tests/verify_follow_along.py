@@ -71,8 +71,19 @@ shown('gof','8.457447',stats.chisquare([255,125,90],[282,117.5,70.5]).statistic)
 for text,a in [('6.635',.01),('5.024',.025),('3.841',.05)]:shown('chi-holm',text,stats.chi2.isf(a,1))
 for key,values in [('risk',[('.438596',(6/19)/(18/25)),('.404211',18/25-6/19),('2.47396',1/(18/25-6/19))]),('odds',[('2.90698',50*35/(14*43))]),('nnh',[('500',1/(.01-.008)),('25',500/20)])]:
  for text,value in values:shown(key,text,value)
+for text,value in [('89.1319',95-.67449*8.7),('100.8681',95+.67449*8.7),('11.7362',100.8681-89.1319)]:shown('quartile-work',text,value)
+for text,value in [('.025',(1-.95)/2),('77.948',95-1.96*8.7),('112.052',95+1.96*8.7)]:shown('central-range',text,value)
+shown('t-output-work','.06092',2*stats.t.sf((76.8-72)/(4.15/np.sqrt(5)),4))
+shown('t-output-work','.003393',stats.ttest_ind_from_stats(49,8.4,22,57,9.5,27,equal_var=True).pvalue)
+shown('residual-work','66.8154',8.174069**2)
+shown('same-counts-check','5.5772',2.36161**2)
+shown('t-p-range','2.132',stats.t.isf(.10/2,4));shown('t-p-range','2.776',stats.t.isf(.05/2,4))
+pool=205/406;se=np.sqrt(pool*(1-pool)*(1/186+1/220));zy=(.565-.455-.5*(1/186+1/220))/se
+for text,value in [('.504926',pool),('.495074',1-pool),('.049802',se),('2.10915',zy)]:shown('rounded-proportions',text,value)
+rt=4/475;rc=27/525
+for text,value in [('.008421',rt),('.051429',rc),('.163743',rt/rc)]:shown('folate-risk',text,value)
 used=[k for s in p['sheets'] for col in s['columns'] for k in col]
-assert len(used)==len(set(used))==44
+assert len(used)==len(set(used))==53
 assert len(p['sheets'])==4 and all(len(s['columns'])==3 for s in p['sheets'])
 assert p['margins']==dict(top=.3,bottom=.3,left=.3,right=.3)
 coverage=json.loads((R/'follow-along-coverage.json').read_text())
@@ -83,7 +94,17 @@ assert {t['topic'] for t in coverage['topics'] if t['excluded']}=={'power','anov
 prior_text=subprocess.check_output(['git','show','aa72d40:bme423/follow-along-sheet-data.js'],cwd=R.parent).decode()
 prior_pack=json.loads(prior_text.removeprefix('const SHEET_PACK=').split(';\n',1)[0])
 rules=json.loads((R/'equation-guide-data.js').read_text().removeprefix('const EQUATION_GUIDE=').rstrip(';\n'))['rules']
-assert p['sheets']==prior_pack['sheets']
+for new_sheet,old_sheet in zip(p['sheets'],prior_pack['sheets']):
+ assert new_sheet['title']==old_sheet['title']
+ for new_column,old_column in zip(new_sheet['columns'],old_sheet['columns']):
+  assert [k for k in new_column if k in prior_pack['blocks']]==old_column
+equation_pack=json.loads(subprocess.check_output(['git','show','aba6477:bme423/follow-along-sheet-data.js'],cwd=R.parent).decode().removeprefix('const SHEET_PACK=').split(';\n',1)[0])
+assert all(b[k]==v for k,v in equation_pack['blocks'].items()),'original equations/prose were edited'
+assert len(coverage['supplements'])==9
+for entry in coverage['supplements']:
+ assert entry['purpose'] and entry['block'] in p['sheets'][entry['side']-1]['columns'][entry['column']-1]
+ for source in entry['sources']:
+  assert (R/'sources'/source.split(':')[0]).is_file(),source
 assert len(coverage['equations'])==44
 assert sum(len(x['additions']) for x in coverage['equations'])==77
 assert sum(x['originalExpressions'] for x in coverage['equations'])==184
@@ -104,10 +125,11 @@ doc=fitz.open(R/'BME423-four-page-notes-v3.pdf');assert len(doc)==4
 for page in doc:
  assert tuple(page.rect)==(0,0,612,792)
  text=page.get_text();assert len(text.split())>1000
+ assert not re.search(r'Side\s*[1-4]/4|BME423 · MIDTERM',text),'page-header strip remains'
  assert not re.search(r'\\frac|\\\[|\$\$|Session\s+\d+|HW[12]',text),text
  blocks=page.get_text('blocks')
  assert min(t[0] for t in blocks)>=21.6-.2
  assert max(t[2] for t in blocks)<=590.4+.2
  assert min(t[1] for t in blocks)>=21.6-.2
  assert max(t[3] for t in blocks)<=770.4+.2
-print(f'PASS: {count} independently recomputed displayed values; symbolic density/CDF identities; 77 source-linked general equations; all 184 original displays and all original prose in 44 blocks preserved; all 43 included topics; preserved slide prose/older sheets; four dense letter pages with 0.3in margins and rendered math.')
+print(f'PASS: {count} independently recomputed displayed values; 9 source-linked supplements; symbolic density/CDF identities; 77 source-linked general equations; all 184 original displays and all original prose in 44 blocks preserved; all 43 included topics; preserved slide prose/older sheets; four dense letter pages without page headers, 0.3in margins and rendered math.')
