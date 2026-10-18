@@ -1,5 +1,974 @@
 {
   "revision": "Version 3 \u00b7 follow-along exam solutions",
+  "equationRevision": "equations-before-work",
+  "equations": [
+    {
+      "block": "choose",
+      "originalSHA256": "70948393e10fbb3421fa3eb08b51ca0756f08dfb4416dff5529ab381cdae2212",
+      "originalExpressions": 0,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "notation",
+      "originalSHA256": "4eeb802a2e357e0b8ef34a93bf2d0236ef7fea9a9ffe876cca2c9983fd5d3fc5",
+      "originalExpressions": 0,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "raw",
+      "originalSHA256": "e4ab30e7627b6c5f90dea022f730576b3538c633960050c5f1999852dcf73d24",
+      "originalExpressions": 8,
+      "additions": [
+        {
+          "before": 1,
+          "formula": "deviations",
+          "tex": "d_i=x_i-\\bar x,\\qquad d_i^2=(x_i-\\bar x)^2",
+          "sourceRules": [
+            "deviation",
+            "squares"
+          ]
+        },
+        {
+          "before": 3,
+          "formula": "samplevar",
+          "tex": "s^2=\\frac{\\sum_i(x_i-\\bar x)^2}{n-1}",
+          "sourceRules": [
+            "samplevar"
+          ]
+        },
+        {
+          "before": 4,
+          "formula": "sd",
+          "tex": "s=\\sqrt{s^2}",
+          "sourceRules": [
+            "sd"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "percentile",
+      "originalSHA256": "3e1e2b0954eb85b609f68d1a5c1d44331fc11e34b91479a90a29e09df33f81ad",
+      "originalExpressions": 4,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "plots",
+      "originalSHA256": "7cf85b18c8e2ff0a4220510f5c769fa354f269bf9d7f22b00daf5d2238a9a55f",
+      "originalExpressions": 0,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "discrete",
+      "originalSHA256": "05c7a92324d739e1ead86f25aa8efc84b8c41c0f7c160b9828802bea40f74de3",
+      "originalExpressions": 6,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "pmf",
+          "tex": "f(x)\\ge0,\\qquad\\sum_x f(x)=1",
+          "sourceRules": [
+            "validpmf"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "ex",
+          "tex": "\\mu=E[X]=\\sum_x x f(x)",
+          "sourceRules": [
+            "ex"
+          ]
+        },
+        {
+          "before": 2,
+          "formula": "ex2",
+          "tex": "E[X^2]=\\sum_x x^2 f(x)",
+          "sourceRules": [
+            "ex2"
+          ]
+        },
+        {
+          "before": 3,
+          "formula": "var",
+          "tex": "\\operatorname{Var}(X)=E[X^2]-(E[X])^2",
+          "sourceRules": [
+            "var"
+          ]
+        },
+        {
+          "before": 5,
+          "formula": "dcdf",
+          "tex": "F(t)=P(X\\le t)=\\sum_{x\\le t}f(x)",
+          "sourceRules": [
+            "dcdf"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "direct-variance",
+      "originalSHA256": "ee8dd22bd41393bc1828b22e54e44f94e98fc2268b2e04a1ab94a55ec215cba8",
+      "originalExpressions": 4,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "directvar",
+          "tex": "E[(X-\\mu)^2]=\\sum_x(x-\\mu)^2f(x)",
+          "sourceRules": [
+            "directvar"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "endpoints",
+      "originalSHA256": "45d2ece0279c4803d9c8455c5afba94936d75a66d347b78b203354a5038095f1",
+      "originalExpressions": 5,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "dinterval",
+          "tex": "P(a\\le X<b)=F(b^-)-F(a^-)",
+          "sourceRules": [
+            "dcdf",
+            "interval"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "dright",
+          "tex": "P(X>a)=1-F(a)",
+          "sourceRules": [
+            "dcdf",
+            "tails"
+          ]
+        },
+        {
+          "before": 2,
+          "formula": "dinclusive",
+          "tex": "P(X\\ge a)=1-F(a^-)",
+          "sourceRules": [
+            "dcdf",
+            "tails"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "independence",
+      "originalSHA256": "81c6a542693439e2fcde3f935b7e6ed390c63f760adad73e33b8accecc0cb251",
+      "originalExpressions": 3,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "equally",
+          "tex": "P(A)=\\frac{\\text{favorable equally likely outcomes}}{\\text{all equally likely outcomes}}",
+          "sourceRules": [
+            "count"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "conditional",
+          "tex": "P(A\\cap B)=P(A)P(B\\mid A)",
+          "sourceRules": [
+            "conditional"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "continuous",
+      "originalSHA256": "795ae61721386643eb8a158b2e8f48b14c9e8b1b55b854b20ab9bab8662ce418",
+      "originalExpressions": 9,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "area",
+          "tex": "\\int_a^b f(x)\\,dx=1",
+          "sourceRules": [
+            "area"
+          ]
+        },
+        {
+          "before": 0,
+          "formula": "powerint",
+          "tex": "\\int x^k\\,dx=\\frac{x^{k+1}}{k+1}+C\\quad(k\\ne-1)",
+          "sourceRules": [
+            "powerint"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "ccdf",
+          "tex": "F(t)=\\int_a^t f(u)\\,du\\quad(a\\le t\\le b)",
+          "sourceRules": [
+            "ccdf"
+          ]
+        },
+        {
+          "before": 3,
+          "formula": "cleft",
+          "tex": "P(X<t)=F(t)\\quad\\text{(continuous)}",
+          "sourceRules": [
+            "ccdf",
+            "point"
+          ]
+        },
+        {
+          "before": 4,
+          "formula": "cright",
+          "tex": "P(X>t)=1-F(t)",
+          "sourceRules": [
+            "tails"
+          ]
+        },
+        {
+          "before": 5,
+          "formula": "cex",
+          "tex": "\\mu=E[X]=\\int_a^b x f(x)\\,dx",
+          "sourceRules": [
+            "cex"
+          ]
+        },
+        {
+          "before": 6,
+          "formula": "cex2",
+          "tex": "E[X^2]=\\int_a^b x^2 f(x)\\,dx",
+          "sourceRules": [
+            "cex2"
+          ]
+        },
+        {
+          "before": 7,
+          "formula": "var",
+          "tex": "\\operatorname{Var}(X)=E[X^2]-(E[X])^2",
+          "sourceRules": [
+            "var"
+          ]
+        },
+        {
+          "before": 8,
+          "formula": "median",
+          "tex": "F(q)=\\frac12",
+          "sourceRules": [
+            "medianarea"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "piecewise",
+      "originalSHA256": "e3c9a5e548c822e473f61e0359e4380e355b11f25c738cd1ffc90e347e17fe6e",
+      "originalExpressions": 4,
+      "additions": [
+        {
+          "before": 1,
+          "formula": "pieces",
+          "tex": "F(x)=\\int_a^s f_1(u)\\,du+\\int_s^x f_2(u)\\,du",
+          "sourceRules": [
+            "piececdf"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "endpoint",
+      "originalSHA256": "43dd8fb2041bba447be4cf971170d283c08e5ae9dbbe65605836840911267838",
+      "originalExpressions": 7,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "area",
+          "tex": "\\int_a^b f(x)\\,dx=1",
+          "sourceRules": [
+            "area"
+          ]
+        },
+        {
+          "before": 2,
+          "formula": "quadratic",
+          "tex": "Ac^2+Bc+D=0:\\quad c=\\frac{-B\\pm\\sqrt{B^2-4AD}}{2A}",
+          "sourceRules": [
+            "quadratic"
+          ]
+        },
+        {
+          "before": 3,
+          "formula": "ccdf",
+          "tex": "F(t)=\\int_a^t f(u)\\,du\\quad(a\\le t\\le b)",
+          "sourceRules": [
+            "ccdf"
+          ]
+        },
+        {
+          "before": 4,
+          "formula": "cright",
+          "tex": "P(X>t)=1-F(t)",
+          "sourceRules": [
+            "tails"
+          ]
+        },
+        {
+          "before": 5,
+          "formula": "cinterval",
+          "tex": "P(a<X<b)=F(b)-F(a)",
+          "sourceRules": [
+            "interval"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "function",
+      "originalSHA256": "adfbe97a64bf068fbcbd8a01d7329129d81460c32fa17a867d7588d5b563f471",
+      "originalExpressions": 6,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "cex",
+          "tex": "\\mu=E[X]=\\int_a^b x f(x)\\,dx",
+          "sourceRules": [
+            "cex"
+          ]
+        },
+        {
+          "before": 3,
+          "formula": "linearmean",
+          "tex": "E[aX+b]=aE[X]+b",
+          "sourceRules": [
+            "linearmean"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "uniform",
+      "originalSHA256": "f5c7b8720ded25a54f30a7f3c6eb9e2a9f296dc106c174f32c5aff074224bbf6",
+      "originalExpressions": 7,
+      "additions": [
+        {
+          "before": 3,
+          "formula": "cex",
+          "tex": "\\mu=E[X]=\\int_a^b x f(x)\\,dx",
+          "sourceRules": [
+            "cex"
+          ]
+        },
+        {
+          "before": 4,
+          "formula": "cex2",
+          "tex": "E[X^2]=\\int_a^b x^2 f(x)\\,dx",
+          "sourceRules": [
+            "cex2"
+          ]
+        },
+        {
+          "before": 5,
+          "formula": "var",
+          "tex": "\\operatorname{Var}(X)=E[X^2]-(E[X])^2",
+          "sourceRules": [
+            "var"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "linear",
+      "originalSHA256": "8fc0149eaa45d09fab9c4fa11231327d218460adeb34a8f142bd5b35f68739ce",
+      "originalExpressions": 3,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "shift",
+          "tex": "E[X+c]=\\mu+c,\\qquad SD(X+c)=\\sigma",
+          "sourceRules": [
+            "shiftmean",
+            "linearvar"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "normal",
+      "originalSHA256": "36871ee775e3a9a2039495c7b1529dabfea5e631d1a8b920f111a9797642e5a2",
+      "originalExpressions": 8,
+      "additions": [
+        {
+          "before": 3,
+          "formula": "symmetry",
+          "tex": "\\Phi(-z)=1-\\Phi(z)",
+          "sourceRules": [
+            "phi"
+          ]
+        },
+        {
+          "before": 4,
+          "formula": "normalinterval",
+          "tex": "P(l<X<u)=\\Phi(z_u)-\\Phi(z_l)",
+          "sourceRules": [
+            "normalinterval"
+          ]
+        },
+        {
+          "before": 5,
+          "formula": "normalright",
+          "tex": "P(X\\ge u)=1-\\Phi(z_u)",
+          "sourceRules": [
+            "normalright"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "quantile",
+      "originalSHA256": "078330215f952e11f6235dac309ebf9accb957f3add5bef43bcd857763e7d54a",
+      "originalExpressions": 5,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "zquant",
+          "tex": "\\Phi(z_p)=p\\quad\\Longrightarrow\\quad z_p=\\Phi^{-1}(p)",
+          "sourceRules": [
+            "zquant"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "normal-definition",
+      "originalSHA256": "93bc6f9103fc08675cf3014be7235bc9390b5eff410b9166285ccdf7c16c0cbf",
+      "originalExpressions": 2,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "r-probability",
+      "originalSHA256": "74487722550304c198c0f21482a5ec586b092043ba9537c0aadc1859a02137a9",
+      "originalExpressions": 2,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "rleft",
+          "tex": "P(X\\le x)=\\Phi\\!\\left(\\frac{x-\\mu}{\\sigma}\\right)",
+          "sourceRules": [
+            "z",
+            "phi"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "quantile",
+          "tex": "x_p=\\mu+z_p\\sigma",
+          "sourceRules": [
+            "quantile"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "sampling",
+      "originalSHA256": "e048737bad52df4b8a859965348dca1aec488f8eeaf92d42482a0f608077e663",
+      "originalExpressions": 5,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "meanse",
+          "tex": "\\mathrm{SEM}=\\frac{\\sigma}{\\sqrt n}",
+          "sourceRules": [
+            "meanse"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "meanz",
+          "tex": "z=\\frac{\\bar x-\\mu}{\\sigma/\\sqrt n}",
+          "sourceRules": [
+            "meanz"
+          ]
+        },
+        {
+          "before": 3,
+          "formula": "normalinterval",
+          "tex": "P(l<X<u)=\\Phi(z_u)-\\Phi(z_l)",
+          "sourceRules": [
+            "normalinterval"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "sampling-rules",
+      "originalSHA256": "6dd017c866a6950b27a306342682879f075a1dd4a3ea57045872d330839c7867",
+      "originalExpressions": 3,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "ti-probability",
+      "originalSHA256": "88a44472c2696b97d20c769df26aad8d67681e9819727e50c1f00edda109b0ea",
+      "originalExpressions": 0,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "one-t",
+      "originalSHA256": "a47c80bb8c26537c0dfe921affcb60e558424e0a3241fa37531ab9f94d8fdca4",
+      "originalExpressions": 6,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "tnull",
+          "tex": "H_0:\\mu=\\mu_0,\\qquad H_1:\\mu\\ne\\mu_0",
+          "sourceRules": [
+            "onull"
+          ]
+        },
+        {
+          "before": 5,
+          "formula": "tcritical",
+          "tex": "|t|>t_{\\mathrm{crit}}\\ \\Rightarrow\\ \\text{reject }H_0",
+          "sourceRules": [
+            "tdecision",
+            "tlookup"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "two-t",
+      "originalSHA256": "b28fc083070063c1dec81c624bbd08844a77fedf0432f38e2dae704bd4edfde3",
+      "originalExpressions": 9,
+      "additions": [
+        {
+          "before": 8,
+          "formula": "tcritical",
+          "tex": "|t|>t_{\\mathrm{crit}}\\ \\Rightarrow\\ \\text{reject }H_0",
+          "sourceRules": [
+            "tdecision",
+            "tlookup"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "t-output",
+      "originalSHA256": "85230d60642b5e37f72532fe07755e2d9be01853e2d39ebf97c6ec8e5f1f789f",
+      "originalExpressions": 0,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "anova",
+      "originalSHA256": "7a5cbc6b8e37181415a8dd26ace7c79781fb779cacf9dfd5ec8503c5cc943047",
+      "originalExpressions": 12,
+      "additions": [
+        {
+          "before": 1,
+          "formula": "within",
+          "tex": "s_{\\mathrm{wit}}^2=\\frac{\\sum_{i=1}^m s_i^2}{m}",
+          "sourceRules": [
+            "within"
+          ]
+        },
+        {
+          "before": 3,
+          "formula": "grand",
+          "tex": "\\bar{\\bar x}=\\frac{\\sum_{i=1}^m\\bar x_i}{m}",
+          "sourceRules": [
+            "grand"
+          ]
+        },
+        {
+          "before": 4,
+          "formula": "meandeviation",
+          "tex": "d_i=\\bar x_i-\\bar{\\bar x}",
+          "sourceRules": [
+            "meansvar"
+          ]
+        },
+        {
+          "before": 7,
+          "formula": "meansvar",
+          "tex": "s_{\\bar x}^2=\\frac{\\sum_i(\\bar x_i-\\bar{\\bar x})^2}{m-1}",
+          "sourceRules": [
+            "meansvar"
+          ]
+        },
+        {
+          "before": 11,
+          "formula": "fcritical",
+          "tex": "F>F_{\\mathrm{crit}}\\ \\Rightarrow\\ \\text{reject }H_0",
+          "sourceRules": [
+            "fdecision",
+            "flookup"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "anova-output",
+      "originalSHA256": "3372f45ef1e59185dfa7c799af7804ebfd4c99fe622d177ef25090c2a29fecf9",
+      "originalExpressions": 1,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "outputf",
+          "tex": "F=\\frac{\\mathrm{MS}_{\\mathrm{Group}}}{\\mathrm{MS}_{\\mathrm{Residual}}}",
+          "sourceRules": [
+            "outf"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "assumptions",
+      "originalSHA256": "1b6ff46d93758416a7323616a466087c047682204703fdb2da85f66fe0bd5b88",
+      "originalExpressions": 0,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "posthoc",
+      "originalSHA256": "60c40c909cebb20ab4e6ff101defea2ca98f00b1b22298d4ef608100a8728bef",
+      "originalExpressions": 1,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "bonferroni",
+      "originalSHA256": "c011ab707624f2f82d6aa158f2bfd4075e96a41749cb1f8c834a7e69488ef3f8",
+      "originalExpressions": 6,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "pairse",
+          "tex": "\\mathrm{SE}_{ij}=\\sqrt{\\frac{2s_{\\mathrm{wit}}^2}{n}}\\quad(n_i=n_j=n)",
+          "sourceRules": [
+            "pairse"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "pairt",
+          "tex": "|t_{ij}|=\\frac{|\\bar x_i-\\bar x_j|}{\\mathrm{SE}_{ij}}",
+          "sourceRules": [
+            "pairt"
+          ]
+        },
+        {
+          "before": 5,
+          "formula": "bonfcritical",
+          "tex": "P(T_\\nu>t_{\\mathrm{crit}})=\\frac{\\alpha_T}{2k}",
+          "sourceRules": [
+            "bonftail"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "holm",
+      "originalSHA256": "a9c4cd147aa8fc0d7277df50c85115fb82501e74825211e7aeb0ad76627ed246",
+      "originalExpressions": 5,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "t-table",
+      "originalSHA256": "6c8a6336a74a5f2b23355150e48a165d06ca82f543608c4dda9063f766a18d71",
+      "originalExpressions": 0,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "binary",
+      "originalSHA256": "382b3aa15af5f1d9ab73d250a208ea2e0f2f8d83ff8e6881c9dd5fab04478cf5",
+      "originalExpressions": 4,
+      "additions": [
+        {
+          "before": 2,
+          "formula": "binarysd",
+          "tex": "\\widehat{\\mathrm{SD}}(X)=\\sqrt{\\hat p(1-\\hat p)}",
+          "sourceRules": [
+            "binarysd"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "z",
+      "originalSHA256": "bfbb1ef30337e87c55df79312f1c355ee3ef006e780a552ab80d93ca13d266b5",
+      "originalExpressions": 10,
+      "additions": [
+        {
+          "before": 1,
+          "formula": "prop",
+          "tex": "\\hat p_i=\\frac{e_i}{n_i}",
+          "sourceRules": [
+            "prop"
+          ]
+        },
+        {
+          "before": 7,
+          "formula": "yatesgap",
+          "tex": "D_Y=\\max(0,|\\hat p_1-\\hat p_2|-c_Y)",
+          "sourceRules": [
+            "yatesgap"
+          ]
+        },
+        {
+          "before": 9,
+          "formula": "zcritical",
+          "tex": "|z|>z_{\\mathrm{crit}}\\ \\Rightarrow\\ \\text{reject }H_0",
+          "sourceRules": [
+            "zdecision",
+            "zlookup"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "chi2",
+      "originalSHA256": "5ebf06e68b6e856e7d3de40da220c89d0e89777f4e06e2ba41e06090e48d46cc",
+      "originalExpressions": 8,
+      "additions": [
+        {
+          "before": 3,
+          "formula": "yatescell",
+          "tex": "c_{ij}=\\frac{\\max(0,|O_{ij}-E_{ij}|-.5)^2}{E_{ij}}",
+          "sourceRules": [
+            "yatescell"
+          ]
+        },
+        {
+          "before": 6,
+          "formula": "chidf",
+          "tex": "\\nu=(r-1)(c-1)",
+          "sourceRules": [
+            "chidf"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "large",
+      "originalSHA256": "d604f4c48d9842fd836e0b761e3c573e20d8031df6f43f5dde86cb89aa7e2b48",
+      "originalExpressions": 7,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "expected",
+          "tex": "E_{ij}=\\frac{R_iC_j}{N}",
+          "sourceRules": [
+            "expected"
+          ]
+        },
+        {
+          "before": 2,
+          "formula": "chicell",
+          "tex": "c_{ij}=\\frac{(O_{ij}-E_{ij})^2}{E_{ij}}",
+          "sourceRules": [
+            "chicell"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "gof",
+      "originalSHA256": "d5132c28eae6fb64707cb641f2ec4f49e159c01ff6e609cfa7491ff9ef11dcdc",
+      "originalExpressions": 5,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "gofexpected",
+          "tex": "E_i=Np_{i,0}",
+          "sourceRules": [
+            "gofexpected"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "gof",
+          "tex": "\\chi^2=\\sum_{i=1}^k\\frac{(O_i-E_i)^2}{E_i}",
+          "sourceRules": [
+            "gof"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "chi-holm",
+      "originalSHA256": "4b49422226f841249bab59a9604fd7e01e9006f0d3bff0acc66e43c641785dc6",
+      "originalExpressions": 4,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "holm",
+          "tex": "\\alpha_j=\\frac{\\alpha_T}{k-j+1}",
+          "sourceRules": [
+            "holm"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "risk",
+      "originalSHA256": "6de7a39096bb878cd7cf80fd46d104f4325c94e48e37328b991425275e10db20",
+      "originalExpressions": 4,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "risks",
+          "tex": "r_T=\\frac{e_T}{n_T},\\qquad r_C=\\frac{e_C}{n_C}",
+          "sourceRules": [
+            "risks"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "odds",
+      "originalSHA256": "54e6075fe131aff5c1dfe00d5f49dd32db872ca1813bd3872dba37371e3ce1bf",
+      "originalExpressions": 3,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "odds",
+          "tex": "\\operatorname{odds}_1=\\frac ab,\\qquad\\operatorname{odds}_0=\\frac cd",
+          "sourceRules": [
+            "odds"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "or",
+          "tex": "\\mathrm{OR}=\\frac{a/b}{c/d}=\\frac{ad}{bc}",
+          "sourceRules": [
+            "or"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "nnh",
+      "originalSHA256": "ad46a59d546db7f29116dd172702e1eb5afd4e5f33d15dd3693b824383b14e54",
+      "originalExpressions": 6,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "rr",
+          "tex": "\\mathrm{RR}=\\frac{r_T}{r_C}",
+          "sourceRules": [
+            "rr"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "rrr",
+          "tex": "\\mathrm{RRR}=1-\\mathrm{RR}",
+          "sourceRules": [
+            "rrr"
+          ]
+        },
+        {
+          "before": 2,
+          "formula": "arr",
+          "tex": "\\mathrm{ARR}=r_C-r_T",
+          "sourceRules": [
+            "arr"
+          ]
+        },
+        {
+          "before": 3,
+          "formula": "nnt",
+          "tex": "\\mathrm{NNT}=\\frac1{\\mathrm{ARR}}",
+          "sourceRules": [
+            "nnt"
+          ]
+        },
+        {
+          "before": 5,
+          "formula": "benefitharm",
+          "tex": "\\text{additional harms per benefit}=\\frac{\\mathrm{NNT}}{\\mathrm{NNH}}",
+          "sourceRules": [
+            "benefitharm"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    },
+    {
+      "block": "trials",
+      "originalSHA256": "45ab7063f84be43cc37d9963b97b106d7efc985b8dae68941369394219712fd6",
+      "originalExpressions": 0,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "ti-tests",
+      "originalSHA256": "89dc5b1e784ffb257809eb836cf12b629bbf7b0721ca0f0bb0570d648530e321",
+      "originalExpressions": 0,
+      "additions": [],
+      "status": "existing formulas or conceptual guidance retained"
+    },
+    {
+      "block": "anova-no",
+      "originalSHA256": "3a40aa8c9dda8cd54a416a0820927bf301b4e414b526a181a8356e2d7508fed8",
+      "originalExpressions": 2,
+      "additions": [
+        {
+          "before": 0,
+          "formula": "f",
+          "tex": "F=\\frac{s_{\\mathrm{bet}}^2}{s_{\\mathrm{wit}}^2}",
+          "sourceRules": [
+            "f"
+          ]
+        },
+        {
+          "before": 1,
+          "formula": "fcritical",
+          "tex": "F>F_{\\mathrm{crit}}\\ \\Rightarrow\\ \\text{reject }H_0",
+          "sourceRules": [
+            "fdecision",
+            "flookup"
+          ]
+        }
+      ],
+      "status": "equations inserted before substitutions"
+    }
+  ],
   "margins": {
     "top": 0.3,
     "bottom": 0.3,

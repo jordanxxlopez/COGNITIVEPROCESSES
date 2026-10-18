@@ -91,6 +91,8 @@ for a,b in zip(prior['questions'],D['questions']):
     if a['id'] not in {'q8','q88','q89'}:assert a==b,a['id']
 assert prior['modules']==D['modules'] and prior['exams']==D['exams']
 assert old('v2-data.js','const V2=')['B']==V['B']
-for file in ['version-c-data.js','follow-along-sheet-data.js','follow-along-sheet.css','BME423-four-page-notes-v3.pdf','BME423-four-page-notes-v2.pdf','note-sheet-data.js']:
+# Version 3 was subsequently revised at the user's request; its original content
+# and new print geometry are audited in verify_follow_along.py instead.
+for file in ['version-c-data.js','BME423-four-page-notes-v2.pdf','note-sheet-data.js']:
     assert subprocess.check_output(['git','show','a1e844d:bme423/'+file],cwd=R.parent)==(R/file).read_bytes(),file
-print(f'PASS: {checks} independently checked new displayed values; piecewise CDF/Uniform identities; all {steps} steps, 38 worked blocks and 384 slides audited; original teaching, questions, slide images and four-page print guide preserved except the two corrected percentile exercises.')
+print(f'PASS: {checks} independently checked new displayed values; piecewise CDF/Uniform identities; all {steps} steps, 38 worked blocks and 384 slides audited; original teaching, questions, slide images and older print sheets preserved except the two corrected percentile exercises. Revised Version 3 is checked separately.')

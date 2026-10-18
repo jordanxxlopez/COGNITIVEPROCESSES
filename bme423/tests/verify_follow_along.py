@@ -1,6 +1,6 @@
 """Independent numerical, symbolic, coverage, preservation and physical-PDF checks."""
 from pathlib import Path
-import json, math, re, subprocess
+import json, math, re, subprocess, hashlib
 import numpy as np
 from scipy import stats, integrate, optimize
 import sympy as sp
@@ -78,6 +78,24 @@ assert p['margins']==dict(top=.3,bottom=.3,left=.3,right=.3)
 coverage=json.loads((R/'follow-along-coverage.json').read_text())
 assert all(t['status']=='covered' and t['printedBlocks'] for t in coverage['topics'] if not t['excluded'])
 assert {t['topic'] for t in coverage['topics'] if t['excluded']}=={'power','anovaSS'}
+# Every original block and numerical display survives unchanged beneath the new
+# formula wrappers. Formula-only additions refer to existing reviewed rules.
+prior_text=subprocess.check_output(['git','show','aa72d40:bme423/follow-along-sheet-data.js'],cwd=R.parent).decode()
+prior_pack=json.loads(prior_text.removeprefix('const SHEET_PACK=').split(';\n',1)[0])
+rules=json.loads((R/'equation-guide-data.js').read_text().removeprefix('const EQUATION_GUIDE=').rstrip(';\n'))['rules']
+assert p['sheets']==prior_pack['sheets']
+assert len(coverage['equations'])==44
+assert sum(len(x['additions']) for x in coverage['equations'])==77
+assert sum(x['originalExpressions'] for x in coverage['equations'])==184
+for audit in coverage['equations']:
+ key=audit['block'];old=prior_pack['blocks'][key]['html']
+ clean=re.sub(r'<div class="sheet-formula"[^>]*>[\s\S]*?</div>','',b[key]['html'])
+ assert clean==old,(key,'original working/prose changed')
+ assert hashlib.sha256(old.encode()).hexdigest()==audit['originalSHA256']
+ for a in audit['additions']:
+  assert a['sourceRules'] and all(k in rules for k in a['sourceRules'])
+  assert a['tex'] in b[key]['html']
+  assert f'data-sheet-formula="{key}:{a["before"]}:{a["formula"]}"' in b[key]['html']
 # Equation additions change teaching views; all print artifacts and original slide prose stay preserved.
 for name in ['note-sheet-data.js','notes-v2.html','BME423-four-page-notes-v2.pdf','BME423-four-page-notes.pdf','version-c-data.js']:
  prior=subprocess.check_output(['git','show','38b7392:bme423/'+name],cwd=R.parent)
@@ -92,4 +110,4 @@ for page in doc:
  assert max(t[2] for t in blocks)<=590.4+.2
  assert min(t[1] for t in blocks)>=21.6-.2
  assert max(t[3] for t in blocks)<=770.4+.2
-print(f'PASS: {count} independently recomputed displayed values; symbolic density/CDF identities; correct lecture percentile convention and rounded Normal table arithmetic; all 43 included topics; preserved slide prose/older sheets; four dense letter pages with 0.3in margins and rendered math.')
+print(f'PASS: {count} independently recomputed displayed values; symbolic density/CDF identities; 77 source-linked general equations; all 184 original displays and all original prose in 44 blocks preserved; all 43 included topics; preserved slide prose/older sheets; four dense letter pages with 0.3in margins and rendered math.')

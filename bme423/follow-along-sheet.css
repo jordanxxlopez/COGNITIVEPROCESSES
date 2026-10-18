@@ -1,11 +1,18 @@
 /* Isolated Version 3 print layout; previous note sheets retain their own dimensions. */
-.sheet-v2.sheet-follow{width:8.5in;min-height:11in;padding:.3in;font-size:7.5pt;line-height:1.16}
-.sheet-follow .compact-block h3{font-size:8pt;line-height:1.15}
-.sheet-follow .compact-block p{font-size:7.5pt;line-height:1.16}
-.sheet-follow .compact-block .math-display{font-size:7.3pt}
+.sheet-v2.sheet-follow{width:8.5in;min-height:11in;padding:.3in;font-size:6.75pt;line-height:1.12}
+.sheet-follow .compact-block h3{font-size:7.25pt;line-height:1.12}
+.sheet-follow .compact-block p{font-size:6.75pt;line-height:1.12}
+.sheet-follow .compact-block .math-display{font-size:6.35pt}
 @page bme-follow{size:letter;margin:.3in}
 @media print{.sheet-v2.sheet-follow{page:bme-follow;width:7.9in;min-height:0;border:0;padding:0;margin:0;break-after:page}.sheet-v2.sheet-follow:last-child{break-after:auto}}
-.sheet-follow .compact-block{margin-bottom:4pt}
-.sheet-follow .compact-block h3{margin-bottom:2pt;padding-top:2.5pt}
-.sheet-follow .compact-block p{margin:1.5pt 0}
-.sheet-follow .compact-block .math-display{margin:1.5pt 0;padding:.5pt 0}
+.sheet-follow .compact-block{margin-bottom:3pt}
+.sheet-follow .compact-block h3{margin-bottom:2pt;padding-top:2pt}
+.sheet-follow .compact-block p{margin:1pt 0}
+.sheet-follow .compact-block .math-display{margin:.85pt 0;padding:.3pt 0}
+.sheet-follow .sheet-follow-header{font-size:6.7pt;margin:0 0 3pt;padding:0 0 2pt;gap:3pt}
+.sheet-follow .sheet-formula{margin:0;break-after:avoid}
+.sheet-follow .sheet-formula .math-display{margin-bottom:.7pt}
+.sheet-follow[data-sheet-side="2"] .notes-column:first-child .math-display{margin-top:.5pt;margin-bottom:.5pt}
+.sheet-follow[data-sheet-side="2"] .notes-column:first-child .compact-block p{font-size:6.5pt;margin:.5pt 0}
+.sheet-follow[data-sheet-side="3"] .compact-block p,.sheet-follow[data-sheet-side="4"] .compact-block p{font-size:7pt}
+.sheet-follow[data-sheet-side="3"] .compact-block .math-display,.sheet-follow[data-sheet-side="4"] .compact-block .math-display{font-size:6.7pt}

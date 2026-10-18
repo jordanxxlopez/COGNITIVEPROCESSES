@@ -58,6 +58,8 @@ add('ti-tests','TI-84 checks for the two worked mean tests',p('<b>One sample:</b
 add('anova-no','If ANOVA does not cross its cutoff',p('Cat/dog heart rate: two groups of five.')+eq(r'F=16.9/68.05=.248,\quad(\nu_n,\nu_d)=(1,8)')+eq(r'.248<5.32\ \Rightarrow\ \text{do not reject }H_0')+p('Write: “At .05, a difference in population mean heart rate was not established.”'),['anova','hypothesis'])
 B['chi2']['html']+=p('<b>If asked for a p range:</b> at df 1, 5.577 lies between 5.024 (.025 tail) and 6.635 (.01 tail).')+eq(r'.01<p<.025')
 B['large']['html']+=p('Expected cells may be fractional. Their row/column totals must match the observed margins. Use counts, not percentages, in the statistic.')
+from follow_along_equations import add_equations
+equation_audit=add_equations(B)
 S=[
  {'title':'1 · Match the question · summaries · probability','columns':[
  ['choose','notation','raw','percentile'],
@@ -78,15 +80,15 @@ S=[
 ]
 used=[k for s in S for col in s['columns'] for k in col]
 assert len(used)==len(set(used))==len(B)
-pack={'revision':'Version 3 · follow-along exam solutions','layout':'follow-along','blocks':B,'sheets':S,'margins':dict(top=.3,bottom=.3,left=.3,right=.3)}
-(R/'follow-along-sheet-data.js').write_text('const SHEET_PACK='+json.dumps(pack,ensure_ascii=False,separators=(',',':'))+';\n'+'''function renderFollowAlongSheet(){return renderNotesV2().replaceAll('class="sheet-v2"','class="sheet-v2 sheet-follow"')}\n''')
+pack={'revision':'Version 3 · follow-along exam solutions','layout':'follow-along','equationRevision':'equations-before-work','blocks':B,'sheets':S,'margins':dict(top=.3,bottom=.3,left=.3,right=.3)}
+(R/'follow-along-sheet-data.js').write_text('const SHEET_PACK='+json.dumps(pack,ensure_ascii=False,separators=(',',':'))+';\n'+'''function renderFollowAlongSheet(){return SHEET_PACK.sheets.map((s,i)=>`<article class="sheet-v2 sheet-follow" data-sheet-side="${i+1}"><div class="notes-columns">${s.columns.map((keys,c)=>`<div class="notes-column">${c===0?`<header class="sheet-follow-header"><strong>BME423 · MIDTERM</strong><span>Side ${i+1}/4</span></header>`:''}${keys.map(k=>{const b=SHEET_PACK.blocks[k];return `<section class="compact-block" data-block="${k}"><h3>${esc(b.title)}</h3>${authored(b.html)}</section>`}).join('')}</div>`).join('')}</div></article>`).join('')}\n''')
 priorities=json.loads((R/'exam-priorities.json').read_text())
 coverage=[]
 for t in priorities['topics']:
  mapped=[k for k in used if t['topic'] in B[k]['topics']]
  assert t['excluded'] or mapped,('uncovered included topic',t['topic'])
  coverage.append({**t,'printedBlocks':mapped,'status':'explicitly excluded' if t['excluded'] else 'covered'})
-report={'revision':pack['revision'],'margins':pack['margins'],'method':priorities['method'],'topics':coverage,
+report={'revision':pack['revision'],'equationRevision':pack['equationRevision'],'equations':equation_audit,'margins':pack['margins'],'method':priorities['method'],'topics':coverage,
  'corrections':['Sample-percentile rank follows lecture: 1 + p(n-1)/100, rather than the older sheet’s n+1 convention.','Rounded Normal-table impurity subtraction is .1736 - .0091 = .1645.'],
  'sourceExamples':['HW1 height sample, discrete table, endpoint density, Normal glucose, tumor-size ANOVA',
  'HW2 cognitive-score pooled t, filgrastim Bonferroni, supplied pairwise chi-squared output',
