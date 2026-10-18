@@ -4,6 +4,8 @@
 .sheet-follow .compact-block h3{font-size:7.25pt;line-height:1.12}
 .sheet-follow .compact-block p{font-size:var(--sheet-body);line-height:1.12}
 .sheet-follow .compact-block .math-display{font-size:var(--sheet-math)}
+/* Measure the actual typeset equation, rather than a full-column block box. */
+.sheet-follow .math-display .katex-display>.katex>.katex-html{display:inline-block}
 @page bme-follow{size:letter;margin:.3in}
 @media print{.sheet-v2.sheet-follow{page:bme-follow;width:7.9in;min-height:0;border:0;padding:0;margin:0;break-after:page}.sheet-v2.sheet-follow:last-child{break-after:auto}}
 .sheet-follow .compact-block{margin-bottom:3pt}
@@ -12,14 +14,31 @@
 .sheet-follow .compact-block .math-display{margin:.85pt 0;padding:.3pt 0}
 .sheet-follow .sheet-formula{margin:0;break-after:avoid}
 .sheet-follow .sheet-formula .math-display{margin-bottom:.7pt}
-.sheet-follow[data-sheet-side="2"] .notes-column:first-child .math-display{margin-top:.5pt;margin-bottom:.5pt}
-.sheet-follow[data-sheet-side="2"] .notes-column:first-child{--sheet-body:6.5pt}
-.sheet-follow[data-sheet-side="2"] .notes-column:first-child .compact-block p{margin:.5pt 0}
 .sheet-follow[data-sheet-side="3"] .notes-column,.sheet-follow[data-sheet-side="4"] .notes-column{--sheet-body:7pt;--sheet-math:6.7pt}
 /* Measured at the fixed letter-column width, retaining every original block. */
 .sheet-follow[data-sheet-side="3"] [data-sheet-column="1"]{--sheet-body:6.84pt;--sheet-math:6.54pt}
 .sheet-follow[data-sheet-side="3"] [data-sheet-column="2"]{--sheet-body:6.54pt;--sheet-math:6.24pt}
 .sheet-follow[data-sheet-side="3"] [data-sheet-column="3"]{--sheet-body:6.91pt;--sheet-math:6.61pt}
-.sheet-follow[data-sheet-side="4"] [data-sheet-column="1"]{--sheet-body:6.7pt;--sheet-math:6.4pt}
+.sheet-follow[data-sheet-side="4"] [data-sheet-column="1"]{--sheet-body:6.8pt;--sheet-math:6.5pt}
 .sheet-follow[data-sheet-side="4"] [data-sheet-column="2"]{--sheet-body:6.47pt;--sheet-math:6.17pt}
 .sheet-follow[data-sheet-side="4"] [data-sheet-column="3"]{--sheet-body:6.42pt;--sheet-math:6.12pt}
+.sheet-follow[data-sheet-side="1"] [data-sheet-column="1"]{--sheet-body:6.8pt;--sheet-math:6.4pt}
+.sheet-follow .sheet-sketch-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.115in;border-top:.5pt solid #333;padding-top:3pt;margin-top:2pt;color:#111}
+.sheet-follow .sheet-sketch-row h3{font-size:7pt;line-height:1.1;margin:0 0 1pt}
+.sheet-follow .sheet-sketch-row p{font-size:6.3pt;line-height:1.1;margin:1pt 0}
+.sheet-follow .sheet-sketch-row .math-display{font-size:6pt;line-height:1.1;margin:1pt 0;padding:0}
+.sheet-follow .sheet-sketch-row figure{margin:0;min-width:0}
+.sheet-follow .sheet-sketch-row figcaption{font-size:6.3pt;line-height:1.1;margin:0}
+.sheet-follow .sheet-sketch-row img{display:block;width:100%;height:1.1in;object-fit:contain}
+/* Page 2 reserves a full-width three-column row for the actual sketch example. */
+.sheet-follow[data-sheet-side="2"] .notes-column .compact-block{margin-bottom:2pt}
+.sheet-follow[data-sheet-side="2"] .notes-column .compact-block h3{margin-bottom:1.5pt;padding-top:1.5pt}
+.sheet-follow[data-sheet-side="2"] .notes-column .compact-block p{line-height:1.1;margin:.3pt 0}
+.sheet-follow[data-sheet-side="2"] .notes-column .compact-block .math-display{margin:.3pt 0;padding:0}
+.sheet-follow[data-sheet-side="2"] [data-sheet-column="1"] .compact-block{margin-bottom:1.5pt}
+.sheet-follow[data-sheet-side="2"] [data-sheet-column="1"] .compact-block h3{margin-bottom:1pt;padding-top:1pt}
+.sheet-follow[data-sheet-side="2"] [data-sheet-column="1"] .compact-block p{margin:.2pt 0;line-height:1.08}
+.sheet-follow[data-sheet-side="2"] [data-sheet-column="1"] .compact-block .math-display{margin:0;padding:0;line-height:1}
+.sheet-follow[data-sheet-side="2"] [data-sheet-column="1"]{--sheet-body:6.4pt;--sheet-math:6.2pt}
+.sheet-follow[data-sheet-side="2"] [data-sheet-column="2"]{--sheet-body:6.26pt;--sheet-math:6.06pt}
+.sheet-follow[data-sheet-side="2"] [data-sheet-column="3"]{--sheet-body:6.44pt;--sheet-math:6.24pt}

@@ -87,6 +87,20 @@ assert len(used)==len(set(used))==53
 assert len(p['sheets'])==4 and all(len(s['columns'])==3 for s in p['sheets'])
 assert p['margins']==dict(top=.3,bottom=.3,left=.3,right=.3)
 coverage=json.loads((R/'follow-along-coverage.json').read_text())
+graph=coverage['sketch'];gc=optimize.brentq(lambda t:.1*t+t*t/2-1,0,2)
+assert math.isclose(graph['support'][1],gc,rel_tol=1e-12)
+assert math.isclose(graph['endpointDensity'],.1+gc,rel_tol=1e-12)
+assert graph['cdfMidpoint']==.175
+assert math.isclose(integrate.quad(lambda x:.1+x,0,gc)[0],1,abs_tol=1e-12)
+for gx,gy,gf in zip(graph['sampleX'],graph['sampleDensity'],graph['sampleCDF']):
+ assert math.isclose(gy,.1+gx,rel_tol=1e-12)
+ assert math.isclose(gf,integrate.quad(lambda x:.1+x,0,gx)[0],abs_tol=1e-12)
+assert np.all(np.diff(graph['sampleCDF'])>=0)
+for path in [graph['pdf'],graph['cdf']]:
+ assert '<svg' in (R/path).read_text()
+assert all(t in p['sketchHTML'] for t in ['1. Axes:','2. PDF:','3. CDF:',r'F(.5)=.1(.5)+\frac{(.5)^2}{2}=.175'])
+last_full=json.loads(subprocess.check_output(['git','show','78d04d3:bme423/follow-along-sheet-data.js'],cwd=R.parent).decode().removeprefix('const SHEET_PACK=').split(';\n',1)[0])
+assert b==last_full['blocks'] and p['sheets']==last_full['sheets'],'existing full guide content changed'
 assert all(t['status']=='covered' and t['printedBlocks'] for t in coverage['topics'] if not t['excluded'])
 assert {t['topic'] for t in coverage['topics'] if t['excluded']}=={'power','anovaSS'}
 # Every original block and numerical display survives unchanged beneath the new
@@ -132,4 +146,4 @@ for page in doc:
  assert max(t[2] for t in blocks)<=590.4+.2
  assert min(t[1] for t in blocks)>=21.6-.2
  assert max(t[3] for t in blocks)<=770.4+.2
-print(f'PASS: {count} independently recomputed displayed values; 9 source-linked supplements; symbolic density/CDF identities; 77 source-linked general equations; all 184 original displays and all original prose in 44 blocks preserved; all 43 included topics; preserved slide prose/older sheets; four dense letter pages without page headers, 0.3in margins and rendered math.')
+print(f'PASS: {count} independently recomputed displayed values; PDF/CDF plotted support, endpoints, normalization and 201 curve samples independently checked; all 53 existing blocks preserved exactly; 9 source-linked supplements and 77 general equations; all 43 included topics; older sheets preserved; four dense letter pages without page headers, 0.3in margins and rendered math.')
