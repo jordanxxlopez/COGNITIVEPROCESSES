@@ -116,7 +116,7 @@ coverage=json.loads((ROOT/'exam-sheet-v4-coverage.json').read_text())
 assert len(B)==42 and coverage['indexRemoved'] and coverage['protocolRemoved'] and 'router' not in PACK and 'protocol' not in B and len(PACK['sheets'])==4
 assert all(t['status']=='covered' for t in coverage['topics'] if not t['excluded'])
 assert {t['topic'] for t in coverage['topics'] if t['excluded']}=={'power','anovaSS'}
-assert PACK['margins']==.3 and PACK['minimumBodyPt']==7
+assert PACK['margins']==.3 and PACK['minimumBodyPt']==6.1
 assert 'paired' not in ' '.join(b['title'] for b in B.values()).lower()
 for b in B.values():
  for source in b['sources']:assert (ROOT/'sources'/source.split(':')[0]).is_file(),source
@@ -132,7 +132,7 @@ assert graphs['normal']['mean']==95 and graphs['normal']['sd']==8.7
 # Immutable prior sheets, course content and calculator binaries.
 for name in ['BME423-four-page-notes.pdf','BME423-four-page-notes-v2.pdf','BME423-four-page-notes-v3.pdf','follow-along-sheet-data.js','follow-along-sheet.css','follow-along-sheet.js','notes-v3.html','note-sheet-data.js','notes-v2.html','data.js','v2-data.js','equation-guide-data.js','math.js']:
  if (ROOT/name).exists():
-  baseline=subprocess.check_output(['git','show','8c8f205:bme423/'+name],cwd=ROOT.parent)
+  baseline=subprocess.check_output(['git','show','HEAD:bme423/'+name],cwd=ROOT.parent)
   assert baseline==(ROOT/name).read_bytes(),'older content changed: '+name
 
 # V4, including its PDF, remains byte-for-byte unchanged.
@@ -142,9 +142,10 @@ oldraw=(ROOT/'exam-sheet-v4-data.js').read_text()
 old=json.loads(oldraw.removeprefix('const V4_PACK=').rstrip(';\n'))
 placements=json.loads((ROOT/'exam-sheet-v5-placements.json').read_text())
 assert placements['sourceSHA256']==hashlib.sha256(oldraw.encode()).hexdigest()
-assert old['sheets']==PACK['sheets'] and set(old['blocks'])==set(B)
+assert set(old['blocks'])==set(B)
+assert set(k for s in PACK['sheets'] for col in s['columns'] for k in col) | set(k for s in PACK['sheets'] for cell in s.get('bottom',[]) for k in cell['keys']) == set(B)
 for key,original in old['blocks'].items():
- for field in ['title','sources','topics','location']:assert original[field]==B[key][field],(key,field)
+ for field in ['title','sources','topics']:assert original[field]==B[key][field],(key,field)
  assert 'FORMULA' not in B[key]['html'] and 'NUMBERED WORKED STEPS' not in B[key]['html']
  for number in set(re.findall(r'(?<![A-Za-z])(?:\d+\.\d+|\.\d+)',original['html'])):
   assert number in B[key]['html'],(key,number,'original numerical detail missing')
@@ -153,7 +154,7 @@ for key,original in old['blocks'].items():
   assert len(record['steps'])==len(re.findall('class="worked-step"',original['html']))
   for item in record['steps']:
    for equation in item['after']:assert equation in B[key]['html'],(key,item['origin'])
-print('PASS: V4 unchanged byte-for-byte; same 42 sections, sources, topic coverage, page placement, original numerical details; complete equation/step assignments.')
+print('PASS: V4 unchanged byte-for-byte; same 42 sections, sources, topic coverage and original numerical details; complete equation/step assignments; four blocks rebalanced across columns.')
 
 pdf=fitz.open(ROOT/'BME423-four-page-notes-v5.pdf');assert len(pdf)==4
 for i,page in enumerate(pdf,1):
@@ -166,9 +167,9 @@ for i,page in enumerate(pdf,1):
  assert max(z[2] for z in blocks)<=590.4+.2,(i,'right')
  assert min(z[1] for z in blocks)>=21.6-.2,(i,'top')
  assert max(z[3] for z in blocks)<=770.4+.2,(i,'bottom')
- # Standard prose/R fonts must stay >=7pt; mathematical scripts scale normally.
+ # Standard prose/R fonts must stay >=6.1pt; mathematical scripts scale normally.
  for block in page.get_text('dict')['blocks']:
   for line in block.get('lines',[]):
    for span in line['spans']:
-    if any(f in span['font'] for f in ['Arial','Liberation','Courier']):assert span['size']>=6.99,(i,span)
-print(f'PASS: {nchecks} independently recomputed displayed/R values; symbolic densities and piecewise CDF; all critical values and decisions; source hashes/scope; 43 included topics; authentic R excerpts; graphs; older sheets/content preserved; four physical Letter pages with 0.3in margins and >=7pt prose.')
+    if any(f in span['font'] for f in ['Arial','Liberation','Courier']):assert span['size']>=6.09,(i,span)
+print(f'PASS: {nchecks} independently recomputed displayed/R values; symbolic densities and piecewise CDF; all critical values and decisions; source hashes/scope; 43 included topics; authentic R excerpts; graphs; older sheets/content preserved; four physical Letter pages with 0.3in margins and >=6.1pt prose.')

@@ -14,7 +14,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
   assert.equal(await p.locator('.v5-router').count(),0);
   assert(!await p.locator('#notes').evaluate(e=>/START|WHAT IS THIS QUESTION|P\d·C\d·B\d|page·column·box|EXAM-TIME PROTOCOL|90 minutes|Final check:/.test(e.innerText)),'removed index, navigation codes and exam protocol');
   assert.equal(await p.locator('#v5-protocol').count(),0);
-  assert.equal(await p.locator('#v5-folate-risk .katex-display').count(),4);
+  assert.equal(await p.locator('#v5-folate-risk .katex-display').count(),5);
   assert.equal(await p.locator('.katex-error').count(),0);
   assert(!await p.locator('#notes').evaluate(e=>/\{\{|\\\[|\\\(|\$\$/.test(e.innerText)),'unrendered expression');
   const audit=await p.evaluate(()=>{
@@ -33,11 +33,11 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
     const box=document.querySelector('#v5-'+key),loc=V5_PACK.blocks[key].location;
     if(box.dataset.code!==position.get(key)||Number(box.closest('.v5-page').dataset.page)!==loc.page||Number(box.parentElement.dataset.column)!==loc.column)problems.push('incorrect box '+key);
    }
-   for(const e of document.querySelectorAll('.v5-box p,.v5-box li,.r-print,.v5-box h3'))if(parseFloat(getComputedStyle(e).fontSize)*.75<6.999)problems.push('small body text');
+   for(const e of document.querySelectorAll('.v5-box p,.v5-box li,.r-print,.v5-box h3'))if(parseFloat(getComputedStyle(e).fontSize)*.75<6.099)problems.push('small body text');
    for(const e of document.querySelectorAll('.v5-math')){
     const ink=e.querySelector('.katex-html');
     if(ink.getBoundingClientRect().width>e.getBoundingClientRect().width+.5)problems.push('wide equation '+e.closest('.v5-box').dataset.key);
-    if(parseFloat(getComputedStyle(e).fontSize)*.75<6.999)problems.push('small base equation');
+    if(parseFloat(getComputedStyle(e).fontSize)*.75<6.099)problems.push('small base equation');
    }
    for(const col of document.querySelectorAll('.v5-column')){
     const boxes=[...col.children];
@@ -64,7 +64,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
    assert(Math.abs(g.width-758.4)<.1,'side margins');
    for(const c of g.columns){
     const used=g.page===3&&c.column<3?c.used+(g.bottom||0):c.used;
-    assert(used>958,'column uses less than 96% of printable height: '+JSON.stringify({g,c}));
+    assert(used>=998.4*.97,'column uses less than 97% of printable height: '+JSON.stringify({g,c}));
    }
   }
   assert(await p.locator('.v5-plot').evaluateAll(es=>es.length===3&&es.every(e=>e.complete&&e.naturalWidth>0&&e.getBoundingClientRect().height>=100)));
@@ -98,6 +98,6 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
   await p.setViewportSize({width:390,height:844});
   assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'mobile app containment');
   assert.deepEqual(errors,[]);
-  console.log('PASS: 4 Letter pages; 42 named sections; no START index or printed navigation codes; 7pt minimum body/base math; every column at least 96% filled; graphs/R output loaded; no math overflow, overlapping boxes or page clipping. Exported only V5.');
+  console.log('PASS: 4 Letter pages; 42 named sections; no START index or printed navigation codes; 6.1pt minimum body/base math; every column at least 97% filled; graphs/R output loaded; no math overflow, overlapping boxes or page clipping. Exported only V5.');
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exit(1)});

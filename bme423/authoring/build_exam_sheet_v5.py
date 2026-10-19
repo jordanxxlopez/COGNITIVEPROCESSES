@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 raw = (ROOT / 'exam-sheet-v4-data.js').read_text()
 source = json.loads(raw.removeprefix('const V4_PACK=').rstrip(';\n'))
 pack = deepcopy(source)
-pack['revision'] = 'v5-equations-with-each-step'
+pack['revision'] = 'v5-equations-with-each-step-full-algebra'
+pack['minimumBodyPt'] = 6.1
 audit = {}
 
 # Replacements are whole operations, never a second bank of general formulas.
@@ -255,6 +256,9 @@ edit('conditions',display(r'F=16.9/68.05=.248347<5.32'),step((r'F=s_{\mathrm{bet
 edit('integral-steps',display(r'\int_l^u f(x)\,dx=G(u)-G(l)'),'')
 edit('integral-steps',display(r'P(1.5<X\le2)=\left[\frac{x^2}{4}\right]_{1.5}^{2}')+display(r'=\frac{2^2}{4}-\frac{1.5^2}{4}=1-.5625=.4375'),step((r'P(l<X<u)=F(u)-F(l)=\int_l^u f(x)\,dx',r'=G(u)-G(l)',r'P(1.5<X\le2)=\left[\frac{x^2}{4}\right]_{1.5}^{2}',r'=\frac{2^2}{4}-\frac{1.5^2}{4}=1-.5625=.4375')))
 
+from expand_exam_sheet_v5 import expand_walkthroughs
+algebra_expansions = expand_walkthroughs(pack, audit)
+
 for key,b in pack['blocks'].items():
     b['html']=b['html'].replace('class="v4-plot"','class="v5-plot"').replace('href="#v4-','href="#v5-')
     assert 'FORMULA' not in b['html'],(key,'detached formula label')
@@ -265,6 +269,6 @@ for key,b in pack['blocks'].items():
 
 out=ROOT/'exam-sheet-v5-data.js'
 out.write_text('const V5_PACK='+json.dumps(pack,ensure_ascii=False,separators=(',',':'))+';\n')
-manifest={'sourceSHA256':hashlib.sha256(raw.encode()).hexdigest(),'sourceRevision':'470f85e','placements':audit,'blocks':len(pack['blocks']),'scope':'Same blocks, sources, examples and figures as V4. Equations moved into corresponding worked operations.'}
+manifest={'sourceSHA256':hashlib.sha256(raw.encode()).hexdigest(),'sourceRevision':'470f85e','placements':audit,'blocks':len(pack['blocks']),'algebraExpansions':algebra_expansions,'scope':'Same blocks, sources, examples and figures as V4. Equations and expanded algebra remain inside their corresponding worked operations.'}
 (ROOT/'exam-sheet-v5-placements.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print(f'Built V5: {len(pack["blocks"])} sections; {len(audit)} individually reviewed transformations; V4 read only.')

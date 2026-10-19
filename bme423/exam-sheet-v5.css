@@ -3,31 +3,31 @@
 body{margin:0;background:#ddd;color:#111;font-family:Arial,Helvetica,sans-serif}
 .no-print{max-width:8.5in;background:white;padding:16px;margin:16px auto;font-size:16px;line-height:1.4}
 .no-print a,.no-print button{margin-right:16px}
-.v5-page{width:8.5in;min-height:11in;padding:.3in;margin:20px auto;background:white;font-size:7pt;line-height:1.1}
+.v5-page{width:8.5in;min-height:11in;padding:.3in;margin:20px auto;background:white;font-size:6.2pt;line-height:1.1}
 .v5-columns,.v5-bottom{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.11in}
 .v5-column{min-width:0}
 .v5-column>.v5-box:last-child{margin-bottom:0}
 .v5-column+.v5-column{border-left:.35pt solid #aaa;padding-left:.06in}
 .v5-box{margin:0 0 3pt;break-inside:avoid;min-width:0}
-.v5-box h3{font-size:8pt;line-height:1.07;margin:0 0 2pt;padding-top:2pt;border-top:1pt solid #333;letter-spacing:0;color:#000}
-.v5-box p,.v5-box li{font-size:var(--body-size,7pt);line-height:1.08;margin:.8pt 0}
+.v5-box h3{font-size:7.5pt;line-height:1.07;margin:0 0 2pt;padding-top:2pt;border-top:1pt solid #333;letter-spacing:0;color:#000}
+.v5-box p,.v5-box li{font-size:var(--body-size,6.2pt);line-height:1.08;margin:.8pt 0}
 .v5-box ol{margin:1pt 0 2pt;padding-left:12px}
 .v5-box b{font-weight:800}
-.v5-math{font-size:var(--body-size,7pt);text-align:center;margin:.8pt 0;line-height:1.1;padding:0;min-width:0;break-inside:avoid}
+.v5-math{font-size:var(--body-size,6.2pt);text-align:center;margin:.8pt 0;line-height:1.1;padding:0;min-width:0;break-inside:avoid}
 .worked-step{position:relative;padding-left:8px;min-width:0}
 .v5-box{counter-reset:workstep}
 .v5-step{position:relative;padding-left:8px;min-width:0;counter-increment:workstep;break-inside:avoid;margin:.4pt 0}
 .v5-step>.step-number::before{content:counter(workstep) "."}
 .v5-continuation{padding-left:8px;break-before:avoid}
-.step-number{position:absolute;left:0;top:2pt;font-size:7pt}
+.step-number{position:absolute;left:0;top:2pt;font-size:6.2pt}
 .v5-page .katex{font-size:1em}
 .v5-page .katex-display{margin:0}
 .v5-page .katex-display>.katex>.katex-html{display:inline-block;white-space:nowrap}
 .v5-page .katex-display>.katex{white-space:normal}
 .method-reference{color:#000;font-weight:800}
 .v5-plot{display:block;width:100%;height:1.05in;object-fit:contain;margin:2pt 0}
-.r-print{font:7pt/1.1 'Liberation Mono','Courier New',monospace;white-space:pre-wrap;overflow-wrap:normal;tab-size:2;margin:2pt 0;padding:2pt 0;border-bottom:.35pt solid #aaa;max-width:100%}
-.r-label{display:block;margin:2pt 0;font-size:7pt}
+.r-print{font:6.2pt/1.1 'Liberation Mono','Courier New',monospace;white-space:pre-wrap;overflow-wrap:normal;tab-size:2;margin:2pt 0;padding:2pt 0;border-bottom:.35pt solid #aaa;max-width:100%}
+.r-label{display:block;margin:2pt 0;font-size:6.2pt}
 .v5-bottom{margin-top:3pt;align-items:start;border-top:.35pt solid #555;padding-top:2pt}
 .v5-bottom .v5-box h3{border-top:0;padding-top:0}
 .v5-bottom .v5-box{margin-bottom:0}
@@ -41,17 +41,7 @@ body{margin:0;background:#ddd;color:#111;font-family:Arial,Helvetica,sans-serif}
 .v5-page[data-page="1"] .v5-box h3{margin-bottom:1.5pt;padding-top:1.5pt}
 .v5-page[data-page="1"] .v5-box p,.v5-page[data-page="1"] .v5-box li{margin:.4pt 0;line-height:1.05}
 .v5-page[data-page="1"] .v5-math{margin:.4pt 0}
-.v5-page[data-page="1"] .v5-column:nth-child(1){--body-size:7.5pt}
 .v5-page[data-page="1"] .v5-column:nth-child(2) .v5-box p,.v5-page[data-page="1"] .v5-column:nth-child(2) .v5-box li,.v5-page[data-page="1"] .v5-column:nth-child(2) .v5-math,.v5-page[data-page="1"] .v5-column:nth-child(2) .v5-step{margin-top:0;margin-bottom:0}
-.v5-page[data-page="1"] .v5-column:nth-child(3){--body-size:7.1pt}
-.v5-page[data-page="2"] .v5-column:nth-child(1){--body-size:7.25pt}
-.v5-page[data-page="2"] .v5-column:nth-child(2){--body-size:8pt}
-.v5-page[data-page="3"] .v5-column:nth-child(1){--body-size:7.25pt}
-.v5-page[data-page="3"] .v5-column:nth-child(2){--body-size:8.4pt}
-.v5-page[data-page="3"] .v5-column:nth-child(3){--body-size:8.1pt}
-.v5-page[data-page="4"] .v5-column:nth-child(1){--body-size:7.65pt}
-.v5-page[data-page="4"] .v5-column:nth-child(2){--body-size:7.7pt}
-.v5-page[data-page="4"] .v5-column:nth-child(3){--body-size:7.6pt}
 .v5-page .v5-column>.v5-box:last-child{margin-bottom:0}
 @media print{
  body{background:white;color:black}.no-print{display:none!important}
@@ -59,3 +49,19 @@ body{margin:0;background:#ddd;color:#111;font-family:Arial,Helvetica,sans-serif}
  .v5-page:last-child{break-after:auto}
  a{color:black}
 }
+
+/* Algebra stays inside each existing walkthrough; column sizes retain four full pages. */
+.algebra-note{font-style:normal}
+.v5-page[data-page="1"] .v5-column:nth-child(1){--body-size:6.5pt}
+.v5-page[data-page="1"] .v5-column:nth-child(2){--body-size:6.55pt}
+.v5-page[data-page="1"] .v5-column:nth-child(3){--body-size:6.2pt}
+.v5-page[data-page="2"] .v5-column:nth-child(1){--body-size:6.15pt}
+.v5-page[data-page="2"] .v5-column:nth-child(2){--body-size:6.14pt}
+.v5-page[data-page="2"] .v5-column:nth-child(3){--body-size:6.7pt}
+.v5-page[data-page="3"] .v5-column:nth-child(1){--body-size:6.9pt}
+.v5-page[data-page="3"] .v5-column:nth-child(2){--body-size:6.1pt}
+.v5-page[data-page="3"] .v5-column:nth-child(3){--body-size:7.4pt}
+.v5-page[data-page="4"] .v5-column:nth-child(1){--body-size:6.4pt}
+.v5-page[data-page="4"] .v5-column:nth-child(2){--body-size:6.7pt}
+.v5-page[data-page="4"] .v5-column:nth-child(3){--body-size:7.2pt}
+.v5-page[data-page="3"] .v5-bottom{--body-size:6.5pt}
