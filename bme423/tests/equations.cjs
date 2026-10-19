@@ -15,13 +15,10 @@ const assert=require('node:assert/strict');
     const steps=[...box.querySelectorAll('.step')];
     if(steps.length!==p.steps.length)failures.push(p.id+' lost steps');
     steps.forEach((step,i)=>{
-     const expected=EQUATION_GUIDE.problems[p.id][i],found=[...step.querySelectorAll('[data-equation-rule]')].map(el=>el.dataset.equationRule);
-     if(JSON.stringify(expected)!==JSON.stringify(found))failures.push(p.id+':'+i+' missing formula');
-     for(const formula of step.querySelectorAll('[data-equation-rule]')){
-      if(!(formula.compareDocumentPosition(step.querySelector('.worked-math'))&Node.DOCUMENT_POSITION_FOLLOWING))failures.push(p.id+':'+i+' rule after substitution');
-      if(!formula.querySelector('.symbol-key')?.textContent.trim())failures.push(p.id+':'+i+' no symbol meanings');
-     }
-     count++;if(expected.length)calculations++;
+     const flow=STUDIO_FLOWS.problems[p.id][i];
+     if(!step.querySelector('.worked-math')||step.querySelector('.equation-rule'))failures.push(p.id+':'+i+' missing connected operation');
+     if(step.querySelectorAll('.math-display').length!==flow.math.length)failures.push(p.id+':'+i+' missing formula or substitution');
+     count++;if(flow.math.length)calculations++;
     });
     // A partial hint contains precisely the first step's equation and work.
     const hint=document.createElement('div');hint.innerHTML=stepsHTML(p,1);
@@ -30,8 +27,8 @@ const assert=require('node:assert/strict');
    for(const key of Object.keys(V2.blocks)){
     const box=document.createElement('div');box.innerHTML=sourceWorked(key);
     if(box.querySelector('.katex-error'))failures.push(key+' malformed math');
-    const expected=Object.values(EQUATION_GUIDE.worked[key]||{}).flat().length;
-    if(box.querySelectorAll('[data-equation-rule]').length!==expected)failures.push(key+' wrong placements');
+    if(!box.querySelector('[data-source-question] ol li'))failures.push(key+' missing complete question');
+    if(box.querySelector('.equation-rule'))failures.push(key+' detached formula bank');
    }
    for(const version of ['A','B','C']){
     state.scriptVersion=version;
@@ -56,7 +53,7 @@ const assert=require('node:assert/strict');
   await page.evaluate(()=>{state.scriptVersion='B';selectedLesson='summary';go('lesson')});
   const apply=page.locator('[data-worked-block="describe"]');
   await apply.scrollIntoViewIfNeeded();
-  assert(await apply.locator('[data-equation-rule="mean"] .katex').count());
+  assert(await apply.locator('.source-solution .katex').count());
   assert((await apply.innerText()).includes('64.5'));
   await page.screenshot({path:'/tmp/bme-equations-apply.png'});
   // Corrected percentile values and grading remain synchronized.
@@ -65,12 +62,12 @@ const assert=require('node:assert/strict');
   await page.locator('[data-grade="percentile"]').click();
   assert.equal(await page.evaluate(()=>state.practice.percentile.correct),true);
   await page.locator('[data-solution="percentile"]').click();
-  assert(await page.locator('.step [data-equation-rule="rank"]').count());
+  assert(await page.locator('.step[data-integrated-step="0"] .katex').count());
   // A numeric quiz reveals that question's full equation-to-answer calculation.
   await page.evaluate(()=>{const q=DATA.questions.find(q=>q.id==='q88');quiz={items:prepareQuizItems([q]),answers:[],index:0,finished:false};go('quiz')});
   await page.locator('#revealQ').click();
   assert.equal(await page.locator('.feedback .step').count(),3);
-  assert.equal(await page.locator('.feedback [data-equation-rule="rank"]').count(),1);
+  assert.equal(await page.locator('.feedback [data-integrated-step="0"] .math-display').count(),1);
   assert(await page.locator('.option.correct').innerText().then(t=>t.includes('11')));
   await page.evaluate(()=>{quiz.finished=true;render()});
   assert.equal(await page.locator('.quiz-calculation .step').count(),3);
@@ -79,7 +76,7 @@ const assert=require('node:assert/strict');
    await page.evaluate(id=>{quiz=null;examId=id;state.examDone[id]=false;go('mock')},id);
    assert.equal(await page.locator('.steps').count(),0);
    await page.locator('#finishMock').click();
-   assert(await page.locator('.steps [data-equation-rule]').count()>30);
+   assert(await page.locator('.steps [data-integrated-step]').count()>30);
   }
   // Lookup equations use arbitrary entered df, not a one-sample assumption.
   await page.evaluate(()=>go('rlab'));
@@ -89,7 +86,7 @@ const assert=require('node:assert/strict');
   }
   // Complete collection and expanded viewer keep the same slide, note and layout.
   await page.evaluate(()=>{state.scriptVersion='C';state.theme='dark';selectedModule=7;go('module')});
-  await page.locator('details.lesson').filter({has:page.locator('[data-open-slide="7:10"]')}).locator('summary').click();
+  await page.locator('details.lesson').filter({has:page.locator('[data-open-slide="7:10"]')}).locator(':scope > summary').click();
   await page.locator('[data-open-slide="7:10"]').click();
   assert(await page.locator('[data-slide-lecture="7:10"] [data-equation-rule="hrwithin"]').count());
   const note=page.locator('[data-note="s7:10"]');await note.fill('Square the SDs first.');

@@ -131,20 +131,20 @@ def frame(p):
         check='Enter the new standard error.'
     elif t=='onet':
         title='A study population and a reference mean'
-        context=f'A blood measurement in a reference adult population has a known mean of {n(g["μ0"])}. To determine whether the mean differs in a student population, researchers select a random sample of {n(g["n"])} students. The sample mean is {n(g["mean"])} and the sample standard deviation is {n(g["s"])}. Assume the measured variable is Normally distributed.'
+        context=f'The average LDL concentration in a reference adult population is {n(g["μ0"])}. Researchers want to determine whether the average LDL concentration differs in a student population. They select a random sample of {n(g["n"])} students. The sample mean is {n(g["mean"])} and the sample standard deviation is {n(g["s"])}. LDL concentration is measured in mg/dL. Assume a Normal population.'
         parts=['State the population null hypothesis and identify the appropriate statistical test.', r'Use a two-sided significance level of \(\alpha=0.05\). Show the standard error, signed test statistic, degrees of freedom and critical value.', 'Give a conclusion about the study population mean compared with the reference.']
         check='Enter the signed t statistic.'
     elif t=='pooledt':
         n1,m1,s1=nums(g['group 1']);n2,m2,s2=nums(g['group 2'])
         title='A comparison of two treatment populations'
-        context='Researchers compare a measured response in a control group and an intervention group. The samples are independent. Assume Normal populations with a common population variance. The sample results are summarized below.'
+        context='Medical researchers investigate whether an intervention changes cognitive assessment scores. A control group receives no intervention and a separate group receives the intervention. The independent samples have the results below. Assume Normal populations with a common population variance.'
         math=[table(['Group','n','Mean','SD'],[[r'\text{Control}',n1,m1,s1],[r'\text{Intervention}',n2,m2,s2]])]
         parts=['State the population null hypothesis and select the test specific to two independent groups.', r'At \(\alpha=0.05\), determine whether the population means differ. Show the pooled variance, standard error, signed statistic and degrees of freedom.', 'Use the appropriate table and state the conclusion in terms of the two population means.']
         check='Enter the signed t statistic, using control minus intervention.'
     elif t=='anova':
         means=ast.literal_eval(g['means']);sds=ast.literal_eval(g['SDs']);size=g['n per group']
         title='Responses under different regimens'
-        context=f'A study compares {len(means)} independent groups receiving different regimens. Each group contains {n(size)} subjects. The measured response is interval data. Assume Normal populations with equal population variances. The group summaries are given below.'
+        context=f'A biomedical study investigates whether different treatment regimens change an assay response. The {len(means)} independent treatment groups each contain {n(size)} subjects. The assay records interval data. Assume Normal populations with equal population variances. The group summaries are given below.'
         math=[table(['Group','Mean','SD'],[[i+1,m,s] for i,(m,s) in enumerate(zip(means,sds))])]
         if key=='class-hr':
             title='Heart rate and pet preference'
@@ -241,6 +241,26 @@ def frame(p):
         parts=[r'At \(\alpha=0.05\), state the decision about equal population means.', 'Explain the conclusion in terms of population means, using the supplied result without writing code.']
         check='Enter 1 to reject the null or 0 not to reject it.'
     else:raise ValueError((key,t,'unframed topic'))
+    # Match the homework's labeled summaries and count tables. The canonical
+    # inputs, requested answer and grading remain unchanged.
+    if t=='onet':
+        math=[table(['Sample size','Sample mean','Sample SD','Reference mean'],[[g['n'],g['mean'],g['s'],g['μ0']]])]
+    elif t=='zprop':
+        a,b=nums(g['m1/n1']);c,d=nums(g['m2/n2'])
+        context='Two independent patient groups are followed for a clinical event. The observed outcomes are summarized below.'
+        math=[table(['Group','Event','No event','Total'],[[1,a,b-a,b],[2,c,d-c,d]])]
+    elif t=='binary':
+        math=[table(['Outcome','Number'],[[r'\text{Event}',events],[r'\text{No event}',total-events]])]
+    elif t=='gof':
+        context='A sample of 470 people is classified into three exercise categories. The observed counts and proposed population proportions are shown below.'
+        math=[table(['Category','Observed','Proposed proportion'],[[1,255,.60],[2,125,.25],[3,90,.15]])]
+    elif t=='risk' and key in ['risk','aspirin-risk']:
+        context='Patients in treatment and control groups are followed for an adverse event. The observed outcomes are shown below. Treatment is compared with the reference control.'
+        labels=['Aspirin','Placebo'] if key=='aspirin-risk' else ['Treatment','Control']
+        if key=='aspirin-risk':context='Patients receiving aspirin or placebo are followed for thrombus formation. Aspirin is the treatment; placebo is the reference control. The observed outcomes are shown below.'
+        math=[table(['Group','Event','No event','Total'],[[r'\text{'+labels[0]+'}',a,b-a,b],[r'\text{'+labels[1]+'}',c,d-c,d]])]
+    elif key=='smoke-odds':
+        math=[table(['Group','Exposed','Unexposed'],[[r'\text{Cases}',50,14],[r'\text{Controls}',43,35]])]
     assert context and parts and check
     return dict(title=title,context=context,math=math,parts=parts,check=check,topic=t)
 

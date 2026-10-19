@@ -49,7 +49,7 @@ const{chromium}=require('playwright'),assert=require('node:assert/strict');
   const correct=await p.evaluate(id=>PROB.get(id).answer,next);
   await p.locator(`[data-response="${next}"]`).fill(String(correct));await p.locator(`[data-grade="${next}"]`).click();
   assert(await p.evaluate(id=>state.practice[id].correct,next),'canonical grading');
-  await p.locator(`[data-solution="${next}"]`).click();assert(await p.locator('[data-prep-practice] [data-equation-rule]').count());
+  await p.locator(`[data-solution="${next}"]`).click();assert(await p.locator('[data-prep-practice] [data-integrated-step] .katex').count());
   assert.equal(await p.locator('.katex-error').count(),0);
   await p.reload();assert.equal(await p.locator('[data-prep-practice]').getAttribute('data-prep-practice'),next);
   assert.equal(await p.evaluate(id=>state.drafts[id],first),'999');
