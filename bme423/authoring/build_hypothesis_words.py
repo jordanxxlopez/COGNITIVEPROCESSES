@@ -132,6 +132,8 @@ sources = dict(
     output=[proportions('death during follow-up', 'the active-treatment population being compared', 'the standard-care population', 'Each requested active-versus-control comparison')],
     anovaoutput=[means('exhaled nitric oxide', 'the lung-function groups')]
 )
+sources['pooled'][0]['nullWords'] = 'The population mean fasting glucose concentration is the same for children with and without a diabetic parent.'
+sources['pooled'][0]['alternativeWords'] = 'The population mean fasting glucose concentration differs between children with and without a diabetic parent.'
 slides = {}
 
 
