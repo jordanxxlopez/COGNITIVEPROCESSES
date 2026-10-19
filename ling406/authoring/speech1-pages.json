@@ -1,0 +1,130 @@
+[
+  {
+    "page": 1,
+    "text": "Speech Perception I: Categorical \nPerception\n"
+  },
+  {
+    "page": 2,
+    "text": "What is speech perception?\nSomehow we are able to take this mess and retrieve a message:\nWe also extract the same message from very different physical stimuli:\n"
+  },
+  {
+    "page": 3,
+    "text": "One premise:\nSomehow we have to turn a highly variable, analog signal, into \nsomething more abstract, so that the language system can \noperate on it.\nCategorical perception is thought to reflect this kind of \n“translation” from physical to symbolic.\nNote, next time, we’ll talk about some alternative ideas \nabout this.\n"
+  },
+  {
+    "page": 4,
+    "text": "Formants and formant transitions\nThe shape of the vocal tract is related in lawful ways to the amplification of \nparticular resonant frequencies (from Ladefoged, 1996).\n"
+  },
+  {
+    "page": 5,
+    "text": "English vowels from Rob Hagiwara: (http://home.cc.umanitoba.ca/~robh/howto.html#formants)\nbead\nbid\nbade\nbed\nbad\nbod\nbaud\nbode\n“bood”\nbooed\nHere they are as spectrograms\n"
+  },
+  {
+    "page": 6,
+    "text": "Let’s learn about formants by doing some \nsource-filter synthesis\n(I did all of this with Praat free software for speech analysis, available at praat.org)\nThis is a spectrogram of me \nsaying /u/.\nI’ve got the cursor on the \nfirst formant, you can \nsee it’s at about 300Hz.\nThe second formant is very \nlow, around 900Hz.\n"
+  },
+  {
+    "page": 7,
+    "text": "Let’s learn about formants by doing some \nsource-filter synthesis\nActually, Praat can \nautomatically find \nformants. \nHere it’s identified five. \nOnly the first three are \nusually important for \nphonemic processing.\nIn this example, we’ll only \ndeal with the first two.\n"
+  },
+  {
+    "page": 8,
+    "text": "This is the source…\nSo, now what I’ve done is \nextract the SOURCE from \nthe sound, using a model \nof the filter based on the \nformant frequencies.\n(This is a little bit like doing \na multiple regression \nanalysis.)\nThe result is a more-or-less \n“unfiltered” version of \nmy voice. It sounds like a \nbuzz…\n"
+  },
+  {
+    "page": 9,
+    "text": "…and these are the filters!\nTime (s)\n0\n2.5\n0\n1000\n2000\n3000\n4000\n5000\nTime (s)\n0\n2.5\n0\n1000\n2000\n3000\n4000\n5000\nTime (s)\n0\n2.5\n0\n1000\n2000\n3000\n4000\n5000\nShown here are three different \nfilters we can apply to our source.\nThe first is just the first four \nformants from the original \nrecording.\nIn the second one, I’ve just raised \nthe first formant a little.\nIn the second one, I’ve raised the \nsecond formant a lot.\n"
+  },
+  {
+    "page": 10,
+    "text": "Multiplying the source by the filters gives \nus new vowels.\nTime (s)\n0\n2.5\n0\n1000\n2000\n3000\n4000\n5000\nTime (s)\n0\n2.5\n0\n1000\n2000\n3000\n4000\n5000\nTime (s)\n0\n2.5\n0\n1000\n2000\n3000\n4000\n5000\n"
+  },
+  {
+    "page": 11,
+    "text": "Remember that formant values are \npartly determined by anatomical \nfeatures that differ between \nspeakers of the same language, by \ndifferent rates of speech, and by \ncontext (e.g., the phones \nproduced before and after a \nvowel).  \nNonetheless, formant values can \nprovide a pretty good description \nof “vowel space,” especially for a \nspecific talker, speaking carefully.\nAll else being equal, we can produce \nreasonable approximations of \nvowels by manipulating steady-\nstate formants. \n"
+  },
+  {
+    "page": 12,
+    "text": "The “pattern playback” synthesizer.\n"
+  },
+  {
+    "page": 13,
+    "text": "Liberman et al. (1957) available here: http://www.haskins.yale.edu/Reprints/HL0022.pdf\nStop consonants are \ndistinguished by \nformant transitions. \nThis is sensible if you \nthink about how \nthey’re produced: the \naudible part of a /b/, \n/d/, or /g/, happens \nwhile your jaw is \nopening.\nThe pattern playback \nsynthesizer was used \nto create speech-like \nsounds that replicated \nthese formant \ntransitions. \n"
+  },
+  {
+    "page": 14,
+    "text": "A speech continuum:\nThese stimuli are \nconstructed by \nkeeping F1 constant \nand varying F2 onset \nfrequency linearly\nfrom stimulus 1 to 13.\nThus: adjacent stimuli \ndiffer by the same \namount across the \nentire continuum.\n"
+  },
+  {
+    "page": 15,
+    "text": "Liberman et al. (1957) available here: http://www.haskins.yale.edu/Reprints/HL0022.pdf\nA simple “ideal observer” model assuming perception \nis non-categorical.\nThe first thing we’d predict is that categorization \nwould get “blurry” as you move away from category \nprototypes. We know the endpoints are /b/ and /g/, \nwith /d/ in the middle. Between these points, stimulus \nambiguity should scale with the distance from the \nprototype. So, stimulus 2 would be 75/25 /b/ - /d/. \n0\n0.5\n1\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n/b/\n/d/\n/g/\nLabeling\n"
+  },
+  {
+    "page": 16,
+    "text": "A simple “ideal observer” model assuming perception \nis linear.\nBut the other important thing we’d predict is that Discrimination performance should \nbe independent of Labeling. \nObviously labeling has to have a sort of “peaked” function, because you’ve got three \ncategories, and you’re asking people to make binary responses. But for the \ndiscrimination task, you’re just asking people to say “same” or “different.” If \nperception of differences in F2 onset were constant over the whole continuum, \ndiscrimination accuracy would also be constant. \n0\n0.5\n1\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n/b/\n/d/\n/g/\nLabeling\n0\n0.5\n1\n1 vs. 3\n2 vs. 4\n3 vs. 5\n4 vs. 6\n5 vs. 7\n6 vs. 8\n7 vs. 9\n8 vs. 10\n9 vs. 11\naccuracy\nDiscrimination\n"
+  },
+  {
+    "page": 17,
+    "text": "Categorical perception\nLiberman et al. (1957) available here: http://www.haskins.yale.edu/Reprints/HL0022.pdf\n"
+  },
+  {
+    "page": 18,
+    "text": "Categorical perception demonstration\n"
+  },
+  {
+    "page": 19,
+    "text": "Categorical perception: Class data\n(prior years)\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1\n2\n3\n4\n5\n6\n7\n8\n9\nbeach-peach_id\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1-\n3\n2-\n4\n3-\n5\n4-\n6\n5-\n7\n6-\n8\n7-\n9\nbeach-peach_discrim\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1\n2\n3\n4\n5\n6\n7\n8\n9\nbeach-peach_id\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1-\n3\n2-\n4\n3-\n5\n4-\n6\n5-\n7\n6-\n8\n7-\n9\nbeach-peach_discrim\n"
+  },
+  {
+    "page": 20,
+    "text": "0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1\n2\n3\n4\n5\n6\n7\n8\n9\nbeach-peach_id\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1-\n3\n2-\n4\n3-\n5\n4-\n6\n5-\n7\n6-\n8\n7-\n9\nbeach-peach_discrim\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1\n2\n3\n4\n5\n6\n7\n8\n9\nbeach-peach_id\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1-\n3\n2-\n4\n3-\n5\n4-\n6\n5-\n7\n6-\n8\n7-\n9\nbeach-peach_discrim\nSome thoughts:\nNot everyone has exactly \nthe same category \nboundary.\nBut in general, \ndiscrimination is best for \nstimuli perceived as \nbeing in different \ncategories.\nBTW, to make the lab do-\nable in a short amount \nof time, I only included \ndifferent trials in the \nDiscrim experiment! The \n“correct” answer on \nevery trial would be \n“different,” if you were \nable to discriminate \nthem!\n"
+  },
+  {
+    "page": 21,
+    "text": "0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1\n2\n3\n4\n5\n6\n7\n8\n9\nbear_pear_id\n0\n0.2\n0.4\n0.6\n0.8\n1\n1-3 2-4 3-5 4-6 5-7 6-8\nbear-pear_discrim\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1\n2\n3\n4\n5\n6\n7\n8\n9\nbeach-peach_id\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\n1-3\n2-4\n3-5\n4-6\n5-7\n6-8\n7-9\nbeach-peach_discrim\nThe one iron-clad law of \nexperimental research:\nStuff happens.\nCan you think of some \nways this experiment was \nmaybe not the best?\nHow would you do it \ndifferently?\n"
+  },
+  {
+    "page": 22,
+    "text": "How would categorical perception help?\nOR:\nWhat is the advantage of being worse at hearing \nsome differences between sounds?\n"
+  },
+  {
+    "page": 23,
+    "text": "For next session\nRead:\nGanong (1980) \nDownload here: http://search.proquest.com.libproxy.usc.edu/docview/614330814\n(you’ll be prompted for USC credentials)\nAnd McClelland et al. (2006)\nhttp://psych.stanford.edu/~jlm/papers/McCMirmanHolt06_TiCS.pdf\n(Prof. McClelland posts all of his papers for free on his website!)\n"
+  },
+  {
+    "page": 24,
+    "text": "Categorical perception in infants\nInfant in the “conditioned head turn \nprocedure from Janet Werker’s website: \nhttp://infantstudies.psych.ubc.ca/\nActually, we’ll be focusing on “high \namplitude sucking” results. (image from \nan unrelated paper, Rochat & Striano, 2001, \nIBD)\n"
+  },
+  {
+    "page": 25,
+    "text": "Categorical perception in infants\nEimas et al. (1971, Science) \n"
+  },
+  {
+    "page": 26,
+    "text": "“Perceptual narrowing” for speech categories\n"
+  },
+  {
+    "page": 27,
+    "text": "A very compelling narrative:\nSpeech perception depends on categorical \nperception abilities that are a special property of \nthe language system.\nThese are present very early in development.\nIn fact, children start off as “citizens of the world,” \nable to hear all contrasts, but then rapidly tune \ntheir perceptual systems to their specific \nlanguage. \n"
+  },
+  {
+    "page": 28,
+    "text": "Some issues\nCategorical perception:\n- not limited to language\n- not limited to humans\n- task-dependent\nInfant speech perception:\n- not actually “universal”\n"
+  },
+  {
+    "page": 29,
+    "text": "Categorical perception of non-speech \nsounds\nCutting & Rosner (1974, Perception & Psychophysics)\n"
+  },
+  {
+    "page": 30,
+    "text": "Categorical perception of non-speech \nsounds…by infants!\nJusczyk et al. (1977, Perception & Psychophysics)\n"
+  },
+  {
+    "page": 31,
+    "text": "Categorical perception of speech \nsounds…by chinchillas!\nOhlemiller et al.(1999, Behavioral Brain Research, see also Kuhl & Miller, 1975)\nTrained using \noperant \nconditioning that \neither the 0-lag \nor 80ms-lag \nstimulus is a SD\nfor food.\n"
+  },
+  {
+    "page": 32,
+    "text": "Some contrasts are less salient than \nothers (for infants).\n"
+  }
+]

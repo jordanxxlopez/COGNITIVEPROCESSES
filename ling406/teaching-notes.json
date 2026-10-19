@@ -1,0 +1,2065 @@
+{
+  "speech1": [
+    {
+      "page": 1,
+      "title": "Speech perception: from sound to categories",
+      "paragraphs": [
+        "**Speech perception** turns changing sound into a linguistic message. The sound reaching the ear is continuous, but the words recognized through it contain distinctions such as /b/ versus /p/.",
+        "The central question is how the listener extracts stable categories from variable input. Formants, synthetic speech, and labeling and discrimination experiments make that question testable."
+      ]
+    },
+    {
+      "page": 2,
+      "title": "A stable message in a variable signal",
+      "paragraphs": [
+        "A speech waveform contains overlapping movements of the vocal tract rather than neatly separated letters. The spectrogram spreads this signal across time and frequency, making some of its structure visible.",
+        "Different speakers can express the same message with very different voices. Vocal-tract anatomy, speaking rate, and surrounding sounds change the physical input without necessarily changing the words.",
+        "Recognition therefore requires more than matching the sound to one exact recording. The listener must preserve differences that distinguish linguistic categories while tolerating other variation."
+      ]
+    },
+    {
+      "page": 3,
+      "title": "From an analog signal to a symbolic representation",
+      "paragraphs": [
+        "An **analog signal** varies continuously: a frequency or a timing interval can change by small amounts. A **symbolic representation** groups that variation into units the language system can use, such as a phoneme.",
+        "**Categorical perception** is one proposed bridge between these descriptions. Several physically different sounds may receive the same label, while a small change near a boundary produces a different label.",
+        "The proposed benefit is a stable input to later language processes. Whether the system completely discards fine acoustic detail is a separate question from whether its final labels look categorical."
+      ]
+    },
+    {
+      "page": 4,
+      "title": "Formants reflect the shape of the vocal tract",
+      "paragraphs": [
+        "**Formants** are resonant frequency regions amplified by the vocal tract. Changing the shape of the tract changes which frequencies are emphasized in the outgoing sound.",
+        "The vocal-tract drawings pair different articulatory shapes with different resonance patterns. The relationship is lawful: the shape acts as a filter rather than adding an arbitrary linguistic label.",
+        "A **formant transition** is a movement in one of these resonances over time. A steady formant helps characterize a vowel; a transition can reveal the articulatory movement into that vowel."
+      ]
+    },
+    {
+      "page": 5,
+      "title": "Reading vowel spectrograms",
+      "paragraphs": [
+        "A **spectrogram** places time horizontally and frequency vertically. Dark bands show concentrations of acoustic energy; the formants are prominent bands that differ across the listed vowels.",
+        "Compare the vowels in bead, bid, bade, bed, and bad, then the remaining examples. Their identity changes with the pattern of resonances, rather than with the presence of a single universal vowel frequency.",
+        "F1 and F2 provide a useful description of these contrasts. Their combination matters: hearing one band in isolation would throw away part of the vowel pattern."
+      ]
+    },
+    {
+      "page": 6,
+      "title": "The /u/ example: first and second formants",
+      "paragraphs": [
+        "The /u/ recording has a low first formant, around 300 Hz, and a low second formant, around 900 Hz. These are two resonances of the same vowel, not two different spoken sounds.",
+        "The waveform shows pressure variation over time; the spectrogram below it shows where energy is concentrated in frequency. The cursor identifies F1 within that display.",
+        "This example gives a concrete starting point for synthesis: keep the source constant, change selected resonance frequencies, and hear how the vowel changes."
+      ]
+    },
+    {
+      "page": 7,
+      "title": "Tracking formants in Praat",
+      "paragraphs": [
+        "The automatic tracks estimate the changing formant frequencies through the recording. Five tracks are identified. The first three are usually important for phonemic processing, although the demonstration concentrates on the first two.",
+        "F1 is the lowest formant, F2 is the next, and higher numbers refer to higher resonances. These labels specify their order, not separate speakers or successive syllables.",
+        "Tracking the resonances makes it possible to describe a vowel with a small set of changing acoustic properties and then manipulate those properties deliberately."
+      ]
+    },
+    {
+      "page": 8,
+      "title": "Separating the source from the filter",
+      "paragraphs": [
+        "The **source** is the sound that the vocal tract filters. Removing the estimated filter from the recording leaves a more buzz-like signal with less of the original vowel quality.",
+        "The extraction uses the formant pattern to estimate what the tract contributed. The result is an approximate source that can be sent through different filters.",
+        "This separates two causes of the final sound: the excitation that supplies energy and the resonances that shape its spectrum. Changing the second while holding the first fixed tests the contribution of the filter."
+      ]
+    },
+    {
+      "page": 9,
+      "title": "Changing the filter while keeping the source",
+      "paragraphs": [
+        "The first filter approximates the resonances of the original recording. Another raises F1, and another raises F2 more substantially. Each manipulation changes which frequencies receive amplification.",
+        "Because the source is held fixed, a resulting vowel difference can be traced to the filter change. Raising F1 and raising F2 are distinct manipulations, even though both alter vowel quality.",
+        "The displays represent filters through time. They are instructions for shaping the source, rather than three naturally recorded speakers whose voices differ in many uncontrolled ways."
+      ]
+    },
+    {
+      "page": 10,
+      "title": "Recombining source and filter",
+      "paragraphs": [
+        "Applying each filter to the same source produces a new sound. The resulting spectrograms show how the resonance pattern changes when a selected formant is moved.",
+        "The important comparison is between a constant source and different filters. A changed vowel quality shows that vocal-tract resonance patterns are sufficient to alter what vowel the listener hears.",
+        "This is a controlled demonstration of **source–filter synthesis**: manipulate a defined acoustic cause, then compare both the physical output and its perceptual identity."
+      ]
+    },
+    {
+      "page": 11,
+      "title": "Vowel space contains distributions",
+      "paragraphs": [
+        "A **vowel space** represents vowels using formant values, commonly F1 and F2. Each vowel occupies a region containing many productions, rather than one exact pair of frequencies.",
+        "Anatomy, rate, and neighboring phones move a production within this space. Regions can overlap, so a measured formant value does not always uniquely identify a vowel.",
+        "Steady formants can still generate recognizable approximations. The listener's task is to recognize useful structure in variable distributions rather than demand physically identical examples."
+      ]
+    },
+    {
+      "page": 12,
+      "title": "The pattern playback synthesizer",
+      "paragraphs": [
+        "The **pattern playback** device converts a visible acoustic pattern into a speech-like sound. A drawn pattern specifies how energy should be distributed over frequency and time.",
+        "Its role is to let researchers control the stimulus instead of relying only on naturally spoken syllables. A chosen transition can be altered while other portions of the pattern remain constant.",
+        "Synthetic speech makes a causal question possible: when just one acoustic property changes, does perceived phoneme identity change smoothly or in categories?"
+      ]
+    },
+    {
+      "page": 13,
+      "title": "Stop consonants and formant transitions",
+      "paragraphs": [
+        "The stop consonants /b/, /d/, and /g/ involve different places of closure. Their audible release into a vowel contains rapidly changing formant information as the articulators move.",
+        "Liberman and colleagues used synthetic patterns to reproduce these transitions. The listener hears a syllable even though the researcher can specify the transition independently.",
+        "The critical cue is therefore not only a steady vowel resonance. The direction and starting position of a transition can help distinguish consonants leading into a similar vowel."
+      ]
+    },
+    {
+      "page": 14,
+      "title": "Constructing an evenly spaced speech continuum",
+      "paragraphs": [
+        "F1 stays constant while the starting frequency of F2 changes in equal steps. This creates a **continuum**: adjacent stimuli differ physically by the same amount.",
+        "Toward one region listeners hear /b/, in another /d/, and toward the other end /g/. The equal physical spacing lets perception be compared across different regions fairly.",
+        "If a pair across a category boundary is easier to distinguish than an equally separated pair within a category, its advantage cannot be explained simply by a larger programmed acoustic difference."
+      ]
+    },
+    {
+      "page": 15,
+      "title": "The noncategorical prediction for labeling",
+      "paragraphs": [
+        "A simple noncategorical observer is increasingly uncertain as a stimulus moves away from a category's best example. Its labels change gradually with distance through the continuum.",
+        "The middle /d/ region rises and falls because there are categories on either side. Such a peaked labeling curve can arise merely because the task requires choosing among a small set of responses.",
+        "Labeling by itself therefore does not settle how finely the sounds are perceived. A second task must ask whether equal acoustic differences remain equally noticeable throughout the continuum."
+      ]
+    },
+    {
+      "page": 16,
+      "title": "The noncategorical prediction for discrimination",
+      "paragraphs": [
+        "In a **discrimination** task, listeners report whether two sounds are the same or different. Pairs can be selected with a constant step separation throughout the continuum.",
+        "If perception preserves the same sensitivity everywhere, discrimination should stay roughly constant across equally separated pairs. Labeling may vary, but crossing a label boundary should not create a special perceptual advantage.",
+        "This prediction links the two tasks: categorical perception instead predicts better discrimination where the labels switch, with worse discrimination inside a category."
+      ]
+    },
+    {
+      "page": 17,
+      "title": "Liberman: labeling boundaries and discrimination peaks",
+      "paragraphs": [
+        "The labeling functions change sharply between /b/, /d/, and /g/. The discrimination functions peak near those changes rather than staying flat across the acoustic continuum.",
+        "A within-category pair can sound similar even when its physical separation equals that of a boundary-crossing pair. Increasing the step separation raises discriminability overall, but the boundary pattern remains important.",
+        "This combination defines the classic evidence for **categorical perception**: abrupt category assignments together with discrimination tied to those assignments. The relationship between the graphs is the key result."
+      ]
+    },
+    {
+      "page": 18,
+      "title": "Carrying out the categorical-perception demonstration",
+      "paragraphs": [
+        "The demonstration separates two judgments. First, identify a sound along a continuum, such as beach versus peach; then judge whether two selected sounds differ.",
+        "A label boundary is located where identification changes. A discrimination comparison asks whether pairs near that location are easier to distinguish than equally separated pairs farther from it.",
+        "The two responses answer different questions. A listener can repeatedly choose one word while still showing some sensitivity to acoustic differences among tokens given that word label."
+      ]
+    },
+    {
+      "page": 19,
+      "title": "Comparing class identification and discrimination curves",
+      "paragraphs": [
+        "The identification panels show how word choices vary across the continuum. The paired discrimination panels show responses to equally separated stimulus pairs.",
+        "Find the steep portion of each person's identification curve, then compare it with the location of that person's discrimination peak. The relevant match is between a boundary and improved discrimination.",
+        "Individual curves need not align at exactly the same stimulus number. Averaging listeners with different boundaries can soften a pattern that is sharper within a person."
+      ]
+    },
+    {
+      "page": 20,
+      "title": "Individual boundaries and the class task",
+      "paragraphs": [
+        "Different listeners can place the boundary at different points. Despite that variation, discrimination is generally strongest for sounds assigned to different categories.",
+        "In the abbreviated class task, discrimination included only physically different pairs. Reporting different was therefore correct on every trial, even when a listener could not hear the difference.",
+        "This detail explains why the graph is a measure of detected difference under this particular design. It also distinguishes the class exercise from a full task containing both same and different trials."
+      ]
+    },
+    {
+      "page": 21,
+      "title": "Why class data can look noisy",
+      "paragraphs": [
+        "Bear–pear and beach–peach need not produce identical curves. A listener may use the stimuli differently, and short experiments produce variable estimates from relatively few trials.",
+        "Mixing same and different trials would make response tendencies easier to assess. Repeating enough pairs and examining each person's labeling boundary would also clarify the relationship between the tasks.",
+        "The experimental question remains specific: after matching physical distance, does a pair's position relative to the listener's category boundary predict its discriminability?"
+      ]
+    },
+    {
+      "page": 22,
+      "title": "Why reduced sensitivity can help recognition",
+      "paragraphs": [
+        "Many acoustic differences do not change a word's identity. Treating every small change as a new linguistic unit would make ordinary variation across repetitions or speakers difficult to handle.",
+        "A category groups different tokens together so that later processes can access a stable phoneme or word representation. At a boundary, sensitivity is useful because the difference may distinguish words.",
+        "The advantage is selective stability: similar treatment within a category and greater differentiation between categories. This explains why being worse at some physical discriminations can accompany successful language recognition."
+      ]
+    },
+    {
+      "page": 23,
+      "title": "Linking categorical perception to word knowledge",
+      "paragraphs": [
+        "Ganong's work asks whether known words affect the identity assigned to an ambiguous speech sound. The later speech-perception material examines this lexical influence and models that implement it.",
+        "McClelland and colleagues motivate an interactive account in which information can flow between representational levels. The assigned readings connect phoneme categorization to the larger word-recognition system."
+      ]
+    },
+    {
+      "page": 24,
+      "title": "Measuring infant speech discrimination",
+      "paragraphs": [
+        "Infants cannot press a labeled response button, so researchers use changes in behavior. A **conditioned head turn** rewards turning when a sound changes; **high-amplitude sucking** measures sucking responses linked to sound presentation.",
+        "Repeated exposure usually reduces responding. If a new sound restores responding, the infant has detected a change rather than simply continued hearing an indistinguishable repetition.",
+        "These methods test discrimination before the infant can name a phoneme. The displayed sucking photograph illustrates the method; it is not itself the Eimas experimental result."
+      ]
+    },
+    {
+      "page": 25,
+      "title": "Eimas: categorical discrimination before words",
+      "paragraphs": [
+        "Eimas and colleagues repeatedly presented speech sounds to infants and measured sucking. After responding declined, the sound either stayed the same or shifted within or between adult-defined categories.",
+        "A boundary-crossing change produced renewed sucking more clearly than an equally sized within-category change. The response follows perceived category structure rather than physical distance alone.",
+        "Infants therefore show categorical-like discrimination before fluent speech production. Early appearance made the phenomenon important to theories of how language abilities develop."
+      ]
+    },
+    {
+      "page": 26,
+      "title": "Perceptual narrowing across infancy",
+      "paragraphs": [
+        "Young English-learning infants discriminate some non-English speech contrasts. With development, discrimination of those contrasts declines if they are not maintained by the language environment.",
+        "The comparison with listeners who hear the contrasts in their language ties the change to experience. The infant system becomes better aligned with distinctions useful in its surroundings.",
+        "**Perceptual narrowing** is a developmental change in which contrasts remain salient. It is not the claim that infants stop hearing sound or that all possible contrasts were equally detectable initially."
+      ]
+    },
+    {
+      "page": 27,
+      "title": "The initially broad perception account",
+      "paragraphs": [
+        "The proposed narrative begins with broad sensitivity to speech contrasts, followed by tuning to the native language. Learning selects which distinctions continue to organize perception.",
+        "In this account, categorical speech perception is treated as an early, specialized foundation. The environment narrows an initially broad inventory rather than building every contrast from scratch.",
+        "This explanation combines an early capacity with experience-dependent change. Its claims about specialization and universality can be tested separately using nonspeech sounds, other animals, and difficult infant contrasts."
+      ]
+    },
+    {
+      "page": 28,
+      "title": "Separating early appearance from language specificity",
+      "paragraphs": [
+        "Categorical perception occurs for nonspeech sounds and in nonhuman animals. Its appearance therefore does not automatically identify a mechanism unique to human language.",
+        "Final category decisions can also depend on the response task. A sharply divided label curve need not mean all earlier acoustic processing has become all-or-none.",
+        "Infant perception is likewise not uniform across every contrast. Some distinctions need experience to become detectable, adding category formation to the story of developmental tuning."
+      ]
+    },
+    {
+      "page": 29,
+      "title": "Cutting and Rosner: categories for nonspeech",
+      "paragraphs": [
+        "Listeners heard sounds varying along an acoustic continuum associated with plucked and bowed qualities. They labeled the sounds and discriminated pairs at matched physical separations.",
+        "Labels changed near a boundary, and discrimination was better for pairs crossing that boundary. Sounds on the same side were harder to tell apart despite comparable physical differences.",
+        "The same labeling–discrimination relationship can therefore arise without phonemes. Categorical perception describes a perceptual organization that extends beyond speech."
+      ]
+    },
+    {
+      "page": 30,
+      "title": "Jusczyk: infant categories for nonspeech",
+      "paragraphs": [
+        "Infants heard repeated nonspeech sounds while sucking was measured. After habituation, the sound stayed unchanged, changed within a category, or crossed a category boundary.",
+        "Sucking recovered for the between-category shift more than for a within-category shift or unchanged sound. The infant detected the acoustically different sound when it crossed the perceptual boundary.",
+        "Early categorical discrimination therefore extends beyond speech too. Infancy and categorical behavior together do not establish that the underlying capacity is language-specific."
+      ]
+    },
+    {
+      "page": 31,
+      "title": "Chinchillas categorize speech continua",
+      "paragraphs": [
+        "Chinchillas were trained with endpoints of a voice-onset-time continuum, using a response associated with food. An **SD**, or discriminative stimulus, signals when the trained response will be rewarded.",
+        "Tests with intermediate speech sounds produced category-like changes in responding. The human comparison also shows a sharp change across the continuum.",
+        "A nonhuman auditory system can therefore organize these speech stimuli categorically. This challenges the claim that the phenomenon requires possession of human language."
+      ]
+    },
+    {
+      "page": 32,
+      "title": "Some infant contrasts must become salient",
+      "paragraphs": [
+        "The nasal contrast /ma/–/na/ is easier for young infants than /na/–/ŋa/. These sounds differ in place of articulation, or where the constriction is made.",
+        "Narayan and colleagues found that the difficult contrast becomes more discriminable with relevant language experience. Filipino-learning infants improve across the ages shown.",
+        "Development can increase sensitivity as well as reduce it. Learning is therefore more than eliminating unused contrasts from a completely universal starting set."
+      ]
+    }
+  ],
+  "speech2": [
+    {
+      "page": 1,
+      "title": "Spoken words and the lexical–phonetic interface",
+      "paragraphs": [
+        "Spoken-word recognition connects changing acoustic features, phonemes, and stored words. The **lexical–phonetic interface** is the interaction between speech-sound processing and word knowledge.",
+        "The main distinctions are when partial information moves forward and whether word-level information feeds back. Cascading and feedback answer these different questions."
+      ]
+    },
+    {
+      "page": 2,
+      "title": "A staged speech-perception model",
+      "paragraphs": [
+        "The model passes the waveform through auditory processing, acoustic-property detection, phonetic features, segmental analysis, and lexical search. Each level expresses the signal in a different representational form.",
+        "A simple staged interpretation has phoneme identification finish before words can be recognized. Some acoustic detail can be lost as the system converts continuous variation into discrete units.",
+        "**Cascaded processing** instead permits partial activation to reach later levels. **Feedback** permits later levels to influence earlier ones; neither term merely means that processing is fast."
+      ]
+    },
+    {
+      "page": 3,
+      "title": "The beach–peach voicing continuum",
+      "paragraphs": [
+        "Beach and peach differ at the initial stop consonant. Changing **voice onset time**, the delay between release and voicing, creates intermediate sounds along a /b/–/p/ continuum.",
+        "Identification changes from one word to the other, while discrimination is strongest around the boundary. These final judgments reproduce the familiar categorical pattern.",
+        "The next question concerns what happens before the final choice. Sounds receiving the same word label might still activate competing words by different amounts."
+      ]
+    },
+    {
+      "page": 4,
+      "title": "Thresholded transmission",
+      "paragraphs": [
+        "In a **threshold model**, information is passed to the next level only when activation crosses a required level. The phoneme decision acts like a gate on what reaches word recognition.",
+        "Graded feature evidence can therefore be converted into a more discrete phoneme signal. Once the gate selects /b/, later processing would receive that category rather than the remaining within-category uncertainty.",
+        "This makes a prediction about word competition: acoustic differences that do not change the phoneme output should not continuously change activation of its lexical competitor."
+      ]
+    },
+    {
+      "page": 5,
+      "title": "Cascaded transmission",
+      "paragraphs": [
+        "In a **cascaded model**, activation flows forward while the earlier level is still changing. A phoneme need not be fully settled before it begins activating words.",
+        "A sound closer to the /b/–/p/ boundary can activate more /p/-consistent competitors even when the final response remains /b/. The graded feature input continues to matter downstream.",
+        "A step-like final label can coexist with this process. Categorization at the response stage does not require every internal representation to switch categorically at the same moment."
+      ]
+    },
+    {
+      "page": 6,
+      "title": "The lumber-mill analogy",
+      "paragraphs": [
+        "The lumber mill takes trees and produces lumber; the factory takes lumber and produces a furniture kit; the customer assembles that kit. Each stage requires the previous stage's transformed output.",
+        "A factory cannot assemble a shipment that has not arrived. Similarly, a strongly staged language model waits for the required earlier representation before beginning the next operation.",
+        "The analogy captures dependence on completed inputs. It explains what thresholded transmission would mean for the timing of phoneme and word recognition."
+      ]
+    },
+    {
+      "page": 7,
+      "title": "Waiting for a completed representation",
+      "paragraphs": [
+        "The important feature of the furniture chain is its input requirement. A later layer accepts a particular finished representation, not every partial state of the preceding layer.",
+        "Translated to speech, lexical processing would wait for phoneme-level output. Unresolved acoustic uncertainty would be handled upstream before lexical search begins.",
+        "Testing this account requires a measure during recognition. A final mouse click alone could hide uncertainty that was active earlier."
+      ]
+    },
+    {
+      "page": 8,
+      "title": "The food-web analogy",
+      "paragraphs": [
+        "In a **food web**, a change in one population affects others through ongoing connections. A drought alters plants, which influences consumers and then predators while the system continues operating.",
+        "Cascaded processing has the same continuous character: partially changed activation at one level changes the input to other levels immediately rather than after a finished package is delivered.",
+        "Feedback adds influence in the reverse direction. The analogy separates continuous forward propagation from the additional possibility of reciprocal interactions."
+      ]
+    },
+    {
+      "page": 9,
+      "title": "Testing thresholds against cascades",
+      "paragraphs": [
+        "Both accounts can produce a final bear or pear response. The decisive comparison asks whether fine acoustic changes within one response category affect competition before that response.",
+        "A visual-world task records looks to pictures while a spoken target unfolds. Looking toward the alternative picture provides a time-sensitive index of its involvement in recognition.",
+        "If competitor looks grow gradually near the category boundary, information has affected lexical processing without having to change the final category decision."
+      ]
+    },
+    {
+      "page": 10,
+      "title": "McMurray: the visual-world method",
+      "paragraphs": [
+        "Participants viewed pictures including a /b/–/p/ competitor pair and heard a token from a voice-onset-time continuum. Eye tracking measured where they looked as they identified it.",
+        "The pictures make possible word interpretations visible. Bear can be the selected target while pear briefly attracts attention as a competing interpretation.",
+        "Varying the acoustic token while preserving the picture set tests whether distance from the phoneme boundary changes ongoing lexical competition."
+      ]
+    },
+    {
+      "page": 11,
+      "title": "A categorical final choice",
+      "paragraphs": [
+        "Participants clicked the picture matching the spoken token. The identification curve was step-like: one part of the continuum generally led to bear, the other to pear.",
+        "This reproduces categorical responding in an ordinary recognition task. It does not yet reveal whether all bear responses were equally certain at every earlier moment.",
+        "Eye movements supply the missing time course. They allow comparison of tokens that end in the same click but differ in the strength of the alternative they briefly activate."
+      ]
+    },
+    {
+      "page": 12,
+      "title": "Competitor looks reveal graded ambiguity",
+      "paragraphs": [
+        "Tokens nearer the phoneme boundary produced more looks to the competing picture. The final click could remain the same while the moment-by-moment distribution of looks changed.",
+        "The result means that within-category acoustic differences reached word-level processing. A less prototypical bear token created greater temporary competition from pear.",
+        "Recognition is therefore richer than the final categorical label. The eye trace reveals partial activation that a single endpoint response conceals."
+      ]
+    },
+    {
+      "page": 13,
+      "title": "Aligning looks with the category boundary",
+      "paragraphs": [
+        "The reorganized graph expresses competitor looking relative to distance from the category boundary. Competitor activity increases as the input approaches that boundary.",
+        "This comparison focuses on **category goodness**: some members fit a category more clearly than others. They can share a final label while differing in how strongly the alternative remains active.",
+        "The gradual relationship fits continuous propagation. It is harder to explain by a phoneme gate that sends an identical, fully resolved symbol for every token inside one category."
+      ]
+    },
+    {
+      "page": 14,
+      "title": "How a cascade produces the eye-movement result",
+      "paragraphs": [
+        "A bilabial stop can activate features consistent with both /b/ and /p/ by different amounts. **Bilabial** means produced with the two lips; voicing helps distinguish the competing consonants.",
+        "Graded feature activation influences phoneme activation and then candidate words. A near-boundary token leaves more activity in the competitor than a clearly voiced token does.",
+        "The resulting looks track this competition before a decision. The same final word can emerge from different amounts of earlier uncertainty."
+      ]
+    },
+    {
+      "page": 15,
+      "title": "Andruski: partial input can activate meaning",
+      "paragraphs": [
+        "Nonwords resembling real words can facilitate related meanings: beace primes war, and ging primes queen. **Semantic priming** means a preceding item facilitates processing of a meaning-related target.",
+        "A near-word input can partially activate peace or king without being a correct spoken instance of that word. Their meanings can then influence the following target.",
+        "Partial acoustic evidence can therefore have consequences as far as the lexical and semantic levels. Recognition does not need a perfectly completed phoneme sequence before any downstream activation occurs."
+      ]
+    },
+    {
+      "page": 16,
+      "title": "Why the threshold-only account struggles",
+      "paragraphs": [
+        "A threshold that passes only the chosen phoneme loses the differences among tokens assigned to that phoneme. It would give later levels essentially the same category output for those tokens.",
+        "McMurray's competitor looks vary gradually even among tokens receiving the same final label. The variation therefore survives into recognition instead of vanishing at a discrete gate.",
+        "Cascading explains how this can happen: partial activation is continuously transmitted. The evidence concerns the flow of uncertainty, not the disappearance of phoneme categories."
+      ]
+    },
+    {
+      "page": 17,
+      "title": "Adding lexical feedback",
+      "paragraphs": [
+        "The model includes connections from words back to phonemes. A partially active word can reinforce the phoneme sequence consistent with that word.",
+        "**Feedback** differs from cascading: cascading describes continuous forward flow; feedback describes information traveling from a later representational level toward an earlier one.",
+        "The two can work together. Acoustic input starts several candidates, and lexical knowledge can then change the balance among their component speech sounds."
+      ]
+    },
+    {
+      "page": 18,
+      "title": "Ganong: real words bias phoneme labels",
+      "paragraphs": [
+        "Ganong constructed continua between a real word and a nonword, such as corpse and gorpse. The initial sound was varied in small voice-onset-time steps.",
+        "An ambiguous consonant could be interpreted in a way that produces a known word. A different surrounding sequence could favor the other consonant instead.",
+        "Comparing the labeling functions tests a **lexical effect** on phoneme identification. The crucial stimuli are ambiguous enough that word knowledge can affect their interpretation."
+      ]
+    },
+    {
+      "page": 19,
+      "title": "The late-correction prediction",
+      "paragraphs": [
+        "A late-correction account leaves the initial phoneme percept unchanged, then biases a report toward a real word. Word knowledge acts after an otherwise ordinary categorical decision.",
+        "This predicts a response adjustment rather than a relocation of the phoneme boundary itself. Its shape can be contrasted with the boundary-shift prediction in the next comparison.",
+        "The experiment therefore asks more than whether words are favored overall. Where the two labeling curves differ across the continuum helps distinguish the accounts."
+      ]
+    },
+    {
+      "page": 20,
+      "title": "The boundary-shift prediction",
+      "paragraphs": [
+        "If word knowledge changes the category boundary, its largest effect should occur for ambiguous sounds near that boundary. Clear endpoint tokens need little lexical help.",
+        "The same intermediate acoustic input can receive different labels when one surrounding sequence makes /k/ a word and another makes /g/ a word. The transition point shifts with lexical context.",
+        "This is a selective interaction between evidence and knowledge. It does not predict that every clearly heard consonant should be overwritten whenever a word is available."
+      ]
+    },
+    {
+      "page": 21,
+      "title": "Ganong's observed labeling curves",
+      "paragraphs": [
+        "The observed curves resemble a change around the category boundary more than a uniform late correction. Lexical context has its greatest influence where the consonant is uncertain.",
+        "Known words therefore affect how the ambiguous speech sequence is categorized. The shape of the effect is part of the evidence, rather than only the total number of word responses.",
+        "Later interactive models implement this with lexical-to-phoneme feedback: activated words strengthen the speech sounds that support them."
+      ]
+    },
+    {
+      "page": 22,
+      "title": "TRACE: activation changes as speech unfolds",
+      "paragraphs": [
+        "**TRACE** represents interacting features, phonemes, and words over time. An unfolding input activates several words compatible with its early sounds.",
+        "The plots show candidates changing activation rather than appearing only after the entire word is heard. Later input changes how well each candidate fits.",
+        "A simulation connects a proposed mechanism to a time course. Its changing word and phoneme activity provides a process-level account of lexical effects on an ambiguous initial consonant."
+      ]
+    },
+    {
+      "page": 23,
+      "title": "Why the final /g/ favors plug",
+      "paragraphs": [
+        "Early input can partially support plug, blood, or blush. When the final /g/ arrives, it strongly favors plug over the competitors whose endings do not match.",
+        "Increasing plug activation feeds back to its phonemes. This can strengthen the interpretation of the initial sound that makes the full input a word.",
+        "The sequence illustrates interaction across time and levels: later evidence changes word competition, and the winning lexical candidate influences an earlier speech-sound interpretation."
+      ]
+    },
+    {
+      "page": 24,
+      "title": "TRACE and interactive activation",
+      "paragraphs": [
+        "TRACE shares principles with the **interactive activation** approach to written-word recognition. Representational levels activate compatible candidates, while competition helps select among alternatives.",
+        "Speech adds an important temporal demand. A spoken word arrives progressively, so candidates must be updated as successive sounds become available.",
+        "The relationship is mechanistic rather than merely visual: reciprocal activation and competitive selection can explain word recognition in different input modalities while respecting their different time courses."
+      ]
+    },
+    {
+      "page": 25,
+      "title": "Categories coexist with interaction",
+      "paragraphs": [
+        "Equal physical differences can remain easier to hear across category boundaries. Neither cascading nor lexical feedback requires that this basic categorical-perception result disappear.",
+        "What changes is the claim that a word-recognition system waits passively for finished phonemes. Acoustic uncertainty can affect words, and word knowledge can affect ambiguous phonemes.",
+        "The **lexical–phonetic interface** is therefore interactive. Stable final categories can emerge from a process that retains graded information and exchanges influence between levels."
+      ]
+    },
+    {
+      "page": 26,
+      "title": "From words to sentence ambiguity",
+      "paragraphs": [
+        "The sentence-processing reading extends the ambiguity question to larger structures. Words can fit more than one grammatical arrangement while a sentence unfolds.",
+        "The relevant connection is timing: does one process finish before another begins, or do several sources of information constrain interpretation together? This prepares the move from phoneme and word competition to competing sentence analyses."
+      ]
+    },
+    {
+      "page": 27,
+      "title": "The cohort effect in spoken-word recognition",
+      "paragraphs": [
+        "As a spoken word begins, words sharing its onset form a **cohort** of candidates. Listeners can look toward both the target and an onset-sharing competitor before the ending separates them.",
+        "In the visual-world display, the target gains looks as evidence accumulates. The cohort competitor attracts early looks, then loses support when the rest of the sound no longer matches.",
+        "The eye-movement time course shows recognition operating during the word. The system need not wait for a completed acoustic word before considering lexical candidates."
+      ]
+    },
+    {
+      "page": 28,
+      "title": "Why the time course matters",
+      "paragraphs": [
+        "The simulation and eye traces track changing activity for targets and different competitors. Their peaks and declines reveal when a candidate is temporarily plausible.",
+        "A final correct click compresses that history into one answer. Time-resolved measures preserve the competition that occurred on the way to the answer.",
+        "This links cohort effects to graded category goodness: both show information influencing recognition before a final categorical response is issued."
+      ]
+    }
+  ],
+  "aphasias": [
+    {
+      "page": 1,
+      "title": "Aphasia: language after brain injury",
+      "paragraphs": [
+        "**Aphasia** is an acquired disruption of language associated with brain injury. Different patterns of speaking and understanding can reveal which operations a language task requires.",
+        "The central comparison is between a loss of linguistic knowledge and difficulty using that knowledge under processing demands. Carefully designed comprehension tasks help separate these explanations."
+      ]
+    },
+    {
+      "page": 2,
+      "title": "Centers, connections, and disconnections",
+      "paragraphs": [
+        "Early neurologists such as Wernicke and Lichtheim described specialized centers joined by pathways. Damage to a connection could disrupt one operation while leaving other operations available.",
+        "In the diagram, comprehension and verbatim repetition can fail through different disconnections. **Repetition** means reproducing what was heard, which need not be identical to understanding its meaning.",
+        "A box-and-arrow model states which representations communicate. This makes distinct predicted impairment patterns possible instead of treating every language difficulty as the same disorder."
+      ]
+    },
+    {
+      "page": 3,
+      "title": "The Geschwind–Wernicke framework",
+      "paragraphs": [
+        "Geschwind revived a connected-system account of brain and language. The diagram places auditory, motor, and connecting regions within an anatomical model.",
+        "By this period, linguistics also distinguished computations such as syntax from lexical knowledge. Clinical differences could therefore be interpreted using more specific candidate functions.",
+        "A **double dissociation** compares contrasting patterns of impairment. It can motivate separating operations, but the task definitions determine which operations the comparison actually tests."
+      ]
+    },
+    {
+      "page": 4,
+      "title": "Fluency, agrammatism, and comprehension",
+      "paragraphs": [
+        "Broca-type speech often contains word-finding pauses, omitted grammatical morphemes, and disturbed word order. **Agrammatism** refers to this reduced or disrupted grammatical organization.",
+        "Wernicke-type speech can be fluent and well articulated while containing substitutions, invented words, and comprehension problems. Fluency describes the flow of speech rather than whether its content is accurate.",
+        "Everyday conversation may make comprehension seem better than controlled testing shows. The passage also distinguishes behavioral syndromes from a perfectly one-to-one match with a named brain area."
+      ]
+    },
+    {
+      "page": 5,
+      "title": "Telegraphic speech versus fluent word salad",
+      "paragraphs": [
+        "**Telegraphic speech** retains important content words but has difficulty with grammatical particles, inflections, and ordering. The listener may infer an intended message from the surviving words.",
+        "Wernicke-type **word salad** can preserve the outward rhythm and rough syntax of speech while word selection and meaningful organization break down. A **neologism** is an invented word form.",
+        "These profiles suggest a contrast between grammatical organization and lexical selection. The contrast motivates experiments rather than replacing the need to test those functions directly."
+      ]
+    },
+    {
+      "page": 6,
+      "title": "Broca's original cases and apraxia of speech",
+      "paragraphs": [
+        "Broca's original patients had profound problems producing articulate speech. This historical description is not identical to the later syndrome defined mainly through agrammatic language.",
+        "**Apraxia of speech** concerns planning or controlling speech movements. A person may have difficulty producing the movements without having lost all grammatical knowledge.",
+        "Calling both patterns Broca-related can hide this distinction. The question is whether the observed failure belongs to motor execution, linguistic structure, or a combination."
+      ]
+    },
+    {
+      "page": 7,
+      "title": "Why grammar and the lexicon were separated",
+      "paragraphs": [
+        "The **lexicon** contains word-level representations; **grammar** organizes combinations and structural relations. The proposed aphasia dichotomy maps Wernicke-type problems onto lexical activation and Broca-type problems onto grammar.",
+        "Formal linguistic arguments made this separation plausible by distinguishing grammatical structure from meaning. A sentence can be syntactically organized even when its meaning is strange.",
+        "The clinical prediction is specific: a grammar impairment should affect tasks that need structural relationships, including comprehension when word meaning alone cannot supply the answer."
+      ]
+    },
+    {
+      "page": 8,
+      "title": "Functional and positional levels in production",
+      "paragraphs": [
+        "The production framework separates selecting lexical items from organizing their grammatical positions and forms. **Lemmas** are lexical representations linked to intended meanings; positional processes arrange grammatical structure.",
+        "The relationship between a word and its referent is often arbitrary. Affixes and structural combinations instead reflect rules governing how pieces are assembled.",
+        "The error easy enoughly illustrates morphology participating in production processes rather than being only a stored whole-word meaning. This is why the grammar–lexicon contrast involves more than long words versus short words."
+      ]
+    },
+    {
+      "page": 9,
+      "title": "Testing grammar during comprehension",
+      "paragraphs": [
+        "A listener can seem to understand a sentence by combining familiar meanings and contextual expectations. This success does not necessarily show that every syntactic dependency was computed.",
+        "An autonomous-parser account proposes structural computations that can be distinguished from meaning. To test them, sentence materials must make structure determine the intended interpretation.",
+        "Broca-type patients could therefore follow many conversations while struggling with sentences whose grammatical relationships cannot be recovered from familiar event knowledge."
+      ]
+    },
+    {
+      "page": 10,
+      "title": "From articulation to a syntactic hypothesis",
+      "paragraphs": [
+        "Broca's historical observation separated articulate speech from comprehension. A later theory asks a different question: can grammatical processing be impaired across speaking and understanding?",
+        "A comprehension task reduces the need to produce speech. If difficulty remains when the participant can simply choose a picture, impaired articulation alone is insufficient to explain that response pattern.",
+        "The best materials isolate who performs an action and who receives it. They force structural information to contribute instead of letting the task be solved entirely through familiar meanings."
+      ]
+    },
+    {
+      "page": 11,
+      "title": "Competence and performance",
+      "paragraphs": [
+        "**Competence** refers to linguistic knowledge; **performance** is its use under actual processing and response demands. Motor difficulties can change speech output even if some underlying knowledge remains.",
+        "Jackson's point is that the behavior observed after injury is what the person can still accomplish. A short, agrammatic utterance may reflect an adaptation to difficulty rather than a literal picture of an erased grammar.",
+        "Caramazza and Zurif therefore examined comprehension. The aim was to see whether grammatical relationships cause difficulty when the required response does not depend on producing a fluent sentence."
+      ]
+    },
+    {
+      "page": 12,
+      "title": "Why man bites dog is informative",
+      "paragraphs": [
+        "For the dog bit the man, word meanings and familiar event knowledge favor the same interpretation as ordinary English word order. Several routes can lead to a correct response.",
+        "In the dog that the man is biting is angry, the man performs the biting and the dog receives it. A dog-bites-man expectation gives the wrong answer.",
+        "This sentence separates **semantic heuristics**, shortcuts based on likely events, from computing the actual relationship. Choosing the matching picture requires tracking the embedded grammatical structure."
+      ]
+    },
+    {
+      "page": 13,
+      "title": "Caramazza and Zurif's sentence contrasts",
+      "paragraphs": [
+        "Control sentences provide relatively straightforward action descriptions. Other conditions embed one clause inside another, increasing the need to connect the nouns to their grammatical roles.",
+        "**Semantically constrained** items, such as an apple being eaten by a boy, can be supported by plausibility. **Reversible** items contain participants that could exchange roles, while improbable items make the intended relation conflict with common expectations.",
+        "Comparing these conditions asks when plausibility can compensate for structural difficulty. The task is not merely recognizing nouns; it is selecting the picture showing the specified action relation."
+      ]
+    },
+    {
+      "page": 14,
+      "title": "The sentence–picture matching results",
+      "paragraphs": [
+        "Healthy controls performed well across sentence types. Wernicke-type patients were poor more broadly, consistent with substantial comprehension difficulty.",
+        "Broca-type patients had particular difficulty when structure conflicted with likely roles or when the nouns could plausibly exchange roles. The trouble concerned keeping who did what to whom straight.",
+        "This pattern supported the proposal that syntax contributes a distinct operation. It showed why everyday comprehension can conceal problems that become visible in carefully contrasted sentence materials."
+      ]
+    },
+    {
+      "page": 15,
+      "title": "Defining the operation more precisely",
+      "paragraphs": [
+        "Broad descriptions such as fluent or poor comprehension summarize behavior but combine many processes. A language theory can suggest finer distinctions, such as lexical access versus structural role assignment.",
+        "Experiments then make the proposed distinction observable. Sentence–picture matching separates recognizing content words from using the grammar to connect their referents.",
+        "The resulting structure–function question concerns particular operations rather than a whole faculty called language. The explanatory value comes from linking a defined task contrast to a defined impairment pattern."
+      ]
+    },
+    {
+      "page": 16,
+      "title": "Dick: four ways to describe the same action",
+      "paragraphs": [
+        "Participants indicated which animal performed the action. In the dog is biting the cat, the dog is the agent; it remains the agent in it's the cat that the dog is biting.",
+        "The four forms were active, subject cleft, object cleft, and passive. **Object clefts** and **passives** require interpreting a first-mentioned noun that is not simply the acting participant.",
+        "Holding the event relation constant while varying its expression tests sensitivity to sentence form. The target is the agent, not whichever animal happens to be named first."
+      ]
+    },
+    {
+      "page": 17,
+      "title": "Patient performance across sentence forms",
+      "paragraphs": [
+        "Broca-type patients struggled particularly with object clefts and passives relative to easier forms. The pattern resembles the earlier difficulty with noncanonical or structurally demanding relationships.",
+        "The participant must map the sentence onto the correct actor while resisting a first-noun-as-agent shortcut. That shortcut works for many active sentences but fails for an object cleft.",
+        "The graph compares performance patterns across groups rather than diagnosing grammar from one missed item. Both overall accuracy and the additional cost of particular forms matter."
+      ]
+    },
+    {
+      "page": 18,
+      "title": "Healthy listeners under processing stress",
+      "paragraphs": [
+        "Healthy undergraduates also became especially vulnerable on object clefts and passives when speech was accelerated or a secondary memory task added demands.",
+        "The manipulation changes available processing resources rather than giving the participants a brain lesion. The resulting selective difficulty resembles part of the patient pattern.",
+        "A structurally selective deficit can therefore emerge through **performance** demands. The shared pattern raises the possibility that demanding sentences expose a more general processing bottleneck."
+      ]
+    },
+    {
+      "page": 19,
+      "title": "Saygin: actions without words",
+      "paragraphs": [
+        "Patients matched an action to an object using linguistic and nonlinguistic stimuli. The drawings make meaningful relations available without requiring a sentence to carry all the information.",
+        "Broca-type patients had difficulty in both versions. Removing language did not eliminate the relevant task difficulty.",
+        "The result connects linguistic action interpretation with broader action or event processing. It tests whether the impairment is confined to sentence grammar by preserving the relation while changing its presentation."
+      ]
+    },
+    {
+      "page": 20,
+      "title": "Relating action matching to lesion location",
+      "paragraphs": [
+        "Performance on the nonverbal task was associated with damage involving Broca's area. The anatomical relationship therefore extended beyond a language-only version of the task.",
+        "A **lesion–behavior association** relates the location of damaged tissue to measured performance. Here the behavior involves interpreting or matching an action relation without a spoken sentence.",
+        "The evidence motivates a functional description broader than grammar alone. A region can contribute to language tasks because those tasks also depend on operations used outside language."
+      ]
+    },
+    {
+      "page": 21,
+      "title": "Environmental sounds and Wernicke-type deficits",
+      "paragraphs": [
+        "Patients matched environmental sounds to pictures and also completed a verbal version. An environmental sound conveys information about an event or object without being a word.",
+        "Wernicke-type patients were particularly poor, and the reported verbal–nonverbal difference was not significant. Their difficulty extended to extracting meaning from sounds outside speech.",
+        "The comparison preserves auditory meaning matching while changing whether the input is linguistic. This helps explain why poor spoken comprehension need not identify a language-exclusive deficit."
+      ]
+    },
+    {
+      "page": 22,
+      "title": "Auditory meaning and posterior damage",
+      "paragraphs": [
+        "The lesion maps relate poor sound–picture matching to damage involving Wernicke's area. Associations are shown for both verbal and nonverbal inputs.",
+        "The overlap matters because both tasks require connecting an auditory pattern with an appropriate meaning. One uses words; the other uses meaningful environmental sounds.",
+        "The anatomical result therefore fits a contribution to auditory comprehension broader than word labels alone. Behavioral task comparisons and lesion maps address the same functional question from different directions."
+      ]
+    },
+    {
+      "page": 23,
+      "title": "What the competing aphasia accounts explain",
+      "paragraphs": [
+        "A grammar–lexicon account predicts dissociable linguistic operations. A broader processing account asks whether similar difficulties occur when comparable demands are imposed without language.",
+        "Controlled sentences, action matching, and environmental-sound matching give these proposals measurable predictions. Accuracy patterns are compared across conditions and related quantitatively to lesions.",
+        "The resulting debate concerns what a region or impairment contributes to a task. Naming a syndrome is the starting point for explaining the behavior, not the entire explanation."
+      ]
+    },
+    {
+      "page": 24,
+      "title": "Connecting aphasia to development",
+      "paragraphs": [
+        "The next topic asks how language functions emerge rather than how they change after injury. Developmental evidence can help identify the contributions of experience and initial learning capacities.",
+        "The connection is functional: successful language depends on several interacting operations. Their appearance, change, and vulnerability can be studied through carefully chosen behavioral tasks."
+      ]
+    },
+    {
+      "page": 25,
+      "title": "Voxel-based lesion–symptom mapping",
+      "paragraphs": [
+        "**Voxel-based lesion–symptom mapping** compares damage at small brain locations with differences in behavior across many patients. A voxel is a small three-dimensional unit in a brain image.",
+        "The displayed maps associate broad fluency deficits more with anterior regions and broad comprehension deficits more with posterior regions. This supports a rough production–perception separation at that level of description.",
+        "The particular symptom measure determines the interpretation. Broad fluency maps and precise action-matching contrasts ask related but differently detailed questions about brain function."
+      ]
+    }
+  ],
+  "development1": [
+    {
+      "page": 1,
+      "title": "How speech perception develops",
+      "paragraphs": [
+        "Language development asks how an infant's changing abilities arise from initial capacities and experience. Speech perception is especially useful because it can be measured before fluent speaking.",
+        "The lecture moves from categorical perception to learning from sound distributions and social interaction. The common question is what experience changes in the perceptual system."
+      ]
+    },
+    {
+      "page": 2,
+      "title": "Nativist explanations of language acquisition",
+      "paragraphs": [
+        "**Generativity** is the ability to produce and understand new sentences. Chomsky argued that acquiring a language involves identifying an abstract grammar rather than memorizing a list of utterances.",
+        "The critique of simple behaviorism has two parts: grammatical similarity is not reducible to straightforward surface resemblance, and children are not consistently rewarded for grammar and punished for ungrammaticality.",
+        "A **nativist** account proposes innate knowledge about possible languages, called Universal Grammar, together with language-specific acquisition processes. Speed and broadly comparable grammatical outcomes motivated this proposal."
+      ]
+    },
+    {
+      "page": 3,
+      "title": "Why categorical perception seemed specialized",
+      "paragraphs": [
+        "Categorical perception makes equal physical differences unequal perceptually. Sounds crossing a phoneme boundary are distinguished more easily than sounds within one category.",
+        "Early theories interpreted this as an auditory signal being translated into language-relevant symbols. Its apparent restriction to humans and speech made a specialized mechanism seem plausible.",
+        "The key distinction is between describing the perceptual pattern and explaining its origin. Similarity defined by a category can emerge through different kinds of learning or initial organization."
+      ]
+    },
+    {
+      "page": 4,
+      "title": "Infant methods: head turns and sucking",
+      "paragraphs": [
+        "A conditioned head turn rewards an infant for turning when a sound changes. High-amplitude sucking instead measures sucking linked to presentation of the auditory stimulus.",
+        "Repetition causes **habituation**, a decline in response. A renewed response after a sound change indicates that the infant detected a difference.",
+        "The measure supplies evidence without asking for a verbal category label. The comparison must specify whether the sound stayed the same, changed within a category, or crossed a boundary."
+      ]
+    },
+    {
+      "page": 5,
+      "title": "Eimas: comparing equal changes in VOT",
+      "paragraphs": [
+        "Infants heard repeated speech tokens varying in **voice onset time**, the interval between stop release and the onset of voicing. Sucking was measured before and after a stimulus shift.",
+        "A between-category shift produced stronger recovery than a matched within-category shift. An unchanged condition supplied a comparison for responding without a new sound.",
+        "The result is categorical-like discrimination early in life. Infants distinguished the changes according to their relation to a speech boundary, rather than responding equally to every physical shift."
+      ]
+    },
+    {
+      "page": 6,
+      "title": "Why an early infant result mattered",
+      "paragraphs": [
+        "At around four months, many motor and visual skills are still developing, and speech production is only beginning to resemble vowel-like sounds. Categorical discrimination appears early relative to those milestones.",
+        "If the ability were unique to speech and humans, its early emergence would fit an account of an innate language specialization. This made the Eimas finding influential.",
+        "Early presence establishes when a behavior can be observed. The claims that it is language-specific or independent of learning require additional comparisons, which the following experiments provide."
+      ]
+    },
+    {
+      "page": 7,
+      "title": "Werker: perceptual narrowing",
+      "paragraphs": [
+        "Young English-learning infants detect contrasts that distinguish sounds in Hindi or Salish even though those contrasts are not used in English. Older English-learning infants show reduced discrimination.",
+        "Infants remain sensitive to distinctions supported by their own linguistic environment. Experience changes which differences organize perception most effectively.",
+        "**Perceptual narrowing** describes this increasing tuning. The loss concerns particular distinctions; it is not a general decline in hearing or the ability to learn any new information."
+      ]
+    },
+    {
+      "page": 8,
+      "title": "The citizens-of-the-world narrative",
+      "paragraphs": [
+        "The proposed account starts with many available phonetic contrasts. Exposure to the native language selects a smaller set that remains useful for distinguishing its words.",
+        "Learning is therefore described as choosing among innately available categories. A broad initial capacity becomes specialized through the child's environment.",
+        "This narrative makes concrete predictions: categorical perception should be special to language, and infants should begin with access to the relevant contrasts. Both claims can be tested independently."
+      ]
+    },
+    {
+      "page": 9,
+      "title": "What a fuller developmental account must explain",
+      "paragraphs": [
+        "Categorical patterns also occur with nonspeech sounds, nonhuman listeners, and different task demands. The same outward behavior does not always identify a uniquely linguistic mechanism.",
+        "Infant contrasts differ in initial salience, meaning how easy they are to detect. Some improve with relevant experience instead of being present early and then lost.",
+        "A developmental explanation therefore needs both category tuning and category formation. It must explain why experience can strengthen some distinctions while reducing sensitivity to others."
+      ]
+    },
+    {
+      "page": 10,
+      "title": "Cutting and Rosner's nonspeech continuum",
+      "paragraphs": [
+        "Adults labeled nonspeech sounds with plucked or bowed qualities and discriminated equally separated pairs. The sounds varied in an acoustic property such as their onset characteristics.",
+        "Labeling changed around a category boundary, and discrimination was best near that boundary. The physically matched within-category changes were less noticeable.",
+        "Categorical perception can therefore organize nonspeech input. Its signature is the relationship between category labeling and discrimination, not simply the presence of spoken syllables."
+      ]
+    },
+    {
+      "page": 11,
+      "title": "Jusczyk: infant nonspeech categories",
+      "paragraphs": [
+        "Infants first heard a repeated nonspeech sound until sucking declined. The stimulus then remained unchanged, shifted within a category, or crossed a boundary.",
+        "Renewed sucking appeared most clearly for the between-category condition. The within-category condition resembled the unchanged condition more closely despite a physical change.",
+        "Infants can therefore show the categorical pattern outside speech. The result connects early auditory organization with a broader perceptual capacity."
+      ]
+    },
+    {
+      "page": 12,
+      "title": "Chinchilla speech categorization",
+      "paragraphs": [
+        "Chinchillas learned to respond to endpoint speech stimuli when that response was rewarded with food. The trained **SD** signaled that a response would have its rewarded consequence.",
+        "Intermediate voice-onset times were then used to trace the response curve. The change between endpoint-consistent responses was category-like, comparable in broad form to human labeling.",
+        "Possessing human language is not required for this organization of speech sounds. The experiment separates an animal's auditory categorization from the specifically human uses made of phonemes."
+      ]
+    },
+    {
+      "page": 13,
+      "title": "Narayan: not every contrast starts equally clear",
+      "paragraphs": [
+        "Young infants detected /ma/–/na/ more readily than /na/–/ŋa/. The latter distinguishes two nasal places of articulation at the beginning of a syllable.",
+        "Looking behavior changed when an easy contrast switched, but not comparably for the difficult contrast. The same method therefore reveals unequal sensitivity to different speech distinctions.",
+        "The initial state is not a universal inventory in which every possible contrast is equally available. Acoustic salience is part of what the learning system begins with."
+      ]
+    },
+    {
+      "page": 14,
+      "title": "Experience can create a stronger distinction",
+      "paragraphs": [
+        "Filipino-learning infants improved on /na/–/ŋa/ between the younger and older ages shown. Their environment provides information that makes this contrast linguistically relevant.",
+        "Older infants showed a clearer behavioral difference between same and change trials. The ability grows with experience instead of merely surviving from an equally sensitive initial state.",
+        "Learning can therefore add effective distinctions. This complements perceptual narrowing: development changes the organization of perception in both directions."
+      ]
+    },
+    {
+      "page": 15,
+      "title": "Emergentist learning and associations",
+      "paragraphs": [
+        "An **emergentist** account explains organized behavior through learning mechanisms sensitive to regularities in experience. An association strengthens when events reliably occur together.",
+        "In the neuron illustration, food already activates a salivation response. Repeated pairing allows the bell-related connection to become stronger, so the bell can help activate that response.",
+        "Speech learning requires extending this principle to pattern recognition. The relevant input is not merely a reward but the distribution and co-occurrence of acoustic properties across many sounds."
+      ]
+    },
+    {
+      "page": 16,
+      "title": "Learning a vowel distribution",
+      "paragraphs": [
+        "The vowel-space plot places productions using F1 and F2. A vowel category forms a cloud because no speaker produces exactly the same resonance pattern every time.",
+        "A statistical learner can track where observations cluster. A **prototype**, a particularly representative example, could correspond to the distribution's mean or most frequent region.",
+        "This turns category learning into discovering structure in variable input. Overlapping clouds explain why a single formant pair may remain ambiguous even after useful categories have formed."
+      ]
+    },
+    {
+      "page": 17,
+      "title": "Maye: one peak versus two peaks",
+      "paragraphs": [
+        "Infants passively heard a continuum distributed around either one peak or two. **Unimodal** exposure emphasizes one central cluster; **bimodal** exposure emphasizes two clusters.",
+        "Test trials alternated tokens 3 and 6 or repeated a token. Those critical tokens occurred equally often during exposure, so their individual familiarity does not explain the group contrast.",
+        "Only the bimodal group showed clear sensitivity to the alternating versus nonalternating test. The distribution changed whether the same two sounds were treated as distinct, supporting learning from statistical structure."
+      ]
+    },
+    {
+      "page": 18,
+      "title": "Learning through social interaction",
+      "paragraphs": [
+        "Infants exposed to live, interactive Mandarin showed phonetic learning more clearly than groups receiving television or audio exposure. The contrast concerns the context of language experience, not simply the presence of sound.",
+        "In another study, mothers' responses either followed their infant's vocalizations or occurred on a noncontingent schedule. **Contingent** feedback depends on the infant's own action; it increased the quantity and complexity of vocalizations.",
+        "Social exchange can help by reinforcing behavior or directing attention to useful information. These mechanisms connect other people to the learning process rather than treating exposure as an undifferentiated count of sounds."
+      ]
+    },
+    {
+      "page": 19,
+      "title": "Statistical learning is constrained",
+      "paragraphs": [
+        "A learner must discover which properties distinguish categories. Speaker identity and speech rate vary widely but do not define the same linguistic contrasts as phonetic cues.",
+        "Earlier learning changes later learning by making some distinctions easier to preserve or acquire. This creates a connection between statistical learning and sensitive periods.",
+        "Social and interactive context also changes what is learned. A constrained statistical account therefore includes the properties attended to, the learner's existing organization, and the context in which the input arrives."
+      ]
+    }
+  ],
+  "development2": [
+    {
+      "page": 1,
+      "title": "Finding words, meanings, and constructions",
+      "paragraphs": [
+        "Language development includes separating words from speech, linking them to meanings, and combining them into structures. Success at one problem does not automatically solve the next.",
+        "**Morphemes** are meaningful grammatical pieces, and **constructions** are patterns that connect forms with uses or meanings. The experiments ask what children know before their own utterances become long and fluent."
+      ]
+    },
+    {
+      "page": 2,
+      "title": "Why speech does not supply printed spaces",
+      "paragraphs": [
+        "The acoustic signal has no consistent physical boundary between every pair of words. Closures and pauses can occur within words as well as between them.",
+        "A learner therefore cannot simply split the waveform wherever silence appears. **Segmentation** means discovering word-sized units within this connected stream.",
+        "The problem is harder for a beginner who does not already know the words. Regularities within the signal must help establish the units that will later support recognition."
+      ]
+    },
+    {
+      "page": 3,
+      "title": "Stress and phonotactic cues to boundaries",
+      "paragraphs": [
+        "**Phonotactics** concerns which sound sequences occur within a language's words. An unusual sequence can suggest that a word boundary lies between its sounds.",
+        "English often stresses the first syllable of a word. Infants familiarized with kingdom recognized it in connected passages more clearly than infants familiarized with device, whose stress falls later.",
+        "Stress can therefore help locate word beginnings in English. Isolated words and phonotactic regularities supply additional cues, and different languages can assign these cues different usefulness."
+      ]
+    },
+    {
+      "page": 4,
+      "title": "Pretty baby and transitional probability",
+      "paragraphs": [
+        "A **transitional probability** is how likely one syllable is to follow another. In pretty baby, the first syllable of pretty strongly predicts its own second syllable.",
+        "The final syllable of pretty can instead be followed by many words, making one specific across-word continuation less reliable. The frequency ratios compare a pair's occurrences with the occurrences of its starting syllable.",
+        "High within-word predictability and lower across-word predictability can help locate boundaries. The learner tracks conditional relationships rather than simply counting which syllables are common."
+      ]
+    },
+    {
+      "page": 5,
+      "title": "Why probabilities are cues, not printed boundaries",
+      "paragraphs": [
+        "A syllable is often more predictable after another syllable inside a word than after a word ending. This makes a drop in predictability a useful segmentation cue.",
+        "The road ahead versus a head and ice cream versus I scream show that acoustic sequences can support multiple divisions. Context can change which division is meaningful.",
+        "Statistical segmentation is therefore probabilistic. Several sources of information can support an interpretation, and the same sound sequence need not carry one unavoidable boundary structure."
+      ]
+    },
+    {
+      "page": 6,
+      "title": "Saffran: isolating statistical information",
+      "paragraphs": [
+        "Infants heard continuously presented artificial speech made from simple consonant–vowel syllables. The stream was monotone, without boundary-defining changes in pitch, amplitude, duration, or pauses.",
+        "Repeated three-syllable units such as tokibu and gopila created strong internal relationships. Boundaries were available through the transition statistics rather than ordinary speech cues.",
+        "This design tests whether statistical structure is sufficient to affect segmentation. A successful response cannot be attributed to a pause conveniently marking each artificial word."
+      ]
+    },
+    {
+      "page": 7,
+      "title": "The unsegmented artificial stream",
+      "paragraphs": [
+        "The printed syllable stream illustrates what the infant hears without inserted word spaces. The same small set of three-syllable units recurs in different orders.",
+        "A starting syllable reliably predicts the rest of its unit, while a unit ending may lead to several possible next units. These conditional patterns are present even when the stream looks like one continuous string.",
+        "The learner's problem is to discover recurring groupings from those relationships. The experimenter knows the units, but the infant must recover them from exposure."
+      ]
+    },
+    {
+      "page": 8,
+      "title": "Making the hidden groupings visible",
+      "paragraphs": [
+        "Coloring the recurring units reveals the structure already present in the unsegmented stream. The colors are an explanatory aid; they were not an extra cue in the infant's auditory input.",
+        "Across repetitions, syllables inside a unit stay together more reliably than syllables straddling a boundary. The same sequence therefore supports different predictions at internal and boundary positions.",
+        "The comparison between the plain and colored versions separates what the input contains statistically from what it explicitly marks. Repetition can reveal structure without audible spaces."
+      ]
+    },
+    {
+      "page": 9,
+      "title": "Words versus frequency-matched part-words",
+      "paragraphs": [
+        "A **part-word** spans a trained word boundary. It can occur just as often as a real artificial word while having lower internal transitional probabilities.",
+        "In the example, GOPILA and BU-GIKO each occur twice. But GI follows BU on only some occasions, whereas the internal transitions in GOPILA are fully predictable in that sequence.",
+        "Matching frequency tests the proposed learning mechanism. If infants distinguish these sequences, mere familiarity with how often the whole string occurred is insufficient to explain the difference."
+      ]
+    },
+    {
+      "page": 10,
+      "title": "Interpreting the novelty preference",
+      "paragraphs": [
+        "Infants looked longer toward part-word test items than toward trained words. Here the longer response is a **novelty preference**, showing that the groups of syllables were treated differently.",
+        "Because part-words were matched in occurrence frequency, simple repetition count does not explain why they were less familiar in structure. The conditional syllable relationships distinguish them.",
+        "The result supports statistical segmentation. Longer looking does not always mean greater familiarity; its interpretation depends on the task and exposure design."
+      ]
+    },
+    {
+      "page": 11,
+      "title": "Segmentation does not supply meaning",
+      "paragraphs": [
+        "Finding a stable spoken form such as cat identifies a recurring unit. It does not determine which object, property, or event that form refers to.",
+        "**Reference** is the relation between an expression and what the speaker intends it to pick out. Word learning requires connecting the discovered form to an appropriate interpretation.",
+        "The next experiments therefore move from recognizing repeated sound patterns to using the social and conceptual context in which words are spoken."
+      ]
+    },
+    {
+      "page": 12,
+      "title": "The inductive problem of word meaning",
+      "paragraphs": [
+        "A speaker says cat near an animal. The sound could in principle refer to the whole animal, its fur, a body part, its movement, a category, or the individual named Felix.",
+        "The **hypothesis space** is this set of candidate interpretations. One co-occurrence between word and scene does not uniquely select the intended meaning.",
+        "Word learners need ways to narrow those possibilities. Attention, speaker intention, and default assumptions make the mapping problem more manageable than unrestricted association with everything visible."
+      ]
+    },
+    {
+      "page": 13,
+      "title": "Joint attention and reference",
+      "paragraphs": [
+        "**Joint attention** means sharing an attentional focus with another person. Gaze following begins around the age indicated in the lecture and helps a child connect communication with an attended object.",
+        "Looking where a speaker looks is useful because a word is intentionally directed toward something. The relevant scene includes the speaker's relation to the object, not only the object's presence.",
+        "Shared attention therefore supplies evidence about reference. It helps distinguish what the adult means from other things happening at the same moment."
+      ]
+    },
+    {
+      "page": 14,
+      "title": "Baldwin: interaction versus a voice behind a screen",
+      "paragraphs": [
+        "In the joint-attention condition, an adult interacting with the infant labeled the object the infant was handling. In the other condition, a voice behind a screen supplied the label.",
+        "Eighteen-month-olds learned the new word in the joint-attention condition but not in the no-joint-attention condition. Simply hearing a label while touching an object was not equally effective.",
+        "The result connects learning to a communicative interaction. Shared attention helps make the spoken form an intentional reference to the object."
+      ]
+    },
+    {
+      "page": 15,
+      "title": "Follow-in and discrepant labeling",
+      "paragraphs": [
+        "In **follow-in labeling**, the speaker looks at and names the toy already occupying the infant's attention. In **discrepant labeling**, the speaker attends to a different toy, such as one in a bucket.",
+        "The contrast separates the infant's current focus from the speaker's intended referent. A purely simultaneous-association strategy would favor the infant's own toy even when the adult names something else.",
+        "Following the speaker's gaze provides another route to the mapping. The key question is whether infants use information about another person's intention rather than only their own momentary attention."
+      ]
+    },
+    {
+      "page": 16,
+      "title": "Using gaze as evidence about a new word",
+      "paragraphs": [
+        "A gaze-direction demonstration asks which object the speaker is looking toward when giving a new label. Eye direction can distinguish an intended referent from a competing object.",
+        "The informative comparison is between the child's focus and the adult's focus. They can coincide, or the child can use the adult's gaze to redirect the interpretation.",
+        "This page marks a demonstration in the source PDF. The underlying concept is intentional reference through gaze; a still PDF does not reproduce the original moving demonstration."
+      ]
+    },
+    {
+      "page": 17,
+      "title": "Akhtar: emotional and behavioral cues",
+      "paragraphs": [
+        "A new label can occur while an adult searches among objects or reacts differently to them. Facial expression and behavior help identify what the adult intends.",
+        "Infants use those cues to select a referent for the novel word. The relevant information is not only which object was physically present when the sound occurred.",
+        "Learning therefore includes interpreting an interaction. An adult's satisfaction, attention, or goal can narrow the candidate meanings of a new expression."
+      ]
+    },
+    {
+      "page": 18,
+      "title": "Reading intention from an interaction",
+      "paragraphs": [
+        "An intentional-cues demonstration highlights that naming occurs within goal-directed behavior. The learner observes what the speaker is trying to find or communicate.",
+        "A response that identifies the intended object follows the adult's goal rather than treating every encounter as an equally good label–object pairing. This connects behavior and affect to reference.",
+        "The PDF provides the demonstration title rather than its original video. The teaching point is the use of the speaker's intention as evidence about a word's meaning."
+      ]
+    },
+    {
+      "page": 19,
+      "title": "The whole-object assumption",
+      "paragraphs": [
+        "The **whole-object assumption** is a default interpretation that a new noun names an entire object rather than one of its parts, properties, or actions.",
+        "It narrows the mapping problem immediately. A novel word spoken near an unfamiliar toy is initially linked to the toy as a whole instead of every visible feature separately.",
+        "A default is a starting preference, not an unchangeable rule. More informative contextual or linguistic evidence can support a different meaning."
+      ]
+    },
+    {
+      "page": 20,
+      "title": "Mutual exclusivity",
+      "paragraphs": [
+        "**Mutual exclusivity** is a default tendency to map a new word onto an object without an already known name. If one object is familiar and another unnamed, the unfamiliar one is a plausible referent.",
+        "The strategy reduces competition among possible mappings. Existing vocabulary becomes evidence about where a new label is likely to belong.",
+        "The lecture places its emergence in the later portion of the second year. The essential idea is the inference from known naming relations, rather than a requirement that an object literally can never have more than one label."
+      ]
+    },
+    {
+      "page": 21,
+      "title": "Applying mutual exclusivity in a choice",
+      "paragraphs": [
+        "Suppose a known object and an unfamiliar object are available when a novel label is requested. The strategy favors the object without a known label.",
+        "This follows from treating the familiar object's existing name as a reason to seek another referent. The choice therefore uses vocabulary knowledge to solve a new mapping problem.",
+        "The source page introduces a demonstration. Its concept can be understood through the decision structure even though the original video is not embedded in the uploaded PDF."
+      ]
+    },
+    {
+      "page": 22,
+      "title": "From short utterances to constructions",
+      "paragraphs": [
+        "Menn distinguishes a collection of relevant words, memorized formulas, productive combinations, and stable constructions. The same short utterance can fit different explanations depending on its context.",
+        "Up, pick you up, and mommy up differ in length but do not by themselves reveal the child's full system. A formula can be reproduced without flexible control of all its parts.",
+        "Context and generalization help distinguish these possibilities. The goal is to determine whether a child can use a pattern productively beyond one familiar routine."
+      ]
+    },
+    {
+      "page": 23,
+      "title": "Comprehension can exceed production",
+      "paragraphs": [
+        "Children producing only one word at a time can already use basic transitive word order in comprehension. Their spoken output is therefore an incomplete measure of their structural knowledge.",
+        "In a sentence–scene comparison, word order can specify which participant acts and which receives the action. A child need not produce the full sentence to show that distinction.",
+        "This separates linguistic understanding from production demands. Short utterances do not automatically imply that the child has no representation of relations involving several words."
+      ]
+    },
+    {
+      "page": 24,
+      "title": "Gertner: a novel verb tests generalization",
+      "paragraphs": [
+        "Two-year-olds heard a sentence such as the duck is gorping the bunny while viewing novel actions with reversed actor–recipient roles. **Gorping** is unfamiliar, so its meaning cannot simply be recalled from a known phrase.",
+        "Children looked longer at the action in which the duck acted on the bunny. The transitive word-order pattern identified the roles even with a new verb.",
+        "This is evidence of generalization beyond memorized utterances. Their MLU (mean length of utterance) is around two. Understanding the relation can exceed a short production such as duck gorp bunny."
+      ]
+    }
+  ],
+  "l1-critical": [
+    {
+      "page": 1,
+      "title": "When first-language experience occurs",
+      "paragraphs": [
+        "An **L1** is a first language. Studies of delayed access to any language ask whether the timing of early experience changes later attainment.",
+        "The lecture first uses visual development to explain experience-dependent organization, then applies the timing question to brain injury and delayed language exposure."
+      ]
+    },
+    {
+      "page": 2,
+      "title": "Critical versus sensitive periods",
+      "paragraphs": [
+        "A strict **critical period** has a discrete onset and offset, with relevant learning confined to that interval. Outside it, the proposed system is insensitive to that learning experience.",
+        "A **sensitive** or **optimal period** instead makes some ages especially favorable while allowing learning at other ages. Its timing and effectiveness may also depend on experience.",
+        "Evidence of an age advantage does not by itself choose between these descriptions. Continued improvement after the favored window fits a sensitive-period account more naturally than an absolute cutoff."
+      ]
+    },
+    {
+      "page": 3,
+      "title": "Amblyopia and early visual input",
+      "paragraphs": [
+        "**Amblyopia** is poor vision in an eye despite normal peripheral function at the time it is assessed. Early abnormal input can leave a lasting cortical consequence.",
+        "Strabismus misaligns the eyes, a cataract clouds input, and anisometropia gives the eyes different optical properties. Each can disrupt the normal relationship between the inputs during development.",
+        "Repairing the initial condition does not necessarily restore ordinary vision. The lasting impairment reflects how the brain organized itself while the input was abnormal."
+      ]
+    },
+    {
+      "page": 4,
+      "title": "Competition between the eyes",
+      "paragraphs": [
+        "Inputs from the eyes compete for cortical representation. If one eye supplies abnormal input, the other can gain an increasing representational advantage.",
+        "Restoring the disadvantaged eye's physical function does not immediately reverse that organization. The stronger input continues to dominate the existing competitive system.",
+        "The sequence links a temporary early disturbance to a persistent later outcome. What matters is not only what information arrives now but the representation established by earlier experience."
+      ]
+    },
+    {
+      "page": 5,
+      "title": "Why patch the stronger eye?",
+      "paragraphs": [
+        "Patching the better eye reduces its competitive advantage. The weaker eye then has more opportunity to drive processing and benefit from the brain's plasticity.",
+        "The treatment is generally more effective early in development. Later in childhood the already-established imbalance can be harder to alter through this intervention.",
+        "The mechanism is experience-dependent rebalancing. Covering the stronger eye does not repair the weaker eye's optics directly; it changes how the cortical system uses the competing inputs."
+      ]
+    },
+    {
+      "page": 6,
+      "title": "Adult perceptual learning in amblyopia",
+      "paragraphs": [
+        "Levi and Polat examined intensive practice in adults with amblyopia. Repeated psychophysical training in the affected eye improved task performance and aspects of visual function.",
+        "The graph relates performance to extended training, showing that substantial exposure can change an adult system that had developed abnormally. The relevant comparison is improvement with practice.",
+        "Adult plasticity is therefore reduced or differently accessed, rather than necessarily absent. A sensitive-period description accommodates both an early advantage and later learning under suitable conditions."
+      ]
+    },
+    {
+      "page": 7,
+      "title": "Game-based visual training",
+      "paragraphs": [
+        "The cited work examines video-game training in adult amblyopia. Game performance engages repeated visual discrimination and attention in the affected system.",
+        "Its place in the argument is adult experience producing visual change. The example extends the idea of training beyond one narrowly repeated laboratory judgment.",
+        "The conceptual connection is to plasticity after the optimal developmental period. Improvement later in life distinguishes an especially effective early window from a permanent end to all learning."
+      ]
+    },
+    {
+      "page": 8,
+      "title": "From temporary deprivation to lasting organization",
+      "paragraphs": [
+        "An early disturbance can change the experience-dependent organization of the visual system. Persistent poor function is a consequence of that developmental history.",
+        "Treatment works most readily within an earlier window, but appropriately structured adult training can also improve function. The timing and the nature of experience both matter.",
+        "Amblyopia therefore illustrates a **sensitive period** with competitive dynamics. It supplies a concrete mechanism to consider when interpreting age effects in other developing systems."
+      ]
+    },
+    {
+      "page": 9,
+      "title": "Connecting visual development to language",
+      "paragraphs": [
+        "The language question is whether experience at particular ages is especially important for building an effective language system. Lenneberg connected this possibility to developmental neurology.",
+        "Deprivation cases ask what happens when accessible language is absent early. Delayed sign-language access provides a different kind of evidence from histories of severe neglect.",
+        "These comparisons concern access to a usable language, not simply whether someone has heard speech. A child needs input the developing system can actually perceive and learn from."
+      ]
+    },
+    {
+      "page": 10,
+      "title": "Lenneberg's developmental synthesis",
+      "paragraphs": [
+        "Lenneberg linked stage-like language milestones with the changing brain. An orderly developmental sequence made a maturational contribution plausible.",
+        "A **maturational** account attributes change partly to the organism's biological development. The proposal was that the ability to acquire language might open and close in relation to that development.",
+        "The evidence combined linguistic milestones and neurological observations. The important causal question is which changes enable early learning and which reduce later reorganization."
+      ]
+    },
+    {
+      "page": 11,
+      "title": "The proposed opening of the learning window",
+      "paragraphs": [
+        "Early brain-development data largely came from postmortem tissue. Measures such as neuronal size and packing density changed rapidly during early childhood.",
+        "Lenneberg considered these changes potentially permissive for the beginning of language acquisition. A permissive change enables a process; it need not specify every word or rule that will be learned.",
+        "The plotted age coverage is sparse, including a large gap between childhood and adulthood. The proposal links biological change and learning capacity without a continuously sampled developmental record."
+      ]
+    },
+    {
+      "page": 12,
+      "title": "Recovery and cerebral dominance",
+      "paragraphs": [
+        "Children can show substantial language development after very early damage, including removal of a hemisphere to treat severe epilepsy. Comparable adult injury has very different consequences.",
+        "Lenneberg related the contrast to **cerebral dominance**, the developing asymmetry of language organization between hemispheres. Earlier organization was proposed to allow more flexibility.",
+        "The prediction is that developmental state changes how readily other tissue supports language. The evidence concerns reorganization after injury, rather than directly measuring one switch that ends language learning."
+      ]
+    },
+    {
+      "page": 13,
+      "title": "Perinatal stroke outcomes",
+      "paragraphs": [
+        "A **perinatal stroke** occurs around birth. Children with such injuries often have better language outcomes than adults with comparable damage.",
+        "Better does not necessarily mean fully typical. Studies show early deficits after injury to either hemisphere and later outcomes that may remain in a low-normal range.",
+        "Early plasticity can support substantial function while leaving persistent costs. The comparison distinguishes relative resilience from complete compensation."
+      ]
+    },
+    {
+      "page": 14,
+      "title": "Genie and delayed access to language",
+      "paragraphs": [
+        "Genie experienced severe deprivation and abuse with extremely restricted early linguistic interaction. The case offered an opportunity to observe language learning after unusually delayed access.",
+        "Her later learning involved vocabulary, comprehension, and production developing at different rates. These components must be considered separately rather than summarized as language present or absent.",
+        "The central timing question is whether the delayed first-language history especially affects grammar. The severe deprivation history is also part of what makes this case different from ordinary late instruction."
+      ]
+    },
+    {
+      "page": 15,
+      "title": "What Genie learned",
+      "paragraphs": [
+        "Genie developed comprehension of many words, some prepositions, and aspects of morphology. Plurals were a relative area of success in the observations described.",
+        "**Morphology** concerns meaningful word parts, such as plural marking. Understanding a plural distinction is more than recognizing an isolated object name.",
+        "The case therefore shows substantial later learning. The pattern is uneven: acquiring vocabulary and selected grammatical relations does not imply that the full system develops at the same rate."
+      ]
+    },
+    {
+      "page": 16,
+      "title": "Production and grammar developed more slowly",
+      "paragraphs": [
+        "Genie's production remained far behind comprehension. Some comprehension advantage occurs in typical development, but her early punishment for making sounds also bears directly on speaking.",
+        "Grammatical abilities grew much more slowly than vocabulary. The contrast is between components of acquisition rather than a total inability to learn anything after childhood.",
+        "This difference made the case influential in discussion of L1 timing. A later learner could acquire many meanings while still struggling with the productive organization of sentences."
+      ]
+    },
+    {
+      "page": 17,
+      "title": "Interpreting the delayed-learning pattern",
+      "paragraphs": [
+        "The grammar–vocabulary disparity is consistent with the idea that early experience is especially important for first-language grammar. It is the pattern of learning, not simply the age at observation, that motivates this interpretation.",
+        "Genie also had a history of severe abuse, disrupted social development, and uncertain prior capacities. Those factors affect both the input and the learning situation.",
+        "The observation period ended when funding stopped. The case provides evidence about observed development over that interval, while other delayed-language populations help test which aspects of the pattern generalize."
+      ]
+    },
+    {
+      "page": 18,
+      "title": "Mayberry: late L1 versus late L2 in sign",
+      "paragraphs": [
+        "Some deaf children encounter an accessible first language only when sign language becomes available later. A comparison group learned spoken language earlier and later acquired sign after becoming deaf.",
+        "The groups may begin sign at similar ages but differ in prior language experience. Late first-language learners have greater difficulty than learners who already established another language.",
+        "This separates age of learning a particular language from age of access to any language. Early linguistic experience provides a foundation whose effects can persist into later learning and adulthood."
+      ]
+    },
+    {
+      "page": 19,
+      "title": "What the timing evidence has in common",
+      "paragraphs": [
+        "Brain-injury recovery differs greatly between childhood and adulthood. Delayed first-language access is also associated with persistent difficulties, especially in complex language learning.",
+        "Simply withholding input does not appear to preserve an indefinitely open first-language window. Time passes and the system develops even when normal experience is missing.",
+        "These findings support an important role for early accessible language. The sensitive-period distinction remains useful because later learning can occur without reproducing the outcome of early acquisition."
+      ]
+    },
+    {
+      "page": 20,
+      "title": "From first-language timing to L2",
+      "paragraphs": [
+        "Second-language learning lets the timing question be examined in many more people. Learners already possess a language but differ in when and how they encounter another.",
+        "The next comparison therefore asks whether early L1 experience preserves later capacity, or whether maturation changes learning even after a first language is established."
+      ]
+    },
+    {
+      "page": 21,
+      "title": "Further examples of deprivation and plasticity",
+      "paragraphs": [
+        "The source lists films and further material related to Genie, unusual language histories, and plasticity. These extend the theme of what early experience changes.",
+        "The common question remains whether later experience can restore a function, build a new one, or reveal residual learning. These are different outcomes and should be distinguished when connecting a case to a sensitive-period account."
+      ]
+    }
+  ],
+  "sentence": [
+    {
+      "page": 1,
+      "title": "Understanding sentences while they unfold",
+      "paragraphs": [
+        "**Sentence processing** assigns structure and meaning as words arrive. A listener or reader often has to choose among several possible relationships before the sentence is complete.",
+        "The central issue is how syntactic preferences, meaning, context, and expectations interact. Reading times, eye movements, actions, and brain responses reveal parts of that process."
+      ]
+    },
+    {
+      "page": 2,
+      "title": "The horse raced past the barn fell",
+      "paragraphs": [
+        "The sentence can mean that the horse that was raced past the barn subsequently fell. Raced past the barn modifies which horse is being discussed; fell is the main predicate.",
+        "An initial interpretation instead treats raced as the main verb. On reaching fell, that analysis leaves no straightforward place for the new main event.",
+        "Adding that was after horse makes the modifying structure explicit. The difficulty therefore concerns resolving a **reduced relative clause**, not the impossibility of expressing the intended event."
+      ]
+    },
+    {
+      "page": 3,
+      "title": "What a garden path is",
+      "paragraphs": [
+        "A **garden path** occurs when an initially attractive interpretation becomes incompatible with later input. The reader must revise the earlier structural assignment to continue.",
+        "In the horse example, the early main-verb reading of raced is the tempting path. The later fell forces raced to be reinterpreted as part of a modifying clause.",
+        "The experience shows that comprehension is incremental. The system commits enough to an interpretation during the sentence that later evidence can produce a measurable cost of reanalysis."
+      ]
+    },
+    {
+      "page": 4,
+      "title": "A parser under memory and time constraints",
+      "paragraphs": [
+        "A **parser** builds a structural analysis connecting the words of a sentence. The initial tree assigns raced to the main verb position and treats the following material accordingly.",
+        "Maintaining every possible tree would demand memory and time. An efficient system might prefer a simpler analysis and revise it only when later evidence makes that necessary.",
+        "The account explains a garden path through a processing strategy. The sentence is grammatical under another structure, but the parser initially chooses a different one."
+      ]
+    },
+    {
+      "page": 5,
+      "title": "Minimal attachment",
+      "paragraphs": [
+        "**Minimal attachment** favors the analysis requiring fewer structural nodes. In the horse sentence, treating raced as the main verb initially builds a smaller tree than introducing a reduced relative clause.",
+        "When fell arrives, the smaller analysis fails. The correct structure has additional organization connecting the horse to a modifying clause before its main verb.",
+        "The proposed cause of difficulty is therefore a preference for structural economy. Reanalysis requires undoing the earlier economical choice and constructing the larger alternative."
+      ]
+    },
+    {
+      "page": 6,
+      "title": "Late closure and dynamite",
+      "paragraphs": [
+        "**Late closure** favors attaching incoming material to the structure currently being processed. A phrase tends to continue the current clause or phrase when a grammatical analysis permits it.",
+        "In the burglar blew open the safe with the dynamite, the final phrase can attach to the action. Dynamite then specifies the instrument used to blow the safe open.",
+        "An alternative attachment makes the phrase describe the safe. The experiment compares interpretations of a locally ambiguous phrase rather than sentences with different words in every position."
+      ]
+    },
+    {
+      "page": 7,
+      "title": "Why jewels create a processing cost",
+      "paragraphs": [
+        "With the jewels can describe the safe's contents, but jewels are an unlikely instrument for blowing it open. The plausible meaning therefore favors noun attachment over the initially preferred action attachment.",
+        "Reading-time and eye-movement measures show a cost when the sensible analysis conflicts with the preferred structure. The system briefly entertains a less sensible relation and then revises it.",
+        "This is an argument about the order of information use. A syntactic preference can guide the initial analysis before plausibility redirects the interpretation."
+      ]
+    },
+    {
+      "page": 8,
+      "title": "An autonomous structural parser",
+      "paragraphs": [
+        "An **autonomous parser** initially computes syntactic structure using its own structural preferences. Meaning is not the primary determinant of that first analysis.",
+        "Minimal attachment and late closure provide efficient defaults. They avoid maintaining many complete alternatives by choosing an economical path until a problem appears.",
+        "The account resembles the staged lumber-mill model: one kind of operation supplies an analysis for another to evaluate. Experiments then ask whether nonstructural information can affect the earliest choices themselves."
+      ]
+    },
+    {
+      "page": 9,
+      "title": "Reduced relatives are not always difficult",
+      "paragraphs": [
+        "Some reduced-relative sentences are easy to understand despite having the supposedly demanding structural form. Their words and likely meanings make the modifying interpretation natural.",
+        "MacDonald, Perlmutter, and Seidenberg argue that semantic cues and learned distributional regularities influence parsing from early on. The same abstract construction can receive different support in different contexts.",
+        "A structure's existence therefore does not uniquely predict its processing difficulty. The frequency and plausibility of its components can change how strongly the competing analyses are activated."
+      ]
+    },
+    {
+      "page": 10,
+      "title": "Why the example table matters",
+      "paragraphs": [
+        "The table collects reduced-relative examples that readers encounter without an overwhelming garden path. Several come from discussions that otherwise use reduced relatives to support autonomous parsing.",
+        "Their shared structure is compatible with different experienced difficulty. This focuses attention on lexical and contextual differences instead of treating the construction as uniformly hard.",
+        "The comparison motivates a **constraint-based** view: several partial sources of information favor or disfavor an analysis as the input unfolds."
+      ]
+    },
+    {
+      "page": 11,
+      "title": "Research reported and the arrested burglar",
+      "paragraphs": [
+        "In recent research reported by, research is unlikely to perform the reporting, and reported often occurs in modifying constructions. Meaning and learned usage favor a reduced-relative interpretation.",
+        "A burglar is also more likely to be arrested than to perform an arrest. A policeman has a stronger association with acting as the arresting agent, increasing competition for the alternative analysis.",
+        "These differences concern **lexical statistics** and world knowledge. They can make two structurally similar sentences differ in how readily the correct analysis emerges."
+      ]
+    },
+    {
+      "page": 12,
+      "title": "Spivey: an apple, a towel, and a box",
+      "paragraphs": [
+        "Participants saw an apple on a towel, another towel, a box, and other objects. They heard put the apple on the towel in the box while their eye movements were measured.",
+        "On the towel can first sound like a destination for put. The correct instruction instead uses it to identify the apple, with in the box specifying the final destination.",
+        "Looks to the empty towel reveal a temporary destination interpretation. The final action can be correct even though the eye trace records an earlier competing plan."
+      ]
+    },
+    {
+      "page": 13,
+      "title": "The one-apple display",
+      "paragraphs": [
+        "With only one apple available, the noun already identifies the target. A following location phrase is less needed to distinguish it from another apple.",
+        "The empty towel can therefore attract looks as a possible destination while the instruction unfolds. Later in the box resolves the required movement.",
+        "The visual scene supplies information about what needs specifying. The ambiguity is not solely a property of the spoken words detached from their task context."
+      ]
+    },
+    {
+      "page": 14,
+      "title": "Adding a second apple",
+      "paragraphs": [
+        "When two apples are present, on the towel becomes useful for identifying which apple to move. The phrase now has an immediate referential purpose.",
+        "Listeners make fewer looks to the irrelevant destination towel than in the one-apple situation. The spoken sentence remains the same while the visual context changes.",
+        "This supports early use of **referential context**. The need to distinguish objects can change which structural interpretation is favored during processing."
+      ]
+    },
+    {
+      "page": 15,
+      "title": "What the context comparison shows",
+      "paragraphs": [
+        "The eye-movement comparison measures the temporary attraction of the wrong destination in one- and two-referent scenes. Its reduction with two apples shows context changing the evolving interpretation.",
+        "A purely syntactic default would not straightforwardly predict a different early preference from the same string solely because another apple is present. The contextual distinction is informative before the sentence ends.",
+        "Syntax and pragmatics therefore interact during comprehension. **Pragmatics** concerns how an expression serves the communicative situation, including why a speaker would specify one apple's location."
+      ]
+    },
+    {
+      "page": 16,
+      "title": "Mouse trajectories and competing actions",
+      "paragraphs": [
+        "Mouse tracking records the developing movement toward a response. A curved or diverted path can reveal competing interpretations that influence the action before it is completed.",
+        "The one-referent and two-referent contexts affect these trajectories, just as they affect eye movements. Ambiguity changes the execution of the action rather than only a retrospective report.",
+        "The method measures time course through movement. A correct endpoint need not mean there was never competition on the way to it."
+      ]
+    },
+    {
+      "page": 17,
+      "title": "Brain responses to structural expectations",
+      "paragraphs": [
+        "**Event-related potentials**, or ERPs, are brain electrical responses averaged relative to a defined event, such as a word appearing. Their timing helps identify when a manipulation affects processing.",
+        "Syntax experiments compare a word in an expected versus an unexpected category position. The physical word and its sentence context together determine what counts as a violation.",
+        "An early response provides evidence of rapid expectation sensitivity. Explaining its mechanism requires examining both grammatical structure and properties of the word's form."
+      ]
+    },
+    {
+      "page": 18,
+      "title": "The: starting the incremental sentence",
+      "paragraphs": [
+        "The begins a noun phrase and creates expectations about what kinds of material can follow. No complete sentence meaning is available yet.",
+        "In word-by-word presentation, the response to each new item is interpreted relative to the material already seen. This lets the experiment measure the unfolding process instead of only the final judgment.",
+        "The developing prediction is provisional. Later words can specify, satisfy, or conflict with what the earlier context made likely."
+      ]
+    },
+    {
+      "page": 19,
+      "title": "Pizza: establishing the noun phrase",
+      "paragraphs": [
+        "Pizza supplies the noun following the determiner. The reader can now construct a noun phrase referring to a particular kind of entity.",
+        "This is still not a complete proposition. The next words must establish what is said about the pizza and how the remaining sentence fits together.",
+        "Incremental presentation separates recognizing a word from integrating it into an evolving structure. The same word can be easy to recognize while its grammatical continuation remains open."
+      ]
+    },
+    {
+      "page": 20,
+      "title": "Was: opening a new structural expectation",
+      "paragraphs": [
+        "Was changes the developing expectations for the predicate. It can participate in constructions describing a state or a passive event, depending on what follows.",
+        "The reader uses the emerging phrase to predict compatible continuations. Those predictions need not wait until a whole sentence is visible.",
+        "This stage prepares the later violation comparison. An unexpected item is defined by its relationship to the structure established so far."
+      ]
+    },
+    {
+      "page": 21,
+      "title": "In: introducing a prepositional phrase",
+      "paragraphs": [
+        "In introduces a prepositional relation. A continuation can specify the location or context associated with the pizza.",
+        "The preposition changes which forms are expected next. It invites a phrase of an appropriate category rather than an arbitrary sequence of recognizable words.",
+        "A category-sensitive response therefore depends on the prior context. Recognizing in also reorganizes predictions about the next part of the sentence."
+      ]
+    },
+    {
+      "page": 22,
+      "title": "The: expecting a noun after the preposition",
+      "paragraphs": [
+        "The pizza was in the now strongly sets up a noun-phrase continuation after the preposition. A noun would complete the immediate determiner–noun relation.",
+        "This is a specific expectation about grammatical category. It is different from merely guessing a semantically related word such as a common pizza topping.",
+        "The ERP comparison asks what happens when the next item conflicts with that prepared category and whether its visible form contributes to the response."
+      ]
+    },
+    {
+      "page": 23,
+      "title": "Eaten: a word-category violation",
+      "paragraphs": [
+        "Eaten does not supply the ordinary noun required by the immediately preceding in the sequence. The words are individually recognizable, but their combination disrupts the expected structure.",
+        "The crucial event occurs when the violating item arrives. The reader can detect the mismatch before evaluating a long, completed passage.",
+        "This separates lexical familiarity from structural fit. Knowing a word does not ensure that it belongs in the position where it is encountered."
+      ]
+    },
+    {
+      "page": 24,
+      "title": "The early left anterior negativity",
+      "paragraphs": [
+        "The **ELAN**, early left anterior negativity, is an ERP effect reported for word-category violations, with an early timing around 100–200 milliseconds. The name describes its timing, polarity, and scalp distribution.",
+        "Sequences such as the pizza was in the eaten place an item where its grammatical category does not fit. Researchers compare responses with category-appropriate continuations.",
+        "The timing motivated interest in rapid syntactic processing. Whether the effect identifies an autonomous grammar computation depends on what physical cues distinguish the compared words."
+      ]
+    },
+    {
+      "page": 25,
+      "title": "Early visual predictions and form typicality",
+      "paragraphs": [
+        "Dikker and colleagues related early responses to properties of written word forms. A context predicting a verb can also prepare visual patterns associated with verb-like words.",
+        "A mismatch between the expected form and the displayed form can influence visual cortex rapidly. A very early category-related effect can therefore include perceptual prediction.",
+        "**Form typicality** means how characteristic a word's physical pattern is of a class. The question shifts from category labels alone to how grammatical expectations connect with learned form statistics."
+      ]
+    },
+    {
+      "page": 26,
+      "title": "Perches and needs can change category",
+      "paragraphs": [
+        "In the bird perches seem easy to install, perches is a noun referring to objects. In the bird perches comfortably, it functions as a verb.",
+        "Similarly, student needs can refer to requirements or describe what a student requires. Context changes the grammatical role without changing the ambiguous word's spelling.",
+        "These contrasts help separate the form's usual category associations from its role in a particular sentence. A word can be statistically noun-like while functioning as a verb, or the reverse."
+      ]
+    },
+    {
+      "page": 27,
+      "title": "Noun-like and verb-like forms",
+      "paragraphs": [
+        "Perches is classified as more noun-like in the form-based comparison; needs is more verb-like. Those tendencies are statistical associations rather than an inability to use each form in the other category.",
+        "The sentence pairs place them in contexts requiring different categories. The analysis asks whether response patterns follow contextual role, typical form, or their interaction.",
+        "This makes prediction concrete: an unexpected category with a strongly incompatible form may be detected differently from one whose spelling provides little category evidence."
+      ]
+    },
+    {
+      "page": 28,
+      "title": "Comparing form-based and syntactic expectations",
+      "paragraphs": [
+        "The figure compares how words' form properties relate to the noun and verb categories being tested. The sentence contexts independently establish the required grammatical role.",
+        "A mismatch can therefore be varied while preserving a meaningful distinction between form typicality and sentence structure. Both contribute information available to the reader.",
+        "The logic is to identify what drives the early response. If form matters, a category violation need not produce the same effect for every noun or verb."
+      ]
+    },
+    {
+      "page": 29,
+      "title": "When a category violation produces the early effect",
+      "paragraphs": [
+        "The early effect appeared where a noun's category was supported by morphological marking or statistical form information. Neutral nouns without strong category cues did not show the same effect.",
+        "**Morphological marking** supplies a meaningful form cue; statistical nouniness comes from the patterns shared by many noun forms. Both are physically available when the written word appears.",
+        "The result connects the early response to predicted physical form. It does not reduce all syntax to spelling; it explains why the earliest measured mismatch can depend on learned visual properties."
+      ]
+    },
+    {
+      "page": 30,
+      "title": "Four sentences, four connected lessons",
+      "paragraphs": [
+        "Colorless green ideas sleep furiously separates grammatical organization from sensible meaning. The horse sentence shows that locally preferred structures can create garden paths.",
+        "Put the apple on the towel in the box shows early contextual influence. The bird perches example links grammatical expectations to the physical form of the upcoming word.",
+        "Together these cases describe incremental interpretation shaped by several constraints. A sentence's structure matters, while its words, scene, and expected forms help determine how that structure is reached."
+      ]
+    },
+    {
+      "page": 31,
+      "title": "From parsing to aphasia",
+      "paragraphs": [
+        "The aphasia material asks how the operations used in sentence comprehension change after brain injury. Structural ambiguity and role assignment provide useful test contrasts.",
+        "The connection is experimental: choosing sentences that separate syntax, plausibility, and processing demands makes it possible to explain specific patterns of comprehension difficulty."
+      ]
+    }
+  ],
+  "l2-learning": [
+    {
+      "page": 1,
+      "title": "Learning a second language",
+      "paragraphs": [
+        "An **L2** is a second language learned after another language is established. Learning draws on existing conceptual skills and linguistic representations while adapting to a new system.",
+        "The central topics are transfer, competition between languages, and what happens when a previously used language stops receiving input."
+      ]
+    },
+    {
+      "page": 2,
+      "title": "Learning speed versus ultimate attainment",
+      "paragraphs": [
+        "Adults often learn more quickly at the beginning of L2 instruction. They already possess conceptual knowledge, learning strategies, and an established language that can support the new task.",
+        "**Ultimate attainment** is the level reached after extended learning. Earlier learners more often reach native-like outcomes even though they may initially progress more slowly.",
+        "These measures answer different questions. A child advantage in eventual attainment does not imply that adults learn fewer words in every early lesson."
+      ]
+    },
+    {
+      "page": 3,
+      "title": "Conceptual knowledge supports later learners",
+      "paragraphs": [
+        "A first-language learner is also developing concepts such as spatial relationships and events. An older L2 learner already has much of that knowledge available.",
+        "The later learner can focus on how the new language expresses familiar relations. This reduces some demands compared with learning both the concepts and their linguistic expression.",
+        "Existing language also shapes attention and expectations. The same prior experience that helps with one feature can interfere with a feature organized differently in L2."
+      ]
+    },
+    {
+      "page": 4,
+      "title": "Positive and negative transfer",
+      "paragraphs": [
+        "**Transfer** is using L1 processes and representations in L2. It is positive when the existing pattern fits the new language and negative when it creates a misleading expectation.",
+        "Similar words or structures can reduce the amount that must be learned. Incompatible sound categories, agreement rules, or word meanings can instead create persistent errors.",
+        "Transfer is therefore a relation between two systems. The question is which specific previously learned mapping is being reused and whether it matches the target language."
+      ]
+    },
+    {
+      "page": 5,
+      "title": "Dental and retroflex contrasts",
+      "paragraphs": [
+        "Hindi distinguishes dental and retroflex consonants that English listeners may initially interpret using one alveolar category. **Place of articulation** describes where a consonant is produced.",
+        "Mapping both L2 sounds onto the same L1 category makes their difference less salient. The learner must establish a distinction that was not required in the same way by English.",
+        "This is negative phonetic transfer. Familiar categorization helps recognize speech generally but can merge two sounds that must be separated to distinguish L2 words."
+      ]
+    },
+    {
+      "page": 6,
+      "title": "Learning classifiers",
+      "paragraphs": [
+        "Chinese classifiers depend on properties associated with the noun. Different nouns require different classifier choices in relevant constructions.",
+        "English determiner use does not demand that same system of semantic sorting. An English learner must start attending to distinctions that ordinary L1 grammar did not require in that position.",
+        "The transfer problem is therefore not just remembering another short word. It involves learning which noun properties control a grammatical choice."
+      ]
+    },
+    {
+      "page": 7,
+      "title": "Grammatical gender and agreement",
+      "paragraphs": [
+        "**Grammatical gender** assigns nouns to classes that affect related words. It is distinct from social gender and need not reflect a noun's real-world properties.",
+        "Pronouns, adjectives, and some verb forms may have to agree with a noun's grammatical class. French synonyms can belong to different classes even when they refer to similar things.",
+        "A learner must acquire both class membership and the consequences for agreement. L1 habits can interfere when the first language does not organize those dependencies similarly."
+      ]
+    },
+    {
+      "page": 8,
+      "title": "Cognates and borrowings",
+      "paragraphs": [
+        "Similar words across languages can facilitate vocabulary learning. A **cognate** reflects shared historical origin, while a **loan word** comes from borrowing.",
+        "The lecture examples include recognizable European forms and Japanese adaptations of borrowed vocabulary. Similarity can provide an initial connection between a new form and an already known meaning.",
+        "This is positive transfer: prior representations reduce uncertainty. The useful claim concerns a helpful relation between form and meaning, not a guarantee that every familiar-looking form shares its meaning."
+      ]
+    },
+    {
+      "page": 9,
+      "title": "False friends",
+      "paragraphs": [
+        "A word that resembles an L1 form can have a different meaning. Spanish embarazado means pregnant, not embarrassed. Its familiar-looking form can therefore produce a confident but mistaken interpretation.",
+        "The bias is understandable: many cross-language similarities are useful, so an existing word is quickly activated by a similar L2 form. The error occurs when the meaning relation does not match.",
+        "**False friends** therefore expose negative lexical transfer. Learning requires distinguishing useful correspondences from misleading ones rather than avoiding L1 knowledge altogether."
+      ]
+    },
+    {
+      "page": 10,
+      "title": "De Groot and Keijzer: paired-associate learning",
+      "paragraphs": [
+        "Dutch speakers learned pairs linking familiar Dutch words to invented foreign-like forms. The pairs varied in cognate similarity and in whether their meanings were concrete or abstract.",
+        "Participants studied the associations and later took a retention test after a week without training. This separates initial learning from how much remains later.",
+        "The design tests whether form similarity contributes from the beginning of learning. The made-up forms allow a defined manipulation rather than relying only on participants' prior experience with a real L2."
+      ]
+    },
+    {
+      "page": 11,
+      "title": "Cognate advantages in learning and retention",
+      "paragraphs": [
+        "Cognate-like pairs were acquired more rapidly and retained better. Session 4 follows a week without practice, so its performance measures persistence rather than another immediate study trial.",
+        "Form similarity can provide a bridge between a new label and an existing lexical representation. That bridge can help both establishing and retrieving the association.",
+        "The table also contains concreteness differences, but the stated lecture emphasis is the cognate effect. The important result is that similarity helps from the earliest stages, not only after extensive fluency."
+      ]
+    },
+    {
+      "page": 12,
+      "title": "Why test production as well as recognition?",
+      "paragraphs": [
+        "A **receptive** test supplies the new form and asks for the familiar meaning. A cognate can sometimes be guessed from its resemblance even without successful learning.",
+        "A **productive** or expressive test asks the learner to generate the new form from the familiar word. The answer is not fully supplied by the prompt.",
+        "A benefit in productive testing therefore provides stronger evidence of a learned mapping. It addresses whether participants can retrieve the new representation rather than merely recognize a transparent clue."
+      ]
+    },
+    {
+      "page": 13,
+      "title": "Reading immediate and delayed recall",
+      "paragraphs": [
+        "The table separates productive from receptive recall and immediate from delayed tests. Cognates outperform noncognates across these comparisons, with less forgetting over the delay.",
+        "Concrete items are also retained better than abstract ones in the displayed data. This is a second factor, so it should not be confused with cognate status.",
+        "Productive success matters particularly because it requires retrieving a foreign-like form. The pattern supports both initial acquisition and retention advantages rather than an effect limited to guessing familiar meanings."
+      ]
+    },
+    {
+      "page": 14,
+      "title": "Are both languages active during L2 recognition?",
+      "paragraphs": [
+        "The research question is whether an L2 word activates similar L1 words even when the task is conducted in L2. A visual-world display can make those potential competitors observable.",
+        "A listener hears a target and looks among objects. Additional looks to an object whose L1 name overlaps with the input indicate cross-language competition.",
+        "The task therefore tests selective language access during ordinary word identification. Knowing which language is being used may not prevent all activation in the other lexicon."
+      ]
+    },
+    {
+      "page": 15,
+      "title": "Using eye movements to measure competition",
+      "paragraphs": [
+        "McMurray's bear–pear task showed that eye movements reveal partial competition hidden by the final click. The competitor becomes more attractive as acoustic input grows ambiguous.",
+        "Bilingual experiments use the same logic with a different kind of competitor. A picture can compete because its name in another language resembles the spoken target.",
+        "The measure concerns activation during processing. A correct L2 response can coexist with temporary attraction to an L1-linked object."
+      ]
+    },
+    {
+      "page": 16,
+      "title": "Cohort activation within a language",
+      "paragraphs": [
+        "A **cohort** consists of words compatible with the beginning of a spoken form. Early input activates more than one candidate, and later sounds reduce the competition.",
+        "In a visual-world display, looks to a same-onset competitor rise and then decline as the target becomes clearer. The timing is important even if only one object is eventually selected.",
+        "This provides the baseline mechanism for the bilingual question. Cross-language cohorts extend onset competition beyond the language explicitly required by the task."
+      ]
+    },
+    {
+      "page": 17,
+      "title": "Marian and Spivey's cross-language competitor",
+      "paragraphs": [
+        "Native Russian speakers processed English targets while viewing objects. A target such as speaker overlaps in sound with the Russian name for matches, making the matches picture a potential competitor.",
+        "The picture's English name need not resemble the target. The phonological overlap arises through the other language.",
+        "If looks increase relative to an unrelated control, recognition is not fully restricted to English candidates. The experiment can compare within-language and between-language competition in the same setting."
+      ]
+    },
+    {
+      "page": 18,
+      "title": "Competition during L2 processing",
+      "paragraphs": [
+        "In the English task, listeners looked at both English and Russian-name competitors. With one competitor present, within- and between-language competition were comparable in the reported conditions.",
+        "When both appeared together, the English competitor attracted more looks, but the Russian competitor still exceeded the control. Competition from the other language did not disappear.",
+        "The result supports nonselective activation during L2 recognition in this population. The task language shapes competition without perfectly isolating one lexicon."
+      ]
+    },
+    {
+      "page": 19,
+      "title": "The asymmetry during L1 processing",
+      "paragraphs": [
+        "When the native Russian speakers performed the task in Russian, the English competitor did not show a statistically reliable advantage over the control in the reported data.",
+        "This differs from the L2 task, where Russian-name competitors attracted looks. The comparison asks about the direction and strength of cross-language influence.",
+        "An asymmetrical connection account can explain why L1 intrudes more into L2 than the reverse for these learners. The small plotted difference is not equivalent to evidence for a reliable competitor effect."
+      ]
+    },
+    {
+      "page": 20,
+      "title": "The Revised Hierarchical Model",
+      "paragraphs": [
+        "The **Revised Hierarchical Model** links L1 words, L2 words, and shared concepts. The L1 lexicon is larger and more strongly connected to concepts in the learner configuration shown.",
+        "L2 words have relatively strong links toward their L1 counterparts. Such a path is reinforced by learning a new word through a familiar translation.",
+        "Unequal link strengths make directional predictions. Activating L2 can engage L1 more readily than activating L1 engages L2 in this particular configuration."
+      ]
+    },
+    {
+      "page": 21,
+      "title": "How a competitor gains conceptual support",
+      "paragraphs": [
+        "The English input can activate an overlapping Russian word. That lexical activation can in turn support the corresponding concept, making its pictured referent attract attention.",
+        "Connections between words and concepts allow activation to circulate. Once the matches representation is partially involved, feedback can maintain its competition during the English task.",
+        "Weaker access from L1 into L2 helps explain the opposite-task asymmetry. The mechanism concerns routes and strengths of activation, rather than a claim that the two picture meanings must themselves be similar."
+      ]
+    },
+    {
+      "page": 22,
+      "title": "Balanced bilinguals still have interacting systems",
+      "paragraphs": [
+        "A **balanced bilingual** has relatively strong access to both languages. In an interactive account, stronger links do not necessarily eliminate competition.",
+        "If both languages connect effectively to shared concepts, activation and inhibitory control can be engaged across languages repeatedly. The person is not simply switching between two entirely isolated monolingual systems.",
+        "This prediction motivated work on control outside language. The theoretical prediction of ongoing competition should be distinguished from treating every possible nonlinguistic advantage as already established by these eye-movement data."
+      ]
+    },
+    {
+      "page": 23,
+      "title": "What happens when L1 use stops?",
+      "paragraphs": [
+        "The usual learning timeline adds L2 while L1 continues to be used. International adoption can instead sharply reduce or end contact with the original language.",
+        "This changes the input to an already organized system. Previously used connections may no longer be reinforced while the new language becomes dominant.",
+        "The question is whether L1 is still accessible, becomes harder to access, or leaves traces that can help later relearning. These outcomes require different tests."
+      ]
+    },
+    {
+      "page": 24,
+      "title": "Testing Korean adoptees in France",
+      "paragraphs": [
+        "Adults adopted from Korea into French-speaking homes during childhood were tested for residual Korean knowledge. Their current language was French.",
+        "Comparison with monolingual French speakers asks whether early Korean exposure confers a remaining advantage. Different tasks can probe sounds, words, sentence memory, and brain responses.",
+        "The relevant history includes both early acquisition and later absence of input. This is a test of retention under a changed environment, not an ordinary classroom L2-learning trajectory."
+      ]
+    },
+    {
+      "page": 25,
+      "title": "The Korean three-way stop contrast",
+      "paragraphs": [
+        "Korean distinguishes three kinds of stop consonants in the contrast shown. A listener must differentiate the language's phonetic categories rather than merely detect that two recordings differ.",
+        "Early Korean experience might be expected to support this distinction later, even after long use of French. The comparison therefore probes a specific possible trace of the earlier sound system.",
+        "Testing a well-defined contrast makes retention operational. Performance can be compared with listeners who have no comparable early Korean experience."
+      ]
+    },
+    {
+      "page": 26,
+      "title": "Ventureyra: no detected phonetic advantage",
+      "paragraphs": [
+        "The adoptees did not outperform monolingual French listeners on the tested Korean contrasts. Their early experience did not produce an accessible advantage in that task.",
+        "The Korean comparison group supplies evidence that the contrast is measurable with relevant language experience. The key difference is therefore between retained current ability and a long-disused early history.",
+        "The finding concerns the tested phonetic discrimination. It motivates broader searches for residual knowledge rather than assuming that one negative task exhausts every possible form of retention."
+      ]
+    },
+    {
+      "page": 27,
+      "title": "Pallier's broader behavioral tests",
+      "paragraphs": [
+        "Pallier and colleagues tested language identification, Korean word translations, and detection of repeated excerpts in recorded sentences. These target different potential remnants of L1 experience.",
+        "The adoptees again did not show an advantage over monolingual French listeners. The tests sought any accessible trace rather than only performance on a demanding grammar test.",
+        "Agreement across several measures strengthens the observation of little detectable residual knowledge under those conditions. It also distinguishes current access from what later retraining might reveal."
+      ]
+    },
+    {
+      "page": 28,
+      "title": "Brain responses to the current language",
+      "paragraphs": [
+        "French activated familiar temporal and frontal language regions in the adoptees. Their current language therefore recruited a conventional language network.",
+        "Contrasting French with Korean did not reveal the predicted residual Korean-processing difference between the groups. The imaging comparison converges with the behavioral tests' lack of a detected advantage.",
+        "The result shows substantial reorganization with changed language experience. Brain responses and behavioral performance address related aspects of which language representations are currently effective."
+      ]
+    },
+    {
+      "page": 29,
+      "title": "Competition as an account of replacement",
+      "paragraphs": [
+        "Connections supporting a language gain strength through use. When L1 is no longer activated and L2 dominates experience, the competitive balance can shift toward the new system.",
+        "The lecture compares this with experience-dependent competition in visual development. A previously advantaged representation can lose effective access when another pattern is consistently reinforced.",
+        "This provides a process for apparent replacement. It does not require a whole language to disappear instantaneously when adoption occurs; changing use alters the system over time."
+      ]
+    },
+    {
+      "page": 30,
+      "title": "Retention can become visible through relearning",
+      "paragraphs": [
+        "Failure to detect a skill in an initial task need not settle whether early experience influences future learning. A later learning phase can test how readily the relevant patterns return.",
+        "**Unmasking** means making an earlier influence observable under conditions that were not present in the first test. The next example examines people with childhood exposure who later studied the language.",
+        "The question changes from what can be performed now to what prior experience contributes to subsequent acquisition. Those are related but distinct measures of retention."
+      ]
+    },
+    {
+      "page": 31,
+      "title": "Au: childhood Spanish overhearers",
+      "paragraphs": [
+        "Students who often overheard Spanish as children but did not learn to speak it later took classroom Spanish. Their childhood exposure preceded comparable later instruction.",
+        "Performance after later learning can reveal benefits not obvious in initial fluent production. The early experience may preserve useful phonological information even without a previously spoken vocabulary.",
+        "The comparison addresses residual learning through later training. Childhood hearing and childhood speaking are different histories, so the type of early experience must be specified."
+      ]
+    },
+    {
+      "page": 32,
+      "title": "Apparent replacement and residual knowledge",
+      "paragraphs": [
+        "The Korean adoption tasks showed little accessible early-language advantage, while the overhearer work indicates that early exposure can affect later learning. These outcomes probe different forms of retention.",
+        "A representation may be difficult to use spontaneously but still influence relearning. Current proficiency and learning efficiency should therefore be measured separately.",
+        "The synthesis connects competition with persistence. New-language dominance can coexist with early traces whose contribution becomes visible only under another learning condition."
+      ]
+    },
+    {
+      "page": 33,
+      "title": "Why language histories matter",
+      "paragraphs": [
+        "Korean exposure in France differs from Spanish exposure in Los Angeles. Continued opportunities to hear a language, family use, cognates, and a shared writing system can change later outcomes.",
+        "These are mechanisms affecting maintenance and transfer, not interchangeable background details. A heritage-language environment can reinforce connections that complete absence of input does not.",
+        "Comparing learner groups requires tracking those histories. The effect attributed to early experience also depends on what happened between that experience and the eventual test."
+      ]
+    }
+  ],
+  "l2-sensitive": [
+    {
+      "page": 1,
+      "title": "Age and second-language attainment",
+      "paragraphs": [
+        "L2 sensitive-period research asks how the age of learning relates to eventual proficiency. Learners already possess an L1, making this a different comparison from delayed first-language access.",
+        "Age of arrival, task demands, transfer, and experience all contribute to interpreting the data. The central skill is explaining the pattern rather than assuming that one correlation names its cause."
+      ]
+    },
+    {
+      "page": 2,
+      "title": "Lenneberg's laterality proposal",
+      "paragraphs": [
+        "Lenneberg connected language-learning capacity to the development of cerebral dominance. The proposal combined milestones with evidence of greater early resilience after brain injury.",
+        "A laterality account makes maturation part of the learning explanation. As organization changes, the opportunities for reorganization may also change.",
+        "L2 data test the broader timing prediction in learners with different ages of onset. They do not directly measure cerebral dominance simply by measuring grammar accuracy."
+      ]
+    },
+    {
+      "page": 3,
+      "title": "Why L2 provides a larger comparison",
+      "paragraphs": [
+        "Severely delayed L1 cases are unusual and often involve complicated histories. L2 acquisition occurs at many ages in much larger populations.",
+        "Comparing later attainment across these learners can reveal age-related patterns. It also adds variation in prior language, instruction, and amount of experience.",
+        "The research question becomes whether a timing effect remains informative about learning capacity when those histories and the measurement task are considered."
+      ]
+    },
+    {
+      "page": 4,
+      "title": "Johnson and Newport's study",
+      "paragraphs": [
+        "Johnson and Newport compared English attainment among Chinese- and Korean-speaking learners who arrived at different ages. A grammaticality-judgment task assessed several English structures.",
+        "**Age of arrival**, or AOA, provides an index of when substantial exposure began. **Attainment** refers to the level eventually measured, rather than how quickly the first lesson was learned.",
+        "The proposed prediction was higher final proficiency after earlier arrival. The age pattern, including its shape before and after adolescence, is central to evaluating that proposal."
+      ]
+    },
+    {
+      "page": 5,
+      "title": "What a grammaticality judgment measures",
+      "paragraphs": [
+        "Participants listened to recorded sentences and reported whether each was grammatical. The test was **untimed**, allowing reflection instead of requiring an immediate interpretation in conversation.",
+        "The example sets manipulate grammatical properties such as determiners, agreement, or questions. A correct response requires recognizing the particular contrast being tested.",
+        "This is a judgment about language, called **metalinguistic** performance. It can draw on explicit rules as well as the knowledge used during ordinary comprehension."
+      ]
+    },
+    {
+      "page": 6,
+      "title": "Reading the age-of-arrival scatterplots",
+      "paragraphs": [
+        "Each point represents a learner's accuracy in relation to age of arrival. A downward relationship means that later arrival tends to accompany lower final judgment accuracy.",
+        "The early and late ranges must also be examined separately. An overall correlation can conceal a change from an age-related slope to broad variability without a clear slope.",
+        "Describe where near-native performance occurs and how the distribution changes. The plot's shape carries more information than a statement that younger is better."
+      ]
+    },
+    {
+      "page": 7,
+      "title": "Early high accuracy and later variability",
+      "paragraphs": [
+        "Early arrivals often perform close to the native range, particularly those arriving in early childhood. Accuracy declines across later childhood arrival ages in the presented data.",
+        "Late arrivals show a wide spread of scores with little clear within-group relationship to age. Some perform much better than other late learners.",
+        "This is not a claim that late learners respond randomly or cannot learn grammar. The randomness concerns the scatter of attainment with respect to arrival age within that later range."
+      ]
+    },
+    {
+      "page": 8,
+      "title": "The sensitive-period interpretation",
+      "paragraphs": [
+        "Johnson and Newport interpret the age-related early decline as a developmental reduction in ordinary language-learning capacity. The later scatter is attributed to greater dependence on individual learning abilities.",
+        "The explanation predicts both a timing relationship and a change in what determines success later. It is more specific than simply noting a mean difference between children and adults.",
+        "Some late acquisition remains possible. The pattern concerns typical ultimate attainment and its determinants rather than a strict statement that every postpubertal learner has zero sensitivity to language."
+      ]
+    },
+    {
+      "page": 9,
+      "title": "Exercise versus maturational-state hypotheses",
+      "paragraphs": [
+        "The **exercise hypothesis** says early language use preserves the learning capacity: once exercised, it should remain available for subsequent acquisition. Without early use, it declines.",
+        "The **maturational-state hypothesis** says the capacity declines with maturation even if a first language was acquired normally. Established L1 knowledge would not fully preserve child-like L2 learning.",
+        "Lower attainment in older L2 learners who already used an L1 fits the second proposal more directly. The hypotheses differ in what early successful language acquisition is predicted to protect."
+      ]
+    },
+    {
+      "page": 10,
+      "title": "Explicit knowledge and task design",
+      "paragraphs": [
+        "An untimed grammaticality judgment allows conscious reflection on learned rules. A person can deliberately evaluate a sentence rather than process it at ordinary conversational speed.",
+        "**Explicit knowledge** is knowledge available to conscious explanation or monitoring. **Implicit knowledge** can guide fluent performance without a verbalized rule.",
+        "A judgment task may combine these sources differently from spontaneous use. The measured age effect therefore belongs to a particular task and cannot automatically be assigned entirely to implicit grammar acquisition."
+      ]
+    },
+    {
+      "page": 11,
+      "title": "Education predicts untimed judgment performance",
+      "paragraphs": [
+        "The lecture relates untimed GJT scores to years of formal L2 education. Schooling can strengthen knowledge of rules that are directly useful for deliberative judgments.",
+        "This fits the proposal that an untimed test draws substantially on explicit metalinguistic learning. A well-practiced rule explanation may help even when conversational performance differs.",
+        "The association makes task demands part of the attainment interpretation. Comparing timed, spontaneous, and untimed measures helps clarify which kind of knowledge is producing a score."
+      ]
+    },
+    {
+      "page": 12,
+      "title": "Transfer changes the age comparison",
+      "paragraphs": [
+        "Languages differ in how many features map conveniently onto English. Similar vocabulary or constructions can support learning, while absent or incompatible features add difficulty.",
+        "Johnson and Newport's learners had Chinese or Korean as L1. Another language pairing can change the available transfer even at comparable ages of arrival.",
+        "An age effect must therefore be interpreted with the language pair in view. Maturation and prior representations both affect what an L2 learner must reorganize."
+      ]
+    },
+    {
+      "page": 13,
+      "title": "Not every construction is equally difficult",
+      "paragraphs": [
+        "Progressive -ing and word order are relatively successful structures in the displayed results. Other properties, such as determiners, are harder for learners whose L1 lacks the relevant system.",
+        "Questions can be relatively successful for late learners despite emerging late in children's L1 development. L2 learning does not simply replay the entire L1 developmental order.",
+        "The pattern supports examining individual constructions. A total score combines different demands and different opportunities for transfer."
+      ]
+    },
+    {
+      "page": 14,
+      "title": "Birdsong and Molis: changing the language pair",
+      "paragraphs": [
+        "The comparison with Spanish-speaking learners changes the relation between L1 and English. Their attainment distribution differs from the Chinese/Korean pattern used in the original argument.",
+        "Similarity between languages can change learning difficulty and the observed AOA relationship. The plots therefore test whether one age pattern generalizes across learner populations.",
+        "A maturational account must explain this dependence on language pairing as well as any overall earlier-learning advantage. Transfer contributes directly to the outcome being measured."
+      ]
+    },
+    {
+      "page": 15,
+      "title": "What a complete explanation must connect",
+      "paragraphs": [
+        "Later onset is generally associated with lower L2 attainment, but the pattern depends on constructions, test demands, and language pairings. These factors change what a score represents.",
+        "Age also covaries with experience: instruction, opportunities for use, and immersion differ across histories. Separating those influences requires more than reading a single downward trend.",
+        "A useful explanation identifies the proposed mechanism and its prediction. Maturation, transfer, and explicit learning can each contribute, so their distinct effects must be matched to the evidence."
+      ]
+    },
+    {
+      "page": 16,
+      "title": "Connecting L2 learning to later course material",
+      "paragraphs": [
+        "The source assigns the reading chapter next. Reading adds another input modality in which form, learned representations, and experience interact during recognition.",
+        "The present midterm workspace stays with the uploaded speech, development, sentence, aphasia, and L2 material. Later reading lectures can be added as a new course module when their sources are supplied."
+      ]
+    }
+  ]
+}
