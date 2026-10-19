@@ -122,7 +122,7 @@ for p in list(originals.values()) + neuro['problems']:
 
 sources = dict(
     decision=[general], anova=[means('tumor volume', 'the three isotype-control dosing groups')],
-    pooled=[two_means('fasting glucose concentration', 'control', 'comparison')],
+    pooled=[two_means('fasting glucose concentration', 'children without a diabetic parent', 'children with a diabetic parent')],
     onet=[one_mean('heart rate', '72 beats per minute')],
     pairs=[{**pairwise, 'nullWords': 'For the selected treatment pair, the two population mean HDL concentrations are equal.', 'alternativeWords': 'For the selected treatment pair, the two population mean HDL concentrations differ.'}],
     multiplicity=[pairwise], z=[proportions('a thrombus', 'placebo', 'aspirin')],
@@ -150,17 +150,20 @@ slide_range(7, 18, 25, means('forced mid-expiratory flow', 'the tobacco-exposure
 slide_range(7, 32, 35, slides['6:3'])
 slide_range(7, 37, 39, sources['anovaoutput'][0])
 slide_range(8, 9, 14, two_means())
-slide_range(8, 15, 16, two_means('fasting glucose concentration', 'control', 'comparison'))
+slide_range(8, 15, 16, sources['pooled'][0])
 slide_range(8, 17, 19, two_means('cardiac index', 'halothane', 'morphine'))
 slide_range(8, 20, 21, one_mean())
 slide_range(8, 22, 24, sources['onet'][0])
 slide_range(9, 7, 7, means('HDL concentration', 'the activity groups'))
 slide_range(9, 8, 14, sources['pairs'][0])
-slide_range(9, 16, 16, {**control_pair, 'label': 'Each requested Group 1 comparison with another group'})
+slide_range(9, 16, 16, pair(r'\mu_1=\mu_j', r'\mu_1\ne\mu_j',
+                          'For the comparison being tested, the Group 1 population and the selected other group population have the same mean response.',
+                          'For that comparison, the Group 1 population and the selected other group population have different mean responses.',
+                          'Each requested Group 1 comparison with another group'))
 slide_range(11, 13, 15, proportions())
 slide_range(11, 16, 18, proportions('death', 'halothane', 'morphine'))
 slide_range(11, 19, 21, sources['z'][0])
-slide_range(11, 22, 22, proportions('an adverse reaction', 'the first anesthetic-gel population', 'the second anesthetic-gel population'))
+slide_range(11, 22, 22, proportions('an adverse reaction', 'the topical-anesthetic-gel population', 'the placebo-cream population'))
 slide_range(12, 4, 11, sources['chi2'][0])
 slide_range(12, 13, 15, sources['large'][0])
 for page, first, second in [(16, 'nefazodone', 'psychotherapy'), (17, 'nefazodone', 'combined treatment'), (18, 'psychotherapy', 'combined treatment')]:
