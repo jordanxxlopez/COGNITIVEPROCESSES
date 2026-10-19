@@ -130,7 +130,7 @@ def outcome(pid, topic, is_neuro):
     return None
 
 
-def reference(pid, step, index, mode, is_neuro=False):
+def reference_rules(pid, step, index, mode):
     p = by_id[pid]
     topic, label = p['topic'], step['label']
     origin = step.get('origin', index if mode == 'C' else None)
@@ -155,6 +155,12 @@ def reference(pid, step, index, mode, is_neuro=False):
     if not selected and topic == 'trials': selected = ['design' if 'Design' in label else 'assignment']
     if not selected and label in ('Conclude', 'Conclude in context', 'Finish'): selected = ['decisionwords']
     if not selected: raise AssertionError((pid, mode, index, label))
+    return selected
+
+
+def reference(pid, step, index, mode, is_neuro=False):
+    topic = by_id[pid]['topic']
+    selected = reference_rules(pid, step, index, mode)
     selected = ['or_' if key in ('or', 'odds') else 'counttarget' if key == 'count' else key for key in selected]
     text = ' '.join(dict.fromkeys(rules[key] for key in selected))
     # Avoid importing the coin setting into the spatial-cue counterpart.
@@ -172,12 +178,13 @@ def reference(pid, step, index, mode, is_neuro=False):
     return text
 
 
-pack = {'D': {}, 'C': {}}
-for pid, q in version_d['problems'].items():
-    pack['D'][pid] = [reference(pid, s, i, 'D') for i, s in enumerate(q['flow'])]
-    nid = neuro['byOriginal'][pid]
-    pack['D'][nid] = [reference(pid, s, i, 'D', True) for i, s in enumerate(q['flow'])]
-for pid, flow in old['problems'].items():
-    pack['C'][pid] = [reference(pid, s, i, 'C') for i, s in enumerate(flow)]
-(ROOT / 'step-reference-data.js').write_text('const STEP_REFERENCES='+json.dumps(pack, ensure_ascii=False, separators=(',', ':'))+';\n')
-print('Built', sum(len(v) for mode in pack.values() for v in mode.values()), 'small step references across current, earlier and neuroscience examples.')
+if __name__ == '__main__':
+    pack = {'D': {}, 'C': {}}
+    for pid, q in version_d['problems'].items():
+        pack['D'][pid] = [reference(pid, s, i, 'D') for i, s in enumerate(q['flow'])]
+        nid = neuro['byOriginal'][pid]
+        pack['D'][nid] = [reference(pid, s, i, 'D', True) for i, s in enumerate(q['flow'])]
+    for pid, flow in old['problems'].items():
+        pack['C'][pid] = [reference(pid, s, i, 'C') for i, s in enumerate(flow)]
+    (ROOT / 'step-reference-data.js').write_text('const STEP_REFERENCES='+json.dumps(pack, ensure_ascii=False, separators=(',', ':'))+';\n')
+    print('Built', sum(len(v) for mode in pack.values() for v in mode.values()), 'small step references across current, earlier and neuroscience examples.')
