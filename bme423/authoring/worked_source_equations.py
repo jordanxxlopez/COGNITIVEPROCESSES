@@ -27,6 +27,9 @@ def source_chains(key,html):
     elif key=='z':pairs=[(r'\hat p_1=18/25',r'\hat p_1=m_1/n_1=18/25'),(r'\hat p_2=6/19',r'\hat p_2=m_2/n_2=6/19'),(r'\hat p=\frac{18+6}',r'\hat p=\frac{m_1+m_2}{n_1+n_2}=\frac{18+6}'),(r'c_Y=\tfrac12(1/25',r'c_Y=\tfrac12(1/n_1+1/n_2)=\tfrac12(1/25'),(r'D_Y=\max(0,|.72',r'D_Y=\max(0,|\hat p_1-\hat p_2|-c_Y)=\max(0,|.72'),(r'|z_Y|=.357895',r'|z_Y|=D_Y/\operatorname{SE}_0=.357895')]
     elif key in ('chi2','large'):
         obs=[[18,7],[6,13]] if key=='chi2' else [[36,131],[41,132],[75,104]];expected,cells=cell_work(obs)
+        # The complete cell list below already includes E11. Replace the older
+        # single-cell demonstration rather than displaying that cell twice.
+        if key=='large':html=re.sub(r'E_\{11\}=.*?\\\\(?=E=)', '', html, count=1)
         # Expand each cell where the numerical matrix was previously a jump.
         marker=r'E=\begin{pmatrix}';html=html.replace(marker,r'\\'.join(expected)+r'\\'+marker)
         if key=='chi2':html=html.replace(r'\chi_Y^2=\sum',r'\\'.join(cells)+r'\\\chi_Y^2=\sum')

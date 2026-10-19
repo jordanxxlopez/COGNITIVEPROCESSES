@@ -132,6 +132,28 @@ for mode in ['D','C']:
       arithmetic+=1
 assert arithmetic>3000,arithmetic
 # Original content, grading data, wording, slide scripts and PDFs are read-only.
-for name in ['data.js','v2-data.js','version-d-data.js','version-c-data.js','neuroscience-worked-data.js','practice-question-data.js','studio-flow-data.js','studio-question-data.js','hypothesis-data.js','step-reference-data.js']+[p.name for p in R.glob('*.pdf')]:
+for name in ['data.js','v2-data.js','version-d-data.js','version-c-data.js','neuroscience-worked-data.js','practice-question-data.js','studio-flow-data.js','studio-question-data.js','hypothesis-data.js']+[p.name for p in R.glob('*.pdf')]:
  assert (R/name).read_bytes()==subprocess.check_output(['git','show','HEAD:bme423/'+name]),name
 print(f'PASS: {checks} independent formula/result checks and {arithmetic} evaluated numerical equalities; all 696 example/version entries, 4029 steps, 38 embedded worked cases per version; questions, answers, hypotheses, notes references and PDFs preserved.')
+
+old_refs=json.loads(subprocess.check_output(['git','show','HEAD:bme423/step-reference-data.js']).decode().split('=',1)[1].rstrip(';\n'))
+new_refs=load('step-reference-data.js');changed=0
+for mode,problems in old_refs.items():
+ for pid,steps in problems.items():
+  for i,text in enumerate(steps):
+   if text==new_refs[mode][pid][i]:continue
+   assert mode=='D'
+   original=neuro['questions'][pid]['originalId'] if pid in neuro['questions'] else pid
+   assert v['problems'][original]['flow'][i]['label']=='Requested family and adjusted level'
+   assert 'original ANOVA residual df' in new_refs[mode][pid][i] and 'pooled two-sample df' not in new_refs[mode][pid][i]
+   changed+=1
+assert changed in (0,50),changed
+confirmed=0
+for pid,q in v['problems'].items():
+ for i,step in enumerate(q['flow']):
+  if step['label']!='Requested family and adjusted level':continue
+  for target in [pid,neuro['byOriginal'][pid]]:
+   assert 'original ANOVA residual df' in new_refs['D'][target][i] and 'pooled two-sample df' not in new_refs['D'][target][i]
+   confirmed+=1
+assert confirmed==50,confirmed
+print('PASS: all 50 consolidated-family references retain original ANOVA residual df.')

@@ -85,7 +85,7 @@ labels = {
     'Right-tail probability for the mean': 'meanz meanright',
     'Non-Normal population with n=50': 'meanvar meanse',
     'Recover individual SD': 'individualrecover', 'Sample size for SEM=1': 'sampleplanning',
-    'Requested family and adjusted level': 'bonf pairdf tdf',
+    'Requested family and adjusted level': 'bonf pairdf tlookup',
     'Common pair standard error': 'pairse', 'Family conclusion': 'familyconclusion',
     'Different requested family': 'family holm', 'Individual SD versus proportion SE': 'binarychange',
     'Equivalent corrected chi-square comparison': 'chidf',

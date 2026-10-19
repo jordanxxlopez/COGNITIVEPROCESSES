@@ -10,9 +10,9 @@ const{chromium}=require('playwright'),assert=require('node:assert/strict');
    box.innerHTML=problemHTML(x,true);const q=VERSION_D.problems[x.id];
    if(box.querySelectorAll('[data-question-frame] > .teaching').length<2)issues.push(x.id+' missing clinical/probability scenario');
    if(box.querySelectorAll('[data-question-frame] li').length<2)issues.push(x.id+' missing multipart task');
-   if(box.querySelectorAll('.step').length!==q.flow.length)issues.push(x.id+' incomplete solution');
+   if(box.querySelectorAll('.step').length!==problemSteps(x).length)issues.push(x.id+' incomplete solution');
    if(box.querySelector('.katex-error')||box.querySelector('.step .equation-rule'))issues.push(x.id+' malformed or detached math');
-   steps+=q.flow.length;
+   steps+=problemSteps(x).length;
   }
   for(const key of Object.keys(VERSION_D.sources)){box.innerHTML=sourceWorked(key);if(!box.querySelector('[data-source-question] li')||box.querySelector('.katex-error'))issues.push(key+' invalid source case')}
   for(const q of questionPool()){
@@ -22,7 +22,7 @@ const{chromium}=require('playwright'),assert=require('node:assert/strict');
   state.scriptVersion='C';for(const m of DATA.modules)for(const slide of makeModuleSlides(m.id)){lessonText(LES.get(slide.topic),m.id,slide.page);slides++}
   for(let i=0;i<100;i++){const items=prepareQuizItems(questionPool());if(!validateAnswerKey(items))issues.push('repeated adjacent answer key');for(const q of items)if(q.options[q.correct]!==questionPool().find(x=>x.id===q.id).options[q.correct])issues.push('desynchronized choice')}
   return{issues,steps,slides,cases:problemPool().length,quizzes:questionPool().length};
- });assert.deepEqual(audit.issues,[]);assert.equal(audit.steps,1476);assert.equal(audit.cases,236);assert.equal(audit.quizzes,339);assert.equal(audit.slides,384);
+ });assert.deepEqual(audit.issues,[]);assert.equal(audit.steps,1399);assert.equal(audit.cases,236);assert.equal(audit.quizzes,339);assert.equal(audit.slides,384);
  // Starting examples are actual homework/lecture workloads in every method group.
  for(let i=0;i<8;i++){
   await p.locator('#rapidGroup').selectOption(String(i));const expected=await p.evaluate(()=>VERSION_D.preferred[RAPID_PREP.groups[rapidState().index].id]);

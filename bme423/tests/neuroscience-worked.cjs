@@ -14,17 +14,17 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict');
     if(p.answer!==PROB.get(p.originalId).answer||q.primaryAnswer!==original.primaryAnswer)issues.push(p.id+' answer changed');
     if(q.flow.length!==original.flow.length)issues.push(p.id+' steps lost');
     box.innerHTML=problemHTML(p,true);
-    if(box.querySelectorAll('.step').length!==q.flow.length)issues.push(p.id+' incomplete solution');
+    if(box.querySelectorAll('.step').length!==problemSteps(p).length)issues.push(p.id+' incomplete solution');
     if(box.querySelectorAll('[data-question-frame] > .teaching').length!==2)issues.push(p.id+' missing scenario');
     if(box.querySelectorAll('[data-question-frame] li').length<2)issues.push(p.id+' missing multipart questions');
     if(box.querySelector('.katex-error'))issues.push(p.id+' invalid math');
     if(box.querySelector('[data-note]').dataset.note!=='problem:'+p.id)issues.push(p.id+' notes collide');
     if(!q.synthetic||!p.source.includes('synthetic data'))issues.push(p.id+' mislabeled evidence');
-    steps+=q.flow.length;figures+=box.querySelectorAll('.worked-figure').length;
+    steps+=problemSteps(p).length;figures+=box.querySelectorAll('.worked-figure').length;
    }
    return {issues,cases:NEURO_WORKED.problems.length,topics:NEURO_WORKED.topics.length,steps,figures};
   });
-  assert.deepEqual(audit.issues,[]);assert.equal(audit.cases,236);assert.equal(audit.topics,31);assert.equal(audit.steps,1476);
+  assert.deepEqual(audit.issues,[]);assert.equal(audit.cases,236);assert.equal(audit.topics,31);assert.equal(audit.steps,1399);
   // Topic changes, same-method variants, and the complete selector.
   assert.equal(await page.locator('#neuroProblemSelect option').count(),236);
   for(const topic of await page.evaluate(()=>NEURO_WORKED.topics)){

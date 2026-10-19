@@ -57,9 +57,25 @@ function teachingParagraphs(paragraphs,placements={},hypothesis=null){return par
 function stepEquations(p,index){const steps=EQUATION_GUIDE.problems[p.id];if(!steps||!steps[index])throw Error('Unreviewed calculation step '+p.id+':'+index);return equationRules(steps[index])}
 function versionD(){return state.questionVersion==='D'}
 function questionFrame(p){if(NEURO_WORKED.questions[p.id])return NEURO_WORKED.questions[p.id];const q=versionD()?VERSION_D.problems[p.id]:(PRACTICE_QUESTIONS.questions[p.id]||VERSION_D.problems[p.id]);if(!q)throw Error('Missing question '+p.id);return q}
-function problemSteps(p){const neuro=NEURO_WORKED.questions[p.id],mode=neuro||versionD()?'D':'C',flow=neuro?neuro.flow:versionD()?VERSION_D.problems[p.id]?.flow:(STUDIO_FLOWS.problems[p.id]||VERSION_D.problems[p.id]?.flow);if(!flow)throw Error('Missing worked solution '+p.id);const equations=WORKED_CHAINS[mode][p.id]||WORKED_CHAINS.D[p.id];if(!equations||equations.length!==flow.length)throw Error('Missing worked equations '+p.id);return flow.map((step,i)=>({...step,math:equations[i]}))}
+function workedSolutionContext(p){
+ const neuro=NEURO_WORKED.questions[p.id],mode=neuro||versionD()?'D':'C',flow=neuro?neuro.flow:versionD()?VERSION_D.problems[p.id]?.flow:(STUDIO_FLOWS.problems[p.id]||VERSION_D.problems[p.id]?.flow);
+ if(!flow)throw Error('Missing worked solution '+p.id);
+ let indices=flow.map((_,i)=>i);
+ // These cases contained an older short answer followed by a complete answer
+ // to the same family. Retain the complete answer, including every pair.
+ if(mode==='D'&&['bonferroni','posthoc'].includes(p.topic)){
+  const start=flow.findIndex(step=>step.label==='Requested family and adjusted level');
+  if(start>=0){
+   const complete=flow.slice(start),pairs=complete.filter(step=>/^Groups \d+ and \d+$/.test(step.label));
+   if(start===0||complete[1]?.label!=='Common pair standard error'||complete.at(-1)?.label!=='Family conclusion'||pairs.length!==complete[0].values?.k||new Set(pairs.map(step=>step.label)).size!==pairs.length)throw Error('Incomplete consolidated comparison solution '+p.id);
+   indices=indices.slice(start);
+  }
+ }
+ return {mode,flow,indices};
+}
+function problemSteps(p){const {mode,flow,indices}=workedSolutionContext(p),equations=WORKED_CHAINS[mode][p.id]||WORKED_CHAINS.D[p.id];if(!equations||equations.length!==flow.length)throw Error('Missing worked equations '+p.id);return indices.map(i=>({...flow[i],math:equations[i]}))}
 function generalEquationList(keys){return [...new Set(keys.flatMap(key=>{const rules=WORKED_GENERAL.rules[key];if(!rules)throw Error('Missing general equation '+key);return rules}))]}
-function stepGeneralHTML(p,index){const mode=NEURO_WORKED.questions[p.id]||versionD()?'D':'C',steps=WORKED_GENERAL[mode][p.id]||WORKED_GENERAL.D[p.id],keys=steps?.[index];if(!keys)throw Error('Missing general worked-step equations '+p.id+':'+index);return keys.length?`<div class="step-general-equations" data-general-step="${esc(p.id)}:${index}">${generalEquationList(keys).map(displayMath).join('')}</div>`:''}
+function stepGeneralHTML(p,index){const {mode,indices}=workedSolutionContext(p),steps=WORKED_GENERAL[mode][p.id]||WORKED_GENERAL.D[p.id],keys=steps?.[indices[index]];if(!keys)throw Error('Missing general worked-step equations '+p.id+':'+index);return keys.length?`<div class="step-general-equations" data-general-step="${esc(p.id)}:${index}">${generalEquationList(keys).map(displayMath).join('')}</div>`:''}
 function sourceGeneralEquations(html,key){const mode=versionD()?'D':'C',slots=WORKED_GENERAL.sources[mode][key];if(!slots)throw Error('Missing general source equations '+key);let index=0;const result=html.replace(/\\\[([\s\S]*?)\\\]/g,whole=>{const slot=index++,keys=slots[slot];if(!keys)throw Error('Missing general source calculation '+key+':'+slot);return (keys.length?`<div class="step-general-equations" data-general-source="${esc(key)}:${slot}">${generalEquationList(keys).map(tex=>'\\['+tex+'\\]').join('')}</div>`:'')+whole});if(index!==slots.length)throw Error('Changed source calculation order '+key);return result}
 function workedFigure(figure){return figure?`<figure class="worked-figure"><img src="${esc(figure.src)}" alt="${esc(figure.alt)}" decoding="async"><figcaption>${esc(figure.caption)}</figcaption></figure>`:''}
 function questionBody(q){return `${(q.paragraphs||[q.context]).map(p=>`<p class="teaching">${rich(p)}</p>`).join('')}${q.math.map(displayMath).join('')}<ol class="rapid-question-parts" type="a">${q.parts.map(part=>`<li>${rich(part)}</li>`).join('')}</ol>`}
@@ -70,4 +86,4 @@ function quizExplanation(q){const p=q.problem&&PROB.get(q.problem);return `<div 
 function renderNotesV2(){const pack=typeof SHEET_PACK==='undefined'?V2:SHEET_PACK;return pack.sheets.map((s,i)=>`<article class="sheet-v2"><header><strong>BME423 · MIDTERM</strong><span>Side ${i+1}/4 · ${esc(s.title.slice(4))}</span></header><div class="notes-columns">${s.columns.map(keys=>`<div class="notes-column">${keys.map(k=>{const b=pack.blocks[k];return `<section class="compact-block" data-block="${k}"><h3>${esc(b.title)}</h3>${authored(b.html)}</section>`}).join('')}</div>`).join('')}</div></article>`).join('')}
 function fitNotesMath(){document.querySelectorAll('.sheet-v2 .math-display').forEach(el=>{el.style.fontSize='';const span=el.querySelector('.katex-html');if(!span)return;const width=span.getBoundingClientRect().width,available=el.clientWidth;if(width>available&&available>0){if(el.closest('.sheet-follow')){const size=parseFloat(getComputedStyle(el).fontSize);el.style.fontSize=(size*Math.min(1,available/width))+'px'}else el.style.fontSize=(Math.min(1,available/width)*100).toFixed(2)+'%'}})}
 
-function stepReferenceHTML(p,index){const mode=versionD()||NEURO_WORKED.questions[p.id]?'D':'C',text=STEP_REFERENCES[mode][p.id]?.[index]||STEP_REFERENCES.D[p.id]?.[index];if(!text)throw Error('Missing step reference '+p.id+':'+index);return `<p class="step-reference" data-step-reference="${esc(p.id)}:${index}">${rich(text)}</p>`}
+function stepReferenceHTML(p,index){const {mode,indices}=workedSolutionContext(p),sourceIndex=indices[index],text=STEP_REFERENCES[mode][p.id]?.[sourceIndex]||STEP_REFERENCES.D[p.id]?.[sourceIndex];if(!text)throw Error('Missing step reference '+p.id+':'+index);return `<p class="step-reference" data-step-reference="${esc(p.id)}:${index}">${rich(text)}</p>`}

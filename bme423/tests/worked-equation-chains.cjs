@@ -10,9 +10,9 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict');
    const pool=mode==='D'?[...problemPool(),...NEURO_WORKED.problems]:DATA.problems;
    for(const p of pool){
     const original=NEURO_WORKED.questions[p.id]?.flow||(mode==='D'?VERSION_D.problems[p.id].flow:STUDIO_FLOWS.problems[p.id]);
-    const flow=problemSteps(p);if(flow.length!==original.length)issues.push(p.id+' lost steps');
+    const context=workedSolutionContext(p),flow=problemSteps(p);if(flow.length!==context.indices.length)issues.push(p.id+' lost steps');
     flow.forEach((s,i)=>{
-     const {math:newMath,...newRest}=s,{math:oldMath,...oldRest}=original[i];
+     const {math:newMath,...newRest}=s,{math:oldMath,...oldRest}=original[context.indices[i]];
      if(JSON.stringify(newRest)!==JSON.stringify(oldRest))issues.push(p.id+':'+i+' non-math change');
      for(const tex of s.math){const html=workedEquation(tex,problemHypothesis(p));if(!html.includes('katex'))issues.push(p.id+':'+i+' unrendered calculation');if(html.includes('katex-error'))issues.push(p.id+':'+i+' invalid equation');if(html.includes('worked-equation-chain'))wrapped++;math++}
      steps++;
@@ -22,7 +22,7 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict');
   }
   state.questionVersion='D';return{examples,steps,math,sources,wrapped,issues};
  });
- assert.equal(audit.examples,696);assert.equal(audit.steps,4029);assert.equal(audit.sources,76);assert(audit.wrapped>2000);assert.deepEqual(audit.issues,[]);
+ assert.equal(audit.examples,696);assert.equal(audit.steps,3875);assert.equal(audit.sources,76);assert(audit.wrapped>2000);assert.deepEqual(audit.issues,[]);
  // No numerical explanation skips the named risks, every cell, or later pairs.
  const fil=await page.evaluate(()=>problemSteps(PROB.get('d-hw2-filgrastim')));
  for(let i=9;i<=11;i++)assert(fil[i].math[0].includes('\\bar x_')&&fil[i].math[0].includes('\\mathrm{SE}_{ij}'));

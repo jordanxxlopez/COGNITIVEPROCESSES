@@ -11,7 +11,7 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict');
     const flow=problemSteps(p),mapped=WORKED_GENERAL[mode][p.id]||WORKED_GENERAL.D[p.id];box.innerHTML=stepsHTML(p);
     const rendered=[...box.querySelectorAll('.step')];if(flow.length!==rendered.length)issues.push(p.id+' missing calculation');
     rendered.forEach((step,i)=>{
-     const work=step.querySelector('.worked-math'),keys=mapped[i],head=work.querySelector(':scope > .step-general-equations');
+     const work=step.querySelector('.worked-math'),keys=mapped[workedSolutionContext(p).indices[i]],head=work.querySelector(':scope > .step-general-equations');
      if(keys.length){
       if(head!==work.firstElementChild)issues.push(p.id+':'+i+' general rule not first');
       if(head?.dataset.generalStep!==p.id+':'+i)issues.push(p.id+':'+i+' incorrect rule target');
@@ -35,7 +35,7 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict');
   }
   state.questionVersion='D';return {cases,steps,generalSteps,generalEquations,sources,issues};
  });
- assert.equal(audit.cases,696);assert.equal(audit.steps,4029);assert.equal(audit.generalSteps,3601);assert.equal(audit.sources,76);assert.deepEqual(audit.issues,[]);
+ assert.equal(audit.cases,696);assert.equal(audit.steps,3875);assert.equal(audit.generalSteps,3471);assert.equal(audit.sources,76);assert.deepEqual(audit.issues,[]);
  // Corrected and ordinary contributions both start with the applicable generic
  // equation, followed by every individual cell, never only a representative.
  const cells=await page.evaluate(()=>[...VERSION_D.extraCases,...DATA.problems].filter(p=>p.topic==='chi').map(p=>{

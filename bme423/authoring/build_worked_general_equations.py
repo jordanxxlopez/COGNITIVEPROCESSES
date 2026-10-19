@@ -66,6 +66,7 @@ def general_keys(pid,s,index,mode):
  if label=='Largest departure contribution':keys=['gofcell']
  if label=='Calculate contributions' and topic=='gof':keys=['gofcell','gof']
  if label=='Count the specified family':keys=['familycount']
+ if label=='Individual SD versus proportion SE' and len(maths)==1:keys=['sechange']
  if label.startswith('Control versus Group '):keys=['expected','yatescell','chisum','chidf','holm','chidecision']
  if label=='Equivalent corrected chi-square comparison':keys=['cellchiidentity','chidf']
  if label=='Find variance of the group means':keys=['popss' if pid=='population' else 'meansvar']

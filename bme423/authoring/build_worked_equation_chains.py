@@ -156,6 +156,7 @@ def transform(pid,flow,base,mode):
                 df=m*(size-1)
                 family=(r'\frac{m(m-1)}2=\frac{'+n(m)+'('+n(m)+'-1)}2='+n(k)) if (t!='bonferroni' or pid=='bonf') else ('m-1='+n(m)+'-1='+n(k))
                 ms=['k='+family,r'\alpha_{\mathrm{pair}}=\frac{\alpha_T}{k}=\frac{.05}{'+n(k)+'}='+f(.05/k),r'\nu=m(n-1)='+n(m)+'('+n(size)+'-1)='+n(df),tcut(df,.05/k,True)]
+                if label=='Requested family and adjusted level':ms.insert(3,r'\alpha_{\mathrm{tail}}=\frac{\alpha_{\mathrm{pair}}}{2}=\frac{'+f(.05/k)+'}{2}='+f(.05/(2*k)))
                 if label=='All-pair family and cutoff':ms.append(pairse(var,size))
             if label.startswith('Groups ') or label in ('Low versus Medium','Low versus High','Medium versus High'):
                 if t=='anova':means=ast.literal_eval(g['means']);size=g['n per group'];var=np.mean(np.asarray(ast.literal_eval(g['SDs']))**2);i,j={'Low versus Medium':(0,1),'Low versus High':(0,2),'Medium versus High':(1,2)}[label]
@@ -177,6 +178,7 @@ def transform(pid,flow,base,mode):
             if label=='Individual SD versus proportion SE':
                 events=g.get('m',g.get('events'));size=g.get('n',g.get('patients'));pr=events/size;se=math.sqrt(pr*(1-pr)/size)
                 ms[-1]=r'\mathrm{SE}_{4n}(\hat p)=\frac{\mathrm{SE}_n(\hat p)}2=\frac{'+f(se)+'}2='+f(se/2)
+                if any(previous['label']=='Take the Bernoulli SD' for previous in base[:index]):ms=ms[1:]
         if t=='zprop':
             if pid=='d-hw2-dioxin':
                 ms=[m.replace(r'\hat p=\frac{205}',r'\hat p=\frac{m_1+m_2}{n_1+n_2}=\frac{205}').replace(r'c_Y=\tfrac12(1/186',r'c_Y=\tfrac12(1/n_1+1/n_2)=\tfrac12(1/186').replace('D_Y=|',r'D_Y=\max(0,|\hat p_1-\hat p_2|-c_Y)=|').replace(r'z_{\mathrm{crit}}=1.959964',r'z_{\mathrm{crit}}=\Phi^{-1}(1-\alpha/2)=\Phi^{-1}(.975)=1.959964') for m in ms]
