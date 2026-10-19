@@ -6,7 +6,12 @@ Explain source terminology and instructional stimuli directly. Exclude presentat
 narration, roadmaps, decorative-image descriptions, stock caveats, and filler.
 Do not use the phrase “need not” in authored study materials. Use direct wording
 that fits the meaning, such as “does not have to” or “does not necessarily.”
-For LING406 Version 3, avoid colons and semicolons in transcript prose. Do not use
+For LING406 Versions 3 and later, avoid colons and semicolons in
+transcript prose. Do not use
 “lawful” as evaluative framing. Do not introduce earlier or later slides.
 Preserve source documents verbatim and keep notes, read marks, and quiz state
 compatible when changing the interface.
+
+LING406 Version 4 retains source wording within the teaching prose. Each page
+must equal or exceed Version 3 in visible word count and character count.
+Preserve explanations and do not pad logistical pages to increase their length.

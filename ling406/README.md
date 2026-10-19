@@ -45,14 +45,17 @@ python ling406/authoring/render_sources.py
 python ling406/authoring/build_studio.py
 python ling406/version2/author_transcripts.py
 python ling406/version3/build_transcripts.py
+python ling406/version4/build_transcripts.py
 node --test ling406/tests/quiz-engine.test.cjs
 python ling406/tests/verify_coverage.py
 python ling406/tests/verify_v2.py
 python ling406/tests/verify_v3.py
+python ling406/tests/verify_v4.py
 # With the repository root served at http://localhost:8907:
 node ling406/tests/studio.cjs
 node ling406/tests/transcripts-v2.cjs
 node ling406/tests/transcripts-v3.cjs
+node ling406/tests/transcripts-v4.cjs
 ```
 
 The content checks verify all source page/hash references, unique per-slide scripts, question counts and sources, review/group links, core flags and allocations. Engine checks include deliberately invalid arrangements, 500 randomized full-bank arrangements, all four answer positions, canonical grading identity, and correct options outside the original first position. Browser checks cover every collection, all workspace routes, complete reader queues and endpoints, shared/autogrowing notes, read marks, persistence, answer feedback and retry behavior, every source/slide asset, dialogs, light/dark mobile containment, and the offline text shell. Browser screenshots were visually reviewed. The original repository files are checked against a pre-task hash snapshot when available.
@@ -91,3 +94,28 @@ presentation-framing phrases in teaching prose. Browser checks compare all 284
 rendered page entries with the authored scripts, verify the full review queue,
 shared notes, three-edition switching, selected-version speech/search/guide,
 saved quiz preservation, desktop/mobile layouts and offline switching.
+
+## Version 4 source wording
+
+Version 4 keeps the slide-specific Version 3 explanations and incorporates more
+of each slide's wording within its existing paragraphs. The authored revisions
+in `version4/*.txt` pair each replacement with its source phrase. The builder
+checks those phrases against the extracted slide text, with explicit visual
+anchors for material that appears only in instructional graphics. The review
+uses the revised script for matching content and retains its separate page-54
+explanation. The six single-word incremental sentence pages already contain the
+source word and retain their existing explanations. Seven explicitly authored
+clarifications expand abrupt sentences within their existing paragraphs.
+
+`version4/build_transcripts.py` rejects any page whose visible word count or
+character count falls below Version 3, including within each paragraph. It also checks source-phrase inclusion,
+bold markup and the existing direct-teaching style constraints. The results
+for every page are recorded in `version4/coverage.json`. Title and reading-only
+pages stay empty of invented teaching prose. This edition has 30,273 teaching
+words across the same 284 lecture/review page entries.
+
+Versions 1, 2 and 3 remain unchanged. Saved edition preferences, slide notes,
+read marks and quiz answers keep their existing browser keys. The fourth
+edition is offered in the existing topbar and both readers, and is the default
+only when there is no saved edition preference. Its text also feeds the guide,
+combined notes, core review, experiments, search and read-aloud features.

@@ -1,6 +1,8 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const root='http://localhost:8907/ling406/';
+const edition=Number(process.env.LING_TRANSCRIPT_VERSION||3);
+assert([3,4].includes(edition));
 const bare=s=>s.replace(/\*\*/g,'');
 const flatten=blocks=>blocks.flatMap(b=>[b.text,...b.children]).map(bare);
 (async()=>{
@@ -15,12 +17,14 @@ const flatten=blocks=>blocks.flatMap(b=>[b.text,...b.children]).map(bare);
   const p=await context.newPage(),errors=[];
   p.on('pageerror',e=>errors.push(e.message));
   await p.goto(root);
-  const D=await p.evaluate(()=>LING406),V=await p.evaluate(()=>LING406_TRANSCRIPTS_V3);
+  const D=await p.evaluate(()=>LING406),V3=await p.evaluate(()=>LING406_TRANSCRIPTS_V3);
+  const V=edition===4?{...V3,...await p.evaluate(()=>LING406_TRANSCRIPTS_V4)}:V3;
   const sel='header [data-transcript-version]',rsel='#readerRoot [data-transcript-version]';
-  assert.equal(await p.locator(sel).inputValue(),'3');
+  assert.equal(await p.locator(sel).inputValue(),'4');
+  await p.selectOption(sel,String(edition));
   assert.equal(await p.locator('#collectionNav button').count(),10);
   assert.match(await p.locator('[data-lecture="midterm-review"]').innerText(),/10.*Midterm II Review.*Fall 2025/s);
-  // Compare every rendered V3 paragraph with its explicitly authored source-page entry.
+  // Compare every rendered selected-edition paragraph with its explicitly authored source-page entry.
   for(const id of [...D.modules.map(m=>m.id),'midterm-review']){
    await p.evaluate(id=>LingStudio.go('collection',id),id);
    const rows=await p.locator('.note-section').evaluateAll(es=>es.map(e=>({id:e.dataset.section,paragraphs:[...e.querySelectorAll('.section-transcript .teaching-script p')].map(p=>p.textContent),image:e.querySelector('img').getAttribute('src')})));
@@ -37,7 +41,7 @@ const flatten=blocks=>blocks.flatMap(b=>[b.text,...b.children]).map(bare);
   await p.locator('.reader-inline [data-read]').check();
   await p.locator('[data-action="readerExpand"]').click();
   assert.equal(await p.locator('#readerSelect').count(),1);
-  for(const version of ['1','2','3']){
+  for(const version of Array.from({length:edition},(_,i)=>String(i+1))){
    await p.selectOption(rsel,version);
    assert.equal(await p.locator('#readerSelect').inputValue(),'53');
    assert.equal(await p.locator('#readerRoot [data-note]').inputValue(),'Review matches share this note with the corresponding lecture.');
@@ -83,9 +87,9 @@ const flatten=blocks=>blocks.flatMap(b=>[b.text,...b.children]).map(bare);
   const correct=await p.evaluate(()=>LingStudio.questions.get(LingStudio.state.quiz.items[0].id).correct);
   await p.locator(`[data-answer="${correct}"]`).click();
   const quiz=await p.evaluate(()=>JSON.stringify(LingStudio.state.quiz));
-  for(const version of ['1','2','3'])await p.selectOption(sel,version);
+  for(const version of Array.from({length:edition},(_,i)=>String(i+1)))await p.selectOption(sel,version);
   assert.equal(await p.evaluate(()=>JSON.stringify(LingStudio.state.quiz)),quiz);
-  await p.reload();assert.equal(await p.locator(sel).inputValue(),'3');
+  await p.reload();assert.equal(await p.locator(sel).inputValue(),String(edition));
   for(const theme of ['light','dark']){
    await p.setViewportSize({width:1440,height:1000});
    await p.evaluate(t=>{LingStudio.state.theme=t;LingStudio.go('collection','speech1')},theme);
@@ -93,7 +97,7 @@ const flatten=blocks=>blocks.flatMap(b=>[b.text,...b.children]).map(bare);
    await p.locator('#readerRoot img').evaluate(e=>e.decode());
    assert(await p.evaluate(()=>document.querySelector('.expanded-stage').scrollWidth<=innerWidth));
    const visual=await p.locator('#readerRoot .reader-visual').boundingBox();assert(visual.y<350&&visual.y+visual.height<1000);
-   await p.screenshot({path:`/tmp/ling-v3-desktop-${theme}.png`});
+   await p.screenshot({path:`/tmp/ling-v${edition}-desktop-${theme}.png`});
    await p.keyboard.press('Escape');
    await p.setViewportSize({width:390,height:844});
    for(const id of ['speech1','midterm-review']){
@@ -102,15 +106,15 @@ const flatten=blocks=>blocks.flatMap(b=>[b.text,...b.children]).map(bare);
    }
    await p.evaluate(()=>LingStudio.openReader(['review-54'],0,true,'Review'));
    assert(await p.evaluate(()=>document.querySelector('.expanded-stage').scrollWidth<=innerWidth));
-   await p.screenshot({path:`/tmp/ling-v3-mobile-${theme}.png`});await p.keyboard.press('Escape');
+   await p.screenshot({path:`/tmp/ling-v${edition}-mobile-${theme}.png`});await p.keyboard.press('Escape');
   }
   await p.evaluate(()=>navigator.serviceWorker.ready);await p.reload();
   await context.setOffline(true);await p.reload();
   await p.evaluate(()=>LingStudio.go('collection','midterm-review'));
   assert.equal(await p.locator('.note-section').count(),55);
   assert.deepEqual(await p.locator('[data-section="review-54"] .teaching-script p').allTextContents(),flatten(V.scripts['review-54']));
-  for(const version of ['1','2','3']){await p.selectOption(sel,version);assert.equal(await p.locator('.note-section').count(),55);}
+  for(const version of Array.from({length:edition},(_,i)=>String(i+1))){await p.selectOption(sel,version);assert.equal(await p.locator('.note-section').count(),55);}
   await context.setOffline(false);assert.deepEqual(errors,[]);
-  console.log('PASS: all 284 V3 DOM scripts, original 55-slide collection/readers, review/lecture shared notes, three-edition switching and persistence, nested teaching prose, speech/search/guide, quiz preservation, light/dark desktop/mobile containment, and offline switching.');
+  console.log(`PASS: all 284 V${edition} DOM scripts, original 55-slide collection/readers, review/lecture shared notes, ${edition}-edition switching and persistence, nested teaching prose, speech/search/guide, quiz preservation, light/dark desktop/mobile containment, and offline switching.`);
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exit(1)});
