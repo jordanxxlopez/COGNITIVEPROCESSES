@@ -1,0 +1,236 @@
+[
+  {
+    "page": 1,
+    "text": "            Ling 285\nHuman Language and Technology\n            Lecture 4\n      Dynamical Systems 1\n\n\n               Khalil Iskarous\n       Department of Linguistics\n     University of Southern California",
+    "ocr": "",
+    "image": "assets/slides/lecture04/001.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 2,
+    "text": "Today\n\n• Dynamic Programming\n• Pop Quiz\n• Dynamical Systems Galore",
+    "ocr": "",
+    "image": "assets/slides/lecture04/002.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 3,
+    "text": "Shortest Path Problem",
+    "ocr": "Shortest Path Problem",
+    "image": "assets/slides/lecture04/003.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 4,
+    "text": "    Greedy Algorithm\n\n\n\n\n\nNews Flash: Greed is not\ngood!!!",
+    "ocr": "",
+    "image": "assets/slides/lecture04/004.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 5,
+    "text": "",
+    "ocr": "",
+    "image": "assets/slides/lecture04/005.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 6,
+    "text": "       Exhaustive Algorithm\n\n\n\n\n\n   Very Accurate, but if there are many\nstages and states, it will take a very very long\n                                    i",
+    "ocr": "",
+    "image": "assets/slides/lecture04/006.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 7,
+    "text": "Dynamic Programming\n\n                   Bellman:\n               •  Imagine we know the\n              costs of the paths from\n          B to J and C to J.\n               •  We’ll call them VBJ and VCJ\n               •  Then what’s the best\n              cost from A to J, VAJ?",
+    "ocr": "",
+    "image": "assets/slides/lecture04/007.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 8,
+    "text": "Dynamic Programming\n\n                   Bellman:\n               •  Imagine we know the  We don’t know\n                                 ☹️              costs of the paths from  VBJ and VCJ\n          B to J and C to J.\n                             ☹️               •  We’ll call them VBJ and VCJ\n               •  Then what’s the best\n              cost from A to J, VAJ?\n                              Bellman: To solve\n                        A problem,\n                         decompose\n                                                 it into subproblems\n                          You can solve, if you\n                                 can!",
+    "ocr": "",
+    "image": "assets/slides/lecture04/008.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 9,
+    "text": "Bellman: We don’t know\nthe best cost from B to J,\nbut if we knew the best\ncosts from D, E, F, to J, then\nwe can find the best cost\nfrom B to J",
+    "ocr": "",
+    "image": "assets/slides/lecture04/009.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 10,
+    "text": "Dynamic Programming: Calculate\nValues, then you can be greedy!\n                                   And what’s the best\n                                          path? Now go\n                                        greedy\n                               On the Values! Not\n                                                     Costs!!!!\n            😌",
+    "ocr": "",
+    "image": "assets/slides/lecture04/010.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 11,
+    "text": "                 🤔 If I’m at this stage,\n                               DP gives me forsight that                                                       In the initial problem, a lateDynamic                          State H leads to something                                                      obstacle (the 9!) can lead                                                terrible 🤨 This is still theProgramming                                        case if               an early greedy decisionis forsight!                                      There are many more stages                                               based on the cost to lead\n                                           to J                   ☹️                                                       to a bad path. The Values                                                                                                                                  ️\n                                                     contain the FUTURE!!!! So\nSøren Kierkegaard: Life                                       we can go greedy on them,\ncan                                                       since they already containonly be understood\n                                                          infobackwards; but it must\n              😌be lived forwards                                           on all the future obstacles!!!\n                                              So they make\n                                                    present decisions optimal,\n                                                because the whole future\n                                               from each state is\n                                                   encapsulated in its Value!!!",
+    "ocr": "",
+    "image": "assets/slides/lecture04/011.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 12,
+    "text": "                                         Dynamic Programming can\n                                         be seen to start withDynamic Programming:\n                                             posing a\n                                             Problem, its subproblems,\n                                         Subsub Problems…. Then\n                                                  solving the big problem by\n                                                 soloving the subproblems,\n                                           which you can do by\n                                                  solving the\n            😌                      subsubproblems…. Till you\n                                               get to a point, where the\n                                           problems are trivial, and\n                                    now we can go back and\n                                                  solve the bigger problems.\n                                     How?",
+    "ocr": "",
+    "image": "assets/slides/lecture04/012.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 13,
+    "text": "                                         By propagating Values from\n                                           each stage to the earlierDynamic Programming:\n                                              stage by using Bellman’s\n                                                     idea:\n                                         The Value at one state is\n                                               the Min of a set of\n                                          numbers, each of which is\n                                               the sum of the cost to one\n                                                  of the next states and the\n            😌                        value at that state!",
+    "ocr": "",
+    "image": "assets/slides/lecture04/013.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 14,
+    "text": "   Mind-Blowing Stuff\n\n\n\n\n\nDP: Go through the bad 12\nearlier\nto get onto a route that doesn’t\nget stuck later at the 9! It may\nseem\nthat we need a big brain to do                                           Nano Bannana\nthat!!!                                                    Pro",
+    "ocr": "",
+    "image": "assets/slides/lecture04/014.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 15,
+    "text": "   Decision-Making is like Physics \n\n\n\n\n\nDP: Go through the bad 12\nearlier\nto get onto a route that doesn’t\nget stuck later at the 9! It may\nseem\nthat we need a big brain to do\nthat!!!",
+    "ocr": "",
+    "image": "assets/slides/lecture04/015.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 16,
+    "text": "Figuring out the best Route!",
+    "ocr": "Figuring out the best Route!",
+    "image": "assets/slides/lecture04/016.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 17,
+    "text": "Pop Quiz",
+    "ocr": "Pop Quiz",
+    "image": "assets/slides/lecture04/017.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 18,
+    "text": "Pop QUiz",
+    "ocr": "Pop QUiz\n\nLearning rate = 10%\n\n140 ;\n\n00\n\n80\n\n60\n\nhot coffee cooling\n40\n\ntemperature (°C)\n\n20 room temperature = 18°C.\n\niced coffee warming\n\nT T T 1\n° 2 4 6 8\n\noO 50 100 150 200 250 300 minutes\n\nEpochs",
+    "image": "assets/slides/lecture04/018.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  }
+]

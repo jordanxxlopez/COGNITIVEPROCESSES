@@ -1,0 +1,2178 @@
+{
+  "questions": [
+    {
+      "id": "ling285-q001",
+      "prompt": "Why does the lecture treat learning to speak as an impressive motor achievement, even before reading and writing begin?",
+      "answer": "Speaking coordinates complex vocal-tract movements with little explicit instruction and little direct visual feedback. The lecture contrasts this early accomplishment with reading and writing, which generally require much more explicit instruction.",
+      "rubric": [
+        "The explanation identifies coordinated movement of speech organs.",
+        "The explanation connects early speech learning to limited instruction or visual feedback."
+      ],
+      "sources": [
+        {
+          "collection": "lecture01",
+          "page": 3
+        }
+      ],
+      "topic": "Speech foundations",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q002",
+      "prompt": "A researcher tracks tongue movement while another tracks vibrations in the air inside the vocal tract. Which studies articulation and which studies acoustics?",
+      "answer": "Tracking tongue movement studies articulatory phonetics because it concerns the movement and arrangement of vocal-tract structures. Tracking air vibration studies acoustic phonetics because it concerns the sound-producing behavior of the air.",
+      "rubric": [
+        "Tongue movement is assigned to articulatory phonetics.",
+        "Air vibration is assigned to acoustic phonetics."
+      ],
+      "sources": [
+        {
+          "collection": "lecture01",
+          "page": 4
+        }
+      ],
+      "topic": "Speech foundations",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q003",
+      "prompt": "A speaker holds the mouth constriction approximately steady while changing from the sound in fat to the sound in vat. What mainly changes, and what remains shared?",
+      "answer": "The vocal folds begin vibrating for the voiced sound in vat. Both sounds are fricatives made at the same labial place, so voicing changes while their place and manner remain shared.",
+      "rubric": [
+        "The answer identifies vocal-fold vibration as the relevant change.",
+        "The answer preserves the shared fricative manner and labial place."
+      ],
+      "sources": [
+        {
+          "collection": "lecture01",
+          "page": 8
+        },
+        {
+          "collection": "lecture02",
+          "page": 6
+        }
+      ],
+      "topic": "Consonants",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q004",
+      "prompt": "Why can m and b belong to the same place and voicing categories while still sounding different?",
+      "answer": "Both are voiced and bilabial, so their vocal folds vibrate and their lips form the constriction. Their manner differs because m is nasal and b is an oral stop, or plosive.",
+      "rubric": [
+        "Both sounds are identified as voiced and bilabial.",
+        "The answer distinguishes a nasal from an oral stop."
+      ],
+      "sources": [
+        {
+          "collection": "lecture01",
+          "page": 10
+        },
+        {
+          "collection": "lecture02",
+          "page": 6
+        }
+      ],
+      "topic": "Consonants",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q005",
+      "prompt": "Compare the first sounds in Pam, Bam, Tam, Dam, Kam, and Gam without merely listing the letters.",
+      "answer": "They are oral stops at three places. Pam and Bam are bilabial, Tam and Dam are alveolar, and Kam and Gam are velar. Within each pair, p, t, and k are voiceless while b, d, and g are voiced.",
+      "rubric": [
+        "The answer groups the three pairs by bilabial, alveolar, and velar place.",
+        "The answer separates voiceless p/t/k from voiced b/d/g and preserves the shared stop manner."
+      ],
+      "sources": [
+        {
+          "collection": "lecture02",
+          "page": 6
+        }
+      ],
+      "topic": "Consonants",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q006",
+      "prompt": "Why is filling the blank in “Chickens cackle and ___ quack” a test of more than recognizing individual words?",
+      "answer": "Choosing ducks requires using the remaining context to complete the pattern. The sentence combines word meanings with a relation between an animal and its characteristic sound, so knowledge of the whole pattern guides the missing word.",
+      "rubric": [
+        "The answer explains that the remaining context constrains the completion.",
+        "The answer connects the completion to relationships among words rather than isolated recognition."
+      ],
+      "sources": [
+        {
+          "collection": "lecture02",
+          "page": 10
+        }
+      ],
+      "topic": "Closure and prediction",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q007",
+      "prompt": "What changes when the words in a prompt are represented as vectors, and why does that help a computer process them?",
+      "answer": "Each word is represented by a list of numbers rather than processed as the printed word itself. The system can then combine those numerical inputs with learned numerical weights to produce probabilities for possible continuations.",
+      "rubric": [
+        "A vector is identified as a list of numbers representing an input.",
+        "The answer connects numerical representation to computation with weights."
+      ],
+      "sources": [
+        {
+          "collection": "lecture02",
+          "page": 11
+        },
+        {
+          "collection": "lecture02",
+          "page": 12
+        }
+      ],
+      "topic": "Representations",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q008",
+      "prompt": "Two systems receive the same token vectors but assign different probabilities to the next word. Which stored quantities could account for that difference?",
+      "answer": "Their weights can differ. Weights store the learned relationships used to transform input vectors into an output distribution, so different weights can give different predictions from the same input.",
+      "rubric": [
+        "The answer identifies weights as learned knowledge.",
+        "The answer explains how changing weights can change an output while the input stays fixed."
+      ],
+      "sources": [
+        {
+          "collection": "lecture02",
+          "page": 12
+        }
+      ],
+      "topic": "Representations",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q009",
+      "prompt": "In the learning-rate plots, a learner approaches the central value quickly but continues making large jumps. What setting would you examine first, and why?",
+      "answer": "I would examine the learning rate. A larger rate makes each observation pull the estimate farther, which can produce fast early movement and greater fluctuation near the central value. Reducing it makes each correction smaller but slows adjustment.",
+      "rubric": [
+        "The answer connects a larger rate to a larger correction per observation.",
+        "The answer states the speed versus fluctuation tradeoff without promising that a smaller rate instantly gives an exact answer."
+      ],
+      "sources": [
+        {
+          "collection": "lecture02",
+          "page": 18
+        }
+      ],
+      "topic": "Learning rate",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q010",
+      "prompt": "Why does correcting only part of a discrepancy make sense when the current observation is just one member of a varied dataset?",
+      "answer": "One observation provides evidence about the estimate but does not by itself establish the average of the whole dataset. Moving partway toward it lets successive observations contribute instead of replacing the estimate completely with whichever value appeared last.",
+      "rubric": [
+        "The answer distinguishes one observation from the whole dataset.",
+        "The answer explains how partial correction allows repeated evidence to contribute."
+      ],
+      "sources": [
+        {
+          "collection": "lecture02",
+          "page": 17
+        }
+      ],
+      "topic": "Learning from error",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q011",
+      "prompt": "Explain how speech fits the lecture’s three-part description of a dynamical system.",
+      "answer": "Its elements include parts of the tongue, lips, velum, larynx, palate, and pharyngeal wall. Relations among those elements coordinate their behavior under neural control. In the example, that coordination serves the goal of conveying a thought.",
+      "rubric": [
+        "The answer names relevant interacting speech elements and their relations.",
+        "The answer identifies conveying a thought as the example’s goal."
+      ],
+      "sources": [
+        {
+          "collection": "lecture03",
+          "page": 5
+        }
+      ],
+      "topic": "Dynamical systems",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q012",
+      "prompt": "Why can a simple learning system help us reason about a much more complicated biological system?",
+      "answer": "Systems with very different physical parts can share an organization of interacting variables and change over time. A simpler system can make a shared principle easier to follow, while its simplicity does not establish that every biological detail is identical.",
+      "rubric": [
+        "The answer identifies a shared pattern of interaction or change.",
+        "The answer explains the value of a simpler model without claiming that all system details are equivalent."
+      ],
+      "sources": [
+        {
+          "collection": "lecture03",
+          "page": 6
+        }
+      ],
+      "topic": "Dynamical systems",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q013",
+      "prompt": "Explain the mechanism behind “fake it till you make it” in the language-model example.",
+      "answer": "The system begins with random weights and uses them to guess a continuation. A known target allows the output error to be identified, and training changes the weights to reduce that error. Repeating this across many examples improves its predictions.",
+      "rubric": [
+        "The explanation starts with random weights and an initial prediction.",
+        "The explanation links known targets, error-driven weight change, and repeated training."
+      ],
+      "sources": [
+        {
+          "collection": "lecture03",
+          "page": 10
+        }
+      ],
+      "topic": "Learning from error",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q014",
+      "prompt": "An estimate has been moving downward, but a new observed value is above the current estimate. Should the next correction still move down?",
+      "answer": "It should move upward toward that observation. The current estimate minus the higher observation is negative, so subtracting a positive fraction of this discrepancy raises the estimate. Descent refers to reducing an error objective, not requiring the estimated number to fall on every step.",
+      "rubric": [
+        "The answer predicts an upward correction from a higher observation.",
+        "The answer distinguishes error reduction from a universally downward estimate trajectory."
+      ],
+      "sources": [
+        {
+          "collection": "lecture03",
+          "page": 19
+        },
+        {
+          "collection": "lecture03",
+          "page": 29
+        }
+      ],
+      "topic": "SGD direction",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q015",
+      "prompt": "A slide uses a signed discrepancy, and another uses a squared-loss curve. Why is a negative discrepancy compatible with a nonnegative loss?",
+      "answer": "A signed discrepancy records whether the estimate is above or below a target. Squaring the discrepancy removes that sign and measures the size of the error, so the squared loss can remain positive even when the signed discrepancy is negative.",
+      "rubric": [
+        "The answer distinguishes direction information from error magnitude.",
+        "The answer explains why a squared discrepancy is nonnegative."
+      ],
+      "sources": [
+        {
+          "collection": "lecture03",
+          "page": 28
+        },
+        {
+          "collection": "lecture03",
+          "page": 19
+        }
+      ],
+      "topic": "Loss and error",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q016",
+      "prompt": "How would you compare two learning rates fairly using the plotted demonstration rather than judging only the first few updates?",
+      "answer": "I would use the same dataset and starting estimate and compare both the speed of approach and the later fluctuations. A rate that moves rapidly at first may keep jumping around, so early speed alone does not establish the more stable estimate.",
+      "rubric": [
+        "The comparison holds the data and starting estimate fixed.",
+        "The comparison considers both initial speed and later variability."
+      ],
+      "sources": [
+        {
+          "collection": "lecture03",
+          "page": 30
+        }
+      ],
+      "topic": "Learning rate",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q017",
+      "prompt": "Why can choosing the cheapest next edge lead to an expensive route overall?",
+      "answer": "The next edge describes only the immediate cost. A locally cheap choice can lead to expensive later edges, so minimizing each immediate cost separately can miss the route with the smallest total cost.",
+      "rubric": [
+        "The answer distinguishes immediate cost from total future cost.",
+        "The answer explains how a locally cheap move can create an expensive continuation."
+      ],
+      "sources": [
+        {
+          "collection": "lecture04",
+          "page": 4
+        }
+      ],
+      "topic": "Search strategies",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q018",
+      "prompt": "Why does exhaustive route search become inefficient as the number of stages and choices grows?",
+      "answer": "It considers complete possible routes. Adding choices across stages creates many combinations to check, so the amount of work grows rapidly even though comparing all complete routes can identify an optimal one.",
+      "rubric": [
+        "The answer identifies the growth of combinations of complete routes.",
+        "The answer separates exhaustive accuracy from its computational cost."
+      ],
+      "sources": [
+        {
+          "collection": "lecture04",
+          "page": 6
+        }
+      ],
+      "topic": "Search strategies",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q019",
+      "prompt": "If you know the best remaining cost from each possible next state to the goal, how should you choose the next move?",
+      "answer": "For each next state, combine the cost of reaching it now with its best remaining cost to the goal. Choose the option with the smallest combined cost. The remaining value alone does not include the price of the current move.",
+      "rubric": [
+        "The answer includes both the immediate edge cost and the best future cost.",
+        "The answer chooses the minimum combined cost rather than only the cheapest edge or smallest successor value."
+      ],
+      "sources": [
+        {
+          "collection": "lecture04",
+          "page": 7
+        }
+      ],
+      "topic": "Dynamic programming",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q020",
+      "prompt": "Why does dynamic programming work backward from simple subproblems before making the starting decision?",
+      "answer": "The best starting decision depends on the costs of later continuations. Near the goal those costs are directly available, so solving those cases first supplies the values required by earlier states. The solutions are then reused as the problem is built back up.",
+      "rubric": [
+        "The answer explains the dependency of an earlier choice on later values.",
+        "The answer explains working backward from simple cases and reusing the results."
+      ],
+      "sources": [
+        {
+          "collection": "lecture04",
+          "page": 12
+        }
+      ],
+      "topic": "Dynamic programming",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q021",
+      "prompt": "In what sense can a value function provide “foresight” without predicting a new event outside the graph?",
+      "answer": "A state’s value includes the best cost of its continuation through the supplied graph. That value carries information about later costs into a current decision, so an expensive obstacle farther ahead can influence the choice now.",
+      "rubric": [
+        "The answer connects a value to the cost of a future continuation in the given graph.",
+        "The answer explains how later costs influence a present choice without inventing new future events."
+      ],
+      "sources": [
+        {
+          "collection": "lecture04",
+          "page": 11
+        }
+      ],
+      "topic": "Dynamic programming",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q022",
+      "prompt": "Why can a beach route that covers more distance take less time than the straight route to a person in the water?",
+      "answer": "Travel time depends on speed as well as distance. If running on land is faster than swimming, spending more of the route on land can compensate for a longer total distance. A shortest-time objective can therefore select a different path from a shortest-distance objective.",
+      "rubric": [
+        "The answer accounts for different speeds in the two regions.",
+        "The answer distinguishes the objective of minimum time from minimum distance."
+      ],
+      "sources": [
+        {
+          "collection": "lecture04",
+          "page": 14
+        }
+      ],
+      "topic": "Optimization",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q023",
+      "prompt": "In the displayed oscillator, why is knowing position alone insufficient to predict the next moment’s motion?",
+      "answer": "Velocity determines how position changes, and position determines how velocity changes through the restoring effect. Two states at the same position can move differently if their velocities differ, so the coupled system requires both quantities.",
+      "rubric": [
+        "The answer identifies velocity as the rate of change of position.",
+        "The answer explains that position affects velocity change and that both form the state."
+      ],
+      "sources": [
+        {
+          "collection": "lecture05-06",
+          "page": 3
+        }
+      ],
+      "topic": "Coupled motion",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q024",
+      "prompt": "For the displayed oscillator, position is negative and velocity is initially zero. Describe how an oscillation can begin without doing arithmetic.",
+      "answer": "A negative position produces a positive change in velocity, so the object begins moving toward equilibrium. At equilibrium it has acquired positive velocity and continues past it. The restoring effect then slows and reverses the motion on the positive side.",
+      "rubric": [
+        "The answer correctly starts with increasing positive velocity from a negative position.",
+        "The answer explains crossing equilibrium through continuing velocity and then reversing under the restoring effect."
+      ],
+      "sources": [
+        {
+          "collection": "lecture05-06",
+          "page": 4
+        }
+      ],
+      "topic": "Coupled motion",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q025",
+      "prompt": "When a slice of air alternately bunches together and spreads apart, what physical quantities are changing?",
+      "answer": "Bunching corresponds to compression, with particles closer together and higher pressure. Spreading corresponds to rarefaction, with particles farther apart and lower pressure. Repetition of these changes forms the pressure vibration described in the lecture.",
+      "rubric": [
+        "The answer associates compression with closer particles and higher pressure.",
+        "The answer associates rarefaction with greater spacing and lower pressure."
+      ],
+      "sources": [
+        {
+          "collection": "lecture05-06",
+          "page": 10
+        }
+      ],
+      "topic": "Air vibration",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q026",
+      "prompt": "What two tongue-position dimensions organize dean, Dan, dune, and Don in the vowel diagram?",
+      "answer": "The diagram organizes them by high versus low tongue position and front versus back position. Dean is high and front, Dan low and front, dune high and back, and Don low and back in the illustrated arrangement.",
+      "rubric": [
+        "The answer identifies height and frontness/backness as separate dimensions.",
+        "The answer assigns the illustrated examples consistently to those dimensions."
+      ],
+      "sources": [
+        {
+          "collection": "lecture05-06",
+          "page": 12
+        }
+      ],
+      "topic": "Vowels",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q027",
+      "prompt": "Why does a loop between position and velocity describe something different from a rule that directly returns position to zero?",
+      "answer": "In the coupled loop, position changes velocity, and velocity then changes position. Velocity can remain nonzero at equilibrium and carry the system past it. A direct balancing rule for position can instead slow its approach as it reaches equilibrium without that separate continuing motion.",
+      "rubric": [
+        "The answer describes the two-way coupling of position and velocity.",
+        "The answer links overshoot to a separate velocity state."
+      ],
+      "sources": [
+        {
+          "collection": "lecture05-06",
+          "page": 7
+        },
+        {
+          "collection": "lecture07",
+          "page": 8
+        }
+      ],
+      "topic": "Coupled motion",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q028",
+      "prompt": "In the lecture’s simple viscous-spring model, why does the return to equilibrium slow down near equilibrium?",
+      "answer": "The restoring change depends on displacement from equilibrium. A large displacement produces a larger correction, while a smaller displacement produces a smaller correction. The model therefore approaches equilibrium rapidly at first and more slowly near it.",
+      "rubric": [
+        "The answer connects correction size to displacement.",
+        "The answer explains the decrease in return speed near equilibrium."
+      ],
+      "sources": [
+        {
+          "collection": "lecture07",
+          "page": 6
+        }
+      ],
+      "topic": "Feedback",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q029",
+      "prompt": "What does “a spring stops at a place, a mass stops after a process” mean in the lecture’s comparison?",
+      "answer": "The simple balancing spring model comes to rest as its displacement reaches equilibrium. With mass and continuing motion, arriving at equilibrium does not instantly remove velocity. The system continues, is slowed by the reversed restoring effect, and eventually turns around.",
+      "rubric": [
+        "The answer distinguishes reaching equilibrium from having zero velocity.",
+        "The answer links inertia and a continuing reversal process to oscillation."
+      ],
+      "sources": [
+        {
+          "collection": "lecture07",
+          "page": 8
+        }
+      ],
+      "topic": "Inertia and oscillation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q030",
+      "prompt": "An otherwise unchanged mass–spring system is made heavier. What should happen to its frequency, and why?",
+      "answer": "Its frequency decreases. More mass is harder to change in motion under the same restoring stiffness, so each oscillation takes longer.",
+      "rubric": [
+        "The answer predicts lower frequency when mass increases at fixed stiffness.",
+        "The answer explains a longer motion cycle through greater resistance to changing motion."
+      ],
+      "sources": [
+        {
+          "collection": "lecture07",
+          "page": 13
+        }
+      ],
+      "topic": "Perturbation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q031",
+      "prompt": "An otherwise unchanged mass–spring system is made stiffer. What should happen to its frequency, and why?",
+      "answer": "Its frequency increases. A stiffer restoring effect changes the motion more strongly for the same displacement, so the system completes its back-and-forth cycle more quickly.",
+      "rubric": [
+        "The answer predicts higher frequency when stiffness increases at fixed mass.",
+        "The answer connects a stronger restoring effect to a shorter cycle."
+      ],
+      "sources": [
+        {
+          "collection": "lecture07",
+          "page": 13
+        }
+      ],
+      "topic": "Perturbation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q032",
+      "prompt": "How can different locations along one basilar membrane help distinguish different sound frequencies?",
+      "answer": "Different regions have different mechanical properties and respond most strongly to different frequencies. Higher-frequency response is associated with the stiffer region, while lower-frequency response is associated with the more compliant region. Neural connections carry information about the responding locations to the brain.",
+      "rubric": [
+        "The answer connects local mechanical variation to frequency-selective response.",
+        "The answer explains how the pattern of responding locations supplies information to the brain."
+      ],
+      "sources": [
+        {
+          "collection": "lecture07",
+          "page": 14
+        },
+        {
+          "collection": "lecture08",
+          "page": 7
+        }
+      ],
+      "topic": "Hearing",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q033",
+      "prompt": "A temperature controller stops correcting promptly at its target, while another keeps heating or cooling because feedback arrives late. Which resembles the simple balancing spring and which resembles the oscillating mass–spring?",
+      "answer": "Prompt correction resembles the simple balancing spring because the response decreases and stops at the target. Delayed feedback resembles the oscillating mass–spring because correction continues past the target and then reverses, creating repeated overshoot.",
+      "rubric": [
+        "The answer assigns prompt settling to the simple balancing model.",
+        "The answer assigns delayed overshoot to the oscillating comparison and explains the continuing correction."
+      ],
+      "sources": [
+        {
+          "collection": "lecture08",
+          "page": 3
+        },
+        {
+          "collection": "exam-review",
+          "page": 1
+        }
+      ],
+      "topic": "Inertia and oscillation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q034",
+      "prompt": "Describe the sequence linking an incoming sound vibration to motion inside the cochlea in the labeled ear diagram.",
+      "answer": "Sound moves the tympanic membrane, and the connected middle-ear bones pass that motion through the malleus, incus, and stapes. Motion enters the cochlea and drives the fluid–basilar-membrane system. The frequency-sensitive response supplies information to the auditory system.",
+      "rubric": [
+        "The answer preserves the tympanic membrane and malleus–incus–stapes sequence.",
+        "The answer connects transmitted motion to the cochlea and basilar-membrane response."
+      ],
+      "sources": [
+        {
+          "collection": "lecture08",
+          "page": 6
+        },
+        {
+          "collection": "lecture08",
+          "page": 7
+        }
+      ],
+      "topic": "Hearing",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q035",
+      "prompt": "Why can changing the effective stiffness or mass of the vocal folds change pitch?",
+      "answer": "The folds are a vibrating mechanical system. Greater effective stiffness tends to raise their vibration frequency, while greater effective mass tends to lower it. Their vibration rate is the fundamental frequency, F0, associated with pitch in the lecture.",
+      "rubric": [
+        "The answer gives the correct contrasting effects of mass and stiffness.",
+        "The answer connects fold vibration rate with F0 and pitch."
+      ],
+      "sources": [
+        {
+          "collection": "lecture08",
+          "page": 8
+        }
+      ],
+      "topic": "Vocal folds",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q036",
+      "prompt": "In the lecture’s simplified account, why do vocal folds repeatedly open and close instead of remaining permanently open after air pressure separates them?",
+      "answer": "Pressure beneath the closed folds can push them apart and permit airflow. The lecture describes the airflow as drawing the folds back toward closure, after which pressure can build and separate them again. Repetition of that cycle generates vibration.",
+      "rubric": [
+        "The answer explains pressure-driven opening followed by airflow-associated closure.",
+        "The answer links repeated opening and closure to the continuing vibration rather than one permanent movement."
+      ],
+      "sources": [
+        {
+          "collection": "lecture08",
+          "page": 8
+        }
+      ],
+      "topic": "Vocal folds",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q037",
+      "prompt": "Why can a simulated undamped oscillator show increasing amplitude even when the intended physical model supplies no growing drive?",
+      "answer": "The result can come from the numerical update rule. The explicit Euler example uses the previous position and previous velocity for both updates and develops growing amplitude. That growth is a property of this approximation, rather than proof that the intended undamped oscillator gains physical energy.",
+      "rubric": [
+        "The answer identifies the numerical update method as a possible source of growth.",
+        "The answer separates numerical amplitude growth from the intended physical behavior."
+      ],
+      "sources": [
+        {
+          "collection": "lecture08",
+          "page": 10
+        }
+      ],
+      "topic": "Numerical models",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q038",
+      "prompt": "What important difference separates the position-first update from explicit Euler in the two displayed oscillator tables?",
+      "answer": "The position-first method updates position and then uses that new position to update velocity. Explicit Euler updates both quantities from the old pair. Changing which state enters the second calculation changes the resulting trajectory.",
+      "rubric": [
+        "The answer states that position-first uses the new position in the velocity update.",
+        "The answer states that explicit Euler uses the old pair and connects this difference to the simulated behavior."
+      ],
+      "sources": [
+        {
+          "collection": "lecture08",
+          "page": 9
+        },
+        {
+          "collection": "lecture08",
+          "page": 10
+        }
+      ],
+      "topic": "Numerical models",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q039",
+      "prompt": "A five-vowel network outputs [.2,.2,.4,.2,0] in the order read, rad, rude, Rud, rod. What is its strongest decision, and what does the whole vector preserve?",
+      "answer": "Rude receives the largest probability, so it is the strongest decision under a highest-probability rule. The whole vector also preserves the relative probabilities of the alternatives, rather than supplying only a category name.",
+      "rubric": [
+        "The answer selects rude using the category order and largest probability.",
+        "The answer explains that the distribution retains information about the alternatives."
+      ],
+      "sources": [
+        {
+          "collection": "lecture09",
+          "page": 10
+        }
+      ],
+      "topic": "Neural outputs",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q040",
+      "prompt": "Why would [.4,0,.5,.2] fail as a probability distribution over four mutually exclusive output categories?",
+      "answer": "Its entries total 1.1, exceeding the complete probability mass of 1. A distribution over the listed alternatives must allocate a total of 100%, so these entries cannot represent the stated output probabilities.",
+      "rubric": [
+        "The answer identifies that the total exceeds 1.",
+        "The answer connects the problem to allocating probability across the complete category set."
+      ],
+      "sources": [
+        {
+          "collection": "lecture09",
+          "page": 10
+        }
+      ],
+      "topic": "Neural outputs",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q041",
+      "prompt": "The vowel order is read, rad, rude, Rud, rod, and the training signal is known to be Rud. How should the target vector differ from a network’s uncertain prediction?",
+      "answer": "The target is [0,0,0,1,0] because Rud is the fourth category in this order. It gives all target probability to the known category, while a prediction may distribute probability across several candidates before the weights are corrected.",
+      "rubric": [
+        "The answer supplies the target vector in the stated category order.",
+        "The answer distinguishes the known target from the network’s current uncertain prediction."
+      ],
+      "sources": [
+        {
+          "collection": "lecture09",
+          "page": 11
+        }
+      ],
+      "topic": "Learning targets",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q042",
+      "prompt": "Explain how the templatic account links stored knowledge to a recognition decision.",
+      "answer": "The input is compared with stored templates, and the template with the greatest similarity provides the recognition decision. In the network analogy, learned weights play the role of templates used to evaluate an incoming numerical signal.",
+      "rubric": [
+        "The answer describes comparison of an input with stored templates.",
+        "The answer connects the best match to recognition and weights to stored knowledge."
+      ],
+      "sources": [
+        {
+          "collection": "lecture09",
+          "page": 13
+        }
+      ],
+      "topic": "Templates",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q043",
+      "prompt": "Why is a multilayer network described as hierarchical rather than a single template comparison?",
+      "answer": "The input produces a new representation, which becomes the input to another stage. Repeating this transformation across layers allows the final decision to depend on a sequence of intermediate representations rather than one direct comparison.",
+      "rubric": [
+        "The answer describes one representation becoming the input to the next stage.",
+        "The answer connects multiple stages to the eventual output decision."
+      ],
+      "sources": [
+        {
+          "collection": "lecture09",
+          "page": 14
+        }
+      ],
+      "topic": "Hierarchy",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q044",
+      "prompt": "A network labels a sound using its existing weights, then a trainer uses the known label to change those weights. Identify the two different operations.",
+      "answer": "Labeling the sound using the current weights is inference. Changing the weights using the known target and the resulting error is learning. Inference is part of the training sequence because an output must be obtained before its error can guide a correction.",
+      "rubric": [
+        "The answer distinguishes using weights from changing weights.",
+        "The answer explains why producing an inference can occur inside a learning cycle."
+      ],
+      "sources": [
+        {
+          "collection": "lecture09",
+          "page": 16
+        }
+      ],
+      "topic": "Inference and learning",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q045",
+      "prompt": "What does a weighted sum contribute to the artificial-neuron model?",
+      "answer": "Each incoming activation is multiplied by the weight on its connection, and the products are added. The weights determine how strongly and in which signed direction the inputs contribute to the resulting activation.",
+      "rubric": [
+        "The answer explains componentwise multiplication followed by addition.",
+        "The answer explains that connection weights change each input’s contribution."
+      ],
+      "sources": [
+        {
+          "collection": "lecture10",
+          "page": 6
+        }
+      ],
+      "topic": "Weighted sums",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q046",
+      "prompt": "Describe forward propagation through the displayed multilayer perceptron without calculating its neuron values.",
+      "answer": "Each layer uses its incoming activations and connection weights to produce the next representation. Those resulting activations become inputs to the following layer, and this repeats until the output stage expresses category probabilities. The displayed network uses linear hidden activations and a probability-producing softmax output.",
+      "rubric": [
+        "The answer describes repeated weighted computation and passage to the next layer.",
+        "The answer ends with an output distribution and preserves the displayed distinction between hidden activations and probabilities."
+      ],
+      "sources": [
+        {
+          "collection": "lecture10",
+          "page": 9
+        }
+      ],
+      "topic": "Forward propagation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q047",
+      "prompt": "A hidden neuron has a negative activation in the diagram. Does that automatically make the network’s final probability distribution invalid?",
+      "answer": "No. A hidden activation is an internal numerical value and can be negative in this schematic network. The final output probabilities are a different representation, whose values must be nonnegative and total 1.",
+      "rubric": [
+        "The answer separates internal signed activations from output probabilities.",
+        "The answer states the requirements on the final probability distribution."
+      ],
+      "sources": [
+        {
+          "collection": "lecture10",
+          "page": 9
+        }
+      ],
+      "topic": "Activations and probabilities",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q048",
+      "prompt": "In the seven-output training example, the correct category is the sixth in the listed order. Why is a large fourth-output probability a learning error even if the distribution sums to 1?",
+      "answer": "A valid probability distribution can still favor the wrong category. The known target places its 1 in the sixth position, so an output emphasizing the fourth differs from the target. Training changes weights to reduce that mismatch.",
+      "rubric": [
+        "The answer distinguishes valid probability normalization from a correct category decision.",
+        "The answer connects the sixth-position target and the incorrect emphasis to error-driven weight change."
+      ],
+      "sources": [
+        {
+          "collection": "lecture10",
+          "page": 12
+        }
+      ],
+      "topic": "Learning targets",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q049",
+      "prompt": "Why does repeated exposure to the erroneous value 400 distort the estimated average rather than being repaired automatically by SGD?",
+      "answer": "SGD adjusts toward the observations it receives. If 400 is treated as a legitimate observation, it pulls the estimate upward and changes the dataset’s average. The algorithm does not by itself know that this observation was a recording mistake.",
+      "rubric": [
+        "The answer explains that the erroneous value participates in the correction process.",
+        "The answer distinguishes fitting supplied data from knowing which data are mistakes."
+      ],
+      "sources": [
+        {
+          "collection": "lecture10",
+          "page": 13
+        }
+      ],
+      "topic": "Data quality",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q050",
+      "prompt": "Why must a learning procedure include a way to perform inference?",
+      "answer": "The procedure must first combine the input with the current weights to obtain a prediction. Only then can the prediction be compared with the known answer and used to decide how the weights should change.",
+      "rubric": [
+        "The answer explains that the current prediction must be computed first.",
+        "The answer connects comparison with the target to the subsequent weight update."
+      ],
+      "sources": [
+        {
+          "collection": "lecture10",
+          "page": 5
+        }
+      ],
+      "topic": "Inference and learning",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q051",
+      "prompt": "In the paired demonstrations, what distinguishes longitudinal motion from transverse motion, and what can remain comparable?",
+      "answer": "Longitudinal displacement runs along the spring or chain, while transverse displacement runs across its length. The demonstration tunes the restoring effects so that the two directions can share the same oscillation rate, despite the different directions of visible motion.",
+      "rubric": [
+        "The answer distinguishes motion along the system from motion across it.",
+        "The answer explains that comparable restoring conditions can produce matching rates without making the motion directions identical."
+      ],
+      "sources": [
+        {
+          "collection": "lecture11",
+          "page": 2
+        }
+      ],
+      "topic": "Modes and motion",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q052",
+      "prompt": "Why can two coupled masses have a same-direction mode and an opposite-direction mode?",
+      "answer": "Coupling allows coordinated patterns in which both masses oscillate at one shared rate with a stable relationship. In one mode they move together, while in the other they move in opposite directions. The different patterns involve different restoring effects and therefore different mode frequencies.",
+      "rubric": [
+        "The answer describes same-direction and opposite-direction coordinated patterns.",
+        "The answer connects a normal mode to a shared rate and stable movement relationship."
+      ],
+      "sources": [
+        {
+          "collection": "lecture11",
+          "page": 4
+        }
+      ],
+      "topic": "Modes and motion",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q053",
+      "prompt": "A two-mass system is moving as the sum of two normal modes. Why is it misleading to assign the mixed motion just one normal-mode frequency?",
+      "answer": "Each component mode retains its own frequency. Adding them produces a combined motion containing both rates, so the mixture is not itself one of the single-frequency normal modes.",
+      "rubric": [
+        "The answer preserves the distinct frequencies of the component modes.",
+        "The answer distinguishes a sum of modes from a single normal mode."
+      ],
+      "sources": [
+        {
+          "collection": "lecture11",
+          "page": 4
+        }
+      ],
+      "topic": "Modes and motion",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q054",
+      "prompt": "The middle mass stays still in one three-mass mode while the outer masses move. Does that mean the middle mass is broken or absent?",
+      "answer": "No. In that coordinated mode, the middle position is a node of displacement. The same mass can move in other modes because the pattern of coordinated motion changes.",
+      "rubric": [
+        "The answer identifies a node as a location of zero displacement in a particular mode.",
+        "The answer explains that being motionless in one mode does not imply being motionless in all modes."
+      ],
+      "sources": [
+        {
+          "collection": "lecture11",
+          "page": 6
+        }
+      ],
+      "topic": "Nodes",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q055",
+      "prompt": "A six-mass chain has six normal modes. Does that establish that their frequencies are 1, 2, 3, 4, 5, and 6 times its lowest frequency?",
+      "answer": "No. The number of modes and the spacing of their frequencies are different properties. The finite-chain demonstration has one mode per mass, but its frequencies are generally not integer multiples of the lowest one.",
+      "rubric": [
+        "The answer distinguishes mode count from frequency ratios.",
+        "The answer explicitly avoids imposing the ideal-string harmonic series on a finite chain."
+      ],
+      "sources": [
+        {
+          "collection": "lecture11",
+          "page": 7
+        }
+      ],
+      "topic": "Discrete systems",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q056",
+      "prompt": "Why does the membrane animation’s use of 100, 200, 300, 400, and 500 Hz not prove that every membrane naturally has a harmonic series?",
+      "answer": "Those frequencies were assigned to the illustrated membrane motions for teaching. The source notes distinguish them from the rectangular membrane’s natural mode frequencies, so the chosen spacing is a feature of this demonstration rather than a universal membrane result.",
+      "rubric": [
+        "The answer identifies the frequencies as illustrative assigned values.",
+        "The answer distinguishes the demonstration from a general claim about natural membrane frequencies."
+      ],
+      "sources": [
+        {
+          "collection": "lecture11",
+          "page": 9
+        }
+      ],
+      "topic": "Model limits",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q057",
+      "prompt": "How could you test the lecture’s prediction of equally spaced peaks in a vocal-fold vibration spectrum?",
+      "answer": "Record an appropriate laryngeal vibration signal and inspect its spectrum. Compare the peak frequencies to ask whether the gaps are approximately equal, as predicted for the illustrated harmonic source. The test compares a measurement with a prediction, rather than treating a schematic membrane animation as the measurement.",
+      "rubric": [
+        "The answer identifies a vibration measurement and a spectral peak-spacing comparison.",
+        "The answer distinguishes a theoretical or schematic prediction from an observed result."
+      ],
+      "sources": [
+        {
+          "collection": "lecture11",
+          "page": 10
+        }
+      ],
+      "topic": "Theory and measurement",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q058",
+      "prompt": "How would you design a demonstration that separates the effect of adding mass from the effect of increasing stiffness?",
+      "answer": "Begin with a common reference system. In one comparison increase mass while keeping effective stiffness fixed, and in another increase effective stiffness while keeping mass fixed. Compare oscillation rates, expecting greater mass to lower frequency and greater stiffness to raise it.",
+      "rubric": [
+        "The answer changes one mechanical property at a time against a common reference.",
+        "The answer predicts opposite frequency effects for added mass and increased stiffness."
+      ],
+      "sources": [
+        {
+          "collection": "lecture12",
+          "page": 4
+        }
+      ],
+      "topic": "Perturbation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q059",
+      "prompt": "Why must you know where a small mass is added before predicting how strongly it affects a particular mode?",
+      "answer": "The mode has different amounts of motion at different locations. Added mass has a larger effect where that mode moves strongly and little effect at its displacement node. The same added mass can therefore affect different modes differently at one location.",
+      "rubric": [
+        "The answer connects the mass effect to the mode’s local displacement.",
+        "The answer explains why the same location can produce different effects across modes."
+      ],
+      "sources": [
+        {
+          "collection": "lecture12",
+          "page": 9
+        },
+        {
+          "collection": "lecture13",
+          "page": 2
+        }
+      ],
+      "topic": "Local perturbation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q060",
+      "prompt": "At the marked region, mode 4 moves strongly while mode 5 has little displacement and strong local stretching. Why can increasing both mass and stiffness lower mode 4 but raise mode 5?",
+      "answer": "For mode 4 the added mass matters because the region moves, while the added stiffness has little effect where local stretching is small. For mode 5 the mass has little effect at the displacement node, while extra stiffness matters where stretching is strong. The two modes therefore respond in opposite directions at the same region.",
+      "rubric": [
+        "The answer ties mode 4’s decrease to local motion and the added-mass effect.",
+        "The answer ties mode 5’s increase to local stretching and the added-stiffness effect."
+      ],
+      "sources": [
+        {
+          "collection": "lecture12",
+          "page": 11
+        }
+      ],
+      "topic": "Local perturbation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q061",
+      "prompt": "In the illustrated /u/ constriction at the free end, why do both F1 and F2 decrease?",
+      "answer": "Motion dominates at that location for both illustrated modes. The constriction’s mass-loading effect therefore dominates for each, lowering both mode frequencies and hence both formants in this model.",
+      "rubric": [
+        "The answer identifies motion-dominated behavior for both modes at the constriction.",
+        "The answer uses mass loading to explain decreases in both F1 and F2."
+      ],
+      "sources": [
+        {
+          "collection": "lecture12",
+          "page": 19
+        }
+      ],
+      "topic": "Vowel perturbation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q062",
+      "prompt": "Why can the illustrated /i/ constriction lower F1 while raising F2?",
+      "answer": "Near the illustrated two-thirds location, mass motion dominates for the first mode while springiness dominates for the second. The same constriction can therefore lower the first frequency through its mass effect and raise the second through its stiffness effect.",
+      "rubric": [
+        "The answer assigns motion and mass loading to the first mode’s decrease.",
+        "The answer assigns springiness and stiffness to the second mode’s increase."
+      ],
+      "sources": [
+        {
+          "collection": "lecture12",
+          "page": 20
+        }
+      ],
+      "topic": "Vowel perturbation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q063",
+      "prompt": "How does the illustrated /a/ constriction reverse the first-two-formant pattern of /i/?",
+      "answer": "At the illustrated one-third location, springiness dominates for the first mode and mass motion dominates for the second. The constriction raises F1 and lowers F2, reversing the directions predicted for the illustrated /i/ constriction.",
+      "rubric": [
+        "The answer states F1 increases and F2 decreases.",
+        "The answer explains the directions through the different local roles of stiffness and mass."
+      ],
+      "sources": [
+        {
+          "collection": "lecture12",
+          "page": 21
+        }
+      ],
+      "topic": "Vowel perturbation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q064",
+      "prompt": "Why should you not conclude that changing only a string’s free or fixed boundary leaves its fundamental unchanged from the two 100 Hz demonstrations?",
+      "answer": "The fixed–fixed and fixed–free examples were separately tuned to a 100 Hz fundamental. They therefore compare their mode patterns at matched fundamentals, rather than holding length and wave speed fixed while changing only the boundary. Under those unchanged physical conditions, the source notes say the fixed–free fundamental would be half the fixed–fixed one.",
+      "rubric": [
+        "The answer identifies the demonstrations as separately tuned examples.",
+        "The answer explains why the shared displayed fundamental does not isolate the effect of changing only the boundary."
+      ],
+      "sources": [
+        {
+          "collection": "lecture12",
+          "page": 14
+        }
+      ],
+      "topic": "Boundary conditions",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q065",
+      "prompt": "Why does an ideal fixed–fixed string support both even and odd multiples of its fundamental in the illustrated mode sequence?",
+      "answer": "Both ends must remain displacement nodes. The patterns fit one, two, three, and further whole half-waves into the same length, producing the successive integer-multiple frequencies in this ideal string model.",
+      "rubric": [
+        "The answer identifies displacement nodes at both fixed ends.",
+        "The answer connects successive whole half-wave counts to both even and odd harmonics."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 4
+        }
+      ],
+      "topic": "Boundary conditions",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q066",
+      "prompt": "Why do the illustrated fixed–free modes use 1, 3, 5, and 7 quarter-wave packets rather than every integer count?",
+      "answer": "One end is a displacement node and the other a displacement antinode. Fitting those different end conditions requires an odd count of quarter-waves in the illustrated ideal string, producing the odd-multiple mode sequence.",
+      "rubric": [
+        "The answer states the node and antinode end conditions.",
+        "The answer connects the end conditions to odd quarter-wave counts and odd-multiple frequencies."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 8
+        }
+      ],
+      "topic": "Boundary conditions",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q067",
+      "prompt": "A constriction can increase both the effective mass and stiffness of air. Why do those effects not simply cancel everywhere?",
+      "answer": "A mode’s regions of strong motion and strong compression are not the same. Increased mass matters most where air moves strongly, while increased stiffness matters most where compression is strong. Their relative contributions depend on the constriction location and the mode being considered.",
+      "rubric": [
+        "The answer distinguishes regions of strong motion from regions of strong compression.",
+        "The answer explains that local mode structure determines which perturbation effect dominates."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 13
+        }
+      ],
+      "topic": "Local perturbation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q068",
+      "prompt": "What remains the same and what changes when the illustrated 100 Hz harmonic source passes through the schwa filter?",
+      "answer": "The harmonic frequencies retain their 100 Hz spacing. The filter changes their relative amplitudes, strengthening harmonics near its resonances and weakening others. The resulting spectral envelope carries the vowel pattern rather than creating a different source spacing.",
+      "rubric": [
+        "The answer preserves the harmonic frequency spacing.",
+        "The answer attributes relative harmonic-height changes and the spectral envelope to the filter."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        }
+      ],
+      "topic": "Source and filter",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q069",
+      "prompt": "How can /i/ and /a/ have different formant patterns even when the source harmonic spacing is identical?",
+      "answer": "The source can supply the same set of harmonics while different vocal-tract shapes filter their amplitudes differently. The illustrated /i/ has a low F1 and high F2, while /a/ has a higher F1 and lower F2. Different resonance envelopes can therefore produce different vowels without changing the source spacing.",
+      "rubric": [
+        "The answer explains that different filters act on a shared harmonic source.",
+        "The answer correctly compares the illustrated F1/F2 patterns of /i/ and /a/."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 21
+        },
+        {
+          "collection": "lecture13",
+          "page": 22
+        }
+      ],
+      "topic": "Source and filter",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q070",
+      "prompt": "How is the information in one spectrum rearranged when many spectra are assembled into the illustrated spectrogram?",
+      "answer": "Each spectrum supplies amplitudes at different frequencies for one short time slice. In the spectrogram, frequency runs vertically and the time slices are laid out horizontally. Larger spectral amplitudes become darker marks in this grayscale display.",
+      "rubric": [
+        "The answer maps spectrum frequency to the spectrogram’s vertical axis and successive slices to time.",
+        "The answer maps amplitude to darkness in the illustrated grayscale display."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 23
+        }
+      ],
+      "topic": "Spectra and spectrograms",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q071",
+      "prompt": "Why can it become harder to estimate a vowel’s formants when the fundamental frequency is high?",
+      "answer": "Higher fundamental frequency spaces the source harmonics farther apart. Fewer harmonic samples then describe the resonance envelope, making a broad formant pattern harder to distinguish from individual harmonic peaks. The problem concerns sampling the filter with sparse harmonics, rather than formants automatically disappearing.",
+      "rubric": [
+        "The answer connects higher F0 to wider harmonic spacing.",
+        "The answer explains that fewer harmonic samples make the resonance envelope harder to identify."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 25
+        }
+      ],
+      "topic": "Harmonics and formants",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q072",
+      "prompt": "One printed list in Lecture 12 says stiffness rises while frequency falls, but its later bullet and Lecture 13 disagree. Which relationship should guide your explanation?",
+      "answer": "Use increasing stiffness raises frequency when mass and the relevant system conditions are held fixed. Lecture 13 corrects the arrow, and the explanation agrees with the stronger restoring action and with the comparative mass–spring demonstration.",
+      "rubric": [
+        "The answer uses the corrected positive stiffness–frequency relationship under fixed comparison conditions.",
+        "The answer grounds the correction in the corrected primary slide and restoring-effect reasoning."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 2
+        },
+        {
+          "collection": "lecture12",
+          "page": 9
+        },
+        {
+          "collection": "lecture07",
+          "page": 13
+        }
+      ],
+      "topic": "Perturbation",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q073",
+      "prompt": "Why does interest added to a bank account exemplify reinforcing feedback rather than the balancing feedback of a cooling cup of coffee?",
+      "answer": "More money earns more interest, and the added interest increases the stock that earns the next interest payment. That loop amplifies growth. A cooling cup instead has a temperature difference that drives a change toward room temperature, reducing the discrepancy that caused the change.",
+      "rubric": [
+        "The answer explains how the account stock increases its own inflow through interest.",
+        "The answer contrasts self-amplification with a response that reduces a discrepancy."
+      ],
+      "sources": [
+        {
+          "collection": "notes-09-03",
+          "page": 2
+        },
+        {
+          "collection": "notes-09-01",
+          "page": 13
+        }
+      ],
+      "topic": "Feedback",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q074",
+      "prompt": "What common feedback idea links a room approaching a set temperature, a simple spring approaching equilibrium, and an estimate being corrected toward observations?",
+      "answer": "Each comparison contains a discrepancy and a correction that opposes it. As the discrepancy becomes smaller, a proportional correction can also become smaller. Their physical details differ, but the shared balancing organization explains an approach toward a target or equilibrium.",
+      "rubric": [
+        "The answer identifies a discrepancy and an opposing corrective response.",
+        "The answer explains a shared balancing pattern without equating all physical mechanisms."
+      ],
+      "sources": [
+        {
+          "collection": "lecture07",
+          "page": 6
+        },
+        {
+          "collection": "lecture04",
+          "page": 18
+        },
+        {
+          "collection": "lecture02",
+          "page": 17
+        }
+      ],
+      "topic": "Cumulative connections",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q075",
+      "prompt": "What common tradeoff appears in the route-search examples and the learning-rate examples, and how do the mechanisms differ?",
+      "answer": "Both compare speed with the quality or stability of a result. Exhaustive route search can obtain an optimal route by checking many possibilities but takes substantial time. A large learning rate changes an estimate rapidly but can create larger fluctuations, so its speed advantage comes from bigger updates rather than checking more complete routes.",
+      "rubric": [
+        "The answer identifies the speed–accuracy or speed–stability comparison.",
+        "The answer distinguishes route enumeration from the size of learning updates."
+      ],
+      "sources": [
+        {
+          "collection": "lecture04",
+          "page": 6
+        },
+        {
+          "collection": "lecture02",
+          "page": 19
+        }
+      ],
+      "topic": "Cumulative connections",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q076",
+      "prompt": "How do template matching and hierarchical processing work together during a network’s forward pass?",
+      "answer": "A weighted comparison combines incoming activations with stored connection weights, playing the template-like role. The resulting activations pass to another layer, where further weighted combinations occur. Repeating the operation builds a hierarchy ending in the output decision.",
+      "rubric": [
+        "The answer connects weights and input comparisons to the template-like role.",
+        "The answer connects repeated layer-to-layer transformations to hierarchical processing."
+      ],
+      "sources": [
+        {
+          "collection": "lecture09",
+          "page": 15
+        },
+        {
+          "collection": "lecture10",
+          "page": 9
+        }
+      ],
+      "topic": "Cumulative connections",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q077",
+      "prompt": "How does mass-and-stiffness reasoning connect hearing with speech production without making them the same process?",
+      "answer": "In hearing, varying mechanical properties help different basilar-membrane regions respond to different frequencies. In speech production, changing vocal-fold properties changes the source vibration, while vocal-tract constrictions change resonance patterns. Mechanical properties shape frequency responses in each case, but the structures and roles differ.",
+      "rubric": [
+        "The answer connects hearing to region-dependent frequency response.",
+        "The answer distinguishes the speech source and vocal-tract resonances while stating their shared mechanical principle."
+      ],
+      "sources": [
+        {
+          "collection": "lecture08",
+          "page": 7
+        },
+        {
+          "collection": "lecture08",
+          "page": 8
+        },
+        {
+          "collection": "lecture13",
+          "page": 13
+        }
+      ],
+      "topic": "Cumulative connections",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q078",
+      "prompt": "A student calls every tall spectral line a formant. Explain the correction using source, filter, and the hearing example.",
+      "answer": "Individual evenly spaced lines are source harmonics. Formants are vocal-tract resonances reflected in the envelope of stronger and weaker harmonic amplitudes. Hearing distinguishes frequencies in the resulting sound, but a high-amplitude frequency component is not automatically a separate vocal-tract resonance.",
+      "rubric": [
+        "The answer distinguishes individual source harmonics from the resonance envelope.",
+        "The answer avoids equating a strong component or auditory response with a unique formant."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        },
+        {
+          "collection": "lecture08",
+          "page": 7
+        }
+      ],
+      "topic": "Cumulative connections",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q079",
+      "prompt": "In the bathtub example, inflow comes to equal outflow after the tub has partly drained. Why does the water level then remain steady instead of returning automatically to its original height?",
+      "answer": "Equal inflow and outflow make the net change zero. They preserve the amount currently present rather than replacing the earlier loss. Restoring the original level would require inflow to exceed outflow for some time.",
+      "rubric": [
+        "The answer connects equal flows to zero net stock change.",
+        "The answer distinguishes holding the present stock from restoring a previous stock."
+      ],
+      "sources": [
+        {
+          "collection": "notes-09-01",
+          "page": 8
+        }
+      ],
+      "topic": "Stocks and flows",
+      "edition": "2026-10-19-v1"
+    },
+    {
+      "id": "ling285-q080",
+      "prompt": "Why can reacting more aggressively to a dealership inventory shortage make oscillations worse when deliveries arrive late?",
+      "answer": "New orders do not immediately become inventory. If the dealer repeatedly corrects the apparent shortage while earlier orders are still in transit, too many cars can eventually arrive. Reversing the orders then takes effect late as well, producing repeated overshoot. The supplied comparison shows that shortening reaction time can worsen this pattern.",
+      "rubric": [
+        "The answer explains how a delivery delay separates an order from its eventual stock effect.",
+        "The answer connects repeated correction before arrival to overshoot and worsening oscillation."
+      ],
+      "sources": [
+        {
+          "collection": "notes-09-17",
+          "page": 10
+        },
+        {
+          "collection": "notes-09-17",
+          "page": 12
+        }
+      ],
+      "topic": "Delays and feedback",
+      "edition": "2026-10-19-v1"
+    }
+  ],
+  "coreReview": [
+    {
+      "collection": "lecture01",
+      "page": 3,
+      "reason": "Distinguishes speech articulation from literacy and frames speech as coordinated motor behavior."
+    },
+    {
+      "collection": "lecture01",
+      "page": 8,
+      "reason": "Supports explaining voicing through vocal-fold vibration rather than memorizing letter pairs."
+    },
+    {
+      "collection": "lecture01",
+      "page": 10,
+      "reason": "Anchors the place and manner contrasts used in the uploaded conceptual review."
+    },
+    {
+      "collection": "lecture02",
+      "page": 6,
+      "reason": "Combines manner, place, and voicing in the consonant classification needed to explain sound contrasts."
+    },
+    {
+      "collection": "lecture02",
+      "page": 10,
+      "reason": "Connects context-based closure with prediction, a named topic in the uploaded Exam 1 Review."
+    },
+    {
+      "collection": "lecture02",
+      "page": 12,
+      "reason": "Locates learned knowledge in numerical weights and separates weights from input representations."
+    },
+    {
+      "collection": "lecture02",
+      "page": 18,
+      "reason": "Requires interpreting learning-rate plots and their speed–fluctuation tradeoff."
+    },
+    {
+      "collection": "lecture03",
+      "page": 5,
+      "reason": "Makes elements, relations, and goal concrete in the speech system."
+    },
+    {
+      "collection": "lecture03",
+      "page": 10,
+      "reason": "Explains the random-weight, prediction, error, and correction cycle used across the AI material."
+    },
+    {
+      "collection": "lecture03",
+      "page": 19,
+      "reason": "Explains why subtracting a negative discrepancy raises an estimate, a frequent sign misconception."
+    },
+    {
+      "collection": "lecture03",
+      "page": 28,
+      "reason": "Distinguishes a signed estimate error from nonnegative squared loss."
+    },
+    {
+      "collection": "lecture04",
+      "page": 4,
+      "reason": "Explains why minimizing immediate edge cost can miss the best complete route."
+    },
+    {
+      "collection": "lecture04",
+      "page": 6,
+      "reason": "Supports explaining the cost of exhaustive enumeration."
+    },
+    {
+      "collection": "lecture04",
+      "page": 7,
+      "reason": "States the immediate-cost-plus-future-value reasoning behind the Bellman comparison."
+    },
+    {
+      "collection": "lecture04",
+      "page": 12,
+      "reason": "Explains recursive subproblems and backward solution rather than a memorized route."
+    },
+    {
+      "collection": "lecture05-06",
+      "page": 3,
+      "reason": "Provides the visibly supplied position–velocity coupling used for conceptual oscillator predictions."
+    },
+    {
+      "collection": "lecture05-06",
+      "page": 10,
+      "reason": "Connects compression and rarefaction to changing air pressure."
+    },
+    {
+      "collection": "lecture05-06",
+      "page": 12,
+      "reason": "Organizes the vowel examples by height and frontness/backness."
+    },
+    {
+      "collection": "lecture07",
+      "page": 6,
+      "reason": "Anchors negative feedback and the slowing approach to equilibrium."
+    },
+    {
+      "collection": "lecture07",
+      "page": 8,
+      "reason": "Separates equilibrium position from the continuing motion that makes overshoot possible."
+    },
+    {
+      "collection": "lecture07",
+      "page": 13,
+      "reason": "Gives the verified mass-down-frequency and stiffness-up-frequency perturbation rules."
+    },
+    {
+      "collection": "lecture08",
+      "page": 6,
+      "reason": "Traces transmitted sound motion into the cochlea and basilar membrane."
+    },
+    {
+      "collection": "lecture08",
+      "page": 7,
+      "reason": "Applies frequency-selective mechanical response to hearing, an explicit uploaded review topic."
+    },
+    {
+      "collection": "lecture08",
+      "page": 8,
+      "reason": "Links vocal-fold mass and stiffness with F0 and the opening–closing cycle."
+    },
+    {
+      "collection": "lecture08",
+      "page": 10,
+      "reason": "Distinguishes numerical update artifacts from the intended physical oscillator."
+    },
+    {
+      "collection": "lecture09",
+      "page": 10,
+      "reason": "Teaches output distributions, category order, and the probability-sum constraint."
+    },
+    {
+      "collection": "lecture09",
+      "page": 13,
+      "reason": "Explains why weights can act as learned templates."
+    },
+    {
+      "collection": "lecture09",
+      "page": 15,
+      "reason": "Connects the inner product to the template comparison used in network computation."
+    },
+    {
+      "collection": "lecture09",
+      "page": 16,
+      "reason": "Separates inference with existing weights from learning that changes weights."
+    },
+    {
+      "collection": "lecture10",
+      "page": 6,
+      "reason": "Explains how connection weights determine contributions to a neuron’s activation."
+    },
+    {
+      "collection": "lecture10",
+      "page": 9,
+      "reason": "Integrates repeated layer computation, hidden activations, and normalized output probabilities."
+    },
+    {
+      "collection": "lecture10",
+      "page": 12,
+      "reason": "Explains training by comparing an output with a known target."
+    },
+    {
+      "collection": "lecture10",
+      "page": 13,
+      "reason": "Shows why learning from an erroneous outlier can distort the fitted result."
+    },
+    {
+      "collection": "lecture11",
+      "page": 4,
+      "reason": "Distinguishes the two normal modes from their combined motion in a two-mass system."
+    },
+    {
+      "collection": "lecture11",
+      "page": 7,
+      "reason": "Extends mode counting while explicitly separating discrete-chain frequencies from ideal-string harmonics."
+    },
+    {
+      "collection": "lecture11",
+      "page": 10,
+      "reason": "Connects a theoretical claim with a spectral prediction and a proposed measurement."
+    },
+    {
+      "collection": "lecture12",
+      "page": 11,
+      "reason": "Requires reasoning from local displacement and stretching to opposite perturbation effects."
+    },
+    {
+      "collection": "lecture12",
+      "page": 19,
+      "reason": "Applies local mass loading to explain why both illustrated /u/ formants decrease."
+    },
+    {
+      "collection": "lecture12",
+      "page": 20,
+      "reason": "Explains opposite F1 and F2 shifts for the illustrated /i/ constriction."
+    },
+    {
+      "collection": "lecture12",
+      "page": 21,
+      "reason": "Explains the reversed perturbation pattern for the illustrated /a/ constriction."
+    },
+    {
+      "collection": "lecture13",
+      "page": 2,
+      "reason": "Consolidates corrected mechanical principles and resolves the Lecture 12 stiffness-arrow typo."
+    },
+    {
+      "collection": "lecture13",
+      "page": 8,
+      "reason": "Explains the node–antinode boundary condition behind odd quarter-wave modes."
+    },
+    {
+      "collection": "lecture13",
+      "page": 20,
+      "reason": "Separates harmonic spacing from the filter-shaped amplitude envelope."
+    },
+    {
+      "collection": "lecture13",
+      "page": 23,
+      "reason": "Maps spectrum axes and amplitude into the spectrogram’s frequency, time, and darkness."
+    },
+    {
+      "collection": "lecture13",
+      "page": 25,
+      "reason": "Explains why widely spaced harmonics make formant estimation harder."
+    },
+    {
+      "collection": "notes-09-01",
+      "page": 8,
+      "reason": "Distinguishes stock level from flow rate and explains why balanced flows preserve the present stock."
+    },
+    {
+      "collection": "notes-09-03",
+      "page": 2,
+      "reason": "Contrasts reinforcing self-amplification with balancing feedback through the interest example."
+    },
+    {
+      "collection": "notes-09-17",
+      "page": 4,
+      "reason": "Separates a conditional model scenario from a verified forecast of what the future will do."
+    },
+    {
+      "collection": "notes-09-17",
+      "page": 12,
+      "reason": "Explains why faster corrective reaction can worsen oscillations when delivery is delayed."
+    }
+  ],
+  "guide": [
+    {
+      "title": "Explain speech contrasts with physical actions",
+      "explanation": "You can classify the supplied consonants by voicing, place, and manner, then explain what changes in the vocal folds or airflow when a contrast changes. You can distinguish tongue height from frontness/backness in the vowel examples.",
+      "refs": [
+        {
+          "collection": "lecture02",
+          "page": 6
+        },
+        {
+          "collection": "lecture05-06",
+          "page": 12
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Separate inputs, weights, predictions, and targets",
+      "explanation": "You can say which numbers represent the signal, which store learned knowledge, which express the network’s present decision, and which encode the known answer used during training.",
+      "refs": [
+        {
+          "collection": "lecture02",
+          "page": 12
+        },
+        {
+          "collection": "lecture09",
+          "page": 11
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Predict the direction of an error correction",
+      "explanation": "You can explain why an estimate above an observation decreases and an estimate below it increases. You can explain why descent of a squared loss does not require the estimate itself to decrease.",
+      "refs": [
+        {
+          "collection": "lecture03",
+          "page": 19
+        },
+        {
+          "collection": "lecture03",
+          "page": 28
+        },
+        {
+          "collection": "lecture03",
+          "page": 29
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Choose a route using complete cost",
+      "explanation": "You can explain greedy failure, exhaustive search cost, and the use of immediate cost plus a solved continuation value. You can distinguish minimum time from minimum distance.",
+      "refs": [
+        {
+          "collection": "lecture04",
+          "page": 4
+        },
+        {
+          "collection": "lecture04",
+          "page": 6
+        },
+        {
+          "collection": "lecture04",
+          "page": 7
+        },
+        {
+          "collection": "lecture04",
+          "page": 14
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Explain settling and overshoot",
+      "explanation": "You can distinguish a direct balancing response from coupled position and velocity. You can describe why a moving mass crosses equilibrium and how a delayed corrective response can produce repeated overshoot.",
+      "refs": [
+        {
+          "collection": "lecture07",
+          "page": 6
+        },
+        {
+          "collection": "lecture07",
+          "page": 8
+        },
+        {
+          "collection": "exam-review",
+          "page": 1
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Use perturbation before memorizing outcomes",
+      "explanation": "You can predict the effects of greater mass and greater stiffness under fixed comparison conditions. For an extended mode, you first locate motion and stretching, then explain which change matters locally.",
+      "refs": [
+        {
+          "collection": "lecture07",
+          "page": 13
+        },
+        {
+          "collection": "lecture12",
+          "page": 11
+        },
+        {
+          "collection": "lecture13",
+          "page": 2
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Link hearing and speech mechanics",
+      "explanation": "You can explain how mechanical frequency selectivity supports hearing and how the vocal-fold source differs from vocal-tract resonance. You can keep F0, individual harmonics, and formants distinct.",
+      "refs": [
+        {
+          "collection": "lecture08",
+          "page": 7
+        },
+        {
+          "collection": "lecture08",
+          "page": 8
+        },
+        {
+          "collection": "lecture13",
+          "page": 20
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Follow a network through a forward pass",
+      "explanation": "You can explain multiplication by connection weights and summation, repeated transformations across layers, and conversion to an output distribution. You can separate internal signed activations from final probabilities.",
+      "refs": [
+        {
+          "collection": "lecture10",
+          "page": 6
+        },
+        {
+          "collection": "lecture10",
+          "page": 9
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Keep normal modes and mixtures distinct",
+      "explanation": "You can count the demonstrated modes for a finite chain, describe fixed relationships within one mode, and explain why a sum of modes contains several frequencies. You can avoid applying the ideal-string harmonic ratios to every finite chain or membrane.",
+      "refs": [
+        {
+          "collection": "lecture11",
+          "page": 4
+        },
+        {
+          "collection": "lecture11",
+          "page": 7
+        },
+        {
+          "collection": "lecture11",
+          "page": 9
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Explain the two string boundary conditions",
+      "explanation": "You can identify nodes at two fixed ends and a node–antinode pair for fixed–free ends. You can connect the half-wave and odd-quarter-wave pictures to their corresponding ideal mode sequences while preserving the separately tuned demonstration conditions.",
+      "refs": [
+        {
+          "collection": "lecture13",
+          "page": 4
+        },
+        {
+          "collection": "lecture13",
+          "page": 8
+        },
+        {
+          "collection": "lecture11",
+          "page": 11
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Derive the illustrated vowel shifts",
+      "explanation": "You can explain /u/ as mass-dominated for the first two modes, /i/ as mass-dominated then stiffness-dominated, and /a/ as stiffness-dominated then mass-dominated. Your explanation connects each direction to a constriction location and a mode, rather than treating constriction as one universal frequency shift.",
+      "refs": [
+        {
+          "collection": "lecture12",
+          "page": 19
+        },
+        {
+          "collection": "lecture12",
+          "page": 20
+        },
+        {
+          "collection": "lecture12",
+          "page": 21
+        },
+        {
+          "collection": "lecture13",
+          "page": 13
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Read the acoustic displays",
+      "explanation": "You can identify frequency and amplitude in a spectrum and time, frequency, and amplitude-coded darkness in a spectrogram. You can explain why high F0 yields fewer harmonics to sample the resonance envelope.",
+      "refs": [
+        {
+          "collection": "lecture13",
+          "page": 23
+        },
+        {
+          "collection": "lecture13",
+          "page": 25
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Compare learning rates",
+      "explanation": "Hold the data and starting condition fixed. Predict that bigger updates will approach the central region faster but may fluctuate more, then compare both early movement and the later plotted spread. The uploaded plots support this speed–fluctuation comparison.",
+      "refs": [
+        {
+          "collection": "lecture02",
+          "page": 18
+        },
+        {
+          "collection": "lecture03",
+          "page": 30
+        }
+      ],
+      "kind": "demonstration"
+    },
+    {
+      "title": "Compare oscillator update rules",
+      "explanation": "Keep the model and starting state fixed, then distinguish the position-first sequence from the old-pair explicit Euler sequence. Compare the resulting amplitudes and explain why an approximation can create growth absent from the intended oscillator.",
+      "refs": [
+        {
+          "collection": "lecture08",
+          "page": 9
+        },
+        {
+          "collection": "lecture08",
+          "page": 10
+        }
+      ],
+      "kind": "demonstration"
+    },
+    {
+      "title": "Watch a normal mode and a mixture",
+      "explanation": "Identify whether the masses maintain one coordinated pattern at a shared rate. Then inspect the summed row and track the contribution of each constituent rate. The mixture combines modes rather than erasing their individual frequencies.",
+      "refs": [
+        {
+          "collection": "lecture11",
+          "page": 4
+        },
+        {
+          "collection": "lecture11",
+          "page": 6
+        }
+      ],
+      "kind": "demonstration"
+    },
+    {
+      "title": "Test a spectral prediction",
+      "explanation": "State the predicted regular peak spacing before examining the measurement. Record a suitable vibration signal, inspect its spectrum, and compare the frequency gaps. The lecture proposes this experiment but the supplied text does not provide a completed empirical dataset or establish a result for every speaker.",
+      "refs": [
+        {
+          "collection": "lecture11",
+          "page": 10
+        },
+        {
+          "collection": "lecture12",
+          "page": 13
+        }
+      ],
+      "kind": "demonstration"
+    },
+    {
+      "title": "Compare vowels with one source",
+      "explanation": "Keep the illustrated 100 Hz harmonic source constant while comparing the schwa, /i/, and /a/ filters. Look for changes in harmonic heights and in the broad resonance envelope, while the source spacing remains fixed.",
+      "refs": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        },
+        {
+          "collection": "lecture13",
+          "page": 21
+        },
+        {
+          "collection": "lecture13",
+          "page": 22
+        }
+      ],
+      "kind": "demonstration"
+    },
+    {
+      "title": "Trace stocks, flows, and feedback",
+      "explanation": "You can distinguish an accumulated stock from its rates of inflow and outflow. You can explain why equal flows preserve the current level, how reinforcing feedback amplifies a change, and why a delay can turn a balancing correction into repeated overshoot.",
+      "refs": [
+        {
+          "collection": "notes-09-01",
+          "page": 8
+        },
+        {
+          "collection": "notes-09-03",
+          "page": 2
+        },
+        {
+          "collection": "notes-09-17",
+          "page": 12
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Interpret a model conditionally",
+      "explanation": "You can separate the question of whether a model behaves appropriately under stated conditions from the question of whether those conditions will actually occur. The population scenarios compare possible birth and death patterns rather than proving one future outcome.",
+      "refs": [
+        {
+          "collection": "notes-09-17",
+          "page": 4
+        },
+        {
+          "collection": "notes-09-17",
+          "page": 5
+        }
+      ],
+      "kind": "readiness"
+    }
+  ],
+  "examReview": {
+    "formatSummary": "The uploaded Exam 1 Review contains 20 short conceptual prompts asking for explanations, comparisons, classifications, simple vector interpretation, and cause-and-effect predictions. This generated bank uses that response style across the currently supplied lectures, including later mode and formant material. It is a study aid rather than an instructor exam or a prediction of exam questions.",
+    "sourceFiles": [
+      "sources/exam-review.docx",
+      "sources/exam-review-seagull.docx"
+    ],
+    "limitations": [
+      "The uploaded answer companion has unverified authorship. Its inconsistent basilar-membrane description and its use of signed “loss” are not copied as authoritative answers. Primary lecture diagrams, equations, and corrected principles guide the generated explanations.",
+      "Lecture 10 labels its beliefs segment as not on the exam. That segment is excluded from generated assessment and core selection.",
+      "Lectures 11–13 extend beyond the supplied Exam 1 Review scope. Their inclusion here supports cumulative study and does not assign them to a particular instructor exam.",
+      "Membrane frequencies assigned in a schematic demonstration are not treated as natural frequencies of every membrane. Discrete chains are not assumed to have integer harmonic ratios.",
+      "Generated self-check rubrics assess the stated concepts. A short answer can express the same mechanism in different words, and a self-check result is not an instructor grade."
+    ]
+  },
+  "examReviewCollections": {
+    "exam-review": {
+      "title": "Uploaded Exam 1 Review · conceptual explanations",
+      "sections": [
+        {
+          "page": 1,
+          "title": "Questions 1–4 · sound contrasts, correction, and hearing",
+          "kind": "content",
+          "teaching": [
+            "Question 1 compares m in mad and b in bad. Both sounds are voiced and bilabial, so vocal-fold vibration and lip place are shared. Their manner differs because m is nasal and b is an oral stop, or plosive. A complete comparison states both the similarities and the difference.",
+            "Question 2 links learning rate in SGD with stiffness in the simple viscous-spring model. Learning rate controls the fraction of an observed discrepancy used to correct an estimate. A larger rate produces a faster adjustment but can increase fluctuation, while a smaller rate changes the estimate more slowly. Greater stiffness produces a stronger balancing correction for a given displacement, so the simple spring returns more rapidly toward equilibrium. This settling comparison is distinct from the undamped mass–spring frequency comparison.",
+            "Question 3 asks how the basilar membrane distinguishes frequencies. Mechanical properties vary along it, producing regions that respond most strongly to different sound frequencies. The stiffer region supports higher-frequency response, and the more compliant region supports lower-frequency response. The lecture connects such frequency-selective motion to neural signals that carry information to the brain. Greater mass tends to lower a mechanical frequency while greater stiffness tends to raise it under the stated fixed comparisons.",
+            "Question 4 describes two controllers aimed at 70. The prompt controller approaches the target and stops correcting, resembling the simple balancing spring. In the delayed case, cooling continues until 60 and heating continues until 80 before the response reverses. Its repeated overshoot resembles the mass–spring comparison because reaching the target does not immediately end the continuing process."
+          ],
+          "issues": [
+            "These explanations are authored study support for the uploaded review prompts, not an authenticated instructor answer key.",
+            "The basilar-membrane answer is cross-checked against the primary hearing and perturbation material rather than copied from the inconsistent uploaded answer companion."
+          ],
+          "review": {
+            "pageInspected": true,
+            "assetsInspected": true,
+            "method": "Compared native DOCX paragraphs and equation XML with the rendered page, then cross-checked conceptual answers against primary lecture pages. These documents contain text and equations rather than independent instructional image figures.",
+            "limitations": []
+          }
+        },
+        {
+          "page": 2,
+          "title": "Questions 5–13 · search, learning, and probability",
+          "kind": "content",
+          "teaching": [
+            "Question 5 asks why exhaustive shortest-path search is inefficient. It checks combinations of complete routes, and those combinations multiply as states and stages are added. Exhaustive comparison can be accurate, but its increasing computational work makes it slow. Dynamic programming instead solves and reuses subproblems, while greedy immediate-cost choices can miss expensive future edges.",
+            "Question 6 compares Pam, Bam, Dam, Tam, Kam, and Gam. All six begin with oral stops. The p/b pair is bilabial, the t/d pair alveolar, and the k/g pair velar. Within each place pair, p, t, and k are voiceless and b, d, and g are voiced. Manner is shared while place and voicing distinguish the set.",
+            "Question 7 connects closure with GPT. Closure completes a familiar incomplete pattern from its remaining parts, as when context supplies ducks in the chickens-and-quack example. GPT turns the prompt into numerical input representations and uses learned weights to predict possible continuations. The connection is context-guided completion, rather than proof that every detail of human understanding and the model is identical.",
+            "Question 8 locates network knowledge in learned numerical weights. Input vectors represent the current signal or tokens, whereas weights determine how those inputs are transformed into a prediction. Learning changes the weights, while inference uses the weights currently available.",
+            "Question 9 asks about the speed–accuracy tradeoff across route search and SGD. Exhaustive route search spends time comparing possibilities to obtain an optimal route, while a greedy shortcut can be faster and miss the best total path. A large SGD learning rate approaches a target region quickly but can fluctuate more strongly around it. The shared comparison concerns rapid progress versus result quality or stability, though the mechanisms differ.",
+            "Question 10 uses the phrase “fake it till you make it.” Random initial weights produce an initial guess, a known target reveals an error, and training adjusts the weights to reduce that error. Repeated examples improve predictions. The phrase names this error-driven learning cycle rather than guaranteeing that any training setup will succeed.",
+            "Question 11 asks what the classification networks and language-model examples produce. Their output is a probability distribution over the stated categories or candidate continuations. The highest-probability category supplies the strongest decision in the lecture’s examples, while the other probabilities preserve the distribution over alternatives.",
+            "Question 12 gives [.4,0,.5,.2]. Although each entry falls between 0 and 1, their total is 1.1, so they cannot form a normalized distribution over the four mutually exclusive categories. A valid distribution assigns a total probability of 1 to the complete category set.",
+            "Question 13 asks whether a vowel contains only one vibration frequency. It does not. The course’s vowel and oscillator material concerns combinations of vibration components. The vocal-fold source supplies harmonics, while vocal-tract resonances shape their relative amplitudes."
+          ],
+          "issues": [],
+          "review": {
+            "pageInspected": true,
+            "assetsInspected": true,
+            "method": "Compared native DOCX paragraphs and equation XML with the rendered page, then cross-checked conceptual answers against primary lecture pages. These documents contain text and equations rather than independent instructional image figures.",
+            "limitations": []
+          }
+        },
+        {
+          "page": 3,
+          "title": "Questions 14–20 · motion, updates, and networks",
+          "kind": "content",
+          "teaching": [
+            "Question 14 distinguishes vowels by tongue height and by frontness/backness. The illustrated diagram places dean high and front, Dan low and front, dune high and back, Don low and back, and done centrally. These dimensions organize articulatory differences rather than assigning one single sound frequency to each vowel.",
+            "Question 15 asks for five discussed oscillatory examples. Source-supported examples include a mass–spring system, air vibrating during speech, vocal-fold vibration, the delayed temperature controller, and an SGD trajectory with strong fluctuations. The course also uses economic cycles. The shared idea is repeated variation or overshoot, while the physical causes and degree of regularity differ across examples.",
+            "Question 16 supplies ẋ = v and v̇ = −(k/m)x, starting with negative x and zero v. The negative displacement causes a positive velocity change, so motion begins toward equilibrium. On reaching equilibrium the object has positive velocity and continues past it. On the positive side the restoring effect reduces that velocity to zero, then reverses it. The undamped coupled model therefore oscillates.",
+            "Question 17 supplies ẋ = −.1x. A negative x produces a positive change, so x rises toward zero. As the displacement shrinks, the change shrinks, producing a slowing approach without a separate velocity state that carries it through equilibrium. Replacing −.1 with −.9 strengthens the correction and makes the continuous model approach equilibrium faster.",
+            "Question 18 supplies New x = Current x − lr(Current x − d). If the observation d lies below the estimate, the discrepancy is positive and the first subtraction lowers the estimate. If d lies above the estimate, the discrepancy is negative and subtracting its scaled value raises the estimate. The first minus therefore makes the correction oppose the signed discrepancy. A signed discrepancy can be negative, while the squared-loss example elsewhere in the course is nonnegative.",
+            "Question 19 asks for the operations of forward propagation. Each incoming activation is multiplied by its connection weight, and the products feeding one neuron are added to produce that neuron’s activation. The resulting values become inputs to the next layer, and the process repeats. In the displayed multilayer classifier, the final output transformation produces nonnegative category probabilities that sum to 1.",
+            "Question 20 gives the current prediction [.1,.1,.1,.2,.5] and specifies the correct category at Python index 2. Python indexing begins at 0, so index 2 is the third element. The target is [0,0,1,0,0], placing the full target probability at that category. It describes the known answer used for learning, rather than the network’s current confidence."
+          ],
+          "issues": [
+            "The two displayed equations were verified against the DOCX equation XML and rendered page because ordinary paragraph extraction omits their mathematical objects.",
+            "Question 20 uses the source wording “2th position” but explicitly invokes Python indexing. The explanation follows index 2, the third element."
+          ],
+          "review": {
+            "pageInspected": true,
+            "assetsInspected": true,
+            "method": "Compared native DOCX paragraphs and equation XML with the rendered page, then cross-checked conceptual answers against primary lecture pages. These documents contain text and equations rather than independent instructional image figures.",
+            "limitations": []
+          }
+        }
+      ]
+    },
+    "exam-review-seagull": {
+      "title": "Uploaded answer companion · authorship unverified",
+      "sections": [
+        {
+          "page": 1,
+          "title": "Companion answers 1–16 · primary-source checks",
+          "kind": "content",
+          "teaching": [
+            "The uploaded companion supplies brief answers to the first sixteen review questions. Its authorship is unverified. Its sound classifications agree with the primary consonant table when m and b are treated as voiced and bilabial, m as nasal, and b as plosive. Its p/b, t/d, and k/g place pairs also agree with that table.",
+            "Its learning-rate and stiffness comparison captures the faster versus slower correction idea. A larger learning rate changes an estimate more strongly per observation, while increased stiffness strengthens the balancing response in the simple viscous-spring comparison. Greater learning-rate fluctuation should be distinguished from a guarantee of failure or exact accuracy at a small rate.",
+            "Its basilar-membrane paragraph contains inconsistent mechanical labels. “Floppy” does not support the same high-stiffness description printed beside it, and the assigned sides are not a reliable study rule. Use the primary hearing and perturbation material instead. Greater mass tends to lower frequency, greater stiffness tends to raise it, and different membrane regions respond preferentially to different frequencies. Neural signals convey the responding frequency pattern to the brain.",
+            "Its prompt thermostat and delayed thermostat answers match the review’s intended simple-spring versus mass–spring analogy. The first settles at 70, while delayed sensing allows repeated cooling and heating overshoot toward 60 and 80. These are comparisons of corrective behavior, rather than claims that the devices literally contain the same mechanical system.",
+            "Its exhaustive-search answer identifies slowness but omits the key explanation. Complete-route combinations increase rapidly with choices and stages. Its closure answer identifies completion, which the primary material grounds in using remaining context to restore a missing pattern. Its weights answer locates stored network knowledge in the learned numerical connections.",
+            "Its tradeoff, random-weight learning, output-distribution, and probability-sum answers agree with the broad review themes. Complete explanations add the mechanisms. Exhaustive checking costs time, large corrections increase fluctuation, repeated target-guided updates change random weights, and output probabilities over the full category set must sum to 1.",
+            "Its no-single-frequency vowel answer and its height plus frontness/backness answer agree with the vowel material. Its oscillatory examples cover mechanical motion, speech sounds, delayed temperature control, economic cycles, and large-learning-rate behavior. Each example requires its own cause of repeated variation rather than assuming that all are identical harmonic mechanisms.",
+            "Its oscillator answer begins correctly with movement toward equilibrium from negative displacement. The velocity direction requires precision after the positive turning point. Positive displacement produces negative acceleration, so velocity becomes negative and the mass begins moving back toward equilibrium. Velocity does not simply increase on every return. The coupled equations establish that ordered reversal."
+          ],
+          "issues": [
+            "This companion is preserved as an uploaded source, not labeled as an instructor answer key.",
+            "Its basilar-membrane labels conflict internally and are resolved using primary lecture material.",
+            "Its answer 16 is clarified to distinguish displacement, velocity, and acceleration across a turning point."
+          ],
+          "review": {
+            "pageInspected": true,
+            "assetsInspected": true,
+            "method": "Compared native DOCX paragraphs and equation XML with the rendered page, then cross-checked conceptual answers against primary lecture pages. These documents contain text and equations rather than independent instructional image figures.",
+            "limitations": []
+          }
+        },
+        {
+          "page": 2,
+          "title": "Companion answers 17–20 · signs and representation",
+          "kind": "content",
+          "teaching": [
+            "Answer 17 describes x approaching zero rapidly at first and more slowly near equilibrium. In ẋ = −.1x, a negative position has a positive change. Replacing −.1 with −.9 increases the correction strength, making the continuous balancing response faster. A direct first-order balancing rule differs from the coupled oscillator with its separate velocity state.",
+            "Answer 18 calls a discrepancy “loss” and allows it to be positive or negative. For the averaging update, the signed quantity Current x − d tells whether the estimate is too high or too low relative to the observation. Subtracting a positive multiple of that quantity moves the estimate in the corrective direction. The squared-loss graph in Lecture 3 instead uses a nonnegative error measure, so the two terms should not be merged into one signed-loss rule.",
+            "Answer 19 describes multiplying and combining activations and weights across layers. More precisely, a neuron’s incoming activation vector and its vector of connection weights form an inner product, obtained by multiplying corresponding entries and adding the products. Repeating such computations creates the forward pass. The demonstrated classifier then produces an output probability distribution whose entries sum to 1.",
+            "Answer 20 uses [0,0,1,0,0] for Python index 2. This is the third element because the indices begin at 0. The vector is the one-hot target for the known category, while [.1,.1,.1,.2,.5] is the network’s current prediction being compared with it."
+          ],
+          "issues": [
+            "The source’s use of signed “loss” is distinguished from the nonnegative squared loss shown in the primary teaching deck."
+          ],
+          "review": {
+            "pageInspected": true,
+            "assetsInspected": true,
+            "method": "Compared native DOCX paragraphs and equation XML with the rendered page, then cross-checked conceptual answers against primary lecture pages. These documents contain text and equations rather than independent instructional image figures.",
+            "limitations": []
+          }
+        }
+      ]
+    }
+  }
+}

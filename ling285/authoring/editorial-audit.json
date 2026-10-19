@@ -1,0 +1,52 @@
+{
+  "target": "ling285/data.json",
+  "sha256": "e01c4d78bee42285e017b3f4df199ab534ad3a5db993d8f96f01dc811c003d8a",
+  "scope": "Independent editorial and student-view audit, with detailed early-lecture source review inherited from this authoring session.",
+  "checks": [
+    {
+      "name": "Early lecture transfer",
+      "result": "pass",
+      "detail": "All 78 L01–L04 sections preserve the source-reviewed teaching paragraphs exactly. Every original page remains available beside the teaching."
+    },
+    {
+      "name": "Referenced source assets",
+      "result": "pass",
+      "uniqueLocalReferences": 515,
+      "missing": []
+    },
+    {
+      "name": "Review explanations",
+      "result": "pass",
+      "detail": "Read all explanations for the 20 uploaded review prompts and both pages of the unverified companion commentary. Sound categories, learning/stiffness comparison, basilar-membrane correction, dynamic programming, signed discrepancy, oscillator reversal, probability normalization, forward propagation, and Python index 2 are consistent with the reviewed primary sources."
+    },
+    {
+      "name": "Generated written practice",
+      "result": "pass",
+      "questions": 80,
+      "detail": "Read the current 80 prompts and answers. All source references and nonempty self-assessment rubrics resolve. Early-course questions retain conceptual cause-and-effect rather than arithmetic-drill or researcher-heavy multiple-choice framing."
+    },
+    {
+      "name": "Original-source distinction",
+      "result": "pass",
+      "detail": "Original source text and speaker notes are explicitly labeled and preserved separately. The companion is not represented as an authenticated instructor answer key. No internal agent instructions, workspace paths, or tool-call residue were found in authored teaching."
+    },
+    {
+      "name": "Visible student presentation",
+      "result": "pass",
+      "detail": "Used Chromium at 1440×1100 to inspect rendered Bellman teaching and uploaded review Questions 14–20 beside their original source pages. Explanation text, arrows, equations, source links, selected core badge, and note controls are readable. No browser page errors occurred."
+    }
+  ],
+  "substantiveFindings": [
+    "Bellman comparison correctly combines the current edge cost with successor value, resolving misleading greedy-on-values shorthand.",
+    "The original graph is retained with all edge costs. Authored route A→B→D→G→J costs 30, while the immediate-cost greedy route costs 33.",
+    "Signed error can be negative, whereas the displayed squared-loss objective remains nonnegative. The explanations do not mistake an increasing estimate for failure of descent.",
+    "The unverified answer companion’s reversed basilar-membrane account is identified and not propagated into study answers.",
+    "Python index 2 is correctly interpreted as the third output category with target [0,0,1,0,0]."
+  ],
+  "remainingLimitations": [
+    "The audit does not convert sampled visual phases into a claim of exhaustive frame-by-frame viewing. Untranscribed original audio and unavailable external clips remain labeled as limitations."
+  ],
+  "requiredFixes": [],
+  "status": "passed with disclosed source limitations",
+  "postAuditReview": "Added an explicit no-supplied-transcript label to the original audio player. Teaching, practice, source references, and rubrics are unchanged from the independent audit."
+}

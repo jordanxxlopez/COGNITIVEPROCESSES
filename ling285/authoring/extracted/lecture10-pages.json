@@ -1,0 +1,171 @@
+[
+  {
+    "page": 1,
+    "text": "            Ling 285\nHuman Language and Technology\n           Lecture 10\n      Neural Networks 1.5\n\n\n               Khalil Iskarous\n       Department of Linguistics\n     University of Southern California",
+    "ocr": "",
+    "image": "assets/slides/lecture10/001.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 2,
+    "text": "First Exam Next Thursday\n  Pease bring a Pencil!",
+    "ocr": "",
+    "image": "assets/slides/lecture10/002.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 3,
+    "text": "A Neural Network\n • Imagine you are given many pictures of faces (48 Million pixels),\n  and you’re asked to identify one of 1000 possible people.\n • Imagine you are given speech waves and you’re asked to to\n   identify for each, which of 25 sounds each speech wave\n   corresponds to.\n • What can do this? A Neural Network (NN)\n •  I will not tell you now why it’s called a NN. I will teach you what it is\n   by what it does– how it walks and how it swims.\n • The job of an NN is to take a bunch of numbers the 48M pixels in\n  one image/numbers of a wave and to return a probability\n   distribution.\n • For speech the probability distribution is 25 sounds\n • But let’s say it had just 5 vowels, this is a pdf: [.2,.2,.4,.2,0]\n • And let’s say we agree the vowel order is read, rad, rude, Rud, rod\n • The p’s must sum to 1 (100%)\n • That says: there’s 20% chance the sound is the v in read, 20% it’s\n   the vowel in rad, 40% the vowel in rude, 20% it’s the vowel in Rud,",
+    "ocr": "",
+    "image": "assets/slides/lecture10/003.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 4,
+    "text": "A Neural Network\n • The input of an NN is a bunch of numbers, signal, or a vector, e.g., [4,1,-3,2,1,.4,1,2,-\n   3,…] (usually 1000’s of nums). Let’s say these are the pressure numbers of a speech\n  wave\n • The output of the NN is a decision pdf: Given the signal, what’s the p(each object): p of\n  each vowels read, rad, rude, Rud, rod\n • How? How can NNs do that? How can it make a decision.\n • They have knowledge, in a bunch of weights w’s\n • And somehow the input signal vector is combined with these w’s and a decision\n   about the object detected is made, eventually, as there are many many w’s and many\n  many calculations! Several trillion w’s and billions of calculations.\n • These magical w’s allow the NN to make decisions, but how does it know these w’s???\n • Fake it till you make it!\n • SGD for NNs. You start out with random w’s.\n       1.  Give it a signal (let’s say we give it the vowel in Rud)\n       2.  Forward Propagation: It uses its stupid w’s, and it produces a pdf that doesn’t reflect reality:\n            [.4,.1,.2,.2,.1]\n       3. We tell it: NO!!!!!!! You should have decided: 0,0,0,1,0], so it realizes it made a big Error or Loss\n       4.  It improves its w’s to reduce the Loss\n       5.  Give it another signal and repeat billions of times!",
+    "ocr": "",
+    "image": "assets/slides/lecture10/004.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 5,
+    "text": "Two Huge Questions\n\n1. Learning: How does an NN learn the w’s? Specifically\n2. Inference: How does an NN combine w’s with inputs?\n   Specifically\n• We will answer question 2 first, since 2 is part of 1!!!",
+    "ocr": "",
+    "image": "assets/slides/lecture10/005.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 6,
+    "text": "                                                                 Cajal:Neurons,One neuronactivity,computesand synaptica weightedweightssum\n                                                       Brain is\n                                        made of           Inner Product, Scalar Product, Dot Product,\n          ∫f*g                                      neurons\n                3                        −2w     −2−1\n               −2\n     3         −1w    −2     1         3          8\n                                     2    −1                  1\n                1\n     2   +2w   1        +3w\n     3\n\n\n                       Cajal’s retinal circuit\n     (−1 × −2) + (1 × 3) + (3 × 1) = 8\n Santiago Ramón y Cajal, Recuerdos de mi vida, vol. II (1917), fig. 40. Cropped and rotated.",
+    "ocr": "",
+    "image": "assets/slides/lecture10/006.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 7,
+    "text": "         Brain chemistry/electronics  Arithmetic\n\n\n\n\n194\n3\n\n\n                196\n                       198                2",
+    "ocr": "",
+    "image": "assets/slides/lecture10/007.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 8,
+    "text": "        Beliefs: Not on exam!\n\nMost engineers/neuroscientists/people: Modern AI has nothing\nto do with how humans think, perceive, act, decide, etc. The brain\nis full of chemistry and electrical activity and abstract stuff, and\nthat obviously is not part of LLMs, which are full of numbers and\narithmetic!\n\n\n\nA few people, including me: Modern AI is a set of evolutionary\ntinkerings for 100 years with how arithmetic can emulate brain\nchemical and electrical activity… And these attempts seem to\nhave succeeded.",
+    "ocr": "",
+    "image": "assets/slides/lecture10/008.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 9,
+    "text": "           A multilayer perceptron\n\nInput            Hidden 1           Hidden 2          Hidden 3             Output\n\n                                                                      0.05\n                                                      w 2         w              w     6      w                  w\n                                                  w           0.10             4                       3\n     2     w      w                         w                                                          w 1                   w     w       w                 w                                                                      0.20     −1w            w              −2         w             w                                                      w                         w             w           w        w                    w                                                     w     w                                                   w 3     1       14         w       w       −1                                                                      0.30                                          w        w                                                w                                                     w                        w                                      w                                                       w                     w                              w       w    w                             w     w 3                    5         w                                                      w      0.15                           w                                                  w 4                                 w   w                                                     w\n                                                   w                    w                                                          w                                   w     −2     w     w             −3                                          w  2                                                       w     0.12                         w         w                          1 2\n                                                          w\n                                                                      0.08\n\n                                     Linear hidden activationsSoftmax output: probabilities sum to 1.00",
+    "ocr": "",
+    "image": "assets/slides/lecture10/009.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 10,
+    "text": "Pop Quiz: What is the activation on Hidden 1 Neuron 2?\n\nInput            Hidden 1           Hidden 2          Hidden 3             Output\n\n\n                                                      w -2         w              w     6      w                  w                                                  w             4                       3\n     3     w      w                         w                                                          w 1                   w     w       w                 w\n     −2w            w              −2         w             w                                                      w                         w             w           w        w                    w                                                     w     w                                                   w 3     1           -3          w       w      w  −1        w                                                w                                                     w                        w                                      w                                                       w                     w                              w       w    w                             w     w 2                    5         w                                            w                           w                                                  w -4                                w   w                                                     w\n                                                   w                    w                                                          w                                   w     5     w\n                                                       w     w        −3                        w  2\n         w               w     1 2\n                                                          w\n\n\n                                     Linear hidden activations",
+    "ocr": "",
+    "image": "assets/slides/lecture10/010.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 11,
+    "text": "First Exam Next Thursday\n  Pease bring a Pencil!",
+    "ocr": "",
+    "image": "assets/slides/lecture10/011.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 12,
+    "text": "Learning FITYMI: Pick random w’s, and randomly pick I/O to\n   learn from x = -2,1,3,-4,2 input and output 0,0,0,0,0,1,0\n   Input            Hidden 1           Hidden 2          Hidden 3             Output\nWRONG!!!!!! The actual pdf at the output                                                                        0.05\n                                                        w   2                           6           wshould      be 0,0,0,0,0,1,0.w                   Changew      w’s tow                                                    w           0.10               4                       3\n       2       w      w                           w                                                            wmake1   the outputw  pdfw  closerw    to the wtrue                                                                        0.20      −1w              w              −2         w             w                                                        w                           w             w           w          w                      w one!!~!!       Using SGD,              now called                              w       w                                                     w   3   1       14                 w       −1      w       0.30                                            w          w                                                w                                                       w                          w                                        w                                                         w                       w                              w         w    w                                            w                           5Backpropagation!w 3           w                                                        w      0.15                              w                                                    w   4                                 w   w                                                        w\n                                                     w                      w                                                            w                                     w      −2     w       w              −3                                            w  2                                                         w     0.12                           w           w                           1   2\n                                                            wAnd repeat this over and over again with\n                                                                        0.08\n billions of I/O pairs! That’s what’s done at                                        Linear hidden activationsSoftmax output: probabilities sum to 1.00\ndata centers ",
+    "ocr": "",
+    "image": "assets/slides/lecture10/012.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 13,
+    "text": "     Python SGD for Average\n\n• We want to estimate w, the average of\n  [73,90,98,46,400,81,82,78,62,91,61,84,75,84,81,75]\n• Note that one of the numbers by mistake is 400 … the actual average of the list is\n  about 100\n• But in reality, the datapoint 400 is a mistake, and the true average of the list, without\n  that mistake is about 80!\n• For ease, we will assume that the list above is the data list in the order we will see\n them randomly",
+    "ocr": "",
+    "image": "assets/slides/lecture10/013.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  }
+]
