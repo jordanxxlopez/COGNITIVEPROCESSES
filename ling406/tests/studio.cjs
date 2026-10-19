@@ -5,7 +5,7 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=r
  const context=await browser.newContext({viewport:{width:1440,height:1000}}),p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
  await p.goto('http://localhost:8907/ling406/');await p.evaluate(()=>localStorage.setItem('psyc301-preservation-sentinel','unchanged'));
  const data=await p.evaluate(()=>({modules:LING406.modules,experimentIDs:[...new Set(LING406.experiments.flatMap(g=>g.sections))]}));
- assert.equal(await p.locator('#collectionNav button').count(),9);
+ assert.equal(await p.locator('#collectionNav button').count(),10);
  for(const m of data.modules){await p.evaluate(id=>LingStudio.go('collection',id),m.id);assert.equal(await p.locator('.note-section').count(),m.sections.length);await p.locator('[data-reader="lecture"]').filter({hasText:'Expand'}).click();assert.equal(await p.locator('#readerSelect option').count(),m.sections.length);await p.locator('#readerRoot img').evaluate(e=>e.decode());await p.selectOption('#readerSelect',String(m.sections.length-1));assert(await p.locator('[data-action="next"]').isDisabled());assert.equal(await p.locator('#readerRoot .reader-visual img').getAttribute('src'),`assets/slides/${m.id}/${String(m.sections.length).padStart(2,'0')}.webp`);await p.locator('[data-action="readerClose"]').click();assert.equal(await p.locator('.expanded-shell').count(),0);}
  // Notes are a single growing line initially and are shared across all views.
  await p.evaluate(()=>LingStudio.openReader(['speech1-14'],0,true,'Test'));

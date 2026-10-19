@@ -44,12 +44,50 @@ python ling406/authoring/refine_distractors.py
 python ling406/authoring/render_sources.py
 python ling406/authoring/build_studio.py
 python ling406/version2/author_transcripts.py
+python ling406/version3/build_transcripts.py
 node --test ling406/tests/quiz-engine.test.cjs
 python ling406/tests/verify_coverage.py
 python ling406/tests/verify_v2.py
+python ling406/tests/verify_v3.py
 # With the repository root served at http://localhost:8907:
 node ling406/tests/studio.cjs
 node ling406/tests/transcripts-v2.cjs
+node ling406/tests/transcripts-v3.cjs
 ```
 
 The content checks verify all source page/hash references, unique per-slide scripts, question counts and sources, review/group links, core flags and allocations. Engine checks include deliberately invalid arrangements, 500 randomized full-bank arrangements, all four answer positions, canonical grading identity, and correct options outside the original first position. Browser checks cover every collection, all workspace routes, complete reader queues and endpoints, shared/autogrowing notes, read marks, persistence, answer feedback and retry behavior, every source/slide asset, dialogs, light/dark mobile containment, and the offline text shell. Browser screenshots were visually reviewed. The original repository files are checked against a pre-task hash snapshot when available.
+
+## Version 3 and review collection
+
+The third edition is separately authored in `version3/*.py` and compiled by
+`version3/build_transcripts.py` into `transcripts-v3-data.js`. It covers all 229
+lecture pages and all 55 original review pages. Explanations follow the content
+of each page, with complete teaching sentences in bullets and nested bullets.
+Title, reading-reminder and links-only pages retain their original visuals and
+personal notes without invented teaching paragraphs. Prose length follows the
+amount of instructional content, rather than a fixed paragraph quota.
+
+Collection 10 contains the Fall 2025 Midterm II review. Its images, PDF page links,
+and extracted slide text come from the review PDF itself. A matched lecture's
+script is reused only where the review page contains that material. Review page
+54 has its own explanation, distinguishing the sound overlap of English speaker
+and Russian spichki from a relationship between the meanings of the objects.
+`version3/coverage.json` records every page, source hash, author file and review
+mapping. The original PDFs and rendered slides remain unchanged.
+
+The dropdown offers Versions 1, 2 and 3 in the collection, workspace and reader
+views. New users begin in Version 3, while existing users keep their saved
+selection. Review notes and read marks share the existing matching-lecture keys.
+Quiz identifiers, allocations, answer ordering and saved answers are unchanged.
+
+The earlier editions remain available. Their only prose changes replace the
+user-rejected wording listed in `editorial/direct_wording.py`.
+`editorial/wording-changes.json` pins the baseline commit and before/after hashes.
+The tests compare those files against exactly those replacements and verify the
+remaining source files and other studios against the preserved baseline.
+
+Version 3 checks reject colons, semicolons, the rejected wording, and common
+presentation-framing phrases in teaching prose. Browser checks compare all 284
+rendered page entries with the authored scripts, verify the full review queue,
+shared notes, three-edition switching, selected-version speech/search/guide,
+saved quiz preservation, desktop/mobile layouts and offline switching.

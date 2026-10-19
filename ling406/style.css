@@ -13,3 +13,11 @@
 .transcript-version{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;max-width:100%}.transcript-version select{font-size:13px;min-width:0;max-width:280px}.reader-controls .transcript-version{flex:0 1 310px}.reader-controls .transcript-version select{max-width:100%;width:100%}.expanded-toolbar .transcript-version{color:#c3d7be}
 @media(min-width:761px){.expanded-pair .reader-visual{position:sticky;top:0;align-self:start}.expanded-pair .slide{max-height:min(76vh,calc(100dvh - 200px))}}
 @media(max-width:760px){.reader-controls .transcript-version{flex:1 1 240px}.transcript-version select{max-width:100%}}
+
+/* Source-specific teaching prose keeps complete paragraphs in a readable hierarchy. */
+.teaching-script{margin:0;padding-left:1.3em}
+.teaching-script>li{padding-left:.2em;margin:0 0 1.1em}
+.teaching-script p{margin:0}
+.teaching-script ul{padding-left:1.3em;margin:.8em 0 0}
+.teaching-script ul li{margin:.75em 0}
+.teaching-script li::marker{color:var(--muted)}

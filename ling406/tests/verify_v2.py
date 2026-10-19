@@ -23,6 +23,11 @@ canonical = {
     'quiz-engine.js': 'e2916a4d7ac6d910dac4574b8f18df0227bf5dd59d07d3b0c021b7e9aa479dda',
     'source-manifest.json': '0ffbdd36081264d3504a037d32274273029edebe947ffe27e8cd963f19614fca',
 }
+wording = json.loads((ROOT/'editorial/wording-changes.json').read_text())['files']
+for name in canonical:
+    if name in wording:
+        assert canonical[name] == wording[name]['before'], name
+        canonical[name] = wording[name]['after']
 for name, digest in canonical.items():
     assert sha(ROOT/name) == digest, name
 assert C['preservedV1SHA256'] == canonical['teaching-notes.json']
@@ -76,6 +81,10 @@ snapshot = Path('/tmp/ling406-v2-preserved.json')
 if snapshot.exists():
     previous = json.loads(snapshot.read_text())
     for name, digest in previous.items():
+        approved = wording.get(name.removeprefix('ling406/'))
+        if approved:
+            assert approved['before'] == digest, name
+            digest = approved['after']
         assert sha(ROOT.parent/name) == digest, name
-    print(f'{len(previous)} pre-existing files remain byte-identical.')
-print(f'PASS: all 229 V2 scripts, {total:,} words, 5–6 paragraphs each, all review mappings, reference hashes/pages, original scripts/questions preserved, and source-specific teaching examples.')
+    print(f'{len(previous)} pre-existing file hashes checked, with only the approved direct-wording corrections.')
+print(f'PASS: all 229 V2 scripts, {total:,} words, 5–6 paragraphs each, all review mappings, reference hashes/pages, original scripts/questions preserved apart from approved direct-wording corrections, and source-specific teaching examples.')
