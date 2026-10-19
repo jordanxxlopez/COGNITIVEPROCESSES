@@ -36,7 +36,7 @@ add('data','DATA TYPE + SYMBOL KEY',
  p('<b>STEPS</b> 1. Measured on a numerical scale? Continuous: height/BP; discrete: number of tender joints. 2. Categories? Ordered: cancer stage/Apgar; nominal: country/ZIP/event. Numbered categories need not have equal gaps.')+
  p(r'<b>SYMBOLS</b> \(X\): random measurement; \(x_i\): observation; \(\bar x\): sample mean; \(\mu\): population mean; \(s,\sigma\): sample/population SD; \(s^2,\sigma^2\): variances; \(n\): sample count; \(\nu\): df; \(\alpha\): significance level; \(f\): mass/density; \(F\): CDF.')+
  p('<b>WRITE</b> Height: interval-continuous; ZIP: categorical-nominal.')+
- p('<b>TRAP</b> A numerical label is not automatically a measured amount.'),['classification','start'],['session2.pdf','hw1.pdf:1'])
+ p('<b>TRAP</b> A numerical label is not automatically a measured amount.'),['classification','start','choose'],['session2.pdf','hw1.pdf:1'])
 
 add('summary','RAW LIST → MEAN, VARIANCE, SD, SEM',fields(
  'A list of measurements; estimate center, spread, or error in the estimated mean.',
@@ -586,12 +586,18 @@ add('design','STUDY DESIGN → WHAT WAS ASSIGNED / FOLLOWED?',
  p('<b>WRITE</b> State what was assigned, how people were selected, and which outcome was followed. <b>TRAP</b> Association alone does not establish causation; volunteers need not represent every patient.'),
  ['trials'],['session10.pdf:23–31','session13.pdf:2–3,12'])
 
-add('protocol','EXAM-TIME PROTOCOL',
- steps('Read the givens and requested outcome.','Name the method from the outcome and study design.','Copy the formula; label the given numbers.','Keep calculator precision (at least six significant digits) until the final answer.','Read table/df/tail; compare statistic or p.',
- r'Write: “At \(\alpha=\_\_\), [test] [supports / does not establish] a population [mean / proportion] difference between [groups].”')+
- p('<b>90 minutes:</b> 3 to read; 80 to work (10–13 per question for 6–8 questions); 7 to check.')+
- p('<b>Final check:</b> SD/SEM, squared variance, Yates, family count, df, tails, units, conclusion.'),
- ['choose'],['session15.pdf:2','midterm-review-transcript.txt'])
+add('folate-risk','FOLATE: RISK RATIOS FROM COUNTS',
+ p('<b>GIVEN</b> NTD is the event. Folate: 4 with NTD, 471 without; no folate: 27 with NTD, 498 without.')+
+ p('<b>1. TOTALS</b> Add both outcomes within each group:')+
+ eq(r'n_F=471+4=475,\quad n_{NF}=498+27=525')+
+ p('<b>2. RISKS</b> Divide events by everyone in that group:')+
+ eq(r'r_F=\frac4{475}=.00842105,\quad r_{NF}=\frac{27}{525}=.0514286')+
+ p('<b>3. RATIO</b> For risk without folate relative to risk with folate:')+
+ eq(r'\mathrm{RR}=\frac{r_{NF}}{r_F}=\frac{27/525}{4/475}=6.10714')+
+ p('<b>RESULT</b> The no-folate group’s NTD risk was about 6.11 times the folate group’s risk.')+
+ p('Swapping the groups takes the reciprocal:')+
+ eq(r'\mathrm{RR}_{F:NF}=1/\mathrm{RR}_{NF:F}=.163743'),
+ ['risk','odds'],['hw2.pdf:2','session13.pdf:4–10'])
 
 add('quartile-steps','QUARTILES + IQR: LOCATE, INTERPOLATE, SUBTRACT',fields(
  'A data list; asks for quartiles, middle spread or a box plot.',
@@ -642,7 +648,7 @@ S=[
  {'columns':[['endpoint','uniform','coefficient','continuous-sketch'],['normal','quantile','normal-sketch'],['sampling','linear','precision','r-normal']]},
  {'columns':[['one-t','pooled-t','t-output'],['anova','conditions'],['bonferroni','holm','tables']],
   'bottom':[{'column':1,'span':2,'keys':['aov-output']}]},
- {'columns':[['binary','z-yates','chi2'],['large-chi','gof','chi-holm'],['risk','odds','design','protocol']]}
+ {'columns':[['binary','z-yates','chi2'],['large-chi','gof','chi-holm'],['risk','odds','design','folate-risk']]}
 ]
 for page,s in enumerate(S,1):
  for col,keys in enumerate(s['columns'],1):
@@ -664,7 +670,7 @@ coverage=[]
 for t in prior['topics']:
  keys=[k for k,b in B.items() if t['topic'] in b['topics']]
  coverage.append({**t,'boxes':[code(k) for k in keys],'status':'excluded' if t['excluded'] else 'covered' if keys else 'not separately requested'})
-report={'revision':pack['revision'],'minimumBodyPt':7,'margins':.3,'indexRemoved':True,
+report={'revision':pack['revision'],'minimumBodyPt':7,'margins':.3,'indexRemoved':True,'protocolRemoved':True,
  'topics':coverage,'boxes':{k:{'code':code(k),'sources':b['sources']} for k,b in B.items()},
  'scopeDecisions':{'paired_t':'No paired-t procedure found in supplied Session 2–13 materials; omitted.',
  'welch':'Requested genuine default-output reading example on HW1 raw heights; no Welch derivation added.',

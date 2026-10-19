@@ -12,7 +12,9 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
   assert.equal(await p.locator('.v4-column').count(),12);
   assert.equal(await p.locator('.v4-box').count(),42);
   assert.equal(await p.locator('.v4-router').count(),0);
-  assert(!await p.locator('#notes').evaluate(e=>/START|WHAT IS THIS QUESTION|P\d·C\d·B\d|page·column·box/.test(e.innerText)),'removed index and printed navigation codes');
+  assert(!await p.locator('#notes').evaluate(e=>/START|WHAT IS THIS QUESTION|P\d·C\d·B\d|page·column·box|EXAM-TIME PROTOCOL|90 minutes|Final check:/.test(e.innerText)),'removed index, navigation codes and exam protocol');
+  assert.equal(await p.locator('#v4-protocol').count(),0);
+  assert.equal(await p.locator('#v4-folate-risk .katex-display').count(),4);
   assert.equal(await p.locator('.katex-error').count(),0);
   assert(!await p.locator('#notes').evaluate(e=>/\{\{|\\\[|\\\(|\$\$/.test(e.innerText)),'unrendered expression');
   const audit=await p.evaluate(()=>{
@@ -66,7 +68,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
    }
   }
   assert(await p.locator('.v4-plot').evaluateAll(es=>es.length===3&&es.every(e=>e.complete&&e.naturalWidth>0&&e.getBoundingClientRect().height>=100)));
-  assert(await p.locator('.v4-box').evaluateAll(es=>es.every(e=>e.querySelector('.katex')||['data','design','protocol'].includes(e.dataset.key))),'mathematical methods include rendered formulas');
+  assert(await p.locator('.v4-box').evaluateAll(es=>es.every(e=>e.querySelector('.katex')||['data','design'].includes(e.dataset.key))),'mathematical methods include rendered formulas');
   assert.equal(await p.locator('.v4-bottom .aov-print').count(),1);
   assert(await p.locator('.aov-print').evaluate(e=>e.getBoundingClientRect().width>480),'real ANOVA table has two-column room');
   assert.deepEqual(errors,[]);
