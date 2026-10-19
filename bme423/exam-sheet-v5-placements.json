@@ -1,0 +1,1432 @@
+{
+  "sourceSHA256": "3d1b4dbba1d7f2ed633f19de5ab0efd6ecd0b6b0696c8f1742a92fb8762aeca2",
+  "sourceRevision": "470f85e",
+  "placements": {
+    "summary": {
+      "removedBank": "\\[\\bar x=\\frac{\\sum x_i}{n},\\quad s^2=\\frac{\\sum(x_i-\\bar x)^2}{n-1}\\]\\[s=\\sqrt{s^2},\\qquad\\mathrm{SEM}=\\frac{s}{\\sqrt n}\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "\\sum x_i=645,\\quad n=10,\\quad\\bar x=645/10=64.5",
+          "after": [
+            "\\sum x_i=645,\\quad n=10",
+            "\\bar x=\\frac{\\sum x_i}{n}=\\frac{645}{10}=64.5"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "\\begin{array}{c|rrrrr}x_i&65&69&59&64&62\\\\x_i-64.5&.5&4.5&-5.5&-.5&-2.5\\\\(x_i-64.5)^2&.25&20.25&30.25&.25&6.25\\\\\\hline x_i&67&68&62&64&65\\\\x_i-64.5&2.5&3.5&-2.5&-.5&.5\\\\(x_i-64.5)^2&6.25&12.25&6.25&.25&.25\\end{array}",
+          "after": [
+            "\\begin{array}{c|rrrrr}x_i&65&69&59&64&62\\\\x_i-64.5&.5&4.5&-5.5&-.5&-2.5\\\\(x_i-64.5)^2&.25&20.25&30.25&.25&6.25\\\\\\hline x_i&67&68&62&64&65\\\\x_i-64.5&2.5&3.5&-2.5&-.5&.5\\\\(x_i-64.5)^2&6.25&12.25&6.25&.25&.25\\end{array}"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "\\sum(x_i-\\bar x)^2=82.5,\\quad s^2=82.5/9=9.16667",
+          "after": [
+            "\\sum(x_i-\\bar x)^2=82.5",
+            "s^2=\\frac{\\sum(x_i-\\bar x)^2}{n-1}=\\frac{82.5}{9}=9.16667"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "s=\\sqrt{9.16667}=3.02765",
+          "after": [
+            "s=\\sqrt{s^2}=\\sqrt{9.16667}=3.02765"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "\\mathrm{SEM}=3.02765/\\sqrt{10}=.957427",
+          "after": [
+            "\\mathrm{SEM}=\\frac{s}{\\sqrt n}=\\frac{3.02765}{\\sqrt{10}}=.957427"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "\\sum x_i^2-\\frac{(\\sum x_i)^2}{n}=41685-645^2/10=82.5",
+          "after": [
+            "\\sum x_i^2-\\frac{(\\sum x_i)^2}{n}=41685-645^2/10=82.5"
+          ]
+        },
+        {
+          "origin": 7,
+          "before": "\\mu=\\frac{\\sum x_i}{N},\\quad\\sigma^2=\\frac{\\sum(x_i-\\mu)^2}{N}",
+          "after": [
+            "\\mu=\\frac{\\sum x_i}{N},\\quad\\sigma^2=\\frac{\\sum(x_i-\\mu)^2}{N}"
+          ]
+        }
+      ]
+    },
+    "percentile": {
+      "removedBank": "<p>\\(p\\): percent; \\(I\\): integer rank; \\(d\\): fractional rank; parentheses denote sorted order.</p>\\[r=1+\\frac{p(n-1)}{100}=I+d\\]\\[x_p=x_{(I)}+d[x_{(I+1)}-x_{(I)}]\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "r=1+30(5-1)/100=2.2",
+          "after": [
+            "r=1+\\frac{p(n-1)}{100}=1+\\frac{30(5-1)}{100}=2.2=I+d"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "x_{30}=7+.2(8-7)=7.2",
+          "after": [
+            "x_p=x_{(I)}+d[x_{(I+1)}-x_{(I)}]",
+            "x_{30}=7+.2(8-7)=7.2"
+          ]
+        }
+      ]
+    },
+    "discrete": {
+      "removedBank": "\\[f(x)\\ge0,\\quad\\sum_x f(x)=1,\\quad F(t)=\\sum_{x\\le t}f(x)\\]\\[\\mu=E[X]=\\sum_x xf(x),\\quad E[X^2]=\\sum_x x^2f(x)\\]\\[\\operatorname{Var}(X)=E[X^2]-\\mu^2=\\sum_x(x-\\mu)^2f(x)\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "\\begin{array}{c|rrrr}x&-1&2&3&7\\\\f(x)&.55&.15&.10&.20\\\\xf(x)&-.55&.30&.30&1.40\\\\x^2f(x)&.55&.60&.90&9.80\\end{array}",
+          "after": [
+            "f(x)\\ge0,\\quad\\sum_x f(x)=.55+.15+.10+.20=1",
+            "\\begin{array}{c|rrrr}x&-1&2&3&7\\\\f(x)&.55&.15&.10&.20\\\\xf(x)&-.55&.30&.30&1.40\\\\x^2f(x)&.55&.60&.90&9.80\\end{array}"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "\\mu=-.55+.30+.30+1.40=1.45",
+          "after": [
+            "\\mu=E[X]=\\sum_x xf(x)=-.55+.30+.30+1.40=1.45"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "E[X^2]=.55+.60+.90+9.80=11.85",
+          "after": [
+            "E[X^2]=\\sum_x x^2f(x)=.55+.60+.90+9.80=11.85"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "\\operatorname{Var}(X)=11.85-1.45^2=9.74750",
+          "after": [
+            "\\operatorname{Var}(X)=E[X^2]-\\mu^2=11.85-1.45^2=9.74750"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "E[(X-\\mu)^2]=.55(-2.45)^2+.15(.55)^2",
+          "after": [
+            "\\operatorname{Var}(X)=\\sum_x(x-\\mu)^2f(x)",
+            "E[(X-\\mu)^2]=.55(-2.45)^2+.15(.55)^2"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "\\qquad+.10(1.55)^2+.20(5.55)^2=9.74750",
+          "after": [
+            "\\qquad+.10(1.55)^2+.20(5.55)^2=9.74750"
+          ]
+        },
+        {
+          "origin": 7,
+          "before": "F(t)=\\begin{cases}0&t<-1\\\\.55&-1\\le t<2\\\\.70&2\\le t<3\\\\.80&3\\le t<7\\\\1&t\\ge7\\end{cases}",
+          "after": [
+            "F(t)=\\sum_{x\\le t}f(x)",
+            "F(t)=\\begin{cases}0&t<-1\\\\.55&-1\\le t<2\\\\.70&2\\le t<3\\\\.80&3\\le t<7\\\\1&t\\ge7\\end{cases}"
+          ]
+        },
+        {
+          "origin": 8,
+          "before": "P(2\\le X<7)=F(7^-)-F(2^-)=.80-.55=.25",
+          "after": [
+            "P(2\\le X<7)=F(7^-)-F(2^-)=.80-.55=.25"
+          ]
+        }
+      ]
+    },
+    "loaded": {
+      "removedBank": "\\[F(t)=\\sum_{x\\le t}f(x),\\quad E[X^r]=\\sum_x x^rf(x)\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": ".20+5(.16)=1,\\quad P(X\\le3)=.20+.16+.16=.52",
+          "after": [
+            "\\sum_xf(x)=.20+5(.16)=1",
+            "P(X\\le3)=F(3)=\\sum_{x\\le3}f(x)=.20+.16+.16=.52"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "E[X]=1(.20)+(2+3+4+5+6)(.16)=3.4",
+          "after": [
+            "E[X]=\\sum_x xf(x)=1(.20)+(2+3+4+5+6)(.16)",
+            "=3.4"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "E[X^2]=.20+(4+9+16+25+36)(.16)=14.6",
+          "after": [
+            "E[X^r]=\\sum_x x^rf(x)",
+            "E[X^2]=.20+(4+9+16+25+36)(.16)=14.6"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "\\operatorname{Var}(X)=14.6-3.4^2=3.04",
+          "after": [
+            "\\operatorname{Var}(X)=14.6-3.4^2=3.04"
+          ]
+        }
+      ]
+    },
+    "events": {
+      "removedBank": "\\[P(A\\cap B)=P(A)P(B\\mid A)\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "P=\\frac4{52}\\frac3{51}=.00452489",
+          "after": [
+            "P(A\\cap B)=P(A)P(B\\mid A)",
+            "P(\\text{two kings})=\\frac4{52}\\frac3{51}=.00452489"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "P=3/8=.375",
+          "after": [
+            "P=3/8=.375"
+          ]
+        }
+      ]
+    },
+    "continuous": {
+      "removedBank": "\\[\\int_a^b f(x)\\,dx=1,\\quad F(t)=\\int_a^t f(u)\\,du\\]\\[P(l<X<u)=F(u)-F(l),\\quad P(X>t)=1-F(t)\\]\\[E[X^r]=\\int_a^b x^rf(x)\\,dx,\\quad\\operatorname{Var}(X)=E[X^2]-\\mu^2\\]\\[F(q)=.5\\quad\\text{defines the median }q\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "\\int_0^2x/2\\,dx=[x^2/4]_0^2=1",
+          "after": [
+            "\\int_a^b f(x)\\,dx=\\int_0^2\\frac{x}{2}\\,dx=\\left[\\frac{x^2}{4}\\right]_0^2=1"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "F(t)=\\int_0^t u/2\\,du=t^2/4\\quad(0\\le t\\le2)",
+          "after": [
+            "F(t)=\\int_a^t f(u)\\,du",
+            "F(t)=\\int_0^t u/2\\,du=t^2/4\\quad(0\\le t\\le2)"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "P(X<1)=1^2/4=.25",
+          "after": [
+            "P(X<1)=F(1)=\\frac{1^2}{4}=.25"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "P(X>1.5)=1-1.5^2/4=.4375",
+          "after": [
+            "P(X>t)=1-F(t)",
+            "P(X>1.5)=1-\\frac{1.5^2}{4}=.4375"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "\\mu=\\int_0^2x(x/2)\\,dx=[x^3/6]_0^2=4/3",
+          "after": [
+            "E[X]=\\int_a^b xf(x)\\,dx",
+            "\\mu=\\int_0^2x(x/2)\\,dx=[x^3/6]_0^2=4/3"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "E[X^2]=\\int_0^2x^2(x/2)\\,dx=[x^4/8]_0^2=2",
+          "after": [
+            "E[X^r]=\\int_a^b x^rf(x)\\,dx\\quad(r=2)",
+            "E[X^2]=\\int_0^2x^2(x/2)\\,dx=[x^4/8]_0^2=2"
+          ]
+        },
+        {
+          "origin": 7,
+          "before": "\\operatorname{Var}(X)=2-(4/3)^2=2/9",
+          "after": [
+            "\\operatorname{Var}(X)=E[X^2]-\\mu^2=2-(4/3)^2=2/9"
+          ]
+        },
+        {
+          "origin": 8,
+          "before": "q^2/4=.5\\Rightarrow q=\\sqrt2=1.41421",
+          "after": [
+            "F(q)=.5:\\quad q^2/4=.5\\Rightarrow q=\\sqrt2=1.41421"
+          ]
+        }
+      ]
+    },
+    "piecewise": {
+      "removedBank": "\\[F(t)=\\int_a^s f_1(u)\\,du+\\int_s^t f_2(u)\\,du\\quad(t>s)\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "F(1)=\\int_0^1u\\,du=1/2",
+          "after": [
+            "F(1)=\\int_0^1u\\,du=1/2"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "F(t)=\\tfrac12+\\int_1^t(2-u)\\,du",
+          "after": [
+            "F(t)=\\int_a^s f_1(u)\\,du+\\int_s^t f_2(u)\\,du\\quad(t>s)",
+            "F(t)=\\tfrac12+\\int_1^t(2-u)\\,du"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "=\\tfrac12+[2u-u^2/2]_1^t=2t-t^2/2-1",
+          "after": [
+            "=\\tfrac12+[2u-u^2/2]_1^t=2t-t^2/2-1"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "F(t)=\\begin{cases}0&t<0\\\\t^2/2&0\\le t\\le1\\\\2t-t^2/2-1&1<t\\le2\\\\1&t>2\\end{cases}",
+          "after": [
+            "F(t)=\\begin{cases}0&t<0\\\\t^2/2&0\\le t\\le1\\\\2t-t^2/2-1&1<t\\le2\\\\1&t>2\\end{cases}"
+          ]
+        }
+      ]
+    },
+    "endpoint": {
+      "removedBank": "\\[\\int_{\\text{support}} f(x)\\,dx=1\\]\\[Ac^2+Bc+D=0:\\quad c=\\frac{-B\\pm\\sqrt{B^2-4AD}}{2A}\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "1=\\int_0^c(.1+x)\\,dx=[.1x+x^2/2]_0^c",
+          "after": [
+            "\\int_{\\mathrm{support}}f(x)\\,dx=1",
+            "1=\\int_0^c(.1+x)\\,dx=[.1x+x^2/2]_0^c"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": ".1c+c^2/2=1\\Rightarrow c^2+.2c-2=0",
+          "after": [
+            ".1c+c^2/2=1\\Rightarrow c^2+.2c-2=0"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "c=\\frac{-.2+\\sqrt{.2^2-4(1)(-2)}}2=1.31774",
+          "after": [
+            "Ac^2+Bc+D=0:\\quad c=\\frac{-B\\pm\\sqrt{B^2-4AD}}{2A}",
+            "c=\\frac{-.2+\\sqrt{.2^2-4(1)(-2)}}2=1.31774"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "F(t)=\\begin{cases}0&t\\le0\\\\.1t+t^2/2&0<t\\le c\\\\1&t>c\\end{cases}",
+          "after": [
+            "F(t)=\\begin{cases}0&t\\le0\\\\.1t+t^2/2&0<t\\le c\\\\1&t>c\\end{cases}"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "P(X>.5)=1-[.1(.5)+.5^2/2]=.825",
+          "after": [
+            "P(X>.5)=1-[.1(.5)+.5^2/2]=.825"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "P(0<X<.6)=.1(.6)+.6^2/2=.24",
+          "after": [
+            "P(0<X<.6)=.1(.6)+.6^2/2=.24"
+          ]
+        },
+        {
+          "origin": 7,
+          "before": "P(X=.5)=0",
+          "after": [
+            "P(X=.5)=0"
+          ]
+        },
+        {
+          "origin": 8,
+          "before": "\\mu=\\int_0^c x(.1+x)\\,dx=[.05x^2+x^3/3]_0^c",
+          "after": [
+            "\\mu=\\int_0^c x(.1+x)\\,dx=[.05x^2+x^3/3]_0^c"
+          ]
+        },
+        {
+          "origin": 9,
+          "before": "=.05c^2+c^3/3=.849556",
+          "after": [
+            "=.05c^2+c^3/3=.849556"
+          ]
+        },
+        {
+          "origin": 10,
+          "before": "E[2X+1]=2\\mu+1=2(.849556)+1=2.69911",
+          "after": [
+            "E[2X+1]=2\\mu+1=2(.849556)+1=2.69911"
+          ]
+        }
+      ]
+    },
+    "uniform": {
+      "removedBank": "\\[f(x)=\\frac1{b-a},\\quad F(t)=\\frac{t-a}{b-a}\\quad(a\\le t\\le b)\\]\\[P(l<X<u)=\\frac{u-l}{b-a}\\quad(a\\le l<u\\le b)\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "E[X]=\\int_0^1x\\,dx=[x^2/2]_0^1=1/2",
+          "after": [
+            "E[X]=\\int_0^1x\\,dx=[x^2/2]_0^1=1/2"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "E[X^2]=\\int_0^1x^2\\,dx=[x^3/3]_0^1=1/3",
+          "after": [
+            "E[X^2]=\\int_0^1x^2\\,dx=[x^3/3]_0^1=1/3"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "\\operatorname{Var}(X)=1/3-(1/2)^2=1/12",
+          "after": [
+            "\\operatorname{Var}(X)=1/3-(1/2)^2=1/12"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "\\mu=(a+b)/2,\\quad\\sigma^2=(b-a)^2/12",
+          "after": [
+            "\\mu=(a+b)/2,\\quad\\sigma^2=(b-a)^2/12"
+          ]
+        }
+      ]
+    },
+    "coefficient": {
+      "removedBank": "\\[1=\\int_a^b k g(x)\\,dx=k\\int_a^b g(x)\\,dx\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "1=\\int_0^2 kx\\,dx=k[x^2/2]_0^2=2k",
+          "after": [
+            "1=\\int_a^b kg(x)\\,dx=k\\int_a^b g(x)\\,dx",
+            "1=\\int_0^2 kx\\,dx=k[x^2/2]_0^2=2k"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "k=1/2\\Rightarrow f(x)=x/2",
+          "after": [
+            "k=1/2\\Rightarrow f(x)=x/2"
+          ]
+        }
+      ]
+    },
+    "normal": {
+      "removedBank": "\\[z=\\frac{x-\\mu}{\\sigma},\\quad\\Phi(z)=P(Z\\le z)\\]\\[\\Phi(-z)=1-\\Phi(z),\\quad P(l<X<u)=\\Phi(z_u)-\\Phi(z_l)\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "z_{85}=(85-95)/8.7=-1.14943\\approx-1.15",
+          "after": [
+            "z_{85}=\\frac{x-\\mu}{\\sigma}=\\frac{85-95}{8.7}=-1.14943\\approx-1.15"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "z_{115}=(115-95)/8.7=2.29885\\approx2.30",
+          "after": [
+            "z_{115}=\\frac{x-\\mu}{\\sigma}=\\frac{115-95}{8.7}=2.29885\\approx2.30"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "\\Phi(1.15)=.8749,\\quad\\Phi(2.30)=.9893",
+          "after": [
+            "\\Phi(z)=P(Z\\le z)",
+            "\\Phi(1.15)=.8749,\\quad\\Phi(2.30)=.9893"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "P(X<85)=1-.8749=.1251",
+          "after": [
+            "P(X<85)=\\Phi(-1.15)=1-\\Phi(1.15)",
+            "=1-.8749=.1251"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "P(85\\le X<115)=.9893-.1251=.8642",
+          "after": [
+            "P(l<X<u)=\\Phi(z_u)-\\Phi(z_l)",
+            "P(85\\le X<115)=.9893-.1251=.8642"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "P(X\\ge115)=1-.9893=.0107",
+          "after": [
+            "P(X\\ge115)=1-.9893=.0107"
+          ]
+        },
+        {
+          "origin": 7,
+          "before": ".1251+.8642+.0107=1",
+          "after": [
+            ".1251+.8642+.0107=1"
+          ]
+        },
+        {
+          "origin": 8,
+          "before": "z_0=(0-95)/8.7=-10.9195",
+          "after": [
+            "z_0=(0-95)/8.7=-10.9195"
+          ]
+        },
+        {
+          "origin": 9,
+          "before": "P(X<0)\\approx0,\\quad P(X=95)=0",
+          "after": [
+            "P(X<0)\\approx0,\\quad P(X=95)=0"
+          ]
+        }
+      ]
+    },
+    "quantile": {
+      "removedBank": "\\[z_p=\\Phi^{-1}(p),\\quad x_p=\\mu+z_p\\sigma\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "p=.975,\\quad z_p=1.96",
+          "after": [
+            "p=.975,\\quad z_p=\\Phi^{-1}(p)=\\Phi^{-1}(.975)=1.96"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "x_p=95+1.96(8.7)=112.052",
+          "after": [
+            "x_p=\\mu+z_p\\sigma=95+1.96(8.7)=112.052"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "z_{.25}=-.674490,\\quad z_{.75}=.674490",
+          "after": [
+            "z_{.25}=-.674490,\\quad z_{.75}=.674490"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "Q_1=95-.674490(8.7)=89.1319",
+          "after": [
+            "Q_1=95-.674490(8.7)=89.1319"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "Q_3=95+.674490(8.7)=100.868",
+          "after": [
+            "Q_3=95+.674490(8.7)=100.868"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "p_L=(1-.95)/2=.025,\\quad p_U=1-.025=.975",
+          "after": [
+            "p_L=(1-.95)/2=.025,\\quad p_U=1-.025=.975"
+          ]
+        },
+        {
+          "origin": 7,
+          "before": "x_L=95-1.96(8.7)=77.948",
+          "after": [
+            "x_L=95-1.96(8.7)=77.948"
+          ]
+        },
+        {
+          "origin": 8,
+          "before": "x_U=95+1.96(8.7)=112.052",
+          "after": [
+            "x_U=95+1.96(8.7)=112.052"
+          ]
+        }
+      ]
+    },
+    "sampling": {
+      "removedBank": "\\[E[\\bar X]=\\mu,\\quad\\operatorname{Var}(\\bar X)=\\frac{\\sigma^2}{n}\\]\\[\\mathrm{SEM}=\\frac{\\sigma}{\\sqrt n},\\quad z=\\frac{\\bar x-\\mu}{\\sigma/\\sqrt n}\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "\\mathrm{SEM}=1.5/\\sqrt{50}=.212132",
+          "after": [
+            "E[\\bar X]=\\mu=4,\\quad\\operatorname{Var}(\\bar X)=\\sigma^2/n",
+            "\\mathrm{SEM}=\\frac{\\sigma}{\\sqrt n}=\\frac{1.5}{\\sqrt{50}}=.212132"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "z_L=(3.5-4)/.212132=-2.35702",
+          "after": [
+            "z_L=\\frac{\\bar x-\\mu}{\\sigma/\\sqrt n}=\\frac{3.5-4}{.212132}=-2.35702"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "z_U=(3.8-4)/.212132=-.942809",
+          "after": [
+            "z_U=\\frac{\\bar x-\\mu}{\\sigma/\\sqrt n}=\\frac{3.8-4}{.212132}=-.942809"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "P=\\Phi(-.942809)-\\Phi(-2.35702)",
+          "after": [
+            "P=\\Phi(-.942809)-\\Phi(-2.35702)"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "=.172889-.00921106=.163678",
+          "after": [
+            "=.172889-.00921106=.163678"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "P=.1736-.0091=.1645",
+          "after": [
+            "P=.1736-.0091=.1645"
+          ]
+        }
+      ]
+    },
+    "linear": {
+      "removedBank": "\\[E[aX+b]=a\\mu+b,\\quad\\operatorname{Var}(aX+b)=a^2\\sigma^2\\]\\[E[aX+bY+c]=a\\mu_X+b\\mu_Y+c\\]\\[\\operatorname{Var}(aX+bY+c)=a^2\\sigma_X^2+b^2\\sigma_Y^2\\]\\[E[h(X)]=\\sum_x h(x)f(x)\\quad\\text{(discrete)}\\]\\[E[h(X)]=\\int h(x)f(x)\\,dx\\quad\\text{(continuous)}\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "E[X-26]=95-26=69",
+          "after": [
+            "E[aX+b]=a\\mu+b",
+            "E[X-26]=1(95)-26=69"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "\\operatorname{Var}(X-26)=8.7^2=75.69,\\quad\\operatorname{SD}(X-26)=8.7",
+          "after": [
+            "\\operatorname{Var}(aX+b)=a^2\\sigma^2",
+            "\\operatorname{Var}(X-26)=1^2(8.7)^2=75.69,\\quad\\operatorname{SD}=8.7"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "\\operatorname{Var}\\left(\\frac{\\sum X_i}{n}\\right)=\\frac{n\\sigma^2}{n^2}=\\frac{\\sigma^2}{n}",
+          "after": [
+            "E[aX+bY+c]=a\\mu_X+b\\mu_Y+c",
+            "\\operatorname{Var}(aX+bY+c)=a^2\\sigma_X^2+b^2\\sigma_Y^2",
+            "\\operatorname{Var}\\left(\\frac{\\sum X_i}{n}\\right)=\\frac{n\\sigma^2}{n^2}=\\frac{\\sigma^2}{n}"
+          ]
+        }
+      ]
+    },
+    "one-t": {
+      "removedBank": "\\[H_0:\\mu=\\mu_0,\\quad H_1:\\mu\\ne\\mu_0\\]\\[t=\\frac{\\bar x-\\mu_0}{s/\\sqrt n},\\qquad\\nu=n-1\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "H_0:\\mu_{\\mathrm{student}}=115",
+          "after": [
+            "H_0:\\mu=\\mu_0,\\quad H_1:\\mu\\ne\\mu_0",
+            "H_0:\\mu_{\\mathrm{student}}=115"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "\\mathrm{SEM}=16/\\sqrt{16}=4",
+          "after": [
+            "\\mathrm{SEM}=s/\\sqrt n=16/\\sqrt{16}=4"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "\\bar x-\\mu_0=103-115=-12",
+          "after": [
+            "\\bar x-\\mu_0=103-115=-12"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "t=-12/4=-3,\\qquad\\nu=16-1=15",
+          "after": [
+            "t=\\frac{\\bar x-\\mu_0}{s/\\sqrt n}=\\frac{-12}{4}=-3",
+            "\\nu=n-1=16-1=15"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "|t|=3>2.131\\Rightarrow\\text{reject }H_0",
+          "after": [
+            "|t|=3>2.131\\Rightarrow\\text{reject }H_0"
+          ]
+        }
+      ]
+    },
+    "pooled-t": {
+      "removedBank": "\\[H_0:\\mu_1=\\mu_2,\\quad H_1:\\mu_1\\ne\\mu_2\\]\\[s_p^2=\\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}\\]\\[\\mathrm{SE}_{\\Delta}=\\sqrt{s_p^2(1/n_1+1/n_2)}\\]\\[t=\\frac{\\bar x_1-\\bar x_2}{\\mathrm{SE}_{\\Delta}},\\quad\\nu=n_1+n_2-2\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "s_1^2=70.56,\\quad s_2^2=90.25,\\quad\\nu=22+27-2=47",
+          "after": [
+            "H_0:\\mu_1=\\mu_2,\\quad H_1:\\mu_1\\ne\\mu_2",
+            "s_1^2=8.4^2=70.56,\\quad s_2^2=9.5^2=90.25",
+            "\\nu=n_1+n_2-2=22+27-2=47"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "s_p^2=\\frac{21(70.56)+26(90.25)}{47}=81.4523",
+          "after": [
+            "s_p^2=\\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}",
+            "s_p^2=\\frac{21(70.56)+26(90.25)}{47}=81.4523"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "\\mathrm{SE}_{\\Delta}=\\sqrt{81.4523(1/22+1/27)}=2.59213",
+          "after": [
+            "\\mathrm{SE}_{\\Delta}=\\sqrt{s_p^2(1/n_1+1/n_2)}",
+            "\\mathrm{SE}_{\\Delta}=\\sqrt{81.4523(1/22+1/27)}=2.59213"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "t=(49-57)/2.59213=-3.08627",
+          "after": [
+            "t=\\frac{\\bar x_1-\\bar x_2}{\\mathrm{SE}_{\\Delta}}=\\frac{49-57}{2.59213}=-3.08627"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "|t|=3.08627>2.013\\Rightarrow\\text{reject }H_0",
+          "after": [
+            "|t|=3.08627>2.013\\Rightarrow\\text{reject }H_0"
+          ]
+        }
+      ]
+    },
+    "anova": {
+      "removedBank": "<p>\\(m\\): number of groups; \\(n\\): subjects per group; \\(\\bar{\\bar x}\\): grand mean.</p>\\[H_0:\\mu_1=\\cdots=\\mu_m;\\quad H_1:\\text{not all means equal}\\]\\[s_{\\mathrm{wit}}^2=\\frac{\\sum s_i^2}{m},\\quad\\bar{\\bar x}=\\frac{\\sum\\bar x_i}{m}\\]\\[s_{\\bar x}^2=\\frac{\\sum(\\bar x_i-\\bar{\\bar x})^2}{m-1},\\quad s_{\\mathrm{bet}}^2=ns_{\\bar x}^2\\]\\[F=\\frac{s_{\\mathrm{bet}}^2}{s_{\\mathrm{wit}}^2},\\quad\\nu_n=m-1,\\quad\\nu_d=m(n-1)\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "s_{\\mathrm{wit}}^2=(189^2+217^2+191^2)/3=39763.7",
+          "after": [
+            "H_0:\\mu_1=\\cdots=\\mu_m;\\quad H_1:\\text{not all equal}",
+            "s_{\\mathrm{wit}}^2=\\frac{\\sum_i s_i^2}{m}",
+            "s_{\\mathrm{wit}}^2=(189^2+217^2+191^2)/3=39763.7"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "\\bar{\\bar x}=(1188+1412+1363)/3=1321",
+          "after": [
+            "\\bar{\\bar x}=\\frac{\\sum_i\\bar x_i}{m}=\\frac{1188+1412+1363}{3}=1321"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "(\\bar x_i-1321)=(-133,91,42)",
+          "after": [
+            "(\\bar x_i-1321)=(-133,91,42)"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "\\sum(\\bar x_i-1321)^2=17689+8281+1764=27734",
+          "after": [
+            "\\sum_i(\\bar x_i-1321)^2",
+            "=17689+8281+1764=27734"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "s_{\\bar x}^2=27734/2=13867",
+          "after": [
+            "s_{\\bar x}^2=\\frac{\\sum_i(\\bar x_i-\\bar{\\bar x})^2}{m-1}=\\frac{27734}{2}=13867"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "s_{\\mathrm{bet}}^2=12(13867)=166404",
+          "after": [
+            "s_{\\mathrm{bet}}^2=n s_{\\bar x}^2=12(13867)=166404"
+          ]
+        },
+        {
+          "origin": 7,
+          "before": "F=166404/39763.7=4.18483",
+          "after": [
+            "F=\\frac{s_{\\mathrm{bet}}^2}{s_{\\mathrm{wit}}^2}=\\frac{166404}{39763.7}=4.18483"
+          ]
+        },
+        {
+          "origin": 8,
+          "before": "(\\nu_n,\\nu_d)=(2,33)",
+          "after": [
+            "\\nu_n=m-1=2,\\quad\\nu_d=m(n-1)=3(11)=33"
+          ]
+        }
+      ]
+    },
+    "bonferroni": {
+      "removedBank": "<p>\\(k\\): requested comparisons; \\(\\alpha_T\\): family significance; \\(\\nu\\): ANOVA residual df.</p>\\[k=\\begin{cases}m(m-1)/2&\\text{all pairs}\\\\m-1&\\text{each vs control}\\end{cases}\\]\\[\\mathrm{SE}_{ij}=\\sqrt{s_{\\mathrm{wit}}^2(1/n_i+1/n_j)}\\]\\[|t_{ij}|=\\frac{|\\bar x_i-\\bar x_j|}{\\mathrm{SE}_{ij}},\\quad\\alpha_{\\mathrm{pair}}=\\alpha_T/k\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "\\mathrm{SE}=\\sqrt{2(2.5267)/15}=.580425",
+          "after": [
+            "k=\\begin{cases}m(m-1)/2&\\text{all pairs}\\\\m-1&\\text{vs control}\\end{cases}",
+            "\\mathrm{SE}_{ij}=\\sqrt{s_{\\mathrm{wit}}^2(1/n_i+1/n_j)}",
+            "\\mathrm{SE}=\\sqrt{2(2.5267)/15}=.580425"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "|t_{13}|=(5.2-3.7)/.580425=2.58431",
+          "after": [
+            "|t_{13}|=\\frac{|\\bar x_1-\\bar x_3|}{\\mathrm{SE}_{13}}=\\frac{1.5}{.580425}=2.58431"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "|t_{12}|=(4.6-3.7)/.580425=1.55059",
+          "after": [
+            "|t_{12}|=(4.6-3.7)/.580425=1.55059"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "|t_{23}|=(5.2-4.6)/.580425=1.03373",
+          "after": [
+            "|t_{23}|=(5.2-4.6)/.580425=1.03373"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "\\alpha_{\\mathrm{pair}}=.05/3=.0166667",
+          "after": [
+            "\\alpha_{\\mathrm{pair}}=\\alpha_T/k=.05/3=.0166667"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "t_{\\mathrm{crit}}=2.49367;\\quad2.58431>2.49367",
+          "after": [
+            "t_{\\mathrm{crit}}=2.49367;\\quad2.58431>2.49367"
+          ]
+        }
+      ]
+    },
+    "holm": {
+      "removedBank": "\\[\\alpha_j=\\frac{\\alpha_T}{k-j+1},\\qquad j=1,\\ldots,k\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "\\begin{array}{c|r|r|r}\\text{pair}&|t|&\\alpha_j&t_{\\mathrm{crit}}\\\\1:6&3.3&.0100&2.687\\\\1:3&2.9&.0125&2.59973\\\\1:5&2.3&.0166667&2.48469\\\\1:4&2.2&.0250&\\\\1:2&2.1&.0500&\\end{array}",
+          "after": [
+            "\\alpha_j=\\frac{\\alpha_T}{k-j+1},\\quad j=1,\\ldots,k",
+            "\\begin{array}{c|r|r|r}\\text{pair}&|t|&\\alpha_j&t_{\\mathrm{crit}}\\\\1:6&3.3&.0100&2.687\\\\1:3&2.9&.0125&2.59973\\\\1:5&2.3&.0166667&2.48469\\\\1:4&2.2&.0250&\\\\1:2&2.1&.0500&\\end{array}"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "3.3>2.687:\\ \\text{pass};\\quad2.9>2.59973:\\ \\text{pass}",
+          "after": [
+            "3.3>2.687:\\ \\text{pass};\\quad2.9>2.59973:\\ \\text{pass}"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "2.3<2.48469:\\ \\text{STOP}",
+          "after": [
+            "2.3<2.48469:\\ \\text{STOP}"
+          ]
+        }
+      ]
+    },
+    "binary": {
+      "removedBank": "<p>\\(m\\): number of events; \\(n\\): total subjects; code event 1, other 0.</p>\\[\\hat p=m/n,\\quad\\widehat{\\operatorname{Var}}(X)=\\hat p(1-\\hat p)\\]\\[\\widehat{\\operatorname{SD}}(X)=\\sqrt{\\hat p(1-\\hat p)},\\quad\\operatorname{SE}(\\hat p)=\\sqrt{\\frac{\\hat p(1-\\hat p)}n}\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "\\hat p=8/61=.131148",
+          "after": [
+            "\\hat p=m/n=8/61=.131148"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "\\hat p(1-\\hat p)=.113948",
+          "after": [
+            "\\widehat{\\operatorname{Var}}(X)=\\hat p(1-\\hat p)=.113948"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "\\widehat{\\operatorname{SD}}(X)=\\sqrt{.113948}=.337562",
+          "after": [
+            "\\widehat{\\operatorname{SD}}(X)=\\sqrt{\\hat p(1-\\hat p)}=\\sqrt{.113948}=.337562"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "\\operatorname{SE}(\\hat p)=\\sqrt{.113948/61}=.0432203",
+          "after": [
+            "\\widehat{\\operatorname{SE}}(\\hat p)=\\sqrt{\\frac{\\hat p(1-\\hat p)}{n}}=\\sqrt{\\frac{.113948}{61}}=.0432203"
+          ]
+        }
+      ]
+    },
+    "z-yates": {
+      "removedBank": "\\[H_0:p_1=p_2,\\quad H_1:p_1\\ne p_2\\]\\[\\hat p_i=m_i/n_i,\\quad\\hat p=\\frac{m_1+m_2}{n_1+n_2}\\]\\[\\mathrm{SE}_0=\\sqrt{\\hat p(1-\\hat p)(1/n_1+1/n_2)}\\]\\[c_Y=\\tfrac12(1/n_1+1/n_2),\\quad D_Y=\\max(0,|\\hat p_1-\\hat p_2|-c_Y)\\]\\[|z_Y|=D_Y/\\mathrm{SE}_0\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "\\hat p_1=.72,\\quad\\hat p_2=.315789,\\quad\\hat p=24/44=.545455",
+          "after": [
+            "H_0:p_1=p_2,\\quad H_1:p_1\\ne p_2",
+            "\\hat p_i=m_i/n_i:\\quad\\hat p_1=18/25=.72",
+            "\\hat p_2=6/19=.315789,\\quad\\hat p=\\frac{m_1+m_2}{n_1+n_2}=\\frac{24}{44}=.545455"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "\\mathrm{SE}_0=\\sqrt{.545455(.454545)(1/25+1/19)}=.151547",
+          "after": [
+            "\\mathrm{SE}_0=\\sqrt{\\hat p(1-\\hat p)(1/n_1+1/n_2)}",
+            "\\mathrm{SE}_0=\\sqrt{.545455(.454545)(1/25+1/19)}=.151547"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "c_Y=.5(1/25+1/19)=.0463158",
+          "after": [
+            "c_Y=\\tfrac12(1/n_1+1/n_2)",
+            "c_Y=.5(1/25+1/19)=.0463158"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "D_Y=|.72-.315789|-.0463158=.357895",
+          "after": [
+            "D_Y=\\max(0,|\\hat p_1-\\hat p_2|-c_Y)",
+            "D_Y=|.72-.315789|-.0463158=.357895"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "|z_Y|=.357895/.151547=2.36161>1.960",
+          "after": [
+            "|z_Y|=\\frac{D_Y}{\\mathrm{SE}_0}=\\frac{.357895}{.151547}=2.36161>1.960"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "\\hat p=205/406=.504926",
+          "after": [
+            "\\hat p=205/406=.504926"
+          ]
+        },
+        {
+          "origin": 7,
+          "before": "\\mathrm{SE}_0=\\sqrt{.504926(.495074)(1/186+1/220)}=.0498017",
+          "after": [
+            "\\mathrm{SE}_0=\\sqrt{.504926(.495074)(1/186+1/220)}",
+            "=.0498017"
+          ]
+        },
+        {
+          "origin": 8,
+          "before": "c_Y=.5(1/186+1/220)=.00496090",
+          "after": [
+            "c_Y=.5(1/186+1/220)=.00496090"
+          ]
+        },
+        {
+          "origin": 9,
+          "before": "|z_Y|=\\frac{.565-.455-.00496090}{.0498017}=2.10915>1.960",
+          "after": [
+            "|z_Y|=\\frac{.565-.455-.00496090}{.0498017}=2.10915>1.960"
+          ]
+        }
+      ]
+    },
+    "chi2": {
+      "removedBank": "<p>\\(O_{ij},E_{ij}\\): observed/expected count; \\(R_i,C_j\\): row/column totals; \\(N\\): all subjects.</p>\\[E_{ij}=R_iC_j/N,\\quad\\chi_Y^2=\\sum_{i,j}\\frac{\\max(0,|O_{ij}-E_{ij}|-.5)^2}{E_{ij}}\\]\\[\\nu=(r-1)(c-1)=1\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "O=\\begin{pmatrix}18&7\\\\6&13\\end{pmatrix},\\quad N=44",
+          "after": [
+            "O=\\begin{pmatrix}18&7\\\\6&13\\end{pmatrix},\\quad N=44"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "E=\\begin{pmatrix}25(24)/44&25(20)/44\\\\19(24)/44&19(20)/44\\end{pmatrix}",
+          "after": [
+            "E_{ij}=R_iC_j/N",
+            "E=\\begin{pmatrix}25(24)/44&25(20)/44\\\\19(24)/44&19(20)/44\\end{pmatrix}"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "=\\begin{pmatrix}13.6364&11.3636\\\\10.3636&8.63636\\end{pmatrix}",
+          "after": [
+            "=\\begin{pmatrix}13.6364&11.3636\\\\10.3636&8.63636\\end{pmatrix}"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "c_{11}=\\frac{(|18-13.6364|-.5)^2}{13.6364}=1.09470",
+          "after": [
+            "\\chi_Y^2=\\sum_{ij}\\frac{\\max(0,|O_{ij}-E_{ij}|-.5)^2}{E_{ij}}",
+            "c_{11}=\\frac{(|18-13.6364|-.5)^2}{13.6364}=1.09470"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "\\chi_Y^2=1.09470+1.31364+1.44039+1.72847=5.57719",
+          "after": [
+            "\\chi_Y^2=1.09470+1.31364+1.44039+1.72847",
+            "=5.57719,\\quad\\nu=(r-1)(c-1)=1"
+          ]
+        }
+      ]
+    },
+    "large-chi": {
+      "removedBank": "\\[H_0:\\text{equal population outcome proportions}\\]\\[E_{ij}=R_iC_j/N,\\quad\\chi^2=\\sum_{i,j}\\frac{(O_{ij}-E_{ij})^2}{E_{ij}}\\]\\[\\nu=(r-1)(c-1)\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "O=\\begin{pmatrix}36&131\\\\41&132\\\\75&104\\end{pmatrix},\\quad R=(167,173,179)",
+          "after": [
+            "H_0:\\text{equal outcome proportions across groups}",
+            "O=\\begin{pmatrix}36&131\\\\41&132\\\\75&104\\end{pmatrix},\\quad R=(167,173,179)"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "C=(152,367),\\quad N=519",
+          "after": [
+            "C=(152,367),\\quad N=519"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "E_{11}=167(152)/519=48.9094",
+          "after": [
+            "E_{11}=\\frac{R_1C_1}{N}=\\frac{167(152)}{519}=48.9094"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "E=\\begin{pmatrix}48.9094&118.091\\\\50.6667&122.333\\\\52.4239&126.576\\end{pmatrix}",
+          "after": [
+            "E=\\begin{pmatrix}48.9094&118.091\\\\50.6667&122.333\\\\52.4239&126.576\\end{pmatrix}"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "c_{11}=(36-48.9094)^2/48.9094=3.40739",
+          "after": [
+            "c_{11}=(36-48.9094)^2/48.9094=3.40739"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "\\chi^2=3.40739+1.41124+1.84430+.763851",
+          "after": [
+            "\\chi^2=\\sum_{ij}(O_{ij}-E_{ij})^2/E_{ij}",
+            "\\chi^2=3.40739+1.41124+1.84430+.763851"
+          ]
+        },
+        {
+          "origin": 7,
+          "before": "\\qquad+9.72230+4.02667=21.1757,\\quad\\nu=2",
+          "after": [
+            "\\qquad+9.72230+4.02667=21.1757,\\quad\\nu=2",
+            "\\nu=(r-1)(c-1)=(3-1)(2-1)=2"
+          ]
+        },
+        {
+          "origin": 8,
+          "before": "\\texttt{2.522e-05}=.00002522",
+          "after": [
+            "\\texttt{2.522e-05}=.00002522"
+          ]
+        }
+      ]
+    },
+    "gof": {
+      "removedBank": "\\[H_0:p_i=p_{i,0}\\ \\text{for all categories}\\]\\[E_i=Np_{i,0},\\quad\\chi^2=\\sum_i\\frac{(O_i-E_i)^2}{E_i},\\quad\\nu=k-1\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "E=(470(.60),470(.25),470(.15))=(282,117.5,70.5)",
+          "after": [
+            "H_0:p_i=p_{i0}\\ \\text{for all }i",
+            "E_i=Np_{i0}:\\quad E=(470(.60),470(.25),470(.15))",
+            "=(282,117.5,70.5)"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "\\chi^2=\\frac{(255-282)^2}{282}+\\frac{(125-117.5)^2}{117.5}+\\frac{(90-70.5)^2}{70.5}",
+          "after": [
+            "\\chi^2=\\sum_i(O_i-E_i)^2/E_i",
+            "\\chi^2=\\frac{(255-282)^2}{282}+\\frac{(125-117.5)^2}{117.5}+\\frac{(90-70.5)^2}{70.5}"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "=2.58511+.478723+5.39362=8.45745,\\quad\\nu=2",
+          "after": [
+            "=2.58511+.478723+5.39362=8.45745,\\quad\\nu=2",
+            "\\nu=k-1=3-1=2"
+          ]
+        }
+      ]
+    },
+    "chi-holm": {
+      "removedBank": "\\[\\alpha_j=\\frac{\\alpha_T}{k-j+1}\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "k=3,\\quad\\alpha_j=.05/3,\\ .05/2,\\ .05",
+          "after": [
+            "\\alpha_j=\\alpha_T/(k-j+1)",
+            "k=3,\\quad\\alpha_j=.05/3,\\ .05/2,\\ .05"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "18.234>6.635>\\chi^2_{.0166667,1}:\\ \\text{pass}",
+          "after": [
+            "18.234>6.635>\\chi^2_{.0166667,1}:\\ \\text{pass}"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "9.4944>\\chi^2_{.025,1}=5.024:\\ \\text{pass}",
+          "after": [
+            "9.4944>\\chi^2_{.025,1}=5.024:\\ \\text{pass}"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "4.6895>\\chi^2_{.05,1}=3.841:\\ \\text{pass}",
+          "after": [
+            "4.6895>\\chi^2_{.05,1}=3.841:\\ \\text{pass}"
+          ]
+        }
+      ]
+    },
+    "risk": {
+      "removedBank": "<p>\\(r_T=m_T/n_T,r_C=m_C/n_C\\): treatment/control event risks.</p>\\[\\mathrm{RR}=r_T/r_C,\\quad\\mathrm{RRR}=1-\\mathrm{RR}\\]\\[\\mathrm{ARR}=r_C-r_T,\\quad\\mathrm{NNT}=1/\\mathrm{ARR}\\]\\[\\mathrm{NNH}=1/(r_T-r_C)\\quad\\text{when treatment raises harm risk}\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "r_T=.315789,\\quad r_C=.72,\\quad\\mathrm{RR}=.438596",
+          "after": [
+            "r_T=6/19=.315789,\\quad r_C=18/25=.72",
+            "\\mathrm{RR}=r_T/r_C=.315789/.72=.438596"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "\\mathrm{ARR}=.72-.315789=.404211",
+          "after": [
+            "\\mathrm{ARR}=r_C-r_T=.72-.315789=.404211"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "\\mathrm{NNT}=1/.404211=2.47396\\Rightarrow3\\text{ people}",
+          "after": [
+            "\\mathrm{NNT}=1/\\mathrm{ARR}=1/.404211=2.47396\\to3\\text{ people}"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "r_C=.010,\\quad r_T=.008,\\quad\\mathrm{RR}=.8",
+          "after": [
+            "r_C=.010,\\quad r_T=.008,\\quad\\mathrm{RR}=.8"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "\\mathrm{RRR}=.2,\\quad\\mathrm{ARR}=.002,\\quad\\mathrm{NNT}=500",
+          "after": [
+            "\\mathrm{RRR}=1-\\mathrm{RR}=1-.8=.2",
+            "\\mathrm{ARR}=.010-.008=.002,\\quad\\mathrm{NNT}=1/.002=500"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "\\mathrm{NNT}/\\mathrm{NNH}=500/20=25",
+          "after": [
+            "\\mathrm{NNH}=1/(r_T-r_C)\\quad\\text{when treatment raises harm}",
+            "\\mathrm{NNT}/\\mathrm{NNH}=500/20=25"
+          ]
+        }
+      ]
+    },
+    "odds": {
+      "removedBank": "\\[\\begin{array}{c|cc}&\\text{exposed}&\\text{unexposed}\\\\\\text{case}&a&b\\\\\\text{control}&c&d\\end{array}\\]\\[\\mathrm{OR}=\\frac{a/b}{c/d}=\\frac{ad}{bc}\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "\\mathrm{OR}=\\frac{50/14}{43/35}=\\frac{50(35)}{14(43)}=2.90698",
+          "after": [
+            "\\begin{array}{c|cc}&\\text{exposed}&\\text{unexposed}\\\\\\text{cases}&a&b\\\\\\text{controls}&c&d\\end{array}",
+            "\\mathrm{OR}=\\frac{a/b}{c/d}=\\frac{ad}{bc}=\\frac{50/14}{43/35}",
+            "=\\frac{50(35)}{14(43)}=2.90698"
+          ]
+        }
+      ]
+    },
+    "quartile-steps": {
+      "removedBank": "\\[r=1+\\frac{p(n-1)}{100},\\quad\\mathrm{IQR}=Q_3-Q_1\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "r_{25}=1+.25(9)=3.25",
+          "after": [
+            "r=1+\\frac{p(n-1)}{100}:\\quad r_{25}=1+.25(9)=3.25"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "Q_1=x_{(3)}+.25[x_{(4)}-x_{(3)}]",
+          "after": [
+            "Q_1=x_{(3)}+.25[x_{(4)}-x_{(3)}]"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "=62+.25(64-62)=62.5",
+          "after": [
+            "=62+.25(64-62)=62.5"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "r_{50}=1+.50(9)=5.5",
+          "after": [
+            "r_{50}=1+.50(9)=5.5"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "\\text{median}=64+.5(65-64)=64.5",
+          "after": [
+            "\\text{median}=64+.5(65-64)=64.5"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "r_{75}=1+.75(9)=7.75",
+          "after": [
+            "r_{75}=1+.75(9)=7.75"
+          ]
+        },
+        {
+          "origin": 7,
+          "before": "Q_3=65+.75(67-65)=66.5",
+          "after": [
+            "Q_3=65+.75(67-65)=66.5"
+          ]
+        },
+        {
+          "origin": 8,
+          "before": "\\mathrm{IQR}=66.5-62.5=4",
+          "after": [
+            "\\mathrm{IQR}=Q_3-Q_1=66.5-62.5=4"
+          ]
+        }
+      ]
+    },
+    "cdf-endpoints": {
+      "removedBank": "\\[P(X>a)=1-F(a),\\quad P(X\\ge a)=1-F(a^-)\\]\\[P(a<X\\le b)=F(b)-F(a)\\]",
+      "steps": [
+        {
+          "origin": 1,
+          "before": "F(2^-)=.55,\\quad F(2)=.55+.15=.70",
+          "after": [
+            "F(2^-)=.55,\\quad F(2)=.55+.15=.70"
+          ]
+        },
+        {
+          "origin": 2,
+          "before": "P(X>2)=1-.70=.30",
+          "after": [
+            "P(X>a)=1-F(a):\\quad P(X>2)=1-.70=.30"
+          ]
+        },
+        {
+          "origin": 3,
+          "before": "P(X\\ge2)=1-.55=.45",
+          "after": [
+            "P(X\\ge a)=1-F(a^-):\\quad P(X\\ge2)=1-.55=.45"
+          ]
+        },
+        {
+          "origin": 4,
+          "before": "P(2<X\\le7)=F(7)-F(2)=1-.70=.30",
+          "after": [
+            "P(a<X\\le b)=F(b)-F(a)",
+            "P(2<X\\le7)=F(7)-F(2)=1-.70=.30"
+          ]
+        },
+        {
+          "origin": 5,
+          "before": "P(-1<X<3)=F(3^-)-F(-1)",
+          "after": [
+            "P(-1<X<3)=F(3^-)-F(-1)"
+          ]
+        },
+        {
+          "origin": 6,
+          "before": "=.70-.55=.15",
+          "after": [
+            "=.70-.55=.15"
+          ]
+        }
+      ]
+    },
+    "discrete-sketch": {
+      "edits": [
+        {
+          "before": "<p><b>FORMULA</b> \\(F(t)=\\sum_{x\\le t}f(x)\\).</p>",
+          "after": ""
+        },
+        {
+          "before": "<li>CDF: hold each level flat, then jump by the next mass.</li>",
+          "after": "<li>CDF: \\[F(t)=\\sum_{x\\le t}f(x)\\]Hold each level flat, then jump by the next mass.</li>"
+        }
+      ]
+    },
+    "continuous-sketch": {
+      "edits": [
+        {
+          "before": "<p><b>FORMULA</b> \\(f(x)=.1+x\\); interior \\(F(x)=.1x+x^2/2\\).</p>",
+          "after": ""
+        },
+        {
+          "before": "<li>PDF: straight line",
+          "after": "<li>\\[f(x)=.1+x\\]PDF: straight line"
+        },
+        {
+          "before": "<li>CDF: through",
+          "after": "<li>\\[F(x)=.1x+x^2/2\\]CDF: through"
+        }
+      ]
+    },
+    "precision": {
+      "edits": [
+        {
+          "before": "<b>FORMULA / STEPS</b>",
+          "after": "<b>ESTIMATES</b>"
+        },
+        {
+          "before": "\\[\\widehat{\\mathrm{SE}}(s^2)=s^2\\sqrt{\\frac2{n-1}}\\]",
+          "after": "<p>Uncertainty in the sample variance:</p><div class=\"v5-step\"><span class=\"step-number\"></span>\\[\\widehat{\\mathrm{SE}}(s^2)=s^2\\sqrt{\\frac2{n-1}}\\]</div>"
+        },
+        {
+          "before": "<p><b>WORKED</b> Four times the sample size halves SEM:</p>\\[\\frac{\\sigma}{\\sqrt{4n}}=\\frac12\\frac{\\sigma}{\\sqrt n}\\]",
+          "after": "<p>Four times the sample size halves SEM:</p><div class=\"v5-step\"><span class=\"step-number\"></span>\\[\\mathrm{SEM}_{4n}=\\frac{\\sigma}{\\sqrt{4n}}=\\frac12\\frac{\\sigma}{\\sqrt n}=\\tfrac12\\mathrm{SEM}_n\\]</div>"
+        }
+      ]
+    },
+    "t-output": {
+      "edits": [
+        {
+          "before": "<p><b>TRIGGER</b> Supplied t output. <b>FORMULA</b></p>\\[p<\\alpha\\Rightarrow\\text{reject }H_0\\]",
+          "after": "<p><b>TRIGGER</b> Supplied t output.</p>"
+        },
+        {
+          "before": "Both p values are below .05.</p>",
+          "after": "Both p values are below .05.</p><div class=\"v5-step\"><span class=\"step-number\"></span>\\[p<\\alpha\\Rightarrow\\text{reject }H_0\\]\\[.0003625<.05;\\quad .0002594<.05\\]</div>"
+        }
+      ]
+    },
+    "aov-output": {
+      "edits": [
+        {
+          "before": "<p><b>TRIGGER</b> Supplied ANOVA output. <b>FORMULA</b></p>\\[F=\\frac{\\mathrm{MS}_{\\mathrm{Group}}}{\\mathrm{MS}_{\\mathrm{Residual}}}\\]",
+          "after": "<p><b>TRIGGER</b> Supplied ANOVA output.</p>"
+        },
+        {
+          "before": "<p><b>STEPS</b> Compare p with alpha.",
+          "after": "<div class=\"v5-step\"><span class=\"step-number\"></span>\\[F=\\frac{\\mathrm{MS}_{\\mathrm{Group}}}{\\mathrm{MS}_{\\mathrm{Residual}}}=5.832\\quad\\text{(unrounded inputs)}\\]</div><p><b>STEPS</b> Compare p with alpha."
+        }
+      ]
+    },
+    "normal-sketch": {
+      "edits": [
+        {
+          "before": "\\[f(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}e^{-(x-\\mu)^2/(2\\sigma^2)}\\]\\[F(t)=\\int_{-\\infty}^t\\frac{1}{\\sigma\\sqrt{2\\pi}}e^{-(u-\\mu)^2/(2\\sigma^2)}\\,du\\]<p>With the given glucose parameters:</p>\\[f(x)=\\frac1{8.7\\sqrt{2\\pi}}e^{-(x-95)^2/(2(8.7)^2)}\\]\\[F(t)=\\int_{-\\infty}^t\\frac1{8.7\\sqrt{2\\pi}}e^{-(u-95)^2/(2(8.7)^2)}\\,du\\]<ol><li>Insert mean 95 and SD 8.7.</li><li>PDF: symmetric bell at 95; mark 86.3 and 103.7 (one SD each side).</li><li>CDF: rising S through (95,.5), flattening toward 0 and 1.</li></ol>",
+          "after": "<div class=\"v5-step\"><span class=\"step-number\"></span>\\[f(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}e^{-(x-\\mu)^2/(2\\sigma^2)}\\]\\[f(x)=\\frac1{8.7\\sqrt{2\\pi}}e^{-(x-95)^2/(2(8.7)^2)}\\]</div><p>PDF: symmetric bell at 95; mark 86.3 and 103.7 (one SD each side).</p><div class=\"v5-step\"><span class=\"step-number\"></span>\\[F(t)=\\int_{-\\infty}^t\\frac{1}{\\sigma\\sqrt{2\\pi}}e^{-(u-\\mu)^2/(2\\sigma^2)}\\,du\\]\\[F(t)=\\int_{-\\infty}^t\\frac1{8.7\\sqrt{2\\pi}}e^{-(u-95)^2/(2(8.7)^2)}\\,du\\]</div><p>CDF: rising S through (95,.5), flattening toward 0 and 1. Insert mean 95 and SD 8.7.</p>"
+        }
+      ]
+    },
+    "r-normal": {
+      "edits": [
+        {
+          "before": "\\[\\texttt{pnorm}:x\\longmapsto F(x),\\qquad\\texttt{qnorm}:p\\longmapsto x_p\\]",
+          "after": ""
+        },
+        {
+          "before": "<pre class=\"r-print\">pnorm(85,95,8.7)\n[1] 0.1251903\npnorm(115,95,8.7,lower.tail=FALSE)\n[1] 0.01075671\nqnorm(.975,95,8.7)\n[1] 112.0517\nqnorm(.025,95,8.7,lower.tail=FALSE)\n[1] 112.0517</pre>",
+          "after": "<div class=\"v5-step\"><span class=\"step-number\"></span>\\[\\texttt{pnorm}:x\\longmapsto F(x)\\]<pre class=\"r-print\">pnorm(85,95,8.7)\n[1] 0.1251903\npnorm(115,95,8.7,lower.tail=FALSE)\n[1] 0.01075671</pre></div><div class=\"v5-step\"><span class=\"step-number\"></span>\\[\\texttt{qnorm}:p\\longmapsto x_p\\]<pre class=\"r-print\">qnorm(.975,95,8.7)\n[1] 112.0517\nqnorm(.025,95,8.7,lower.tail=FALSE)\n[1] 112.0517</pre></div>"
+        }
+      ]
+    },
+    "conditions": {
+      "edits": [
+        {
+          "before": "\\[\\text{two-sided t: }|t|>t_{\\mathrm{crit}}\\Rightarrow\\text{reject}\\]\\[\\text{F or }\\chi^2:\\ \\text{statistic}>\\text{upper cutoff}\\Rightarrow\\text{reject}\\]",
+          "after": ""
+        },
+        {
+          "before": "\\[F=16.9/68.05=.248347<5.32\\]",
+          "after": "<div class=\"v5-step\"><span class=\"step-number\"></span>\\[F=s_{\\mathrm{bet}}^2/s_{\\mathrm{wit}}^2=16.9/68.05=.248347<5.32\\]\\[F\\text{ or }\\chi^2:\\ \\text{statistic}>\\text{upper cutoff}\\Rightarrow\\text{reject}\\]\\[\\text{two-sided t: }|t|>t_{\\mathrm{crit}}\\Rightarrow\\text{reject}\\]</div>"
+        }
+      ]
+    },
+    "integral-steps": {
+      "edits": [
+        {
+          "before": "\\[\\int_l^u f(x)\\,dx=G(u)-G(l)\\]",
+          "after": ""
+        },
+        {
+          "before": "\\[P(1.5<X\\le2)=\\left[\\frac{x^2}{4}\\right]_{1.5}^{2}\\]\\[=\\frac{2^2}{4}-\\frac{1.5^2}{4}=1-.5625=.4375\\]",
+          "after": "<div class=\"v5-step\"><span class=\"step-number\"></span>\\[P(l<X<u)=F(u)-F(l)=\\int_l^u f(x)\\,dx\\]\\[=G(u)-G(l)\\]\\[P(1.5<X\\le2)=\\left[\\frac{x^2}{4}\\right]_{1.5}^{2}\\]\\[=\\frac{2^2}{4}-\\frac{1.5^2}{4}=1-.5625=.4375\\]</div>"
+        }
+      ]
+    }
+  },
+  "blocks": 42,
+  "scope": "Same blocks, sources, examples and figures as V4. Equations moved into corresponding worked operations."
+}
