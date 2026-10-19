@@ -6,7 +6,7 @@ const assert=require('node:assert/strict');
  try{
   const page=await browser.newPage({viewport:{width:1500,height:1000}}),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
-  await page.goto('http://localhost:8907/bme423/');
+  await page.goto('http://localhost:8907/bme423/?questionVersion=C');
   const audit=await page.evaluate(()=>{
    const failures=[];let count=0,calculations=0,slideCount=0;
    for(const key of Object.keys(EQUATION_GUIDE.rules))equationRules([key]);

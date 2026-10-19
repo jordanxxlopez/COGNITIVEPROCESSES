@@ -2,7 +2,7 @@
 const{chromium}=require('playwright'),assert=require('node:assert/strict');
 (async()=>{const b=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});try{
  const p=await b.newPage({viewport:{width:1450,height:1000}}),errors=[];p.on('pageerror',e=>errors.push(e.message));
- await p.goto('http://localhost:8907/bme423/');
+ await p.goto('http://localhost:8907/bme423/?questionVersion=C');
  const audit=await p.evaluate(()=>{
   const failures=[];let steps=0,slides=0;const holder=document.createElement('div');
   function check(html,label){holder.innerHTML=html;if(holder.querySelector('.katex-error'))failures.push(label+' malformed math');if(/[\x00-\x08\x0b\x0c\x0e-\x1f]/.test(holder.textContent))failures.push(label+' control character');return holder}

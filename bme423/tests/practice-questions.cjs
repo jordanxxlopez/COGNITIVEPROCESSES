@@ -2,7 +2,7 @@
 const{chromium}=require('playwright'),assert=require('node:assert/strict');
 (async()=>{const b=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});try{
  const p=await b.newPage({viewport:{width:1450,height:1000}}),errors=[];p.on('pageerror',e=>errors.push(e.message));
- await p.goto('http://localhost:8907/bme423/?view=learnNow');
+ await p.goto('http://localhost:8907/bme423/?questionVersion=C&view=learnNow');
  const coverage=await p.evaluate(()=>{
   const issues=[];
   for(const problem of DATA.problems){

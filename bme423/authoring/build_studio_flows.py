@@ -150,6 +150,7 @@ def flow(p):
     for i,s in enumerate(out):s['label']=p['steps'][i]['label'];s['origin']=i
     return out
 
-flows={p['id']:flow(p) for p in D['problems']}
-(ROOT/'studio-flow-data.js').write_text('const STUDIO_FLOWS='+json.dumps({'problems':flows},ensure_ascii=False,separators=(',',':'))+';\n')
-print('Integrated',len(flows),'problems;',sum(map(len,flows.values())),'individually assigned steps. Canonical answers agree.')
+if __name__=='__main__':
+    flows={p['id']:flow(p) for p in D['problems']}
+    (ROOT/'studio-flow-data.js').write_text('const STUDIO_FLOWS='+json.dumps({'problems':flows},ensure_ascii=False,separators=(',',':'))+';\n')
+    print('Integrated',len(flows),'problems;',sum(map(len,flows.values())),'individually assigned steps. Canonical answers agree.')

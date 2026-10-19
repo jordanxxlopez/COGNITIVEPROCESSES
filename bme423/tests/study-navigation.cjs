@@ -6,7 +6,7 @@ const assert=require('node:assert/strict');
  try{
   const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
-  await page.goto('http://localhost:8907/bme423/');
+  await page.goto('http://localhost:8907/bme423/?questionVersion=C');
   const groups=await page.evaluate(()=>DAYS.map(d=>d[2]));
   const previous=()=>page.locator('[data-study-step="-1"]').first();
   const next=()=>page.locator('[data-study-step="1"]').first();

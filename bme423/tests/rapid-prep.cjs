@@ -3,7 +3,7 @@ const{chromium}=require('playwright'),assert=require('node:assert/strict'),fs=re
 (async()=>{const b=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});try{
  const p=await b.newPage({viewport:{width:1450,height:1000}}),errors=[];p.on('pageerror',e=>errors.push(e.message));
  const base='http://localhost:8907/bme423/';
- await p.goto(base+'?view=learnNow');assert.equal(await p.locator('h1').innerText(),'Learn these methods');
+ await p.goto(base+'?questionVersion=C&view=learnNow');assert.equal(await p.locator('h1').innerText(),'Learn these methods');
  assert.equal(await p.locator('nav [data-view="learnNow"]').count(),1);assert.equal(await p.locator('nav [data-view="checkNow"]').count(),1);
  await p.evaluate(()=>{state.notes.keep='Keep my original notes';state.read=['summary'];state.examDone.A=true;save()});
  const audit=await p.evaluate(()=>{
@@ -48,7 +48,7 @@ const{chromium}=require('playwright'),assert=require('node:assert/strict'),fs=re
  await p.locator('[data-prep-move="1"]').first().click();assert.equal(await p.locator('#rapidGroup').inputValue(),'7');
  await p.evaluate(()=>go('home'));assert.equal(await p.locator('.rapid-entry').count(),1);assert.equal(await p.locator('#study-group-0').count(),1);
  await p.evaluate(()=>go('minimum'));assert.equal(await p.locator('#content [data-view="learnNow"]').count(),1);assert(await p.locator('.minimum-item').count());
- await p.goto(base+'?view=checkNow');assert.equal(await p.locator('h1').innerText(),'Check understanding');assert.equal(await p.locator('.rapid-question').count(),6);
+ await p.goto(base+'?questionVersion=C&view=checkNow');assert.equal(await p.locator('h1').innerText(),'Check understanding');assert.equal(await p.locator('.rapid-question').count(),6);
  assert.equal(await p.locator('.rapid-question .step').count(),0,'solutions covered');assert.equal(await p.locator('.rapid-question .answerbox').count(),0);
  await p.locator('[data-prep-detail="cue:0"] summary').click();assert(await p.locator('[data-prep-detail="cue:0"] .katex').count());
  await p.locator('[data-note="problem:discrete-2"]').fill('Weighted values first; square outcomes, not probabilities.');

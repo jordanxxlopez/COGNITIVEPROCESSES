@@ -2,7 +2,7 @@
 const{chromium}=require('playwright'),assert=require('node:assert/strict');
 (async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});try{
  const p=await browser.newPage({viewport:{width:1450,height:1000}}),errors=[];p.on('pageerror',e=>errors.push(e.message));
- await p.goto('http://localhost:8907/bme423/?view=learnNow&learnVersion=2');
+ await p.goto('http://localhost:8907/bme423/?questionVersion=C&view=learnNow&learnVersion=2');
  assert.equal(await p.locator('#rapidLearningVersion').inputValue(),'2');
  await p.evaluate(()=>{state.notes.keep='I keep these notes.';state.drafts['mean-1']='1.2';state.checks.push('prep:read:setup');save()});
  for(let index=0;index<8;index++){
