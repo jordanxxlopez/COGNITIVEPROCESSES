@@ -22,7 +22,7 @@ Because the underlying populations genuinely differ, that rejection is a correct
 ## 4 | The same real effect can be missed
 The population drug effect is unchanged, but a different random sample produces a smaller standardized separation. The sample means and standard deviations differ from the previous example.
 
-The observed t magnitude now lies below the critical value, so the test does not reject the no-effect null. In this hypothetical setup, we know that decision misses a real population difference.
+The observed t magnitude now lies below the critical value, so the test does not reject the no-effect null. In this hypothetical setup, that decision misses a known population difference.
 
 A nonsignificant result can therefore arise even when treatment works. The size of the observed statistic depends on both the true effect and the sampling variation in the collected data.
 
@@ -31,7 +31,7 @@ The upper distribution represents repeated experiments when the drug has no effe
 
 The lower distribution represents repeated experiments when the drug truly increases urine production. Some results cross the rejection boundary, while others remain below it and miss that effect.
 
-The displayed experiment counts estimate these two outcomes under the real-effect situation. Controlling false positives does not by itself tell us how often the test will detect a specified real difference.
+The displayed experiment counts estimate these two outcomes under the real-effect situation. Controlling false positives does not by itself determine how often the test detects a specified real difference.
 
 ## 6 | The four decision-and-reality combinations
 Reality has two possibilities: a treatment effect exists or it does not. The test also has two decisions: reject the no-effect null or do not reject it.

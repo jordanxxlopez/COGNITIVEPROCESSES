@@ -1,12 +1,12 @@
 ## 1 | Using one Normal reference for many measurements
 The continuous-variable summary connects density, accumulated probability, and expected value. These describe a distribution's shape, chances, and center.
 
-The standard Normal variable gives us a common reference curve. Once a measurement is converted into standard-deviation units, the same probability table can be used for many different Normal populations.
+The standard Normal variable provides a common reference curve. Once a measurement is converted into standard-deviation units, the same probability table can be used for many different Normal populations.
 
-We also reverse the process to find a cutoff for a requested probability. Finally, Normal quantile plots compare observed data with the pattern expected from a Normal population.
+The reverse process identifies a cutoff for a requested probability. Finally, Normal quantile plots compare observed data with the pattern expected from a Normal population.
 
 ## 2 | Descriptive summaries before inference
-The discussion outline returns to the ways we describe a sample. Center can be expressed with a mean, median, trimmed mean, or mode, depending on which feature we want to summarize.
+The discussion outline returns to methods for describing a sample. Center can be expressed with a mean, median, trimmed mean, or mode, depending on the feature being summarized.
 
 Spread includes range, interquartile range, variance, and standard deviation. Shape adds another layer through skewness and kurtosis.
 
@@ -24,12 +24,12 @@ The mean of a continuous variable is a density-weighted average of its possible 
 
 For a transformed variable, apply the transformation to each original value before weighting and accumulating. This covers squared values and squared distances as well as linear changes.
 
-The density remains the weighting rule for the original variable. Changing what we average changes the factor multiplied by that density, rather than making every possible value equally likely.
+The density remains the weighting rule for the original variable. Changing the quantity being averaged changes the factor multiplied by that density, rather than making every possible value equally likely.
 
 ## 5 | Choosing the right cumulative subtraction
 A cumulative probability gives the area to the left. For a right tail, remove that left-hand area from the total probability of one.
 
-For a bounded interval, compare the accumulated probability at its two ends. The larger cumulative value contains the smaller one plus the interval we want.
+For a bounded interval, compare the accumulated probability at its two ends. The larger cumulative value contains the smaller one plus the requested interval.
 
 The two graphs connect these operations: the density marks the selected region, while the cumulative curve records how much probability has accumulated at each cutoff. Start with the region before choosing the subtraction.
 

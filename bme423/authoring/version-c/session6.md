@@ -6,7 +6,7 @@ ANOVA compares two estimates of population variance. One comes from variation am
 Their ratio is the F statistic. The cell-phone example applies this idea to sperm motility, connecting a biological group comparison to a calculation of between-group separation relative to background variation.
 
 ## 2 | From probability areas to a group-comparison test
-Probability calculations turn cutoffs into areas and areas into cutoffs. The listed Normal functions support those two directions, which we have already practiced by hand.
+Probability calculations turn cutoffs into areas and areas into cutoffs. The listed Normal functions support those two directions, as in the preceding hand calculations.
 
 ANOVA adds a different reference distribution for a statistic built from group data. Its F value compares variation between groups with variation within them.
 
@@ -24,10 +24,10 @@ The dots show the cardiac-output measurements for the full hypothetical populati
 
 The Normal notation describes a shared center and shared variance. If diet has no effect, group membership does not move the population mean for cardiac output.
 
-This full-population picture gives us the reference situation. In practice we see only a few sampled people from each group, so their sample means can separate even when this underlying equal-means picture is true.
+This full-population picture provides the reference situation. In practice, only a few sampled people from each group are observed, so their sample means can separate even when this underlying equal-means picture is true.
 
 ## 5 | Sample mean differences versus individual variation
-Each group has a sample mean and a spread of individual cardiac-output values. The means are not identical, but that alone does not tell us that the diets caused different population outcomes.
+Each group has a sample mean and a spread of individual cardiac-output values. The means are not identical, but that alone does not establish that the diets caused different population outcomes.
 
 Ask how large the separation of the means is compared with the spread inside the groups. Widely scattered individual values can produce visibly different sample means just by sampling.
 
@@ -45,7 +45,7 @@ Follow the individual points in each group, then compare their centers. The bott
 
 Changing the positions of group centers changes the between-group picture. The individual scatter within a group continues to describe the variation among people receiving that same treatment.
 
-A large-looking difference must be interpreted relative to that individual scatter and the group size. The comparison asks whether ordinary sampling from one population can plausibly produce the arrangement of centers we see.
+A large-looking difference must be interpreted relative to that individual scatter and the group size. The comparison asks whether ordinary sampling from one population can plausibly produce the observed arrangement of centers.
 
 ## 8 | Why means have less spread than individuals
 The individual measurement follows a population distribution with variance \(\sigma^2\). An average of several independent measurements has a smaller variance because the individual deviations partly cancel.
@@ -85,9 +85,9 @@ Multiply the variance of the group means by seven to put the between-groups esti
 ## 13 | The F statistic compares the two estimates
 Place the between-groups variance estimate in the numerator and the within-groups estimate in the denominator. Both estimate the same population variance when the null hypothesis is true.
 
-A ratio near one means the two estimates are comparable. A large ratio means the group means are much more separated than the within-group variation would lead us to expect.
+A ratio near one means the two estimates are comparable. A large ratio means the group means are much more separated than expected from the within-group variation.
 
-F changes across repeated samples, so it has its own probability distribution. We need that distribution to decide how large a ratio counts as unusually large.
+F changes across repeated samples, so it has its own probability distribution. This distribution determines how large a ratio counts as unusually large.
 
 ## 14 | A critical F value marks the upper tail
 The critical value is chosen so that a specified small portion of the null F distribution lies to its right. The example uses an upper-tail probability of 0.05.

@@ -157,14 +157,14 @@ A statistic is calculated from observed sample data. Collecting a different samp
 
 A sampling distribution describes that variation across all possible samples of a fixed design. Each point represents a completed sample's statistic.
 
-This provides the reference for inference from one observed sample. We compare the obtained statistic with what repeated sampling would produce under the population model being tested.
+This provides the reference for inference from one observed sample. Compare the obtained statistic with the results expected from repeated sampling under the population model being tested.
 
 ## 24 | Three samples estimate the same fixed population
 The population height mean and spread do not change across the illustration. Different groups of ten individuals nevertheless produce different sample means and standard deviations.
 
 The sample mean estimates population center, and sample standard deviation estimates individual population spread. Neither estimate must equal its target in a particular sample.
 
-The variation among these estimates motivates sampling distributions. We want to know how much an estimate can move because of selection alone before interpreting its discrepancy from a proposed population value.
+The variation among these estimates motivates sampling distributions. Quantify how much an estimate can move because of selection alone before interpreting its discrepancy from a proposed population value.
 
 ## 25 | Collect the means of repeated samples of ten
 Every sample contributes one average to the plotted distribution. Its horizontal position depends on the combined heights of the ten selected individuals.
@@ -185,7 +185,7 @@ The sample mean has the population mean as its expected center. Its sampling sta
 
 For sufficiently large independent samples, the distribution of the mean is approximately Normal even if individual observations are not. The course gives thirty as its stated large-sample guideline.
 
-The theorem changes the distribution we can use for the average; it does not change the population's original shape. Keep the word mean attached when using that Normal approximation.
+The theorem changes the distribution available for describing the average; it does not change the population's original shape. Keep the word mean attached when using that Normal approximation.
 
 ## 28 | Skewed individuals can produce more symmetric averages
 The top distribution has a long right tail. A small sample can include an extreme individual, which can pull its average upward.

@@ -135,7 +135,7 @@ for s in ['discrete','continuous','normal']:assert '<svg' in (ROOT/'figures'/f'v
 assert graphs['normal']['mean']==95 and graphs['normal']['sd']==8.7
 
 # Immutable prior sheets, course content and calculator binaries.
-for name in ['BME423-four-page-notes.pdf','BME423-four-page-notes-v2.pdf','BME423-four-page-notes-v3.pdf','follow-along-sheet-data.js','follow-along-sheet.css','follow-along-sheet.js','notes-v3.html','note-sheet-data.js','notes-v2.html','version-c-data.js','data.js','v2-data.js','equation-guide-data.js','math.js']:
+for name in ['BME423-four-page-notes.pdf','BME423-four-page-notes-v2.pdf','BME423-four-page-notes-v3.pdf','follow-along-sheet-data.js','follow-along-sheet.css','follow-along-sheet.js','notes-v3.html','note-sheet-data.js','notes-v2.html','data.js','v2-data.js','equation-guide-data.js','math.js']:
  if (ROOT/name).exists():
   baseline=subprocess.check_output(['git','show','8c8f205:bme423/'+name],cwd=ROOT.parent)
   assert baseline==(ROOT/name).read_bytes(),'older content changed: '+name

@@ -93,6 +93,6 @@ assert prior['modules']==D['modules'] and prior['exams']==D['exams']
 assert old('v2-data.js','const V2=')['B']==V['B']
 # Version 3 was subsequently revised at the user's request; its original content
 # and new print geometry are audited in verify_follow_along.py instead.
-for file in ['version-c-data.js','BME423-four-page-notes-v2.pdf','note-sheet-data.js']:
+for file in ['BME423-four-page-notes-v2.pdf','note-sheet-data.js']:
     assert subprocess.check_output(['git','show','a1e844d:bme423/'+file],cwd=R.parent)==(R/file).read_bytes(),file
 print(f'PASS: {checks} independently checked new displayed values; piecewise CDF/Uniform identities; all {steps} steps, 38 worked blocks and 384 slides audited; original teaching, questions, slide images and older print sheets preserved except the two corrected percentile exercises. Revised Version 3 is checked separately.')

@@ -1,5 +1,5 @@
 ## 1 | From separate outcomes to continuous measurements
-A continuous random variable can take values throughout a range. We describe its probabilities with a density curve, rather than placing a separate probability at each possible measurement.
+A continuous random variable can take values throughout a range. A density curve describes its probabilities, rather than assigning a separate probability to each possible measurement.
 
 The distribution function accumulates area under that curve up to a cutoff. It turns the shape of a density into the probability of being below a particular measurement.
 
@@ -12,7 +12,7 @@ Range, interquartile range, variance, and standard deviation describe different 
 
 The R summary functions collect these descriptions for a data set or for separate groups. Read the name of the summary alongside its value so that a measure of spread is not mistaken for a measure of center.
 
-## 3 | The discrete framework we are extending
+## 3 | Extending the discrete framework
 For a discrete variable, the probability function attaches a mass to each allowed value. Those masses are nonnegative and sum to one.
 
 An expectation multiplies each transformed value by its probability and adds the contributions. Choosing the transformation to be the value itself gives the mean; choosing squared distance from the mean gives variance.
@@ -59,7 +59,7 @@ The standard Normal variable is named \(Z\). Its mean is zero and its standard d
 
 A position on this axis describes distance from the center in standard-deviation units. Negative values lie below the mean and positive values lie above it.
 
-The curve is still a density, so probabilities are areas. Later, a table of cumulative areas lets us answer questions about this one reference curve and then translate them back to other Normal measurements.
+The curve is still a density, so probabilities are areas. A table of cumulative areas provides probabilities for this reference curve, which then translate to other Normal measurements.
 
 ## 10 | Building a continuous cumulative distribution
 The cumulative distribution function collects density area from the far left up to a chosen value. Moving the cutoff rightward includes more of the curve.
@@ -106,7 +106,7 @@ The integral in the example expresses that balance mathematically: multiply each
 ## 16 | Applying a linear change before averaging
 A new variable can be defined by adding a constant and multiplying the original measurement by a constant. The expression \(Y=a+bX\) describes that shift and rescaling.
 
-To find the expected new value directly, apply the transformation to every possible original value and weight it by the original density. The density still tells us how likely those original values are.
+To find the expected new value directly, apply the transformation to every possible original value and weight it by the original density. The density still determines the probability weights of those original values.
 
 The shift adds the same amount to every outcome, while the multiplier scales every outcome. These simple effects lead to a useful shortcut for the new mean.
 

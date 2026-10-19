@@ -5,7 +5,8 @@ const fs=require('node:fs');
 const cp=require('node:child_process');
 const path=require('node:path');
 const repo=path.resolve(__dirname,'../..');
-const unchanged=['version-c-data.js','note-sheet-data.js','BME423-four-page-notes-v2.pdf'];
+// Lecture prose is editable; archived print content remains immutable.
+const unchanged=['note-sheet-data.js','BME423-four-page-notes-v2.pdf'];
 for(const file of unchanged){
  assert.deepEqual(fs.readFileSync(path.join(repo,'bme423',file)),cp.execFileSync('git',['show','a1e844d:bme423/'+file],{cwd:repo,maxBuffer:12*1024*1024}),file+' changed');
 }

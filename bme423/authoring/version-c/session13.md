@@ -20,7 +20,7 @@ A retrospective case-control study begins by selecting people with and without t
 These designs build their samples in different directions. Forward follow-up can estimate outcome probabilities within exposure groups; sampling by outcome does not directly reproduce those population event risks.
 
 ## 4 | Association means the quantities vary together
-Two measured quantities are associated when knowing one changes what we expect about the other. Their patterns are statistically dependent.
+Two measured quantities are associated when knowing one changes expectations about the other. Their patterns are statistically dependent.
 
 An association by itself does not establish a causal direction. A relationship may reflect other factors as well as a direct effect.
 

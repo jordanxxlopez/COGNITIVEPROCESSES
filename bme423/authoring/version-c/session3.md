@@ -1,7 +1,7 @@
 ## 1 | Probability gives a language for uncertain outcomes
 A random variable records an outcome that is not known in advance. Some outcomes take separate values, such as a count of heads; others vary continuously, such as a measured height.
 
-We begin with discrete outcomes and ask which values can occur and how likely each value is. A probability function lists those individual chances, while a distribution function adds chances up to a chosen cutoff.
+For discrete outcomes, identify which values can occur and how likely each value is. A probability function lists those individual chances, while a distribution function adds chances up to a chosen cutoff.
 
 Expected value describes the probability-weighted center. Independence explains when one event leaves another event's chance unchanged, which is the key to understanding the gambler's fallacy.
 
@@ -17,19 +17,19 @@ The Martian heights provide a population whose center and spread can be calculat
 
 The mean is 40 cm and the standard deviation is 5 cm. These describe the full population, rather than estimates from a small selected sample.
 
-When we randomly select one individual, the height we obtain becomes uncertain. The same population picture can then describe which heights are more common and which are less common, linking descriptive statistics to probability.
+Before an individual is randomly selected, the height of that individual is uncertain. The same population picture can then describe which heights are more common and which are less common, linking descriptive statistics to probability.
 
 ## 4 | Why probability was developed
 Questions about gambling helped motivate a mathematical treatment of uncertain outcomes. Pascal and Fermat considered such problems, followed by contributions from Bayes and Laplace.
 
-The shared problem is that we may know the possible outcomes without knowing which one will happen. Probability makes that uncertainty describable and allows different uncertain events to be compared.
+The possible outcomes may be known even when the particular outcome remains uncertain. Probability makes that uncertainty describable and allows different uncertain events to be compared.
 
-The quotation emphasizes uncertainty as an ordinary feature of life. In this course, the practical use is biomedical measurement: knowing a population's pattern helps us reason about outcomes we have not yet observed.
+The quotation emphasizes uncertainty as an ordinary feature of life. In this course, the practical use is biomedical measurement: a population's pattern supports predictions about outcomes that are not yet observed.
 
 ## 5 | Process, variable, experiment, and sample space
 A random process has known possible results but an uncertain actual result. An experiment is the procedure that produces an outcome or collects a measurement from that process.
 
-A random variable records the outcome we care about. Its value is unknown before the experiment but becomes a particular observed value afterward.
+A random variable records the outcome of interest. Its value is unknown before the experiment but becomes a particular observed value afterward.
 
 The sample space contains all possible experimental outcomes. Keep the procedure, the recorded quantity, and the set of possibilities separate: they describe different parts of the same probability problem.
 
@@ -38,7 +38,7 @@ For one coin toss, the recorded outcome can be heads or tails. The experiment is
 
 For a randomly selected student, the recorded outcome can instead be heart rate. The selection and measurement produce a numerical observation whose value is not known beforehand.
 
-For three coin tosses, we can record the total number of heads rather than the complete sequence. Different sequences can give the same count, so defining the random variable determines how outcomes are grouped.
+For three coin tosses, the total number of heads can be recorded instead of the complete sequence. Different sequences can give the same count, so defining the random variable determines how outcomes are grouped.
 
 ## 7 | Counting outcomes in an event
 An event collects the outcomes that satisfy a condition. For an equally likely set of elementary outcomes, count how many belong to the event and compare that count with the total number possible.
@@ -48,7 +48,7 @@ The numerator counts favorable outcomes; the denominator counts the full sample 
 The equal-likelihood condition matters when using simple counts. A loaded die, for example, requires the actual probabilities of its outcomes rather than treating each face as equally common.
 
 ## 8 | Coding a coin toss as a discrete variable
-The coin has two outcomes, heads and tails. Assigning them the numerical codes 1 and 2 lets us write their probabilities using a random variable \(X\).
+The coin has two outcomes, heads and tails. Assigning them the numerical codes 1 and 2 allows their probabilities to be written using a random variable \(X\).
 
 For a fair coin, both codes have probability one half. The number is a label for the outcome; changing the label does not change the physical coin toss.
 

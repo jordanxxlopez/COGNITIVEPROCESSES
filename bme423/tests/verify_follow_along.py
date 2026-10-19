@@ -132,7 +132,7 @@ for audit in coverage['equations']:
   assert a['tex'] in b[key]['html']
   assert f'data-sheet-formula="{key}:{a["before"]}:{a["formula"]}"' in b[key]['html']
 # Equation additions change teaching views; all print artifacts and original slide prose stay preserved.
-for name in ['note-sheet-data.js','notes-v2.html','BME423-four-page-notes-v2.pdf','BME423-four-page-notes.pdf','version-c-data.js']:
+for name in ['note-sheet-data.js','notes-v2.html','BME423-four-page-notes-v2.pdf','BME423-four-page-notes.pdf']:
  prior=subprocess.check_output(['git','show','38b7392:bme423/'+name],cwd=R.parent)
  assert prior==(R/name).read_bytes(),name+' changed'
 doc=fitz.open(R/'BME423-four-page-notes-v3.pdf');assert len(doc)==4

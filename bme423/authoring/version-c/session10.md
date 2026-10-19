@@ -1,9 +1,9 @@
 ## 1 | Sampling distributions and clinical-trial design
-The first part asks how statistics change when we collect different samples. Expected values describe their centers, while estimator properties describe whether they are centered correctly and how much they fluctuate.
+The first part asks how statistics change across different samples. Expected values describe their centers, while estimator properties describe whether they are centered correctly and how much they fluctuate.
 
 The central limit theorem explains the shape of many sample-mean distributions. The t and F distributions then provide reference patterns for other statistics constructed from sample data.
 
-The clinical-trial part asks how the data were produced. A clear study question, comparison groups, random assignment, and masking determine what the observed statistical comparison can tell us about treatment.
+The clinical-trial part asks how the data were produced. A clear study question, comparison groups, random assignment, and masking determine what the observed statistical comparison can establish about treatment.
 
 ## 2 | Three uses of the t-test framework
 An independent-samples t test compares means from different groups of individuals. A one-sample test compares one mean with a fixed reference value.
@@ -20,18 +20,18 @@ Nominal category counts call for proportion or contingency-table methods instead
 Use the row and column together. Knowing only that there are two groups is insufficient; the outcome's meaning and whether the individuals are independent also affect the method.
 
 ## 4 | Why a sampling distribution is useful
-A sample describes the individuals actually observed. Inference asks what that sample tells us about the larger population from which it was selected.
+A sample describes the individuals actually observed. Inference asks what that sample reveals about the larger population from which it was selected.
 
 Repeated samples would produce different statistics, even if the population stayed fixed. A sampling distribution describes that repeat-to-repeat variation.
 
-Its width tells us how much a statistic can fluctuate because of sampling. That supplies a reference for judging how precisely a single sample represents a population quantity.
+Its width describes how much a statistic can fluctuate because of sampling. That supplies a reference for judging how precisely a single sample represents a population quantity.
 
 ## 5 | Expected value includes means and variances
 The mean averages possible values using density weights. A function of the variable can be averaged with the same weighting rule by changing what is multiplied by the density.
 
 Squared distance from the population mean is one such function. Its expectation is the population variance, so variance itself is a particular expected value.
 
-This gives a shared language for later derivations. Whether we average values or squared distances, the density specifies which regions of the possible outcomes receive more weight.
+This gives a shared language for later derivations. For averages of values or squared distances, the density specifies which regions of the possible outcomes receive more weight.
 
 ## 6 | Linear combinations of independent variables
 A linear combination multiplies each variable by a constant and adds the results. Its expected value adds those same weighted means.

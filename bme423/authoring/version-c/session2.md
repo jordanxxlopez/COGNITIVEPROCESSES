@@ -1,16 +1,16 @@
 ## 1 | Describing a population, then learning from a sample
-A population is the full group we want to describe. Its center tells us what a typical measurement looks like; its dispersion tells us how much the measurements differ. A Normal distribution adds a description of the overall shape.
+A population is the full group of interest. Its center describes a typical measurement; its dispersion describes how much the measurements differ. A Normal distribution adds a description of the overall shape.
 
-Usually we cannot measure everyone, so we collect a sample. The sample mean estimates the population mean, while the standard error describes how much that estimated mean would move if we collected another sample.
+Measuring everyone is usually impractical, so a sample provides observations from the population. The sample mean estimates the population mean, while the standard error describes how much that estimated mean would move across repeated samples.
 
-The kind of measurement also matters. Height and blood pressure are numerical measurements, whereas categories label groups. The class survey connects these ideas to real student measurements before we start comparing groups.
+The kind of measurement also matters. Height and blood pressure are numerical measurements, whereas categories label groups. The class survey connects these ideas to real student measurements before group comparisons.
 
 ## 2 | R and RStudio: the tools around the data
 R performs statistical calculations. RStudio provides a workspace around R, including a place to write commands, inspect objects, view plots, and read help. Installing the interface and installing the calculation engine are separate tasks.
 
 A working directory is the folder R uses to find input files and save output. Variables hold objects; vectors collect values; matrices and arrays arrange values into structured sets.
 
-A data frame organizes observations into rows and variables into columns. Packages add functions, and loading a package makes its functions available during a session. These are tools for organizing the measurements we will analyze.
+A data frame organizes observations into rows and variables into columns. Packages add functions, and loading a package makes its functions available during a session. These are tools for organizing the measurements for analysis.
 
 ## 3 | Population mean and population spread
 Each dot represents an individual's height. The Martian population is centered at 40 cm and the Venusian population at 15 cm. Those centers are the population means, written \(\mu\) (mu).
@@ -45,7 +45,7 @@ A sample contains \(n\) measured individuals from a larger population. Its mean,
 
 Sample variance measures squared distances from that sample mean. Divide the sum of those squared distances by \(n-1\), then take the square root if you want the sample standard deviation \(s\).
 
-Random sampling aims to avoid systematically favoring certain individuals. That matters because we use the sample's center and spread to estimate the population's center and spread, rather than describing only the people we happened to measure.
+Random sampling aims to avoid systematically favoring certain individuals. The sample's center and spread estimate the population's center and spread, extending the description beyond the measured individuals.
 
 ## 8 | Median, range, and quartiles
 Put the observations in ascending order first. The median is the middle observation when the sample size is odd; when it is even, average the two middle observations.
@@ -101,7 +101,7 @@ The population height mean and standard deviation stay fixed, but the three rand
 
 A sample with more tall individuals can have a mean above the population mean; another with more short individuals can have a mean below it. The variation comes from who was selected, even when the population has not changed.
 
-Thus \(\bar{x}\) estimates \(\mu\), and \(s\) estimates \(\sigma\). We now need a way to describe how much those estimates fluctuate across repeated samples.
+Thus \(\bar{x}\) estimates \(\mu\), and \(s\) estimates \(\sigma\). The next step is to describe how much those estimates fluctuate across repeated samples.
 
 ## 16 | A distribution made from sample means
 Imagine repeatedly selecting ten individuals and calculating their average height. Each completed sample contributes one mean to this new distribution, rather than ten individual heights.
@@ -125,7 +125,7 @@ Its spread is the population standard deviation divided by the square root of th
 The central limit theorem explains why averages from sufficiently large independent samples become approximately Normal even when individual measurements are not. The course gives a sample-size guideline of 30; increasing sample size also makes those averages less scattered.
 
 ## 19 | Estimating standard error from one sample
-We usually have one sample, rather than a whole distribution of repeated samples. Calculate its mean and standard deviation first, using the observations actually collected.
+Usually, only one sample is available, rather than a whole distribution of repeated samples. Calculate its mean and standard deviation first, using the observations actually collected.
 
 Replace the unknown population standard deviation in the standard-error expression with the sample standard deviation. Dividing \(s\) by the square root of \(n\) estimates the spread that repeated sample means would have.
 
@@ -171,7 +171,7 @@ The height and finger-length violin plots summarize numerical measurements. Thei
 
 The eye-color display uses separate category bars. Those bars count membership in named groups rather than dividing a continuous measurement scale into neighboring intervals.
 
-The height-versus-finger-length scatter plot uses one point per student and places two measurements on two axes. It lets us look for a relationship between measurements, rather than merely summarizing either measurement by itself.
+The height-versus-finger-length scatter plot uses one point per student and places two measurements on two axes. This arrangement reveals relationships between measurements, rather than merely summarizing either measurement by itself.
 
 ## 26 | Dog-preferring and cat-preferring students
 The two groups differ in size, so raw histogram counts need to be read with their group totals in mind. The dog-preferring group also has a wider heart-rate spread in these class data.
@@ -185,4 +185,4 @@ Now select five students from each pet-preference group and compare their averag
 
 A statistical test asks whether the observed difference is large relative to the sampling variation expected when there is no population difference. It connects what happened in the samples to a statement about the populations.
 
-The target is the population mean heart rate in each group. We will use the sample means, their variability, and the sample sizes to decide how surprising the observed separation is under an equal-means assumption.
+The target is the population mean heart rate in each group. Use the sample means, their variability, and the sample sizes to determine how surprising the observed separation is under an equal-means assumption.
