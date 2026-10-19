@@ -1,209 +1,8 @@
 {
-  "revision": "Version 4 · question router + worked methods",
+  "revision": "Version 4 · equations + full worked methods",
   "minimumBodyPt": 7,
   "margins": 0.3,
-  "routes": [
-    {
-      "label": "Raw measurements: center, SD, SEM",
-      "target": "summary",
-      "code": "P1·C1·B2"
-    },
-    {
-      "label": "Data type / symbols",
-      "target": "data",
-      "code": "P1·C1·B1"
-    },
-    {
-      "label": "Sorted-list percentile / median / IQR",
-      "target": "percentile",
-      "code": "P1·C1·B3"
-    },
-    {
-      "label": "Probability table: validity / mean / variance / CDF",
-      "target": "discrete",
-      "code": "P1·C2·B1"
-    },
-    {
-      "label": "Loaded die: use stated masses",
-      "target": "loaded",
-      "code": "P1·C2·B2"
-    },
-    {
-      "label": "Cards / repeated events",
-      "target": "events",
-      "code": "P1·C3·B3"
-    },
-    {
-      "label": "Draw a discrete mass graph or step CDF",
-      "target": "discrete-sketch",
-      "code": "P1·C2·B3"
-    },
-    {
-      "label": "Density: area / CDF / moments / median",
-      "target": "continuous",
-      "code": "P1·C3·B1"
-    },
-    {
-      "label": "Density changes formula in pieces",
-      "target": "piecewise",
-      "code": "P1·C3·B2"
-    },
-    {
-      "label": "Unknown support endpoint",
-      "target": "endpoint",
-      "code": "P2·C1·B1"
-    },
-    {
-      "label": "Unknown density coefficient",
-      "target": "coefficient",
-      "code": "P2·C1·B3"
-    },
-    {
-      "label": "Uniform over a range",
-      "target": "uniform",
-      "code": "P2·C1·B2"
-    },
-    {
-      "label": "Draw continuous density / CDF",
-      "target": "continuous-sketch",
-      "code": "P2·C1·B4"
-    },
-    {
-      "label": "Normal cutoffs → probability",
-      "target": "normal",
-      "code": "P2·C2·B1"
-    },
-    {
-      "label": "Given area → Normal cutoff",
-      "target": "quantile",
-      "code": "P2·C2·B2"
-    },
-    {
-      "label": "Draw Normal density / CDF",
-      "target": "normal-sketch",
-      "code": "P2·C2·B3"
-    },
-    {
-      "label": "Average of n / CLT / SEM",
-      "target": "sampling",
-      "code": "P2·C3·B1"
-    },
-    {
-      "label": "Reliability / changing sample size",
-      "target": "precision",
-      "code": "P2·C3·B3"
-    },
-    {
-      "label": "Shift / scale / independent sum",
-      "target": "linear",
-      "code": "P2·C3·B2"
-    },
-    {
-      "label": "One mean vs fixed reference",
-      "target": "one-t",
-      "code": "P3·C1·B1"
-    },
-    {
-      "label": "Two independent means",
-      "target": "pooled-t",
-      "code": "P3·C1·B2"
-    },
-    {
-      "label": "Several equal-size group means",
-      "target": "anova",
-      "code": "P3·C2·B1"
-    },
-    {
-      "label": "Which pairs? Bonferroni",
-      "target": "bonferroni",
-      "code": "P3·C3·B1"
-    },
-    {
-      "label": "Which pairs? Holm",
-      "target": "holm",
-      "code": "P3·C3·B2"
-    },
-    {
-      "label": "Mean-test conditions / assumptions",
-      "target": "conditions",
-      "code": "P3·C2·B2"
-    },
-    {
-      "label": "Supplied t output",
-      "target": "t-output",
-      "code": "P3·C1·B3"
-    },
-    {
-      "label": "Supplied ANOVA output",
-      "target": "aov-output",
-      "code": "P3·C1·B4"
-    },
-    {
-      "label": "pnorm / qnorm / lower.tail",
-      "target": "r-normal",
-      "code": "P2·C3·B4"
-    },
-    {
-      "label": "One event proportion + SE",
-      "target": "binary",
-      "code": "P4·C1·B1"
-    },
-    {
-      "label": "Two proportions / corrected z",
-      "target": "z-yates",
-      "code": "P4·C1·B2"
-    },
-    {
-      "label": "2×2 observed counts",
-      "target": "chi2",
-      "code": "P4·C1·B3"
-    },
-    {
-      "label": "More rows/columns of counts",
-      "target": "large-chi",
-      "code": "P4·C2·B1"
-    },
-    {
-      "label": "One list vs stated target percentages",
-      "target": "gof",
-      "code": "P4·C2·B2"
-    },
-    {
-      "label": "Pairwise chi-square vs control",
-      "target": "chi-holm",
-      "code": "P4·C2·B3"
-    },
-    {
-      "label": "Followed treatment/exposure groups → risk",
-      "target": "risk",
-      "code": "P4·C3·B1"
-    },
-    {
-      "label": "Cases selected by disease → odds",
-      "target": "odds",
-      "code": "P4·C3·B2"
-    },
-    {
-      "label": "Design / blinding / crossover",
-      "target": "design",
-      "code": "P4·C3·B3"
-    },
-    {
-      "label": "Tables / tails / missing row",
-      "target": "tables",
-      "code": "P3·C3·B3"
-    },
-    {
-      "label": "At least one mean differs → ANOVA",
-      "target": "anova",
-      "code": "P3·C2·B1"
-    },
-    {
-      "label": "Protocol / time budget",
-      "target": "protocol",
-      "code": "P4·C3·B4"
-    }
-  ],
+  "indexRemoved": true,
   "topics": [
     {
       "topic": "rcode",
@@ -420,7 +219,8 @@
       "boxes": [
         "P1·C2·B1",
         "P1·C2·B2",
-        "P1·C2·B3"
+        "P1·C2·B3",
+        "P1·C2·B4"
       ],
       "status": "covered"
     },
@@ -436,7 +236,8 @@
       "excluded": false,
       "boxes": [
         "P1·C2·B1",
-        "P1·C2·B3"
+        "P1·C2·B3",
+        "P1·C2·B4"
       ],
       "status": "covered"
     },
@@ -487,7 +288,8 @@
         "P1·C3·B1",
         "P2·C1·B1",
         "P2·C1·B3",
-        "P2·C1·B4"
+        "P2·C1·B4",
+        "P1·C3·B4"
       ],
       "status": "covered"
     },
@@ -523,7 +325,8 @@
       "boxes": [
         "P1·C3·B1",
         "P2·C1·B1",
-        "P2·C1·B2"
+        "P2·C1·B2",
+        "P1·C3·B4"
       ],
       "status": "covered"
     },
@@ -698,7 +501,8 @@
       "hw2": false,
       "excluded": false,
       "boxes": [
-        "P1·C1·B3"
+        "P1·C1·B3",
+        "P1·C1·B4"
       ],
       "status": "covered"
     },
@@ -716,7 +520,8 @@
         "P1·C3·B1",
         "P1·C3·B2",
         "P2·C1·B1",
-        "P2·C1·B3"
+        "P2·C1·B3",
+        "P1·C3·B4"
       ],
       "status": "covered"
     },
@@ -810,7 +615,8 @@
       "hw2": false,
       "excluded": false,
       "boxes": [
-        "P1·C1·B3"
+        "P1·C1·B3",
+        "P1·C1·B4"
       ],
       "status": "covered"
     },
@@ -1199,6 +1005,28 @@
       "sources": [
         "session15.pdf:2",
         "midterm-review-transcript.txt"
+      ]
+    },
+    "quartile-steps": {
+      "code": "P1·C1·B4",
+      "sources": [
+        "hw1.pdf:4",
+        "session2.pdf",
+        "session15.pdf:7"
+      ]
+    },
+    "cdf-endpoints": {
+      "code": "P1·C2·B4",
+      "sources": [
+        "hw1.pdf:2",
+        "session3.pdf",
+        "session4.pdf:3–4"
+      ]
+    },
+    "integral-steps": {
+      "code": "P1·C3·B4",
+      "sources": [
+        "session4.pdf:20–21"
       ]
     }
   },

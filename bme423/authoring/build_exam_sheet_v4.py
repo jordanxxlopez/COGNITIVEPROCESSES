@@ -1,4 +1,4 @@
-"""Four-page, source-based question router and fill-in worked methods.
+"""Four full pages of source-based equations and worked methods.
 
 Version 4 is independent of every earlier print pack and teaching version.
 """
@@ -587,14 +587,58 @@ add('design','STUDY DESIGN → WHAT WAS ASSIGNED / FOLLOWED?',
  ['trials'],['session10.pdf:23–31','session13.pdf:2–3,12'])
 
 add('protocol','EXAM-TIME PROTOCOL',
- steps('Read the givens and requested outcome.','Use START; follow the page·column·box code.','Copy the formula; label the given numbers.','Keep calculator precision (at least six significant digits) until the final answer.','Read table/df/tail; compare statistic or p.',
+ steps('Read the givens and requested outcome.','Name the method from the outcome and study design.','Copy the formula; label the given numbers.','Keep calculator precision (at least six significant digits) until the final answer.','Read table/df/tail; compare statistic or p.',
  r'Write: “At \(\alpha=\_\_\), [test] [supports / does not establish] a population [mean / proportion] difference between [groups].”')+
- p('<b>90 minutes:</b> 3 to route; 80 to work (10–13 per question for 6–8 questions); 7 to check.')+
+ p('<b>90 minutes:</b> 3 to read; 80 to work (10–13 per question for 6–8 questions); 7 to check.')+
  p('<b>Final check:</b> SD/SEM, squared variance, Yates, family count, df, tails, units, conclusion.'),
  ['choose'],['session15.pdf:2','midterm-review-transcript.txt'])
 
+add('quartile-steps','QUARTILES + IQR: LOCATE, INTERPOLATE, SUBTRACT',fields(
+ 'A data list; asks for quartiles, middle spread or a box plot.',
+ eq(r'r=1+\frac{p(n-1)}{100},\quad\mathrm{IQR}=Q_3-Q_1'),
+ ['Sort the list.','Find each percentile rank; interpolate between neighboring values.','Subtract quartiles; compare observations with the box-plot fences.'],
+ p(r'Sorted heights: \(59,62,62,64,64,65,65,67,68,69\); \(n=10\).')+
+ eq(r'r_{25}=1+.25(9)=3.25')+
+ eq(r'Q_1=x_{(3)}+.25[x_{(4)}-x_{(3)}]')+
+ eq(r'=62+.25(64-62)=62.5')+
+ eq(r'r_{50}=1+.50(9)=5.5')+
+ eq(r'\text{median}=64+.5(65-64)=64.5')+
+ eq(r'r_{75}=1+.75(9)=7.75')+
+ eq(r'Q_3=65+.75(67-65)=66.5')+
+ eq(r'\mathrm{IQR}=66.5-62.5=4'),
+ '', 'Middle half of the heights: 62.5–66.5 inches; median 64.5 inches.',
+ 'Use the fractional rank to move between two sorted observations; do not round it to the nearest rank.'),
+ ['percentile','plots'],['hw1.pdf:4','session2.pdf','session15.pdf:7'])
+
+add('cdf-endpoints','DISCRETE CDF: INCLUDE OR EXCLUDE THE ENDPOINT',fields(
+ 'A discrete probability with a strict or inclusive inequality.',
+ eq(r'P(X>a)=1-F(a),\quad P(X\ge a)=1-F(a^-)')+
+ eq(r'P(a<X\le b)=F(b)-F(a)'),
+ ['For an included endpoint, keep its probability mass.','For an excluded endpoint, remove its mass.'],
+ p(r'Use the probability table above. \(F(a^-)\) is the total just before \(a\).')+
+ eq(r'F(2^-)=.55,\quad F(2)=.55+.15=.70')+
+ eq(r'P(X>2)=1-.70=.30')+
+ eq(r'P(X\ge2)=1-.55=.45')+
+ eq(r'P(2<X\le7)=F(7)-F(2)=1-.70=.30')+
+ eq(r'P(-1<X<3)=F(3^-)-F(-1)')+
+ eq(r'=.70-.55=.15'),
+ '', 'Including 2 adds its mass .15: the right-tail chance changes from .30 to .45.',
+ 'A discrete point can have positive probability. The continuous rule that a single point has zero probability does not apply.'),
+ ['dcdf','pmf'],['hw1.pdf:2','session3.pdf','session4.pdf:3–4'])
+
+add('integral-steps','INTEGRALS: SUBSTITUTE BOTH BOUNDS',
+ p(r'Analysis time: \(f(x)=x/2\) on 0–2. An antiderivative \(G\) is a function whose derivative is \(f\).')+
+ eq(r'\int_l^u f(x)\,dx=G(u)-G(l)')+
+ p('<b>AREA</b> Integrate the density; insert upper and lower bounds:')+
+ eq(r'P(1.5<X\le2)=\left[\frac{x^2}{4}\right]_{1.5}^{2}')+
+ eq(r'=\frac{2^2}{4}-\frac{1.5^2}{4}=1-.5625=.4375')+
+ p('<b>MEAN</b> Multiply the density by x before integrating:')+
+ eq(r'E[X]=\int_0^2x\frac{x}{2}\,dx=\left[\frac{x^3}{6}\right]_0^2')+
+ eq(r'=\frac{2^3}{6}-\frac{0^3}{6}=\frac86=\frac43'),
+ ['integrate','density','cexpect'],['session4.pdf:20–21'])
+
 S=[
- {'columns':[['data','summary','percentile'],['discrete','loaded','discrete-sketch'],['continuous','piecewise','events']]},
+ {'columns':[['data','summary','percentile','quartile-steps'],['discrete','loaded','discrete-sketch','cdf-endpoints'],['continuous','piecewise','events','integral-steps']]},
  {'columns':[['endpoint','uniform','coefficient','continuous-sketch'],['normal','quantile','normal-sketch'],['sampling','linear','precision','r-normal']]},
  {'columns':[['one-t','pooled-t','t-output'],['anova','conditions'],['bonferroni','holm','tables']],
   'bottom':[{'column':1,'span':2,'keys':['aov-output']}]},
@@ -609,27 +653,18 @@ for page,s in enumerate(S,1):
 assert all('location' in b for b in B.values())
 def code(k):
  l=B[k]['location'];return f'P{l["page"]}·C{l["column"]}·B{l["box"]}'
-def ref(k):return f'<a class="route" href="#v4-{k}" data-target="{k}">{code(k)}</a>'
+def ref(k):
+ label={'sampling':'Sample means and SEM','percentile':'Sample percentiles','pooled-t':'Pooled t test'}[k]
+ return f'<a class="method-reference" href="#v4-{k}" data-target="{k}">{label}</a>'
 for b in B.values():b['html']=re.sub(r'\{\{([\w-]+)\}\}',lambda m:ref(m[1]),b['html'])
-ROUTES=[
- [('RAW / PROBABILITY',None),('Raw measurements: center, SD, SEM','summary'),('Data type / symbols','data'),('Sorted-list percentile / median / IQR','percentile'),
- ('Probability table: validity / mean / variance / CDF','discrete'),('Loaded die: use stated masses','loaded'),('Cards / repeated events','events'),('Draw a discrete mass graph or step CDF','discrete-sketch'),
- ('Density: area / CDF / moments / median','continuous'),('Density changes formula in pieces','piecewise'),('Unknown support endpoint','endpoint'),('Unknown density coefficient','coefficient'),('Uniform over a range','uniform'),('Draw continuous density / CDF','continuous-sketch')],
- [('NORMAL / COMPARISONS / OUTPUT',None),('Normal cutoffs → probability','normal'),('Given area → Normal cutoff','quantile'),('Draw Normal density / CDF','normal-sketch'),('Average of n / CLT / SEM','sampling'),('Reliability / changing sample size','precision'),('Shift / scale / independent sum','linear'),
- ('One mean vs fixed reference','one-t'),('Two independent means','pooled-t'),('Several equal-size group means','anova'),('Which pairs? Bonferroni','bonferroni'),('Which pairs? Holm','holm'),
- ('Mean-test conditions / assumptions','conditions'),('Supplied t output','t-output'),('Supplied ANOVA output','aov-output'),('pnorm / qnorm / lower.tail','r-normal')],
- [('COUNTS / TRIGGER WORDS',None),('One event proportion + SE','binary'),('Two proportions / corrected z','z-yates'),('2×2 observed counts','chi2'),('More rows/columns of counts','large-chi'),('One list vs stated target percentages','gof'),('Pairwise chi-square vs control','chi-holm'),
- ('Followed treatment/exposure groups → risk','risk'),('Cases selected by disease → odds','odds'),('Design / blinding / crossover','design'),('Tables / tails / missing row','tables'),('At least one mean differs → ANOVA','anova'),('Protocol / time budget','protocol')]
-]
-router='<section class="v4-router"><h1>START · WHAT IS THIS QUESTION?</h1><div class="router-grid">'+''.join('<div>'+''.join('<h2>'+label+'</h2>' if key is None else '<p>'+html.escape(label)+' → '+ref(key)+'</p>' for label,key in col)+'</div>' for col in ROUTES)+'</div></section>'
-pack={'revision':'Version 4 · question router + worked methods','blocks':B,'sheets':S,'router':router,'margins':.3,'minimumBodyPt':7}
+pack={'revision':'Version 4 · equations + full worked methods','blocks':B,'sheets':S,'margins':.3,'minimumBodyPt':7}
 (R/'exam-sheet-v4-data.js').write_text('const V4_PACK='+json.dumps(pack,ensure_ascii=False,separators=(',',':'))+';\n')
 prior=json.loads((R/'exam-priorities.json').read_text())
 coverage=[]
 for t in prior['topics']:
  keys=[k for k,b in B.items() if t['topic'] in b['topics']]
  coverage.append({**t,'boxes':[code(k) for k in keys],'status':'excluded' if t['excluded'] else 'covered' if keys else 'not separately requested'})
-report={'revision':pack['revision'],'minimumBodyPt':7,'margins':.3,'routes':[{ 'label':label,'target':key,'code':code(key)} for col in ROUTES for label,key in col if key],
+report={'revision':pack['revision'],'minimumBodyPt':7,'margins':.3,'indexRemoved':True,
  'topics':coverage,'boxes':{k:{'code':code(k),'sources':b['sources']} for k,b in B.items()},
  'scopeDecisions':{'paired_t':'No paired-t procedure found in supplied Session 2–13 materials; omitted.',
  'welch':'Requested genuine default-output reading example on HW1 raw heights; no Welch derivation added.',
@@ -639,4 +674,4 @@ report={'revision':pack['revision'],'minimumBodyPt':7,'margins':.3,'routes':[{ '
  'omitted':'Repeated numerical examples and CI lines in software output excerpts; covered methods retained. No Session14 errors/power; no R code-writing tutorial.',
  'graphs':GRAPHS,'rRuntime':OUT['runtime'], 'sourceHashes':{str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (R/'sources').glob('*.pdf') if p.stem!='session14'}}
 (R/'exam-sheet-v4-coverage.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-print(f'Built Version 4: {len(B)} labeled boxes, {len(report["routes"])} verified route definitions, four letter pages.')
+print(f'Built Version 4: {len(B)} named sections, no index or printed navigation codes, four letter pages.')

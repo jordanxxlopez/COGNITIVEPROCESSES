@@ -10,8 +10,9 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
   await p.emulateMedia({media:'print'});await p.evaluate(()=>document.fonts.ready);
   assert.equal(await p.locator('.v4-page').count(),4);
   assert.equal(await p.locator('.v4-column').count(),12);
-  assert.equal(await p.locator('.v4-box').count(),39);
-  assert.equal(await p.locator('.v4-router .route').count(),40);
+  assert.equal(await p.locator('.v4-box').count(),42);
+  assert.equal(await p.locator('.v4-router').count(),0);
+  assert(!await p.locator('#notes').evaluate(e=>/START|WHAT IS THIS QUESTION|P\d·C\d·B\d|page·column·box/.test(e.innerText)),'removed index and printed navigation codes');
   assert.equal(await p.locator('.katex-error').count(),0);
   assert(!await p.locator('#notes').evaluate(e=>/\{\{|\\\[|\\\(|\$\$/.test(e.innerText)),'unrendered expression');
   const audit=await p.evaluate(()=>{
@@ -21,17 +22,16 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
     s.columns.forEach((keys,ci)=>keys.forEach((key,bi)=>position.set(key,`P${pi+1}·C${ci+1}·B${bi+1}`)));
     for(const cell of s.bottom||[])cell.keys.forEach((key,bi)=>position.set(key,`P${pi+1}·C${cell.column}·B${s.columns[cell.column-1].length+bi+1}`));
    }
-   const routes=[...document.querySelectorAll('.route')];
+   const routes=[...document.querySelectorAll('.method-reference')];
    for(const a of routes){
     const key=a.dataset.target,target=document.querySelector(a.getAttribute('href'));
-    if(!target||!boxKeys.has(key)||target.dataset.code!==a.textContent||position.get(key)!==a.textContent)problems.push('incorrect route '+key);
+    if(!target||!boxKeys.has(key)||!a.textContent.trim())problems.push('incorrect named reference '+key);
    }
    for(const key of boxKeys){
     const box=document.querySelector('#v4-'+key),loc=V4_PACK.blocks[key].location;
-    if(!document.querySelector(`.v4-router [data-target="${key}"]`))problems.push('unrouted '+key);
     if(box.dataset.code!==position.get(key)||Number(box.closest('.v4-page').dataset.page)!==loc.page||Number(box.parentElement.dataset.column)!==loc.column)problems.push('incorrect box '+key);
    }
-   for(const e of document.querySelectorAll('.v4-box p,.v4-box li,.r-print,.v4-router p,.v4-box h3'))if(parseFloat(getComputedStyle(e).fontSize)*.75<6.999)problems.push('small body text');
+   for(const e of document.querySelectorAll('.v4-box p,.v4-box li,.r-print,.v4-box h3'))if(parseFloat(getComputedStyle(e).fontSize)*.75<6.999)problems.push('small body text');
    for(const e of document.querySelectorAll('.v4-math')){
     const ink=e.querySelector('.katex-html');
     if(ink.getBoundingClientRect().width>e.getBoundingClientRect().width+.5)problems.push('wide equation '+e.closest('.v4-box').dataset.key);
@@ -43,7 +43,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
    }
    for(const pre of document.querySelectorAll('.r-print'))if(pre.scrollWidth>pre.clientWidth+1)problems.push('wide R output');
    const geometry=[...document.querySelectorAll('.v4-page')].map(s=>{
-    const r=s.getBoundingClientRect(),router=s.querySelector('.v4-router'),bottom=s.querySelector('.v4-bottom');
+    const r=s.getBoundingClientRect(),bottom=s.querySelector('.v4-bottom');
     const columns=[...s.querySelectorAll('.v4-column')].map(c=>{
      const last=c.lastElementChild.getBoundingClientRect();
      return {column:Number(c.dataset.column),used:last.bottom-r.top,own:last.bottom-c.getBoundingClientRect().top};
@@ -52,7 +52,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
      const q=box.getBoundingClientRect();
      if(q.left<r.left-.1||q.right>r.right+.1||q.bottom>r.top+998.4+.1)problems.push('outside page '+box.dataset.key);
     }
-    return {page:Number(s.dataset.page),height:r.height,width:r.width,router:router?.getBoundingClientRect().height,bottom:bottom?.getBoundingClientRect().height,columns};
+    return {page:Number(s.dataset.page),height:r.height,width:r.width,bottom:bottom?.getBoundingClientRect().height,columns};
    });
    return {problems,geometry};
   });
@@ -62,10 +62,9 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
    assert(Math.abs(g.width-758.4)<.1,'side margins');
    for(const c of g.columns){
     const used=g.page===3&&c.column<3?c.used+(g.bottom||0):c.used;
-    assert(used>930,'column insufficiently used: '+JSON.stringify({g,c}));
+    assert(used>958,'column uses less than 96% of printable height: '+JSON.stringify({g,c}));
    }
   }
-  assert(audit.geometry[0].router<998.4/3,'router must fit top third');
   assert(await p.locator('.v4-plot').evaluateAll(es=>es.length===3&&es.every(e=>e.complete&&e.naturalWidth>0&&e.getBoundingClientRect().height>=100)));
   assert(await p.locator('.v4-box').evaluateAll(es=>es.every(e=>e.querySelector('.katex')||['data','design','protocol'].includes(e.dataset.key))),'mathematical methods include rendered formulas');
   assert.equal(await p.locator('.v4-bottom .aov-print').count(),1);
@@ -84,6 +83,6 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
   await p.setViewportSize({width:390,height:844});
   assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'mobile app containment');
   assert.deepEqual(errors,[]);
-  console.log('PASS: 4 Letter pages; 39 labeled boxes; all 40 router leaves and cross-references correct; 7pt minimum body/base math; all columns substantially filled; graphs/R output loaded; no math overflow, overlapping boxes or page clipping. Exported only V4.');
+  console.log('PASS: 4 Letter pages; 42 named sections; no START index or printed navigation codes; 7pt minimum body/base math; every column at least 96% filled; graphs/R output loaded; no math overflow, overlapping boxes or page clipping. Exported only V4.');
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exit(1)});

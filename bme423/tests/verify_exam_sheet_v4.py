@@ -89,6 +89,11 @@ for text,a in [('6.635',.01),('5.024',.025),('3.841',.05)]:shown('chi-holm',text
 assert all(stats.chi2.sf(stat,1)<alpha for stat,alpha in zip([18.234,9.4944,4.6895],[.05/3,.05/2,.05]))
 for text,value in [('.438596',(6/19)/(18/25)),('.404211',18/25-6/19),('2.47396',1/(18/25-6/19)),('500',1/(.01-.008)),('25',500/20)]:shown('risk',text,value)
 shown('odds','2.90698',50*35/(14*43))
+heights=np.sort(x)
+for text,value in [('3.25',1+.25*(len(x)-1)),('62.5',np.percentile(x,25)),('5.5',1+.5*(len(x)-1)),('64.5',np.median(x)),('7.75',1+.75*(len(x)-1)),('66.5',np.percentile(x,75)),('4',stats.iqr(x))]:shown('quartile-steps',text,value)
+for text,value in [('.70',ps[xs<=2].sum()),('.30',ps[xs>2].sum()),('.45',ps[xs>=2].sum()),('.15',ps[(xs>-1)&(xs<3)].sum())]:shown('cdf-endpoints',text,value)
+shown('integral-steps','.5625',1.5**2/4);shown('integral-steps','.4375',integrate.quad(lambda u:u/2,1.5,2)[0])
+assert sp.integrate(u*u/2,(u,0,2))==sp.Rational(8,6)
 
 # Real R output, generated with actual course data, independently checked.
 r=json.loads((ROOT/'exam-sheet-v4-r-output.json').read_text());senior=np.array([69,66,70,71,72,67,70,71,72,69])
@@ -107,7 +112,11 @@ for key,res in [('pnorm_left',stats.norm.cdf(85,95,8.7)),('pnorm_right',stats.no
  printed=r['outputs'][key].split()[-1];assert abs(float(printed)-res)<=.501*10**(-len(printed.split('.')[1]));nchecks+=1
 
 coverage=json.loads((ROOT/'exam-sheet-v4-coverage.json').read_text())
-assert len(B)==39 and len(coverage['routes'])==40 and len(PACK['sheets'])==4
+assert len(B)==42 and coverage['indexRemoved'] and 'router' not in PACK and len(PACK['sheets'])==4
+previous=json.loads(subprocess.check_output(['git','show','4b89816:bme423/exam-sheet-v4-data.js'],cwd=ROOT.parent).decode().removeprefix('const V4_PACK=').rstrip(';\n'))
+for key,old in previous['blocks'].items():
+ assert key in B
+ assert re.findall(r'\\\[([\s\S]*?)\\\]',old['html'])==re.findall(r'\\\[([\s\S]*?)\\\]',B[key]['html']),(key,'existing math changed')
 assert all(t['status']=='covered' for t in coverage['topics'] if not t['excluded'])
 assert {t['topic'] for t in coverage['topics'] if t['excluded']}=={'power','anovaSS'}
 assert PACK['margins']==.3 and PACK['minimumBodyPt']==7
@@ -129,10 +138,10 @@ for name in ['BME423-four-page-notes.pdf','BME423-four-page-notes-v2.pdf','BME42
   baseline=subprocess.check_output(['git','show','8c8f205:bme423/'+name],cwd=ROOT.parent)
   assert baseline==(ROOT/name).read_bytes(),'older content changed: '+name
 pdf=fitz.open(ROOT/'BME423-four-page-notes-v4.pdf');assert len(pdf)==4
-assert len(pdf[0].get_links())>=40,'PDF router links missing'
 for i,page in enumerate(pdf,1):
  assert tuple(page.rect)==(0,0,612,792)
  text=page.get_text();assert len(text.split())>700
+ assert not re.search(r'START|WHAT IS THIS QUESTION|P\d·C\d·B\d|page·column·box',text),'removed index/navigation text remains'
  assert not re.search(r'\\frac|\\\[|\$\$|Session\s+\d+|Side\s*\d/4',text),'unwanted raw math / source clutter'
  blocks=page.get_text('blocks')
  assert min(z[0] for z in blocks)>=21.6-.2,(i,'left')

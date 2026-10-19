@@ -14,6 +14,6 @@ function v4authored(source){
  return out;
 }
 function v4code(b){const l=b.location;return `P${l.page}·C${l.column}·B${l.box}`}
-function v4box(k){const b=V4_PACK.blocks[k];return `<section class="v4-box" id="v4-${k}" data-key="${k}" data-code="${v4code(b)}"><h3><span>${v4code(b)}</span> ${b.title}</h3>${v4authored(b.html)}</section>`}
-function renderExamSheetV4(){return V4_PACK.sheets.map((s,i)=>`<article class="v4-page ${s.bottom?'v4-with-bottom':''}" data-page="${i+1}">${i===0?V4_PACK.router:''}<div class="v4-columns">${s.columns.map((keys,c)=>`<div class="v4-column" data-column="${c+1}">${keys.map(v4box).join('')}</div>`).join('')}</div>${s.bottom?`<div class="v4-bottom">${s.bottom.map(c=>`<div style="grid-column:${c.column}/span ${c.span}" data-column="${c.column}">${c.keys.map(v4box).join('')}</div>`).join('')}</div>`:''}</article>`).join('')}
+function v4box(k){const b=V4_PACK.blocks[k];return `<section class="v4-box" id="v4-${k}" data-key="${k}" data-code="${v4code(b)}"><h3>${b.title}</h3>${v4authored(b.html)}</section>`}
+function renderExamSheetV4(){return V4_PACK.sheets.map((s,i)=>`<article class="v4-page ${s.bottom?'v4-with-bottom':''}" data-page="${i+1}"><div class="v4-columns">${s.columns.map((keys,c)=>`<div class="v4-column" data-column="${c+1}">${keys.map(v4box).join('')}</div>`).join('')}</div>${s.bottom?`<div class="v4-bottom">${s.bottom.map(c=>`<div style="grid-column:${c.column}/span ${c.span}" data-column="${c.column}">${c.keys.map(v4box).join('')}</div>`).join('')}</div>`:''}</article>`).join('')}
 document.querySelector('#notes').innerHTML=renderExamSheetV4();
