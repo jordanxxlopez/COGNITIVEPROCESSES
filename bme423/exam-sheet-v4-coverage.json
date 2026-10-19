@@ -1,0 +1,1258 @@
+{
+  "revision": "Version 4 · question router + worked methods",
+  "minimumBodyPt": 7,
+  "margins": 0.3,
+  "routes": [
+    {
+      "label": "Raw measurements: center, SD, SEM",
+      "target": "summary",
+      "code": "P1·C1·B2"
+    },
+    {
+      "label": "Data type / symbols",
+      "target": "data",
+      "code": "P1·C1·B1"
+    },
+    {
+      "label": "Sorted-list percentile / median / IQR",
+      "target": "percentile",
+      "code": "P1·C1·B3"
+    },
+    {
+      "label": "Probability table: validity / mean / variance / CDF",
+      "target": "discrete",
+      "code": "P1·C2·B1"
+    },
+    {
+      "label": "Loaded die: use stated masses",
+      "target": "loaded",
+      "code": "P1·C2·B2"
+    },
+    {
+      "label": "Cards / repeated events",
+      "target": "events",
+      "code": "P1·C3·B3"
+    },
+    {
+      "label": "Draw a discrete mass graph or step CDF",
+      "target": "discrete-sketch",
+      "code": "P1·C2·B3"
+    },
+    {
+      "label": "Density: area / CDF / moments / median",
+      "target": "continuous",
+      "code": "P1·C3·B1"
+    },
+    {
+      "label": "Density changes formula in pieces",
+      "target": "piecewise",
+      "code": "P1·C3·B2"
+    },
+    {
+      "label": "Unknown support endpoint",
+      "target": "endpoint",
+      "code": "P2·C1·B1"
+    },
+    {
+      "label": "Unknown density coefficient",
+      "target": "coefficient",
+      "code": "P2·C1·B3"
+    },
+    {
+      "label": "Uniform over a range",
+      "target": "uniform",
+      "code": "P2·C1·B2"
+    },
+    {
+      "label": "Draw continuous density / CDF",
+      "target": "continuous-sketch",
+      "code": "P2·C1·B4"
+    },
+    {
+      "label": "Normal cutoffs → probability",
+      "target": "normal",
+      "code": "P2·C2·B1"
+    },
+    {
+      "label": "Given area → Normal cutoff",
+      "target": "quantile",
+      "code": "P2·C2·B2"
+    },
+    {
+      "label": "Draw Normal density / CDF",
+      "target": "normal-sketch",
+      "code": "P2·C2·B3"
+    },
+    {
+      "label": "Average of n / CLT / SEM",
+      "target": "sampling",
+      "code": "P2·C3·B1"
+    },
+    {
+      "label": "Reliability / changing sample size",
+      "target": "precision",
+      "code": "P2·C3·B3"
+    },
+    {
+      "label": "Shift / scale / independent sum",
+      "target": "linear",
+      "code": "P2·C3·B2"
+    },
+    {
+      "label": "One mean vs fixed reference",
+      "target": "one-t",
+      "code": "P3·C1·B1"
+    },
+    {
+      "label": "Two independent means",
+      "target": "pooled-t",
+      "code": "P3·C1·B2"
+    },
+    {
+      "label": "Several equal-size group means",
+      "target": "anova",
+      "code": "P3·C2·B1"
+    },
+    {
+      "label": "Which pairs? Bonferroni",
+      "target": "bonferroni",
+      "code": "P3·C3·B1"
+    },
+    {
+      "label": "Which pairs? Holm",
+      "target": "holm",
+      "code": "P3·C3·B2"
+    },
+    {
+      "label": "Mean-test conditions / assumptions",
+      "target": "conditions",
+      "code": "P3·C2·B2"
+    },
+    {
+      "label": "Supplied t output",
+      "target": "t-output",
+      "code": "P3·C1·B3"
+    },
+    {
+      "label": "Supplied ANOVA output",
+      "target": "aov-output",
+      "code": "P3·C1·B4"
+    },
+    {
+      "label": "pnorm / qnorm / lower.tail",
+      "target": "r-normal",
+      "code": "P2·C3·B4"
+    },
+    {
+      "label": "One event proportion + SE",
+      "target": "binary",
+      "code": "P4·C1·B1"
+    },
+    {
+      "label": "Two proportions / corrected z",
+      "target": "z-yates",
+      "code": "P4·C1·B2"
+    },
+    {
+      "label": "2×2 observed counts",
+      "target": "chi2",
+      "code": "P4·C1·B3"
+    },
+    {
+      "label": "More rows/columns of counts",
+      "target": "large-chi",
+      "code": "P4·C2·B1"
+    },
+    {
+      "label": "One list vs stated target percentages",
+      "target": "gof",
+      "code": "P4·C2·B2"
+    },
+    {
+      "label": "Pairwise chi-square vs control",
+      "target": "chi-holm",
+      "code": "P4·C2·B3"
+    },
+    {
+      "label": "Followed treatment/exposure groups → risk",
+      "target": "risk",
+      "code": "P4·C3·B1"
+    },
+    {
+      "label": "Cases selected by disease → odds",
+      "target": "odds",
+      "code": "P4·C3·B2"
+    },
+    {
+      "label": "Design / blinding / crossover",
+      "target": "design",
+      "code": "P4·C3·B3"
+    },
+    {
+      "label": "Tables / tails / missing row",
+      "target": "tables",
+      "code": "P3·C3·B3"
+    },
+    {
+      "label": "At least one mean differs → ANOVA",
+      "target": "anova",
+      "code": "P3·C2·B1"
+    },
+    {
+      "label": "Protocol / time budget",
+      "target": "protocol",
+      "code": "P4·C3·B4"
+    }
+  ],
+  "topics": [
+    {
+      "topic": "rcode",
+      "score": 13,
+      "explicit": true,
+      "reviewPages": [
+        63
+      ],
+      "hw1": true,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P2·C3·B4",
+        "P3·C1·B3",
+        "P3·C1·B4",
+        "P3·C3·B3",
+        "P4·C1·B3",
+        "P4·C2·B1",
+        "P4·C2·B2",
+        "P4·C2·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "pooledt",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        38,
+        39,
+        40
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P3·C1·B2",
+        "P3·C1·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "onet",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        41,
+        42
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P3·C1·B1"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "posthoc",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        43
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P3·C1·B4",
+        "P3·C3·B1",
+        "P3·C3·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "bonferroni",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        44
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P3·C3·B1"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "holm",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        45,
+        53
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P3·C3·B2",
+        "P4·C2·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "zprop",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        49
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P4·C1·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "yates",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        50
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P4·C1·B2",
+        "P4·C1·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "chi",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        52
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P4·C1·B3",
+        "P4·C2·B1",
+        "P4·C2·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "risk",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        56,
+        58
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P4·C3·B1",
+        "P4·C3·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "odds",
+      "score": 11,
+      "explicit": true,
+      "reviewPages": [
+        62
+      ],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P4·C3·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "classification",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        8
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C1·B1"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "pmf",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        9,
+        10,
+        11
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C2·B1",
+        "P1·C2·B2",
+        "P1·C2·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "dcdf",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        12
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C2·B1",
+        "P1·C2·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "expect",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        13,
+        14
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C2·B1",
+        "P1·C2·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "variance",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        15
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C2·B1",
+        "P1·C2·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "density",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        16
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C3·B1",
+        "P2·C1·B1",
+        "P2·C1·B3",
+        "P2·C1·B4"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "ccdf",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        18,
+        19
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C3·B1",
+        "P1·C3·B2",
+        "P2·C1·B1",
+        "P2·C1·B4"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "cexpect",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        17
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C3·B1",
+        "P2·C1·B1",
+        "P2·C1·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "normalprob",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        20,
+        21,
+        22
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P2·C2·B1",
+        "P2·C2·B3",
+        "P2·C3·B4"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "anova",
+      "score": 10,
+      "explicit": true,
+      "reviewPages": [
+        33,
+        34,
+        35
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P3·C2·B1",
+        "P3·C1·B4"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "sampling",
+      "score": 8,
+      "explicit": true,
+      "reviewPages": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P2·C3·B1",
+        "P2·C3·B2",
+        "P2·C3·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "choose",
+      "score": 8,
+      "explicit": true,
+      "reviewPages": [
+        32,
+        36,
+        37,
+        46,
+        48,
+        51,
+        57,
+        64
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P4·C3·B4"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "binary",
+      "score": 8,
+      "explicit": true,
+      "reviewPages": [
+        47
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P4·C1·B1"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "contingency",
+      "score": 8,
+      "explicit": true,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": true,
+      "excluded": false,
+      "boxes": [
+        "P4·C1·B3",
+        "P4·C2·B1"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "gof",
+      "score": 8,
+      "explicit": true,
+      "reviewPages": [
+        54,
+        55
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P4·C2·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "normalquant",
+      "score": 7,
+      "explicit": true,
+      "reviewPages": [],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P2·C2·B2",
+        "P2·C3·B4"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "summary",
+      "score": 5,
+      "explicit": false,
+      "reviewPages": [
+        3,
+        4,
+        31
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C1·B2",
+        "P2·C3·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "percentile",
+      "score": 5,
+      "explicit": false,
+      "reviewPages": [
+        6,
+        7
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C1·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "integrate",
+      "score": 5,
+      "explicit": false,
+      "reviewPages": [
+        2
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C3·B1",
+        "P1·C3·B2",
+        "P2·C1·B1",
+        "P2·C1·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "normal",
+      "score": 5,
+      "explicit": false,
+      "reviewPages": [
+        5
+      ],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P2·C2·B1",
+        "P2·C2·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "hypothesis",
+      "score": 5,
+      "explicit": true,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P3·C1·B1",
+        "P3·C1·B2",
+        "P3·C2·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "start",
+      "score": 3,
+      "explicit": false,
+      "reviewPages": [
+        1,
+        2,
+        65
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C1·B1"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "estimators",
+      "score": 3,
+      "explicit": false,
+      "reviewPages": [
+        30
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C1·B2",
+        "P2·C3·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "nnt",
+      "score": 3,
+      "explicit": false,
+      "reviewPages": [
+        59,
+        60,
+        61
+      ],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P4·C3·B1"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "plots",
+      "score": 2,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": true,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C1·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "rbasics",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P2·C3·B4"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "random",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C2·B1",
+        "P1·C3·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "independent",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P1·C3·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "linear",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P2·C3·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "uniform",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P2·C1·B2"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "distributions",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P3·C2·B2",
+        "P3·C3·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "anovaSS",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": true,
+      "boxes": [],
+      "status": "excluded"
+    },
+    {
+      "topic": "trials",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": false,
+      "boxes": [
+        "P4·C3·B3"
+      ],
+      "status": "covered"
+    },
+    {
+      "topic": "power",
+      "score": 0,
+      "explicit": false,
+      "reviewPages": [],
+      "hw1": false,
+      "hw2": false,
+      "excluded": true,
+      "boxes": [],
+      "status": "excluded"
+    }
+  ],
+  "boxes": {
+    "data": {
+      "code": "P1·C1·B1",
+      "sources": [
+        "session2.pdf",
+        "hw1.pdf:1"
+      ]
+    },
+    "summary": {
+      "code": "P1·C1·B2",
+      "sources": [
+        "hw1.pdf:4",
+        "session2.pdf"
+      ]
+    },
+    "percentile": {
+      "code": "P1·C1·B3",
+      "sources": [
+        "session2.pdf",
+        "session5.pdf:16–17"
+      ]
+    },
+    "discrete": {
+      "code": "P1·C2·B1",
+      "sources": [
+        "hw1.pdf:1–2",
+        "session3.pdf"
+      ]
+    },
+    "loaded": {
+      "code": "P1·C2·B2",
+      "sources": [
+        "session3.pdf:19,24,26"
+      ]
+    },
+    "events": {
+      "code": "P1·C3·B3",
+      "sources": [
+        "session3.pdf:13–16"
+      ]
+    },
+    "discrete-sketch": {
+      "code": "P1·C2·B3",
+      "sources": [
+        "hw1.pdf:2",
+        "session3.pdf:23–24"
+      ]
+    },
+    "continuous": {
+      "code": "P1·C3·B1",
+      "sources": [
+        "session4.pdf",
+        "session5.pdf"
+      ]
+    },
+    "piecewise": {
+      "code": "P1·C3·B2",
+      "sources": [
+        "session4.pdf"
+      ]
+    },
+    "endpoint": {
+      "code": "P2·C1·B1",
+      "sources": [
+        "hw1.pdf:3"
+      ]
+    },
+    "uniform": {
+      "code": "P2·C1·B2",
+      "sources": [
+        "session4.pdf",
+        "session5.pdf"
+      ]
+    },
+    "coefficient": {
+      "code": "P2·C1·B3",
+      "sources": [
+        "session4.pdf:analysis-time density"
+      ]
+    },
+    "continuous-sketch": {
+      "code": "P2·C1·B4",
+      "sources": [
+        "hw1.pdf:3"
+      ]
+    },
+    "normal": {
+      "code": "P2·C2·B1",
+      "sources": [
+        "hw1.pdf:3",
+        "session5.pdf"
+      ]
+    },
+    "quantile": {
+      "code": "P2·C2·B2",
+      "sources": [
+        "hw1.pdf:3",
+        "session5.pdf:9"
+      ]
+    },
+    "normal-sketch": {
+      "code": "P2·C2·B3",
+      "sources": [
+        "hw1.pdf:3",
+        "session5.pdf"
+      ]
+    },
+    "r-normal": {
+      "code": "P2·C3·B4",
+      "sources": [
+        "session15.pdf:63",
+        "hw1.pdf:3–4"
+      ]
+    },
+    "sampling": {
+      "code": "P2·C3·B1",
+      "sources": [
+        "session10.pdf",
+        "session15.pdf:23–29"
+      ]
+    },
+    "linear": {
+      "code": "P2·C3·B2",
+      "sources": [
+        "session5.pdf",
+        "session10.pdf"
+      ]
+    },
+    "precision": {
+      "code": "P2·C3·B3",
+      "sources": [
+        "session2.pdf",
+        "session10.pdf",
+        "session15.pdf:30–31"
+      ]
+    },
+    "one-t": {
+      "code": "P3·C1·B1",
+      "sources": [
+        "hw2.pdf:1",
+        "session8.pdf:20–24"
+      ]
+    },
+    "pooled-t": {
+      "code": "P3·C1·B2",
+      "sources": [
+        "hw2.pdf:1",
+        "session8.pdf"
+      ]
+    },
+    "t-output": {
+      "code": "P3·C1·B3",
+      "sources": [
+        "hw1.pdf:4",
+        "session9.pdf:15",
+        "session15.pdf:63"
+      ]
+    },
+    "anova": {
+      "code": "P3·C2·B1",
+      "sources": [
+        "hw1.pdf:5",
+        "session15.pdf:33–35",
+        "midterm-review-transcript.txt"
+      ]
+    },
+    "conditions": {
+      "code": "P3·C2·B2",
+      "sources": [
+        "session7.pdf:8–14",
+        "session8.pdf",
+        "session15.pdf"
+      ]
+    },
+    "aov-output": {
+      "code": "P3·C1·B4",
+      "sources": [
+        "session7.pdf:37,39",
+        "session15.pdf:63"
+      ]
+    },
+    "bonferroni": {
+      "code": "P3·C3·B1",
+      "sources": [
+        "hw2.pdf:1–2",
+        "session9.pdf"
+      ]
+    },
+    "holm": {
+      "code": "P3·C3·B2",
+      "sources": [
+        "session9.pdf:16",
+        "session15.pdf:45"
+      ]
+    },
+    "tables": {
+      "code": "P3·C3·B3",
+      "sources": [
+        "tables/t_table.pdf",
+        "tables/F_table.pdf",
+        "tables/Chi_Squared_Table2.pdf",
+        "tables/z_table_NormalDist.pdf",
+        "session15.pdf:2",
+        "hw2.pdf:2"
+      ]
+    },
+    "binary": {
+      "code": "P4·C1·B1",
+      "sources": [
+        "session11.pdf:3–11"
+      ]
+    },
+    "z-yates": {
+      "code": "P4·C1·B2",
+      "sources": [
+        "session11.pdf:14–20",
+        "hw2.pdf:2"
+      ]
+    },
+    "chi2": {
+      "code": "P4·C1·B3",
+      "sources": [
+        "session12.pdf:3–11",
+        "session11.pdf:19–20"
+      ]
+    },
+    "large-chi": {
+      "code": "P4·C2·B1",
+      "sources": [
+        "session12.pdf:13–16"
+      ]
+    },
+    "gof": {
+      "code": "P4·C2·B2",
+      "sources": [
+        "session12.pdf:24–27"
+      ]
+    },
+    "chi-holm": {
+      "code": "P4·C2·B3",
+      "sources": [
+        "hw2.pdf:3–4"
+      ]
+    },
+    "risk": {
+      "code": "P4·C3·B1",
+      "sources": [
+        "session13.pdf",
+        "session11.pdf:19–20"
+      ]
+    },
+    "odds": {
+      "code": "P4·C3·B2",
+      "sources": [
+        "session13.pdf:12–16"
+      ]
+    },
+    "design": {
+      "code": "P4·C3·B3",
+      "sources": [
+        "session10.pdf:23–31",
+        "session13.pdf:2–3,12"
+      ]
+    },
+    "protocol": {
+      "code": "P4·C3·B4",
+      "sources": [
+        "session15.pdf:2",
+        "midterm-review-transcript.txt"
+      ]
+    }
+  },
+  "scopeDecisions": {
+    "paired_t": "No paired-t procedure found in supplied Session 2–13 materials; omitted.",
+    "welch": "Requested genuine default-output reading example on HW1 raw heights; no Welch derivation added.",
+    "study_designs": "Masking/sham/crossover/parallel are in Session10; concise definitions retained.",
+    "unbalanced_aov": "Actual source output is read as supplied; no unbalanced by-hand sum-of-squares method.",
+    "f_df33": "Supplied table brackets denominator df33 by 32 and34; exact F(.05;2,33) is not a printed cell."
+  },
+  "omitted": "Repeated numerical examples and CI lines in software output excerpts; covered methods retained. No Session14 errors/power; no R code-writing tutorial.",
+  "graphs": {
+    "discrete": {
+      "x": [
+        -1,
+        2,
+        3,
+        7
+      ],
+      "p": [
+        0.55,
+        0.15,
+        0.1,
+        0.2
+      ],
+      "source": "hw1.pdf:2"
+    },
+    "continuous": {
+      "c": 1.3177446878757824,
+      "source": "hw1.pdf:3"
+    },
+    "normal": {
+      "mean": 95,
+      "sd": 8.7,
+      "source": "hw1.pdf:3"
+    }
+  },
+  "rRuntime": "R version 4.6.0 (2026-04-24)",
+  "sourceHashes": {
+    "sources/session5.pdf": "bad665f77fb159771709d429b0d3764349d08915d3306d46fef3613c7df870c2",
+    "sources/session9.pdf": "705cfb26877fe443f9e8e58c0832ef8686e5a5be08024db1735e418b30063725",
+    "sources/session2.pdf": "6c220a2d8706882dfb1cf1b023326a8c94fc212fb3e1111dde649b10229dcf60",
+    "sources/session4.pdf": "ed036e4ab1637b510282555be5d891cef3cb5a7fd9d87f9e68533a067b3323bf",
+    "sources/session15.pdf": "959ca714daebf178e4f17088fcd6f24090a333c541dfbebd64e3fff62b43c394",
+    "sources/session11.pdf": "b6a65c01055cc86f571634da81b3d0c741ff2c3dbbd0056c26f64bbd66f99e7e",
+    "sources/syllabus.pdf": "89a35d4d6eff29af90b97375014d057b0ce694418e655ade5ffe00f0e51b5adb",
+    "sources/session7.pdf": "40fbd96accac3f6b1d5f2e366242b4fc6bb1827a716ab32bc54bb13a4ab59907",
+    "sources/session6.pdf": "c3fbf91fd6a0f4b6e8048e8566f64c88531e8d9e5fb6442880f087286e7ccfa5",
+    "sources/session8.pdf": "3c494a99483d71a7e4c3366a4428fc9fe6d6fbd748679dbe1052c7338d38fcb2",
+    "sources/hw1.pdf": "027644291bb93c7659a7b3092b8968d18822b810a819720a4b435f0dfddbadc8",
+    "sources/session3.pdf": "30dcc1ceeed9ac364c5e8dfe652c50ca8f7953adc5fdd42bc9b2c7689c723624",
+    "sources/session12.pdf": "322be9ea795ddeab205f51961da95814d7ead9ebd2967d792b1a5e08a4d1919f",
+    "sources/hw2.pdf": "0059f0a23937bd08fb2bf10fca98ad643f6c1055d9caabc6e06165cbcc2a608d",
+    "sources/session10.pdf": "f31ecc9df4a82ae75f9f6628b53ebd4a975ca4ba11d8a89de1bec829b530cf05",
+    "sources/session13.pdf": "cfe8450a0098d751f956e2b814f337d1e4b9404ed698a9d7487793db104a870c"
+  }
+}
