@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 1,
+  "edition": "2026-10-19-v3",
+  "reviewDate": "2026-10-19",
+  "status": "passed",
+  "scope": {
+    "moduleId": "module2",
+    "lectures": [
+      "lecture11",
+      "lecture12",
+      "lecture13"
+    ],
+    "questions": 150,
+    "mcq": 75,
+    "written": 75,
+    "preservedExisting": 42,
+    "added": 108
+  },
+  "method": "Collaborative independent source-based reading. Each question was reviewed by an agent other than its bank author. Review compared stems, keys, model answers, rubrics, every option and its feedback with the reviewed teaching, primary source text/speaker notes, and pertinent original figures or extracted animation frames. Structural/preservation checks supplement human source and ambiguity judgments. Bank hashes bind this decision to the exact frozen inputs.",
+  "sourceInputs": [
+    {
+      "file": "authoring/teaching-later.json",
+      "sha256": "4d554c7a3eaeec642200c73966839021fd8625d878e3fc80b14c69d21fdf81f9"
+    },
+    {
+      "file": "authoring/teaching-readings.json",
+      "sha256": "358ad4abf018a148966167ea58b93c1db28432c67750a68be00ee7dc5ea6fa1c"
+    },
+    {
+      "file": "authoring/source-manifest.json",
+      "sha256": "54ec4102bcaca92d74c64364c581eec3df7b96a7dd7872633e59bd7277ab4220"
+    },
+    {
+      "file": "sources/lecture11.pptx",
+      "sha256": "478201e4288ec30c978f740bee4331b431d7c21550359888168c71c922dda85d"
+    },
+    {
+      "file": "sources/lecture12.pptx",
+      "sha256": "18ff0855624cbb9866d4bd0c4a61de0bcfd214b5577181d64e6c95f46ea01cbf"
+    },
+    {
+      "file": "sources/lecture13.pptx",
+      "sha256": "3914b2c587ab34843fbf038ded4df05fd4c93df477af07e9ba2d7f0ccd9acca9"
+    }
+  ],
+  "banks": [
+    {
+      "lectureId": "lecture11",
+      "file": "authoring/module2-lecture11-practice.json",
+      "sha256": "eed81124c23934da165aa20803bcf3131dc2f807822797faa0d42543aa413312",
+      "status": "passed",
+      "counts": {
+        "total": 50,
+        "mcq": 25,
+        "written": 25,
+        "preservedExisting": 13,
+        "added": 37
+      },
+      "independentReview": [
+        {
+          "reviewer": "/root/teaching_readings",
+          "scope": "All25 written and all25 multiple-choice questions, including stems, answer keys, answers, rubrics, sources, and every option with its feedback."
+        }
+      ],
+      "sourceChecks": [
+        "Matched effective longitudinal/transverse restoring stiffness and controls; 4m/4K direction and cycle-rate comparisons.",
+        "Finite-chain normal modes, pure-mode displacement nodes, phase versus frequency, pointwise superposition, and discrete-versus-continuous assumptions.",
+        "Atlas row/mode/color legends and normalized display amplitudes.",
+        "Fixed–fixed half-waves, fixed–free odd quarter-waves, mode order versus harmonic order, and separately tuned fundamentals at fixed length/wave speed.",
+        "Pickup-dependent amplitudes, spectrum axes, uniform visual slowing, membrane shape indices and assigned illustrative frequencies.",
+        "Theory-to-prediction logic and explicitly hypothetical/proposed laryngeal evidence; no fabricated experiment outcome."
+      ],
+      "checks": {
+        "oneBestAnswerForEveryMCQ": true,
+        "everyOptionFeedbackConsistent": true,
+        "writtenAnswerAndRubricConsistent": true,
+        "sourceSupportedUnderStatedConditions": true,
+        "primaryLectureOwnershipCorrect": true,
+        "existingSubstantiveFieldsPreservedExactly": true,
+        "noExactDuplicatePrompts": true,
+        "withinFormatTaskDemandsReviewedForPadding": true,
+        "hypotheticalExperimentsLabeled": true,
+        "noAlwaysNeverOptionCuePattern": true
+      },
+      "descriptiveMetrics": {
+        "correctOptionIds": {
+          "a": 6,
+          "b": 5,
+          "c": 6,
+          "d": 8
+        },
+        "correctOptionLongestOrTied": 6,
+        "sourceOfMetrics": "Mechanical counts only; correctness and task distinctness were judged by the independent readers."
+      }
+    },
+    {
+      "lectureId": "lecture12",
+      "file": "authoring/module2-lecture12-practice.json",
+      "sha256": "f71e6f782b7a9a9c7e5d910798f5b64b7a973b6cf29ebd812f0f1202ffaabe32",
+      "status": "passed",
+      "counts": {
+        "total": 50,
+        "mcq": 25,
+        "written": 25,
+        "preservedExisting": 13,
+        "added": 37
+      },
+      "independentReview": [
+        {
+          "reviewer": "/root/teaching_readings",
+          "scope": "All25 written questions and multiple-choice questions01–16; all50 received structural, preservation, ownership and duplicate-candidate checks."
+        },
+        {
+          "reviewer": "/root/teaching_later",
+          "scope": "All25 multiple-choice questions independently cross-reviewed, including100 choices and their feedback, answers, rubrics, citations, and final22/b clarification. This reviewer authored Lecture11, not Lecture12."
+        }
+      ],
+      "sourceChecks": [
+        "Matched mechanical controls and corrected stiffness–frequency relationship; axial versus effective transverse stiffness.",
+        "Mode-specific local displacement versus deformation, weak local measurements, controlled perturbation tests, and inferred-versus-measured constriction location.",
+        "Marked left-of-center mode4/mode5 comparison; /u/ lowers both, /i/ lowersF1 and raisesF2, /a/ raisesF1 and lowersF2 under the stated model.",
+        "Finite-chain ratios, mode mixtures, local pickup/excitation, string boundary assumptions, ideal playback scaling and node-versus-crossing distinction.",
+        "Longitudinal air motion and fixed–free tube analogy, first/second/third-mode reasoning, membrane indices and assigned-frequency caveat.",
+        "Economic-stabilization illustration treated conceptually; proposed laryngeal tests remain distinct from observed measurements."
+      ],
+      "checks": {
+        "oneBestAnswerForEveryMCQ": true,
+        "everyOptionFeedbackConsistent": true,
+        "writtenAnswerAndRubricConsistent": true,
+        "sourceSupportedUnderStatedConditions": true,
+        "primaryLectureOwnershipCorrect": true,
+        "existingSubstantiveFieldsPreservedExactly": true,
+        "noExactDuplicatePrompts": true,
+        "withinFormatTaskDemandsReviewedForPadding": true,
+        "hypotheticalExperimentsLabeled": true,
+        "noAlwaysNeverOptionCuePattern": true
+      },
+      "descriptiveMetrics": {
+        "correctOptionIds": {
+          "a": 6,
+          "b": 6,
+          "c": 6,
+          "d": 7
+        },
+        "correctOptionLongestOrTied": 5,
+        "sourceOfMetrics": "Mechanical counts only; correctness and task distinctness were judged by the independent readers."
+      }
+    },
+    {
+      "lectureId": "lecture13",
+      "file": "authoring/module2-lecture13-practice.json",
+      "sha256": "684ed733770cf0bdcff113d04d0fd71334df3fb3251ad65a2eea08ebce8cb4ba",
+      "status": "passed",
+      "counts": {
+        "total": 50,
+        "mcq": 25,
+        "written": 25,
+        "preservedExisting": 16,
+        "added": 34
+      },
+      "independentReview": [
+        {
+          "reviewer": "/root/teaching_readings",
+          "scope": "All25 written and all25 multiple-choice questions, including stems, answer keys, answers, rubrics, sources, and every option with its feedback."
+        }
+      ],
+      "sourceChecks": [
+        "Fixed–fixed and fixed–free boundary conditions; mode count/order, harmonic multipliers, uniform visual slowdown and pickup-dependent amplitudes.",
+        "Motion versus compression and the conditional /u/, /i/, /a/ perturbation effects; reference endpoints and uniform-versus-shaped tract assumptions.",
+        "Source F0/harmonic spacing versus filter formants and relative amplitudes; uniform gain distinguished from changed envelope.",
+        "Schematic schwa,/i/,/a/ values; a750Hz formant may lie between700/800Hz source harmonics.",
+        "Spectrogram time/frequency/amplitude coordinates, independently changing encodings, reversed temporal order and explicit hypothetical reversed shading legend.",
+        "Sparse harmonic sampling at highF0 with filter fixed; illustrative toddler/soprano examples are not participant datasets."
+      ],
+      "checks": {
+        "oneBestAnswerForEveryMCQ": true,
+        "everyOptionFeedbackConsistent": true,
+        "writtenAnswerAndRubricConsistent": true,
+        "sourceSupportedUnderStatedConditions": true,
+        "primaryLectureOwnershipCorrect": true,
+        "existingSubstantiveFieldsPreservedExactly": true,
+        "noExactDuplicatePrompts": true,
+        "withinFormatTaskDemandsReviewedForPadding": true,
+        "hypotheticalExperimentsLabeled": true,
+        "noAlwaysNeverOptionCuePattern": true
+      },
+      "descriptiveMetrics": {
+        "correctOptionIds": {
+          "a": 8,
+          "b": 6,
+          "c": 6,
+          "d": 5
+        },
+        "correctOptionLongestOrTied": 8,
+        "sourceOfMetrics": "Mechanical counts only; correctness and task distinctness were judged by the independent readers."
+      }
+    }
+  ],
+  "resolvedFindings": [
+    {
+      "ids": [
+        "ling285-mcq-lecture11-16"
+      ],
+      "issue": "Optiond used a conspicuously implausible boundary-count reading of amplitude.",
+      "resolution": "Replaced by a plausible local-spectrum-to-whole-string displacement overgeneralization and matching feedback; reread and accepted."
+    },
+    {
+      "ids": [
+        "ling285-mcq-lecture11-23"
+      ],
+      "issue": "Optionb asked for the tallest of explicitly equal peaks and inferred dimensionality from height.",
+      "resolution": "Replaced by a plausible mistaken spatial-node-map interpretation of local peak heights; reread and accepted."
+    },
+    {
+      "ids": [
+        "ling285-mcq-lecture11-24"
+      ],
+      "issue": "Optiond reduced scientific testing to label spelling.",
+      "resolution": "Replaced by confusion between assigned schematic agreement and independent experimental confirmation; reread and accepted."
+    },
+    {
+      "ids": [
+        "ling285-mcq-lecture13-15"
+      ],
+      "issue": "Optionb treated fractional locations as endpoint markers instead of a credible coordinate misconception.",
+      "resolution": "Replaced by the false requirement of uniform cross-section when translating complementary endpoint distances; feedback explains why geometry does not change the shared length conversion."
+    },
+    {
+      "ids": [
+        "ling285-mcq-lecture13-21"
+      ],
+      "issue": "Optionc used the nonsensical phrase “later in frequency”.",
+      "resolution": "Replaced by a plausible darkness-versus-duration confusion and feedback distinguishing amplitude from horizontal extent; reread and accepted."
+    },
+    {
+      "ids": [
+        "ling285-written-lecture11-17"
+      ],
+      "issue": "Author identified an axis-reading inverse too close to another task.",
+      "resolution": "Rewritten to pointwise signed superposition that constructs one spatial string field; independently checked as a distinct task."
+    },
+    {
+      "ids": [
+        "ling285-mcq-lecture12-22"
+      ],
+      "issue": "Author identified a node distractor that could describe a valid pure-mode node.",
+      "resolution": "Latest optionb instead defines a node by repeated equilibrium crossings. Independent cross-review confirms this is false and leaves keyd uniquely valid."
+    }
+  ],
+  "duplicateReview": {
+    "method": "Exact normalized-prompt check plus manual comparison of the12 highest lexical-overlap candidates supplied by root and task demands across each bank. Lexical overlap was treated as a diagnostic, not an automatic duplicate verdict.",
+    "candidates": [
+      {
+        "score": 0.5071,
+        "lecture": "lecture11",
+        "ids": [
+          "ling285-q054",
+          "ling285-mcq-lecture11-04"
+        ],
+        "types": [
+          "written",
+          "mcq"
+        ],
+        "prompts": [
+          "The middle mass stays still in one three-mass mode while the outer masses move. Does that mean the middle mass is broken or absent?",
+          "In one three-mass mode, the middle mass remains at its resting position while the outer masses move oppositely. What does that observation establish?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Preserved written/MCQ counterpart for the same displacement-node concept; intentional two-format practice, retained content."
+      },
+      {
+        "score": 0.4343,
+        "lecture": "lecture11",
+        "ids": [
+          "ling285-q052",
+          "ling285-mcq-lecture11-01"
+        ],
+        "types": [
+          "written",
+          "mcq"
+        ],
+        "prompts": [
+          "Why can two coupled masses have a same-direction mode and an opposite-direction mode?",
+          "Two coupled masses can move together in one mode and in opposite directions in another. Why can those patterns have different frequencies even though the masses are unchanged?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Preserved written/MCQ counterpart for coupling-dependent rate; intentional two-format practice, retained content."
+      },
+      {
+        "score": 0.3524,
+        "lecture": "lecture11",
+        "ids": [
+          "ling285-q054",
+          "ling285-written-lecture11-11"
+        ],
+        "types": [
+          "written",
+          "written"
+        ],
+        "prompts": [
+          "The middle mass stays still in one three-mass mode while the outer masses move. Does that mean the middle mass is broken or absent?",
+          "In the three-mass comparison, describe the relationship among the outer masses and the middle mass in the lowest and highest modes. Why does counting the physical masses not distinguish those two rows?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Different modes and inference: persistent middle node in pure mode2 versus contrasting lowest/highest three-mass patterns and unchanged mass inventory."
+      },
+      {
+        "score": 0.3281,
+        "lecture": "lecture11",
+        "ids": [
+          "ling285-q057",
+          "ling285-mcq-lecture11-06"
+        ],
+        "types": [
+          "written",
+          "mcq"
+        ],
+        "prompts": [
+          "How could you test the lecture’s prediction of equally spaced peaks in a vocal-fold vibration spectrum?",
+          "You want to test the lecture’s prediction of regular harmonic spacing in a laryngeal vibration signal. Which plan directly compares a measurement with that prediction?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Preserved experiment-design written/MCQ counterpart; intentional two-format practice, retained content."
+      },
+      {
+        "score": 0.6607,
+        "lecture": "lecture12",
+        "ids": [
+          "ling285-q060",
+          "ling285-mcq-lecture12-04"
+        ],
+        "types": [
+          "written",
+          "mcq"
+        ],
+        "prompts": [
+          "At the marked region, mode 4 moves strongly while mode 5 has little displacement and strong local stretching. Why can increasing both mass and stiffness lower mode 4 but raise mode 5?",
+          "In the marked region left of center, mode 4 moves strongly with relatively little local stretching, while mode 5 has small motion and strong stretching. What combined mass-and-stiffness prediction follows?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Preserved written/MCQ counterpart for local mode4/mode5 perturbation; intentional two-format practice, retained content."
+      },
+      {
+        "score": 0.5076,
+        "lecture": "lecture12",
+        "ids": [
+          "ling285-q061",
+          "ling285-q062"
+        ],
+        "types": [
+          "written",
+          "written"
+        ],
+        "prompts": [
+          "In the illustrated /u/ constriction at the free end, why do both F1 and F2 decrease?",
+          "Why can the illustrated /i/ constriction lower F1 while raising F2?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Different constriction locations and F2 predictions: /u/ free-end mass dominance in both modes versus /i/ mode-dependent mass/stiffness dominance."
+      },
+      {
+        "score": 0.3982,
+        "lecture": "lecture12",
+        "ids": [
+          "ling285-q061",
+          "ling285-mcq-lecture12-05"
+        ],
+        "types": [
+          "written",
+          "mcq"
+        ],
+        "prompts": [
+          "In the illustrated /u/ constriction at the free end, why do both F1 and F2 decrease?",
+          "For the illustrated /u/ free-end loading, motion dominates at the constriction for both of the first two modes. Which prediction and explanation match the model?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Preserved written/MCQ counterpart for /u/; intentional two-format practice, retained content."
+      },
+      {
+        "score": 0.3751,
+        "lecture": "lecture12",
+        "ids": [
+          "ling285-written-lecture12-11",
+          "ling285-mcq-lecture12-24"
+        ],
+        "types": [
+          "written",
+          "mcq"
+        ],
+        "prompts": [
+          "Suppose you are given the shape of a vowel that is not one of the three worked examples. Explain the steps needed to predict its first two formant changes without assuming that every constriction behaves like /u/.",
+          "The worked vowel panels establish first-two-formant shifts. What additional information is needed to predict a third-formant shift from the same constriction using the same method?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Different transfer demands: predictF1/F2 for an unworked vowel versus identify required third-mode evidence before predictingF3."
+      },
+      {
+        "score": 0.4418,
+        "lecture": "lecture13",
+        "ids": [
+          "ling285-mcq-lecture13-05",
+          "ling285-mcq-lecture13-19"
+        ],
+        "types": [
+          "mcq",
+          "mcq"
+        ],
+        "prompts": [
+          "The /i/ example labels F1 at 300 Hz and F2 at 2300 Hz, while /a/ labels F1 at 750 Hz and F2 at 1200 Hz. What comparison is supported?",
+          "The /a/ filter labels F1 at 750 Hz while the source harmonics remain 100 Hz apart. How can the figure represent that formant without placing a harmonic exactly at 750 Hz?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Distinct MCQ demands despite shared numeric labels: compare/i/and/a/filters versus explain a resonance between neighboring source harmonics."
+      },
+      {
+        "score": 0.3747,
+        "lecture": "lecture13",
+        "ids": [
+          "ling285-mcq-lecture13-10",
+          "ling285-written-lecture13-13"
+        ],
+        "types": [
+          "mcq",
+          "written"
+        ],
+        "prompts": [
+          "The five string-spectrum peaks have equal heights at the marked pickup. Which claim is justified by the way the demonstration was constructed?",
+          "The pickup spectrum has equal heights for five string components. A learner concludes that each mode has equal displacement at every point of the string. What information has the learner overlooked?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Related two-format practice with different inference: arranged equality at one pickup versus rejecting equality of displacement everywhere."
+      },
+      {
+        "score": 0.342,
+        "lecture": "lecture13",
+        "ids": [
+          "ling285-q070",
+          "ling285-mcq-lecture13-04"
+        ],
+        "types": [
+          "written",
+          "mcq"
+        ],
+        "prompts": [
+          "How is the information in one spectrum rearranged when many spectra are assembled into the illustrated spectrogram?",
+          "Which mapping correctly distinguishes a spectrum from the illustrated grayscale spectrogram assembled over time?"
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Preserved written/MCQ counterpart for coordinate mapping; intentional two-format practice, retained content."
+      },
+      {
+        "score": 0.3399,
+        "lecture": "lecture13",
+        "ids": [
+          "ling285-mcq-lecture13-21",
+          "ling285-written-lecture13-23"
+        ],
+        "types": [
+          "mcq",
+          "written"
+        ],
+        "prompts": [
+          "Under the illustrated grayscale key, a band stays at the same vertical frequency but becomes darker as time advances. What change is represented?",
+          "During a hypothetical interval, the first band rises while retaining the same darkness, and the second stays at the same frequency but becomes darker. Describe these two changes without treating frequency and amplitude as interchangeable."
+        ],
+        "independentDisposition": "accepted",
+        "reason": "Related two-format encoding practice: identify one amplitude change at fixedfrequency versus separately explain a moving constant-darkness band and a fixed-frequency darkening band."
+      }
+    ],
+    "conclusion": "No unresolved padding or exact-duplicate prompt found. Recurring source concepts across lecture recaps and intentional written/MCQ counterparts remain; the150 questions are not claimed to represent150 unrelated concepts."
+  },
+  "finalChecks": {
+    "all150IdsUnique": true,
+    "all75MCQsHaveFourDistinctOptionsAndOneExistingKey": true,
+    "all300OptionsHaveFeedback": true,
+    "all150QuestionsHaveAnswerRubricAndSources": true,
+    "everyQuestionCitesItsPrimaryLecture": true,
+    "all42ExistingQuestionSubstantiveFieldsMatchOriginalAuthoringBanks": true,
+    "exactly25MCQAnd25WrittenPerLecture": true,
+    "sourceAssumptionsAndUnprovidedOutcomesPreserved": true
+  },
+  "unresolvedFindings": [],
+  "publicationReadiness": "Question-content audit passed for these exact bank hashes. Build, interface, deployment and unseen-exam prediction validation are outside this audit’s scope.",
+  "reviewTimezone": "America/Los_Angeles"
+}

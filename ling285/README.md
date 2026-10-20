@@ -10,11 +10,11 @@ Module II opens by default with Lectures 11–13 and room for future additions. 
 
 All 26 supplied files are preserved and verified by SHA-256. The student workspace contains 216 lecture slides across 12 deck collections, covering Lectures 01–13 with 05–06 combined, plus supporting readings, the syllabus, and both uploaded review documents. These total 315 student-facing source pages. The 37-page LING406 reference PDF is retained separately as an organization reference and contributes no LING285 teaching or practice.
 
-The current edition retains all 80 written practice questions and adds 54 multiple-choice questions, alongside 49 selected core-review pages and 19 readiness and demonstration entries. Original page images, figure details, animations, videos, and audio remain available. Every teaching page records source provenance and completed visual-review checks in [teaching-coverage.json](authoring/teaching-coverage.json).
+The current edition retains all 134 existing questions and expands Module II to 150 questions. Each of Lectures 11, 12, and 13 owns 50 questions, with 25 multiple-choice items and 25 written prompts. The primary current practice test selects exactly 100 unique questions, split 50/50, with balanced lecture coverage. Module I keeps its 92-question bank and previous practice behavior. The full course has 242 questions, alongside 49 selected core-review pages and 19 readiness and demonstration entries. Original visuals and teaching remain preserved. Every teaching page records source provenance and completed visual-review checks in [teaching-coverage.json](authoring/teaching-coverage.json).
 
 The supplied Exam 1 Review has 20 conceptual prompts and no A–D items. [assessment-model.json](authoring/assessment-model.json) records its observed reasoning patterns. New MCQs adapt those patterns, including cause and effect, comparisons, applications, and interpretation. Module II questions transfer the style to its own source material. The reproducible ranker combines TF–IDF similarity to the review with reasoning-pattern weights. Sampling covers the active lectures and both formats before using these weights. Scores express study relevance, not validated probabilities of exam appearance. [assessment-ranking.json](authoring/assessment-ranking.json) records the executed scores.
 
-The new bank and source-pattern model receive a separate [MCQ editorial audit](authoring/mcq-editorial-audit.json). The earlier `editorial-audit.json` remains a historical record of the first teaching edition.
+The expanded Module II banks receive a separate [question editorial audit](authoring/module2-expanded-audit.json). The earlier `editorial-audit.json` and `mcq-editorial-audit.json` remain historical records of their respective editions.
 
 Source discrepancies are identified on the relevant pages. Unavailable external demonstrations, untranscribed audio, and unreadable details are qualified rather than reconstructed. The uploaded answer companion has unverified authorship; its answers are checked against the primary lecture sources. The file labeled Lectures 05–06 has an internal title of Lectures 4+5, so both labels are retained.
 
@@ -32,17 +32,20 @@ The existing prepared cloud environment supplies Node.js, Chromium, Playwright, 
 
 ```sh
 node --test ling285/tests/content.test.cjs
+node --test ling285/tests/fixed-practice.test.cjs
 node ling285/tests/app-smoke.cjs
 node ling285/tests/module-practice-smoke.cjs
 ```
 
-The content checks verify source and media hashes, references, coverage, selective core review, practice contracts, and important source corrections. The browser check starts its own temporary server and exercises navigation, readers, notes, read marks, practice, persistence, backup import/export, original media, and mobile containment. Neither check substitutes for academic source review.
+The content checks verify source and media hashes, references, coverage, selective core review, practice contracts, and important source corrections. The browser checks start temporary servers and exercise navigation, readers, notes, read marks, practice, persistence, backups, original media, and mobile containment. The fixed-practice regression also simulates an added Lecture 14 and verifies that the cumulative test stays at 100 while contributions rebalance. These checks do not substitute for academic source review.
 
 ## Add the next lecture
 
 Follow [AGENTS.md](AGENTS.md) before authoring. Preserve the new original file, extend `authoring/upload-manifest.json`, extract its text and media, and inspect every rendered page and meaningful original asset. Keep existing lecture and section IDs stable so personal progress remains associated with the same content.
 
-Write the new teaching sections in the authoring JSON collections. Update written practice, readiness entries, and selective core references in `authoring/practice-guide.json`, and multiple-choice items in `authoring/practice-mcq.json`. The assembly script assigns numbered lecture decks from Lecture 11 onward to Module II. Reuse question IDs only when the prompt retains the same meaning. Update the edition and revision in `authoring/build_studio.py`, then rebuild and run the checks. Superseded questions leave the active bank when their IDs are retired.
+Write the new teaching sections in the authoring JSON collections. Update readiness entries and selective core references in `authoring/practice-guide.json`. For each Module II lecture, add `authoring/module2-lectureNN-practice.json` with exactly 25 MCQs and 25 written prompts, each with that lecture's explicit `lectureId`. The assembly script assigns numbered lecture decks from Lecture 11 onward to Module II and verifies the complete bank. Existing questions retain their IDs and content. The older practice files remain the baseline for Module I and previously published questions.
+
+The cumulative test stays at 100 questions when another lecture arrives. Its 50 MCQ places and 50 written places are shared as evenly as possible among the supplied lecture banks, with complementary remainder allocation keeping total lecture contributions balanced. New lectures replace some earlier lectures' places in the cumulative selection. Each lecture retains its complete 50-question quiz, drafts, and ratings. Update the edition, model blueprint, and revision, rebuild, and run the checks. Questions leave the active bank only when deliberately retired.
 
 The assembly step verifies reviewed source coverage and copies original runtime assets by content hash.
 

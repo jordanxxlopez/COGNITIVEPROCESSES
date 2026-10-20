@@ -1,6 +1,6 @@
 {
-  "id": "ling285-question-pattern-model-v2",
-  "edition": "2026-10-19-v2",
+  "id": "ling285-question-pattern-model-v3",
+  "edition": "2026-10-19-v3",
   "title": "Source-based assessment pattern and coverage model",
   "status": "Descriptive study-priority model and generated MCQ blueprint. It is not a validated exam-prediction model.",
   "evidence": {
@@ -396,8 +396,10 @@
   },
   "weightExplanation": "Weights for the six observed primary patterns equal their counts among the 20 uploaded prompts. The design weight of 1 is an explicit user-requested extension, not an observed instructor-question frequency. These positive relevance weights are not normalized probabilities and do not estimate the chance a question will appear.",
   "generatedBlueprint": {
-    "totalMCQ": 54,
+    "totalMCQ": 111,
+    "totalWritten": 131,
     "totalRetainedWritten": 80,
+    "totalRetainedQuestions": 134,
     "moduleI": {
       "id": "module1",
       "lectureCollections": [
@@ -411,8 +413,9 @@
         "lecture09",
         "lecture10"
       ],
-      "mcqPerCollection": 4,
-      "totalMCQ": 36
+      "totalMCQ": 36,
+      "totalWritten": 56,
+      "currentTestSize": 20
     },
     "moduleII": {
       "id": "module2",
@@ -421,29 +424,28 @@
         "lecture12",
         "lecture13"
       ],
-      "mcqPerCollection": 6,
-      "totalMCQ": 18,
-      "futureLectures": "Append supplied later lectures and regenerate cumulative selection without discarding existing written study material."
-    },
-    "targetPatternCounts": {
-      "cause-effect": 12,
-      "distinction": 12,
-      "interpretation": 10,
-      "application": 8,
-      "prediction": 6,
-      "design": 6
+      "mcqPerCollection": 25,
+      "writtenPerCollection": 25,
+      "totalMCQ": 75,
+      "totalWritten": 75,
+      "lectureQuizSize": 50,
+      "currentTestSize": 100,
+      "currentMCQ": 50,
+      "currentWritten": 50,
+      "futureLectures": "Append a 50-question bank for each supplied later lecture. Keep the cumulative test at 100, with 50 per format, and rebalance each lecture’s contribution without deleting its quiz bank or saved work."
     },
     "targetCorrectPositionCounts": {
-      "a": 14,
-      "b": 14,
-      "c": 13,
-      "d": 13
+      "a": 28,
+      "b": 28,
+      "c": 28,
+      "d": 27
     },
     "formatChecks": [
       "Exactly four distinct options with stable a/b/c/d IDs.",
       "One keyed answer and independent explanatory feedback for every option.",
-      "Mix substantial explanatory choices with occasional compact feature or vector contrasts.",
-      "Avoid an always-longest correct option, all/none choices, unsupported name/year recall, and the explicitly excluded beliefs page."
+      "Substantial varied choices with plausible within-topic misconceptions rather than universal-word or option-length shortcuts.",
+      "Distinct explanatory tasks and inferences rather than padding the count with superficial paraphrases.",
+      "Lecture quiz ownership is explicit. Background source links do not make the same question count in multiple lecture quizzes."
     ]
   },
   "ranking": {
@@ -457,7 +459,7 @@
     "textSimilarity": "A deterministic TF–IDF cosine comparison can measure lexical overlap with the 20 review prompts. Its result measures document overlap, not semantic understanding, correctness, exam probability, or the professor’s intention.",
     "patternScore": "Use the supplied positive patternWeights. For multiple patterns use their arithmetic mean so adding labels cannot automatically inflate the score.",
     "directEvidence": "Nonempty examReviewRefs link an item to specific observed reasoning demands. Empty refs mark an extension whose content is lecture-supported without a direct counterpart in the supplied review.",
-    "selection": "Rank deterministically within the chosen module, retain a question-ID tie break, and enforce per-lecture coverage for a cumulative set. A module boundary is determined by the latest lecture source needed to answer the item.",
+    "selection": "Within the chosen module, balance the required counts by format and authoritative lecture owner, then use the documented relevance priorities within those pools. Module II primary tests contain 100 unique items, with 50 of each format. Each complete lecture quiz contains 50 unique items, with 25 of each format. Additional lectures share the same 100 test places.",
     "audit": "Store the component scores, matching review item numbers, tie-break rule, selected IDs, and model revision with any generated practice-test selection. Rankings can change when new material or actual review evidence is supplied."
   },
   "limitations": [

@@ -5,7 +5,7 @@ import hashlib,json,re,shutil
 from PIL import Image
 from assessment_ranking import rank_questions
 ROOT=Path(__file__).resolve().parents[1];A=ROOT/'authoring'
-REVISION='2026-10-19-v2'
+REVISION='2026-10-19-v3'
 def read(name):return json.loads((A/name).read_text())
 def write(path,value):path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -22,12 +22,38 @@ module_two={key for key,entry in manifest.items() if entry['role']=='lecture' an
 meadows=['notes-08-25-1','notes-08-25-2','notes-09-01','notes-09-03','notes-09-15','notes-09-17']
 def required_module(refs):return 'module2' if any(ref['collection'] in module_two for ref in refs) else 'module1'
 questions=[dict(q,type='written',edition=REVISION) for q in practice['questions']]+[dict(q,edition=REVISION) for q in mcq['questions']]
+question_index={q['id']:q for q in questions}
+retained_module_two={q['id'] for q in questions if required_module(q['sources'])=='module2'}
+expanded_banks=[];claimed_ids=set()
+for bank_path in sorted(A.glob('module2-lecture*-practice.json')):
+ bank=json.loads(bank_path.read_text());owner=bank['lectureId']
+ assert owner in module_two,('No supplied lecture source for bank',owner)
+ assert len(bank['questions'])==50,(owner,'Lecture quizzes require50 questions')
+ assert Counter(q['type'] for q in bank['questions'])=={'mcq':25,'written':25},owner
+ assert len({q['id'] for q in bank['questions']})==50,owner
+ for question in bank['questions']:
+  assert question['id'] not in claimed_ids,('A question belongs to only one lecture quiz',question['id'])
+  claimed_ids.add(question['id'])
+  assert question['lectureId']==owner,question['id']
+  assert any(ref['collection']==owner for ref in question['sources']),question['id']
+  if question['id'] in question_index:
+   original=question_index[question['id']]
+   for field in ['type','prompt','answer','rubric','sources','topic','options','correctOption']:
+    assert original.get(field)==question.get(field),(question['id'],'Existing content changed',field)
+  question_index[question['id']]=dict(question,edition=REVISION)
+ expanded_banks.append(owner)
+assert set(expanded_banks)==module_two,('Supply a complete50-question bank for every Module II lecture',module_two-set(expanded_banks))
+assert retained_module_two<=claimed_ids,('Existing Module II questions missing from lecture banks',retained_module_two-claimed_ids)
+questions=list(question_index.values())
 for q in questions:
  q['moduleId']=required_module(q['sources'])
+ q['lectureId']=q.get('lectureId') or next((ref['collection'] for ref in q['sources'] if ref['collection'] in module_two),None) or next((ref['collection'] for ref in q['sources'] if ref['collection'].startswith('lecture')),None)
  if q['type']=='mcq':
   assert len(q['options'])==4 and len({o['id'] for o in q['options']})==4,q['id']
   assert q['correctOption'] in {o['id'] for o in q['options']},q['id']
   assert all(o['text'].strip() and o['feedback'].strip() for o in q['options']),q['id']
+for owner in module_two:
+ assert Counter(q['type'] for q in questions if q['lectureId']==owner)=={'mcq':25,'written':25},owner
 rankings=rank_questions(questions,assessment_model)
 for q,r in zip(questions,rankings):q['priority']=r['priority']
 guide=[dict(g,moduleIds=[required_module(g['refs'])]) for g in practice['guide']]
@@ -109,6 +135,7 @@ modules=[
   'lectureRange':'Lectures 01–10','description':'First-midterm material · Lectures 01–10.','futureNote':'First-midterm material remains available with its own notes, review tools, and practice.'},
  {'id':'module2','title':'Module II','subtitle':'Midterm 2','lectureIds':[key for key in lecture_keys if key in module_two],
   'supplementIds':[],'meadowsIds':[],'lectureRange':late_range+' so far','description':'Current focus · '+late_range+'. Future lectures will be added here.',
+  'assessmentPolicy':{'lectureQuizSize':50,'currentTestSize':100,'mcqShare':.5},
   'futureNote':late_range+' are available now. New lectures will extend this module and its cumulative practice as the professor posts them.'}
 ]
 for module in modules:

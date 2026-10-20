@@ -92,7 +92,7 @@ test('embedded original assets match their content-addressed filenames', () => {
 });
 
 test('practice questions and study guides point to usable source sections', () => {
-  assert.equal(data.questions.length, 134);
+  assert.equal(data.questions.length, 242);
   assert.equal(new Set(data.questions.map(item => item.id)).size, data.questions.length);
   const primaryCounts = new Map(lectures.map(collection => [collection.id, 0]));
   for (const question of data.questions) {
@@ -161,23 +161,68 @@ test('the module boundary preserves the first midterm and focuses the active wor
 });
 
 test('all original written questions retain their exact IDs, wording, answers, rubrics, and source links', () => {
-  const written = data.questions.filter(question => question.type === 'written');
-  assert.equal(written.length, 80);
-  assert.deepEqual(written.map(question => question.id), Array.from({length: 80}, (_, index) => `ling285-q${String(index + 1).padStart(3, '0')}`));
+  const originalIds = Array.from({length: 80}, (_, index) => `ling285-q${String(index + 1).padStart(3, '0')}`);
+  const byId = new Map(data.questions.map(question => [question.id, question]));
+  const written = originalIds.map(id => byId.get(id));
+  assert(written.every(question => question?.type === 'written'));
+  assert.deepEqual(written.map(question => question.id), originalIds);
   // Captured from the released v1 bank before the module/MCQ revision. Only new
   // format, module, priority, and edition metadata may change.
   const originalFields = ['id', 'prompt', 'answer', 'rubric', 'sources', 'topic'];
   const preserved = written.map(question => Object.fromEntries(originalFields.map(field => [field, question[field]])));
   const digest = crypto.createHash('sha256').update(JSON.stringify(preserved)).digest('hex');
   assert.equal(digest, '4b7a8590e451360a02cd2454da67a2082a762913d7d082ddce9e3d63e03f91b6', 'Existing written prompts, explanations, rubrics, or source mappings changed');
-  assert.equal(data.coverage.writtenQuestionCount, 80);
-  assert.equal(data.coverage.mcqQuestionCount, 54);
-  assert.equal(data.coverage.questionCount, 134);
+  assert.equal(data.questions.filter(question => question.type === 'written').length, 131);
+  assert.equal(data.coverage.writtenQuestionCount, 131);
+  assert.equal(data.coverage.mcqQuestionCount, 111);
+  assert.equal(data.coverage.questionCount, 242);
+});
+
+test('expanding Module II preserves the entire released 134-question content bank', () => {
+  const byId = new Map(data.questions.map(question => [question.id, question]));
+  const originalIds = Array.from({length: 80}, (_, index) => `ling285-q${String(index + 1).padStart(3, '0')}`);
+  for (const collection of lectures) {
+    const count = ['lecture11','lecture12','lecture13'].includes(collection.id) ? 6 : 4;
+    for (let number = 1; number <= count; number += 1) originalIds.push(`ling285-mcq-${collection.id}-${String(number).padStart(2, '0')}`);
+  }
+  assert.equal(originalIds.length, 134);
+  const metadata = new Set(['edition', 'type', 'moduleId', 'priority', 'lectureId']);
+  const baseline = originalIds.map(id => {
+    const question = byId.get(id);assert(question, `Released question ${id} disappeared`);
+    return Object.fromEntries(Object.entries(question).filter(([key]) => !metadata.has(key)));
+  });
+  const canonical = value => Array.isArray(value) ? value.map(canonical) : value && typeof value === 'object' ? Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])])) : value;
+  const digest = crypto.createHash('sha256').update(JSON.stringify(canonical(baseline))).digest('hex');
+  assert.equal(digest, '0b973cfa652dc34e7cc936a7fe8cf90a1efce5cc84765725872452bc81c7fdd9', 'A released question changed its prompt, answer, options, feedback, rubric, source, or reasoning metadata');
+});
+
+test('each Module II lecture owns exactly 25 multiple-choice and 25 written questions', () => {
+  const module = data.modules.find(item => item.id === 'module2');
+  assert.deepEqual(module.assessmentPolicy, {lectureQuizSize:50, currentTestSize:100, mcqShare:.5});
+  assert.equal(module.questionCount, 150);
+  assert.equal(module.mcqCount, 75);
+  assert.equal(module.writtenCount, 75);
+  const pool = data.questions.filter(question => question.moduleId === 'module2');
+  for (const question of pool) {
+    assert(module.lectureIds.includes(question.lectureId), `${question.id} has no authoritative lecture owner`);
+    assert(question.sources.some(ref => ref.collection === question.lectureId), `${question.id} owner is not one of its source lectures`);
+  }
+  for (const lectureId of module.lectureIds) {
+    const owned = pool.filter(question => question.lectureId === lectureId);
+    assert.equal(owned.length, 50, `${lectureId} quiz bank must contain fifty distinct questions`);
+    assert.equal(owned.filter(question => question.type === 'mcq').length, 25, lectureId);
+    assert.equal(owned.filter(question => question.type === 'written').length, 25, lectureId);
+  }
+  assert.equal(data.questions.find(question => question.id === 'ling285-q077').lectureId, 'lecture13', 'Cross-module source links must not assign this Lecture 13 question to Lecture 08');
+  const first = data.modules.find(item => item.id === 'module1');
+  assert.equal(first.questionCount, 92);
+  assert.equal(first.mcqCount, 36);
+  assert.equal(first.writtenCount, 56);
 });
 
 test('multiple-choice questions have independently explained distractors and stable balanced keys', () => {
   const multipleChoice = data.questions.filter(question => question.type === 'mcq');
-  assert.equal(multipleChoice.length, 54);
+  assert.equal(multipleChoice.length, 111);
   const correctPositions = [0, 0, 0, 0];
   for (const question of multipleChoice) {
     assert.equal(question.options.length, 4, `${question.id} requires four options`);

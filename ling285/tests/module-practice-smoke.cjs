@@ -26,7 +26,7 @@ const server = http.createServer((request, response) => {
   });
 });
 (async () => {
-  assert.equal(data.questions.length, 134, 'Build current course data before running this test.');
+  assert.equal(data.questions.length, 242, 'Build current course data before running this test.');
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const url = 'http://127.0.0.1:' + server.address().port + '/ling285/';
   const browser = await chromium.launch({executablePath:process.env.CHROMIUM_PATH || '/usr/bin/chromium', headless:true, args:['--no-sandbox']});
@@ -89,7 +89,9 @@ const server = http.createServer((request, response) => {
     await page.locator('[data-start="mixed"]').click();
     await page.evaluate(() => {Math.random = window.testOriginalRandom;delete window.testOriginalRandom;});
     let state = await saved();
-    const initialItems = assertModuleSession(state, 'module2', 'mixed', 20);
+    const initialItems = assertModuleSession(state, 'module2', 'mixed', 100);
+    assert.equal(initialItems.filter(question => question.type === 'mcq').length, 50);
+    assert.equal(initialItems.filter(question => question.type === 'written').length, 50);
     assert(modules.get('module2').lectureIds.every(id => initialItems.some(question => question.sources.some(ref => ref.collection === id))), 'Current tests must cover available lectures.');
     const lateSessionIds = [...state.session.ids];
     const mcqIndex = initialItems.findIndex(question => question.type === 'mcq');
@@ -167,8 +169,8 @@ const server = http.createServer((request, response) => {
     }
 
     console.log('Module smoke: format-specific selection and 360-pixel dark-mode layout');
-    await switchModule('module2');await work('test');await page.locator('[name="practiceMode"][value="mcq"]').check();await page.locator('[data-start="mixed"]').click();
-    assertModuleSession(await saved(), 'module2', 'mcq', Math.min(20, modules.get('module2').mcqCount));
+    await switchModule('module2');await work('test');await page.locator('[name="practiceMode"][value="mcq"]').check();await page.locator('[data-start="focused"]').click();
+    assertModuleSession(await saved(), 'module2', 'mcq', modules.get('module2').mcqCount);
     await page.locator('[data-theme="dark"]').click();assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
     await page.setViewportSize({width:360,height:800});
     if (!(await page.locator('body').getAttribute('class') || '').includes('side-closed')) await page.locator('#sidebar [data-action="sidebar"]').click();
