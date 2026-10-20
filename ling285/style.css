@@ -456,3 +456,7 @@ body.reader-open { overflow: hidden; }
   h1 { font-size: 26pt; }
   .print-only { display: block; }
 }
+
+/* Transcript editions share the original source IDs and existing study layout. */
+.transcript-version{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:.79rem;color:var(--muted);font-weight:650}.transcript-version select{min-width:170px;max-width:250px;font-size:.8rem;flex:none}.transcript-status{margin:20px 4.3% 0}.video-only-source>.source-media{margin-top:0}.reader-controls .transcript-version select{min-width:170px;max-width:220px}.transcript-references p{overflow-wrap:anywhere}
+@media(max-width:760px){.transcript-version{max-width:100%;gap:6px}.transcript-version select,.reader-controls .transcript-version select{min-width:0;max-width:230px;width:auto}.reader-controls .transcript-version{width:100%;padding:3px 0}.reader-controls .transcript-version select{order:initial}.transcript-status{margin:15px 20px 0}}

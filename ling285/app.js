@@ -1,6 +1,7 @@
 'use strict';
 (() => {
 const KEY = 'ling285-study-studio-v1';
+const VERSIONED_COLLECTIONS=new Set(['lecture11','lecture12','lecture13','lecture14']);
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeURL = value => {
@@ -10,8 +11,9 @@ const safeURL = value => {
 const rich = value => esc(value).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 const unique = values => [...new Set(values)];
 const WORK = [ ['guide','What to know by the end'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['combined','Combined notes'], ['test','Current practice test'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
-const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null,sessions:{},activeModule:'module2',practiceMode:'mixed',mcqSelections:{},mcqSubmitted:{},optionOrders:{},flags:{}});
-let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections, moduleMap;
+const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null,sessions:{},activeModule:'module2',practiceMode:'mixed',mcqSelections:{},mcqSubmitted:{},optionOrders:{},flags:{},transcriptVersion:'v2'});
+let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections, moduleMap, transcriptData=null, transcriptLoadError='';
+const conceptualSections=new Map(),conceptualCollections=new Map(),visualPresentations=new Map();
 let storageAvailable = true, reader = null, lastReaderFocus = null, view = 'home', selected = '', saveTimeout, searchQuery = '';
 let timer = {duration:25 * 60,remaining:25 * 60,end:null,interval:null,mode:'Study'};
 const own = (object,key) => Object.prototype.hasOwnProperty.call(object,key);
@@ -82,6 +84,7 @@ function validateState(raw) {
   if(typeof raw.sideClosed==='boolean')clean.sideClosed=raw.sideClosed;
   if(moduleMap.has(raw.activeModule))clean.activeModule=raw.activeModule;
   if(['mixed','mcq','written'].includes(raw.practiceMode))clean.practiceMode=raw.practiceMode;
+  if(['v1','v2'].includes(raw.transcriptVersion))clean.transcriptVersion=raw.transcriptVersion;
   for(const module of D.modules){
     const candidate=sanitizeSession(raw.sessions?.[module.id],module.id);
     if(candidate)clean.sessions[module.id]=candidate;
@@ -140,7 +143,59 @@ function go(next,collectionId,push=true,moduleId) {
   save();applyPreferences();render();window.scrollTo({top:0,behavior:'instant'});$('#content').focus({preventScroll:true});
 }
 
-function collectionTitle(c) {return c.role === 'lecture' ? c.title.replace(/^(?:Lectures?\s+)?\d+(?:[+–-]\d+)?\s*[·:.-]\s*/i,'') : c.title;}
+function effectiveVersion() {return state.transcriptVersion==='v2' && transcriptData?'v2':'v1';}
+function sectionTitle(section) {return effectiveVersion()==='v2'?(conceptualSections.get(section.id)?.title || section.title):section.title;}
+function teachingParagraphs(section) {return effectiveVersion()==='v2' && conceptualSections.has(section.id)?conceptualSections.get(section.id).teaching:(section.teaching || []);}
+function collectionTitle(c) {
+  const title=effectiveVersion()==='v2'?(conceptualCollections.get(c.id)?.title || c.title):c.title;
+  return c.role==='lecture'?title.replace(/^(?:Lectures?\s+)?\d+(?:[+–-]\d+)?\s*[·:.-]\s*/i,''):title;
+}
+function versionedSections(items) {return items.some(section=>VERSIONED_COLLECTIONS.has(section.collection));}
+function transcriptSelector() {
+  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version"><option value="v1" ${effectiveVersion()==='v1'?'selected':''}>Version 1 · Original</option><option value="v2" ${effectiveVersion()==='v2'?'selected':''} ${transcriptData?'':'disabled'}>${esc(transcriptData?.label || 'Version 2 · Conceptual')}</option></select>${transcriptLoadError?'<small>Version 2 unavailable · original shown</small>':''}</label>`;
+}
+function transcriptNotice() {
+  const active=reader?versionedSections(reader.items):view==='collection'?VERSIONED_COLLECTIONS.has(selected):['combined','core'].includes(view) && state.activeModule==='module2';
+  const element=$('#transcriptNotice');if(!element)return;
+  element.hidden=!(active && transcriptLoadError);
+  element.textContent=element.hidden?'':'Version 2 could not be loaded. The original Version 1 teaching remains available. '+transcriptLoadError;
+}
+function changeTranscriptVersion(value) {
+  if(!['v1','v2'].includes(value) || (value==='v2' && !transcriptData))return;
+  const scroll=window.scrollY,stage=document.querySelector(reader?.expanded?'#readerDialog .reader-stage':'.inline-reader .reader-stage'),stageScroll=stage?.scrollTop || 0;
+  stopSpeech();pauseMedia();state.transcriptVersion=value;save();
+  if(reader)renderReader();else render();
+  requestAnimationFrame(()=>{
+    window.scrollTo(0,scroll);const updated=document.querySelector(reader?.expanded?'#readerDialog .reader-stage':'.inline-reader .reader-stage');if(updated)updated.scrollTop=stageScroll;
+    const scope=reader?.expanded?$('#readerDialog'):$('#content');scope.querySelector('[data-transcript-version]')?.focus({preventScroll:true});
+  });
+}
+async function loadConceptualTranscripts() {
+  const affected=D.collections.filter(collection=>VERSIONED_COLLECTIONS.has(collection.id));if(!affected.length)return;
+  try{
+    const response=await fetch('transcripts-v2.json',{cache:'no-cache'});if(!response.ok)throw new Error('Transcript file returned '+response.status+'.');
+    const payload=await response.json();if(payload.id!=='v2' || !payload.collections || typeof payload.collections!=='object')throw new Error('The transcript file has an invalid edition.');
+    for(const collection of affected){
+      const revised=payload.collections[collection.id];if(!revised || !Array.isArray(revised.sections))throw new Error('Missing transcript collection '+collection.id+'.');
+      const overrides=new Map();
+      for(const item of revised.sections){
+        const original=sections.get(item.id);
+        if(!original || original.collection!==collection.id || item.page!==original.page || overrides.has(item.id) || typeof item.title!=='string' || !Array.isArray(item.teaching) || !item.teaching.every(paragraph=>typeof paragraph==='string'))throw new Error('Invalid transcript source mapping in '+collection.id+'.');
+        overrides.set(item.id,item);
+      }
+      if(overrides.size!==collection.sections.length || collection.sections.some(item=>!overrides.has(item.id)))throw new Error('Incomplete transcript pages in '+collection.id+'.');
+      conceptualCollections.set(collection.id,{title:revised.title || collection.title});
+      for(const [id,item] of overrides)conceptualSections.set(id,item);
+    }
+    for(const [id,presentation] of Object.entries(payload.visualPresentation || {})){
+      const section=sections.get(id);if(section && VERSIONED_COLLECTIONS.has(section.collection) && presentation?.hideStaticPreview===true)visualPresentations.set(id,{hideStaticPreview:true});
+    }
+    transcriptData=payload;
+  }catch(error){
+    conceptualSections.clear();conceptualCollections.clear();visualPresentations.clear();transcriptLoadError=error.message;
+    console.warn('Conceptual transcript unavailable: '+error.message);
+  }
+}
 function refLabel(c) {return c.number ? 'Lecture '+c.number : c.title;}
 function moduleLectureRange(module=currentModule()) {
   const labels=moduleLectures(module.id).map(collection=>collection.number).filter(Boolean);
@@ -172,7 +227,7 @@ function badge(s) {return s.core ? '<span class="core-badge">Must know · core r
 function collectionLabel(c) {return c.role === 'lecture' ? 'Lecture '+(c.number || c.label || '') : (c.role === 'supplemental-notes'?'Supplemental notes':c.role === 'syllabus'?'Course syllabus':'Review material');}
 function issueHTML(issues) {return (issues || []).map(issue => `<p class="issue">${esc(typeof issue === 'string' ? issue : issue.message || issue.description || JSON.stringify(issue))}</p>`).join('');}
 function teaching(s) {
-  const blocks = Array.isArray(s.teaching) ? s.teaching : [];
+  const blocks = teachingParagraphs(s);
   return blocks.length ? `<div class="teaching"><ul>${blocks.map(p => `<li>${rich(typeof p === 'string' ? p : p.text || '')}${p && typeof p === 'object' && p.children?.length ? '<ul>'+p.children.map(x => '<li>'+rich(x)+'</li>').join('')+'</ul>':''}</li>`).join('')}</ul></div>` : '<p class="source-empty">Original source page retained. This page has no additional teaching script.</p>';
 }
 function mediaHTML(s) {
@@ -190,18 +245,19 @@ function mediaHTML(s) {
   const moving = assets.filter(isMoving), still = assets.filter(asset => !isMoving(asset));
   return `<div class="source-media">${moving.map(item).join('')}${still.length?`<details class="figure-details"><summary>Original figure details · ${still.length}</summary>${still.map(item).join('')}</details>`:''}</div>`;
 }
-function visual(s,eager = false) {
-  const c = collections.get(s.collection);
-  return `<figure class="source-figure">${s.image ? `<button class="slide-button" data-image-section="${esc(s.id)}" aria-label="Enlarge original page ${s.page}, ${esc(s.title)}"><img src="${esc(safeURL(s.image))}" alt="Original ${esc(c.title)}, page ${s.page}: ${esc(s.title)}" loading="${eager?'eager':'lazy'}" decoding="async"></button>` : '<p class="source-empty">Open the source document to inspect this page.</p>'}<figcaption>Original source · page ${s.page}<br><a href="${esc(pageLink(s))}" target="_blank" rel="noopener">${esc(c.originalFilename || c.title)}</a></figcaption>${mediaHTML(s)}</figure>`;
+function visual(s,eager=false) {
+  const c=collections.get(s.collection),videoOnly=visualPresentations.get(s.id)?.hideStaticPreview===true && (s.assets || []).some(asset=>asset.type==='video');
+  const preview=s.image?`<button class="slide-button" data-image-section="${esc(s.id)}" aria-label="Enlarge original page ${s.page}, ${esc(s.title)}"><img src="${esc(safeURL(s.image))}" alt="Original ${esc(c.title)}, page ${s.page}: ${esc(s.title)}" loading="${eager?'eager':'lazy'}" decoding="async"></button>`:'<p class="source-empty">Open the source document to inspect this page.</p>';
+  return `<figure class="source-figure ${videoOnly?'video-only-source':''}">${videoOnly?mediaHTML(s):preview}<figcaption>Original source · page ${s.page}<br><a href="${esc(pageLink(s))}" target="_blank" rel="noopener">${esc(c.originalFilename || c.title)}</a></figcaption>${videoOnly?'':mediaHTML(s)}</figure>`;
 }
 function noteBox(s,readerMode=false) {const noteId=(readerMode?'reader-note-':'note-')+s.id;return `<div class="notes-box"><label for="${esc(noteId)}">My notes · shared across study views</label><textarea id="${esc(noteId)}" rows="1" data-note="${esc(s.id)}" placeholder="Explain it in your own words, or leave a question…">${esc(state.notes[s.id] || '')}</textarea></div>`;}
 function sourceText(s) {return `<details class="source-excerpt"><summary>Source text & speaker notes</summary><h4>Extracted source text</h4><pre>${esc(s.sourceText || 'No machine-readable text was extracted from this page. Refer to the original visual and source assets.')}</pre>${s.speakerNotes ? '<h4>Original speaker notes</h4><pre>'+esc(Array.isArray(s.speakerNotes)?s.speakerNotes.join('\n'):s.speakerNotes)+'</pre>':''}</details>`;}
 function sectionBody(s,readerMode=false,recall=false) {
-  return `<div class="section-body"><div class="section-pair"><div><div class="teaching-heading">${readerMode?`<span class="reader-label">${esc(collections.get(s.collection).title)} · page ${s.page}</span><h2>${esc(s.title)} ${badge(s)}</h2>`:''}</div>${recall?'<div class="recall-cover">Explain the idea from the original visual. What changes, why does it change, and what does that cause?<p><button data-action="recall">Reveal teaching notes</button></p></div>':teaching(s)}${issueHTML(s.issues)}${s.core && s.coreReason?'<p class="small muted" style="margin-top:20px"><strong>Core priority</strong> · '+esc(s.coreReason)+'</p>':''}<div class="section-tools row"><label><input type="checkbox" data-read="${esc(s.id)}" ${state.read[s.id]?'checked':''}> Mark read</label><button class="small-button" data-open-section="${esc(s.id)}">Expand visual + teaching</button></div>${noteBox(s,readerMode)}${sourceText(s)}</div>${visual(s,readerMode)}</div></div>`;
+  return `<div class="section-body"><div class="section-pair"><div><div class="teaching-heading">${readerMode?`<span class="reader-label">${esc(collectionTitle(collections.get(s.collection)))} · page ${s.page}</span><h2>${esc(sectionTitle(s))} ${badge(s)}</h2>`:''}</div>${recall?'<div class="recall-cover">Explain the idea from the original visual. What changes, why does it change, and what does that cause?<p><button data-action="recall">Reveal teaching notes</button></p></div>':teaching(s)}${issueHTML(s.issues)}${s.core && s.coreReason?'<p class="small muted" style="margin-top:20px"><strong>Core priority</strong> · '+esc(s.coreReason)+'</p>':''}<div class="section-tools row"><label><input type="checkbox" data-read="${esc(s.id)}" ${state.read[s.id]?'checked':''}> Mark read</label><button class="small-button" data-open-section="${esc(s.id)}">Expand visual + teaching</button></div>${noteBox(s,readerMode)}${sourceText(s)}</div>${visual(s,readerMode)}</div></div>`;
 }
-function sectionHTML(s,index=0) {return `<details class="source-section ${s.core?'core-section':''}" data-section="${esc(s.id)}" ${own(state.open,s.id) ? state.open[s.id]?'open':'' : index === 0?'open':''}><summary><span class="page-index">${String(s.page).padStart(2,'0')}</span><span class="section-title">${esc(s.title)}</span>${badge(s)}</summary>${sectionBody(s)}</details>`;}
+function sectionHTML(s,index=0) {return `<details class="source-section ${s.core?'core-section':''}" data-section="${esc(s.id)}" ${own(state.open,s.id) ? state.open[s.id]?'open':'' : index === 0?'open':''}><summary><span class="page-index">${String(s.page).padStart(2,'0')}</span><span class="section-title">${esc(sectionTitle(s))}</span>${badge(s)}</summary>${sectionBody(s)}</details>`;}
 function searchTools(label='Search teaching notes') {return `<label class="search-wrap"><span>${esc(label)}</span><input type="search" id="noteSearch" class="search" value="${esc(searchQuery)}" placeholder="Find a concept, source example, or explanation…"></label><p class="small muted" id="searchCount" aria-live="polite"></p>`;}
-function studyToolbar(kind) {return `<div class="toolbar"><button class="primary" data-reader="${kind}" data-expanded="false">Visual + teaching</button><button data-reader="${kind}" data-expanded="true">Expand visual + teaching</button><button data-action="smaller" aria-label="Decrease teaching text size">A−</button><button data-action="larger" aria-label="Increase teaching text size">A+</button><button data-action="expandSections">Expand sections</button><button data-action="collapseSections">Collapse sections</button><button class="push" data-action="print">Print notes</button></div>`;}
+function studyToolbar(kind) {return `<div class="toolbar">${versionedSections(matchingSections(kind))?transcriptSelector():''}<button class="primary" data-reader="${kind}" data-expanded="false">Visual + teaching</button><button data-reader="${kind}" data-expanded="true">Expand visual + teaching</button><button data-action="smaller" aria-label="Decrease teaching text size">A−</button><button data-action="larger" aria-label="Increase teaching text size">A+</button><button data-action="expandSections">Expand sections</button><button data-action="collapseSections">Collapse sections</button><button class="push" data-action="print">Print notes</button></div>`;}
 function home() {
   const m=currentModule(),lectures=moduleLectures(),pages=lectures.flatMap(c=>c.sections),read=pages.filter(s=>state.read[s.id]).length;
   const other=D.modules.find(module=>module.id!==m.id),otherLectures=moduleLectures(other?.id),pool=moduleQuestions();
@@ -429,11 +485,15 @@ function results() {
   return `${scopeBanner()}<span class="eyebrow">Practice results · ${esc(session.title)}</span><h1>Keep the reasoning.<br>Revisit the gaps.</h1>${mcq.length?`<p class="lead">Multiple choice · ${correct.length} of ${checked.length} checked answers correct. ${mcq.length-checked.length} unanswered or unchecked.</p>`:''}${written.length?`<p class="lead">Written explanations · ${drafted} of ${written.length} have a saved draft. ${ready} self-rated ready.</p>`:''}<p class="small muted">Written self-ratings remain separate from checked multiple-choice results.</p><div class="toolbar"><button class="primary" data-go="missed">Open this module’s review queue · ${queueQuestions().length}</button><button data-action="resumePractice">Revisit this set</button><button data-go="test">Practice options</button></div>${items.map((q,index)=>{const submitted=isMCQ(q) && state.mcqSubmitted[q.id],selectedOption=isMCQ(q)?q.options.find(o=>o.id===state.mcqSelections[q.id]):null;return `<details class="result-row"><summary>${index+1}. ${esc(q.prompt)} <span class="tag">${isMCQ(q)?submitted?(state.mcqSelections[q.id]===q.correctOption?'Correct':'Incorrect'):'Unchecked':esc(state.ratings[q.id] || 'Unrated')}${state.flags[q.id]?' · uncertain':''}</span></summary>${isMCQ(q)?`<p class="small"><strong>Your selection</strong><br>${esc(selectedOption?.text || 'No answer selected.')}</p>`:`<p class="small"><strong>Your draft</strong><br>${esc(state.drafts[q.id] || 'No draft saved.')}</p>`}${submitted || (!isMCQ(q) && state.revealed[q.id])?`<p class="small"><strong>${isMCQ(q)?'Explanation':'Model answer'}</strong><br>${rich(Array.isArray(q.answer)?q.answer.join('\n'):q.answer)}</p>`:'<p class="small muted">Answer explanation has not been revealed.</p>'}<div class="row"><button class="small-button" data-revisit-question="${index}">Revisit question</button>${sourceRefs(q)}</div></details>`;}).join('')}`;
 }
 
+function transcriptReferences() {
+  const refs=Array.isArray(transcriptData?.references)?transcriptData.references:[];
+  return refs.length?`<h2>Version 2 references</h2><div class="card transcript-references"><p class="small muted">These references support the conceptual transcript. The original lecture collections and question bank remain unchanged.</p>${refs.map(ref=>`<p class="small"><a href="${esc(safeURL(ref.file))}" target="_blank" rel="noopener">${esc(ref.title || ref.file)}</a>${ref.kind?' · '+esc(ref.kind):''}</p>`).join('')}</div>`:'';
+}
 function sources() {
   const coverage=D.coverage || {},sourceEntries=Array.isArray(coverage.sources)?coverage.sources:[];
   const model=D.assessmentModel;
   const modelText=model?(typeof model==='string'?model:model.summary || model.provenance || model.description || ''):'';
-  return `<span class="eyebrow">All course sources</span><h1>Sources & coverage.</h1><p class="lead">The original documents and every supplied collection remain available here. Workspace tools and current tests stay separated by module.</p><div class="row toolbar"><button class="primary" data-action="export">Export notes & progress</button><button data-action="import">Import progress backup</button></div><p class="small muted">Backups include shared notes, read marks, written drafts, multiple-choice selections and checks, uncertainty flags, and each module’s current practice set.</p><div class="card"><h2>${esc(model?.title || 'Practice model')}</h2><p>${esc(modelText || 'Practice follows reasoning patterns in the uploaded 20-question short-answer review and the supplied lectures. Multiple-choice items add another way to test those distinctions.')}</p><p class="small muted">Question selection preserves lecture and format coverage, then uses source-based priority weights within those groups. These weights are study priorities, not validated predictions of an unseen exam. The uploaded review establishes short conceptual explanations; it does not confirm a multiple-choice exam format.</p></div><div class="grid"><div class="card"><h2>${D.collections.length} collections</h2><p>${allSections.length} mapped source pages across lecture decks, reviews, and supporting material.</p></div><div class="card"><h2>${D.questions.length} practice prompts</h2><p>${formatCounts(D.questions)} with original source links.</p></div><div class="card"><h2>Meadows workspace</h2><p>Six readings on systems and feedback stay grouped within Module I.</p><button data-go="meadows">Open Meadows readings</button></div></div><h2>Available collections</h2><div class="table-scroll"><table class="source-table"><thead><tr><th>Collection</th><th>Pages</th><th>Sources</th><th>Notes</th></tr></thead><tbody>${D.collections.map(c=>`<tr><td><button class="text-button" data-collection="${esc(c.id)}">${esc(c.title)}</button><div class="file-identity">${esc(c.role || 'lecture')}${moduleForCollection(c.id)?' · '+esc(moduleMap.get(moduleForCollection(c.id)).title):''}</div></td><td>${c.sections.length}</td><td>${c.sourceFile?`<a href="${esc(safeURL(c.sourceFile))}" target="_blank" rel="noopener">Original file</a><br>`:''}${c.pdfFile?`<a href="${esc(safeURL(c.pdfFile))}" target="_blank" rel="noopener">Source PDF</a>`:''}<div class="file-identity">${esc(c.originalFilename || '')}</div></td><td>${(c.issues || []).length?issueHTML(c.issues):'See source-page details.'}</td></tr>`).join('')}</tbody></table></div>${sourceEntries.length?`<h2>Additional source inventory</h2><div class="card">${sourceEntries.map(s=>`<p class="small">${s.file?`<a href="${esc(safeURL(s.file))}" target="_blank" rel="noopener">${esc(s.originalFilename || s.original || s.title || s.id || s.file)}</a>`:esc(s.originalFilename || s.original || s.title || s.id || '')}${s.role?' · '+esc(s.role):''}${s.status?' · '+esc(s.status):''}</p>`).join('')}</div>`:''}${coverage.issues?.length?'<h2>Source review notes</h2>'+issueHTML(coverage.issues):''}<p class="small muted">Personal progress is stored locally in this browser. It does not sync between devices. Original visuals retain their source colors, including when the interface uses dark mode.</p>`;
+  return `<span class="eyebrow">All course sources</span><h1>Sources & coverage.</h1><p class="lead">The original documents and every supplied collection remain available here. Workspace tools and current tests stay separated by module.</p><div class="row toolbar"><button class="primary" data-action="export">Export notes & progress</button><button data-action="import">Import progress backup</button></div><p class="small muted">Backups include shared notes, read marks, written drafts, multiple-choice selections and checks, uncertainty flags, and each module’s current practice set.</p><div class="card"><h2>${esc(model?.title || 'Practice model')}</h2><p>${esc(modelText || 'Practice follows reasoning patterns in the uploaded 20-question short-answer review and the supplied lectures. Multiple-choice items add another way to test those distinctions.')}</p><p class="small muted">Question selection preserves lecture and format coverage, then uses source-based priority weights within those groups. These weights are study priorities, not validated predictions of an unseen exam. The uploaded review establishes short conceptual explanations; it does not confirm a multiple-choice exam format.</p></div><div class="grid"><div class="card"><h2>${D.collections.length} collections</h2><p>${allSections.length} mapped source pages across lecture decks, reviews, and supporting material.</p></div><div class="card"><h2>${D.questions.length} practice prompts</h2><p>${formatCounts(D.questions)} with original source links.</p></div><div class="card"><h2>Meadows workspace</h2><p>Six readings on systems and feedback stay grouped within Module I.</p><button data-go="meadows">Open Meadows readings</button></div></div><h2>Available collections</h2><div class="table-scroll"><table class="source-table"><thead><tr><th>Collection</th><th>Pages</th><th>Sources</th><th>Notes</th></tr></thead><tbody>${D.collections.map(c=>`<tr><td><button class="text-button" data-collection="${esc(c.id)}">${esc(c.title)}</button><div class="file-identity">${esc(c.role || 'lecture')}${moduleForCollection(c.id)?' · '+esc(moduleMap.get(moduleForCollection(c.id)).title):''}</div></td><td>${c.sections.length}</td><td>${c.sourceFile?`<a href="${esc(safeURL(c.sourceFile))}" target="_blank" rel="noopener">Original file</a><br>`:''}${c.pdfFile?`<a href="${esc(safeURL(c.pdfFile))}" target="_blank" rel="noopener">Source PDF</a>`:''}<div class="file-identity">${esc(c.originalFilename || '')}</div></td><td>${(c.issues || []).length?issueHTML(c.issues):'See source-page details.'}</td></tr>`).join('')}</tbody></table></div>${sourceEntries.length?`<h2>Additional source inventory</h2><div class="card">${sourceEntries.map(s=>`<p class="small">${s.file?`<a href="${esc(safeURL(s.file))}" target="_blank" rel="noopener">${esc(s.originalFilename || s.original || s.title || s.id || s.file)}</a>`:esc(s.originalFilename || s.original || s.title || s.id || '')}${s.role?' · '+esc(s.role):''}${s.status?' · '+esc(s.status):''}</p>`).join('')}</div>`:''}${transcriptReferences()}${coverage.issues?.length?'<h2>Source review notes</h2>'+issueHTML(coverage.issues):''}<p class="small muted">Personal progress is stored locally in this browser. It does not sync between devices. Original visuals retain their source colors, including when the interface uses dark mode.</p>`;
 }
 
 function render() {
@@ -442,7 +502,8 @@ function render() {
   const resume=state.session && !state.session.finished && view!=='practice'?'<p class="small"><button class="text-button" data-go="practice">↳ Resume '+esc(currentModule().title)+' practice</button></p>':'';
   $('#content').innerHTML=resume+(routes[view] || home)();
   document.title='LING258 · Study Studio';
-  sizeNotes();
+  if(searchQuery && $('#noteSearch'))applySearch(searchQuery);
+  sizeNotes();transcriptNotice();
 }
 
 let mediaObserver;
@@ -468,12 +529,13 @@ function openReader(ids,index=0,expanded=true,label='Visual + teaching') {
   reader={items,index:Math.max(0,Math.min(items.length-1,index)),expanded,recall:false,label,returnView:view};
   renderReader();
 }
-function readerControls() {return `<div class="reader-controls"><button data-action="closeReader">✕ Close</button><button data-action="readerPrevious" ${reader.index === 0?'disabled':''}>← Previous</button><select id="readerSelect" aria-label="Select source page">${reader.items.map((s,index)=>`<option value="${index}" ${index === reader.index?'selected':''}>${esc(collections.get(s.collection).number || '')} · p${s.page} · ${esc(s.title)}</option>`).join('')}</select><button data-action="readerNext" ${reader.index === reader.items.length-1?'disabled':''}>Next →</button>${reader.expanded?'': '<button data-action="expandReader">Expand</button>'}<button data-action="recall">${reader.recall?'Show teaching':'Try recall'}</button><button data-action="readAloud">Read aloud</button><button data-action="stopSpeech">Stop</button><button data-action="smaller" aria-label="Decrease teaching text size">A−</button><button data-action="larger" aria-label="Increase teaching text size">A+</button><span class="reader-position">${reader.index+1} / ${reader.items.length}</span></div>`;}
+function readerControls() {return `<div class="reader-controls"><button data-action="closeReader">✕ Close</button>${versionedSections(reader.items)?transcriptSelector():''}<button data-action="readerPrevious" ${reader.index === 0?'disabled':''}>← Previous</button><select id="readerSelect" aria-label="Select source page">${reader.items.map((s,index)=>`<option value="${index}" ${index === reader.index?'selected':''}>${esc(collections.get(s.collection).number || '')} · p${s.page} · ${esc(sectionTitle(s))}</option>`).join('')}</select><button data-action="readerNext" ${reader.index === reader.items.length-1?'disabled':''}>Next →</button>${reader.expanded?'': '<button data-action="expandReader">Expand</button>'}<button data-action="recall">${reader.recall?'Show teaching':'Try recall'}</button><button data-action="readAloud">Read aloud</button><button data-action="stopSpeech">Stop</button><button data-action="smaller" aria-label="Decrease teaching text size">A−</button><button data-action="larger" aria-label="Increase teaching text size">A+</button><span class="reader-position">${reader.index+1} / ${reader.items.length}</span></div>`;}
 function renderReader() {
   if(!reader)return;
   const s=reader.items[reader.index];
   const html=`<div class="reader-shell">${readerControls()}<div class="reader-stage">${sectionBody(s,true,reader.recall)}</div></div>`;
   if(reader.expanded) {
+    if($('#content .inline-reader'))$('#content').innerHTML='';
     $('#readerDialog').innerHTML=html;
     if(!$('#readerDialog').open)$('#readerDialog').showModal();
     document.body.classList.add('reader-open');
@@ -482,7 +544,7 @@ function renderReader() {
     document.body.classList.remove('reader-open');
     $('#content').innerHTML=`<span class="eyebrow">${esc(reader.label)}</span><div class="inline-reader">${html}</div>`;
   }
-  sizeNotes();$('#readerSelect')?.focus({preventScroll:true});
+  sizeNotes();transcriptNotice();$('#readerSelect')?.focus({preventScroll:true});
 }
 function closeReader(restore=true) {
   if(!reader)return;pauseMedia();stopSpeech();const expanded=reader.expanded;reader=null;
@@ -492,7 +554,7 @@ function closeReader(restore=true) {
 function moveReader(index) {if(!reader || index<0 || index>=reader.items.length)return;pauseMedia();stopSpeech();reader.index=index;reader.recall=false;renderReader();}
 function pauseMedia() {document.querySelectorAll('video,audio').forEach(media => media.pause());}
 function stopSpeech() {if('speechSynthesis' in window)speechSynthesis.cancel();}
-function readAloud() {if(!reader || !('speechSynthesis' in window)){announce('Read aloud is unavailable in this browser.');return;}stopSpeech();const s=reader.items[reader.index];const text=[s.title,...(s.teaching || []).map(x=>typeof x === 'string'?x:x.text || '')].join('. ').replace(/\*\*/g,'');const speech=new SpeechSynthesisUtterance(text);speech.rate=.94;speechSynthesis.speak(speech);}
+function readAloud() {if(!reader || !('speechSynthesis' in window)){announce('Read aloud is unavailable in this browser.');return;}stopSpeech();const s=reader.items[reader.index];const text=[sectionTitle(s),...teachingParagraphs(s).map(x=>typeof x === 'string'?x:x.text || '')].join('. ').replace(/\*\*/g,'');const speech=new SpeechSynthesisUtterance(text);speech.rate=.94;speechSynthesis.speak(speech);}
 function announce(message) {$('#saveStatus').textContent=message;}
 function exportProgress() {
   const backup={course:'LING285',version:1,exportedAt:new Date().toISOString(),state};
@@ -506,6 +568,7 @@ async function importProgress(file) {
       const backup=JSON.parse(await file.text());
       if(backup.course!=='LING285' || backup.version!==1)throw new Error('Choose a LING285 progress backup exported by this studio.');
       const imported=validateState(backup.state);
+      if(!own(backup.state,'transcriptVersion'))imported.transcriptVersion=state.transcriptVersion;
       for(const field of ['notes','read','ready','drafts','ratings','revealed','open','flags','mcqSelections','mcqSubmitted','optionOrders'])imported[field]={...state[field],...imported[field]};
       imported.sessions={...state.sessions,...imported.sessions};imported.session=imported.sessions[imported.activeModule] || null;
       closeReader(false);state=imported;save();render();announce('LING285 progress imported and merged with this browser.');
@@ -515,9 +578,9 @@ async function importProgress(file) {
 }
 
 function applySearch(value) {
-  searchQuery=value;const query=value.trim().toLocaleLowerCase();let hits=0;
+  searchQuery=value;const query=value.trim().replace(/\s+/g,' ').toLocaleLowerCase();let hits=0;
   document.querySelectorAll('.source-section').forEach(element=>{
-    const s=sections.get(element.dataset.section);const searchable=[s.title,s.sourceText,...(s.teaching || []).map(x=>typeof x === 'string'?x:x.text || ''),state.notes[s.id] || ''].join(' ').toLocaleLowerCase();
+    const s=sections.get(element.dataset.section);const searchable=[sectionTitle(s),s.sourceText,...teachingParagraphs(s).map(x=>typeof x === 'string'?x:x.text || ''),state.notes[s.id] || ''].join(' ').replace(/\*\*/g,'').replace(/\s+/g,' ').toLocaleLowerCase();
     const match=!query || searchable.includes(query);element.hidden=!match;if(match)hits++;
   });
   document.querySelectorAll('.search-group').forEach(group=>group.hidden=![...group.querySelectorAll('.source-section')].some(element=>!element.hidden));
@@ -577,6 +640,7 @@ document.addEventListener('input',event=>{
 });
 document.addEventListener('change',event=>{
   const element=event.target;
+  if(element.hasAttribute('data-transcript-version')){changeTranscriptVersion(element.value);return;}
   if(element.dataset.read){state.read[element.dataset.read]=element.checked;document.querySelectorAll('[data-read]').forEach(box=>{if(box.dataset.read===element.dataset.read)box.checked=element.checked;});save();}
   if(element.dataset.ready){state.ready[element.dataset.ready]=element.checked;save();}
   if(element.name==='practiceMode'){state.practiceMode=element.value;save();const scroll=window.scrollY;render();window.scrollTo(0,scroll);}
@@ -629,7 +693,7 @@ async function init() {
       if(isMCQ(q) && (!Array.isArray(q.options) || q.options.length!==4 || new Set(q.options.map(o=>o.id)).size!==4 || !q.options.some(o=>o.id===q.correctOption)))throw new Error('A multiple-choice question has an invalid answer map.');
       questionMap.set(q.id,q);
     });
-    allSections=[...sections.values()];loadState();readRoute();applyPreferences();render();tick();
+    allSections=[...sections.values()];await loadConceptualTranscripts();loadState();readRoute();applyPreferences();render();tick();
   } catch(error) {
     $('#saveStatus').textContent='Course could not be opened';
     $('#content').innerHTML='<span class="eyebrow">LING285 Study Studio</span><h1>The course could not load.</h1><p>'+esc(error.message)+'</p><p>Reload this page when the course data is available. A static web server is required when opening a local copy.</p><a href="./">Reload studio</a>';

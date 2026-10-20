@@ -4,6 +4,10 @@ Human Language and Technology · Fall 2026 · Khalil Iskarous.
 
 The studio provides teaching notes alongside the original pages, numbered lecture collections, a selective must-know core review, a readiness guide, demonstrations, combined notes, and both multiple-choice and written practice. Notes explain cause and effect in the instructor's style. Written responses use model explanations and self-assessment criteria. Multiple-choice responses use a source-checked key and explain every option.
 
+Lectures 11–14 now have a **Transcript** dropdown. Version 2 opens by default and teaches the mechanisms in connected prose, with key terms emphasized and fewer numerical recitals. It follows the PSYC301 Working Memory writing style and the conceptual explanations in the uploaded Exam 1 review and answer key. Version 1 remains available unchanged. The choice follows you through lecture notes, combined notes, core review, and expanded readers. Both editions share your existing notes and read marks; quizzes, drafts, and the 100-question test remain unchanged.
+
+Video-only pages show their original embedded video directly when the flattened slide preview is entirely blank. Pages with written content, diagrams, or reveal overlays retain their previews. All original files, figures, source text, code, and detailed numerical labels remain available. The additional review copy and answer key are listed in Sources & coverage as transcript-writing references.
+
 Module II opens by default with Lectures 11–14 and room for future additions. Module I retains Lectures 01–10 and its own study tools. Each module has separate guides, core review, combined notes, practice, quizzes, and retry queues. The burgundy-to-rose gradient layout follows the PSYC301 navigation hierarchy, with a current-module overview and a first-midterm archive. Meadows has a separate workspace section. Uploaded reviews, supplemental lecture notes, and the syllabus remain accessible through Sources & coverage.
 
 ## Included material
@@ -34,6 +38,8 @@ The existing prepared cloud environment supplies Node.js, Chromium, Playwright, 
 node --test ling285/tests/content.test.cjs
 node --test ling285/tests/fixed-practice.test.cjs
 node --test ling285/tests/lecture14.test.cjs
+node --test ling285/tests/transcripts-v2.test.cjs
+node --test ling285/tests/transcript-versions.test.cjs
 node ling285/tests/app-smoke.cjs
 node ling285/tests/module-practice-smoke.cjs
 ```
@@ -52,6 +58,12 @@ The assembly step verifies reviewed source coverage and copies original runtime 
 
 ```sh
 python3 ling285/authoring/build_studio.py
+```
+
+Version 2 is assembled separately so rebuilding it cannot overwrite the original course data or practice bank. Its four authored collections are `authoring/teaching-v2-lecture11.json` through `teaching-v2-lecture14.json`. The build verifies their page identities, teaching coverage, and reviewed media-presentation flags. The source review and writing evidence are recorded in `authoring/transcripts-v2-style-model.json`, and the independent review is recorded in `authoring/transcripts-v2-audit.json`.
+
+```sh
+python3 ling285/authoring/build_transcripts_v2.py
 ```
 
 ## Reproduce extraction
