@@ -7,11 +7,12 @@ for(const file of ['index.html','share.html']){
  const html=fs.readFileSync(path.join(root,file),'utf8');
  const raw=html.match(/<script id="study-data" type="application\/json">(.*?)<\/script>/s)[1];
  const elements=new Map();
- const element=selector=>{if(!elements.has(selector))elements.set(selector,{dataset:{},textContent:'',innerHTML:'',value:'60',style:{setProperty(){}},classList:{add(){},remove(){},toggle(){}},setAttribute(){},querySelector(){return null},prepend(){},append(){}});return elements.get(selector)};
+ const element=selector=>{if(!elements.has(selector))elements.set(selector,{dataset:{},textContent:'',innerHTML:'',value:'60',style:{setProperty(){}},classList:{add(){},remove(){},toggle(){}},setAttribute(){},querySelector(){return null},querySelectorAll(){return []},focus(){},prepend(){},append(){}});return elements.get(selector)};
  const saved=JSON.stringify({read:['6:2'],personalNotes:{'6:2':'My existing note'},missed:[3001,2001,1,2999]});
  element('#study-data').textContent=raw;
  const context=vm.createContext({console,window:{scrollTo(){}},document:{querySelector:element,getElementById:id=>element('#'+id),querySelectorAll:()=>[],addEventListener(){},createElement:()=>element('created'),documentElement:element('root'),body:element('body')},localStorage:{getItem:()=>saved,setItem(){}},setInterval(){},Date,URL,Blob});
  vm.runInContext(fs.readFileSync(path.join(root,'module2-data.js'),'utf8'),context);
+ vm.runInContext(fs.readFileSync(path.join(root,'short-term-memory-v2.js'),'utf8'),context);
  const script=[...html.matchAll(/<script>(.*?)<\/script>/gs)][0][1];
  vm.runInContext(script,context);
  vm.runInContext(fs.readFileSync(path.join(root,'module2-workspace.js'),'utf8'),context);
@@ -19,6 +20,28 @@ for(const file of ['index.html','share.html']){
  const count=run('secondHalf.questions.length');
  assert(count>0);assert.equal(run('Q.length'),208+count);assert(!run('state.missed.includes(2999)'));
  assert.equal(run('state.personalNotes["6:2"]'),'My existing note');
+ assert.equal(run('state.explanationVersions[6]'),'2');
+ assert.equal(run('moduleBy(6).sections.filter(s=>s.version2).length'),46);
+ const originalText=run('JSON.stringify(moduleBy(6).sections.map(s=>s.bullets))');
+ run("go('module',6)");
+ assert.match(element('#content').innerHTML,/Version 2 · expanded teaching notes/);
+ assert.match(run('versionControl(moduleBy(6))'),/value="A"/);
+ assert.match(run('sectionBullets(moduleBy(6),moduleBy(6).sections.find(s=>s.page===11)).join(" ")'),/sensory modality/);
+ run("state.explanationVersions[6]='A'");
+ assert.equal(run('sectionBullets(moduleBy(6),moduleBy(6).sections.find(s=>s.page===11)).length'),run('moduleBy(6).sections.find(s=>s.page===11).bullets.length'));
+ assert.equal(run('JSON.stringify(moduleBy(6).sections.map(s=>s.bullets))'),originalText);
+ run("state.explanationVersions[6]='2'");
+ for(const v of ['m2guide','m2core','m2experiments','m2combined']){
+  run(`go('${v}')`);
+  assert.match(element('#content').innerHTML,/data-explanation-version="6"/);
+ }
+ run("go('m2guide')");assert.match(element('#content').innerHTML,/sensory modality/);
+ run("reviewSource(6,11)");assert.match(element('#modal').innerHTML,/sensory modality/);
+ run("view='m2coreExpanded';teachIndex=secondCoreModule().sections.findIndex(s=>s.noteKey==='6:11');render()");
+ assert.match(element('#content').innerHTML,/sensory modality/);
+ assert.match(element('#content').innerHTML,/Short-Term Memory version/);
+ run("state.explanationVersions[6]='A';render()");assert.doesNotMatch(element('#content').innerHTML,/sensory modality/);
+ run("state.explanationVersions[6]='2';go('home')");
  assert(run('state.missed.includes(3001)'));assert(!run('state.missed.includes(2001)'));
  for(const [id] of run('secondTools')){
   run(`go('${id}')`);
