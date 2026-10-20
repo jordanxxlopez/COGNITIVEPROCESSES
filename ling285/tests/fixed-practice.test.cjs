@@ -50,7 +50,7 @@ test('fixed Module II tests and lecture quizzes keep their sizes when formats or
   const errors = [];
   try {
     const page = await browser.newPage();page.setDefaultTimeout(10000);page.on('pageerror', error => errors.push(error.message));
-    const initial = {activeModule:'module2',practiceMode:'written',drafts:{[draftId]:'An explanation saved before fixed-size tests.'},session:{moduleId:'module2',ids:oldMCQ,index:2,title:'Earlier eighteen-question set',scope:'mixed',mode:'mcq',finished:false}};
+    const initial = {assessmentVersion:'v1',activeModule:'module2',practiceMode:'written',drafts:{[draftId]:'An explanation saved before fixed-size tests.'},session:{moduleId:'module2',ids:oldMCQ,index:2,title:'Earlier eighteen-question set',scope:'mixed',mode:'mcq',finished:false}};
     await page.addInitScript(({key,value}) => {if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(value));}, {key:KEY,value:initial});
     const state = () => page.evaluate(key => JSON.parse(localStorage.getItem(key)), KEY);
     const work = async route => {await page.locator('#workNav [data-go="' + route + '"]').click();};
@@ -94,7 +94,7 @@ test('fixed Module II tests and lecture quizzes keep their sizes when formats or
     Object.assign(futureModule, {questionCount:250,mcqCount:125,writtenCount:125});
     const futureContext = await browser.newContext();const futurePage = await futureContext.newPage();futurePage.setDefaultTimeout(10000);futurePage.on('pageerror', error => errors.push(error.message));
     await futurePage.route('**/ling285/data.json', route => route.fulfill({json:future}));
-    const retained = {activeModule:'module2',practiceMode:'mcq',notes:{'lecture13-p020':'Keep my source and filter explanation.'},drafts:{[draftId]:'Keep my earlier written response.'},session:prior100};
+    const retained = {assessmentVersion:'v1',activeModule:'module2',practiceMode:'mcq',notes:{'lecture13-p020':'Keep my source and filter explanation.'},drafts:{[draftId]:'Keep my earlier written response.'},session:prior100};
     await futurePage.addInitScript(({key,value}) => {if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(value));}, {key:KEY,value:retained});
     const futureState = () => futurePage.evaluate(key => JSON.parse(localStorage.getItem(key)), KEY);
     await futurePage.goto(url);await futurePage.locator('.module-hero').waitFor();

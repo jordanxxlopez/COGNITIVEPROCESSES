@@ -1,0 +1,1266 @@
+{
+  "schemaVersion": 1,
+  "edition": "2026-10-20-exam-style-evidence-v2",
+  "status": "source-reviewed",
+  "purpose": "Observed instructor-style evidence for transparent study ranking and generated practice. This is not a predictive-accuracy study or a probability model of future exams.",
+  "sourceFiles": [
+    {
+      "file": "sources/exam1-key.pdf",
+      "sha256": "5c53fb6f375493432c6395aa481d2cf706bf098bcff544c57ac0775ec52f002a"
+    },
+    {
+      "file": "sources/exam-review-v2.docx",
+      "sha256": "a2e49f69fda812a087317f3dc428a777eb2c0d926888ae1adcefa16f852f9a23"
+    },
+    {
+      "file": "sources/exam-review-v2.pdf",
+      "sha256": "955d1d1af6eb55b95297a122a860f0ead05166de5337e2afdae5874a2346c808"
+    },
+    {
+      "file": "authoring/v2-reference-extraction/exam1-key-pages.json",
+      "sha256": "0a3fd74be080dbd8afc150a210b2a02d48e5f8d18ce5fa572a3ecb803917aa41"
+    },
+    {
+      "file": "authoring/v2-reference-extraction/exam-review-v2-pages.json",
+      "sha256": "57601110587c35e5df82aaaa6cded035c93b3dda20654e6bb4e26c6ed63a21bc"
+    },
+    {
+      "file": "authoring/v2-reference-extraction/exam-review-v2-native.json",
+      "sha256": "636e0234a36a8e22329e8ebc84c3240404fb5c8c3cfe1633ee727a168c13048d"
+    },
+    {
+      "file": "authoring/v2-reference-extraction/embedded-images.json",
+      "sha256": "be731d20916846f25352894a60b599251210664e0a561bc4cd00fc02f44e7f59"
+    }
+  ],
+  "sourceReview": {
+    "allFiveKeyPagesInspected": true,
+    "allThreeReviewPagesInspected": true,
+    "allSixteenExtractedImagesAndFragmentsInspected": true,
+    "nativeTextOCRAndFontSpansCompared": true,
+    "reviewUploadByteIdenticalToExistingReview": true,
+    "documentInstructionsTreatedAsSourceContent": true,
+    "visualFindings": [
+      "The answer No in actual item16 is bold despite an unfilled trailing underline.",
+      "The route answer for item12 is on page3, while its graph is at the top of page4.",
+      "The oscillator answer for item18 continues from page4 to page5.",
+      "MRI figures, their labels and colored articulatory marks were read visually; they are not fully captured by ordinary text extraction."
+    ]
+  },
+  "transcriptionPolicy": {
+    "scope": "Prompt wording is transcribed from the visible source. Whitespace and line wrapping are normalized, typographic ligatures become ordinary letters, superscript/subscript mathematical layout is represented with readable Unicode/plain-text symbols, and answer-filled blank slots in identification prompts become ___. Embedded figures and their page locations are recorded separately.",
+    "answers": "Full supplied key wording is retained after whitespace normalization. The filled answer choices/labels are represented explicitly when they are part of a visual or fill-in item. No answers are invented for the review sheet.",
+    "wordCounts": "Count Unicode alphanumeric tokens, retaining internal apostrophes and hyphens. Numerical entries and symbolic names such as w1 count as tokens; standalone punctuation/operators do not. Stem counts exclude separately stored MCQ choices and figure labels. This mechanical length measure is not a prescription for new answer length."
+  },
+  "classificationPolicy": {
+    "allowedPatterns": [
+      "cause-effect",
+      "distinction",
+      "application",
+      "interpretation",
+      "prediction",
+      "procedure",
+      "design"
+    ],
+    "onePrimaryPatternPerActualItem": true,
+    "patternsAreAnalystJudgments": true,
+    "definitions": {
+      "cause-effect": "Explain why a feature, operation or physical change causes the stated consequence.",
+      "distinction": "Compare shared/different properties or separate two roles.",
+      "application": "Transfer a known principle to a pictured or concrete case.",
+      "interpretation": "Read or encode the meaning of a statement, diagram, value list or symbolic representation.",
+      "prediction": "State how behavior changes under a specified condition or initial state.",
+      "procedure": "Describe or apply the ordered operations of a process.",
+      "design": "Propose a new setup or controlled test; no actual key item primarily requests this."
+    },
+    "scopeLimits": "A multi-part question can involve secondary patterns. Counts use primaryPattern only and do not count the same actual item more than once."
+  },
+  "examItems": [
+    {
+      "number": 1,
+      "prompt": "Which of these 4 could be the probability distribution decision of a neural network?",
+      "answer": "Only (b) is possible. The numbers in a probability distribution have to be between 0 and 1 and all add up to 1. (a) adds up to 0, (c) has a negative number, and (d) adds up to 1.5.",
+      "sourcePages": [
+        1
+      ],
+      "primaryPattern": "interpretation",
+      "patterns": [
+        "interpretation",
+        "distinction"
+      ],
+      "observedFormat": "MCQ",
+      "answerFocus": "Recognize nonnegative entries that sum to one, rather than treating any output list as probabilities.",
+      "reviewAnalogies": [
+        11,
+        12
+      ],
+      "classificationRationale": "Interpret a represented output using the defining conditions of a probability distribution.",
+      "elementarySymbolicOrNumericRepresentation": true,
+      "choices": [
+        {
+          "id": "a",
+          "text": "[0,0,0,0]"
+        },
+        {
+          "id": "b",
+          "text": "[0,.4,0,.6]",
+          "key": true
+        },
+        {
+          "id": "c",
+          "text": "[-.5,0,.5,0]"
+        },
+        {
+          "id": "d",
+          "text": "[.3,.3,.4,.5]"
+        }
+      ],
+      "stemWordCount": 14,
+      "answerWordCount": 40,
+      "choiceWordCount": 16,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 2,
+      "prompt": "Name three ways in which we can distinguish consonants from each other.",
+      "answer": "Voicing (whether the vocal folds vibrate), place of articulation (where in the mouth the sound is made, e.g., labial, dental, alveolar, postalveolar, or velar), manner of articulation (how the air is constricted, e.g., fricative, oral stop, or nasal stop), and nasality (whether the velum is lowered to allow the air to escape through the nose). Any 3 of the four.",
+      "sourcePages": [
+        1
+      ],
+      "primaryPattern": "distinction",
+      "patterns": [
+        "distinction"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Name and explain three dimensions that differentiate consonants.",
+      "reviewAnalogies": [
+        6,
+        1
+      ],
+      "classificationRationale": "Identify the dimensions along which speech sounds differ.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 12,
+      "answerWordCount": 62,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 3,
+      "prompt": "One side of the basilar membrane is heavy and not stiff, while the other side is light and very stiff. How do these facts enable audition?",
+      "answer": "Frequency goes up with stiffness and down with mass (k↑ f↑, m↑ f↓), so the heavy, non-stiff end of the membrane vibrates at low frequencies and the light, stiff end vibrates at high frequencies. Each part is hooked to neurons that tell the brain which frequencies they heard based on location.",
+      "sourcePages": [
+        1
+      ],
+      "primaryPattern": "cause-effect",
+      "patterns": [
+        "cause-effect",
+        "application"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Link stiffness and mass to local preferred frequencies, then explain how location supports frequency identification.",
+      "reviewAnalogies": [
+        3,
+        2
+      ],
+      "classificationRationale": "Explain the mechanism connecting physical variation with audition.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 26,
+      "answerWordCount": 51,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 4,
+      "prompt": "Can you describe how dynamic programming works in terms of the size of problems, and problems containing other problems",
+      "answer": "You break the big problem into smaller subproblems until you reach small problems that are trivial to solve. You solve those smallest problems first, then use their answers to solve the larger problems that contain them, all the way to the hardest problems.",
+      "sourcePages": [
+        2
+      ],
+      "primaryPattern": "procedure",
+      "patterns": [
+        "procedure"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Describe solving small contained subproblems first and reusing their answers to build the larger solution.",
+      "reviewAnalogies": [
+        5,
+        9
+      ],
+      "classificationRationale": "The requested answer is an ordered account of how the method operates.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 19,
+      "answerWordCount": 43,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 5,
+      "prompt": "Can you describe why dynamic programming is more efficient than the exhaustive algorithm?",
+      "answer": "The paths in a shortest-path problem overlap. The exhaustive algorithm solves every path separately, so it redoes the same additions over and over. Dynamic programming solves only the non-overlapping parts. It finds the best solution from each state only once and reuses it for every path through that state, so it never repeats work.",
+      "sourcePages": [
+        2
+      ],
+      "primaryPattern": "cause-effect",
+      "patterns": [
+        "cause-effect",
+        "distinction"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Explain how overlapping subproblems make repeated work costly and cached solutions avoid repetition.",
+      "reviewAnalogies": [
+        5,
+        9
+      ],
+      "classificationRationale": "Explain why a difference in operations changes efficiency.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 13,
+      "answerWordCount": 54,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 6,
+      "prompt": "Which of these is “f” as in “family” ___ and which is “th” as in “thing” ___",
+      "answer": "f: b; th: a. In (b) the lower lip is against the upper teeth (labial); in (a) the tongue tip is up at the teeth (dental).",
+      "sourcePages": [
+        2
+      ],
+      "primaryPattern": "application",
+      "patterns": [
+        "application",
+        "interpretation"
+      ],
+      "observedFormat": "short-identification",
+      "answerFocus": "Use the visible place of constriction to identify the two sounds.",
+      "reviewAnalogies": [
+        6,
+        1
+      ],
+      "classificationRationale": "Apply articulation knowledge to the supplied MRI images.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "figureContext": {
+        "pages": [
+          2
+        ],
+        "description": "Two sagittal vocal-tract MRI images labeled a and b, with colored articulatory contours. The answer maps dental tongue-tip configuration a to th and lower-lip/upper-teeth configuration b to f.",
+        "embeddedImages": [
+          "exam1-key-p2-xref48.jpeg",
+          "exam1-key-p2-xref49.jpeg"
+        ]
+      },
+      "stemWordCount": 15,
+      "answerWordCount": 26,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 7,
+      "prompt": "Describe how the Stochastic Gradient Descent Algorithm works in your own words.",
+      "answer": "We want to estimate a quantity from some existing data, like the average of a list of numbers. We start with a random estimate, pick a random data point, and compute the loss (the difference between our guess and that data point). Then we subtract a small fraction of the loss (the learning rate) from the guess to get a new, slightly better guess. We repeat this with new random data points over and over, and the guess gets closer and closer to the real answer.",
+      "sourcePages": [
+        2
+      ],
+      "primaryPattern": "procedure",
+      "patterns": [
+        "procedure",
+        "cause-effect"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Trace estimate, randomly sampled point, discrepancy, partial correction, and repetition.",
+      "reviewAnalogies": [
+        2,
+        18
+      ],
+      "classificationRationale": "Describe successive operations in the learning procedure.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 12,
+      "answerWordCount": 86,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 8,
+      "prompt": "What’s the similarity between “n” in “neck” and “d” in “deck”, and what’s the difference between those sounds?",
+      "answer": "Both are voiced alveolar stops. The difference is that n is a nasal stop, so the air comes out through the nose, while d is an oral stop, so the air is blocked completely and then released through the mouth.",
+      "sourcePages": [
+        3
+      ],
+      "primaryPattern": "distinction",
+      "patterns": [
+        "distinction"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Preserve shared voicing/place and distinguish nasal from oral airflow.",
+      "reviewAnalogies": [
+        1,
+        6
+      ],
+      "classificationRationale": "The prompt explicitly requests the same and different features.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 18,
+      "answerWordCount": 40,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 9,
+      "prompt": "What’s the similarity and difference between the vowels in “mean” and “moon”?",
+      "answer": "Both are high vowels. The difference is that the vowel in “mean” is a front vowel, while the vowel in “moon” is a back vowel (lips also rounded).",
+      "sourcePages": [
+        3
+      ],
+      "primaryPattern": "distinction",
+      "patterns": [
+        "distinction"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Separate shared tongue height from front/back position and lip rounding.",
+      "reviewAnalogies": [
+        14
+      ],
+      "classificationRationale": "Compare two articulatory configurations along shared and differing dimensions.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 12,
+      "answerWordCount": 28,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 10,
+      "prompt": "Imagine a Stochastic Gradient Algorithm (SGD) with a very low learning rate and a springy system (with no mass) with a low stiffness. a) Describe how the Estimate of SGD and the equilibrium position for the spring system evolve with time. b) How would the evolution in time differ, if the learning rate and stiffness increased? For SGD, ignore accuracy/oscillation for this question.",
+      "answer": "a) Both move toward their goal slowly. With a low learning rate, the SGD estimate only takes a small correction toward the average each time, so it takes many steps to get there. With low stiffness, the spring only pulls weakly, so it drifts back to its equilibrium position slowly. b) Both would get there faster. A higher learning rate makes bigger corrections toward the average, and a stiffer spring pulls harder and snaps back to equilibrium more quickly.",
+      "sourcePages": [
+        3
+      ],
+      "primaryPattern": "prediction",
+      "patterns": [
+        "prediction",
+        "cause-effect",
+        "application"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Predict slower or faster approach under explicitly stated parameter changes, limiting the SGD claim to the requested speed comparison.",
+      "reviewAnalogies": [
+        2,
+        4,
+        17
+      ],
+      "classificationRationale": "Predict the evolution of the two systems when their stated conditions change.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 64,
+      "answerWordCount": 79,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 11,
+      "prompt": "Describe the psychological principle of closure, illustrated by this figure, and how is it used in the GPT system as a principle for learning?",
+      "answer": "Humans are very adept at filling in missing information using what we already know. In the figure no triangle is actually drawn, but we see one anyway because our brain completes the shape. GPT learns the same way (the cloze task). It takes a sentence, pretends a part of a sentence is missing, and asks the network to complete what’s missing. If the guess is wrong, the weights get adjusted, and after billions of these completions the system ends up “knowing” the language.",
+      "sourcePages": [
+        3
+      ],
+      "primaryPattern": "application",
+      "patterns": [
+        "application",
+        "cause-effect"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Connect visual completion with the source’s language-completion learning analogy and feedback-driven weight changes.",
+      "reviewAnalogies": [
+        7,
+        10
+      ],
+      "classificationRationale": "Apply a completion principle across the pictured perceptual stimulus and the learning example.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "figureContext": {
+        "pages": [
+          3
+        ],
+        "description": "Three black disk-like shapes with inward-facing sectors removed evoke an undrawn white triangle.",
+        "embeddedImages": [
+          "exam1-key-p3-xref57.jpeg"
+        ]
+      },
+      "stemWordCount": 24,
+      "answerWordCount": 83,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 12,
+      "prompt": "Referring to the shortest path problem below, what is the Greedy Forward solution? You can just write out the numbers with +’s.",
+      "answer": "3+3+4+2 = 12 (A→B→E→F→H)",
+      "sourcePages": [
+        3,
+        4
+      ],
+      "primaryPattern": "procedure",
+      "patterns": [
+        "procedure",
+        "application"
+      ],
+      "observedFormat": "symbolic",
+      "answerFocus": "Follow the cheapest outgoing edge at each stage and express the resulting route costs.",
+      "reviewAnalogies": [
+        5,
+        9
+      ],
+      "classificationRationale": "Apply an ordered local-choice procedure to the supplied graph.",
+      "elementarySymbolicOrNumericRepresentation": true,
+      "figureContext": {
+        "pages": [
+          4
+        ],
+        "description": "Directed stage graph, Stage1 A; Stage2 B/C; Stage3 D/E; Stage4 F/G; Stage5 H.",
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "cost": 3
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "cost": 5
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "cost": 6
+          },
+          {
+            "from": "B",
+            "to": "E",
+            "cost": 3
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "cost": 2
+          },
+          {
+            "from": "C",
+            "to": "E",
+            "cost": 1
+          },
+          {
+            "from": "D",
+            "to": "F",
+            "cost": 3
+          },
+          {
+            "from": "D",
+            "to": "G",
+            "cost": 1
+          },
+          {
+            "from": "E",
+            "to": "F",
+            "cost": 4
+          },
+          {
+            "from": "E",
+            "to": "G",
+            "cost": 7
+          },
+          {
+            "from": "F",
+            "to": "H",
+            "cost": 2
+          },
+          {
+            "from": "G",
+            "to": "H",
+            "cost": 3
+          }
+        ],
+        "embeddedImages": [
+          "exam1-key-p4-xref69.jpeg"
+        ]
+      },
+      "stemWordCount": 22,
+      "answerWordCount": 10,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 13,
+      "prompt": "Referring to the shortest path problem in question 12. We call the best cost from any state x to state H V_xH. Imagine we have already solved for V_DH and V_EH, how can I calculate V_CH?",
+      "answer": "V_CH = min{ 2 + V_DH, 1 + V_EH } (or written vertically, crucially min)",
+      "sourcePages": [
+        4
+      ],
+      "primaryPattern": "interpretation",
+      "patterns": [
+        "interpretation",
+        "application",
+        "procedure"
+      ],
+      "observedFormat": "symbolic",
+      "answerFocus": "Represent the comparison of outgoing-edge cost plus each already-solved successor cost, retaining the minimum operator.",
+      "reviewAnalogies": [
+        5,
+        9
+      ],
+      "classificationRationale": "Encode the graph and solved successor values in a symbolic relationship; no full numerical route solving is requested.",
+      "elementarySymbolicOrNumericRepresentation": true,
+      "figureContext": {
+        "pages": [
+          4
+        ],
+        "sameGraphAsItem": 12,
+        "relevantEdges": [
+          {
+            "from": "C",
+            "to": "D",
+            "cost": 2
+          },
+          {
+            "from": "C",
+            "to": "E",
+            "cost": 1
+          }
+        ],
+        "embeddedImages": [
+          "exam1-key-p4-xref69.jpeg"
+        ]
+      },
+      "stemWordCount": 40,
+      "answerWordCount": 14,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 14,
+      "prompt": "In terms of accuracy and speed in solving shortest path problems, how do Greedy and Exhaustive Algorithms compare? And what algorithm do we use if we want to balance those two factors?",
+      "answer": "Greedy is fast but inaccurate. Exhaustive is accurate but slow. Dynamic Programming.",
+      "sourcePages": [
+        4
+      ],
+      "primaryPattern": "distinction",
+      "patterns": [
+        "distinction",
+        "application"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Contrast the source’s speed/accuracy characterizations and identify dynamic programming as its balancing method.",
+      "reviewAnalogies": [
+        5,
+        9
+      ],
+      "classificationRationale": "Compare alternative methods along the two explicitly named dimensions.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 32,
+      "answerWordCount": 12,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 15,
+      "prompt": "What’s my favorite popular way of describing how learning in AI works? Describe why I put it this way.",
+      "answer": "Fake it till you make it. The system starts out with completely random weights, so it doesn’t actually know anything. It’s just faking it. It makes a guess, receives feedback, and changes its weights a little so it does better next time. After repeating this a lot of times, it will make it, i.e., have the right knowledge.",
+      "sourcePages": [
+        4
+      ],
+      "primaryPattern": "cause-effect",
+      "patterns": [
+        "cause-effect",
+        "procedure"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Explain the random-start, feedback and weight-change mechanism behind the remembered phrase.",
+      "reviewAnalogies": [
+        10,
+        8
+      ],
+      "classificationRationale": "The phrase alone is insufficient; the source asks why it describes learning.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 19,
+      "answerWordCount": 59,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 16,
+      "prompt": "In each vowel, air vibrates at a single frequency? Yes/No ___",
+      "answer": "No",
+      "sourcePages": [
+        4
+      ],
+      "primaryPattern": "interpretation",
+      "patterns": [
+        "interpretation"
+      ],
+      "observedFormat": "short-identification",
+      "answerFocus": "Recognize that vowels contain multiple frequency components.",
+      "reviewAnalogies": [
+        13
+      ],
+      "classificationRationale": "Judge a statement about the interpretation of a vowel’s acoustic content.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 11,
+      "answerWordCount": 1,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 17,
+      "prompt": "What is the goal of a spring, if it’s extended or squeezed? ___. What is the primary physical property of a mass that is already moving? ___",
+      "answer": "Go back to equilibrium. Keeps on moving.",
+      "sourcePages": [
+        4
+      ],
+      "primaryPattern": "distinction",
+      "patterns": [
+        "distinction",
+        "cause-effect"
+      ],
+      "observedFormat": "short-identification",
+      "answerFocus": "Distinguish a spring’s restoring tendency from a moving mass’s inertia.",
+      "reviewAnalogies": [
+        4,
+        16,
+        15
+      ],
+      "classificationRationale": "Identify the different physical roles underlying their combined behavior.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 25,
+      "answerWordCount": 7,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 18,
+      "prompt": "If a system is described by these differential equations ẋ = v, v̇ = −(k/m)x, and if x starts as negative and v = 0, will the system oscillate? How will the position of the mass evolve with time.",
+      "answer": "Yes, it oscillates. x starts out negative, so the spring is squeezed and pushes the mass toward equilibrium (x = 0). The mass speeds up and reaches 0, but a moving mass keeps moving, so it overshoots and stretches the spring on the positive side; the spring then pulls it back, it overshoots again, and this repeats. The position swings back and forth, tracing out a cosine-shaped wave.",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "primaryPattern": "prediction",
+      "patterns": [
+        "prediction",
+        "cause-effect"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Predict return, inertia-driven overshoot and repeated oscillation from the given initial condition, without solving the differential equations.",
+      "reviewAnalogies": [
+        16,
+        4,
+        15
+      ],
+      "classificationRationale": "Predict an evolving trajectory from the stated system and initial state.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 38,
+      "answerWordCount": 67,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 19,
+      "prompt": "Which of these is “k” as in “Ken” ___ and which of these is “m” as in “men”? ___",
+      "answer": "k: a; m: b. In (a), the back of the tongue is raised up (velar); in (b), the lips are closed (labial) and the velum is also lowered (nasal).",
+      "sourcePages": [
+        5
+      ],
+      "primaryPattern": "application",
+      "patterns": [
+        "application",
+        "interpretation"
+      ],
+      "observedFormat": "short-identification",
+      "answerFocus": "Map the visible tongue, lip and velum configurations to the two sounds.",
+      "reviewAnalogies": [
+        6,
+        1
+      ],
+      "classificationRationale": "Apply articulation categories to the supplied MRI configurations.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "figureContext": {
+        "pages": [
+          5
+        ],
+        "description": "Two sagittal MRI images labeled a and b with articulatory contours. Imagea has raised back of tongue; imageb has closed lips and a lowered velum.",
+        "embeddedImages": [
+          "exam1-key-p5-xref74.jpeg",
+          "exam1-key-p5-xref75.jpeg"
+        ]
+      },
+      "stemWordCount": 17,
+      "answerWordCount": 29,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 20,
+      "prompt": "In SGD for averaging a list, the mathematical formula for the New Estimate of average x is: New x = Current x – lr (Current x – data point d to learn from). And lr is the learning rate. What is the purpose of the first minus in the formula?",
+      "answer": "The minus makes the estimate move toward the data point regardless if the data is above or below the true estimate. If the estimate is above the data point, the loss is positive, so subtracting it pushes the estimate down. If the estimate is below the data point, the loss is negative, so subtracting it pushes the estimate up.",
+      "sourcePages": [
+        5
+      ],
+      "primaryPattern": "cause-effect",
+      "patterns": [
+        "cause-effect",
+        "interpretation"
+      ],
+      "observedFormat": "written",
+      "answerFocus": "Explain why subtraction corrects in the appropriate direction for points above and below the current estimate.",
+      "reviewAnalogies": [
+        18,
+        2
+      ],
+      "classificationRationale": "Explain the causal role of a sign, rather than calculate an updated numerical estimate.",
+      "elementarySymbolicOrNumericRepresentation": true,
+      "stemWordCount": 47,
+      "answerWordCount": 59,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 21,
+      "prompt": "Imagine we have a neural network with many neurons in many layers. Imagine that one neuron, let’s call it y, in layer 4 is connected to 5 neurons from the previous layer. Assume every neuron is connected to all neurons in previous layer. How many weights does y have?",
+      "answer": "5",
+      "sourcePages": [
+        5
+      ],
+      "primaryPattern": "interpretation",
+      "patterns": [
+        "interpretation"
+      ],
+      "observedFormat": "symbolic",
+      "answerFocus": "Read one weight per incoming connection from the network description.",
+      "reviewAnalogies": [
+        19,
+        8
+      ],
+      "classificationRationale": "Interpret network connectivity as the corresponding parameter count.",
+      "elementarySymbolicOrNumericRepresentation": true,
+      "stemWordCount": 49,
+      "answerWordCount": 1,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 22,
+      "prompt": "Continuing from the previous question, if y’s weights are w1, w2, w3, w4, w5, and the activations of the 5 neurons feeding it are x1, x2, x3, x4, x5. How do we write the activation of neuron y?",
+      "answer": "w1x1+w2x2+w3x3+w4x4+w5x5",
+      "sourcePages": [
+        5
+      ],
+      "primaryPattern": "procedure",
+      "patterns": [
+        "procedure",
+        "interpretation"
+      ],
+      "observedFormat": "symbolic",
+      "answerFocus": "Scale each incoming activation by its connection weight, then add the contributions.",
+      "reviewAnalogies": [
+        19
+      ],
+      "classificationRationale": "State the weighted-combination operation symbolically; no numerical multiplication is required.",
+      "elementarySymbolicOrNumericRepresentation": true,
+      "stemWordCount": 38,
+      "answerWordCount": 5,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 23,
+      "prompt": "Imagine that the decision made by a neural network is [.4,.1,.1,.3,.1], but the true category is the one in the last position. Using Python list notation, how do we express to the neural network in a probability distribution format what the true answer is?",
+      "answer": "[0,0,0,0,1]",
+      "sourcePages": [
+        5
+      ],
+      "primaryPattern": "interpretation",
+      "patterns": [
+        "interpretation",
+        "distinction"
+      ],
+      "observedFormat": "symbolic",
+      "answerFocus": "Encode the independently known category as a one-hot target, distinct from the current prediction.",
+      "reviewAnalogies": [
+        20,
+        11
+      ],
+      "classificationRationale": "Translate a known category into the ordered target representation.",
+      "elementarySymbolicOrNumericRepresentation": true,
+      "stemWordCount": 48,
+      "answerWordCount": 5,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 24,
+      "prompt": "If I raise stiffness of a mass-spring system, does the frequency of vibration rise or fall? ___ And if I raise the mass, does the frequency of vibration rise or fall? ___",
+      "answer": "Stiffness: rise. Mass: fall.",
+      "sourcePages": [
+        5
+      ],
+      "primaryPattern": "prediction",
+      "patterns": [
+        "prediction",
+        "cause-effect"
+      ],
+      "observedFormat": "short-identification",
+      "answerFocus": "Give the two directional frequency predictions for the changed physical properties.",
+      "reviewAnalogies": [
+        2,
+        3
+      ],
+      "classificationRationale": "Predict the response direction when stiffness or mass is increased.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 30,
+      "answerWordCount": 4,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    },
+    {
+      "number": 25,
+      "prompt": "There are systems all around us? True or False? ___",
+      "answer": "True",
+      "sourcePages": [
+        5
+      ],
+      "primaryPattern": "interpretation",
+      "patterns": [
+        "interpretation"
+      ],
+      "observedFormat": "short-identification",
+      "answerFocus": "Recognize the course’s broad systems framing.",
+      "reviewAnalogies": [],
+      "classificationRationale": "Judge a broad statement from the course’s systems perspective.",
+      "elementarySymbolicOrNumericRepresentation": false,
+      "stemWordCount": 9,
+      "answerWordCount": 1,
+      "choiceWordCount": 0,
+      "sourceFile": "sources/exam1-key.pdf"
+    }
+  ],
+  "reviewItems": [
+    {
+      "number": 1,
+      "prompt": "What’s the similarity between “m” in “mad” and “b” in “bad”, and what’s the difference between those sounds?",
+      "sourcePages": [
+        1
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "distinction",
+      "actualExamAnalogies": [
+        2,
+        6,
+        8,
+        19
+      ],
+      "stemWordCount": 18,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 2,
+      "prompt": "What’s the role of the learning rate in Stochastic Gradient Descent and the role of stiffness in (viscous) springy systems? What happens when learning rate is high vs. low and when stiffness is high vs. low?",
+      "sourcePages": [
+        1
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "cause-effect",
+      "actualExamAnalogies": [
+        3,
+        7,
+        10,
+        20,
+        24
+      ],
+      "stemWordCount": 36,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 3,
+      "prompt": "What’s the physical principle behind how your auditory system hears different frequencies? Describe the basic physics of the basilar membrane to illustrate how the system works.",
+      "sourcePages": [
+        1
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "cause-effect",
+      "actualExamAnalogies": [
+        3
+      ],
+      "stemWordCount": 26,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 4,
+      "prompt": "Imagine the following two temperature control systems, if you set the temperature at 70: a) Excellent thermostat right near the Air conditioning/Heating Unit: If the temperature is higher than 70, the AC turns on and temperature goes down to 70 and stays there, as the thermostat detects the right temperature and stops the AC. If the temperature were lower than 70, heating turns on till it gets to 70, and thermostat turns it off as it detects the right temperature. b) Thermostat really far from the AC/HU: If the temperature is higher than 70, the AC turns on and temperature goes down to 70, but the thermostat doesn’t detect that and the temperature keeps dropping till 60, and when the thermostat finally detects 60, it turns on HU, and heat comes on, and temperature rises to 70, but thermostat doesn’t detect it, till the temperature goes up to 80, etc. Which of these systems is like a spring by itself, and which is like a mass-spring?",
+      "sourcePages": [
+        1
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "application",
+      "actualExamAnalogies": [
+        10,
+        17,
+        18
+      ],
+      "stemWordCount": 168,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 5,
+      "prompt": "Why is the exhaustive algorithm so inefficient for solving the shortest path problem?",
+      "sourcePages": [
+        2
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "cause-effect",
+      "actualExamAnalogies": [
+        4,
+        5,
+        12,
+        13,
+        14
+      ],
+      "stemWordCount": 13,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 6,
+      "prompt": "What are the different ways we distinguish between the consonants at the beginning of the words: Pam, Bam, Dam, Tam, Kam, and Gam?",
+      "sourcePages": [
+        2
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "distinction",
+      "actualExamAnalogies": [
+        2,
+        6,
+        8,
+        19
+      ],
+      "stemWordCount": 23,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 7,
+      "prompt": "Describe the psychological principle of closure, and how it’s used in the GPT system?",
+      "sourcePages": [
+        2
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "application",
+      "actualExamAnalogies": [
+        11
+      ],
+      "stemWordCount": 14,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 8,
+      "prompt": "How is knowledge represented in Neural Networks?",
+      "sourcePages": [
+        2
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "interpretation",
+      "actualExamAnalogies": [
+        15,
+        21
+      ],
+      "stemWordCount": 7,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 9,
+      "prompt": "What’s the basic tradeoff that we see in both shortest path problems and Stochastic Gradient Descent Algorithm?",
+      "sourcePages": [
+        2
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "distinction",
+      "actualExamAnalogies": [
+        4,
+        5,
+        12,
+        13,
+        14
+      ],
+      "stemWordCount": 17,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 10,
+      "prompt": "What’s my favorite popular way of describe how learning in AI works? Fake __ ___ ___ ___ ____. Describe why I describe it this way.",
+      "sourcePages": [
+        2
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "cause-effect",
+      "actualExamAnalogies": [
+        11,
+        15
+      ],
+      "stemWordCount": 20,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 11,
+      "prompt": "What’s the output of an LLM or Neural Network in general, and how does it express a decision?",
+      "sourcePages": [
+        2
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "interpretation",
+      "actualExamAnalogies": [
+        1,
+        23
+      ],
+      "stemWordCount": 18,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 12,
+      "prompt": "Is this a good output of an NN, if there are 4 categories [.4,0,.5,.2]? Why yes/no?",
+      "sourcePages": [
+        2
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "interpretation",
+      "actualExamAnalogies": [
+        1
+      ],
+      "stemWordCount": 20,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 13,
+      "prompt": "In each vowel, air vibrates at a single frequency? Yes/No",
+      "sourcePages": [
+        2
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "interpretation",
+      "actualExamAnalogies": [
+        16
+      ],
+      "stemWordCount": 11,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 14,
+      "prompt": "What are the 2 basic ways we distinguish vowels?",
+      "sourcePages": [
+        3
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "distinction",
+      "actualExamAnalogies": [
+        9
+      ],
+      "stemWordCount": 9,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 15,
+      "prompt": "Some people say “Everything is a Harmonic Oscillator”. Give 5 examples of oscillatory systems, we’ve discussed in class and/or in the Meadows book.",
+      "sourcePages": [
+        3
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "application",
+      "actualExamAnalogies": [
+        17,
+        18
+      ],
+      "stemWordCount": 24,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 16,
+      "prompt": "If ẋ = v, v̇ = −(k/m)x starts with x negative and v = 0, will it oscillate? Say in a couple of sentences, what will happen.",
+      "sourcePages": [
+        3
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "prediction",
+      "actualExamAnalogies": [
+        17,
+        18
+      ],
+      "stemWordCount": 26,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 17,
+      "prompt": "If ẋ = −.1 x describes a system, then if x starts negative, what will happen? What happens if the number −.1 becomes −.9?",
+      "sourcePages": [
+        3
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "prediction",
+      "actualExamAnalogies": [
+        10
+      ],
+      "stemWordCount": 23,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 18,
+      "prompt": "In SGD for averaging a list, the mathematical formula for the New Estimate of average x is: New x = Current x – lr (Current x – data point d to learn from). What is the purpose of the first minus in the formula? To answer, consider the possibility that the data point is above vs. below the Current x.",
+      "sourcePages": [
+        3
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "cause-effect",
+      "actualExamAnalogies": [
+        7,
+        20
+      ],
+      "stemWordCount": 57,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 19,
+      "prompt": "What is the math of forward propagation from the signal input to an NN all the way to a decision at the end? Describe it.",
+      "sourcePages": [
+        3
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "procedure",
+      "actualExamAnalogies": [
+        21,
+        22
+      ],
+      "stemWordCount": 25,
+      "officialAnswerProvided": false
+    },
+    {
+      "number": 20,
+      "prompt": "Imagine that the decision by an NN is [.1,.1,.1,.2,.5], but the true category is the one in the 2th position, using Python list notation, then how do we express to the NN in a probability distribution what the true answer is?",
+      "sourcePages": [
+        3
+      ],
+      "sourceFile": "sources/exam-review-v2.docx",
+      "primaryPattern": "interpretation",
+      "actualExamAnalogies": [
+        23
+      ],
+      "stemWordCount": 45,
+      "officialAnswerProvided": false
+    }
+  ],
+  "empiricalSummary": {
+    "actualItemCount": 25,
+    "reviewItemCount": 20,
+    "primaryPatternCounts": {
+      "interpretation": 6,
+      "distinction": 5,
+      "cause-effect": 4,
+      "procedure": 4,
+      "application": 3,
+      "prediction": 3,
+      "design": 0
+    },
+    "observedFormatCounts": {
+      "MCQ": 1,
+      "written": 13,
+      "short-identification": 6,
+      "symbolic": 5
+    },
+    "stemWordCounts": {
+      "n": 25,
+      "min": 9,
+      "median": 22,
+      "mean": 26.16,
+      "max": 64
+    },
+    "answerWordCounts": {
+      "n": 25,
+      "min": 1,
+      "median": 29,
+      "mean": 34.64,
+      "max": 86
+    },
+    "answerWordCountsByFormat": {
+      "MCQ": {
+        "n": 1,
+        "min": 40,
+        "median": 40,
+        "mean": 40,
+        "max": 40
+      },
+      "written": {
+        "n": 13,
+        "min": 12,
+        "median": 59,
+        "mean": 55.62,
+        "max": 86
+      },
+      "short-identification": {
+        "n": 6,
+        "min": 1,
+        "median": 5.5,
+        "mean": 11.33,
+        "max": 29
+      },
+      "symbolic": {
+        "n": 5,
+        "min": 1,
+        "median": 5,
+        "mean": 7,
+        "max": 14
+      }
+    },
+    "stemWordCountsByFormat": {
+      "MCQ": {
+        "n": 1,
+        "min": 14,
+        "median": 14,
+        "mean": 14,
+        "max": 14
+      },
+      "written": {
+        "n": 13,
+        "min": 12,
+        "median": 19,
+        "mean": 25.85,
+        "max": 64
+      },
+      "short-identification": {
+        "n": 6,
+        "min": 9,
+        "median": 16.0,
+        "mean": 17.83,
+        "max": 30
+      },
+      "symbolic": {
+        "n": 5,
+        "min": 22,
+        "median": 40,
+        "mean": 39.4,
+        "max": 49
+      }
+    },
+    "explicitPrimaryDesignItems": 0,
+    "elementarySymbolicOrNumericItems": [
+      1,
+      12,
+      13,
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "authoringGuidance": [
+    "Use plain connected explanations of what moves, what changes, why it changes and what that causes.",
+    "Preserve the full source-supported ideas; do not automatically make Version3 shorter. Trim repetition only when the same explanation adds nothing.",
+    "Keep meaningful quantities, mode labels, input/output structure, signed contributions and simple representations when they identify the concept. Avoid equation solving or numerical chores that replace the conceptual question.",
+    "Use short answers where the reasoning fits, and allow fuller answers for multi-step mechanisms. The source key includes both one-word labels and paragraph explanations.",
+    "Explain one best MCQ answer and every distractor, using substantive plausible alternatives rather than longer wording as a correctness cue.",
+    "The actual exam has one conventional A–D item and predominantly other formats. The requested 25MCQ/25written lecture banks and 50MCQ/50written current test are user-specified study adaptations, not the observed exam format.",
+    "Link practice to actual item numbers only when their reasoning or representation is substantively related; a topic keyword alone is insufficient."
+  ],
+  "limits": [
+    "These 25 actual questions describe one supplied completed exam; they do not validate prediction accuracy for another exam.",
+    "The review sheet is related evidence, not twenty additional actual exam observations.",
+    "Pattern classification and derived ranking weights must remain transparent analyst choices.",
+    "The answer key contains simplified class explanations; do not silently turn an analogy into a universal physical guarantee. Item10 explicitly brackets SGD accuracy/oscillation."
+  ]
+}

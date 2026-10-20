@@ -31,6 +31,7 @@ const server = http.createServer((request, response) => {
   const url = 'http://127.0.0.1:' + server.address().port + '/ling285/';
   const browser = await chromium.launch({executablePath:process.env.CHROMIUM_PATH || '/usr/bin/chromium', headless:true, args:['--no-sandbox']});
   const page = await browser.newPage({viewport:{width:1440, height:1000}, acceptDownloads:true});
+  await page.addInitScript(key=>{if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify({assessmentVersion:'v1'}));},KEY);
   page.setDefaultTimeout(12000);
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
@@ -186,7 +187,7 @@ const server = http.createServer((request, response) => {
     await legacyPage.goto(url);await legacyPage.locator('#content h1').waitFor();
     const legacy = {notes:{'lecture01-p003':'A note saved before modules existed.'},read:{'lecture01-p003':true},drafts:{'ling285-q001':'Original first-half answer.','ling285-q051':'Original second-half answer.'},ratings:{'ling285-q001':'partial','ling285-q051':'review'},revealed:{'ling285-q001':true,'ling285-q051':true},session:{ids:['ling285-q001','ling285-q051'],index:1,title:'Pre-module written set',finished:false,edition:'Supplied material · Lectures 01–13',scope:'mixed'}};
     await legacyPage.evaluate(({key,value}) => localStorage.setItem(key, JSON.stringify(value)), {key:KEY,value:legacy});await legacyPage.reload();await legacyPage.locator('#content h1').waitFor();
-    await legacyPage.locator('#workNav [data-go="test"]').click();await legacyPage.locator('#content [data-go="practice"]').last().click();
+    await legacyPage.locator('#workNav [data-go="test"]').click();await legacyPage.locator('[data-resume-assessment="v1"]').click();
     assert.equal(await legacyPage.locator('#answerDraft').inputValue(), 'Original second-half answer.');
     const migrated = await legacyPage.evaluate(key => JSON.parse(localStorage.getItem(key)), KEY);
     assert.deepEqual(migrated.sessions.module2.ids, ['ling285-q051']);assert.deepEqual(migrated.sessions.module1.ids, ['ling285-q001']);assert.equal(migrated.notes['lecture01-p003'], legacy.notes['lecture01-p003']);assert.equal(migrated.read['lecture01-p003'], true);assert.equal(migrated.ratings['ling285-q001'], 'partial');

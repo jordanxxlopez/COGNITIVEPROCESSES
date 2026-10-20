@@ -1,0 +1,7820 @@
+{
+  "revision": "2026-10-20-practice-v2",
+  "purpose": "Reproducible study priorities; no validated prediction of a future exam.",
+  "trainingDocuments": 45,
+  "vocabularySize": 306,
+  "vocabularyFit": "Exam and review prompts only; generated questions and key answers excluded.",
+  "observedSummary": {
+    "actualItemCount": 25,
+    "reviewItemCount": 20,
+    "primaryPatternCounts": {
+      "interpretation": 6,
+      "distinction": 5,
+      "cause-effect": 4,
+      "procedure": 4,
+      "application": 3,
+      "prediction": 3,
+      "design": 0
+    },
+    "observedFormatCounts": {
+      "MCQ": 1,
+      "written": 13,
+      "short-identification": 6,
+      "symbolic": 5
+    },
+    "stemWordCounts": {
+      "n": 25,
+      "min": 9,
+      "median": 22,
+      "mean": 26.16,
+      "max": 64
+    },
+    "answerWordCounts": {
+      "n": 25,
+      "min": 1,
+      "median": 29,
+      "mean": 34.64,
+      "max": 86
+    },
+    "answerWordCountsByFormat": {
+      "MCQ": {
+        "n": 1,
+        "min": 40,
+        "median": 40,
+        "mean": 40,
+        "max": 40
+      },
+      "written": {
+        "n": 13,
+        "min": 12,
+        "median": 59,
+        "mean": 55.62,
+        "max": 86
+      },
+      "short-identification": {
+        "n": 6,
+        "min": 1,
+        "median": 5.5,
+        "mean": 11.33,
+        "max": 29
+      },
+      "symbolic": {
+        "n": 5,
+        "min": 1,
+        "median": 5,
+        "mean": 7,
+        "max": 14
+      }
+    },
+    "stemWordCountsByFormat": {
+      "MCQ": {
+        "n": 1,
+        "min": 14,
+        "median": 14,
+        "mean": 14,
+        "max": 14
+      },
+      "written": {
+        "n": 13,
+        "min": 12,
+        "median": 19,
+        "mean": 25.85,
+        "max": 64
+      },
+      "short-identification": {
+        "n": 6,
+        "min": 9,
+        "median": 16.0,
+        "mean": 17.83,
+        "max": 30
+      },
+      "symbolic": {
+        "n": 5,
+        "min": 22,
+        "median": 40,
+        "mean": 39.4,
+        "max": 49
+      }
+    },
+    "explicitPrimaryDesignItems": 0,
+    "elementarySymbolicOrNumericItems": [
+      1,
+      12,
+      13,
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "method": {
+    "patternWeight": ".75 * exam pattern proportion + .25 * review pattern proportion",
+    "score": "1 + .6 * normalized pattern weight + .25 * maximum exam cosine similarity + .15 * maximum review cosine similarity",
+    "coefficients": "Editorial study weights, not fitted or validated performance estimates.",
+    "similarity": "L2-normalized sublinear TF–IDF; vocabulary and IDF fitted to 45 source prompts only.",
+    "selection": "Lecture and format quotas first; weighted sampling without replacement within each group."
+  },
+  "patternWeights": {
+    "cause-effect": 0.1825,
+    "distinction": 0.2,
+    "application": 0.1275,
+    "interpretation": 0.2425,
+    "prediction": 0.11499999999999999,
+    "procedure": 0.1325,
+    "design": 0.0
+  },
+  "examPatternCounts": {
+    "interpretation": 6,
+    "distinction": 5,
+    "cause-effect": 4,
+    "procedure": 4,
+    "application": 3,
+    "prediction": 3
+  },
+  "reviewPatternCounts": {
+    "distinction": 4,
+    "cause-effect": 5,
+    "application": 3,
+    "interpretation": 5,
+    "prediction": 2,
+    "procedure": 1
+  },
+  "practicePatternCounts": {
+    "distinction": 46,
+    "application": 10,
+    "prediction": 23,
+    "interpretation": 73,
+    "cause-effect": 41,
+    "design": 4,
+    "procedure": 3
+  },
+  "contracts": {
+    "questions": 200,
+    "perLecture": 50,
+    "perLectureMCQ": 25,
+    "perLectureWritten": 25,
+    "currentTest": 100,
+    "currentTestMCQ": 50,
+    "currentTestWritten": 50,
+    "currentTestPerLecture": 25
+  },
+  "inputs": [
+    {
+      "file": "authoring/exam-style-evidence-v2.json",
+      "sha256": "b0d9e30b4d15df25f3682a42348834c41738e9f4a40c930fa49ca6a3ba7f8757"
+    },
+    {
+      "file": "authoring/practice-v2-lecture11.json",
+      "sha256": "a83faca7f024332696a796e19114e9a062dba97bef76c5f764eae4891d4796ae"
+    },
+    {
+      "file": "authoring/practice-v2-lecture12.json",
+      "sha256": "a3e6797383c9dbab4267e503be37a5a7e9fec790d863504ad0d684790c2db6cc"
+    },
+    {
+      "file": "authoring/practice-v2-lecture13.json",
+      "sha256": "03b77950e89e103c2a054310a1b5ee5a11f2361eabaf7182ff562774de697d5b"
+    },
+    {
+      "file": "authoring/practice-v2-lecture14.json",
+      "sha256": "f9eec9b8926cecd7f9d29b26fc45914bef0f2412953a54e9dd712ce193988c06"
+    }
+  ],
+  "rankings": [
+    {
+      "id": "v2-l11-mcq-001",
+      "priority": 1.580953,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.303891,
+      "reviewSimilarity": 0.067568,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.303891
+        },
+        {
+          "number": 17,
+          "similarity": 0.244304
+        },
+        {
+          "number": 18,
+          "similarity": 0.182292
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.067568
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-002",
+      "priority": 1.414142,
+      "pattern": "application",
+      "patternComponent": 0.525773,
+      "examSimilarity": 0.280655,
+      "reviewSimilarity": 0.190099,
+      "closestExamItems": [
+        {
+          "number": 17,
+          "similarity": 0.280655
+        },
+        {
+          "number": 24,
+          "similarity": 0.273486
+        },
+        {
+          "number": 10,
+          "similarity": 0.236914
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.190099
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l11-mcq-003",
+      "priority": 1.42565,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.456294,
+      "reviewSimilarity": 0.18027,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.456294
+        },
+        {
+          "number": 16,
+          "similarity": 0.147864
+        },
+        {
+          "number": 10,
+          "similarity": 0.132445
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 2,
+          "similarity": 0.18027
+        },
+        {
+          "number": 13,
+          "similarity": 0.147864
+        },
+        {
+          "number": 17,
+          "similarity": 0.101756
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l11-mcq-004",
+      "priority": 1.42565,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.456294,
+      "reviewSimilarity": 0.18027,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.456294
+        },
+        {
+          "number": 16,
+          "similarity": 0.147864
+        },
+        {
+          "number": 10,
+          "similarity": 0.132445
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 2,
+          "similarity": 0.18027
+        },
+        {
+          "number": 13,
+          "similarity": 0.147864
+        },
+        {
+          "number": 17,
+          "similarity": 0.101756
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l11-mcq-005",
+      "priority": 1.672675,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.240905,
+      "reviewSimilarity": 0.08299,
+      "closestExamItems": [
+        {
+          "number": 14,
+          "similarity": 0.240905
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.08299
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-006",
+      "priority": 1.677884,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.244367,
+      "reviewSimilarity": 0.11195,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.244367
+        },
+        {
+          "number": 24,
+          "similarity": 0.243298
+        },
+        {
+          "number": 18,
+          "similarity": 0.206513
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.11195
+        },
+        {
+          "number": 7,
+          "similarity": 0.102607
+        },
+        {
+          "number": 4,
+          "similarity": 0.088145
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-007",
+      "priority": 1.689979,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.282314,
+      "reviewSimilarity": 0.129334,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.282314
+        },
+        {
+          "number": 24,
+          "similarity": 0.281079
+        },
+        {
+          "number": 18,
+          "similarity": 0.238582
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.129334
+        },
+        {
+          "number": 7,
+          "similarity": 0.11854
+        },
+        {
+          "number": 17,
+          "similarity": 0.076607
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-008",
+      "priority": 1.494845,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-009",
+      "priority": 1.69097,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.195509,
+      "reviewSimilarity": 0.280617,
+      "closestExamItems": [
+        {
+          "number": 22,
+          "similarity": 0.195509
+        },
+        {
+          "number": 23,
+          "similarity": 0.145712
+        },
+        {
+          "number": 24,
+          "similarity": 0.118197
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.280617
+        },
+        {
+          "number": 14,
+          "similarity": 0.220824
+        },
+        {
+          "number": 17,
+          "similarity": 0.162824
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l11-mcq-010",
+      "priority": 1.376879,
+      "pattern": "application",
+      "patternComponent": 0.525773,
+      "examSimilarity": 0.145407,
+      "reviewSimilarity": 0.167088,
+      "closestExamItems": [
+        {
+          "number": 14,
+          "similarity": 0.145407
+        },
+        {
+          "number": 20,
+          "similarity": 0.113442
+        },
+        {
+          "number": 3,
+          "similarity": 0.103089
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 18,
+          "similarity": 0.167088
+        },
+        {
+          "number": 20,
+          "similarity": 0.093506
+        },
+        {
+          "number": 4,
+          "similarity": 0.050092
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-011",
+      "priority": 1.666659,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.266635,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.266635
+        },
+        {
+          "number": 17,
+          "similarity": 0.235243
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-012",
+      "priority": 1.668777,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.152364,
+      "reviewSimilarity": 0.204577,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.152364
+        },
+        {
+          "number": 17,
+          "similarity": 0.122489
+        },
+        {
+          "number": 3,
+          "similarity": 0.105177
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.204577
+        },
+        {
+          "number": 20,
+          "similarity": 0.0954
+        },
+        {
+          "number": 4,
+          "similarity": 0.033877
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-013",
+      "priority": 1.723738,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.297554,
+      "reviewSimilarity": 0.328997,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.297554
+        },
+        {
+          "number": 22,
+          "similarity": 0.14564
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.328997
+        },
+        {
+          "number": 20,
+          "similarity": 0.186686
+        },
+        {
+          "number": 12,
+          "similarity": 0.173638
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-014",
+      "priority": 1.557257,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.125881,
+      "reviewSimilarity": 0.20628,
+      "closestExamItems": [
+        {
+          "number": 20,
+          "similarity": 0.125881
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 15,
+          "similarity": 0.20628
+        },
+        {
+          "number": 18,
+          "similarity": 0.109505
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-015",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l11-mcq-016",
+      "priority": 1.451546,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-017",
+      "priority": 1.62515,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.280046,
+      "reviewSimilarity": 0.401954,
+      "closestExamItems": [
+        {
+          "number": 22,
+          "similarity": 0.280046
+        },
+        {
+          "number": 23,
+          "similarity": 0.208718
+        },
+        {
+          "number": 9,
+          "similarity": 0.146973
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.401954
+        },
+        {
+          "number": 14,
+          "similarity": 0.316308
+        },
+        {
+          "number": 17,
+          "similarity": 0.233228
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-018",
+      "priority": 1.593592,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.153576,
+      "reviewSimilarity": 0.402349,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.153576
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.402349
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-019",
+      "priority": 1.103456,
+      "pattern": "design",
+      "patternComponent": 0.0,
+      "examSimilarity": 0.413825,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.413825
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-020",
+      "priority": 1.494845,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-021",
+      "priority": 1.68851,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.187947,
+      "reviewSimilarity": 0.276824,
+      "closestExamItems": [
+        {
+          "number": 20,
+          "similarity": 0.187947
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 18,
+          "similarity": 0.276824
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-022",
+      "priority": 1.691317,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.247412,
+      "reviewSimilarity": 0.196428,
+      "closestExamItems": [
+        {
+          "number": 11,
+          "similarity": 0.247412
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 15,
+          "similarity": 0.196428
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-023",
+      "priority": 1.348694,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.156658,
+      "reviewSimilarity": 0.166621,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.156658
+        },
+        {
+          "number": 23,
+          "similarity": 0.153659
+        },
+        {
+          "number": 24,
+          "similarity": 0.126812
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 19,
+          "similarity": 0.166621
+        },
+        {
+          "number": 13,
+          "similarity": 0.156658
+        },
+        {
+          "number": 17,
+          "similarity": 0.107808
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-024",
+      "priority": 1.607533,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.345131,
+      "reviewSimilarity": 0.17603,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.345131
+        },
+        {
+          "number": 9,
+          "similarity": 0.159538
+        },
+        {
+          "number": 24,
+          "similarity": 0.111608
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.17603
+        },
+        {
+          "number": 7,
+          "similarity": 0.069053
+        },
+        {
+          "number": 20,
+          "similarity": 0.047089
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-mcq-025",
+      "priority": 1.703456,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.413825,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.413825
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-001",
+      "priority": 1.675239,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.234799,
+      "reviewSimilarity": 0.11026,
+      "closestExamItems": [
+        {
+          "number": 10,
+          "similarity": 0.234799
+        },
+        {
+          "number": 18,
+          "similarity": 0.118698
+        },
+        {
+          "number": 23,
+          "similarity": 0.103445
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.11026
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-002",
+      "priority": 1.541917,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.279667,
+      "reviewSimilarity": 0.13636,
+      "closestExamItems": [
+        {
+          "number": 17,
+          "similarity": 0.279667
+        },
+        {
+          "number": 10,
+          "similarity": 0.155754
+        },
+        {
+          "number": 24,
+          "similarity": 0.121875
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 18,
+          "similarity": 0.13636
+        },
+        {
+          "number": 4,
+          "similarity": 0.027098
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l11-written-003",
+      "priority": 1.643294,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.394051,
+      "reviewSimilarity": 0.332906,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.394051
+        },
+        {
+          "number": 8,
+          "similarity": 0.322886
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 1,
+          "similarity": 0.332906
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-004",
+      "priority": 1.566986,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.288599,
+      "reviewSimilarity": 0.288599,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.288599
+        },
+        {
+          "number": 24,
+          "similarity": 0.233616
+        },
+        {
+          "number": 14,
+          "similarity": 0.177035
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.288599
+        },
+        {
+          "number": 4,
+          "similarity": 0.060987
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l11-written-005",
+      "priority": 1.405861,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.351294,
+      "reviewSimilarity": 0.223343,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.351294
+        },
+        {
+          "number": 16,
+          "similarity": 0.183195
+        },
+        {
+          "number": 10,
+          "similarity": 0.164091
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 2,
+          "similarity": 0.223343
+        },
+        {
+          "number": 13,
+          "similarity": 0.183195
+        },
+        {
+          "number": 17,
+          "similarity": 0.12607
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l11-written-006",
+      "priority": 1.546898,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.27443,
+      "reviewSimilarity": 0.178292,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.27443
+        },
+        {
+          "number": 18,
+          "similarity": 0.23479
+        },
+        {
+          "number": 10,
+          "similarity": 0.221829
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 2,
+          "similarity": 0.178292
+        },
+        {
+          "number": 16,
+          "similarity": 0.158883
+        },
+        {
+          "number": 4,
+          "similarity": 0.034692
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l11-written-007",
+      "priority": 1.564228,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.159076,
+      "reviewSimilarity": 0.197425,
+      "closestExamItems": [
+        {
+          "number": 17,
+          "similarity": 0.159076
+        },
+        {
+          "number": 24,
+          "similarity": 0.116869
+        },
+        {
+          "number": 10,
+          "similarity": 0.088594
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.197425
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-008",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-009",
+      "priority": 1.672675,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.240905,
+      "reviewSimilarity": 0.08299,
+      "closestExamItems": [
+        {
+          "number": 14,
+          "similarity": 0.240905
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.08299
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-010",
+      "priority": 1.547181,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.333851,
+      "reviewSimilarity": 0.081148,
+      "closestExamItems": [
+        {
+          "number": 17,
+          "similarity": 0.333851
+        },
+        {
+          "number": 24,
+          "similarity": 0.145488
+        },
+        {
+          "number": 14,
+          "similarity": 0.141657
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.081148
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        17
+      ]
+    },
+    {
+      "id": "v2-l11-written-011",
+      "priority": 1.417164,
+      "pattern": "procedure",
+      "patternComponent": 0.546392,
+      "examSimilarity": 0.308627,
+      "reviewSimilarity": 0.081148,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.308627
+        },
+        {
+          "number": 24,
+          "similarity": 0.145488
+        },
+        {
+          "number": 14,
+          "similarity": 0.141657
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.081148
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-012",
+      "priority": 1.609624,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.333179,
+      "reviewSimilarity": 0.209891,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.333179
+        },
+        {
+          "number": 23,
+          "similarity": 0.187833
+        },
+        {
+          "number": 24,
+          "similarity": 0.152364
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.209891
+        },
+        {
+          "number": 20,
+          "similarity": 0.200207
+        },
+        {
+          "number": 4,
+          "similarity": 0.033877
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-013",
+      "priority": 1.703944,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.27487,
+      "reviewSimilarity": 0.234841,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.27487
+        },
+        {
+          "number": 24,
+          "similarity": 0.212827
+        },
+        {
+          "number": 17,
+          "similarity": 0.171097
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.234841
+        },
+        {
+          "number": 20,
+          "similarity": 0.133258
+        },
+        {
+          "number": 12,
+          "similarity": 0.123945
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-014",
+      "priority": 1.684388,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.318143,
+      "reviewSimilarity": 0.032348,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.318143
+        },
+        {
+          "number": 22,
+          "similarity": 0.161542
+        },
+        {
+          "number": 24,
+          "similarity": 0.145488
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.032348
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-015",
+      "priority": 1.55549,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.27487,
+      "reviewSimilarity": 0.234841,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.27487
+        },
+        {
+          "number": 24,
+          "similarity": 0.212827
+        },
+        {
+          "number": 17,
+          "similarity": 0.171097
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.234841
+        },
+        {
+          "number": 20,
+          "similarity": 0.133258
+        },
+        {
+          "number": 12,
+          "similarity": 0.123945
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-016",
+      "priority": 1.397446,
+      "pattern": "application",
+      "patternComponent": 0.525773,
+      "examSimilarity": 0.303932,
+      "reviewSimilarity": 0.039993,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.303932
+        },
+        {
+          "number": 24,
+          "similarity": 0.179871
+        },
+        {
+          "number": 17,
+          "similarity": 0.144602
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.039993
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        21
+      ]
+    },
+    {
+      "id": "v2-l11-written-017",
+      "priority": 1.623368,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.155788,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.155788
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-018",
+      "priority": 1.593147,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.312758,
+      "reviewSimilarity": 0.13408,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.312758
+        },
+        {
+          "number": 9,
+          "similarity": 0.179195
+        },
+        {
+          "number": 16,
+          "similarity": 0.13408
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.13408
+        },
+        {
+          "number": 3,
+          "similarity": 0.113095
+        },
+        {
+          "number": 20,
+          "similarity": 0.052891
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-019",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-020",
+      "priority": 1.670002,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.280008,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.280008
+        },
+        {
+          "number": 22,
+          "similarity": 0.183999
+        },
+        {
+          "number": 23,
+          "similarity": 0.13069
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-021",
+      "priority": 1.73628,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.33678,
+      "reviewSimilarity": 0.347231,
+      "closestExamItems": [
+        {
+          "number": 8,
+          "similarity": 0.33678
+        },
+        {
+          "number": 9,
+          "similarity": 0.242747
+        },
+        {
+          "number": 15,
+          "similarity": 0.200478
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 1,
+          "similarity": 0.347231
+        },
+        {
+          "number": 7,
+          "similarity": 0.237748
+        },
+        {
+          "number": 11,
+          "similarity": 0.219573
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-022",
+      "priority": 1.719002,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.25123,
+      "reviewSimilarity": 0.374627,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.25123
+        },
+        {
+          "number": 22,
+          "similarity": 0.16584
+        },
+        {
+          "number": 3,
+          "similarity": 0.109756
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.374627
+        },
+        {
+          "number": 20,
+          "similarity": 0.212579
+        },
+        {
+          "number": 12,
+          "similarity": 0.197721
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-023",
+      "priority": 1.577379,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.117912,
+      "reviewSimilarity": 0.353704,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.117912
+        },
+        {
+          "number": 8,
+          "similarity": 0.098458
+        },
+        {
+          "number": 9,
+          "similarity": 0.070967
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.353704
+        },
+        {
+          "number": 15,
+          "similarity": 0.158377
+        },
+        {
+          "number": 1,
+          "similarity": 0.101513
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l11-written-024",
+      "priority": 1.102619,
+      "pattern": "design",
+      "patternComponent": 0.0,
+      "examSimilarity": 0.292619,
+      "reviewSimilarity": 0.196428,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.292619
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 15,
+          "similarity": 0.196428
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l11-written-025",
+      "priority": 1.451546,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-001",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-002",
+      "priority": 1.53657,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.228742,
+      "reviewSimilarity": 0.185584,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.228742
+        },
+        {
+          "number": 18,
+          "similarity": 0.209687
+        },
+        {
+          "number": 24,
+          "similarity": 0.164602
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 12,
+          "similarity": 0.185584
+        },
+        {
+          "number": 20,
+          "similarity": 0.103062
+        },
+        {
+          "number": 4,
+          "similarity": 0.083621
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l12-mcq-003",
+      "priority": 1.397082,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.325875,
+      "reviewSimilarity": 0.207183,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.325875
+        },
+        {
+          "number": 16,
+          "similarity": 0.16994
+        },
+        {
+          "number": 10,
+          "similarity": 0.152218
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 2,
+          "similarity": 0.207183
+        },
+        {
+          "number": 13,
+          "similarity": 0.16994
+        },
+        {
+          "number": 17,
+          "similarity": 0.116948
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-mcq-004",
+      "priority": 1.365527,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.195143,
+      "reviewSimilarity": 0.214698,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.195143
+        },
+        {
+          "number": 10,
+          "similarity": 0.157739
+        },
+        {
+          "number": 3,
+          "similarity": 0.126392
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 2,
+          "similarity": 0.214698
+        },
+        {
+          "number": 17,
+          "similarity": 0.12119
+        },
+        {
+          "number": 4,
+          "similarity": 0.070414
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-mcq-005",
+      "priority": 1.682091,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.196571,
+      "reviewSimilarity": 0.219655,
+      "closestExamItems": [
+        {
+          "number": 23,
+          "similarity": 0.196571
+        },
+        {
+          "number": 24,
+          "similarity": 0.159452
+        },
+        {
+          "number": 14,
+          "similarity": 0.155253
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.219655
+        },
+        {
+          "number": 20,
+          "similarity": 0.209521
+        },
+        {
+          "number": 4,
+          "similarity": 0.088937
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-006",
+      "priority": 1.558795,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.230494,
+      "reviewSimilarity": 0.330831,
+      "closestExamItems": [
+        {
+          "number": 22,
+          "similarity": 0.230494
+        },
+        {
+          "number": 23,
+          "similarity": 0.171787
+        },
+        {
+          "number": 24,
+          "similarity": 0.139348
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.330831
+        },
+        {
+          "number": 14,
+          "similarity": 0.26034
+        },
+        {
+          "number": 17,
+          "similarity": 0.19196
+        }
+      ],
+      "authoredExamAnalogies": [
+        17
+      ]
+    },
+    {
+      "id": "v2-l12-mcq-007",
+      "priority": 1.704054,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.275161,
+      "reviewSimilarity": 0.235089,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.275161
+        },
+        {
+          "number": 24,
+          "similarity": 0.125832
+        },
+        {
+          "number": 22,
+          "similarity": 0.104069
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.235089
+        },
+        {
+          "number": 20,
+          "similarity": 0.133399
+        },
+        {
+          "number": 12,
+          "similarity": 0.124076
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-008",
+      "priority": 1.417555,
+      "pattern": "application",
+      "patternComponent": 0.525773,
+      "examSimilarity": 0.26585,
+      "reviewSimilarity": 0.237522,
+      "closestExamItems": [
+        {
+          "number": 22,
+          "similarity": 0.26585
+        },
+        {
+          "number": 2,
+          "similarity": 0.210293
+        },
+        {
+          "number": 23,
+          "similarity": 0.194398
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.237522
+        },
+        {
+          "number": 20,
+          "similarity": 0.228316
+        },
+        {
+          "number": 14,
+          "similarity": 0.179668
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-009",
+      "priority": 1.69427,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.377079,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.377079
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        21
+      ]
+    },
+    {
+      "id": "v2-l12-mcq-010",
+      "priority": 1.568462,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.16135,
+      "reviewSimilarity": 0.22186,
+      "closestExamItems": [
+        {
+          "number": 14,
+          "similarity": 0.16135
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.22186
+        },
+        {
+          "number": 4,
+          "similarity": 0.055584
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-011",
+      "priority": 1.656511,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.376738,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 19,
+          "similarity": 0.376738
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-012",
+      "priority": 1.66506,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.425536,
+      "reviewSimilarity": 0.425536,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.425536
+        },
+        {
+          "number": 24,
+          "similarity": 0.344464
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.425536
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-013",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-014",
+      "priority": 1.451546,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-015",
+      "priority": 1.387061,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.262717,
+      "reviewSimilarity": 0.245635,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.262717
+        },
+        {
+          "number": 10,
+          "similarity": 0.212361
+        },
+        {
+          "number": 17,
+          "similarity": 0.12008
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 9,
+          "similarity": 0.245635
+        },
+        {
+          "number": 2,
+          "similarity": 0.170682
+        },
+        {
+          "number": 4,
+          "similarity": 0.033211
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-mcq-016",
+      "priority": 1.720684,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.259369,
+      "reviewSimilarity": 0.372276,
+      "closestExamItems": [
+        {
+          "number": 22,
+          "similarity": 0.259369
+        },
+        {
+          "number": 23,
+          "similarity": 0.193307
+        },
+        {
+          "number": 3,
+          "similarity": 0.14532
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.372276
+        },
+        {
+          "number": 14,
+          "similarity": 0.292954
+        },
+        {
+          "number": 17,
+          "similarity": 0.216008
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-017",
+      "priority": 1.593592,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.153576,
+      "reviewSimilarity": 0.402349,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.153576
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.402349
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l12-mcq-018",
+      "priority": 1.0,
+      "pattern": "design",
+      "patternComponent": 0.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-019",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-020",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-021",
+      "priority": 1.656511,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.376738,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 19,
+          "similarity": 0.376738
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-mcq-022",
+      "priority": 1.419914,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.391995,
+      "reviewSimilarity": 0.249195,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.391995
+        },
+        {
+          "number": 22,
+          "similarity": 0.166889
+        },
+        {
+          "number": 23,
+          "similarity": 0.124382
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.249195
+        },
+        {
+          "number": 20,
+          "similarity": 0.239537
+        },
+        {
+          "number": 14,
+          "similarity": 0.188498
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-mcq-023",
+      "priority": 1.284536,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-mcq-024",
+      "priority": 1.598225,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.429312,
+      "reviewSimilarity": 0.262341,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.429312
+        },
+        {
+          "number": 22,
+          "similarity": 0.182776
+        },
+        {
+          "number": 23,
+          "similarity": 0.136223
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.262341
+        },
+        {
+          "number": 14,
+          "similarity": 0.206443
+        },
+        {
+          "number": 17,
+          "similarity": 0.152219
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-mcq-025",
+      "priority": 1.623363,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.359499,
+      "reviewSimilarity": 0.257619,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.359499
+        },
+        {
+          "number": 16,
+          "similarity": 0.257619
+        },
+        {
+          "number": 22,
+          "similarity": 0.206373
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.257619
+        },
+        {
+          "number": 20,
+          "similarity": 0.177236
+        },
+        {
+          "number": 14,
+          "similarity": 0.139472
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l12-written-001",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-002",
+      "priority": 1.643294,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.394051,
+      "reviewSimilarity": 0.332906,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.394051
+        },
+        {
+          "number": 8,
+          "similarity": 0.322886
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 1,
+          "similarity": 0.332906
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-003",
+      "priority": 1.564332,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.402418,
+      "reviewSimilarity": 0.081207,
+      "closestExamItems": [
+        {
+          "number": 17,
+          "similarity": 0.402418
+        },
+        {
+          "number": 10,
+          "similarity": 0.224117
+        },
+        {
+          "number": 24,
+          "similarity": 0.209343
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.081207
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l12-written-004",
+      "priority": 1.57315,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.230867,
+      "reviewSimilarity": 0.137252,
+      "closestExamItems": [
+        {
+          "number": 10,
+          "similarity": 0.230867
+        },
+        {
+          "number": 24,
+          "similarity": 0.180313
+        },
+        {
+          "number": 14,
+          "similarity": 0.099818
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.137252
+        },
+        {
+          "number": 2,
+          "similarity": 0.117146
+        },
+        {
+          "number": 4,
+          "similarity": 0.106767
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-written-005",
+      "priority": 1.684548,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.159452,
+      "reviewSimilarity": 0.2979,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.159452
+        },
+        {
+          "number": 14,
+          "similarity": 0.155253
+        },
+        {
+          "number": 22,
+          "similarity": 0.131874
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.2979
+        },
+        {
+          "number": 20,
+          "similarity": 0.16904
+        },
+        {
+          "number": 12,
+          "similarity": 0.157226
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-006",
+      "priority": 1.378211,
+      "pattern": "application",
+      "patternComponent": 0.525773,
+      "examSimilarity": 0.151621,
+      "reviewSimilarity": 0.165616,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.151621
+        },
+        {
+          "number": 14,
+          "similarity": 0.147628
+        },
+        {
+          "number": 17,
+          "similarity": 0.121891
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.165616
+        },
+        {
+          "number": 2,
+          "similarity": 0.120146
+        },
+        {
+          "number": 4,
+          "similarity": 0.084569
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-007",
+      "priority": 1.694691,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.27487,
+      "reviewSimilarity": 0.173158,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.27487
+        },
+        {
+          "number": 24,
+          "similarity": 0.212827
+        },
+        {
+          "number": 17,
+          "similarity": 0.171097
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.173158
+        },
+        {
+          "number": 20,
+          "similarity": 0.16517
+        },
+        {
+          "number": 4,
+          "similarity": 0.047321
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-008",
+      "priority": 1.537638,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.173571,
+      "reviewSimilarity": 0.284658,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.173571
+        },
+        {
+          "number": 24,
+          "similarity": 0.152364
+        },
+        {
+          "number": 22,
+          "similarity": 0.126012
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.284658
+        },
+        {
+          "number": 20,
+          "similarity": 0.161526
+        },
+        {
+          "number": 12,
+          "similarity": 0.150237
+        }
+      ],
+      "authoredExamAnalogies": [
+        17
+      ]
+    },
+    {
+      "id": "v2-l12-written-009",
+      "priority": 1.397446,
+      "pattern": "application",
+      "patternComponent": 0.525773,
+      "examSimilarity": 0.303932,
+      "reviewSimilarity": 0.039993,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.303932
+        },
+        {
+          "number": 24,
+          "similarity": 0.179871
+        },
+        {
+          "number": 17,
+          "similarity": 0.144602
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.039993
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        21
+      ]
+    },
+    {
+      "id": "v2-l12-written-010",
+      "priority": 1.615205,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.3009,
+      "reviewSimilarity": 0.3009,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.3009
+        },
+        {
+          "number": 9,
+          "similarity": 0.278636
+        },
+        {
+          "number": 24,
+          "similarity": 0.243573
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.3009
+        },
+        {
+          "number": 1,
+          "similarity": 0.2354
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-011",
+      "priority": 1.551827,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.153668,
+      "reviewSimilarity": 0.412422,
+      "closestExamItems": [
+        {
+          "number": 8,
+          "similarity": 0.153668
+        },
+        {
+          "number": 9,
+          "similarity": 0.110762
+        },
+        {
+          "number": 15,
+          "similarity": 0.091476
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 9,
+          "similarity": 0.412422
+        },
+        {
+          "number": 1,
+          "similarity": 0.158437
+        },
+        {
+          "number": 7,
+          "similarity": 0.108481
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-012",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-013",
+      "priority": 1.537654,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.303891,
+      "reviewSimilarity": 0.067568,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.303891
+        },
+        {
+          "number": 17,
+          "similarity": 0.244304
+        },
+        {
+          "number": 18,
+          "similarity": 0.182292
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.067568
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-written-014",
+      "priority": 1.56052,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.23432,
+      "reviewSimilarity": 0.33596,
+      "closestExamItems": [
+        {
+          "number": 22,
+          "similarity": 0.23432
+        },
+        {
+          "number": 1,
+          "similarity": 0.180814
+        },
+        {
+          "number": 23,
+          "similarity": 0.169804
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 12,
+          "similarity": 0.33596
+        },
+        {
+          "number": 20,
+          "similarity": 0.180991
+        },
+        {
+          "number": 2,
+          "similarity": 0.162444
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-written-015",
+      "priority": 1.697654,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.16584,
+      "reviewSimilarity": 0.374627,
+      "closestExamItems": [
+        {
+          "number": 22,
+          "similarity": 0.16584
+        },
+        {
+          "number": 3,
+          "similarity": 0.109756
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.374627
+        },
+        {
+          "number": 20,
+          "similarity": 0.212579
+        },
+        {
+          "number": 12,
+          "similarity": 0.197721
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-016",
+      "priority": 1.696332,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.199335,
+      "reviewSimilarity": 0.309985,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.199335
+        },
+        {
+          "number": 8,
+          "similarity": 0.166447
+        },
+        {
+          "number": 9,
+          "similarity": 0.119973
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.309985
+        },
+        {
+          "number": 1,
+          "similarity": 0.171612
+        },
+        {
+          "number": 7,
+          "similarity": 0.117502
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-017",
+      "priority": 1.387992,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.413825,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.413825
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-018",
+      "priority": 1.494845,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-019",
+      "priority": 1.544976,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.262014,
+      "reviewSimilarity": 0.186175,
+      "closestExamItems": [
+        {
+          "number": 12,
+          "similarity": 0.262014
+        },
+        {
+          "number": 18,
+          "similarity": 0.154684
+        },
+        {
+          "number": 11,
+          "similarity": 0.128772
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.186175
+        },
+        {
+          "number": 7,
+          "similarity": 0.170637
+        },
+        {
+          "number": 17,
+          "similarity": 0.110275
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l12-written-020",
+      "priority": 1.693448,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.23362,
+      "reviewSimilarity": 0.23362,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.23362
+        },
+        {
+          "number": 17,
+          "similarity": 0.13296
+        },
+        {
+          "number": 24,
+          "similarity": 0.097681
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.23362
+        },
+        {
+          "number": 4,
+          "similarity": 0.20706
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        17
+      ]
+    },
+    {
+      "id": "v2-l12-written-021",
+      "priority": 1.655206,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.36804,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 2,
+          "similarity": 0.36804
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        9
+      ]
+    },
+    {
+      "id": "v2-l12-written-022",
+      "priority": 1.562886,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.325879,
+      "reviewSimilarity": 0.199136,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.325879
+        },
+        {
+          "number": 22,
+          "similarity": 0.13874
+        },
+        {
+          "number": 23,
+          "similarity": 0.103403
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.199136
+        },
+        {
+          "number": 14,
+          "similarity": 0.156705
+        },
+        {
+          "number": 19,
+          "similarity": 0.1416
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-written-023",
+      "priority": 1.356047,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.187947,
+      "reviewSimilarity": 0.163497,
+      "closestExamItems": [
+        {
+          "number": 20,
+          "similarity": 0.187947
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 18,
+          "similarity": 0.163497
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-written-024",
+      "priority": 1.419914,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.391995,
+      "reviewSimilarity": 0.249195,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.391995
+        },
+        {
+          "number": 22,
+          "similarity": 0.166889
+        },
+        {
+          "number": 23,
+          "similarity": 0.124382
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.249195
+        },
+        {
+          "number": 20,
+          "similarity": 0.239537
+        },
+        {
+          "number": 14,
+          "similarity": 0.188498
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l12-written-025",
+      "priority": 1.621761,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.425536,
+      "reviewSimilarity": 0.425536,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.425536
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.425536
+        },
+        {
+          "number": 4,
+          "similarity": 0.076589
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        17
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-001",
+      "priority": 1.392301,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.312032,
+      "reviewSimilarity": 0.198382,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.312032
+        },
+        {
+          "number": 16,
+          "similarity": 0.16272
+        },
+        {
+          "number": 10,
+          "similarity": 0.145751
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 2,
+          "similarity": 0.198382
+        },
+        {
+          "number": 13,
+          "similarity": 0.16272
+        },
+        {
+          "number": 17,
+          "similarity": 0.11198
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-002",
+      "priority": 1.392301,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.312032,
+      "reviewSimilarity": 0.198382,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.312032
+        },
+        {
+          "number": 16,
+          "similarity": 0.16272
+        },
+        {
+          "number": 10,
+          "similarity": 0.145751
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 2,
+          "similarity": 0.198382
+        },
+        {
+          "number": 13,
+          "similarity": 0.16272
+        },
+        {
+          "number": 17,
+          "similarity": 0.11198
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-003",
+      "priority": 1.663829,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.236635,
+      "reviewSimilarity": 0.031138,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.236635
+        },
+        {
+          "number": 11,
+          "similarity": 0.219575
+        },
+        {
+          "number": 24,
+          "similarity": 0.140044
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.031138
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-mcq-004",
+      "priority": 1.571244,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.197895,
+      "reviewSimilarity": 0.179499,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.197895
+        },
+        {
+          "number": 23,
+          "similarity": 0.168405
+        },
+        {
+          "number": 21,
+          "similarity": 0.139869
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.179499
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-mcq-005",
+      "priority": 1.573399,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.179871,
+      "reviewSimilarity": 0.223904,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.179871
+        },
+        {
+          "number": 17,
+          "similarity": 0.144602
+        },
+        {
+          "number": 18,
+          "similarity": 0.107897
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 15,
+          "similarity": 0.223904
+        },
+        {
+          "number": 4,
+          "similarity": 0.039993
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-mcq-006",
+      "priority": 1.73628,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.33678,
+      "reviewSimilarity": 0.347231,
+      "closestExamItems": [
+        {
+          "number": 8,
+          "similarity": 0.33678
+        },
+        {
+          "number": 9,
+          "similarity": 0.242747
+        },
+        {
+          "number": 15,
+          "similarity": 0.200478
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 1,
+          "similarity": 0.347231
+        },
+        {
+          "number": 7,
+          "similarity": 0.237748
+        },
+        {
+          "number": 11,
+          "similarity": 0.219573
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-mcq-007",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-008",
+      "priority": 1.73628,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.33678,
+      "reviewSimilarity": 0.347231,
+      "closestExamItems": [
+        {
+          "number": 8,
+          "similarity": 0.33678
+        },
+        {
+          "number": 9,
+          "similarity": 0.242747
+        },
+        {
+          "number": 15,
+          "similarity": 0.200478
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 1,
+          "similarity": 0.347231
+        },
+        {
+          "number": 7,
+          "similarity": 0.237748
+        },
+        {
+          "number": 11,
+          "similarity": 0.219573
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-mcq-009",
+      "priority": 1.702927,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.199485,
+      "reviewSimilarity": 0.353704,
+      "closestExamItems": [
+        {
+          "number": 11,
+          "similarity": 0.199485
+        },
+        {
+          "number": 3,
+          "similarity": 0.117912
+        },
+        {
+          "number": 8,
+          "similarity": 0.098458
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.353704
+        },
+        {
+          "number": 1,
+          "similarity": 0.101513
+        },
+        {
+          "number": 7,
+          "similarity": 0.069506
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-mcq-010",
+      "priority": 1.641669,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.277791,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 15,
+          "similarity": 0.277791
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-mcq-011",
+      "priority": 1.656511,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.376738,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 19,
+          "similarity": 0.376738
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        18
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-012",
+      "priority": 1.596157,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.25328,
+      "reviewSimilarity": 0.25328,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.25328
+        },
+        {
+          "number": 10,
+          "similarity": 0.132485
+        },
+        {
+          "number": 8,
+          "similarity": 0.123484
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.25328
+        },
+        {
+          "number": 1,
+          "similarity": 0.127316
+        },
+        {
+          "number": 7,
+          "similarity": 0.087173
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-013",
+      "priority": 1.537654,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.303891,
+      "reviewSimilarity": 0.067568,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.303891
+        },
+        {
+          "number": 17,
+          "similarity": 0.244304
+        },
+        {
+          "number": 18,
+          "similarity": 0.182292
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.067568
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-014",
+      "priority": 1.770215,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.425536,
+      "reviewSimilarity": 0.425536,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.425536
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.425536
+        },
+        {
+          "number": 4,
+          "similarity": 0.076589
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-015",
+      "priority": 1.284536,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-016",
+      "priority": 1.284536,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-017",
+      "priority": 1.284536,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-018",
+      "priority": 1.562011,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.20582,
+      "reviewSimilarity": 0.104737,
+      "closestExamItems": [
+        {
+          "number": 11,
+          "similarity": 0.20582
+        },
+        {
+          "number": 14,
+          "similarity": 0.127815
+        },
+        {
+          "number": 8,
+          "similarity": 0.101585
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 1,
+          "similarity": 0.104737
+        },
+        {
+          "number": 18,
+          "similarity": 0.086745
+        },
+        {
+          "number": 7,
+          "similarity": 0.071713
+        }
+      ],
+      "authoredExamAnalogies": [
+        9,
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-019",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-020",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-021",
+      "priority": 1.623641,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.424809,
+      "reviewSimilarity": 0.150623,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.424809
+        },
+        {
+          "number": 23,
+          "similarity": 0.134794
+        },
+        {
+          "number": 22,
+          "similarity": 0.09043
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.150623
+        },
+        {
+          "number": 20,
+          "similarity": 0.143674
+        },
+        {
+          "number": 12,
+          "similarity": 0.123279
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-022",
+      "priority": 1.315464,
+      "pattern": "application",
+      "patternComponent": 0.525773,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-mcq-023",
+      "priority": 1.683685,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.334742,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.334742
+        },
+        {
+          "number": 11,
+          "similarity": 0.247412
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-mcq-024",
+      "priority": 1.770215,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.425536,
+      "reviewSimilarity": 0.425536,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.425536
+        },
+        {
+          "number": 24,
+          "similarity": 0.344464
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.425536
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-mcq-025",
+      "priority": 1.575078,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.308829,
+      "reviewSimilarity": 0.308829,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.308829
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.308829
+        },
+        {
+          "number": 2,
+          "similarity": 0.273296
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-written-001",
+      "priority": 1.544294,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.282124,
+      "reviewSimilarity": 0.148108,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.282124
+        },
+        {
+          "number": 18,
+          "similarity": 0.276682
+        },
+        {
+          "number": 10,
+          "similarity": 0.272599
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 12,
+          "similarity": 0.148108
+        },
+        {
+          "number": 3,
+          "similarity": 0.131597
+        },
+        {
+          "number": 4,
+          "similarity": 0.122303
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l13-written-002",
+      "priority": 1.599252,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.417008,
+      "reviewSimilarity": 0.289689,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.417008
+        },
+        {
+          "number": 16,
+          "similarity": 0.289689
+        },
+        {
+          "number": 17,
+          "similarity": 0.218265
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.289689
+        },
+        {
+          "number": 1,
+          "similarity": 0.145618
+        },
+        {
+          "number": 7,
+          "similarity": 0.099704
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-written-003",
+      "priority": 1.566016,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.170421,
+      "reviewSimilarity": 0.190434,
+      "closestExamItems": [
+        {
+          "number": 23,
+          "similarity": 0.170421
+        },
+        {
+          "number": 10,
+          "similarity": 0.114775
+        },
+        {
+          "number": 22,
+          "similarity": 0.114331
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.190434
+        },
+        {
+          "number": 20,
+          "similarity": 0.181649
+        },
+        {
+          "number": 4,
+          "similarity": 0.096505
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-written-004",
+      "priority": 1.669531,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.230209,
+      "reviewSimilarity": 0.07986,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.230209
+        },
+        {
+          "number": 24,
+          "similarity": 0.125832
+        },
+        {
+          "number": 17,
+          "similarity": 0.101159
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.07986
+        },
+        {
+          "number": 20,
+          "similarity": 0.078788
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        18
+      ]
+    },
+    {
+      "id": "v2-l13-written-005",
+      "priority": 1.715438,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.300065,
+      "reviewSimilarity": 0.26948,
+      "closestExamItems": [
+        {
+          "number": 17,
+          "similarity": 0.300065
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.26948
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-written-006",
+      "priority": 1.506594,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.366987,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 9,
+          "similarity": 0.366987
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-written-007",
+      "priority": 1.673828,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.12156,
+      "reviewSimilarity": 0.28959,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.12156
+        },
+        {
+          "number": 23,
+          "similarity": 0.103445
+        },
+        {
+          "number": 21,
+          "similarity": 0.085916
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 9,
+          "similarity": 0.28959
+        },
+        {
+          "number": 20,
+          "similarity": 0.11026
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-written-008",
+      "priority": 1.524221,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.240905,
+      "reviewSimilarity": 0.08299,
+      "closestExamItems": [
+        {
+          "number": 14,
+          "similarity": 0.240905
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.08299
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-written-009",
+      "priority": 1.34601,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.13314,
+      "reviewSimilarity": 0.187929,
+      "closestExamItems": [
+        {
+          "number": 8,
+          "similarity": 0.13314
+        },
+        {
+          "number": 21,
+          "similarity": 0.120365
+        },
+        {
+          "number": 3,
+          "similarity": 0.118765
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.187929
+        },
+        {
+          "number": 16,
+          "similarity": 0.175197
+        },
+        {
+          "number": 1,
+          "similarity": 0.137272
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-written-010",
+      "priority": 1.697092,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.210386,
+      "reviewSimilarity": 0.296634,
+      "closestExamItems": [
+        {
+          "number": 2,
+          "similarity": 0.210386
+        },
+        {
+          "number": 14,
+          "similarity": 0.135201
+        },
+        {
+          "number": 3,
+          "similarity": 0.128687
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.296634
+        },
+        {
+          "number": 3,
+          "similarity": 0.20012
+        },
+        {
+          "number": 6,
+          "similarity": 0.141221
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-written-011",
+      "priority": 1.621761,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.425536,
+      "reviewSimilarity": 0.425536,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.425536
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.425536
+        },
+        {
+          "number": 4,
+          "similarity": 0.076589
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l13-written-012",
+      "priority": 1.561242,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.336374,
+      "reviewSimilarity": 0.170682,
+      "closestExamItems": [
+        {
+          "number": 10,
+          "similarity": 0.336374
+        },
+        {
+          "number": 24,
+          "similarity": 0.262717
+        },
+        {
+          "number": 17,
+          "similarity": 0.12008
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 2,
+          "similarity": 0.170682
+        },
+        {
+          "number": 4,
+          "similarity": 0.033211
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-written-013",
+      "priority": 1.618379,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.335931,
+      "reviewSimilarity": 0.263677,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.335931
+        },
+        {
+          "number": 12,
+          "similarity": 0.148212
+        },
+        {
+          "number": 8,
+          "similarity": 0.126608
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.263677
+        },
+        {
+          "number": 2,
+          "similarity": 0.173372
+        },
+        {
+          "number": 9,
+          "similarity": 0.172876
+        }
+      ],
+      "authoredExamAnalogies": [
+        9
+      ]
+    },
+    {
+      "id": "v2-l13-written-014",
+      "priority": 1.617892,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.333187,
+      "reviewSimilarity": 0.264999,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.333187
+        },
+        {
+          "number": 23,
+          "similarity": 0.163325
+        },
+        {
+          "number": 22,
+          "similarity": 0.141852
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.264999
+        },
+        {
+          "number": 14,
+          "similarity": 0.160219
+        },
+        {
+          "number": 9,
+          "similarity": 0.141029
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l13-written-015",
+      "priority": 1.616998,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.377072,
+      "reviewSimilarity": 0.1859,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.377072
+        },
+        {
+          "number": 22,
+          "similarity": 0.216461
+        },
+        {
+          "number": 2,
+          "similarity": 0.171226
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.1859
+        },
+        {
+          "number": 14,
+          "similarity": 0.14629
+        },
+        {
+          "number": 13,
+          "similarity": 0.124285
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-written-016",
+      "priority": 1.711909,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.650907,
+      "reviewSimilarity": 0.650907,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.650907
+        },
+        {
+          "number": 24,
+          "similarity": 0.384484
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.650907
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-written-017",
+      "priority": 1.589895,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.252097,
+      "reviewSimilarity": 0.213504,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.252097
+        },
+        {
+          "number": 8,
+          "similarity": 0.206569
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 15,
+          "similarity": 0.213504
+        },
+        {
+          "number": 1,
+          "similarity": 0.212979
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-written-018",
+      "priority": 1.6546,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.08496,
+      "reviewSimilarity": 0.222397,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.08496
+        },
+        {
+          "number": 18,
+          "similarity": 0.071125
+        },
+        {
+          "number": 23,
+          "similarity": 0.061986
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 15,
+          "similarity": 0.222397
+        },
+        {
+          "number": 20,
+          "similarity": 0.066069
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-written-019",
+      "priority": 1.660632,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.137248,
+      "reviewSimilarity": 0.175466,
+      "closestExamItems": [
+        {
+          "number": 14,
+          "similarity": 0.137248
+        },
+        {
+          "number": 23,
+          "similarity": 0.094681
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 15,
+          "similarity": 0.175466
+        },
+        {
+          "number": 4,
+          "similarity": 0.115462
+        },
+        {
+          "number": 20,
+          "similarity": 0.100919
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-written-020",
+      "priority": 1.622939,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.365841,
+      "reviewSimilarity": 0.244224,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.365841
+        },
+        {
+          "number": 23,
+          "similarity": 0.153569
+        },
+        {
+          "number": 22,
+          "similarity": 0.125661
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.244224
+        },
+        {
+          "number": 12,
+          "similarity": 0.160563
+        },
+        {
+          "number": 14,
+          "similarity": 0.141932
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-written-021",
+      "priority": 1.58041,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.276102,
+      "reviewSimilarity": 0.11026,
+      "closestExamItems": [
+        {
+          "number": 11,
+          "similarity": 0.276102
+        },
+        {
+          "number": 3,
+          "similarity": 0.12156
+        },
+        {
+          "number": 23,
+          "similarity": 0.103445
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.11026
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l13-written-022",
+      "priority": 1.667616,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.215875,
+      "reviewSimilarity": 0.090983,
+      "closestExamItems": [
+        {
+          "number": 11,
+          "similarity": 0.215875
+        },
+        {
+          "number": 14,
+          "similarity": 0.134059
+        },
+        {
+          "number": 20,
+          "similarity": 0.104589
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 18,
+          "similarity": 0.090983
+        },
+        {
+          "number": 4,
+          "similarity": 0.046182
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-written-023",
+      "priority": 1.541165,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.18528,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 10,
+          "similarity": 0.18528
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-written-024",
+      "priority": 1.115445,
+      "pattern": "design",
+      "patternComponent": 0.0,
+      "examSimilarity": 0.288614,
+      "reviewSimilarity": 0.288614,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.288614
+        },
+        {
+          "number": 8,
+          "similarity": 0.119843
+        },
+        {
+          "number": 9,
+          "similarity": 0.086382
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.288614
+        },
+        {
+          "number": 15,
+          "similarity": 0.192778
+        },
+        {
+          "number": 1,
+          "similarity": 0.123562
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l13-written-025",
+      "priority": 1.514817,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.12156,
+      "reviewSimilarity": 0.219206,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.12156
+        },
+        {
+          "number": 23,
+          "similarity": 0.103445
+        },
+        {
+          "number": 21,
+          "similarity": 0.085916
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 15,
+          "similarity": 0.219206
+        },
+        {
+          "number": 20,
+          "similarity": 0.11026
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-001",
+      "priority": 1.689724,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.271951,
+      "reviewSimilarity": 0.144906,
+      "closestExamItems": [
+        {
+          "number": 5,
+          "similarity": 0.271951
+        },
+        {
+          "number": 17,
+          "similarity": 0.198338
+        },
+        {
+          "number": 3,
+          "similarity": 0.123299
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.144906
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-mcq-002",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-mcq-003",
+      "priority": 1.494845,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-mcq-004",
+      "priority": 1.609898,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.454385,
+      "reviewSimilarity": 0.29837,
+      "closestExamItems": [
+        {
+          "number": 22,
+          "similarity": 0.454385
+        },
+        {
+          "number": 23,
+          "similarity": 0.322323
+        },
+        {
+          "number": 21,
+          "similarity": 0.069233
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.29837
+        },
+        {
+          "number": 17,
+          "similarity": 0.219655
+        },
+        {
+          "number": 12,
+          "similarity": 0.139921
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-mcq-005",
+      "priority": 1.770215,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.425536,
+      "reviewSimilarity": 0.425536,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.425536
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.425536
+        },
+        {
+          "number": 4,
+          "similarity": 0.076589
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-006",
+      "priority": 1.69173,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.229325,
+      "reviewSimilarity": 0.229325,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.229325
+        },
+        {
+          "number": 25,
+          "similarity": 0.200779
+        },
+        {
+          "number": 3,
+          "similarity": 0.164589
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.229325
+        },
+        {
+          "number": 12,
+          "similarity": 0.162897
+        },
+        {
+          "number": 4,
+          "similarity": 0.082549
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-007",
+      "priority": 1.694679,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.426982,
+      "reviewSimilarity": 0.620585,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.426982
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.620585
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        9
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-008",
+      "priority": 1.52342,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.214066,
+      "reviewSimilarity": 0.12238,
+      "closestExamItems": [
+        {
+          "number": 24,
+          "similarity": 0.214066
+        },
+        {
+          "number": 3,
+          "similarity": 0.134922
+        },
+        {
+          "number": 23,
+          "similarity": 0.114816
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.12238
+        },
+        {
+          "number": 4,
+          "similarity": 0.047596
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-009",
+      "priority": 1.431215,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.429312,
+      "reviewSimilarity": 0.262341,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.429312
+        },
+        {
+          "number": 22,
+          "similarity": 0.182776
+        },
+        {
+          "number": 23,
+          "similarity": 0.136223
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.262341
+        },
+        {
+          "number": 14,
+          "similarity": 0.206443
+        },
+        {
+          "number": 17,
+          "similarity": 0.152219
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-010",
+      "priority": 1.569591,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.317215,
+      "reviewSimilarity": 0.258271,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.317215
+        },
+        {
+          "number": 24,
+          "similarity": 0.25635
+        },
+        {
+          "number": 22,
+          "similarity": 0.114331
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.258271
+        },
+        {
+          "number": 20,
+          "similarity": 0.146553
+        },
+        {
+          "number": 12,
+          "similarity": 0.13631
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-011",
+      "priority": 1.284536,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-012",
+      "priority": 1.360275,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.203695,
+      "reviewSimilarity": 0.165433,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.203695
+        },
+        {
+          "number": 16,
+          "similarity": 0.165433
+        },
+        {
+          "number": 3,
+          "similarity": 0.101125
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.165433
+        },
+        {
+          "number": 12,
+          "similarity": 0.100085
+        },
+        {
+          "number": 17,
+          "similarity": 0.096963
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-mcq-013",
+      "priority": 1.6,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-014",
+      "priority": 1.386715,
+      "pattern": "application",
+      "patternComponent": 0.525773,
+      "examSimilarity": 0.170345,
+      "reviewSimilarity": 0.191101,
+      "closestExamItems": [
+        {
+          "number": 14,
+          "similarity": 0.170345
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.191101
+        },
+        {
+          "number": 16,
+          "similarity": 0.178154
+        },
+        {
+          "number": 4,
+          "similarity": 0.058683
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-015",
+      "priority": 1.718349,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.473396,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.473396
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-mcq-016",
+      "priority": 1.613802,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.092011,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.092011
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-mcq-017",
+      "priority": 1.711325,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.278314,
+      "reviewSimilarity": 0.278314,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.278314
+        },
+        {
+          "number": 1,
+          "similarity": 0.213439
+        },
+        {
+          "number": 23,
+          "similarity": 0.148534
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.278314
+        },
+        {
+          "number": 11,
+          "similarity": 0.173639
+        },
+        {
+          "number": 4,
+          "similarity": 0.050092
+        }
+      ],
+      "authoredExamAnalogies": [
+        21
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-018",
+      "priority": 1.737251,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.416018,
+      "reviewSimilarity": 0.221645,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.416018
+        },
+        {
+          "number": 6,
+          "similarity": 0.287019
+        },
+        {
+          "number": 22,
+          "similarity": 0.219089
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.221645
+        },
+        {
+          "number": 14,
+          "similarity": 0.138019
+        },
+        {
+          "number": 17,
+          "similarity": 0.101767
+        }
+      ],
+      "authoredExamAnalogies": [
+        21
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-019",
+      "priority": 1.435282,
+      "pattern": "procedure",
+      "patternComponent": 0.546392,
+      "examSimilarity": 0.299116,
+      "reviewSimilarity": 0.217784,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.299116
+        },
+        {
+          "number": 1,
+          "similarity": 0.267704
+        },
+        {
+          "number": 23,
+          "similarity": 0.186297
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 11,
+          "similarity": 0.217784
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        22
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-020",
+      "priority": 1.585221,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.211089,
+      "reviewSimilarity": 0.250688,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.211089
+        },
+        {
+          "number": 16,
+          "similarity": 0.196141
+        },
+        {
+          "number": 1,
+          "similarity": 0.150421
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 8,
+          "similarity": 0.250688
+        },
+        {
+          "number": 13,
+          "similarity": 0.196141
+        },
+        {
+          "number": 11,
+          "similarity": 0.175472
+        }
+      ],
+      "authoredExamAnalogies": [
+        15
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-021",
+      "priority": 1.619232,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.376279,
+      "reviewSimilarity": 0.202115,
+      "closestExamItems": [
+        {
+          "number": 12,
+          "similarity": 0.376279
+        },
+        {
+          "number": 15,
+          "similarity": 0.12528
+        },
+        {
+          "number": 11,
+          "similarity": 0.112119
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 19,
+          "similarity": 0.202115
+        },
+        {
+          "number": 10,
+          "similarity": 0.136114
+        },
+        {
+          "number": 2,
+          "similarity": 0.117934
+        }
+      ],
+      "authoredExamAnalogies": [
+        15
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-022",
+      "priority": 1.493486,
+      "pattern": "application",
+      "patternComponent": 0.525773,
+      "examSimilarity": 0.516831,
+      "reviewSimilarity": 0.325428,
+      "closestExamItems": [
+        {
+          "number": 1,
+          "similarity": 0.516831
+        },
+        {
+          "number": 23,
+          "similarity": 0.305314
+        },
+        {
+          "number": 20,
+          "similarity": 0.089471
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.325428
+        },
+        {
+          "number": 18,
+          "similarity": 0.077831
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        1
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-023",
+      "priority": 1.690595,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.23036,
+      "reviewSimilarity": 0.220036,
+      "closestExamItems": [
+        {
+          "number": 1,
+          "similarity": 0.23036
+        },
+        {
+          "number": 11,
+          "similarity": 0.22101
+        },
+        {
+          "number": 23,
+          "similarity": 0.094681
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 11,
+          "similarity": 0.220036
+        },
+        {
+          "number": 12,
+          "similarity": 0.186602
+        },
+        {
+          "number": 20,
+          "similarity": 0.100919
+        }
+      ],
+      "authoredExamAnalogies": [
+        23
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-024",
+      "priority": 1.679123,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.31649,
+      "reviewSimilarity": 0.0,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.31649
+        },
+        {
+          "number": 21,
+          "similarity": 0.266635
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        22
+      ]
+    },
+    {
+      "id": "v2-l14-mcq-025",
+      "priority": 1.706542,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.253706,
+      "reviewSimilarity": 0.287439,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.253706
+        },
+        {
+          "number": 22,
+          "similarity": 0.24507
+        },
+        {
+          "number": 23,
+          "similarity": 0.099761
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.287439
+        },
+        {
+          "number": 12,
+          "similarity": 0.267349
+        },
+        {
+          "number": 14,
+          "similarity": 0.236327
+        }
+      ],
+      "authoredExamAnalogies": [
+        21
+      ]
+    },
+    {
+      "id": "v2-l14-written-001",
+      "priority": 1.538341,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.25143,
+      "reviewSimilarity": 0.159579,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.25143
+        },
+        {
+          "number": 2,
+          "similarity": 0.221989
+        },
+        {
+          "number": 4,
+          "similarity": 0.154012
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.159579
+        },
+        {
+          "number": 4,
+          "similarity": 0.049144
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l14-written-002",
+      "priority": 1.557869,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.302886,
+      "reviewSimilarity": 0.204008,
+      "closestExamItems": [
+        {
+          "number": 3,
+          "similarity": 0.302886
+        },
+        {
+          "number": 23,
+          "similarity": 0.11003
+        },
+        {
+          "number": 21,
+          "similarity": 0.091386
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 3,
+          "similarity": 0.204008
+        },
+        {
+          "number": 20,
+          "similarity": 0.117279
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-written-003",
+      "priority": 1.372938,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.159234,
+      "reviewSimilarity": 0.323959,
+      "closestExamItems": [
+        {
+          "number": 14,
+          "similarity": 0.159234
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 17,
+          "similarity": 0.323959
+        },
+        {
+          "number": 2,
+          "similarity": 0.105425
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        24
+      ]
+    },
+    {
+      "id": "v2-l14-written-004",
+      "priority": 1.570079,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.193236,
+      "reviewSimilarity": 0.179499,
+      "closestExamItems": [
+        {
+          "number": 18,
+          "similarity": 0.193236
+        },
+        {
+          "number": 23,
+          "similarity": 0.168405
+        },
+        {
+          "number": 10,
+          "similarity": 0.144228
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.179499
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        },
+        {
+          "number": 18,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        18
+      ]
+    },
+    {
+      "id": "v2-l14-written-005",
+      "priority": 1.474915,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.155788,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 4,
+          "similarity": 0.155788
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-written-006",
+      "priority": 1.463806,
+      "pattern": "procedure",
+      "patternComponent": 0.546392,
+      "examSimilarity": 0.3009,
+      "reviewSimilarity": 0.404976,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.3009
+        },
+        {
+          "number": 2,
+          "similarity": 0.287227
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.404976
+        },
+        {
+          "number": 13,
+          "similarity": 0.3009
+        },
+        {
+          "number": 6,
+          "similarity": 0.1928
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "v2-l14-written-007",
+      "priority": 1.543844,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.197211,
+      "reviewSimilarity": 0.286631,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.197211
+        },
+        {
+          "number": 10,
+          "similarity": 0.094878
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.286631
+        },
+        {
+          "number": 2,
+          "similarity": 0.188465
+        },
+        {
+          "number": 9,
+          "similarity": 0.187926
+        }
+      ],
+      "authoredExamAnalogies": [
+        9
+      ]
+    },
+    {
+      "id": "v2-l14-written-008",
+      "priority": 1.623017,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.375142,
+      "reviewSimilarity": 0.229239,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.375142
+        },
+        {
+          "number": 17,
+          "similarity": 0.181793
+        },
+        {
+          "number": 22,
+          "similarity": 0.18018
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.229239
+        },
+        {
+          "number": 14,
+          "similarity": 0.180394
+        },
+        {
+          "number": 17,
+          "similarity": 0.133013
+        }
+      ],
+      "authoredExamAnalogies": [
+        3,
+        24
+      ]
+    },
+    {
+      "id": "v2-l14-written-009",
+      "priority": 1.490471,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.0,
+      "reviewSimilarity": 0.259499,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.0
+        },
+        {
+          "number": 24,
+          "similarity": 0.0
+        },
+        {
+          "number": 23,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 9,
+          "similarity": 0.259499
+        },
+        {
+          "number": 4,
+          "similarity": 0.065062
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        17,
+        24
+      ]
+    },
+    {
+      "id": "v2-l14-written-010",
+      "priority": 1.603741,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.27224,
+      "reviewSimilarity": 0.27224,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.27224
+        },
+        {
+          "number": 12,
+          "similarity": 0.241816
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.27224
+        },
+        {
+          "number": 4,
+          "similarity": 0.048998
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        18
+      ]
+    },
+    {
+      "id": "v2-l14-written-011",
+      "priority": 1.689962,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.224905,
+      "reviewSimilarity": 0.224905,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.224905
+        },
+        {
+          "number": 3,
+          "similarity": 0.083306
+        },
+        {
+          "number": 23,
+          "similarity": 0.070892
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.224905
+        },
+        {
+          "number": 4,
+          "similarity": 0.134005
+        },
+        {
+          "number": 20,
+          "similarity": 0.075562
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-written-012",
+      "priority": 1.548915,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.249891,
+      "reviewSimilarity": 0.23264,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.249891
+        },
+        {
+          "number": 2,
+          "similarity": 0.164999
+        },
+        {
+          "number": 14,
+          "similarity": 0.106033
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.23264
+        },
+        {
+          "number": 2,
+          "similarity": 0.179601
+        },
+        {
+          "number": 12,
+          "similarity": 0.122783
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l14-written-013",
+      "priority": 1.607014,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.38867,
+      "reviewSimilarity": 0.38867,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.38867
+        },
+        {
+          "number": 24,
+          "similarity": 0.353569
+        },
+        {
+          "number": 23,
+          "similarity": 0.154987
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.38867
+        },
+        {
+          "number": 20,
+          "similarity": 0.165197
+        },
+        {
+          "number": 19,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l14-written-014",
+      "priority": 1.589895,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.252097,
+      "reviewSimilarity": 0.213504,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.252097
+        },
+        {
+          "number": 8,
+          "similarity": 0.206569
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 15,
+          "similarity": 0.213504
+        },
+        {
+          "number": 1,
+          "similarity": 0.212979
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        16
+      ]
+    },
+    {
+      "id": "v2-l14-written-015",
+      "priority": 1.614998,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.300382,
+      "reviewSimilarity": 0.300382,
+      "closestExamItems": [
+        {
+          "number": 16,
+          "similarity": 0.300382
+        },
+        {
+          "number": 24,
+          "similarity": 0.243154
+        },
+        {
+          "number": 10,
+          "similarity": 0.092799
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 13,
+          "similarity": 0.300382
+        },
+        {
+          "number": 4,
+          "similarity": 0.078028
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-written-016",
+      "priority": 1.659928,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.170345,
+      "reviewSimilarity": 0.11561,
+      "closestExamItems": [
+        {
+          "number": 14,
+          "similarity": 0.170345
+        },
+        {
+          "number": 20,
+          "similarity": 0.132899
+        },
+        {
+          "number": 25,
+          "similarity": 0.0
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 18,
+          "similarity": 0.11561
+        },
+        {
+          "number": 4,
+          "similarity": 0.058683
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": []
+    },
+    {
+      "id": "v2-l14-written-017",
+      "priority": 1.638389,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.350206,
+      "reviewSimilarity": 0.373278,
+      "closestExamItems": [
+        {
+          "number": 23,
+          "similarity": 0.350206
+        },
+        {
+          "number": 6,
+          "similarity": 0.327598
+        },
+        {
+          "number": 16,
+          "similarity": 0.157141
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.373278
+        },
+        {
+          "number": 14,
+          "similarity": 0.157532
+        },
+        {
+          "number": 13,
+          "similarity": 0.157141
+        }
+      ],
+      "authoredExamAnalogies": [
+        23
+      ]
+    },
+    {
+      "id": "v2-l14-written-018",
+      "priority": 1.748505,
+      "pattern": "interpretation",
+      "patternComponent": 1.0,
+      "examSimilarity": 0.503695,
+      "reviewSimilarity": 0.150543,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.503695
+        },
+        {
+          "number": 6,
+          "similarity": 0.246358
+        },
+        {
+          "number": 22,
+          "similarity": 0.188051
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.150543
+        },
+        {
+          "number": 14,
+          "similarity": 0.118466
+        },
+        {
+          "number": 17,
+          "similarity": 0.08735
+        }
+      ],
+      "authoredExamAnalogies": [
+        21
+      ]
+    },
+    {
+      "id": "v2-l14-written-019",
+      "priority": 1.593381,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.288402,
+      "reviewSimilarity": 0.176235,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.288402
+        },
+        {
+          "number": 21,
+          "similarity": 0.227469
+        },
+        {
+          "number": 22,
+          "similarity": 0.171465
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.176235
+        },
+        {
+          "number": 14,
+          "similarity": 0.138684
+        },
+        {
+          "number": 17,
+          "similarity": 0.102258
+        }
+      ],
+      "authoredExamAnalogies": [
+        21,
+        22
+      ]
+    },
+    {
+      "id": "v2-l14-written-020",
+      "priority": 1.431084,
+      "pattern": "prediction",
+      "patternComponent": 0.474227,
+      "examSimilarity": 0.400585,
+      "reviewSimilarity": 0.309344,
+      "closestExamItems": [
+        {
+          "number": 6,
+          "similarity": 0.400585
+        },
+        {
+          "number": 23,
+          "similarity": 0.187675
+        },
+        {
+          "number": 22,
+          "similarity": 0.170546
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.309344
+        },
+        {
+          "number": 14,
+          "similarity": 0.192629
+        },
+        {
+          "number": 17,
+          "similarity": 0.142034
+        }
+      ],
+      "authoredExamAnalogies": [
+        22
+      ]
+    },
+    {
+      "id": "v2-l14-written-021",
+      "priority": 1.55564,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.368672,
+      "reviewSimilarity": 0.079502,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.368672
+        },
+        {
+          "number": 14,
+          "similarity": 0.117143
+        },
+        {
+          "number": 20,
+          "similarity": 0.091391
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 18,
+          "similarity": 0.079502
+        },
+        {
+          "number": 4,
+          "similarity": 0.040355
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        21,
+        22
+      ]
+    },
+    {
+      "id": "v2-l14-written-022",
+      "priority": 1.442446,
+      "pattern": "application",
+      "patternComponent": 0.525773,
+      "examSimilarity": 0.309801,
+      "reviewSimilarity": 0.330211,
+      "closestExamItems": [
+        {
+          "number": 23,
+          "similarity": 0.309801
+        },
+        {
+          "number": 1,
+          "similarity": 0.201047
+        },
+        {
+          "number": 18,
+          "similarity": 0.094817
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 20,
+          "similarity": 0.330211
+        },
+        {
+          "number": 17,
+          "similarity": 0.114449
+        },
+        {
+          "number": 16,
+          "similarity": 0.106696
+        }
+      ],
+      "authoredExamAnalogies": [
+        1
+      ]
+    },
+    {
+      "id": "v2-l14-written-023",
+      "priority": 1.629146,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.273283,
+      "reviewSimilarity": 0.439866,
+      "closestExamItems": [
+        {
+          "number": 25,
+          "similarity": 0.273283
+        },
+        {
+          "number": 1,
+          "similarity": 0.19474
+        },
+        {
+          "number": 23,
+          "similarity": 0.135521
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 11,
+          "similarity": 0.439866
+        },
+        {
+          "number": 12,
+          "similarity": 0.180375
+        },
+        {
+          "number": 1,
+          "similarity": 0.108714
+        }
+      ],
+      "authoredExamAnalogies": [
+        23
+      ]
+    },
+    {
+      "id": "v2-l14-written-024",
+      "priority": 1.565223,
+      "pattern": "cause-effect",
+      "patternComponent": 0.752577,
+      "examSimilarity": 0.337303,
+      "reviewSimilarity": 0.195675,
+      "closestExamItems": [
+        {
+          "number": 21,
+          "similarity": 0.337303
+        },
+        {
+          "number": 8,
+          "similarity": 0.07331
+        },
+        {
+          "number": 3,
+          "similarity": 0.065395
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 11,
+          "similarity": 0.195675
+        },
+        {
+          "number": 19,
+          "similarity": 0.159928
+        },
+        {
+          "number": 12,
+          "similarity": 0.125408
+        }
+      ],
+      "authoredExamAnalogies": [
+        21
+      ]
+    },
+    {
+      "id": "v2-l14-written-025",
+      "priority": 1.646128,
+      "pattern": "distinction",
+      "patternComponent": 0.824742,
+      "examSimilarity": 0.323244,
+      "reviewSimilarity": 0.469809,
+      "closestExamItems": [
+        {
+          "number": 9,
+          "similarity": 0.323244
+        },
+        {
+          "number": 1,
+          "similarity": 0.267704
+        },
+        {
+          "number": 23,
+          "similarity": 0.186297
+        }
+      ],
+      "closestReviewItems": [
+        {
+          "number": 14,
+          "similarity": 0.469809
+        },
+        {
+          "number": 11,
+          "similarity": 0.217784
+        },
+        {
+          "number": 20,
+          "similarity": 0.0
+        }
+      ],
+      "authoredExamAnalogies": [
+        15
+      ]
+    }
+  ]
+}

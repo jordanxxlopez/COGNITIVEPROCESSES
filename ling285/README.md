@@ -4,7 +4,9 @@ Human Language and Technology · Fall 2026 · Khalil Iskarous.
 
 The studio provides teaching notes alongside the original pages, numbered lecture collections, a selective must-know core review, a readiness guide, demonstrations, combined notes, and both multiple-choice and written practice. Notes explain cause and effect in the instructor's style. Written responses use model explanations and self-assessment criteria. Multiple-choice responses use a source-checked key and explain every option.
 
-Lectures 11–14 now have a **Transcript** dropdown. Version 2 opens by default and teaches the mechanisms in connected prose, with key terms emphasized and fewer numerical recitals. It follows the PSYC301 Working Memory writing style and the conceptual explanations in the uploaded Exam 1 review and answer key. Version 1 remains available unchanged. The choice follows you through lecture notes, combined notes, core review, and expanded readers. Both editions share your existing notes and read marks; quizzes, drafts, and the 100-question test remain unchanged.
+Lectures 11–14 have three transcript editions. **Version 3 · Clear explanations** opens for new users, with plain words and complete cause-and-effect explanations in the PSYC301 Working Memory writing style. It is not a shorter summary: useful labels and basic numbers stay, while unnecessary jargon and repetition are removed. Versions 1 and 2 remain unchanged. An explicitly saved edition remains selected. The choice applies to lecture notes, combined notes, core review, search, readers, recall, print, and speech. All editions share the same personal notes and read marks.
+
+**Practice Version 2 · Exam style** adds 200 questions, separate from the original bank. Each lecture has 25 MCQs and 25 written questions. The current test selects 100 unique questions, split 50/50 and balanced across the four lectures. It adapts the actual 25-question Exam 1 key and 20-prompt review: some questions ask for identification or a direction, while others ask for a comparison or causal explanation. The 50/50 study split follows the user's requirement, not the observed exam proportions. Version 1 remains available, with separate saved sessions and answers. A temporary missing version file leaves earlier practice available and retains the unavailable edition's saved work.
 
 Video-only pages show their original embedded video directly when the flattened slide preview is entirely blank. Pages with written content, diagrams, or reveal overlays retain their previews. All original files, figures, source text, code, and detailed numerical labels remain available. The additional review copy and answer key are listed in Sources & coverage as transcript-writing references.
 
@@ -40,6 +42,8 @@ node --test ling285/tests/fixed-practice.test.cjs
 node --test ling285/tests/lecture14.test.cjs
 node --test ling285/tests/transcripts-v2.test.cjs
 node --test ling285/tests/transcript-versions.test.cjs
+node --test ling285/tests/practice-versions.test.cjs
+node --test ling285/tests/editions-v3-practice-v2.test.cjs
 node ling285/tests/app-smoke.cjs
 node ling285/tests/module-practice-smoke.cjs
 ```
@@ -80,3 +84,12 @@ python3 ling285/authoring/refresh_inventory.py
 The phase sampler records nonuniform video samples linked to their original source assets. Inspect the source media and resulting inventory before authoring and rebuilding. Omitting `--only` processes the whole source inventory and is unnecessary for a single weekly addition.
 
 Source originals, converted PDFs, rendered pages, extracted text, authored teaching, inventories, and runtime assets are versioned. Duplicate extracted-media caches and contact sheets are ignored because they can be regenerated from the originals. Historical intake checkpoints describe the state at intake; current release coverage is recorded in [coverage-report.json](coverage-report.json).
+
+## Build the additional editions
+
+```sh
+python3 ling285/authoring/build_transcripts_v3.py
+python3 ling285/authoring/build_practice_v2.py
+```
+
+These scripts preserve `data.json` and older editions. Four `teaching-v3-lectureNN.json` files retain all 86 source-page identities. Four `practice-v2-lectureNN.json` files supply the 200 distinct new question IDs. `exam-style-evidence-v2.json` records all 45 actual exam/review prompts. `practice-v2-model.json` records the executed study ranking: source-only TF–IDF similarities and observed reasoning patterns, applied after lecture and format quotas. Its coefficients are editorial study weights, with no validated claim about future exams. The review record distinguishes independent review from author self-review.
