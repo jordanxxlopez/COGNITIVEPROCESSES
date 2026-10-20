@@ -3,7 +3,9 @@ from pathlib import Path
 from collections import Counter
 import hashlib,json,re,shutil
 from PIL import Image
+from assessment_ranking import rank_questions
 ROOT=Path(__file__).resolve().parents[1];A=ROOT/'authoring'
+REVISION='2026-10-19-v2'
 def read(name):return json.loads((A/name).read_text())
 def write(path,value):path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -15,6 +17,20 @@ for name in ['teaching-early.json','teaching-middle.json','teaching-later.json',
   assert key not in authored,key
   authored[key]=value
 practice=read('practice-guide.json');authored.update(practice['examReviewCollections'])
+mcq=read('practice-mcq.json');assessment_model=read('assessment-model.json')
+module_two={key for key,entry in manifest.items() if entry['role']=='lecture' and int(re.match(r'lecture(\d+)',key).group(1))>=11}
+meadows=['notes-08-25-1','notes-08-25-2','notes-09-01','notes-09-03','notes-09-15','notes-09-17']
+def required_module(refs):return 'module2' if any(ref['collection'] in module_two for ref in refs) else 'module1'
+questions=[dict(q,type='written',edition=REVISION) for q in practice['questions']]+[dict(q,edition=REVISION) for q in mcq['questions']]
+for q in questions:
+ q['moduleId']=required_module(q['sources'])
+ if q['type']=='mcq':
+  assert len(q['options'])==4 and len({o['id'] for o in q['options']})==4,q['id']
+  assert q['correctOption'] in {o['id'] for o in q['options']},q['id']
+  assert all(o['text'].strip() and o['feedback'].strip() for o in q['options']),q['id']
+rankings=rank_questions(questions,assessment_model)
+for q,r in zip(questions,rankings):q['priority']=r['priority']
+guide=[dict(g,moduleIds=[required_module(g['refs'])]) for g in practice['guide']]
 expected={k for k,v in manifest.items() if v['role']!='style-reference'}
 assert set(authored)==expected,('Missing',expected-set(authored),'Unexpected',set(authored)-expected)
 assert all(v['status']=='downloaded' for v in manifest.values())
@@ -24,6 +40,7 @@ media_dir=ROOT/'assets/original';media_dir.mkdir(parents=True,exist_ok=True)
 used_media={};audit=[];collections=[];source_issues=[]
 lecture_keys=sorted(k for k,v in manifest.items() if v['role']=='lecture')
 other_keys=['exam-review','exam-review-seagull','notes-08-25-1','notes-08-25-2','notes-09-01','notes-09-03','notes-09-15','notes-09-17','notes-lecture07','notes-lecture08','notes-lecture09','notes-lecture10','syllabus']
+other_keys.extend(sorted(expected-set(lecture_keys)-set(other_keys)))
 for key in lecture_keys+other_keys:
  entry=manifest[key];author=authored[key];pages=author['sections']
  assert [p['page'] for p in pages]==list(range(1,entry['pages']+1)),key
@@ -71,21 +88,49 @@ for key in lecture_keys+other_keys:
  if key=='exam-review-seagull':issues.append('Uploaded answer companion with unverified authorship. Teaching resolves its inconsistencies against the primary lecture sources.')
  if key in ['lecture11','lecture12','lecture13']:issues.append('Embedded videos supply content that can appear blank in the static PDF. Play the original demonstrations on the relevant pages.')
  label=f'Lecture {number}' if number else 'Uploaded review' if entry['role']=='review' else 'Course syllabus' if key=='syllabus' else 'Supporting reading'
- collections.append({'id':key,'title':author['title'],'number':number,'label':label,'role':entry['role'],'sourceFile':entry['file'],'pdfFile':entry['rendered_pdf'],'originalFilename':entry['original'],'issues':issues,'sections':sections})
+ collections.append({'id':key,'title':author['title'],'number':number,'label':label,'role':entry['role'],'sourceFile':entry['file'],'pdfFile':entry['rendered_pdf'],'originalFilename':entry['original'],'issues':issues,'sections':sections,'moduleId':None if key=='syllabus' else 'module2' if key in module_two else 'module1','workspaceGroup':'meadows' if key in meadows else 'lectures' if entry['role']=='lecture' else 'sources'})
 all_sections={s['id']:s for c in collections for s in c['sections']}
 def check_ref(ref):assert f'{ref["collection"]}-p{ref["page"]:03}' in all_sections,ref
-for q in practice['questions']:
+for q in questions:
  assert q['prompt'] and q['answer'] and len(q['rubric'])>=2,q
  for ref in q['sources']:check_ref(ref)
 for ref in practice['coreReview']:check_ref(ref)
 for g in practice['guide']:
  for ref in g['refs']:check_ref(ref)
-assert len({q['id'] for q in practice['questions']})==len(practice['questions'])
+assert len({q['id'] for q in questions})==len(questions)
 assert not any(s['core'] and not s['teaching'] for s in all_sections.values())
 assert not any('need not' in t.lower() for s in all_sections.values() for t in s['teaching'])
 limitations=sorted({limit for item in audit for limit in item['review'].get('limitations',[]) if limit})
-coverage={'sourceCount':len(manifest),'studentSourceCount':len(collections),'pageCount':len(all_sections),'lecturePageCount':sum(len(c['sections']) for c in collections if c['role']=='lecture'),'lectureCollectionCount':len(lecture_keys),'coreCount':len(core),'questionCount':len(practice['questions']),'guideCount':len(practice['guide']),'teachingWordCount':sum(a['words'] for a in audit),'allSuppliedSourcesAcquired':True,'pageReviewComplete':True,'originalSourceHashesVerified':True,'sources':[dict(v,id=k) for k,v in manifest.items() if v['role']=='style-reference'],'issues':['The LING406 reference PDF is an organization reference and is excluded from LING285 teaching and practice.','Generated practice is a source-aligned study aid, with self-assessment rather than automatic grading or exam prediction.','Original external or untranscribed audio content is not represented as a recovered lecture transcript.']+limitations}
-data={'course':{'code':'LING285','title':'Human Language and Technology','professor':'Khalil Iskarous','edition':'Supplied material · Lectures 01–13','revision':'2026-10-19-v1','coverageNotice':'All supplied lecture decks are included. Practice covers the material available now and can grow as new lectures arrive. Source discrepancies and unavailable external clips are noted on their pages.'},'collections':collections,'questions':practice['questions'],'guide':practice['guide'],'coverage':coverage}
+late_lectures=[key for key in lecture_keys if key in module_two]
+late_range='Lectures '+str(int(re.match(r'lecture(\d+)',late_lectures[0]).group(1)))+'–'+str(int(re.match(r'lecture(\d+)',late_lectures[-1]).group(1)))
+modules=[
+ {'id':'module1','title':'Module I','subtitle':'Midterm 1','lectureIds':[key for key in lecture_keys if key not in module_two],
+  'supplementIds':['notes-lecture07','notes-lecture08','notes-lecture09','notes-lecture10'],'meadowsIds':meadows,
+  'lectureRange':'Lectures 01–10','description':'First-midterm material · Lectures 01–10.','futureNote':'First-midterm material remains available with its own notes, review tools, and practice.'},
+ {'id':'module2','title':'Module II','subtitle':'Midterm 2','lectureIds':[key for key in lecture_keys if key in module_two],
+  'supplementIds':[],'meadowsIds':[],'lectureRange':late_range+' so far','description':'Current focus · '+late_range+'. Future lectures will be added here.',
+  'futureNote':late_range+' are available now. New lectures will extend this module and its cumulative practice as the professor posts them.'}
+]
+for module in modules:
+ module['questionCount']=sum(q['moduleId']==module['id'] for q in questions)
+ module['mcqCount']=sum(q['moduleId']==module['id'] and q['type']=='mcq' for q in questions)
+ module['writtenCount']=module['questionCount']-module['mcqCount']
+coverage={'sourceCount':len(manifest),'studentSourceCount':len(collections),'pageCount':len(all_sections),
+ 'lecturePageCount':sum(len(c['sections']) for c in collections if c['role']=='lecture'),
+ 'lectureCollectionCount':len(lecture_keys),'coreCount':len(core),'questionCount':len(questions),
+ 'writtenQuestionCount':sum(q['type']=='written' for q in questions),'mcqQuestionCount':sum(q['type']=='mcq' for q in questions),
+ 'guideCount':len(guide),'teachingWordCount':sum(a['words'] for a in audit),
+ 'allSuppliedSourcesAcquired':True,'pageReviewComplete':True,'originalSourceHashesVerified':True,
+ 'sources':[dict(v,id=k) for k,v in manifest.items() if v['role']=='style-reference'],
+ 'issues':['The LING406 reference PDF is an organization reference and is excluded from LING285 teaching and practice.',
+ 'Generated practice is a source-aligned study aid, not an actual instructor exam or a validated exam prediction. Written answers use self-assessment rather than automatic grading; multiple-choice answers use a source-checked key.',
+ 'The supplied Exam 1 Review contains 20 conceptual prompts and no A–D questions. New multiple-choice items adapt its reasoning patterns. Module II practice applies that style to Lectures 11–13.',
+ 'Original external or untranscribed audio content is not represented as a recovered lecture transcript.']+limitations}
+data={'course':{'code':'LING285','title':'Human Language and Technology','professor':'Khalil Iskarous',
+ 'edition':'Module I · Lectures 01–10 / Module II · '+late_range,'revision':REVISION,'defaultModule':'module2',
+ 'coverageNotice':'Module II begins with Lectures 11–13 and grows as new material arrives. Module I retains Lectures 01–10 and separate study tools. Supporting documents remain in Sources & coverage.'},
+ 'modules':modules,'collections':collections,'questions':questions,'guide':guide,'coverage':coverage,'assessmentModel':assessment_model}
 write(ROOT/'data.json',data);write(ROOT/'coverage-report.json',coverage);write(ROOT/'source-manifest.json',manifest);write(A/'teaching-coverage.json',audit);write(A/'runtime-asset-manifest.json',list(used_media.values()));write(A/'page-inventory.json',list(inventory.values()))
 write(A/'preparation-status.json',{'sourceAcquisitionComplete':True,'blockedSources':[],'originalsVerified':len(manifest),'pagesRendered':len(inventory),'studentPages':len(all_sections),'lectureSlides':216,'teachingCoverageVerified':True,'reviewLimitations':limitations,'assemblyComplete':True})
+write(A/'assessment-ranking.json',{'method':'TF–IDF cosine similarity to the 20 supplied review prompts plus observed reasoning-pattern weights. Scores measure study relevance, not the probability of appearing on an exam. Sampling preserves lecture and question-type coverage before using these weights.','revision':REVISION,'questions':rankings,'rankedIdsByModule':{module['id']:[q['id'] for q in sorted((q for q in rankings if q['moduleId']==module['id']),key=lambda q:(-q['priority'],q['id']))] for module in modules}})
 print(json.dumps({k:v for k,v in coverage.items() if k not in ['sources','issues']},indent=2));print('Runtime assets',len(used_media),sum(v['bytes'] for v in used_media.values())//1024//1024,'MiB')

@@ -1,0 +1,496 @@
+{
+  "id": "ling285-mcq-independent-editorial-audit-v2",
+  "reviewedAtUTC": "2026-10-20T00:01:21.156795+00:00",
+  "bankFile": "authoring/practice-mcq.json",
+  "bankEdition": "2026-10-19-v2",
+  "bankSha256": "a88ee90e4949826442603b41e818f9eaf6f7750ef7d2746789459e213460ae2f",
+  "modelFile": "authoring/assessment-model.json",
+  "modelId": "ling285-question-pattern-model-v2",
+  "modelSha256": "ed0c8648a960070819794226f8dcce8b773cd85de995747e961adea200108c9c",
+  "status": "Passed independent source, answer-key, ambiguity, and editorial review for the supplied 54-item version. This is not empirical difficulty or exam-prediction validation.",
+  "reviewScope": {
+    "questions": 54,
+    "options": 216,
+    "distractors": 162,
+    "moduleI": 36,
+    "moduleII": 18,
+    "perLecture": {
+      "lecture01": 4,
+      "lecture02": 4,
+      "lecture03": 4,
+      "lecture04": 4,
+      "lecture05-06": 4,
+      "lecture07": 4,
+      "lecture08": 4,
+      "lecture09": 4,
+      "lecture10": 4,
+      "lecture11": 6,
+      "lecture12": 6,
+      "lecture13": 6
+    },
+    "sourceReviewPrompts": 20,
+    "correctPositions": {
+      "a": 14,
+      "d": 13,
+      "c": 13,
+      "b": 14
+    },
+    "questionPatterns": {
+      "distinction": 12,
+      "application": 8,
+      "design": 6,
+      "cause-effect": 12,
+      "interpretation": 10,
+      "prediction": 6
+    }
+  },
+  "method": [
+    "Read all 54 final stems, all 216 final choices, every keyed answer, all option feedback, rubrics, and source citations.",
+    "Compare the assessment model with all 20 uploaded Exam 1 Review prompts, including visible equations preserved in DOCX mathematical XML and zero-based Python indexing.",
+    "Check primary lecture explanations against the source material already visually reviewed during this session. For Lectures 11–13 this includes rendered pages, linked individual original image assets, reveal overlays, speaker notes, and video phase samples.",
+    "Evaluate each choice independently, then check that the keyed answer is supported and no distractor supplies a second valid answer under the stem conditions.",
+    "Check source-dependent module boundaries and distinguish observed written-review patterns from the user-requested MCQ/design adaptation.",
+    "Check that each reference resolves to an existing source page and compare answer-position, option-length, and absolute-word distributions for obvious cues."
+  ],
+  "contentChecks": {
+    "incorrectKeysFound": 0,
+    "unresolvedMultipleValidAnswers": 0,
+    "unresolvedFactualIssues": 0,
+    "moduleIIConstraintsVerified": [
+      "Finite chains have one mode per mass in the displayed direction without a general integer-frequency-ratio rule.",
+      "Normal-mode mixtures retain their component frequencies; a node belongs to the mode rather than removing a physical mass.",
+      "Fixed–fixed and fixed–free demonstrations are separately tuned; unchanged length and wave speed would halve the fundamental when one end becomes free.",
+      "The membrane’s illustrative assigned harmonics do not establish universal natural membrane eigenfrequencies.",
+      "The proposed laryngeal experiment is not reported as a completed participant measurement.",
+      "Mass effects track local motion and stiffness effects local deformation, including the marked off-center comparison.",
+      "The /u/, /i/, and /a/ directional formant changes follow the specified local dominance and the corrected stiffness direction.",
+      "Source harmonics, F0, vocal-tract formants, spectral envelopes, and spectrogram axes/amplitude are kept distinct.",
+      "The /i/ and /a/ formant values and their shared 100 Hz source spacing match the schematic sources; wider spacing creates sparse sampling of a fixed filter."
+    ],
+    "crossModuleChecks": [
+      "Consonant features and vowel coordinates",
+      "Corrective SGD sign and learning-rate controls",
+      "Signed discrepancy versus nonnegative squared loss",
+      "Greedy versus complete-route objective and dynamic-programming edge-plus-continuation comparison",
+      "Settling versus inertia-driven overshoot",
+      "Mass and stiffness directions, hearing, vocal-fold F0, and numerical Euler artifacts",
+      "Network input/weight/activation/probability roles, inference/learning, normalization, one-hot indexing, and forward computation"
+    ],
+    "modelReview": "The 20 source prompts and primary-pattern counts match. Review evidence is not presented as a validated predictive model. Design tasks and A–D form are explicit adaptations, and Module II uses later lecture content with no claim of an observed Midterm II format."
+  },
+  "resolvedFindings": [
+    {
+      "id": "same-state-learning-rate-control",
+      "questionId": "ling285-mcq-lecture02-01",
+      "finding": "Different-rate learners using the same dataset can have different current discrepancies; the earlier stem did not hold current state fixed.",
+      "resolution": "The final stem compares one update with the same current estimate, same nonidentical datum, and positive rates below 1."
+    },
+    {
+      "id": "distractor-plausibility-and-universal-cues",
+      "finding": "The initial draft used many universal-word distractors and several remote cross-domain explanations that allowed easy elimination.",
+      "resolution": "The author replaced/reviewed all 162 distractors. The final choices use in-domain contrasts such as source versus filter, phase versus frequency, modal deformation, controlled-variable confounds, axis mappings, and representation roles. The auditor reread all final choices and feedback."
+    },
+    {
+      "id": "tfidf-scope",
+      "finding": "The initial model wording could imply semantic similarity from lexical TF–IDF overlap.",
+      "resolution": "The final model describes lexical overlap and explicitly rejects correctness, probability, and instructor-intention inference from its score."
+    }
+  ],
+  "editorialMetrics": {
+    "wordCountMethod": "Whitespace-delimited option words",
+    "meanCorrectOptionWords": 21.28,
+    "meanDistractorOptionWords": 22.58,
+    "correctTiedForLongest": 9,
+    "absoluteWordRegex": "\\b(always|every|must|necessarily|only|cannot|never|impossible)\\b",
+    "correctWithAbsoluteWord": 2,
+    "distractorsWithAbsoluteWord": 2,
+    "absoluteWordInterpretation": "A diagnostic scan for one possible cue, not a prohibited-word rule or a validated quality statistic."
+  },
+  "limitations": [
+    "No actual Midterm II or held-out exam was supplied. Matching observed conceptual patterns cannot establish likely instructor wording, question frequencies, or exam prediction accuracy.",
+    "Distractor plausibility and one-key judgments are editorial source-based checks. Difficulty and discrimination have not been measured with student response data.",
+    "Several prompts state the relevant physical premises directly. They assess application or representation distinctions more than unaided recall, and individual item difficulty varies.",
+    "Generated design items adapt the requested study format rather than reproduce observed instructor A–D items.",
+    "Source-specific qualifications remain important, including simplified mechanical models and schematic formant values."
+  ],
+  "items": [
+    {
+      "id": "ling285-mcq-lecture01-01",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture01-02",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture01-03",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture01-04",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture02-01",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture02-02",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture02-03",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture02-04",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture03-01",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture03-02",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture03-03",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture03-04",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture04-01",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture04-02",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture04-03",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture04-04",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture05-06-01",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture05-06-02",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture05-06-03",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture05-06-04",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture07-01",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture07-02",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture07-03",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture07-04",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture08-01",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture08-02",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture08-03",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture08-04",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture09-01",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture09-02",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture09-03",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture09-04",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture10-01",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture10-02",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture10-03",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture10-04",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture11-01",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture11-02",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture11-03",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture11-04",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture11-05",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture11-06",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture12-01",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture12-02",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture12-03",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture12-04",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture12-05",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture12-06",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture13-01",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture13-02",
+      "correctOption": "c",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture13-03",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture13-04",
+      "correctOption": "a",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture13-05",
+      "correctOption": "d",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    },
+    {
+      "id": "ling285-mcq-lecture13-06",
+      "correctOption": "b",
+      "sourceSupported": true,
+      "singleValidKeyUnderStem": true,
+      "optionFeedbackConsistent": true
+    }
+  ]
+}

@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#193c45"><meta name="description" content="LING285 Human Language and Technology. Source-aligned teaching notes, original lecture visuals, and conceptual practice.">
-  <title>LING285 · Study Studio</title><link rel="stylesheet" href="style.css?v=ling285-1">
+  <meta name="theme-color" content="#661831"><meta name="description" content="LING285 Human Language and Technology. Source-aligned teaching notes, original lecture visuals, and conceptual practice.">
+  <title>LING285 · Study Studio</title><link rel="stylesheet" href="style.css?v=ling285-2">
 </head>
 <body>
 <a class="skip" href="#content">Skip to study content</a>
@@ -11,14 +11,19 @@
   <aside id="sidebar" aria-label="Study navigation">
     <div class="brand-row"><a href="./" class="brand">Study<span> Studio.</span></a><button class="icon-button" data-action="sidebar" aria-label="Close study menu">‹</button></div>
     <p class="course-name">LING285<br><span>Human Language and Technology</span></p>
-    <div class="nav-label">Your workspace</div><nav id="workNav" aria-label="Workspace"></nav>
-    <div class="nav-label">Individual collections</div><nav id="collectionNav" aria-label="Lecture collections"></nav>
+    <div class="nav-label">Course modules</div><nav id="courseNav" aria-label="Course overview"></nav>
+    <nav id="moduleNav" class="module-nav" aria-label="Switch course module"></nav>
+    <div id="activeModuleLabel" class="module-banner" aria-live="polite"></div>
+    <div class="nav-label" id="workspaceModuleLabel">Your workspace</div><nav id="workNav" aria-label="Active module workspace"></nav>
+    <div class="nav-label">Individual collections</div><nav id="collectionNav" aria-label="Active module lecture collections"></nav>
+    <details id="moduleArchive" class="module-archive"><summary>Module I · Midterm 1 archive</summary><p class="small muted">Completed first-half material · Lectures 01–10</p><div class="nav-label">Archive workspace</div><nav id="archiveWorkNav" aria-label="Module I archive workspace"></nav><div class="nav-label">Archive collections</div><nav id="archiveCollectionNav" aria-label="Module I archive lecture collections"></nav></details>
+    <nav class="reading-nav" aria-label="Supporting reading workspace"><button data-go="meadows">Meadows · systems & feedback</button></nav>
     <div class="sidebar-bottom"><div class="row"><button data-theme="light" aria-pressed="true">Light</button><button data-theme="dark" aria-pressed="false">Dark</button></div><p class="small">Read it. Explain it. Try it.<br>Personal progress stays in this browser.</p><details><summary>Other study studios</summary><p><a href="../">PSYC301</a> · <a href="../bme423/">BME423</a> · <a href="../ling406/">LING406</a></p></details></div>
   </aside>
   <main id="main">
     <header class="topbar">
       <button data-action="sidebar" class="menu-button" aria-label="Toggle study menu" aria-expanded="true">☰ <span>Menu</span></button>
-      <div class="course-header"><strong>LING285 / STUDY STUDIO</strong><span id="saveStatus" role="status">Loading course material…</span></div>
+      <div class="course-header"><strong id="headerModule">LING285 / MODULE II</strong><span id="saveStatus" role="status">Loading course material…</span></div>
       <div class="timer" aria-label="Study timer"><span id="timerMode">Study</span><strong id="clock" role="timer" aria-live="off">25:00</strong><select id="duration" aria-label="Study duration"><option value="25">25 min</option><option value="45">45 min</option><option value="60">60 min</option><option value="10">10 min</option></select><button id="timerStart">Start</button><button id="timerReset">Reset</button><button id="timerBreak">Break</button></div>
     </header>
     <div id="storageWarning" class="storage-warning" role="alert" hidden></div>
@@ -29,5 +34,5 @@
 <dialog id="readerDialog" class="reader-dialog" aria-label="Expanded visual and teaching notes"></dialog>
 <dialog id="imageDialog" class="image-dialog" aria-label="Enlarged original source"><div class="row spread"><strong>Original source visual</strong><button data-action="closeImage">✕ Close</button></div><img id="enlargedImage" alt=""><a id="imageSource" target="_blank" rel="noopener">Open source PDF</a></dialog>
 <input id="importFile" type="file" accept="application/json,.json" hidden>
-<script src="app.js?v=ling285-1" defer></script>
+<script src="app.js?v=ling285-2" defer></script>
 </body></html>

@@ -36,7 +36,10 @@ const server = http.createServer((request,response)=>{
   const errors=[];page.on('pageerror',error=>errors.push(error.message));
   try{
     console.log('UI check: opening studio');await page.goto(url);await page.locator('#content h1').waitFor();
-    await page.getByRole('heading',{name:/Human Language/}).waitFor();
+    await page.locator('#content h1').waitFor();
+    // This legacy written-flow smoke uses the retained first-half module. The
+    // separate module smoke verifies Module II is the untouched default.
+    await page.locator('#moduleNav [data-module="module1"]').click();
     console.log('UI check: course loaded');const navLabels=await page.locator('#collectionNav button').allTextContents();assert.equal(new Set(navLabels).size,navLabels.length,'Collection navigation labels must be unique and informative.');const lecture=data.collections.find(c=>c.role==='lecture');assert(lecture);
     await page.locator('#collectionNav [data-collection="'+lecture.id+'"]').click();
     const first=lecture.sections[0];
@@ -69,7 +72,7 @@ const server = http.createServer((request,response)=>{
       assert(await page.locator('#content h1').count()>0,'Missing heading for '+route);
     }
     if(!fixtureMode) {
-      const mediaSections=data.collections.flatMap(c=>c.sections.map(section=>({c,section})));
+      const mediaSections=data.collections.filter(c=>c.role==='lecture' && c.moduleId!=='module2').flatMap(c=>c.sections.map(section=>({c,section})));
       for(const kind of ['animated','static','video']) {
         const match=mediaSections.find(({section})=>(section.assets || []).some(asset=>kind === 'animated'?asset.animated === true:kind === 'video'?asset.type === 'video':asset.type === 'image' && !asset.animated));
         if(!match)continue;
@@ -92,7 +95,7 @@ const server = http.createServer((request,response)=>{
       }
       await page.locator('#workNav [data-go="test"]').click();
     }
-    console.log('UI check: routes and readers passed');await page.locator('[data-start="mixed"]').click();
+    console.log('UI check: routes and readers passed');await page.locator('[name="practiceMode"][value="written"]').check();await page.locator('[data-start="mixed"]').click();
     await page.locator('#answerDraft').fill('A complete saved conceptual draft.');
     const session=await page.evaluate(()=>JSON.parse(localStorage.getItem('ling285-study-studio-v1')).session);
     assert.equal(new Set(session.ids).size,session.ids.length);
@@ -121,6 +124,7 @@ const server = http.createServer((request,response)=>{
     const backup={course:'LING285',version:1,state:{notes:{[first.id]:'Imported study note.'}}};
     await page.locator('#importFile').setInputFiles({name:'good.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(backup))});
     await page.waitForFunction(()=>document.querySelector('#saveStatus').textContent.includes('imported'));
+    await page.locator('#moduleNav [data-module="module1"]').click();
     await page.locator('#collectionNav [data-collection="'+lecture.id+'"]').click();
     await page.locator('[data-section="'+first.id+'"] [data-image-section]').click();
     await page.locator('#imageDialog').waitFor({state:'visible'});await page.keyboard.press('Escape');
@@ -136,7 +140,7 @@ const server = http.createServer((request,response)=>{
     await page.keyboard.press('Escape');
     await page.screenshot({path:'/tmp/ling285-ui-mobile.png',fullPage:false});
     await page.setViewportSize({width:1440,height:1000});
-    await page.goto(url);await page.getByRole('heading',{name:/Human Language/}).waitFor();
+    await page.goto(url);await page.locator('#content h1').waitFor();
     await page.screenshot({path:'/tmp/ling285-ui-home.png',fullPage:false});
     assert.deepEqual(errors,[]);
     console.log('LING285 UI smoke passed ('+(fixtureMode?'fixture':'current data')+'): navigation, shared notes/read marks, readers, search, conceptual self-assessment, persistence, export/import, source dialog, mobile containment.');

@@ -1,0 +1,472 @@
+{
+  "id": "ling285-question-pattern-model-v2",
+  "edition": "2026-10-19-v2",
+  "title": "Source-based assessment pattern and coverage model",
+  "status": "Descriptive study-priority model and generated MCQ blueprint. It is not a validated exam-prediction model.",
+  "evidence": {
+    "sourceFile": "sources/exam-review.docx",
+    "sha256": "a2e49f69fda812a087317f3dc428a777eb2c0d926888ae1adcefa16f852f9a23",
+    "sourcePageCount": 3,
+    "promptCount": 20,
+    "answerCompanion": "sources/exam-review-seagull.docx",
+    "answerCompanionAuthority": "Uploaded companion authorship is unverified. Primary lecture sources resolve conflicts.",
+    "scope": "Only the supplied Exam 1 Review is direct question-format evidence. No actual Midterm II paper, answer-key frequency data, or held-out exam is supplied."
+  },
+  "userRequestedAdaptation": {
+    "format": "Four-option A–D questions with varied option lengths, substantial sentence-length explanations, plausible misconceptions, application, and controlled-design reasoning.",
+    "boundary": "The source review uses written conceptual prompts rather than an A–D exam. Multiple-choice format and explicit design tasks are user-requested adaptations. Researcher-name/year dependence from PSYC301 is not treated as evidence about LING285.",
+    "retained": "All 80 existing written prompts retain their IDs, prompt wording, answers, and rubrics."
+  },
+  "reviewItems": [
+    {
+      "number": 1,
+      "prompt": "What’s the similarity between “m” in “mad” and “b” in “bad”, and what’s the difference between those sounds?",
+      "primaryPattern": "distinction",
+      "patterns": [
+        "distinction"
+      ],
+      "observedFormat": "classification or comparison written response",
+      "reasoningSkill": "Compare shared voicing/place with different nasal versus oral manner.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 1
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 2,
+      "prompt": "What’s the role of the learning rate in Stochastic Gradient Descent and the role of stiffness in (viscous) springy systems? What happens when learning rate is high vs. low and when stiffness is high vs. low?",
+      "primaryPattern": "cause-effect",
+      "patterns": [
+        "cause-effect",
+        "application",
+        "prediction"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Explain how a parameter changes corrective response strength and compare learning with spring settling.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 1
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 3,
+      "prompt": "What’s the physical principle behind how your auditory system hears different frequencies? Describe the basic physics of the basilar membrane to illustrate how the system works.",
+      "primaryPattern": "cause-effect",
+      "patterns": [
+        "cause-effect",
+        "application"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Explain hearing through local mechanical frequency selectivity.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 1
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target.",
+      "sourceIssue": "The uploaded answer companion contains inconsistent mass/stiffness labels. Primary hearing and corrected perturbation material govern generated answers."
+    },
+    {
+      "number": 4,
+      "prompt": "Imagine the following two temperature control systems, if you set the temperature at 70: a) Excellent thermostat right near the Air conditioning/Heating Unit: If the temperature is higher than 70, the AC turns on and temperature goes down to 70 and stays there, as the thermostat detects the right temperature and stops the AC. If the temperature were lower than 70, heating turns on till it gets to 70, and thermostat turns it off as it detects the right temperature. b) Thermostat really far from the AC/HU: If the temperature is higher than 70, the AC turns on and temperature goes down to 70, but the thermostat doesn’t detect that and the temperature keeps dropping till 60, and when the thermostat finally detects 60, it turns on HU, and heat comes on, and temperature rises to 70, but thermostat doesn’t detect it, till the temperature goes up to 80, etc. Which of these systems is like a spring by itself, and which is like a mass-spring?",
+      "primaryPattern": "application",
+      "patterns": [
+        "application",
+        "distinction",
+        "cause-effect"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Apply settling versus overshoot reasoning to a delayed temperature-control scenario.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 1
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 5,
+      "prompt": "Why is the exhaustive algorithm so inefficient for solving the shortest path problem?",
+      "primaryPattern": "cause-effect",
+      "patterns": [
+        "cause-effect"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Explain why combinations of complete routes make exhaustive enumeration expensive.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 2
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 6,
+      "prompt": "What are the different ways we distinguish between the consonants at the beginning of the words: Pam, Bam, Dam, Tam, Kam, and Gam?",
+      "primaryPattern": "distinction",
+      "patterns": [
+        "distinction"
+      ],
+      "observedFormat": "classification or comparison written response",
+      "reasoningSkill": "Classify six consonants using shared manner plus differing place and voicing.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 2
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 7,
+      "prompt": "Describe the psychological principle of closure, and how it’s used in the GPT system?",
+      "primaryPattern": "application",
+      "patterns": [
+        "application",
+        "cause-effect"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Connect completion of a familiar pattern with GPT continuation prediction.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 2
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 8,
+      "prompt": "How is knowledge represented in Neural Networks?",
+      "primaryPattern": "distinction",
+      "patterns": [
+        "distinction"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Locate network knowledge in learned weights rather than current inputs or predictions.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 2
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 9,
+      "prompt": "What’s the basic tradeoff that we see in both shortest path problems and Stochastic Gradient Descent Algorithm?",
+      "primaryPattern": "application",
+      "patterns": [
+        "application",
+        "distinction"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Compare speed and solution quality or stability across search and SGD.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 2
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 10,
+      "prompt": "What’s my favorite popular way of describe how learning in AI works? Fake __ ___ ___ ___ ____. Describe why I describe it this way. ",
+      "primaryPattern": "cause-effect",
+      "patterns": [
+        "cause-effect",
+        "procedure"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Name the supplied learning analogy and explain random initialization followed by error-driven correction.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 2
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 11,
+      "prompt": "What’s the output of an LLM or Neural Network in general, and how does it express a decision?",
+      "primaryPattern": "interpretation",
+      "patterns": [
+        "interpretation"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Interpret a network output distribution and its strongest category decision.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 2
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 12,
+      "prompt": "Is this a good output of an NN, if there are 4 categories [.4,0,.5,.2]? Why yes/no?",
+      "primaryPattern": "interpretation",
+      "patterns": [
+        "interpretation"
+      ],
+      "observedFormat": "evaluate supplied probability vector and justify",
+      "reasoningSkill": "Evaluate normalization of a supplied candidate probability vector.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 2
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 13,
+      "prompt": "In each vowel, air vibrates at a single frequency? Yes/No",
+      "primaryPattern": "distinction",
+      "patterns": [
+        "distinction"
+      ],
+      "observedFormat": "yes/no conceptual diagnostic",
+      "reasoningSkill": "Reject the one-frequency vowel misconception.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 2
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 14,
+      "prompt": "What are the 2 basic ways we distinguish vowels?",
+      "primaryPattern": "distinction",
+      "patterns": [
+        "distinction"
+      ],
+      "observedFormat": "classification or comparison written response",
+      "reasoningSkill": "Identify height and frontness/backness as the illustrated vowel dimensions.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 3
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 15,
+      "prompt": "Some people say “Everything is a Harmonic Oscillator”. Give 5 examples of oscillatory systems, we’ve discussed in class and/or in the Meadows book.",
+      "primaryPattern": "application",
+      "patterns": [
+        "application"
+      ],
+      "observedFormat": "generate five source-discussed examples",
+      "reasoningSkill": "Produce examples of repeated variation across the course’s systems.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 3
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 16,
+      "prompt": "If ẋ = v and v̇ = −(k/m)x starts with x negative and v = 0, will it oscillate? Say in a couple of sentences, what will happen.",
+      "primaryPattern": "prediction",
+      "patterns": [
+        "prediction",
+        "cause-effect"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Predict an oscillator trajectory from the signs of displacement and initial velocity.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 3
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target.",
+      "equationHandling": "Visible DOCX equation reconstructed as Unicode notation from its mathematical XML and rendered page. Original document remains unchanged.",
+      "nativeParagraphWithoutEquation": "If  starts with x negative and v = 0, will it oscillate? Say in a couple of sentences, what will happen."
+    },
+    {
+      "number": 17,
+      "prompt": "If ẋ = −.1x describes a system, then if x starts negative, what will happen? What happens if the number −.1 becomes −.9?",
+      "primaryPattern": "prediction",
+      "patterns": [
+        "prediction",
+        "cause-effect"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Predict the direction and speed of a direct balancing response after a parameter change.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 3
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target.",
+      "equationHandling": "Visible DOCX equation reconstructed as Unicode notation from its mathematical XML and rendered page. Original document remains unchanged.",
+      "nativeParagraphWithoutEquation": "If   describes a system, then if x starts negative, what will happen? What happens if the number -becomes  -.9?"
+    },
+    {
+      "number": 18,
+      "prompt": "In SGD for averaging a list, the mathematical formula for the New Estimate of average x is: New x = Current x – lr (Current x – data point d to learn from). What is the purpose of the first minus in the formula? To answer, consider the possibility that the data point is above vs. below the Current x.",
+      "primaryPattern": "cause-effect",
+      "patterns": [
+        "cause-effect",
+        "interpretation"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Explain the update’s corrective sign for observations above and below an estimate.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 3
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target.",
+      "sourceIssue": "The averaging discrepancy is signed. The separate squared-loss example is nonnegative, so the two must remain distinct."
+    },
+    {
+      "number": 19,
+      "prompt": "What is the math of forward propagation from the signal input to an NN all the way to a decision at the end? Describe it.",
+      "primaryPattern": "procedure",
+      "patterns": [
+        "procedure"
+      ],
+      "observedFormat": "short conceptual written response",
+      "reasoningSkill": "Describe weighted multiplication, summation, and repeated forward computation.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 3
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target."
+    },
+    {
+      "number": 20,
+      "prompt": "Imagine that the decision by an NN is [.1,.1,.1,.2,.5], but the true category is the one in the 2th position, using Python list notation, then how do we express to the NN in a probability distribution what the true answer is?",
+      "primaryPattern": "interpretation",
+      "patterns": [
+        "interpretation"
+      ],
+      "observedFormat": "construct a target vector using Python indexing",
+      "reasoningSkill": "Translate zero-based category index 2 into the one-hot target vector.",
+      "sources": [
+        {
+          "collection": "exam-review",
+          "page": 3
+        }
+      ],
+      "mcqAdaptation": "Use a source-supported correct explanation against plausible mechanistic or representational confusions, while retaining the explanation target.",
+      "sourceIssue": "The source says “2th position” but explicitly uses Python list notation. Index 2 is the third element."
+    }
+  ],
+  "observedPrimaryPatternCounts": {
+    "distinction": 5,
+    "cause-effect": 5,
+    "application": 4,
+    "interpretation": 3,
+    "prediction": 2,
+    "procedure": 1
+  },
+  "patternWeights": {
+    "cause-effect": 5,
+    "distinction": 5,
+    "application": 4,
+    "interpretation": 3,
+    "prediction": 2,
+    "procedure": 1,
+    "design": 1
+  },
+  "weightExplanation": "Weights for the six observed primary patterns equal their counts among the 20 uploaded prompts. The design weight of 1 is an explicit user-requested extension, not an observed instructor-question frequency. These positive relevance weights are not normalized probabilities and do not estimate the chance a question will appear.",
+  "generatedBlueprint": {
+    "totalMCQ": 54,
+    "totalRetainedWritten": 80,
+    "moduleI": {
+      "id": "module1",
+      "lectureCollections": [
+        "lecture01",
+        "lecture02",
+        "lecture03",
+        "lecture04",
+        "lecture05-06",
+        "lecture07",
+        "lecture08",
+        "lecture09",
+        "lecture10"
+      ],
+      "mcqPerCollection": 4,
+      "totalMCQ": 36
+    },
+    "moduleII": {
+      "id": "module2",
+      "lectureCollections": [
+        "lecture11",
+        "lecture12",
+        "lecture13"
+      ],
+      "mcqPerCollection": 6,
+      "totalMCQ": 18,
+      "futureLectures": "Append supplied later lectures and regenerate cumulative selection without discarding existing written study material."
+    },
+    "targetPatternCounts": {
+      "cause-effect": 12,
+      "distinction": 12,
+      "interpretation": 10,
+      "application": 8,
+      "prediction": 6,
+      "design": 6
+    },
+    "targetCorrectPositionCounts": {
+      "a": 14,
+      "b": 14,
+      "c": 13,
+      "d": 13
+    },
+    "formatChecks": [
+      "Exactly four distinct options with stable a/b/c/d IDs.",
+      "One keyed answer and independent explanatory feedback for every option.",
+      "Mix substantial explanatory choices with occasional compact feature or vector contrasts.",
+      "Avoid an always-longest correct option, all/none choices, unsupported name/year recall, and the explicitly excluded beliefs page."
+    ]
+  },
+  "ranking": {
+    "purpose": "Order study questions by documented source relevance and deliberate curricular coverage, not forecast an unseen test.",
+    "inputs": [
+      "Question prompt and authored answer.",
+      "The 20 source-worded review prompts.",
+      "Question pattern or patterns, their numeric weights, and explicit examReviewRefs when conceptually justified.",
+      "Module and lecture coverage constraints."
+    ],
+    "textSimilarity": "A deterministic TF–IDF cosine comparison can measure lexical overlap with the 20 review prompts. Its result measures document overlap, not semantic understanding, correctness, exam probability, or the professor’s intention.",
+    "patternScore": "Use the supplied positive patternWeights. For multiple patterns use their arithmetic mean so adding labels cannot automatically inflate the score.",
+    "directEvidence": "Nonempty examReviewRefs link an item to specific observed reasoning demands. Empty refs mark an extension whose content is lecture-supported without a direct counterpart in the supplied review.",
+    "selection": "Rank deterministically within the chosen module, retain a question-ID tie break, and enforce per-lecture coverage for a cumulative set. A module boundary is determined by the latest lecture source needed to answer the item.",
+    "audit": "Store the component scores, matching review item numbers, tie-break rule, selected IDs, and model revision with any generated practice-test selection. Rankings can change when new material or actual review evidence is supplied."
+  },
+  "limitations": [
+    "Twenty review prompts are a finite, nonrandom sample. They do not reveal actual test frequencies or establish generalizable prediction accuracy.",
+    "The review demonstrates conceptual explanations, comparisons, qualitative trajectories, and representation interpretation. It provides no evidence for a researcher-name-heavy LING285 exam.",
+    "Multiple-choice performance does not replace explaining a mechanism in one’s own words. Written practice remains available.",
+    "Module II mode, boundary, perturbation, and formant questions transfer the observed reasoning style to supplied later lectures. No Midterm II exam format or content frequency is claimed.",
+    "The proposed laryngeal experiment has no supplied completed participant dataset. Its predicted outcome must not become an asserted measured result.",
+    "Corrected stiffness direction, discrete-chain frequency limits, assigned membrane frequencies, separately tuned boundary demonstrations, and source-versus-filter distinctions remain constraints on every item.",
+    "Relevance ranking is transparent study prioritization. It is not a trained or validated statistical forecast of an instructor exam."
+  ]
+}

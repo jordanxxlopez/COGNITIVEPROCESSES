@@ -92,12 +92,14 @@ test('embedded original assets match their content-addressed filenames', () => {
 });
 
 test('practice questions and study guides point to usable source sections', () => {
-  assert.equal(data.questions.length, 80);
+  assert.equal(data.questions.length, 134);
   assert.equal(new Set(data.questions.map(item => item.id)).size, data.questions.length);
   const primaryCounts = new Map(lectures.map(collection => [collection.id, 0]));
   for (const question of data.questions) {
     assert(question.prompt.trim() && question.answer.trim() && question.topic.trim());
     assert.equal(question.edition, data.course.revision);
+    assert(['written', 'mcq'].includes(question.type), `Unknown question format on ${question.id}`);
+    assert(Number.isFinite(question.priority) && question.priority > 0, `Missing assessment priority on ${question.id}`);
     assert(question.rubric.length >= 2 && question.rubric.length <= 4);
     assert(question.rubric.every(point => typeof point === 'string' && point.trim()));
     assert(question.sources.length > 0);
@@ -115,7 +117,146 @@ test('practice questions and study guides point to usable source sections', () =
     assert(guide.title.trim() && guide.explanation.trim());
     assert(guide.refs.length > 0);
     guide.refs.forEach(reference);
+    const requiredModule = guide.refs.some(ref => /^lecture1[123]$/.test(ref.collection)) ? 'module2' : 'module1';
+    assert.deepEqual(guide.moduleIds, [requiredModule], `Guide ${guide.title} should stay with its latest required source`);
   }
+});
+
+test('the module boundary preserves the first midterm and focuses the active workspace on the second', () => {
+  assert.deepEqual(data.modules.map(module => module.id), ['module1', 'module2']);
+  const [first, second] = data.modules;
+  assert.deepEqual(first.lectureIds, ['lecture01','lecture02','lecture03','lecture04','lecture05-06','lecture07','lecture08','lecture09','lecture10']);
+  assert.deepEqual(second.lectureIds, ['lecture11','lecture12','lecture13']);
+  assert.equal(first.lectureIds.length, 9);
+  assert.equal(second.lectureIds.length, 3);
+  assert.match(second.futureNote, /new lectures|extend/i);
+  assert.deepEqual(first.meadowsIds, ['notes-08-25-1','notes-08-25-2','notes-09-01','notes-09-03','notes-09-15','notes-09-17']);
+  assert.deepEqual(second.meadowsIds, []);
+  const numbered = data.modules.flatMap(module => module.lectureIds);
+  assert.equal(new Set(numbered).size, 12);
+  assert.deepEqual(new Set(numbered), new Set(lectures.map(collection => collection.id)));
+  for (const collection of data.collections) {
+    assert(['lectures', 'meadows', 'sources'].includes(collection.workspaceGroup), collection.id);
+    if (collection.role === 'lecture') {
+      assert.equal(collection.workspaceGroup, 'lectures');
+      assert.equal(collection.moduleId, second.lectureIds.includes(collection.id) ? 'module2' : 'module1');
+    } else if (first.meadowsIds.includes(collection.id)) {
+      assert.equal(collection.workspaceGroup, 'meadows');
+      assert.equal(collection.moduleId, 'module1');
+    } else {
+      assert.equal(collection.workspaceGroup, 'sources', `Supporting document ${collection.id} must not become a numbered lecture`);
+    }
+  }
+  for (const question of data.questions) {
+    const requiredModule = question.sources.some(ref => second.lectureIds.includes(ref.collection)) ? 'module2' : 'module1';
+    assert.equal(question.moduleId, requiredModule, `${question.id} must belong to the latest module its sources require`);
+  }
+  for (const module of data.modules) {
+    const pool = data.questions.filter(question => question.moduleId === module.id);
+    assert.equal(module.questionCount, pool.length);
+    assert.equal(module.writtenCount, pool.filter(question => question.type === 'written').length);
+    assert.equal(module.mcqCount, pool.filter(question => question.type === 'mcq').length);
+    assert(module.mcqCount >= 10 && module.writtenCount >= 10, `Module ${module.id} needs both usable practice formats`);
+  }
+});
+
+test('all original written questions retain their exact IDs, wording, answers, rubrics, and source links', () => {
+  const written = data.questions.filter(question => question.type === 'written');
+  assert.equal(written.length, 80);
+  assert.deepEqual(written.map(question => question.id), Array.from({length: 80}, (_, index) => `ling285-q${String(index + 1).padStart(3, '0')}`));
+  // Captured from the released v1 bank before the module/MCQ revision. Only new
+  // format, module, priority, and edition metadata may change.
+  const originalFields = ['id', 'prompt', 'answer', 'rubric', 'sources', 'topic'];
+  const preserved = written.map(question => Object.fromEntries(originalFields.map(field => [field, question[field]])));
+  const digest = crypto.createHash('sha256').update(JSON.stringify(preserved)).digest('hex');
+  assert.equal(digest, '4b7a8590e451360a02cd2454da67a2082a762913d7d082ddce9e3d63e03f91b6', 'Existing written prompts, explanations, rubrics, or source mappings changed');
+  assert.equal(data.coverage.writtenQuestionCount, 80);
+  assert.equal(data.coverage.mcqQuestionCount, 54);
+  assert.equal(data.coverage.questionCount, 134);
+});
+
+test('multiple-choice questions have independently explained distractors and stable balanced keys', () => {
+  const multipleChoice = data.questions.filter(question => question.type === 'mcq');
+  assert.equal(multipleChoice.length, 54);
+  const correctPositions = [0, 0, 0, 0];
+  for (const question of multipleChoice) {
+    assert.equal(question.options.length, 4, `${question.id} requires four options`);
+    assert.equal(new Set(question.options.map(option => option.id)).size, 4, `${question.id} has duplicate canonical option IDs`);
+    assert.equal(new Set(question.options.map(option => option.text.trim())).size, 4, `${question.id} repeats an option`);
+    assert.equal(new Set(question.options.map(option => option.feedback.trim())).size, 4, `${question.id} repeats a distractor explanation`);
+    const correctIndex = question.options.findIndex(option => option.id === question.correctOption);
+    assert(correctIndex >= 0, `${question.id} has an unresolvable answer key`);
+    correctPositions[correctIndex] += 1;
+    for (const option of question.options) {
+      assert(typeof option.id === 'string' && option.id.trim(), `${question.id} needs stable option IDs`);
+      assert(typeof option.text === 'string' && option.text.trim(), `${question.id} has an empty option`);
+      assert(typeof option.feedback === 'string' && option.feedback.trim(), `${question.id}/${option.id} needs an explanation`);
+      assert(!/^(?:correct|incorrect|wrong)[.!]?$/i.test(option.feedback.trim()), `${question.id} needs more than a verdict`);
+    }
+  }
+  assert(Math.max(...correctPositions) - Math.min(...correctPositions) <= 1, `Answer positions must remain balanced: ${correctPositions}`);
+});
+
+test('the assessment model uses the twenty actual review prompts without claiming a validated forecast', () => {
+  const model = data.assessmentModel;
+  assert(model && Array.isArray(model.reviewItems));
+  assert.equal(model.reviewItems.length, 20);
+  assert.deepEqual(model.reviewItems.map(item => item.number), Array.from({length: 20}, (_, index) => index + 1));
+  assert.equal(model.evidence.promptCount, 20);
+  assert.equal(model.evidence.sourceFile, manifest['exam-review'].file);
+  assert.equal(model.evidence.sha256, manifest['exam-review'].sha256);
+  assert.match(model.status, /not a validated exam-prediction model/i);
+  assert.match(model.userRequestedAdaptation.boundary, /written conceptual prompts rather than an A[–-]D exam/i);
+  assert.match(model.evidence.scope, /no actual Midterm II|no.*held-out exam/i);
+  assert(model.limitations.some(item => /finite.*sample|not.*prediction accuracy/i.test(item)));
+  // The source's equation objects are not ordinary DOCX paragraph text. Items
+  // 16 and 17 preserve that original paragraph separately and reconstruct only
+  // their visibly supplied equations in their readable prompt.
+  const sourceParagraphs = model.reviewItems.map(item => (item.nativeParagraphWithoutEquation || item.prompt).replace(/\s+/g, ' ').trim());
+  const digest = crypto.createHash('sha256').update(JSON.stringify(sourceParagraphs)).digest('hex');
+  assert.equal(digest, '4555a8155c0ddf9969b62aa4dbe9ed562ca3b6fb24afd3731e70053aebc8a2b1', 'The evidence prompts must remain the actual uploaded review wording');
+  for (const item of model.reviewItems) {
+    assert(item.patterns.includes(item.primaryPattern));
+    assert(item.sources.every(ref => ref.collection === 'exam-review'));
+    item.sources.forEach(reference);
+  }
+  const primaryCounts = Object.fromEntries(Object.keys(model.observedPrimaryPatternCounts).map(pattern => [pattern, model.reviewItems.filter(item => item.primaryPattern === pattern).length]));
+  assert.deepEqual(model.observedPrimaryPatternCounts, primaryCounts);
+  assert.equal(Object.values(primaryCounts).reduce((sum, count) => sum + count, 0), 20);
+  for (const [pattern, count] of Object.entries(primaryCounts)) assert.equal(model.patternWeights[pattern], count);
+  assert.match(model.weightExplanation, /design.*user-requested extension/i);
+  assert.match(model.weightExplanation, /not normalized probabilities/i);
+});
+
+test('executed relevance rankings cover the bank and reproduce each module order', () => {
+  const ranking = JSON.parse(fs.readFileSync(path.join(root, 'authoring/assessment-ranking.json'), 'utf8'));
+  assert.equal(ranking.revision, data.course.revision);
+  assert.equal(ranking.questions.length, data.questions.length);
+  assert.deepEqual(new Set(ranking.questions.map(question => question.id)), new Set(data.questions.map(question => question.id)));
+  const ranked = new Map(ranking.questions.map(question => [question.id, question]));
+  assert.equal(ranked.size, data.questions.length);
+  for (const question of data.questions) {
+    const evidence = ranked.get(question.id);
+    assert.equal(evidence.moduleId, question.moduleId);
+    assert.equal(evidence.type, question.type);
+    assert.equal(evidence.priority, question.priority);
+    assert(Number.isFinite(evidence.priority) && evidence.priority >= 1, question.id);
+    assert(Number.isFinite(evidence.lexicalSimilarity) && evidence.lexicalSimilarity >= 0 && evidence.lexicalSimilarity <= 1, question.id);
+    assert(Number.isFinite(evidence.reasoningPatternWeight) && evidence.reasoningPatternWeight >= 0 && evidence.reasoningPatternWeight <= 1, question.id);
+    assert(evidence.closestReviewItems.length > 0 && evidence.closestReviewItems.length <= 20);
+    assert.equal(new Set(evidence.closestReviewItems.map(item => item.number)).size, evidence.closestReviewItems.length);
+    for (const match of evidence.closestReviewItems) {
+      assert(Number.isInteger(match.number) && match.number >= 1 && match.number <= 20, question.id);
+      assert(Number.isFinite(match.similarity) && match.similarity >= 0 && match.similarity <= 1, question.id);
+    }
+  }
+  for (const module of data.modules) {
+    const expected = data.questions.filter(question => question.moduleId === module.id)
+      .sort((left, right) => right.priority - left.priority || left.id.localeCompare(right.id))
+      .map(question => question.id);
+    assert.deepEqual(ranking.rankedIdsByModule[module.id], expected, `${module.id} ranking must use priority and deterministic ID ties`);
+  }
+  assert.match(ranking.method, /not.*probability|not.*exam odds/i);
 });
 
 test('core review remains a justified selection and excludes the non-exam beliefs segment', () => {
@@ -142,7 +283,8 @@ test('the uploaded conceptual review stays distinct from generated cumulative pr
   assert.match(text('exam-review', 1), /Question 1/);
   assert.match(text('exam-review', 3), /Question 20/);
   assert.match(text('exam-review', 3), /\[0,0,1,0,0\]/);
-  assert(data.coverage.issues.some(issue => /self-assessment rather than automatic grading or exam prediction/i.test(issue)));
+  assert(data.coverage.issues.some(issue => /written answers use self-assessment rather than automatic grading/i.test(issue)));
+  assert(data.coverage.issues.some(issue => /multiple-choice answers use a source-checked key/i.test(issue)));
   for (const question of data.questions) {
     if (question.sources.some(ref => /^lecture1[123]$/.test(ref.collection))) {
       assert(!/actual exam|will be on (?:the |your )?exam|guaranteed exam/i.test(question.prompt + question.answer));

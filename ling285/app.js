@@ -9,9 +9,9 @@ const safeURL = value => {
 };
 const rich = value => esc(value).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 const unique = values => [...new Set(values)];
-const WORK = [ ['home','Course overview'], ['guide','What to know by the end'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['combined','Combined notes'], ['test','Current practice test'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
-const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null});
-let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections;
+const WORK = [ ['guide','What to know by the end'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['combined','Combined notes'], ['test','Current practice test'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
+const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null,sessions:{},activeModule:'module2',practiceMode:'mixed',mcqSelections:{},mcqSubmitted:{},optionOrders:{},flags:{}});
+let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections, moduleMap;
 let storageAvailable = true, reader = null, lastReaderFocus = null, view = 'home', selected = '', saveTimeout, searchQuery = '';
 let timer = {duration:25 * 60,remaining:25 * 60,end:null,interval:null,mode:'Study'};
 const own = (object,key) => Object.prototype.hasOwnProperty.call(object,key);
@@ -22,53 +22,89 @@ function storageError(message) {
   $('#storageWarning').textContent = message + ' Export your notes and progress before closing this tab.';
 }
 function save() {
+  if(state.session?.moduleId) state.sessions[state.session.moduleId] = state.session;
   try {
     localStorage.setItem(KEY, JSON.stringify(state));
-    storageAvailable = true;
-    $('#storageWarning').hidden = true;
-    $('#saveStatus').textContent = 'Saved in this browser';
-    clearTimeout(saveTimeout);
-    saveTimeout = setTimeout(() => { if(storageAvailable) $('#saveStatus').textContent = 'Personal progress stays in this browser'; }, 1400);
-  } catch { storageError('Browser storage is unavailable or full.'); }
+    storageAvailable = true; $('#storageWarning').hidden = true;
+    $('#saveStatus').textContent = 'Saved in this browser';clearTimeout(saveTimeout);
+    saveTimeout = setTimeout(() => {if(storageAvailable)$('#saveStatus').textContent='Personal progress stays in this browser';},1400);
+  } catch {storageError('Browser storage is unavailable or full.');}
 }
-function validateState(raw, importing = false) {
-  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) throw new Error('The progress file has no valid state.');
-  const clean = defaults();
-  const knownSection = id => sections.has(id);
-  const knownQuestion = id => questionMap.has(id);
-  for (const [field,validator,known] of [
-    ['notes',v => typeof v === 'string' && v.length <= 100000,knownSection],
-    ['read',v => typeof v === 'boolean',knownSection],
-    ['open',v => typeof v === 'boolean',knownSection],
-    ['drafts',v => typeof v === 'string' && v.length <= 100000,knownQuestion],
-    ['revealed',v => typeof v === 'boolean',knownQuestion],
-    ['ratings',v => ['ready','partial','review','uncertain'].includes(v),knownQuestion],
-    ['ready',v => typeof v === 'boolean',id => /^guide-\d+$/.test(id)]
+
+function questionModule(q) {
+  if(moduleMap.has(q?.moduleId))return q.moduleId;
+  const refs=(q?.sources || []).map(ref=>moduleForCollection(ref.collection));
+  return refs.includes('module2')?'module2':'module1';
+}
+function moduleForCollection(id) {
+  const c=collections.get(id);if(moduleMap.has(c?.moduleId))return c.moduleId;
+  return D.modules.find(m=>[...(m.lectureIds || []),...(m.supplementIds || []),...(m.meadowsIds || [])].includes(id))?.id || null;
+}
+function currentModule() {return moduleMap.get(state.activeModule) || D.modules.at(-1);}
+function moduleLectures(id=state.activeModule) {return (moduleMap.get(id)?.lectureIds || []).map(cid=>collections.get(cid)).filter(Boolean);}
+function moduleReadings(id=state.activeModule) {return (moduleMap.get(id)?.meadowsIds || []).map(cid=>collections.get(cid)).filter(Boolean);}
+function moduleCoreCollections() {return [...moduleLectures(),...moduleReadings()];}
+function moduleQuestions(id=state.activeModule) {return D.questions.filter(q=>questionModule(q)===id);}
+function moduleGuides() {return D.guide.map((g,index)=>({g,index})).filter(({g})=>(g.moduleIds || unique((g.refs || []).map(ref=>moduleForCollection(ref.collection)).filter(Boolean))).includes(state.activeModule));}
+function isMCQ(q) {return q?.type==='mcq';}
+function validOrder(q,order) {return isMCQ(q) && Array.isArray(order) && order.length===q.options.length && new Set(order).size===order.length && order.every(id=>q.options.some(option=>option.id===id));}
+function sanitizeSession(raw,moduleId) {
+  if(!raw || typeof raw!=='object' || !Array.isArray(raw.ids))return null;
+  const ids=unique(raw.ids.filter(id=>questionMap.has(id) && questionModule(questionMap.get(id))===moduleId));if(!ids.length)return null;
+  const previousId=raw.ids[Math.max(0,Math.trunc(Number(raw.index)||0))];
+  return {ids,index:Math.max(0,ids.indexOf(previousId)),moduleId,
+    title:typeof raw.title==='string'?raw.title.slice(0,160):'Conceptual practice',finished:raw.finished===true,
+    edition:typeof raw.edition==='string'?raw.edition:'',scope:typeof raw.scope==='string'?raw.scope:'mixed',
+    mode:['mixed','mcq','written'].includes(raw.mode)?raw.mode:'written'};
+}
+function validateState(raw) {
+  if(!raw || typeof raw!=='object' || Array.isArray(raw))throw new Error('The progress file has no valid state.');
+  const clean=defaults(),knownSection=id=>sections.has(id),knownQuestion=id=>questionMap.has(id);
+  for(const [field,validator,known] of [
+    ['notes',v=>typeof v==='string' && v.length<=100000,knownSection],
+    ['read',v=>typeof v==='boolean',knownSection],['open',v=>typeof v==='boolean',knownSection],
+    ['drafts',v=>typeof v==='string' && v.length<=100000,knownQuestion],
+    ['revealed',v=>typeof v==='boolean',knownQuestion],['flags',v=>typeof v==='boolean',knownQuestion],
+    ['ratings',v=>['ready','partial','review','uncertain'].includes(v),knownQuestion],
+    ['ready',v=>typeof v==='boolean',id=>/^guide-\d+$/.test(id)],
+    ['mcqSubmitted',v=>typeof v==='boolean',id=>isMCQ(questionMap.get(id))],
+    ['mcqSelections',v=>typeof v==='string',id=>isMCQ(questionMap.get(id))],
+    ['optionOrders',v=>Array.isArray(v),id=>isMCQ(questionMap.get(id))]
   ]) {
-    if (raw[field] != null && (typeof raw[field] !== 'object' || Array.isArray(raw[field]))) throw new Error('Invalid '+field+' in progress file.');
-    Object.entries(raw[field] || {}).forEach(([id,value]) => {
-      if (!['__proto__','constructor','prototype'].includes(id) && known(id) && validator(value)) clean[field][id] = value;
-    });
+    if(raw[field]!=null && (typeof raw[field]!=='object' || Array.isArray(raw[field])))throw new Error('Invalid '+field+' in progress file.');
+    Object.entries(raw[field] || {}).forEach(([id,value])=>{if(!['__proto__','constructor','prototype'].includes(id) && known(id) && validator(value))clean[field][id]=value;});
   }
-  if(['light','dark'].includes(raw.theme)) clean.theme = raw.theme;
-  if(Number.isFinite(raw.size)) clean.size = Math.max(15,Math.min(28,raw.size));
-  if(typeof raw.sideClosed === 'boolean') clean.sideClosed = raw.sideClosed;
-  if(raw.session && typeof raw.session === 'object' && Array.isArray(raw.session.ids)) {
-    const ids = unique(raw.session.ids.filter(id => typeof id === 'string' && questionMap.has(id)));
-    if(ids.length && ids.length <= questionMap.size) clean.session = {
-      ids, index: Math.max(0,Math.min(ids.length-1,Math.trunc(Number(raw.session.index) || 0))),
-      title: typeof raw.session.title === 'string' ? raw.session.title.slice(0,160) : 'Conceptual practice',
-      finished: raw.session.finished === true,
-      edition: typeof raw.session.edition === 'string' ? raw.session.edition : '',
-      scope: typeof raw.session.scope === 'string' ? raw.session.scope : 'mixed'
-    };
+  for(const [id,value] of Object.entries(clean.mcqSelections))if(!questionMap.get(id).options.some(option=>option.id===value))delete clean.mcqSelections[id];
+  for(const [id,order] of Object.entries(clean.optionOrders))if(!validOrder(questionMap.get(id),order))delete clean.optionOrders[id];
+  for(const id of Object.keys(clean.mcqSubmitted))if(!clean.mcqSelections[id])clean.mcqSubmitted[id]=false;
+  if(['light','dark'].includes(raw.theme))clean.theme=raw.theme;
+  if(Number.isFinite(raw.size))clean.size=Math.max(15,Math.min(28,raw.size));
+  if(typeof raw.sideClosed==='boolean')clean.sideClosed=raw.sideClosed;
+  if(moduleMap.has(raw.activeModule))clean.activeModule=raw.activeModule;
+  if(['mixed','mcq','written'].includes(raw.practiceMode))clean.practiceMode=raw.practiceMode;
+  for(const module of D.modules){
+    const candidate=sanitizeSession(raw.sessions?.[module.id],module.id);
+    if(candidate)clean.sessions[module.id]=candidate;
   }
+  // Pre-module mixed sets are partitioned without moving a draft or rating to a different question.
+  if(raw.session?.ids)for(const module of D.modules){
+    if(raw.session.moduleId && raw.session.moduleId!==module.id)continue;
+    const legacy=sanitizeSession(raw.session,module.id);if(legacy)clean.sessions[module.id]=legacy;
+  }
+  clean.session=clean.sessions[clean.activeModule] || null;
   return clean;
 }
+function activateModule(id) {
+  if(!moduleMap.has(id) || id===state.activeModule)return;
+  if(state.session)state.sessions[state.activeModule]=state.session;
+  state.activeModule=id;state.session=state.sessions[id] || null;
+  selected=moduleLectures(id)[0]?.id || selected;save();
+}
+
 function loadState() {
   try {
     const stored = localStorage.getItem(KEY);
-    if(stored) state = validateState(JSON.parse(stored));
+    if(stored){state=validateState(JSON.parse(stored));save();}
     $('#saveStatus').textContent = 'Personal progress stays in this browser';
   } catch { storageError('Saved progress could not be read. Current edits will be kept in this tab.'); }
 }
@@ -80,29 +116,49 @@ function applyPreferences() {
   document.querySelectorAll('[data-action="sidebar"]').forEach(b => b.setAttribute('aria-expanded',String(!state.sideClosed)));
 }
 function readRoute() {
-  const params = new URLSearchParams(location.search);
-  view = params.get('view') || 'home';
-  selected = params.get('lecture') || lectureCollections[0]?.id || D.collections[0]?.id || '';
-  if(!collections.has(selected)) selected = lectureCollections[0]?.id || D.collections[0]?.id || '';
-  if(![...WORK.map(x => x[0]),'collection','practice'].includes(view)) view = 'home';
+  const params=new URLSearchParams(location.search);
+  if(moduleMap.has(params.get('module')))activateModule(params.get('module'));
+  view=params.get('view') || 'home';
+  selected=params.get('lecture') || moduleLectures()[0]?.id || D.collections[0]?.id || '';
+  if(!collections.has(selected))selected=moduleLectures()[0]?.id || '';
+  if(view==='collection' && moduleForCollection(selected)){const incoming=selected;activateModule(moduleForCollection(incoming));selected=incoming;}
+  if(view==='meadows')activateModule('module1');
+  if(![...WORK.map(x=>x[0]),'home','collection','practice','meadows'].includes(view))view='home';
 }
-function go(next, collectionId, push = true) {
-  closeReader(false); stopSpeech(); pauseMedia();
-  view = next; if(collectionId && collections.has(collectionId)) selected = collectionId;
-  searchQuery = '';
-  const url = new URL(location.href);url.searchParams.set('view',view);
-  if(view === 'collection') url.searchParams.set('lecture',selected); else url.searchParams.delete('lecture');
-  if(push) history.pushState(null,'',url); else history.replaceState(null,'',url);
-  if(innerWidth <= 760) state.sideClosed = true;
-  applyPreferences(); render(); window.scrollTo({top:0,behavior:'instant'});$('#content').focus({preventScroll:true});
+function go(next,collectionId,push=true,moduleId) {
+  closeReader(false);stopSpeech();pauseMedia();
+  if(moduleId)activateModule(moduleId);
+  if(collectionId && collections.has(collectionId)){
+    const owner=moduleForCollection(collectionId);if(owner)activateModule(owner);selected=collectionId;
+  }
+  if(next==='meadows')activateModule('module1');
+  view=next;searchQuery='';
+  const url=new URL(location.href);url.searchParams.set('view',view);url.searchParams.set('module',state.activeModule);
+  if(view==='collection')url.searchParams.set('lecture',selected);else url.searchParams.delete('lecture');
+  history[push?'pushState':'replaceState'](null,'',url);
+  if(innerWidth<=760)state.sideClosed=true;
+  save();applyPreferences();render();window.scrollTo({top:0,behavior:'instant'});$('#content').focus({preventScroll:true});
 }
+
 function collectionTitle(c) {return c.role === 'lecture' ? c.title.replace(/^(?:Lectures?\s+)?\d+(?:[+–-]\d+)?\s*[·:.-]\s*/i,'') : c.title;}
 function refLabel(c) {return c.number ? 'Lecture '+c.number : c.title;}
+function scopeBanner() {const m=currentModule();return `<div class="scope-banner"><span class="tag">${esc(m.title)} · ${esc(m.subtitle || '')}</span><p>${esc(m.description || (m.id==='module2'?'Current focus · Lectures 11–13. Future lectures will be added here.':'Completed first-half material · Lectures 01–10.'))}</p></div>`;}
 function nav() {
-  const queue = queueQuestions().length;
-  $('#workNav').innerHTML = WORK.map(([id,title]) => `<button data-go="${id}" class="${view === id?'active':''}" ${view === id?'aria-current="page"':''}>${esc(title)}${id === 'missed'?' · '+queue:''}</button>`).join('');
-  $('#collectionNav').innerHTML = D.collections.map(c => `<button data-collection="${esc(c.id)}" class="${view === 'collection' && selected === c.id?'active':''}" ${view === 'collection' && selected === c.id?'aria-current="page"':''}><span class="nav-number">${esc(c.number ?? (c.role === 'lecture'?'':'↳'))}</span><span>${esc(collectionTitle(c))}</span></button>`).join('');
+  const m=currentModule(),queue=queueQuestions().length;
+  $('#courseNav').innerHTML=`<button data-go="home" class="${view==='home'?'active':''}" ${view==='home'?'aria-current="page"':''}>Course overview</button>`;
+  $('#moduleNav').innerHTML=D.modules.map(module=>`<button data-module="${esc(module.id)}" class="${state.activeModule===module.id?'active':''}" aria-pressed="${state.activeModule===module.id}"><span>${esc(module.title)}</span><small>${esc(module.subtitle || '')}</small></button>`).join('');
+  $('#activeModuleLabel').innerHTML=`<strong>${esc(m.title)}</strong> <span>· ${esc(m.subtitle || '')}</span>`;
+  $('#workspaceModuleLabel').textContent='Your workspace · '+m.title;
+  $('#workNav').innerHTML=WORK.map(([id,title])=>`<button data-go="${id}" class="${view===id?'active':''}" ${view===id?'aria-current="page"':''}>${esc(title)}${id==='missed'?' · '+queue:''}</button>`).join('');
+  const collectionButton=c=>`<button data-collection="${esc(c.id)}" class="${view==='collection' && selected===c.id?'active':''}" ${view==='collection' && selected===c.id?'aria-current="page"':''}><span class="nav-number">${esc(c.number)}</span><span>${esc(collectionTitle(c))}</span></button>`;
+  $('#collectionNav').innerHTML=moduleLectures().map(collectionButton).join('');
+  $('#archiveWorkNav').innerHTML=WORK.map(([id,title])=>`<button data-go="${id}" data-scope-module="module1" class="${state.activeModule==='module1' && view===id?'active':''}">${esc(title)}${id==='missed'?' · '+queueQuestions('module1').length:''}</button>`).join('');
+  $('#archiveCollectionNav').innerHTML=moduleLectures('module1').map(collectionButton).join('');
+  $('#moduleArchive').hidden=state.activeModule==='module1';
+  if(state.activeModule==='module1')$('#moduleArchive').open=false;
+  $('#headerModule').textContent='LING285 / '+m.title.toUpperCase();
 }
+
 function pageLink(section) {
   const c = collections.get(section.collection);
   return safeURL(c.pdfFile || c.sourceFile) + (c.pdfFile?'#page='+section.page:'');
@@ -142,26 +198,34 @@ function sectionHTML(s,index=0) {return `<details class="source-section ${s.core
 function searchTools(label='Search teaching notes') {return `<label class="search-wrap"><span>${esc(label)}</span><input type="search" id="noteSearch" class="search" value="${esc(searchQuery)}" placeholder="Find a concept, source example, or explanation…"></label><p class="small muted" id="searchCount" aria-live="polite"></p>`;}
 function studyToolbar(kind) {return `<div class="toolbar"><button class="primary" data-reader="${kind}" data-expanded="false">Visual + teaching</button><button data-reader="${kind}" data-expanded="true">Expand visual + teaching</button><button data-action="smaller" aria-label="Decrease teaching text size">A−</button><button data-action="larger" aria-label="Increase teaching text size">A+</button><button data-action="expandSections">Expand sections</button><button data-action="collapseSections">Collapse sections</button><button class="push" data-action="print">Print notes</button></div>`;}
 function home() {
-  const lectureSections = lectureCollections.flatMap(c => c.sections);
-  const readCount = lectureSections.filter(s => state.read[s.id]).length;
-  const coreCount = allSections.filter(s => s.core).length;
-  return `<span class="eyebrow">LING285 · ${esc(D.course.professor || 'Khalil Iskarous')}</span><div class="hero"><div><h1>Human Language<br>and Technology.</h1><p class="lead">Understand how speech, physical systems, and learning connect. Keep each original source beside its teaching notes, then explain the ideas in your own words.</p><div class="row"><button class="primary" data-collection="${esc(selected)}">Open the lecture workspace</button><button data-go="guide">What to know</button></div></div><div class="hero-quote" aria-hidden="true"><span class="big-word">What moves?</span><span class="big-word">What changes?</span><span class="big-word">What follows?</span><p>Intuition and cause and effect.<br>One concept at a time.</p></div></div><div class="stat-strip"><div class="stat"><strong>${lectureCollections.length}</strong><span>lecture collections</span></div><div class="stat"><strong>${lectureSections.length}</strong><span>original lecture pages</span></div><div class="stat"><strong>${coreCount}</strong><span>selective core pages</span></div><div class="stat"><strong>${readCount}</strong><span>pages marked read</span></div></div>${D.course.coverageNotice?'<div class="notice">'+esc(D.course.coverageNotice)+'</div>':''}<div class="grid"><article class="card"><span class="eyebrow">Your understanding</span><h2>Build the explanation.</h2><p>Follow the original slide order, inspect diagrams and embedded demonstrations, and leave notes attached to each source page.</p><div class="progress" aria-label="${readCount} of ${lectureSections.length} lecture pages marked read"><span style="width:${lectureSections.length?Math.round(readCount/lectureSections.length*100):0}%"></span></div><button data-go="combined">Combined teaching notes</button></article><article class="card"><span class="eyebrow">Conceptual practice</span><h2>Say why it happens.</h2><p>Draft short explanations, compare them with a model answer, and decide which ideas deserve another try.</p><div class="row"><button class="primary" data-go="test">Current practice test</button><button data-go="missed">Review queue · ${queueQuestions().length}</button></div></article><article class="card"><span class="eyebrow">Study priorities</span><h2>Keep the core selective.</h2><p>Red labels identify a chosen group of foundational distinctions. The full supporting material stays in its individual collection.</p><button data-go="core">Must know · core review</button></article></div><div class="row spread"><h2>Individual collections</h2><span class="small muted">${esc(D.course.edition || 'Current supplied material')}</span></div><div class="grid">${D.collections.map(collectionCard).join('')}</div><p class="small muted">Notes, read marks, and practice responses save in this browser. <button class="text-button small-button" data-action="export">Export a backup</button></p>`;
+  const m=currentModule(),lectures=moduleLectures(),pages=lectures.flatMap(c=>c.sections),read=pages.filter(s=>state.read[s.id]).length;
+  const other=D.modules.find(module=>module.id!==m.id),otherLectures=moduleLectures(other?.id),pool=moduleQuestions();
+  return `<section class="module-hero"><span class="tag">${esc(m.title.toUpperCase())} · ${esc((m.subtitle || '').toUpperCase())}</span><h1>${m.id==='module2'?'A new module.<br>Follow sound into speech.':'Module I.<br>Your first-half archive.'}</h1><p class="lead">${esc(m.description || m.lectureRange || '')} ${m.id==='module2'?'Follow the cause and effect in speech production, then test the ideas in both formats.':'Teaching, core review, and module practice stay together. Your notes and progress remain attached to their original pages.'}</p><div class="row"><button class="primary" data-go="combined">Open ${esc(m.title)} notes</button><button data-go="test">Current practice test</button><button data-go="guide">Study guide</button></div></section><div class="grid module-grid"><article class="card module-card active"><span class="eyebrow">${m.id==='module2'?'Current focus':'Archived focus'}</span><h2>${esc(m.title)} · ${esc(m.subtitle || '')}</h2><p>${lectures.length} numbered lecture collections · ${pages.length} original source pages.</p><p class="small muted">${read} of ${pages.length} lecture pages marked read</p><div class="progress" aria-label="${read} of ${pages.length} lecture pages marked read"><span style="width:${pages.length?read/pages.length*100:0}%"></span></div><div class="row"><button data-go="combined">Open teaching notes</button><button data-go="core">Must know · core review</button></div></article>${other?`<article class="card module-card"><span class="eyebrow">${other.id==='module1'?'Completed first-half material':'Current second-half material'}</span><h2>${esc(other.title)} · ${esc(other.subtitle || '')}${other.id==='module1'?' archive':''}</h2><p>${esc(other.description || other.lectureRange || '')} Its guide, core review, and practice stay separate from this workspace.</p><p class="small muted">${otherLectures.length} lecture collections · saved study progress preserved</p><button data-module="${esc(other.id)}">Open ${esc(other.title)}${other.id==='module1'?' archive':''}</button></article>`:''}</div><div class="card practice-summary"><div><span class="eyebrow">Practice for ${esc(m.title)}</span><h2>Multiple choice. Written explanations. Or both.</h2><p>${formatCounts(pool)} available · current tests use up to 20 questions.</p></div><div class="row"><button class="primary" data-go="test">Choose a practice format</button><button data-go="quizzes">Lecture quizzes</button><button data-go="missed">Missed & uncertain · ${queueQuestions().length}</button></div></div><section class="current-lecture-list"><h2>${esc(m.title)} · individual collections</h2><div class="row">${lectures.map(c=>`<button data-collection="${esc(c.id)}"><span class="nav-number">${esc(c.number)}</span> ${esc(collectionTitle(c))}</button>`).join('')}</div></section>${m.futureNote?'<div class="notice">'+esc(m.futureNote)+'</div>':''}<p class="small muted">The six Meadows readings have their own Module I workspace. <button class="text-button small-button" data-go="meadows">Open Meadows</button> · <button class="text-button small-button" data-go="sources">Sources & coverage</button></p>`;
 }
+
+function collectionQuestions(c) {return moduleQuestions(moduleForCollection(c.id) || state.activeModule).filter(q=>(q.sources || []).some(ref=>ref.collection===c.id));}
 function collectionCard(c) {
-  const read = c.sections.filter(s => state.read[s.id]).length;
-  const qCount = D.questions.filter(q => (q.sources || []).some(ref => ref.collection === c.id)).length;
-  return `<article class="card collection-card"><span class="collection-number">${esc(c.number || (c.role === 'review'?'R':'↳'))}</span><span class="eyebrow">${esc(collectionLabel(c))}</span><h3>${esc(collectionTitle(c))}</h3><p class="small">${c.sections.length} source pages · ${read} read${qCount?' · '+qCount+' practice prompts':''}</p><div class="row"><button data-collection="${esc(c.id)}">Open collection</button>${qCount?`<button class="small-button" data-start="lecture:${esc(c.id)}">Practice</button>`:''}</div></article>`;
+  const read=c.sections.filter(s=>state.read[s.id]).length,qCount=collectionQuestions(c).length;
+  return `<article class="card collection-card"><span class="collection-number">${esc(c.number || '↳')}</span><span class="eyebrow">${esc(collectionLabel(c))}</span><h3>${esc(collectionTitle(c))}</h3><p class="small">${c.sections.length} source pages · ${read} read${qCount?' · '+qCount+' practice prompts':''}</p><div class="row"><button data-collection="${esc(c.id)}">Open collection</button>${qCount && c.role==='lecture'?`<button class="small-button" data-start="lecture:${esc(c.id)}">Practice</button>`:''}</div></article>`;
 }
+
 function collectionView() {
-  const c = collections.get(selected);if(!c) return '<h1>Collection unavailable</h1>';
-  const qCount = D.questions.filter(q => (q.sources || []).some(ref => ref.collection === c.id)).length;
-  return `<span class="eyebrow">${esc(collectionLabel(c))}</span><h1>${esc(collectionTitle(c))}</h1><p class="small muted">${c.sections.length} source pages · ${esc(c.originalFilename || '')}</p>${issueHTML(c.issues)}<div class="row"><a class="small" href="${esc(safeURL(c.sourceFile || c.pdfFile))}" target="_blank" rel="noopener">Open original source</a>${c.pdfFile && c.sourceFile !== c.pdfFile?`<a class="small" href="${esc(safeURL(c.pdfFile))}" target="_blank" rel="noopener">Open PDF</a>`:''}${qCount?`<button class="small-button" data-start="lecture:${esc(c.id)}">Lecture practice · ${qCount}</button>`:''}</div>${studyToolbar('lecture')}${searchTools()}<div class="section-list">${c.sections.map(sectionHTML).join('')}</div>`;
+  const c=collections.get(selected);if(!c)return '<h1>Collection unavailable</h1>';
+  const qCount=collectionQuestions(c).length;
+  return `${moduleForCollection(c.id)?scopeBanner():'<span class="tag">Supporting course source</span>'}<span class="eyebrow">${esc(collectionLabel(c))}</span><h1>${esc(collectionTitle(c))}</h1><p class="small muted">${c.sections.length} source pages · ${esc(c.originalFilename || '')}</p>${issueHTML(c.issues)}<div class="row"><a class="small" href="${esc(safeURL(c.sourceFile || c.pdfFile))}" target="_blank" rel="noopener">Open original source</a>${c.pdfFile && c.sourceFile!==c.pdfFile?`<a class="small" href="${esc(safeURL(c.pdfFile))}" target="_blank" rel="noopener">Open PDF</a>`:''}${qCount && c.role==='lecture'?`<button class="small-button" data-start="lecture:${esc(c.id)}">Lecture practice · ${qCount}</button>`:''}${c.role!=='lecture'?'<button class="small-button" data-go="sources">All sources & coverage</button>':''}</div>${studyToolbar('lecture')}${searchTools()}<div class="section-list">${c.sections.map(sectionHTML).join('')}</div>`;
 }
-function combined() {return `<span class="eyebrow">All lecture collections</span><h1>Combined teaching notes.</h1><p class="lead">Keep the course sequence, original sources, and your personal notes together.</p>${studyToolbar('combined')}${searchTools('Search all lecture collections')}${lectureCollections.map(c => `<section class="section-group search-group"><h2>${esc(c.number)}${c.number?' · ':''}${esc(collectionTitle(c))}</h2>${c.sections.map(sectionHTML).join('')}</section>`).join('')}`;}
+
+function combined() {return `${scopeBanner()}<span class="eyebrow">${esc(currentModule().title)} lecture collections</span><h1>Combined teaching notes.</h1><p class="lead">The numbered lecture decks from this module, in source order.</p>${studyToolbar('combined')}${searchTools('Search this module’s lecture collections')}${moduleLectures().map(c=>`<section class="section-group search-group"><h2>${esc(c.number)} · ${esc(collectionTitle(c))}</h2>${c.sections.map(sectionHTML).join('')}</section>`).join('')}`;}
+function meadows() {
+  const readings=moduleReadings('module1');
+  return `${scopeBanner()}<span class="eyebrow">Module I · supporting readings</span><h1>Meadows.<br>Systems & feedback.</h1><p class="lead">Follow stocks, flows, balancing loops, reinforcing loops, and delays through the six supplied readings.</p><div class="grid">${readings.map(collectionCard).join('')}</div>${studyToolbar('meadows')}${searchTools('Search the Meadows readings')}${readings.map(c=>`<section class="section-group search-group"><h2>${esc(c.title)}</h2>${c.sections.map(sectionHTML).join('')}</section>`).join('')}`;
+}
+
 function core() {
-  const pool = allSections.filter(s => s.core);
-  return `<span class="eyebrow">Selective study priorities</span><div class="core-intro"><h1>Must know<br>· core review.</h1><p class="lead">${pool.length} selected source pages. Understand the mechanism and explain the distinction before moving to supporting detail.</p></div><p class="small muted">These are study priorities based on the supplied material, not predictions of unseen exam questions.</p>${studyToolbar('core')}${searchTools('Search selected core explanations')}${D.collections.filter(c => c.sections.some(s => s.core)).map(c => `<section class="section-group search-group"><h2>${esc(c.number)}${c.number?' · ':''}${esc(collectionTitle(c))}</h2>${c.sections.filter(s => s.core).map(sectionHTML).join('')}</section>`).join('') || '<div class="empty">Core priorities have not been supplied yet.</div>'}`;
+  const groups=moduleCoreCollections(),pool=groups.flatMap(c=>c.sections).filter(s=>s.core);
+  return `${scopeBanner()}<span class="eyebrow">Selective study priorities</span><div class="core-intro"><h1>Must know<br>· core review.</h1><p class="lead">${pool.length} selected source pages in ${esc(currentModule().title)}. Understand the mechanism and explain the distinction before moving to supporting detail.</p></div>${studyToolbar('core')}${searchTools('Search this module’s core explanations')}${groups.filter(c=>c.sections.some(s=>s.core)).map(c=>`<section class="section-group search-group"><h2>${c.number?esc(c.number)+' · ':''}${esc(collectionTitle(c))}</h2>${c.sections.filter(s=>s.core).map(sectionHTML).join('')}</section>`).join('') || '<div class="empty">Core priorities have not been supplied yet.</div>'}`;
 }
+
 function refsFor(g) {return (g.refs || []).map(ref => {
   const exact = allSections.find(s => s.collection === ref.collection && Number(s.page) === Number(ref.page));return exact;
 }).filter(Boolean);}
@@ -169,38 +233,97 @@ function guideCard(g,index) {
   const ids = refsFor(g).map(s => s.id);
   return `<article class="card guide-card"><h2>${esc(g.title)}</h2><p>${rich(g.explanation || '')}</p><div class="row">${ids.length?`<button data-guide-reader="${index}">Open matching sources · ${ids.length}</button>`:''}${refsFor(g).slice(0,6).map(s => `<button class="source-ref" data-open-section="${esc(s.id)}">${esc(refLabel(collections.get(s.collection)))} · p${s.page}</button>`).join('')}</div><label class="readiness"><input type="checkbox" data-ready="guide-${index}" ${state.ready['guide-'+index]?'checked':''}> I can explain this without the notes</label></article>`;
 }
-function guide() {return `<span class="eyebrow">Explain, connect, apply</span><h1>What to know<br>by the end.</h1><p class="lead">Use these explanations as a checklist. Open the matching source pages when you want the full visual and teaching.</p>${D.guide.map(guideCard).join('') || '<div class="empty">Open the lecture collections to study the current material.</div>'}`;}
+function guide() {return `${scopeBanner()}<span class="eyebrow">Explain, connect, apply</span><h1>What to know<br>by the end.</h1><p class="lead">Use this module’s explanations as a checklist, then open the matching source pages.</p>${moduleGuides().map(({g,index})=>guideCard(g,index)).join('') || '<div class="empty">Open the lecture collections to study the current material.</div>'}`;}
+
 function demonstrationEntries() {
-  const explicit = D.guide.map((g,index) => ({g,index})).filter(({g}) => ['demonstration','experiment','connection'].includes(g.kind));
-  return explicit.length ? explicit : D.guide.map((g,index) => ({g,index})).filter(({g}) => /demonstrat|feedback|oscillat|spring|thermostat|hearing|propagation|learning|experiment|dynamic programming/i.test(g.title));
+  const entries=moduleGuides(),explicit=entries.filter(({g})=>['demonstration','experiment','connection'].includes(g.kind));
+  return explicit.length?explicit:entries.filter(({g})=>/demonstrat|feedback|oscillat|spring|thermostat|hearing|propagation|learning|experiment|dynamic programming/i.test(g.title));
 }
-function experiments() {return `<span class="eyebrow">Follow the cause and effect</span><h1>Demonstrations<br>& connections.</h1><p class="lead">Trace what changes in a system, what the change causes, and which source evidence supports the explanation.</p>${demonstrationEntries().map(({g,index}) => guideCard(g,index)).join('') || '<div class="empty"><p>Demonstrations remain available in the original lecture order.</p><button data-go="combined">Open lecture notes</button></div>'}`;}
-function queueQuestions() {return D.questions.filter(q => ['partial','review','uncertain'].includes(state.ratings[q.id]));}
+
+function experiments() {return `${scopeBanner()}<span class="eyebrow">Follow the cause and effect</span><h1>Demonstrations<br>& connections.</h1><p class="lead">Trace what changes, what it causes, and which source evidence supports the explanation.</p>${demonstrationEntries().map(({g,index})=>guideCard(g,index)).join('') || '<div class="empty"><p>Demonstrations remain in the original lecture order.</p><button data-go="combined">Open lecture notes</button></div>'}`;}
+
+function needsReview(q) {return state.flags[q.id]===true || ['partial','review','uncertain'].includes(state.ratings[q.id]) || (isMCQ(q) && state.mcqSubmitted[q.id] && state.mcqSelections[q.id]!==q.correctOption);}
+function queueQuestions(moduleId=state.activeModule) {return moduleQuestions(moduleId).filter(needsReview);}
+function practiceModePicker() {
+  return `<fieldset class="practice-mode"><legend>Question format</legend>${[['mixed','Mixed'],['mcq','Multiple choice'],['written','Written explanations']].map(([value,label])=>`<label><input type="radio" name="practiceMode" value="${value}" ${state.practiceMode===value?'checked':''}> <span>${label}</span></label>`).join('')}</fieldset>`;
+}
+function modePool(pool) {return state.practiceMode==='mixed'?pool:pool.filter(q=>isMCQ(q)===(state.practiceMode==='mcq'));}
+function formatCounts(pool) {return `${pool.filter(isMCQ).length} multiple-choice · ${pool.filter(q=>!isMCQ(q)).length} written`;}
 function test() {
-  const count = Math.min(20,D.questions.length);
-  return `<span class="eyebrow">Current practice · ${esc(D.course.edition || 'Supplied material')}</span><h1>Explain the idea.<br>Check the reasoning.</h1><div class="practice-intro"><p class="lead">Practice short conceptual answers in the style of the uploaded review. Explain what changes and why, then compare your response with the model explanation.</p><p class="small muted">Original study practice based on the supplied sources. It is not an actual instructor exam or a prediction of future questions. Responses are self-assessed rather than automatically graded.</p></div><div class="grid"><article class="card"><span class="eyebrow">Cumulative practice</span><h2>${count}-question current test</h2><p>A mixed set from the current question bank. Your draft, revealed answers, and self-ratings stay attached to each question.</p><button class="primary" data-start="mixed">Start current test</button></article><article class="card"><span class="eyebrow">A smaller session</span><h2>Five explanations.</h2><p>Work through a short selection and keep the harder ideas in your review queue.</p><button data-start="quick">Start 5-question practice</button></article><article class="card"><span class="eyebrow">Focused practice</span><h2>Choose one lecture.</h2><p>Return to the concepts and original visuals from a particular collection.</p><button data-go="quizzes">Open lecture practice</button></article></div>${state.session?`<div class="card"><h2>${state.session.finished?'Review your last set':'Continue your current set'}</h2><p>${esc(state.session.title)} · ${state.session.ids.length} questions</p><button data-go="practice">${state.session.finished?'Open self-assessment':'Resume practice'}</button></div>`:''}`;
+  const pool=moduleQuestions(),count=Math.min(20,modePool(pool).length);
+  return `${scopeBanner()}<span class="eyebrow">Current practice · ${esc(currentModule().title)}</span><h1>Choose the answer.<br>Explain the reasoning.</h1><div class="practice-intro"><p class="lead">Use multiple-choice questions, written explanations, or both. Each question links to its original sources and explains the reasoning after your response.</p></div>${practiceModePicker()}<p class="small muted">${formatCounts(pool)} available in this module.</p><div class="grid"><article class="card"><span class="eyebrow">Current module test</span><h2>${count}-question practice test</h2><p>A selection from ${esc(currentModule().title)}, with lecture coverage preserved as the bank grows.</p><button class="primary" data-start="mixed" ${count?'':'disabled'}>Start current test</button></article><article class="card"><span class="eyebrow">A shorter session</span><h2>Five questions.</h2><p>A smaller set in your chosen format. Keep difficult or uncertain questions in your review queue.</p><button data-start="quick" ${count?'':'disabled'}>Start 5-question practice</button></article><article class="card"><span class="eyebrow">Focused practice</span><h2>Choose one lecture.</h2><p>Practice both formats within an individual lecture collection.</p><button data-go="quizzes">Open lecture quizzes</button></article></div>${state.session?`<div class="card"><h2>${state.session.finished?'Review your last set':'Continue your current set'}</h2><p>${esc(state.session.title)} · ${state.session.ids.length} questions</p><button data-go="practice">${state.session.finished?'Open results':'Resume practice'}</button></div>`:''}`;
 }
-function quizzes() {return `<span class="eyebrow">One collection at a time</span><h1>Lecture practice.</h1><p class="lead">Draft the explanation, check the model answer, and use the original source when a detail is uncertain.</p><div class="grid">${lectureCollections.map(collectionCard).join('')}</div>`;}
+
+function quizzes() {return `${scopeBanner()}<span class="eyebrow">One collection at a time</span><h1>Lecture quizzes.</h1><p class="lead">Choose a format, respond, and check the reasoning against the original source.</p>${practiceModePicker()}<div class="grid">${moduleLectures().map(collectionCard).join('')}</div>`;}
+
 function missed() {
-  const pool = queueQuestions();
-  return `<span class="eyebrow">Your next review</span><h1>Missed & uncertain.</h1><p class="lead">${pool.length} ${pool.length === 1?'explanation needs':'explanations need'} another try. A “Ready” self-rating removes a question from this queue.</p>${pool.length?`<div class="row toolbar"><button class="primary" data-start="missed">Practice the review queue</button></div>${pool.map(q => `<article class="card guide-card"><span class="tag">${esc(state.ratings[q.id] || 'review')} · ${esc(q.topic || 'Conceptual practice')}</span><h3 style="margin-top:15px">${esc(q.prompt)}</h3><div class="row"><button data-single-question="${esc(q.id)}">Try this explanation</button><button class="small-button" data-remove-queue="${esc(q.id)}">Remove from queue</button></div></article>`).join('')}`:'<div class="empty"><p>Questions rated “Partial,” “Review,” or “Uncertain” appear here.</p><button data-go="test">Choose conceptual practice</button></div>'}`;
+  const pool=queueQuestions();
+  return `${scopeBanner()}<span class="eyebrow">Your next review</span><h1>Missed & uncertain.</h1><p class="lead">${pool.length} questions in this module need another try. A checked correct answer clears a multiple-choice mistake unless it remains flagged. Written explanations use your self-rating.</p>${pool.length?`<div class="row toolbar"><button class="primary" data-start="missed">Practice this module’s review queue</button></div>${pool.map(q=>`<article class="card guide-card"><span class="tag">${isMCQ(q)?'Multiple choice':'Written'} · ${state.flags[q.id]?'uncertain':esc(state.ratings[q.id] || 'review')}</span><h3 style="margin-top:15px">${esc(q.prompt)}</h3><div class="row"><button data-single-question="${esc(q.id)}">Try this question</button>${isMCQ(q) && state.ratings[q.id]==='review'?'':`<button class="small-button" data-remove-queue="${esc(q.id)}">Remove from queue</button>`}</div></article>`).join('')}`:'<div class="empty"><p>Incorrect multiple-choice responses, uncertain flags, and written answers rated for review appear here.</p><button data-go="test">Choose practice</button></div>'}`;
 }
+
 function shuffle(items) {
   const array = [...items];for(let i=array.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[array[i],array[j]]=[array[j],array[i]];}return array;
 }
+function weightedPick(pool) {
+  return pool.map(q=>({q,key:-Math.log(Math.max(Number.EPSILON,Math.random()))/Math.max(1,Number(q.priority)||1)})).sort((a,b)=>a.key-b.key).map(item=>item.q);
+}
+function samplePractice(pool,count,mode,coverLectures=true) {
+  const available=mode==='mixed'?pool:pool.filter(q=>isMCQ(q)===(mode==='mcq'));
+  const selected=[],picked=new Set();
+  const add=items=>{const q=weightedPick(items.filter(item=>!picked.has(item.id)))[0];if(q && selected.length<count){selected.push(q);picked.add(q.id);}return q;};
+  const types=mode==='mixed'?['mcq','written']:[mode];
+  const groups=coverLectures?shuffle(moduleLectures()).map(c=>({id:c.id,pool:available.filter(q=>(q.sources || []).some(ref=>ref.collection===c.id))})).filter(group=>group.pool.length):[];
+  // Cover available lectures first, then available lecture/format cells, before weighting the remainder.
+  for(const [index,group] of groups.entries()){
+    if(selected.length>=count)break;
+    if(selected.some(q=>group.pool.some(candidate=>candidate.id===q.id)))continue;
+    const preferred=types[index%types.length],preferredPool=group.pool.filter(q=>(isMCQ(q)?'mcq':'written')===preferred);
+    add(preferredPool.length?preferredPool:group.pool);
+  }
+  if(mode==='mixed')for(const type of types){
+    if(!selected.some(q=>(isMCQ(q)?'mcq':'written')===type))add(available.filter(q=>(isMCQ(q)?'mcq':'written')===type));
+  }
+  for(const group of groups)for(const type of types){
+    if(selected.length>=count)break;
+    const cell=group.pool.filter(q=>(isMCQ(q)?'mcq':'written')===type);
+    if(cell.length && !selected.some(q=>cell.some(candidate=>candidate.id===q.id)))add(cell);
+  }
+  for(const q of weightedPick(available.filter(q=>!picked.has(q.id)))){
+    if(selected.length>=count)break;selected.push(q);picked.add(q.id);
+  }
+  return shuffle(selected);
+}
 function startPractice(scope,exactId) {
-  let pool = [...D.questions],title = 'Current mixed practice test';
-  if(scope.startsWith('lecture:')) {const cid=scope.slice(8);pool=pool.filter(q => (q.sources || []).some(ref => ref.collection === cid));title = collections.get(cid)?.title+' · conceptual practice';}
-  if(scope === 'missed') {pool=queueQuestions();title='Missed & uncertain · retry';}
-  if(exactId) {pool = pool.filter(q => q.id === exactId);title = 'Focused conceptual practice';}
-  if(scope === 'mixed' || scope === 'quick') pool=shuffle(pool).slice(0,scope === 'quick'?5:20);
-  else if(!exactId) pool=shuffle(pool);
-  if(!pool.length){announce('No practice prompts are available for this collection yet.');return;}
-  state.session = {ids:unique(pool.map(q => q.id)),index:0,title,finished:false,edition:String(D.course.edition || ''),scope};
-  // A new attempt hides feedback while retaining drafts and prior self-ratings.
-  state.session.ids.forEach(id => state.revealed[id] = false);
+  if(scope.startsWith('lecture:')){const owner=moduleForCollection(scope.slice(8));if(owner)activateModule(owner);}
+  let pool=moduleQuestions(),title=currentModule().title+' · current practice',mode=state.practiceMode;
+  if(scope.startsWith('lecture:')){const cid=scope.slice(8);pool=pool.filter(q=>(q.sources || []).some(ref=>ref.collection===cid));title=collectionTitle(collections.get(cid))+' · lecture practice';}
+  if(scope==='missed'){pool=queueQuestions();title=currentModule().title+' · missed & uncertain';mode='mixed';}
+  if(exactId){pool=pool.filter(q=>q.id===exactId);title=currentModule().title+' · focused practice';mode=isMCQ(pool[0])?'mcq':'written';}
+  const cap=scope==='quick'?5:(scope==='mixed' || scope.startsWith('lecture:'))?20:pool.length;
+  const items=samplePractice(pool,cap,mode,scope==='mixed' || scope==='quick');
+  if(!items.length){announce('No questions are available in that format for this collection yet.');return;}
+  state.session={ids:items.map(q=>q.id),index:0,title,finished:false,edition:String(D.course.edition || ''),scope,mode,moduleId:state.activeModule};
+  for(const q of items){
+    if(isMCQ(q)){state.optionOrders[q.id]=shuffle(q.options.map(option=>option.id));delete state.mcqSelections[q.id];state.mcqSubmitted[q.id]=false;}
+    else state.revealed[q.id]=false;
+  }
   save();go('practice');
 }
+function ensureOptionOrder(q) {
+  if(!validOrder(q,state.optionOrders[q.id])){state.optionOrders[q.id]=shuffle(q.options.map(option=>option.id));save();}
+  return state.optionOrders[q.id];
+}
+function uncertainControl(q) {return `<label class="uncertain-control"><input type="checkbox" data-flag="${esc(q.id)}" ${state.flags[q.id] || state.ratings[q.id]==='uncertain'?'checked':''}> Mark uncertain · keep in review</label>`;}
+function checkMCQ(id) {
+  const q=questionMap.get(id);if(!isMCQ(q) || !q.options.some(option=>option.id===state.mcqSelections[id]))return;
+  state.mcqSubmitted[id]=true;state.ratings[id]=state.mcqSelections[id]===q.correctOption?'ready':'review';
+  save();const scroll=window.scrollY;render();window.scrollTo(0,scroll);document.querySelector('.question-feedback')?.focus({preventScroll:true});
+}
+function mcqHTML(q) {
+  const order=ensureOptionOrder(q),submitted=state.mcqSubmitted[q.id]===true,selection=state.mcqSelections[q.id],correct=submitted && selection===q.correctOption;
+  return `<fieldset class="mcq-options"><legend>Choose the best answer, then check it.</legend>${order.map((id,index)=>{const option=q.options.find(o=>o.id===id),chosen=selection===id;return `<label class="mcq-option ${chosen?'selected':''} ${submitted && id===q.correctOption?'correct':''} ${submitted && chosen && !correct?'incorrect':''}"><input type="radio" name="mcq-${esc(q.id)}" data-mcq-option="${esc(id)}" data-question="${esc(q.id)}" value="${esc(id)}" ${chosen?'checked':''} ${submitted?'disabled':''}><span class="option-letter">${String.fromCharCode(65+index)}</span><span class="option-text">${esc(option.text)}</span></label>`;}).join('')}</fieldset><div class="row"><button class="primary answer-check" data-check-question="${esc(q.id)}" ${submitted || !selection?'disabled':''}>${submitted?'Answer checked':'Check answer'}</button>${submitted?`<button data-retry-question="${esc(q.id)}">Try this question again</button>`:''}${uncertainControl(q)}</div>${submitted?`<section class="question-feedback ${correct?'correct':'incorrect'}" tabindex="-1" aria-label="Answer feedback"><h3>${correct?'Correct.':'Review this answer.'}</h3><p>${rich(Array.isArray(q.answer)?q.answer.join('\n'):q.answer)}</p><h3>Reasoning for every option</h3><div class="option-explanations">${order.map((id,index)=>{const option=q.options.find(o=>o.id===id);return `<div class="option-explanation ${id===q.correctOption?'correct':''}"><h4>${String.fromCharCode(65+index)}. ${esc(option.text)} ${id===q.correctOption?'<span class="tag">Correct answer</span>':''}${id===selection?'<span class="tag">Your selection</span>':''}</h4><p>${rich(option.feedback || '')}</p></div>`;}).join('')}</div></section>`:''}<details class="source-excerpt"><summary>My reasoning · optional</summary><textarea class="draft" data-draft="${esc(q.id)}" aria-label="My reasoning for this multiple-choice question" placeholder="Why does your selected answer fit?">${esc(state.drafts[q.id] || '')}</textarea></details>`;
+}
+
 function answerHTML(q) {
   const answer = Array.isArray(q.answer) ? q.answer.map(x => '<p>'+rich(x)+'</p>').join('') : '<p>'+rich(q.answer)+'</p>';
   return `<div class="feedback"><span class="eyebrow">Compare with your explanation</span><h3>Model answer</h3>${answer}${q.rubric?.length?`<h3 style="margin-top:20px">Check your reasoning</h3><ul>${q.rubric.map(x=>'<li>'+rich(x)+'</li>').join('')}</ul>`:''}<p class="rating-label">How well did your draft explain it?</p><div class="rating-group" role="group" aria-label="Self-assess your answer">${[['ready','Ready'],['partial','Partial'],['review','Review'],['uncertain','Uncertain']].map(([id,label]) => `<button data-rating="${id}" data-question="${esc(q.id)}" aria-pressed="${state.ratings[q.id] === id}">${label}</button>`).join('')}</div><p class="small muted">Choose a rating yourself. Revealing the model answer does not count as a correct response.</p></div>`;
@@ -210,34 +333,39 @@ function sourceRefs(q) {return (q.sources || []).map(ref => {
   return s?`<button class="source-ref" data-open-section="${esc(s.id)}">${esc(refLabel(collections.get(s.collection)))} · page ${s.page} · source + teaching</button>`:'';
 }).join('');}
 function practice() {
-  const session = state.session;
-  if(!session?.ids.length) return '<h1>Choose a practice set.</h1><button data-go="test">Practice options</button>';
-  if(session.finished) return results();
-  const q = questionMap.get(session.ids[session.index]);
-  if(!q) {state.session=null;save();return '<h1>This practice set has changed.</h1><button data-go="test">Open current practice</button>';}
-  const revealed = state.revealed[q.id];
-  return `<span class="eyebrow">${esc(session.title)}</span><div class="row spread"><h1>Question ${session.index+1}<span class="muted" style="font-size:.5em"> / ${session.ids.length}</span></h1><span class="tag">${esc(q.topic || 'Conceptual explanation')}</span></div><article class="card practice-card"><p class="question-prompt">${esc(q.prompt)}</p><label class="draft-label" for="answerDraft">Your explanation · saved in this browser</label><textarea id="answerDraft" class="draft" data-draft="${esc(q.id)}" placeholder="Explain what changes, why it happens, and what follows…">${esc(state.drafts[q.id] || '')}</textarea>${!revealed?`<div class="row"><button class="primary" data-reveal="${esc(q.id)}">Reveal model answer & self-assess</button><button data-rating="uncertain" data-question="${esc(q.id)}" aria-pressed="${state.ratings[q.id] === 'uncertain'}">${state.ratings[q.id] === 'uncertain'?'Queued as uncertain':'Mark uncertain'}</button></div>`:answerHTML(q)}<div class="row" style="margin-top:20px">${sourceRefs(q)}</div><div class="toolbar"><button data-question-index="${session.index-1}" ${session.index === 0?'disabled':''}>← Previous</button><button class="primary" data-question-index="${session.index+1}" ${session.index === session.ids.length-1?'disabled':''}>Next →</button><button class="push" data-action="finishPractice">Finish & review</button></div><p class="attempt-meta">Drafts and self-ratings remain available after this set. You can revise them on another attempt.</p></article><details class="card" style="max-width:950px"><summary>Question navigator</summary><div class="number-nav">${session.ids.map((id,index) => `<button class="${index === session.index?'current':''} ${state.ratings[id] === 'ready'?'done':''} ${['review','partial','uncertain'].includes(state.ratings[id])?'review':''}" data-question-index="${index}" aria-label="Question ${index+1}${state.ratings[id]?', self-rated '+state.ratings[id]:''}">${index+1}</button>`).join('')}</div><p class="small muted">Filled = ready · dashed border = review · solid accent border = current question</p></details>`;
+  const session=state.session;
+  if(!session?.ids.length)return `${scopeBanner()}<h1>Choose a practice set.</h1><button data-go="test">Practice options</button>`;
+  if(session.finished)return results();
+  const q=questionMap.get(session.ids[session.index]);
+  if(!q || questionModule(q)!==state.activeModule){state.session=null;save();return '<h1>This practice set has changed.</h1><button data-go="test">Open current practice</button>';}
+  const revealed=state.revealed[q.id];
+  return `${scopeBanner()}<span class="eyebrow">${esc(session.title)}</span><div class="row spread"><h1>Question ${session.index+1}<span class="muted" style="font-size:.5em"> / ${session.ids.length}</span></h1><span class="tag">${isMCQ(q)?'Multiple choice':'Written explanation'} · ${esc(q.topic || '')}</span></div><article class="card practice-card"><p class="question-prompt">${esc(q.prompt)}</p>${isMCQ(q)?mcqHTML(q):`<label class="draft-label" for="answerDraft">Your explanation · saved in this browser</label><textarea id="answerDraft" class="draft" data-draft="${esc(q.id)}" placeholder="Explain what changes, why it happens, and what follows…">${esc(state.drafts[q.id] || '')}</textarea>${!revealed?`<div class="row"><button class="primary" data-reveal="${esc(q.id)}">Reveal model answer & self-assess</button>${uncertainControl(q)}</div>`:answerHTML(q)+uncertainControl(q)}`}<div class="row" style="margin-top:20px">${sourceRefs(q)}</div><div class="toolbar"><button data-question-index="${session.index-1}" ${session.index===0?'disabled':''}>← Previous</button><button class="primary" data-question-index="${session.index+1}" ${session.index===session.ids.length-1?'disabled':''}>Next →</button><button class="push" data-action="finishPractice">Finish & review</button></div><p class="attempt-meta">Multiple-choice responses are checked after you submit. Written explanations use your self-assessment.</p></article><details class="card" style="max-width:950px"><summary>Question navigator</summary><div class="number-nav">${session.ids.map((id,index)=>`<button class="${index===session.index?'current':''} ${state.ratings[id]==='ready' && !needsReview(questionMap.get(id))?'done':''} ${needsReview(questionMap.get(id))?'review':''}" data-question-index="${index}" aria-label="Question ${index+1}${needsReview(questionMap.get(id))?', needs review':''}">${index+1}</button>`).join('')}</div><p class="small muted">Filled = ready · dashed border = review · solid accent border = current question</p></details>`;
 }
+
 function results() {
-  const session = state.session;
-  const counts = Object.fromEntries(['ready','partial','review','uncertain'].map(value => [value,session.ids.filter(id => state.ratings[id] === value).length]));
-  const drafted = session.ids.filter(id => state.drafts[id]?.trim()).length;
-  return `<span class="eyebrow">Self-assessment · ${esc(session.title)}</span><h1>Keep the reasoning.<br>Revisit the gaps.</h1><p class="lead">${drafted} of ${session.ids.length} questions have a saved draft. ${counts.ready} self-rated ready · ${counts.partial} partial · ${counts.review} review · ${counts.uncertain} uncertain.</p><p class="small muted">These are your self-ratings, not an automatically calculated exam score.</p><div class="toolbar"><button class="primary" data-go="missed">Open review queue · ${queueQuestions().length}</button><button data-action="resumePractice">Revisit this set</button><button data-go="test">Practice options</button></div>${session.ids.map((id,index) => {const q=questionMap.get(id);return `<details class="result-row"><summary>${index+1}. ${esc(q.prompt)} <span class="tag">${esc(state.ratings[id] || 'Unrated')}</span></summary><p class="small"><strong>Your draft</strong><br>${esc(state.drafts[id] || 'No draft saved.')}</p>${state.revealed[id]?`<p class="small"><strong>Model answer</strong><br>${rich(Array.isArray(q.answer)?q.answer.join('\n'):q.answer)}</p>`:'<p class="small muted">Model answer has not been revealed.</p>'}<div class="row"><button class="small-button" data-revisit-question="${index}">Revisit & self-assess</button>${sourceRefs(q)}</div></details>`;}).join('')}`;
+  const session=state.session,items=session.ids.map(id=>questionMap.get(id));
+  const mcq=items.filter(isMCQ),written=items.filter(q=>!isMCQ(q));
+  const checked=mcq.filter(q=>state.mcqSubmitted[q.id]),correct=checked.filter(q=>state.mcqSelections[q.id]===q.correctOption);
+  const drafted=written.filter(q=>state.drafts[q.id]?.trim()).length,ready=written.filter(q=>state.ratings[q.id]==='ready').length;
+  return `${scopeBanner()}<span class="eyebrow">Practice results · ${esc(session.title)}</span><h1>Keep the reasoning.<br>Revisit the gaps.</h1>${mcq.length?`<p class="lead">Multiple choice · ${correct.length} of ${checked.length} checked answers correct. ${mcq.length-checked.length} unanswered or unchecked.</p>`:''}${written.length?`<p class="lead">Written explanations · ${drafted} of ${written.length} have a saved draft. ${ready} self-rated ready.</p>`:''}<p class="small muted">Written self-ratings remain separate from checked multiple-choice results.</p><div class="toolbar"><button class="primary" data-go="missed">Open this module’s review queue · ${queueQuestions().length}</button><button data-action="resumePractice">Revisit this set</button><button data-go="test">Practice options</button></div>${items.map((q,index)=>{const submitted=isMCQ(q) && state.mcqSubmitted[q.id],selectedOption=isMCQ(q)?q.options.find(o=>o.id===state.mcqSelections[q.id]):null;return `<details class="result-row"><summary>${index+1}. ${esc(q.prompt)} <span class="tag">${isMCQ(q)?submitted?(state.mcqSelections[q.id]===q.correctOption?'Correct':'Incorrect'):'Unchecked':esc(state.ratings[q.id] || 'Unrated')}${state.flags[q.id]?' · uncertain':''}</span></summary>${isMCQ(q)?`<p class="small"><strong>Your selection</strong><br>${esc(selectedOption?.text || 'No answer selected.')}</p>`:`<p class="small"><strong>Your draft</strong><br>${esc(state.drafts[q.id] || 'No draft saved.')}</p>`}${submitted || (!isMCQ(q) && state.revealed[q.id])?`<p class="small"><strong>${isMCQ(q)?'Explanation':'Model answer'}</strong><br>${rich(Array.isArray(q.answer)?q.answer.join('\n'):q.answer)}</p>`:'<p class="small muted">Answer explanation has not been revealed.</p>'}<div class="row"><button class="small-button" data-revisit-question="${index}">Revisit question</button>${sourceRefs(q)}</div></details>`;}).join('')}`;
 }
+
 function sources() {
-  const coverage = D.coverage || {};
-  const sourceEntries = Array.isArray(coverage.sources) ? coverage.sources : [];
-  const total = allSections.length;
-  return `<span class="eyebrow">Check against the source</span><h1>Sources & coverage.</h1><p class="lead">Original documents, source-page mappings, and review notes stay available alongside the teaching.</p>${D.course.coverageNotice?'<div class="notice">'+esc(D.course.coverageNotice)+'</div>':''}<div class="row toolbar"><button class="primary" data-action="export">Export notes & progress</button><button data-action="import">Import progress backup</button></div><p class="small muted">Backups contain your personal notes, read marks, draft answers, and self-ratings. Progress is stored locally in this browser and does not sync between devices.</p><div class="grid"><div class="card"><h2>${D.collections.length} collections</h2><p>${total} mapped source pages across lectures, reviews, and supporting material.</p></div><div class="card"><h2>${D.questions.length} practice prompts</h2><p>Source-linked written explanations with model answers and self-assessment criteria.</p></div><div class="card"><h2>Original visuals</h2><p>Source slide images retain their original colors. Playable embedded media appears with controls on its source page.</p></div></div><h2>Available collections</h2><div class="table-scroll"><table class="source-table"><thead><tr><th>Collection</th><th>Pages</th><th>Sources</th><th>Notes</th></tr></thead><tbody>${D.collections.map(c=>`<tr><td><button class="text-button" data-collection="${esc(c.id)}">${esc(c.number || '')} ${esc(c.title)}</button><div class="file-identity">${esc(c.role || 'lecture')}</div></td><td>${c.sections.length}</td><td>${c.sourceFile?`<a href="${esc(safeURL(c.sourceFile))}" target="_blank" rel="noopener">Original file</a><br>`:''}${c.pdfFile?`<a href="${esc(safeURL(c.pdfFile))}" target="_blank" rel="noopener">Source PDF</a>`:''}<div class="file-identity">${esc(c.originalFilename || '')}</div></td><td>${(c.issues || []).length?issueHTML(c.issues):'See source-page details.'}</td></tr>`).join('')}</tbody></table></div>${sourceEntries.length?`<h2>Additional source inventory</h2><div class="card">${sourceEntries.map(s=>`<p class="small">${s.file?`<a href="${esc(safeURL(s.file))}" target="_blank" rel="noopener">${esc(s.originalFilename || s.original || s.title || s.id || s.file)}</a>`:esc(s.originalFilename || s.original || s.title || s.id || '')}${s.role?' · '+esc(s.role):''}${s.status?' · '+esc(s.status):''}</p>`).join('')}</div>`:''}${coverage.issues?.length?'<h2>Review notes</h2>'+issueHTML(coverage.issues):''}<h2>How to use this workspace</h2><div class="card"><ul class="check-list"><li>Read the source and teaching together. Open the original document for full-size labels, animation context, and any source discrepancy.</li><li>Use the red core labels as a selective study priority. Read the supporting pages when you want the full explanation.</li><li>Write a conceptual answer before revealing its model explanation. Use “Partial,” “Review,” or “Uncertain” to keep it in your retry queue.</li><li>Future lectures can extend these collections without changing the IDs attached to your existing notes and answers.</li></ul></div>`;
+  const coverage=D.coverage || {},sourceEntries=Array.isArray(coverage.sources)?coverage.sources:[];
+  const model=D.assessmentModel;
+  const modelText=model?(typeof model==='string'?model:model.summary || model.provenance || model.description || ''):'';
+  return `<span class="eyebrow">All course sources</span><h1>Sources & coverage.</h1><p class="lead">The original documents and every supplied collection remain available here. Workspace tools and current tests stay separated by module.</p><div class="row toolbar"><button class="primary" data-action="export">Export notes & progress</button><button data-action="import">Import progress backup</button></div><p class="small muted">Backups include shared notes, read marks, written drafts, multiple-choice selections and checks, uncertainty flags, and each module’s current practice set.</p><div class="card"><h2>${esc(model?.title || 'Practice model')}</h2><p>${esc(modelText || 'Practice follows reasoning patterns in the uploaded 20-question short-answer review and the supplied lectures. Multiple-choice items add another way to test those distinctions.')}</p><p class="small muted">Question selection preserves lecture and format coverage, then uses source-based priority weights. These weights are study priorities, not validated predictions of an unseen exam. The uploaded review establishes short conceptual explanations; it does not confirm a multiple-choice exam format.</p></div><div class="grid"><div class="card"><h2>${D.collections.length} collections</h2><p>${allSections.length} mapped source pages across lecture decks, reviews, and supporting material.</p></div><div class="card"><h2>${D.questions.length} practice prompts</h2><p>${formatCounts(D.questions)} with original source links.</p></div><div class="card"><h2>Meadows workspace</h2><p>Six readings on systems and feedback stay grouped within Module I.</p><button data-go="meadows">Open Meadows readings</button></div></div><h2>Available collections</h2><div class="table-scroll"><table class="source-table"><thead><tr><th>Collection</th><th>Pages</th><th>Sources</th><th>Notes</th></tr></thead><tbody>${D.collections.map(c=>`<tr><td><button class="text-button" data-collection="${esc(c.id)}">${esc(c.title)}</button><div class="file-identity">${esc(c.role || 'lecture')}${moduleForCollection(c.id)?' · '+esc(moduleMap.get(moduleForCollection(c.id)).title):''}</div></td><td>${c.sections.length}</td><td>${c.sourceFile?`<a href="${esc(safeURL(c.sourceFile))}" target="_blank" rel="noopener">Original file</a><br>`:''}${c.pdfFile?`<a href="${esc(safeURL(c.pdfFile))}" target="_blank" rel="noopener">Source PDF</a>`:''}<div class="file-identity">${esc(c.originalFilename || '')}</div></td><td>${(c.issues || []).length?issueHTML(c.issues):'See source-page details.'}</td></tr>`).join('')}</tbody></table></div>${sourceEntries.length?`<h2>Additional source inventory</h2><div class="card">${sourceEntries.map(s=>`<p class="small">${s.file?`<a href="${esc(safeURL(s.file))}" target="_blank" rel="noopener">${esc(s.originalFilename || s.original || s.title || s.id || s.file)}</a>`:esc(s.originalFilename || s.original || s.title || s.id || '')}${s.role?' · '+esc(s.role):''}${s.status?' · '+esc(s.status):''}</p>`).join('')}</div>`:''}${coverage.issues?.length?'<h2>Source review notes</h2>'+issueHTML(coverage.issues):''}<p class="small muted">Personal progress is stored locally in this browser. It does not sync between devices. Original visuals retain their source colors, including when the interface uses dark mode.</p>`;
 }
+
 function render() {
   nav();applyPreferences();
-  const routes = {home,collection:collectionView,guide,core,experiments,combined,test,quizzes,missed,sources,practice};
-  const resume = state.session && !state.session.finished && view !== 'practice' ? '<p class="small"><button class="text-button" data-go="practice">↳ Resume current conceptual practice</button></p>' : '';
-  $('#content').innerHTML = resume + (routes[view] || home)();
-  document.title = (view === 'collection'?collections.get(selected)?.title:WORK.find(x=>x[0] === view)?.[1] || 'Conceptual practice')+' · LING285 Study Studio';
+  const routes={home,collection:collectionView,guide,core,experiments,combined,test,quizzes,missed,sources,practice,meadows};
+  const resume=state.session && !state.session.finished && view!=='practice'?'<p class="small"><button class="text-button" data-go="practice">↳ Resume '+esc(currentModule().title)+' practice</button></p>':'';
+  $('#content').innerHTML=resume+(routes[view] || home)();
+  document.title=(view==='collection'?collections.get(selected)?.title:view==='home'?'Course overview':view==='meadows'?'Meadows readings':WORK.find(x=>x[0]===view)?.[1] || 'Practice')+' · LING285 Study Studio';
   sizeNotes();
 }
+
 let mediaObserver;
 function initMedia() {
   mediaObserver?.disconnect();
@@ -248,7 +376,13 @@ function initMedia() {
 }
 function resizeNote(element) {element.style.height=Math.max(52,element.clientHeight,element.scrollHeight+2)+'px';}
 function sizeNotes() {initMedia();document.querySelectorAll('[data-note]').forEach(resizeNote);}
-function matchingSections(kind) {if(kind === 'lecture') return collections.get(selected).sections;if(kind === 'core')return allSections.filter(s=>s.core);return lectureCollections.flatMap(c=>c.sections);}
+function matchingSections(kind) {
+  if(kind==='lecture')return collections.get(selected).sections;
+  if(kind==='core')return moduleCoreCollections().flatMap(c=>c.sections).filter(s=>s.core);
+  if(kind==='meadows')return moduleReadings('module1').flatMap(c=>c.sections);
+  return moduleLectures().flatMap(c=>c.sections);
+}
+
 function openReader(ids,index=0,expanded=true,label='Visual + teaching') {
   const items=unique(ids).map(id=>sections.get(id)).filter(Boolean);if(!items.length)return;
   pauseMedia();stopSpeech();lastReaderFocus=document.activeElement;
@@ -287,17 +421,20 @@ function exportProgress() {
 }
 async function importProgress(file) {
   if(!file)return;
-  try {
-    if(file.size > 5*1024*1024) throw new Error('This file exceeds the 5 MB progress-backup limit.');
-    const backup=JSON.parse(await file.text());
-    if(backup.course !== 'LING285' || backup.version !== 1)throw new Error('Choose a LING285 progress backup exported by this studio.');
-    const imported=validateState(backup.state,true);
-    // Merge known personal entries. Imported preferences and the practice session replace local equivalents.
-    for(const field of ['notes','read','ready','drafts','ratings','revealed','open'])imported[field]={...state[field],...imported[field]};
-    closeReader(false);state=imported;save();render();announce('LING285 progress imported and merged with this browser.');
-  } catch(error) {$('#storageWarning').hidden=false;$('#storageWarning').textContent='Import failed. '+error.message+' Existing progress was preserved.';}
-  $('#importFile').value='';
+  return (async()=>{
+    try {
+      if(file.size>5*1024*1024)throw new Error('This file exceeds the 5 MB progress-backup limit.');
+      const backup=JSON.parse(await file.text());
+      if(backup.course!=='LING285' || backup.version!==1)throw new Error('Choose a LING285 progress backup exported by this studio.');
+      const imported=validateState(backup.state);
+      for(const field of ['notes','read','ready','drafts','ratings','revealed','open','flags','mcqSelections','mcqSubmitted','optionOrders'])imported[field]={...state[field],...imported[field]};
+      imported.sessions={...state.sessions,...imported.sessions};imported.session=imported.sessions[imported.activeModule] || null;
+      closeReader(false);state=imported;save();render();announce('LING285 progress imported and merged with this browser.');
+    } catch(error){$('#storageWarning').hidden=false;$('#storageWarning').textContent='Import failed. '+error.message+' Existing progress was preserved.';}
+    $('#importFile').value='';
+  })();
 }
+
 function applySearch(value) {
   searchQuery=value;const query=value.trim().toLocaleLowerCase();let hits=0;
   document.querySelectorAll('.source-section').forEach(element=>{
@@ -334,19 +471,22 @@ function handleAction(action) {
 document.addEventListener('click',event=>{
   if(innerWidth<=760 && !state.sideClosed && !event.target.closest('#sidebar') && event.target.closest('#main') && !event.target.closest('[data-action="sidebar"]')){state.sideClosed=true;applyPreferences();}
   const button=event.target.closest('button');if(!button || button.disabled || !D)return;
-  if(button.dataset.go){go(button.dataset.go);return;}
+  if(button.dataset.module){go('home',null,true,button.dataset.module);return;}
+  if(button.dataset.go){go(button.dataset.go,null,true,button.dataset.scopeModule);return;}
   if(button.dataset.collection){go('collection',button.dataset.collection);return;}
   if(button.dataset.theme){state.theme=button.dataset.theme;applyPreferences();save();return;}
   if(button.dataset.action){handleAction(button.dataset.action);return;}
-  if(button.dataset.reader){openReader(matchingSections(button.dataset.reader).map(s=>s.id),0,button.dataset.expanded === 'true',button.dataset.reader === 'lecture'?collections.get(selected).title:'Visual + teaching');return;}
+  if(button.dataset.reader){openReader(matchingSections(button.dataset.reader).map(s=>s.id),0,button.dataset.expanded==='true',button.dataset.reader==='lecture'?collections.get(selected).title:button.dataset.reader==='meadows'?'Meadows · systems and feedback':currentModule().title+' · visual + teaching');return;}
   if(button.dataset.openSection){openReader([button.dataset.openSection]);return;}
   if(button.dataset.guideReader){const g=D.guide[Number(button.dataset.guideReader)];openReader(refsFor(g).map(s=>s.id),0,true,g.title);return;}
   if(button.dataset.imageSection){const s=sections.get(button.dataset.imageSection);$('#enlargedImage').src=safeURL(s.image);$('#enlargedImage').alt='Original page '+s.page+' · '+s.title;$('#imageSource').href=pageLink(s);$('#imageDialog').showModal();return;}
   if(button.dataset.start){startPractice(button.dataset.start);return;}
   if(button.dataset.singleQuestion){startPractice('single',button.dataset.singleQuestion);return;}
-  if(button.dataset.removeQueue){delete state.ratings[button.dataset.removeQueue];save();render();return;}
+  if(button.dataset.removeQueue){const q=questionMap.get(button.dataset.removeQueue);if(isMCQ(q) && state.ratings[q.id]==='review')return;delete state.ratings[q.id];delete state.flags[q.id];save();render();return;}
+  if(button.dataset.checkQuestion){checkMCQ(button.dataset.checkQuestion);return;}
+  if(button.dataset.retryQuestion){state.mcqSubmitted[button.dataset.retryQuestion]=false;delete state.mcqSelections[button.dataset.retryQuestion];save();const scroll=window.scrollY;render();window.scrollTo(0,scroll);return;}
   if(button.dataset.reveal){state.revealed[button.dataset.reveal]=true;save();const scroll=window.scrollY;render();window.scrollTo(0,scroll);document.querySelector('.feedback')?.scrollIntoView({block:'nearest',behavior:'smooth'});return;}
-  if(button.dataset.rating){state.ratings[button.dataset.question]=button.dataset.rating;save();const scroll=window.scrollY;render();window.scrollTo(0,scroll);return;}
+  if(button.dataset.rating){const q=questionMap.get(button.dataset.question);if(isMCQ(q))return;state.ratings[q.id]=button.dataset.rating;save();const scroll=window.scrollY;render();window.scrollTo(0,scroll);return;}
   if(button.hasAttribute('data-question-index')){const index=Number(button.dataset.questionIndex);if(state.session && index>=0 && index<state.session.ids.length){state.session.index=index;save();render();window.scrollTo(0,0);}return;}
   if(button.hasAttribute('data-revisit-question')){state.session.index=Number(button.dataset.revisitQuestion);state.session.finished=false;save();render();window.scrollTo(0,0);}
 });
@@ -360,6 +500,20 @@ document.addEventListener('change',event=>{
   const element=event.target;
   if(element.dataset.read){state.read[element.dataset.read]=element.checked;document.querySelectorAll('[data-read]').forEach(box=>{if(box.dataset.read===element.dataset.read)box.checked=element.checked;});save();}
   if(element.dataset.ready){state.ready[element.dataset.ready]=element.checked;save();}
+  if(element.name==='practiceMode'){state.practiceMode=element.value;save();const scroll=window.scrollY;render();window.scrollTo(0,scroll);}
+  if(element.dataset.mcqOption){
+    const q=questionMap.get(element.dataset.question);if(!isMCQ(q) || state.mcqSubmitted[q.id])return;
+    if(q.options.some(option=>option.id===element.dataset.mcqOption)){
+      state.mcqSelections[q.id]=element.dataset.mcqOption;
+      document.querySelectorAll('.mcq-option').forEach(label=>label.classList.toggle('selected',label.querySelector('input').checked));
+      const check=document.querySelector('[data-check-question]');if(check)check.disabled=false;save();
+    }
+  }
+  if(element.dataset.flag){
+    const id=element.dataset.flag;state.flags[id]=element.checked;
+    if(!element.checked && state.ratings[id]==='uncertain')delete state.ratings[id];
+    save();nav();
+  }
   if(element.id==='readerSelect')moveReader(Number(element.value));
   if(element.id==='importFile')importProgress(element.files[0]);
   if(element.id==='duration')resetTimer();
@@ -384,9 +538,19 @@ async function init() {
     if(!D.course || !Array.isArray(D.collections) || !Array.isArray(D.questions))throw new Error('The course data is incomplete.');
     D.guide=Array.isArray(D.guide)?D.guide:[];collections=new Map();sections=new Map();questionMap=new Map();
     D.collections.forEach(c=>{if(!c.id || collections.has(c.id) || !Array.isArray(c.sections))throw new Error('A collection has an invalid or duplicate ID.');collections.set(c.id,c);c.sections.forEach(s=>{if(!s.id || sections.has(s.id))throw new Error('A source page has an invalid or duplicate ID.');s.collection=c.id;sections.set(s.id,s);});});
-    D.questions.forEach(q=>{if(!q.id || questionMap.has(q.id))throw new Error('A practice question has an invalid or duplicate ID.');questionMap.set(q.id,q);});
-    allSections=[...sections.values()];lectureCollections=D.collections.filter(c=>c.role === 'lecture');
-    loadState();readRoute();applyPreferences();render();tick();
+    lectureCollections=D.collections.filter(c=>c.role==='lecture');
+    if(!Array.isArray(D.modules) || !D.modules.length){
+      const early=lectureCollections.filter(c=>parseInt(c.number,10)<11).map(c=>c.id),late=lectureCollections.filter(c=>parseInt(c.number,10)>=11).map(c=>c.id);
+      const meadows=D.collections.filter(c=>/^notes-\d\d-\d\d(?:-\d)?$/.test(c.id)).map(c=>c.id);
+      D.modules=[{id:'module1',title:'Module I',subtitle:'Midterm 1',lectureIds:early,supplementIds:['notes-lecture07','notes-lecture08','notes-lecture09','notes-lecture10'],meadowsIds:meadows},{id:'module2',title:'Module II',subtitle:'Midterm 2',lectureIds:late,supplementIds:[],meadowsIds:[],futureNote:'New lectures will be added to this module as you receive them.'}];
+    }
+    moduleMap=new Map(D.modules.map(module=>[module.id,module]));
+    D.questions.forEach(q=>{
+      if(!q.id || questionMap.has(q.id))throw new Error('A practice question has an invalid or duplicate ID.');
+      if(isMCQ(q) && (!Array.isArray(q.options) || q.options.length!==4 || new Set(q.options.map(o=>o.id)).size!==4 || !q.options.some(o=>o.id===q.correctOption)))throw new Error('A multiple-choice question has an invalid answer map.');
+      questionMap.set(q.id,q);
+    });
+    allSections=[...sections.values()];loadState();readRoute();applyPreferences();render();tick();
   } catch(error) {
     $('#saveStatus').textContent='Course could not be opened';
     $('#content').innerHTML='<span class="eyebrow">LING285 Study Studio</span><h1>The course could not load.</h1><p>'+esc(error.message)+'</p><p>Reload this page when the course data is available. A static web server is required when opening a local copy.</p><a href="./">Reload studio</a>';
