@@ -107,7 +107,7 @@ function parseAnswer(s){s=String(s).trim().replace(/−/g,'-');const m=s.match(/
 function gradeProblem(id){const p=PROB.get(id),value=parseAnswer(state.drafts[id]||'');const prev=state.practice[id];state.practice[id]={correct:Number.isFinite(value)&&Math.abs(value-p.answer)<=p.tolerance,error:!Number.isFinite(value),revealed:prev?.revealed||shown.has(id)||view==='worked'||view==='neuroWorked'};save();render()}
 function refreshPercentileChecks(){for(const id of ['percentile','percentile2']){const prev=state.practice[id];if(!prev)continue;const p=PROB.get(id),value=parseAnswer(state.drafts[id]||'');state.practice[id]={...prev,correct:Number.isFinite(value)&&Math.abs(value-p.answer)<=p.tolerance,error:!Number.isFinite(value)}}}
 function moveSlide(delta){if('speechSynthesis'in window)speechSynthesis.cancel();viewer.index=Math.max(0,Math.min(viewer.slides.length-1,viewer.index+delta));covered=false;render()}
-let timer={running:false,left:25*60,end:0,mode:'Study'};
+let timer={running:false,left:30*60,end:0,mode:'Study'};
 function setTimer(minutes,mode='Study'){timer={running:false,left:minutes*60,end:0,mode};updateTimer()}
 function updateTimer(){if(timer.running)timer.left=Math.max(0,Math.ceil((timer.end-Date.now())/1000));if(timer.left===0)timer.running=false;$('#clock').textContent=String(Math.floor(timer.left/60)).padStart(2,'0')+':'+String(timer.left%60).padStart(2,'0');$('#timerMode').textContent=timer.left===0?'Time is up':timer.mode;$('#timerStart').textContent=timer.running?'Pause':'Start'}
 setInterval(updateTimer,1000);

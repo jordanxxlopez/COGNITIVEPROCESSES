@@ -39,3 +39,18 @@ Lecture 09 · Short-Term Memory appears under Module 2 → Individual collection
 Working Memory adds 14 explicitly selected core-review slides and five experiment groups. Both core review and experiments have continuous expanded visual/transcript readers, with original lecture note/read keys. `sources/PSYCH301_L12_Working_Memory_F26_2.pdf` is the unchanged uploaded PDF; `media/working-memory/source.json` records its checksum and page-render provenance. Keep the adjacent Module 2 scripts, `media`, and `sources` directories when running a local copy. The balanced allocation is a coverage rule, not a prediction of the instructor’s exam distribution.
 
 Short-Term Memory Version 2 is stored separately in `short-term-memory-v2.js`. Its 46 source-aligned sections add fuller teaching explanations while the original embedded `bullets` remain unchanged. The collection dropdown defaults to Version 2 until a choice is saved, and the selected edition also appears in combined notes, the current guide, core review, experiments, source popups, and their expanded readers. Both editions share the same personal-note and read keys; question pools and cumulative quotas are unchanged.
+
+## Study timer in expanded readers
+
+PSYC301, LING285, LING406, and BME423 keep the study timer available beside the
+reader controls in **Expand visual + transcript**. The dropdown offers 30, 60,
+and 90 minutes. Opening, navigating, resizing text, and closing the reader keep
+the same countdown; Start/Pause, Reset, and each course's existing Break action
+remain available. `reader-timer.js` moves the existing timer without replacing
+its handlers, and `reader-timer.css` styles it only inside the expanded reader.
+
+Verify the four-course interaction with:
+
+```sh
+node --test tests/expanded-reader-timer.test.cjs
+```

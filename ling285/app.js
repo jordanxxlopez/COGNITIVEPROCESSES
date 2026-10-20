@@ -15,7 +15,7 @@ const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed
 let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections, moduleMap, practiceData=null,practiceLoadError='';
 const transcriptEditions=new Map(),transcriptErrors=new Map(),visualPresentations=new Map(),practiceQuestionIds=new Set();
 let storageAvailable = true, reader = null, lastReaderFocus = null, view = 'home', selected = '', saveTimeout, searchQuery = '';
-let timer = {duration:25 * 60,remaining:25 * 60,end:null,interval:null,mode:'Study'};
+let timer = {duration:30 * 60,remaining:30 * 60,end:null,interval:null,mode:'Study'};
 const own = (object,key) => Object.prototype.hasOwnProperty.call(object,key);
 function storageError(message) {
   storageAvailable = false;
