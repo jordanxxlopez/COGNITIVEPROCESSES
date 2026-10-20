@@ -362,7 +362,7 @@ function render() {
   const routes={home,collection:collectionView,guide,core,experiments,combined,test,quizzes,missed,sources,practice,meadows};
   const resume=state.session && !state.session.finished && view!=='practice'?'<p class="small"><button class="text-button" data-go="practice">↳ Resume '+esc(currentModule().title)+' practice</button></p>':'';
   $('#content').innerHTML=resume+(routes[view] || home)();
-  document.title=(view==='collection'?collections.get(selected)?.title:view==='home'?'Course overview':view==='meadows'?'Meadows readings':WORK.find(x=>x[0]===view)?.[1] || 'Practice')+' · LING285 Study Studio';
+  document.title='LING258 · Study Studio';
   sizeNotes();
 }
 
