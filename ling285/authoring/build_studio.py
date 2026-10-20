@@ -5,14 +5,14 @@ import hashlib,json,re,shutil
 from PIL import Image
 from assessment_ranking import rank_questions
 ROOT=Path(__file__).resolve().parents[1];A=ROOT/'authoring'
-REVISION='2026-10-19-v3'
+REVISION='2026-10-20-v4'
 def read(name):return json.loads((A/name).read_text())
 def write(path,value):path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 manifest=read('source-manifest.json');inventory={(p['source'],p['page']):p for p in read('page-inventory.json')}
 media={a['sha256']:a for a in read('unique-embedded.json')}
 authored={}
-for name in ['teaching-early.json','teaching-middle.json','teaching-later.json','teaching-readings.json']:
+for name in ['teaching-early.json','teaching-middle.json','teaching-later.json','teaching-readings.json','teaching-lecture14.json']:
  for key,value in read(name).items():
   assert key not in authored,key
   authored[key]=value
@@ -80,6 +80,12 @@ for key in lecture_keys+other_keys:
   raw=p.get('native',{});shape_text='\n'.join(s.get('text','') if 'text' in s else '\n'.join(' | '.join(row) for row in s.get('rows',[])) for s in raw.get('shapes',[]))
   # Preserve exact extracted wording separately from authored teaching.
   original_text=p['text'].strip() or p['ocr'].strip() or shape_text.strip()
+  if key=='lecture14':
+   # PDF text can omit labels retained as native PowerPoint text. Keep the
+   # complete new-slide wording without changing earlier released sections.
+   native_text='\n'.join(s.get('text','') for s in raw.get('shapes',[]) if s.get('type')=='text').strip()
+   if native_text and ' '.join(native_text.split()) not in ' '.join(original_text.split()):
+    original_text+='\n\nNative slide text:\n'+native_text
   seen=set();assets=[]
   for ref in p.get('embeddedAssets',[]):
    sha=ref['sha256']
@@ -106,13 +112,13 @@ for key in lecture_keys+other_keys:
   sections.append({'id':sid,'page':page,'title':section['title'],'kind':section['kind'],'teaching':section['teaching'],'image':p['image'],'assets':assets,'sourceText':original_text,'speakerNotes':raw.get('speakerNotes',''),'issues':display_issues,'core':is_core,'coreReason':core.get((key,page),'')})
   audit.append({'id':sid,'source':key,'page':page,'kind':section['kind'],'teachingParagraphs':len(section['teaching']),'words':sum(len(t.split()) for t in section['teaching']),'core':is_core,'review':review,'issues':section.get('issues',[]),'sourceSha256':entry['sha256']})
   source_issues.extend(display_issues)
-  p['detailedVisualReviewComplete']=True;p['teachingCoverageVerified']=True
+  p['renderedPageInspected']=True;p['detailedVisualReviewComplete']=True;p['teachingCoverageVerified']=True
   p['reviewMethod']=review['method'];p['reviewLimitations']=review.get('limitations',[])
  number=('05–06' if key=='lecture05-06' else key.removeprefix('lecture')) if entry['role']=='lecture' else ''
  issues=[]
  if key=='lecture05-06':issues.append('The uploaded filename identifies Lectures 05–06; its internal title says Lecture 4+5. Both original labels are retained.')
  if key=='exam-review-seagull':issues.append('Uploaded answer companion with unverified authorship. Teaching resolves its inconsistencies against the primary lecture sources.')
- if key in ['lecture11','lecture12','lecture13']:issues.append('Embedded videos supply content that can appear blank in the static PDF. Play the original demonstrations on the relevant pages.')
+ if key in module_two:issues.append('Embedded videos supply content that can appear blank in the static PDF. Play the original demonstrations on the relevant pages.')
  label=f'Lecture {number}' if number else 'Uploaded review' if entry['role']=='review' else 'Course syllabus' if key=='syllabus' else 'Supporting reading'
  collections.append({'id':key,'title':author['title'],'number':number,'label':label,'role':entry['role'],'sourceFile':entry['file'],'pdfFile':entry['rendered_pdf'],'originalFilename':entry['original'],'issues':issues,'sections':sections,'moduleId':None if key=='syllabus' else 'module2' if key in module_two else 'module1','workspaceGroup':'meadows' if key in meadows else 'lectures' if entry['role']=='lecture' else 'sources'})
 all_sections={s['id']:s for c in collections for s in c['sections']}
@@ -151,13 +157,13 @@ coverage={'sourceCount':len(manifest),'studentSourceCount':len(collections),'pag
  'sources':[dict(v,id=k) for k,v in manifest.items() if v['role']=='style-reference'],
  'issues':['The LING406 reference PDF is an organization reference and is excluded from LING285 teaching and practice.',
  'Generated practice is a source-aligned study aid, not an actual instructor exam or a validated exam prediction. Written answers use self-assessment rather than automatic grading; multiple-choice answers use a source-checked key.',
- 'The supplied Exam 1 Review contains 20 conceptual prompts and no A–D questions. New multiple-choice items adapt its reasoning patterns. Module II practice applies that style to Lectures 11–13.',
+ 'The supplied Exam 1 Review contains 20 conceptual prompts and no A–D questions. New multiple-choice items adapt its reasoning patterns. Module II practice applies that style to '+late_range+'.',
  'Original external or untranscribed audio content is not represented as a recovered lecture transcript.']+limitations}
 data={'course':{'code':'LING285','title':'Human Language and Technology','professor':'Khalil Iskarous',
  'edition':'Module I · Lectures 01–10 / Module II · '+late_range,'revision':REVISION,'defaultModule':'module2',
- 'coverageNotice':'Module II begins with Lectures 11–13 and grows as new material arrives. Module I retains Lectures 01–10 and separate study tools. Supporting documents remain in Sources & coverage.'},
+ 'coverageNotice':'Module II currently covers '+late_range+' and grows as new material arrives. Module I retains Lectures 01–10 and separate study tools. Supporting documents remain in Sources & coverage.'},
  'modules':modules,'collections':collections,'questions':questions,'guide':guide,'coverage':coverage,'assessmentModel':assessment_model}
 write(ROOT/'data.json',data);write(ROOT/'coverage-report.json',coverage);write(ROOT/'source-manifest.json',manifest);write(A/'teaching-coverage.json',audit);write(A/'runtime-asset-manifest.json',list(used_media.values()));write(A/'page-inventory.json',list(inventory.values()))
-write(A/'preparation-status.json',{'sourceAcquisitionComplete':True,'blockedSources':[],'originalsVerified':len(manifest),'pagesRendered':len(inventory),'studentPages':len(all_sections),'lectureSlides':216,'teachingCoverageVerified':True,'reviewLimitations':limitations,'assemblyComplete':True})
+write(A/'preparation-status.json',{'sourceAcquisitionComplete':True,'blockedSources':[],'originalsVerified':len(manifest),'pagesRendered':len(inventory),'studentPages':len(all_sections),'lectureSlides':coverage['lecturePageCount'],'teachingCoverageVerified':True,'reviewLimitations':limitations,'assemblyComplete':True})
 write(A/'assessment-ranking.json',{'method':'TF–IDF cosine similarity to the 20 supplied review prompts plus observed reasoning-pattern weights. Scores measure study relevance, not the probability of appearing on an exam. Sampling preserves lecture and question-type coverage before using these weights.','revision':REVISION,'questions':rankings,'rankedIdsByModule':{module['id']:[q['id'] for q in sorted((q for q in rankings if q['moduleId']==module['id']),key=lambda q:(-q['priority'],q['id']))] for module in modules}})
 print(json.dumps({k:v for k,v in coverage.items() if k not in ['sources','issues']},indent=2));print('Runtime assets',len(used_media),sum(v['bytes'] for v in used_media.values())//1024//1024,'MiB')

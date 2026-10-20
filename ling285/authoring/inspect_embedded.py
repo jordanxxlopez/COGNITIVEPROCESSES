@@ -1,15 +1,19 @@
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor,as_completed
 from PIL import Image,ImageDraw,ImageOps
-import json,subprocess,io,os
+import argparse,json,subprocess,io,os
 os.environ["OMP_THREAD_LIMIT"]="1"
 ROOT=Path(__file__).resolve().parents[1];A=ROOT/'authoring'
 def white_image(path):
  im=Image.open(path).convert('RGBA');bg=Image.new('RGBA',im.size,'white');bg.alpha_composite(im);return bg.convert('RGB')
+parser=argparse.ArgumentParser(description='OCR and inspect embedded source media incrementally.')
+parser.add_argument('--only', nargs='+', help='Process new assets for these sources and preserve prior reviews.')
+selected=parser.parse_args().only
 assets=json.loads((A/'embedded-manifest.json').read_text());seen=set();unique=[]
+prior={a['sha256']:a for a in json.loads((A/'unique-embedded.json').read_text())} if selected else {}
 for a in assets:
  if a['sha256'] in seen:continue
- seen.add(a['sha256']);unique.append(a)
+ seen.add(a['sha256']);unique.append(prior.get(a['sha256'],a))
 def process(a):
  p=ROOT/a['file'];a['visualReviewed']=False
  if p.suffix=='.mp4':
@@ -38,8 +42,9 @@ def process(a):
      gif.seek(i);target=p.with_name(p.stem+f'-frame{i}.png');gif.convert('RGB').save(target);a['frames'].append(str(target.relative_to(ROOT)))
   except Exception as e:a['extractionIssue']=type(e).__name__+': '+str(e)
  return a
+pending=[a for a in unique if not selected or (a['source'] in selected and a['sha256'] not in prior)]
 with ThreadPoolExecutor(max_workers=4) as pool:
- for n,f in enumerate(as_completed([pool.submit(process,a) for a in unique]),1):
+ for n,f in enumerate(as_completed([pool.submit(process,a) for a in pending]),1):
   f.result()
   if n%40==0:print('OCR/media assets',n,'/',len(unique),flush=True)
 (A/'unique-embedded.json').write_text(json.dumps(unique,ensure_ascii=False,indent=2))

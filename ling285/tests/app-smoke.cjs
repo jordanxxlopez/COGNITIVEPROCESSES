@@ -37,6 +37,7 @@ const server = http.createServer((request,response)=>{
   try{
     console.log('UI check: opening studio');await page.goto(url);await page.locator('#content h1').waitFor();
     await page.locator('#content h1').waitFor();
+    assert.equal(await page.title(),'LING258 · Study Studio');
     // This legacy written-flow smoke uses the retained first-half module. The
     // separate module smoke verifies Module II is the untouched default.
     await page.locator('#moduleNav [data-module="module1"]').click();

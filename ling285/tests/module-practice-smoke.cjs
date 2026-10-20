@@ -26,7 +26,7 @@ const server = http.createServer((request, response) => {
   });
 });
 (async () => {
-  assert.equal(data.questions.length, 242, 'Build current course data before running this test.');
+  assert.equal(data.questions.length, 292, 'Build current course data before running this test.');
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const url = 'http://127.0.0.1:' + server.address().port + '/ling285/';
   const browser = await chromium.launch({executablePath:process.env.CHROMIUM_PATH || '/usr/bin/chromium', headless:true, args:['--no-sandbox']});

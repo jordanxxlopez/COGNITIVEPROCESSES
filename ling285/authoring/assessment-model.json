@@ -1,6 +1,6 @@
 {
-  "id": "ling285-question-pattern-model-v3",
-  "edition": "2026-10-19-v3",
+  "id": "ling285-question-pattern-model-v4",
+  "edition": "2026-10-20-v4",
   "title": "Source-based assessment pattern and coverage model",
   "status": "Descriptive study-priority model and generated MCQ blueprint. It is not a validated exam-prediction model.",
   "evidence": {
@@ -396,10 +396,10 @@
   },
   "weightExplanation": "Weights for the six observed primary patterns equal their counts among the 20 uploaded prompts. The design weight of 1 is an explicit user-requested extension, not an observed instructor-question frequency. These positive relevance weights are not normalized probabilities and do not estimate the chance a question will appear.",
   "generatedBlueprint": {
-    "totalMCQ": 111,
-    "totalWritten": 131,
+    "totalMCQ": 136,
+    "totalWritten": 156,
     "totalRetainedWritten": 80,
-    "totalRetainedQuestions": 134,
+    "totalRetainedQuestions": 242,
     "moduleI": {
       "id": "module1",
       "lectureCollections": [
@@ -422,23 +422,25 @@
       "lectureCollections": [
         "lecture11",
         "lecture12",
-        "lecture13"
+        "lecture13",
+        "lecture14"
       ],
       "mcqPerCollection": 25,
       "writtenPerCollection": 25,
-      "totalMCQ": 75,
-      "totalWritten": 75,
+      "totalMCQ": 100,
+      "totalWritten": 100,
       "lectureQuizSize": 50,
       "currentTestSize": 100,
       "currentMCQ": 50,
       "currentWritten": 50,
-      "futureLectures": "Append a 50-question bank for each supplied later lecture. Keep the cumulative test at 100, with 50 per format, and rebalance each lecture’s contribution without deleting its quiz bank or saved work."
+      "futureLectures": "Append a 50-question bank for each supplied later lecture. Keep the cumulative test at 100, with 50 per format, and rebalance each lecture’s contribution without deleting its quiz bank or saved work.",
+      "currentPerCollection": 25
     },
     "targetCorrectPositionCounts": {
-      "a": 28,
-      "b": 28,
-      "c": 28,
-      "d": 27
+      "a": 34,
+      "b": 34,
+      "c": 34,
+      "d": 34
     },
     "formatChecks": [
       "Exactly four distinct options with stable a/b/c/d IDs.",

@@ -1698,6 +1698,41 @@
       "collection": "notes-09-17",
       "page": 12,
       "reason": "Explains why faster corrective reaction can worsen oscillations when delivery is delayed."
+    },
+    {
+      "collection": "lecture14",
+      "page": 3,
+      "reason": "Explains how a fixed displacement node and a free displacement antinode select odd harmonics, while keeping the separately retuned 100 Hz illustration distinct from a controlled change of boundary."
+    },
+    {
+      "collection": "lecture14",
+      "page": 9,
+      "reason": "Explains why a constriction can add both inertia and stiffness yet change different formants differently, depending on local air motion and compression."
+    },
+    {
+      "collection": "lecture14",
+      "page": 17,
+      "reason": "Combines source spacing with a fixed vowel filter and shows why sparse harmonics can leave a formant poorly sampled without moving the formant target."
+    },
+    {
+      "collection": "lecture14",
+      "page": 18,
+      "reason": "Connects spectrum frequency and amplitude to spectrogram height and darkness, and follows the opposite F1 and F2 changes in the /i/ to /a/ transition."
+    },
+    {
+      "collection": "lecture14",
+      "page": 22,
+      "reason": "Identifies F1 and F2 as the two inputs, the 3–2–4 hidden layers, and the five word outputs in the purely linear classifier."
+    },
+    {
+      "collection": "lecture14",
+      "page": 24,
+      "reason": "Traces forward information flow and interprets the displayed word distribution without treating an illustrative probability bar chart as the demonstrated result of raw linear weights or training."
+    },
+    {
+      "collection": "lecture14",
+      "page": 25,
+      "reason": "Connects each PyTorch layer declaration to the network dimensions and distinguishes declaring a linear architecture from supplying an input, training it, or normalizing its output."
     }
   ],
   "guide": [
@@ -2030,6 +2065,101 @@
         {
           "collection": "notes-09-17",
           "page": 5
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Explain the boundary before reading the frequency labels",
+      "explanation": "You can explain why the fixed end stays still while the free end moves most, and why that combination fits one, three, five, or seven quarter-wavelengths. You can distinguish the separately tuned 100 Hz example from changing only the end condition while holding length and wave speed fixed.",
+      "refs": [
+        {
+          "collection": "lecture14",
+          "page": 3
+        },
+        {
+          "collection": "lecture14",
+          "page": 4
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Predict a vowel change from what moves and compresses",
+      "explanation": "You can explain why added mass matters where air moves and added stiffness matters where air compresses. Apply that reasoning to the illustrated /u/ free-end region, /i/ region near two-thirds of the tract, and /a/ region near one-third, explaining the separate F1 and F2 directions instead of memorizing arrows alone.",
+      "refs": [
+        {
+          "collection": "lecture14",
+          "page": 9
+        },
+        {
+          "collection": "lecture14",
+          "page": 11
+        },
+        {
+          "collection": "lecture14",
+          "page": 12
+        },
+        {
+          "collection": "lecture14",
+          "page": 13
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Separate harmonic spacing from a vowel filter",
+      "explanation": "You can compare the 100, 250, and 350 Hz sources within the same frequency window, then hold a vowel filter fixed while changing that source. Explain why raising F0 leaves fewer harmonics to reveal the filter shape and can make a formant hard to locate even when its target has not shifted.",
+      "refs": [
+        {
+          "collection": "lecture14",
+          "page": 15
+        },
+        {
+          "collection": "lecture14",
+          "page": 16
+        },
+        {
+          "collection": "lecture14",
+          "page": 17
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Carry speech information into a classifier",
+      "explanation": "You can translate a spectrum into a spectrogram by putting frequency vertically, time horizontally, and amplitude into darkness. Follow the /i/ to /a/ pattern, then explain how two formant values become F1 and F2 inputs while the five output positions represent candidate words.",
+      "refs": [
+        {
+          "collection": "lecture14",
+          "page": 18
+        },
+        {
+          "collection": "lecture14",
+          "page": 21
+        },
+        {
+          "collection": "lecture14",
+          "page": 22
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Distinguish a forward pass from a trained program",
+      "explanation": "You can trace the input through weighted connections in the 2 → 3 → 2 → 4 → 5 network and identify the largest displayed word probability without declaring it the correct label. Explain what nn.Sequential and the bias-free nn.Linear layers declare, and recognize that the shown code supplies no training procedure or probability-normalization step.",
+      "refs": [
+        {
+          "collection": "lecture14",
+          "page": 23
+        },
+        {
+          "collection": "lecture14",
+          "page": 24
+        },
+        {
+          "collection": "lecture14",
+          "page": 25
         }
       ],
       "kind": "readiness"

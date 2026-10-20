@@ -40,7 +40,7 @@ function owners(items) {
   return counts;
 }
 test('fixed Module II tests and lecture quizzes keep their sizes when formats or lecture coverage change', {timeout:60000}, async () => {
-  assert.equal(data.questions.length, 242, 'Build the expanded practice bank before running fixed-size checks.');
+  assert.equal(data.questions.length, 292, 'Build the expanded practice bank before running fixed-size checks.');
   const module = data.modules.find(item => item.id === 'module2');
   const oldMCQ = data.questions.filter(question => question.moduleId === 'module2' && question.type === 'mcq').slice(0,18).map(question => question.id);
   const draftId = data.questions.find(question => question.id === 'ling285-q051').id;
@@ -61,8 +61,8 @@ test('fixed Module II tests and lecture quizzes keep their sizes when formats or
     await work('test');assert(await page.locator('[name="practiceMode"][value="written"]').isChecked());
     await page.locator('[data-start="mixed"]').click();
     let current = await state();let selected = checkSelection(current.session, data.questions, 100, {mcq:50,written:50});
-    assert.equal(current.session.mode, 'mixed');assert.deepEqual(Object.values(owners(selected)).sort((a,b) => a-b), [33,33,34]);
-    for (const type of ['mcq','written']) assert.deepEqual(Object.values(owners(selected.filter(question => question.type === type))).sort((a,b) => a-b), [16,17,17]);
+    assert.equal(current.session.mode, 'mixed');assert.deepEqual(Object.values(owners(selected)).sort((a,b) => a-b), [25,25,25,25]);
+    for (const type of ['mcq','written']) assert.deepEqual(Object.values(owners(selected.filter(question => question.type === type))).sort((a,b) => a-b), [12,12,13,13]);
     const prior100 = JSON.parse(JSON.stringify(current.session));
     assert.equal(current.drafts[draftId], initial.drafts[draftId]);
     // Saved single-format mode applies only to optional focused/quick practice.
@@ -81,17 +81,17 @@ test('fixed Module II tests and lecture quizzes keep their sizes when formats or
     await page.locator('#moduleNav [data-module="module1"]').click();await work('test');await page.locator('[data-start="mixed"]').click();
     checkSelection((await state()).session, data.questions, 20, {mcq:0,written:20});
 
-    // A future fourth lecture expands the bank to 200. The current test remains
-    // 100 and includes 25 questions per lecture, with exactly 50 of each format.
-    const future = structuredClone(data);const source = future.collections.find(collection => collection.id === 'lecture13');
-    const fixture = structuredClone(source);fixture.id='lecture14';fixture.number='14';fixture.title='Synthetic future lecture fixture';
+    // A future fifth lecture expands the bank to 250. The current test remains
+    // 100 and includes 20 questions per lecture, with exactly 50 of each format.
+    const future = structuredClone(data);const source = future.collections.find(collection => collection.id === 'lecture14');
+    const fixture = structuredClone(source);fixture.id='lecture15';fixture.number='15';fixture.title='Synthetic future lecture fixture';
     fixture.sections.forEach(section => {section.id='future-'+section.id;});future.collections.push(fixture);
-    const futureModule = future.modules.find(item => item.id === 'module2');futureModule.lectureIds.push('lecture14');
-    for (const question of data.questions.filter(question => question.lectureId === 'lecture13')) {
-      const copy = structuredClone(question);copy.id='future-'+question.id;copy.lectureId='lecture14';
-      copy.sources=copy.sources.map(ref => ref.collection === 'lecture13' ? {...ref,collection:'lecture14'} : ref);future.questions.push(copy);
+    const futureModule = future.modules.find(item => item.id === 'module2');futureModule.lectureIds.push('lecture15');
+    for (const question of data.questions.filter(question => question.lectureId === 'lecture14')) {
+      const copy = structuredClone(question);copy.id='future-'+question.id;copy.lectureId='lecture15';
+      copy.sources=copy.sources.map(ref => ref.collection === 'lecture14' ? {...ref,collection:'lecture15'} : ref);future.questions.push(copy);
     }
-    Object.assign(futureModule, {questionCount:200,mcqCount:100,writtenCount:100});
+    Object.assign(futureModule, {questionCount:250,mcqCount:125,writtenCount:125});
     const futureContext = await browser.newContext();const futurePage = await futureContext.newPage();futurePage.setDefaultTimeout(10000);futurePage.on('pageerror', error => errors.push(error.message));
     await futurePage.route('**/ling285/data.json', route => route.fulfill({json:future}));
     const retained = {activeModule:'module2',practiceMode:'mcq',notes:{'lecture13-p020':'Keep my source and filter explanation.'},drafts:{[draftId]:'Keep my earlier written response.'},session:prior100};
@@ -103,11 +103,11 @@ test('fixed Module II tests and lecture quizzes keep their sizes when formats or
     await futurePage.locator('#content [data-go="practice"]').last().click();assert.deepEqual((await futureState()).session.ids, prior100.ids);
     await futurePage.locator('#workNav [data-go="test"]').click();await futurePage.locator('[data-start="mixed"]').click();
     const next = await futureState();const nextItems = checkSelection(next.session, future.questions, 100, {mcq:50,written:50});
-    assert.deepEqual(Object.values(owners(nextItems)).sort((a,b) => a-b), [25,25,25,25]);
-    assert(nextItems.some(question => question.lectureId === 'lecture14'));
+    assert.deepEqual(Object.values(owners(nextItems)).sort((a,b) => a-b), [20,20,20,20,20]);
+    assert(nextItems.some(question => question.lectureId === 'lecture15'));
     assert.notDeepEqual(new Set(next.session.ids), new Set(prior100.ids), 'A newly generated selection must incorporate the added lecture.');
     assert.equal(next.drafts[draftId], retained.drafts[draftId]);assert.equal(next.notes['lecture13-p020'], retained.notes['lecture13-p020']);
-    assert.equal(future.questions.filter(question => question.moduleId === 'module2').length, 200, 'Rebalancing a test must not discard whole lecture banks.');
+    assert.equal(future.questions.filter(question => question.moduleId === 'module2').length, 250, 'Rebalancing a test must not discard whole lecture banks.');
     assert(data.questions.filter(question => question.moduleId === 'module2').every(question => future.questions.some(candidate => candidate.id === question.id)), 'Future fixture must retain every existing question ID.');
     assert.equal(await futurePage.title(), 'LING258 · Study Studio');
     await futureContext.close();assert.deepEqual(errors, []);

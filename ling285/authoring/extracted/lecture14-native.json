@@ -1,0 +1,4928 @@
+[
+  {
+    "page": 1,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Ling 285\u000bHuman Language and Technology\u000bLecture 14\u000b\u000bSpeech  Neural Networks\u000b",
+        "bounds": [
+          1524000,
+          1831023,
+          9144000,
+          2387600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Khalil Iskarous\nDepartment of Linguistics\nUniversity of Southern California",
+        "bounds": [
+          1409700,
+          4459288,
+          9144000,
+          1655762
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 2,
+    "shapes": [],
+    "speakerNotes": "MEMBRANE: Illustrative harmonic frequencies 100, 200, 300, 400, 500 Hz are intentionally assigned for teaching, as requested; they are not the natural eigenfrequencies of this rectangular membrane. The animation and mode labels use those same frequencies, uniformly slowed by 250. Modal coefficients are 0.55/abs(phi_mn(pickup)), giving five equal-height measured spectral peaks at the marked point. The aspect ratio Lx/Ly=1.15; shapes are (1,1),(2,1),(1,2),(2,2),(3,1), with phi_mn=sin(m*pi*x/Lx)sin(n*pi*y/Ly). All edges are fixed. The pickup is (x/Lx,y/Ly)=(0.23,0.31). Combined surface is vertically reduced to fit, at 0.057/0.24 of the magnification used in individual panels. The combined field is the exact sum of the five illustrated motions.\n\nPLAYBACK: This slide contains a self-contained H.264 MP4 video, set to start automatically in Slide Show and repeat until the slide is advanced. Right arrow advances. Clicking the video can pause/resume it. Static thumbnails and document previews show only the poster frame. The demonstration repeats every 60 seconds."
+  },
+  {
+    "page": 3,
+    "shapes": [],
+    "speakerNotes": "FIXED–FREE STRING: s=0 at bottom and s=L at top. phi_j(s)=sin((2j-1)*pi*s/(2L)), j=1..4. The displacement vanishes at the bottom; the spatial derivative vanishes at the top, which is a displacement antinode. Frequencies 100,300,500,700 Hz are shown at 0.4,1.2,2.0,2.8 Hz (1/250 speed). Equal modal coefficients give equal spectral peaks for the four-mode mixture measured at the free end. The four panels show the modes separately. The ideal free transverse boundary can be realized by a frictionless sliding endpoint while maintaining tension. These are separately tuned examples: for identical length and wave speed, changing a fixed–fixed string to fixed–free halves its fundamental; setting both examples to 100 Hz implies retuning length or wave speed.\n\nPLAYBACK: This slide contains a self-contained H.264 MP4 video, set to start automatically in Slide Show and repeat until the slide is advanced. Right arrow advances. Clicking the video can pause/resume it. Static thumbnails and document previews show only the poster frame. The demonstration repeats every 20 seconds.\n\n"
+  },
+  {
+    "page": 4,
+    "shapes": [
+      {
+        "type": "accessibility-descr",
+        "text": "/mnt/data/mode_slides_assets/fq_quarter_1.png"
+      },
+      {
+        "type": "accessibility-descr",
+        "text": "/mnt/data/mode_slides_assets/fq_quarter_2.png"
+      },
+      {
+        "type": "accessibility-descr",
+        "text": "/mnt/data/mode_slides_assets/fq_quarter_3.png"
+      },
+      {
+        "type": "accessibility-descr",
+        "text": "/mnt/data/mode_slides_assets/fq_quarter_4.png"
+      },
+      {
+        "type": "accessibility-descr",
+        "text": "/mnt/data/mode_slides_assets/fq_quarter_5.png"
+      },
+      {
+        "type": "accessibility-descr",
+        "text": "/mnt/data/mode_slides_assets/fq_quarter_6.png"
+      },
+      {
+        "type": "accessibility-descr",
+        "text": "/mnt/data/mode_slides_assets/fq_quarter_7.png"
+      }
+    ],
+    "speakerNotes": "Slide 2: Fixed-free string modes. The bottom is fixed and the top is free. Video loops while the teacher clicks. Each click reveals one quarter-wavelength packet in every mode that contains it. The four modes contain 1, 3, 5, and 7 quarter-wave packets respectively, matching odd harmonics."
+  },
+  {
+    "page": 5,
+    "shapes": [],
+    "speakerNotes": ""
+  },
+  {
+    "page": 6,
+    "shapes": [],
+    "speakerNotes": ""
+  },
+  {
+    "page": 7,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Pop quiz",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          838200,
+          1825625,
+          10515600,
+          4351338
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A                     B                     C                  D                          E                        F  ",
+        "bounds": [
+          4969565,
+          6321287,
+          6189515,
+          369332
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 8,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Vowels",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "dean",
+        "bounds": [
+          3009036,
+          2144842,
+          1075936,
+          584775
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dan",
+        "bounds": [
+          2892032,
+          6130497,
+          910442,
+          584775
+        ]
+      },
+      {
+        "type": "text",
+        "text": "done",
+        "bounds": [
+          6278691,
+          4151244,
+          1083951,
+          584775
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Don",
+        "bounds": [
+          10477615,
+          6222919,
+          918841,
+          584775
+        ]
+      },
+      {
+        "type": "text",
+        "text": "dune",
+        "bounds": [
+          10568371,
+          2120609,
+          1087157,
+          584775
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Front",
+        "bounds": [
+          1934109,
+          3098815,
+          1413144,
+          707886
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Low",
+        "bounds": [
+          23102,
+          5214541,
+          1130566,
+          707886
+        ]
+      },
+      {
+        "type": "text",
+        "text": "High",
+        "bounds": [
+          113048,
+          1087973,
+          1255472,
+          707886
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Back",
+        "bounds": [
+          9292826,
+          3200046,
+          1342034,
+          707886
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Central",
+        "bounds": [
+          5369265,
+          4736019,
+          1921488,
+          707886
+        ]
+      },
+      {
+        "type": "text",
+        "text": "No constriction",
+        "bounds": [
+          5470510,
+          2511991,
+          1718997,
+          369332
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Constriction 2/3 from glottis",
+        "bounds": [
+          1165602,
+          203786,
+          2967800,
+          369332
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Constriction 1/3 from glottis",
+        "bounds": [
+          8515498,
+          4466795,
+          2967800,
+          369332
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Constriction at lips",
+        "bounds": [
+          9045549,
+          76371,
+          2066400,
+          369332
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 9,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "When we compress air, as happens in a constriction, its stiffness rises, so making a constriction at a place that experiences lots of compression, will raise frequency. And bunching up air makes its mas//density larger, so in a part of the vocal tract where air moves a lot, constricting raises mass! So making a constriction increases mass and increases stiffness. \n\nBut be careful!!!! This doesn’t mean that constrictions have no effect on frequency!!! Why? Because the parts of a vibrating medium that moves the most alternate with those that compress/uncompress the most!",
+        "bounds": [
+          1510746,
+          1639957,
+          9872869,
+          3416320
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 10,
+    "shapes": [],
+    "speakerNotes": ""
+  },
+  {
+    "page": 11,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "/u/ = free-end loading",
+        "bounds": [
+          7178040,
+          566928,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mode 1: motion dominates",
+        "bounds": [
+          7178040,
+          978408,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mode 2: motion dominates",
+        "bounds": [
+          7178040,
+          1389888,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "F1 ↓     F2 ↓",
+        "bounds": [
+          7178040,
+          1801368,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Click to reveal the reasoning steps.",
+        "bounds": [
+          7315200,
+          2395728,
+          4114800,
+          274320
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 12,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "/i/ = constriction near 2/3",
+        "bounds": [
+          7178040,
+          566928,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mode 1: mass motion dominates",
+        "bounds": [
+          7178040,
+          978408,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mode 2: springiness dominates",
+        "bounds": [
+          7178040,
+          1389888,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "F1 ↓     F2 ↑",
+        "bounds": [
+          7178040,
+          1801368,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Click to reveal the reasoning steps.",
+        "bounds": [
+          7315200,
+          2395728,
+          4114800,
+          274320
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 13,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "/a/ = constriction near 1/3",
+        "bounds": [
+          7178040,
+          566928,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mode 1: springiness dominates",
+        "bounds": [
+          7178040,
+          978408,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mode 2: mass motion dominates",
+        "bounds": [
+          7178040,
+          1389888,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "F1 ↑     F2 ↓",
+        "bounds": [
+          7178040,
+          1801368,
+          4480560,
+          411480
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Click to reveal the reasoning steps.",
+        "bounds": [
+          7315200,
+          2395728,
+          4114800,
+          274320
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 14,
+    "shapes": [],
+    "speakerNotes": ""
+  },
+  {
+    "page": 15,
+    "shapes": [
+      {
+        "type": "accessibility-descr",
+        "text": "slide_1.png"
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 16,
+    "shapes": [
+      {
+        "type": "accessibility-descr",
+        "text": "slide_2.png"
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 17,
+    "shapes": [
+      {
+        "type": "accessibility-descr",
+        "text": "slide_3.png"
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 18,
+    "shapes": [
+      {
+        "type": "accessibility-descr",
+        "text": "/mnt/data/source_filter_spectrogram_assets/specgram_base.png"
+      },
+      {
+        "type": "accessibility-descr",
+        "text": "/mnt/data/source_filter_spectrogram_assets/specgram_overlay1.png"
+      },
+      {
+        "type": "accessibility-descr",
+        "text": "/mnt/data/source_filter_spectrogram_assets/specgram_overlay2.png"
+      }
+    ],
+    "speakerNotes": "Click 1 maps the spectrum frequency axis to the spectrogram vertical axis. Click 2 maps spectrum amplitude to darkness in the spectrogram."
+  },
+  {
+    "page": 19,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Where were you a year ago?",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          838200,
+          1825625,
+          10515600,
+          4351338
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 20,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "My favorite experiment to show how complex speech is!!!!!",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          838200,
+          1825625,
+          10515600,
+          4351338
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 21,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Back to AI: We will build an NN that will be trained on your Formants and will decide which vowel is being spoken",
+        "bounds": [
+          745435,
+          2883038,
+          10515600,
+          1325563
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 22,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "A purely linear network",
+        "bounds": [
+          609600,
+          381000,
+          10096500,
+          533400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2 inputs → hidden layers of 3, 2 and 4 neurons → 5 outputs. No activation functions.",
+        "bounds": [
+          609600,
+          990600,
+          10096500,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3048000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3524250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3524250,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3048000,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          4000500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          4476750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3048000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3048000,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3524250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          4000500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3524250,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          4476750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          2571750,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          1905000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          2571750,
+          1905000,
+          1905000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          4476750,
+          1905000,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          4476750,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          3333750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3048000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3524250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3524250,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3524250,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3048000,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4000500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4476750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4476750,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          3333750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3048000,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4000500,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4953000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          5429250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1714500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1714500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          2857500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          3810000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          4762500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5524500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5524500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          2381250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          5238750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          1905000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          2857500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          3810000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          4762500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          5715000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/done/",
+        "bounds": [
+          9906000,
+          1943100,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/dune/",
+        "bounds": [
+          9906000,
+          2895600,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/dean/",
+        "bounds": [
+          9906000,
+          3848100,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/Don/",
+        "bounds": [
+          9906000,
+          4800600,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/Dan/",
+        "bounds": [
+          9906000,
+          5753100,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "input · 2",
+        "bounds": [
+          1143000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 1 · 3",
+        "bounds": [
+          3048000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 2 · 2",
+        "bounds": [
+          4953000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 3 · 4",
+        "bounds": [
+          6858000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "output · 5",
+        "bounds": [
+          8763000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "F1",
+        "bounds": [
+          1164861,
+          3320534,
+          429926,
+          369332
+        ]
+      },
+      {
+        "type": "text",
+        "text": "F2",
+        "bounds": [
+          1189324,
+          4345543,
+          429926,
+          369332
+        ]
+      }
+    ],
+    "speakerNotes": "A purely linear feed-forward network: 2 inputs, hidden layers of 3, 2 and 4 neurons, and 5 output neurons, one per word."
+  },
+  {
+    "page": 23,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "An input, and random weights",
+        "bounds": [
+          609600,
+          381000,
+          10096500,
+          533400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          609600,
+          990600,
+          10096500,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Input (320, 2000). Every edge gets a random weight: blue positive, orange negative.",
+        "bounds": [
+          609600,
+          990600,
+          10096500,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1524000,
+          3524250,
+          190500,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1524000,
+          4476750,
+          190500,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3048000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3524250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3524250,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3048000,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          4000500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          4476750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3048000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3048000,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3524250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          4000500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3524250,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          4476750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          2571750,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          1905000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          2571750,
+          1905000,
+          1905000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          4476750,
+          1905000,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          4476750,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          3333750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3048000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3524250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3524250,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3524250,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3048000,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4000500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4476750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4476750,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          3333750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3048000,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4000500,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4953000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          5429250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.35",
+        "bounds": [
+          2676525,
+          3214688,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.70",
+        "bounds": [
+          2676525,
+          3690937,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.30",
+        "bounds": [
+          2676525,
+          4167188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.86",
+        "bounds": [
+          2295525,
+          3976687,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.07",
+        "bounds": [
+          2295525,
+          4262438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.27",
+        "bounds": [
+          2676525,
+          4643438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.88",
+        "bounds": [
+          4581525,
+          3214688,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.01",
+        "bounds": [
+          4581525,
+          3690937,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.93",
+        "bounds": [
+          4200525,
+          3786188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.13",
+        "bounds": [
+          4581525,
+          4167188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.86",
+        "bounds": [
+          4200525,
+          4452938,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.82",
+        "bounds": [
+          4581525,
+          4643438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.15",
+        "bounds": [
+          6486525,
+          2967038,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.65",
+        "bounds": [
+          6486525,
+          3443288,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.75",
+        "bounds": [
+          6486525,
+          3919537,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.55",
+        "bounds": [
+          6486525,
+          4395788,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.25",
+        "bounds": [
+          6296025,
+          3633788,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.90",
+        "bounds": [
+          6105525,
+          4110038,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.15",
+        "bounds": [
+          6105525,
+          4395788,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.21",
+        "bounds": [
+          6486525,
+          4872038,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.95",
+        "bounds": [
+          8391525,
+          2262188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.91",
+        "bounds": [
+          8391525,
+          2738438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.72",
+        "bounds": [
+          8391525,
+          3214688,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.42",
+        "bounds": [
+          8391525,
+          3690937,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.71",
+        "bounds": [
+          8391525,
+          4167188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.76",
+        "bounds": [
+          8010525,
+          3024188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.38",
+        "bounds": [
+          8010525,
+          3309938,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.63",
+        "bounds": [
+          8010525,
+          3595688,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.64",
+        "bounds": [
+          8010525,
+          3881438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.16",
+        "bounds": [
+          8391525,
+          4643438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.28",
+        "bounds": [
+          8582025,
+          2967038,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.26",
+        "bounds": [
+          8772525,
+          3405188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.10",
+        "bounds": [
+          8010525,
+          4262438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.87",
+        "bounds": [
+          8010525,
+          4548188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.88",
+        "bounds": [
+          8391525,
+          5119688,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.59",
+        "bounds": [
+          7781925,
+          4757738,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.36",
+        "bounds": [
+          8582025,
+          3919537,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.14",
+        "bounds": [
+          8010525,
+          4929188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.37",
+        "bounds": [
+          8010525,
+          5214938,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.17",
+        "bounds": [
+          8391525,
+          5595938,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1714500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1714500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          2857500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          3810000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          4762500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5524500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5524500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          2381250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          5238750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          1905000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          2857500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          3810000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          4762500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          5715000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "320",
+        "bounds": [
+          609600,
+          3333750,
+          914400,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2000",
+        "bounds": [
+          609600,
+          4286250,
+          914400,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/done/",
+        "bounds": [
+          9906000,
+          1943100,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/dune/",
+        "bounds": [
+          9906000,
+          2895600,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/dean/",
+        "bounds": [
+          9906000,
+          3848100,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/Don/",
+        "bounds": [
+          9906000,
+          4800600,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/Dan/",
+        "bounds": [
+          9906000,
+          5753100,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "input · 2",
+        "bounds": [
+          1143000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 1 · 3",
+        "bounds": [
+          3048000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 2 · 2",
+        "bounds": [
+          4953000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 3 · 4",
+        "bounds": [
+          6858000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "output · 5",
+        "bounds": [
+          8763000,
+          6286500,
+          1524000,
+          228600
+        ]
+      }
+    ],
+    "speakerNotes": "Before training, every weight is a random number between −1 and 1."
+  },
+  {
+    "page": 24,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Forward flow",
+        "bounds": [
+          609600,
+          381000,
+          10096500,
+          533400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "The input flows forward, layer by layer. At the output: a distribution over the five words.",
+        "bounds": [
+          609600,
+          990600,
+          10096500,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1524000,
+          3524250,
+          190500,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1524000,
+          4476750,
+          190500,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3048000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3524250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3524250,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          3048000,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          4000500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1905000,
+          4476750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3048000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3048000,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3524250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          4000500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          3524250,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3810000,
+          4476750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          2571750,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          1905000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          2571750,
+          1905000,
+          1905000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          3524250,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          4476750,
+          1905000,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5715000,
+          4476750,
+          1905000,
+          952500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2571750,
+          1905000,
+          3333750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3048000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3524250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3524250,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3524250,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3048000,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4000500,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4476750,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4476750,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          2095500,
+          1905000,
+          3333750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          3048000,
+          1905000,
+          2381250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4000500,
+          1905000,
+          1428750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          4953000,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7620000,
+          5429250,
+          1905000,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.35",
+        "bounds": [
+          2676525,
+          3214688,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.70",
+        "bounds": [
+          2676525,
+          3690937,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.30",
+        "bounds": [
+          2676525,
+          4167188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.86",
+        "bounds": [
+          2295525,
+          3976687,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.07",
+        "bounds": [
+          2295525,
+          4262438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.27",
+        "bounds": [
+          2676525,
+          4643438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.88",
+        "bounds": [
+          4581525,
+          3214688,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.01",
+        "bounds": [
+          4581525,
+          3690937,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.93",
+        "bounds": [
+          4200525,
+          3786188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.13",
+        "bounds": [
+          4581525,
+          4167188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.86",
+        "bounds": [
+          4200525,
+          4452938,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.82",
+        "bounds": [
+          4581525,
+          4643438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.15",
+        "bounds": [
+          6486525,
+          2967038,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.65",
+        "bounds": [
+          6486525,
+          3443288,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.75",
+        "bounds": [
+          6486525,
+          3919537,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.55",
+        "bounds": [
+          6486525,
+          4395788,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.25",
+        "bounds": [
+          6296025,
+          3633788,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.90",
+        "bounds": [
+          6105525,
+          4110038,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.15",
+        "bounds": [
+          6105525,
+          4395788,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.21",
+        "bounds": [
+          6486525,
+          4872038,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.95",
+        "bounds": [
+          8391525,
+          2262188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.91",
+        "bounds": [
+          8391525,
+          2738438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.72",
+        "bounds": [
+          8391525,
+          3214688,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.42",
+        "bounds": [
+          8391525,
+          3690937,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.71",
+        "bounds": [
+          8391525,
+          4167188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.76",
+        "bounds": [
+          8010525,
+          3024188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.38",
+        "bounds": [
+          8010525,
+          3309938,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.63",
+        "bounds": [
+          8010525,
+          3595688,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.64",
+        "bounds": [
+          8010525,
+          3881438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.16",
+        "bounds": [
+          8391525,
+          4643438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.28",
+        "bounds": [
+          8582025,
+          2967038,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.26",
+        "bounds": [
+          8772525,
+          3405188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.10",
+        "bounds": [
+          8010525,
+          4262438,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.87",
+        "bounds": [
+          8010525,
+          4548188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.88",
+        "bounds": [
+          8391525,
+          5119688,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.59",
+        "bounds": [
+          7781925,
+          4757738,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.36",
+        "bounds": [
+          8582025,
+          3919537,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.14",
+        "bounds": [
+          8010525,
+          4929188,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−0.37",
+        "bounds": [
+          8010525,
+          5214938,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.17",
+        "bounds": [
+          8391525,
+          5595938,
+          361950,
+          152400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1847850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1847850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1847850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1847850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1847850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1847850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3752850,
+          2990850,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3752850,
+          2990850,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3752850,
+          3943350,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3752850,
+          3943350,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3752850,
+          4895850,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3752850,
+          4895850,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5657850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5657850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5657850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5657850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5657850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5657850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5657850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5657850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          2514600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          2514600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          2514600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          2514600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          2514600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          3467100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          4419600,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          5372100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          5372100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          5372100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          5372100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7562850,
+          5372100,
+          114300,
+          114300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1714500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1714500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          2857500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          3810000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          4762500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5524500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5524500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          2381250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          5238750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          1905000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          2857500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          3810000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          4762500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          5715000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1714500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1714500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          2857500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          3810000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3619500,
+          4762500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5524500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5524500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          2381250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          3333750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          4286250,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7429500,
+          5238750,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          1905000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          2857500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          3810000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          4762500,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9334500,
+          5715000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "320",
+        "bounds": [
+          609600,
+          3333750,
+          914400,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2000",
+        "bounds": [
+          609600,
+          4286250,
+          914400,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/done/",
+        "bounds": [
+          9906000,
+          1943100,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/dune/",
+        "bounds": [
+          9906000,
+          2895600,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/dean/",
+        "bounds": [
+          9906000,
+          3848100,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/Don/",
+        "bounds": [
+          9906000,
+          4800600,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/Dan/",
+        "bounds": [
+          9906000,
+          5753100,
+          838200,
+          304800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "input · 2",
+        "bounds": [
+          1143000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 1 · 3",
+        "bounds": [
+          3048000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 2 · 2",
+        "bounds": [
+          4953000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 3 · 4",
+        "bounds": [
+          6858000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "output · 5",
+        "bounds": [
+          8763000,
+          6286500,
+          1524000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "p(word)",
+        "bounds": [
+          10763250,
+          1638300,
+          762000,
+          209550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10763250,
+          2028825,
+          762000,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": ".5",
+        "bounds": [
+          11601450,
+          1981200,
+          381000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10763250,
+          2981325,
+          152400,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": ".1",
+        "bounds": [
+          10991850,
+          2933700,
+          381000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10763250,
+          3933825,
+          152400,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": ".1",
+        "bounds": [
+          10991850,
+          3886200,
+          381000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10763250,
+          4886325,
+          152400,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": ".1",
+        "bounds": [
+          10991850,
+          4838700,
+          381000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10763250,
+          5838825,
+          304800,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": ".2",
+        "bounds": [
+          11144250,
+          5791200,
+          381000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "😡",
+        "bounds": [
+          10190922,
+          381000,
+          748923,
+          769441
+        ]
+      }
+    ],
+    "speakerNotes": "Plays automatically in Slide Show and loops until you advance: dots carry the input forward, layer by layer; the output distribution [.5, .1, .1, .1, .2] appears; then the smiley."
+  },
+  {
+    "page": 25,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "The same network in PyTorch",
+        "bounds": [
+          609600,
+          381000,
+          10096500,
+          533400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          986790,
+          2777490,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          986790,
+          3044190,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          986790,
+          3044190,
+          1066800,
+          800100
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          986790,
+          2777490,
+          1066800,
+          800100
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          986790,
+          3310890,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          986790,
+          3577590,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          2053590,
+          2777490,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          2053590,
+          2777490,
+          1066800,
+          800100
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          2053590,
+          3044190,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          2053590,
+          3310890,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          2053590,
+          3044190,
+          1066800,
+          800100
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          2053590,
+          3577590,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3120390,
+          2510790,
+          1066800,
+          533400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3120390,
+          3044190,
+          1066800,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3120390,
+          3044190,
+          1066800,
+          533400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3120390,
+          3044190,
+          1066800,
+          1066800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3120390,
+          2510790,
+          1066800,
+          1066800
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3120390,
+          3044190,
+          1066800,
+          533400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3120390,
+          3577590,
+          1066800,
+          0
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3120390,
+          3577590,
+          1066800,
+          533400
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2244090,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2510790,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2510790,
+          1066800,
+          800100
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2510790,
+          1066800,
+          1333500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2510790,
+          1066800,
+          1866900
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2244090,
+          1066800,
+          800100
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2777490,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          3044190,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          3044190,
+          1066800,
+          800100
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          3044190,
+          1066800,
+          1333500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2244090,
+          1066800,
+          1333500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2777490,
+          1066800,
+          800100
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          3310890,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          3577590,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          3577590,
+          1066800,
+          800100
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2244090,
+          1066800,
+          1866900
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          2777490,
+          1066800,
+          1333500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          3310890,
+          1066800,
+          800100
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          3844290,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4187190,
+          4110990,
+          1066800,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          880110,
+          2937510,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          880110,
+          3470910,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1946910,
+          2670810,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1946910,
+          3204210,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1946910,
+          3737610,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3013710,
+          2937510,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3013710,
+          3470910,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4080510,
+          2404110,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4080510,
+          2937510,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4080510,
+          3470910,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4080510,
+          4004310,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5147310,
+          2137410,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5147310,
+          2670810,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5147310,
+          3204210,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5147310,
+          3737610,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5147310,
+          4271010,
+          213360,
+          213360
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/done/",
+        "bounds": [
+          5467350,
+          2158746,
+          685800,
+          170688
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/dune/",
+        "bounds": [
+          5467350,
+          2692146,
+          685800,
+          170688
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/dean/",
+        "bounds": [
+          5467350,
+          3225546,
+          685800,
+          170688
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/Don/",
+        "bounds": [
+          5467350,
+          3758946,
+          685800,
+          170688
+        ]
+      },
+      {
+        "type": "text",
+        "text": "/Dan/",
+        "bounds": [
+          5467350,
+          4292346,
+          685800,
+          170688
+        ]
+      },
+      {
+        "type": "text",
+        "text": "input · 2",
+        "bounds": [
+          415290,
+          4591050,
+          1143000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 1 · 3",
+        "bounds": [
+          1482090,
+          4591050,
+          1143000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 2 · 2",
+        "bounds": [
+          2548890,
+          4591050,
+          1143000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "hidden 3 · 4",
+        "bounds": [
+          3615690,
+          4591050,
+          1143000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "output · 5",
+        "bounds": [
+          4682490,
+          4591050,
+          1143000,
+          228600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "import torch\nimport torch.nn as nn\n \n# purely linear: 2 → 3 → 2 → 4 → 5\nnet = nn.Sequential(\n    nn.Linear(2, 3, bias=False),  # 2 in → 3 out\n    nn.Linear(3, 2, bias=False),  # 3 in → 2 out\n    nn.Linear(2, 4, bias=False),  # 2 in → 4 out\n    nn.Linear(4, 5, bias=False),  # 4 in → 5 out\n)",
+        "bounds": [
+          6286500,
+          1809750,
+          5372100,
+          3238500
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Declaration only, no training. bias=False keeps every layer purely linear, as in the picture.",
+        "bounds": [
+          6286500,
+          5238750,
+          5372100,
+          457200
+        ]
+      }
+    ],
+    "speakerNotes": "nn.Linear(in, out) holds an out × in weight matrix; bias=False removes the bias so each layer is a pure linear map."
+  }
+]

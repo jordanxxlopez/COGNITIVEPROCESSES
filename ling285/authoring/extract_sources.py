@@ -1,7 +1,7 @@
 """Inventory source content and original visuals before any teaching authoring."""
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor,as_completed
-import hashlib,json,shutil,subprocess,zipfile,io
+import argparse,hashlib,json,shutil,subprocess,zipfile,io
 import fitz
 from pptx import Presentation
 from docx import Document
@@ -10,7 +10,15 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'authoring';SOURCES=ROOT/'sources';SLIDES=ROOT/'assets/slides'
 for p in [SOURCES,SLIDES,OUT/'extracted',OUT/'embedded',OUT/'review-grids']:p.mkdir(parents=True,exist_ok=True)
 inputs=json.loads((OUT/'upload-manifest.json').read_text())
-manifest={};all_embedded=[]
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--only', nargs='+', help='Add or refresh these source keys while preserving all other extracted sources.')
+selected=parser.parse_args().only
+manifest=json.loads((OUT/'source-manifest.json').read_text()) if selected else {}
+all_embedded=[a for a in json.loads((OUT/'embedded-manifest.json').read_text()) if a['source'] not in selected] if selected else []
+if selected:
+ unknown=set(selected)-{item['key'] for item in inputs}
+ if unknown:raise ValueError(f'Unknown source keys: {sorted(unknown)}')
+ inputs=[item for item in inputs if item['key'] in selected]
 def sha(data):return hashlib.sha256(data).hexdigest()
 def resolve_source(item,sources):
  """Use the preserved original when a session-specific upload path is gone."""
@@ -61,10 +69,11 @@ def convert(item):
  if p.suffix=='.pdf' or (SOURCES/(key+'.pdf')).exists():return key,True
  r=subprocess.run(['soffice','--headless','--convert-to','pdf','--outdir',str(SOURCES),str(p)],capture_output=True,text=True,timeout=180)
  return key,(SOURCES/(key+'.pdf')).exists(),r.stdout,r.stderr
-jobs=[(k,e) for k,e in manifest.items() if e.get('file')]
+jobs=[(k,e) for k,e in manifest.items() if e.get('file') and (not selected or k in selected)]
 with ThreadPoolExecutor(max_workers=2) as pool:
  for f in as_completed([pool.submit(convert,j) for j in jobs]):print('Converted',f.result(),flush=True)
 for key,entry in manifest.items():
+ if selected and key not in selected:continue
  pdf=SOURCES/(key+'.pdf')
  if not pdf.exists():continue
  doc=fitz.open(pdf);pages=[]

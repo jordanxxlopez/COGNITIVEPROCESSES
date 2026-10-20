@@ -142,7 +142,12 @@ function go(next,collectionId,push=true,moduleId) {
 
 function collectionTitle(c) {return c.role === 'lecture' ? c.title.replace(/^(?:Lectures?\s+)?\d+(?:[+–-]\d+)?\s*[·:.-]\s*/i,'') : c.title;}
 function refLabel(c) {return c.number ? 'Lecture '+c.number : c.title;}
-function scopeBanner() {const m=currentModule();return `<div class="scope-banner"><span class="tag">${esc(m.title)} · ${esc(m.subtitle || '')}</span><p>${esc(m.description || (m.id==='module2'?'Current focus · Lectures 11–13. Future lectures will be added here.':'Completed first-half material · Lectures 01–10.'))}</p></div>`;}
+function moduleLectureRange(module=currentModule()) {
+  const labels=moduleLectures(module.id).map(collection=>collection.number).filter(Boolean);
+  return module.lectureRange || (labels.length>1?`Lectures ${labels[0]}–${labels.at(-1)}`:labels.length?`Lecture ${labels[0]}`:'Supplied lecture material');
+}
+function scopeBanner() {const m=currentModule();return `<div class="scope-banner"><span class="tag">${esc(m.title)} · ${esc(m.subtitle || '')}</span><p>${esc(m.description || (m.id==='module2'?'Current focus · '+moduleLectureRange(m)+'. Future lectures will be added here.':'Completed first-half material · '+moduleLectureRange(m)+'.'))}</p></div>`;}
+
 function nav() {
   const m=currentModule(),queue=queueQuestions().length;
   $('#courseNav').innerHTML=`<button data-go="home" class="${view==='home'?'active':''}" ${view==='home'?'aria-current="page"':''}>Course overview</button>`;
