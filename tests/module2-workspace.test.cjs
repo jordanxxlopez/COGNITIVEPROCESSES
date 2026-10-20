@@ -32,10 +32,19 @@ for(const file of ['index.html','share.html']){
  assert(nav.indexOf('data-view="m2test"')<nav.indexOf('Individual collections'));
  assert(nav.indexOf('Individual collections')<nav.indexOf('data-module="6"'));
  assert.match(nav, /navnum">09/);
- assert.equal(run('secondCoreModule().sections.length'),20);
+ assert.equal(run('moduleBy(6).sections.filter(s=>s.examPriorityE.mustKnow).length'),20);
+ assert.equal(run('secondCoreModule().sections.length'),34);
+ run("go('module',9)");
+ assert.match(element('#content').innerHTML,/10 · Working Memory/);
+ assert.match(element('#workspaceNav').innerHTML,/navnum">10/);
+ assert.doesNotMatch(element('#moduleNav').innerHTML,/data-module="9"/);
+ assert.equal(run('moduleBy(9).sections.length'),20);
+ assert.equal(run('moduleBy(9).original.length'),22);
+ assert.match(run('header(moduleBy(9))'),/sources\/PSYCH301_L12_Working_Memory_F26_2.pdf/);
  assert(run('secondQuestions().some(q=>!moduleBy(q.module).sections.find(s=>s.page===q.page).examPriorityE?.mustKnow)'));
  assert(!run('moduleBy(6).sections[0].examPriorityE.mustKnow'));
  assert.match(element('#content').innerHTML,/class="priority-e"/);
+ run("go('module',6)");
  run("mode='teach';teachIndex=moduleBy(6).sections.findIndex(s=>s.examPriorityE.mustKnow);render()");
  assert.match(element('#content').innerHTML,/Must know · core review/);
  run("go('m2combined')");assert.match(element('#content').innerHTML,/class="priority-e"/);
@@ -44,16 +53,42 @@ for(const file of ['index.html','share.html']){
  run("view='m2coreExpanded';teachIndex=0;render()");assert.match(element('#content').innerHTML,/data-personal-note="6:3"/);
  assert.match(element('#content').innerHTML,/class="priority-e"/);
  run('exitExpandedView()');assert.equal(run('view'),'m2core');
+ run("view='m2experimentsExpanded';teachIndex=secondExperimentModule().sections.findIndex(s=>s.noteKey==='9:8');render()");
+ assert.match(element('#content').innerHTML,/data-personal-note="9:8"/);
+ assert.match(element('#content').innerHTML,/Conrad/);
+ assert.equal(run('secondExperimentModule().sections.at(-1).noteKey'),'9:22');
+ run('exitExpandedView()');assert.equal(run('view'),'m2experiments');
  run("go('m2test');startQuiz('m2all')");
- assert.equal(run('quiz.items.length'),count);
- assert(run('quiz.items.every(q=>q.module===6 && moduleBy(q.module).sections.some(s=>s.page===q.page))'));
+ assert.equal(run('quiz.items.length'),100);
+ assert(run('quiz.items.every(q=>secondHalf.modules.includes(q.module) && moduleBy(q.module).sections.some(s=>s.page===q.page))'));
+ assert.equal(run('quiz.items.filter(q=>q.module===6).length'),50);
+ assert.equal(run('quiz.items.filter(q=>q.module===9).length'),50);
  assert(run('validateAnswerKey(quiz.items)'));
  run('answer(quiz.items[0].correct)');assert.equal(run('quiz.answers.length'),1);
- run("go('m2missed');startQuiz('m2missed')");assert(run('quiz.items.every(q=>q.module===6)'));
- run("go('missed');startQuiz('missed')");assert(run('quiz.items.every(q=>q.module!==6)'));
+ run("go('m2missed');startQuiz('m2missed')");assert(run('quiz.items.every(q=>secondHalf.modules.includes(q.module))'));
+ run("go('missed');startQuiz('missed')");assert(run('quiz.items.every(q=>!secondHalf.modules.includes(q.module))'));
  run("go('module',6);startQuiz('moduleall')");assert.match(run('quiz.kind'),/^m2/);
+ assert.equal(run('quiz.items.length'),50);assert(run('quiz.items.every(q=>q.module===6)'));
+ run("go('module',9);startQuiz('moduleall')");assert.equal(run('quiz.items.length'),50);assert(run('quiz.items.every(q=>q.module===9)'));
+ run("startQuiz('m2quick')");assert.equal(run('quiz.items.length'),10);
+ assert.equal(run('quiz.items.filter(q=>q.module===9).length'),5);
+ assert(run('validateAnswerKey(quiz.items)'));
  run('quiz.finished=true');assert.match(run('results()'),/data-view="m2test"/);
  const ids=run('secondQuestions().map(q=>q.id)');assert.equal(new Set(ids).size,count);
  for(const q of run('secondQuestions()')){assert.equal(q.options.length,4);assert(q.why.length>20);assert.equal(new Set(q.options).size,4)}
+ // Future lectures change quotas without changing the 100-question total.
+ run('globalThis.originalModuleIds=[...secondHalf.modules]');
+ for(const n of [2,3,4,6]){
+  run(`secondHalf.modules=Array.from({length:${n}},(_,i)=>100+i);globalThis.fixture=secondHalf.modules.flatMap(id=>Array.from({length:60},(_,i)=>({id:id*1000+i,module:id})))`);
+  const extraLectures=new Set();
+  for(let attempt=0;attempt<30;attempt++){
+   run('globalThis.sample=balancedSecondQuestions(fixture,100)');
+   assert(run('validateSecondBalance(sample,100)'));
+   if(100%n)for(const id of run(`secondHalf.modules.filter(id=>sample.filter(q=>q.module===id).length===${Math.ceil(100/n)})`))extraLectures.add(id);
+  }
+  if(100%n)assert.equal(extraLectures.size,n,'Remainder is not fixed to one lecture');
+ }
+ assert.throws(()=>run('balancedSecondQuestions([],100)'),/Add source-based questions/);
+ run('secondHalf.modules=originalModuleIds');
  console.log(`PASS ${file}: all Module 2 views, full test, source anchors, answer flow, isolated retry queues, retained notes and saved misses.`);
 }

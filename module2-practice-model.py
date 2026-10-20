@@ -13,9 +13,16 @@ def audit():
     bank = json.loads(raw.split('window.SECOND_HALF = ', 1)[1].rstrip(';\n'))
     markup = (ROOT / 'index.html').read_text()
     data = json.loads(re.search(r'<script id="study-data" type="application/json">(.*?)</script>', markup, re.S)[1])
-    modules = {m['id']: m for m in data['modules']}
+    modules = {m['id']: m for m in data['modules'] + bank.get('collections', [])}
     questions = bank['questions']
     assert len({q['id'] for q in questions}) == len(questions), 'Duplicate IDs'
+    assert bank['practiceTestSize'] == 100, 'Current cumulative test must stay at 100'
+    minimum_pool_size = -(-bank['practiceTestSize'] // len(bank['modules']))
+    for module_id in bank['modules']:
+        assert sum(q['module'] == module_id for q in questions) >= minimum_pool_size, 'Insufficient pool for equal lecture quotas'
+    for group in bank['topics'] + bank['coreReview'] + bank['experiments']:
+        pages = {s['page'] for s in modules[group.get('module', 6)]['sections']}
+        assert set(group['pages']) <= pages, ('Missing review source', group['title'])
     kinds = Counter(q['kind'] for q in questions)
     stem_lengths, option_lengths = [], []
     researcher_items = []
@@ -42,6 +49,9 @@ def audit():
         'basis': bank['styleBasis'],
         'prior_model_use': 'Retain lecture/source alignment and transparent reporting. Do not transfer Exam 1 chapter weights or six sample-question similarities to a new exam without its guide.',
         'question_count': len(questions),
+        'lecture_pool_counts': dict(Counter(q['module'] for q in questions)),
+        'cumulative_test_size': bank['practiceTestSize'],
+        'cumulative_allocation': 'Equal lecture quotas; a randomly assigned remainder keeps the total fixed.',
         'question_types': dict(kinds),
         'stem_words': {'minimum': min(stem_lengths), 'maximum': max(stem_lengths)},
         'option_words': {'minimum': min(option_lengths), 'maximum': max(option_lengths)},

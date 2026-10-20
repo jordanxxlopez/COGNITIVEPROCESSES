@@ -6,10 +6,15 @@ const vm = require('node:vm');
 for (const file of ['index.html', 'share.html']) {
   const html = fs.readFileSync(path.join(__dirname, '..', file), 'utf8');
   const data = JSON.parse(html.match(/<script id="study-data" type="application\/json">(.*?)<\/script>/s)[1]);
+  const manifest = {window:{}};
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname, '..', 'module2-data.js'), 'utf8'), manifest);
+  const current = manifest.window.SECOND_HALF;
+  const modules = data.modules.concat(current.collections || []);
   const elements = {};
   const context = vm.createContext({
-    M: data.modules, Q: data.questions,
-    moduleBy: id => data.modules.find(m => m.id === id),
+    M: modules, Q: data.questions,
+    window: {SECOND_HALF:current},
+    moduleBy: id => modules.find(m => m.id === id),
     state: { read: ['6:2', '3:2'], missed: [], personalNotes: { '6:2': 'Keep my note' } },
     view: 'home', selected: 6, mode: 'notes',
     $: selector => elements[selector] ||= {}, esc: String,
@@ -25,9 +30,10 @@ for (const file of ['index.html', 'share.html']) {
   assert.match(elements['#moduleNav'].innerHTML, /Module 1 · Exam 1 archive/);
   assert.doesNotMatch(elements['#moduleNav'].innerHTML, /id="examOneArchive" open/);
   assert.doesNotMatch(elements['#moduleNav'].innerHTML, /data-module="6"/);
-  for (const m of data.modules.filter(m => m.id !== 6)) {
+  for (const m of modules.filter(m => !current.modules.includes(m.id))) {
     assert.match(elements['#moduleNav'].innerHTML, new RegExp(`data-module="${m.id}"`));
   }
+  for (const id of current.modules) assert.doesNotMatch(elements['#moduleNav'].innerHTML, new RegExp(`data-module="${id}"`));
   assert.match(context.home(), /MODULE 2 · SECOND HALF/);
   assert.doesNotMatch(context.home(), /Start with attention/);
   assert.match(context.moduleScreen(), /MEMORY_NOTES/);

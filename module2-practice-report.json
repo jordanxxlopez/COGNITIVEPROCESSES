@@ -1,5 +1,5 @@
 {
-  "revision": "stm-v2-observed-style",
+  "revision": "memory-v3-balanced-100",
   "method": "Editorial style quotas and source-coverage validation",
   "validated_prediction": false,
   "empirical_difficulty_calibrated": false,
@@ -9,22 +9,28 @@
     "approach": "Balanced lecture coverage with researcher-linked interpretation, experimental design, application, and concise relational distinctions. Distractors use confounds, reversed relationships, overclaims, and competing explanations."
   },
   "prior_model_use": "Retain lecture/source alignment and transparent reporting. Do not transfer Exam 1 chapter weights or six sample-question similarities to a new exam without its guide.",
-  "question_count": 25,
+  "question_count": 100,
+  "lecture_pool_counts": {
+    "6": 50,
+    "9": 50
+  },
+  "cumulative_test_size": 100,
+  "cumulative_allocation": "Equal lecture quotas; a randomly assigned remainder keeps the total fixed.",
   "question_types": {
-    "application": 6,
-    "definition": 4,
-    "researcher": 8,
-    "design": 7
+    "application": 37,
+    "definition": 9,
+    "researcher": 29,
+    "design": 25
   },
   "stem_words": {
     "minimum": 7,
-    "maximum": 33
+    "maximum": 39
   },
   "option_words": {
     "minimum": 3,
     "maximum": 26
   },
-  "short_relationship_items": 4,
+  "short_relationship_items": 9,
   "items_with_researcher_year_cues": [
     {
       "id": 3003,
@@ -85,6 +91,128 @@
       "id": 3024,
       "years": [
         "1973"
+      ]
+    },
+    {
+      "id": 3054,
+      "years": [
+        "1960"
+      ]
+    },
+    {
+      "id": 3059,
+      "years": [
+        "1958",
+        "1959"
+      ]
+    },
+    {
+      "id": 3066,
+      "years": [
+        "1956"
+      ]
+    },
+    {
+      "id": 3069,
+      "years": [
+        "2004"
+      ]
+    },
+    {
+      "id": 3071,
+      "years": [
+        "1980"
+      ]
+    },
+    {
+      "id": 3072,
+      "years": [
+        "1973"
+      ]
+    },
+    {
+      "id": 3101,
+      "years": [
+        "1974"
+      ]
+    },
+    {
+      "id": 3103,
+      "years": [
+        "1974"
+      ]
+    },
+    {
+      "id": 3107,
+      "years": [
+        "1964"
+      ]
+    },
+    {
+      "id": 3110,
+      "years": [
+        "1975",
+        "1984"
+      ]
+    },
+    {
+      "id": 3111,
+      "years": [
+        "1980"
+      ]
+    },
+    {
+      "id": 3117,
+      "years": [
+        "1968"
+      ]
+    },
+    {
+      "id": 3119,
+      "years": [
+        "1968"
+      ]
+    },
+    {
+      "id": 3121,
+      "years": [
+        "1968"
+      ]
+    },
+    {
+      "id": 3125,
+      "years": [
+        "1971"
+      ]
+    },
+    {
+      "id": 3130,
+      "years": [
+        "2000"
+      ]
+    },
+    {
+      "id": 3132,
+      "years": [
+        "2000"
+      ]
+    },
+    {
+      "id": 3135,
+      "years": [
+        "2005"
+      ]
+    },
+    {
+      "id": 3138,
+      "years": [
+        "2005"
+      ]
+    },
+    {
+      "id": 3142,
+      "years": [
+        "2005"
       ]
     }
   ],
@@ -238,6 +366,456 @@
       "module": 6,
       "page": 47,
       "title": "Control processes and working memory"
+    },
+    {
+      "id": 3051,
+      "module": 6,
+      "page": 4,
+      "title": "Kinds of memory"
+    },
+    {
+      "id": 3052,
+      "module": 6,
+      "page": 11,
+      "title": "Icons and echoes"
+    },
+    {
+      "id": 3053,
+      "module": 6,
+      "page": 14,
+      "title": "Whole, partial, and delayed report"
+    },
+    {
+      "id": 3054,
+      "module": 6,
+      "page": 16,
+      "title": "Sperling's results"
+    },
+    {
+      "id": 3055,
+      "module": 6,
+      "page": 18,
+      "title": "Cue delay and recall"
+    },
+    {
+      "id": 3056,
+      "module": 6,
+      "page": 17,
+      "title": "Large capacity and fast decay"
+    },
+    {
+      "id": 3057,
+      "module": 6,
+      "page": 20,
+      "title": "Recoding and rehearsal"
+    },
+    {
+      "id": 3058,
+      "module": 6,
+      "page": 23,
+      "title": "Duration and capacity"
+    },
+    {
+      "id": 3059,
+      "module": 6,
+      "page": 24,
+      "title": "The Brown–Peterson procedure"
+    },
+    {
+      "id": 3060,
+      "module": 6,
+      "page": 29,
+      "title": "Delay and trial history"
+    },
+    {
+      "id": 3061,
+      "module": 6,
+      "page": 28,
+      "title": "Average performance"
+    },
+    {
+      "id": 3062,
+      "module": 6,
+      "page": 32,
+      "title": "Retroactive interference"
+    },
+    {
+      "id": 3063,
+      "module": 6,
+      "page": 33,
+      "title": "Proactive interference"
+    },
+    {
+      "id": 3064,
+      "module": 6,
+      "page": 31,
+      "title": "Interference theories"
+    },
+    {
+      "id": 3065,
+      "module": 6,
+      "page": 35,
+      "title": "Measuring the longest correct sequence"
+    },
+    {
+      "id": 3066,
+      "module": 6,
+      "page": 36,
+      "title": "Miller's capacity proposal"
+    },
+    {
+      "id": 3067,
+      "module": 6,
+      "page": 39,
+      "title": "The first display in change detection"
+    },
+    {
+      "id": 3068,
+      "module": 6,
+      "page": 42,
+      "title": "Set size and visual capacity"
+    },
+    {
+      "id": 3069,
+      "module": 6,
+      "page": 43,
+      "title": "Complexity and capacity"
+    },
+    {
+      "id": 3070,
+      "module": 6,
+      "page": 43,
+      "title": "Complexity and capacity"
+    },
+    {
+      "id": 3071,
+      "module": 6,
+      "page": 45,
+      "title": "Chunking"
+    },
+    {
+      "id": 3072,
+      "module": 6,
+      "page": 46,
+      "title": "Chess expertise and meaningful arrangements"
+    },
+    {
+      "id": 3073,
+      "module": 6,
+      "page": 46,
+      "title": "Chess expertise and meaningful arrangements"
+    },
+    {
+      "id": 3074,
+      "module": 6,
+      "page": 23,
+      "title": "Duration and capacity"
+    },
+    {
+      "id": 3075,
+      "module": 6,
+      "page": 47,
+      "title": "Control processes and working memory"
+    },
+    {
+      "id": 3101,
+      "module": 9,
+      "page": 2,
+      "title": "Working memory stores and manipulates information"
+    },
+    {
+      "id": 3102,
+      "module": 9,
+      "page": 3,
+      "title": "Mental multiplication combines storage with processing"
+    },
+    {
+      "id": 3103,
+      "module": 9,
+      "page": 4,
+      "title": "Short-term memory and working-memory models"
+    },
+    {
+      "id": 3104,
+      "module": 9,
+      "page": 5,
+      "title": "The loop, sketchpad, and executive have different jobs"
+    },
+    {
+      "id": 3105,
+      "module": 9,
+      "page": 5,
+      "title": "The loop, sketchpad, and executive have different jobs"
+    },
+    {
+      "id": 3106,
+      "module": 9,
+      "page": 6,
+      "title": "Working-memory components interact with long-term knowledge"
+    },
+    {
+      "id": 3107,
+      "module": 9,
+      "page": 8,
+      "title": "Conrad’s flashed letters are confused by sound"
+    },
+    {
+      "id": 3108,
+      "module": 9,
+      "page": 8,
+      "title": "Conrad’s flashed letters are confused by sound"
+    },
+    {
+      "id": 3109,
+      "module": 9,
+      "page": 9,
+      "title": "Visual letters can be recoded into sound"
+    },
+    {
+      "id": 3110,
+      "module": 9,
+      "page": 10,
+      "title": "Word length changes how much can be rehearsed"
+    },
+    {
+      "id": 3111,
+      "module": 9,
+      "page": 10,
+      "title": "Word length changes how much can be rehearsed"
+    },
+    {
+      "id": 3112,
+      "module": 9,
+      "page": 10,
+      "title": "Word length changes how much can be rehearsed"
+    },
+    {
+      "id": 3113,
+      "module": 9,
+      "page": 11,
+      "title": "Articulatory suppression disrupts verbal rehearsal"
+    },
+    {
+      "id": 3114,
+      "module": 9,
+      "page": 11,
+      "title": "Articulatory suppression disrupts verbal rehearsal"
+    },
+    {
+      "id": 3115,
+      "module": 9,
+      "page": 11,
+      "title": "Articulatory suppression disrupts verbal rehearsal"
+    },
+    {
+      "id": 3116,
+      "module": 9,
+      "page": 12,
+      "title": "The visuospatial sketchpad supports mental imagery"
+    },
+    {
+      "id": 3117,
+      "module": 9,
+      "page": 13,
+      "title": "Brooks’s sentence task is easier with pointing"
+    },
+    {
+      "id": 3118,
+      "module": 9,
+      "page": 13,
+      "title": "Brooks’s sentence task is easier with pointing"
+    },
+    {
+      "id": 3119,
+      "module": 9,
+      "page": 14,
+      "title": "Brooks’s F task is easier with speaking"
+    },
+    {
+      "id": 3120,
+      "module": 9,
+      "page": 14,
+      "title": "Brooks’s F task is easier with speaking"
+    },
+    {
+      "id": 3121,
+      "module": 9,
+      "page": 15,
+      "title": "Interference depends on the combination of tasks"
+    },
+    {
+      "id": 3122,
+      "module": 9,
+      "page": 15,
+      "title": "Interference depends on the combination of tasks"
+    },
+    {
+      "id": 3123,
+      "module": 9,
+      "page": 15,
+      "title": "Interference depends on the combination of tasks"
+    },
+    {
+      "id": 3124,
+      "module": 9,
+      "page": 15,
+      "title": "Interference depends on the combination of tasks"
+    },
+    {
+      "id": 3125,
+      "module": 9,
+      "page": 17,
+      "title": "Shepard and Metzler’s mental rotation"
+    },
+    {
+      "id": 3126,
+      "module": 9,
+      "page": 17,
+      "title": "Shepard and Metzler’s mental rotation"
+    },
+    {
+      "id": 3127,
+      "module": 9,
+      "page": 17,
+      "title": "Shepard and Metzler’s mental rotation"
+    },
+    {
+      "id": 3128,
+      "module": 9,
+      "page": 17,
+      "title": "Shepard and Metzler’s mental rotation"
+    },
+    {
+      "id": 3129,
+      "module": 9,
+      "page": 18,
+      "title": "Executive control directs the work of working memory"
+    },
+    {
+      "id": 3130,
+      "module": 9,
+      "page": 18,
+      "title": "Executive control directs the work of working memory"
+    },
+    {
+      "id": 3131,
+      "module": 9,
+      "page": 18,
+      "title": "Executive control directs the work of working memory"
+    },
+    {
+      "id": 3132,
+      "module": 9,
+      "page": 19,
+      "title": "The episodic buffer binds information into episodes"
+    },
+    {
+      "id": 3133,
+      "module": 9,
+      "page": 19,
+      "title": "The episodic buffer binds information into episodes"
+    },
+    {
+      "id": 3134,
+      "module": 9,
+      "page": 19,
+      "title": "The episodic buffer binds information into episodes"
+    },
+    {
+      "id": 3135,
+      "module": 9,
+      "page": 20,
+      "title": "Vogel’s task separates targets from distractors"
+    },
+    {
+      "id": 3136,
+      "module": 9,
+      "page": 20,
+      "title": "Vogel’s task separates targets from distractors"
+    },
+    {
+      "id": 3137,
+      "module": 9,
+      "page": 20,
+      "title": "Vogel’s task separates targets from distractors"
+    },
+    {
+      "id": 3138,
+      "module": 9,
+      "page": 21,
+      "title": "Retention activity tracks relevant items and distraction"
+    },
+    {
+      "id": 3139,
+      "module": 9,
+      "page": 21,
+      "title": "Retention activity tracks relevant items and distraction"
+    },
+    {
+      "id": 3140,
+      "module": 9,
+      "page": 21,
+      "title": "Retention activity tracks relevant items and distraction"
+    },
+    {
+      "id": 3141,
+      "module": 9,
+      "page": 21,
+      "title": "Retention activity tracks relevant items and distraction"
+    },
+    {
+      "id": 3142,
+      "module": 9,
+      "page": 22,
+      "title": "Filtering efficiency and working-memory capacity"
+    },
+    {
+      "id": 3143,
+      "module": 9,
+      "page": 22,
+      "title": "Filtering efficiency and working-memory capacity"
+    },
+    {
+      "id": 3144,
+      "module": 9,
+      "page": 7,
+      "title": "Three effects associated with the phonological loop"
+    },
+    {
+      "id": 3145,
+      "module": 9,
+      "page": 11,
+      "title": "Articulatory suppression disrupts verbal rehearsal"
+    },
+    {
+      "id": 3146,
+      "module": 9,
+      "page": 15,
+      "title": "Interference depends on the combination of tasks"
+    },
+    {
+      "id": 3147,
+      "module": 9,
+      "page": 19,
+      "title": "The episodic buffer binds information into episodes"
+    },
+    {
+      "id": 3148,
+      "module": 9,
+      "page": 21,
+      "title": "Retention activity tracks relevant items and distraction"
+    },
+    {
+      "id": 3149,
+      "module": 9,
+      "page": 22,
+      "title": "Filtering efficiency and working-memory capacity"
+    },
+    {
+      "id": 3150,
+      "module": 9,
+      "page": 18,
+      "title": "Executive control directs the work of working memory"
     }
   ],
   "limitations": [
