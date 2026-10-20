@@ -39,8 +39,16 @@ test('the executed model fits only the supplied exam/review evidence and reports
  for(const source of evidence.sourceFiles)assert.equal(sha(source.file),source.sha256);
 });
 
-test('the final release audit binds current editions and preserves older audited files',()=>{
+test('the Version 3 release audit binds its historical interface and preserves its content files',()=>{
  const report=read('authoring/v3-practice-v2-audit.json');assert.equal(report.status,'passed');assert.equal(report.scope.sourcePages,86);assert.equal(report.scope.newQuestions,200);
- for(const row of [...report.files,...report.preservation.oldFileBindings])assert.equal(sha(row.file),row.sha256,row.file);
+ // UI files evolve with newer editions; verify their exact released bytes
+ // at the recorded Version 3 commit rather than rewriting the historical audit.
+ const {execFileSync}=require('node:child_process');
+ for(const row of [...report.files,...report.preservation.oldFileBindings]){
+  const actual=['app.js','index.html','style.css'].includes(row.file)
+   ?crypto.createHash('sha256').update(execFileSync('git',['show','8334e0b:ling285/'+row.file],{cwd:root})).digest('hex')
+   :sha(row.file);
+  assert.equal(actual,row.sha256,row.file);
+ }
  const review=read(report.editorialReview);assert(review);
 });

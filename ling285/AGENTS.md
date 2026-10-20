@@ -64,3 +64,13 @@ answers remain attached to their original questions and practice version.
 Build the additional editions separately from data.json. When adding another
 lecture, extend the active practice edition as well as the lecture collection;
 a partial edition must not silently exclude new lectures from its test.
+
+## Transcript Version 4
+
+Version 4 uses the PSYC301 expanded teaching and LING406 slide-wording style.
+The user's latest length requirement is a median of 200–250 words across
+instructional slides, not a minimum for every page. Teach the source concepts
+in a few connected paragraphs using plain words. Give the space to mechanisms,
+source-supported distinctions, and reading the original visuals. Do not pad
+simple pages or repeat generic caveats to meet a count. Keep title, blank, and
+prompt-only pages unpadded. Preserve Versions 1–3 and both practice editions.

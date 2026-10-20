@@ -11,7 +11,7 @@ const safeURL = value => {
 const rich = value => esc(value).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 const unique = values => [...new Set(values)];
 const WORK = [ ['guide','What to know by the end'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['combined','Combined notes'], ['test','Current practice test'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
-const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null,sessions:{},practiceSessions:{},activeModule:'module2',practiceMode:'mixed',assessmentVersion:'v2',mcqSelections:{},mcqSubmitted:{},optionOrders:{},flags:{},transcriptVersion:'v3'});
+const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null,sessions:{},practiceSessions:{},activeModule:'module2',practiceMode:'mixed',assessmentVersion:'v2',mcqSelections:{},mcqSubmitted:{},optionOrders:{},flags:{},transcriptVersion:'v4'});
 let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections, moduleMap, practiceData=null,practiceLoadError='';
 const transcriptEditions=new Map(),transcriptErrors=new Map(),visualPresentations=new Map(),practiceQuestionIds=new Set();
 let storageAvailable = true, reader = null, lastReaderFocus = null, view = 'home', selected = '', saveTimeout, searchQuery = '';
@@ -95,7 +95,7 @@ function validateState(raw) {
   if(typeof raw.sideClosed==='boolean')clean.sideClosed=raw.sideClosed;
   if(moduleMap.has(raw.activeModule))clean.activeModule=raw.activeModule;
   if(['mixed','mcq','written'].includes(raw.practiceMode))clean.practiceMode=raw.practiceMode;
-  if(['v1','v2','v3'].includes(raw.transcriptVersion))clean.transcriptVersion=raw.transcriptVersion;
+  if(['v1','v2','v3','v4'].includes(raw.transcriptVersion))clean.transcriptVersion=raw.transcriptVersion;
   if(['v1','v2'].includes(raw.assessmentVersion))clean.assessmentVersion=raw.assessmentVersion;
   // Partition older module sessions by their original question IDs. Neither a
   // transcript choice nor a new practice edition can rebind a previous answer.
@@ -156,7 +156,7 @@ function go(next,collectionId,push=true,moduleId) {
   save();applyPreferences();render();window.scrollTo({top:0,behavior:'instant'});$('#content').focus({preventScroll:true});
 }
 
-function effectiveVersion() {return transcriptEditions.has(state.transcriptVersion)?state.transcriptVersion:state.transcriptVersion==='v3' && transcriptEditions.has('v2')?'v2':'v1';}
+function effectiveVersion() {return ['v4','v3','v2'].find(version=>Number(version.slice(1))<=Number(state.transcriptVersion.slice(1)) && transcriptEditions.has(version)) || 'v1';}
 function currentTranscript() {return transcriptEditions.get(effectiveVersion());}
 function sectionTitle(section) {return currentTranscript()?.sections.get(section.id)?.title || section.title;}
 function teachingParagraphs(section) {return currentTranscript()?.sections.get(section.id)?.teaching ?? (section.teaching || []);}
@@ -166,7 +166,7 @@ function collectionTitle(c) {
 }
 function versionedSections(items) {return items.some(section=>VERSIONED_COLLECTIONS.has(section.collection));}
 function transcriptSelector() {
-  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version">${[['v1','Version 1 · Original'],['v2','Version 2 · Conceptual'],['v3','Version 3 · Clear explanations']].map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${id!=='v1' && !transcriptEditions.has(id)?'disabled':''}>${esc(transcriptEditions.get(id)?.payload.label || label)}</option>`).join('')}</select>${state.transcriptVersion!==effectiveVersion()?`<small>${esc(state.transcriptVersion.toUpperCase())} unavailable · ${esc(effectiveVersion().toUpperCase())} shown</small>`:''}</label>`;
+  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version">${[['v1','Version 1 · Original'],['v2','Version 2 · Conceptual'],['v3','Version 3 · Clear explanations'],['v4','Version 4 · Teaching notes']].map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${id!=='v1' && !transcriptEditions.has(id)?'disabled':''}>${esc(transcriptEditions.get(id)?.payload.label || label)}</option>`).join('')}</select>${state.transcriptVersion!==effectiveVersion()?`<small>${esc(state.transcriptVersion.toUpperCase())} unavailable · ${esc(effectiveVersion().toUpperCase())} shown</small>`:''}</label>`;
 }
 function transcriptNotice() {
   const active=reader?versionedSections(reader.items):view==='collection'?VERSIONED_COLLECTIONS.has(selected):['combined','core'].includes(view) && state.activeModule==='module2';
@@ -176,7 +176,7 @@ function transcriptNotice() {
   element.textContent=element.hidden?'':`Transcript Version ${state.transcriptVersion.slice(1)} could not be loaded. ${effectiveVersion()==='v1'?'The original Version 1 teaching remains available.':'Version '+effectiveVersion().slice(1)+' teaching is shown.'} ${error}`;
 }
 function changeTranscriptVersion(value) {
-  if(!['v1','v2','v3'].includes(value) || (value!=='v1' && !transcriptEditions.has(value)))return;
+  if(!['v1','v2','v3','v4'].includes(value) || (value!=='v1' && !transcriptEditions.has(value)))return;
   const scroll=window.scrollY,stage=document.querySelector(reader?.expanded?'#readerDialog .reader-stage':'.inline-reader .reader-stage'),stageScroll=stage?.scrollTop || 0;
   stopSpeech();pauseMedia();state.transcriptVersion=value;save();
   if(reader)renderReader();else render();
@@ -755,7 +755,7 @@ async function init() {
       if(isMCQ(q) && (!Array.isArray(q.options) || q.options.length!==4 || new Set(q.options.map(o=>o.id)).size!==4 || !q.options.some(o=>o.id===q.correctOption)))throw new Error('A multiple-choice question has an invalid answer map.');
       questionMap.set(q.id,q);
     });
-    allSections=[...sections.values()];await Promise.all([loadConceptualTranscripts('v2'),loadConceptualTranscripts('v3'),loadPracticeEdition()]);loadState();readRoute();applyPreferences();render();tick();
+    allSections=[...sections.values()];await Promise.all([loadConceptualTranscripts('v2'),loadConceptualTranscripts('v3'),loadConceptualTranscripts('v4'),loadPracticeEdition()]);loadState();readRoute();applyPreferences();render();tick();
   } catch(error) {
     $('#saveStatus').textContent='Course could not be opened';
     $('#content').innerHTML='<span class="eyebrow">LING285 Study Studio</span><h1>The course could not load.</h1><p>'+esc(error.message)+'</p><p>Reload this page when the course data is available. A static web server is required when opening a local copy.</p><a href="./">Reload studio</a>';
