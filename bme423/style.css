@@ -34,3 +34,45 @@ nav button[data-view=minimum]{color:var(--red);font-weight:750}@media print{.not
 .worked-equation-chain{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;column-gap:.32em;row-gap:12px}.equation-link{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;padding:3px 0;vertical-align:baseline}
 
 .step-general-equations{margin:0 0 18px}.step-general-equations>.math-display:first-child{margin-top:0}
+
+/* Blue-to-green screen colors; study layouts and printed sheets stay unchanged. */
+@media screen{
+ :root{
+  --bg:#eaf2fb;--paper:#fcfefd;--ink:#203a49;--muted:#4b656d;
+  --line:#b6cccf;--accent:#1d5e73;--soft:#e1efed;--violet:#285e89;
+  --page-middle:#edf7f3;--page-end:#e3f2e8;
+  --nav-start:#e4edfb;--nav-end:#ddefe5;
+  --panel-end:#f0f7f4;--header-start:#edf5fd;--header-end:#e5f4ec;
+  --hero-start:#d7e9fb;--hero-end:#d3ecde;
+  --primary-start:#245c87;--primary-end:#1e6b56;--primary-ink:#fff;
+  --primary-line:#255f70;--primary-hover-start:#194c76;--primary-hover-end:#175b47;
+ }
+ html[data-mode=dark]{
+  --bg:#0b1d32;--paper:#142e3d;--ink:#edf7f4;--muted:#b5cccf;
+  --line:#527d80;--accent:#a8e0ca;--soft:#224844;--violet:#9ed5f6;
+  --page-middle:#0d2d35;--page-end:#0b2e23;
+  --nav-start:#112d4b;--nav-end:#103d2c;
+  --panel-end:#14352c;--header-start:#16384f;--header-end:#163e30;
+  --hero-start:#1b4162;--hero-end:#19513a;
+  --primary-start:#93c8ef;--primary-end:#9ddcc0;--primary-ink:#0c2b32;
+  --primary-line:#89c8c3;--primary-hover-start:#b0dcfa;--primary-hover-end:#b4ead0;
+ }
+ body{background:linear-gradient(135deg,var(--bg),var(--page-middle) 52%,var(--page-end));background-attachment:fixed}
+ aside{background:linear-gradient(160deg,var(--nav-start),var(--nav-end))}
+ .hero{background:linear-gradient(120deg,var(--hero-start),var(--hero-end))}
+ .timer,.viewer-controls{background:linear-gradient(115deg,var(--header-start),var(--header-end))}
+ .card,details.lesson,details.problem,.step,.viewer-pair .transcript{
+  background:linear-gradient(135deg,var(--paper),var(--panel-end));
+ }
+ .primary,html[data-mode=dark] .primary{
+  background:linear-gradient(115deg,var(--primary-start),var(--primary-end));
+  color:var(--primary-ink);border-color:var(--primary-line);
+ }
+ .primary:hover,html[data-mode=dark] .primary:hover{
+  background:linear-gradient(115deg,var(--primary-hover-start),var(--primary-hover-end));
+  color:var(--primary-ink);
+ }
+ .expanded{background:linear-gradient(135deg,#071827,#0b2d20)}
+ .expanded .caption{color:#c0d9dc}
+ .swatch.dark{background:#0b2231}
+}
