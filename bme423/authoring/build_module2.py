@@ -114,7 +114,13 @@ def finish_case(c):
   c['lookup']=dict(path=TABLES['t']['path'],page=2,row='infinity',column=column,value=TABLES['t']['rows']['infinity'][column],approximation=False,normalReference=True)
  for item in c['steps']:
   if 'cutoff' in item['title'].lower() or c['topic']=='twoProportions' and item['title']=='Calculate the difference and margin':item['tableLookup']=c['lookup']
- c['module']=17;c['tolerance']=max(0.002,c['values']['se']*0.0005+0.0005) if c['topic'] in ('oneMean','twoMeans') else 0.002;c['answerName']='Lower endpoint';c['answer']=c['values']['lower'];cases.append(c);return c
+ c['module']=17;c['tolerance']=max(0.002,c['values']['se']*0.0005+0.0005) if c['topic'] in ('oneMean','twoMeans') else 0.002
+ if c['lookup'].get('approximation'):
+  value=TABLES['t']['rows']['200'][c['lookup']['column']]
+  alternative=c['values']['difference']-value*c['values']['se']
+  c['alternativeTableAnswer']=dict(row='200',critical=value,lower=alternative)
+  c['tolerance']=max(c['tolerance'],abs(alternative-c['values']['lower'])+0.0005)
+ c['answerName']='Lower endpoint';c['answer']=c['values']['lower'];cases.append(c);return c
 
 def mean_case(id,title,context,n,x,sd,confidence=.95,source=None,reference=None):
  alpha=1-confidence;df=n-1;se=sd/math.sqrt(n);lookup=table_t(df,alpha);tc=lookup['value'];margin=tc*se;lo=x-margin;hi=x+margin

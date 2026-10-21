@@ -1433,7 +1433,12 @@ const BME_MODULE_II={
         "reject": true
       },
       "module": 17,
-      "tolerance": 0.002,
+      "tolerance": 0.003013773821076537,
+      "alternativeTableAnswer": {
+        "row": "200",
+        "critical": 1.972,
+        "lower": 2.886903168736444
+      },
       "answerName": "Lower endpoint",
       "answer": 2.8894169425575207
     },
