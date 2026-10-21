@@ -13,3 +13,10 @@ rule. Preserve uploaded originals and existing archived PDF editions.
 
 Retain the original 279aa10 lecture layout and explanations. Hypothesis notation
 and the accompanying verbal explanations remain visible as in that version.
+
+Hypothesis wording Version 2 changes only the verbal sentences directly below
+existing hypothesis notation. Keep Version 1 available through the independent
+Hypothesis wording selector. Keep the notation, teaching prose, original source
+visuals, questions, worked mathematics, table guidance and progress unchanged.
+Use complete, specific population/outcome/group/reference sentences, match the
+alternative's direction, and retain separate null and alternative labels.

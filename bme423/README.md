@@ -208,3 +208,30 @@ The 279aa10 interface and teaching renderer are restored. The later structure ov
 `table-guidance.js` adds the original-PDF link at each current cutoff step and a Statistical tables page with all eight originals. The 95% heart-rate example uses row 9 / two-tail 0.05 / 2.262; the urine example uses row 18 / 0.05 / 2.101. Normal proportion intervals use the infinity row, including the printed 2.5758 at two-tail 0.01. Unavailable entries are identified rather than labeled as printed values. Earlier archived PDF editions and computed reference solutions remain unchanged.
 
 Run `python bme423/tests/verify_module2.py`, `node bme423/tests/module2.cjs`, and `node bme423/tests/table-guidance.cjs`. These check printed cutoff provenance against standard distribution rounding, recompute every current example with its displayed cutoff, verify synchronized grading and quiz values, preserve the 55 archived assets, inspect all eight original links, and confirm restoration of the original lecture structure and visible equations.
+
+## Switchable hypothesis wording · Versions 1 and 2
+
+The independent **Hypothesis wording** selector appears in the regular header
+and expanded visual/transcript controls. Version 1 retains the existing verbal
+sentences. Version 2 supplies complete contextual null and alternative sentences
+under the same original notation. The new edition is the initial selection;
+subsequent selections persist in the existing saved state.
+
+`hypothesis-wording-v2-data.js` contains sentence fields only. Its authoring
+builder uses the existing problem frames and source contexts for both earlier
+question editions, neuroscience examples, lectures, source examples and Session
+17. Formula references without a named clinical example retain their general
+population comparison instead of inventing an outcome. A generic pairwise
+formula refers to the selected pair, rather than asserting that every pair in
+the family differs.
+
+`hypothesis-wording.js` changes only the dedicated verbal translations. Toggling
+updates those nodes in place, preserving open slide sections, notes, quiz order,
+current quiz answers, and all equations. It does not rewrite the lecture prose,
+remove notation, add duplicate explanations, regenerate PDFs, or alter grading.
+Rebuild with `python bme423/authoring/build_hypothesis_wording_v2.py`.
+Run `node bme423/tests/hypothesis-wording-v2.cjs` against a repository server on
+port 8920 (or set `BME_STUDIO_URL`). The test compares the original renderer,
+Version 1 and Version 2 across all render paths with only hypothesis sentence
+nodes masked, and verifies both selectors, persistence, source wording,
+notation, numeric work, quiz state, notes and mobile themes.
