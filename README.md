@@ -18,7 +18,7 @@ Open the study app: https://jordanxxlopez.github.io/COGNITIVEPROCESSES/
 - A 100-question combined practice exam, plus 60- and 65-question options.
 - Separate 25–30-question lecture quizzes.
 - 208 questions with answer explanations, source links, and retry queues.
-- Exam 1 retains its original question scope; Module 2 has a separate balanced 100-question cumulative test and retry queue for Short-Term Memory and Working Memory.
+- Exam 1 retains its original question scope; Module 2 has a separate balanced 100-question cumulative test and retry queue for Short-Term Memory, Working Memory, and Problem Solving and Reasoning.
 
 The 100-question set covers Chapters 1, 3, 4, and 11 and the five assigned articles. Its topic allocation and sampling weights come from the supplied exam guide and six example questions. `exam_model.py` contains the study-priority model; `model-report.json` records its output. This is not a validated forecast of unseen professor questions or a model trained on USC exam archives.
 
@@ -26,13 +26,13 @@ The `index.html` can also be downloaded and opened in a browser; study text and 
 
 ## Growing Module 2 workspace
 
-Module 2 includes a lecture-based study guide, core review, experiments, combined notes, current practice test, lecture quizzes, missed-question queue, and source coverage. It covers collection 09 · Short-Term Memory and collection 10 · Working Memory. The latter preserves all 22 original PDF pages and provides 20 instructional slide transcripts. Original note and read-progress keys remain intact.
+Module 2 includes a lecture-based study guide, core review, experiments, combined notes, current practice test, lecture quizzes, missed-question queue, and source coverage. It covers collection 09 · Short-Term Memory, collection 10 · Working Memory, and collection 11 · Problem Solving and Reasoning. The latter preserves all 22 original PDF pages and provides 20 instructional slide transcripts. Original note and read-progress keys remain intact.
 
 When new lectures are supplied, add their sections with stable IDs and update `module2-data.js`: extend `modules` and `collections`, add topic/experiment groups with an explicit `module` and source `pages`, and append source-based questions to the lecture pools. Keep existing question IDs and contents intact. Increase `revision` and update the Module 2 script version queries in both HTML entry points, retain IDs for unchanged questions, and assign new IDs to changed questions. Retire a question only when its contents actually change; otherwise preserve it and its retry history. Topic `progressKey` values keep guide checkboxes stable across coverage revisions. Do not automatically generate coverage for lectures that have not been supplied. The site does not ingest new lectures automatically.
 
 Run `node --test tests/*.test.cjs` after updating coverage.
 
-The current Module 2 pools contain 50 questions per supplied lecture. The original 25 Short-Term Memory questions remain unchanged, with 25 added items; Working Memory adds 50. The 100-question current test draws equal quotas from all current lectures. With an uneven division, extra questions are assigned to randomly selected lectures (three lectures give 34/33/33); quiz order and validated nonrepeating answer positions are then shuffled. Publishing additional lectures requires enough source-based questions in every pool to meet the new quotas. Lecture quizzes contain up to 50 questions, while the quick cumulative set balances 10 questions across lectures. The question edition includes researcher-linked interpretations, experiment-design items, applications, and concise concept distinctions. Explanations address distractors as well as the correct answer. `python3 module2-practice-model.py --output module2-practice-report.json` reproduces the source and format audit; it does not estimate instructor question probabilities. Changed questions receive new IDs so old responses are not assigned to different questions.
+The current Module 2 pools contain 50 questions per supplied lecture. The original 25 Short-Term Memory questions remain unchanged, with 25 added items; Working Memory and Problem Solving and Reasoning each add 50. The 100-question current test draws equal quotas from all current lectures. With an uneven division, extra questions are assigned to randomly selected lectures (three lectures give 34/33/33); quiz order and validated nonrepeating answer positions are then shuffled. Publishing additional lectures requires enough source-based questions in every pool to meet the new quotas. Lecture quizzes contain up to 50 questions, while the quick cumulative set balances 10 questions across lectures. The question edition includes researcher-linked interpretations, experiment-design items, applications, and concise concept distinctions. Explanations address distractors as well as the correct answer. `python3 module2-practice-model.py --output module2-practice-report.json` reproduces the source and format audit; it does not estimate instructor question probabilities. Changed questions receive new IDs so old responses are not assigned to different questions.
 
 Lecture 09 · Short-Term Memory appears under Module 2 → Individual collections, below the workspace tools. Core review uses an explicit 20-section selection in `module2-data.js` → `coreReview`; guide inclusion or a practice question does not automatically earn a marker. The remaining 26 Short-Term Memory sections provide supporting explanations; the same markers appear in notes, combined notes, source review, and visual/transcript views. Core review also has a continuous expanded viewer using the original personal-note and read-progress keys. Supply `lectureNumbers` entries for future lectures.
 
@@ -54,3 +54,31 @@ Verify the four-course interaction with:
 ```sh
 node --test tests/expanded-reader-timer.test.cjs
 ```
+
+## Collection 11 · Problem Solving and Reasoning
+
+The unchanged uploaded `CogPsych_Ch12_1 F26.pdf` is stored at
+`sources/CogPsych_Ch12_1_F26.pdf`. All 22 original pages are rendered under
+`media/problem-solving/`. The title page remains available as an original page,
+with 21 instructional sections following the actual source order. Their expanded
+teaching paragraphs explain the lecture’s terminology, puzzle materials, legal
+moves, experimental procedures, warmth results and representations directly.
+Visual-only tile-puzzle, search-tree and Tower of Hanoi pages have individual
+explanations. The chapter title is retained without inventing formal reasoning
+material absent from this supplied Part 1 lecture.
+
+Four study-guide groups, 16 selected core sections, seven experiment/demonstration
+groups and 50 source-linked questions extend all current workspace tools. The
+150-question Module 2 bank supplies the same 100-question current test with
+33/33/34 lecture quotas; the lecture receiving the extra question varies between
+attempts. Ten-question cumulative sets use 3/3/4, while lecture quizzes retain
+50 questions. No existing question or notes ID is replaced. Both index and share
+entry points use the same new collection and preserve their earlier content.
+
+`authoring/psyc301/build_problem_solving.py` reproducibly appends only this new
+collection, groups and questions. `authoring/psyc301/problem-solving-source.json`
+records the source checksum and extracted page text. The new tests preserve the
+entire earlier embedded course data, current earlier lecture/question contents,
+notes and progress; validate every new source anchor; check puzzle arithmetic;
+sample repeated balanced tests with nonrepeating adjacent answer positions; and
+exercise notes, quizzes, source links, expanded readers and both color modes.
