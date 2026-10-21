@@ -1,16 +1,15 @@
-# BME423 hypotheses
+# BME423 statistical tables
 
-For authored study problems that request hypotheses, label **Null hypothesis** and
-**Alternative hypothesis** separately and write each entirely in complete,
-specific sentences. Do not present a hypothesis as a mathematical statement.
-Name the relevant population, measured outcome, groups, reference value, or
-relationship using the information actually supplied by the question. Do not
-invent an unspecified population, outcome, or reference value. Distinguish
-population means, proportions, variances, associations, and distributions.
-Match a directional alternative to the direction explicitly requested. An
-observed sample difference or a treatment's stated purpose does not turn a
-two-sided question into a one-sided test. Supply separate contextual statements
-for each requested pairwise comparison.
+Use the supplied course tables for authored lookup walkthroughs. Identify the
+actual PDF, PDF page, row, column, tail convention, and printed value. A computed
+quantile is a verification reference, not a printed table entry. Match subsequent
+margins, bounds, comparisons, quiz choices, and grading to the displayed value.
 
-Calculation formulas and numerical work remain in rendered math. Preserve
-original uploaded sources and earlier PDF editions verbatim.
+The supplied t table uses combined two-tail alpha. Its infinity row provides
+Normal cutoffs. If a required row or column is absent, state the approximation or
+bracket using entries actually printed. Do not invent an exact row, column, or
+p value, and do not claim an unstated missing-row convention is the professor's
+rule. Preserve uploaded originals and existing archived PDF editions.
+
+Retain the original 279aa10 lecture layout and explanations. Hypothesis notation
+and the accompanying verbal explanations remain visible as in that version.

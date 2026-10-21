@@ -1,6 +1,6 @@
 // Source-aligned BME423 MODULE II. Existing MODULE I data is unchanged.
 const BME_MODULE_II={
-  "revision": "module-ii-session17-v1",
+  "revision": "module-ii-session17-table-first",
   "testSize": 100,
   "lectureQuizSize": 50,
   "modules": [
@@ -297,7 +297,7 @@ const BME_MODULE_II={
           "topic": "twoMeans",
           "paragraphs": [
             "A trial of 1,700 pre-diabetic participants compares placebo with a glucose-lowering drug. Each group has 850 participants. The placebo sample mean and SD are 112.4 and 4.7 mg/dL, while the drug mean and SD are 109.1 and 3.9 mg/dL.",
-            "Define the difference as placebo minus drug, giving an observed 3.3 mg/dL difference. The pooled variance is 18.65, the degrees of freedom are 1,698, and the standard error is approximately 0.209481 mg/dL. The positive 95% t cutoff is approximately 1.961362.",
+            "Define the difference as placebo minus drug, giving an observed 3.3 mg/dL difference. The pooled variance is 18.65, the degrees of freedom are 1,698, and the standard error is approximately 0.209481 mg/dL. The supplied table has no row for 1,698 degrees of freedom. The infinity row gives 1.9600 as a large-df approximation in the combined two-tail 0.05 column.",
             "The interval is approximately 2.889 to 3.711 mg/dL. Zero is outside the interval, so reject equal population means at the matching two-sided 0.05 level without separately calculating a t statistic. The positive direction supports lower population mean glucose in the drug group."
           ],
           "equations": [],
@@ -499,9 +499,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=10-1=9",
-            "\\alpha=1-0.95=0.05,\\quad t_{0.05}(9)=2.262157"
+            "\\alpha=1-0.95=0.05",
+            "t_{0.05}(9)=2.262"
           ],
-          "words": "Use the t-table row for 9 degrees of freedom and the total two-tail 0.05 column. On a TI-84, invT(0.975,9) returns the positive cutoff."
+          "words": "Open t_table.pdf, PDF page 1. Use row 9 and the combined two-tail 0.05 column. The printed cutoff is 2.262. Do not halve the column probability again.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 1,
+            "row": "9",
+            "column": "0.05",
+            "value": 2.262,
+            "actualDf": 9,
+            "approximation": false
+          }
         },
         {
           "title": "Calculate the margin of error",
@@ -509,7 +519,7 @@ const BME_MODULE_II={
             "M=t_c s_{\\bar x}"
           ],
           "work": [
-            "M=2.262157(2.84605)=6.438212"
+            "M=2.262(2.84605)=6.437765"
           ],
           "words": "The margin has the same measurement units as the sample mean."
         },
@@ -519,7 +529,7 @@ const BME_MODULE_II={
             "L=\\bar x-M"
           ],
           "work": [
-            "L=67-6.438212=60.56179"
+            "L=67-6.437765=60.56224"
           ],
           "words": "Subtract the margin from the sample mean."
         },
@@ -529,7 +539,7 @@ const BME_MODULE_II={
             "U=\\bar x+M"
           ],
           "work": [
-            "U=67+6.438212=73.43821"
+            "U=67+6.437765=73.43776"
           ],
           "words": "Add the same margin to the sample mean."
         },
@@ -539,13 +549,22 @@ const BME_MODULE_II={
             "L<\\mu<U"
           ],
           "work": [
-            "60.56179<\\mu<73.43821"
+            "60.56224<\\mu<73.43776"
           ],
           "words": "The 95% interval estimates the population mean in the original measurement units. It is not an interval containing this percentage of individual measurements."
         }
       ],
-      "conclusion": "The 95% confidence interval for the population mean is 60.56179 to 73.43821 beats/min.",
+      "conclusion": "The 95% confidence interval for the population mean is 60.56224 to 73.43776 beats/min.",
       "source": 10,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 1,
+        "row": "9",
+        "column": "0.05",
+        "value": 2.262,
+        "actualDf": 9,
+        "approximation": false
+      },
       "values": {
         "n": 10,
         "x": 67,
@@ -553,15 +572,15 @@ const BME_MODULE_II={
         "confidence": 0.95,
         "df": 9,
         "se": 2.846049894151541,
-        "critical": 2.262157162798205,
-        "margin": 6.438212153735981,
-        "lower": 60.56178784626402,
-        "upper": 73.43821215373598
+        "critical": 2.262,
+        "margin": 6.437764860570786,
+        "lower": 60.56223513942921,
+        "upper": 73.43776486057078
       },
       "module": 17,
       "tolerance": 0.002,
       "answerName": "Lower endpoint",
-      "answer": 60.56178784626402
+      "answer": 60.56223513942921
     },
     {
       "id": "ci-urine",
@@ -665,9 +684,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=10+10-2=18",
-            "\\alpha=1-0.95=0.05,\\quad t_{0.05}(18)=2.100922"
+            "\\alpha=1-0.95=0.05",
+            "t_{0.05}(18)=2.101"
           ],
-          "words": "The table uses total two-tail alpha. For an exact cutoff, TI-84 invT(0.975,18) uses the left cumulative area."
+          "words": "Open t_table.pdf, PDF page 1. Use row 18 and the combined two-tail 0.05 column. The printed cutoff is 2.101. Do not halve the column probability again.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 1,
+            "row": "18",
+            "column": "0.05",
+            "value": 2.101,
+            "actualDf": 18,
+            "approximation": false
+          }
         },
         {
           "title": "Calculate the margin",
@@ -675,7 +704,7 @@ const BME_MODULE_II={
             "M=t_c s_d"
           ],
           "work": [
-            "M=2.100922(89.86712)=188.8038"
+            "M=2.101(89.86712)=188.8108"
           ],
           "words": "Multiply the positive cutoff by the standard error of the difference."
         },
@@ -686,8 +715,8 @@ const BME_MODULE_II={
             "U=d+M"
           ],
           "work": [
-            "L=220-188.8038=31.19618",
-            "U=220+188.8038=408.8038"
+            "L=220-188.8108=31.18917",
+            "U=220+188.8108=408.8108"
           ],
           "words": "The bounds retain the diuretic minus placebo subtraction order."
         },
@@ -697,13 +726,22 @@ const BME_MODULE_II={
             "0\\notin[L,U]\\Rightarrow\\text{reject }H_0"
           ],
           "work": [
-            "[31.19618,408.8038]"
+            "[31.18917,408.8108]"
           ],
           "words": "Zero is outside the interval. Reject the equal-means null at the matching two-sided 0.05 level; no separate t statistic is required."
         }
       ],
-      "conclusion": "The 95% CI for diuretic minus placebo is 31.19618 to 408.8038 mL/day. The population means differ, with diuretic higher.",
+      "conclusion": "The 95% CI for diuretic minus placebo is 31.18917 to 408.8108 mL/day. The population means differ, with diuretic higher.",
       "source": 6,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 1,
+        "row": "18",
+        "column": "0.05",
+        "value": 2.101,
+        "actualDf": 18,
+        "approximation": false
+      },
       "values": {
         "n1": 10,
         "n2": 10,
@@ -715,17 +753,17 @@ const BME_MODULE_II={
         "df": 18,
         "variance": 40380.5,
         "se": 89.86712413335592,
-        "critical": 2.1009220402410382,
+        "critical": 2.101,
         "difference": 220,
-        "margin": 188.80382178484476,
-        "lower": 31.196178215155243,
-        "upper": 408.8038217848448,
+        "margin": 188.81082780418078,
+        "lower": 31.189172195819225,
+        "upper": 408.8108278041808,
         "reject": true
       },
       "module": 17,
-      "tolerance": 0.002,
+      "tolerance": 0.04543356206667796,
       "answerName": "Lower endpoint",
-      "answer": 31.196178215155243
+      "answer": 31.189172195819225
     },
     {
       "id": "ci-aspirin",
@@ -825,7 +863,16 @@ const BME_MODULE_II={
             "d=0.72-0.32=0.4",
             "M=1.96(0.15)=0.294"
           ],
-          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column. This reproduces the slide’s early-rounded arithmetic."
+          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column. This reproduces the slide’s early-rounded arithmetic.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate both endpoints",
@@ -871,6 +918,15 @@ const BME_MODULE_II={
         "lower": 0.10599999999999998,
         "upper": 0.694,
         "reject": true
+      },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "approximation": false,
+        "normalReference": true
       },
       "module": 17,
       "tolerance": 0.002,
@@ -975,7 +1031,16 @@ const BME_MODULE_II={
             "d=0.72-0.3157895=0.4042105",
             "M=1.96(0.151547)=0.2970322"
           ],
-          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column."
+          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate both endpoints",
@@ -1021,6 +1086,15 @@ const BME_MODULE_II={
         "lower": 0.10717831598954913,
         "upper": 0.7012427366420297,
         "reject": true
+      },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "approximation": false,
+        "normalReference": true
       },
       "module": 17,
       "tolerance": 0.002,
@@ -1098,7 +1172,16 @@ const BME_MODULE_II={
           "work": [
             "\\alpha=1-0.95=0.05,\\quad z_c=1.96"
           ],
-          "words": "Use the infinite-df row of the course two-tail t table. For 95% confidence, the positive cutoff is 1.96."
+          "words": "Use the infinite-df row of the course two-tail t table. For 95% confidence, the positive cutoff is 1.96.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate the margin",
@@ -1156,6 +1239,15 @@ const BME_MODULE_II={
         "lower": 0.31208311904733366,
         "upper": 0.3959168809526663,
         "reject": true
+      },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "approximation": false,
+        "normalReference": true
       },
       "module": 17,
       "tolerance": 0.002,
@@ -1264,9 +1356,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=850+850-2=1698",
-            "\\alpha=1-0.95=0.05,\\quad t_{0.05}(1698)=1.961362"
+            "\\alpha=1-0.95=0.05",
+            "t_{0.05}(1698)\\approx t_{0.05}(\\infty)=1.9600"
           ],
-          "words": "The table uses total two-tail alpha. For an exact cutoff, TI-84 invT(0.975,1698) uses the left cumulative area."
+          "words": "The supplied t table has no row for 1698 df. On PDF page 2, the infinity row and combined two-tail 0.05 column give 1.9600. This is a declared large-df Normal approximation, not an exact finite-df lookup. A conservative printed alternative is row 200, value 1.972; the uploaded lecture does not state a mandatory missing-row rule.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "actualDf": 1698,
+            "approximation": true
+          }
         },
         {
           "title": "Calculate the margin",
@@ -1274,7 +1376,7 @@ const BME_MODULE_II={
             "M=t_c s_d"
           ],
           "work": [
-            "M=1.961362(0.2094812)=0.4108684"
+            "M=1.96(0.2094812)=0.4105831"
           ],
           "words": "Multiply the positive cutoff by the standard error of the difference."
         },
@@ -1285,8 +1387,8 @@ const BME_MODULE_II={
             "U=d+M"
           ],
           "work": [
-            "L=3.3-0.4108684=2.889132",
-            "U=3.3+0.4108684=3.710868"
+            "L=3.3-0.4105831=2.889417",
+            "U=3.3+0.4105831=3.710583"
           ],
           "words": "The bounds retain the placebo minus drug subtraction order."
         },
@@ -1296,13 +1398,22 @@ const BME_MODULE_II={
             "0\\notin[L,U]\\Rightarrow\\text{reject }H_0"
           ],
           "work": [
-            "[2.889132,3.710868]"
+            "[2.889417,3.710583]"
           ],
           "words": "Zero is outside the interval. Reject the equal-means null at the matching two-sided 0.05 level; no separate t statistic is required."
         }
       ],
-      "conclusion": "The 95% CI for placebo minus drug is 2.889132 to 3.710868 mg/dL. The population means differ, with placebo higher.",
+      "conclusion": "The 95% CI for placebo minus drug is 2.889417 to 3.710583 mg/dL. The population means differ, with placebo higher.",
       "source": 17,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "actualDf": 1698,
+        "approximation": true
+      },
       "values": {
         "n1": 850,
         "n2": 850,
@@ -1314,17 +1425,17 @@ const BME_MODULE_II={
         "df": 1698,
         "variance": 18.65,
         "se": 0.20948115175637275,
-        "critical": 1.9613620613162466,
+        "critical": 1.96,
         "difference": 3.3000000000000114,
-        "margin": 0.4108683836157807,
-        "lower": 2.8891316163842307,
-        "upper": 3.710868383615792,
+        "margin": 0.4105830574424906,
+        "lower": 2.8894169425575207,
+        "upper": 3.710583057442502,
         "reject": true
       },
       "module": 17,
       "tolerance": 0.002,
       "answerName": "Lower endpoint",
-      "answer": 2.8891316163842307
+      "answer": 2.8894169425575207
     },
     {
       "id": "ci-heart-practice",
@@ -1380,9 +1491,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=16-1=15",
-            "\\alpha=1-0.95=0.05,\\quad t_{0.05}(15)=2.13145"
+            "\\alpha=1-0.95=0.05",
+            "t_{0.05}(15)=2.131"
           ],
-          "words": "Use the t-table row for 15 degrees of freedom and the total two-tail 0.05 column. On a TI-84, invT(0.975,15) returns the positive cutoff."
+          "words": "Open t_table.pdf, PDF page 1. Use row 15 and the combined two-tail 0.05 column. The printed cutoff is 2.131. Do not halve the column probability again.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 1,
+            "row": "15",
+            "column": "0.05",
+            "value": 2.131,
+            "actualDf": 15,
+            "approximation": false
+          }
         },
         {
           "title": "Calculate the margin of error",
@@ -1390,7 +1511,7 @@ const BME_MODULE_II={
             "M=t_c s_{\\bar x}"
           ],
           "work": [
-            "M=2.13145(2)=4.262899"
+            "M=2.131(2)=4.262"
           ],
           "words": "The margin has the same measurement units as the sample mean."
         },
@@ -1400,7 +1521,7 @@ const BME_MODULE_II={
             "L=\\bar x-M"
           ],
           "work": [
-            "L=72-4.262899=67.7371"
+            "L=72-4.262=67.738"
           ],
           "words": "Subtract the margin from the sample mean."
         },
@@ -1410,7 +1531,7 @@ const BME_MODULE_II={
             "U=\\bar x+M"
           ],
           "work": [
-            "U=72+4.262899=76.2629"
+            "U=72+4.262=76.262"
           ],
           "words": "Add the same margin to the sample mean."
         },
@@ -1420,13 +1541,22 @@ const BME_MODULE_II={
             "L<\\mu<U"
           ],
           "work": [
-            "67.7371<\\mu<76.2629"
+            "67.738<\\mu<76.262"
           ],
           "words": "The 95% interval estimates the population mean in the original measurement units. It is not an interval containing this percentage of individual measurements."
         }
       ],
-      "conclusion": "The 95% confidence interval for the population mean is 67.7371 to 76.2629 beats/min.",
+      "conclusion": "The 95% confidence interval for the population mean is 67.738 to 76.262 beats/min.",
       "source": null,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 1,
+        "row": "15",
+        "column": "0.05",
+        "value": 2.131,
+        "actualDf": 15,
+        "approximation": false
+      },
       "values": {
         "n": 16,
         "x": 72,
@@ -1434,15 +1564,15 @@ const BME_MODULE_II={
         "confidence": 0.95,
         "df": 15,
         "se": 2.0,
-        "critical": 2.131449545559776,
-        "margin": 4.262899091119552,
-        "lower": 67.73710090888045,
-        "upper": 76.26289909111955
+        "critical": 2.131,
+        "margin": 4.262,
+        "lower": 67.738,
+        "upper": 76.262
       },
       "module": 17,
       "tolerance": 0.002,
       "answerName": "Lower endpoint",
-      "answer": 67.73710090888045
+      "answer": 67.738
     },
     {
       "id": "ci-reaction",
@@ -1498,9 +1628,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=25-1=24",
-            "\\alpha=1-0.95=0.05,\\quad t_{0.05}(24)=2.063899"
+            "\\alpha=1-0.95=0.05",
+            "t_{0.05}(24)=2.064"
           ],
-          "words": "Use the t-table row for 24 degrees of freedom and the total two-tail 0.05 column. On a TI-84, invT(0.975,24) returns the positive cutoff."
+          "words": "Open t_table.pdf, PDF page 1. Use row 24 and the combined two-tail 0.05 column. The printed cutoff is 2.064. Do not halve the column probability again.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 1,
+            "row": "24",
+            "column": "0.05",
+            "value": 2.064,
+            "actualDf": 24,
+            "approximation": false
+          }
         },
         {
           "title": "Calculate the margin of error",
@@ -1508,7 +1648,7 @@ const BME_MODULE_II={
             "M=t_c s_{\\bar x}"
           ],
           "work": [
-            "M=2.063899(8)=16.51119"
+            "M=2.064(8)=16.512"
           ],
           "words": "The margin has the same measurement units as the sample mean."
         },
@@ -1518,7 +1658,7 @@ const BME_MODULE_II={
             "L=\\bar x-M"
           ],
           "work": [
-            "L=310-16.51119=293.4888"
+            "L=310-16.512=293.488"
           ],
           "words": "Subtract the margin from the sample mean."
         },
@@ -1528,7 +1668,7 @@ const BME_MODULE_II={
             "U=\\bar x+M"
           ],
           "work": [
-            "U=310+16.51119=326.5112"
+            "U=310+16.512=326.512"
           ],
           "words": "Add the same margin to the sample mean."
         },
@@ -1538,13 +1678,22 @@ const BME_MODULE_II={
             "L<\\mu<U"
           ],
           "work": [
-            "293.4888<\\mu<326.5112"
+            "293.488<\\mu<326.512"
           ],
           "words": "The 95% interval estimates the population mean in the original measurement units. It is not an interval containing this percentage of individual measurements."
         }
       ],
-      "conclusion": "The 95% confidence interval for the population mean is 293.4888 to 326.5112 ms.",
+      "conclusion": "The 95% confidence interval for the population mean is 293.488 to 326.512 ms.",
       "source": null,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 1,
+        "row": "24",
+        "column": "0.05",
+        "value": 2.064,
+        "actualDf": 24,
+        "approximation": false
+      },
       "values": {
         "n": 25,
         "x": 310,
@@ -1552,15 +1701,15 @@ const BME_MODULE_II={
         "confidence": 0.95,
         "df": 24,
         "se": 8.0,
-        "critical": 2.0638985616280245,
-        "margin": 16.511188493024196,
-        "lower": 293.4888115069758,
-        "upper": 326.5111884930242
+        "critical": 2.064,
+        "margin": 16.512,
+        "lower": 293.488,
+        "upper": 326.512
       },
       "module": 17,
-      "tolerance": 0.002,
+      "tolerance": 0.0045000000000000005,
       "answerName": "Lower endpoint",
-      "answer": 293.4888115069758
+      "answer": 293.488
     },
     {
       "id": "ci-pressure",
@@ -1616,9 +1765,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=12-1=11",
-            "\\alpha=1-0.95=0.05,\\quad t_{0.05}(11)=2.200985"
+            "\\alpha=1-0.95=0.05",
+            "t_{0.05}(11)=2.201"
           ],
-          "words": "Use the t-table row for 11 degrees of freedom and the total two-tail 0.05 column. On a TI-84, invT(0.975,11) returns the positive cutoff."
+          "words": "Open t_table.pdf, PDF page 1. Use row 11 and the combined two-tail 0.05 column. The printed cutoff is 2.201. Do not halve the column probability again.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 1,
+            "row": "11",
+            "column": "0.05",
+            "value": 2.201,
+            "actualDf": 11,
+            "approximation": false
+          }
         },
         {
           "title": "Calculate the margin of error",
@@ -1626,7 +1785,7 @@ const BME_MODULE_II={
             "M=t_c s_{\\bar x}"
           ],
           "work": [
-            "M=2.200985(3.464102)=7.624436"
+            "M=2.201(3.464102)=7.624488"
           ],
           "words": "The margin has the same measurement units as the sample mean."
         },
@@ -1636,7 +1795,7 @@ const BME_MODULE_II={
             "L=\\bar x-M"
           ],
           "work": [
-            "L=124-7.624436=116.3756"
+            "L=124-7.624488=116.3755"
           ],
           "words": "Subtract the margin from the sample mean."
         },
@@ -1646,7 +1805,7 @@ const BME_MODULE_II={
             "U=\\bar x+M"
           ],
           "work": [
-            "U=124+7.624436=131.6244"
+            "U=124+7.624488=131.6245"
           ],
           "words": "Add the same margin to the sample mean."
         },
@@ -1656,13 +1815,22 @@ const BME_MODULE_II={
             "L<\\mu<U"
           ],
           "work": [
-            "116.3756<\\mu<131.6244"
+            "116.3755<\\mu<131.6245"
           ],
           "words": "The 95% interval estimates the population mean in the original measurement units. It is not an interval containing this percentage of individual measurements."
         }
       ],
-      "conclusion": "The 95% confidence interval for the population mean is 116.3756 to 131.6244 mmHg.",
+      "conclusion": "The 95% confidence interval for the population mean is 116.3755 to 131.6245 mmHg.",
       "source": null,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 1,
+        "row": "11",
+        "column": "0.05",
+        "value": 2.201,
+        "actualDf": 11,
+        "approximation": false
+      },
       "values": {
         "n": 12,
         "x": 124,
@@ -1670,15 +1838,15 @@ const BME_MODULE_II={
         "confidence": 0.95,
         "df": 11,
         "se": 3.464101615137755,
-        "critical": 2.200985160091639,
-        "margin": 7.624436247967676,
-        "lower": 116.37556375203232,
-        "upper": 131.62443624796768
+        "critical": 2.201,
+        "margin": 7.624487654918199,
+        "lower": 116.3755123450818,
+        "upper": 131.6244876549182
       },
       "module": 17,
-      "tolerance": 0.002,
+      "tolerance": 0.0022320508075688774,
       "answerName": "Lower endpoint",
-      "answer": 116.37556375203232
+      "answer": 116.3755123450818
     },
     {
       "id": "ci-respiration",
@@ -1734,9 +1902,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=20-1=19",
-            "\\alpha=1-0.99=0.01,\\quad t_{0.01}(19)=2.860935"
+            "\\alpha=1-0.99=0.01",
+            "t_{0.01}(19)=2.861"
           ],
-          "words": "Use the t-table row for 19 degrees of freedom and the total two-tail 0.01 column. On a TI-84, invT(0.995,19) returns the positive cutoff."
+          "words": "Open t_table.pdf, PDF page 1. Use row 19 and the combined two-tail 0.01 column. The printed cutoff is 2.861. Do not halve the column probability again.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 1,
+            "row": "19",
+            "column": "0.01",
+            "value": 2.861,
+            "actualDf": 19,
+            "approximation": false
+          }
         },
         {
           "title": "Calculate the margin of error",
@@ -1744,7 +1922,7 @@ const BME_MODULE_II={
             "M=t_c s_{\\bar x}"
           ],
           "work": [
-            "M=2.860935(0.6708204)=1.919173"
+            "M=2.861(0.6708204)=1.919217"
           ],
           "words": "The margin has the same measurement units as the sample mean."
         },
@@ -1754,7 +1932,7 @@ const BME_MODULE_II={
             "L=\\bar x-M"
           ],
           "work": [
-            "L=16-1.919173=14.08083"
+            "L=16-1.919217=14.08078"
           ],
           "words": "Subtract the margin from the sample mean."
         },
@@ -1764,7 +1942,7 @@ const BME_MODULE_II={
             "U=\\bar x+M"
           ],
           "work": [
-            "U=16+1.919173=17.91917"
+            "U=16+1.919217=17.91922"
           ],
           "words": "Add the same margin to the sample mean."
         },
@@ -1774,13 +1952,22 @@ const BME_MODULE_II={
             "L<\\mu<U"
           ],
           "work": [
-            "14.08083<\\mu<17.91917"
+            "14.08078<\\mu<17.91922"
           ],
           "words": "The 99% interval estimates the population mean in the original measurement units. It is not an interval containing this percentage of individual measurements."
         }
       ],
-      "conclusion": "The 99% confidence interval for the population mean is 14.08083 to 17.91917 breaths/min.",
+      "conclusion": "The 99% confidence interval for the population mean is 14.08078 to 17.91922 breaths/min.",
       "source": null,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 1,
+        "row": "19",
+        "column": "0.01",
+        "value": 2.861,
+        "actualDf": 19,
+        "approximation": false
+      },
       "values": {
         "n": 20,
         "x": 16,
@@ -1788,15 +1975,15 @@ const BME_MODULE_II={
         "confidence": 0.99,
         "df": 19,
         "se": 0.6708203932499369,
-        "critical": 2.8609346064649794,
-        "margin": 1.919173277771191,
-        "lower": 14.080826722228808,
-        "upper": 17.91917327777119
+        "critical": 2.861,
+        "margin": 1.9192171450880697,
+        "lower": 14.08078285491193,
+        "upper": 17.91921714508807
       },
       "module": 17,
       "tolerance": 0.002,
       "answerName": "Lower endpoint",
-      "answer": 14.080826722228808
+      "answer": 14.08078285491193
     },
     {
       "id": "ci-neural",
@@ -1900,9 +2087,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=12+16-2=26",
-            "\\alpha=1-0.95=0.05,\\quad t_{0.05}(26)=2.055529"
+            "\\alpha=1-0.95=0.05",
+            "t_{0.05}(26)=2.056"
           ],
-          "words": "The table uses total two-tail alpha. For an exact cutoff, TI-84 invT(0.975,26) uses the left cumulative area."
+          "words": "Open t_table.pdf, PDF page 1. Use row 26 and the combined two-tail 0.05 column. The printed cutoff is 2.056. Do not halve the column probability again.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 1,
+            "row": "26",
+            "column": "0.05",
+            "value": 2.056,
+            "actualDf": 26,
+            "approximation": false
+          }
         },
         {
           "title": "Calculate the margin",
@@ -1910,7 +2107,7 @@ const BME_MODULE_II={
             "M=t_c s_d"
           ],
           "work": [
-            "M=2.055529(1.757995)=3.61361"
+            "M=2.056(1.757995)=3.614437"
           ],
           "words": "Multiply the positive cutoff by the standard error of the difference."
         },
@@ -1921,8 +2118,8 @@ const BME_MODULE_II={
             "U=d+M"
           ],
           "work": [
-            "L=3-3.61361=-0.6136096",
-            "U=3+3.61361=6.61361"
+            "L=3-3.614437=-0.6144368",
+            "U=3+3.614437=6.614437"
           ],
           "words": "The bounds retain the group1 minus group2 subtraction order."
         },
@@ -1932,13 +2129,22 @@ const BME_MODULE_II={
             "0\\in[L,U]\\Rightarrow\\text{do not reject }H_0"
           ],
           "work": [
-            "[-0.6136096,6.61361]"
+            "[-0.6144368,6.614437]"
           ],
           "words": "Zero is inside the interval. Do not reject the equal-means null at the matching two-sided 0.05 level; no separate t statistic is required."
         }
       ],
-      "conclusion": "The 95% CI for group1 minus group2 is -0.6136096 to 6.61361 score units. The interval includes equal population means, so the comparison does not reject equality.",
+      "conclusion": "The 95% CI for group1 minus group2 is -0.6144368 to 6.614437 score units. The interval includes equal population means, so the comparison does not reject equality.",
       "source": null,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 1,
+        "row": "26",
+        "column": "0.05",
+        "value": 2.056,
+        "actualDf": 26,
+        "approximation": false
+      },
       "values": {
         "n1": 12,
         "n2": 16,
@@ -1950,17 +2156,17 @@ const BME_MODULE_II={
         "df": 26,
         "variance": 21.192307692307693,
         "se": 1.7579945596602033,
-        "critical": 2.0555294386428735,
+        "critical": 2.056,
         "difference": 3,
-        "margin": 3.6136095703555635,
-        "lower": -0.6136095703555635,
-        "upper": 6.613609570355564,
+        "margin": 3.6144368146613783,
+        "lower": -0.6144368146613783,
+        "upper": 6.614436814661378,
         "reject": false
       },
       "module": 17,
       "tolerance": 0.002,
       "answerName": "Lower endpoint",
-      "answer": -0.6136095703555635
+      "answer": -0.6144368146613783
     },
     {
       "id": "ci-sleep",
@@ -2064,9 +2270,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=18+18-2=34",
-            "\\alpha=1-0.95=0.05,\\quad t_{0.05}(34)=2.032245"
+            "\\alpha=1-0.95=0.05",
+            "t_{0.05}(34)=2.032"
           ],
-          "words": "The table uses total two-tail alpha. For an exact cutoff, TI-84 invT(0.975,34) uses the left cumulative area."
+          "words": "Open t_table.pdf, PDF page 1. Use row 34 and the combined two-tail 0.05 column. The printed cutoff is 2.032. Do not halve the column probability again.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 1,
+            "row": "34",
+            "column": "0.05",
+            "value": 2.032,
+            "actualDf": 34,
+            "approximation": false
+          }
         },
         {
           "title": "Calculate the margin",
@@ -2074,7 +2290,7 @@ const BME_MODULE_II={
             "M=t_c s_d"
           ],
           "work": [
-            "M=2.032245(0.3836955)=0.779763"
+            "M=2.032(0.3836955)=0.7796692"
           ],
           "words": "Multiply the positive cutoff by the standard error of the difference."
         },
@@ -2085,8 +2301,8 @@ const BME_MODULE_II={
             "U=d+M"
           ],
           "work": [
-            "L=0.4-0.779763=-0.379763",
-            "U=0.4+0.779763=1.179763"
+            "L=0.4-0.7796692=-0.3796692",
+            "U=0.4+0.7796692=1.179669"
           ],
           "words": "The bounds retain the group1 minus group2 subtraction order."
         },
@@ -2096,13 +2312,22 @@ const BME_MODULE_II={
             "0\\in[L,U]\\Rightarrow\\text{do not reject }H_0"
           ],
           "work": [
-            "[-0.379763,1.179763]"
+            "[-0.3796692,1.179669]"
           ],
           "words": "Zero is inside the interval. Do not reject the equal-means null at the matching two-sided 0.05 level; no separate t statistic is required."
         }
       ],
-      "conclusion": "The 95% CI for group1 minus group2 is -0.379763 to 1.179763 hours. The interval includes equal population means, so the comparison does not reject equality.",
+      "conclusion": "The 95% CI for group1 minus group2 is -0.3796692 to 1.179669 hours. The interval includes equal population means, so the comparison does not reject equality.",
       "source": null,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 1,
+        "row": "34",
+        "column": "0.05",
+        "value": 2.032,
+        "actualDf": 34,
+        "approximation": false
+      },
       "values": {
         "n1": 18,
         "n2": 18,
@@ -2114,17 +2339,17 @@ const BME_MODULE_II={
         "df": 34,
         "variance": 1.325,
         "se": 0.38369548110737794,
-        "critical": 2.0322445093177186,
+        "critical": 2.032,
         "difference": 0.40000000000000036,
-        "margin": 0.7797630347304892,
-        "lower": -0.3797630347304889,
-        "upper": 1.1797630347304895,
+        "margin": 0.779669217610192,
+        "lower": -0.3796692176101917,
+        "upper": 1.1796692176101924,
         "reject": false
       },
       "module": 17,
       "tolerance": 0.002,
       "answerName": "Lower endpoint",
-      "answer": -0.3797630347304889
+      "answer": -0.3796692176101917
     },
     {
       "id": "ci-pain",
@@ -2228,9 +2453,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=20+24-2=42",
-            "\\alpha=1-0.95=0.05,\\quad t_{0.05}(42)=2.018082"
+            "\\alpha=1-0.95=0.05",
+            "t_{0.05}(42)=2.018"
           ],
-          "words": "The table uses total two-tail alpha. For an exact cutoff, TI-84 invT(0.975,42) uses the left cumulative area."
+          "words": "Open t_table.pdf, PDF page 1. Use row 42 and the combined two-tail 0.05 column. The printed cutoff is 2.018. Do not halve the column probability again.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 1,
+            "row": "42",
+            "column": "0.05",
+            "value": 2.018,
+            "actualDf": 42,
+            "approximation": false
+          }
         },
         {
           "title": "Calculate the margin",
@@ -2238,7 +2473,7 @@ const BME_MODULE_II={
             "M=t_c s_d"
           ],
           "work": [
-            "M=2.018082(0.4278175)=0.8633706"
+            "M=2.018(0.4278175)=0.8633356"
           ],
           "words": "Multiply the positive cutoff by the standard error of the difference."
         },
@@ -2249,8 +2484,8 @@ const BME_MODULE_II={
             "U=d+M"
           ],
           "work": [
-            "L=-1.1-0.8633706=-1.963371",
-            "U=-1.1+0.8633706=-0.2366294"
+            "L=-1.1-0.8633356=-1.963336",
+            "U=-1.1+0.8633356=-0.2366644"
           ],
           "words": "The bounds retain the group1 minus group2 subtraction order."
         },
@@ -2260,13 +2495,22 @@ const BME_MODULE_II={
             "0\\notin[L,U]\\Rightarrow\\text{reject }H_0"
           ],
           "work": [
-            "[-1.963371,-0.2366294]"
+            "[-1.963336,-0.2366644]"
           ],
           "words": "Zero is outside the interval. Reject the equal-means null at the matching two-sided 0.05 level; no separate t statistic is required."
         }
       ],
-      "conclusion": "The 95% CI for group1 minus group2 is -1.963371 to -0.2366294 score units. The population means differ, with group1 lower.",
+      "conclusion": "The 95% CI for group1 minus group2 is -1.963336 to -0.2366644 score units. The population means differ, with group1 lower.",
       "source": null,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 1,
+        "row": "42",
+        "column": "0.05",
+        "value": 2.018,
+        "actualDf": 42,
+        "approximation": false
+      },
       "values": {
         "n1": 20,
         "n2": 24,
@@ -2278,17 +2522,17 @@ const BME_MODULE_II={
         "df": 42,
         "variance": 1.9966666666666666,
         "se": 0.427817458477068,
-        "critical": 2.0180817028184443,
+        "critical": 2.018,
         "difference": -1.1,
-        "margin": 0.8633705850988604,
-        "lower": -1.9633705850988605,
-        "upper": -0.23662941490113965,
+        "margin": 0.8633356312067231,
+        "lower": -1.9633356312067232,
+        "upper": -0.236664368793277,
         "reject": true
       },
       "module": 17,
       "tolerance": 0.002,
       "answerName": "Lower endpoint",
-      "answer": -1.9633705850988605
+      "answer": -1.9633356312067232
     },
     {
       "id": "ci-latency",
@@ -2392,9 +2636,19 @@ const BME_MODULE_II={
           ],
           "work": [
             "\\nu=15+17-2=30",
-            "\\alpha=1-0.95=0.05,\\quad t_{0.05}(30)=2.042272"
+            "\\alpha=1-0.95=0.05",
+            "t_{0.05}(30)=2.042"
           ],
-          "words": "The table uses total two-tail alpha. For an exact cutoff, TI-84 invT(0.975,30) uses the left cumulative area."
+          "words": "Open t_table.pdf, PDF page 1. Use row 30 and the combined two-tail 0.05 column. The printed cutoff is 2.042. Do not halve the column probability again.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 1,
+            "row": "30",
+            "column": "0.05",
+            "value": 2.042,
+            "actualDf": 30,
+            "approximation": false
+          }
         },
         {
           "title": "Calculate the margin",
@@ -2402,7 +2656,7 @@ const BME_MODULE_II={
             "M=t_c s_d"
           ],
           "work": [
-            "M=2.042272(3.735574)=7.629059"
+            "M=2.042(3.735574)=7.628041"
           ],
           "words": "Multiply the positive cutoff by the standard error of the difference."
         },
@@ -2413,8 +2667,8 @@ const BME_MODULE_II={
             "U=d+M"
           ],
           "work": [
-            "L=-4-7.629059=-11.62906",
-            "U=-4+7.629059=3.629059"
+            "L=-4-7.628041=-11.62804",
+            "U=-4+7.628041=3.628041"
           ],
           "words": "The bounds retain the group1 minus group2 subtraction order."
         },
@@ -2424,13 +2678,22 @@ const BME_MODULE_II={
             "0\\in[L,U]\\Rightarrow\\text{do not reject }H_0"
           ],
           "work": [
-            "[-11.62906,3.629059]"
+            "[-11.62804,3.628041]"
           ],
           "words": "Zero is inside the interval. Do not reject the equal-means null at the matching two-sided 0.05 level; no separate t statistic is required."
         }
       ],
-      "conclusion": "The 95% CI for group1 minus group2 is -11.62906 to 3.629059 ms. The interval includes equal population means, so the comparison does not reject equality.",
+      "conclusion": "The 95% CI for group1 minus group2 is -11.62804 to 3.628041 ms. The interval includes equal population means, so the comparison does not reject equality.",
       "source": null,
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 1,
+        "row": "30",
+        "column": "0.05",
+        "value": 2.042,
+        "actualDf": 30,
+        "approximation": false
+      },
       "values": {
         "n1": 15,
         "n2": 17,
@@ -2442,17 +2705,17 @@ const BME_MODULE_II={
         "df": 30,
         "variance": 111.2,
         "se": 3.7355735575573354,
-        "critical": 2.0422724563012378,
+        "critical": 2.042,
         "difference": -4,
-        "margin": 7.629058985086573,
-        "lower": -11.629058985086573,
-        "upper": 3.629058985086573,
+        "margin": 7.628041204532078,
+        "lower": -11.628041204532078,
+        "upper": 3.628041204532078,
         "reject": false
       },
       "module": 17,
-      "tolerance": 0.002,
+      "tolerance": 0.0023677867787786676,
       "answerName": "Lower endpoint",
-      "answer": -11.629058985086573
+      "answer": -11.628041204532078
     },
     {
       "id": "ci-screen",
@@ -2523,9 +2786,18 @@ const BME_MODULE_II={
             "z_c=z_\\alpha"
           ],
           "work": [
-            "\\alpha=1-0.99=0.01,\\quad z_c=2.575829"
+            "\\alpha=1-0.99=0.01,\\quad z_c=2.5758"
           ],
-          "words": "Use the infinite-df row of the course two-tail t table. For 99% confidence, the positive cutoff is 2.575829."
+          "words": "Use the infinite-df row of the course two-tail t table. For 99% confidence, the positive cutoff is 2.5758.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.01",
+            "value": 2.5758,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate the margin",
@@ -2533,7 +2805,7 @@ const BME_MODULE_II={
             "M=z_c s_{\\hat p}"
           ],
           "work": [
-            "M=2.575829(0.02592296)=0.06677313"
+            "M=2.5758(0.02592296)=0.06677237"
           ],
           "words": "The margin is in proportion units. Multiply by 100 only when converting the final interpretation to percentage points."
         },
@@ -2543,7 +2815,7 @@ const BME_MODULE_II={
             "L=\\hat p-M"
           ],
           "work": [
-            "L=0.28-0.06677313=0.2132269"
+            "L=0.28-0.06677237=0.2132276"
           ],
           "words": "Subtract the margin from the observed proportion."
         },
@@ -2553,7 +2825,7 @@ const BME_MODULE_II={
             "U=\\hat p+M"
           ],
           "work": [
-            "U=0.28+0.06677313=0.3467731"
+            "U=0.28+0.06677237=0.3467724"
           ],
           "words": "Add the same margin to the observed proportion."
         },
@@ -2563,12 +2835,12 @@ const BME_MODULE_II={
             "p_0\\in[L,U]\\Rightarrow\\text{do not reject }H_0"
           ],
           "work": [
-            "0.2132269<p<0.3467731,\\quad p_0=0.25"
+            "0.2132276<p<0.3467724,\\quad p_0=0.25"
           ],
           "words": "Do not reject equality with 0.25 at the matching two-sided 0.01 level. The comparison is with the stated reference, not automatically with zero."
         }
       ],
-      "conclusion": "The 99% CI is 0.2132269 to 0.3467731, or 21.32% to 34.68%. The reference is included; the data do not reject that population proportion.",
+      "conclusion": "The 99% CI is 0.2132276 to 0.3467724, or 21.32% to 34.68%. The reference is included; the data do not reject that population proportion.",
       "source": null,
       "values": {
         "m": 84,
@@ -2578,16 +2850,25 @@ const BME_MODULE_II={
         "confidence": 0.99,
         "variance": 0.2016,
         "se": 0.02592296279363144,
-        "critical": 2.5758293035489004,
-        "margin": 0.06677312719864373,
-        "lower": 0.2132268728013563,
-        "upper": 0.3467731271986437,
+        "critical": 2.5758,
+        "margin": 0.06677236756383587,
+        "lower": 0.21322763243616416,
+        "upper": 0.3467723675638359,
         "reject": false
+      },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.01",
+        "value": 2.5758,
+        "approximation": false,
+        "normalReference": true
       },
       "module": 17,
       "tolerance": 0.002,
       "answerName": "Lower endpoint",
-      "answer": 0.2132268728013563
+      "answer": 0.21322763243616416
     },
     {
       "id": "ci-recall",
@@ -2660,7 +2941,16 @@ const BME_MODULE_II={
           "work": [
             "\\alpha=1-0.95=0.05,\\quad z_c=1.96"
           ],
-          "words": "Use the infinite-df row of the course two-tail t table. For 95% confidence, the positive cutoff is 1.96."
+          "words": "Use the infinite-df row of the course two-tail t table. For 95% confidence, the positive cutoff is 1.96.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate the margin",
@@ -2718,6 +3008,15 @@ const BME_MODULE_II={
         "lower": 0.5630867367407627,
         "upper": 0.6969132632592373,
         "reject": true
+      },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "approximation": false,
+        "normalReference": true
       },
       "module": 17,
       "tolerance": 0.002,
@@ -2795,7 +3094,16 @@ const BME_MODULE_II={
           "work": [
             "\\alpha=1-0.95=0.05,\\quad z_c=1.96"
           ],
-          "words": "Use the infinite-df row of the course two-tail t table. For 95% confidence, the positive cutoff is 1.96."
+          "words": "Use the infinite-df row of the course two-tail t table. For 95% confidence, the positive cutoff is 1.96.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate the margin",
@@ -2853,6 +3161,15 @@ const BME_MODULE_II={
         "lower": 0.24202241812562375,
         "upper": 0.3579775818743762,
         "reject": false
+      },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "approximation": false,
+        "normalReference": true
       },
       "module": 17,
       "tolerance": 0.002,
@@ -2930,7 +3247,16 @@ const BME_MODULE_II={
           "work": [
             "\\alpha=1-0.95=0.05,\\quad z_c=1.96"
           ],
-          "words": "Use the infinite-df row of the course two-tail t table. For 95% confidence, the positive cutoff is 1.96."
+          "words": "Use the infinite-df row of the course two-tail t table. For 95% confidence, the positive cutoff is 1.96.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate the margin",
@@ -2988,6 +3314,15 @@ const BME_MODULE_II={
         "lower": 0.3422005062788318,
         "upper": 0.4377994937211682,
         "reject": false
+      },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "approximation": false,
+        "normalReference": true
       },
       "module": 17,
       "tolerance": 0.002,
@@ -3092,7 +3427,16 @@ const BME_MODULE_II={
             "d=0.35-0.2=0.15",
             "M=1.96(0.06314665)=0.1237674"
           ],
-          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column."
+          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate both endpoints",
@@ -3138,6 +3482,15 @@ const BME_MODULE_II={
         "lower": 0.026232556784912098,
         "upper": 0.27376744321508784,
         "reject": true
+      },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "approximation": false,
+        "normalReference": true
       },
       "module": 17,
       "tolerance": 0.002,
@@ -3242,7 +3595,16 @@ const BME_MODULE_II={
             "d=0.15-0.1090909=0.04090909",
             "M=1.96(0.04445542)=0.08713263"
           ],
-          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column."
+          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate both endpoints",
@@ -3288,6 +3650,15 @@ const BME_MODULE_II={
         "lower": -0.046223537087888955,
         "upper": 0.12804171890607077,
         "reject": false
+      },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "approximation": false,
+        "normalReference": true
       },
       "module": 17,
       "tolerance": 0.002,
@@ -3392,7 +3763,16 @@ const BME_MODULE_II={
             "d=0.6-0.48=0.12",
             "M=1.96(0.06741999)=0.1321432"
           ],
-          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column."
+          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate both endpoints",
@@ -3438,6 +3818,15 @@ const BME_MODULE_II={
         "lower": -0.012143173042795469,
         "upper": 0.25214317304279543,
         "reject": false
+      },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "approximation": false,
+        "normalReference": true
       },
       "module": 17,
       "tolerance": 0.002,
@@ -3542,7 +3931,16 @@ const BME_MODULE_II={
             "d=0.6-0.6333333=-0.03333333",
             "M=1.96(0.05614136)=0.1100371"
           ],
-          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column."
+          "words": "Use the Normal cutoff 1.96 from the infinite-df row, total two-tail 0.05 column.",
+          "tableLookup": {
+            "path": "sources/tables/t_table.pdf",
+            "page": 2,
+            "row": "infinity",
+            "column": "0.05",
+            "value": 1.96,
+            "approximation": false,
+            "normalReference": true
+          }
         },
         {
           "title": "Calculate both endpoints",
@@ -3589,6 +3987,15 @@ const BME_MODULE_II={
         "upper": 0.07670372439756963,
         "reject": false
       },
+      "lookup": {
+        "path": "sources/tables/t_table.pdf",
+        "page": 2,
+        "row": "infinity",
+        "column": "0.05",
+        "value": 1.96,
+        "approximation": false,
+        "normalReference": true
+      },
       "module": 17,
       "tolerance": 0.002,
       "answerName": "Lower endpoint",
@@ -3602,17 +4009,17 @@ const BME_MODULE_II={
       "topic": "oneMean",
       "stem": "For the bme423 student heart rate study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(60.56179\\) beats/min",
-        "\\(64.42472\\) beats/min",
-        "\\(56.69886\\) beats/min",
-        "\\(68.28764\\) beats/min"
+        "\\(60.56224\\) beats/min",
+        "\\(64.42489\\) beats/min",
+        "\\(56.69958\\) beats/min",
+        "\\(68.28755\\) beats/min"
       ],
       "correct": 0,
-      "why": "The lower endpoint is 60.56179 beats/min. Subtract the margin from the sample mean.",
+      "why": "The lower endpoint is 60.56224 beats/min. Subtract the margin from the sample mean.",
       "case": "ci-heart",
       "equations": [
         "L=\\bar x-M",
-        "L=67-6.438212=60.56179"
+        "L=67-6.437765=60.56224"
       ]
     },
     {
@@ -3621,17 +4028,17 @@ const BME_MODULE_II={
       "topic": "oneMean",
       "stem": "For the bme423 student heart rate study, construct the requested 95% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(73.43821\\) beats/min",
-        "\\(77.30114\\) beats/min",
-        "\\(69.57528\\) beats/min",
-        "\\(81.16407\\) beats/min"
+        "\\(73.43776\\) beats/min",
+        "\\(77.30042\\) beats/min",
+        "\\(69.57511\\) beats/min",
+        "\\(81.16308\\) beats/min"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 73.43821 beats/min. Add the same margin to the sample mean.",
+      "why": "The upper endpoint is 73.43776 beats/min. Add the same margin to the sample mean.",
       "case": "ci-heart",
       "equations": [
         "U=\\bar x+M",
-        "U=67+6.438212=73.43821"
+        "U=67+6.437765=73.43776"
       ]
     },
     {
@@ -3641,9 +4048,9 @@ const BME_MODULE_II={
       "stem": "For the bme423 student heart rate study, construct the requested 95% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(2.84605\\) beats/min",
-        "\\(6.708977\\) beats/min",
-        "\\(-1.016877\\) beats/min",
-        "\\(10.5719\\) beats/min"
+        "\\(6.708709\\) beats/min",
+        "\\(-1.016609\\) beats/min",
+        "\\(10.57137\\) beats/min"
       ],
       "correct": 0,
       "why": "The standard error is 2.84605 beats/min. Divide the sample SD by the square root of sample size. Keep the standard error available for the margin calculation.",
@@ -3659,19 +4066,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the diuretic versus placebo urine production study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(31.19618\\) mL/day",
-        "\\(144.4785\\) mL/day",
-        "\\(-82.08611\\) mL/day",
-        "\\(257.7608\\) mL/day"
+        "\\(31.18917\\) mL/day",
+        "\\(144.4757\\) mL/day",
+        "\\(-82.09732\\) mL/day",
+        "\\(257.7622\\) mL/day"
       ],
       "correct": 0,
-      "why": "The lower endpoint is 31.19618 mL/day. The bounds retain the diuretic minus placebo subtraction order.",
+      "why": "The lower endpoint is 31.18917 mL/day. The bounds retain the diuretic minus placebo subtraction order.",
       "case": "ci-urine",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=220-188.8038=31.19618",
-        "U=220+188.8038=408.8038"
+        "L=220-188.8108=31.18917",
+        "U=220+188.8108=408.8108"
       ]
     },
     {
@@ -3680,19 +4087,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the diuretic versus placebo urine production study, construct the requested 95% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(408.8038\\) mL/day",
-        "\\(522.0861\\) mL/day",
-        "\\(295.5215\\) mL/day",
-        "\\(635.3684\\) mL/day"
+        "\\(408.8108\\) mL/day",
+        "\\(522.0973\\) mL/day",
+        "\\(295.5243\\) mL/day",
+        "\\(635.3838\\) mL/day"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 408.8038 mL/day. The bounds retain the diuretic minus placebo subtraction order.",
+      "why": "The upper endpoint is 408.8108 mL/day. The bounds retain the diuretic minus placebo subtraction order.",
       "case": "ci-urine",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=220-188.8038=31.19618",
-        "U=220+188.8038=408.8038"
+        "L=220-188.8108=31.18917",
+        "U=220+188.8108=408.8108"
       ]
     },
     {
@@ -3702,9 +4109,9 @@ const BME_MODULE_II={
       "stem": "For the diuretic versus placebo urine production study, construct the requested 95% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(89.86712\\) mL/day",
-        "\\(203.1494\\) mL/day",
-        "\\(-23.41517\\) mL/day",
-        "\\(316.4317\\) mL/day"
+        "\\(203.1536\\) mL/day",
+        "\\(-23.41937\\) mL/day",
+        "\\(316.4401\\) mL/day"
       ],
       "correct": 0,
       "why": "The standard error is 89.86712 mL/day. Add the two mean-variance contributions inside the root, then take the root. This restores the original measurement units.",
@@ -3900,19 +4307,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the session 17 glucose lecture exercise study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(2.889132\\) mg/dL",
-        "\\(3.135653\\) mg/dL",
-        "\\(2.642611\\) mg/dL",
-        "\\(3.382174\\) mg/dL"
+        "\\(2.889417\\) mg/dL",
+        "\\(3.135767\\) mg/dL",
+        "\\(2.643067\\) mg/dL",
+        "\\(3.382117\\) mg/dL"
       ],
       "correct": 0,
-      "why": "The lower endpoint is 2.889132 mg/dL. The bounds retain the placebo minus drug subtraction order.",
+      "why": "The lower endpoint is 2.889417 mg/dL. The bounds retain the placebo minus drug subtraction order.",
       "case": "ci-glucose",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=3.3-0.4108684=2.889132",
-        "U=3.3+0.4108684=3.710868"
+        "L=3.3-0.4105831=2.889417",
+        "U=3.3+0.4105831=3.710583"
       ]
     },
     {
@@ -3921,19 +4328,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the session 17 glucose lecture exercise study, construct the requested 95% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(3.710868\\) mg/dL",
-        "\\(3.957389\\) mg/dL",
-        "\\(3.464347\\) mg/dL",
-        "\\(4.20391\\) mg/dL"
+        "\\(3.710583\\) mg/dL",
+        "\\(3.956933\\) mg/dL",
+        "\\(3.464233\\) mg/dL",
+        "\\(4.203283\\) mg/dL"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 3.710868 mg/dL. The bounds retain the placebo minus drug subtraction order.",
+      "why": "The upper endpoint is 3.710583 mg/dL. The bounds retain the placebo minus drug subtraction order.",
       "case": "ci-glucose",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=3.3-0.4108684=2.889132",
-        "U=3.3+0.4108684=3.710868"
+        "L=3.3-0.4105831=2.889417",
+        "U=3.3+0.4105831=3.710583"
       ]
     },
     {
@@ -3943,9 +4350,9 @@ const BME_MODULE_II={
       "stem": "For the session 17 glucose lecture exercise study, construct the requested 95% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(0.2094812\\) mg/dL",
-        "\\(0.4560022\\) mg/dL",
-        "\\(-0.03703988\\) mg/dL",
-        "\\(0.7025232\\) mg/dL"
+        "\\(0.455831\\) mg/dL",
+        "\\(-0.03686868\\) mg/dL",
+        "\\(0.7021808\\) mg/dL"
       ],
       "correct": 0,
       "why": "The standard error is 0.2094812 mg/dL. Add the two mean-variance contributions inside the root, then take the root. This restores the original measurement units.",
@@ -3961,17 +4368,17 @@ const BME_MODULE_II={
       "topic": "oneMean",
       "stem": "For the resting heart rate in a student sample study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(67.7371\\) beats/min",
-        "\\(70.29484\\) beats/min",
-        "\\(65.17936\\) beats/min",
-        "\\(72.85258\\) beats/min"
+        "\\(67.738\\) beats/min",
+        "\\(70.2952\\) beats/min",
+        "\\(65.1808\\) beats/min",
+        "\\(72.8524\\) beats/min"
       ],
       "correct": 0,
-      "why": "The lower endpoint is 67.7371 beats/min. Subtract the margin from the sample mean.",
+      "why": "The lower endpoint is 67.738 beats/min. Subtract the margin from the sample mean.",
       "case": "ci-heart-practice",
       "equations": [
         "L=\\bar x-M",
-        "L=72-4.262899=67.7371"
+        "L=72-4.262=67.738"
       ]
     },
     {
@@ -3980,17 +4387,17 @@ const BME_MODULE_II={
       "topic": "oneMean",
       "stem": "For the resting heart rate in a student sample study, construct the requested 95% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(76.2629\\) beats/min",
-        "\\(78.82064\\) beats/min",
-        "\\(73.70516\\) beats/min",
-        "\\(81.37838\\) beats/min"
+        "\\(76.262\\) beats/min",
+        "\\(78.8192\\) beats/min",
+        "\\(73.7048\\) beats/min",
+        "\\(81.3764\\) beats/min"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 76.2629 beats/min. Add the same margin to the sample mean.",
+      "why": "The upper endpoint is 76.262 beats/min. Add the same margin to the sample mean.",
       "case": "ci-heart-practice",
       "equations": [
         "U=\\bar x+M",
-        "U=72+4.262899=76.2629"
+        "U=72+4.262=76.262"
       ]
     },
     {
@@ -4000,9 +4407,9 @@ const BME_MODULE_II={
       "stem": "For the resting heart rate in a student sample study, construct the requested 95% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(2\\) beats/min",
-        "\\(4.557739\\) beats/min",
-        "\\(-0.5577395\\) beats/min",
-        "\\(7.115479\\) beats/min"
+        "\\(4.5572\\) beats/min",
+        "\\(-0.5572\\) beats/min",
+        "\\(7.1144\\) beats/min"
       ],
       "correct": 0,
       "why": "The standard error is 2 beats/min. Divide the sample SD by the square root of sample size. Keep the standard error available for the margin calculation.",
@@ -4018,17 +4425,17 @@ const BME_MODULE_II={
       "topic": "oneMean",
       "stem": "For the reaction time in a laboratory sample study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(293.4888\\) ms",
-        "\\(303.3955\\) ms",
-        "\\(283.5821\\) ms",
-        "\\(313.3022\\) ms"
+        "\\(293.488\\) ms",
+        "\\(303.3952\\) ms",
+        "\\(283.5808\\) ms",
+        "\\(313.3024\\) ms"
       ],
       "correct": 0,
-      "why": "The lower endpoint is 293.4888 ms. Subtract the margin from the sample mean.",
+      "why": "The lower endpoint is 293.488 ms. Subtract the margin from the sample mean.",
       "case": "ci-reaction",
       "equations": [
         "L=\\bar x-M",
-        "L=310-16.51119=293.4888"
+        "L=310-16.512=293.488"
       ]
     },
     {
@@ -4037,17 +4444,17 @@ const BME_MODULE_II={
       "topic": "oneMean",
       "stem": "For the reaction time in a laboratory sample study, construct the requested 95% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(326.5112\\) ms",
-        "\\(336.4179\\) ms",
-        "\\(316.6045\\) ms",
-        "\\(346.3246\\) ms"
+        "\\(326.512\\) ms",
+        "\\(336.4192\\) ms",
+        "\\(316.6048\\) ms",
+        "\\(346.3264\\) ms"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 326.5112 ms. Add the same margin to the sample mean.",
+      "why": "The upper endpoint is 326.512 ms. Add the same margin to the sample mean.",
       "case": "ci-reaction",
       "equations": [
         "U=\\bar x+M",
-        "U=310+16.51119=326.5112"
+        "U=310+16.512=326.512"
       ]
     },
     {
@@ -4057,9 +4464,9 @@ const BME_MODULE_II={
       "stem": "For the reaction time in a laboratory sample study, construct the requested 95% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(8\\) ms",
-        "\\(17.90671\\) ms",
-        "\\(-1.906713\\) ms",
-        "\\(27.81343\\) ms"
+        "\\(17.9072\\) ms",
+        "\\(-1.9072\\) ms",
+        "\\(27.8144\\) ms"
       ],
       "correct": 0,
       "why": "The standard error is 8 ms. Divide the sample SD by the square root of sample size. Keep the standard error available for the margin calculation.",
@@ -4075,17 +4482,17 @@ const BME_MODULE_II={
       "topic": "oneMean",
       "stem": "For the systolic pressure in a clinic sample study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(116.3756\\) mmHg",
+        "\\(116.3755\\) mmHg",
         "\\(120.9502\\) mmHg",
-        "\\(111.8009\\) mmHg",
+        "\\(111.8008\\) mmHg",
         "\\(125.5249\\) mmHg"
       ],
       "correct": 0,
-      "why": "The lower endpoint is 116.3756 mmHg. Subtract the margin from the sample mean.",
+      "why": "The lower endpoint is 116.3755 mmHg. Subtract the margin from the sample mean.",
       "case": "ci-pressure",
       "equations": [
         "L=\\bar x-M",
-        "L=124-7.624436=116.3756"
+        "L=124-7.624488=116.3755"
       ]
     },
     {
@@ -4094,17 +4501,17 @@ const BME_MODULE_II={
       "topic": "oneMean",
       "stem": "For the systolic pressure in a clinic sample study, construct the requested 95% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(131.6244\\) mmHg",
-        "\\(136.1991\\) mmHg",
+        "\\(131.6245\\) mmHg",
+        "\\(136.1992\\) mmHg",
         "\\(127.0498\\) mmHg",
-        "\\(140.7738\\) mmHg"
+        "\\(140.7739\\) mmHg"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 131.6244 mmHg. Add the same margin to the sample mean.",
+      "why": "The upper endpoint is 131.6245 mmHg. Add the same margin to the sample mean.",
       "case": "ci-pressure",
       "equations": [
         "U=\\bar x+M",
-        "U=124+7.624436=131.6244"
+        "U=124+7.624488=131.6245"
       ]
     },
     {
@@ -4114,9 +4521,9 @@ const BME_MODULE_II={
       "stem": "For the systolic pressure in a clinic sample study, construct the requested 95% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(3.464102\\) mmHg",
-        "\\(8.038763\\) mmHg",
-        "\\(-1.11056\\) mmHg",
-        "\\(12.61343\\) mmHg"
+        "\\(8.038794\\) mmHg",
+        "\\(-1.110591\\) mmHg",
+        "\\(12.61349\\) mmHg"
       ],
       "correct": 0,
       "why": "The standard error is 3.464102 mmHg. Divide the sample SD by the square root of sample size. Keep the standard error available for the margin calculation.",
@@ -4132,17 +4539,17 @@ const BME_MODULE_II={
       "topic": "oneMean",
       "stem": "For the respiration rate after quiet rest study, construct the requested 99% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(14.08083\\) breaths/min",
-        "\\(15.23233\\) breaths/min",
-        "\\(12.92932\\) breaths/min",
-        "\\(16.38383\\) breaths/min"
+        "\\(14.08078\\) breaths/min",
+        "\\(15.23231\\) breaths/min",
+        "\\(12.92925\\) breaths/min",
+        "\\(16.38384\\) breaths/min"
       ],
       "correct": 0,
-      "why": "The lower endpoint is 14.08083 breaths/min. Subtract the margin from the sample mean.",
+      "why": "The lower endpoint is 14.08078 breaths/min. Subtract the margin from the sample mean.",
       "case": "ci-respiration",
       "equations": [
         "L=\\bar x-M",
-        "L=16-1.919173=14.08083"
+        "L=16-1.919217=14.08078"
       ]
     },
     {
@@ -4151,17 +4558,17 @@ const BME_MODULE_II={
       "topic": "oneMean",
       "stem": "For the respiration rate after quiet rest study, construct the requested 99% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(17.91917\\) breaths/min",
-        "\\(19.07068\\) breaths/min",
-        "\\(16.76767\\) breaths/min",
-        "\\(20.22218\\) breaths/min"
+        "\\(17.91922\\) breaths/min",
+        "\\(19.07075\\) breaths/min",
+        "\\(16.76769\\) breaths/min",
+        "\\(20.22228\\) breaths/min"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 17.91917 breaths/min. Add the same margin to the sample mean.",
+      "why": "The upper endpoint is 17.91922 breaths/min. Add the same margin to the sample mean.",
       "case": "ci-respiration",
       "equations": [
         "U=\\bar x+M",
-        "U=16+1.919173=17.91917"
+        "U=16+1.919217=17.91922"
       ]
     },
     {
@@ -4171,9 +4578,9 @@ const BME_MODULE_II={
       "stem": "For the respiration rate after quiet rest study, construct the requested 99% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(0.6708204\\) breaths/min",
-        "\\(1.822324\\) breaths/min",
-        "\\(-0.4806836\\) breaths/min",
-        "\\(2.973828\\) breaths/min"
+        "\\(1.822351\\) breaths/min",
+        "\\(-0.4807099\\) breaths/min",
+        "\\(2.973881\\) breaths/min"
       ],
       "correct": 0,
       "why": "The standard error is 0.6708204 breaths/min. Divide the sample SD by the square root of sample size. Keep the standard error available for the margin calculation.",
@@ -4189,19 +4596,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the neural response under two conditions study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(-0.6136096\\) score units",
-        "\\(1.554556\\) score units",
-        "\\(-2.781775\\) score units",
-        "\\(3.722722\\) score units"
+        "\\(-0.6144368\\) score units",
+        "\\(1.554225\\) score units",
+        "\\(-2.783099\\) score units",
+        "\\(3.722887\\) score units"
       ],
       "correct": 0,
-      "why": "The lower endpoint is -0.6136096 score units. The bounds retain the group1 minus group2 subtraction order.",
+      "why": "The lower endpoint is -0.6144368 score units. The bounds retain the group1 minus group2 subtraction order.",
       "case": "ci-neural",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=3-3.61361=-0.6136096",
-        "U=3+3.61361=6.61361"
+        "L=3-3.614437=-0.6144368",
+        "U=3+3.614437=6.614437"
       ]
     },
     {
@@ -4210,19 +4617,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the neural response under two conditions study, construct the requested 95% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(6.61361\\) score units",
-        "\\(8.781775\\) score units",
-        "\\(4.445444\\) score units",
-        "\\(10.94994\\) score units"
+        "\\(6.614437\\) score units",
+        "\\(8.783099\\) score units",
+        "\\(4.445775\\) score units",
+        "\\(10.95176\\) score units"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 6.61361 score units. The bounds retain the group1 minus group2 subtraction order.",
+      "why": "The upper endpoint is 6.614437 score units. The bounds retain the group1 minus group2 subtraction order.",
       "case": "ci-neural",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=3-3.61361=-0.6136096",
-        "U=3+3.61361=6.61361"
+        "L=3-3.614437=-0.6144368",
+        "U=3+3.614437=6.614437"
       ]
     },
     {
@@ -4232,9 +4639,9 @@ const BME_MODULE_II={
       "stem": "For the neural response under two conditions study, construct the requested 95% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(1.757995\\) score units",
-        "\\(3.92616\\) score units",
-        "\\(-0.4101712\\) score units",
-        "\\(6.094326\\) score units"
+        "\\(3.926657\\) score units",
+        "\\(-0.4106675\\) score units",
+        "\\(6.095319\\) score units"
       ],
       "correct": 0,
       "why": "The standard error is 1.757995 score units. Add the two mean-variance contributions inside the root, then take the root. This restores the original measurement units.",
@@ -4250,19 +4657,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the sleep duration in two treatment groups study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(-0.379763\\) hours",
-        "\\(0.08809479\\) hours",
-        "\\(-0.8476209\\) hours",
-        "\\(0.5559526\\) hours"
+        "\\(-0.3796692\\) hours",
+        "\\(0.08813231\\) hours",
+        "\\(-0.8474707\\) hours",
+        "\\(0.5559338\\) hours"
       ],
       "correct": 0,
-      "why": "The lower endpoint is -0.379763 hours. The bounds retain the group1 minus group2 subtraction order.",
+      "why": "The lower endpoint is -0.3796692 hours. The bounds retain the group1 minus group2 subtraction order.",
       "case": "ci-sleep",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=0.4-0.779763=-0.379763",
-        "U=0.4+0.779763=1.179763"
+        "L=0.4-0.7796692=-0.3796692",
+        "U=0.4+0.7796692=1.179669"
       ]
     },
     {
@@ -4271,19 +4678,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the sleep duration in two treatment groups study, construct the requested 95% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(1.179763\\) hours",
-        "\\(1.647621\\) hours",
-        "\\(0.7119052\\) hours",
-        "\\(2.115479\\) hours"
+        "\\(1.179669\\) hours",
+        "\\(1.647471\\) hours",
+        "\\(0.7118677\\) hours",
+        "\\(2.115272\\) hours"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 1.179763 hours. The bounds retain the group1 minus group2 subtraction order.",
+      "why": "The upper endpoint is 1.179669 hours. The bounds retain the group1 minus group2 subtraction order.",
       "case": "ci-sleep",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=0.4-0.779763=-0.379763",
-        "U=0.4+0.779763=1.179763"
+        "L=0.4-0.7796692=-0.3796692",
+        "U=0.4+0.7796692=1.179669"
       ]
     },
     {
@@ -4293,9 +4700,9 @@ const BME_MODULE_II={
       "stem": "For the sleep duration in two treatment groups study, construct the requested 95% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(0.3836955\\) hours",
-        "\\(0.8515533\\) hours",
-        "\\(-0.08416234\\) hours",
-        "\\(1.319411\\) hours"
+        "\\(0.851497\\) hours",
+        "\\(-0.08410605\\) hours",
+        "\\(1.319299\\) hours"
       ],
       "correct": 0,
       "why": "The standard error is 0.3836955 hours. Add the two mean-variance contributions inside the root, then take the root. This restores the original measurement units.",
@@ -4311,19 +4718,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the pain scores after intervention versus control study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(-1.963371\\) score units",
-        "\\(-1.445348\\) score units",
-        "\\(-2.481393\\) score units",
-        "\\(-0.9273259\\) score units"
+        "\\(-1.963336\\) score units",
+        "\\(-1.445334\\) score units",
+        "\\(-2.481337\\) score units",
+        "\\(-0.9273329\\) score units"
       ],
       "correct": 0,
-      "why": "The lower endpoint is -1.963371 score units. The bounds retain the group1 minus group2 subtraction order.",
+      "why": "The lower endpoint is -1.963336 score units. The bounds retain the group1 minus group2 subtraction order.",
       "case": "ci-pain",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=-1.1-0.8633706=-1.963371",
-        "U=-1.1+0.8633706=-0.2366294"
+        "L=-1.1-0.8633356=-1.963336",
+        "U=-1.1+0.8633356=-0.2366644"
       ]
     },
     {
@@ -4332,19 +4739,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the pain scores after intervention versus control study, construct the requested 95% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(-0.2366294\\) score units",
-        "\\(0.2813929\\) score units",
-        "\\(-0.7546518\\) score units",
-        "\\(0.7994153\\) score units"
+        "\\(-0.2366644\\) score units",
+        "\\(0.281337\\) score units",
+        "\\(-0.7546657\\) score units",
+        "\\(0.7993384\\) score units"
       ],
       "correct": 0,
-      "why": "The upper endpoint is -0.2366294 score units. The bounds retain the group1 minus group2 subtraction order.",
+      "why": "The upper endpoint is -0.2366644 score units. The bounds retain the group1 minus group2 subtraction order.",
       "case": "ci-pain",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=-1.1-0.8633706=-1.963371",
-        "U=-1.1+0.8633706=-0.2366294"
+        "L=-1.1-0.8633356=-1.963336",
+        "U=-1.1+0.8633356=-0.2366644"
       ]
     },
     {
@@ -4354,9 +4761,9 @@ const BME_MODULE_II={
       "stem": "For the pain scores after intervention versus control study, construct the requested 95% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(0.4278175\\) score units",
-        "\\(0.9458398\\) score units",
-        "\\(-0.09020489\\) score units",
-        "\\(1.463862\\) score units"
+        "\\(0.9458188\\) score units",
+        "\\(-0.09018392\\) score units",
+        "\\(1.46382\\) score units"
       ],
       "correct": 0,
       "why": "The standard error is 0.4278175 score units. Add the two mean-variance contributions inside the root, then take the root. This restores the original measurement units.",
@@ -4372,19 +4779,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the evoked-response latency in two groups study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(-11.62906\\) ms",
-        "\\(-7.051624\\) ms",
-        "\\(-16.20649\\) ms",
-        "\\(-2.474188\\) ms"
+        "\\(-11.62804\\) ms",
+        "\\(-7.051216\\) ms",
+        "\\(-16.20487\\) ms",
+        "\\(-2.474392\\) ms"
       ],
       "correct": 0,
-      "why": "The lower endpoint is -11.62906 ms. The bounds retain the group1 minus group2 subtraction order.",
+      "why": "The lower endpoint is -11.62804 ms. The bounds retain the group1 minus group2 subtraction order.",
       "case": "ci-latency",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=-4-7.629059=-11.62906",
-        "U=-4+7.629059=3.629059"
+        "L=-4-7.628041=-11.62804",
+        "U=-4+7.628041=3.628041"
       ]
     },
     {
@@ -4393,19 +4800,19 @@ const BME_MODULE_II={
       "topic": "twoMeans",
       "stem": "For the evoked-response latency in two groups study, construct the requested 95% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(3.629059\\) ms",
-        "\\(8.206494\\) ms",
-        "\\(-0.9483764\\) ms",
-        "\\(12.78393\\) ms"
+        "\\(3.628041\\) ms",
+        "\\(8.204866\\) ms",
+        "\\(-0.9487835\\) ms",
+        "\\(12.78169\\) ms"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 3.629059 ms. The bounds retain the group1 minus group2 subtraction order.",
+      "why": "The upper endpoint is 3.628041 ms. The bounds retain the group1 minus group2 subtraction order.",
       "case": "ci-latency",
       "equations": [
         "L=d-M",
         "U=d+M",
-        "L=-4-7.629059=-11.62906",
-        "U=-4+7.629059=3.629059"
+        "L=-4-7.628041=-11.62804",
+        "U=-4+7.628041=3.628041"
       ]
     },
     {
@@ -4415,9 +4822,9 @@ const BME_MODULE_II={
       "stem": "For the evoked-response latency in two groups study, construct the requested 95% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(3.735574\\) ms",
-        "\\(8.313009\\) ms",
-        "\\(-0.8418618\\) ms",
-        "\\(12.89044\\) ms"
+        "\\(8.312398\\) ms",
+        "\\(-0.8412512\\) ms",
+        "\\(12.88922\\) ms"
       ],
       "correct": 0,
       "why": "The standard error is 3.735574 ms. Add the two mean-variance contributions inside the root, then take the root. This restores the original measurement units.",
@@ -4433,17 +4840,17 @@ const BME_MODULE_II={
       "topic": "oneProportion",
       "stem": "For the positive screening responses study, construct the requested 99% interval using the stated course method. What is its lower endpoint?",
       "options": [
-        "\\(0.2132269\\) proportion",
-        "\\(0.2532907\\) proportion",
-        "\\(0.173163\\) proportion",
-        "\\(0.2933546\\) proportion"
+        "\\(0.2132276\\) proportion",
+        "\\(0.2532911\\) proportion",
+        "\\(0.1731642\\) proportion",
+        "\\(0.2933545\\) proportion"
       ],
       "correct": 0,
-      "why": "The lower endpoint is 0.2132269 proportion. Subtract the margin from the observed proportion.",
+      "why": "The lower endpoint is 0.2132276 proportion. Subtract the margin from the observed proportion.",
       "case": "ci-screen",
       "equations": [
         "L=\\hat p-M",
-        "L=0.28-0.06677313=0.2132269"
+        "L=0.28-0.06677237=0.2132276"
       ]
     },
     {
@@ -4452,17 +4859,17 @@ const BME_MODULE_II={
       "topic": "oneProportion",
       "stem": "For the positive screening responses study, construct the requested 99% interval using the stated course method. What is its upper endpoint?",
       "options": [
-        "\\(0.3467731\\) proportion",
-        "\\(0.386837\\) proportion",
-        "\\(0.3067093\\) proportion",
-        "\\(0.4269009\\) proportion"
+        "\\(0.3467724\\) proportion",
+        "\\(0.3868358\\) proportion",
+        "\\(0.3067089\\) proportion",
+        "\\(0.4268992\\) proportion"
       ],
       "correct": 0,
-      "why": "The upper endpoint is 0.3467731 proportion. Add the same margin to the observed proportion.",
+      "why": "The upper endpoint is 0.3467724 proportion. Add the same margin to the observed proportion.",
       "case": "ci-screen",
       "equations": [
         "U=\\hat p+M",
-        "U=0.28+0.06677313=0.3467731"
+        "U=0.28+0.06677237=0.3467724"
       ]
     },
     {
@@ -4472,9 +4879,9 @@ const BME_MODULE_II={
       "stem": "For the positive screening responses study, construct the requested 99% interval using the stated course method. What is its standard error?",
       "options": [
         "\\(0.02592296\\) proportion",
-        "\\(0.06598684\\) proportion",
-        "\\(-0.01414091\\) proportion",
-        "\\(0.1060507\\) proportion"
+        "\\(0.06598638\\) proportion",
+        "\\(-0.01414046\\) proportion",
+        "\\(0.1060498\\) proportion"
       ],
       "correct": 0,
       "why": "The standard error is 0.02592296 proportion. Subtract the proportion from one, multiply, divide by sample size, then take the square root.",
@@ -5051,15 +5458,15 @@ const BME_MODULE_II={
       "id": "m2-s17-q076",
       "module": 17,
       "topic": "meaning",
-      "stem": "For a 95% two-sided confidence interval, which left cumulative area gives the positive t cutoff?",
+      "stem": "The supplied t table labels a critical-value column 0.05. What does that heading represent?",
       "options": [
-        "0.975",
-        "0.95",
-        "0.025",
-        "0.05"
+        "The sum of the probabilities in the two tails.",
+        "The probability in the right tail alone.",
+        "The central confidence probability.",
+        "The sample mean divided by its standard error."
       ],
       "correct": 0,
-      "why": "The total excluded area is 0.05, with 0.025 in each tail. The positive cutoff therefore has 0.975 to its left.",
+      "why": "The table is explicitly two-tailed. The 0.05 heading combines 0.025 in each tail, so the central confidence is 95%.",
       "case": null,
       "equations": []
     },
@@ -5586,6 +5993,10 @@ const BME_MODULE_II={
   },
   "sourceNotes": [
     {
+      "page": 17,
+      "text": "Worked CI cutoffs are read from the supplied two-tailed t table. For 1698 df, the infinity row gives 1.9600 as an explicitly labeled large-df approximation; the finite conservative row 200 gives 1.972. No mandatory missing-row convention is specified in the uploaded lecture or review."
+    },
+    {
       "page": 12,
       "text": "The aspirin slide uses rounded group proportions and SE. Its 0.11–0.69 result is reproduced with that rounding; a second worked example retains the original fractions. The subtraction is an absolute probability difference, expressed in percentage points, not a relative-risk reduction."
     },
@@ -5610,6 +6021,38 @@ const BME_MODULE_II={
     {
       "path": "sources/session17.pptx",
       "sha256": "8410e270d107e43cbc195898c6e21f1df8b48b253c93f5b1d01297c71def5b7a"
+    },
+    {
+      "path": "sources/tables/t_table.pdf",
+      "sha256": "5d4f04d50dd88767f865061a545c81c1a9d52bd36c305de7150b73392f56a54f"
+    },
+    {
+      "path": "sources/tables/F_table.pdf",
+      "sha256": "32f731da2d7bb4e6576395a5271d4303f06cd84037b8793769dc52c07f983bb7"
+    },
+    {
+      "path": "sources/tables/z_table_NormalDist.pdf",
+      "sha256": "7233a69e4133358f1f034abe4f447ef6e0e0c0dd958ef44a16daf1b75ad50770"
+    },
+    {
+      "path": "sources/tables/Chi_Squared_Table1.pdf",
+      "sha256": "de022efffa1fc7de5d98b8b9e5e4bdd05df63fc7dce77487040c11c9cab3f04e"
+    },
+    {
+      "path": "sources/tables/Chi_Squared_Table2.pdf",
+      "sha256": "00b66e7e550f7e938bd49e976ee4f730bddb5b9b71b9b9f5330a77d0352f3acd"
+    },
+    {
+      "path": "sources/tables/Friedman_ChiSquared_Table.pdf",
+      "sha256": "50bea319f1256c61b325e26dfb5d7abe536e5501f8f65424ccef0f80290925ce"
+    },
+    {
+      "path": "sources/tables/WilcoxonW_Table.pdf",
+      "sha256": "d5c6524e1d25014c51046bfe247a7ba77b72d125ef510aedc9a7e59ad944db19"
+    },
+    {
+      "path": "sources/tables/MannWhitney_RankSumT_Table.pdf",
+      "sha256": "2271f705ddbbacefefa6e50faed443f46b37aabd58e29637087c610339cb8533"
     }
   ]
 };

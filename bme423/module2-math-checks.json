@@ -1,6 +1,10 @@
 {
-  "method": "Independent SciPy distribution cutoffs and direct formula checks; 95% z calculations use the lecture-rounded 1.96.",
+  "method": "Displayed cutoffs are manually transcribed printed-table values; SciPy independently checks their rounding or declared large-df approximation. All margins, endpoints, quiz answers and grading use the displayed table values.",
   "source_conventions": [
+    {
+      "page": 17,
+      "text": "Worked CI cutoffs are read from the supplied two-tailed t table. For 1698 df, the infinity row gives 1.9600 as an explicitly labeled large-df approximation; the finite conservative row 200 gives 1.972. No mandatory missing-row convention is specified in the uploaded lecture or review."
+    },
     {
       "page": 12,
       "text": "The aspirin slide uses rounded group proportions and SE. Its 0.11\u20130.69 result is reproduced with that rounding; a second worked example retains the original fractions. The subtraction is an absolute probability difference, expressed in percentage points, not a relative-risk reduction."
@@ -25,10 +29,10 @@
         "confidence": 0.95,
         "df": 9,
         "se": 2.846049894151541,
-        "critical": 2.262157162798205,
-        "margin": 6.438212153735981,
-        "lower": 60.56178784626402,
-        "upper": 73.43821215373598
+        "critical": 2.262,
+        "margin": 6.437764860570786,
+        "lower": 60.56223513942921,
+        "upper": 73.43776486057078
       }
     },
     {
@@ -45,11 +49,11 @@
         "df": 18,
         "variance": 40380.5,
         "se": 89.86712413335592,
-        "critical": 2.1009220402410382,
+        "critical": 2.101,
         "difference": 220,
-        "margin": 188.80382178484476,
-        "lower": 31.196178215155243,
-        "upper": 408.8038217848448,
+        "margin": 188.81082780418078,
+        "lower": 31.189172195819225,
+        "upper": 408.8108278041808,
         "reject": true
       }
     },
@@ -131,11 +135,11 @@
         "df": 1698,
         "variance": 18.65,
         "se": 0.20948115175637275,
-        "critical": 1.9613620613162466,
+        "critical": 1.96,
         "difference": 3.3000000000000114,
-        "margin": 0.4108683836157807,
-        "lower": 2.8891316163842307,
-        "upper": 3.710868383615792,
+        "margin": 0.4105830574424906,
+        "lower": 2.8894169425575207,
+        "upper": 3.710583057442502,
         "reject": true
       }
     },
@@ -149,10 +153,10 @@
         "confidence": 0.95,
         "df": 15,
         "se": 2.0,
-        "critical": 2.131449545559776,
-        "margin": 4.262899091119552,
-        "lower": 67.73710090888045,
-        "upper": 76.26289909111955
+        "critical": 2.131,
+        "margin": 4.262,
+        "lower": 67.738,
+        "upper": 76.262
       }
     },
     {
@@ -165,10 +169,10 @@
         "confidence": 0.95,
         "df": 24,
         "se": 8.0,
-        "critical": 2.0638985616280245,
-        "margin": 16.511188493024196,
-        "lower": 293.4888115069758,
-        "upper": 326.5111884930242
+        "critical": 2.064,
+        "margin": 16.512,
+        "lower": 293.488,
+        "upper": 326.512
       }
     },
     {
@@ -181,10 +185,10 @@
         "confidence": 0.95,
         "df": 11,
         "se": 3.464101615137755,
-        "critical": 2.200985160091639,
-        "margin": 7.624436247967676,
-        "lower": 116.37556375203232,
-        "upper": 131.62443624796768
+        "critical": 2.201,
+        "margin": 7.624487654918199,
+        "lower": 116.3755123450818,
+        "upper": 131.6244876549182
       }
     },
     {
@@ -197,10 +201,10 @@
         "confidence": 0.99,
         "df": 19,
         "se": 0.6708203932499369,
-        "critical": 2.8609346064649794,
-        "margin": 1.919173277771191,
-        "lower": 14.080826722228808,
-        "upper": 17.91917327777119
+        "critical": 2.861,
+        "margin": 1.9192171450880697,
+        "lower": 14.08078285491193,
+        "upper": 17.91921714508807
       }
     },
     {
@@ -217,11 +221,11 @@
         "df": 26,
         "variance": 21.192307692307693,
         "se": 1.7579945596602033,
-        "critical": 2.0555294386428735,
+        "critical": 2.056,
         "difference": 3,
-        "margin": 3.6136095703555635,
-        "lower": -0.6136095703555635,
-        "upper": 6.613609570355564,
+        "margin": 3.6144368146613783,
+        "lower": -0.6144368146613783,
+        "upper": 6.614436814661378,
         "reject": false
       }
     },
@@ -239,11 +243,11 @@
         "df": 34,
         "variance": 1.325,
         "se": 0.38369548110737794,
-        "critical": 2.0322445093177186,
+        "critical": 2.032,
         "difference": 0.40000000000000036,
-        "margin": 0.7797630347304892,
-        "lower": -0.3797630347304889,
-        "upper": 1.1797630347304895,
+        "margin": 0.779669217610192,
+        "lower": -0.3796692176101917,
+        "upper": 1.1796692176101924,
         "reject": false
       }
     },
@@ -261,11 +265,11 @@
         "df": 42,
         "variance": 1.9966666666666666,
         "se": 0.427817458477068,
-        "critical": 2.0180817028184443,
+        "critical": 2.018,
         "difference": -1.1,
-        "margin": 0.8633705850988604,
-        "lower": -1.9633705850988605,
-        "upper": -0.23662941490113965,
+        "margin": 0.8633356312067231,
+        "lower": -1.9633356312067232,
+        "upper": -0.236664368793277,
         "reject": true
       }
     },
@@ -283,11 +287,11 @@
         "df": 30,
         "variance": 111.2,
         "se": 3.7355735575573354,
-        "critical": 2.0422724563012378,
+        "critical": 2.042,
         "difference": -4,
-        "margin": 7.629058985086573,
-        "lower": -11.629058985086573,
-        "upper": 3.629058985086573,
+        "margin": 7.628041204532078,
+        "lower": -11.628041204532078,
+        "upper": 3.628041204532078,
         "reject": false
       }
     },
@@ -302,10 +306,10 @@
         "confidence": 0.99,
         "variance": 0.2016,
         "se": 0.02592296279363144,
-        "critical": 2.5758293035489004,
-        "margin": 0.06677312719864373,
-        "lower": 0.2132268728013563,
-        "upper": 0.3467731271986437,
+        "critical": 2.5758,
+        "margin": 0.06677236756383587,
+        "lower": 0.21322763243616416,
+        "upper": 0.3467723675638359,
         "reject": false
       }
     },
