@@ -15,3 +15,10 @@ compatible when changing the interface.
 LING406 Version 4 retains source wording within the teaching prose. Each page
 must equal or exceed Version 3 in visible word count and character count.
 Preserve explanations and do not pad logistical pages to increase their length.
+
+Every individual lecture collection must display every original source slide in
+source order, including the opening title, chapter dividers, and logistical
+pages. A title or other noninstructional slide may have an empty transcript.
+Do not omit a slide because no transcript is needed, and do not fill such pages
+with invented teaching text. Preserve all existing transcripts and page-based
+notes/read keys when restoring missing slides.

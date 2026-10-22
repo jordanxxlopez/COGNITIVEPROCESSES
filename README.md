@@ -82,3 +82,15 @@ entire earlier embedded course data, current earlier lecture/question contents,
 notes and progress; validate every new source anchor; check puzzle arithmetic;
 sample repeated balanced tests with nonrepeating adjacent answer positions; and
 exercise notes, quizzes, source links, expanded readers and both color modes.
+
+## Every source slide remains in individual collections
+
+`collection-slides.js` restores missing original pages in source order before
+the workspace is rendered. Title, divider, and logistical pages retain their
+original visuals with empty transcripts. It adds 13 previously omitted pages
+across the PSYC301 collections, including each opening title and Working
+Memory’s mental-rotation divider. Existing section objects, teaching editions,
+source images, quizzes, guide/core selections and page-based notes/read keys
+remain unchanged. The same rule covers the main and shared entry points.
+The complete collections now contain 47 Short-Term Memory slides, 22 Working
+Memory slides, and 22 Problem Solving and Reasoning slides.

@@ -51,15 +51,15 @@ test('both entry points expose lecture 11, complete readers, preserved progress 
   await ctx.addInitScript(()=>{if(!localStorage.getItem('psyc301-studio-v1'))localStorage.setItem('psyc301-studio-v1',JSON.stringify({theme:'dark',read:['6:11','9:11'],personalNotes:{'6:11':'Keep sensory notes.','9:11':'Keep working-memory notes.'},missed:[3001,2001,1],explanationVersions:{6:'2',3:'E'},essentialsDone:['m2-stm-v2-observed-style-1']}))});
   const p=await ctx.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto(base+entry);
   assert.match(await p.locator('#content').innerText(),/3 lectures|3 supplied|across 3 lectures/);
-  await p.locator('#workspaceNav [data-module="10"]').click();assert.match(await p.locator('#content h1').innerText(),/11 · Problem Solving and Reasoning/);assert.equal(await p.locator('.section').count(),21);
-  assert.equal(await p.locator('.section .priority-e').count(),16);assert.equal(await p.locator('.section:not(.core-e)').count(),5);
+  await p.locator('#workspaceNav [data-module="10"]').click();assert.match(await p.locator('#content h1').innerText(),/11 · Problem Solving and Reasoning/);assert.equal(await p.locator('.section').count(),22);
+  assert.equal(await p.locator('.section .priority-e').count(),16);assert.equal(await p.locator('.section:not(.core-e)').count(),6);
   const link=p.locator('.notesHeader a');assert.match(await link.getAttribute('href'),/CogPsych_Ch12_1_F26.pdf/);assert.equal((await p.request.get(base+'/'+await link.getAttribute('href'))).status(),200);
   for(const image of collection.original){const r=await p.request.get(base+'/'+image);assert.equal(r.status(),200);assert.equal(crypto.createHash('sha256').update(await r.body()).digest('hex'),crypto.createHash('sha256').update(fs.readFileSync(path.join(root,image))).digest('hex'))}
   await p.locator('[data-mode="expanded"]').click();await p.locator('[data-reader-timer]').waitFor();
-  assert.equal(await p.locator('#teachSelect option').count(),21);const note=p.locator('[data-personal-note="10:2"]');await note.fill('Problem = obstacle between current and goal.');
+  assert.equal(await p.locator('#teachSelect option').count(),22);await p.locator('#teachSelect').selectOption('1');const note=p.locator('[data-personal-note="10:2"]');await note.fill('Problem = obstacle between current and goal.');
   await p.locator('[data-read="10:2"]').check();
   for(let i=0;i<21;i++){
-   await p.locator('#teachSelect').selectOption(String(i));await p.locator('.visual-pane img').evaluate(img=>img.decode());
+   await p.locator('#teachSelect').selectOption(String(i+1));await p.locator('.visual-pane img').evaluate(img=>img.decode());
    assert.match(await p.locator('.visual-pane img').getAttribute('src'),new RegExp('slide-'+String(i+2).padStart(2,'0')+'\\.webp$'));
    assert.equal(await p.locator('#spoken li').count(),collection.sections[i].bullets.length);
    assert.equal((await p.locator('#spoken').innerText()).replace(/\s+/g,' ').trim(),plain(collection.sections[i].bullets.join(' ')).replace(/\s+/g,' ').trim());

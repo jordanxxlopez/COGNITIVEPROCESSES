@@ -15,6 +15,7 @@ for(const file of ['index.html','share.html']){
  vm.runInContext(fs.readFileSync(path.join(root,'short-term-memory-v2.js'),'utf8'),context);
  const script=[...html.matchAll(/<script>(.*?)<\/script>/gs)][0][1];
  vm.runInContext(script,context);
+ vm.runInContext(fs.readFileSync(path.join(root,'collection-slides.js'),'utf8'),context);
  vm.runInContext(fs.readFileSync(path.join(root,'module2-workspace.js'),'utf8'),context);
  const run=code=>vm.runInContext(code,context);
  const count=run('secondHalf.questions.length');
@@ -61,7 +62,7 @@ for(const file of ['index.html','share.html']){
  assert.match(element('#content').innerHTML,/10 · Working Memory/);
  assert.match(element('#workspaceNav').innerHTML,/navnum">10/);
  assert.doesNotMatch(element('#moduleNav').innerHTML,/data-module="9"/);
- assert.equal(run('moduleBy(9).sections.length'),20);
+ assert.equal(run('moduleBy(9).sections.length'),22);
  assert.equal(run('moduleBy(9).original.length'),22);
  assert.match(run('header(moduleBy(9))'),/sources\/PSYCH301_L12_Working_Memory_F26_2.pdf/);
  assert(run('secondQuestions().some(q=>!moduleBy(q.module).sections.find(s=>s.page===q.page).examPriorityE?.mustKnow)'));
@@ -95,7 +96,7 @@ for(const file of ['index.html','share.html']){
  assert.equal(run('quiz.items.length'),50);assert(run('quiz.items.every(q=>q.module===6)'));
  run("go('module',9);startQuiz('moduleall')");assert.equal(run('quiz.items.length'),50);assert(run('quiz.items.every(q=>q.module===9)'));
  run("go('module',10)");assert.match(element('#content').innerHTML,/11 · Problem Solving and Reasoning/);
- assert.equal(run('moduleBy(10).sections.length'),21);assert.equal(run('moduleBy(10).original.length'),22);
+ assert.equal(run('moduleBy(10).sections.length'),22);assert.equal(run('moduleBy(10).original.length'),22);
  run("startQuiz('moduleall')");assert.equal(run('quiz.items.length'),50);assert(run('quiz.items.every(q=>q.module===10)'));
  run("startQuiz('m2quick')");assert.equal(run('quiz.items.length'),10);
  assert(run('validateSecondBalance(quiz.items,10)'));
