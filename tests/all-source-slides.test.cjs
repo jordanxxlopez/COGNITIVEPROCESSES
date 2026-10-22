@@ -1,5 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),http=require('node:http'),{execFileSync}=require('node:child_process');
+const {directTeaching}=require('./psyc-transcript-preservation.cjs');
 const {chromium}=require('playwright'),root=path.resolve(__dirname,'..');
 const data=JSON.parse(fs.readFileSync(path.join(root,'index.html'),'utf8').match(/<script id="study-data" type="application\/json">(.*?)<\/script>/s)[1]);
 const c={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'module2-data.js'),'utf8'),c);
@@ -17,7 +18,7 @@ test('all omitted original pages are added in order without changing any existin
  }
  assert.equal(added,13);const snapshot=JSON.stringify(modules);context.retainAllSourceSlides(modules);assert.equal(JSON.stringify(modules),snapshot,'Running completion twice adds duplicates');
  // Original transcript data, question banks, archive assets, and application code stay intact.
- for(const file of ['module2-data.js','short-term-memory-v2.js','module2-workspace.js'])assert.equal(fs.readFileSync(path.join(root,file),'utf8'),execFileSync('git',['show','1dd9bc0:'+file],{cwd:root,encoding:'utf8',maxBuffer:50*1024*1024}));
+ for(const file of ['module2-data.js','short-term-memory-v2.js','module2-workspace.js']){const actual=fs.readFileSync(path.join(root,file),'utf8'),original=execFileSync('git',['show','1dd9bc0:'+file],{cwd:root,encoding:'utf8',maxBuffer:50*1024*1024});if(file==='module2-workspace.js')assert.equal(actual,original);else{const parse=t=>JSON.parse(t.slice(t.indexOf(' = ')+3).replace(/;\s*$/,''));assert.deepEqual(parse(actual),directTeaching(parse(original)));}}
 });
 function server(){return http.createServer((req,res)=>{let name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(name.endsWith('/'))name+='index.html';const file=path.resolve(root,'.'+name);if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end()}fs.stat(file,(e,s)=>{if(e||!s.isFile()){res.writeHead(404);return res.end()}res.writeHead(200,{'Content-Type':{'.html':'text/html','.js':'application/javascript','.css':'text/css','.webp':'image/webp'}[path.extname(file)]||'application/octet-stream'});fs.createReadStream(file).pipe(res)})})}
 test('main and shared collections expose all pages in notes and expanded readers, with blank title transcripts',{timeout:120000},async()=>{

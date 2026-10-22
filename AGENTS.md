@@ -22,3 +22,8 @@ pages. A title or other noninstructional slide may have an empty transcript.
 Do not omit a slide because no transcript is needed, and do not fill such pages
 with invented teaching text. Preserve all existing transcripts and page-based
 notes/read keys when restoring missing slides.
+
+In PSYC301 teaching transcripts, state the course content directly. Do not write
+“the lecture says,” “the lecture gives,” “the lecture describes,” or similar
+source narration. This restriction applies to authored teaching prose, not
+original source slides or lecture titles/navigation labels.

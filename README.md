@@ -94,3 +94,21 @@ source images, quizzes, guide/core selections and page-based notes/read keys
 remain unchanged. The same rule covers the main and shared entry points.
 The complete collections now contain 47 Short-Term Memory slides, 22 Working
 Memory slides, and 22 Problem Solving and Reasoning slides.
+
+## Switch between course studios
+
+The **Course** dropdown in each sidebar links PSYC301, BME423, LING406, and
+LING285. The existing independent apps, course colors, content, progress and
+storage keys are retained. `course-switcher.js` resolves links relative to its
+own URL, so the same navigation works at the deployed repository prefix or on
+a local server. It also appears on the PSYC301 shared entry point. The LING285
+route and material stay LING285, while its separately requested LING258 browser
+tab title remains unchanged. The switcher does not move or overwrite study data.
+
+PSYC301 transcript editions retain their existing content while replacing
+source narration such as “the lecture gives” with direct teaching statements.
+The sentence-level edit record is in
+`authoring/psyc301/direct-teaching-wording-changes.json`. It covers the original
+embedded editions, the separate Short-Term Memory Version 2, the current
+Working Memory/Problem Solving notes and their authoring text. Other-course
+transcripts, original slides, quizzes and saved progress are unchanged.

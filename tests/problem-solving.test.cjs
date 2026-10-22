@@ -1,20 +1,22 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),http=require('node:http'),crypto=require('node:crypto'),vm=require('node:vm'),{execFileSync}=require('node:child_process');
 const {chromium}=require('playwright');
+const {directTeaching}=require('./psyc-transcript-preservation.cjs');
 const root=path.resolve(__dirname,'..');
 const before=file=>execFileSync('git',['show','edb74c5:'+file],{cwd:root,encoding:'utf8',maxBuffer:50*1024*1024});
 const load=text=>JSON.parse(text.split('window.SECOND_HALF = ',1)[0]===text?'null':text.split('window.SECOND_HALF = ')[1].replace(/;\s*$/,''));
-const bank=load(fs.readFileSync(path.join(root,'module2-data.js'),'utf8')),old=load(before('module2-data.js'));
+const bank=load(fs.readFileSync(path.join(root,'module2-data.js'),'utf8')),old=directTeaching(load(before('module2-data.js')));
 const collection=bank.collections.find(c=>c.id===10),questions=bank.questions.filter(q=>q.module===10),plain=s=>s.replace(/<[^>]*>/g,'');
 test('new lecture preserves earlier data and uses every instructional source page',()=>{
  assert.deepEqual(bank.questions.filter(q=>q.module!==10),old.questions);
  assert.deepEqual(bank.collections.filter(m=>m.id!==10),old.collections);
  for(const key of ['topics','coreReview','experiments'])assert.deepEqual(bank[key].filter(g=>g.module!==10),old[key]);
- assert.equal(fs.readFileSync(path.join(root,'short-term-memory-v2.js'),'utf8'),before('short-term-memory-v2.js'));
+ const stm=t=>JSON.parse(t.split('window.SHORT_TERM_MEMORY_V2 = ')[1].replace(/;\s*$/,''));
+ assert.deepEqual(stm(fs.readFileSync(path.join(root,'short-term-memory-v2.js'),'utf8')),directTeaching(stm(before('short-term-memory-v2.js'))));
  for(const file of ['index.html','share.html']){
   const current=fs.readFileSync(path.join(root,file),'utf8'),earlier=before(file);
   const json=html=>html.match(/<script id="study-data" type="application\/json">(.*?)<\/script>/s)[1];
-  assert.equal(json(current),json(earlier),'Existing embedded source text and images changed');
+  assert.deepEqual(JSON.parse(json(current)),directTeaching(JSON.parse(json(earlier))),'Only the requested direct-teaching wording can change in earlier embedded material');
   assert.deepEqual([...current.matchAll(/<script>(.*?)<\/script>/gs)].map(m=>m[1]),[...earlier.matchAll(/<script>(.*?)<\/script>/gs)].map(m=>m[1]),'Existing app code changed');
   assert.deepEqual([...current.matchAll(/<style>(.*?)<\/style>/gs)].map(m=>m[1]),[...earlier.matchAll(/<style>(.*?)<\/style>/gs)].map(m=>m[1]),'Existing design changed');
  }

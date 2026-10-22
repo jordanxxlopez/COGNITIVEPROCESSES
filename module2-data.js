@@ -2796,7 +2796,7 @@ window.SECOND_HALF = {
             "<strong>Baddeley and colleagues (1975, 1984)</strong> found that people remembered more short words than long words. The <strong>word-length effect</strong> concerns how long the items take to pronounce and rehearse. A list of longer words takes more time to repeat, leaving fewer words available within the same brief rehearsal period.",
             "<strong>Ellis and Hennelly (1980)</strong> found that Welsh–English bilingual children had a <strong>shorter digit span in Welsh than in English</strong>. Digit span is the number of digits that can be retained and reported in order. The children knew both languages, but Welsh number names took longer to pronounce.",
             "The language difference follows the time needed to say the number names rather than the numerical values represented by those names. The same type of memory task can therefore produce a different span when the verbal forms take different amounts of time to rehearse.",
-            "The lecture relates span to the amount of verbal material that can be said in about <strong>1.5–2 seconds</strong>. Faster rehearsal allows more items to be refreshed within that interval. Longer pronunciation time reduces the number of separate items that can be kept active together."
+            "Span is related to the amount of verbal material that can be said in about <strong>1.5–2 seconds</strong>. Faster rehearsal allows more items to be refreshed within that interval. Longer pronunciation time reduces the number of separate items that can be kept active together."
           ],
           "image": 9
         },
@@ -2806,7 +2806,7 @@ window.SECOND_HALF = {
           "bullets": [
             "<strong>Articulatory suppression</strong> occurs when a person speaks while memorizing other material. Producing the competing speech keeps the <strong>phonological loop</strong> busy. The person has less opportunity to rehearse the items that must be remembered, and recall becomes worse.",
             "The <strong>word-length effect is reduced</strong> during suppression. Short words normally have an advantage because they can be rehearsed more quickly than long words. When the rehearsal process is occupied by another speaking task, that advantage is reduced because neither list can receive ordinary rehearsal.",
-            "The <strong>phonological similarity effect is also reduced</strong> in the situation described in the lecture. Verbal rehearsal and the conversion of seen items into their sounds are disrupted, so the sound-based overlap between the remembered items has less influence on performance.",
+            "The <strong>phonological similarity effect is also reduced</strong> under these conditions. Verbal rehearsal and the conversion of seen items into their sounds are disrupted, so the sound-based overlap between the remembered items has less influence on performance.",
             "Suppression connects the memory effects to a particular process. A competing speaking task reduces memory and changes the influence of sound similarity and word length. The interference is consistent with a system that uses speech-related rehearsal to maintain verbal information."
           ],
           "image": 10
@@ -3084,7 +3084,7 @@ window.SECOND_HALF = {
           "bullets": [
             "Transferring a Tower of Hanoi stack requires moving smaller disks out of the way before a larger disk becomes available. The smaller disks can occupy temporary positions on the other pegs, but their size ordering still has to obey the rule against placing a larger disk on a smaller one.",
             "Moving the largest disk to the goal peg does not complete the puzzle if smaller disks remain elsewhere. Those disks must then be rearranged onto the larger disk in the required order. The route therefore includes repeated transfers of smaller stacks as part of transferring the whole stack.",
-            "The lecture describes the <strong>64-disk</strong> version as requiring roughly <strong>a trillion years</strong> even if every correct move took only one second. Increasing the number of disks creates a very large number of required moves. Executing each move quickly does not remove the many intermediate rearrangements imposed by the rules."
+            "The <strong>64-disk</strong> version requires roughly <strong>a trillion years</strong> even if every correct move took only one second. Increasing the number of disks creates a very large number of required moves. Executing each move quickly does not remove the many intermediate rearrangements imposed by the rules."
           ],
           "image": 13
         },

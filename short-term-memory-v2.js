@@ -243,7 +243,7 @@ window.SHORT_TERM_MEMORY_V2 = {
         "<strong>Decay</strong> means loss of a memory trace associated with the passage of time. Brown and Peterson and Peterson investigated whether short-term information disappears as time passes when rehearsal is prevented. Their filled-delay procedure makes the letters vulnerable during the interval before recall.",
         "<strong>Proactive interference</strong> occurs when what has already been remembered interferes with newer information. Earlier trigrams can compete with the current trigram, so later trials involve more than the effect of waiting through the current delay. The previous letter sets contribute to forgetting of the new set.",
         "The account of short-term forgetting includes both <strong>decay and interference</strong>. Elapsed time concerns how long the representation has to survive, while interference concerns competition from other memories. These processes describe different influences on the same recall response.",
-        "The lecture gives an effective short-term duration of about <strong>15–20 seconds</strong>. That duration concerns temporary availability under the memory conditions being considered. Rehearsal and competing information influence how much remains accessible during that period."
+        "Short-term memory has an effective duration of about <strong>15–20 seconds</strong>. That duration concerns temporary availability under the memory conditions being considered. Rehearsal and competing information influence how much remains accessible during that period."
       ]
     },
     {
@@ -343,7 +343,7 @@ window.SHORT_TERM_MEMORY_V2 = {
         "The change-detection procedure presents an initial display for <strong>100 milliseconds</strong>, a <strong>900-millisecond gap</strong>, and a comparison display for <strong>2,000 milliseconds</strong>. Participants decide whether the relevant visual information changed. The gap makes the task depend on retaining the initial display rather than inspecting two displays together.",
         "For the colored-square task, <strong>accuracy decreases as set size increases</strong>. Set size is the number of objects that must be remembered. Performance is high for small arrays and falls substantially when there are more than about four items, linking the decline to a growing retention demand.",
         "The bar task compares memory for <strong>orientation only</strong>, <strong>color only</strong>, and the <strong>conjunction of color and orientation</strong>. A conjunction means remembering the properties together as belonging to the same objects. The comparison includes a blue bar changing its orientation between the initial and test displays.",
-        "Accuracy decreases with set size in each of these conditions. The lecture relates the pattern to a capacity of about <strong>three to four items in visual working memory</strong>. Larger arrays make it harder to preserve all the relevant object information across the brief gap."
+        "Accuracy decreases with set size in each of these conditions. The pattern is associated with a capacity of about <strong>three to four items in visual working memory</strong>. Larger arrays make it harder to preserve all the relevant object information across the brief gap."
       ]
     },
     {
