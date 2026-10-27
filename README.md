@@ -26,7 +26,7 @@ The `index.html` can also be downloaded and opened in a browser; study text and 
 
 ## Growing Module 2 workspace
 
-Module 2 includes a lecture-based study guide, core review, experiments, combined notes, current practice test, lecture quizzes, missed-question queue, and source coverage. It covers collection 09 · Short-Term Memory, collection 10 · Working Memory, collection 11 · Problem Solving and Reasoning, and collection 12 · Problem Solving and Reasoning · Part II. The latter preserves all 22 original PDF pages and provides 20 instructional slide transcripts. Original note and read-progress keys remain intact.
+Module 2 includes a lecture-based study guide, core review, experiments, combined notes, current practice test, lecture quizzes, missed-question queue, and source coverage. It covers collection 09 · Short-Term Memory, collection 10 · Working Memory, collection 11 · Problem Solving and Reasoning, collection 12 · Problem Solving and Reasoning · Part II, and collection 13 · Judgment, Decision Making, and Reasoning. Every collection retains all original pages in order, including its title. Original note and read-progress keys remain intact.
 
 When new lectures are supplied, add their sections with stable IDs and update `module2-data.js`: extend `modules` and `collections`, add topic/experiment groups with an explicit `module` and source `pages`, and append source-based questions to the lecture pools. Keep existing question IDs and contents intact. Increase `revision` and update the Module 2 script version queries in both HTML entry points, retain IDs for unchanged questions, and assign new IDs to changed questions. Retire a question only when its contents actually change; otherwise preserve it and its retry history. Topic `progressKey` values keep guide checkboxes stable across coverage revisions. Do not automatically generate coverage for lectures that have not been supplied. The site does not ingest new lectures automatically.
 
@@ -139,3 +139,31 @@ and question-bank audit with
 coverage, all source pages and transcript text, every new question anchor,
 important source comparisons, exact four-way quotas, grading/source links,
 review readers, saved notes, both entry points and mobile color modes.
+
+
+## Collection 13 · Judgment, Decision Making, and Reasoning
+
+All 33 original pages of `CogPsych_Ch13_1 F26.pdf` appear in order. The title has
+no transcript, and all 32 instructional pages have expanded, slide-specific
+teaching paragraphs. Notes teach the actual tasks and graph relationships,
+including paired death judgments, nested Linda categories, sample-size effects,
+Johnny’s tradeoff-by-outcome pattern, material versus symbolic offers, and the
+energy-program approval/anticipated-anger results. Historical task statistics
+are retained as course material, not updated population estimates. The unchanged
+PDF is at `sources/CogPsych_Ch13_1_F26.pdf`; original page renders and extraction
+provenance are in `media/judgment/` and `authoring/psyc301/judgment-source.json`.
+
+Seven guide groups, 24 selected core-review pages, ten experiment/demonstration
+groups, and 50 new source-linked questions extend every current review tool.
+The current pool is 250 questions across five collections. The 100-question test
+draws 20 per collection; the quick set draws two per collection; each lecture
+quiz remains 50. Answer choices still pass the nonrepeating adjacent-letter
+validator before display. Existing content, source/page keys, versions, saved
+progress, themes, and other courses remain unchanged.
+
+Rebuild content with `python authoring/psyc301/build_judgment.py`, audit with
+`python module2-practice-model.py --output module2-practice-report.json`, and
+verify with `node --test tests/*.test.cjs`. The judgment tests verify exact
+preservation of the earlier bank, all source assets and page anchors, the
+instructional graph comparisons, balanced tests, answer grading, shared notes
+across readers, both entry points, and responsive light/dark expanded views.
