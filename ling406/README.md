@@ -152,3 +152,37 @@ Rebuild with `python ling406/version5/build_transcripts.py`. Verify with
 while the repository is served at `http://localhost:8907/`. The coverage file
 records each page's author file, role and size; `version5/preserved.json` pins
 all pre-existing LING406 source, edition, question and palette files.
+
+## Version 6 · natural teaching
+
+Version 6 is an additional option in the existing Transcript dropdown across
+all ten Module II collections. Its 265 instructional entries are authored for
+individual source pages, including the review, with over 34,000 teaching words.
+Every one of the 284 original pages remains in place. Title, administrative and
+other noninstructional pages remain visible with empty explanations.
+
+The edition follows the user's Version 6 teaching-writing instructions. Each
+explanation uses connected, read-aloud sentences and defines necessary technical
+terms in context. Experimental explanations distinguish what participants do,
+what is compared, what happens and how the finding relates to the account being
+tested. Incidental graph coordinates and table values are omitted when the
+scientific relationship is sufficient. Values defining important conditions and
+comparisons remain. Explanations teach the content directly without presentation
+narration, arrow chains, colons, semicolons, look-ahead commentary or added topics.
+The coverage report records page-specific authorship rather than applying an
+automatic paraphrase or generic expansion to existing scripts.
+
+Versions 1–5 and all source assets remain unchanged. Existing saved edition
+preferences are honored, including Version 5. Version 6 is the initial choice
+only when there is no valid saved preference. Notes, read marks, review-note
+links, question banks, grading, timers, palettes and layouts are preserved.
+PSYC301, BME423 and LING285 are unchanged. Review page 54 retains its distinct
+explanation of sound overlap between speaker and spichki, not shared meaning.
+The existing KaTeX renderer and spoken equation equivalents also support V6.
+
+Rebuild using `python ling406/version6/build_transcripts.py`. Run
+`python ling406/tests/verify_v6.py` for coverage, authored-content checks,
+source-fact anchors and preservation. With the repository served on port 8907,
+run `node ling406/tests/transcripts-v6.cjs` for all-page rendering, six-edition
+switching, notes/read/quiz persistence, review alignment, accessible math and
+speech, responsive light/dark readers, and offline switching.

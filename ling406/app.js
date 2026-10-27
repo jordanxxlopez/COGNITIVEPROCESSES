@@ -1,5 +1,5 @@
 'use strict';
-const T2=window.LING406_TRANSCRIPTS_V2,T3=window.LING406_TRANSCRIPTS_V3,T4=window.LING406_TRANSCRIPTS_V4,T5=window.LING406_TRANSCRIPTS_V5;
+const T2=window.LING406_TRANSCRIPTS_V2,T3=window.LING406_TRANSCRIPTS_V3,T4=window.LING406_TRANSCRIPTS_V4,T5=window.LING406_TRANSCRIPTS_V5,T6=window.LING406_TRANSCRIPTS_V6;
 const D=window.LING406,KEY='ling406-study-studio-v1',QZ=window.LingQuiz;
 const sections=new Map(D.sections.map(s=>[s.id,s])),questions=new Map(D.questions.map(q=>[q.id,q]));
 const reviewSections=T3.review.map(r=>({...sections.get(r.lectureSection),id:r.id,noteId:r.lectureSection,module:'midterm-review',page:r.page,source:'review',image:`assets/slides/review/${String(r.page).padStart(2,'0')}.webp`,reviewPages:[],title:r.title,sourceText:r.sourceText}));
@@ -9,8 +9,8 @@ const collections=[...D.modules,reviewModule],modules=new Map(collections.map(m=
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const rich=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
 let stored={};try{stored=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch{}
-const state={notes:{},read:{},ready:{},missed:[],open:{},theme:matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light',sideClosed:innerWidth<761,readerSize:18,transcriptVersion:5,quiz:null,...stored};
-state.transcriptVersion=[1,2,3,4,5].includes(Number(state.transcriptVersion))?Number(state.transcriptVersion):5;
+const state={notes:{},read:{},ready:{},missed:[],open:{},theme:matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light',sideClosed:innerWidth<761,readerSize:18,transcriptVersion:6,quiz:null,...stored};
+state.transcriptVersion=[1,2,3,4,5,6].includes(Number(state.transcriptVersion))?Number(state.transcriptVersion):6;
 let params=new URLSearchParams(location.search),view=params.get('view')||'home',selected=params.get('lecture')||'speech1',reader=null,cover=false,lastFocus=null,saveTimer;
 if(!modules.has(selected))selected='speech1';
 const WORK=[['guide','What to know by the end'],['core','Must know · core review'],['experiments','Experiments to know'],['combined','Combined notes'],['test','Current practice test'],['quizzes','Lecture quizzes'],['missed','Missed & uncertain'],['sources','Sources & coverage']];
@@ -22,11 +22,11 @@ function nav(){
  $('#workNav').innerHTML=WORK.map(([id,title])=>`<button data-go="${id}" class="${view===id?'active':''}">${title}${id==='missed'?' · '+state.missed.filter(id=>questions.has(id)).length:''}</button>`).join('');
  $('#collectionNav').innerHTML=collections.map(m=>`<button data-lecture="${m.id}" class="${view==='collection'&&selected===m.id?'active':''}"><span class="nav-num">${m.number}</span>${esc(m.title)}</button>`).join('');
 }
-function teachingBlocks(s){const pack=state.transcriptVersion===5?T5:state.transcriptVersion===4?T4:T3,blocks=pack.scripts[s.id];if(!blocks)throw new Error('Missing Version '+state.transcriptVersion+' transcript for '+s.id);return blocks}
+function teachingBlocks(s){const pack=state.transcriptVersion===6?T6:state.transcriptVersion===5?T5:state.transcriptVersion===4?T4:T3,blocks=pack.scripts[s.id];if(!blocks)throw new Error('Missing Version '+state.transcriptVersion+' transcript for '+s.id);return blocks}
 function transcript(s){const id=s.noteId||s.id;if(state.transcriptVersion===1)return s.paragraphs;if(state.transcriptVersion>=3)return teachingBlocks(s).flatMap(b=>[b.text,...b.children]);const p=T2.scripts[id];if(!p)throw new Error('Missing Version 2 transcript for '+id);return p}
-// The new edition alone renders its source equations and formant subscripts.
+// Versions 5 and 6 render source equations and formant subscripts.
 function teachingRich(text){
- if(state.transcriptVersion!==5)return rich(text);
+ if(state.transcriptVersion<5)return rich(text);
  const plain=part=>rich(part).replace(/F([123])/g,(_,n)=>katex.renderToString('F_{'+n+'}',{throwOnError:true,output:'htmlAndMathml'})).replace('<strong>f</strong>',katex.renderToString('f',{throwOnError:true,output:'htmlAndMathml'}));
  const marker=String.fromCharCode(92),open=marker+'[',close=marker+']';
  let rest=String(text),output='',start=rest.indexOf(open);
@@ -38,15 +38,15 @@ function teachingRich(text){
  return output+plain(rest);
 }
 function spokenTeaching(text){
- if(state.transcriptVersion!==5)return text;
+ if(state.transcriptVersion<5)return text;
  const marker=String.fromCharCode(92),open=marker+'[',close=marker+']';
- return text.split(open).map((part,i)=>{if(!i)return part;const end=part.indexOf(close),math=part.slice(0,end);return (T5.mathSpeech[math]||math)+part.slice(end+2)}).join('');
+ return text.split(open).map((part,i)=>{if(!i)return part;const end=part.indexOf(close),math=part.slice(0,end);return ((state.transcriptVersion===6?T6:T5).mathSpeech[math]||math)+part.slice(end+2)}).join('');
 }
 function transcriptHTML(s){if(state.transcriptVersion<3)return transcript(s).map(p=>`<p>${rich(p)}</p>`).join('');const blocks=teachingBlocks(s);return blocks.length?`<ul class="teaching-script">${blocks.map(b=>`<li><p>${teachingRich(b.text)}</p>${b.children.length?`<ul>${b.children.map(p=>`<li><p>${teachingRich(p)}</p></li>`).join('')}</ul>`:''}</li>`).join('')}</ul>`:''}
 function displayTitle(s){return state.transcriptVersion>=3?(T3.titles[s.id]||s.title):s.title}
-function transcriptSelector(){return `<label class="transcript-version">Transcript<select data-transcript-version aria-label="Transcript version"><option value="1">Version 1 · original</option><option value="2">Version 2 · slide-aligned teaching</option><option value="3">Version 3 · direct teaching</option><option value="4">Version 4 · slide wording</option><option value="5">Version 5 · clear teaching</option></select></label>`}
+function transcriptSelector(){return `<label class="transcript-version">Transcript<select data-transcript-version aria-label="Transcript version"><option value="1">Version 1 · original</option><option value="2">Version 2 · slide-aligned teaching</option><option value="3">Version 3 · direct teaching</option><option value="4">Version 4 · slide wording</option><option value="5">Version 5 · clear teaching</option><option value="6">Version 6 · natural teaching</option></select></label>`}
 function syncVersionControls(){document.querySelectorAll('[data-transcript-version]').forEach(el=>el.value=String(state.transcriptVersion))}
-function changeTranscriptVersion(value){const scroll=window.scrollY,stage=document.querySelector('.expanded-stage'),stageScroll=stage?.scrollTop||0;stopAudio();state.transcriptVersion=[1,2,3,4,5].includes(Number(value))?Number(value):5;save();if(reader)renderReader();else render();requestAnimationFrame(()=>{window.scrollTo(0,scroll);const current=document.querySelector('.expanded-stage');if(current)current.scrollTop=stageScroll;const target=document.querySelector('.reader-controls [data-transcript-version]')||document.querySelector('header [data-transcript-version]');target?.focus({preventScroll:true})})}
+function changeTranscriptVersion(value){const scroll=window.scrollY,stage=document.querySelector('.expanded-stage'),stageScroll=stage?.scrollTop||0;stopAudio();state.transcriptVersion=[1,2,3,4,5,6].includes(Number(value))?Number(value):6;save();if(reader)renderReader();else render();requestAnimationFrame(()=>{window.scrollTo(0,scroll);const current=document.querySelector('.expanded-stage');if(current)current.scrollTop=stageScroll;const target=document.querySelector('.reader-controls [data-transcript-version]')||document.querySelector('header [data-transcript-version]');target?.focus({preventScroll:true})})}
 const badge=s=>s.core?'<span class="badge">Must know · core review</span>':'';
 function sourceCaption(s){const source=D.sources[s.source];return `<figcaption class="source-caption">Original ${esc(s.source==='review'?'review':'source')} page ${s.page} · click to enlarge<br><a href="${source.file}#page=${s.page}" target="_blank" rel="noopener">${esc(source.original)}</a></figcaption>`}
 function visual(s,eager=false){return `<figure class="section-visual reader-visual"><button class="slide-button" data-image="${esc(s.image)}" data-pdf="${D.sources[s.source].file}#page=${s.page}" aria-label="Enlarge ${esc(displayTitle(s))}, original page ${s.page}"><img class="slide" src="${s.image}" alt="${esc(displayTitle(s))} · original ${s.source==='review'?'review':'lecture'} slide, page ${s.page}" loading="${eager?'eager':'lazy'}" decoding="async"></button>${sourceCaption(s)}</figure>`}

@@ -66,11 +66,11 @@ for sid,terms in facts.items():
  for term in terms:assert term.lower()in text,(sid,term)
 # All old documents, illustrations, question banks, prior editions and palettes
 # remain byte-for-byte intact. Only the declared UI/cache/docs/tests can change.
-allowed={'ling406/app.js','ling406/index.html','ling406/sw.js','ling406/README.md','ling406/tests/transcripts-v2.cjs','ling406/tests/transcripts-v3.cjs'}
+allowed={'ling406/app.js','ling406/index.html','ling406/sw.js','ling406/README.md','ling406/tests/transcripts-v2.cjs','ling406/tests/transcripts-v3.cjs','ling406/tests/transcripts-v5.cjs'}
 for name,digest in json.loads((R/'version5/preserved.json').read_text()).items():
  if name not in allowed:assert hashlib.sha256((REPO/name).read_bytes()).hexdigest()==digest,name
 old=subprocess.check_output(['git','show','d44e23f:ling406/app.js'],cwd=REPO,text=True)
-new=(R/'app.js').read_text();start=new.index('// The new edition alone');end=new.index('function transcriptHTML',start);new=new[:start]+new[end:]
+new=(R/'app.js').read_text();start=new.index('// Versions 5 and 6');end=new.index('function transcriptHTML',start);new=new[:start]+new[end:]
 changed=('const T2=','const state=','state.transcriptVersion=','function teachingBlocks(','function transcriptHTML(','function transcriptSelector(','function changeTranscriptVersion(','function readAloud(')
 def unchanged(text):return '\n'.join(line for line in text.splitlines()if not line.startswith(changed))
 assert unchanged(old)==unchanged(new),'Unexpected application behavior changed'

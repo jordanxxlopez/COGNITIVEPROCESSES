@@ -19,13 +19,17 @@ test('PSYC301 changes only the requested transcript framing, across preserved ed
  }
  for(const name of ['bme423/index.html','ling406/index.html','ling285/index.html']){
   let current=fs.readFileSync(path.join(root,name),'utf8').replace(/<link rel="stylesheet" href="(?:\.\.\/)?course-switcher\.css[^"]*">/,'').replace(/<script src="(?:\.\.\/)?course-switcher\.js[^"]*" defer><\/script>/,'');
-  // Subsequent LING406 V5 was authorized separately. Its full content and
+  // Subsequent LING406 V5 and V6 were authorized separately. Its full content and
   // bounded application changes are pinned by ling406/tests/verify_v5.py.
   if(name==='ling406/index.html')current=current
    .replace('<link rel="stylesheet" href="../bme423/vendor/katex/katex.min.css">','')
    .replace('<link rel="stylesheet" href="transcripts-v5.css?v=ling406-transcripts-v5">','')
    .replace('<script src="../bme423/vendor/katex/katex.min.js"></script>','')
    .replace('<script src="transcripts-v5-data.js?v=ling406-transcripts-v5"></script>','')
+   .replace('<script src="transcripts-v6-data.js?v=ling406-transcripts-v6"></script>','')
+   .replace('app.js?v=ling406-transcripts-v6','app.js?v=ling406-transcripts-v5')
+   .replace('<option value="6" selected>Version 6 · natural teaching</option>','')
+   .replace('<option value="5">Version 5 · clear teaching</option>','')
    .replace('app.js?v=ling406-transcripts-v5','app.js?v=ling406-transcripts-v4')
    .replace('<option value="5" selected>Version 5 · clear teaching</option>','')
    .replace('<option value="4">Version 4 · slide wording</option>','<option value="4" selected>Version 4 · slide wording</option>');
