@@ -167,3 +167,45 @@ verify with `node --test tests/*.test.cjs`. The judgment tests verify exact
 preservation of the earlier bank, all source assets and page anchors, the
 instructional graph comparisons, balanced tests, answer grading, shared notes
 across readers, both entry points, and responsive light/dark expanded views.
+
+## PSYC301 Module II · Version 6 teaching
+
+`psyc301-v6-data.js` and `psyc301-v6.js` add **Version 6 · natural teaching**
+only to current collections 09–13. The Exam 1 archive receives no new edition.
+The five collections retain all 148 original source pages in their existing
+order. Individually authored explanations cover 141 instructional pages. Titles,
+the mental-rotation divider and the link-only Clive Wearing video-reference page
+remain visible without invented teaching prose. Earlier scripts are unchanged,
+including the original explanation on that video-reference page.
+
+The additional edition teaches source concepts in connected sentences intended
+for reading aloud. It explains necessary terminology, participants' tasks,
+conditions, mechanisms and findings. Important contrasts and experimental values
+remain, while incidental graph measurements and repeated visual descriptions
+are omitted. The source slides retain all of their original detail. Scientific
+qualifications present in the source remain part of the explanation rather than
+becoming generic closing caveats. There is no presentation narration, look-ahead
+framing or added course material.
+
+The existing collection and reader dropdowns retain their previous choices and
+add the new option. Working Memory and the three later lectures also gain an
+Original/Version 6 dropdown. Choosing the edition preserves the current page,
+personal notes and read keys. Existing defaults and saved choices are unchanged.
+The selected collection's text also follows its source into current review
+views, search, source popups and read-aloud. Synthetic review readers continue
+using original lecture/page note keys. Question banks, balance, answer order,
+grading, timers, palettes and all other courses remain unchanged.
+
+Source arithmetic and quantitative relationships render through the existing
+local KaTeX distribution. The new stylesheet affects only equations inside V6
+prose. Authored spoken equivalents prevent mathematical source code or duplicate
+accessibility text from being read aloud. No styles or scripts for earlier
+explanation bodies are replaced.
+
+Authored page text, source extraction/checksums, a preservation snapshot and the
+coverage report are under `authoring/psyc301/version6/`. Rebuild with
+`python authoring/psyc301/version6/build.py`. Verify source coverage and bounded
+changes with `python authoring/psyc301/version6/verify.py`, then run
+`node --test tests/psyc301-v6.test.cjs` for both entry points, every source page,
+version switching, notes/progress, source math/speech, archive preservation,
+current quiz balance and responsive readers.

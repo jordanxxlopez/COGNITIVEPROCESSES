@@ -20,4 +20,12 @@ function existingCoverage(current,earlier){
  for(const key of ['topics','coreReview','experiments'])result[key]=current[key].filter(g=>known.has(g.module??6));
  return result;
 }
-module.exports={directTeaching,existingCoverage};
+// A later, separately authorized Module II edition adds only these assets.
+// Removing their exact tags must leave the original entry page byte-for-byte.
+function stripPsycV6Assets(text){return text
+ .replace('<link rel="stylesheet" href="bme423/vendor/katex/katex.min.css">','')
+ .replace('<link rel="stylesheet" href="psyc301-v6.css?v=psyc301-module2-v6">','')
+ .replace('<script src="bme423/vendor/katex/katex.min.js"></script>','')
+ .replace('<script src="psyc301-v6-data.js?v=psyc301-module2-v6"></script>','')
+ .replace('<script src="psyc301-v6.js?v=psyc301-module2-v6"></script>','');}
+module.exports={directTeaching,existingCoverage,stripPsycV6Assets};

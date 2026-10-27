@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),http=require('node:http'),{execFileSync}=require('node:child_process');
-const {chromium}=require('playwright'),{existingCoverage}=require('./psyc-transcript-preservation.cjs'),root=path.resolve(__dirname,'..');
+const {chromium}=require('playwright'),{existingCoverage,stripPsycV6Assets}=require('./psyc-transcript-preservation.cjs'),root=path.resolve(__dirname,'..');
 const parse=s=>JSON.parse(s.split('window.SECOND_HALF = ')[1].replace(/;\s*$/,'')),bank=parse(fs.readFileSync(path.join(root,'module2-data.js'),'utf8'));
 const original=parse(execFileSync('git',['show','917d3da:module2-data.js'],{cwd:root,encoding:'utf8',maxBuffer:50*1024*1024}));
 const collection=bank.collections.find(m=>m.id===12),questions=bank.questions.filter(q=>q.module===12),plain=s=>s.replace(/<[^>]*>/g,'');
@@ -18,7 +18,7 @@ test('collection 13 preserves the previous bank and teaches every supplied page'
  assert(7/100<1/10);assert.equal(100-1000,-900);assert.equal(1000-100,900);
  // Cache queries and the authorized PSYC301 gradient stylesheet preserve every
  // original script, embedded archive/version, design rule and storage definition.
- for(const file of ['index.html','share.html']){const before=execFileSync('git',['show','917d3da:'+file],{cwd:root,encoding:'utf8',maxBuffer:50*1024*1024}),now=fs.readFileSync(path.join(root,file),'utf8');assert.equal(now.replace(/<link rel="stylesheet" href="psyc301-theme\.css\?v=vivid-gradient-\d+">\n/,''),before.replaceAll('v=problem-solving-part2-1','v=judgment-1'));}
+ for(const file of ['index.html','share.html']){const before=execFileSync('git',['show','917d3da:'+file],{cwd:root,encoding:'utf8',maxBuffer:50*1024*1024}),now=stripPsycV6Assets(fs.readFileSync(path.join(root,file),'utf8'));assert.equal(now.replace(/<link rel="stylesheet" href="psyc301-theme\.css\?v=vivid-gradient-\d+">\n/,''),before.replaceAll('v=problem-solving-part2-1','v=judgment-1'));}
 });
 function serve(){return http.createServer((req,res)=>{let name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(name.endsWith('/'))name+='index.html';const file=path.resolve(root,'.'+name);if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end()}fs.stat(file,(e,s)=>{if(e||!s.isFile()){res.writeHead(404);return res.end()}res.writeHead(200,{'Content-Type':{'.html':'text/html','.js':'application/javascript','.css':'text/css','.webp':'image/webp','.pdf':'application/pdf'}[path.extname(file)]||'application/octet-stream'});fs.createReadStream(file).pipe(res)})})}
 test('both entry points integrate judgment notes, graphs, review tools, quizzes and preserved state',{timeout:150000},async()=>{
