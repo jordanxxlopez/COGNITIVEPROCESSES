@@ -119,3 +119,36 @@ read marks and quiz answers keep their existing browser keys. The fourth
 edition is offered in the existing topbar and both readers, and is the default
 only when there is no saved edition preference. Its text also feeds the guide,
 combined notes, core review, experiments, search and read-aloud features.
+
+## Version 5 · clear teaching
+
+The existing selector now also offers Version 5 across all ten Module II
+collections. Every one of the 229 lecture pages and 55 review pages remains in
+source order. The 265 instructional entries have page-specific authored rewrites
+in `version5/*.txt`. Sentences explain technical terms where they occur and
+separate experimental tasks, conditions, observations and interpretations without
+presentation narration. Titles, reading reminders and other noninstructional
+pages retain empty scripts. This edition contains over 34,000 teaching words.
+
+The review retains its own original visuals and page links. Matching material
+uses the corresponding V5 lecture explanation. Review page 54 has its own
+explanation of the sound overlap between speaker and spichki and the distinction
+between word forms and meanings. The supplied guidelines shape the teaching
+content inside the existing interface rather than introducing a new note layout.
+
+All earlier editions remain available and byte-for-byte unchanged. Existing
+saved edition choices are retained; V5 is the default only without a saved choice.
+Notes, read marks, source/page IDs, question banks, answer order, grading, timers,
+colors and layout remain intact. The selected text also feeds existing search,
+guide, core review, experiments, combined notes and read-aloud behavior.
+
+Source equations in transitional probability render with the existing local
+KaTeX distribution. Formant labels use rendered subscripts in V5. Read-aloud
+uses authored spoken equivalents for equations, and the updated offline shell
+includes the new data, renderer and font assets.
+
+Rebuild with `python ling406/version5/build_transcripts.py`. Verify with
+`python ling406/tests/verify_v5.py` and `node ling406/tests/transcripts-v5.cjs`
+while the repository is served at `http://localhost:8907/`. The coverage file
+records each page's author file, role and size; `version5/preserved.json` pins
+all pre-existing LING406 source, edition, question and palette files.
