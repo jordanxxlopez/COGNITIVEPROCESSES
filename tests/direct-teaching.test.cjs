@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{execFileSync}=require('node:child_process');
-const {directTeaching}=require('./psyc-transcript-preservation.cjs'),root=path.resolve(__dirname,'..');
+const {directTeaching,existingCoverage}=require('./psyc-transcript-preservation.cjs'),root=path.resolve(__dirname,'..');
 const before=name=>execFileSync('git',['show','43a7eba:'+name],{cwd:root,encoding:'utf8',maxBuffer:50*1024*1024});
 const pack=(text,marker)=>JSON.parse(text.split(marker)[1].replace(/;\s*$/,''));
 test('PSYC301 changes only the requested transcript framing, across preserved editions',()=>{
@@ -12,7 +12,7 @@ test('PSYC301 changes only the requested transcript framing, across preserved ed
   assert.deepEqual(current,directTeaching(old));assert.deepEqual(current.questions,old.questions);audit(current.modules);
  }
  for(const [name,marker,modules]of [['module2-data.js','window.SECOND_HALF = ',d=>d.collections],['short-term-memory-v2.js','window.SHORT_TERM_MEMORY_V2 = ',d=>[d]]]){
-  const current=pack(fs.readFileSync(path.join(root,name),'utf8'),marker),old=pack(before(name),marker);assert.deepEqual(current,directTeaching(old));audit(modules(current));
+  const current=pack(fs.readFileSync(path.join(root,name),'utf8'),marker),old=pack(before(name),marker);assert.deepEqual(existingCoverage(current,old),directTeaching(old));audit(modules(current));
  }
  for(const file of ['ling406/app.js','ling406/data.js','ling406/transcripts-v2-data.js','ling406/transcripts-v3-data.js','ling406/transcripts-v4-data.js','ling285/app.js','ling285/data.json','bme423/app.js','bme423/module2-data.js']){
   if(fs.existsSync(path.join(root,file)))assert.equal(fs.readFileSync(path.join(root,file),'utf8'),before(file),file+' was outside transcript-change scope');

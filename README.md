@@ -26,7 +26,7 @@ The `index.html` can also be downloaded and opened in a browser; study text and 
 
 ## Growing Module 2 workspace
 
-Module 2 includes a lecture-based study guide, core review, experiments, combined notes, current practice test, lecture quizzes, missed-question queue, and source coverage. It covers collection 09 · Short-Term Memory, collection 10 · Working Memory, and collection 11 · Problem Solving and Reasoning. The latter preserves all 22 original PDF pages and provides 20 instructional slide transcripts. Original note and read-progress keys remain intact.
+Module 2 includes a lecture-based study guide, core review, experiments, combined notes, current practice test, lecture quizzes, missed-question queue, and source coverage. It covers collection 09 · Short-Term Memory, collection 10 · Working Memory, collection 11 · Problem Solving and Reasoning, and collection 12 · Problem Solving and Reasoning · Part II. The latter preserves all 22 original PDF pages and provides 20 instructional slide transcripts. Original note and read-progress keys remain intact.
 
 When new lectures are supplied, add their sections with stable IDs and update `module2-data.js`: extend `modules` and `collections`, add topic/experiment groups with an explicit `module` and source `pages`, and append source-based questions to the lecture pools. Keep existing question IDs and contents intact. Increase `revision` and update the Module 2 script version queries in both HTML entry points, retain IDs for unchanged questions, and assign new IDs to changed questions. Retire a question only when its contents actually change; otherwise preserve it and its retry history. Topic `progressKey` values keep guide checkboxes stable across coverage revisions. Do not automatically generate coverage for lectures that have not been supplied. The site does not ingest new lectures automatically.
 
@@ -112,3 +112,30 @@ The sentence-level edit record is in
 embedded editions, the separate Short-Term Memory Version 2, the current
 Working Memory/Problem Solving notes and their authoring text. Other-course
 transcripts, original slides, quizzes and saved progress are unchanged.
+
+## Collection 12 · Problem Solving and Reasoning · Part II
+
+All 24 pages of the supplied `CogPsych_Ch12_2 F26.pdf` appear in the individual
+collection in source order. The first title slide has no transcript. The other
+23 slides have expanded direct teaching paragraphs, including the visual-only
+checkerboard, fortress/radiation mapping, and physics sorting examples. The
+source PDF remains unchanged at `sources/CogPsych_Ch12_2_F26.pdf`, with page
+renders in `media/problem-solving-part2/` and source provenance in
+`authoring/psyc301/problem-solving-part2-source.json`.
+
+Five guide groups, 17 selected core sections, six experiment/demonstration groups
+and 50 new source-linked questions extend the existing workspace. The cumulative
+100-question test now draws 25 questions from each of four collections. The
+10-question quick set uses 2–3 per collection with a randomly assigned remainder;
+lecture quizzes keep 50 questions. Earlier question IDs, transcripts, notes,
+read marks, course switching, appearance controls and answer-order validation
+are preserved. No unseen exam distribution is claimed.
+
+Rebuild this addition with
+`python authoring/psyc301/build_problem_solving_part2.py`, reproduce the source
+and question-bank audit with
+`python module2-practice-model.py --output module2-practice-report.json`, and run
+`node --test tests/*.test.cjs`. The Part II tests check the unchanged earlier
+coverage, all source pages and transcript text, every new question anchor,
+important source comparisons, exact four-way quotas, grading/source links,
+review readers, saved notes, both entry points and mobile color modes.

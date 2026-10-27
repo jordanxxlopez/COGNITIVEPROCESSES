@@ -8,9 +8,9 @@ const load=text=>JSON.parse(text.split('window.SECOND_HALF = ',1)[0]===text?'nul
 const bank=load(fs.readFileSync(path.join(root,'module2-data.js'),'utf8')),old=directTeaching(load(before('module2-data.js')));
 const collection=bank.collections.find(c=>c.id===10),questions=bank.questions.filter(q=>q.module===10),plain=s=>s.replace(/<[^>]*>/g,'');
 test('new lecture preserves earlier data and uses every instructional source page',()=>{
- assert.deepEqual(bank.questions.filter(q=>q.module!==10),old.questions);
- assert.deepEqual(bank.collections.filter(m=>m.id!==10),old.collections);
- for(const key of ['topics','coreReview','experiments'])assert.deepEqual(bank[key].filter(g=>g.module!==10),old[key]);
+ assert.deepEqual(bank.questions.filter(q=>old.modules.includes(q.module)),old.questions);
+ assert.deepEqual(bank.collections.filter(m=>old.modules.includes(m.id)),old.collections);
+ for(const key of ['topics','coreReview','experiments'])assert.deepEqual(bank[key].filter(g=>old.modules.includes(g.module??6)),old[key]);
  const stm=t=>JSON.parse(t.split('window.SHORT_TERM_MEMORY_V2 = ')[1].replace(/;\s*$/,''));
  assert.deepEqual(stm(fs.readFileSync(path.join(root,'short-term-memory-v2.js'),'utf8')),directTeaching(stm(before('short-term-memory-v2.js'))));
  for(const file of ['index.html','share.html']){
@@ -20,9 +20,9 @@ test('new lecture preserves earlier data and uses every instructional source pag
   assert.deepEqual([...current.matchAll(/<script>(.*?)<\/script>/gs)].map(m=>m[1]),[...earlier.matchAll(/<script>(.*?)<\/script>/gs)].map(m=>m[1]),'Existing app code changed');
   assert.deepEqual([...current.matchAll(/<style>(.*?)<\/style>/gs)].map(m=>m[1]),[...earlier.matchAll(/<style>(.*?)<\/style>/gs)].map(m=>m[1]),'Existing design changed');
  }
- assert.deepEqual(bank.modules,[6,9,10]);assert.equal(bank.lectureNumbers[10],'11');
+ assert.deepEqual(bank.modules.slice(0,3),[6,9,10]);assert.equal(bank.lectureNumbers[10],'11');
  assert.equal(collection.original.length,22);assert.deepEqual(collection.sections.map(s=>s.page),Array.from({length:21},(_,i)=>i+2));
- assert.equal(questions.length,50);assert.equal(new Set(bank.questions.map(q=>q.id)).size,150);
+ assert.equal(questions.length,50);assert.equal(new Set(bank.questions.map(q=>q.id)).size,bank.questions.length);
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'authoring/psyc301/problem-solving-source.json')));
  assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,manifest.stored))).digest('hex'),manifest.sha256);
  for(const image of collection.original){assert(fs.statSync(path.join(root,image)).size>4000)}
@@ -52,7 +52,7 @@ test('both entry points expose lecture 11, complete readers, preserved progress 
   const ctx=await browser.newContext({viewport:{width:1480,height:1100}});
   await ctx.addInitScript(()=>{if(!localStorage.getItem('psyc301-studio-v1'))localStorage.setItem('psyc301-studio-v1',JSON.stringify({theme:'dark',read:['6:11','9:11'],personalNotes:{'6:11':'Keep sensory notes.','9:11':'Keep working-memory notes.'},missed:[3001,2001,1],explanationVersions:{6:'2',3:'E'},essentialsDone:['m2-stm-v2-observed-style-1']}))});
   const p=await ctx.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto(base+entry);
-  assert.match(await p.locator('#content').innerText(),/3 lectures|3 supplied|across 3 lectures/);
+  assert.match(await p.locator('#content').innerText(),/4 lectures|4 supplied|across 4 lectures/);
   await p.locator('#workspaceNav [data-module="10"]').click();assert.match(await p.locator('#content h1').innerText(),/11 · Problem Solving and Reasoning/);assert.equal(await p.locator('.section').count(),22);
   assert.equal(await p.locator('.section .priority-e').count(),16);assert.equal(await p.locator('.section:not(.core-e)').count(),6);
   const link=p.locator('.notesHeader a');assert.match(await link.getAttribute('href'),/CogPsych_Ch12_1_F26.pdf/);assert.equal((await p.request.get(base+'/'+await link.getAttribute('href'))).status(),200);
@@ -71,14 +71,14 @@ test('both entry points expose lecture 11, complete readers, preserved progress 
   await p.locator('#exitExpanded').click();await p.locator('#workspaceNav [data-view="m2guide"]').click();assert.match(await p.locator('#content').innerText(),/Problem representation, restructuring, and insight/);
   await p.locator('#workspaceNav [data-view="m2core"]').click();await p.locator('[data-second-core-expand]').click();const corePages=await p.evaluate(()=>secondCoreModule().sections.filter(s=>s.sourceModule===10).map(s=>s.noteKey));assert.equal(corePages.length,16);assert(corePages.includes('10:21'));await p.locator('#exitExpanded').click();
   await p.locator('#workspaceNav [data-view="m2experiments"]').click();assert.match(await p.locator('#content').innerText(),/Metcalfe and Wiebe/);await p.locator('[data-second-experiment-expand="0"]').first().click();const index=await p.evaluate(()=>secondExperimentModule().sections.findIndex(s=>s.noteKey==='10:22'));await p.locator('#teachSelect').selectOption(String(index));assert.match(await p.locator('#spoken').innerText(),/think-aloud protocol/i);assert(await p.locator('[data-personal-note="10:22"]').count());await p.locator('#exitExpanded').click();
-  const audit=await p.evaluate(()=>{const extra=new Set(),keys=new Set();for(let i=0;i<100;i++){const items=prepareQuizItems(balancedSecondQuestions(secondQuestions(),100));if(!validateSecondBalance(items,100)||!validateAnswerKey(items))throw Error('Invalid set');for(const id of secondHalf.modules)if(items.filter(q=>q.module===id).length===34)extra.add(id);keys.add(items.map(q=>q.order.indexOf(q.correct)).join(''))}return{extra:[...extra].sort((a,b)=>a-b),keys:keys.size}});assert.deepEqual(audit.extra,[6,9,10]);assert.equal(audit.keys,100);
-  await p.locator('#workspaceNav [data-view="m2test"]').click();assert.match(await p.locator('#content').innerText(),/33–34 questions per lecture/);await p.locator('[data-start="m2all"]').click();
+  const audit=await p.evaluate(()=>{const extra=new Set(),keys=new Set();for(let i=0;i<100;i++){const items=prepareQuizItems(balancedSecondQuestions(secondQuestions(),100));if(!validateSecondBalance(items,100)||!validateAnswerKey(items))throw Error('Invalid set');for(const id of secondHalf.modules)if(100%secondHalf.modules.length&&items.filter(q=>q.module===id).length===Math.ceil(100/secondHalf.modules.length))extra.add(id);keys.add(items.map(q=>q.order.indexOf(q.correct)).join(''))}return{extra:[...extra].sort((a,b)=>a-b),keys:keys.size}});assert.deepEqual(audit.extra,100%bank.modules.length?bank.modules:[]);assert.equal(audit.keys,100);
+  await p.locator('#workspaceNav [data-view="m2test"]').click();assert.match(await p.locator('#content').innerText(),/25 questions per lecture/);await p.locator('[data-start="m2all"]').click();
   assert.equal(await p.evaluate(()=>quiz.items.length),100);assert(await p.evaluate(()=>validateSecondBalance(quiz.items,100)&&validateAnswerKey(quiz.items)));
   const q=await p.evaluate(()=>({correct:quiz.items[0].correct,module:quiz.items[0].module,page:quiz.items[0].page}));await p.locator('[data-answer="'+q.correct+'"]').click();assert.match(await p.locator('.feedback').innerText(),/Correct/);await p.locator('#nextQ').click();assert.equal(await p.evaluate(()=>quiz.index),1);
   await p.evaluate(()=>{go('module',10);startQuiz('moduleall')});assert.equal(await p.evaluate(()=>quiz.items.length),50);assert(await p.evaluate(()=>quiz.items.every(q=>q.module===10)));await p.evaluate(()=>{for(let i=0;i<quiz.items.length;i++)quiz.answers[i]={choice:quiz.items[i].correct};quiz.finished=true;render()});assert.match(await p.locator('#content').innerText(),/50 \/ 50|50\/50|100%/);
   for(const theme of ['dark','light']){await p.setViewportSize({width:390,height:844});await p.evaluate(theme=>{applyTheme(theme);go('module',10);mode='expanded';render()},theme);assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));assert(await p.locator('[data-reader-timer]').count())}
   const saved=await p.evaluate(()=>JSON.parse(localStorage.getItem('psyc301-studio-v1')));assert.equal(saved.personalNotes['6:11'],'Keep sensory notes.');assert.equal(saved.personalNotes['9:11'],'Keep working-memory notes.');assert.equal(saved.personalNotes['10:2'],'Problem = obstacle between current and goal.');assert(saved.read.includes('10:2'));assert(saved.read.includes('6:11'));assert(saved.read.includes('9:11'));assert.equal(saved.explanationVersions[6],'2');assert(saved.essentialsDone.includes('m2-stm-v2-observed-style-1'));
   await p.reload();await p.locator('#workspaceNav [data-module="10"]').click();assert.equal(await p.locator('[data-personal-note="10:2"]').inputValue(),saved.personalNotes['10:2']);assert(await p.locator('[data-read="10:2"]').isChecked());
-  assert.deepEqual(errors,[]);await ctx.close();console.log('PASS '+entry+': 22 original pages, 21 expanded slide scripts, all review tools, 50 new questions, randomized 33/33/34 exams, unchanged archive/notes, persistent new notes, and responsive readers.');
+  assert.deepEqual(errors,[]);await ctx.close();console.log('PASS '+entry+': 22 original pages, 21 expanded slide scripts, all review tools, 50 new questions, balanced current exams, unchanged archive/notes, persistent new notes, and responsive readers.');
  }}finally{await browser.close();await new Promise(r=>server.close(r))}
 });

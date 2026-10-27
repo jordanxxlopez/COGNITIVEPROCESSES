@@ -8,4 +8,16 @@ function directTeaching(value){
  if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,directTeaching(v)]));
  return value;
 }
-module.exports={directTeaching};
+// Compare an earlier coverage edition without letting later appended lectures
+// invalidate its guarantees for pre-existing content.
+function existingCoverage(current,earlier){
+ if(!Array.isArray(current.modules)||!Array.isArray(earlier.modules)||!Array.isArray(current.collections))return current;
+ const known=new Set(earlier.modules),result={...current,revision:earlier.revision};
+ result.modules=current.modules.filter(id=>known.has(id));
+ result.collections=current.collections.filter(m=>known.has(m.id));
+ result.questions=current.questions.filter(q=>known.has(q.module));
+ result.lectureNumbers=Object.fromEntries(Object.entries(current.lectureNumbers).filter(([id])=>known.has(Number(id))));
+ for(const key of ['topics','coreReview','experiments'])result[key]=current[key].filter(g=>known.has(g.module??6));
+ return result;
+}
+module.exports={directTeaching,existingCoverage};

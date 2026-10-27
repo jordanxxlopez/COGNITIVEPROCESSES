@@ -57,7 +57,8 @@ for(const file of ['index.html','share.html']){
  assert(nav.indexOf('Individual collections')<nav.indexOf('data-module="6"'));
  assert.match(nav, /navnum">09/);
  assert.equal(run('moduleBy(6).sections.filter(s=>s.examPriorityE.mustKnow).length'),20);
- assert.equal(run('secondCoreModule().sections.length'),50);
+ assert.equal(run('secondCoreModule().sections.filter(s=>s.sourceModule!==11).length'),50);
+ assert.equal(run('secondCoreModule().sections.length'),67);
  run("go('module',9)");
  assert.match(element('#content').innerHTML,/10 · Working Memory/);
  assert.match(element('#workspaceNav').innerHTML,/navnum">10/);
@@ -81,13 +82,14 @@ for(const file of ['index.html','share.html']){
  assert.match(element('#content').innerHTML,/data-personal-note="9:8"/);
  assert.match(element('#content').innerHTML,/Conrad/);
  assert(run("secondExperimentModule().sections.some(s=>s.noteKey==='9:22')"));
- assert.equal(run('secondExperimentModule().sections.at(-1).noteKey'),'10:22');
+ assert(run("secondExperimentModule().sections.some(s=>s.noteKey==='10:22')"));
+ assert.equal(run('secondExperimentModule().sections.at(-1).noteKey'),'11:21');
  run('exitExpandedView()');assert.equal(run('view'),'m2experiments');
  run("go('m2test');startQuiz('m2all')");
  assert.equal(run('quiz.items.length'),100);
  assert(run('quiz.items.every(q=>secondHalf.modules.includes(q.module) && moduleBy(q.module).sections.some(s=>s.page===q.page))'));
  assert(run('validateSecondBalance(quiz.items,100)'));
- for(const id of [6,9,10])assert([33,34].includes(run(`quiz.items.filter(q=>q.module===${id}).length`)));
+ for(const id of [6,9,10,11])assert.equal(run(`quiz.items.filter(q=>q.module===${id}).length`),25);
  assert(run('validateAnswerKey(quiz.items)'));
  run('answer(quiz.items[0].correct)');assert.equal(run('quiz.answers.length'),1);
  run("go('m2missed');startQuiz('m2missed')");assert(run('quiz.items.every(q=>secondHalf.modules.includes(q.module))'));
@@ -100,7 +102,7 @@ for(const file of ['index.html','share.html']){
  run("startQuiz('moduleall')");assert.equal(run('quiz.items.length'),50);assert(run('quiz.items.every(q=>q.module===10)'));
  run("startQuiz('m2quick')");assert.equal(run('quiz.items.length'),10);
  assert(run('validateSecondBalance(quiz.items,10)'));
- for(const id of [6,9,10])assert([3,4].includes(run(`quiz.items.filter(q=>q.module===${id}).length`)));
+ for(const id of [6,9,10,11])assert([2,3].includes(run(`quiz.items.filter(q=>q.module===${id}).length`)));
  assert(run('validateAnswerKey(quiz.items)'));
  run('quiz.finished=true');assert.match(run('results()'),/data-view="m2test"/);
  const ids=run('secondQuestions().map(q=>q.id)');assert.equal(new Set(ids).size,count);
