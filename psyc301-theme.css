@@ -53,3 +53,36 @@
     background: linear-gradient(110deg, #292338 0%, #202c3d 50%, #1b393a 100%);
   }
 }
+
+/* Keep the palette visible throughout long collections and every workspace.
+   Color belongs to interface surfaces, not the source or transcript body. */
+@media screen {
+  :root {
+    --studio-panel-gradient: linear-gradient(115deg, #f8f2ff 0%, #edf4ff 50%, #e9f8f2 100%);
+    --studio-heading-gradient: linear-gradient(115deg, #e2d5ff 0%, #d3e4ff 50%, #c3eade 100%);
+  }
+  html[data-theme=dark] {
+    --studio-panel-gradient: linear-gradient(115deg, #332c4e 0%, #263d54 50%, #1d4b4a 100%);
+    --studio-heading-gradient: linear-gradient(115deg, #413261 0%, #294762 50%, #1b5956 100%);
+  }
+  body,
+  html[data-theme] body {
+    background-attachment: fixed;
+  }
+  .card:not(.transcript-pane):not(.visual-pane):not(.breakpanel),
+  html[data-theme] .notesHeader,
+  html[data-theme] .notice,
+  html[data-theme] .timer,
+  html[data-theme] .covered {
+    background-image: var(--studio-panel-gradient);
+  }
+  .section > summary,
+  details.guide > summary,
+  html[data-theme] .teachcontrols,
+  html[data-theme] .expanded .teachcontrols {
+    background-image: var(--studio-heading-gradient);
+  }
+  .progress > div {
+    background-image: linear-gradient(115deg, #6553cf 0%, #4c58b8 50%, #287375 100%);
+  }
+}
