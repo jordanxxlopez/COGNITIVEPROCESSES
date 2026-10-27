@@ -1,0 +1,55 @@
+/* PSYC301 only. Richer versions of the existing violet, blue and teal palette.
+   Reading surfaces, source slides, feedback colors and print styles stay intact. */
+@media screen {
+  body {
+    background: linear-gradient(135deg, #ede8ff 0%, #e7f0fc 48%, #dff2ed 100%);
+  }
+  aside {
+    background: linear-gradient(155deg, #f1ebff 0%, #e7edfb 48%, #ddf1ed 100%);
+  }
+  .hero {
+    background: linear-gradient(120deg, #d2c3ff 0%, #c6dcff 48%, #a8e1d5 100%);
+  }
+  nav button.active {
+    background: linear-gradient(110deg, #e0d3ff 0%, #d7e4ff 55%, #ccece3 100%);
+  }
+  .primary,
+  .tabs button[aria-selected=true] {
+    background: linear-gradient(115deg, #6553cf 0%, #4c58b8 50%, #287375 100%);
+  }
+  .primary:hover {
+    background: linear-gradient(115deg, #5544bc 0%, #3e4ba4 50%, #216467 100%);
+  }
+  html[data-theme=light] .expanded-preview,
+  html[data-theme=light] .expanded .shell,
+  html[data-theme=light] body.expanded {
+    background: linear-gradient(135deg, #e5def4 0%, #dce7f2 48%, #d5eae4 100%);
+  }
+  html[data-theme=dark] body {
+    background: linear-gradient(135deg, #201b35 0%, #132439 48%, #103b3b 100%);
+  }
+  html[data-theme=dark] aside {
+    background: linear-gradient(155deg, #302449 0%, #1c3048 48%, #154443 100%);
+  }
+  html[data-theme=dark] .hero {
+    background: linear-gradient(120deg, #4c347c 0%, #254d76 48%, #176a68 100%);
+  }
+  html[data-theme=dark] nav button.active {
+    background: linear-gradient(110deg, #49366b 0%, #2e426a 55%, #225555 100%);
+  }
+  html[data-theme=dark] .primary,
+  html[data-theme=dark] .tabs button[aria-selected=true] {
+    background: linear-gradient(115deg, #6553cf 0%, #4c58b8 50%, #287375 100%);
+  }
+  html[data-theme=dark] .primary:hover {
+    background: linear-gradient(115deg, #5544bc 0%, #3e4ba4 50%, #216467 100%);
+  }
+  html[data-theme=dark] .expanded-preview,
+  html[data-theme=dark] .expanded .shell,
+  html[data-theme=dark] body.expanded {
+    background: linear-gradient(135deg, #211b32 0%, #112334 48%, #103837 100%);
+  }
+  html[data-theme=dark] .expanded .teachcontrols {
+    background: linear-gradient(110deg, #292338 0%, #202c3d 50%, #1b393a 100%);
+  }
+}
