@@ -2535,21 +2535,342 @@
       "paragraphs": 3,
       "originalImage": "assets/slides/lecture14/025.webp",
       "originalAssets": []
+    },
+    {
+      "id": "lecture15-p001",
+      "page": 1,
+      "title": "Neural Networks",
+      "kind": "title",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 1",
+      "concepts": [],
+      "words": 0,
+      "version3Words": 0,
+      "paragraphs": 0,
+      "originalImage": "assets/slides/lecture15/001.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture15-p002",
+      "page": 2,
+      "title": "Two formants feed a fully connected network",
+      "kind": "concept",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 2",
+      "concepts": [
+        "formant inputs",
+        "hidden layers",
+        "fully connected",
+        "signed weights"
+      ],
+      "words": 288,
+      "version3Words": 288,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture15/002.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture15-p003",
+      "page": 3,
+      "title": "Forward propagation combines weighted inputs",
+      "kind": "concept",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 3",
+      "concepts": [
+        "inner product",
+        "linear hidden activations",
+        "logits",
+        "softmax",
+        "prediction versus target"
+      ],
+      "words": 271,
+      "version3Words": 271,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture15/003.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture15-p004",
+      "page": 4,
+      "title": "Pop quiz · Forward propagation",
+      "kind": "prompt",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 4",
+      "concepts": [],
+      "words": 0,
+      "version3Words": 0,
+      "paragraphs": 0,
+      "originalImage": "assets/slides/lecture15/004.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/578a201565eeba977543.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture15-p005",
+      "page": 5,
+      "title": "Info on Exam 2 and Exam 3",
+      "kind": "logistics",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 5",
+      "concepts": [],
+      "words": 0,
+      "version3Words": 0,
+      "paragraphs": 0,
+      "originalImage": "assets/slides/lecture15/005.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture15-p006",
+      "page": 6,
+      "title": "Backpropagation uses the difference between prediction and target",
+      "kind": "concept",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 6",
+      "concepts": [
+        "computed versus desired output",
+        "cross-entropy",
+        "gradient",
+        "backward order",
+        "stored activations"
+      ],
+      "words": 287,
+      "version3Words": 287,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture15/006.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture15-p007",
+      "page": 7,
+      "title": "Predict how changing a marked weight affects error",
+      "kind": "concept",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 7",
+      "concepts": [
+        "marked output weight",
+        "marked input weight",
+        "direction of error",
+        "downstream paths"
+      ],
+      "words": 235,
+      "version3Words": 235,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture15/007-ink.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/5cc370b56f25f0bbfbf3.png"
+        },
+        {
+          "type": "image",
+          "file": "assets/original/29b29d84e9c03a356b11.png"
+        },
+        {
+          "type": "image",
+          "file": "assets/original/428791f334e131de9396.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture15-p008",
+      "page": 8,
+      "title": "Backpropagation reuses downstream error calculations",
+      "kind": "concept",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 8",
+      "concepts": [
+        "W2 versus W5",
+        "credit assignment",
+        "dynamic programming",
+        "SGD versus gradients"
+      ],
+      "words": 246,
+      "version3Words": 246,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture15/008.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/6ee1e5e5debfc8afcaf2.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture15-p009",
+      "page": 9,
+      "title": "Pair each recording with its target row",
+      "kind": "concept",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 9",
+      "concepts": [
+        "matrix rows and columns",
+        "one-hot target",
+        "paired observations",
+        "prediction versus target"
+      ],
+      "words": 250,
+      "version3Words": 250,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture15/009.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture15-p010",
+      "page": 10,
+      "title": "Read one full-batch training step in PyTorch",
+      "kind": "concept",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 10",
+      "concepts": [
+        "tensor inputs",
+        "linear layer dimensions",
+        "zero_grad",
+        "cross-entropy logits",
+        "backward versus step",
+        "full batch"
+      ],
+      "words": 259,
+      "version3Words": 259,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture15/010.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture15-p011",
+      "page": 11,
+      "title": "Sigmoid turns an inner product into a bounded activation",
+      "kind": "concept",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 11",
+      "concepts": [
+        "sigmoid",
+        "bounded graded activation",
+        "saturation",
+        "linear versus sigmoid",
+        "rate coding context"
+      ],
+      "words": 274,
+      "version3Words": 274,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture15/011.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/07f692ce6b18fe7e4d92.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture15-p012",
+      "page": 12,
+      "title": "Apply sigmoid while recalculating downstream activity",
+      "kind": "concept",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 12",
+      "concepts": [
+        "nine hidden neurons",
+        "unchanged formants and weights",
+        "downstream recomputation",
+        "sigmoid versus training",
+        "softmax outputs"
+      ],
+      "words": 259,
+      "version3Words": 259,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture15/012.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/slides/lecture15/stages/sigmoid-00.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture15/stages/sigmoid-01.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture15/stages/sigmoid-02.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture15/stages/sigmoid-03.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture15/stages/sigmoid-04.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture15/stages/sigmoid-05.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture15/stages/sigmoid-06.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture15/stages/sigmoid-07.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture15/stages/sigmoid-08.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture15/stages/sigmoid-09.webp"
+        }
+      ]
+    },
+    {
+      "id": "lecture15-p013",
+      "page": 13,
+      "title": "Insert sigmoid after the hidden linear layers",
+      "kind": "concept",
+      "lectureId": "lecture15",
+      "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+      "authoringEntry": "teaching-v4-lecture15.json page 13",
+      "concepts": [
+        "hidden sigmoid placement",
+        "unchanged layer sizes",
+        "final logits",
+        "training sequence",
+        "diagram versus defaults"
+      ],
+      "words": 259,
+      "version3Words": 259,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture15/013.webp",
+      "originalAssets": []
     }
   ],
   "metrics": {
-    "instructionalPages": 75,
-    "words": 14747,
-    "medianWords": 216,
+    "instructionalPages": 85,
+    "words": 17375,
+    "medianWords": 221,
     "minimumWords": 122,
-    "maximumWords": 233,
+    "maximumWords": 288,
     "quartiles": [
-      142.0,
-      216.0,
-      226.0
+      157.0,
+      221.0,
+      229.5
     ]
   },
   "medianRule": "The user requested a 200–250-word median, not a per-slide minimum. Shorter explanations remain where sufficient.",
-  "emptyPagesPreserved": 11,
+  "emptyPagesPreserved": 14,
   "sourceAndVisualsUnchanged": true
 }

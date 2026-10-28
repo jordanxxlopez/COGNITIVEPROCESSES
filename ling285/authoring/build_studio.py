@@ -12,7 +12,7 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 manifest=read('source-manifest.json');inventory={(p['source'],p['page']):p for p in read('page-inventory.json')}
 media={a['sha256']:a for a in read('unique-embedded.json')}
 authored={}
-for name in ['teaching-early.json','teaching-middle.json','teaching-later.json','teaching-readings.json','teaching-lecture14.json']:
+for name in ['teaching-early.json','teaching-middle.json','teaching-later.json','teaching-readings.json','teaching-lecture14.json','teaching-lecture15.json']:
  for key,value in read(name).items():
   assert key not in authored,key
   authored[key]=value
@@ -80,7 +80,7 @@ for key in lecture_keys+other_keys:
   raw=p.get('native',{});shape_text='\n'.join(s.get('text','') if 'text' in s else '\n'.join(' | '.join(row) for row in s.get('rows',[])) for s in raw.get('shapes',[]))
   # Preserve exact extracted wording separately from authored teaching.
   original_text=p['text'].strip() or p['ocr'].strip() or shape_text.strip()
-  if key=='lecture14':
+  if key in ['lecture14','lecture15']:
    # PDF text can omit labels retained as native PowerPoint text. Keep the
    # complete new-slide wording without changing earlier released sections.
    native_text='\n'.join(s.get('text','') for s in raw.get('shapes',[]) if s.get('type')=='text').strip()
@@ -91,12 +91,16 @@ for key in lecture_keys+other_keys:
    sha=ref['sha256']
    if sha in seen:continue
    seen.add(sha);asset=media[sha];source=ROOT/asset['file'];ext=source.suffix.lower()
+   # Extracted caches are optional; already published exact media are durable.
+   if not source.exists():
+    preserved=media_dir/(sha[:20]+ext)
+    if preserved.exists() and digest(preserved)==sha:source=preserved
    if ext in ['.mp4','.wav']:kind='video' if ext=='.mp4' else 'audio'
    else:
     try:
      with Image.open(source) as im:
       width,height=im.size;animated=getattr(im,'is_animated',False)
-     if min(width,height)<70 or width*height<65000:continue
+     if key!='lecture15' and (min(width,height)<70 or width*height<65000):continue
      kind='image'
     except Exception:continue
    target=media_dir/(sha[:20]+ext)
@@ -105,11 +109,14 @@ for key in lecture_keys+other_keys:
    used_media[sha]={'file':str(target.relative_to(ROOT)),'sha256':sha,'bytes':source.stat().st_size,'original':asset['file']}
    label={'video':'Original embedded demonstration','audio':'Original embedded audio · no supplied transcript','image':'Original figure detail'}[kind]
    if kind=='image' and ext=='.gif' and animated:label='Original animated illustration'
-   assets.append({'file':str(target.relative_to(ROOT)),'type':kind,'label':label,'animated':bool(kind=='image' and ext=='.gif' and animated),'originalFilename':source.name})
+   assets.append({'file':str(target.relative_to(ROOT)),'type':kind,'label':label,'animated':bool(kind=='image' and ext=='.gif' and animated),'originalFilename':Path(asset['file']).name})
+  if key=='lecture15' and page==12:
+   for stage in read('extracted/lecture15-animation-stages.json'):
+    assets.append({'file':stage['file'],'type':'image','label':'Original reveal stage '+str(stage['stage'])+' · '+stage['caption'],'sourceDerived':True,'sourcePage':12,'sourceStage':stage['stage'],'animated':False,'originalFilename':'slide12.xml · stage '+str(stage['stage'])})
   is_core=(key,page) in core
   # Internal authoring observations belong in the audit, not the student flow.
   display_issues=[s for s in section.get('issues',[]) if not re.search(r'agent instruction|new user request|instructions? (?:issued |to the assistant)|not instructions|source policy is recorded',s,re.I)]
-  sections.append({'id':sid,'page':page,'title':section['title'],'kind':section['kind'],'teaching':section['teaching'],'image':p['image'],'assets':assets,'sourceText':original_text,'speakerNotes':raw.get('speakerNotes',''),'issues':display_issues,'core':is_core,'coreReason':core.get((key,page),'')})
+  sections.append({'id':sid,'page':page,'title':section['title'],'kind':section['kind'],'teaching':section['teaching'],'image':'assets/slides/lecture15/007-ink.webp' if key=='lecture15' and page==7 else p['image'],'assets':assets,'sourceText':original_text,'speakerNotes':raw.get('speakerNotes',''),'issues':display_issues,'core':is_core,'coreReason':core.get((key,page),'')})
   audit.append({'id':sid,'source':key,'page':page,'kind':section['kind'],'teachingParagraphs':len(section['teaching']),'words':sum(len(t.split()) for t in section['teaching']),'core':is_core,'review':review,'issues':section.get('issues',[]),'sourceSha256':entry['sha256']})
   source_issues.extend(display_issues)
   p['renderedPageInspected']=True;p['detailedVisualReviewComplete']=True;p['teachingCoverageVerified']=True
@@ -118,7 +125,7 @@ for key in lecture_keys+other_keys:
  issues=[]
  if key=='lecture05-06':issues.append('The uploaded filename identifies Lectures 05–06; its internal title says Lecture 4+5. Both original labels are retained.')
  if key=='exam-review-seagull':issues.append('Uploaded answer companion with unverified authorship. Teaching resolves its inconsistencies against the primary lecture sources.')
- if key in module_two:issues.append('Embedded videos supply content that can appear blank in the static PDF. Play the original demonstrations on the relevant pages.')
+ if key in module_two and any(a['type']=='video' for section in sections for a in section['assets']):issues.append('Embedded videos supply content that can appear blank in the static PDF. Play the original demonstrations on the relevant pages.')
  label=f'Lecture {number}' if number else 'Uploaded review' if entry['role']=='review' else 'Course syllabus' if key=='syllabus' else 'Supporting reading'
  collections.append({'id':key,'title':author['title'],'number':number,'label':label,'role':entry['role'],'sourceFile':entry['file'],'pdfFile':entry['rendered_pdf'],'originalFilename':entry['original'],'issues':issues,'sections':sections,'moduleId':None if key=='syllabus' else 'module2' if key in module_two else 'module1','workspaceGroup':'meadows' if key in meadows else 'lectures' if entry['role']=='lecture' else 'sources'})
 all_sections={s['id']:s for c in collections for s in c['sections']}

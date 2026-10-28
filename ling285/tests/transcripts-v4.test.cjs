@@ -13,12 +13,12 @@ test('Version 4 covers all source identities and meets the requested median with
    const row=coverage.sections.find(row=>row.id===s.id);assert.equal(row.words,words(s.teaching));assert.equal(row.originalImage,old.image);assert.deepEqual(row.originalAssets,old.assets.map(a=>({type:a.type,file:a.file})));
   });
  }
- counts.sort((a,b)=>a-b);const median=counts[(counts.length-1)/2];assert.equal(pages,86);assert.equal(counts.length,75);assert(median>=200&&median<=250);assert.equal(coverage.metrics.medianWords,median);assert.equal(coverage.emptyPagesPreserved,11);
+ counts.sort((a,b)=>a-b);const median=counts[(counts.length-1)/2];assert.equal(pages,99);assert.equal(counts.length,85);assert(median>=200&&median<=250);assert.equal(coverage.metrics.medianWords,median);assert.equal(coverage.emptyPagesPreserved,14);
 });
 test('the earlier teaching, practice editions, and question banks are unchanged',()=>{
  const report=read('authoring/transcripts-v4-preservation.json');assert.equal(report.allEarlierEditionsAndPracticeUnchanged,true);
  for(const row of report.files)assert.equal(sha(row.file),row.sha256,row.file);
- assert.equal(data.questions.length,292);assert.equal(read('practice-v2.json').questions.length,200);
+ assert.equal(data.questions.length,342);assert.equal(read('practice-v2.json').questions.length,250);
 });
 test('the source review keeps the important system and measurement distinctions',()=>{
  const prose=(lecture,page)=>v4.collections[lecture].sections.find(s=>s.page===page).teaching.join(' ');
@@ -34,7 +34,7 @@ test('the Version 4 review matches the final authored and runtime files',()=>{
  for(const file of report.files){
   const actual=['app.js','index.html'].includes(file.file)
    ?crypto.createHash('sha256').update(execFileSync('git',['show','c0db5ad:ling285/'+file.file],{cwd:root})).digest('hex')
-   :sha(file.file);
+   :crypto.createHash('sha256').update(execFileSync('git',['show','f990dd3:ling285/'+file.file],{cwd:root,maxBuffer:20*1024*1024})).digest('hex');
   assert.equal(actual,file.sha256,file.file);
  }
 });

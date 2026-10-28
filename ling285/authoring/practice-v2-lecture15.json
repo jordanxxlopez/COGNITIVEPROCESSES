@@ -1,0 +1,1680 @@
+{
+  "lectureId": "lecture15",
+  "questions": [
+    {
+      "id": "v2-l15-mcq-001",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "In the 2 → 3 → 2 → 4 → 5 network, what do the first two and last five positions represent?",
+      "answer": "F1 and F2 are the inputs, and done, dune, dean, Don, and Dan label the outputs.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 2
+        }
+      ],
+      "topic": "Network architecture",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "F1 and F2 are the inputs, and done, dune, dean, Don, and Dan label the outputs.",
+          "feedback": "F1 and F2 are the inputs, and done, dune, dean, Don, and Dan label the outputs.",
+          "id": "a"
+        },
+        {
+          "text": "The first two positions are word probabilities, and the last five are formants.",
+          "feedback": "The formants enter first. The final positions correspond to word candidates.",
+          "id": "b"
+        },
+        {
+          "text": "The first two positions are recordings, and the last five are hidden layers.",
+          "feedback": "The two input positions hold measurements from a recording. The hidden layers have three, two, and four units.",
+          "id": "c"
+        },
+        {
+          "text": "The first two positions are weights, and the last five are learning rates.",
+          "feedback": "Weights belong to connections, and the learning rate controls updates rather than identifying input or output units.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l15-mcq-002",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What does fully connected mean between the two inputs and first hidden layer?",
+      "answer": "Each input reaches every receiving neuron through a separately weighted connection.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 2
+        }
+      ],
+      "topic": "Full connectivity",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Every connection must use one identical weight.",
+          "feedback": "Full connectivity specifies which neurons are connected, not that their weights are equal.",
+          "id": "a"
+        },
+        {
+          "text": "Only the top hidden neuron receives F1.",
+          "feedback": "All three receiving neurons connect to F1 in the supplied fully connected network.",
+          "id": "b"
+        },
+        {
+          "text": "The input becomes a different word before reaching each neuron.",
+          "feedback": "The incoming quantity remains a formant measurement. Its contribution changes through multiplication by a connection weight.",
+          "id": "c"
+        },
+        {
+          "text": "Each input reaches every receiving neuron through a separately weighted connection.",
+          "feedback": "Each input reaches every receiving neuron through a separately weighted connection.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l15-mcq-003",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "How is a hidden neuron’s inner product obtained?",
+      "answer": "Multiply each incoming value by its weight and add the products.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Inner product",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Add all incoming values and discard their weights.",
+          "feedback": "The different connection weights determine each incoming value’s contribution.",
+          "id": "a"
+        },
+        {
+          "text": "Multiply each incoming value by its weight and add the products.",
+          "feedback": "Multiply each incoming value by its weight and add the products.",
+          "id": "b"
+        },
+        {
+          "text": "Convert each input into a separate word label.",
+          "feedback": "Word responses are assigned at the output layer. Hidden units combine numerical inputs.",
+          "id": "c"
+        },
+        {
+          "text": "Multiply only the largest input by the largest weight.",
+          "feedback": "The neuron combines all of its incoming weighted contributions.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l15-mcq-004",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Does a negative hidden activation remove that neuron from the network?",
+      "answer": "It remains a numerical output used by the next layer.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Negative activation",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It becomes a negative word probability.",
+          "feedback": "A hidden activation is not a word probability. Softmax is applied to the final scores.",
+          "id": "a"
+        },
+        {
+          "text": "It is automatically replaced by zero.",
+          "feedback": "No zero-clipping activation is declared in this all-linear example.",
+          "id": "b"
+        },
+        {
+          "text": "It remains a numerical output used by the next layer.",
+          "feedback": "It remains a numerical output used by the next layer.",
+          "id": "c"
+        },
+        {
+          "text": "It deletes all outgoing connections.",
+          "feedback": "A negative value changes contributions through the existing weights. It does not remove connections.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l15-mcq-005",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Which word is currently favored, without assuming the prediction is correct?",
+      "answer": "Done is the current highest-probability response, but the output alone does not establish the true word.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Prediction versus truth",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Dean is impossible because its probability is below one half.",
+          "feedback": "A positive probability remains assigned to dean. An example’s true label is not set by a one-half cutoff.",
+          "id": "a"
+        },
+        {
+          "text": "The network has already updated its weights.",
+          "feedback": "Forward propagation computes responses using the current weights. It does not perform a training update.",
+          "id": "b"
+        },
+        {
+          "text": "Done is the current highest-probability response, but the output alone does not establish the true word.",
+          "feedback": "Done is the current highest-probability response, but the output alone does not establish the true word.",
+          "id": "c"
+        },
+        {
+          "text": "Done must be the recording’s true word.",
+          "feedback": "The true label comes from the target. The network can favor an incorrect word.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l15-mcq-006",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What does softmax do to the five final scores?",
+      "answer": "It exponentiates each score and normalizes by the sum of all five exponentiated scores.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Softmax",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It applies an independent yes/no threshold to each hidden unit.",
+          "feedback": "Softmax acts across the five output scores, rather than independently thresholding hidden units.",
+          "id": "a"
+        },
+        {
+          "text": "It takes a negative score as a negative probability.",
+          "feedback": "Exponentiating the scores makes positive quantities before normalization.",
+          "id": "b"
+        },
+        {
+          "text": "It assigns the same probability regardless of the scores.",
+          "feedback": "Different final scores generally produce different softmax probabilities.",
+          "id": "c"
+        },
+        {
+          "text": "It exponentiates each score and normalizes by the sum of all five exponentiated scores.",
+          "feedback": "It exponentiates each score and normalizes by the sum of all five exponentiated scores.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l15-mcq-007",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Which desired output identifies dean in done, dune, dean, Don, Dan order?",
+      "answer": "0, 0, 1, 0, 0.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "One-hot target",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "0, 0, 1, 0, 0.",
+          "feedback": "0, 0, 1, 0, 0.",
+          "id": "a"
+        },
+        {
+          "text": "0.557, 0.074, 0.081, 0.185, 0.102.",
+          "feedback": "Those are current computed probabilities rather than the one-hot true label.",
+          "id": "b"
+        },
+        {
+          "text": "1, 0, 0, 0, 0.",
+          "feedback": "That target labels done, not dean.",
+          "id": "c"
+        },
+        {
+          "text": "1, 1, 1, 1, 1.",
+          "feedback": "A one-hot target identifies one true category, rather than marking every category as correct.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l15-mcq-008",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What happens to the loss when the true word’s probability increases?",
+      "answer": "The cross-entropy loss decreases.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Cross-entropy direction",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The loss necessarily increases.",
+          "feedback": "The loss penalizes low probability on the true category, so increasing that probability reduces it.",
+          "id": "a"
+        },
+        {
+          "text": "The cross-entropy loss decreases.",
+          "feedback": "The cross-entropy loss decreases.",
+          "id": "b"
+        },
+        {
+          "text": "Nothing changes unless every hidden activation is positive.",
+          "feedback": "The loss depends on the true category’s output probability, not on all hidden values having the same sign.",
+          "id": "c"
+        },
+        {
+          "text": "The target automatically switches to done.",
+          "feedback": "The target is the supplied recording label. It does not change to match the current prediction.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l15-mcq-009",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Does error information reach the output connections or the first hidden-layer connections first?",
+      "answer": "Output connections are evaluated first, followed by progressively earlier hidden-layer connections.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Backward order",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Output connections are evaluated first, followed by progressively earlier hidden-layer connections.",
+          "feedback": "Output connections are evaluated first, followed by progressively earlier hidden-layer connections.",
+          "id": "a"
+        },
+        {
+          "text": "The first hidden-layer connections are evaluated first without downstream information.",
+          "feedback": "Their effects on error include later layers, whose error dependencies are computed first.",
+          "id": "b"
+        },
+        {
+          "text": "Only connections entering the currently favored word receive gradients.",
+          "feedback": "The loss depends on the full output comparison, and the backward calculation reaches the preceding layers.",
+          "id": "c"
+        },
+        {
+          "text": "All input formants are re-recorded before any gradients can be found.",
+          "feedback": "The backward pass uses the stored input and forward activations.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l15-mcq-010",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Why do the displayed probabilities stay unchanged while updated weights are revealed?",
+      "answer": "The stored forward activations remain fixed while one update is calculated from the original network.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Stored forward values",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The output probabilities have been recomputed after each revealed connection.",
+          "feedback": "The supplied notes explicitly retain the original forward activations throughout the backward calculation.",
+          "id": "a"
+        },
+        {
+          "text": "The target is gradually changed to equal the old prediction.",
+          "feedback": "The desired dean target stays fixed. Learning changes parameters, not the true label.",
+          "id": "b"
+        },
+        {
+          "text": "The stored forward activations remain fixed while one update is calculated from the original network.",
+          "feedback": "The stored forward activations remain fixed while one update is calculated from the original network.",
+          "id": "c"
+        },
+        {
+          "text": "The new weights can never affect future predictions.",
+          "feedback": "They affect a new forward pass. The stored values are not that new pass.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l15-mcq-011",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "If a weight’s loss gradient is positive, does SGD increase or decrease that weight?",
+      "answer": "Decrease the weight by subtracting the learning-rate-scaled gradient.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Gradient update",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Leave the weight unchanged whenever it is already positive.",
+          "feedback": "The update depends on the gradient, not just the sign of the weight.",
+          "id": "a"
+        },
+        {
+          "text": "Set the weight to the true word’s probability.",
+          "feedback": "The rule changes the old weight using its gradient. It does not replace it with a probability.",
+          "id": "b"
+        },
+        {
+          "text": "Increase the weight because a positive gradient means it is helpful.",
+          "feedback": "A positive loss gradient means a small increase raises the loss locally, so the update goes in the opposite direction.",
+          "id": "c"
+        },
+        {
+          "text": "Decrease the weight by subtracting the learning-rate-scaled gradient.",
+          "feedback": "Decrease the weight by subtracting the learning-rate-scaled gradient.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l15-mcq-012",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "For the pink-marked connection to done, does a small weight increase raise or lower the dean-target loss?",
+      "answer": "It raises done’s score, reduces dean’s probability, and raises the loss.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 7
+        }
+      ],
+      "topic": "Output-weight direction",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It cannot affect the output because hidden activations stay fixed.",
+          "feedback": "Even with a fixed source activation, changing its outgoing weight changes the receiving output score.",
+          "id": "a"
+        },
+        {
+          "text": "It raises dean’s score directly because all outputs share one label.",
+          "feedback": "The marked connection ends at done. Each output position represents a distinct candidate.",
+          "id": "b"
+        },
+        {
+          "text": "It makes the true label change from dean to done.",
+          "feedback": "The desired label stays dean. A parameter change can change predictions without changing the label.",
+          "id": "c"
+        },
+        {
+          "text": "It raises done’s score, reduces dean’s probability, and raises the loss.",
+          "feedback": "It raises done’s score, reduces dean’s probability, and raises the loss.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l15-mcq-013",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Why is the sign of an early connection alone insufficient to decide its error effect?",
+      "answer": "Its influence passes through multiple later weighted paths before affecting the output comparison.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 7
+        }
+      ],
+      "topic": "Early-weight influence",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Early weights have no effect on final outputs.",
+          "feedback": "They affect hidden values that feed the later layers.",
+          "id": "a"
+        },
+        {
+          "text": "Its influence passes through multiple later weighted paths before affecting the output comparison.",
+          "feedback": "Its influence passes through multiple later weighted paths before affecting the output comparison.",
+          "id": "b"
+        },
+        {
+          "text": "The learning algorithm must guess a new desired word for every path.",
+          "feedback": "All paths contribute to the same supplied output comparison. Their influence is calculated, not relabeled.",
+          "id": "c"
+        },
+        {
+          "text": "A positive first weight guarantees a reduction in error.",
+          "feedback": "Downstream positive and negative connections and the target jointly determine the effect.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l15-mcq-014",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Which named method is linked to reusing downstream results in backpropagation?",
+      "answer": "Bellman–Viterbi dynamic programming.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 8
+        }
+      ],
+      "topic": "Dynamic programming",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Changing the word targets to eliminate disagreement.",
+          "feedback": "Backpropagation attributes the fixed target mismatch to parameters rather than altering the label.",
+          "id": "a"
+        },
+        {
+          "text": "Discarding every intermediate calculation.",
+          "feedback": "Dynamic programming retains reusable results instead of discarding them.",
+          "id": "b"
+        },
+        {
+          "text": "Choosing only the single strongest connection at each layer.",
+          "feedback": "The error can depend on many paths. Reuse does not discard all but one connection.",
+          "id": "c"
+        },
+        {
+          "text": "Bellman–Viterbi dynamic programming.",
+          "feedback": "Bellman–Viterbi dynamic programming.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l15-mcq-015",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What different jobs do backpropagation and SGD perform?",
+      "answer": "Backpropagation supplies gradients, and SGD uses them to update parameters.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 8
+        }
+      ],
+      "topic": "Gradient versus optimizer",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Backpropagation supplies gradients, and SGD uses them to update parameters.",
+          "feedback": "Backpropagation supplies gradients, and SGD uses them to update parameters.",
+          "id": "a"
+        },
+        {
+          "text": "SGD supplies the true labels, and backpropagation records the sound.",
+          "feedback": "Labels and inputs are supplied as training data, not created by these two operations.",
+          "id": "b"
+        },
+        {
+          "text": "Backpropagation only selects the largest output and never evaluates error.",
+          "feedback": "It calculates how the loss depends on the parameters.",
+          "id": "c"
+        },
+        {
+          "text": "They are two names for collecting formant measurements.",
+          "feedback": "Both concern learning from an existing input-target comparison, not measuring the original recording.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l15-mcq-016",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "In Formant_Inputs, what are the two columns in a single row?",
+      "answer": "F1 and F2 from one recording.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 9
+        }
+      ],
+      "topic": "Matrix dimensions",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The first and last hidden-layer sizes.",
+          "feedback": "Hidden-layer sizes describe network structure rather than individual rows in the measurement matrix.",
+          "id": "a"
+        },
+        {
+          "text": "F1 and F2 from one recording.",
+          "feedback": "F1 and F2 from one recording.",
+          "id": "b"
+        },
+        {
+          "text": "The probabilities of only done and dune.",
+          "feedback": "The input columns are formants. The five word categories belong to the target and output representations.",
+          "id": "c"
+        },
+        {
+          "text": "Two entire training datasets.",
+          "feedback": "The row holds two measurements belonging to one example.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l15-mcq-017",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Why must row order agree between Formant_Inputs and TrueVowel_Outputs?",
+      "answer": "Each recording must stay paired with its own true-word target.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 9
+        }
+      ],
+      "topic": "Data alignment",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The matrix contains only five recordings because five rows are visible.",
+          "feedback": "The displayed rows are illustrative. Both complete matrices have 110 rows.",
+          "id": "a"
+        },
+        {
+          "text": "Each recording must stay paired with its own true-word target.",
+          "feedback": "Each recording must stay paired with its own true-word target.",
+          "id": "b"
+        },
+        {
+          "text": "The highest network probability becomes the true label after sorting.",
+          "feedback": "The recording’s supplied label remains its target, regardless of the prediction.",
+          "id": "c"
+        },
+        {
+          "text": "A target row must have exactly two columns to match the input row.",
+          "feedback": "The row counts match across examples, but inputs have two columns and targets have five.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l15-mcq-018",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Does zero_grad clear stored gradients or reset the network’s weights?",
+      "answer": "It clears stored gradients before the new gradient calculation.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Gradient clearing",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It replaces logits with one-hot targets.",
+          "feedback": "Logits are computed by the network, and targets are supplied separately as Y.",
+          "id": "a"
+        },
+        {
+          "text": "It resets every learned weight to zero.",
+          "feedback": "Gradient storage and parameter values are different. Clearing one does not erase the other.",
+          "id": "b"
+        },
+        {
+          "text": "It removes all recordings from X.",
+          "feedback": "The training data remain available for the forward pass.",
+          "id": "c"
+        },
+        {
+          "text": "It clears stored gradients before the new gradient calculation.",
+          "feedback": "It clears stored gradients before the new gradient calculation.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l15-mcq-019",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Which call applies the parameter update, loss.backward or sgd.step?",
+      "answer": "sgd.step applies the update using the computed gradients.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Backward versus step",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "torch.load updates weights while reading the examples.",
+          "feedback": "Loading X and Y supplies data. It does not implement the training update.",
+          "id": "a"
+        },
+        {
+          "text": "loss.backward already performs the SGD update.",
+          "feedback": "Backward computes derivatives. The optimizer step uses them to change parameters.",
+          "id": "b"
+        },
+        {
+          "text": "sgd.step applies the update using the computed gradients.",
+          "feedback": "sgd.step applies the update using the computed gradients.",
+          "id": "c"
+        },
+        {
+          "text": "nn.Sequential updates only the currently incorrect output.",
+          "feedback": "Sequential defines the forward sequence. Parameter updates are made by the optimizer.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l15-mcq-020",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "How many update steps does the displayed all-110-row program specify?",
+      "answer": "One full-batch update, with all 110 recordings contributing.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Batch versus repetition",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "A forward pass that has no loss or training call.",
+          "feedback": "The program explicitly computes cross-entropy, calls backward, and applies an SGD step.",
+          "id": "a"
+        },
+        {
+          "text": "One full-batch update, with all 110 recordings contributing.",
+          "feedback": "One full-batch update, with all 110 recordings contributing.",
+          "id": "b"
+        },
+        {
+          "text": "110 separate optimizer steps, one automatically created by each row.",
+          "feedback": "No row-by-row update loop is present. One displayed step follows the batch loss.",
+          "id": "c"
+        },
+        {
+          "text": "Repeated training until every recording is correct.",
+          "feedback": "No repeated training loop or stopping condition is supplied.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l15-mcq-021",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Does matching the layer dimensions guarantee the short PyTorch program reproduces the diagram’s probabilities?",
+      "answer": "No. The parameter initialization and bias choices also have to match.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Code and drawing",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "No. The parameter initialization and bias choices also have to match.",
+          "feedback": "No. The parameter initialization and bias choices also have to match.",
+          "id": "a"
+        },
+        {
+          "text": "Yes, the target vector forces the probabilities before training.",
+          "feedback": "The target is used in the loss. It does not automatically set the network output.",
+          "id": "b"
+        },
+        {
+          "text": "Yes, layer sizes uniquely determine every weight.",
+          "feedback": "Many parameter settings share the same architecture.",
+          "id": "c"
+        },
+        {
+          "text": "No, PyTorch cannot represent a five-output network.",
+          "feedback": "The four-to-five final layer represents those output scores. The issue is matching the parameter values and options.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l15-mcq-022",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What happens to sigmoid activation for large negative versus large positive inner products?",
+      "answer": "Large negative values approach 0, while large positive values approach 1.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 11
+        }
+      ],
+      "topic": "Sigmoid shape",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Both values remain unchanged after sigmoid.",
+          "feedback": "That describes passing through a linear value, not the bounded sigmoid transformation.",
+          "id": "a"
+        },
+        {
+          "text": "Every input produces exactly 0 or exactly 1.",
+          "feedback": "Sigmoid changes continuously. The displayed examples are near the endpoints, not equal to them.",
+          "id": "b"
+        },
+        {
+          "text": "Large negative values approach 0, while large positive values approach 1.",
+          "feedback": "Large negative values approach 0, while large positive values approach 1.",
+          "id": "c"
+        },
+        {
+          "text": "Negative values become negative probabilities, and positive values exceed 1.",
+          "feedback": "Sigmoid outputs stay between 0 and 1.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l15-mcq-023",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Where is sigmoid more sensitive to an input change, near its center or near its flat ends?",
+      "answer": "Near the steep central region.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 11
+        }
+      ],
+      "topic": "Sigmoid sensitivity",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Near the steep central region.",
+          "feedback": "Near the steep central region.",
+          "id": "a"
+        },
+        {
+          "text": "Only near the flat ends.",
+          "feedback": "The curve is less responsive where it is flat.",
+          "id": "b"
+        },
+        {
+          "text": "Nowhere, because the neuron has been removed.",
+          "feedback": "Sigmoid transforms an active neuron’s value. It does not delete the unit.",
+          "id": "c"
+        },
+        {
+          "text": "Equally everywhere because the graph is a straight line.",
+          "feedback": "The S-shaped relationship has different slopes in different regions.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l15-mcq-024",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "When sigmoid changes an early hidden output, what happens to later weighted sums?",
+      "answer": "They are recalculated using the changed incoming hidden values.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 12
+        }
+      ],
+      "topic": "Recomputing downstream values",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Only the written color label changes, not numerical activity.",
+          "feedback": "The activation transformation changes values and therefore affects later computations.",
+          "id": "a"
+        },
+        {
+          "text": "They must stay at their old all-linear values.",
+          "feedback": "They depend on the earlier outputs, which have changed.",
+          "id": "b"
+        },
+        {
+          "text": "They are recalculated using the changed incoming hidden values.",
+          "feedback": "They are recalculated using the changed incoming hidden values.",
+          "id": "c"
+        },
+        {
+          "text": "The formants are replaced by the desired one-hot output.",
+          "feedback": "F1 and F2 remain the original measurements. Targets serve the loss comparison.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l15-mcq-025",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Where is nn.Sigmoid inserted in the 2 → 3 → 2 → 4 → 5 program?",
+      "answer": "After the three hidden linear layers, while the final linear scores go to cross-entropy.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 13
+        }
+      ],
+      "topic": "Hidden activation and output loss",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "After the three hidden linear layers, while the final linear scores go to cross-entropy.",
+          "feedback": "After the three hidden linear layers, while the final linear scores go to cross-entropy.",
+          "id": "a"
+        },
+        {
+          "text": "After every connection separately, giving a new target for each weight.",
+          "feedback": "Each hidden neuron transforms its combined weighted sum. Targets still identify words per recording.",
+          "id": "b"
+        },
+        {
+          "text": "Before loading X, to change the number of recordings.",
+          "feedback": "Sigmoid is an activation within the network. It does not alter the dataset’s row count.",
+          "id": "c"
+        },
+        {
+          "text": "After the final layer only, replacing every hidden transformation.",
+          "feedback": "The source inserts sigmoid after the first three linear layers, not after the final scores.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l15-written-001",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Identify the inputs, hidden-layer sizes, and output labels in the supplied classifier.",
+      "answer": "F1 and F2 supply the two inputs. Three hidden layers contain three, two, and four units. Weighted connections combine values across layers before five output positions represent done, dune, dean, Don, and Dan.",
+      "rubric": [
+        "Name the two formants and five word categories.",
+        "Distinguish the three hidden layers from the input and output positions."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 2
+        }
+      ],
+      "topic": "Network roles",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-002",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "For a positive incoming value, how do positive and negative connection weights differ?",
+      "answer": "Multiplication by a positive weight gives a positive contribution, while multiplication by a negative weight gives a negative contribution. The receiver adds contributions from all its inputs, so one signed contribution does not determine the full value by itself.",
+      "rubric": [
+        "Identify the sign change in multiplication.",
+        "Keep a connection contribution distinct from the full combined result."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 2
+        }
+      ],
+      "topic": "Signed contributions",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-003",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Why can the second hidden layer not be evaluated before the first hidden-layer values are available?",
+      "answer": "Each receiving layer uses the outputs of the layer immediately before it. The formants determine first-layer weighted sums, those determine the next layer, and the sequence continues until final scores and probabilities are available.",
+      "rubric": [
+        "Identify the previous layer as the immediate input.",
+        "Describe the forward dependency without treating weights as updated during the pass."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Trace the forward pass",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-004",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What is an inner product in this formant network?",
+      "answer": "Each formant is multiplied by its connection weight and the two products are added. The resulting −0.40 is that hidden neuron’s linear activation, not an output probability or a statement that the neuron has been removed.",
+      "rubric": [
+        "Name multiplication and addition.",
+        "Identify the resulting quantity as a hidden activation."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Inner-product meaning",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-005",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Distinguish a logit from a softmax probability.",
+      "answer": "A logit is a final score before normalization and may be negative. Softmax exponentiates the five scores and divides by their shared total. This produces positive probabilities that sum to one.",
+      "rubric": [
+        "Distinguish unnormalized scores from probabilities.",
+        "Explain the shared exponential normalization."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Logits and probabilities",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-006",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What do the computed output and desired output each represent?",
+      "answer": "The computed output is the network’s current probability distribution, with done highest. The desired output is the supplied correct label, dean. The mismatch is an error to learn from, not a reason to relabel the recording as done.",
+      "rubric": [
+        "Identify the current favored prediction.",
+        "Identify the target independently of that prediction."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Prediction and desired output",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-007",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Which change in dean’s probability reduces the loss for a dean target?",
+      "answer": "Increasing the probability of dean reduces its cross-entropy loss. Decreasing that probability increases the loss. The target remains dean while the network parameters are adjusted.",
+      "rubric": [
+        "State the correct direction.",
+        "Keep the true target fixed."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Training direction",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-008",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Does SGD increase or decrease a weight with a negative loss gradient?",
+      "answer": "It increases the weight because subtracting a negative scaled gradient adds to the old value. A negative local gradient means a small increase in that weight lowers the loss for the current calculation.",
+      "rubric": [
+        "State increase.",
+        "Relate the subtraction rule to the direction of loss change."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Gradient update",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-009",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Why are the stored forward values retained throughout the backward pass?",
+      "answer": "The gradients for all layers belong to the same original forward computation. They use its stored activations and original weights. The reveal sequence displays one simultaneous update, and updated predictions require a separate new forward pass.",
+      "rubric": [
+        "Link all gradients to one stored computation.",
+        "Distinguish reveal order from recomputing after each visible update."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Fixed activations during backward calculation",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-010",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Why does the hand-worked network use a smaller input-layer learning rate?",
+      "answer": "The raw F1 and F2 values are in hertz and much larger than the later hidden values. Their scale enters the input-weight gradients, so the supplied example uses a smaller learning rate for those connections.",
+      "rubric": [
+        "Identify raw formant scale.",
+        "Connect the different update scale to the input-weight gradients."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Input learning rate",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-011",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Why does increasing the marked connection to done raise the dean-target loss?",
+      "answer": "The positive source value makes done’s score rise when that connection weight rises. Softmax allocates one total across candidates, so dean’s probability falls as the wrong candidate gains. Cross-entropy for the dean target therefore increases.",
+      "rubric": [
+        "Trace the positive contribution to done.",
+        "Connect shared probabilities to the loss on dean."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 7
+        }
+      ],
+      "topic": "Marked output connection",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-012",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What extra information is required to judge an early weight’s effect on final error?",
+      "answer": "Its effect continues through later weighted connections, including paths with different signs, and is evaluated against the output target. Backpropagation combines these downstream influences. The supplied network has a positive gradient for this weight, but that direction is not guaranteed by its own positive sign.",
+      "rubric": [
+        "Mention downstream weighted paths.",
+        "Avoid inferring error direction from one connection’s sign alone."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 7
+        }
+      ],
+      "topic": "Marked early connection",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-013",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Why is the final weight layer easier to relate directly to output error than the first?",
+      "answer": "W5 directly forms the final scores from the last hidden activations. W2 changes first-layer hidden activity, whose effects continue through the later layers. Its contribution to loss therefore includes those downstream transformations.",
+      "rubric": [
+        "Identify the direct final-layer relationship.",
+        "Describe the indirect early-layer dependency."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 8
+        }
+      ],
+      "topic": "Last versus first weights",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-014",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "How does reusing downstream error calculations help with earlier weights?",
+      "answer": "The effects of later layers on error are computed first. Earlier-layer calculations combine their local effects with those retained downstream results rather than recalculating all later effects separately for every connection.",
+      "rubric": [
+        "Identify retained downstream results.",
+        "Explain their reuse for earlier dependencies."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 8
+        }
+      ],
+      "topic": "Dynamic-programming connection",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-015",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What do the matching 110 rows mean, and why do the column counts differ?",
+      "answer": "Both matrices refer to the same 110 recordings. The input has F1 and F2 columns, while the target has one column per word candidate with a 1 at the correct category. Different column counts describe different roles for the same examples.",
+      "rubric": [
+        "Match rows to recordings.",
+        "Distinguish two measurements from five category positions."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 9
+        }
+      ],
+      "topic": "Training-matrix layout",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-016",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What target belongs with the illustrated 320, 2000 input row?",
+      "answer": "Its one-hot target identifies dean. Row alignment preserves the recording–label pairing. Reordering only one matrix can associate the formants of one recording with another recording’s word.",
+      "rubric": [
+        "Identify dean.",
+        "Explain the pairing requirement."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 9
+        }
+      ],
+      "topic": "Paired targets",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-017",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Which call clears gradients, which computes them, and which updates parameters?",
+      "answer": "zero_grad clears previously stored gradients. backward computes the parameter gradients from the loss. step applies the SGD update to the parameters. These operations keep gradient storage, derivative calculation, and parameter change distinct.",
+      "rubric": [
+        "Assign the three calls correctly.",
+        "Do not equate clearing gradients with clearing weights."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Training calls",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-018",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Does the shown program perform one or 110 optimizer updates?",
+      "answer": "It performs one update using the loss over the full 110-row batch. Multiple examples contribute to that gradient calculation, but there is no repeated optimizer call per row and no outer training loop.",
+      "rubric": [
+        "State one full-batch update.",
+        "Distinguish examples in a batch from the number of optimizer steps."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Batch training",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-019",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "What must match besides layer sizes to reproduce the displayed numerical network?",
+      "answer": "The parameter values and bias choices must match. The illustration has particular hand-selected weights and no biases, whereas the short PyTorch declarations initialize default parameters and bias terms.",
+      "rubric": [
+        "Mention parameter values.",
+        "Mention the different bias choices."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Architecture versus parameters",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-020",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Describe the relationship between the sign of a large inner product and sigmoid output.",
+      "answer": "Sigmoid approaches zero for large negative inputs and one for large positive inputs. Its displayed values are about 0.0180 and 0.9820. It is a continuous bounded transformation, not an exact binary cutoff.",
+      "rubric": [
+        "Match negative to near zero and positive to near one.",
+        "Retain the graded rather than exact on/off behavior."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 11
+        }
+      ],
+      "topic": "Sigmoid interpretation",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-021",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "How can distinct inputs give similar activations near the sigmoid’s ends?",
+      "answer": "Near a flat end, the output changes little as the input changes, so distinct inputs can yield similar activations. Near the steep middle, relatively small input changes can produce larger activation changes.",
+      "rubric": [
+        "Describe compression near a flat end.",
+        "Contrast the more sensitive central region."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 11
+        }
+      ],
+      "topic": "Sigmoid and perceived differences",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-022",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Why must downstream weighted sums be recomputed after an earlier sigmoid is introduced?",
+      "answer": "Later neurons receive the changed early output. Their new weighted sums must therefore be calculated from those new inputs before sigmoid is applied at their positions. The demonstration builds the altered network in layer order.",
+      "rubric": [
+        "Identify changed incoming values for later neurons.",
+        "Distinguish recomputation from transforming an unrelated stored linear result."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 12
+        }
+      ],
+      "topic": "Sequential sigmoid changes",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-023",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Does the sigmoid demonstration update weights or change the hidden activation rule?",
+      "answer": "The hidden activation rule changes while formants and weights stay fixed. Downstream computations and final probabilities change. Dan becomes the largest response, but dean remains the target, so this is not evidence that a weight-training step has learned the correct label.",
+      "rubric": [
+        "Keep inputs and weights fixed.",
+        "Distinguish changed response from correct learned classification."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 12
+        }
+      ],
+      "topic": "Activation change versus learning",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-024",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Does inserting sigmoid change the number of hidden values passed to the next layer?",
+      "answer": "Sigmoid follows each of the first three linear layers and transforms each value without changing the number of values. A three-unit hidden layer still sends three values to the next linear layer.",
+      "rubric": [
+        "Locate sigmoid after hidden linear layers.",
+        "State that dimensionality is preserved."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 13
+        }
+      ],
+      "topic": "Placing sigmoid",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l15-written-025",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Distinguish the hidden sigmoid operation from the final cross-entropy input.",
+      "answer": "Sigmoid transforms the hidden activations. The final linear layer supplies five logits, and cross-entropy performs the softmax-related loss calculation internally. Independent hidden activation and final class comparison serve different roles.",
+      "rubric": [
+        "Identify final values as logits.",
+        "Distinguish hidden sigmoid from loss normalization."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 13
+        }
+      ],
+      "topic": "Final output and loss",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    }
+  ]
+}

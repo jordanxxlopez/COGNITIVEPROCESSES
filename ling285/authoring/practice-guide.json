@@ -1733,6 +1733,41 @@
       "collection": "lecture14",
       "page": 25,
       "reason": "Connects each PyTorch layer declaration to the network dimensions and distinguishes declaring a linear architecture from supplying an input, training it, or normalizing its output."
+    },
+    {
+      "collection": "lecture15",
+      "page": 3,
+      "reason": "Trace weighted input combinations and distinguish logits, probabilities, and the true category."
+    },
+    {
+      "collection": "lecture15",
+      "page": 6,
+      "reason": "Explain target mismatch, gradient direction, and a single backward update."
+    },
+    {
+      "collection": "lecture15",
+      "page": 8,
+      "reason": "Connect reuse of downstream error calculations to dynamic programming and SGD."
+    },
+    {
+      "collection": "lecture15",
+      "page": 9,
+      "reason": "Read matrix dimensions and preserve recording–target alignment."
+    },
+    {
+      "collection": "lecture15",
+      "page": 11,
+      "reason": "Explain sigmoid saturation and the relationship between input and activation differences."
+    },
+    {
+      "collection": "lecture15",
+      "page": 12,
+      "reason": "Distinguish hidden activation changes, downstream recomputation, and weight training."
+    },
+    {
+      "collection": "lecture15",
+      "page": 13,
+      "reason": "Identify hidden sigmoid placement and final logits in the supplied program."
     }
   ],
   "guide": [
@@ -2163,6 +2198,78 @@
         }
       ],
       "kind": "readiness"
+    },
+    {
+      "title": "Trace a formant classifier and keep the true label separate",
+      "explanation": "Follow F1 and F2 through weighted hidden layers. Explain how final scores become softmax probabilities, then compare the favored word with the supplied one-hot target.",
+      "refs": [
+        {
+          "collection": "lecture15",
+          "page": 2
+        },
+        {
+          "collection": "lecture15",
+          "page": 3
+        },
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Explain why error information travels backward",
+      "explanation": "Use the two marked connections to distinguish a direct output effect from an early weight’s downstream influence. Connect the backward calculation to reused results in dynamic programming and the gradient update in SGD.",
+      "refs": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        },
+        {
+          "collection": "lecture15",
+          "page": 7
+        },
+        {
+          "collection": "lecture15",
+          "page": 8
+        }
+      ],
+      "kind": "demonstration"
+    },
+    {
+      "title": "Read the training matrices and one update",
+      "explanation": "Identify what each row and column contains, preserve input–target pairing, and explain zero_grad, the batch loss, backward, and step in the supplied program.",
+      "refs": [
+        {
+          "collection": "lecture15",
+          "page": 9
+        },
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Explain how sigmoid changes the same network",
+      "explanation": "Keep the weights and formants fixed while hidden sigmoids change downstream values. Compare the linear starting response with the completed sigmoid response and locate the hidden activation calls in the code.",
+      "refs": [
+        {
+          "collection": "lecture15",
+          "page": 11
+        },
+        {
+          "collection": "lecture15",
+          "page": 12
+        },
+        {
+          "collection": "lecture15",
+          "page": 13
+        }
+      ],
+      "kind": "demonstration"
     }
   ],
   "examReview": {

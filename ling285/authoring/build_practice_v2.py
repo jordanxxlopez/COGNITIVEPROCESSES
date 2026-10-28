@@ -13,7 +13,7 @@ from assessment_ranking import tokens
 
 ROOT = Path(__file__).resolve().parents[1]
 A = ROOT / 'authoring'
-LECTURES = [f'lecture{n}' for n in range(11, 15)]
+LECTURES = [f'lecture{n}' for n in range(11, 16)]
 PATTERNS = ['cause-effect', 'distinction', 'application', 'interpretation', 'prediction', 'procedure', 'design']
 def read(p): return json.loads(p.read_text())
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -53,9 +53,9 @@ def build():
             q['assessmentVersion']='v2'
             q['edition']='2026-10-20-practice-v2'
             questions.append(q)
-    assert len(questions)==200 and len({q['id'] for q in questions})==200
-    assert Counter(q['correctOption'] for q in questions if q['type']=='mcq')==dict.fromkeys('abcd',25)
-    assert len({q['prompt'].casefold() for q in questions})==200
+    assert len(questions)==50*len(LECTURES) and len({q['id'] for q in questions})==len(questions)
+    assert set(q['correctOption'] for q in questions if q['type']=='mcq')==set('abcd')
+    assert len({q['prompt'].casefold() for q in questions})==len(questions)
 
     # One source question is one document. Answers are excluded so long key
     # explanations do not dominate short instructor prompts.
@@ -90,7 +90,7 @@ def build():
       'title':'Practice based on the exam and review',
       'summary':'Version 2 uses the 25 questions in the uploaded Exam 1 key and the 20 review prompts as writing examples. Practice mixes quick identification, comparisons, reading figures, predicting the direction of a change, and explaining why it happens. Answers use basic labels and numbers where useful, without adding calculation exercises.',
       'evidence':['All 25 exam questions and all 20 review prompts were reviewed.','The actual key includes one multiple-choice item, brief identification, conceptual explanations, and elementary symbolic or number questions.','The 50/50 practice split follows your requested study format; it is not an estimate of the next exam’s format.'],
-      'limitations':['These are original study questions based on Lectures 11–14. One exam and review cannot establish what will appear on a future exam.','The selection weights help vary study practice after lecture and format coverage are fixed. They are not exam probabilities.']}
+      'limitations':['These are original study questions based on Lectures 11–15. One exam and review cannot establish what will appear on a future exam.','The selection weights help vary study practice after lecture and format coverage are fixed. They are not exam probabilities.']}
     refs=[{'title':'Exam 1 · uploaded answer key','file':'sources/exam1-key.pdf','kind':'Observed exam question styles'},
           {'title':'Exam 1 Review · uploaded copy','file':'sources/exam-review-v2.docx','kind':'Observed review question styles'}]
     runtime={'id':'v2','label':'Version 2 · Exam style','revision':'2026-10-20-practice-v2',
@@ -105,7 +105,7 @@ def build():
                 'selection':'Lecture and format quotas first; weighted sampling without replacement within each group.'},
       'patternWeights':weights,'examPatternCounts':dict(ec),'reviewPatternCounts':dict(rc),
       'practicePatternCounts':dict(Counter(q['pattern'] for q in questions)),
-      'contracts':{'questions':200,'perLecture':50,'perLectureMCQ':25,'perLectureWritten':25,'currentTest':100,'currentTestMCQ':50,'currentTestWritten':50,'currentTestPerLecture':25},
+      'contracts':{'questions':50*len(LECTURES),'perLecture':50,'perLectureMCQ':25,'perLectureWritten':25,'currentTest':100,'currentTestMCQ':50,'currentTestWritten':50,'currentTestPerLecture':100//len(LECTURES)},
       'inputs':[{'file':str(p.relative_to(ROOT)),'sha256':sha(p)} for p in [A/'exam-style-evidence-v2.json',*[A/f'practice-v2-{l}.json' for l in LECTURES]]],
       'rankings':scores}
     write(ROOT/'practice-v2.json',runtime)

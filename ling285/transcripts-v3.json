@@ -2,7 +2,7 @@
   "id": "v3",
   "label": "Version 3 · Clear explanations",
   "revision": "2026-10-20-transcripts-v3",
-  "baseDataSha256": "f1316545ef0167572ad8b29d250416045801e5a82a1fd8daefe176ff8eb650bd",
+  "baseDataSha256": "cae8456ec5cda4e93436d3beaa26ed2833e3164726de2d0f3edc09dc0dba5cfa",
   "writingReference": "PSYC301 · Working Memory",
   "collections": {
     "lecture11": {
@@ -988,6 +988,151 @@
             "The following layers take three values and produce two, then take two and produce four, then take four and produce five. Each stage is connected to the next because the number it produces matches the number the next one expects. The five final values belong to the five candidate labels in the diagram.",
             "Every receiving unit has one weight for each incoming value. The code’s **bias=False** removes an extra constant that would otherwise be added to its weighted sum. It does not remove those weights or stop them from changing during learning. With no activation-function layers between the Linear calls, the sequence stays purely linear.",
             "Defining this sequence establishes the model’s structure. Passing a formant example into it would use that structure to produce an output. Training would additionally require examples and a process for changing the weights. The supplied code is a declaration, so it does not itself demonstrate training or compute the illustrated probability distribution."
+          ]
+        }
+      ]
+    },
+    "lecture15": {
+      "title": "Neural Networks · Forward propagation, learning, and sigmoid",
+      "sections": [
+        {
+          "id": "lecture15-p001",
+          "page": 1,
+          "title": "Neural Networks",
+          "kind": "title",
+          "teaching": []
+        },
+        {
+          "id": "lecture15-p002",
+          "page": 2,
+          "title": "Two formants feed a fully connected network",
+          "kind": "concept",
+          "teaching": [
+            "**F1 and F2** are the two formant measurements supplied to the network. The five output positions stand for **done, dune, dean, Don, and Dan**, in that order. The network receives measurements of the sound and produces a response for each possible word. The input positions and output positions therefore have different jobs, even though both are drawn as circles. Between the inputs and outputs are three **hidden layers**, containing three, two, and four neurons. A hidden neuron receives values from the layer before it and sends its result onward. The arrangement is **2 → 3 → 2 → 4 → 5**. These numbers count the units in successive layers. They do not count recordings or training trials.",
+            "**Fully connected** means that every neuron in one layer connects to every neuron in the next layer. Each connection has its own **weight**, which controls how the value traveling along that connection contributes to the receiving neuron. A positive weight preserves the sign of its contribution, while a negative weight reverses it. The receiving neuron combines all its incoming contributions.",
+            "The same input can affect several hidden neurons because its outgoing connections carry different weights. F1 contributes to all three neurons in the first hidden layer, but it is not multiplied by the same number on every connection. F2 also reaches those three neurons. Each neuron therefore combines the same two measurements in its own way.",
+            "The weights are fixed for this network description. Changing a formant measurement changes what travels through the connections. Changing a weight changes how strongly a connection contributes. Those are different changes to the system. A connection weight specifies how a value contributes to a receiving neuron, rather than giving the probability of an individual word."
+          ]
+        },
+        {
+          "id": "lecture15-p003",
+          "page": 3,
+          "title": "Forward propagation combines weighted inputs",
+          "kind": "concept",
+          "teaching": [
+            "**Forward propagation** carries information from the inputs through the hidden layers to the outputs. F1 is **320** and F2 is **2000**. For the top neuron in the first hidden layer, each input is multiplied by its connection weight, and the two products are added. The positive contribution from F1 and the negative contribution from F2 combine to give **−0.40**. This multiplication followed by addition is an **inner product**. The other two neurons receive the same formants through different weights, so their results are **6.64** and **2.72**. A negative result is still a value that the next layer can use. It does not mean that the neuron or its connections have disappeared.",
+            "Each later layer repeats the same operation using the values from the layer immediately before it. The next pair is approximately **5.50 and −5.93**. Those two values then produce four hidden values, approximately **1.57, −1.95, −1.95, and −2.88**. Information moves through the layers in that order because a later neuron requires the earlier neurons’ results.",
+            "The five final weighted sums are **logits**, or scores before they become probabilities. **Softmax** exponentiates each score and divides it by the sum of the exponentiated scores. The resulting probabilities share one total. A negative logit can therefore lead to a positive probability, and a positive hidden value is not itself a probability.",
+            "**Done** receives the largest probability, about **55.7%**, while **dean** receives about **8.1%**. These are the network’s current responses to this input. They do not establish the true word. The hidden activations here are linear, the weights stay fixed during the forward pass, and the calculations retain more precision than the rounded labels."
+          ]
+        },
+        {
+          "id": "lecture15-p004",
+          "page": 4,
+          "title": "Pop quiz · Forward propagation",
+          "kind": "prompt",
+          "teaching": []
+        },
+        {
+          "id": "lecture15-p005",
+          "page": 5,
+          "title": "Info on Exam 2 and Exam 3",
+          "kind": "logistics",
+          "teaching": []
+        },
+        {
+          "id": "lecture15-p006",
+          "page": 6,
+          "title": "Backpropagation uses the difference between prediction and target",
+          "kind": "concept",
+          "teaching": [
+            "The **computed output** is the network’s current probability distribution. The **desired output** identifies **dean** with a 1 and gives the other four words a 0. This target says which word belongs to the recording. It does not describe the probabilities the untrained network already produces, so the largest computed response can disagree with the desired word. **Cross-entropy loss** measures the mismatch using the probability assigned to the true word. Dean currently receives only about **8.1%**. Assigning more probability to dean reduces this loss, while assigning it less increases the loss. The target and computed output therefore supply the information needed to evaluate how the weights contribute to the mistake.",
+            "**Backpropagation** works backward from the output connections toward the input connections. The final layer’s contribution to the loss is found first. That information is then used to determine how the preceding hidden layers contributed. The calculation proceeds from the output connections to the connections into hidden layer 3, hidden layer 2, and finally hidden layer 1.",
+            "A **gradient** describes how the loss changes with a small change in a weight. The update subtracts the learning rate times that gradient from the old weight. A positive gradient leads to a decrease in that weight, and a negative gradient leads to an increase. Learning therefore does not mean making every positive connection larger or every negative connection smaller.",
+            "The activations and probabilities stored from the forward pass stay fixed throughout the backward calculation. All gradients use the original weights and stored activations, so they belong to one simultaneous parameter update. A new forward pass would be required to obtain the updated network’s predictions. The input connections use a smaller learning rate because their inputs are raw formant values in hertz."
+          ]
+        },
+        {
+          "id": "lecture15-p007",
+          "page": 7,
+          "title": "Predict how changing a marked weight affects error",
+          "kind": "concept",
+          "teaching": [
+            "Increasing a weight changes its contribution to the receiving neuron, but its effect on **error** depends on what that contribution eventually does to the outputs. The desired word is **dean**, while the network currently gives its largest probability to **done**. The relevant question is how a small weight change affects the probability assigned to the true word. The pink-marked positive connection runs from the top neuron in the last hidden layer to **done**. That hidden neuron has a positive activation, approximately **1.57**. Increasing this weight raises done’s final score. Because softmax makes the five output probabilities share one total, strengthening this incorrect candidate reduces the probability available to dean and increases the cross-entropy loss.",
+            "The blue-marked first connection runs from **F1** to the top neuron in the first hidden layer. Increasing that weight raises the first hidden neuron’s value because F1 is positive. Its influence then passes through several positive and negative connections and reaches several outputs. The effect on the final error cannot be decided from the sign of this first connection alone.",
+            "For the supplied network and dean target, the full backward calculation gives a positive gradient for this input connection too. A small increase therefore raises the error here, while the update decreases the weight. The two marked connections both call for decreases in this example, but the early connection requires the combined influence of the downstream paths to establish that direction."
+          ]
+        },
+        {
+          "id": "lecture15-p008",
+          "page": 8,
+          "title": "Backpropagation reuses downstream error calculations",
+          "kind": "concept",
+          "teaching": [
+            "The **last weights**, labeled **W5**, directly determine the final output scores from the last hidden activations. Their effects on the error are close to the output comparison. Once the computed and desired outputs are available, the contribution of these final connections can be found without tracing another hidden layer beyond them. The **first weights**, labeled **W2**, affect the first hidden activations. Those activations affect two more hidden layers before the output scores are produced. An early weight’s contribution to error therefore includes what the later weights do with the values it changes. Its effect is distributed across the paths that continue from it.",
+            "**Backpropagation** calculates the effects near the output first and reuses them when working toward earlier layers. The downstream part of an early connection’s effect has already been computed. It can be combined with the local connection information instead of repeatedly solving the entire downstream calculation separately for every early weight.",
+            "This reuse is the connection to **Bellman–Viterbi dynamic programming**. Smaller dependent calculations are solved and their results are retained for the calculations that depend on them. Working backward fits the dependence of the error on the layers, because the effect of an early layer includes the layers after it.",
+            "**SGD** supplies the weight-adjustment rule, while backpropagation efficiently supplies the gradients that rule uses. Combining **SGD with dynamic programming** connects these two jobs. The backward calculation determines how the error depends on the weights, and the optimizer uses those results to change the weights."
+          ]
+        },
+        {
+          "id": "lecture15-p009",
+          "page": 9,
+          "title": "Pair each recording with its target row",
+          "kind": "concept",
+          "teaching": [
+            "The **Formant_Inputs** matrix has **110 rows and two columns**. Each row contains F1 and F2 for one recording, so the columns represent the two sound measurements rather than two possible words. The network processes the two values from a row together as one example. The **TrueVowel_Outputs** matrix has **110 rows and five columns**. Its columns are **done, dune, dean, Don, and Dan**. The row for a recording puts a 1 in the correct word’s position and 0 in the other four positions. This is a **one-hot target**, because one position identifies the category.",
+            "The rows in the two matrices must stay matched. The third input row contains **320 and 2000**, and the third target row identifies **dean**. Moving one input row without moving its matching target would pair the sound measurements with the wrong answer. Keeping the same number of rows is not sufficient if their order no longer agrees.",
+            "The complete matrices contain 110 examples in paired rows. The five listed examples identify the column arrangement rather than supplying all 110 recordings. The five target columns describe the available categories. They do not mean that each recording supplies five separate input examples.",
+            "The network’s current output is distinct from this target matrix. It assigns its own probabilities to the five words, with done currently highest for the dean example. The target records the correct label even when the network makes a mistake. Training compares those two kinds of information rather than replacing the target with the network’s strongest response."
+          ]
+        },
+        {
+          "id": "lecture15-p010",
+          "page": 10,
+          "title": "Read one full-batch training step in PyTorch",
+          "kind": "concept",
+          "teaching": [
+            "**X** contains the two formant values for each of the 110 recordings, and **Y** contains the five-position targets for the same recordings. **torch.load** loads the saved tensor files, and **.float()** supplies floating-point values. The program assumes these files already exist with the stated shapes. It does not create the recordings or their labels. **nn.Sequential** connects the layers in their written order. **nn.Linear(2, 3)** maps each pair of inputs into three values. The later layers map three to two, two to four, and four to five. These dimensions preserve the **2 → 3 → 2 → 4 → 5** arrangement. There is no sigmoid declared between these hidden layers.",
+            "**SGD** is given the network’s parameters and a **learning rate of 0.1**. **zero_grad()** clears previously stored gradients. **net(X)** performs the forward calculation, and **CrossEntropyLoss** compares the final scores with Y. This loss handles the softmax-related calculation internally, so the final linear layer supplies logits rather than a separately declared softmax output.",
+            "**loss.backward()** computes the gradients of the loss with respect to the parameters. **sgd.step()** then changes those parameters using the gradients. These are separate operations. Computing how a weight affects the error does not by itself change that weight, and clearing gradients does not erase the learned parameter values.",
+            "All **110 rows** contribute to this one gradient step. The code has no repeated training loop. It also uses PyTorch’s default linear-layer initialization and bias options, whereas the numerical drawing uses hand-selected weights with no biases. The code specifies the same layer sizes, but it does not automatically reproduce the displayed numbers."
+          ]
+        },
+        {
+          "id": "lecture15-p011",
+          "page": 11,
+          "title": "Sigmoid turns an inner product into a bounded activation",
+          "kind": "concept",
+          "teaching": [
+            "The **sigmoid activation function** takes an inner product as its input and returns a value between 0 and 1. A large negative input produces an activation near 0, and a large positive input produces one near 1. The S-shaped relationship is gradual rather than an exact switch that returns only two possible values. The horizontal coordinate is **linear activation**, the weighted sum before sigmoid, and the vertical coordinate is **sigmoid activation**. An input of **−4** gives about **0.0180**, whereas an input of **4** gives about **0.9820**. Around the center the curve is steep. Near the upper and lower ends it flattens, so further input changes produce relatively small output changes.",
+            "The formula divides 1 by 1 plus the exponential of the negative input. Moving the input toward larger positive values makes that denominator approach 1, so the output approaches 1. Moving it toward larger negative values enlarges the denominator, so the output approaches 0. The weighted sum is transformed rather than simply passed on unchanged.",
+            "Physical differences can be compressed or emphasized by this input–activation relationship. Distinct inputs near a flat end give similar activations, while inputs on different sides of the steep central region can produce much more different activations. Similarity in the incoming measurements therefore does not translate into an equal-sized difference at every point in the response.",
+            "**Edgar Adrian** supplies biological context through work on nerve activity, including the 1932 Nobel Prize. The mathematical sigmoid is a model of graded activation. Adrian’s rate-coding work concerns changes in firing rate, so a bounded model activation should not be confused with the claim that biological neurons can only have two possible firing rates."
+          ]
+        },
+        {
+          "id": "lecture15-p012",
+          "page": 12,
+          "title": "Apply sigmoid while recalculating downstream activity",
+          "kind": "concept",
+          "teaching": [
+            "The inputs remain **F1 = 320** and **F2 = 2000**, and the connection weights stay fixed. Sigmoid is added to the **nine hidden neurons**, one neuron at a time, in the order of three neurons in the first hidden layer, two in the second, and four in the third. Purple neurons remain linear, while green neurons pass their inner product through sigmoid. The first hidden neuron changes from **−0.400** to about **0.401**. Its new output changes what the next layer receives, so all downstream values are recalculated. The process is not a matter of putting sigmoid around every number stored from the all-linear network. Once an earlier output changes, the later weighted sums change as well.",
+            "After all three first-layer neurons use sigmoid, their outputs are approximately **0.401, 0.999, and 0.938**. Applying sigmoid to the recalculated second-layer sums gives about **0.713 and 0.223**. These second-layer values then supply the third layer, whose final sigmoid outputs are about **0.599, 0.609, 0.609, and 0.481**.",
+            "The output layer still uses **softmax** to assign probabilities across the five words. Once all hidden neurons use sigmoid, **Dan** has the largest displayed probability, about **32.0%**, and **dean** has about **23.0%**. The relative output pattern changes even though the inputs and connection weights have not changed.",
+            "This sequence changes the hidden activation rule rather than training the weights. Dean’s probability is higher than in the all-linear starting state, but it is still not the largest response. Adding sigmoid can therefore alter which word the network favors without establishing that the network has learned the correct classification."
+          ]
+        },
+        {
+          "id": "lecture15-p013",
+          "page": 13,
+          "title": "Insert sigmoid after the hidden linear layers",
+          "kind": "concept",
+          "teaching": [
+            "The network still receives **two formant measurements** and produces **five output scores**. Its linear layers keep the dimensions **2 → 3 → 2 → 4 → 5**. The change is that **nn.Sigmoid()** follows each of the first three linear layers. Each hidden layer therefore combines its incoming values and then transforms those sums before passing them onward. Sigmoid changes values without changing how many values a layer produces. The three values from the first linear layer remain three values after sigmoid, which is why the following **nn.Linear(3, 2)** still receives the correct input size. The same relationship holds for the two-value and four-value hidden layers.",
+            "The final **nn.Linear(4, 5)** is not followed by a declared sigmoid. Its five scores go to **CrossEntropyLoss**, which performs the softmax-related loss calculation internally. Hidden sigmoid activations and the final class-probability calculation have different roles. Adding a hidden activation does not turn every hidden neuron into one of the five word categories.",
+            "The training sequence remains **zero_grad**, the forward calculation and loss, **backward**, and **step**. Clearing gradients prepares this step, the loss compares predictions with the paired targets, backpropagation computes parameter gradients, and SGD applies the update. The learning rate remains **0.1**, and all 110 recordings contribute to the one displayed step.",
+            "The numerical drawing uses the original illustrative weights and no biases, with sigmoid added to the hidden neurons. The short PyTorch declaration initializes its own parameters with the default options. Its structure matches the hidden-activation change, but reproducing the particular displayed probabilities would also require the matching parameter values and bias choices."
           ]
         }
       ]

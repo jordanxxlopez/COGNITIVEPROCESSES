@@ -3,10 +3,10 @@
     "code": "LING285",
     "title": "Human Language and Technology",
     "professor": "Khalil Iskarous",
-    "edition": "Module I · Lectures 01–10 / Module II · Lectures 11–14",
+    "edition": "Module I · Lectures 01–10 / Module II · Lectures 11–15",
     "revision": "2026-10-20-v4",
     "defaultModule": "module2",
-    "coverageNotice": "Module II currently covers Lectures 11–14 and grows as new material arrives. Module I retains Lectures 01–10 and separate study tools. Supporting documents remain in Sources & coverage."
+    "coverageNotice": "Module II currently covers Lectures 11–15 and grows as new material arrives. Module I retains Lectures 01–10 and separate study tools. Supporting documents remain in Sources & coverage."
   },
   "modules": [
     {
@@ -53,21 +53,22 @@
         "lecture11",
         "lecture12",
         "lecture13",
-        "lecture14"
+        "lecture14",
+        "lecture15"
       ],
       "supplementIds": [],
       "meadowsIds": [],
-      "lectureRange": "Lectures 11–14 so far",
-      "description": "Current focus · Lectures 11–14. Future lectures will be added here.",
+      "lectureRange": "Lectures 11–15 so far",
+      "description": "Current focus · Lectures 11–15. Future lectures will be added here.",
       "assessmentPolicy": {
         "lectureQuizSize": 50,
         "currentTestSize": 100,
         "mcqShare": 0.5
       },
-      "futureNote": "Lectures 11–14 are available now. New lectures will extend this module and its cumulative practice as the professor posts them.",
-      "questionCount": 200,
-      "mcqCount": 100,
-      "writtenCount": 100
+      "futureNote": "Lectures 11–15 are available now. New lectures will extend this module and its cumulative practice as the professor posts them.",
+      "questionCount": 250,
+      "mcqCount": 125,
+      "writtenCount": 125
     }
   ],
   "collections": [
@@ -6859,6 +6860,388 @@
       "workspaceGroup": "lectures"
     },
     {
+      "id": "lecture15",
+      "title": "Neural Networks · Forward propagation, learning, and sigmoid",
+      "number": "15",
+      "label": "Lecture 15",
+      "role": "lecture",
+      "sourceFile": "sources/lecture15.pptx",
+      "pdfFile": "sources/lecture15.pdf",
+      "originalFilename": "Ling285_F26_L15.pptx",
+      "issues": [],
+      "sections": [
+        {
+          "id": "lecture15-p001",
+          "page": 1,
+          "title": "Neural Networks",
+          "kind": "title",
+          "teaching": [],
+          "image": "assets/slides/lecture15/001.webp",
+          "assets": [],
+          "sourceText": "Ling 285\nHuman Language and Technology\n           Lecture 15\n        Neural Networks\n\n\n               Khalil Iskarous\n       Department of Linguistics\n     University of Southern California",
+          "speakerNotes": "",
+          "issues": [],
+          "core": false,
+          "coreReason": ""
+        },
+        {
+          "id": "lecture15-p002",
+          "page": 2,
+          "title": "Two formants feed a fully connected network",
+          "kind": "concept",
+          "teaching": [
+            "The network takes **F1 and F2** as its two inputs and has five outputs labeled **done, dune, dean, Don, and Dan**. Its hidden layers contain three, two, and four neurons. The arrangement is **2 → 3 → 2 → 4 → 5**.",
+            "Each neuron connects to every neuron in the next layer. A **weight** multiplies the value on one connection before the receiving neuron combines it with the other incoming contributions. Different weights let neurons combine the same formants differently. Positive and negative weights can contribute in opposite directions."
+          ],
+          "image": "assets/slides/lecture15/002.webp",
+          "assets": [],
+          "sourceText": "+0.1       done\n\n\n                                                                                +0.5                                                                                                     +0.1  +0.6   −0.2\n                          +0.005                       −0.4                                            −0.5\n                                                                                                                 +0.8                                               dune\n                                                                                      +0.4                 −0.1\n                   +0.002                                                                                +0.2F1                                                      +0.6                 +0.4\n                          −0.001                                                                       −0.4  +0.2    +0.4                                                       −0.2\n                                                                                +0.7                                               dean                                               −0.7  +0.5                                                −0.5  +0.2\n                         +0.003\n                                                                                +0.7                          +0.1                                 −0.004                                                                                                      −0.3                                                                                                                  −0.2                                                                                      −0.2F2                    +0.002                      −0.5                                                                                +0.3                               +0.2    Don\n                                                                                                           +0.3                                                                                                                   +0.8\n                                                                                                                   +0.8\n                                                                                                            −0.6\n                                           Dan\n\nNative slide text:\nF1\nF2\ndone\ndune\ndean\nDon\nDan\n+0.005\n−0.001\n+0.002\n+0.003\n−0.004\n+0.002\n−0.4\n+0.6\n+0.5\n−0.2\n−0.7\n−0.5\n+0.5\n+0.2\n+0.4\n+0.7\n+0.4\n+0.7\n−0.2\n+0.3\n+0.1\n+0.6\n−0.1\n−0.5\n−0.2\n+0.8\n+0.2\n−0.3\n+0.1\n+0.4\n+0.2\n+0.1\n−0.5\n−0.4\n−0.2\n+0.3\n+0.2\n+0.8\n+0.8\n−0.6",
+          "speakerNotes": "Fully connected neural network: 2 inputs, hidden layers of 3, 2, and 4 neurons, and 5 outputs. Right arrow reveals all 40 illustrative signed weights. The weights are fixed across both slides.",
+          "issues": [],
+          "core": false,
+          "coreReason": ""
+        },
+        {
+          "id": "lecture15-p003",
+          "page": 3,
+          "title": "Forward propagation combines weighted inputs",
+          "kind": "concept",
+          "teaching": [
+            "**Forward propagation** multiplies incoming values by their weights and adds the products. With F1 at **320** and F2 at **2000**, the top first-layer neuron receives contributions that total **−0.40**. The other two results are **6.64** and **2.72**.",
+            "Later hidden layers use the preceding layer’s results in the same way. The five final scores are **logits**, and **softmax** turns them into probabilities sharing one total. **Done** has the largest current response, about **55.7%**, while **dean** has about **8.1%**. The hidden activations are linear and no weights change during this forward pass."
+          ],
+          "image": "assets/slides/lecture15/003.webp",
+          "assets": [],
+          "sourceText": "Forward propagation\n\n\n                       Top neuron: w₁ F1 + w₂F2\n\n                (+0.005 × 320) + (−0.001 × 2000) = −0.40\n\n                                                                                55.7%                                                                                                            +0.1       done\n                                                           1.57\n                           -0.4                                    +0.5                                                                                                     +0.1  +0.6   −0.2\n                          +0.005                       −0.4                                            −0.5          7.4%                                                                                                                 +0.8                                               dune                                            5.5                                                                                      +0.4                 −0.1      320                   +0.002                                                                                +0.2     -1.95F1                                                      +0.6                 +0.4\n                          −0.001                                                                       −0.4  +0.2    +0.4\n                                                                                8.1%                        6.64           −0.2                     +0.7                                               dean                                               −0.7  +0.5                                                −0.5  +0.2\n                         +0.003\n                                                                                +0.7     -1.95          +0.1                                 −0.004                                            -5.93                              −0.3                                                                                                                  −0.2      2000                                                                     −0.2F2                    +0.002                      −0.5                                          18.5%                                                                                +0.3                               +0.2    Don\n                        2.72                                                              +0.3     +0.8\n                                                              -2.88               +0.8                                                                                                            −0.6\n                                                                                10.2%                                           Dan\n\n                                                                     Softmax: p ᵢ = exp(z ᵢ) / Σ ⱼ exp(z ⱼ)\n\n                                                                Output logits: 0.622  -1.398  -1.300  -0.478  -1.076\n\nNative slide text:\nForward propagation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF1\nF2\ndone\ndune\ndean\nDon\nDan\n+0.005\n−0.001\n+0.002\n+0.003\n−0.004\n+0.002\n−0.4\n+0.6\n+0.5\n−0.2\n−0.7\n−0.5\n+0.5\n+0.2\n+0.4\n+0.7\n+0.4\n+0.7\n−0.2\n+0.3\n+0.1\n+0.6\n−0.1\n−0.5\n−0.2\n+0.8\n+0.2\n−0.3\n+0.1\n+0.4\n+0.2\n+0.1\n−0.5\n−0.4\n−0.2\n+0.3\n+0.2\n+0.8\n+0.8\n−0.6\n320\n2000\n-0.4\n6.64\n2.72\n5.5\n-5.93\n1.57\n-1.95\n-1.95\n-2.88\n55.7%\n7.4%\n8.1%\n18.5%\n10.2%\n(+0.005 × 320) + (−0.001 × 2000) = −0.40\nTop neuron: w₁F1 + w₂F2\nSoftmax: pᵢ = exp(zᵢ) / Σⱼ exp(zⱼ)\nOutput logits:  0.622   -1.398   -1.300   -0.478   -1.076",
+          "speakerNotes": "Illustrative weights, no biases, linear hidden activations. Inputs are F1=320 and F2=2000. Click 1: inputs. Click 2: signals travel to hidden layer 1, then the first inner product and its result appear. Click 3: remaining hidden 1 values. Click 4: hidden 2. Click 5: hidden 3. Click 6: output probabilities after softmax. Hidden values display up to two decimals; calculations use full precision.\nW matrices (each row is a destination neuron, each column a source): [[[0.005,-0.001],[0.002,0.003],[-0.004,0.002]],[[-0.4,0.6,0.5],[-0.2,-0.7,-0.5]],[[0.5,0.2],[0.4,0.7],[0.4,0.7],[-0.2,0.3]],[[0.1,0.6,-0.1,-0.5],[-0.2,0.8,0.2,-0.3],[0.1,0.4,0.2,0.1],[-0.5,-0.4,-0.2,0.3],[0.2,0.8,0.8,-0.6]]]\nActivations: [[320,2000],[-0.3999999999999999,6.64,2.7199999999999998],[5.504,-5.927999999999999],[1.5664,-1.9479999999999995,-1.9479999999999995,-2.8792],[0.6222400000000002,-1.3975199999999997,-1.3000799999999997,-0.47816000000000014,-1.0759999999999998]]\nSoftmax probabilities: [0.5571968635843721,0.07393295085907757,0.08149964081043531,0.18540054876097475,0.10196999598514019]",
+          "issues": [],
+          "core": true,
+          "coreReason": "Trace weighted input combinations and distinguish logits, probabilities, and the true category."
+        },
+        {
+          "id": "lecture15-p004",
+          "page": 4,
+          "title": "Pop quiz · Forward propagation",
+          "kind": "prompt",
+          "teaching": [],
+          "image": "assets/slides/lecture15/004.webp",
+          "assets": [
+            {
+              "file": "assets/original/578a201565eeba977543.png",
+              "type": "image",
+              "label": "Original figure detail",
+              "animated": false,
+              "originalFilename": "image1.png"
+            }
+          ],
+          "sourceText": "Pop\nQuiz!",
+          "speakerNotes": "",
+          "issues": [],
+          "core": false,
+          "coreReason": ""
+        },
+        {
+          "id": "lecture15-p005",
+          "page": 5,
+          "title": "Info on Exam 2 and Exam 3",
+          "kind": "logistics",
+          "teaching": [],
+          "image": "assets/slides/lecture15/005.webp",
+          "assets": [],
+          "sourceText": "Info on Exam 2 and\nExam 3",
+          "speakerNotes": "",
+          "issues": [
+            "Only the heading is supplied. No exam dates, coverage changes, or rules are stated on this page."
+          ],
+          "core": false,
+          "coreReason": ""
+        },
+        {
+          "id": "lecture15-p006",
+          "page": 6,
+          "title": "Backpropagation uses the difference between prediction and target",
+          "kind": "concept",
+          "teaching": [
+            "The desired output marks **dean** with a 1 and the other four words with zeros. The computed probabilities do not match this target. **Cross-entropy loss** decreases when the network assigns more probability to the true word.",
+            "**Backpropagation** determines how the loss depends on weights, working from the output connections toward the first hidden layer. The update subtracts the learning rate times each gradient from its old weight. All gradients use the original weights and stored forward activations. Updated weights appear in backward order, but the displayed activations are not a new forward pass."
+          ],
+          "image": "assets/slides/lecture15/006.webp",
+          "assets": [],
+          "sourceText": "Backpropagation\n\n\n                    Top neuron: w₁ F1 + w₂F2                            Computed Desired\n                                                                        Output   Output\n             (+0.005 × 320) + (−0.001 × 2000) = −0.40\n\n                                                                         55.7%                                                                                                +0.083+0.1           0    done\n                                                   1.57\n                                                                                                 −0.202−0.2  +0.622+0.6\n                        -0.4                              +0.514+0.5                                                                                +0.185+0.2           +0.129+0.1    −0.078−0.1                       +0.00498+0.005                 −0.4003−0.4                                                                         7.4%                                                0    dune                                       5.5     +0.396+0.4                   +0.803+0.8      320                                                                                       −0.468−0.5F1                                                  -1.95                                                +0.6054+0.6                                                                                                 +0.197+0.2                       +0.00195+0.002                                                                      +0.420+0.4\n                                                                                                         +0.364+0.4\n                    −0.00113−0.001                     6.64         −0.2020−0.2                  +0.704+0.7                 +0.203+0.2         8.1%                                                                                                           −0.506−0.5       1    dean\n                        +0.00270+0.003                −0.6672−0.7                   −0.156−0.2                     +0.164+0.2\n                                                      -1.95    −0.296−0.3     −0.393−0.4                           −0.00403−0.004        +0.5022+0.5                         +0.679+0.7                                      -5.93                                      −0.193−0.2      2000                                                                                                  +0.047+0.1        18.5%F2               +0.00179+0.002                  −0.4866−0.5                                                                                                          +0.804+0.8       0    Don                                                                          +0.253+0.3\n                     2.72                                                       +0.311+0.3                                                                                                         +0.804+0.8\n                                                      -2.88                                                                                                    −0.594−0.6\n                                                                         10.2%                                                0    Dan\n\n           Weight update: W ← W − η ∂L/∂W                         Softmax: p ᵢ = exp(z ᵢ) / Σ ⱼ exp(z ⱼ)\n\n                               Cross-entropy for dean. Forward activationsOutputstaylogits:fixed 0.622during -1.398this backward-1.300 pass.-0.478  -1.076\n\nNative slide text:\nBackpropagation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF1\nF2\ndone\n0\ndune\n0\ndean\n1\nDon\n0\nDan\n0\nComputed\nOutput\nDesired\nOutput\n+0.005\n−0.001\n+0.002\n+0.003\n−0.004\n+0.002\n−0.4\n+0.6\n+0.5\n−0.2\n−0.7\n−0.5\n+0.5\n+0.2\n+0.4\n+0.7\n+0.4\n+0.7\n−0.2\n+0.3\n+0.1\n+0.6\n−0.1\n−0.5\n−0.2\n+0.8\n+0.2\n−0.3\n+0.1\n+0.4\n+0.2\n+0.1\n−0.5\n−0.4\n−0.2\n+0.3\n+0.2\n+0.8\n+0.8\n−0.6\n320\n2000\n-0.4\n6.64\n2.72\n5.5\n-5.93\n1.57\n-1.95\n-1.95\n-2.88\n55.7%\n7.4%\n8.1%\n18.5%\n10.2%\nTop neuron: w₁F1 + w₂F2\n(+0.005 × 320) + (−0.001 × 2000) = −0.40\nSoftmax: pᵢ = exp(zᵢ) / Σⱼ exp(zⱼ)\nOutput logits:  0.622   -1.398   -1.300   -0.478   -1.076\n+0.00498\n−0.00113\n+0.00195\n+0.00270\n−0.00403\n+0.00179\n−0.4003\n+0.6054\n+0.5022\n−0.2020\n−0.6672\n−0.4866\n+0.514\n+0.185\n+0.396\n+0.704\n+0.420\n+0.679\n−0.156\n+0.253\n+0.083\n+0.622\n−0.078\n−0.468\n−0.202\n+0.803\n+0.203\n−0.296\n+0.129\n+0.364\n+0.164\n+0.047\n−0.506\n−0.393\n−0.193\n+0.311\n+0.197\n+0.804\n+0.804\n−0.594\nWeight update:  W ← W − η ∂L/∂W\nCross-entropy for dean. Forward activations stay fixed during this backward pass.",
+          "speakerNotes": "Four clicks: output connections, hidden layer 3 connections, hidden layer 2 connections, hidden layer 1 connections. Each click animates backward error signals then replaces that layer's weights with their updated values. Cross-entropy loss: L = -log p(dean). Softmax derivative at logits: p-y. Linear hidden derivatives are 1. Gradients: delta(next) outer activation(previous). All deltas and gradients use the original weights and stored forward activations, even though updates are revealed progressively. Updates are one simultaneous gradient step displayed in reverse layer order. Layer learning rates from input to output: [0.000001,0.02,0.02,0.02]. Smaller input-layer learning rate accounts for raw input values in Hz. W_new = W_old - eta * gradient. Original loss=2.5071566659789544. Activations shown are the stored original forward pass and are not recomputed during backpropagation.\nGradients: [[[20.9942138956826,131.21383684801623],[47.47242851412122,296.7026782132576],[32.980044648630596,206.1252790539412]],[[0.01625457507547991,-0.2698259462529666,-0.11053111051326342],[0.09870468669705637,-1.638497799171136,-0.6711918695399834]],[[-0.6782205748965306,0.7304672180208273],[0.1842745389015829,-0.19847010657859435],[-0.9914755945613503,1.067853801700524],[-2.1916387833678423,2.360471422202865]],[[0.8727931671185606,-1.0854194902623566,-1.0854194902623566,-1.6042812096321242],[0.11580857422565911,-0.14402138827348307,-0.14402138827348307,-0.21286775211345613],[-1.4387389626345342,1.7892386997012715,1.7892386997012715,2.6445462341785944],[0.29041141957919087,-0.3611602689863787,-0.3611602689863787,-0.5338052599925985],[0.15972580171112358,-0.19863755217905305,-0.19863755217905305,-0.2935920124404156]]]\nUpdated weights: [[[0.004979005786104318,-0.0011312138368480163],[0.001952527571485879,0.0027032973217867426],[-0.0040329800446486305,0.001793874720946059]],[[-0.40032509150150963,0.6053965189250593,0.5022106222102652],[-0.20197409373394115,-0.6672300440165773,-0.48657616260920034]],[[0.5135644114979306,0.18539065563958346],[0.39631450922196837,0.7039694021315719],[0.419829511891227,0.6786429239659895],[-0.15616722433264316,0.2527905715559427]],[[0.08254413665762879,0.6217083898052471,-0.07829161019475286,-0.4679143758073575],[-0.2023161714845132,0.8028804277654698,0.20288042776546966,-0.2957426449577309],[0.12877477925269068,0.3642152260059746,0.16421522600597457,0.04710907531642812],[-0.5058082283915838,-0.39277679462027243,-0.19277679462027245,0.31067610519985195],[0.19680548396577754,0.8039727510435811,0.8039727510435811,-0.5941281597511917]]]",
+          "issues": [],
+          "core": true,
+          "coreReason": "Explain target mismatch, gradient direction, and a single backward update."
+        },
+        {
+          "id": "lecture15-p007",
+          "page": 7,
+          "title": "Predict how changing a marked weight affects error",
+          "kind": "concept",
+          "teaching": [
+            "The pink-marked connection runs from the positive top activation in the last hidden layer to **done**, an incorrect candidate for the **dean** target. Increasing it raises done’s score, reduces the share assigned to dean, and increases the loss.",
+            "The blue-marked **F1** connection affects an early hidden neuron and then many downstream paths. Its error effect depends on those later connections, not just its own sign. The supplied backward calculation gives a positive gradient here too, so a small increase raises the loss for this example."
+          ],
+          "image": "assets/slides/lecture15/007-ink.webp",
+          "assets": [
+            {
+              "file": "assets/original/5cc370b56f25f0bbfbf3.png",
+              "type": "image",
+              "label": "Original figure detail",
+              "animated": false,
+              "originalFilename": "image2.png"
+            },
+            {
+              "file": "assets/original/29b29d84e9c03a356b11.png",
+              "type": "image",
+              "label": "Original figure detail",
+              "animated": false,
+              "originalFilename": "image4.png"
+            },
+            {
+              "file": "assets/original/428791f334e131de9396.png",
+              "type": "image",
+              "label": "Original figure detail",
+              "animated": false,
+              "originalFilename": "image3.png"
+            }
+          ],
+          "sourceText": "If we increase this w, will the Error go up or\n                         down?\n\nIf we increase this w, will\nthe\nError go up or down?",
+          "speakerNotes": "",
+          "issues": [
+            "The original PowerPoint contains pink and blue ink markings that ordinary PDF conversion drops. The displayed source-state export retains the original raster fallbacks at their original positions."
+          ],
+          "core": false,
+          "coreReason": ""
+        },
+        {
+          "id": "lecture15-p008",
+          "page": 8,
+          "title": "Backpropagation reuses downstream error calculations",
+          "kind": "concept",
+          "teaching": [
+            "The last weights, **W5**, affect the output scores directly. The first weights, **W2**, affect hidden activations that continue through several layers, so their effects on error include those later layers.",
+            "**Backpropagation** reuses downstream error calculations when finding earlier effects. This is the course’s connection to **Bellman–Viterbi dynamic programming**. Backpropagation supplies gradients efficiently, and **SGD** uses them to adjust weights."
+          ],
+          "image": "assets/slides/lecture15/008.webp",
+          "assets": [
+            {
+              "file": "assets/original/6ee1e5e5debfc8afcaf2.png",
+              "type": "image",
+              "label": "Original figure detail",
+              "animated": false,
+              "originalFilename": "image5.png"
+            }
+          ],
+          "sourceText": "First                                                                                        Last\n                                          W2                                                        W5Why do we backpropagate?\n\n\n     •  Let’s think about the problem of w-modification, and let’s\n     compare the last set of w’s and the first\n     •  Last W5: The output probabilities are directly determined by\n      the Last w’s!!!! The error is very directly determined by the last\n      W’s\n     • We can use the error between computed and desired directly\n      to determine better w’s.\n     •  First W2 affects its activations, which affects another 2 layers\n      of activations along with other W’s. It’s really hard to figure out\n      the culpability of W2 for the mistakes made all the way at the\n       end!!!!! Moreover, the effect of W2 on errors INCLUDES the\n       effect of W5 on them, since W5 is downstream of W2!!!!\n     • So which problem is easier: Improving W2 or W5?\n     • W5 is easy! What algorithm do we use to solve small problems\n     then bigger ones that depend on them?\n     • Dynamic programming?\n     •  Backpropagation is Bellman-Viterbi Dynamic Programming!!!\n     •  Backpropagation = SGD + Dynamic programming 😉\n\nNative slide text:\nWhy do we backpropagate?\nLet’s think about the problem of w-modification, and let’s compare the last set of w’s and the first\nLast W5: The output probabilities are directly determined by the Last w’s!!!! The error is very directly determined by the last W’s\nWe can use the error between computed and desired directly to determine better w’s. \nFirst W2 affects its activations, which affects another 2 layers of activations along with other W’s. It’s really hard to figure out the culpability of W2 for the mistakes made all the way at the end!!!!! Moreover, the effect of W2 on errors INCLUDES the effect of  W5 on them, since W5 is downstream of W2!!!!\nSo which problem is easier: Improving W2 or W5?\nW5 is easy! What algorithm do we use to solve small problems then bigger ones that depend on them?\nDynamic programming?\nBackpropagation is Bellman-Viterbi Dynamic Programming!!! \nBackpropagation = SGD + Dynamic programming 😉\n\n\n\nFirst W2\nLast W5",
+          "speakerNotes": "",
+          "issues": [],
+          "core": true,
+          "coreReason": "Connect reuse of downstream error calculations to dynamic programming and SGD."
+        },
+        {
+          "id": "lecture15-p009",
+          "page": 9,
+          "title": "Pair each recording with its target row",
+          "kind": "concept",
+          "teaching": [
+            "**Formant_Inputs** has **110 rows and two columns**, containing the F1 and F2 measurements for each recording. **TrueVowel_Outputs** has **110 rows and five columns**, ordered done, dune, dean, Don, Dan.",
+            "Each target row has a 1 at the true word and zeros elsewhere. The input and target rows must remain paired. The illustrated third row contains **320 and 2000** and identifies **dean**, even though the network currently favors done. The visible rows are examples of the matrix layout, not a supplied complete dataset."
+          ],
+          "image": "assets/slides/lecture15/009.webp",
+          "assets": [],
+          "sourceText": "Training matrices\n\n\n          Before backpropagation               Formant_Inputs         TrueVowel_Outputs\n\n                                                       110 × 2                   110 × 5\n\n                                                          55.7%  done        F1        F2       done   dune   dean   Don   Dan\n                                             1.57\n                      -0.4                                   500     1500      1    0    0    0    0\n                                                          7.4%  dune\nF1   320                        5.5          -1.95                   350     1000      0    1    0    0    0\n\n                   6.64                                   8.1%  dean      320     2000      0    0    1    0    0\n\n     2000                       -5.93                           700     1100      0    0    0    1    0F2                                            -1.95\n                                                          18.5%  Don\n                   2.72                                   800     1700      0    0    0    0    1\n\n                                                -2.88\n                                                          10.2%  Dan    ⋮    ⋮    ⋮  ⋮  ⋮  ⋮  ⋮\n\n\n          2 → 3 → 2 → 4 → 5                           Illustrative rows. Each row pairs one recording with its vowel.\n\nNative slide text:\nTraining matrices\nBefore backpropagation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n320\n\n2000\n\n-0.4\n\n6.64\n\n2.72\n\n5.5\n\n-5.93\n\n1.57\n\n-1.95\n\n-1.95\n\n-2.88\n\n55.7%\n\n7.4%\n\n8.1%\n\n18.5%\n\n10.2%\nF1\nF2\ndone\ndune\ndean\nDon\nDan\n2 → 3 → 2 → 4 → 5\nFormant_Inputs\nTrueVowel_Outputs\n110 × 2\n110 × 5\nIllustrative rows. Each row pairs one recording with its vowel.",
+          "speakerNotes": "The rows shown are illustrative teaching examples, not a supplied dataset. Both complete matrices have 110 rows. Input columns are F1 and F2 in Hz. Output columns, in order, are done, dune, dean, Don, Dan. A 1 marks the true vowel. The third row, 320 and 2000 with target dean, matches the network example. The network shows the original pre-backpropagation activations; small weight labels are omitted in this compressed diagram. Files used on the next slide are assumed saved as PyTorch tensors using torch.save.",
+          "issues": [],
+          "core": true,
+          "coreReason": "Read matrix dimensions and preserve recording–target alignment."
+        },
+        {
+          "id": "lecture15-p010",
+          "page": 10,
+          "title": "Read one full-batch training step in PyTorch",
+          "kind": "concept",
+          "teaching": [
+            "**torch.load** reads the formant and target tensors, and **nn.Sequential** connects four linear layers in the **2 → 3 → 2 → 4 → 5** order. No hidden sigmoid is declared. The final scores go to **CrossEntropyLoss**, which handles the softmax-related loss internally.",
+            "**zero_grad()** clears old gradients, **net(X)** computes outputs, **backward()** computes gradients, and **step()** updates parameters. All **110 rows** contribute to one step with learning rate **0.1**. The code initializes its own default parameters, so it does not reproduce the drawing’s fixed weights and absent biases automatically."
+          ],
+          "image": "assets/slides/lecture15/010.webp",
+          "assets": [],
+          "sourceText": "The same network in PyTorch\n\n\n\n                                                   import torch          Before backpropagation\n                                                   from torch import nn\n\n\n                                                   # Sizes: X = 110x2, Y = 110x5\n                                                          55.7%  done                                                   X = torch.load(\"Formant_Inputs.pt\").float()                                             1.57\n                                                   Y = torch.load(\"TrueVowel_Outputs.pt\").float()                      -0.4\n                                                          7.4%  dune\nF1   320                        5.5          -1.95                  net = nn.Sequential(\n                                                       nn.Linear(2, 3),\n                   6.64                                   8.1%  dean       nn.Linear(3, 2),\n                                                       nn.Linear(2, 4),\n     2000                       -5.93F2                                            -1.95                                                       nn.Linear(4, 5)\n                                                          18.5%  Don\n                                                   )\n                   2.72\n\n                                                -2.88\n                                                          10.2%  Dan   sgd = torch.optim.SGD(net.parameters(), lr=0.1)\n                                                   sgd.zero_grad()\n                                                   loss = nn.CrossEntropyLoss()(net(X), Y)\n                                                   loss.backward()\n          2 → 3 → 2 → 4 → 5                                                   sgd.step()\n\n\n                                                       One gradient step using all 110 rows\n\nNative slide text:\nThe same network in PyTorch\nBefore backpropagation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n320\n\n2000\n\n-0.4\n\n6.64\n\n2.72\n\n5.5\n\n-5.93\n\n1.57\n\n-1.95\n\n-1.95\n\n-2.88\n\n55.7%\n\n7.4%\n\n8.1%\n\n18.5%\n\n10.2%\nF1\nF2\ndone\ndune\ndean\nDon\nDan\n2 → 3 → 2 → 4 → 5\nimport torch\nfrom torch import nn\n# Sizes: X = 110x2, Y = 110x5\nX = torch.load(\"Formant_Inputs.pt\").float()\nY = torch.load(\"TrueVowel_Outputs.pt\").float()\nnet = nn.Sequential(\n    nn.Linear(2, 3),\n    nn.Linear(3, 2),\n    nn.Linear(2, 4),\n    nn.Linear(4, 5)\n)\nsgd = torch.optim.SGD(net.parameters(), lr=0.1)\nsgd.zero_grad()\nloss = nn.CrossEntropyLoss()(net(X), Y)\nloss.backward()\nsgd.step()\nOne gradient step using all 110 rows",
+          "speakerNotes": "The program assumes Formant_Inputs.pt and TrueVowel_Outputs.pt already contain the two matrices saved as tensors with torch.save. The .float() calls ensure floating-point inputs and one-hot targets. Linear layers follow exactly 2→3→2→4→5. No hidden activation function is declared. The program uses PyTorch defaults for Linear layers. CrossEntropyLoss accepts logits and floating-point one-hot targets, performing the softmax-related loss calculation internally. The last five lines perform one full-batch SGD step, with learning rate 0.1 as requested. This is a minimal illustration, not a recommendation to repeatedly train on unscaled Hz values at that rate. The displayed network shows the prior illustrative hand-selected weights; the minimal program initializes its own parameters. Official references: https://docs.pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html and https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html and https://docs.pytorch.org/docs/stable/generated/torch.optim.SGD.html",
+          "issues": [
+            "The diagram uses fixed illustrative weights and no biases. The minimal PyTorch declarations initialize their own default parameters and bias terms, so they do not reproduce the displayed numerical outputs automatically. The .pt input files are referenced but not supplied."
+          ],
+          "core": false,
+          "coreReason": ""
+        },
+        {
+          "id": "lecture15-p011",
+          "page": 11,
+          "title": "Sigmoid turns an inner product into a bounded activation",
+          "kind": "concept",
+          "teaching": [
+            "**Sigmoid** turns a weighted sum into an activation between 0 and 1. Large negative sums approach 0 and large positive sums approach 1. The change is gradual. Inputs of **−4** and **4** give approximately **0.0180** and **0.9820**.",
+            "The curve is steep near its center and flat near its ends. Equal input differences can therefore produce different output differences depending on their position. **Edgar Adrian’s** nerve-activity work provides biological context for activation models, not a claim that firing rates have only two possible values."
+          ],
+          "image": "assets/slides/lecture15/011.webp",
+          "assets": [
+            {
+              "file": "assets/original/07f692ce6b18fe7e4d92.png",
+              "type": "image",
+              "label": "Original figure detail",
+              "animated": false,
+              "originalFilename": "image6.png"
+            }
+          ],
+          "sourceText": "The sigmoid activation function\n\n\n                                                     σ(z) = 1 / (1 + exp(−z))        Lord Edgar Adrian\n\n    Nobel Prize in Physiology or Medicine, 1932\n\n  Neurons are nearly digital! On or off, roughly.\n           If the inner product is large positive,\n sigmoid function is near 1, and if inner product\n      Is large negative, sigmois is basically 0.\nAnimal perception reflects this: some things that seem\nalike, are perceived different, and some things that are\n         Very different are perceived same!\n\n                     If the inner product is −4:\n           σ(−4) = 0.0180\n\n                      If the inner product is 4:\n            σ(4) = 0.9820\n                                                   https://www.vcalc.com/wiki/vcalc/sigmoid-\n                                                   function\n\nNative slide text:\nThe sigmoid activation function\nLord Edgar Adrian\nNobel Prize in Physiology or Medicine, 1932\nNeurons are nearly digital! On or off, roughly.\nIf the inner product is large positive, \nsigmoid function is near 1, and if inner product\nIs large negative, sigmois is basically 0.\nAnimal perception reflects this: some things that seem \nalike, are perceived different, and some things that are\nVery different are perceived same!\nIf the inner product is −4:\nσ(−4) = 0.0180\nIf the inner product is 4:\nσ(4) = 0.9820\nσ(z) = 1 / (1 + exp(−z))\nhttps://www.vcalc.com/wiki/vcalc/sigmoid-function",
+          "speakerNotes": "Edgar Douglas Adrian shared the 1932 Nobel Prize in Physiology or Medicine with Charles Sherrington. https://www.nobelprize.org/prizes/medicine/1932/summary/-/ . The quotation is a 21-word excerpt from his lecture The Activity of the Nerve Fibres, December 12, 1932, reproduced on page 140 of Philippides, Husbands, Smith and O’Shea (2005), Flexible Couplings: Diffusing Neuromodulators and Adaptive Robotics. https://users.sussex.ac.uk/~philh/pubs/flexibleCouplingsPubl.pdf . The excerpt begins partway through a sentence, indicated by the ellipsis. Adrian described rate coding. This provides biological motivation for rate-based neuron models, not evidence that he invented the logistic sigmoid or that this precise sentence directly caused its adoption. The plotted logistic is a later mathematical model, not a fit to Adrian’s experimental data. Exact values: sigmoid(-4)=0.01798620996209156 and sigmoid(4)=0.9820137900379085.",
+          "issues": [],
+          "core": true,
+          "coreReason": "Explain sigmoid saturation and the relationship between input and activation differences."
+        },
+        {
+          "id": "lecture15-p012",
+          "page": 12,
+          "title": "Apply sigmoid while recalculating downstream activity",
+          "kind": "concept",
+          "teaching": [
+            "The **nine hidden neurons** receive sigmoid in first-to-last layer order while the inputs and weights stay fixed. The first value changes from **−0.400** to about **0.401**, and all downstream weighted sums are recalculated after each change.",
+            "The fully sigmoid hidden layers finish near **0.401, 0.999, 0.938**, then **0.713, 0.223**, then **0.599, 0.609, 0.609, 0.481**. Outputs still use **softmax**. **Dan** becomes the largest response at about **32.0%**, while **dean** receives about **23.0%**. This is an activation change rather than a weight-training step."
+          ],
+          "image": "assets/slides/lecture15/012.webp",
+          "assets": [
+            {
+              "file": "assets/slides/lecture15/stages/sigmoid-00.webp",
+              "type": "image",
+              "label": "Original reveal stage 0 · Initially: all hidden activations are linear.",
+              "sourceDerived": true,
+              "sourcePage": 12,
+              "sourceStage": 0,
+              "animated": false,
+              "originalFilename": "slide12.xml · stage 0"
+            },
+            {
+              "file": "assets/slides/lecture15/stages/sigmoid-01.webp",
+              "type": "image",
+              "label": "Original reveal stage 1 · Hidden layer 1, neuron 1:  σ(-0.400) = 0.401",
+              "sourceDerived": true,
+              "sourcePage": 12,
+              "sourceStage": 1,
+              "animated": false,
+              "originalFilename": "slide12.xml · stage 1"
+            },
+            {
+              "file": "assets/slides/lecture15/stages/sigmoid-02.webp",
+              "type": "image",
+              "label": "Original reveal stage 2 · Hidden layer 1, neuron 2:  σ(6.640) = 0.999",
+              "sourceDerived": true,
+              "sourcePage": 12,
+              "sourceStage": 2,
+              "animated": false,
+              "originalFilename": "slide12.xml · stage 2"
+            },
+            {
+              "file": "assets/slides/lecture15/stages/sigmoid-03.webp",
+              "type": "image",
+              "label": "Original reveal stage 3 · Hidden layer 1, neuron 3:  σ(2.720) = 0.938",
+              "sourceDerived": true,
+              "sourcePage": 12,
+              "sourceStage": 3,
+              "animated": false,
+              "originalFilename": "slide12.xml · stage 3"
+            },
+            {
+              "file": "assets/slides/lecture15/stages/sigmoid-04.webp",
+              "type": "image",
+              "label": "Original reveal stage 4 · Hidden layer 2, neuron 1:  σ(0.908) = 0.713",
+              "sourceDerived": true,
+              "sourcePage": 12,
+              "sourceStage": 4,
+              "animated": false,
+              "originalFilename": "slide12.xml · stage 4"
+            },
+            {
+              "file": "assets/slides/lecture15/stages/sigmoid-05.webp",
+              "type": "image",
+              "label": "Original reveal stage 5 · Hidden layer 2, neuron 2:  σ(-1.248) = 0.223",
+              "sourceDerived": true,
+              "sourcePage": 12,
+              "sourceStage": 5,
+              "animated": false,
+              "originalFilename": "slide12.xml · stage 5"
+            },
+            {
+              "file": "assets/slides/lecture15/stages/sigmoid-06.webp",
+              "type": "image",
+              "label": "Original reveal stage 6 · Hidden layer 3, neuron 1:  σ(0.401) = 0.599",
+              "sourceDerived": true,
+              "sourcePage": 12,
+              "sourceStage": 6,
+              "animated": false,
+              "originalFilename": "slide12.xml · stage 6"
+            },
+            {
+              "file": "assets/slides/lecture15/stages/sigmoid-07.webp",
+              "type": "image",
+              "label": "Original reveal stage 7 · Hidden layer 3, neuron 2:  σ(0.441) = 0.609",
+              "sourceDerived": true,
+              "sourcePage": 12,
+              "sourceStage": 7,
+              "animated": false,
+              "originalFilename": "slide12.xml · stage 7"
+            },
+            {
+              "file": "assets/slides/lecture15/stages/sigmoid-08.webp",
+              "type": "image",
+              "label": "Original reveal stage 8 · Hidden layer 3, neuron 3:  σ(0.441) = 0.609",
+              "sourceDerived": true,
+              "sourcePage": 12,
+              "sourceStage": 8,
+              "animated": false,
+              "originalFilename": "slide12.xml · stage 8"
+            },
+            {
+              "file": "assets/slides/lecture15/stages/sigmoid-09.webp",
+              "type": "image",
+              "label": "Original reveal stage 9 · Hidden layer 3, neuron 4:  σ(-0.076) = 0.481",
+              "sourceDerived": true,
+              "sourcePage": 12,
+              "sourceStage": 9,
+              "animated": false,
+              "originalFilename": "slide12.xml · stage 9"
+            }
+          ],
+          "sourceText": "Applying sigmoid, one neuron at a time\n\n\n                  HiddenHiddenHiddenHiddenHiddenHiddenHiddenHiddenHiddenInitially:layerlayerlayerlayerlayerlayerlayerlayerlayerall hidden1,2,3,1,1,2,3,3,3, neuronneuronneuronneuronneuronneuronneuronneuronneuronactivations1:2:4:2:3:1:1:2:3: σ(-0.400)σ(-1.248)σ(-0.076)σ(6.640)σ(2.720)σ(0.908)σ(0.401)σ(0.441)σ(0.441)are ======linear.=== 0.9990.9380.7130.5990.6090.6090.4010.2230.481\n\n\n                                                                                55.7%52.6%30.5%25.4%24.5%19.1%19.4%19.4%18.0%16.2%                                               done\n                                                               1.5661.3740.4710.2040.1070.4010.5990.5990.5990.599\n                         0.4010.4010.4010.4010.4010.4010.4010.4010.401-0.4\n                                                                                14.7%16.5%15.9%20.8%19.9%20.5%20.1%20.2%7.4%6.6%                                               dune                                            5.5045.1831.7990.9080.7130.7130.7130.7130.7130.713      320                                                                  -1.948-2.188-0.778-0.511-0.5890.4410.4410.6090.6090.609F1\n\n                         0.9990.9990.9990.9990.9990.9990.9990.9996.646.64                                                   15.5%17.3%16.9%19.0%19.3%18.7%18.3%23.0%8.1%7.6%                                               dean\n                                                                  -1.948-2.188-0.778-0.511-0.5890.4410.4410.4410.6090.609\n                                              -5.928-6.088-2.139-1.248-1.2480.2230.2230.2230.2230.223      2000F2                                                                            18.5%25.9%24.3%25.2%29.0%8.7%7.8%6.6%6.1%8.5%                                           Don\n                         0.9380.9380.9380.9380.9380.9380.9382.722.722.72\n                                                                  -2.879-2.863-1.002-0.556-0.517-0.076-0.076-0.076-0.0760.481\n                                                                                10.2%15.0%15.6%13.6%32.5%33.6%34.8%37.6%32.0%7.2%                                           Dan\n\n                           Purple: linear activation   Green: sigmoid activation\n\n                     Inputs stay as formants. Downstream values recalculate; outputs use softmax.\n\nNative slide text:\nApplying sigmoid, one neuron at a time\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF1\n320\nF2\n2000\ndone\ndune\ndean\nDon\nDan\nPurple: linear activation     Green: sigmoid activation\nInputs stay as formants. Downstream values recalculate; outputs use softmax.\n\n-0.4\n\n6.64\n\n2.72\n\n5.504\n\n-5.928\n\n1.566\n\n-1.948\n\n-1.948\n\n-2.879\n\n55.7%\n\n7.4%\n\n8.1%\n\n18.5%\n\n10.2%\nInitially: all hidden activations are linear.\n\n0.401\n\n6.64\n\n2.72\n\n5.183\n\n-6.088\n\n1.374\n\n-2.188\n\n-2.188\n\n-2.863\n\n52.6%\n\n6.6%\n\n7.6%\n\n25.9%\n\n7.2%\nHidden layer 1, neuron 1:  σ(-0.400) = 0.401\n\n0.401\n\n0.999\n\n2.72\n\n1.799\n\n-2.139\n\n0.471\n\n-0.778\n\n-0.778\n\n-1.002\n\n30.5%\n\n14.7%\n\n15.5%\n\n24.3%\n\n15.0%\nHidden layer 1, neuron 2:  σ(6.640) = 0.999\n\n0.401\n\n0.999\n\n0.938\n\n0.908\n\n-1.248\n\n0.204\n\n-0.511\n\n-0.511\n\n-0.556\n\n25.4%\n\n16.5%\n\n17.3%\n\n25.2%\n\n15.6%\nHidden layer 1, neuron 3:  σ(2.720) = 0.938\n\n0.401\n\n0.999\n\n0.938\n\n0.713\n\n-1.248\n\n0.107\n\n-0.589\n\n-0.589\n\n-0.517\n\n24.5%\n\n15.9%\n\n16.9%\n\n29.0%\n\n13.6%\nHidden layer 2, neuron 1:  σ(0.908) = 0.713\n\n0.401\n\n0.999\n\n0.938\n\n0.713\n\n0.223\n\n0.401\n\n0.441\n\n0.441\n\n-0.076\n\n19.1%\n\n20.8%\n\n19.0%\n\n8.7%\n\n32.5%\nHidden layer 2, neuron 2:  σ(-1.248) = 0.223\n\n0.401\n\n0.999\n\n0.938\n\n0.713\n\n0.223\n\n0.599\n\n0.441\n\n0.441\n\n-0.076\n\n19.4%\n\n19.9%\n\n19.3%\n\n7.8%\n\n33.6%\nHidden layer 3, neuron 1:  σ(0.401) = 0.599\n\n0.401\n\n0.999\n\n0.938\n\n0.713\n\n0.223\n\n0.599\n\n0.609\n\n0.441\n\n-0.076\n\n19.4%\n\n20.5%\n\n18.7%\n\n6.6%\n\n34.8%\nHidden layer 3, neuron 2:  σ(0.441) = 0.609\n\n0.401\n\n0.999\n\n0.938\n\n0.713\n\n0.223\n\n0.599\n\n0.609\n\n0.609\n\n-0.076\n\n18.0%\n\n20.1%\n\n18.3%\n\n6.1%\n\n37.6%\nHidden layer 3, neuron 3:  σ(0.441) = 0.609\n\n0.401\n\n0.999\n\n0.938\n\n0.713\n\n0.223\n\n0.599\n\n0.609\n\n0.609\n\n0.481\n\n16.2%\n\n20.2%\n\n23.0%\n\n8.5%\n\n32.0%\nHidden layer 3, neuron 4:  σ(-0.076) = 0.481",
+          "speakerNotes": "Nine clicks sigmoid the nine hidden neurons in layer order: 3, then 2, then 4. Inputs are unchanged. Every stage uses the same original weights, no biases, and recomputes all downstream preactivations and output probabilities. Purple neurons remain linear. Green neurons have sigmoid applied after their inner product. This progression constructs the sigmoid network, rather than simply applying sigmoid to the stored outputs of a different all-linear network. Outputs remain softmax, matching multiclass cross-entropy. Full stage data is calculated at full precision; values on slide are rounded to 3 decimals.",
+          "issues": [],
+          "core": true,
+          "coreReason": "Distinguish hidden activation changes, downstream recomputation, and weight training."
+        },
+        {
+          "id": "lecture15-p013",
+          "page": 13,
+          "title": "Insert sigmoid after the hidden linear layers",
+          "kind": "concept",
+          "teaching": [
+            "**nn.Sigmoid()** follows the first three linear layers. It transforms each hidden weighted sum without changing the layer’s size. The final **nn.Linear(4, 5)** supplies logits to **CrossEntropyLoss** rather than applying sigmoid to the output scores.",
+            "The input files, **110-row** batch, learning rate **0.1**, and training sequence remain the same. **backward()** calculates gradients and **step()** applies the update. Matching the diagram’s exact probabilities would also require its illustrative weights and no-bias setting, which the default declarations do not supply."
+          ],
+          "image": "assets/slides/lecture15/013.webp",
+          "assets": [],
+          "sourceText": "The same PyTorch program, with sigmoid\n\n\n\n                                                   import torch        Sigmoid hidden activations\n                                                   from torch import nn\n\n\n                                                   # Sizes: X = 110x2, Y = 110x5\n                                                          16.2%  done                                                   X = torch.load(\"Formant_Inputs.pt\").float()                                           0.599\n                                                   Y = torch.load(\"TrueVowel_Outputs.pt\").float()                  0.401\n                                                          20.2%  dune\nF1   320                     0.713        0.609                  net = nn.Sequential(\n                                                       nn.Linear(2, 3), nn.Sigmoid(),\n                  0.999                                  23.0%  dean       nn.Linear(3, 2), nn.Sigmoid(),\n                                                       nn.Linear(2, 4), nn.Sigmoid(),\n     2000                    0.223F2                                        0.609                                                       nn.Linear(4, 5)\n                                                          8.5%  Don\n                                                   )\n                  0.938\n\n                                           0.481\n                                                          32.0%  Dan   sgd = torch.optim.SGD(net.parameters(), lr=0.1)\n                                                   sgd.zero_grad()\n                                                   loss = nn.CrossEntropyLoss()(net(X), Y)\n                                                   loss.backward()\n          2 → 3 → 2 → 4 → 5                                                   sgd.step()\n\n\n                                                                     Sigmoid after each hidden layer\n\nNative slide text:\nThe same PyTorch program, with sigmoid\nSigmoid hidden activations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n320\n\n2000\n\n0.401\n\n0.999\n\n0.938\n\n0.713\n\n0.223\n\n0.599\n\n0.609\n\n0.609\n\n0.481\n\n16.2%\n\n20.2%\n\n23.0%\n\n8.5%\n\n32.0%\nF1\nF2\ndone\ndune\ndean\nDon\nDan\n2 → 3 → 2 → 4 → 5\nimport torch\nfrom torch import nn\n# Sizes: X = 110x2, Y = 110x5\nX = torch.load(\"Formant_Inputs.pt\").float()\nY = torch.load(\"TrueVowel_Outputs.pt\").float()\nnet = nn.Sequential(\n    nn.Linear(2, 3), nn.Sigmoid(),\n    nn.Linear(3, 2), nn.Sigmoid(),\n    nn.Linear(2, 4), nn.Sigmoid(),\n    nn.Linear(4, 5)\n)\nsgd = torch.optim.SGD(net.parameters(), lr=0.1)\nsgd.zero_grad()\nloss = nn.CrossEntropyLoss()(net(X), Y)\nloss.backward()\nsgd.step()\nSigmoid after each hidden layer",
+          "speakerNotes": "The earlier program is repeated with nn.Sigmoid() inserted after Linear(2,3), Linear(3,2), and Linear(2,4). Linear(4,5) outputs logits for CrossEntropyLoss, which handles the softmax-related loss calculation. SGD learning rate is still 0.1. Source: https://docs.pytorch.org/docs/2.14/generated/torch.nn.Sigmoid.html . The diagram uses the original illustrative weights and no biases; the minimal PyTorch declarations use their default initialization and options. Input files must exist and have shapes 110x2 and 110x5.",
+          "issues": [
+            "The diagram and minimal code share layer sizes and sigmoid placement, but the code uses default initialization and bias options. The named .pt input files are not included in the upload."
+          ],
+          "core": true,
+          "coreReason": "Identify hidden sigmoid placement and final logits in the supplied program."
+        }
+      ],
+      "moduleId": "module2",
+      "workspaceGroup": "lectures"
+    },
+    {
       "id": "exam-review",
       "title": "Uploaded Exam 1 Review · conceptual explanations",
       "number": "",
@@ -8904,7 +9287,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture01",
-      "priority": 1.395576
+      "priority": 1.394189
     },
     {
       "id": "ling285-q002",
@@ -8925,7 +9308,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture01",
-      "priority": 1.585764
+      "priority": 1.587296
     },
     {
       "id": "ling285-q003",
@@ -8950,7 +9333,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture01",
-      "priority": 1.562768
+      "priority": 1.562909
     },
     {
       "id": "ling285-q004",
@@ -8975,7 +9358,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture01",
-      "priority": 1.722816
+      "priority": 1.724094
     },
     {
       "id": "ling285-q005",
@@ -8996,7 +9379,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture02",
-      "priority": 2.043917
+      "priority": 2.044954
     },
     {
       "id": "ling285-q006",
@@ -9017,7 +9400,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture02",
-      "priority": 1.587988
+      "priority": 1.591272
     },
     {
       "id": "ling285-q007",
@@ -9042,7 +9425,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture02",
-      "priority": 1.647093
+      "priority": 1.647498
     },
     {
       "id": "ling285-q008",
@@ -9063,7 +9446,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture02",
-      "priority": 1.519793
+      "priority": 1.519148
     },
     {
       "id": "ling285-q009",
@@ -9084,7 +9467,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture02",
-      "priority": 1.465351
+      "priority": 1.464369
     },
     {
       "id": "ling285-q010",
@@ -9105,7 +9488,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture02",
-      "priority": 1.485317
+      "priority": 1.486789
     },
     {
       "id": "ling285-q011",
@@ -9126,7 +9509,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture03",
-      "priority": 1.582345
+      "priority": 1.584745
     },
     {
       "id": "ling285-q012",
@@ -9147,7 +9530,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture03",
-      "priority": 1.584128
+      "priority": 1.587744
     },
     {
       "id": "ling285-q013",
@@ -9168,7 +9551,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture03",
-      "priority": 1.548591
+      "priority": 1.551669
     },
     {
       "id": "ling285-q014",
@@ -9193,7 +9576,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture03",
-      "priority": 1.578365
+      "priority": 1.581068
     },
     {
       "id": "ling285-q015",
@@ -9218,7 +9601,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture03",
-      "priority": 1.468768
+      "priority": 1.474194
     },
     {
       "id": "ling285-q016",
@@ -9239,7 +9622,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture03",
-      "priority": 1.42608
+      "priority": 1.42493
     },
     {
       "id": "ling285-q017",
@@ -9260,7 +9643,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture04",
-      "priority": 1.388953
+      "priority": 1.391135
     },
     {
       "id": "ling285-q018",
@@ -9281,7 +9664,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture04",
-      "priority": 1.646645
+      "priority": 1.64786
     },
     {
       "id": "ling285-q019",
@@ -9302,7 +9685,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture04",
-      "priority": 1.431427
+      "priority": 1.430705
     },
     {
       "id": "ling285-q020",
@@ -9323,7 +9706,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture04",
-      "priority": 1.640694
+      "priority": 1.644391
     },
     {
       "id": "ling285-q021",
@@ -9344,7 +9727,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture04",
-      "priority": 1.360059
+      "priority": 1.362708
     },
     {
       "id": "ling285-q022",
@@ -9365,7 +9748,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture04",
-      "priority": 1.636706
+      "priority": 1.637197
     },
     {
       "id": "ling285-q023",
@@ -9386,7 +9769,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture05-06",
-      "priority": 1.497024
+      "priority": 1.498588
     },
     {
       "id": "ling285-q024",
@@ -9407,7 +9790,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture05-06",
-      "priority": 1.405594
+      "priority": 1.400208
     },
     {
       "id": "ling285-q025",
@@ -9428,7 +9811,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture05-06",
-      "priority": 1.548498
+      "priority": 1.549415
     },
     {
       "id": "ling285-q026",
@@ -9449,7 +9832,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture05-06",
-      "priority": 1.552345
+      "priority": 1.562126
     },
     {
       "id": "ling285-q027",
@@ -9474,7 +9857,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture05-06",
-      "priority": 1.341981
+      "priority": 1.345257
     },
     {
       "id": "ling285-q028",
@@ -9495,7 +9878,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture07",
-      "priority": 1.423996
+      "priority": 1.425093
     },
     {
       "id": "ling285-q029",
@@ -9516,7 +9899,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture07",
-      "priority": 1.58738
+      "priority": 1.588487
     },
     {
       "id": "ling285-q030",
@@ -9537,7 +9920,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture07",
-      "priority": 1.434055
+      "priority": 1.436673
     },
     {
       "id": "ling285-q031",
@@ -9558,7 +9941,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture07",
-      "priority": 1.439844
+      "priority": 1.443475
     },
     {
       "id": "ling285-q032",
@@ -9583,7 +9966,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture07",
-      "priority": 1.561384
+      "priority": 1.563545
     },
     {
       "id": "ling285-q033",
@@ -9608,7 +9991,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture08",
-      "priority": 1.591823
+      "priority": 1.593949
     },
     {
       "id": "ling285-q034",
@@ -9633,7 +10016,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture08",
-      "priority": 1.641377
+      "priority": 1.64502
     },
     {
       "id": "ling285-q035",
@@ -9654,7 +10037,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture08",
-      "priority": 1.435169
+      "priority": 1.437193
     },
     {
       "id": "ling285-q036",
@@ -9675,7 +10058,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture08",
-      "priority": 1.529416
+      "priority": 1.529752
     },
     {
       "id": "ling285-q037",
@@ -9696,7 +10079,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture08",
-      "priority": 1.448158
+      "priority": 1.449714
     },
     {
       "id": "ling285-q038",
@@ -9721,7 +10104,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture08",
-      "priority": 1.442801
+      "priority": 1.342916
     },
     {
       "id": "ling285-q039",
@@ -9742,7 +10125,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.443782
+      "priority": 1.441977
     },
     {
       "id": "ling285-q040",
@@ -9763,7 +10146,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.568859
+      "priority": 1.562028
     },
     {
       "id": "ling285-q041",
@@ -9784,7 +10167,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.398749
+      "priority": 1.393789
     },
     {
       "id": "ling285-q042",
@@ -9805,7 +10188,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.266632
+      "priority": 1.268893
     },
     {
       "id": "ling285-q043",
@@ -9826,7 +10209,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.225283
+      "priority": 1.219034
     },
     {
       "id": "ling285-q044",
@@ -9847,7 +10230,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.367675
+      "priority": 1.357725
     },
     {
       "id": "ling285-q045",
@@ -9889,7 +10272,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture10",
-      "priority": 1.227752
+      "priority": 1.231403
     },
     {
       "id": "ling285-q047",
@@ -9910,7 +10293,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture10",
-      "priority": 1.418799
+      "priority": 1.411364
     },
     {
       "id": "ling285-q048",
@@ -9931,7 +10314,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture10",
-      "priority": 1.474131
+      "priority": 1.473511
     },
     {
       "id": "ling285-q049",
@@ -9952,7 +10335,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture10",
-      "priority": 1.505412
+      "priority": 1.501813
     },
     {
       "id": "ling285-q050",
@@ -9973,7 +10356,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture10",
-      "priority": 1.483556
+      "priority": 1.484458
     },
     {
       "id": "ling285-q051",
@@ -9993,7 +10376,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.393869,
+      "priority": 1.393894,
       "lectureId": "lecture11"
     },
     {
@@ -10014,7 +10397,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.394079,
+      "priority": 1.395303,
       "lectureId": "lecture11"
     },
     {
@@ -10035,7 +10418,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.636981,
+      "priority": 1.640735,
       "lectureId": "lecture11"
     },
     {
@@ -10056,7 +10439,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.331221,
+      "priority": 1.332725,
       "lectureId": "lecture11"
     },
     {
@@ -10077,7 +10460,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.434631,
+      "priority": 1.427846,
       "lectureId": "lecture11"
     },
     {
@@ -10098,7 +10481,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.581483,
+      "priority": 1.583892,
       "lectureId": "lecture11"
     },
     {
@@ -10119,7 +10502,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.508634,
+      "priority": 1.509801,
       "lectureId": "lecture11"
     },
     {
@@ -10140,7 +10523,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.422049,
+      "priority": 1.425339,
       "lectureId": "lecture12"
     },
     {
@@ -10165,7 +10548,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.310026,
+      "priority": 1.310085,
       "lectureId": "lecture12"
     },
     {
@@ -10186,7 +10569,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.482819,
+      "priority": 1.474644,
       "lectureId": "lecture12"
     },
     {
@@ -10207,7 +10590,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.520078,
+      "priority": 1.522174,
       "lectureId": "lecture12"
     },
     {
@@ -10228,7 +10611,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.362338,
+      "priority": 1.358348,
       "lectureId": "lecture12"
     },
     {
@@ -10249,7 +10632,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.378035,
+      "priority": 1.373523,
       "lectureId": "lecture12"
     },
     {
@@ -10270,7 +10653,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.47013,
+      "priority": 1.466619,
       "lectureId": "lecture12"
     },
     {
@@ -10291,7 +10674,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.484178,
+      "priority": 1.485052,
       "lectureId": "lecture13"
     },
     {
@@ -10312,7 +10695,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.168429,
+      "priority": 1.168289,
       "lectureId": "lecture13"
     },
     {
@@ -10333,7 +10716,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.58963,
+      "priority": 1.590886,
       "lectureId": "lecture13"
     },
     {
@@ -10354,7 +10737,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.553469,
+      "priority": 1.554735,
       "lectureId": "lecture13"
     },
     {
@@ -10379,7 +10762,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.729262,
+      "priority": 1.724736,
       "lectureId": "lecture13"
     },
     {
@@ -10400,7 +10783,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.523518,
+      "priority": 1.524924,
       "lectureId": "lecture13"
     },
     {
@@ -10421,7 +10804,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.588717,
+      "priority": 1.591928,
       "lectureId": "lecture13"
     },
     {
@@ -10450,7 +10833,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.347163,
+      "priority": 1.3489,
       "lectureId": "lecture13"
     },
     {
@@ -10476,7 +10859,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": null,
-      "priority": 1.535996
+      "priority": 1.536638
     },
     {
       "id": "ling285-q074",
@@ -10505,7 +10888,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture07",
-      "priority": 1.547094
+      "priority": 1.547724
     },
     {
       "id": "ling285-q075",
@@ -10530,7 +10913,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture04",
-      "priority": 1.448099
+      "priority": 1.445881
     },
     {
       "id": "ling285-q076",
@@ -10555,7 +10938,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.422057
+      "priority": 1.417708
     },
     {
       "id": "ling285-q077",
@@ -10583,7 +10966,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.537103,
+      "priority": 1.53839,
       "lectureId": "lecture13"
     },
     {
@@ -10608,7 +10991,7 @@
       "edition": "2026-10-20-v4",
       "type": "written",
       "moduleId": "module2",
-      "priority": 1.407329,
+      "priority": 1.408689,
       "lectureId": "lecture13"
     },
     {
@@ -10630,7 +11013,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": null,
-      "priority": 1.478081
+      "priority": 1.478369
     },
     {
       "id": "ling285-q080",
@@ -10655,7 +11038,7 @@
       "type": "written",
       "moduleId": "module1",
       "lectureId": null,
-      "priority": 1.420831
+      "priority": 1.419663
     },
     {
       "id": "ling285-mcq-lecture01-01",
@@ -10708,7 +11091,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture01",
-      "priority": 1.617181
+      "priority": 1.619963
     },
     {
       "id": "ling285-mcq-lecture01-02",
@@ -10761,7 +11144,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture01",
-      "priority": 1.777564
+      "priority": 1.778443
     },
     {
       "id": "ling285-mcq-lecture01-03",
@@ -10807,7 +11190,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture01",
-      "priority": 1.487309
+      "priority": 1.489524
     },
     {
       "id": "ling285-mcq-lecture01-04",
@@ -10908,7 +11291,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture02",
-      "priority": 1.626808
+      "priority": 1.631404
     },
     {
       "id": "ling285-mcq-lecture02-02",
@@ -10961,7 +11344,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture02",
-      "priority": 1.401722
+      "priority": 1.40579
     },
     {
       "id": "ling285-mcq-lecture02-03",
@@ -11009,7 +11392,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture02",
-      "priority": 1.526011
+      "priority": 1.527777
     },
     {
       "id": "ling285-mcq-lecture02-04",
@@ -11058,7 +11441,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture02",
-      "priority": 1.280456
+      "priority": 1.280005
     },
     {
       "id": "ling285-mcq-lecture03-01",
@@ -11106,7 +11489,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture03",
-      "priority": 1.710355
+      "priority": 1.712764
     },
     {
       "id": "ling285-mcq-lecture03-02",
@@ -11154,7 +11537,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture03",
-      "priority": 1.555659
+      "priority": 1.551397
     },
     {
       "id": "ling285-mcq-lecture03-03",
@@ -11200,7 +11583,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture03",
-      "priority": 1.340413
+      "priority": 1.341609
     },
     {
       "id": "ling285-mcq-lecture03-04",
@@ -11249,7 +11632,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture03",
-      "priority": 1.201427
+      "priority": 1.199571
     },
     {
       "id": "ling285-mcq-lecture04-01",
@@ -11298,7 +11681,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture04",
-      "priority": 1.560282
+      "priority": 1.56101
     },
     {
       "id": "ling285-mcq-lecture04-02",
@@ -11395,7 +11778,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture04",
-      "priority": 1.333231
+      "priority": 1.332739
     },
     {
       "id": "ling285-mcq-lecture04-04",
@@ -11444,7 +11827,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture04",
-      "priority": 1.245603
+      "priority": 1.248213
     },
     {
       "id": "ling285-mcq-lecture05-06-01",
@@ -11492,7 +11875,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture05-06",
-      "priority": 1.551647
+      "priority": 1.555553
     },
     {
       "id": "ling285-mcq-lecture05-06-02",
@@ -11540,7 +11923,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture05-06",
-      "priority": 1.614127
+      "priority": 1.617225
     },
     {
       "id": "ling285-mcq-lecture05-06-03",
@@ -11588,7 +11971,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture05-06",
-      "priority": 1.489726
+      "priority": 1.497809
     },
     {
       "id": "ling285-mcq-lecture05-06-04",
@@ -11636,7 +12019,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture05-06",
-      "priority": 1.319527
+      "priority": 1.31677
     },
     {
       "id": "ling285-mcq-lecture07-01",
@@ -11685,7 +12068,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture07",
-      "priority": 1.537986
+      "priority": 1.539555
     },
     {
       "id": "ling285-mcq-lecture07-02",
@@ -11734,7 +12117,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture07",
-      "priority": 1.572448
+      "priority": 1.574873
     },
     {
       "id": "ling285-mcq-lecture07-03",
@@ -11788,7 +12171,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture07",
-      "priority": 1.429998
+      "priority": 1.430391
     },
     {
       "id": "ling285-mcq-lecture07-04",
@@ -11836,7 +12219,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture07",
-      "priority": 1.24354
+      "priority": 1.246671
     },
     {
       "id": "ling285-mcq-lecture08-01",
@@ -11885,7 +12268,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture08",
-      "priority": 1.550307
+      "priority": 1.551798
     },
     {
       "id": "ling285-mcq-lecture08-02",
@@ -11937,7 +12320,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture08",
-      "priority": 1.331089
+      "priority": 1.332066
     },
     {
       "id": "ling285-mcq-lecture08-03",
@@ -11985,7 +12368,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture08",
-      "priority": 1.266247
+      "priority": 1.267697
     },
     {
       "id": "ling285-mcq-lecture08-04",
@@ -12033,7 +12416,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture08",
-      "priority": 1.205536
+      "priority": 1.208249
     },
     {
       "id": "ling285-mcq-lecture09-01",
@@ -12083,7 +12466,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.668686
+      "priority": 1.677093
     },
     {
       "id": "ling285-mcq-lecture09-02",
@@ -12132,7 +12515,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.487748
+      "priority": 1.483713
     },
     {
       "id": "ling285-mcq-lecture09-03",
@@ -12180,7 +12563,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.506633
+      "priority": 1.516887
     },
     {
       "id": "ling285-mcq-lecture09-04",
@@ -12233,7 +12616,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture09",
-      "priority": 1.435904
+      "priority": 1.43075
     },
     {
       "id": "ling285-mcq-lecture10-01",
@@ -12282,7 +12665,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture10",
-      "priority": 1.687584
+      "priority": 1.691708
     },
     {
       "id": "ling285-mcq-lecture10-02",
@@ -12332,7 +12715,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture10",
-      "priority": 1.614233
+      "priority": 1.613334
     },
     {
       "id": "ling285-mcq-lecture10-03",
@@ -12380,7 +12763,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture10",
-      "priority": 1.445445
+      "priority": 1.442379
     },
     {
       "id": "ling285-mcq-lecture10-04",
@@ -12428,7 +12811,7 @@
       "edition": "2026-10-20-v4",
       "moduleId": "module1",
       "lectureId": "lecture10",
-      "priority": 1.190675
+      "priority": 1.197009
     },
     {
       "id": "ling285-mcq-lecture11-01",
@@ -12473,7 +12856,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.549032,
+      "priority": 1.550454,
       "lectureId": "lecture11"
     },
     {
@@ -12519,7 +12902,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.533223,
+      "priority": 1.534421,
       "lectureId": "lecture11"
     },
     {
@@ -12565,7 +12948,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.521465,
+      "priority": 1.522644,
       "lectureId": "lecture11"
     },
     {
@@ -12611,7 +12994,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.329131,
+      "priority": 1.330569,
       "lectureId": "lecture11"
     },
     {
@@ -12657,7 +13040,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.437135,
+      "priority": 1.436936,
       "lectureId": "lecture11"
     },
     {
@@ -12703,7 +13086,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.191444,
+      "priority": 1.19461,
       "lectureId": "lecture11"
     },
     {
@@ -12751,7 +13134,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.538242,
+      "priority": 1.539771,
       "lectureId": "lecture12"
     },
     {
@@ -12803,7 +13186,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.553101,
+      "priority": 1.556188,
       "lectureId": "lecture12"
     },
     {
@@ -12851,7 +13234,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.549545,
+      "priority": 1.552534,
       "lectureId": "lecture12"
     },
     {
@@ -12899,7 +13282,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.467296,
+      "priority": 1.46078,
       "lectureId": "lecture12"
     },
     {
@@ -12945,7 +13328,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.24578,
+      "priority": 1.245707,
       "lectureId": "lecture12"
     },
     {
@@ -12995,7 +13378,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.259269,
+      "priority": 1.255223,
       "lectureId": "lecture12"
     },
     {
@@ -13043,7 +13426,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.553998,
+      "priority": 1.555313,
       "lectureId": "lecture13"
     },
     {
@@ -13089,7 +13472,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.540676,
+      "priority": 1.540938,
       "lectureId": "lecture13"
     },
     {
@@ -13137,7 +13520,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.536301,
+      "priority": 1.538326,
       "lectureId": "lecture13"
     },
     {
@@ -13183,7 +13566,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.544955,
+      "priority": 1.54221,
       "lectureId": "lecture13"
     },
     {
@@ -13233,7 +13616,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.516615,
+      "priority": 1.512815,
       "lectureId": "lecture13"
     },
     {
@@ -13279,7 +13662,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.455096,
+      "priority": 1.451475,
       "lectureId": "lecture13"
     },
     {
@@ -13303,7 +13686,7 @@
       "pattern": "interpretation",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.412937
+      "priority": 1.413816
     },
     {
       "id": "ling285-written-lecture11-09",
@@ -13330,7 +13713,7 @@
       "pattern": "application",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.439854
+      "priority": 1.441299
     },
     {
       "id": "ling285-written-lecture11-10",
@@ -13357,7 +13740,7 @@
       "pattern": "design",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.172985
+      "priority": 1.175583
     },
     {
       "id": "ling285-written-lecture11-11",
@@ -13380,7 +13763,7 @@
       "pattern": "distinction",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.56319
+      "priority": 1.565458
     },
     {
       "id": "ling285-written-lecture11-12",
@@ -13411,7 +13794,7 @@
       "pattern": "design",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.111009
+      "priority": 1.111302
     },
     {
       "id": "ling285-written-lecture11-13",
@@ -13434,7 +13817,7 @@
       "pattern": "interpretation",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.39902
+      "priority": 1.39437
     },
     {
       "id": "ling285-written-lecture11-14",
@@ -13457,7 +13840,7 @@
       "pattern": "interpretation",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.318988
+      "priority": 1.319593
     },
     {
       "id": "ling285-written-lecture11-15",
@@ -13480,7 +13863,7 @@
       "pattern": "cause-effect",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.523796
+      "priority": 1.524649
     },
     {
       "id": "ling285-written-lecture11-16",
@@ -13503,7 +13886,7 @@
       "pattern": "design",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.13493
+      "priority": 1.136827
     },
     {
       "id": "ling285-written-lecture11-17",
@@ -13526,7 +13909,7 @@
       "pattern": "procedure",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.125839
+      "priority": 1.127026
     },
     {
       "id": "ling285-written-lecture11-18",
@@ -13549,7 +13932,7 @@
       "pattern": "interpretation",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.353687
+      "priority": 1.355376
     },
     {
       "id": "ling285-written-lecture11-19",
@@ -13572,7 +13955,7 @@
       "pattern": "application",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.488516
+      "priority": 1.491734
     },
     {
       "id": "ling285-written-lecture11-20",
@@ -13595,7 +13978,7 @@
       "pattern": "distinction",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.603599
+      "priority": 1.597523
     },
     {
       "id": "ling285-written-lecture11-21",
@@ -13618,7 +14001,7 @@
       "pattern": "interpretation",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.350147
+      "priority": 1.351431
     },
     {
       "id": "ling285-written-lecture11-22",
@@ -13641,7 +14024,7 @@
       "pattern": "prediction",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.234047
+      "priority": 1.23545
     },
     {
       "id": "ling285-written-lecture11-23",
@@ -13668,7 +14051,7 @@
       "pattern": "application",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.47744
+      "priority": 1.479108
     },
     {
       "id": "ling285-written-lecture11-24",
@@ -13699,7 +14082,7 @@
       "pattern": "application",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.481067
+      "priority": 1.481914
     },
     {
       "id": "ling285-written-lecture11-25",
@@ -13726,7 +14109,7 @@
       "pattern": "distinction",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.535286
+      "priority": 1.53598
     },
     {
       "id": "ling285-mcq-lecture11-07",
@@ -13772,7 +14155,7 @@
       "pattern": "interpretation",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.332999
+      "priority": 1.334358
     },
     {
       "id": "ling285-mcq-lecture11-08",
@@ -13822,7 +14205,7 @@
       "pattern": "design",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.165814
+      "priority": 1.167195
     },
     {
       "id": "ling285-mcq-lecture11-09",
@@ -13868,7 +14251,7 @@
       "pattern": "cause-effect",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.570189
+      "priority": 1.572987
     },
     {
       "id": "ling285-mcq-lecture11-10",
@@ -13914,7 +14297,7 @@
       "pattern": "design",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.173197
+      "priority": 1.174563
     },
     {
       "id": "ling285-mcq-lecture11-11",
@@ -13960,7 +14343,7 @@
       "pattern": "cause-effect",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.531133
+      "priority": 1.531013
     },
     {
       "id": "ling285-mcq-lecture11-12",
@@ -14006,7 +14389,7 @@
       "pattern": "interpretation",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.308803
+      "priority": 1.308838
     },
     {
       "id": "ling285-mcq-lecture11-13",
@@ -14052,7 +14435,7 @@
       "pattern": "distinction",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.59332
+      "priority": 1.592329
     },
     {
       "id": "ling285-mcq-lecture11-14",
@@ -14098,7 +14481,7 @@
       "pattern": "prediction",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.304149
+      "priority": 1.305762
     },
     {
       "id": "ling285-mcq-lecture11-15",
@@ -14148,7 +14531,7 @@
       "pattern": "interpretation",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.374468
+      "priority": 1.376504
     },
     {
       "id": "ling285-mcq-lecture11-16",
@@ -14194,7 +14577,7 @@
       "pattern": "interpretation",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.335496
+      "priority": 1.337826
     },
     {
       "id": "ling285-mcq-lecture11-17",
@@ -14240,7 +14623,7 @@
       "pattern": "prediction",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.21801
+      "priority": 1.21915
     },
     {
       "id": "ling285-mcq-lecture11-18",
@@ -14290,7 +14673,7 @@
       "pattern": "application",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.449807
+      "priority": 1.450337
     },
     {
       "id": "ling285-mcq-lecture11-19",
@@ -14382,7 +14765,7 @@
       "pattern": "distinction",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.554887
+      "priority": 1.550456
     },
     {
       "id": "ling285-mcq-lecture11-21",
@@ -14428,7 +14811,7 @@
       "pattern": "application",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.445273
+      "priority": 1.447823
     },
     {
       "id": "ling285-mcq-lecture11-22",
@@ -14474,7 +14857,7 @@
       "pattern": "distinction",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.594994
+      "priority": 1.587504
     },
     {
       "id": "ling285-mcq-lecture11-23",
@@ -14524,7 +14907,7 @@
       "pattern": "design",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.174871
+      "priority": 1.175877
     },
     {
       "id": "ling285-mcq-lecture11-24",
@@ -14570,7 +14953,7 @@
       "pattern": "cause-effect",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.570457
+      "priority": 1.569324
     },
     {
       "id": "ling285-mcq-lecture11-25",
@@ -14616,7 +14999,7 @@
       "pattern": "application",
       "examReviewRefs": [],
       "moduleId": "module2",
-      "priority": 1.420716
+      "priority": 1.421943
     },
     {
       "id": "ling285-written-lecture12-08",
@@ -14643,7 +15026,7 @@
       "topic": "Air elements and compression",
       "pattern": "cause-effect",
       "examReviewRefs": [],
-      "priority": 1.603323
+      "priority": 1.606116
     },
     {
       "id": "ling285-written-lecture12-09",
@@ -14674,7 +15057,7 @@
       "topic": "Interpreting a small net shift",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.359648
+      "priority": 1.361757
     },
     {
       "id": "ling285-written-lecture12-10",
@@ -14705,7 +15088,7 @@
       "topic": "Testing position-dependent mass sensitivity",
       "pattern": "design",
       "examReviewRefs": [],
-      "priority": 1.136291
+      "priority": 1.137477
     },
     {
       "id": "ling285-written-lecture12-11",
@@ -14744,7 +15127,7 @@
       "topic": "Extending the vowel reasoning method",
       "pattern": "prediction",
       "examReviewRefs": [],
-      "priority": 1.291554
+      "priority": 1.292903
     },
     {
       "id": "ling285-written-lecture12-12",
@@ -14775,7 +15158,7 @@
       "topic": "Comparing spectral amplitude fairly",
       "pattern": "design",
       "examReviewRefs": [],
-      "priority": 1.160284
+      "priority": 1.161729
     },
     {
       "id": "ling285-written-lecture12-13",
@@ -14810,7 +15193,7 @@
       "topic": "Mode count versus harmonic ratios",
       "pattern": "distinction",
       "examReviewRefs": [],
-      "priority": 1.586732
+      "priority": 1.585684
     },
     {
       "id": "ling285-written-lecture12-14",
@@ -14841,7 +15224,7 @@
       "topic": "Supported modes and measured components",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.35954
+      "priority": 1.361941
     },
     {
       "id": "ling285-written-lecture12-15",
@@ -14864,7 +15247,7 @@
       "topic": "Cancellation within a modal mixture",
       "pattern": "cause-effect",
       "examReviewRefs": [],
-      "priority": 1.549899
+      "priority": 1.551913
     },
     {
       "id": "ling285-written-lecture12-16",
@@ -14891,7 +15274,7 @@
       "topic": "Evaluating a prediction against evidence",
       "pattern": "experiment",
       "examReviewRefs": [],
-      "priority": 1.056331
+      "priority": 1.057912
     },
     {
       "id": "ling285-written-lecture12-17",
@@ -14918,7 +15301,7 @@
       "topic": "Reading amplitude normalization",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.354094
+      "priority": 1.355532
     },
     {
       "id": "ling285-written-lecture12-18",
@@ -14941,7 +15324,7 @@
       "topic": "Choosing a displacement pickup",
       "pattern": "design",
       "examReviewRefs": [],
-      "priority": 1.175279
+      "priority": 1.176409
     },
     {
       "id": "ling285-written-lecture12-19",
@@ -14972,7 +15355,7 @@
       "topic": "Transferring a boundary-condition analogy",
       "pattern": "comparison",
       "examReviewRefs": [],
-      "priority": 1.08008
+      "priority": 1.081285
     },
     {
       "id": "ling285-written-lecture12-20",
@@ -15003,7 +15386,7 @@
       "topic": "Inferring a mechanism from formant shifts",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.353112
+      "priority": 1.351384
     },
     {
       "id": "ling285-written-lecture12-21",
@@ -15034,7 +15417,7 @@
       "topic": "One air system with several resonances",
       "pattern": "distinction",
       "examReviewRefs": [],
-      "priority": 1.581456
+      "priority": 1.583786
     },
     {
       "id": "ling285-written-lecture12-22",
@@ -15061,7 +15444,7 @@
       "topic": "Explaining the demonstrated rate ordering",
       "pattern": "comparison",
       "examReviewRefs": [],
-      "priority": 1.082994
+      "priority": 1.079374
     },
     {
       "id": "ling285-written-lecture12-23",
@@ -15084,7 +15467,7 @@
       "topic": "Dynamical reasoning across applications",
       "pattern": "transfer",
       "examReviewRefs": [],
-      "priority": 1.031649
+      "priority": 1.032906
     },
     {
       "id": "ling285-written-lecture12-24",
@@ -15111,7 +15494,7 @@
       "topic": "A local-stiffness prediction in a small chain",
       "pattern": "prediction",
       "examReviewRefs": [],
-      "priority": 1.237536
+      "priority": 1.239366
     },
     {
       "id": "ling285-written-lecture12-25",
@@ -15134,7 +15517,7 @@
       "topic": "Reading two-dimensional mode labels",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.415285
+      "priority": 1.409208
     },
     {
       "id": "ling285-mcq-lecture12-07",
@@ -15180,7 +15563,7 @@
       "topic": "Why directional examples have matching rates",
       "pattern": "comparison",
       "examReviewRefs": [],
-      "priority": 1.077277
+      "priority": 1.078881
     },
     {
       "id": "ling285-mcq-lecture12-08",
@@ -15238,7 +15621,7 @@
       "topic": "Resolving the stiffness-arrow inconsistency",
       "pattern": "cause-effect",
       "examReviewRefs": [],
-      "priority": 1.585635
+      "priority": 1.586375
     },
     {
       "id": "ling285-mcq-lecture12-09",
@@ -15284,7 +15667,7 @@
       "topic": "Effective stiffness depends on the motion direction",
       "pattern": "design",
       "examReviewRefs": [],
-      "priority": 1.149722
+      "priority": 1.151074
     },
     {
       "id": "ling285-mcq-lecture12-10",
@@ -15330,7 +15713,7 @@
       "topic": "Why the two-mass opposite mode is faster",
       "pattern": "cause-effect",
       "examReviewRefs": [],
-      "priority": 1.533319
+      "priority": 1.533163
     },
     {
       "id": "ling285-mcq-lecture12-11",
@@ -15384,7 +15767,7 @@
       "topic": "Mode labels are not harmonic multipliers",
       "pattern": "distinction",
       "examReviewRefs": [],
-      "priority": 1.581765
+      "priority": 1.579164
     },
     {
       "id": "ling285-mcq-lecture12-12",
@@ -15430,7 +15813,7 @@
       "topic": "A node in one mode does not pin a mass",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.333086
+      "priority": 1.332221
     },
     {
       "id": "ling285-mcq-lecture12-13",
@@ -15476,7 +15859,7 @@
       "topic": "Interpreting the finite-mode atlas",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.391461
+      "priority": 1.389698
     },
     {
       "id": "ling285-mcq-lecture12-14",
@@ -15526,7 +15909,7 @@
       "topic": "Why the illustrated spectrum has equal peaks",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.317732
+      "priority": 1.318765
     },
     {
       "id": "ling285-mcq-lecture12-15",
@@ -15572,7 +15955,7 @@
       "topic": "Reading slow motion without retuning the system",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.371512
+      "priority": 1.3696
     },
     {
       "id": "ling285-mcq-lecture12-16",
@@ -15618,7 +16001,7 @@
       "topic": "A mixture can change shape without adding a mode",
       "pattern": "distinction",
       "examReviewRefs": [],
-      "priority": 1.525149
+      "priority": 1.526626
     },
     {
       "id": "ling285-mcq-lecture12-17",
@@ -15664,7 +16047,7 @@
       "topic": "Limits of the illustrative membrane spectrum",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.411036
+      "priority": 1.413426
     },
     {
       "id": "ling285-mcq-lecture12-18",
@@ -15714,7 +16097,7 @@
       "topic": "Turning the laryngeal claim into a test",
       "pattern": "experiment",
       "examReviewRefs": [],
-      "priority": 1.052817
+      "priority": 1.054686
     },
     {
       "id": "ling285-mcq-lecture12-19",
@@ -15760,7 +16143,7 @@
       "topic": "Why fixed–free modes use odd quarter-waves",
       "pattern": "cause-effect",
       "examReviewRefs": [],
-      "priority": 1.563602
+      "priority": 1.563593
     },
     {
       "id": "ling285-mcq-lecture12-20",
@@ -15822,7 +16205,7 @@
       "topic": "Locating the constrictions along the reference tract",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.353787
+      "priority": 1.355118
     },
     {
       "id": "ling285-mcq-lecture12-21",
@@ -15876,7 +16259,7 @@
       "topic": "What transfers from a string model to air",
       "pattern": "comparison",
       "examReviewRefs": [],
-      "priority": 1.116402
+      "priority": 1.116623
     },
     {
       "id": "ling285-mcq-lecture12-22",
@@ -15930,7 +16313,7 @@
       "topic": "A node versus an instantaneous zero crossing",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.356846
+      "priority": 1.359327
     },
     {
       "id": "ling285-mcq-lecture12-23",
@@ -15980,7 +16363,7 @@
       "topic": "The location of a perturbation is part of the evidence",
       "pattern": "interpretation",
       "examReviewRefs": [],
-      "priority": 1.443991
+      "priority": 1.440048
     },
     {
       "id": "ling285-mcq-lecture12-24",
@@ -16038,7 +16421,7 @@
       "topic": "Extending perturbation reasoning to another mode",
       "pattern": "prediction",
       "examReviewRefs": [],
-      "priority": 1.275332
+      "priority": 1.272252
     },
     {
       "id": "ling285-mcq-lecture12-25",
@@ -16084,7 +16467,7 @@
       "topic": "Comparing the spatial structure of air modes",
       "pattern": "comparison",
       "examReviewRefs": [],
-      "priority": 1.094512
+      "priority": 1.096526
     },
     {
       "id": "ling285-mcq-lecture13-07",
@@ -16130,7 +16513,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.329328
+      "priority": 1.331011
     },
     {
       "id": "ling285-mcq-lecture13-08",
@@ -16176,7 +16559,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.458065
+      "priority": 1.458612
     },
     {
       "id": "ling285-mcq-lecture13-09",
@@ -16222,7 +16605,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.32257
+      "priority": 1.323921
     },
     {
       "id": "ling285-mcq-lecture13-10",
@@ -16268,7 +16651,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.53387
+      "priority": 1.534037
     },
     {
       "id": "ling285-mcq-lecture13-11",
@@ -16318,7 +16701,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.46378
+      "priority": 1.466
     },
     {
       "id": "ling285-mcq-lecture13-12",
@@ -16364,7 +16747,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.367583
+      "priority": 1.369748
     },
     {
       "id": "ling285-mcq-lecture13-13",
@@ -16410,7 +16793,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.616891
+      "priority": 1.61897
     },
     {
       "id": "ling285-mcq-lecture13-14",
@@ -16460,7 +16843,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.475125
+      "priority": 1.477027
     },
     {
       "id": "ling285-mcq-lecture13-15",
@@ -16506,7 +16889,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.339259
+      "priority": 1.339433
     },
     {
       "id": "ling285-mcq-lecture13-16",
@@ -16552,7 +16935,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.385539
+      "priority": 1.382954
     },
     {
       "id": "ling285-mcq-lecture13-17",
@@ -16598,7 +16981,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.237945
+      "priority": 1.23773
     },
     {
       "id": "ling285-mcq-lecture13-18",
@@ -16644,7 +17027,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.589152
+      "priority": 1.591874
     },
     {
       "id": "ling285-mcq-lecture13-19",
@@ -16690,7 +17073,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.428641
+      "priority": 1.425903
     },
     {
       "id": "ling285-mcq-lecture13-20",
@@ -16740,7 +17123,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.439924
+      "priority": 1.434418
     },
     {
       "id": "ling285-mcq-lecture13-21",
@@ -16786,7 +17169,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.500291
+      "priority": 1.497701
     },
     {
       "id": "ling285-mcq-lecture13-22",
@@ -16832,7 +17215,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.212843
+      "priority": 1.212827
     },
     {
       "id": "ling285-mcq-lecture13-23",
@@ -16878,7 +17261,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.139628
+      "priority": 1.139884
     },
     {
       "id": "ling285-mcq-lecture13-24",
@@ -16924,7 +17307,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.341782
+      "priority": 1.343152
     },
     {
       "id": "ling285-mcq-lecture13-25",
@@ -16970,7 +17353,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.324726
+      "priority": 1.324661
     },
     {
       "id": "ling285-written-lecture13-11",
@@ -16998,7 +17381,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.318671
+      "priority": 1.319693
     },
     {
       "id": "ling285-written-lecture13-12",
@@ -17022,7 +17405,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.150433
+      "priority": 1.151158
     },
     {
       "id": "ling285-written-lecture13-13",
@@ -17046,7 +17429,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.341482
+      "priority": 1.34184
     },
     {
       "id": "ling285-written-lecture13-14",
@@ -17069,7 +17452,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.360533
+      "priority": 1.361153
     },
     {
       "id": "ling285-written-lecture13-15",
@@ -17093,7 +17476,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.609652
+      "priority": 1.612798
     },
     {
       "id": "ling285-written-lecture13-16",
@@ -17123,7 +17506,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.151073
+      "priority": 1.154008
     },
     {
       "id": "ling285-written-lecture13-17",
@@ -17151,7 +17534,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.609978
+      "priority": 1.604305
     },
     {
       "id": "ling285-written-lecture13-18",
@@ -17185,7 +17568,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.469817
+      "priority": 1.466357
     },
     {
       "id": "ling285-written-lecture13-19",
@@ -17209,7 +17592,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.340797
+      "priority": 1.341679
     },
     {
       "id": "ling285-written-lecture13-20",
@@ -17234,7 +17617,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.579149
+      "priority": 1.577995
     },
     {
       "id": "ling285-written-lecture13-21",
@@ -17258,7 +17641,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.207568
+      "priority": 1.211716
     },
     {
       "id": "ling285-written-lecture13-22",
@@ -17281,7 +17664,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.458151
+      "priority": 1.460479
     },
     {
       "id": "ling285-written-lecture13-23",
@@ -17305,7 +17688,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.350446
+      "priority": 1.353431
     },
     {
       "id": "ling285-written-lecture13-24",
@@ -17329,7 +17712,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.547501
+      "priority": 1.548013
     },
     {
       "id": "ling285-written-lecture13-25",
@@ -17359,7 +17742,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.475969
+      "priority": 1.476845
     },
     {
       "id": "m14-mcq-001",
@@ -17405,7 +17788,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.33398
+      "priority": 1.334758
     },
     {
       "id": "m14-mcq-002",
@@ -17451,7 +17834,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.505647
+      "priority": 1.505622
     },
     {
       "id": "m14-mcq-003",
@@ -17497,7 +17880,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.604444
+      "priority": 1.606972
     },
     {
       "id": "m14-mcq-004",
@@ -17545,7 +17928,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.180277
+      "priority": 1.183357
     },
     {
       "id": "m14-mcq-005",
@@ -17591,7 +17974,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.270835
+      "priority": 1.270921
     },
     {
       "id": "m14-mcq-006",
@@ -17637,7 +18020,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.362784
+      "priority": 1.358735
     },
     {
       "id": "m14-mcq-007",
@@ -17687,7 +18070,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.46194
+      "priority": 1.457757
     },
     {
       "id": "m14-mcq-008",
@@ -17735,7 +18118,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.570165
+      "priority": 1.57426
     },
     {
       "id": "m14-mcq-009",
@@ -17781,7 +18164,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.438749
+      "priority": 1.44334
     },
     {
       "id": "m14-mcq-010",
@@ -17829,7 +18212,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.565813
+      "priority": 1.566652
     },
     {
       "id": "m14-mcq-011",
@@ -17875,7 +18258,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.16332
+      "priority": 1.164849
     },
     {
       "id": "m14-mcq-012",
@@ -17923,7 +18306,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.519787
+      "priority": 1.520628
     },
     {
       "id": "m14-mcq-013",
@@ -17969,7 +18352,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.444658
+      "priority": 1.442027
     },
     {
       "id": "m14-mcq-014",
@@ -18015,7 +18398,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.589855
+      "priority": 1.590309
     },
     {
       "id": "m14-mcq-015",
@@ -18061,7 +18444,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.336681
+      "priority": 1.338224
     },
     {
       "id": "m14-mcq-016",
@@ -18110,7 +18493,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.646041
+      "priority": 1.646646
     },
     {
       "id": "m14-mcq-017",
@@ -18159,7 +18542,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.485437
+      "priority": 1.482705
     },
     {
       "id": "m14-mcq-018",
@@ -18208,7 +18591,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.397456
+      "priority": 1.383816
     },
     {
       "id": "m14-mcq-019",
@@ -18256,7 +18639,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.570399
+      "priority": 1.570277
     },
     {
       "id": "m14-mcq-020",
@@ -18304,7 +18687,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.196467
+      "priority": 1.190686
     },
     {
       "id": "m14-mcq-021",
@@ -18352,7 +18735,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.502392
+      "priority": 1.507898
     },
     {
       "id": "m14-mcq-022",
@@ -18400,7 +18783,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.492939
+      "priority": 1.49503
     },
     {
       "id": "m14-mcq-023",
@@ -18448,7 +18831,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.251359
+      "priority": 1.248206
     },
     {
       "id": "m14-mcq-024",
@@ -18494,7 +18877,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.537286
+      "priority": 1.537043
     },
     {
       "id": "m14-mcq-025",
@@ -18547,7 +18930,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.493139
+      "priority": 1.492159
     },
     {
       "id": "m14-written-001",
@@ -18571,7 +18954,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.404475
+      "priority": 1.407108
     },
     {
       "id": "m14-written-002",
@@ -18599,7 +18982,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.568786
+      "priority": 1.568694
     },
     {
       "id": "m14-written-003",
@@ -18623,7 +19006,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.162451
+      "priority": 1.164078
     },
     {
       "id": "m14-written-004",
@@ -18649,7 +19032,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.547382
+      "priority": 1.549824
     },
     {
       "id": "m14-written-005",
@@ -18677,7 +19060,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.596806
+      "priority": 1.592289
     },
     {
       "id": "m14-written-006",
@@ -18701,7 +19084,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.469892
+      "priority": 1.466345
     },
     {
       "id": "m14-written-007",
@@ -18725,7 +19108,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.333309
+      "priority": 1.333314
     },
     {
       "id": "m14-written-008",
@@ -18753,7 +19136,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.113542
+      "priority": 1.11288
     },
     {
       "id": "m14-written-009",
@@ -18780,7 +19163,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.572263
+      "priority": 1.573318
     },
     {
       "id": "m14-written-010",
@@ -18808,7 +19191,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.404233
+      "priority": 1.404095
     },
     {
       "id": "m14-written-011",
@@ -18832,7 +19215,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.184758
+      "priority": 1.187268
     },
     {
       "id": "m14-written-012",
@@ -18860,7 +19243,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.349829
+      "priority": 1.348907
     },
     {
       "id": "m14-written-013",
@@ -18890,7 +19273,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.539665
+      "priority": 1.539911
     },
     {
       "id": "m14-written-014",
@@ -18914,7 +19297,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.145394
+      "priority": 1.148096
     },
     {
       "id": "m14-written-015",
@@ -18938,7 +19321,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.402926
+      "priority": 1.405423
     },
     {
       "id": "m14-written-016",
@@ -18970,7 +19353,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.442181
+      "priority": 1.438741
     },
     {
       "id": "m14-written-017",
@@ -18996,7 +19379,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.565917
+      "priority": 1.560181
     },
     {
       "id": "m14-written-018",
@@ -19020,7 +19403,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.159165
+      "priority": 1.159249
     },
     {
       "id": "m14-written-019",
@@ -19048,7 +19431,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.29506
+      "priority": 1.284233
     },
     {
       "id": "m14-written-020",
@@ -19074,7 +19457,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.569442
+      "priority": 1.572258
     },
     {
       "id": "m14-written-021",
@@ -19101,7 +19484,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.179908
+      "priority": 1.173356
     },
     {
       "id": "m14-written-022",
@@ -19128,7 +19511,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.349181
+      "priority": 1.351404
     },
     {
       "id": "m14-written-023",
@@ -19154,7 +19537,7 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.237398
+      "priority": 1.233663
     },
     {
       "id": "m14-written-024",
@@ -19178,7 +19561,7 @@
       "examReviewRefs": [],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.662369
+      "priority": 1.667382
     },
     {
       "id": "m14-written-025",
@@ -19214,7 +19597,1782 @@
       ],
       "edition": "2026-10-20-v4",
       "moduleId": "module2",
-      "priority": 1.19553
+      "priority": 1.197681
+    },
+    {
+      "id": "ling285-l15-mcq-001",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "A classifier receives two formant measurements and passes them through hidden layers of three, two, and four units before assigning five word responses. Which description correctly identifies its inputs and outputs?",
+      "answer": "F1 and F2 are the inputs, and done, dune, dean, Don, and Dan label the outputs.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 2
+        }
+      ],
+      "topic": "Network architecture",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The first two positions are word probabilities, and the last five are formants.",
+          "feedback": "The formants enter first. The final positions correspond to word candidates.",
+          "id": "a"
+        },
+        {
+          "text": "F1 and F2 are the inputs, and done, dune, dean, Don, and Dan label the outputs.",
+          "feedback": "F1 and F2 are the inputs, and done, dune, dean, Don, and Dan label the outputs.",
+          "id": "b"
+        },
+        {
+          "text": "The first two positions are weights, and the last five are learning rates.",
+          "feedback": "Weights belong to connections, and the learning rate controls updates rather than identifying input or output units.",
+          "id": "c"
+        },
+        {
+          "text": "The first two positions are recordings, and the last five are hidden layers.",
+          "feedback": "The two input positions hold measurements from a recording. The hidden layers have three, two, and four units.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b",
+      "edition": "2026-10-20-v4",
+      "priority": 1.351823
+    },
+    {
+      "id": "ling285-l15-mcq-002",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Suppose F1 reaches all three units in the first hidden layer. How can those units combine that same input differently?",
+      "answer": "Each input reaches every receiving neuron through a separately weighted connection.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 2
+        }
+      ],
+      "topic": "Full connectivity",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Each input reaches every receiving neuron through a separately weighted connection.",
+          "feedback": "Each input reaches every receiving neuron through a separately weighted connection.",
+          "id": "a"
+        },
+        {
+          "text": "The input becomes a different word before reaching each neuron.",
+          "feedback": "The incoming quantity remains a formant measurement. Its contribution changes through multiplication by a connection weight.",
+          "id": "b"
+        },
+        {
+          "text": "Only the top hidden neuron receives F1.",
+          "feedback": "All three receiving neurons connect to F1 in the supplied fully connected network.",
+          "id": "c"
+        },
+        {
+          "text": "Every connection must use one identical weight.",
+          "feedback": "Full connectivity specifies which neurons are connected, not that their weights are equal.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a",
+      "edition": "2026-10-20-v4",
+      "priority": 1.575144
+    },
+    {
+      "id": "ling285-l15-mcq-003",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "A neuron receives F1 and F2 through signed weights. Which operation produces its inner product?",
+      "answer": "Multiply each incoming value by its weight and add the products.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Inner product",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Add all incoming values and discard their weights.",
+          "feedback": "The different connection weights determine each incoming value’s contribution.",
+          "id": "a"
+        },
+        {
+          "text": "Convert each input into a separate word label.",
+          "feedback": "Word responses are assigned at the output layer. Hidden units combine numerical inputs.",
+          "id": "b"
+        },
+        {
+          "text": "Multiply only the largest input by the largest weight.",
+          "feedback": "The neuron combines all of its incoming weighted contributions.",
+          "id": "c"
+        },
+        {
+          "text": "Multiply each incoming value by its weight and add the products.",
+          "feedback": "Multiply each incoming value by its weight and add the products.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d",
+      "edition": "2026-10-20-v4",
+      "priority": 1.370577
+    },
+    {
+      "id": "ling285-l15-mcq-004",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The top first-layer neuron has activation −0.40. What happens to this value in the all-linear forward pass?",
+      "answer": "It remains a numerical output used by the next layer.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Negative activation",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It remains a numerical output used by the next layer.",
+          "feedback": "It remains a numerical output used by the next layer.",
+          "id": "a"
+        },
+        {
+          "text": "It deletes all outgoing connections.",
+          "feedback": "A negative value changes contributions through the existing weights. It does not remove connections.",
+          "id": "b"
+        },
+        {
+          "text": "It is automatically replaced by zero.",
+          "feedback": "No zero-clipping activation is declared in this all-linear example.",
+          "id": "c"
+        },
+        {
+          "text": "It becomes a negative word probability.",
+          "feedback": "A hidden activation is not a word probability. Softmax is applied to the final scores.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a",
+      "edition": "2026-10-20-v4",
+      "priority": 1.398029
+    },
+    {
+      "id": "ling285-l15-mcq-005",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The network gives done about 55.7% and dean about 8.1%. What can be concluded from this forward pass alone?",
+      "answer": "Done is the current highest-probability response, but the output alone does not establish the true word.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Prediction versus truth",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Dean is impossible because its probability is below one half.",
+          "feedback": "A positive probability remains assigned to dean. An example’s true label is not set by a one-half cutoff.",
+          "id": "a"
+        },
+        {
+          "text": "The network has already updated its weights.",
+          "feedback": "Forward propagation computes responses using the current weights. It does not perform a training update.",
+          "id": "b"
+        },
+        {
+          "text": "Done must be the recording’s true word.",
+          "feedback": "The true label comes from the target. The network can favor an incorrect word.",
+          "id": "c"
+        },
+        {
+          "text": "Done is the current highest-probability response, but the output alone does not establish the true word.",
+          "feedback": "Done is the current highest-probability response, but the output alone does not establish the true word.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d",
+      "edition": "2026-10-20-v4",
+      "priority": 1.344695
+    },
+    {
+      "id": "ling285-l15-mcq-006",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The final weighted sums include negative numbers. How can the network still assign positive probabilities across all five words?",
+      "answer": "It exponentiates each score and normalizes by the sum of all five exponentiated scores.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Softmax",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It exponentiates each score and normalizes by the sum of all five exponentiated scores.",
+          "feedback": "It exponentiates each score and normalizes by the sum of all five exponentiated scores.",
+          "id": "a"
+        },
+        {
+          "text": "It applies an independent yes/no threshold to each hidden unit.",
+          "feedback": "Softmax acts across the five output scores, rather than independently thresholding hidden units.",
+          "id": "b"
+        },
+        {
+          "text": "It assigns the same probability regardless of the scores.",
+          "feedback": "Different final scores generally produce different softmax probabilities.",
+          "id": "c"
+        },
+        {
+          "text": "It takes a negative score as a negative probability.",
+          "feedback": "Exponentiating the scores makes positive quantities before normalization.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a",
+      "edition": "2026-10-20-v4",
+      "priority": 1.360035
+    },
+    {
+      "id": "ling285-l15-mcq-007",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The recording is labeled dean. How should the desired output be represented in the stated five-word order?",
+      "answer": "0, 0, 1, 0, 0.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "One-hot target",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "0, 0, 1, 0, 0.",
+          "feedback": "0, 0, 1, 0, 0.",
+          "id": "a"
+        },
+        {
+          "text": "1, 1, 1, 1, 1.",
+          "feedback": "A one-hot target identifies one true category, rather than marking every category as correct.",
+          "id": "b"
+        },
+        {
+          "text": "0.557, 0.074, 0.081, 0.185, 0.102.",
+          "feedback": "Those are current computed probabilities rather than the one-hot true label.",
+          "id": "c"
+        },
+        {
+          "text": "1, 0, 0, 0, 0.",
+          "feedback": "That target labels done, not dean.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a",
+      "edition": "2026-10-20-v4",
+      "priority": 1.4949
+    },
+    {
+      "id": "ling285-l15-mcq-008",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The target remains dean while the network assigns more probability to dean. How does this affect the cross-entropy loss?",
+      "answer": "The cross-entropy loss decreases.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Cross-entropy direction",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The target automatically switches to done.",
+          "feedback": "The target is the supplied recording label. It does not change to match the current prediction.",
+          "id": "a"
+        },
+        {
+          "text": "The cross-entropy loss decreases.",
+          "feedback": "The cross-entropy loss decreases.",
+          "id": "b"
+        },
+        {
+          "text": "Nothing changes unless every hidden activation is positive.",
+          "feedback": "The loss depends on the true category’s output probability, not on all hidden values having the same sign.",
+          "id": "c"
+        },
+        {
+          "text": "The loss necessarily increases.",
+          "feedback": "The loss penalizes low probability on the true category, so increasing that probability reduces it.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b",
+      "edition": "2026-10-20-v4",
+      "priority": 1.244855
+    },
+    {
+      "id": "ling285-l15-mcq-009",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "A backward pass attributes a classification error to the connections. Which order matches the supplied reveal sequence?",
+      "answer": "Output connections are evaluated first, followed by progressively earlier hidden-layer connections.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Backward order",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Only connections entering the currently favored word receive gradients.",
+          "feedback": "The loss depends on the full output comparison, and the backward calculation reaches the preceding layers.",
+          "id": "a"
+        },
+        {
+          "text": "The first hidden-layer connections are evaluated first without downstream information.",
+          "feedback": "Their effects on error include later layers, whose error dependencies are computed first.",
+          "id": "b"
+        },
+        {
+          "text": "All input formants are re-recorded before any gradients can be found.",
+          "feedback": "The backward pass uses the stored input and forward activations.",
+          "id": "c"
+        },
+        {
+          "text": "Output connections are evaluated first, followed by progressively earlier hidden-layer connections.",
+          "feedback": "Output connections are evaluated first, followed by progressively earlier hidden-layer connections.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d",
+      "edition": "2026-10-20-v4",
+      "priority": 1.236459
+    },
+    {
+      "id": "ling285-l15-mcq-010",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Updated weight labels appear while probabilities remain at the old values. Which account matches this backward pass?",
+      "answer": "The stored forward activations remain fixed while one update is calculated from the original network.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Stored forward values",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The target is gradually changed to equal the old prediction.",
+          "feedback": "The desired dean target stays fixed. Learning changes parameters, not the true label.",
+          "id": "a"
+        },
+        {
+          "text": "The output probabilities have been recomputed after each revealed connection.",
+          "feedback": "The supplied notes explicitly retain the original forward activations throughout the backward calculation.",
+          "id": "b"
+        },
+        {
+          "text": "The stored forward activations remain fixed while one update is calculated from the original network.",
+          "feedback": "The stored forward activations remain fixed while one update is calculated from the original network.",
+          "id": "c"
+        },
+        {
+          "text": "The new weights can never affect future predictions.",
+          "feedback": "They affect a new forward pass. The stored values are not that new pass.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c",
+      "edition": "2026-10-20-v4",
+      "priority": 1.565673
+    },
+    {
+      "id": "ling285-l15-mcq-011",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "A particular weight has a positive loss gradient. With a positive learning rate, which change follows the supplied update rule?",
+      "answer": "Decrease the weight by subtracting the learning-rate-scaled gradient.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Gradient update",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Increase the weight because a positive gradient means it is helpful.",
+          "feedback": "A positive loss gradient means a small increase raises the loss locally, so the update goes in the opposite direction.",
+          "id": "a"
+        },
+        {
+          "text": "Set the weight to the true word’s probability.",
+          "feedback": "The rule changes the old weight using its gradient. It does not replace it with a probability.",
+          "id": "b"
+        },
+        {
+          "text": "Leave the weight unchanged whenever it is already positive.",
+          "feedback": "The update depends on the gradient, not just the sign of the weight.",
+          "id": "c"
+        },
+        {
+          "text": "Decrease the weight by subtracting the learning-rate-scaled gradient.",
+          "feedback": "Decrease the weight by subtracting the learning-rate-scaled gradient.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d",
+      "edition": "2026-10-20-v4",
+      "priority": 1.412087
+    },
+    {
+      "id": "ling285-l15-mcq-012",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The marked last-layer connection sends a positive hidden activation to done, while dean is the target. What is the local effect of increasing that weight?",
+      "answer": "It raises done’s score, reduces dean’s probability, and raises the loss.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 7
+        }
+      ],
+      "topic": "Output-weight direction",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It raises done’s score, reduces dean’s probability, and raises the loss.",
+          "feedback": "It raises done’s score, reduces dean’s probability, and raises the loss.",
+          "id": "a"
+        },
+        {
+          "text": "It cannot affect the output because hidden activations stay fixed.",
+          "feedback": "Even with a fixed source activation, changing its outgoing weight changes the receiving output score.",
+          "id": "b"
+        },
+        {
+          "text": "It raises dean’s score directly because all outputs share one label.",
+          "feedback": "The marked connection ends at done. Each output position represents a distinct candidate.",
+          "id": "c"
+        },
+        {
+          "text": "It makes the true label change from dean to done.",
+          "feedback": "The desired label stays dean. A parameter change can change predictions without changing the label.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a",
+      "edition": "2026-10-20-v4",
+      "priority": 1.255206
+    },
+    {
+      "id": "ling285-l15-mcq-013",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The blue-marked F1 connection feeds an early hidden neuron. Why is its contribution to final error harder to judge than that of the marked output connection?",
+      "answer": "Its influence passes through multiple later weighted paths before affecting the output comparison.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 7
+        }
+      ],
+      "topic": "Early-weight influence",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The learning algorithm must guess a new desired word for every path.",
+          "feedback": "All paths contribute to the same supplied output comparison. Their influence is calculated, not relabeled.",
+          "id": "a"
+        },
+        {
+          "text": "Early weights have no effect on final outputs.",
+          "feedback": "They affect hidden values that feed the later layers.",
+          "id": "b"
+        },
+        {
+          "text": "Its influence passes through multiple later weighted paths before affecting the output comparison.",
+          "feedback": "Its influence passes through multiple later weighted paths before affecting the output comparison.",
+          "id": "c"
+        },
+        {
+          "text": "A positive first weight guarantees a reduction in error.",
+          "feedback": "Downstream positive and negative connections and the target jointly determine the effect.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c",
+      "edition": "2026-10-20-v4",
+      "priority": 1.25487
+    },
+    {
+      "id": "ling285-l15-mcq-014",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The backward calculation first determines downstream effects and then uses those results for earlier layers. Which computational idea does the course connect to this reuse?",
+      "answer": "Bellman–Viterbi dynamic programming.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 8
+        }
+      ],
+      "topic": "Dynamic programming",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Discarding every intermediate calculation.",
+          "feedback": "Dynamic programming retains reusable results instead of discarding them.",
+          "id": "a"
+        },
+        {
+          "text": "Bellman–Viterbi dynamic programming.",
+          "feedback": "Bellman–Viterbi dynamic programming.",
+          "id": "b"
+        },
+        {
+          "text": "Changing the word targets to eliminate disagreement.",
+          "feedback": "Backpropagation attributes the fixed target mismatch to parameters rather than altering the label.",
+          "id": "c"
+        },
+        {
+          "text": "Choosing only the single strongest connection at each layer.",
+          "feedback": "The error can depend on many paths. Reuse does not discard all but one connection.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b",
+      "edition": "2026-10-20-v4",
+      "priority": 1.211065
+    },
+    {
+      "id": "ling285-l15-mcq-015",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "A program has determined how each parameter affects the loss but has not yet changed the parameters. Which distinction explains this state?",
+      "answer": "Backpropagation supplies gradients, and SGD uses them to update parameters.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 8
+        }
+      ],
+      "topic": "Gradient versus optimizer",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "They are two names for collecting formant measurements.",
+          "feedback": "Both concern learning from an existing input-target comparison, not measuring the original recording.",
+          "id": "a"
+        },
+        {
+          "text": "Backpropagation only selects the largest output and never evaluates error.",
+          "feedback": "It calculates how the loss depends on the parameters.",
+          "id": "b"
+        },
+        {
+          "text": "Backpropagation supplies gradients, and SGD uses them to update parameters.",
+          "feedback": "Backpropagation supplies gradients, and SGD uses them to update parameters.",
+          "id": "c"
+        },
+        {
+          "text": "SGD supplies the true labels, and backpropagation records the sound.",
+          "feedback": "Labels and inputs are supplied as training data, not created by these two operations.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c",
+      "edition": "2026-10-20-v4",
+      "priority": 1.534122
+    },
+    {
+      "id": "ling285-l15-mcq-016",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The full training input has 110 rows and two columns. What does one row represent?",
+      "answer": "F1 and F2 from one recording.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 9
+        }
+      ],
+      "topic": "Matrix dimensions",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The probabilities of only done and dune.",
+          "feedback": "The input columns are formants. The five word categories belong to the target and output representations.",
+          "id": "a"
+        },
+        {
+          "text": "Two entire training datasets.",
+          "feedback": "The row holds two measurements belonging to one example.",
+          "id": "b"
+        },
+        {
+          "text": "F1 and F2 from one recording.",
+          "feedback": "F1 and F2 from one recording.",
+          "id": "c"
+        },
+        {
+          "text": "The first and last hidden-layer sizes.",
+          "feedback": "Hidden-layer sizes describe network structure rather than individual rows in the measurement matrix.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c",
+      "edition": "2026-10-20-v4",
+      "priority": 1.414335
+    },
+    {
+      "id": "ling285-l15-mcq-017",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "A student sorts the input recordings but leaves the target rows in their old order. Why can this disrupt learning?",
+      "answer": "Each recording must stay paired with its own true-word target.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 9
+        }
+      ],
+      "topic": "Data alignment",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "A target row must have exactly two columns to match the input row.",
+          "feedback": "The row counts match across examples, but inputs have two columns and targets have five.",
+          "id": "a"
+        },
+        {
+          "text": "The matrix contains only five recordings because five rows are visible.",
+          "feedback": "The displayed rows are illustrative. Both complete matrices have 110 rows.",
+          "id": "b"
+        },
+        {
+          "text": "Each recording must stay paired with its own true-word target.",
+          "feedback": "Each recording must stay paired with its own true-word target.",
+          "id": "c"
+        },
+        {
+          "text": "The highest network probability becomes the true label after sorting.",
+          "feedback": "The recording’s supplied label remains its target, regardless of the prediction.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c",
+      "edition": "2026-10-20-v4",
+      "priority": 1.315608
+    },
+    {
+      "id": "ling285-l15-mcq-018",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The program calls zero_grad before computing the new loss. What does this operation prepare?",
+      "answer": "It clears stored gradients before the new gradient calculation.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Gradient clearing",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It replaces logits with one-hot targets.",
+          "feedback": "Logits are computed by the network, and targets are supplied separately as Y.",
+          "id": "a"
+        },
+        {
+          "text": "It clears stored gradients before the new gradient calculation.",
+          "feedback": "It clears stored gradients before the new gradient calculation.",
+          "id": "b"
+        },
+        {
+          "text": "It resets every learned weight to zero.",
+          "feedback": "Gradient storage and parameter values are different. Clearing one does not erase the other.",
+          "id": "c"
+        },
+        {
+          "text": "It removes all recordings from X.",
+          "feedback": "The training data remain available for the forward pass.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b",
+      "edition": "2026-10-20-v4",
+      "priority": 1.564306
+    },
+    {
+      "id": "ling285-l15-mcq-019",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The loss has been computed and loss.backward has run. Which operation actually applies the SGD parameter update?",
+      "answer": "sgd.step applies the update using the computed gradients.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Backward versus step",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "loss.backward already performs the SGD update.",
+          "feedback": "Backward computes derivatives. The optimizer step uses them to change parameters.",
+          "id": "a"
+        },
+        {
+          "text": "torch.load updates weights while reading the examples.",
+          "feedback": "Loading X and Y supplies data. It does not implement the training update.",
+          "id": "b"
+        },
+        {
+          "text": "sgd.step applies the update using the computed gradients.",
+          "feedback": "sgd.step applies the update using the computed gradients.",
+          "id": "c"
+        },
+        {
+          "text": "nn.Sequential updates only the currently incorrect output.",
+          "feedback": "Sequential defines the forward sequence. Parameter updates are made by the optimizer.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c",
+      "edition": "2026-10-20-v4",
+      "priority": 1.55355
+    },
+    {
+      "id": "ling285-l15-mcq-020",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The displayed program supplies net(X) with all 110 rows and performs one optimizer step. Which description fits?",
+      "answer": "One full-batch update, with all 110 recordings contributing.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Batch versus repetition",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "A forward pass that has no loss or training call.",
+          "feedback": "The program explicitly computes cross-entropy, calls backward, and applies an SGD step.",
+          "id": "a"
+        },
+        {
+          "text": "Repeated training until every recording is correct.",
+          "feedback": "No repeated training loop or stopping condition is supplied.",
+          "id": "b"
+        },
+        {
+          "text": "110 separate optimizer steps, one automatically created by each row.",
+          "feedback": "No row-by-row update loop is present. One displayed step follows the batch loss.",
+          "id": "c"
+        },
+        {
+          "text": "One full-batch update, with all 110 recordings contributing.",
+          "feedback": "One full-batch update, with all 110 recordings contributing.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d",
+      "edition": "2026-10-20-v4",
+      "priority": 1.43657
+    },
+    {
+      "id": "ling285-l15-mcq-021",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The diagram uses hand-selected weights without biases, while the short nn.Linear declarations use defaults. What follows?",
+      "answer": "No. The parameter initialization and bias choices also have to match.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Code and drawing",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Yes, the target vector forces the probabilities before training.",
+          "feedback": "The target is used in the loss. It does not automatically set the network output.",
+          "id": "a"
+        },
+        {
+          "text": "No, PyTorch cannot represent a five-output network.",
+          "feedback": "The four-to-five final layer represents those output scores. The issue is matching the parameter values and options.",
+          "id": "b"
+        },
+        {
+          "text": "Yes, layer sizes uniquely determine every weight.",
+          "feedback": "Many parameter settings share the same architecture.",
+          "id": "c"
+        },
+        {
+          "text": "No. The parameter initialization and bias choices also have to match.",
+          "feedback": "No. The parameter initialization and bias choices also have to match.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d",
+      "edition": "2026-10-20-v4",
+      "priority": 1.582324
+    },
+    {
+      "id": "ling285-l15-mcq-022",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Two weighted sums are −4 and 4. Which description fits their sigmoid activations?",
+      "answer": "Large negative values approach 0, while large positive values approach 1.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 11
+        }
+      ],
+      "topic": "Sigmoid shape",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Large negative values approach 0, while large positive values approach 1.",
+          "feedback": "Large negative values approach 0, while large positive values approach 1.",
+          "id": "a"
+        },
+        {
+          "text": "Negative values become negative probabilities, and positive values exceed 1.",
+          "feedback": "Sigmoid outputs stay between 0 and 1.",
+          "id": "b"
+        },
+        {
+          "text": "Both values remain unchanged after sigmoid.",
+          "feedback": "That describes passing through a linear value, not the bounded sigmoid transformation.",
+          "id": "c"
+        },
+        {
+          "text": "Every input produces exactly 0 or exactly 1.",
+          "feedback": "Sigmoid changes continuously. The displayed examples are near the endpoints, not equal to them.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a",
+      "edition": "2026-10-20-v4",
+      "priority": 1.500918
+    },
+    {
+      "id": "ling285-l15-mcq-023",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Consider equal small changes to an inner product near the middle of the sigmoid and near a flat end. Where can the activation change more strongly?",
+      "answer": "Near the steep central region.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 11
+        }
+      ],
+      "topic": "Sigmoid sensitivity",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Equally everywhere because the graph is a straight line.",
+          "feedback": "The S-shaped relationship has different slopes in different regions.",
+          "id": "a"
+        },
+        {
+          "text": "Near the steep central region.",
+          "feedback": "Near the steep central region.",
+          "id": "b"
+        },
+        {
+          "text": "Nowhere, because the neuron has been removed.",
+          "feedback": "Sigmoid transforms an active neuron’s value. It does not delete the unit.",
+          "id": "c"
+        },
+        {
+          "text": "Only near the flat ends.",
+          "feedback": "The curve is less responsive where it is flat.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b",
+      "edition": "2026-10-20-v4",
+      "priority": 1.253991
+    },
+    {
+      "id": "ling285-l15-mcq-024",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The first hidden activation changes from −0.400 to about 0.401 after sigmoid is introduced. What must happen downstream while weights stay fixed?",
+      "answer": "They are recalculated using the changed incoming hidden values.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 12
+        }
+      ],
+      "topic": "Recomputing downstream values",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Only the written color label changes, not numerical activity.",
+          "feedback": "The activation transformation changes values and therefore affects later computations.",
+          "id": "a"
+        },
+        {
+          "text": "They are recalculated using the changed incoming hidden values.",
+          "feedback": "They are recalculated using the changed incoming hidden values.",
+          "id": "b"
+        },
+        {
+          "text": "The formants are replaced by the desired one-hot output.",
+          "feedback": "F1 and F2 remain the original measurements. Targets serve the loss comparison.",
+          "id": "c"
+        },
+        {
+          "text": "They must stay at their old all-linear values.",
+          "feedback": "They depend on the earlier outputs, which have changed.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b",
+      "edition": "2026-10-20-v4",
+      "priority": 1.255278
+    },
+    {
+      "id": "ling285-l15-mcq-025",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Which arrangement matches the supplied sigmoid PyTorch program?",
+      "answer": "After the three hidden linear layers, while the final linear scores go to cross-entropy.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 13
+        }
+      ],
+      "topic": "Hidden activation and output loss",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "After the three hidden linear layers, while the final linear scores go to cross-entropy.",
+          "feedback": "After the three hidden linear layers, while the final linear scores go to cross-entropy.",
+          "id": "a"
+        },
+        {
+          "text": "After every connection separately, giving a new target for each weight.",
+          "feedback": "Each hidden neuron transforms its combined weighted sum. Targets still identify words per recording.",
+          "id": "b"
+        },
+        {
+          "text": "After the final layer only, replacing every hidden transformation.",
+          "feedback": "The source inserts sigmoid after the first three linear layers, not after the final scores.",
+          "id": "c"
+        },
+        {
+          "text": "Before loading X, to change the number of recordings.",
+          "feedback": "Sigmoid is an activation within the network. It does not alter the dataset’s row count.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a",
+      "edition": "2026-10-20-v4",
+      "priority": 1.3
+    },
+    {
+      "id": "ling285-l15-written-001",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Describe how a formant recording becomes input to the five-word classifier. Include the roles of hidden units and connection weights.",
+      "answer": "F1 and F2 supply the two inputs. Three hidden layers contain three, two, and four units. Weighted connections combine values across layers before five output positions represent done, dune, dean, Don, and Dan.",
+      "rubric": [
+        "Name the two formants and five word categories.",
+        "Distinguish the three hidden layers from the input and output positions."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 2
+        }
+      ],
+      "topic": "Network roles",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.361965
+    },
+    {
+      "id": "ling285-l15-written-002",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Two connections receive the same positive input but have weights with opposite signs. Explain their contributions to a receiving weighted sum.",
+      "answer": "Multiplication by a positive weight gives a positive contribution, while multiplication by a negative weight gives a negative contribution. The receiver adds contributions from all its inputs, so one signed contribution does not determine the full value by itself.",
+      "rubric": [
+        "Identify the sign change in multiplication.",
+        "Keep a connection contribution distinct from the full combined result."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 2
+        }
+      ],
+      "topic": "Signed contributions",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.349818
+    },
+    {
+      "id": "ling285-l15-written-003",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "A network has fixed weights and receives a new F1–F2 pair. Explain why hidden values must be computed in layer order.",
+      "answer": "Each receiving layer uses the outputs of the layer immediately before it. The formants determine first-layer weighted sums, those determine the next layer, and the sequence continues until final scores and probabilities are available.",
+      "rubric": [
+        "Identify the previous layer as the immediate input.",
+        "Describe the forward dependency without treating weights as updated during the pass."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Trace the forward pass",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.55153
+    },
+    {
+      "id": "ling285-l15-written-004",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Explain the operation that gives the top hidden neuron −0.40 from the formants 320 and 2000. Explain what that result represents.",
+      "answer": "Each formant is multiplied by its connection weight and the two products are added. The resulting −0.40 is that hidden neuron’s linear activation, not an output probability or a statement that the neuron has been removed.",
+      "rubric": [
+        "Name multiplication and addition.",
+        "Identify the resulting quantity as a hidden activation."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Inner-product meaning",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.348025
+    },
+    {
+      "id": "ling285-l15-written-005",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The final weighted sums include negative values, but all five displayed probabilities are positive. Explain how these can both be correct.",
+      "answer": "A logit is a final score before normalization and may be negative. Softmax exponentiates the five scores and divides by their shared total. This produces positive probabilities that sum to one.",
+      "rubric": [
+        "Distinguish unnormalized scores from probabilities.",
+        "Explain the shared exponential normalization."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 3
+        }
+      ],
+      "topic": "Logits and probabilities",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.554603
+    },
+    {
+      "id": "ling285-l15-written-006",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The network favors done, but the target has its 1 in the dean position. Explain what the two representations say about this recording.",
+      "answer": "The computed output is the network’s current probability distribution, with done highest. The desired output is the supplied correct label, dean. The mismatch is an error to learn from, not a reason to relabel the recording as done.",
+      "rubric": [
+        "Identify the current favored prediction.",
+        "Identify the target independently of that prediction."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Prediction and desired output",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.623724
+    },
+    {
+      "id": "ling285-l15-written-007",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The true word is dean. Explain how increasing or decreasing its assigned probability changes cross-entropy loss.",
+      "answer": "Increasing the probability of dean reduces its cross-entropy loss. Decreasing that probability increases the loss. The target remains dean while the network parameters are adjusted.",
+      "rubric": [
+        "State the correct direction.",
+        "Keep the true target fixed."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Training direction",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.628615
+    },
+    {
+      "id": "ling285-l15-written-008",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "A weight has a negative loss gradient. Describe its update under the positive-learning-rate subtraction rule and explain why the direction is appropriate.",
+      "answer": "It increases the weight because subtracting a negative scaled gradient adds to the old value. A negative local gradient means a small increase in that weight lowers the loss for the current calculation.",
+      "rubric": [
+        "State increase.",
+        "Relate the subtraction rule to the direction of loss change."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Gradient update",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.430096
+    },
+    {
+      "id": "ling285-l15-written-009",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Weights are revealed in updated form from the output side backward, while neuron values stay unchanged. Explain why this is not four independent forward-and-update cycles.",
+      "answer": "The gradients for all layers belong to the same original forward computation. They use its stored activations and original weights. The reveal sequence displays one simultaneous update, and updated predictions require a separate new forward pass.",
+      "rubric": [
+        "Link all gradients to one stored computation.",
+        "Distinguish reveal order from recomputing after each visible update."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Fixed activations during backward calculation",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.594046
+    },
+    {
+      "id": "ling285-l15-written-010",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The numerical example gives input-layer weights a smaller learning rate than the later layers. Explain the source-supported reason.",
+      "answer": "The raw F1 and F2 values are in hertz and much larger than the later hidden values. Their scale enters the input-weight gradients, so the supplied example uses a smaller learning rate for those connections.",
+      "rubric": [
+        "Identify raw formant scale.",
+        "Connect the different update scale to the input-weight gradients."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "topic": "Input learning rate",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.604144
+    },
+    {
+      "id": "ling285-l15-written-011",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The pink-marked connection carries a positive hidden value into done, while dean is correct. Explain the effect of a small increase in that weight on the loss.",
+      "answer": "The positive source value makes done’s score rise when that connection weight rises. Softmax allocates one total across candidates, so dean’s probability falls as the wrong candidate gains. Cross-entropy for the dean target therefore increases.",
+      "rubric": [
+        "Trace the positive contribution to done.",
+        "Connect shared probabilities to the loss on dean."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 7
+        }
+      ],
+      "topic": "Marked output connection",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.538565
+    },
+    {
+      "id": "ling285-l15-written-012",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The blue F1 weight is positive. Explain why that sign alone cannot tell whether increasing it improves the final classification.",
+      "answer": "Its effect continues through later weighted connections, including paths with different signs, and is evaluated against the output target. Backpropagation combines these downstream influences. The supplied network has a positive gradient for this weight, but that direction is not guaranteed by its own positive sign.",
+      "rubric": [
+        "Mention downstream weighted paths.",
+        "Avoid inferring error direction from one connection’s sign alone."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 7
+        }
+      ],
+      "topic": "Marked early connection",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.554353
+    },
+    {
+      "id": "ling285-l15-written-013",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Explain why attributing error to W2 requires information about later weights, while the W5 calculation is closer to the output comparison.",
+      "answer": "W5 directly forms the final scores from the last hidden activations. W2 changes first-layer hidden activity, whose effects continue through the later layers. Its contribution to loss therefore includes those downstream transformations.",
+      "rubric": [
+        "Identify the direct final-layer relationship.",
+        "Describe the indirect early-layer dependency."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 8
+        }
+      ],
+      "topic": "Last versus first weights",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.611836
+    },
+    {
+      "id": "ling285-l15-written-014",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Explain what is reused when the course connects backpropagation with Bellman–Viterbi dynamic programming.",
+      "answer": "The effects of later layers on error are computed first. Earlier-layer calculations combine their local effects with those retained downstream results rather than recalculating all later effects separately for every connection.",
+      "rubric": [
+        "Identify retained downstream results.",
+        "Explain their reuse for earlier dependencies."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 8
+        }
+      ],
+      "topic": "Dynamic-programming connection",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.508973
+    },
+    {
+      "id": "ling285-l15-written-015",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Describe the meanings of rows and columns in the 110 × 2 input matrix and 110 × 5 target matrix.",
+      "answer": "Both matrices refer to the same 110 recordings. The input has F1 and F2 columns, while the target has one column per word candidate with a 1 at the correct category. Different column counts describe different roles for the same examples.",
+      "rubric": [
+        "Match rows to recordings.",
+        "Distinguish two measurements from five category positions."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 9
+        }
+      ],
+      "topic": "Training-matrix layout",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.431834
+    },
+    {
+      "id": "ling285-l15-written-016",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The third row contains F1 = 320 and F2 = 2000. State its target category and explain why input and target rows must remain aligned.",
+      "answer": "Its one-hot target identifies dean. Row alignment preserves the recording–label pairing. Reordering only one matrix can associate the formants of one recording with another recording’s word.",
+      "rubric": [
+        "Identify dean.",
+        "Explain the pairing requirement."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 9
+        }
+      ],
+      "topic": "Paired targets",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.387825
+    },
+    {
+      "id": "ling285-l15-written-017",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Explain the distinct purposes of zero_grad, backward, and step in the one-step program.",
+      "answer": "zero_grad clears previously stored gradients. backward computes the parameter gradients from the loss. step applies the SGD update to the parameters. These operations keep gradient storage, derivative calculation, and parameter change distinct.",
+      "rubric": [
+        "Assign the three calls correctly.",
+        "Do not equate clearing gradients with clearing weights."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Training calls",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.541127
+    },
+    {
+      "id": "ling285-l15-written-018",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The code sends all 110 recordings through net(X), computes one loss, and calls step once. Explain the number of updates and the role of the batch.",
+      "answer": "It performs one update using the loss over the full 110-row batch. Multiple examples contribute to that gradient calculation, but there is no repeated optimizer call per row and no outer training loop.",
+      "rubric": [
+        "State one full-batch update.",
+        "Distinguish examples in a batch from the number of optimizer steps."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Batch training",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.619579
+    },
+    {
+      "id": "ling285-l15-written-019",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Two networks both use 2 → 3 → 2 → 4 → 5 layers. Explain why one may not reproduce the diagram’s exact probabilities.",
+      "answer": "The parameter values and bias choices must match. The illustration has particular hand-selected weights and no biases, whereas the short PyTorch declarations initialize default parameters and bias terms.",
+      "rubric": [
+        "Mention parameter values.",
+        "Mention the different bias choices."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "topic": "Architecture versus parameters",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.62959
+    },
+    {
+      "id": "ling285-l15-written-020",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Explain why an inner product of −4 gives a near-zero activation and an inner product of 4 gives a near-one activation.",
+      "answer": "Sigmoid approaches zero for large negative inputs and one for large positive inputs. Its displayed values are about 0.0180 and 0.9820. It is a continuous bounded transformation, not an exact binary cutoff.",
+      "rubric": [
+        "Match negative to near zero and positive to near one.",
+        "Retain the graded rather than exact on/off behavior."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 11
+        }
+      ],
+      "topic": "Sigmoid interpretation",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.396714
+    },
+    {
+      "id": "ling285-l15-written-021",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Use the flat ends and steep middle of sigmoid to explain how different input differences can be compressed or emphasized.",
+      "answer": "Near a flat end, the output changes little as the input changes, so distinct inputs can yield similar activations. Near the steep middle, relatively small input changes can produce larger activation changes.",
+      "rubric": [
+        "Describe compression near a flat end.",
+        "Contrast the more sensitive central region."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 11
+        }
+      ],
+      "topic": "Sigmoid and perceived differences",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.604766
+    },
+    {
+      "id": "ling285-l15-written-022",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The first hidden value becomes 0.401 instead of −0.400. Explain why applying sigmoid to all the old stored hidden values separately would not reproduce the supplied sequence.",
+      "answer": "Later neurons receive the changed early output. Their new weighted sums must therefore be calculated from those new inputs before sigmoid is applied at their positions. The demonstration builds the altered network in layer order.",
+      "rubric": [
+        "Identify changed incoming values for later neurons.",
+        "Distinguish recomputation from transforming an unrelated stored linear result."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 12
+        }
+      ],
+      "topic": "Sequential sigmoid changes",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.556804
+    },
+    {
+      "id": "ling285-l15-written-023",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "The network changes its largest response from done to Dan as hidden sigmoids are added. Explain what changes, what stays fixed, and whether this establishes successful training.",
+      "answer": "The hidden activation rule changes while formants and weights stay fixed. Downstream computations and final probabilities change. Dan becomes the largest response, but dean remains the target, so this is not evidence that a weight-training step has learned the correct label.",
+      "rubric": [
+        "Keep inputs and weights fixed.",
+        "Distinguish changed response from correct learned classification."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 12
+        }
+      ],
+      "topic": "Activation change versus learning",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.53327
+    },
+    {
+      "id": "ling285-l15-written-024",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Describe where nn.Sigmoid is inserted and why the input size of the next linear layer stays the same.",
+      "answer": "Sigmoid follows each of the first three linear layers and transforms each value without changing the number of values. A three-unit hidden layer still sends three values to the next linear layer.",
+      "rubric": [
+        "Locate sigmoid after hidden linear layers.",
+        "State that dimensionality is preserved."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 13
+        }
+      ],
+      "topic": "Placing sigmoid",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.604719
+    },
+    {
+      "id": "ling285-l15-written-025",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture15",
+      "prompt": "Explain why the sigmoid version leaves the final Linear(4, 5) without a declared sigmoid before CrossEntropyLoss.",
+      "answer": "Sigmoid transforms the hidden activations. The final linear layer supplies five logits, and cross-entropy performs the softmax-related loss calculation internally. Independent hidden activation and final class comparison serve different roles.",
+      "rubric": [
+        "Identify final values as logits.",
+        "Distinguish hidden sigmoid from loss normalization."
+      ],
+      "sources": [
+        {
+          "collection": "lecture15",
+          "page": 13
+        }
+      ],
+      "topic": "Final output and loss",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4",
+      "priority": 1.591528
     }
   ],
   "guide": [
@@ -19717,20 +21875,104 @@
       "moduleIds": [
         "module2"
       ]
+    },
+    {
+      "title": "Trace a formant classifier and keep the true label separate",
+      "explanation": "Follow F1 and F2 through weighted hidden layers. Explain how final scores become softmax probabilities, then compare the favored word with the supplied one-hot target.",
+      "refs": [
+        {
+          "collection": "lecture15",
+          "page": 2
+        },
+        {
+          "collection": "lecture15",
+          "page": 3
+        },
+        {
+          "collection": "lecture15",
+          "page": 6
+        }
+      ],
+      "kind": "readiness",
+      "moduleIds": [
+        "module2"
+      ]
+    },
+    {
+      "title": "Explain why error information travels backward",
+      "explanation": "Use the two marked connections to distinguish a direct output effect from an early weight’s downstream influence. Connect the backward calculation to reused results in dynamic programming and the gradient update in SGD.",
+      "refs": [
+        {
+          "collection": "lecture15",
+          "page": 6
+        },
+        {
+          "collection": "lecture15",
+          "page": 7
+        },
+        {
+          "collection": "lecture15",
+          "page": 8
+        }
+      ],
+      "kind": "demonstration",
+      "moduleIds": [
+        "module2"
+      ]
+    },
+    {
+      "title": "Read the training matrices and one update",
+      "explanation": "Identify what each row and column contains, preserve input–target pairing, and explain zero_grad, the batch loss, backward, and step in the supplied program.",
+      "refs": [
+        {
+          "collection": "lecture15",
+          "page": 9
+        },
+        {
+          "collection": "lecture15",
+          "page": 10
+        }
+      ],
+      "kind": "readiness",
+      "moduleIds": [
+        "module2"
+      ]
+    },
+    {
+      "title": "Explain how sigmoid changes the same network",
+      "explanation": "Keep the weights and formants fixed while hidden sigmoids change downstream values. Compare the linear starting response with the completed sigmoid response and locate the hidden activation calls in the code.",
+      "refs": [
+        {
+          "collection": "lecture15",
+          "page": 11
+        },
+        {
+          "collection": "lecture15",
+          "page": 12
+        },
+        {
+          "collection": "lecture15",
+          "page": 13
+        }
+      ],
+      "kind": "demonstration",
+      "moduleIds": [
+        "module2"
+      ]
     }
   ],
   "coverage": {
-    "sourceCount": 27,
-    "studentSourceCount": 26,
-    "pageCount": 340,
-    "lecturePageCount": 241,
-    "lectureCollectionCount": 13,
-    "coreCount": 56,
-    "questionCount": 292,
-    "writtenQuestionCount": 156,
-    "mcqQuestionCount": 136,
-    "guideCount": 24,
-    "teachingWordCount": 42356,
+    "sourceCount": 28,
+    "studentSourceCount": 27,
+    "pageCount": 353,
+    "lecturePageCount": 254,
+    "lectureCollectionCount": 14,
+    "coreCount": 63,
+    "questionCount": 342,
+    "writtenQuestionCount": 181,
+    "mcqQuestionCount": 161,
+    "guideCount": 28,
+    "teachingWordCount": 43182,
     "allSuppliedSourcesAcquired": true,
     "pageReviewComplete": true,
     "originalSourceHashesVerified": true,
@@ -19752,7 +21994,7 @@
     "issues": [
       "The LING406 reference PDF is an organization reference and is excluded from LING285 teaching and practice.",
       "Generated practice is a source-aligned study aid, not an actual instructor exam or a validated exam prediction. Written answers use self-assessment rather than automatic grading; multiple-choice answers use a source-checked key.",
-      "The supplied Exam 1 Review contains 20 conceptual prompts and no A–D questions. New multiple-choice items adapt its reasoning patterns. Module II practice applies that style to Lectures 11–14.",
+      "The supplied Exam 1 Review contains 20 conceptual prompts and no A–D questions. New multiple-choice items adapt its reasoning patterns. Module II practice applies that style to Lectures 11–15.",
       "Original external or untranscribed audio content is not represented as a recovered lecture transcript.",
       "Long printed arrays are visibly clipped at the right edge in the original PDF.",
       "No experiment details are inferred from the heading.",

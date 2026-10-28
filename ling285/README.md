@@ -4,19 +4,19 @@ Human Language and Technology · Fall 2026 · Khalil Iskarous.
 
 The studio provides teaching notes alongside the original pages, numbered lecture collections, a selective must-know core review, a readiness guide, demonstrations, combined notes, and both multiple-choice and written practice. Notes explain cause and effect in the instructor's style. Written responses use model explanations and self-assessment criteria. Multiple-choice responses use a source-checked key and explain every option.
 
-Lectures 11–14 have four transcript editions. **Version 4 · Teaching notes** opens for new users. It follows the plain explanatory style of PSYC301 expanded teaching and LING406 slide-wording notes, with a median of **216 words across 75 instructional pages**. The user requested a 200–250-word median rather than a minimum per slide. Each explanation uses a few connected paragraphs to teach mechanisms and source-supported distinctions. The 11 title, blank, and prompt-only pages remain unpadded. Versions 1, 2, and 3 remain unchanged, and an explicitly saved version stays selected. All versions share the same personal notes and read marks and apply across lecture notes, combined notes, core review, readers, search, recall, print, and speech.
+Lectures 11–15 have four transcript editions. **Version 4 · Teaching notes** opens for new users. It follows the plain explanatory style of PSYC301 expanded teaching and LING406 slide-wording notes, with a median of **221 words across 85 instructional pages**. The user requested a 200–250-word median rather than a minimum per slide. Each explanation uses a few connected paragraphs to teach mechanisms and source-supported distinctions. The 14 title, blank, and prompt-only pages remain unpadded. Versions 1, 2, and 3 remain unchanged, and an explicitly saved version stays selected. All versions share the same personal notes and read marks and apply across lecture notes, combined notes, core review, readers, search, recall, print, and speech.
 
-**Practice Version 2 · Exam style** adds 200 questions, separate from the original bank. Each lecture has 25 MCQs and 25 written questions. The current test selects 100 unique questions, split 50/50 and balanced across the four lectures. It adapts the actual 25-question Exam 1 key and 20-prompt review: some questions ask for identification or a direction, while others ask for a comparison or causal explanation. The 50/50 study split follows the user's requirement, not the observed exam proportions. Version 1 remains available, with separate saved sessions and answers. A temporary missing version file leaves earlier practice available and retains the unavailable edition's saved work.
+**Practice Version 2 · Exam style** adds 250 questions, separate from the original bank. Each lecture has 25 MCQs and 25 written questions. The current test selects 100 unique questions, split 50/50 and balanced across the five lectures. It adapts the actual 25-question Exam 1 key and 20-prompt review: some questions ask for identification or a direction, while others ask for a comparison or causal explanation. The 50/50 study split follows the user's requirement, not the observed exam proportions. Version 1 remains available, with separate saved sessions and answers. A temporary missing version file leaves earlier practice available and retains the unavailable edition's saved work.
 
 Video-only pages show their original embedded video directly when the flattened slide preview is entirely blank. Pages with written content, diagrams, or reveal overlays retain their previews. All original files, figures, source text, code, and detailed numerical labels remain available. The additional review copy and answer key are listed in Sources & coverage as transcript-writing references.
 
-Module II opens by default with Lectures 11–14 and room for future additions. Module I retains Lectures 01–10 and its own study tools. Each module has separate guides, core review, combined notes, practice, quizzes, and retry queues. The burgundy-to-rose gradient layout follows the PSYC301 navigation hierarchy, with a current-module overview and a first-midterm archive. Meadows has a separate workspace section. Uploaded reviews, supplemental lecture notes, and the syllabus remain accessible through Sources & coverage.
+Module II opens by default with Lectures 11–15 and room for future additions. Module I retains Lectures 01–10 and its own study tools. Each module has separate guides, core review, combined notes, practice, quizzes, and retry queues. The burgundy-to-rose gradient layout follows the PSYC301 navigation hierarchy, with a current-module overview and a first-midterm archive. Meadows has a separate workspace section. Uploaded reviews, supplemental lecture notes, and the syllabus remain accessible through Sources & coverage.
 
 ## Included material
 
-All 27 supplied files are preserved and verified by SHA-256. The student workspace contains 241 lecture slides across 13 deck collections, covering Lectures 01–14 with 05–06 combined, plus supporting readings, the syllabus, and both uploaded review documents. These total 340 student-facing source pages in 26 collections, or 377 rendered pages when the separate reference PDF is included. The 37-page LING406 reference PDF is retained separately as an organization reference and contributes no LING285 teaching or practice.
+All 28 supplied files are preserved and verified by SHA-256. The student workspace contains 254 lecture slides across 14 deck collections, covering Lectures 01–15 with 05–06 combined, plus supporting readings, the syllabus, and both uploaded review documents. These total 353 student-facing source pages in 27 collections, or 390 rendered pages when the separate reference PDF is included. The 37-page LING406 reference PDF is retained separately as an organization reference and contributes no LING285 teaching or practice.
 
-The current edition retains all 242 previously released questions and adds Lecture 14's complete 50-question bank. Module II now contains 200 questions across Lectures 11–14. Each lecture owns 50 questions, with 25 multiple-choice items and 25 written prompts. The primary current practice test still selects exactly 100 unique questions, split 50/50, with 25 questions from each available lecture. Module I keeps its 92-question bank and previous practice behavior. The full course has 292 questions, alongside 56 selected core-review pages and 24 readiness and demonstration entries. Original visuals and teaching remain preserved, including all 315 earlier student sections. Every teaching page records source provenance and completed visual-review checks in [teaching-coverage.json](authoring/teaching-coverage.json).
+The current edition retains all 292 earlier questions and adds Lecture 15’s complete 50-question bank. Module II contains 250 questions across Lectures 11–15 in each practice edition. Each lecture owns 25 multiple-choice questions and 25 written prompts. The current 100-question test selects 20 from each lecture, with ten of each format per lecture. Earlier saved sets remain available with a notice to start a new set for the expanded coverage. Module I keeps its 92-question bank and previous behavior. The original course bank has 342 questions, 63 selected core-review pages, and 28 readiness and demonstration entries. All 340 earlier student sections retain their content and progress IDs.
 
 The supplied Exam 1 Review has 20 conceptual prompts and no A–D items. [assessment-model.json](authoring/assessment-model.json) records its observed reasoning patterns. New MCQs adapt those patterns, including cause and effect, comparisons, applications, and interpretation. Module II questions transfer the style to its own source material. The reproducible ranker combines TF–IDF similarity to the review with reasoning-pattern weights. Sampling covers the active lectures and both formats before using these weights. Scores express study relevance, not validated probabilities of exam appearance. [assessment-ranking.json](authoring/assessment-ranking.json) records the executed scores.
 
@@ -104,3 +104,35 @@ python3 ling285/authoring/build_transcripts_v4.py
 The hand-authored paragraphs are in `authoring/version4/notes.py`. Explicit mappings reuse explanations only for the same reviewed source demonstration. The builder writes four `teaching-v4-lectureNN.json` files, `transcripts-v4.json`, a coverage report, reference metrics, and preservation hashes. It verifies all 86 source identities, the requested instructional-page median, and byte-for-byte preservation of earlier teaching and both question banks. Completed source extraction and media reviews are reused; no replacement visuals are created.
 
 The Version 3 release audit remains historical. Its original interface hashes are verified against commit `8334e0b`, while its unchanged teaching, sources, and practice files are checked in the current checkout. Version 4 has a separate review and release record.
+
+## Lecture 15 · Neural Networks
+
+The 13-page `Ling285_F26_L15.pptx` is preserved exactly and included in Module II.
+Every original page stays in order, including the opening title, pop-quiz prompt,
+and heading-only exam-information page. Ten instructional pages have teaching
+notes in the four existing editions. Source material includes weighted forward
+propagation, target mismatch, backward gradients and dynamic programming, paired
+training matrices, one full-batch PyTorch step, and hidden sigmoid activations.
+No exam dates or policy details are invented from the heading-only page.
+
+The ordinary PDF export drops two ink markings. Page 7 therefore uses a source
+export that retains the PowerPoint’s own raster ink fallbacks at their original
+positions. The original PPTX, ordinary PDF, extracted images, text and notes stay
+available. Page 12 also provides all ten original sigmoid reveal states, exported
+from the original shapes. These are static source-state exports, not a recording
+of animation playback or replacement diagrams. All ten states were visually
+reviewed and checked numerically against their native labels.
+
+`authoring/lecture15_notes.py` and the four authored JSON files contain the notes.
+`authoring/lecture15_practice.py` supplies both additional 50-question banks.
+Recompute source arithmetic with `python ling285/authoring/verify_lecture15_math.py`.
+The verification checks forward activations, softmax, all backward gradients and
+updates, finite differences for the two marked weights, and all sigmoid states.
+The uploaded tensor files named in the code are not supplied. The diagram’s
+hand-selected bias-free parameters are distinguished from PyTorch’s defaults.
+
+Run `node --test ling285/tests/lecture15.test.cjs ling285/tests/content.test.cjs
+ling285/tests/transcripts-v4.test.cjs ling285/tests/practice-versions.test.cjs`
+for original-source preservation, every page and teaching edition, existing/new
+notes, both practice banks, exact five-way cumulative balance, review views,
+expanded readers and mobile themes.

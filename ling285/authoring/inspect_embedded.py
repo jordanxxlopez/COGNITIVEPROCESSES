@@ -61,6 +61,7 @@ for start in range(0,len(unique),9):
  grid.save(A/'review-grids'/f'embedded-{start+1:03}-{min(start+9,len(unique)):03}.jpg',quality=92)
 # All frames of animations receive their own review grids.
 for i,a in enumerate(unique,1):
+ if selected and a['source'] not in selected:continue
  if not a.get('frames'):continue
  frames=a['frames'];grid=Image.new('RGB',(1600,1100),'#ddd');draw=ImageDraw.Draw(grid)
  for j,f in enumerate(frames[:4]):

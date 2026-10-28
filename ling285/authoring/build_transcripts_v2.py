@@ -6,7 +6,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 A = ROOT / 'authoring'
-LECTURES = ['lecture11', 'lecture12', 'lecture13', 'lecture14']
+LECTURES = [f'lecture{n}' for n in range(11,16)]
 
 def read(path):
     return json.loads(path.read_text())

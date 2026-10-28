@@ -1,7 +1,7 @@
 'use strict';
 (() => {
 const KEY = 'ling285-study-studio-v1';
-const VERSIONED_COLLECTIONS=new Set(['lecture11','lecture12','lecture13','lecture14']);
+const VERSIONED_COLLECTIONS=new Set(['lecture11','lecture12','lecture13','lecture14','lecture15']);
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeURL = value => {

@@ -18,14 +18,14 @@ test('practice editions preserve separate attempts, answers, queues, backups, an
   const context=await browser.newContext({acceptDownloads:true,viewport:{width:1440,height:1000}}),page=await context.newPage();page.setDefaultTimeout(10000);page.on('pageerror',e=>errors.push(e.message));
   const state=()=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),KEY),work=async v=>page.locator('#workNav [data-go="'+v+'"]').click();
   await page.goto(url+'?view=test&module=module2');await page.locator('[data-assessment-version]').waitFor();assert.equal(await page.locator('[data-assessment-version]').inputValue(),'v2');
-  await page.locator('[data-start="mixed"]').click();let saved=await state();check(saved.session,practice.questions,100,{lecture11:25,lecture12:25,lecture13:25,lecture14:25});const firstSet=[...saved.session.ids];
+  await page.locator('[data-start="mixed"]').click();let saved=await state();check(saved.session,practice.questions,100,{lecture11:20,lecture12:20,lecture13:20,lecture14:20,lecture15:20});const firstSet=[...saved.session.ids];
   // Preserve a checked MCQ, written draft, and uncertainty in the new edition.
   const mcqIndex=firstSet.findIndex(id=>practice.questions.find(q=>q.id===id).type==='mcq'),mcq=practice.questions.find(q=>q.id===firstSet[mcqIndex]);
   await page.locator('summary').filter({hasText:'Question navigator'}).click();await page.locator('[data-question-index="'+mcqIndex+'"]').last().click();
   await page.locator('[data-mcq-option="'+mcq.correctOption+'"]').check();await page.locator('[data-check-question]').click();await page.locator('[data-flag]').check();
   const wi=firstSet.findIndex(id=>practice.questions.find(q=>q.id===id).type==='written'),wid=firstSet[wi];
   await page.locator('summary').filter({hasText:'Question navigator'}).click();await page.locator('[data-question-index="'+wi+'"]').last().click();await page.locator('[data-draft]').fill('My saved new-edition explanation.');
-  await page.locator('[data-assessment-version]').selectOption('v1');await page.locator('[data-start="mixed"]').click();saved=await state();check(saved.session,data.questions,100,{lecture11:25,lecture12:25,lecture13:25,lecture14:25});const originalSet=[...saved.session.ids];
+  await page.locator('[data-assessment-version]').selectOption('v1');await page.locator('[data-start="mixed"]').click();saved=await state();check(saved.session,data.questions,100,{lecture11:20,lecture12:20,lecture13:20,lecture14:20,lecture15:20});const originalSet=[...saved.session.ids];
   await work('missed');assert.match(await page.locator('#content .lead').innerText(),/^0 questions/);
   await page.locator('[data-assessment-version]').selectOption('v2');assert.match(await page.locator('#content .lead').innerText(),/^1 questions/);
   assert.equal((await state()).mcqSelections[mcq.id],mcq.correctOption);assert.equal((await state()).mcqSubmitted[mcq.id],true);

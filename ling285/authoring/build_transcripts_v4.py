@@ -84,9 +84,29 @@ for n in range(11,15):
     write(A/f'teaching-v4-{key}.json',{key:authored})
     runtime['collections'][key]={'title':original['title'],'sections':runtime_sections}
 
+# Weekly additions carry their own fully authored pages. Earlier V4 entries
+# retain the original reviewed mappings and are not regenerated from new prose.
+for original in data['collections']:
+    key=original['id']
+    if original['moduleId']!='module2' or key in runtime['collections']:continue
+    authored=read(A/f'teaching-v4-{key}.json')[key]
+    assert len(authored['sections'])==len(original['sections'])
+    additions=[]
+    for old,current in zip(original['sections'],authored['sections']):
+        assert all(old[f]==current[f] for f in ['page','title','kind'])
+        identity={f:old[f] for f in ['id','page','title','kind']}
+        additions.append({**identity,'teaching':current['teaching']})
+        coverage.append({**identity,'lectureId':key,'sourceSha256':source_manifest[key]['sha256'],
+          'authoringEntry':f'teaching-v4-{key}.json page {old["page"]}',
+          'concepts':current['concepts'],'words':sum(words(p) for p in current['teaching']),
+          'version3Words':sum(words(p) for p in v3['collections'][key]['sections'][old['page']-1]['teaching']),
+          'paragraphs':len(current['teaching']),'originalImage':old['image'],
+          'originalAssets':[{'type':a['type'],'file':a['file']}for a in old['assets']]})
+    runtime['collections'][key]={'title':original['title'],'sections':additions}
+
 summary=metrics([s['words'] for s in coverage])
 assert 200<=summary['medianWords']<=250,summary
-assert len(coverage)==86
+assert len(coverage)==sum(len(c['sections'])for c in data['collections']if c['moduleId']=='module2' and c['role']=='lecture')
 write(ROOT/'transcripts-v4.json',runtime)
 write(A/'transcripts-v4-coverage.json',{'revision':runtime['revision'],'sections':coverage,'metrics':summary,
       'medianRule':'The user requested a 200–250-word median, not a per-slide minimum. Shorter explanations remain where sufficient.',
