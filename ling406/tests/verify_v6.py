@@ -123,7 +123,17 @@ changed=('const T2=','const state=','state.transcriptVersion=','function teachin
  " return text.split(open).map(")
 def unchanged(t):return '\n'.join(line for line in t.splitlines()if not line.startswith(changed))
 assert unchanged(old)==unchanged(new),'Unexpected application behavior changed'
+# Later PSYC301 V6 and the shared screen-only gradients add exact asset tags.
+# Their own preservation checks pin all old content and integration behavior.
+def without_later_assets(path,text):
+ course='psyc301' if path in ['index.html','share.html'] else path.split('/')[0]
+ prefix='' if course=='psyc301' else '../'
+ text=text.replace(f'<link rel="stylesheet" href="{prefix}studio-gradients.css?v=studio-gradients-1" data-studio-gradient="{course}">','')
+ if course=='psyc301':
+  for asset in ['<link rel="stylesheet" href="bme423/vendor/katex/katex.min.css">','<link rel="stylesheet" href="psyc301-v6.css?v=psyc301-module2-v6">','<script src="bme423/vendor/katex/katex.min.js"></script>','<script src="psyc301-v6-data.js?v=psyc301-module2-v6"></script>','<script src="psyc301-v6.js?v=psyc301-module2-v6"></script>']:
+   text=text.replace(asset,'')
+ return text
 for path in ['index.html','share.html','module2-data.js','module2-workspace.js','psyc301-theme.css',
  'bme423/app.js','bme423/index.html','bme423/module2-data.js','ling285/app.js','ling285/index.html']:
- assert (REPO/path).read_bytes()==subprocess.check_output(['git','show','bdf8c75:'+path],cwd=REPO),path
+ assert without_later_assets(path,(REPO/path).read_text())==subprocess.check_output(['git','show','bdf8c75:'+path],cwd=REPO,text=True),path
 print(f'PASS V6: {len(V["scripts"])} original pages, {C["teachingPages"]} new source-aligned teaching entries, {C["words"]:,} words, salient source facts/math, prior editions unchanged, original images/questions/state paths/palettes preserved; PSYC301/BME423/LING285 unchanged.')

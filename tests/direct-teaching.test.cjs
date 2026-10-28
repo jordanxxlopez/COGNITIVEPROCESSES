@@ -18,7 +18,7 @@ test('PSYC301 changes only the requested transcript framing, across preserved ed
   if(fs.existsSync(path.join(root,file)))assert.equal(fs.readFileSync(path.join(root,file),'utf8'),before(file),file+' was outside transcript-change scope');
  }
  for(const name of ['bme423/index.html','ling406/index.html','ling285/index.html']){
-  let current=fs.readFileSync(path.join(root,name),'utf8').replace(/<link rel="stylesheet" href="(?:\.\.\/)?course-switcher\.css[^"]*">/,'').replace(/<script src="(?:\.\.\/)?course-switcher\.js[^"]*" defer><\/script>/,'');
+  let current=fs.readFileSync(path.join(root,name),'utf8').replace(/<link rel="stylesheet" href="\.\.\/studio-gradients\.css\?v=studio-gradients-1" data-studio-gradient="(?:bme423|ling406|ling285)">/,'').replace(/<link rel="stylesheet" href="(?:\.\.\/)?course-switcher\.css[^"]*">/,'').replace(/<script src="(?:\.\.\/)?course-switcher\.js[^"]*" defer><\/script>/,'');
   // Subsequent LING406 V5 and V6 were authorized separately. Its full content and
   // bounded application changes are pinned by ling406/tests/verify_v5.py.
   if(name==='ling406/index.html')current=current

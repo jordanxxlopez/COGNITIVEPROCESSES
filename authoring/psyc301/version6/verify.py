@@ -110,12 +110,13 @@ for key,terms in facts.items():
  text=' '.join(V['scripts'][key]).replace('**','').lower()
  for term in terms:assert term.lower()in text,(key,term)
 # Every prior tracked source, transcript, bank, palette and unrelated course stays exact.
-allowed={'index.html','share.html','README.md','tests/psyc-transcript-preservation.cjs','tests/judgment.test.cjs'}
+# Later authorized gradient assets are checked exactly in tests/studio-gradients.test.cjs.
+allowed={'index.html','share.html','README.md','tests/psyc-transcript-preservation.cjs','tests/judgment.test.cjs','bme423/index.html','ling406/index.html','ling285/index.html','ling406/sw.js','tests/direct-teaching.test.cjs','ling406/tests/verify_v6.py'}
 for name,sha in json.loads((HERE/'preserved.json').read_text()).items():
  if name not in allowed:assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==sha,name
 assets=['<link rel="stylesheet" href="bme423/vendor/katex/katex.min.css">','<link rel="stylesheet" href="psyc301-v6.css?v=psyc301-module2-v6">','<script src="bme423/vendor/katex/katex.min.js"></script>','<script src="psyc301-v6-data.js?v=psyc301-module2-v6"></script>','<script src="psyc301-v6.js?v=psyc301-module2-v6"></script>']
 for name in ['index.html','share.html']:
- text=(ROOT/name).read_text()
+ text=(ROOT/name).read_text().replace('<link rel="stylesheet" href="studio-gradients.css?v=studio-gradients-1" data-studio-gradient="psyc301">','')
  for asset in assets:assert text.count(asset)==1,(name,asset);text=text.replace(asset,'')
  assert text==subprocess.check_output(['git','show','1be9d5a:'+name],cwd=ROOT,text=True),name
 print(f'PASS PSYC301 V6: five Module II collections, {C["sourcePages"]} source pages, {C["teachingPages"]} new instructional explanations, {C["words"]:,} words, source conditions/findings and math verified. Every earlier edition, source visual, archive, bank, palette and unrelated course is preserved.')

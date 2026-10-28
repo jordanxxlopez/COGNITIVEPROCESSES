@@ -23,6 +23,8 @@ function existingCoverage(current,earlier){
 // A later, separately authorized Module II edition adds only these assets.
 // Removing their exact tags must leave the original entry page byte-for-byte.
 function stripPsycV6Assets(text){return text
+ // The later shared gradient update adds only this screen stylesheet.
+ .replace('<link rel="stylesheet" href="studio-gradients.css?v=studio-gradients-1" data-studio-gradient="psyc301">','')
  .replace('<link rel="stylesheet" href="bme423/vendor/katex/katex.min.css">','')
  .replace('<link rel="stylesheet" href="psyc301-v6.css?v=psyc301-module2-v6">','')
  .replace('<script src="bme423/vendor/katex/katex.min.js"></script>','')

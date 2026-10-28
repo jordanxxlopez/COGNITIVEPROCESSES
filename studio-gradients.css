@@ -1,0 +1,140 @@
+/* Shared screen-only treatment. Course material, feedback and print styles
+   retain their original surfaces. Each entry point selects its own palette. */
+@media screen {
+  :root:has(link[data-studio-gradient="psyc301"]) {
+    --studio-pop-nav-muted: #4e5b77;
+    --studio-pop-page: linear-gradient(135deg, #e5d9ff 0%, #d8e8ff 49%, #c8eee2 100%);
+    --studio-pop-nav: linear-gradient(158deg, #e5d4ff 0%, #d1e1fc 52%, #bce8dc 100%);
+    --studio-pop-hero: linear-gradient(115deg, #cab0fb 0%, #aecfff 48%, #8bdbc7 100%);
+    --studio-pop-panel: linear-gradient(120deg, #eee3ff 0%, #e1edff 50%, #d7f1e7 100%);
+    --studio-pop-heading: linear-gradient(110deg, #dbc7fc 0%, #c8defd 50%, #b8e8d9 100%);
+    --studio-pop-active: linear-gradient(110deg, #d4b9fa 0%, #bdd5ff 48%, #a6e0cf 100%);
+  }
+  html[data-theme="dark"]:has(link[data-studio-gradient="psyc301"]) {
+    --studio-pop-nav-muted: #cbd4e6;
+    --studio-pop-page: linear-gradient(135deg, #2d2048 0%, #172c4a 49%, #104a45 100%);
+    --studio-pop-nav: linear-gradient(158deg, #42295f 0%, #233e60 52%, #155b53 100%);
+    --studio-pop-hero: linear-gradient(115deg, #603d91 0%, #305d8c 48%, #176f65 100%);
+    --studio-pop-panel: linear-gradient(120deg, #3a2e56 0%, #29465f 50%, #21584f 100%);
+    --studio-pop-heading: linear-gradient(110deg, #513775 0%, #31577a 50%, #1f6b5e 100%);
+    --studio-pop-active: linear-gradient(110deg, #624489 0%, #3b5f89 48%, #247a69 100%);
+  }
+  :root:has(link[data-studio-gradient="bme423"]) {
+    --studio-pop-nav-muted: #405862;
+    --studio-pop-page: linear-gradient(135deg, #d5e5ff 0%, #d2edf4 49%, #c6eddb 100%);
+    --studio-pop-nav: linear-gradient(158deg, #c5dcfa 0%, #c1e4eb 52%, #b5e4ca 100%);
+    --studio-pop-hero: linear-gradient(115deg, #a9cef9 0%, #a4dce7 48%, #91dbb5 100%);
+    --studio-pop-panel: linear-gradient(120deg, #e0ecff 0%, #dbf1f4 50%, #d4efdf 100%);
+    --studio-pop-heading: linear-gradient(110deg, #bcd6f8 0%, #b9e0e9 50%, #afe3c5 100%);
+    --studio-pop-active: linear-gradient(110deg, #afd0fa 0%, #a6dce7 48%, #9cdbb9 100%);
+  }
+  html[data-mode="dark"]:has(link[data-studio-gradient="bme423"]) {
+    --studio-pop-nav-muted: #c4ddda;
+    --studio-pop-page: linear-gradient(135deg, #102342 0%, #103b4a 49%, #0d4932 100%);
+    --studio-pop-nav: linear-gradient(158deg, #16385c 0%, #17485a 52%, #15583c 100%);
+    --studio-pop-hero: linear-gradient(115deg, #25588b 0%, #1f6677 48%, #217550 100%);
+    --studio-pop-panel: linear-gradient(120deg, #1b3b59 0%, #1c4a55 50%, #1b513a 100%);
+    --studio-pop-heading: linear-gradient(110deg, #244b73 0%, #205868 50%, #215e43 100%);
+    --studio-pop-active: linear-gradient(110deg, #2d5d8d 0%, #296779 48%, #2b7554 100%);
+  }
+  :root:has(link[data-studio-gradient="ling406"]) {
+    --studio-pop-nav-muted: #3e5946;
+    --studio-pop-page: linear-gradient(135deg, #d5edd7 0%, #d2ecea 49%, #d1e3fc 100%);
+    --studio-pop-nav: linear-gradient(158deg, #bfe2c3 0%, #c1e3db 52%, #bed8f3 100%);
+    --studio-pop-hero: linear-gradient(115deg, #9dd0a6 0%, #a3d9d2 48%, #9fc7ef 100%);
+    --studio-pop-panel: linear-gradient(120deg, #e0f0dd 0%, #deefea 50%, #dceafa 100%);
+    --studio-pop-heading: linear-gradient(110deg, #b8dbb8 0%, #b3ded3 50%, #bad7f3 100%);
+    --studio-pop-active: linear-gradient(110deg, #abd5ac 0%, #a6d7cb 48%, #a7cdec 100%);
+  }
+  html[data-theme="dark"]:has(link[data-studio-gradient="ling406"]) {
+    --studio-pop-nav-muted: #c5dfcd;
+    --studio-pop-page: linear-gradient(135deg, #0e3828 0%, #103f42 49%, #142c50 100%);
+    --studio-pop-nav: linear-gradient(158deg, #184d30 0%, #17554e 52%, #1b4268 100%);
+    --studio-pop-hero: linear-gradient(115deg, #28663d 0%, #206b64 48%, #285b8b 100%);
+    --studio-pop-panel: linear-gradient(120deg, #224c30 0%, #204e47 50%, #234665 100%);
+    --studio-pop-heading: linear-gradient(110deg, #2b5938 0%, #245e56 50%, #2a5279 100%);
+    --studio-pop-active: linear-gradient(110deg, #326b43 0%, #2b6b62 48%, #345f88 100%);
+  }
+  :root:has(link[data-studio-gradient="ling285"]) {
+    --studio-pop-nav-muted: #ead3df;
+    --studio-pop-page: linear-gradient(135deg, #f8dce9 0%, #f2dfe9 49%, #ffe1e5 100%);
+    --studio-pop-nav: linear-gradient(158deg, #5b203c 0%, #341c31 52%, #7c304a 100%);
+    --studio-pop-hero: linear-gradient(115deg, #631c3d 0%, #8b2d55 48%, #a43a54 100%);
+    --studio-pop-panel: linear-gradient(120deg, #fcecf4 0%, #f5e5ef 50%, #ffe9ed 100%);
+    --studio-pop-heading: linear-gradient(110deg, #efbfd3 0%, #eac9db 50%, #f6c9d1 100%);
+    --studio-pop-active: linear-gradient(110deg, #872e53 0%, #74314e 48%, #a23b58 100%);
+  }
+  html[data-theme="dark"]:has(link[data-studio-gradient="ling285"]) {
+    --studio-pop-nav-muted: #ead3df;
+    --studio-pop-page: linear-gradient(135deg, #321a2c 0%, #3c2441 49%, #4d2535 100%);
+    --studio-pop-nav: linear-gradient(158deg, #57233d 0%, #301b31 52%, #703047 100%);
+    --studio-pop-hero: linear-gradient(115deg, #64233f 0%, #7b3155 48%, #9b3d57 100%);
+    --studio-pop-panel: linear-gradient(120deg, #3e283a 0%, #402e48 50%, #4b2e3b 100%);
+    --studio-pop-heading: linear-gradient(110deg, #57334b 0%, #513952 50%, #69394a 100%);
+    --studio-pop-active: linear-gradient(110deg, #853550 0%, #743954 48%, #a04660 100%);
+  }
+
+  body, html[data-theme] body, html[data-mode] body {
+    background-image: var(--studio-pop-page);
+    background-attachment: fixed;
+  }
+  aside, #sidebar, html[data-theme] aside, html[data-mode] aside {
+    background-image: var(--studio-pop-nav);
+    --muted: var(--studio-pop-nav-muted);
+  }
+  .hero, .module-hero,
+  html[data-theme] .hero, html[data-mode] .hero {
+    background-image: var(--studio-pop-hero);
+  }
+  nav button.active,
+  html[data-theme] nav button.active, html[data-mode] nav button.active,
+  #sidebar nav button.active, #sidebar #moduleNav button.active {
+    background-image: var(--studio-pop-active);
+  }
+
+  /* Keep selected navigation text readable across the stronger dark stops. */
+  html[data-theme="dark"]:has(link[data-studio-gradient="psyc301"]) nav button.active,
+  html[data-theme="dark"]:has(link[data-studio-gradient="ling406"]) nav button.active,
+  html[data-mode="dark"]:has(link[data-studio-gradient="bme423"]) nav button.active {
+    color: #f5fbff;
+  }
+
+  :root:has(link[data-studio-gradient="psyc301"]) .timer .quiet { color: var(--ink); }
+
+  nav button.active .navnum, nav button.active .nav-num,
+  nav button.active .num, #sidebar nav button.active .nav-number { color: inherit; }
+
+  /* UI cards only. Reading panes and worked mathematics keep their surfaces. */
+  .card:not(.transcript-pane):not(.visual-pane):not(.breakpanel):not(.practice-card):not(:has(.teaching, .section-transcript, .question, .quizstem, .question-prompt, .source-worked, .step, .formula)),
+  .notesHeader, .timer, .notice, .covered,
+  html[data-theme] .timer, html[data-mode] .timer {
+    background-image: var(--studio-pop-panel);
+  }
+  .section > summary, details.guide > summary, .note-section > summary,
+  details.lesson > summary, details.problem > summary, .source-section > summary,
+  .teachcontrols, .viewer-controls, .reader-controls {
+    background-image: var(--studio-pop-heading);
+  }
+  :is(.teachcontrols, .viewer-controls, .reader-controls)
+  :is(.quiet, .muted, .question-version, .transcript-version, .reader-count, .reader-position) {
+    color: inherit;
+  }
+  /* LING406's expanded toolbar always has its own dark controls and labels. */
+  :root:has(link[data-studio-gradient="ling406"]) .expanded-toolbar,
+  :root:has(link[data-studio-gradient="ling406"]) .expanded-toolbar .reader-controls {
+    --studio-pop-panel: linear-gradient(120deg, #1c432c, #1d4640 50%, #213f58);
+    background-image: linear-gradient(110deg, #235437, #205650 48%, #254c70);
+  }
+  /* These canvases surround separate, unchanged transcript/source panels. */
+  :root:has(link[data-studio-gradient="psyc301"]) .expanded,
+  :root:has(link[data-studio-gradient="psyc301"]) .expanded-preview,
+  html[data-theme]:has(link[data-studio-gradient="psyc301"]) .expanded-preview {
+    background-image: var(--studio-pop-page);
+  }
+  :root:has(link[data-studio-gradient="bme423"]) .expanded {
+    background-image: linear-gradient(135deg, #102342, #103b4a 49%, #0d4932);
+  }
+  :root:has(link[data-studio-gradient="ling406"]) .expanded-shell {
+    background-image: linear-gradient(135deg, #0e3828, #103f42 49%, #142c50);
+  }
+}

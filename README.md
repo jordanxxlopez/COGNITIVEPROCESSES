@@ -209,3 +209,18 @@ changes with `python authoring/psyc301/version6/verify.py`, then run
 `node --test tests/psyc301-v6.test.cjs` for both entry points, every source page,
 version switching, notes/progress, source math/speech, archive preservation,
 current quiz balance and responsive readers.
+
+## Shared vivid gradients
+
+`studio-gradients.css` strengthens each course's existing palette across page
+backgrounds, navigation, home cards, section headings and reader controls in
+light and dark mode. PSYC301 and its share page retain violet/blue/teal, BME423
+blue/green, LING406 green/blue, and LING285 burgundy/rose. The overlay changes only
+screen backgrounds and navigation text contrast. Original stylesheets, source
+visuals, transcript reading surfaces, mathematical steps, feedback colors and
+print styles remain unchanged. No animation is added. LING406 precaches the new
+stylesheet for offline use.
+
+Run `node --test tests/studio-gradients.test.cjs tests/course-switcher.test.cjs`
+for exact entry-page/content preservation, both themes, UI contrast, desktop and
+mobile layouts, expanded readers, print rendering and saved cross-course notes.
