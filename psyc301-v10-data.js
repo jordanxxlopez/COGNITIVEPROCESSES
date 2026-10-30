@@ -2167,14 +2167,6 @@ window.PSYC301_V10 = {
           "Its difficulty depends on whether the solver notices that each domino must cover one square of each color.",
           "Presenting the board in ways that highlight the two kinds of squares makes the problem easier."
         ]
-      },
-      {
-        "text": "Decisions and reasoning work together in everyday life.",
-        "children": [
-          "Reasoning produces a conclusion, such as which option is likely to turn out best.",
-          "A decision uses that conclusion to choose what to do.",
-          "Inductive reasoning supplies many of the judgments that decisions rely on, because it turns past observations into expectations about what will happen next."
-        ]
       }
     ],
     "11:3": [
@@ -2199,14 +2191,6 @@ window.PSYC301_V10 = {
           "With only 30 men, at most **30 marriages** can be arranged, and two women are left without partners.",
           "The total of 62 people would allow 31 pairs only if any two people could be paired. The requirement of one from each group makes the smaller group the limit."
         ]
-      },
-      {
-        "text": "A strong inductive argument rests on observations that are representative, numerous and of high quality.",
-        "children": [
-          "A conclusion drawn from a small or unusual sample is weak, because it may not reflect the wider group.",
-          "A conclusion drawn from many careful, representative observations is strong, and we can hold it with more confidence.",
-          "Even a strong inductive conclusion stays open to revision, since a single clear observation that contradicts it can overturn it."
-        ]
       }
     ],
     "11:4": [
@@ -2230,14 +2214,6 @@ window.PSYC301_V10 = {
           "Each domino is like a marriage, pairing one member of each kind.",
           "The two missing corners are like the two missing bachelors. In both problems, an imbalance between the two kinds rules out the last pair, no matter how the pieces are arranged."
         ]
-      },
-      {
-        "text": "Inductive reasoning links science and everyday life.",
-        "children": [
-          "A scientist observes many cases and proposes a general rule.",
-          "A person in daily life does the same thing on a smaller scale, expecting the future to follow the pattern of the past.",
-          "Because so much of this reasoning happens automatically, it shapes our expectations and choices constantly, often without our noticing."
-        ]
       }
     ],
     "11:5": [
@@ -2260,14 +2236,6 @@ window.PSYC301_V10 = {
           "Men and women correspond to the two colors of squares.",
           "Marriages correspond to dominoes, which each pair one of each kind.",
           "The missing bachelors correspond to the missing corners. Once the solver sees these correspondences, the logic of the marriage problem solves the checkerboard."
-        ]
-      },
-      {
-        "text": "Heuristics trade accuracy for speed.",
-        "children": [
-          "Working through every possibility carefully would take a long time.",
-          "A heuristic reaches a quick answer using a simple cue, such as how easily examples come to mind or how closely something resembles a category.",
-          "The cost is that the cue sometimes points in the wrong direction, which produces predictable errors in judgment."
         ]
       }
     ],
@@ -2295,14 +2263,6 @@ window.PSYC301_V10 = {
         "children": [
           "The solution requires splitting one strong ray into many weak ones that combine at the target, which is an idea most people do not think of."
         ]
-      },
-      {
-        "text": "The availability heuristic works well when the examples that come to mind reflect how often events really happen.",
-        "children": [
-          "Common events usually are easy to remember, because we encounter them often.",
-          "The heuristic fails when something other than frequency makes an event memorable, such as drama, emotion or heavy news coverage.",
-          "In those cases, a rare event can feel common simply because it is easy to recall."
-        ]
       }
     ],
     "11:7": [
@@ -2327,13 +2287,6 @@ window.PSYC301_V10 = {
         "children": [
           "A large force is needed at the target.",
           "Only small forces can travel safely along any one route. Splitting and converging satisfies both."
-        ]
-      },
-      {
-        "text": "The question asks about the true size of each category, but people answer by how easily they can retrieve examples.",
-        "children": [
-          "Memory is organized so that first letters make good retrieval cues.",
-          "Third letters make poor retrieval cues, so examples of that category are hard to produce even though there are many more of them."
         ]
       }
     ],
@@ -2473,14 +2426,6 @@ window.PSYC301_V10 = {
           "Both versions use the same lab, the same lightbulb and the same lasers.",
           "They differ in the reason why a single strong beam cannot be used."
         ]
-      },
-      {
-        "text": "Small samples vary more than large samples.",
-        "children": [
-          "A day with 15 births can easily include 10 boys by chance, which is more than 60%.",
-          "A day with 45 births would need 28 or more boys to pass 60%, which happens much less often by chance.",
-          "The answer depends on how much daily percentages swing, and smaller samples swing more."
-        ]
       }
     ],
     "11:14": [
@@ -2503,14 +2448,6 @@ window.PSYC301_V10 = {
         "children": [
           "The fragile glass plays the same role as the healthy tissue.",
           "Because the reason for splitting the beam is the same in both problems, the solution transferred well."
-        ]
-      },
-      {
-        "text": "The law of large numbers explains the hospital problem.",
-        "children": [
-          "The larger hospital’s daily births form a bigger sample, so its percentage of boys stays closer to 50%.",
-          "The smaller hospital’s daily births form a smaller sample, so its percentage of boys swings more widely and more often passes 60%.",
-          "Expecting a small sample to look just like the population is a common error, and it comes from applying representativeness where sample size matters."
         ]
       }
     ],
@@ -2557,14 +2494,6 @@ window.PSYC301_V10 = {
           "Two convergence stories with different surface details, such as soldiers and lasers, both rely on weak forces combining at a target.",
           "Comparing them pulls out that common principle, which can then be applied to a new problem like the radiation problem."
         ]
-      },
-      {
-        "text": "The study reveals how people treat evidence.",
-        "children": [
-          "Each side read exactly the same article.",
-          "Each side came away more convinced of the view it already held.",
-          "The same evidence was interpreted in opposite ways, depending on the reader’s starting belief."
-        ]
       }
     ],
     "11:17": [
@@ -2604,14 +2533,6 @@ window.PSYC301_V10 = {
         "children": [
           "The answers lie in how much experts know and how their knowledge is organized."
         ]
-      },
-      {
-        "text": "Expected utility theory gives a clear rule for choosing.",
-        "children": [
-          "For each option, multiply the value of each possible outcome by its probability and add up the results.",
-          "Choose the option with the highest total.",
-          "A rational decision-maker following this rule always picks the option with the greatest expected benefit."
-        ]
       }
     ],
     "11:19": [
@@ -2640,13 +2561,6 @@ window.PSYC301_V10 = {
           "The master recognizes meaningful game patterns and stores each pattern as one chunk.",
           "Random placements match no stored patterns, so the master has no chunks to use."
         ]
-      },
-      {
-        "text": "The utility approach is useful as a standard for what a fully rational choice would be.",
-        "children": [
-          "It is less successful at describing what people actually choose.",
-          "Real decisions also depend on emotions, values beyond money and the way the options are presented."
-        ]
       }
     ],
     "11:20": [
@@ -2668,13 +2582,6 @@ window.PSYC301_V10 = {
         "children": [
           "When an expert sees a problem, the principle needed to solve it comes to mind.",
           "A novice sees the objects in the problem, which may have nothing to do with how it is solved."
-        ]
-      },
-      {
-        "text": "The result reveals that people do not simply compare probabilities.",
-        "children": [
-          "The bowl with more red jellybeans looks more promising, even though it has many more white ones too.",
-          "Attending to the number of winners rather than the proportion of winners leads people to pick the worse bowl."
         ]
       }
     ],
@@ -2704,13 +2611,6 @@ window.PSYC301_V10 = {
         "children": [
           "The novice links it by appearance.",
           "The expert links it by the principle that solves it."
-        ]
-      },
-      {
-        "text": "The choice to drive was driven by fear and vivid memories of the attacks.",
-        "children": [
-          "Those memories made flying seem much riskier than it was.",
-          "The familiar, everyday risk of driving received far less weight, so people moved into a more dangerous form of travel."
         ]
       }
     ],
@@ -2769,13 +2669,6 @@ window.PSYC301_V10 = {
           "The early stages identify and define the problem.",
           "The later stages test ideas and put the best one into practice."
         ]
-      },
-      {
-        "text": "The model predicts different emotional reactions to different kinds of tradeoffs.",
-        "children": [
-          "Putting a price on something sacred feels like a moral violation, so it produces outrage.",
-          "Weighing one sacred value against another feels sad and difficult, but it does not violate the sacred domain in the same way."
-        ]
       }
     ],
     "11:24": [
@@ -2798,13 +2691,6 @@ window.PSYC301_V10 = {
         "children": [
           "Knowledge supplies the material for new ideas.",
           "Flexibility lets the solver set aside familiar procedures when a problem calls for a different approach."
-        ]
-      },
-      {
-        "text": "The two scenarios hold the stakes constant on one side.",
-        "children": [
-          "In both, Johnny’s life is at risk.",
-          "What changes is what his life is weighed against, money in the taboo scenario and another child’s life in the tragic scenario."
         ]
       }
     ],
@@ -2830,6 +2716,14 @@ window.PSYC301_V10 = {
           "**Inductive reasoning** is **reasoning based on observations**.",
           "It means **reaching conclusions from evidence**, moving from specific cases to a general conclusion."
         ]
+      },
+      {
+        "text": "Decisions and reasoning work together in everyday life.",
+        "children": [
+          "Reasoning produces a conclusion, such as which option is likely to turn out best.",
+          "A decision uses that conclusion to choose what to do.",
+          "Inductive reasoning supplies many of the judgments that decisions rely on, because it turns past observations into expectations about what will happen next."
+        ]
       }
     ],
     "12:3": [
@@ -2854,6 +2748,14 @@ window.PSYC301_V10 = {
           "**Quality of the observations**, since careful, accurate observations count for more.",
           "**Sometimes one very compelling, high-quality observation can carry a lot of weight**."
         ]
+      },
+      {
+        "text": "A strong inductive argument rests on observations that are representative, numerous and of high quality.",
+        "children": [
+          "A conclusion drawn from a small or unusual sample is weak, because it may not reflect the wider group.",
+          "A conclusion drawn from many careful, representative observations is strong, and we can hold it with more confidence.",
+          "Even a strong inductive conclusion stays open to revision, since a single clear observation that contradicts it can overturn it."
+        ]
       }
     ],
     "12:4": [
@@ -2874,6 +2776,14 @@ window.PSYC301_V10 = {
           "**Some types of inductive reasoning happen automatically**, without deliberate thought.",
           "Many of our everyday expectations come from this kind of quick, automatic induction."
         ]
+      },
+      {
+        "text": "Inductive reasoning links science and everyday life.",
+        "children": [
+          "A scientist observes many cases and proposes a general rule.",
+          "A person in daily life does the same thing on a smaller scale, expecting the future to follow the pattern of the past.",
+          "Because so much of this reasoning happens automatically, it shapes our expectations and choices constantly, often without our noticing."
+        ]
       }
     ],
     "12:5": [
@@ -2890,6 +2800,14 @@ window.PSYC301_V10 = {
         "children": [
           "The **availability heuristic** judges probability by how easily examples come to mind.",
           "The **representativeness heuristic** judges probability by how much something resembles a typical case."
+        ]
+      },
+      {
+        "text": "Heuristics trade accuracy for speed.",
+        "children": [
+          "Working through every possibility carefully would take a long time.",
+          "A heuristic reaches a quick answer using a simple cue, such as how easily examples come to mind or how closely something resembles a category.",
+          "The cost is that the cue sometimes points in the wrong direction, which produces predictable errors in judgment."
         ]
       }
     ],
@@ -2915,6 +2833,14 @@ window.PSYC301_V10 = {
         "children": [
           "When ease of recall and actual frequency differ, the availability heuristic leads to errors."
         ]
+      },
+      {
+        "text": "The availability heuristic works well when the examples that come to mind reflect how often events really happen.",
+        "children": [
+          "Common events usually are easy to remember, because we encounter them often.",
+          "The heuristic fails when something other than frequency makes an event memorable, such as drama, emotion or heavy news coverage.",
+          "In those cases, a rare event can feel common simply because it is easy to recall."
+        ]
       }
     ],
     "12:7": [
@@ -2931,6 +2857,13 @@ window.PSYC301_V10 = {
           "It is easy to call to mind words that begin with r, because we can search memory by first letter.",
           "Words with r in the third position are much harder to retrieve that way.",
           "The words that come to mind easily seem more common, even though they are much less common."
+        ]
+      },
+      {
+        "text": "The question asks about the true size of each category, but people answer by how easily they can retrieve examples.",
+        "children": [
+          "Memory is organized so that first letters make good retrieval cues.",
+          "Third letters make poor retrieval cues, so examples of that category are hard to produce even though there are many more of them."
         ]
       }
     ],
@@ -3069,6 +3002,14 @@ window.PSYC301_V10 = {
         "children": [
           "Small samples are much more likely than large samples to stray far from the true average."
         ]
+      },
+      {
+        "text": "Small samples vary more than large samples.",
+        "children": [
+          "A day with 15 births can easily include 10 boys by chance, which is more than 60%.",
+          "A day with 45 births would need 28 or more boys to pass 60%, which happens much less often by chance.",
+          "The answer depends on how much daily percentages swing, and smaller samples swing more."
+        ]
       }
     ],
     "12:14": [
@@ -3084,6 +3025,14 @@ window.PSYC301_V10 = {
         "children": [
           "In the hospital problem, people expected a sample of 15 births to look as balanced as a sample of 45.",
           "Small samples often look unrepresentative, and the law of large numbers explains why."
+        ]
+      },
+      {
+        "text": "The law of large numbers explains the hospital problem.",
+        "children": [
+          "The larger hospital’s daily births form a bigger sample, so its percentage of boys stays closer to 50%.",
+          "The smaller hospital’s daily births form a smaller sample, so its percentage of boys swings more widely and more often passes 60%.",
+          "Expecting a small sample to look just like the population is a common error, and it comes from applying representativeness where sample size matters."
         ]
       }
     ],
@@ -3130,6 +3079,14 @@ window.PSYC301_V10 = {
         "text": "This is the **“myside” bias**, the **tendency for people to generate and evaluate evidence and test their hypotheses in a way that is biased toward their own opinions and attitudes**.",
         "children": [
           "**Participants focused on information that agreed with their beliefs and disregarded information that did not**."
+        ]
+      },
+      {
+        "text": "The study reveals how people treat evidence.",
+        "children": [
+          "Each side read exactly the same article.",
+          "Each side came away more convinced of the view it already held.",
+          "The same evidence was interpreted in opposite ways, depending on the reader’s starting belief."
         ]
       }
     ],
@@ -3178,6 +3135,14 @@ window.PSYC301_V10 = {
           "**If they have all the relevant information, they will make the decision that results in the maximum expected utility**. **Expected utility** combines how good each outcome is with how likely it is.",
           "In its early form, utility was measured as **maximum monetary payoff**, so the best choice was the one that paid the most money on average."
         ]
+      },
+      {
+        "text": "Expected utility theory gives a clear rule for choosing.",
+        "children": [
+          "For each option, multiply the value of each possible outcome by its probability and add up the results.",
+          "Choose the option with the highest total.",
+          "A rational decision-maker following this rule always picks the option with the greatest expected benefit."
+        ]
       }
     ],
     "12:19": [
@@ -3200,6 +3165,13 @@ window.PSYC301_V10 = {
         "children": [
           "The expected monetary payoff of casino gambling is negative.",
           "People gamble anyway, because they value the excitement or the chance of a big win."
+        ]
+      },
+      {
+        "text": "The utility approach is useful as a standard for what a fully rational choice would be.",
+        "children": [
+          "It is less successful at describing what people actually choose.",
+          "Real decisions also depend on emotions, values beyond money and the way the options are presented."
         ]
       }
     ],
@@ -3224,6 +3196,13 @@ window.PSYC301_V10 = {
           "The second bowl has more red jellybeans, seven instead of one, so it feels like it offers more chances to win.",
           "People attended to the number of winning beans rather than the proportion, which lowered their actual chance of winning."
         ]
+      },
+      {
+        "text": "The result reveals that people do not simply compare probabilities.",
+        "children": [
+          "The bowl with more red jellybeans looks more promising, even though it has many more white ones too.",
+          "Attending to the number of winners rather than the proportion of winners leads people to pick the worse bowl."
+        ]
       }
     ],
     "12:21": [
@@ -3246,6 +3225,13 @@ window.PSYC301_V10 = {
         "children": [
           "The vivid, frightening images of the hijackings made flying feel dangerous.",
           "The everyday risk of driving felt familiar and controllable, even though it was much larger."
+        ]
+      },
+      {
+        "text": "The choice to drive was driven by fear and vivid memories of the attacks.",
+        "children": [
+          "Those memories made flying seem much riskier than it was.",
+          "The familiar, everyday risk of driving received far less weight, so people moved into a more dangerous form of travel."
         ]
       }
     ],
@@ -3295,6 +3281,13 @@ window.PSYC301_V10 = {
           "This is a **tragic** tradeoff, such as choosing between two lives.",
           "Both sides are sacred, so the choice is painful but not an insult to what people hold sacred."
         ]
+      },
+      {
+        "text": "The model predicts different emotional reactions to different kinds of tradeoffs.",
+        "children": [
+          "Putting a price on something sacred feels like a moral violation, so it produces outrage.",
+          "Weighing one sacred value against another feels sad and difficult, but it does not violate the sacred domain in the same way."
+        ]
       }
     ],
     "12:24": [
@@ -3316,6 +3309,13 @@ window.PSYC301_V10 = {
         "children": [
           "The tradeoff sets one life against another life.",
           "Both sides are sacred values."
+        ]
+      },
+      {
+        "text": "The two scenarios hold the stakes constant on one side.",
+        "children": [
+          "In both, Johnny’s life is at risk.",
+          "What changes is what his life is weighed against, money in the taboo scenario and another child’s life in the tragic scenario."
         ]
       }
     ],
@@ -3368,6 +3368,13 @@ window.PSYC301_V10 = {
           "Each deal asked participants to give up something they valued in exchange for something else.",
           "Comparing reactions to the different deals tests how sacred values shape responses to compromise."
         ]
+      },
+      {
+        "text": "The study tested whether the sacred value effects found in the laboratory also appear in real disputes.",
+        "children": [
+          "The participants were living with the conflict directly, so the issues were deeply personal to them.",
+          "The researchers measured how participants reacted to different possible deals, including their anger, disgust and support for violence."
+        ]
       }
     ],
     "12:27": [
@@ -3412,6 +3419,14 @@ window.PSYC301_V10 = {
         "children": [
           "They opposed giving up these things, but for them the issues could in principle be traded."
         ]
+      },
+      {
+        "text": "The two groups differed in how they related to the disputed issues.",
+        "children": [
+          "For moral absolutists, the issues were beyond any trade.",
+          "For non-absolutists, the issues were very important but could, in principle, be weighed against benefits.",
+          "This difference turned out to determine how each group responded to material offers."
+        ]
       }
     ],
     "12:29": [
@@ -3455,6 +3470,13 @@ window.PSYC301_V10 = {
         "text": "An **incentive** is a reward offered for compromising, such as economic aid.",
         "children": [
           "A **disincentive** is a penalty for refusing, such as **economic sanctions**."
+        ]
+      },
+      {
+        "text": "The research asked whether money and penalties change minds when a value is held as sacred.",
+        "children": [
+          "For ordinary preferences, a large enough reward or penalty usually shifts a decision.",
+          "For sacred values, the same reward or penalty may be felt as an attempt to buy or force a compromise of something beyond price."
         ]
       }
     ],
