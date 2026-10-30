@@ -29,5 +29,9 @@ function stripPsycV6Assets(text){return text
  .replace('<link rel="stylesheet" href="psyc301-v6.css?v=psyc301-module2-v6">','')
  .replace('<script src="bme423/vendor/katex/katex.min.js"></script>','')
  .replace('<script src="psyc301-v6-data.js?v=psyc301-module2-v6"></script>','')
- .replace('<script src="psyc301-v6.js?v=psyc301-module2-v6"></script>','');}
+ .replace('<script src="psyc301-v6.js?v=psyc301-module2-v6"></script>','')
+ // The separately requested Version 10 adds only its own data, script and sub-bullet style.
+ .replace('<link rel="stylesheet" href="psyc301-v10.css?v=psyc301-module2-v10">','')
+ .replace('<script src="psyc301-v10-data.js?v=psyc301-module2-v10"></script>','')
+ .replace('<script src="psyc301-v10.js?v=psyc301-module2-v10"></script>','');}
 module.exports={directTeaching,existingCoverage,stripPsycV6Assets};

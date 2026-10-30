@@ -224,3 +224,23 @@ stylesheet for offline use.
 Run `node --test tests/studio-gradients.test.cjs tests/course-switcher.test.cjs`
 for exact entry-page/content preservation, both themes, UI contrast, desktop and
 mobile layouts, expanded readers, print rendering and saved cross-course notes.
+
+## PSYC301 Module II Version 10 · teaching notes
+
+Collections 09–13 add **Version 10 · teaching notes** to the existing explanation
+dropdown. All 148 Module II source pages stay in source order. The 141
+instructional pages are written as Study Studio notes, with bolded main bullets of
+connected read-aloud sentences and nested sub-bullets for mechanisms, experiment
+setups, observations and interpretation, and the values in instructional figures.
+Explanations are direct, without added caveats, presentation narration, arrow
+chains or outside material. Title, divider and video-link pages stay empty.
+
+`psyc301-v10.js` wraps the Version 6 controls, so earlier editions, defaults and
+saved choices are unchanged. Version 10 appears only when chosen. Its text follows
+the existing readers, search, source popups and read-aloud, and it uses the same
+note and read keys. Equations render with the local KaTeX copy.
+
+Authored text, the builder and coverage are under `authoring/psyc301/version10/`.
+Rebuild with `python authoring/psyc301/version10/build.py`. Verify with
+`python authoring/psyc301/version10/verify.py` and
+`node --test tests/psyc301-v10.test.cjs`.
