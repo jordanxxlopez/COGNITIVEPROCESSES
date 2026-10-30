@@ -8,7 +8,7 @@ async function texts(locator){return locator.evaluateAll(es=>es.map(el=>{const e
  try{
   const context=await browser.newContext({viewport:{width:1500,height:1050}});await context.addInitScript(()=>{window.spoken=[];Object.defineProperty(window,'speechSynthesis',{configurable:true,value:{cancel(){},speak(s){spoken.push(s.text)}}});window.SpeechSynthesisUtterance=function(t){this.text=t}});
   const p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto(root);
-  const select='header [data-transcript-version]',readerSelect='#readerRoot [data-transcript-version]';assert.equal(await p.locator(select).inputValue(),'10');assert.equal(await p.locator(select+' option').count(),8);await p.selectOption(select,'6');
+  const select='header [data-transcript-version]',readerSelect='#readerRoot [data-transcript-version]';assert.equal(await p.locator(select).inputValue(),'12');assert.equal(await p.locator(select+' option').count(),9);await p.selectOption(select,'6');
   const D=await p.evaluate(()=>LING406),V=await p.evaluate(()=>LING406_TRANSCRIPTS_V6),review=await p.evaluate(()=>LING406_TRANSCRIPTS_V3.review);
   for(const id of [...D.modules.map(m=>m.id),'midterm-review']){
    await p.evaluate(id=>LingStudio.go('collection',id),id);

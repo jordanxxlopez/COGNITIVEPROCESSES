@@ -244,3 +244,19 @@ Authored text, the builder and coverage are under `authoring/psyc301/version10/`
 Rebuild with `python authoring/psyc301/version10/build.py`. Verify with
 `python authoring/psyc301/version10/verify.py` and
 `node --test tests/psyc301-v10.test.cjs`.
+
+## PSYC301 Module II Version 12 · detailed teaching notes
+
+Collections 09–13 add **Version 12 · detailed teaching notes** to the explanation
+dropdown. Version 12 builds on the Version 10 notes and follows the Study Studio
+length guidance (about 150–250 words for simple pages, 250–350 for standard
+concepts and 300–400 or more for experiments). Every instructional page gains
+source-based explanation, and the average rises from about 160 to about 270
+words. All 148 source pages stay in order, and title and video-link pages stay
+empty.
+
+`psyc301-v12.js` wraps the Version 10 controls, so earlier editions, defaults and
+saved choices are unchanged. Rebuild with
+`python authoring/psyc301/version12/build.py`. Verify with
+`python authoring/psyc301/version12/verify.py` and
+`node --test tests/psyc301-v12.test.cjs`.

@@ -33,5 +33,7 @@ function stripPsycV6Assets(text){return text
  // The separately requested Version 10 adds only its own data, script and sub-bullet style.
  .replace('<link rel="stylesheet" href="psyc301-v10.css?v=psyc301-module2-v10">','')
  .replace('<script src="psyc301-v10-data.js?v=psyc301-module2-v10"></script>','')
- .replace('<script src="psyc301-v10.js?v=psyc301-module2-v10"></script>','');}
+ .replace('<script src="psyc301-v10.js?v=psyc301-module2-v10"></script>','')
+ .replace('<script src="psyc301-v12-data.js?v=psyc301-module2-v12"></script>','')
+ .replace('<script src="psyc301-v12.js?v=psyc301-module2-v12"></script>','');}
 module.exports={directTeaching,existingCoverage,stripPsycV6Assets};

@@ -46,7 +46,8 @@ for key,terms in facts.items():
 assert subprocess.check_output(['git','show',BASE+':psyc301-v6-data.js'],cwd=ROOT,text=True)==(ROOT/'psyc301-v6-data.js').read_text()
 tags=['<link rel="stylesheet" href="psyc301-v10.css?v=psyc301-module2-v10">','<script src="psyc301-v10-data.js?v=psyc301-module2-v10"></script>','<script src="psyc301-v10.js?v=psyc301-module2-v10"></script>']
 for name in ['index.html','share.html']:
- text=(ROOT/name).read_text()
+ # The separately requested Version 12 adds only its own data and script tags.
+ text=(ROOT/name).read_text().replace('<script src="psyc301-v12-data.js?v=psyc301-module2-v12"></script>','').replace('<script src="psyc301-v12.js?v=psyc301-module2-v12"></script>','')
  for tag in tags:assert text.count(tag)==1,(name,tag);text=text.replace(tag,'')
  assert text==subprocess.check_output(['git','show',BASE+':'+name],cwd=ROOT,text=True),name
 for name in ['module2-data.js','module2-workspace.js','psyc301-v6.js','psyc301-v6.css','collection-slides.js','short-term-memory-v2.js']:
