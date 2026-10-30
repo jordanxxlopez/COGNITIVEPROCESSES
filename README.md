@@ -278,3 +278,19 @@ saved choices are unchanged. Rebuild with
 `python authoring/psyc301/version14/build.py`. Verify with
 `python authoring/psyc301/version14/verify.py` and
 `node --test tests/psyc301-v14.test.cjs`.
+
+## PSYC301 Module II Version 16 · natural teaching notes
+
+Collections 09–13 add **Version 16 · natural teaching notes** to the explanation
+dropdown. Version 16 revises the Version 14 notes under the natural-experiments
+Study Studio guidance. Experiments are explained in connected sentences without
+report-style labels such as setup, result or interpretation, experiment pages gain
+source-based explanation toward the 250–300 word range, and no page exceeds the
+strict 300-word maximum. The average is about 204 words per page. All 148 source
+pages stay in order, and title and video-link pages stay empty.
+
+`psyc301-v16.js` wraps the Version 14 controls, so earlier editions, defaults and
+saved choices are unchanged. Rebuild with
+`python authoring/psyc301/version16/build.py`. Verify with
+`python authoring/psyc301/version16/verify.py` and
+`node --test tests/psyc301-v16.test.cjs`.
