@@ -234,3 +234,20 @@ edition preference is kept. Version 10 is the initial choice only without one.
 Rebuild with `python ling406/version10/build_transcripts.py`. Verify with
 `python ling406/tests/verify_v10.py`, then `node ling406/tests/transcripts-v10.cjs`
 while the repository is served on port 8907.
+
+## Version 12 · detailed teaching notes
+
+Version 12 adds another Transcript option for the individual collections. It
+builds on the Version 10 notes and follows the Study Studio length guidance,
+which calls for about 150–250 words on simple pages, 250–350 on standard concept
+pages and 300–400 or more on experiment pages. 182 of the 265 instructional pages
+gain additional source-based explanation, and the average rises from about 217
+to about 260 words. Single-word sentence pages, metaphor pages and other simple
+pages stay in the shorter range. Titles and logistics pages stay empty.
+
+Versions 1–10, notes, read marks, quizzes and layouts are unchanged. A saved
+edition preference is kept. Version 12 is the initial choice only without one.
+
+Rebuild with `python ling406/version12/build_transcripts.py`. Verify with
+`python ling406/tests/verify_v12.py`, then `node ling406/tests/transcripts-v12.cjs`
+while the repository is served on port 8907.

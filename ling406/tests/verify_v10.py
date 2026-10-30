@@ -83,7 +83,8 @@ untracked=subprocess.check_output(['git','ls-files','--others','--exclude-standa
 # Later separately requested Version 10 files for LING406 and PSYC301.
 allowed|={'ling406/transcripts-v10-data.js','ling406/tests/transcripts-v10.cjs','ling406/tests/verify_v10.py','tests/psyc-transcript-preservation.cjs',
  'index.html','share.html','psyc301-v10.js','psyc301-v10-data.js','psyc301-v10.css','README.md','tests/psyc301-v10.test.cjs','authoring/psyc301/version6/verify.py'}
-for name in changed+untracked:assert name in allowed or name.startswith(('ling406/version7/','ling406/version10/','authoring/psyc301/version10/')),name
+allowed|={'ling406/transcripts-v12-data.js','ling406/tests/transcripts-v12.cjs','ling406/tests/verify_v12.py','ling406/tests/transcripts-v10.cjs','psyc301-v12.js','psyc301-v12-data.js','tests/psyc301-v12.test.cjs','authoring/psyc301/version10/verify.py'}
+for name in changed+untracked:assert name in allowed or name.startswith(('ling406/version12/','authoring/psyc301/version12/','ling406/version7/','ling406/version10/','authoring/psyc301/version10/')),name
 old=subprocess.check_output(['git','show',BASE+':ling406/app.js'],cwd=REPO,text=True)
 prefixes=('const T2=','const state=','state.transcriptVersion=','function teachingBlocks(','function transcriptSelector(','function changeTranscriptVersion(',' return text.split(open).map(')
 def unchanged(t):return '\n'.join(line for line in t.splitlines()if not line.startswith(prefixes))
