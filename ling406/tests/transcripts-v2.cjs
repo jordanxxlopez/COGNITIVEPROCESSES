@@ -18,7 +18,7 @@ const root='http://localhost:8907/ling406/';
   const selector='header [data-transcript-version]';
   const readerSelector='.reader-controls [data-transcript-version]';
   const readParagraphs=()=>p.locator('.reader-transcript>p').allTextContents();
-  assert.equal(await p.locator(selector).inputValue(),'12');
+  assert.equal(await p.locator(selector).inputValue(),'14');
   await p.selectOption(selector,'2');
   for(const m of D.modules){
    await p.evaluate(id=>LingStudio.go('collection',id),m.id);

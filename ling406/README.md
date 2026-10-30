@@ -251,3 +251,22 @@ edition preference is kept. Version 12 is the initial choice only without one.
 Rebuild with `python ling406/version12/build_transcripts.py`. Verify with
 `python ling406/tests/verify_v12.py`, then `node ling406/tests/transcripts-v12.cjs`
 while the repository is served on port 8907.
+
+## Version 14 · balanced teaching notes
+
+Version 14 adds another Transcript option for the individual collections. It
+rewrites the Version 12 notes under the balanced Study Studio length guidance,
+which calls for about 100–150 words on simple pages, 175–250 on standard concept
+pages, 250–300 on experiment pages and up to 350 only for especially complex
+pages, with an average near 225. Repeated restatements and closing summaries that
+add no new fact are removed, and long sentences are split into shorter spoken
+sentences. Every source term, value, study, stimulus and figure detail stays.
+256 of the 265 instructional pages are rewritten. The average is about 218 words
+and no page exceeds 345. Titles and logistics pages stay empty.
+
+Versions 1–12, notes, read marks, quizzes and layouts are unchanged. A saved
+edition preference is kept. Version 14 is the initial choice only without one.
+
+Rebuild with `python ling406/version14/build_transcripts.py`. Verify with
+`python ling406/tests/verify_v14.py`, then `node ling406/tests/transcripts-v14.cjs`
+while the repository is served on port 8907.
