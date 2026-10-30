@@ -216,3 +216,21 @@ Rebuild using `python ling406/version7/build_transcripts.py`. Run
 preservation. With the repository served on port 8907, run
 `node ling406/tests/transcripts-v7.cjs` for all-page rendering, seven-edition
 switching, persistence, equations, speech, responsive readers and offline use.
+
+## Version 10 · direct teaching notes
+
+Version 10 is an additional option in the Transcript dropdown for the individual
+collections. It keeps the Version 7 notes structure and revises it under the
+Study Studio instructions with direct explanations. Unnecessary caveats,
+not-statements and limits the source does not state are replaced with affirmative
+teaching. Limitations that the source itself states are kept. Of the 265
+instructional pages, 158 were revised, and every page keeps its source facts,
+numbers, figure values, nested bullets and source order. Titles and logistics
+pages stay empty.
+
+Versions 1–7, notes, read marks, quizzes and layouts are unchanged. A saved
+edition preference is kept. Version 10 is the initial choice only without one.
+
+Rebuild with `python ling406/version10/build_transcripts.py`. Verify with
+`python ling406/tests/verify_v10.py`, then `node ling406/tests/transcripts-v10.cjs`
+while the repository is served on port 8907.

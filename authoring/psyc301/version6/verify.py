@@ -111,7 +111,9 @@ for key,terms in facts.items():
  for term in terms:assert term.lower()in text,(key,term)
 # Every prior tracked source, transcript, bank, palette and unrelated course stays exact.
 # Later authorized gradient assets are checked exactly in tests/studio-gradients.test.cjs.
-allowed={'index.html','share.html','README.md','tests/psyc-transcript-preservation.cjs','tests/judgment.test.cjs','bme423/index.html','ling406/index.html','ling285/index.html','ling406/sw.js','tests/direct-teaching.test.cjs','ling406/tests/verify_v6.py'}
+allowed={'index.html','share.html','README.md','tests/psyc-transcript-preservation.cjs','tests/judgment.test.cjs','bme423/index.html','ling406/index.html','ling285/index.html','ling406/sw.js','tests/direct-teaching.test.cjs','ling406/tests/verify_v6.py',
+ # LING406 Versions 7 and 10 were authorized separately and are pinned by their own verifiers.
+ 'ling406/README.md','ling406/app.js','ling406/tests/transcripts-v2.cjs','ling406/tests/transcripts-v3.cjs','ling406/tests/transcripts-v5.cjs','ling406/tests/transcripts-v6.cjs'}
 for name,sha in json.loads((HERE/'preserved.json').read_text()).items():
  if name not in allowed:assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==sha,name
 assets=['<link rel="stylesheet" href="bme423/vendor/katex/katex.min.css">','<link rel="stylesheet" href="psyc301-v6.css?v=psyc301-module2-v6">','<script src="bme423/vendor/katex/katex.min.js"></script>','<script src="psyc301-v6-data.js?v=psyc301-module2-v6"></script>','<script src="psyc301-v6.js?v=psyc301-module2-v6"></script>']

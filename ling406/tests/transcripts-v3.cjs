@@ -20,7 +20,7 @@ const flatten=blocks=>blocks.flatMap(b=>[b.text,...b.children]).map(bare);
   const D=await p.evaluate(()=>LING406),V3=await p.evaluate(()=>LING406_TRANSCRIPTS_V3);
   const V=edition===4?{...V3,...await p.evaluate(()=>LING406_TRANSCRIPTS_V4)}:V3;
   const sel='header [data-transcript-version]',rsel='#readerRoot [data-transcript-version]';
-  assert.equal(await p.locator(sel).inputValue(),'7');
+  assert.equal(await p.locator(sel).inputValue(),'10');
   await p.selectOption(sel,String(edition));
   assert.equal(await p.locator('#collectionNav button').count(),10);
   assert.match(await p.locator('[data-lecture="midterm-review"]').innerText(),/10.*Midterm II Review.*Fall 2025/s);
