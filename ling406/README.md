@@ -270,3 +270,20 @@ edition preference is kept. Version 14 is the initial choice only without one.
 Rebuild with `python ling406/version14/build_transcripts.py`. Verify with
 `python ling406/tests/verify_v14.py`, then `node ling406/tests/transcripts-v14.cjs`
 while the repository is served on port 8907.
+
+## Version 16 · natural teaching notes
+
+Version 16 adds another Transcript option for the individual collections. It
+revises the Version 14 notes under the natural-experiments Study Studio guidance,
+which keeps the average near 225 words and sets a strict 300-word maximum for
+every page. Experiments are explained in connected sentences without report-style
+labels such as setup, results or interpretation, and the ten pages that ran past
+300 words are tightened without losing source facts. The average is about 217
+words and no page exceeds 300. Titles and logistics pages stay empty.
+
+Versions 1–14, notes, read marks, quizzes and layouts are unchanged. A saved
+edition preference is kept. Version 16 is the initial choice only without one.
+
+Rebuild with `python ling406/version16/build_transcripts.py`. Verify with
+`python ling406/tests/verify_v16.py`, then `node ling406/tests/transcripts-v16.cjs`
+while the repository is served on port 8907.
