@@ -287,3 +287,21 @@ edition preference is kept. Version 16 is the initial choice only without one.
 Rebuild with `python ling406/version16/build_transcripts.py`. Verify with
 `python ling406/tests/verify_v16.py`, then `node ling406/tests/transcripts-v16.cjs`
 while the repository is served on port 8907.
+
+## Version 18 · teaching scripts
+
+Version 18 adds another Transcript option for the individual collections. Every
+Version 16 teaching page is rewritten in the Study Studio Prompt 2 teaching-script
+style, with no word limit. Pages use bolded teaching bullets of connected spoken
+sentences with nested sub-bullets. Experiments are told naturally without report
+labels, figures are explained by their scientific meaning instead of a walkthrough
+of axes, panels or colors, and only the numbers that define conditions or carry
+key findings are kept. The average is about 194 words per page. Titles and
+logistics pages stay empty.
+
+Versions 1–16, notes, read marks, quizzes and layouts are unchanged. A saved
+edition preference is kept. Version 18 is the initial choice only without one.
+
+Rebuild with `python ling406/version18/build_transcripts.py`. Verify with
+`python ling406/tests/verify_v18.py`, then `node ling406/tests/transcripts-v18.cjs`
+while the repository is served on port 8907.

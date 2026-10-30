@@ -294,3 +294,21 @@ saved choices are unchanged. Rebuild with
 `python authoring/psyc301/version16/build.py`. Verify with
 `python authoring/psyc301/version16/verify.py` and
 `node --test tests/psyc301-v16.test.cjs`.
+
+## PSYC301 Module II Version 18 · teaching scripts
+
+Collections 09–13 add **Version 18 · teaching scripts** to the explanation
+dropdown. Every Version 16 teaching page is rewritten in the Study Studio Prompt 2
+teaching-script style, with no word limit. Each page uses bolded teaching bullets
+of connected spoken sentences with nested sub-bullets. Experiments are told
+naturally without report labels, figures are explained by their scientific
+meaning instead of a walkthrough of axes, panels or colors, and only the numbers
+that define conditions or carry key findings are kept. The average is about 171
+words per page. All 148 source pages stay in order, and title and video-link
+pages stay empty.
+
+`psyc301-v18.js` wraps the Version 16 controls, so earlier editions, defaults and
+saved choices are unchanged. Rebuild with
+`python authoring/psyc301/version18/build.py`. Verify with
+`python authoring/psyc301/version18/verify.py` and
+`node --test tests/psyc301-v18.test.cjs`.
