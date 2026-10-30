@@ -260,3 +260,21 @@ saved choices are unchanged. Rebuild with
 `python authoring/psyc301/version12/build.py`. Verify with
 `python authoring/psyc301/version12/verify.py` and
 `node --test tests/psyc301-v12.test.cjs`.
+
+## PSYC301 Module II Version 14 · balanced teaching notes
+
+Collections 09–13 add **Version 14 · balanced teaching notes** to the explanation
+dropdown. Version 14 rewrites the Version 12 notes under the balanced Study Studio
+length guidance (about 100–150 words for simple pages, 175–250 for standard
+concepts, 250–300 for experiments and up to 350 only for especially complex
+pages). Repeated restatements and closing summaries that add no new fact are
+removed, and long sentences are split for reading aloud, while every source term,
+value, study and figure detail stays. The average is about 195 words per page and
+no page exceeds 295. All 148 source pages stay in order, and title and video-link
+pages stay empty.
+
+`psyc301-v14.js` wraps the Version 12 controls, so earlier editions, defaults and
+saved choices are unchanged. Rebuild with
+`python authoring/psyc301/version14/build.py`. Verify with
+`python authoring/psyc301/version14/verify.py` and
+`node --test tests/psyc301-v14.test.cjs`.
