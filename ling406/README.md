@@ -186,3 +186,33 @@ source-fact anchors and preservation. With the repository served on port 8907,
 run `node ling406/tests/transcripts-v6.cjs` for all-page rendering, six-edition
 switching, notes/read/quiz persistence, review alignment, accessible math and
 speech, responsive light/dark readers, and offline switching.
+
+## Version 7 · teaching notes
+
+Version 7 is an additional option in the existing Transcript dropdown. It rewrites
+the individual collections as Study Studio teaching notes. All nine lecture
+collections and the review collection keep every one of the 284 original pages in
+source order. The 265 instructional entries are authored page by page in
+`version7/*.txt`, with about 58,000 teaching words. Version 6 has about 34,000.
+
+Each page is written as bolded main bullets of connected, read-aloud sentences.
+Nested sub-bullets cover each step of a mechanism and each experiment's setup,
+observations and interpretation. They also teach the values shown in graphs and
+tables, such as looking times, accuracy rates, correlations and reaction times.
+Key terms are defined where they appear. The notes contain no presentation
+narration, arrow chains, colons or semicolons, references to other pages, or
+added topics. Titles, reading reminders and link-only pages remain visible with
+empty scripts. Matching review pages reuse the lecture notes, and review page 54
+has its own explanation of the sound overlap between speaker and spichki.
+
+Versions 1–6, source files, notes, read marks, question banks, grading and
+layouts are unchanged. A saved edition preference is kept. Version 7 is the
+initial choice only when no preference has been saved. The selected text also
+feeds the existing combined notes, core review, experiments, guide, search and
+read-aloud features, and the offline shell caches the new data file.
+
+Rebuild using `python ling406/version7/build_transcripts.py`. Run
+`python ling406/tests/verify_v7.py` for coverage, writing rules, source facts and
+preservation. With the repository served on port 8907, run
+`node ling406/tests/transcripts-v7.cjs` for all-page rendering, seven-edition
+switching, persistence, equations, speech, responsive readers and offline use.
