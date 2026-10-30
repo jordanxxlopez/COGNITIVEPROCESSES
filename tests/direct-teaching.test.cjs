@@ -22,6 +22,10 @@ test('PSYC301 changes only the requested transcript framing, across preserved ed
   // Subsequent LING406 V5, V6 and V7 were authorized separately. Their content and
   // bounded application changes are pinned by ling406/tests/verify_v5.py and verify_v7.py.
   if(name==='ling406/index.html')current=current
+   .replace('<script src="transcripts-v18-data.js?v=ling406-transcripts-v18"></script>','')
+   .replace('app.js?v=ling406-transcripts-v18','app.js?v=ling406-transcripts-v16')
+   .replace('<option value="18" selected>Version 18 · teaching scripts</option>','')
+   .replace('<option value="16">Version 16 · natural teaching notes</option>','<option value="16" selected>Version 16 · natural teaching notes</option>')
    .replace('<script src="transcripts-v16-data.js?v=ling406-transcripts-v16"></script>','')
    .replace('app.js?v=ling406-transcripts-v16','app.js?v=ling406-transcripts-v14')
    .replace('<option value="16" selected>Version 16 · natural teaching notes</option>','')

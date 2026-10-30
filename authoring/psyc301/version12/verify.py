@@ -50,7 +50,7 @@ tags=['<script src="psyc301-v12-data.js?v=psyc301-module2-v12"></script>','<scri
  # The separately requested Version 14 adds only its own data and script tags.
  '<script src="psyc301-v14-data.js?v=psyc301-module2-v14"></script>','<script src="psyc301-v14.js?v=psyc301-module2-v14"></script>',
  # The separately requested Version 16 adds only its own data and script tags.
- '<script src="psyc301-v16-data.js?v=psyc301-module2-v16"></script>','<script src="psyc301-v16.js?v=psyc301-module2-v16"></script>']
+ '<script src="psyc301-v16-data.js?v=psyc301-module2-v16"></script>','<script src="psyc301-v16.js?v=psyc301-module2-v16"></script>','<script src="psyc301-v18-data.js?v=psyc301-module2-v18"></script>','<script src="psyc301-v18.js?v=psyc301-module2-v18"></script>']
 for name in ['index.html','share.html']:
  text=(ROOT/name).read_text()
  for tag in tags:assert text.count(tag)==1,(name,tag);text=text.replace(tag,'')

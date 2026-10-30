@@ -48,7 +48,7 @@ for name in ['psyc301-v6-data.js','psyc301-v10-data.js','psyc301-v10.js','psyc30
 assert 180<=C['averageWords']<=250
 tags=['<script src="psyc301-v14-data.js?v=psyc301-module2-v14"></script>','<script src="psyc301-v14.js?v=psyc301-module2-v14"></script>',
  # The separately requested Version 16 adds only its own data and script tags.
- '<script src="psyc301-v16-data.js?v=psyc301-module2-v16"></script>','<script src="psyc301-v16.js?v=psyc301-module2-v16"></script>']
+ '<script src="psyc301-v16-data.js?v=psyc301-module2-v16"></script>','<script src="psyc301-v16.js?v=psyc301-module2-v16"></script>','<script src="psyc301-v18-data.js?v=psyc301-module2-v18"></script>','<script src="psyc301-v18.js?v=psyc301-module2-v18"></script>']
 for name in ['index.html','share.html']:
  text=(ROOT/name).read_text()
  for tag in tags:assert text.count(tag)==1,(name,tag);text=text.replace(tag,'')
