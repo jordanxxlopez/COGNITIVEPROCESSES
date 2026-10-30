@@ -7,12 +7,14 @@ const old=f=>execFileSync('git',['show',base+':'+f],{cwd:root,encoding:'utf8',ma
 const link=(f,id)=>'<link rel="stylesheet" href="'+(f.includes('/')?'../':'')+'studio-gradients.css?v=studio-gradients-1" data-studio-gradient="'+id+'">';
 test('all five entry pages add only the stylesheet; course content and application code stay exact',()=>{
  for(const [f,id]of Object.entries(entries)){
-  const s=fs.readFileSync(path.join(root,f),'utf8'),tag=link(f,id);
+  let s=fs.readFileSync(path.join(root,f),'utf8');const tag=link(f,id);
+  // LING406 Version 7 was authorized separately and is pinned by ling406/tests/verify_v7.py.
+  if(f==='ling406/index.html')s=s.replace('<script src="transcripts-v7-data.js?v=ling406-transcripts-v7"></script>','').replace('app.js?v=ling406-transcripts-v7','app.js?v=ling406-transcripts-v6').replace('<option value="7" selected>Version 7 · teaching notes</option>','').replace('<option value="6">Version 6 · natural teaching</option>','<option value="6" selected>Version 6 · natural teaching</option>');
   assert.equal(s.split(tag).length,2,f);assert.equal(s.replace(tag,''),old(f),f);
  }
- const sw=fs.readFileSync(path.join(root,'ling406/sw.js'),'utf8');
+ const sw=fs.readFileSync(path.join(root,'ling406/sw.js'),'utf8').replace("const CACHE='ling406-transcripts-v7';","const CACHE='ling406-studio-gradients-1';").replace("'transcripts-v7-data.js?v=ling406-transcripts-v7','app.js?v=ling406-transcripts-v7'","'app.js?v=ling406-transcripts-v6'");
  assert.equal(sw,old('ling406/sw.js').replace("const CACHE='ling406-transcripts-v6';","const CACHE='ling406-studio-gradients-1';").replace("const SHELL=['./',","const SHELL=['../studio-gradients.css?v=studio-gradients-1','./',"));
- const allowed=new Set([...Object.keys(entries),'ling406/sw.js','README.md','tests/psyc-transcript-preservation.cjs','tests/direct-teaching.test.cjs','authoring/psyc301/version6/verify.py','ling406/tests/verify_v6.py']);
+ const allowed=new Set([...Object.keys(entries),'ling406/sw.js','README.md','tests/psyc-transcript-preservation.cjs','tests/direct-teaching.test.cjs','authoring/psyc301/version6/verify.py','ling406/tests/verify_v6.py','ling406/app.js','ling406/README.md','ling406/tests/transcripts-v2.cjs','ling406/tests/transcripts-v3.cjs','ling406/tests/transcripts-v5.cjs','ling406/tests/transcripts-v6.cjs','tests/studio-gradients.test.cjs']);
  // Check every previously tracked file, rather than sampling only a data bank.
  const tracked=new Set(execFileSync('git',['ls-tree','-r','--name-only',base],{cwd:root,encoding:'utf8',maxBuffer:5*1024*1024}).trim().split('\n'));
  const changed=execFileSync('git',['diff','--name-only',base],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);

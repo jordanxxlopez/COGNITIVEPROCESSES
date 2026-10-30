@@ -19,9 +19,13 @@ test('PSYC301 changes only the requested transcript framing, across preserved ed
  }
  for(const name of ['bme423/index.html','ling406/index.html','ling285/index.html']){
   let current=fs.readFileSync(path.join(root,name),'utf8').replace(/<link rel="stylesheet" href="\.\.\/studio-gradients\.css\?v=studio-gradients-1" data-studio-gradient="(?:bme423|ling406|ling285)">/,'').replace(/<link rel="stylesheet" href="(?:\.\.\/)?course-switcher\.css[^"]*">/,'').replace(/<script src="(?:\.\.\/)?course-switcher\.js[^"]*" defer><\/script>/,'');
-  // Subsequent LING406 V5 and V6 were authorized separately. Its full content and
-  // bounded application changes are pinned by ling406/tests/verify_v5.py.
+  // Subsequent LING406 V5, V6 and V7 were authorized separately. Their content and
+  // bounded application changes are pinned by ling406/tests/verify_v5.py and verify_v7.py.
   if(name==='ling406/index.html')current=current
+   .replace('<script src="transcripts-v7-data.js?v=ling406-transcripts-v7"></script>','')
+   .replace('app.js?v=ling406-transcripts-v7','app.js?v=ling406-transcripts-v6')
+   .replace('<option value="7" selected>Version 7 · teaching notes</option>','')
+   .replace('<option value="6">Version 6 · natural teaching</option>','<option value="6" selected>Version 6 · natural teaching</option>')
    .replace('<link rel="stylesheet" href="../bme423/vendor/katex/katex.min.css">','')
    .replace('<link rel="stylesheet" href="transcripts-v5.css?v=ling406-transcripts-v5">','')
    .replace('<script src="../bme423/vendor/katex/katex.min.js"></script>','')
