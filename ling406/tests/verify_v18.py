@@ -84,7 +84,8 @@ allowed={'ling406/app.js','ling406/index.html','ling406/sw.js','ling406/README.m
  *['ling406/tests/transcripts-v'+v+'.cjs' for v in ['2','3','5','6','7','10','12','14','16']],
  *['ling406/tests/verify_v'+v+'.py' for v in ['7','10','12','14','16']],
  *['authoring/psyc301/version'+v+'/verify.py' for v in ['6','10','12','14','16']]}
-for name in changed+untracked:assert name in allowed or name.startswith(('authoring/psyc301/version18/','ling406/version18/')),name
+# Later separately requested LING285 Module II editions live entirely under ling285/.
+for name in changed+untracked:assert name in allowed or name.startswith(('ling285/','authoring/psyc301/version18/','ling406/version18/')),name
 old=subprocess.check_output(['git','show',BASE+':ling406/app.js'],cwd=REPO,text=True)
 prefixes=('const T2=','const state=','state.transcriptVersion=','function teachingBlocks(','function transcriptSelector(','function changeTranscriptVersion(',' return text.split(open).map(')
 def unchanged(t):return '\n'.join(line for line in t.splitlines()if not line.startswith(prefixes))

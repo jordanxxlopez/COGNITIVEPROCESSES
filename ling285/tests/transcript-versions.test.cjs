@@ -125,7 +125,9 @@ test('Version 4 works across all four lectures, shared notes, readers, core revi
  const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox']});const errors=[];
  try{
   const context=await browser.newContext({viewport:{width:1440,height:1050},acceptDownloads:true}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(url+'?view=collection&module=module2&lecture=lecture11');await page.locator('#content [data-transcript-version]').waitFor();assert.equal(await page.locator('#content [data-transcript-version]').inputValue(),'v4');
+  await page.goto(url+'?view=collection&module=module2&lecture=lecture11');await page.locator('#content [data-transcript-version]').waitFor();
+  // Version 18 is now the initial edition; this test then selects Version 4 explicitly.
+  assert.equal(await page.locator('#content [data-transcript-version]').inputValue(),'v18');await page.locator('#content [data-transcript-version]').selectOption('v4');assert.equal(await page.locator('#content [data-transcript-version]').inputValue(),'v4');
   let sharedId;
   for(const lecture of affected){await page.locator('#collectionNav [data-collection="'+lecture+'"]').click();const original=data.collections.find(c=>c.id===lecture).sections.find(s=>s.teaching.length);let section=await openSection(page,original.id);await assertTeaching(section,fourthById.get(original.id).teaching);
    for(const [version,expected]of [['v1',original.teaching],['v2',versionById.get(original.id).teaching],['v3',clearEdition.collections[lecture].sections.find(s=>s.id===original.id).teaching],['v4',fourthById.get(original.id).teaching]]){await page.locator('#content [data-transcript-version]').selectOption(version);await assertTeaching(await openSection(page,original.id),expected);}
