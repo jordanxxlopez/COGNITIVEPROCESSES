@@ -1,0 +1,3968 @@
+{
+  "id": "v10",
+  "label": "Version 10 · Direct teaching notes",
+  "revision": "2026-10-31-transcripts-v10",
+  "baseDataSha256": "cae8456ec5cda4e93436d3beaa26ed2833e3164726de2d0f3edc09dc0dba5cfa",
+  "collections": {
+    "lecture11": {
+      "title": "Masses and Springs · Theory and Prediction",
+      "sections": [
+        {
+          "id": "lecture11-p001",
+          "page": 1,
+          "title": "Masses and Springs · Theory and Prediction",
+          "kind": "title",
+          "teaching": []
+        },
+        {
+          "id": "lecture11-p002",
+          "page": 2,
+          "title": "One mass, two directions",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A mass on a spring **oscillates**, which means it moves back and forth around **equilibrium**, its resting position. Displacing the mass stretches or squeezes the spring, and the spring answers with a force aimed back at equilibrium.",
+              "children": [
+                "Because of its **inertia**, the moving mass carries on past equilibrium and displaces the spring on the far side.",
+                "The spring then pushes or pulls the other way, sends the mass back and starts the next cycle."
+              ]
+            },
+            {
+              "text": "The mass can travel in two directions.",
+              "children": [
+                "**Longitudinal motion** runs along the spring, so the spring lengthens and shortens.",
+                "**Transverse motion** runs across the spring. The two segments are already under tension, and lifting or lowering the mass angles their pull back toward the resting line."
+              ]
+            },
+            {
+              "text": "Each side of the cycle has its own restoring direction.",
+              "children": [
+                "On one side of equilibrium, the spring acts toward the center from that side.",
+                "After the mass crosses, the displacement reverses and the force reverses with it. Inertia carries the mass across, and the restoring force brings it back, over and over."
+              ]
+            },
+            {
+              "text": "The two directions repeat at the same **frequency**, **0.5 Hz**, or one cycle every two seconds.",
+              "children": [
+                "They match because both have the same mass and the same total restoring stiffness.",
+                "The model has no damping, so each cycle is as large as the one before."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture11-p003",
+          "page": 3,
+          "title": "Mass and stiffness change the rate",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "An oscillator’s rate depends on its **mass** and its **stiffness**. Three systems run together, and each comparison changes one property while holding the other fixed.",
+              "children": [
+                "The reference has mass **m** and stiffness **K** and runs at **0.5 Hz**.",
+                "Quadrupling the mass to **4m** slows it to **0.25 Hz**.",
+                "Quadrupling the stiffness to **4K** speeds it to **1 Hz**."
+              ]
+            },
+            {
+              "text": "**More mass means a lower frequency.**",
+              "children": [
+                "A heavier mass takes more force to speed up, slow down and reverse.",
+                "With the same spring, each cycle takes longer, and four times the mass gives half the rate."
+              ]
+            },
+            {
+              "text": "**More stiffness means a higher frequency.**",
+              "children": [
+                "A stiffer spring pulls back harder for the same displacement.",
+                "The mass reverses sooner and completes more cycles per second, and four times the stiffness gives twice the rate.",
+                "Mass is the system’s resistance to changes in motion, and stiffness is the strength of its return."
+              ]
+            },
+            {
+              "text": "The rate is found by counting complete cycles over equal stretches of time.",
+              "children": [
+                "**Amplitude**, the distance the mass travels, is a separate property.",
+                "Each longitudinal and transverse pair matches because both share the same **effective restoring stiffness**, meaning the restoring action in the direction of motion. For transverse motion, that stiffness comes from the tension and layout of the spring segments."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture11-p004",
+          "page": 4,
+          "title": "Two masses have two normal modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Two equal masses linked by three equal springs between fixed ends have **two normal modes**. In a **normal mode**, every part of the system moves at one frequency and keeps a fixed relationship to the other parts.",
+              "children": []
+            },
+            {
+              "text": "In **Mode 1**, the two masses move in step, in the same direction.",
+              "children": [
+                "Their spacing stays nearly constant, so the middle spring barely changes length.",
+                "This mode runs at **0.4 Hz**."
+              ]
+            },
+            {
+              "text": "In **Mode 2**, the masses move in opposite directions.",
+              "children": [
+                "The middle spring is squeezed and stretched hard on every cycle.",
+                "The added restoring force makes this the faster mode, at about **1.73 times** the frequency of Mode 1."
+              ]
+            },
+            {
+              "text": "Each mode is a pattern of the whole chain.",
+              "children": [
+                "Both masses move in both modes.",
+                "The masses and springs are identical in the two patterns, and the difference lies in how the masses move relative to each other."
+              ]
+            },
+            {
+              "text": "Both modes can run together on the same masses.",
+              "children": [
+                "At each mass the two motions add, strengthening where they agree and canceling where they disagree. This is **superposition**.",
+                "The combined motion in the bottom row is the exact sum of the two modes and carries both frequencies. The longitudinal and transverse chains follow the same pattern."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture11-p005",
+          "page": 5,
+          "title": "Pop quiz",
+          "kind": "logistics",
+          "teaching": []
+        },
+        {
+          "id": "lecture11-p006",
+          "page": 6,
+          "title": "Three masses have three normal modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Three equal masses with four equal springs between fixed ends have **three normal modes**.",
+              "children": []
+            },
+            {
+              "text": "**Mode 1** moves all three masses in the same direction.",
+              "children": [
+                "The middle mass swings the farthest, and the outer two swing less.",
+                "This is the lowest mode, at **0.32 Hz**."
+              ]
+            },
+            {
+              "text": "**Mode 2** moves the two outer masses in opposite directions.",
+              "children": [
+                "The pulls on the middle mass cancel, so it stays at equilibrium.",
+                "A point that stays still throughout a mode is a **node**.",
+                "This mode runs at about **1.85 times** the lowest frequency."
+              ]
+            },
+            {
+              "text": "**Mode 3** moves the outer masses together and the middle mass against them.",
+              "children": [
+                "Each mass now moves opposite to its neighbor, so every spring stretches and squeezes strongly.",
+                "This is the highest mode, at about **2.41 times** the lowest frequency."
+              ]
+            },
+            {
+              "text": "The more neighbors oppose each other, the faster the mode.",
+              "children": [
+                "Opposing neighbors stretch the springs more, which strengthens the restoring force and speeds up the cycle.",
+                "All three masses take part in every mode. The colors follow each mass, and the resting marks give the position each displacement starts from."
+              ]
+            },
+            {
+              "text": "The frequency ratios are specific to this chain.",
+              "children": [
+                "When the modes combine, their motions add at each mass.",
+                "The middle mass moves in the mixture because Modes 1 and 3 move it, even though Mode 2 holds it still."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture11-p007",
+          "page": 7,
+          "title": "One more mass, one more mode",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Every movable mass adds one **normal mode** in the modeled direction. The atlas sets chains of one through six masses in rows, with mode numbers in columns, for **21** patterns in all.",
+              "children": [
+                "Each chain has equal masses, one more spring than masses and two fixed ends.",
+                "A chain of three masses fills three columns, and a chain of six fills six."
+              ]
+            },
+            {
+              "text": "In every chain, **Mode 1** is the broadest pattern, with all masses moving together.",
+              "children": [
+                "Each higher mode adds one more group moving the opposite way.",
+                "More reversals put more neighbors in opposition, which stretches the springs more, strengthens the restoring force and raises the frequency."
+              ]
+            },
+            {
+              "text": "The fixed ends stay still in every mode.",
+              "children": [
+                "A mass that stays still within one mode is a node of that pattern while the others keep moving.",
+                "Higher modes use the very same masses and springs in a different arrangement, and the mode number names the arrangement."
+              ]
+            },
+            {
+              "text": "Colors mark the mode number, and rows mark the number of masses.",
+              "children": [
+                "Every pattern is drawn with the same largest displacement, so frequency is read from the repetition rate.",
+                "**Amplitude** is how far the parts move, and frequency is how often they repeat.",
+                "Chains of separate masses have frequency spacings that differ from the whole-number spacing of an ideal continuous string."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture11-p008",
+          "page": 8,
+          "title": "A fixed–fixed string combines harmonics",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **fixed–fixed string** is clamped at both ends, which makes both ends **nodes**.",
+              "children": [
+                "**Mode 1** fits one half-wave between the ends.",
+                "Modes 2, 3, 4 and 5 fit two, three, four and five half-waves."
+              ]
+            },
+            {
+              "text": "Packing more half-waves into the same length shortens the wavelength and raises the frequency.",
+              "children": [
+                "The five modes run at **100, 200, 300, 400 and 500 Hz**.",
+                "These are consecutive **harmonics**, whole-number multiples of the **fundamental**, and they include both odd and even multiples."
+              ]
+            },
+            {
+              "text": "All five modes can share the string at once.",
+              "children": [
+                "Their motions add at every point, so the overall outline keeps changing while each component stays regular.",
+                "A point can go nearly still through cancellation and then move strongly as the modes drift back into step. Every component is present the whole time."
+              ]
+            },
+            {
+              "text": "The display is slowed **250** times, so 100 Hz appears at **0.4 Hz**.",
+              "children": [
+                "Slowing every mode by the same factor keeps their relative rates intact."
+              ]
+            },
+            {
+              "text": "A **pickup** placed **17%** of the way along the string records the motion at that one point.",
+              "children": [
+                "Its **spectrum** has one peak for each component, with frequency along one axis and amplitude along the other.",
+                "The mode strengths were set so the five peaks come out equal at this point. A pickup elsewhere would record different heights."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture11-p009",
+          "page": 9,
+          "title": "A membrane combines spatial modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **membrane** is a vibrating surface with fixed edges, and its modes carry two-number labels. The two numbers count the moving regions along the two directions of the surface.",
+              "children": [
+                "**(1,1)** is a single region moving as one.",
+                "**(2,1)** and **(1,2)** split the surface in two, one along each direction.",
+                "**(2,2)** makes four regions, and **(3,1)** makes three along one direction.",
+                "Neighboring regions move opposite to each other, separated by **node** lines that stay still."
+              ]
+            },
+            {
+              "text": "The five modes add at every point into one changing surface.",
+              "children": [
+                "Where they agree they reinforce, and where they disagree they cancel.",
+                "The combined panel uses a smaller vertical scale than the single-mode panels."
+              ]
+            },
+            {
+              "text": "A node is still for the whole cycle.",
+              "children": [
+                "A moving region passes through the resting level for an instant each cycle and then keeps moving.",
+                "Following one region as it rises, crosses and falls, while its neighbor moves the other way, separates moving regions from nodes.",
+                "The two numbers describe how the surface divides into regions."
+              ]
+            },
+            {
+              "text": "A **pickup** at one marked point records its motion, and the **spectrum** there has one peak per mode.",
+              "children": [
+                "The strengths were chosen to make the five peaks equal at that point.",
+                "The frequencies **100, 200, 300, 400 and 500 Hz** were **assigned for the illustration** instead of calculated from this rectangle’s own resonances. They model how evenly spaced frequencies combine on a surface."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture11-p010",
+          "page": 10,
+          "title": "Theory makes a measurable prediction",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **scientific method** rests on stating very clear theories about the world, usually as **differential equations**.",
+              "children": [
+                "A differential equation describes how the quantities in a system change.",
+                "Solving it yields a **prediction** of what a real measurement should find."
+              ]
+            },
+            {
+              "text": "The theory here treats the **vocal folds as a membrane**.",
+              "children": [
+                "A vibrating membrane produces a wave whose spectrum has **equidistant peaks**, called **harmonics**.",
+                "The equations are of the same kind as those for springs and membranes, with somewhat more detail."
+              ]
+            },
+            {
+              "text": "The prediction follows directly.",
+              "children": [
+                "Any person’s **laryngeal vibration** signal should have a spectrum with **equidistant harmonics**, peaks separated by equal intervals.",
+                "Testing it means recording real vocal-fold vibration and examining the spacing of the peaks. Even spacing supports the theory, and uneven spacing challenges it."
+              ]
+            },
+            {
+              "text": "The spectrum is the part of the signal that carries the prediction.",
+              "children": [
+                "Vibration alone is expected either way, so the evenly spaced peaks are what the experiment checks.",
+                "The membrane animation uses assigned harmonic frequencies, so it pictures the idea, while a recording of real vocal folds tests it. The experiment is proposed here, ready to be carried out."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture11-p011",
+          "page": 11,
+          "title": "One fixed end and one free end",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **fixed–free system** is held at one end and free at the other.",
+              "children": [
+                "The fixed end must be a **node**, with no movement.",
+                "The free end must be an **antinode**, the place of largest movement."
+              ]
+            },
+            {
+              "text": "Shapes that meet both conditions fit odd numbers of **quarter-waves**.",
+              "children": [
+                "The first mode fits one quarter-wave.",
+                "The next fit three, five and seven quarter-waves.",
+                "These are the **first, third, fifth and seventh harmonics**, so the second allowed mode is the third harmonic."
+              ]
+            },
+            {
+              "text": "Odd counts are the only ones that leave the fixed end still and the free end moving.",
+              "children": [
+                "An even count would put a node at the free end.",
+                "Higher modes fit shorter waves into the same length, so they repeat faster."
+              ]
+            },
+            {
+              "text": "The four modes run at **100, 300, 500 and 700 Hz**, slowed **250** times for display.",
+              "children": [
+                "Given equal strengths, they produce four equal peaks in the spectrum measured at the free end.",
+                "An antinode swings through the resting line to the opposite side on every cycle, while the fixed end stays still."
+              ]
+            },
+            {
+              "text": "The fixed–fixed and fixed–free strings were **tuned separately** to share a fundamental.",
+              "children": [
+                "With the same length and wave speed, freeing one end would cut the fundamental in half.",
+                "The matching labels therefore come from separate tuning, and the effect of the free end is to halve the fundamental."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "lecture12": {
+      "title": "Masses and Springs in Speech Production",
+      "sections": [
+        {
+          "id": "lecture12-p001",
+          "page": 1,
+          "title": "Masses and Springs in Speech Production",
+          "kind": "title",
+          "teaching": []
+        },
+        {
+          "id": "lecture12-p002",
+          "page": 2,
+          "title": "Dynamic systems in economic stabilization",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "A **dynamic system** changes over time as its parts act on one another, and that idea reaches well beyond springs. Economics has its own dynamic systems.",
+              "children": [
+                "**Woodford’s theory**, **Dynamic Stochastic General Equilibrium** or **DSGE**, models an economy as a dynamic system.",
+                "Its name combines change over time, random shocks and many linked markets that settle toward balance together."
+              ]
+            },
+            {
+              "text": "The stabilization picture follows two quantities through time.",
+              "children": [
+                "The **black curve** is **unemployment**.",
+                "The **gray curve** is **inflation**.",
+                "Before stabilization, both swing through large, jagged peaks and dips, and afterward the swings are smaller and smoother."
+              ]
+            },
+            {
+              "text": "**Stabilization** means making those swings smaller.",
+              "children": [
+                "The economy keeps changing, and unemployment and inflation stay two separate quantities.",
+                "The goal is to keep away from harmful extremes such as very high unemployment or runaway inflation."
+              ]
+            },
+            {
+              "text": "Physical oscillators and economies share one central question, what drives a fluctuation and what calms it.",
+              "children": [
+                "In a spring, inertia and the restoring force drive the swing.",
+                "In an economy, shocks and the responses of its parts drive it. The calmer curves picture the goal of stabilization."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p003",
+          "page": 3,
+          "title": "One mass, two directions",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A mass on a spring **oscillates**, which means it moves back and forth around **equilibrium**, its resting position. Displacing the mass stretches or squeezes the spring, and the spring answers with a force aimed back at equilibrium.",
+              "children": [
+                "Because of its **inertia**, the moving mass carries on past equilibrium and displaces the spring on the far side.",
+                "The spring then pushes or pulls the other way, sends the mass back and starts the next cycle."
+              ]
+            },
+            {
+              "text": "The mass can travel in two directions.",
+              "children": [
+                "**Longitudinal motion** runs along the spring, so the spring lengthens and shortens.",
+                "**Transverse motion** runs across the spring. The two segments are already under tension, and lifting or lowering the mass angles their pull back toward the resting line."
+              ]
+            },
+            {
+              "text": "Each side of the cycle has its own restoring direction.",
+              "children": [
+                "On one side of equilibrium, the spring acts toward the center from that side.",
+                "After the mass crosses, the displacement reverses and the force reverses with it. Inertia carries the mass across, and the restoring force brings it back, over and over."
+              ]
+            },
+            {
+              "text": "The two directions repeat at the same **frequency**, **0.5 Hz**, or one cycle every two seconds.",
+              "children": [
+                "They match because both have the same mass and the same total restoring stiffness.",
+                "The model has no damping, so each cycle is as large as the one before."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p004",
+          "page": 4,
+          "title": "Mass and stiffness change the rate",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "An oscillator’s rate depends on its **mass** and its **stiffness**. Three systems run together, and each comparison changes one property while holding the other fixed.",
+              "children": [
+                "The reference has mass **m** and stiffness **K** and runs at **0.5 Hz**.",
+                "Quadrupling the mass to **4m** slows it to **0.25 Hz**.",
+                "Quadrupling the stiffness to **4K** speeds it to **1 Hz**."
+              ]
+            },
+            {
+              "text": "**More mass means a lower frequency.**",
+              "children": [
+                "A heavier mass takes more force to speed up, slow down and reverse.",
+                "With the same spring, each cycle takes longer, and four times the mass gives half the rate."
+              ]
+            },
+            {
+              "text": "**More stiffness means a higher frequency.**",
+              "children": [
+                "A stiffer spring pulls back harder for the same displacement.",
+                "The mass reverses sooner and completes more cycles per second, and four times the stiffness gives twice the rate.",
+                "Mass is the system’s resistance to changes in motion, and stiffness is the strength of its return."
+              ]
+            },
+            {
+              "text": "The rate is found by counting complete cycles over equal stretches of time.",
+              "children": [
+                "**Amplitude**, the distance the mass travels, is a separate property.",
+                "Each longitudinal and transverse pair matches because both share the same **effective restoring stiffness**, meaning the restoring action in the direction of motion. For transverse motion, that stiffness comes from the tension and layout of the spring segments."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p005",
+          "page": 5,
+          "title": "Two masses have two normal modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Two equal masses linked by three equal springs between fixed ends have **two normal modes**. In a **normal mode**, every part of the system moves at one frequency and keeps a fixed relationship to the other parts.",
+              "children": []
+            },
+            {
+              "text": "In **Mode 1**, the two masses move in step, in the same direction.",
+              "children": [
+                "Their spacing stays nearly constant, so the middle spring barely changes length.",
+                "This mode runs at **0.4 Hz**."
+              ]
+            },
+            {
+              "text": "In **Mode 2**, the masses move in opposite directions.",
+              "children": [
+                "The middle spring is squeezed and stretched hard on every cycle.",
+                "The added restoring force makes this the faster mode, at about **1.73 times** the frequency of Mode 1."
+              ]
+            },
+            {
+              "text": "Each mode is a pattern of the whole chain.",
+              "children": [
+                "Both masses move in both modes.",
+                "The masses and springs are identical in the two patterns, and the difference lies in how the masses move relative to each other."
+              ]
+            },
+            {
+              "text": "Both modes can run together on the same masses.",
+              "children": [
+                "At each mass the two motions add, strengthening where they agree and canceling where they disagree. This is **superposition**.",
+                "The combined motion in the bottom row is the exact sum of the two modes and carries both frequencies. The longitudinal and transverse chains follow the same pattern."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p006",
+          "page": 6,
+          "title": "Three masses have three normal modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Three equal masses with four equal springs between fixed ends have **three normal modes**.",
+              "children": []
+            },
+            {
+              "text": "**Mode 1** moves all three masses in the same direction.",
+              "children": [
+                "The middle mass swings the farthest, and the outer two swing less.",
+                "This is the lowest mode, at **0.32 Hz**."
+              ]
+            },
+            {
+              "text": "**Mode 2** moves the two outer masses in opposite directions.",
+              "children": [
+                "The pulls on the middle mass cancel, so it stays at equilibrium.",
+                "A point that stays still throughout a mode is a **node**.",
+                "This mode runs at about **1.85 times** the lowest frequency."
+              ]
+            },
+            {
+              "text": "**Mode 3** moves the outer masses together and the middle mass against them.",
+              "children": [
+                "Each mass now moves opposite to its neighbor, so every spring stretches and squeezes strongly.",
+                "This is the highest mode, at about **2.41 times** the lowest frequency."
+              ]
+            },
+            {
+              "text": "The more neighbors oppose each other, the faster the mode.",
+              "children": [
+                "Opposing neighbors stretch the springs more, which strengthens the restoring force and speeds up the cycle.",
+                "All three masses take part in every mode. The colors follow each mass, and the resting marks give the position each displacement starts from."
+              ]
+            },
+            {
+              "text": "The frequency ratios are specific to this chain.",
+              "children": [
+                "When the modes combine, their motions add at each mass.",
+                "The middle mass moves in the mixture because Modes 1 and 3 move it, even though Mode 2 holds it still."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p007",
+          "page": 7,
+          "title": "One more mass, one more mode",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Every movable mass adds one **normal mode** in the modeled direction. The atlas sets chains of one through six masses in rows, with mode numbers in columns, for **21** patterns in all.",
+              "children": [
+                "Each chain has equal masses, one more spring than masses and two fixed ends.",
+                "A chain of three masses fills three columns, and a chain of six fills six."
+              ]
+            },
+            {
+              "text": "In every chain, **Mode 1** is the broadest pattern, with all masses moving together.",
+              "children": [
+                "Each higher mode adds one more group moving the opposite way.",
+                "More reversals put more neighbors in opposition, which stretches the springs more, strengthens the restoring force and raises the frequency."
+              ]
+            },
+            {
+              "text": "The fixed ends stay still in every mode.",
+              "children": [
+                "A mass that stays still within one mode is a node of that pattern while the others keep moving.",
+                "Higher modes use the very same masses and springs in a different arrangement, and the mode number names the arrangement."
+              ]
+            },
+            {
+              "text": "Colors mark the mode number, and rows mark the number of masses.",
+              "children": [
+                "Every pattern is drawn with the same largest displacement, so frequency is read from the repetition rate.",
+                "**Amplitude** is how far the parts move, and frequency is how often they repeat.",
+                "Chains of separate masses have frequency spacings that differ from the whole-number spacing of an ideal continuous string."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p008",
+          "page": 8,
+          "title": "A fixed–fixed string combines harmonics",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **fixed–fixed string** is clamped at both ends, which makes both ends **nodes**.",
+              "children": [
+                "**Mode 1** fits one half-wave between the ends.",
+                "Modes 2, 3, 4 and 5 fit two, three, four and five half-waves."
+              ]
+            },
+            {
+              "text": "Packing more half-waves into the same length shortens the wavelength and raises the frequency.",
+              "children": [
+                "The five modes run at **100, 200, 300, 400 and 500 Hz**.",
+                "These are consecutive **harmonics**, whole-number multiples of the **fundamental**, and they include both odd and even multiples."
+              ]
+            },
+            {
+              "text": "All five modes can share the string at once.",
+              "children": [
+                "Their motions add at every point, so the overall outline keeps changing while each component stays regular.",
+                "A point can go nearly still through cancellation and then move strongly as the modes drift back into step. Every component is present the whole time."
+              ]
+            },
+            {
+              "text": "The display is slowed **250** times, so 100 Hz appears at **0.4 Hz**.",
+              "children": [
+                "Slowing every mode by the same factor keeps their relative rates intact."
+              ]
+            },
+            {
+              "text": "A **pickup** placed **17%** of the way along the string records the motion at that one point.",
+              "children": [
+                "Its **spectrum** has one peak for each component, with frequency along one axis and amplitude along the other.",
+                "The mode strengths were set so the five peaks come out equal at this point. A pickup elsewhere would record different heights."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p009",
+          "page": 9,
+          "title": "Mass, stiffness, position, and frequency",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **principles of mass–spring systems** sum up how these systems behave in seven statements.",
+              "children": []
+            },
+            {
+              "text": "**Mass and stiffness pull frequency in opposite directions.**",
+              "children": [
+                "More mass lowers the frequency, since a heavier load turns around more slowly.",
+                "More stiffness raises the frequency, since a stronger restoring force reverses the motion sooner."
+              ]
+            },
+            {
+              "text": "**An n-mass system has n modes**, each with a higher frequency than the last.",
+              "children": []
+            },
+            {
+              "text": "**Position decides how much a change matters.**",
+              "children": [
+                "Added mass lowers a mode’s frequency in proportion to how much that mass moves in the mode.",
+                "Added stiffness raises a mode’s frequency in proportion to how much that spring stretches or compresses.",
+                "Maximal movement comes with no stretching, and maximal stretching comes with no movement. Neighbors that move together keep their spacing, so motion and compression peak in different places."
+              ]
+            },
+            {
+              "text": "One change can therefore matter in one mode and barely register in another.",
+              "children": [
+                "It matters where the mode moves or stretches strongly.",
+                "It matters little at a node of that mode, and that same node can move in other modes or in a mixture."
+              ]
+            },
+            {
+              "text": "**Endpoints set the harmonic pattern.**",
+              "children": [
+                "A **fixed–fixed system** has harmonics at whole-number multiples of the base frequency, because the base shape fits a whole number of times into each higher mode.",
+                "A **fixed–free system** has harmonics at **odd multiples** of the base frequency, because the base shape fits an odd number of times into each higher mode."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p010",
+          "page": 10,
+          "title": "A fixed–fixed string combines harmonics",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **fixed–fixed string** is clamped at both ends, which makes both ends **nodes**.",
+              "children": [
+                "**Mode 1** fits one half-wave between the ends.",
+                "Modes 2, 3, 4 and 5 fit two, three, four and five half-waves."
+              ]
+            },
+            {
+              "text": "Packing more half-waves into the same length shortens the wavelength and raises the frequency.",
+              "children": [
+                "The five modes run at **100, 200, 300, 400 and 500 Hz**.",
+                "These are consecutive **harmonics**, whole-number multiples of the **fundamental**, and they include both odd and even multiples."
+              ]
+            },
+            {
+              "text": "All five modes can share the string at once.",
+              "children": [
+                "Their motions add at every point, so the overall outline keeps changing while each component stays regular.",
+                "A point can go nearly still through cancellation and then move strongly as the modes drift back into step. Every component is present the whole time."
+              ]
+            },
+            {
+              "text": "The display is slowed **250** times, so 100 Hz appears at **0.4 Hz**.",
+              "children": [
+                "Slowing every mode by the same factor keeps their relative rates intact."
+              ]
+            },
+            {
+              "text": "A **pickup** placed **17%** of the way along the string records the motion at that one point.",
+              "children": [
+                "Its **spectrum** has one peak for each component, with frequency along one axis and amplitude along the other.",
+                "The mode strengths were set so the five peaks come out equal at this point. A pickup elsewhere would record different heights."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p011",
+          "page": 11,
+          "title": "A local change affects two modes differently",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **pop quiz** asks what happens to two modes when mass or stiffness is added at one spot on a string, just left of the midpoint.",
+              "children": []
+            },
+            {
+              "text": "The two modes use that spot in opposite ways.",
+              "children": [
+                "**Mode 4** moves the spot strongly, while its neighbors move along with it, so little stretching happens there.",
+                "**Mode 5** moves the spot very little, while its neighbors move differently, so the string stretches and compresses strongly there."
+              ]
+            },
+            {
+              "text": "**Adding mass** acts on movement.",
+              "children": [
+                "Mode 4 carries the extra mass through a large swing, so its frequency falls.",
+                "Mode 5 barely moves the spot, so its frequency stays about the same.",
+                "Mass lowers frequency in the modes that move it."
+              ]
+            },
+            {
+              "text": "**Adding stiffness** acts on stretching.",
+              "children": [
+                "Mode 5 stretches the spot strongly, so the stiffer spring adds restoring force and raises its frequency.",
+                "Mode 4 barely stretches the spot, so its frequency stays about the same."
+              ]
+            },
+            {
+              "text": "Adding **both** at that spot **lowers Mode 4 and raises Mode 5**.",
+              "children": [
+                "The spot is the same in both modes.",
+                "Its role differs, mainly movement in Mode 4 and mainly stretching in Mode 5, measured over a whole cycle of each mode."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p012",
+          "page": 12,
+          "title": "A membrane combines spatial modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **membrane** is a vibrating surface with fixed edges, and its modes carry two-number labels. The two numbers count the moving regions along the two directions of the surface.",
+              "children": [
+                "**(1,1)** is a single region moving as one.",
+                "**(2,1)** and **(1,2)** split the surface in two, one along each direction.",
+                "**(2,2)** makes four regions, and **(3,1)** makes three along one direction.",
+                "Neighboring regions move opposite to each other, separated by **node** lines that stay still."
+              ]
+            },
+            {
+              "text": "The five modes add at every point into one changing surface.",
+              "children": [
+                "Where they agree they reinforce, and where they disagree they cancel.",
+                "The combined panel uses a smaller vertical scale than the single-mode panels."
+              ]
+            },
+            {
+              "text": "A node is still for the whole cycle.",
+              "children": [
+                "A moving region passes through the resting level for an instant each cycle and then keeps moving.",
+                "Following one region as it rises, crosses and falls, while its neighbor moves the other way, separates moving regions from nodes.",
+                "The two numbers describe how the surface divides into regions."
+              ]
+            },
+            {
+              "text": "A **pickup** at one marked point records its motion, and the **spectrum** there has one peak per mode.",
+              "children": [
+                "The strengths were chosen to make the five peaks equal at that point.",
+                "The frequencies **100, 200, 300, 400 and 500 Hz** were **assigned for the illustration** instead of calculated from this rectangle’s own resonances. They model how evenly spaced frequencies combine on a surface."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p013",
+          "page": 13,
+          "title": "Theory makes a measurable prediction",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **scientific method** rests on stating very clear theories about the world, usually as **differential equations**.",
+              "children": [
+                "A differential equation describes how the quantities in a system change.",
+                "Solving it yields a **prediction** of what a real measurement should find."
+              ]
+            },
+            {
+              "text": "The theory here treats the **vocal folds as a membrane**.",
+              "children": [
+                "A vibrating membrane produces a wave whose spectrum has **equidistant peaks**, called **harmonics**.",
+                "The equations are of the same kind as those for springs and membranes, with somewhat more detail."
+              ]
+            },
+            {
+              "text": "The prediction follows directly.",
+              "children": [
+                "Any person’s **laryngeal vibration** signal should have a spectrum with **equidistant harmonics**, peaks separated by equal intervals.",
+                "Testing it means recording real vocal-fold vibration and examining the spacing of the peaks. Even spacing supports the theory, and uneven spacing challenges it."
+              ]
+            },
+            {
+              "text": "The spectrum is the part of the signal that carries the prediction.",
+              "children": [
+                "Vibration alone is expected either way, so the evenly spaced peaks are what the experiment checks.",
+                "The membrane animation uses assigned harmonic frequencies, so it pictures the idea, while a recording of real vocal folds tests it. The experiment is proposed here, ready to be carried out."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p014",
+          "page": 14,
+          "title": "One fixed end and one free end",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **fixed–free system** is held at one end and free at the other.",
+              "children": [
+                "The fixed end must be a **node**, with no movement.",
+                "The free end must be an **antinode**, the place of largest movement."
+              ]
+            },
+            {
+              "text": "Shapes that meet both conditions fit odd numbers of **quarter-waves**.",
+              "children": [
+                "The first mode fits one quarter-wave.",
+                "The next fit three, five and seven quarter-waves.",
+                "These are the **first, third, fifth and seventh harmonics**, so the second allowed mode is the third harmonic."
+              ]
+            },
+            {
+              "text": "Odd counts are the only ones that leave the fixed end still and the free end moving.",
+              "children": [
+                "An even count would put a node at the free end.",
+                "Higher modes fit shorter waves into the same length, so they repeat faster."
+              ]
+            },
+            {
+              "text": "The four modes run at **100, 300, 500 and 700 Hz**, slowed **250** times for display.",
+              "children": [
+                "Given equal strengths, they produce four equal peaks in the spectrum measured at the free end.",
+                "An antinode swings through the resting line to the opposite side on every cycle, while the fixed end stays still."
+              ]
+            },
+            {
+              "text": "The fixed–fixed and fixed–free strings were **tuned separately** to share a fundamental.",
+              "children": [
+                "With the same length and wave speed, freeing one end would cut the fundamental in half.",
+                "The matching labels therefore come from separate tuning, and the effect of the free end is to halve the fundamental."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p015",
+          "page": 15,
+          "title": "Air in a fixed–free tube has modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The air in the vocal tract behaves like a chain of masses and springs.",
+              "children": [
+                "Moving air has **inertia** and keeps moving.",
+                "Squeezed air pushes back, and the spring-like links in the model represent that restoring effect.",
+                "The air elements move **longitudinally**, back and forth along the tube, oscillating around their usual places."
+              ]
+            },
+            {
+              "text": "The tube is a **fixed–free** system.",
+              "children": [
+                "The **glottis** is the fixed end.",
+                "The open **lips** are the free end."
+              ]
+            },
+            {
+              "text": "The lowest two patterns match the lowest two formants.",
+              "children": [
+                "**Mode 1 is F1-like**, the tube’s lowest resonance.",
+                "**Mode 2 is F2-like**, with one more reversal along the tube.",
+                "In the uniform tube, Mode 2 runs **three times** as fast as Mode 1, the odd-multiple pattern of a fixed–free system. Changing the tract’s shape changes that ratio."
+              ]
+            },
+            {
+              "text": "Each mode is a coordinated pattern of the whole column of air.",
+              "children": [
+                "In some places, neighboring elements travel together and keep their spacing.",
+                "In others, their gaps close and open over and over."
+              ]
+            },
+            {
+              "text": "Three markers place the vowel constrictions.",
+              "children": [
+                "**/a/** is about **one-third** of the way from the glottis.",
+                "**/i/** is about **two-thirds** of the way.",
+                "**/u/** is at the **lips**.",
+                "Each marker is the same physical spot in both modes. Added mass acts where a mode moves strongly, and added springiness acts where it compresses strongly, so one narrowing can push F1 and F2 differently."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p016",
+          "page": 16,
+          "title": "Vowel shape locates a constriction",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Vowels are classified by **tongue height** and **front–back position**, and each one narrows the airway at a particular place. Five words sit on a chart of those two dimensions.",
+              "children": []
+            },
+            {
+              "text": "The two high vowels narrow the tract at different places.",
+              "children": [
+                "**Dean** is **high and front**, with its constriction about **two-thirds** of the way from the glottis to the lips.",
+                "**Dune** is **high and back**, with its constriction at the **lips**.",
+                "They share a height and differ in where they narrow."
+              ]
+            },
+            {
+              "text": "The two low vowels sit at the bottom.",
+              "children": [
+                "**Dan** is **low and front**.",
+                "**Don** is **low and back**, with its constriction about **one-third** of the way from the glottis."
+              ]
+            },
+            {
+              "text": "**Done** is **central** and marked **“No constriction.”**",
+              "children": [
+                "It is the open reference shape."
+              ]
+            },
+            {
+              "text": "Each label captures its own feature.",
+              "children": [
+                "High and low describe tongue height.",
+                "Front and back describe where the tongue sits along the mouth.",
+                "The fraction gives distance along the air path from the glottis."
+              ]
+            },
+            {
+              "text": "The constriction’s location ties the articulation to the sound.",
+              "children": [
+                "Narrowing the airway changes the local mass-like and spring-like behavior of the air.",
+                "How each formant responds depends on how its mode moves and compresses that spot."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p017",
+          "page": 17,
+          "title": "Blank source page",
+          "kind": "blank",
+          "teaching": []
+        },
+        {
+          "id": "lecture12-p018",
+          "page": 18,
+          "title": "Air in a fixed–free tube has modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The air in the vocal tract behaves like a chain of masses and springs.",
+              "children": [
+                "Moving air has **inertia** and keeps moving.",
+                "Squeezed air pushes back, and the spring-like links in the model represent that restoring effect.",
+                "The air elements move **longitudinally**, back and forth along the tube, oscillating around their usual places."
+              ]
+            },
+            {
+              "text": "The tube is a **fixed–free** system.",
+              "children": [
+                "The **glottis** is the fixed end.",
+                "The open **lips** are the free end."
+              ]
+            },
+            {
+              "text": "The lowest two patterns match the lowest two formants.",
+              "children": [
+                "**Mode 1 is F1-like**, the tube’s lowest resonance.",
+                "**Mode 2 is F2-like**, with one more reversal along the tube.",
+                "In the uniform tube, Mode 2 runs **three times** as fast as Mode 1, the odd-multiple pattern of a fixed–free system. Changing the tract’s shape changes that ratio."
+              ]
+            },
+            {
+              "text": "Each mode is a coordinated pattern of the whole column of air.",
+              "children": [
+                "In some places, neighboring elements travel together and keep their spacing.",
+                "In others, their gaps close and open over and over."
+              ]
+            },
+            {
+              "text": "Three markers place the vowel constrictions.",
+              "children": [
+                "**/a/** is about **one-third** of the way from the glottis.",
+                "**/i/** is about **two-thirds** of the way.",
+                "**/u/** is at the **lips**.",
+                "Each marker is the same physical spot in both modes. Added mass acts where a mode moves strongly, and added springiness acts where it compresses strongly, so one narrowing can push F1 and F2 differently."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p019",
+          "page": 19,
+          "title": "/u/ loads the moving lip end",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The **/u/ model** loads the open lips, the **free end** of the air column. Larger elements at the lips represent more **effective mass**, meaning more air that must be moved back and forth there.",
+              "children": []
+            },
+            {
+              "text": "Both lowest modes move strongly at the free end.",
+              "children": [
+                "In **Mode 1**, **motion dominates** at the lips.",
+                "In **Mode 2**, **motion dominates** at the lips as well."
+              ]
+            },
+            {
+              "text": "A larger moving load takes longer to speed up and reverse.",
+              "children": [
+                "Wherever motion dominates, the added load lengthens each cycle.",
+                "Both modes slow, giving **F1 down and F2 down** relative to the uniform tube."
+              ]
+            },
+            {
+              "text": "The two rows compare one lip location across two resonance patterns.",
+              "children": [
+                "Each pattern is arranged differently inside the tube, yet both move strongly at the lips.",
+                "The extra load slows both while F1 remains the lower formant and F2 the higher one.",
+                "Each change is measured against that mode’s own uniform reference."
+              ]
+            },
+            {
+              "text": "The common direction comes from the lip region’s role in both modes.",
+              "children": [
+                "Here motion dominates in both, so loading lowers both.",
+                "The air keeps oscillating around its usual positions, with the larger elements marking the added load."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p020",
+          "page": 20,
+          "title": "/i/ has opposite effects on F1 and F2",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The **/i/ constriction** is near the front, about **two-thirds** of the way from the glottis to the lips. One physical region is narrowed, and that region does a different job in each mode.",
+              "children": []
+            },
+            {
+              "text": "In **Mode 1**, **mass motion dominates** at the narrowing.",
+              "children": [
+                "The air there moves strongly.",
+                "Narrowing adds effective moving mass, which slows the reversal.",
+                "**F1 goes down**."
+              ]
+            },
+            {
+              "text": "In **Mode 2**, **springiness dominates** at the narrowing.",
+              "children": [
+                "The air there is strongly squeezed and stretched.",
+                "Narrowing strengthens the restoring response, which speeds the reversal.",
+                "**F2 goes up**."
+              ]
+            },
+            {
+              "text": "The region stays in one place, and its role changes from mode to mode.",
+              "children": [
+                "Where neighbors travel together, moving load is what counts.",
+                "Where neighbors keep pressing together and pulling apart, the restoring response is what counts."
+              ]
+            },
+            {
+              "text": "The outcome is **lower F1 and higher F2** than the uniform tube.",
+              "children": [
+                "The mass effect governs F1, and the spring effect governs F2.",
+                "One constriction therefore moves the two formants in opposite directions, by two separate causes."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p021",
+          "page": 21,
+          "title": "/a/ reverses the two effects",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The **/a/ constriction** is farther back, about **one-third** of the way from the glottis to the lips. At this spot the two modes trade roles compared with /i/.",
+              "children": []
+            },
+            {
+              "text": "In **Mode 1**, **springiness dominates** at the narrowing.",
+              "children": [
+                "The air there is strongly compressed.",
+                "Narrowing adds restoring force, so the cycle speeds up and **F1 goes up**."
+              ]
+            },
+            {
+              "text": "In **Mode 2**, **mass motion dominates** at the narrowing.",
+              "children": [
+                "The air there moves strongly.",
+                "Narrowing adds effective moving mass, so the cycle slows and **F2 goes down**."
+              ]
+            },
+            {
+              "text": "Both rows narrow the same back location, and each row is its own coordinated motion.",
+              "children": [
+                "In one pattern, the spot moves little while its neighbors squeeze and spread around it.",
+                "In the other, the spot moves a lot while its spacing barely changes.",
+                "That is why springiness governs Mode 1 and moving mass governs Mode 2 here."
+              ]
+            },
+            {
+              "text": "The outcome is **higher F1 and lower F2**, the mirror image of /i/.",
+              "children": [
+                "Moving the constriction changes which role matters most, while mass and stiffness keep their usual effects.",
+                "The arrows give the predicted direction of each change."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p022",
+          "page": 22,
+          "title": "Mass, stiffness, position, and frequency",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **principles of mass–spring systems** sum up how these systems behave in seven statements.",
+              "children": []
+            },
+            {
+              "text": "**Mass and stiffness pull frequency in opposite directions.**",
+              "children": [
+                "More mass lowers the frequency, since a heavier load turns around more slowly.",
+                "More stiffness raises the frequency, since a stronger restoring force reverses the motion sooner."
+              ]
+            },
+            {
+              "text": "**An n-mass system has n modes**, each with a higher frequency than the last.",
+              "children": []
+            },
+            {
+              "text": "**Position decides how much a change matters.**",
+              "children": [
+                "Added mass lowers a mode’s frequency in proportion to how much that mass moves in the mode.",
+                "Added stiffness raises a mode’s frequency in proportion to how much that spring stretches or compresses.",
+                "Maximal movement comes with no stretching, and maximal stretching comes with no movement. Neighbors that move together keep their spacing, so motion and compression peak in different places."
+              ]
+            },
+            {
+              "text": "One change can therefore matter in one mode and barely register in another.",
+              "children": [
+                "It matters where the mode moves or stretches strongly.",
+                "It matters little at a node of that mode, and that same node can move in other modes or in a mixture."
+              ]
+            },
+            {
+              "text": "**Endpoints set the harmonic pattern.**",
+              "children": [
+                "A **fixed–fixed system** has harmonics at whole-number multiples of the base frequency, because the base shape fits a whole number of times into each higher mode.",
+                "A **fixed–free system** has harmonics at **odd multiples** of the base frequency, because the base shape fits an odd number of times into each higher mode."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p023",
+          "page": 23,
+          "title": "Compression and motion alternate in an air column",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Each spot in an air column can be described by its **movement** and its **compression**.",
+              "children": [
+                "**Movement** is how far an air element travels.",
+                "**Compression** is how the gap between neighbors changes. Narrower gaps are compression, and wider gaps are **rarefaction**, or thinned-out air.",
+                "Neighbors can travel together with steady spacing, or squeeze and spread around an element that hardly moves."
+              ]
+            },
+            {
+              "text": "The animation splits one air column into its patterns.",
+              "children": [
+                "The moving **Schwa** row is the uniform reference.",
+                "The **F1, F2 and F3** rows are the first three resonances of that column.",
+                "The closed left end holds the air still, and the open right end lets it move. Higher modes pack more alternating regions of movement and compression into the tube."
+              ]
+            },
+            {
+              "text": "Compression and movement play the roles of spring and mass.",
+              "children": [
+                "Crowded air pushes back toward normal spacing, which supplies the restoring force.",
+                "Moving air keeps going because of inertia.",
+                "Together they keep the air oscillating around its usual positions."
+              ]
+            },
+            {
+              "text": "Strong movement and strong compression occupy different places.",
+              "children": [
+                "Where movement is large, the region carries a lot of moving mass.",
+                "Where spacing changes a lot, the region supplies strong restoring force while its central element stays nearly put."
+              ]
+            },
+            {
+              "text": "Tracking one element over a cycle measures its movement, and tracking its gaps measures compression.",
+              "children": [
+                "Added mass acts where movement is strong.",
+                "Added stiffness acts where compression is strong.",
+                "Those places shift from mode to mode, and each row is its own resonance of the same air."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture12-p024",
+          "page": 24,
+          "title": "Reflection prompt",
+          "kind": "logistics",
+          "teaching": []
+        }
+      ]
+    },
+    "lecture13": {
+      "title": "Masses and Springs in Speech Production · Source and Filter",
+      "sections": [
+        {
+          "id": "lecture13-p001",
+          "page": 1,
+          "title": "Masses and Springs in Speech Production",
+          "kind": "title",
+          "teaching": []
+        },
+        {
+          "id": "lecture13-p002",
+          "page": 2,
+          "title": "Mass, stiffness, position, and frequency",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **principles of mass–spring systems** sum up how these systems behave in seven statements.",
+              "children": []
+            },
+            {
+              "text": "**Mass and stiffness pull frequency in opposite directions.**",
+              "children": [
+                "More mass lowers the frequency, since a heavier load turns around more slowly.",
+                "More stiffness raises the frequency, since a stronger restoring force reverses the motion sooner."
+              ]
+            },
+            {
+              "text": "**An n-mass system has n modes**, each with a higher frequency than the last.",
+              "children": []
+            },
+            {
+              "text": "**Position decides how much a change matters.**",
+              "children": [
+                "Added mass lowers a mode’s frequency in proportion to how much that mass moves in the mode.",
+                "Added stiffness raises a mode’s frequency in proportion to how much that spring stretches or compresses.",
+                "Maximal movement comes with no stretching, and maximal stretching comes with no movement. Neighbors that move together keep their spacing, so motion and compression peak in different places."
+              ]
+            },
+            {
+              "text": "One change can therefore matter in one mode and barely register in another.",
+              "children": [
+                "It matters where the mode moves or stretches strongly.",
+                "It matters little at a node of that mode, and that same node can move in other modes or in a mixture."
+              ]
+            },
+            {
+              "text": "**Endpoints set the harmonic pattern.**",
+              "children": [
+                "A **fixed–fixed system** has harmonics at whole-number multiples of the base frequency, because the base shape fits a whole number of times into each higher mode.",
+                "A **fixed–free system** has harmonics at **odd multiples** of the base frequency, because the base shape fits an odd number of times into each higher mode."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p003",
+          "page": 3,
+          "title": "One more mass, one more mode",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Every movable mass adds one **normal mode** in the modeled direction. The atlas sets chains of one through six masses in rows, with mode numbers in columns, for **21** patterns in all.",
+              "children": [
+                "Each chain has equal masses, one more spring than masses and two fixed ends.",
+                "A chain of three masses fills three columns, and a chain of six fills six."
+              ]
+            },
+            {
+              "text": "In every chain, **Mode 1** is the broadest pattern, with all masses moving together.",
+              "children": [
+                "Each higher mode adds one more group moving the opposite way.",
+                "More reversals put more neighbors in opposition, which stretches the springs more, strengthens the restoring force and raises the frequency."
+              ]
+            },
+            {
+              "text": "The fixed ends stay still in every mode.",
+              "children": [
+                "A mass that stays still within one mode is a node of that pattern while the others keep moving.",
+                "Higher modes use the very same masses and springs in a different arrangement, and the mode number names the arrangement."
+              ]
+            },
+            {
+              "text": "Colors mark the mode number, and rows mark the number of masses.",
+              "children": [
+                "Every pattern is drawn with the same largest displacement, so frequency is read from the repetition rate.",
+                "**Amplitude** is how far the parts move, and frequency is how often they repeat.",
+                "Chains of separate masses have frequency spacings that differ from the whole-number spacing of an ideal continuous string."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p004",
+          "page": 4,
+          "title": "Why fixed–fixed frequencies are integer multiples",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "On a **fixed–fixed string**, both ends are held, so both ends are **nodes** in every mode, and every allowed shape fits a whole number of **half-waves** between them.",
+              "children": []
+            },
+            {
+              "text": "**Mode 1** fits **one half-wave**.",
+              "children": [
+                "The string rises and falls as one broad region.",
+                "This mode sets the **fundamental**, the lowest frequency."
+              ]
+            },
+            {
+              "text": "**Mode 2** fits **two half-waves**.",
+              "children": [
+                "A still point forms at the center.",
+                "The two halves move in opposite directions."
+              ]
+            },
+            {
+              "text": "**Modes 3, 4 and 5** fit **three, four and five half-waves**.",
+              "children": [
+                "Each added half-wave shortens the **wavelength**.",
+                "Shorter waves at the same speed repeat faster.",
+                "Every mode holds a whole number of base half-waves, so every frequency is a **whole-number multiple** of the fundamental, odd and even alike."
+              ]
+            },
+            {
+              "text": "Numbered sections label the half-wave packets of each shape.",
+              "children": [
+                "Section one appears in all five modes, section two in Modes 2 through 5, and so on up to section five in Mode 5 alone.",
+                "The sections stay fixed in place while the string moves up and down.",
+                "Higher harmonics hold more half-wave packets in the same length, which is exactly why they are higher."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p005",
+          "page": 5,
+          "title": "A fixed–fixed string combines harmonics",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **fixed–fixed string** is clamped at both ends, which makes both ends **nodes**.",
+              "children": [
+                "**Mode 1** fits one half-wave between the ends.",
+                "Modes 2, 3, 4 and 5 fit two, three, four and five half-waves."
+              ]
+            },
+            {
+              "text": "Packing more half-waves into the same length shortens the wavelength and raises the frequency.",
+              "children": [
+                "The five modes run at **100, 200, 300, 400 and 500 Hz**.",
+                "These are consecutive **harmonics**, whole-number multiples of the **fundamental**, and they include both odd and even multiples."
+              ]
+            },
+            {
+              "text": "All five modes can share the string at once.",
+              "children": [
+                "Their motions add at every point, so the overall outline keeps changing while each component stays regular.",
+                "A point can go nearly still through cancellation and then move strongly as the modes drift back into step. Every component is present the whole time."
+              ]
+            },
+            {
+              "text": "The display is slowed **250** times, so 100 Hz appears at **0.4 Hz**.",
+              "children": [
+                "Slowing every mode by the same factor keeps their relative rates intact."
+              ]
+            },
+            {
+              "text": "A **pickup** placed **17%** of the way along the string records the motion at that one point.",
+              "children": [
+                "Its **spectrum** has one peak for each component, with frequency along one axis and amplitude along the other.",
+                "The mode strengths were set so the five peaks come out equal at this point. A pickup elsewhere would record different heights."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p006",
+          "page": 6,
+          "title": "A membrane combines spatial modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **membrane** is a vibrating surface with fixed edges, and its modes carry two-number labels. The two numbers count the moving regions along the two directions of the surface.",
+              "children": [
+                "**(1,1)** is a single region moving as one.",
+                "**(2,1)** and **(1,2)** split the surface in two, one along each direction.",
+                "**(2,2)** makes four regions, and **(3,1)** makes three along one direction.",
+                "Neighboring regions move opposite to each other, separated by **node** lines that stay still."
+              ]
+            },
+            {
+              "text": "The five modes add at every point into one changing surface.",
+              "children": [
+                "Where they agree they reinforce, and where they disagree they cancel.",
+                "The combined panel uses a smaller vertical scale than the single-mode panels."
+              ]
+            },
+            {
+              "text": "A node is still for the whole cycle.",
+              "children": [
+                "A moving region passes through the resting level for an instant each cycle and then keeps moving.",
+                "Following one region as it rises, crosses and falls, while its neighbor moves the other way, separates moving regions from nodes.",
+                "The two numbers describe how the surface divides into regions."
+              ]
+            },
+            {
+              "text": "A **pickup** at one marked point records its motion, and the **spectrum** there has one peak per mode.",
+              "children": [
+                "The strengths were chosen to make the five peaks equal at that point.",
+                "The frequencies **100, 200, 300, 400 and 500 Hz** were **assigned for the illustration** instead of calculated from this rectangle’s own resonances. They model how evenly spaced frequencies combine on a surface."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p007",
+          "page": 7,
+          "title": "One fixed end and one free end",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **fixed–free system** is held at one end and free at the other.",
+              "children": [
+                "The fixed end must be a **node**, with no movement.",
+                "The free end must be an **antinode**, the place of largest movement."
+              ]
+            },
+            {
+              "text": "Shapes that meet both conditions fit odd numbers of **quarter-waves**.",
+              "children": [
+                "The first mode fits one quarter-wave.",
+                "The next fit three, five and seven quarter-waves.",
+                "These are the **first, third, fifth and seventh harmonics**, so the second allowed mode is the third harmonic."
+              ]
+            },
+            {
+              "text": "Odd counts are the only ones that leave the fixed end still and the free end moving.",
+              "children": [
+                "An even count would put a node at the free end.",
+                "Higher modes fit shorter waves into the same length, so they repeat faster."
+              ]
+            },
+            {
+              "text": "The four modes run at **100, 300, 500 and 700 Hz**, slowed **250** times for display.",
+              "children": [
+                "Given equal strengths, they produce four equal peaks in the spectrum measured at the free end.",
+                "An antinode swings through the resting line to the opposite side on every cycle, while the fixed end stays still."
+              ]
+            },
+            {
+              "text": "The fixed–fixed and fixed–free strings were **tuned separately** to share a fundamental.",
+              "children": [
+                "With the same length and wave speed, freeing one end would cut the fundamental in half.",
+                "The matching labels therefore come from separate tuning, and the effect of the free end is to halve the fundamental."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p008",
+          "page": 8,
+          "title": "Why fixed–free frequencies are odd multiples",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **quarter-wave** runs from a **node** to an **antinode**. On the **fixed–free string**, the bottom is fixed and the top is free.",
+              "children": [
+                "The fixed bottom must be a node.",
+                "The free top must be an antinode."
+              ]
+            },
+            {
+              "text": "**One quarter-wave** meets both conditions and gives the **fundamental**.",
+              "children": [
+                "Movement starts at zero at the bottom and grows to its largest at the top."
+              ]
+            },
+            {
+              "text": "Adding quarter-waves in pairs keeps both conditions in place.",
+              "children": [
+                "Each pair adds one more reversal inside the string.",
+                "The four allowed modes hold **one, three, five and seven quarter-waves**."
+              ]
+            },
+            {
+              "text": "More sections in the same length shorten the wavelength and raise the frequency.",
+              "children": [
+                "The four modes are the **first, third, fifth and seventh harmonics**.",
+                "The second mode is the third harmonic, the third mode the fifth and the fourth mode the seventh."
+              ]
+            },
+            {
+              "text": "Odd counts are the only ones that end on an antinode at the free top.",
+              "children": [
+                "An even count would end on a node there, which a free end rules out."
+              ]
+            },
+            {
+              "text": "Numbered pieces label the quarter-wave sections.",
+              "children": [
+                "Higher modes contain the extra pieces, and pieces six and seven belong to the fourth mode alone.",
+                "The pieces mark fixed positions in the standing pattern while the string moves."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p009",
+          "page": 9,
+          "title": "Count quarter-waves from the boundary conditions",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **pop quiz** asks for the quarter-wave count of each **fixed–free pattern**, read straight from its endpoints.",
+              "children": [
+                "The fixed bottom is a **node**.",
+                "The free top is an **antinode**.",
+                "Each step from node to antinode, or back, covers **one quarter-wave**."
+              ]
+            },
+            {
+              "text": "The four patterns hold **one, three, five and seven** quarter-waves.",
+              "children": [
+                "Each holds two more than the one before.",
+                "Packing more sections into the same length shortens the wavelength, so the higher patterns repeat faster.",
+                "The numbered divisions stay in fixed positions while the material moves."
+              ]
+            },
+            {
+              "text": "Each pattern carries two different numbers.",
+              "children": [
+                "**Mode number** counts the allowed patterns in order.",
+                "**Harmonic number** compares a pattern’s frequency with the fundamental.",
+                "Only odd counts fit both ends, so the two numbers separate.",
+                "The fourth allowed mode is the **seventh harmonic**."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p010",
+          "page": 10,
+          "title": "Air in a fixed–free tube has modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The air in the vocal tract behaves like a chain of masses and springs.",
+              "children": [
+                "Moving air has **inertia** and keeps moving.",
+                "Squeezed air pushes back, and the spring-like links in the model represent that restoring effect.",
+                "The air elements move **longitudinally**, back and forth along the tube, oscillating around their usual places."
+              ]
+            },
+            {
+              "text": "The tube is a **fixed–free** system.",
+              "children": [
+                "The **glottis** is the fixed end.",
+                "The open **lips** are the free end."
+              ]
+            },
+            {
+              "text": "The lowest two patterns match the lowest two formants.",
+              "children": [
+                "**Mode 1 is F1-like**, the tube’s lowest resonance.",
+                "**Mode 2 is F2-like**, with one more reversal along the tube.",
+                "In the uniform tube, Mode 2 runs **three times** as fast as Mode 1, the odd-multiple pattern of a fixed–free system. Changing the tract’s shape changes that ratio."
+              ]
+            },
+            {
+              "text": "Each mode is a coordinated pattern of the whole column of air.",
+              "children": [
+                "In some places, neighboring elements travel together and keep their spacing.",
+                "In others, their gaps close and open over and over."
+              ]
+            },
+            {
+              "text": "Three markers place the vowel constrictions.",
+              "children": [
+                "**/a/** is about **one-third** of the way from the glottis.",
+                "**/i/** is about **two-thirds** of the way.",
+                "**/u/** is at the **lips**.",
+                "Each marker is the same physical spot in both modes. Added mass acts where a mode moves strongly, and added springiness acts where it compresses strongly, so one narrowing can push F1 and F2 differently."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p011",
+          "page": 11,
+          "title": "Compression and motion alternate in an air column",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Each spot in an air column can be described by its **movement** and its **compression**.",
+              "children": [
+                "**Movement** is how far an air element travels.",
+                "**Compression** is how the gap between neighbors changes. Narrower gaps are compression, and wider gaps are **rarefaction**, or thinned-out air.",
+                "Neighbors can travel together with steady spacing, or squeeze and spread around an element that hardly moves."
+              ]
+            },
+            {
+              "text": "The animation splits one air column into its patterns.",
+              "children": [
+                "The moving **Schwa** row is the uniform reference.",
+                "The **F1, F2 and F3** rows are the first three resonances of that column.",
+                "The closed left end holds the air still, and the open right end lets it move. Higher modes pack more alternating regions of movement and compression into the tube."
+              ]
+            },
+            {
+              "text": "Compression and movement play the roles of spring and mass.",
+              "children": [
+                "Crowded air pushes back toward normal spacing, which supplies the restoring force.",
+                "Moving air keeps going because of inertia.",
+                "Together they keep the air oscillating around its usual positions."
+              ]
+            },
+            {
+              "text": "Strong movement and strong compression occupy different places.",
+              "children": [
+                "Where movement is large, the region carries a lot of moving mass.",
+                "Where spacing changes a lot, the region supplies strong restoring force while its central element stays nearly put."
+              ]
+            },
+            {
+              "text": "Tracking one element over a cycle measures its movement, and tracking its gaps measures compression.",
+              "children": [
+                "Added mass acts where movement is strong.",
+                "Added stiffness acts where compression is strong.",
+                "Those places shift from mode to mode, and each row is its own resonance of the same air."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p012",
+          "page": 12,
+          "title": "Vowel shape locates a constriction",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Vowels are classified by **tongue height** and **front–back position**, and each one narrows the airway at a particular place. Five words sit on a chart of those two dimensions.",
+              "children": []
+            },
+            {
+              "text": "The two high vowels narrow the tract at different places.",
+              "children": [
+                "**Dean** is **high and front**, with its constriction about **two-thirds** of the way from the glottis to the lips.",
+                "**Dune** is **high and back**, with its constriction at the **lips**.",
+                "They share a height and differ in where they narrow."
+              ]
+            },
+            {
+              "text": "The two low vowels sit at the bottom.",
+              "children": [
+                "**Dan** is **low and front**.",
+                "**Don** is **low and back**, with its constriction about **one-third** of the way from the glottis."
+              ]
+            },
+            {
+              "text": "**Done** is **central** and marked **“No constriction.”**",
+              "children": [
+                "It is the open reference shape."
+              ]
+            },
+            {
+              "text": "Each label captures its own feature.",
+              "children": [
+                "High and low describe tongue height.",
+                "Front and back describe where the tongue sits along the mouth.",
+                "The fraction gives distance along the air path from the glottis."
+              ]
+            },
+            {
+              "text": "The constriction’s location ties the articulation to the sound.",
+              "children": [
+                "Narrowing the airway changes the local mass-like and spring-like behavior of the air.",
+                "How each formant responds depends on how its mode moves and compresses that spot."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p013",
+          "page": 13,
+          "title": "Why a constriction can raise one formant and lower another",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "A **constriction** narrows the airway and raises two properties of the air at once.",
+              "children": []
+            },
+            {
+              "text": "It raises **stiffness**.",
+              "children": [
+                "Compressed air resists further compression more strongly.",
+                "At a place where the air is **heavily compressed**, a constriction **raises the frequency**."
+              ]
+            },
+            {
+              "text": "It raises **mass**.",
+              "children": [
+                "Bunching air up increases its density.",
+                "At a place where the air **moves a lot**, a constriction adds moving mass and **lowers the frequency**."
+              ]
+            },
+            {
+              "text": "Both increases happen together, and each one acts in a different region.",
+              "children": [
+                "The parts of a vibrating medium that **move the most** alternate with the parts that **compress and expand the most**.",
+                "Each mode places those regions at its own positions."
+              ]
+            },
+            {
+              "text": "The way to tell the effects apart is to follow the air through a cycle.",
+              "children": [
+                "One element’s travel measures how much mass is being carried there.",
+                "The opening and closing of the gaps beside it measures compression, the source of the restoring force.",
+                "Watching both through a cycle reveals which effect governs that spot in that mode."
+              ]
+            },
+            {
+              "text": "One narrowing can therefore act mainly through **mass** for one formant and mainly through **stiffness** for another.",
+              "children": [
+                "One formant falls and the other rises.",
+                "Both rules hold exactly as before, mass lowering frequency where air moves and stiffness raising it where air compresses."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p014",
+          "page": 14,
+          "title": "Compression and motion alternate in an air column",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Each spot in an air column can be described by its **movement** and its **compression**.",
+              "children": [
+                "**Movement** is how far an air element travels.",
+                "**Compression** is how the gap between neighbors changes. Narrower gaps are compression, and wider gaps are **rarefaction**, or thinned-out air.",
+                "Neighbors can travel together with steady spacing, or squeeze and spread around an element that hardly moves."
+              ]
+            },
+            {
+              "text": "The animation splits one air column into its patterns.",
+              "children": [
+                "The moving **Schwa** row is the uniform reference.",
+                "The **F1, F2 and F3** rows are the first three resonances of that column.",
+                "The closed left end holds the air still, and the open right end lets it move. Higher modes pack more alternating regions of movement and compression into the tube."
+              ]
+            },
+            {
+              "text": "Compression and movement play the roles of spring and mass.",
+              "children": [
+                "Crowded air pushes back toward normal spacing, which supplies the restoring force.",
+                "Moving air keeps going because of inertia.",
+                "Together they keep the air oscillating around its usual positions."
+              ]
+            },
+            {
+              "text": "Strong movement and strong compression occupy different places.",
+              "children": [
+                "Where movement is large, the region carries a lot of moving mass.",
+                "Where spacing changes a lot, the region supplies strong restoring force while its central element stays nearly put."
+              ]
+            },
+            {
+              "text": "Tracking one element over a cycle measures its movement, and tracking its gaps measures compression.",
+              "children": [
+                "Added mass acts where movement is strong.",
+                "Added stiffness acts where compression is strong.",
+                "Those places shift from mode to mode, and each row is its own resonance of the same air."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p015",
+          "page": 15,
+          "title": "Air in a fixed–free tube has modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The air in the vocal tract behaves like a chain of masses and springs.",
+              "children": [
+                "Moving air has **inertia** and keeps moving.",
+                "Squeezed air pushes back, and the spring-like links in the model represent that restoring effect.",
+                "The air elements move **longitudinally**, back and forth along the tube, oscillating around their usual places."
+              ]
+            },
+            {
+              "text": "The tube is a **fixed–free** system.",
+              "children": [
+                "The **glottis** is the fixed end.",
+                "The open **lips** are the free end."
+              ]
+            },
+            {
+              "text": "The lowest two patterns match the lowest two formants.",
+              "children": [
+                "**Mode 1 is F1-like**, the tube’s lowest resonance.",
+                "**Mode 2 is F2-like**, with one more reversal along the tube.",
+                "In the uniform tube, Mode 2 runs **three times** as fast as Mode 1, the odd-multiple pattern of a fixed–free system. Changing the tract’s shape changes that ratio."
+              ]
+            },
+            {
+              "text": "Each mode is a coordinated pattern of the whole column of air.",
+              "children": [
+                "In some places, neighboring elements travel together and keep their spacing.",
+                "In others, their gaps close and open over and over."
+              ]
+            },
+            {
+              "text": "Three markers place the vowel constrictions.",
+              "children": [
+                "**/a/** is about **one-third** of the way from the glottis.",
+                "**/i/** is about **two-thirds** of the way.",
+                "**/u/** is at the **lips**.",
+                "Each marker is the same physical spot in both modes. Added mass acts where a mode moves strongly, and added springiness acts where it compresses strongly, so one narrowing can push F1 and F2 differently."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p016",
+          "page": 16,
+          "title": "/u/ loads the moving lip end",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The **/u/ model** loads the open lips, the **free end** of the air column. Larger elements at the lips represent more **effective mass**, meaning more air that must be moved back and forth there.",
+              "children": []
+            },
+            {
+              "text": "Both lowest modes move strongly at the free end.",
+              "children": [
+                "In **Mode 1**, **motion dominates** at the lips.",
+                "In **Mode 2**, **motion dominates** at the lips as well."
+              ]
+            },
+            {
+              "text": "A larger moving load takes longer to speed up and reverse.",
+              "children": [
+                "Wherever motion dominates, the added load lengthens each cycle.",
+                "Both modes slow, giving **F1 down and F2 down** relative to the uniform tube."
+              ]
+            },
+            {
+              "text": "The two rows compare one lip location across two resonance patterns.",
+              "children": [
+                "Each pattern is arranged differently inside the tube, yet both move strongly at the lips.",
+                "The extra load slows both while F1 remains the lower formant and F2 the higher one.",
+                "Each change is measured against that mode’s own uniform reference."
+              ]
+            },
+            {
+              "text": "The common direction comes from the lip region’s role in both modes.",
+              "children": [
+                "Here motion dominates in both, so loading lowers both.",
+                "The air keeps oscillating around its usual positions, with the larger elements marking the added load."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p017",
+          "page": 17,
+          "title": "/i/ has opposite effects on F1 and F2",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The **/i/ constriction** is near the front, about **two-thirds** of the way from the glottis to the lips. One physical region is narrowed, and that region does a different job in each mode.",
+              "children": []
+            },
+            {
+              "text": "In **Mode 1**, **mass motion dominates** at the narrowing.",
+              "children": [
+                "The air there moves strongly.",
+                "Narrowing adds effective moving mass, which slows the reversal.",
+                "**F1 goes down**."
+              ]
+            },
+            {
+              "text": "In **Mode 2**, **springiness dominates** at the narrowing.",
+              "children": [
+                "The air there is strongly squeezed and stretched.",
+                "Narrowing strengthens the restoring response, which speeds the reversal.",
+                "**F2 goes up**."
+              ]
+            },
+            {
+              "text": "The region stays in one place, and its role changes from mode to mode.",
+              "children": [
+                "Where neighbors travel together, moving load is what counts.",
+                "Where neighbors keep pressing together and pulling apart, the restoring response is what counts."
+              ]
+            },
+            {
+              "text": "The outcome is **lower F1 and higher F2** than the uniform tube.",
+              "children": [
+                "The mass effect governs F1, and the spring effect governs F2.",
+                "One constriction therefore moves the two formants in opposite directions, by two separate causes."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p018",
+          "page": 18,
+          "title": "/a/ reverses the two effects",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The **/a/ constriction** is farther back, about **one-third** of the way from the glottis to the lips. At this spot the two modes trade roles compared with /i/.",
+              "children": []
+            },
+            {
+              "text": "In **Mode 1**, **springiness dominates** at the narrowing.",
+              "children": [
+                "The air there is strongly compressed.",
+                "Narrowing adds restoring force, so the cycle speeds up and **F1 goes up**."
+              ]
+            },
+            {
+              "text": "In **Mode 2**, **mass motion dominates** at the narrowing.",
+              "children": [
+                "The air there moves strongly.",
+                "Narrowing adds effective moving mass, so the cycle slows and **F2 goes down**."
+              ]
+            },
+            {
+              "text": "Both rows narrow the same back location, and each row is its own coordinated motion.",
+              "children": [
+                "In one pattern, the spot moves little while its neighbors squeeze and spread around it.",
+                "In the other, the spot moves a lot while its spacing barely changes.",
+                "That is why springiness governs Mode 1 and moving mass governs Mode 2 here."
+              ]
+            },
+            {
+              "text": "The outcome is **higher F1 and lower F2**, the mirror image of /i/.",
+              "children": [
+                "Moving the constriction changes which role matters most, while mass and stiffness keep their usual effects.",
+                "The arrows give the predicted direction of each change."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p019",
+          "page": 19,
+          "title": "Compression and motion alternate in an air column",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Each spot in an air column can be described by its **movement** and its **compression**.",
+              "children": [
+                "**Movement** is how far an air element travels.",
+                "**Compression** is how the gap between neighbors changes. Narrower gaps are compression, and wider gaps are **rarefaction**, or thinned-out air.",
+                "Neighbors can travel together with steady spacing, or squeeze and spread around an element that hardly moves."
+              ]
+            },
+            {
+              "text": "The animation splits one air column into its patterns.",
+              "children": [
+                "The moving **Schwa** row is the uniform reference.",
+                "The **F1, F2 and F3** rows are the first three resonances of that column.",
+                "The closed left end holds the air still, and the open right end lets it move. Higher modes pack more alternating regions of movement and compression into the tube."
+              ]
+            },
+            {
+              "text": "Compression and movement play the roles of spring and mass.",
+              "children": [
+                "Crowded air pushes back toward normal spacing, which supplies the restoring force.",
+                "Moving air keeps going because of inertia.",
+                "Together they keep the air oscillating around its usual positions."
+              ]
+            },
+            {
+              "text": "Strong movement and strong compression occupy different places.",
+              "children": [
+                "Where movement is large, the region carries a lot of moving mass.",
+                "Where spacing changes a lot, the region supplies strong restoring force while its central element stays nearly put."
+              ]
+            },
+            {
+              "text": "Tracking one element over a cycle measures its movement, and tracking its gaps measures compression.",
+              "children": [
+                "Added mass acts where movement is strong.",
+                "Added stiffness acts where compression is strong.",
+                "Those places shift from mode to mode, and each row is its own resonance of the same air."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p020",
+          "page": 20,
+          "title": "The source supplies harmonics and the filter shapes their heights",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**Source–filter theory** splits speech into a **source**, the vibration of the vocal folds, and a **filter**, the vocal tract that shapes that vibration.",
+              "children": []
+            },
+            {
+              "text": "The glottal source produces a **harmonic comb**.",
+              "children": [
+                "It repeats at a **fundamental frequency**, **F0**, with harmonics at whole-number multiples of F0.",
+                "In the example, the harmonics sit **100 Hz** apart and run up to **4000 Hz**.",
+                "Before the tract acts, they are evenly spaced vertical lines of equal height."
+              ]
+            },
+            {
+              "text": "The tract filter **sculpts the heights** of the harmonics.",
+              "children": [
+                "Harmonics near the tract’s resonances, the **formants**, grow stronger, and the rest grow weaker.",
+                "Every line keeps its position, and only its height changes.",
+                "The outline of those heights is the **spectral envelope**, and that envelope is the vowel."
+              ]
+            },
+            {
+              "text": "In the schwa example, four resonance regions, **F1 through F4**, shape the comb, with the strongest group at low frequency.",
+              "children": []
+            },
+            {
+              "text": "The horizontal axis gives frequency, and the vertical axis gives amplitude.",
+              "children": [
+                "A taller line is a stronger component.",
+                "**F0** is the source’s repetition rate, and **F1** is the tract’s lowest resonance.",
+                "The vowel is made of many harmonics, with the formants deciding which of them are strong."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p021",
+          "page": 21,
+          "title": "The /i/ filter keeps F1 low and F2 high",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **/i/ filter** combines a **low F1** with a **high F2**, and it acts on the same 100 Hz comb.",
+              "children": [
+                "One strong group of harmonics sits near the low end.",
+                "The next strong group sits far higher, past a weak stretch.",
+                "More strong groups follow around **F3** and **F4**, near **3000** and **3600 Hz**."
+              ]
+            },
+            {
+              "text": "The source lines keep their even spacing and positions.",
+              "children": [
+                "The tract changes only their heights.",
+                "The filter’s effect therefore stands apart from the source’s repetition."
+              ]
+            },
+            {
+              "text": "This low-F1, high-F2 pattern comes from the front constriction of /i/.",
+              "children": [
+                "The narrowing adds mass where Mode 1 moves and stiffness where Mode 2 compresses.",
+                "F1 drops and F2 climbs, which pushes the two formants far apart."
+              ]
+            },
+            {
+              "text": "Each line is read in two ways.",
+              "children": [
+                "Its horizontal position is its **frequency**.",
+                "Its height is its **amplitude**.",
+                "A tall line near the low end is a strong low-frequency component."
+              ]
+            },
+            {
+              "text": "The harmonic lines sample the broad formant regions.",
+              "children": [
+                "The envelope traced by their heights is the vowel /i/ in this schematic."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p022",
+          "page": 22,
+          "title": "The /a/ filter raises F1 and lowers F2",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **/a/ filter** has a **higher F1** and a **lower F2** than /i/. Here **F1 is at 750 Hz** and **F2 near 1200 Hz**, so the first two formants sit close together.",
+              "children": [
+                "**F3** and **F4** stay higher, near **2600** and **3500 Hz**.",
+                "The source is unchanged, and the new tract shape makes a new vowel."
+              ]
+            },
+            {
+              "text": "The filter reshapes the harmonic **strengths**.",
+              "children": [
+                "Moving a formant shifts the favored region along the frequency axis.",
+                "Changing a harmonic’s amplitude changes its height.",
+                "The spectrum records these as two separate kinds of change."
+              ]
+            },
+            {
+              "text": "A formant can sit **between two source harmonics**.",
+              "children": [
+                "The 750 Hz F1 target falls between the **700** and **800 Hz** harmonics.",
+                "Those two nearby harmonics become strong, and the source supplies no line exactly at 750 Hz."
+              ]
+            },
+            {
+              "text": "A **formant** is a resonance region of the filter.",
+              "children": [
+                "A **harmonic** is a frequency component of the source.",
+                "The filter decides how strong each harmonic is, and the harmonics reveal where the formants are."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p023",
+          "page": 23,
+          "title": "A spectrogram places successive spectra in time",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "A **spectrum** shows **one instant**, and a **spectrogram** **stacks many spectra over time**.",
+              "children": []
+            },
+            {
+              "text": "A spectrum describes the frequency components of one short slice of sound.",
+              "children": [
+                "Frequency runs across, and amplitude runs up.",
+                "The example uses three successive spectra of **/i/** and three of **/a/**."
+              ]
+            },
+            {
+              "text": "A spectrogram arranges those slices from left to right in time.",
+              "children": [
+                "Its frequency axis runs upward, so a peak at the right side of a spectrum becomes a mark high in the spectrogram.",
+                "Moving right in a spectrogram means moving later in time."
+              ]
+            },
+            {
+              "text": "**Height in the spectrum becomes darkness in the spectrogram.**",
+              "children": [
+                "In grayscale, **black is high amplitude, gray is medium and white is low**.",
+                "Vertical position gives frequency, and darkness gives strength.",
+                "A darkening band is growing stronger, and a rising band is moving to higher frequency."
+              ]
+            },
+            {
+              "text": "From **/i/** to **/a/**, **F1 rises and F2 falls**.",
+              "children": [
+                "The two lowest bands draw toward each other.",
+                "The higher bands stay above them with smaller shifts.",
+                "The spectrogram tracks the tract’s resonances as they change over time."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p024",
+          "page": 24,
+          "title": "Reflection prompt",
+          "kind": "logistics",
+          "teaching": []
+        },
+        {
+          "id": "lecture13-p025",
+          "page": 25,
+          "title": "Wide harmonic spacing makes formants harder to identify",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Formants are easiest to identify when the source harmonics are **close together**. Each harmonic samples the tract’s response, and many closely spaced samples trace each formant clearly.",
+              "children": []
+            },
+            {
+              "text": "With harmonics at **100, 200, 300, 400 Hz** and onward, a vowel with **F1 at 300** and **F2 at 2100 Hz** shapes the amplitudes of many harmonics.",
+              "children": [
+                "Several lines cluster around each formant.",
+                "Their heights rise and fall with the filter, so each formant region stands out."
+              ]
+            },
+            {
+              "text": "A higher **F0** spaces the harmonics farther apart.",
+              "children": [
+                "With harmonics at **250, 500, 750** and onward, fewer lines fall near each formant.",
+                "A formant can sit between two harmonics, and one strong line can sit near a formant without marking its center.",
+                "Telling harmonics from formants becomes very hard."
+              ]
+            },
+            {
+              "text": "Higher voices space the harmonics wider still.",
+              "children": [
+                "A **toddler’s** harmonics could be **400, 800** and onward.",
+                "A **soprano’s** could be **800, 1600, 2400** and onward.",
+                "Across the three spectra and spectrograms, closely spaced components give way to a few isolated traces."
+              ]
+            },
+            {
+              "text": "The filter itself is unchanged.",
+              "children": [
+                "The tract keeps the same resonances.",
+                "The source now offers fewer frequencies to reveal that same filter."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture13-p026",
+          "page": 26,
+          "title": "Homework 4 lab reminder",
+          "kind": "logistics",
+          "teaching": []
+        }
+      ]
+    },
+    "lecture14": {
+      "title": "Speech → Neural Networks",
+      "sections": [
+        {
+          "id": "lecture14-p001",
+          "page": 1,
+          "title": "Speech → Neural Networks",
+          "kind": "title",
+          "teaching": []
+        },
+        {
+          "id": "lecture14-p002",
+          "page": 2,
+          "title": "Five membrane modes combine into one motion",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **membrane** is a vibrating surface with fixed edges, and its modes carry two-number labels. The two numbers count the moving regions along the two directions of the surface.",
+              "children": [
+                "**(1,1)** is a single region moving as one.",
+                "**(2,1)** and **(1,2)** split the surface in two, one along each direction.",
+                "**(2,2)** makes four regions, and **(3,1)** makes three along one direction.",
+                "Neighboring regions move opposite to each other, separated by **node** lines that stay still."
+              ]
+            },
+            {
+              "text": "The five modes add at every point into one changing surface.",
+              "children": [
+                "Where they agree they reinforce, and where they disagree they cancel.",
+                "The combined panel uses a smaller vertical scale than the single-mode panels."
+              ]
+            },
+            {
+              "text": "A node is still for the whole cycle.",
+              "children": [
+                "A moving region passes through the resting level for an instant each cycle and then keeps moving.",
+                "Following one region as it rises, crosses and falls, while its neighbor moves the other way, separates moving regions from nodes.",
+                "The two numbers describe how the surface divides into regions."
+              ]
+            },
+            {
+              "text": "A **pickup** at one marked point records its motion, and the **spectrum** there has one peak per mode.",
+              "children": [
+                "The strengths were chosen to make the five peaks equal at that point.",
+                "The frequencies **100, 200, 300, 400 and 500 Hz** were **assigned for the illustration** instead of calculated from this rectangle’s own resonances. They model how evenly spaced frequencies combine on a surface."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p003",
+          "page": 3,
+          "title": "A fixed end and a free end select odd harmonics",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **fixed–free system** is held at one end and free at the other.",
+              "children": [
+                "The fixed end must be a **node**, with no movement.",
+                "The free end must be an **antinode**, the place of largest movement."
+              ]
+            },
+            {
+              "text": "Shapes that meet both conditions fit odd numbers of **quarter-waves**.",
+              "children": [
+                "The first mode fits one quarter-wave.",
+                "The next fit three, five and seven quarter-waves.",
+                "These are the **first, third, fifth and seventh harmonics**, so the second allowed mode is the third harmonic."
+              ]
+            },
+            {
+              "text": "Odd counts are the only ones that leave the fixed end still and the free end moving.",
+              "children": [
+                "An even count would put a node at the free end.",
+                "Higher modes fit shorter waves into the same length, so they repeat faster."
+              ]
+            },
+            {
+              "text": "The four modes run at **100, 300, 500 and 700 Hz**, slowed **250** times for display.",
+              "children": [
+                "Given equal strengths, they produce four equal peaks in the spectrum measured at the free end.",
+                "An antinode swings through the resting line to the opposite side on every cycle, while the fixed end stays still."
+              ]
+            },
+            {
+              "text": "The fixed–fixed and fixed–free strings were **tuned separately** to share a fundamental.",
+              "children": [
+                "With the same length and wave speed, freeing one end would cut the fundamental in half.",
+                "The matching labels therefore come from separate tuning, and the effect of the free end is to halve the fundamental."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p004",
+          "page": 4,
+          "title": "Quarter-wavelength packets explain the allowed modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "A **quarter-wavelength** links a **node** to an **antinode**. The fixed–free string needs a node at its fixed bottom and an antinode at its free top.",
+              "children": [
+                "**One quarter-wave** fits exactly between those two ends.",
+                "That is the simplest allowed pattern, with no still point inside."
+              ]
+            },
+            {
+              "text": "Quarter-waves are added **two at a time**.",
+              "children": [
+                "One more alone would end at a node, which the free top cannot have.",
+                "Two more end at an antinode again.",
+                "The allowed patterns hold **one, three, five and seven quarter-waves** in the same length."
+              ]
+            },
+            {
+              "text": "More sections give shorter wavelengths.",
+              "children": [
+                "At the same wave speed, shorter waves repeat faster, so each pattern climbs in frequency."
+              ]
+            },
+            {
+              "text": "The demonstration adds one packet at a time to every mode that contains it.",
+              "children": [
+                "The four modes hold **1, 3, 5 and 7** packets, which match the odd harmonics.",
+                "The numbered pieces label regions of the standing shape and stay where they are.",
+                "The string swings back and forth while the pattern’s still points hold their positions."
+              ]
+            },
+            {
+              "text": "The endpoint conditions alone produce the odd harmonics.",
+              "children": [
+                "Every allowed count ends on an antinode at the free top.",
+                "Only odd counts do that, so only odd multiples of the fundamental appear."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p005",
+          "page": 5,
+          "title": "Air moves longitudinally in vocal-tract modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The air in the vocal tract behaves like a chain of masses and springs.",
+              "children": [
+                "Moving air has **inertia** and keeps moving.",
+                "Squeezed air pushes back, and the spring-like links in the model represent that restoring effect.",
+                "The air elements move **longitudinally**, back and forth along the tube, oscillating around their usual places."
+              ]
+            },
+            {
+              "text": "The tube is a **fixed–free** system.",
+              "children": [
+                "The **glottis** is the fixed end.",
+                "The open **lips** are the free end."
+              ]
+            },
+            {
+              "text": "The lowest two patterns match the lowest two formants.",
+              "children": [
+                "**Mode 1 is F1-like**, the tube’s lowest resonance.",
+                "**Mode 2 is F2-like**, with one more reversal along the tube.",
+                "In the uniform tube, Mode 2 runs **three times** as fast as Mode 1, the odd-multiple pattern of a fixed–free system. Changing the tract’s shape changes that ratio."
+              ]
+            },
+            {
+              "text": "Each mode is a coordinated pattern of the whole column of air.",
+              "children": [
+                "In some places, neighboring elements travel together and keep their spacing.",
+                "In others, their gaps close and open over and over."
+              ]
+            },
+            {
+              "text": "Three markers place the vowel constrictions.",
+              "children": [
+                "**/a/** is about **one-third** of the way from the glottis.",
+                "**/i/** is about **two-thirds** of the way.",
+                "**/u/** is at the **lips**.",
+                "Each marker is the same physical spot in both modes. Added mass acts where a mode moves strongly, and added springiness acts where it compresses strongly, so one narrowing can push F1 and F2 differently."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p006",
+          "page": 6,
+          "title": "Track air motion separately from compression",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Every point in an air column has a **movement** and a **compression**.",
+              "children": [
+                "**Movement** is the distance an air element travels.",
+                "**Compression** is the change in spacing between neighbors.",
+                "Neighbors can travel together with steady gaps, and gaps can close and open strongly around a nearly still point."
+              ]
+            },
+            {
+              "text": "Each property has its own reading.",
+              "children": [
+                "One circle followed through a cycle gives movement.",
+                "The gaps between neighboring circles give compression, squeezed in some regions and spread in others."
+              ]
+            },
+            {
+              "text": "Together they act as spring and mass.",
+              "children": [
+                "Changing compression provides a **spring-like restoring effect**, as crowded air pushes back toward normal spacing.",
+                "**Inertia** keeps the air moving as that push changes."
+              ]
+            },
+            {
+              "text": "The tube’s ends set the layout.",
+              "children": [
+                "The **closed end** holds movement back.",
+                "The **open end** lets the air move.",
+                "Each higher mode places its alternating regions at its own positions in the tube."
+              ]
+            },
+            {
+              "text": "The moving **Schwa** reference and the **F1, F2 and F3** rows are resonances of one air system.",
+              "children": [
+                "A constriction can act on moving mass in one mode and on compression in another.",
+                "Its effect depends on the mode and on where it sits."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p007",
+          "page": 7,
+          "title": "Compare positions within an air mode",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The **pop quiz** labels six spots along the air column, **A** to **F**, and asks how each one behaves.",
+              "children": [
+                "Each spot is followed through a full cycle.",
+                "Its air element’s travel gives its movement.",
+                "The spacing changes around it give its compression.",
+                "A full cycle is what reveals the spot’s usual behavior."
+              ]
+            },
+            {
+              "text": "At a spot with strong **movement**, added mass is what counts.",
+              "children": [
+                "More **effective mass** is slower to speed up and reverse.",
+                "The cycle lengthens, and the resonance **falls**."
+              ]
+            },
+            {
+              "text": "At a spot with strong **compression change**, added stiffness is what counts.",
+              "children": [
+                "More **stiffness** pushes the air back toward its spacing more strongly.",
+                "The cycle shortens, and the resonance **rises**."
+              ]
+            },
+            {
+              "text": "**Modes 1, 2 and 3** lay these regions out differently.",
+              "children": [
+                "A spot that moves strongly in one mode can be squeezed strongly in another.",
+                "A prediction needs both the position and the mode."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p008",
+          "page": 8,
+          "title": "Vowel positions change where the tract is narrowed",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Vowels are classified by **tongue height** and **front–back position**, and each one narrows the airway at a particular place. Five words sit on a chart of those two dimensions.",
+              "children": []
+            },
+            {
+              "text": "The two high vowels narrow the tract at different places.",
+              "children": [
+                "**Dean** is **high and front**, with its constriction about **two-thirds** of the way from the glottis to the lips.",
+                "**Dune** is **high and back**, with its constriction at the **lips**.",
+                "They share a height and differ in where they narrow."
+              ]
+            },
+            {
+              "text": "The two low vowels sit at the bottom.",
+              "children": [
+                "**Dan** is **low and front**.",
+                "**Don** is **low and back**, with its constriction about **one-third** of the way from the glottis."
+              ]
+            },
+            {
+              "text": "**Done** is **central** and marked **“No constriction.”**",
+              "children": [
+                "It is the open reference shape."
+              ]
+            },
+            {
+              "text": "Each label captures its own feature.",
+              "children": [
+                "High and low describe tongue height.",
+                "Front and back describe where the tongue sits along the mouth.",
+                "The fraction gives distance along the air path from the glottis."
+              ]
+            },
+            {
+              "text": "The constriction’s location ties the articulation to the sound.",
+              "children": [
+                "Narrowing the airway changes the local mass-like and spring-like behavior of the air.",
+                "How each formant responds depends on how its mode moves and compresses that spot."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p009",
+          "page": 9,
+          "title": "A constriction changes inertia and restoring stiffness",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "A **constriction** narrows the airway and raises two properties of the air at once.",
+              "children": []
+            },
+            {
+              "text": "It raises **stiffness**.",
+              "children": [
+                "Compressed air resists further compression more strongly.",
+                "At a place where the air is **heavily compressed**, a constriction **raises the frequency**."
+              ]
+            },
+            {
+              "text": "It raises **mass**.",
+              "children": [
+                "Bunching air up increases its density.",
+                "At a place where the air **moves a lot**, a constriction adds moving mass and **lowers the frequency**."
+              ]
+            },
+            {
+              "text": "Both increases happen together, and each one acts in a different region.",
+              "children": [
+                "The parts of a vibrating medium that **move the most** alternate with the parts that **compress and expand the most**.",
+                "Each mode places those regions at its own positions."
+              ]
+            },
+            {
+              "text": "The way to tell the effects apart is to follow the air through a cycle.",
+              "children": [
+                "One element’s travel measures how much mass is being carried there.",
+                "The opening and closing of the gaps beside it measures compression, the source of the restoring force.",
+                "Watching both through a cycle reveals which effect governs that spot in that mode."
+              ]
+            },
+            {
+              "text": "One narrowing can therefore act mainly through **mass** for one formant and mainly through **stiffness** for another.",
+              "children": [
+                "One formant falls and the other rises.",
+                "Both rules hold exactly as before, mass lowering frequency where air moves and stiffness raising it where air compresses."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p010",
+          "page": 10,
+          "title": "Use both modes to interpret the same tract location",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "**Mode 1** and **Mode 2** are two resonances of one air column, held at the glottis and open at the lips.",
+              "children": [
+                "Both move the air strongly near the lips.",
+                "Mode 2 adds one more reversal inside the tube and arranges movement and compression its own way."
+              ]
+            },
+            {
+              "text": "Markers at the **back**, the **front** and the **lips** sit at the same places in both modes.",
+              "children": [
+                "A narrowing at any marker changes that region for both modes together."
+              ]
+            },
+            {
+              "text": "What the narrowing does depends on each mode’s activity at the marker.",
+              "children": [
+                "Strong **movement** brings in the mass-like effect, which slows the vibration.",
+                "Strong **compression** brings in the spring-like effect, which speeds it up.",
+                "A single narrowing can therefore push **F1** and **F2** in different directions."
+              ]
+            },
+            {
+              "text": "The two modes follow a set ratio in the ideal tube.",
+              "children": [
+                "In the uniform reference, Mode 2 runs at **three times** the frequency of Mode 1.",
+                "A changed tract shape changes the formants and that ratio."
+              ]
+            },
+            {
+              "text": "**Formants** are tract resonances that change with tract shape.",
+              "children": [
+                "**Harmonics** are source components whose spacing comes from vocal-fold repetition."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p011",
+          "page": 11,
+          "title": "Lip loading lowers both F1 and F2 in the /u/ model",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The **/u/ model** loads the open lips, the **free end** of the air column. Larger elements at the lips represent more **effective mass**, meaning more air that must be moved back and forth there.",
+              "children": []
+            },
+            {
+              "text": "Both lowest modes move strongly at the free end.",
+              "children": [
+                "In **Mode 1**, **motion dominates** at the lips.",
+                "In **Mode 2**, **motion dominates** at the lips as well."
+              ]
+            },
+            {
+              "text": "A larger moving load takes longer to speed up and reverse.",
+              "children": [
+                "Wherever motion dominates, the added load lengthens each cycle.",
+                "Both modes slow, giving **F1 down and F2 down** relative to the uniform tube."
+              ]
+            },
+            {
+              "text": "The two rows compare one lip location across two resonance patterns.",
+              "children": [
+                "Each pattern is arranged differently inside the tube, yet both move strongly at the lips.",
+                "The extra load slows both while F1 remains the lower formant and F2 the higher one.",
+                "Each change is measured against that mode’s own uniform reference."
+              ]
+            },
+            {
+              "text": "The common direction comes from the lip region’s role in both modes.",
+              "children": [
+                "Here motion dominates in both, so loading lowers both.",
+                "The air keeps oscillating around its usual positions, with the larger elements marking the added load."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p012",
+          "page": 12,
+          "title": "A front constriction separates the effects on F1 and F2",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The **/i/ constriction** is near the front, about **two-thirds** of the way from the glottis to the lips. One physical region is narrowed, and that region does a different job in each mode.",
+              "children": []
+            },
+            {
+              "text": "In **Mode 1**, **mass motion dominates** at the narrowing.",
+              "children": [
+                "The air there moves strongly.",
+                "Narrowing adds effective moving mass, which slows the reversal.",
+                "**F1 goes down**."
+              ]
+            },
+            {
+              "text": "In **Mode 2**, **springiness dominates** at the narrowing.",
+              "children": [
+                "The air there is strongly squeezed and stretched.",
+                "Narrowing strengthens the restoring response, which speeds the reversal.",
+                "**F2 goes up**."
+              ]
+            },
+            {
+              "text": "The region stays in one place, and its role changes from mode to mode.",
+              "children": [
+                "Where neighbors travel together, moving load is what counts.",
+                "Where neighbors keep pressing together and pulling apart, the restoring response is what counts."
+              ]
+            },
+            {
+              "text": "The outcome is **lower F1 and higher F2** than the uniform tube.",
+              "children": [
+                "The mass effect governs F1, and the spring effect governs F2.",
+                "One constriction therefore moves the two formants in opposite directions, by two separate causes."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p013",
+          "page": 13,
+          "title": "A back constriction reverses the F1 and F2 pattern",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "The **/a/ constriction** is farther back, about **one-third** of the way from the glottis to the lips. At this spot the two modes trade roles compared with /i/.",
+              "children": []
+            },
+            {
+              "text": "In **Mode 1**, **springiness dominates** at the narrowing.",
+              "children": [
+                "The air there is strongly compressed.",
+                "Narrowing adds restoring force, so the cycle speeds up and **F1 goes up**."
+              ]
+            },
+            {
+              "text": "In **Mode 2**, **mass motion dominates** at the narrowing.",
+              "children": [
+                "The air there moves strongly.",
+                "Narrowing adds effective moving mass, so the cycle slows and **F2 goes down**."
+              ]
+            },
+            {
+              "text": "Both rows narrow the same back location, and each row is its own coordinated motion.",
+              "children": [
+                "In one pattern, the spot moves little while its neighbors squeeze and spread around it.",
+                "In the other, the spot moves a lot while its spacing barely changes.",
+                "That is why springiness governs Mode 1 and moving mass governs Mode 2 here."
+              ]
+            },
+            {
+              "text": "The outcome is **higher F1 and lower F2**, the mirror image of /i/.",
+              "children": [
+                "Moving the constriction changes which role matters most, while mass and stiffness keep their usual effects.",
+                "The arrows give the predicted direction of each change."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p014",
+          "page": 14,
+          "title": "Air motion and compression in the vocal-tract modes",
+          "kind": "media",
+          "teaching": [
+            {
+              "text": "Each spot in an air column can be described by its **movement** and its **compression**.",
+              "children": [
+                "**Movement** is how far an air element travels.",
+                "**Compression** is how the gap between neighbors changes. Narrower gaps are compression, and wider gaps are **rarefaction**, or thinned-out air.",
+                "Neighbors can travel together with steady spacing, or squeeze and spread around an element that hardly moves."
+              ]
+            },
+            {
+              "text": "The animation splits one air column into its patterns.",
+              "children": [
+                "The moving **Schwa** row is the uniform reference.",
+                "The **F1, F2 and F3** rows are the first three resonances of that column.",
+                "The closed left end holds the air still, and the open right end lets it move. Higher modes pack more alternating regions of movement and compression into the tube."
+              ]
+            },
+            {
+              "text": "Compression and movement play the roles of spring and mass.",
+              "children": [
+                "Crowded air pushes back toward normal spacing, which supplies the restoring force.",
+                "Moving air keeps going because of inertia.",
+                "Together they keep the air oscillating around its usual positions."
+              ]
+            },
+            {
+              "text": "Strong movement and strong compression occupy different places.",
+              "children": [
+                "Where movement is large, the region carries a lot of moving mass.",
+                "Where spacing changes a lot, the region supplies strong restoring force while its central element stays nearly put."
+              ]
+            },
+            {
+              "text": "Tracking one element over a cycle measures its movement, and tracking its gaps measures compression.",
+              "children": [
+                "Added mass acts where movement is strong.",
+                "Added stiffness acts where compression is strong.",
+                "Those places shift from mode to mode, and each row is its own resonance of the same air."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p015",
+          "page": 15,
+          "title": "The vocal-fold source sets harmonic spacing",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The vocal folds produce the voiced **source**. Their repetition rate, **F0**, sets the spacing of the harmonic lines.",
+              "children": []
+            },
+            {
+              "text": "The top row recalls the **fixed–fixed membrane**, five modes and their sum.",
+              "children": [
+                "**(1,1)** runs at **100 Hz**, **(2,1)** at **200 Hz**, **(1,2)** at **300 Hz**, **(2,2)** at **400 Hz** and **(3,1)** at **500 Hz**.",
+                "A pickup point records the combined motion.",
+                "These frequencies were assigned for the illustration."
+              ]
+            },
+            {
+              "text": "The bottom row shows **three source spectra** before filtering, each in the same **0 to 4000 Hz** window.",
+              "children": [
+                "At **F0 = 100 Hz**, the harmonics crowd close together.",
+                "At **F0 = 250 Hz**, they sit at **250, 500, 750** and onward, from **tighter, lighter vocal folds**.",
+                "At **F0 = 350 Hz**, they sit at **350, 700, 1050** and onward, from **very tight and light vocal folds**."
+              ]
+            },
+            {
+              "text": "**Lower F0 gives denser harmonic sampling, and higher F0 gives sparser sampling.**",
+              "children": [
+                "Heavier, looser folds repeat more slowly.",
+                "Lighter, tighter folds repeat faster.",
+                "Mass slows the folds’ reversal, and tension speeds their return."
+              ]
+            },
+            {
+              "text": "A voiced vowel holds **many frequencies** at once.",
+              "children": [
+                "The source decides which harmonics are present.",
+                "The tract strengthens some regions and weakens others.",
+                "Pitch changes the source spacing, and vowel shape changes the tract’s favored regions."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p016",
+          "page": 16,
+          "title": "The vocal-tract filter favors nearby harmonics",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The vocal tract is a **filter**, a **fixed–free** tube closed at one end and open at the other, and it selects **formants**.",
+              "children": [
+                "A formant **encourages the closest harmonics to be audible**.",
+                "**Harmonics far from that formant are muted.**",
+                "The source supplies the harmonics, the filter decides which survive, and the vowel shape is the filter."
+              ]
+            },
+            {
+              "text": "Each vowel sets its formants in its own places.",
+              "children": [
+                "**Schwa** has well-separated first and second resonances, near **500** and **1500 Hz**.",
+                "**/u/** lowers both, near **300** and **1000 Hz**, and adds a third near **2000 Hz**.",
+                "**/i/ or /ɪ/** pairs a low F1 near **300 Hz** with a high F2 near **2200 Hz**.",
+                "**/a/** places its first two targets side by side at **800** and **900 Hz**."
+              ]
+            },
+            {
+              "text": "Moving the tongue and lips moves these favored regions.",
+              "children": [
+                "Each target lifts the harmonics closest to it.",
+                "Harmonics between targets stay weak."
+              ]
+            },
+            {
+              "text": "A formant target belongs to the tract, and a harmonic line belongs to the source.",
+              "children": [
+                "A target can sit between two lines and strengthen both neighbors.",
+                "Filtering adjusts the heights of the lines the source supplies."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p017",
+          "page": 17,
+          "title": "One filter can look different at different pitches",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The grid crosses **source** rows with **vowel filter** columns to compare one filter at several pitches. **Dashed red ticks** mark formant targets, and **colored stems** mark the harmonics after filtering.",
+              "children": []
+            },
+            {
+              "text": "Each row holds one source.",
+              "children": [
+                "The top row comes from **heavy, loose** folds with dense harmonics.",
+                "The middle row comes from **lighter, tighter** folds at **F0 = 250 Hz**.",
+                "The bottom row comes from the **lightest, tightest** folds at **F0 = 350 Hz**."
+              ]
+            },
+            {
+              "text": "Each column holds one vowel filter.",
+              "children": [
+                "Down a column, only F0 changes.",
+                "Across a row, only the filter changes.",
+                "The grid separates source effects from tract-shape effects."
+              ]
+            },
+            {
+              "text": "**Dense harmonics trace the formant shape well.**",
+              "children": [
+                "At low F0, many stems fall near each resonance.",
+                "Their heights draw the filter’s **envelope**, the smooth outline of favored strengths.",
+                "More harmonics in the window give a smoother, clearer spectrum."
+              ]
+            },
+            {
+              "text": "**Sparse harmonics can miss a formant or make it look ambiguous.**",
+              "children": [
+                "At high F0, the stems spread out.",
+                "A strong stem can sit beside a target, while the target stays where it was.",
+                "The two close /a/ targets can merge into one grouped region."
+              ]
+            },
+            {
+              "text": "The resonances are all still present.",
+              "children": [
+                "The ticks hold their positions down every column.",
+                "Unchanged ticks with wider stems mean the source changed while the filter stayed the same."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p018",
+          "page": 18,
+          "title": "Map spectra into a spectrogram",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "A **spectrum** captures **one instant**, while a **spectrogram** **stacks many spectra over time**.",
+              "children": [
+                "In a spectrum, frequency runs across and peak height gives amplitude.",
+                "The sequence holds three slices of **/i/** and then three of **/a/**."
+              ]
+            },
+            {
+              "text": "First, each spectrum’s frequency axis becomes the spectrogram’s **vertical axis**.",
+              "children": [
+                "The slices line up from left to right in time.",
+                "Frequency now runs up the page."
+              ]
+            },
+            {
+              "text": "Second, **height becomes darkness**.",
+              "children": [
+                "**Black** is high amplitude, **gray** is medium and **white** is low.",
+                "A band that rises moves to a higher frequency.",
+                "A band that darkens gets stronger at its current frequency."
+              ]
+            },
+            {
+              "text": "The horizontal axis means different things in the two displays.",
+              "children": [
+                "In a spectrum, rightward means higher frequency.",
+                "In a spectrogram, rightward means later time."
+              ]
+            },
+            {
+              "text": "From **/i/** to **/a/**, the first strong band **rises** and the second **falls**.",
+              "children": [
+                "An upper band also moves down, and a fainter band stays high.",
+                "Linking neighboring slices traces the changing resonances, with position giving frequency and darkness giving strength."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p019",
+          "page": 19,
+          "title": "Reflection prompt",
+          "kind": "logistics",
+          "teaching": []
+        },
+        {
+          "id": "lecture14-p020",
+          "page": 20,
+          "title": "Speech-complexity experiment prompt",
+          "kind": "logistics",
+          "teaching": []
+        },
+        {
+          "id": "lecture14-p021",
+          "page": 21,
+          "title": "Use formants as input to vowel recognition",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Speech science leads straight **back to AI**. A **neural network** will be trained on students’ **formants** and will decide which vowel is being spoken.",
+              "children": []
+            },
+            {
+              "text": "The inputs are **F1** and **F2**.",
+              "children": [
+                "They are the first two resonance regions the vocal tract emphasizes.",
+                "Together they make a compact pair of numbers that characterizes each vowel."
+              ]
+            },
+            {
+              "text": "The **input** and the **output** hold different information.",
+              "children": [
+                "The input is a pair of sound measurements.",
+                "The output picks one vowel category.",
+                "The measured pair is evidence about the sound, and the true label names the category. Recognition connects one to the other."
+              ]
+            },
+            {
+              "text": "The task ties the physics of speech to machine learning.",
+              "children": [
+                "The mass–spring account explains where F1 and F2 come from.",
+                "The network learns how those numbers map onto vowel categories.",
+                "Training and testing will measure how well it does that."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p022",
+          "page": 22,
+          "title": "A fully connected linear vowel network",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "A **purely linear network** runs **2 inputs** through **hidden layers of 3, 2 and 4 neurons** to **5 outputs**, with **no activation functions**.",
+              "children": [
+                "The inputs are **F1** and **F2**, kept in that order."
+              ]
+            },
+            {
+              "text": "Every layer is **fully connected**.",
+              "children": [
+                "Each receiving neuron links to every neuron in the layer before.",
+                "Every link has a **weight**.",
+                "A receiving neuron multiplies each incoming value by its weight and sums the results."
+              ]
+            },
+            {
+              "text": "The hidden layers form intermediate combinations.",
+              "children": [
+                "They hold **three**, then **two**, then **four** neurons.",
+                "Each hidden value is a weighted blend of what came before.",
+                "Different weights produce different blends of the same inputs."
+              ]
+            },
+            {
+              "text": "The outputs name five words.",
+              "children": [
+                "In order, they are **/done/, /dune/, /dean/, /Don/** and **/Dan/**.",
+                "The fixed order keeps each output tied to its word."
+              ]
+            },
+            {
+              "text": "**Purely linear** means each layer hands its weighted sums straight to the next.",
+              "children": [
+                "The whole computation is a chain of weighted sums.",
+                "A separate step would be needed to turn the five final values into probabilities."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p023",
+          "page": 23,
+          "title": "Random weights assign signed contributions to connections",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "One example input is **F1 = 320** and **F2 = 2000**, and **every edge gets a random weight**.",
+              "children": [
+                "The inputs measure the sound.",
+                "The **weights** control how the network combines those measurements.",
+                "New weights give new internal results for the same input pair."
+              ]
+            },
+            {
+              "text": "Each connection carries one weight.",
+              "children": [
+                "A neuron multiplies incoming values by their weights and adds the products.",
+                "A first-layer neuron receives F1 and F2, so it has two incoming weights.",
+                "The three first-layer neurons build three different combinations of the same pair."
+              ]
+            },
+            {
+              "text": "Before training, **every weight is a random number between −1 and 1**.",
+              "children": [
+                "Edges carry values such as **0.95**, **−0.91** and **0.28**.",
+                "The heading marks **blue as positive** and **orange as negative**, and the negative edges render green in the figure. The written signs give direction and the sizes give strength.",
+                "Signed contributions can reinforce or oppose each other."
+              ]
+            },
+            {
+              "text": "The weights are **random starting values**.",
+              "children": [
+                "A **forward pass** runs an example through the current weights.",
+                "**Learning** adjusts those weights so the outputs come to match the vowel categories."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p024",
+          "page": 24,
+          "title": "Forward flow and an illustrative output distribution",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "In the **forward flow**, the input travels forward **layer by layer**, and the output is **a distribution over the five words**.",
+              "children": [
+                "The animation moves the input pair along the connections, one layer at a time.",
+                "Each layer combines the previous layer’s values with its current weights."
+              ]
+            },
+            {
+              "text": "The illustrated distribution gives each word a probability.",
+              "children": [
+                "**/done/** gets **0.5**.",
+                "**/Dan/** gets **0.2**.",
+                "**/dune/**, **/dean/** and **/Don/** get **0.1** each.",
+                "/done/ is the favored prediction, and the rest keep some support."
+              ]
+            },
+            {
+              "text": "A probability distribution has values between zero and one that add up to one, and these five do.",
+              "children": []
+            },
+            {
+              "text": "The bars picture the intended kind of output.",
+              "children": [
+                "A purely linear network needs an extra step to guarantee a distribution.",
+                "The bars therefore stand for the goal of the forward pass."
+              ]
+            },
+            {
+              "text": "The **predicted category** is the one the model favors.",
+              "children": [
+                "The **true category** is the example’s actual label.",
+                "Comparing the two tells whether the prediction is correct."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture14-p025",
+          "page": 25,
+          "title": "Declare the layer sequence in PyTorch",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**PyTorch** expresses the same network in a few lines.",
+              "children": [
+                "**import torch** loads the library.",
+                "**import torch.nn as nn** loads its neural-network tools as **nn**.",
+                "The model is stored in **net**."
+              ]
+            },
+            {
+              "text": "**nn.Sequential** lists the layers in the order information flows through them.",
+              "children": [
+                "A comment labels the shape purely linear, **2 to 3 to 2 to 4 to 5**.",
+                "Every **nn.Linear** layer computes weighted sums of its inputs."
+              ]
+            },
+            {
+              "text": "The four layers mirror the picture.",
+              "children": [
+                "**nn.Linear(2, 3, bias=False)** maps 2 inputs to 3 outputs.",
+                "**nn.Linear(3, 2, bias=False)** maps 3 to 2.",
+                "**nn.Linear(2, 4, bias=False)** maps 2 to 4.",
+                "**nn.Linear(4, 5, bias=False)** maps 4 to 5.",
+                "Each output count equals the next input count, so the values pass cleanly through, ending in five values for the five words."
+              ]
+            },
+            {
+              "text": "**nn.Linear(in, out)** stores an **out × in weight matrix**, one weight for each connection.",
+              "children": [
+                "**bias=False** drops the constant that a layer could add to each sum.",
+                "Every layer stays a **pure linear map**, as in the picture, with all of its weights in place."
+              ]
+            },
+            {
+              "text": "The code is a **declaration only, with no training**.",
+              "children": [
+                "It defines the structure.",
+                "Training would add examples and a procedure for adjusting the weights."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "lecture15": {
+      "title": "Neural Networks · Forward propagation, learning, and sigmoid",
+      "sections": [
+        {
+          "id": "lecture15-p001",
+          "page": 1,
+          "title": "Neural Networks",
+          "kind": "title",
+          "teaching": []
+        },
+        {
+          "id": "lecture15-p002",
+          "page": 2,
+          "title": "Two formants feed a fully connected network",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Two formants, **F1** and **F2**, go into the vowel network, and five responses come out, one each for **done, dune, dean, Don** and **Dan**.",
+              "children": [
+                "The input positions hold measurements of the sound.",
+                "The output positions hold the network’s response to each word."
+              ]
+            },
+            {
+              "text": "**Hidden layers** of **three, two and four** neurons sit in between.",
+              "children": [
+                "The full layout is **2 to 3 to 2 to 4 to 5**, counting neurons per layer.",
+                "Each hidden neuron takes values from the layer before and passes its result to the layer after."
+              ]
+            },
+            {
+              "text": "The layers are **fully connected**.",
+              "children": [
+                "Each neuron feeds every neuron in the next layer.",
+                "Every connection has its own **weight**, and **40** signed weights fill the network, from small values like **+0.005** and **−0.001** to larger ones like **+0.6** and **−0.4**.",
+                "A positive weight passes its contribution on with the same sign, and a negative weight flips it."
+              ]
+            },
+            {
+              "text": "F1 and F2 each reach all three first-layer neurons through different weights.",
+              "children": [
+                "Every first-layer neuron therefore blends the same two measurements in its own proportions."
+              ]
+            },
+            {
+              "text": "These weights hold steady across the network’s examples.",
+              "children": [
+                "A new formant value changes what flows along the connections.",
+                "A new weight changes how strongly a connection counts.",
+                "Each weight describes one connection’s contribution to its receiving neuron."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture15-p003",
+          "page": 3,
+          "title": "Forward propagation combines weighted inputs",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**Forward propagation** moves information from the inputs through each hidden layer to the outputs, here for **F1 = 320** and **F2 = 2000**.",
+              "children": []
+            },
+            {
+              "text": "The top first-layer neuron computes **w₁ times F1 plus w₂ times F2**.",
+              "children": [
+                "With weights **+0.005** and **−0.001**, F1 adds +0.005 times 320 and F2 adds −0.001 times 2000.",
+                "The total is **−0.40**."
+              ]
+            },
+            {
+              "text": "That multiply-and-add operation is an **inner product**.",
+              "children": [
+                "The other first-layer neurons, with their own weights, reach **6.64** and **2.72**.",
+                "Negative values like −0.40 pass forward just like positive ones."
+              ]
+            },
+            {
+              "text": "Every later layer applies the same operation to the layer before it.",
+              "children": [
+                "The second layer reaches about **5.50** and **−5.93**.",
+                "The third reaches about **1.57, −1.95, −1.95** and **−2.88**.",
+                "Each layer waits on the previous one, so information moves strictly in order."
+              ]
+            },
+            {
+              "text": "The final five sums are **logits**, **0.622, −1.398, −1.300, −0.478** and **−1.076**.",
+              "children": [
+                "**Softmax** raises e to each logit and divides by the total of all five exponentials.",
+                "The results are five positive probabilities that add to 1, even for negative logits."
+              ]
+            },
+            {
+              "text": "**Done** comes out highest, at about **55.7%**.",
+              "children": [
+                "**Don** follows at about 18.5%, then **Dan** at 10.2%, **dean** at **8.1%** and **dune** at 7.4%.",
+                "These are the current responses of a network with linear hidden activations and fixed weights."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture15-p004",
+          "page": 4,
+          "title": "Pop quiz · Forward propagation",
+          "kind": "prompt",
+          "teaching": []
+        },
+        {
+          "id": "lecture15-p005",
+          "page": 5,
+          "title": "Info on Exam 2 and Exam 3",
+          "kind": "logistics",
+          "teaching": []
+        },
+        {
+          "id": "lecture15-p006",
+          "page": 6,
+          "title": "Backpropagation uses the difference between prediction and target",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**Backpropagation** begins with two versions of the output.",
+              "children": [
+                "The **computed output** is the network’s current distribution, with **done** at **55.7%** and **dean** at **8.1%**.",
+                "The **desired output** marks **dean** with a **1** and the other words with **0**, since dean is the word spoken."
+              ]
+            },
+            {
+              "text": "**Cross-entropy loss** scores the mismatch from the probability of the true word.",
+              "children": [
+                "Here the loss is the negative log of the probability of dean.",
+                "More probability on dean means less loss."
+              ]
+            },
+            {
+              "text": "The computation moves **backward** from the outputs toward the inputs.",
+              "children": [
+                "It finds the contribution of the final weights first.",
+                "It then works through hidden layer 3, hidden layer 2 and hidden layer 1, in that order.",
+                "Each step updates a layer’s weights, so **+0.1** becomes **+0.083** and **+0.6** becomes **+0.622**, for example."
+              ]
+            },
+            {
+              "text": "A **gradient** gives how the loss shifts with a small change in one weight.",
+              "children": [
+                "The update subtracts the learning rate, **η**, times that gradient from the weight.",
+                "A positive gradient lowers the weight, and a negative gradient raises it."
+              ]
+            },
+            {
+              "text": "The forward-pass activations stay fixed during the whole backward pass.",
+              "children": [
+                "Every gradient uses the original weights and stored activations, which makes the updates one simultaneous step.",
+                "A fresh forward pass then gives the updated predictions.",
+                "Input connections get a much smaller learning rate, since their inputs are raw formant values in hertz."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture15-p007",
+          "page": 7,
+          "title": "Predict how changing a marked weight affects error",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**If this weight increases, does the error go up or down?** The target word is **dean**, while the network favors **done**, so the answer depends on how the change moves the probability of dean.",
+              "children": []
+            },
+            {
+              "text": "The **pink** connection runs from the top neuron of the last hidden layer to **done**.",
+              "children": [
+                "The weight is positive, and the neuron’s activation is about **1.57**.",
+                "Raising the weight raises done’s score.",
+                "Softmax splits one total among the five words, so a stronger done leaves less for dean, and the loss **rises**."
+              ]
+            },
+            {
+              "text": "The **blue** connection runs from **F1** to the top neuron of the first hidden layer.",
+              "children": [
+                "Raising it raises that neuron’s value, since F1 is positive.",
+                "The change then spreads through many signed connections to all five outputs.",
+                "Its effect on the error comes from all of those downstream paths together."
+              ]
+            },
+            {
+              "text": "The backward calculation gives the answer for this network and target.",
+              "children": [
+                "The blue connection’s gradient is positive as well.",
+                "A small increase raises the error, so the update lowers the weight.",
+                "Both marked weights decrease here, the early one because of the combined pull of every path that follows it."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture15-p008",
+          "page": 8,
+          "title": "Backpropagation reuses downstream error calculations",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Comparing the **last** weights with the **first** weights reveals why training runs backward.",
+              "children": []
+            },
+            {
+              "text": "The **last weights, W5**, set the output probabilities directly.",
+              "children": [
+                "The error depends very directly on them.",
+                "The gap between computed and desired outputs points straight to better W5 values."
+              ]
+            },
+            {
+              "text": "The **first weights, W2**, sit far from the error.",
+              "children": [
+                "W2 shapes the first hidden activations.",
+                "Those pass through two more layers and other weights before any output appears.",
+                "W2’s share of the blame is spread across every path that follows it.",
+                "That share **includes** the effect of W5, since W5 lies downstream."
+              ]
+            },
+            {
+              "text": "**W5 is the easy problem**, and W2 builds on it.",
+              "children": [
+                "Solving small problems first and reusing their answers for larger, dependent problems is **dynamic programming**.",
+                "**Backpropagation is Bellman–Viterbi dynamic programming.**",
+                "It computes the output-side effects once and reuses them for each earlier layer."
+              ]
+            },
+            {
+              "text": "**Backpropagation = SGD + dynamic programming.**",
+              "children": [
+                "**SGD**, stochastic gradient descent, adjusts the weights.",
+                "Backpropagation supplies the gradients SGD needs, efficiently, through dynamic programming."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture15-p009",
+          "page": 9,
+          "title": "Pair each recording with its target row",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Training draws on two **training matrices**.",
+              "children": []
+            },
+            {
+              "text": "**Formant_Inputs** is **110 × 2**.",
+              "children": [
+                "Each row holds **F1** and **F2** in hertz for one recording.",
+                "The network reads each row as one example."
+              ]
+            },
+            {
+              "text": "**TrueVowel_Outputs** is **110 × 5**.",
+              "children": [
+                "Its columns are **done, dune, dean, Don** and **Dan**.",
+                "Each row has a **1** in the correct word’s column and **0** elsewhere, a **one-hot** target."
+              ]
+            },
+            {
+              "text": "Example rows pair formants with words.",
+              "children": [
+                "**500, 1500** with **done**.",
+                "**350, 1000** with **dune**.",
+                "**320, 2000** with **dean**, the network’s running example.",
+                "**700, 1100** with **Don**, and **800, 1700** with **Dan**."
+              ]
+            },
+            {
+              "text": "Row order ties the two matrices together.",
+              "children": [
+                "The third input row, 320 and 2000, matches the third target row, dean.",
+                "Each input row stays with its own target row throughout training.",
+                "The five rows lay out the format of all 110 examples."
+              ]
+            },
+            {
+              "text": "The network’s output and the target matrix are separate.",
+              "children": [
+                "Before backpropagation, the network favors **done** at 55.7% for the dean example.",
+                "The target holds the correct label, and training compares the two."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture15-p010",
+          "page": 10,
+          "title": "Read one full-batch training step in PyTorch",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "A short **PyTorch** program carries out one full-batch training step.",
+              "children": []
+            },
+            {
+              "text": "It first loads the data.",
+              "children": [
+                "**X = torch.load(\"Formant_Inputs.pt\").float()** brings in the 110 × 2 formants.",
+                "**Y = torch.load(\"TrueVowel_Outputs.pt\").float()** brings in the 110 × 5 targets.",
+                "**.float()** gives both floating-point values, and the files are expected to exist already."
+              ]
+            },
+            {
+              "text": "**nn.Sequential** declares the layers.",
+              "children": [
+                "**nn.Linear(2, 3)**, **nn.Linear(3, 2)**, **nn.Linear(2, 4)** and **nn.Linear(4, 5)** follow the **2 to 3 to 2 to 4 to 5** layout.",
+                "The layers connect directly, with no declared activation in between."
+              ]
+            },
+            {
+              "text": "Five lines make one training step.",
+              "children": [
+                "**sgd = torch.optim.SGD(net.parameters(), lr=0.1)** prepares stochastic gradient descent at a **learning rate of 0.1**.",
+                "**sgd.zero_grad()** clears old gradients.",
+                "**loss = nn.CrossEntropyLoss()(net(X), Y)** runs the network and compares its scores with Y, with the softmax-related step built into the loss.",
+                "**loss.backward()** computes every parameter’s gradient.",
+                "**sgd.step()** updates the parameters."
+              ]
+            },
+            {
+              "text": "Each line does one job.",
+              "children": [
+                "Gradients are computed by backward and applied by step.",
+                "All **110 rows** feed this single step.",
+                "The program starts from PyTorch’s default weights and biases, so it shares the drawing’s layer sizes with its own starting numbers."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture15-p011",
+          "page": 11,
+          "title": "Sigmoid turns an inner product into a bounded activation",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **sigmoid activation function**, **σ(z) = 1 / (1 + exp(−z))**, turns an inner product z into a value between 0 and 1.",
+              "children": []
+            },
+            {
+              "text": "Large inputs land near the limits.",
+              "children": [
+                "A **large positive** inner product gives a sigmoid near **1**.",
+                "A **large negative** inner product gives a sigmoid near **0**.",
+                "**σ(−4) = 0.0180**, and **σ(4) = 0.9820**."
+              ]
+            },
+            {
+              "text": "The curve is an S.",
+              "children": [
+                "The **linear activation**, the weighted sum, runs along the horizontal axis, and the **sigmoid activation** runs up the vertical axis.",
+                "It climbs steeply through the middle and levels off at both ends.",
+                "On the flat ends, large input changes produce only small output changes."
+              ]
+            },
+            {
+              "text": "In the formula, a large positive z shrinks exp(−z) toward zero, pushing the output toward 1.",
+              "children": [
+                "A large negative z makes exp(−z) enormous, pushing the output toward 0."
+              ]
+            },
+            {
+              "text": "**Lord Edgar Adrian**, **Nobel Prize in Physiology or Medicine, 1932**, provides the biological motivation.",
+              "children": [
+                "**Neurons are nearly digital**, roughly on or off.",
+                "His work concerned firing rates, and the sigmoid models that graded, nearly on-off behavior."
+              ]
+            },
+            {
+              "text": "**Animal perception** follows the same pattern.",
+              "children": [
+                "Some similar things are perceived as different, and some very different things are perceived as the same.",
+                "Inputs on either side of the steep middle give very different outputs, while inputs on a flat end give nearly identical ones."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture15-p012",
+          "page": 12,
+          "title": "Apply sigmoid while recalculating downstream activity",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Sigmoid is added to the network **one neuron at a time**, with the inputs held at **F1 = 320** and **F2 = 2000** and every weight unchanged.",
+              "children": [
+                "**Purple** marks a linear neuron.",
+                "**Green** marks a neuron that passes its inner product through sigmoid.",
+                "The nine hidden neurons switch in layer order, three, then two, then four."
+              ]
+            },
+            {
+              "text": "The first switch takes the top first-layer neuron from **−0.400** to about **0.401**.",
+              "children": [
+                "The next layer now receives a different value.",
+                "Every downstream value is **recalculated** from that point forward.",
+                "The result is a true sigmoid network, built one neuron at a time."
+              ]
+            },
+            {
+              "text": "With the first layer all sigmoid, its outputs are about **0.401, 0.999** and **0.938**.",
+              "children": [
+                "The second layer then gives about **0.713** and **0.223**.",
+                "The third layer ends at about **0.599, 0.609, 0.609** and **0.481**."
+              ]
+            },
+            {
+              "text": "The outputs still go through **softmax**.",
+              "children": [
+                "Once every hidden neuron uses sigmoid, **Dan** leads at about **32.0%**.",
+                "**Dean** climbs to about **23.0%**, **dune** sits near 20.2%, **done** drops to about 16.2% and **Don** is near 8.5%.",
+                "Same inputs, same weights, different output pattern."
+              ]
+            },
+            {
+              "text": "The weights have not been trained.",
+              "children": [
+                "Dean improves over the all-linear network and still trails Dan.",
+                "Changing the activation rule changes the network’s favorite, and training is what aligns that favorite with the true word."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture15-p013",
+          "page": 13,
+          "title": "Insert sigmoid after the hidden linear layers",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "This PyTorch program repeats the earlier one with **sigmoid** added after each hidden layer.",
+              "children": [
+                "It loads **X**, the 110 × 2 formants, and **Y**, the 110 × 5 targets, exactly as before.",
+                "**nn.Sigmoid()** follows **nn.Linear(2, 3)**, **nn.Linear(3, 2)** and **nn.Linear(2, 4)**."
+              ]
+            },
+            {
+              "text": "The sizes stay **2 to 3 to 2 to 4 to 5**.",
+              "children": [
+                "Sigmoid reshapes values while keeping their count.",
+                "Three values remain three, so **nn.Linear(3, 2)** still gets the input size it expects.",
+                "The two-value and four-value layers work the same way."
+              ]
+            },
+            {
+              "text": "**nn.Linear(4, 5)** ends the network with no sigmoid after it.",
+              "children": [
+                "Its five logits go to **CrossEntropyLoss**, which carries out the softmax-related calculation.",
+                "Hidden sigmoids transform intermediate values, while the final layer scores the five words."
+              ]
+            },
+            {
+              "text": "The training lines stay the same.",
+              "children": [
+                "**zero_grad**, the forward pass with its loss, **backward** and **step** run in that order.",
+                "The learning rate stays **0.1**, and all 110 recordings feed one step."
+              ]
+            },
+            {
+              "text": "The drawn network uses the original illustrative weights with no biases, giving Dan **32.0%** and dean **23.0%**.",
+              "children": [
+                "The program begins with PyTorch’s default weights and biases.",
+                "Its structure matches the drawing, and the same starting weights and bias choices would reproduce the drawing’s probabilities."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "visualPresentation": {
+    "lecture11-p002": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture11-p003": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture11-p004": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture11-p006": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture11-p007": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture11-p008": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture11-p009": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture11-p011": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p003": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p004": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p005": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p006": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p007": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p008": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p010": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p012": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p014": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p015": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p018": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture12-p023": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture13-p003": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture13-p005": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture13-p006": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture13-p007": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture13-p010": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture13-p011": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture13-p014": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture13-p015": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture13-p019": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture14-p002": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture14-p003": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture14-p005": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture14-p006": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture14-p010": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    },
+    "lecture14-p014": {
+      "hideStaticPreview": true,
+      "reason": "The flattened preview is a uniform blank background; the original embedded video supplies the visual content.",
+      "previewSha256": "c96bb6b03b79cce3c709fd74628ab2040db6f71f1759bd7419897a019059580b"
+    }
+  },
+  "references": [
+    {
+      "title": "Exam 1 Review · uploaded copy",
+      "file": "sources/exam-review-v2.docx",
+      "kind": "Transcript writing reference",
+      "originalFilename": "Exam 1 Review (2).docx",
+      "pages": 3,
+      "sha256": "a2e49f69fda812a087317f3dc428a777eb2c0d926888ae1adcefa16f852f9a23"
+    },
+    {
+      "title": "Exam 1 · uploaded answer key",
+      "file": "sources/exam1-key.pdf",
+      "kind": "Transcript writing reference",
+      "originalFilename": "Exam1 key.pdf",
+      "pages": 5,
+      "sha256": "5c53fb6f375493432c6395aa481d2cf706bf098bcff544c57ac0775ec52f002a"
+    }
+  ],
+  "writingReference": "PSYC301 Module II and LING406 Version 10",
+  "guidance": "Study Studio Prompt 1 with direct explanations. Affirmative teaching replaces unnecessary caveats, not-statements and limits the source does not state. Limits the source itself states are kept.",
+  "metrics": {
+    "instructionalPages": 85,
+    "words": 16839,
+    "averageWords": 198,
+    "medianWords": 201,
+    "maximumWords": 244
+  }
+}

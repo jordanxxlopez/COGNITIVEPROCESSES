@@ -4,7 +4,18 @@ Human Language and Technology · Fall 2026 · Khalil Iskarous.
 
 The studio provides teaching notes alongside the original pages, numbered lecture collections, a selective must-know core review, a readiness guide, demonstrations, combined notes, and both multiple-choice and written practice. Notes explain cause and effect in the instructor's style. Written responses use model explanations and self-assessment criteria. Multiple-choice responses use a source-checked key and explain every option.
 
-Lectures 11–15 have four transcript editions. **Version 4 · Teaching notes** opens for new users. It follows the plain explanatory style of PSYC301 expanded teaching and LING406 slide-wording notes, with a median of **221 words across 85 instructional pages**. The user requested a 200–250-word median rather than a minimum per slide. Each explanation uses a few connected paragraphs to teach mechanisms and source-supported distinctions. The 14 title, blank, and prompt-only pages remain unpadded. Versions 1, 2, and 3 remain unchanged, and an explicitly saved version stays selected. All versions share the same personal notes and read marks and apply across lecture notes, combined notes, core review, readers, search, recall, print, and speech.
+Lectures 11–15 have ten transcript editions. **Version 4 · Teaching notes** was the initial edition before the bulleted editions below were added. It follows the plain explanatory style of PSYC301 expanded teaching and LING406 slide-wording notes, with a median of **221 words across 85 instructional pages**. The user requested a 200–250-word median rather than a minimum per slide. Each explanation uses a few connected paragraphs to teach mechanisms and source-supported distinctions. The 14 title, blank, and prompt-only pages remain unpadded. Versions 1, 2, and 3 remain unchanged, and an explicitly saved version stays selected. All versions share the same personal notes and read marks and apply across lecture notes, combined notes, core review, readers, search, recall, print, and speech.
+
+Module II also has six bulleted teaching-notes editions, matching the editions written for PSYC301 Module II and LING406. Each one is a separate page-by-page text for all 85 instructional pages of Lectures 11–15, written as bolded main bullets of connected spoken sentences with nested sub-bullets. When the same source slide appears in more than one lecture deck, an edition reuses its own text for that slide.
+
+- **Version 7 · Teaching notes (bulleted)** teaches each mechanism step and demonstration value, about 240 words per page.
+- **Version 10 · Direct teaching notes** uses affirmative explanations instead of unnecessary caveats, about 200 words.
+- **Version 12 · Detailed teaching notes** follows the 350–400-word detailed guidance, about 360 words.
+- **Version 14 · Balanced teaching notes** follows the 225-word-average, 350-word-maximum guidance and averages about 200 words, a little under its target.
+- **Version 16 · Natural teaching notes** tells demonstrations naturally under a strict 300-word maximum, about 240 words.
+- **Version 18 · Teaching scripts** follows Prompt 2: figures are explained by their meaning, only key numbers are kept, about 200 words.
+
+Version 18 opens for new users, and an explicitly saved version stays selected. Versions 1–4, notes, read marks and practice are unchanged. Title, blank and prompt-only pages stay empty. Rebuild all six with `python3 ling285/authoring/build_transcripts_notes.py`. The authored text is in `authoring/transcripts-vN/lectureNN.txt`.
 
 **Practice Version 2 · Exam style** adds 250 questions, separate from the original bank. Each lecture has 25 MCQs and 25 written questions. The current test selects 100 unique questions, split 50/50 and balanced across the five lectures. It adapts the actual 25-question Exam 1 key and 20-prompt review: some questions ask for identification or a direction, while others ask for a comparison or causal explanation. The 50/50 study split follows the user's requirement, not the observed exam proportions. Version 1 remains available, with separate saved sessions and answers. A temporary missing version file leaves earlier practice available and retains the unavailable edition's saved work.
 
@@ -45,6 +56,7 @@ node --test ling285/tests/transcript-versions.test.cjs
 node --test ling285/tests/practice-versions.test.cjs
 node --test ling285/tests/editions-v3-practice-v2.test.cjs
 node --test ling285/tests/transcripts-v4.test.cjs
+node --test ling285/tests/transcripts-notes-editions.test.cjs
 node ling285/tests/app-smoke.cjs
 node ling285/tests/module-practice-smoke.cjs
 ```

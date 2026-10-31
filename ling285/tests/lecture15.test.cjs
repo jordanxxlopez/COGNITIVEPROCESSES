@@ -1,4 +1,5 @@
 'use strict';
+const notesEditions=require('./notes-editions-patch.cjs');
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),http=require('node:http'),{execFileSync}=require('node:child_process');
 const {chromium}=require('playwright'),repo=path.resolve(__dirname,'../..'),root=path.join(repo,'ling285');
 const read=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8')),old=f=>JSON.parse(execFileSync('git',['show','f990dd3:ling285/'+f],{cwd:repo,encoding:'utf8',maxBuffer:25*1024*1024}));
@@ -23,7 +24,7 @@ test('all prior slides, editions, question text, answers and study guides remain
  assert.deepEqual(D.guide.slice(0,before.guide.length),before.guide);assert.deepEqual(D.modules[0],before.modules[0]);
  for(const f of ['transcripts-v2.json','transcripts-v3.json','transcripts-v4.json']){const past=old(f),now=read(f);for(const [id,c]of Object.entries(past.collections))assert.deepEqual(now.collections[id],c,f+':'+id);assert.deepEqual(now.visualPresentation,past.visualPresentation)}
  for(const q of old('practice-v2.json').questions)assert.deepEqual(P.questions.find(x=>x.id===q.id),q,q.id);
- for(const f of ['app.js','index.html']){const before=execFileSync('git',['show','f990dd3:ling285/'+f],{cwd:repo,encoding:'utf8'}),now=fs.readFileSync(path.join(root,f),'utf8');assert.equal(now,f==='app.js'?before.replace("new Set(['lecture11','lecture12','lecture13','lecture14'])","new Set(['lecture11','lecture12','lecture13','lecture14','lecture15'])"):before.replace('app.js?v=ling285-reader-timer-1','app.js?v=ling285-lecture15-1'))}
+ for(const f of ['app.js','index.html']){const before=execFileSync('git',['show','f990dd3:ling285/'+f],{cwd:repo,encoding:'utf8'}),now=fs.readFileSync(path.join(root,f),'utf8');assert.equal(now,f==='app.js'?notesEditions.app(before.replace("new Set(['lecture11','lecture12','lecture13','lecture14'])","new Set(['lecture11','lecture12','lecture13','lecture14','lecture15'])")):notesEditions.index(before.replace('app.js?v=ling285-reader-timer-1','app.js?v=ling285-lecture15-1')))}
 });
 test('four editions teach the real pages; both banks add fifty usable source-linked questions',()=>{
  for(const v of [2,3,4]){
