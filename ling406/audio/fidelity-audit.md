@@ -1,5 +1,7 @@
 # Module II audio fidelity audit
 
+**Listening-level update.** The 31 sustained acoustic examples now play and download as PCM WAV copies reduced by 12 dB with uniform gain. The formant, pitch, timing and amplitude-rise comparisons remain intact, including exact decoded sample counts. Original source files and historical hashes are retained separately. Rounding to 16-bit PCM introduces a small measured quantization error. This update adds no filtering, compression, normalization or onset fades. See the measured [level-adjustment record](authoring/listening-levels.json).
+
 The correction covers **every previously active recording**, not just the nasal examples. At baseline commit `929574a`, the listening layer contained **107 recording entries across 398 clip-to-slide placements** in 128 lecture/review sections. All 107 entries and all 398 placements were checked against their source content and available stimulus methods. The audit identified **87 placements requiring replacement or removal**. That number counts placements, not 87 different recordings.
 
 The corrected registry contains **140 player entries backed by 139 distinct audio files**. One Russian word file has separate target and competitor entries so its role can be stated correctly in each condition. Twenty-one older generic or mismatched entries have been retired from lesson mappings. Their files and provenance remain archived for traceability. A retired file's presence in the repository does not make it a current lesson stimulus.

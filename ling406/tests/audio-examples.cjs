@@ -114,23 +114,37 @@ const BASE=process.env.STUDIO_BASE_URL||'http://localhost:8907/ling406/';
     },{files,cacheName:/const CACHE='([^']+)'/.exec(fs.readFileSync(__dirname+'/../sw.js','utf8'))[1]});
     assert.equal(cached.fullResponses,files.length,'Every delivered recording is fully cached at install time');
     await offlineContext.setOffline(true);
-    const ranges=await offlinePage.evaluate(async file=>{
+    const quietId='source_filter_comparison',quietFile=manifest.clips[quietId].file;
+    assert(/\.wav$/i.test(quietFile),'The quiet gain-only comparison is delivered as sample-preserving WAV');
+    const rangeResults=await offlinePage.evaluate(async files=>Promise.all(files.map(async file=>{
       const full=await fetch(file);const all=new Uint8Array(await full.arrayBuffer());
-      async function range(header){const r=await fetch(file,{headers:{Range:header}});return {status:r.status,contentRange:r.headers.get('Content-Range'),bytes:Array.from(new Uint8Array(await r.arrayBuffer()))};}
-      return {file,total:all.length,fullStatus:full.status,prefix:Array.from(all.slice(0,128)),suffix:Array.from(all.slice(-32)),first:await range('bytes=0-127'),last:await range('bytes=-32'),unsatisfiable:await range('bytes='+all.length+'-')};
-    },files[files.length-1]);
-    assert.equal(ranges.fullStatus,200);assert(ranges.total>128);
-    assert.equal(ranges.first.status,206);assert.equal(ranges.first.contentRange,`bytes 0-127/${ranges.total}`);assert.deepEqual(ranges.first.bytes,ranges.prefix);
-    assert.equal(ranges.last.status,206);assert.equal(ranges.last.contentRange,`bytes ${ranges.total-32}-${ranges.total-1}/${ranges.total}`);assert.deepEqual(ranges.last.bytes,ranges.suffix);
-    assert.equal(ranges.unsatisfiable.status,416);assert.equal(ranges.unsatisfiable.contentRange,`bytes */${ranges.total}`);assert.equal(ranges.unsatisfiable.bytes.length,0);
+      async function range(header){const r=await fetch(file,{headers:{Range:header}});return {status:r.status,type:r.headers.get('Content-Type'),contentRange:r.headers.get('Content-Range'),bytes:Array.from(new Uint8Array(await r.arrayBuffer()))};}
+      return {file,total:all.length,fullStatus:full.status,type:full.headers.get('Content-Type'),prefix:Array.from(all.slice(0,128)),suffix:Array.from(all.slice(-32)),first:await range('bytes=0-127'),last:await range('bytes=-32'),unsatisfiable:await range('bytes='+all.length+'-')};
+    })),[files.find(file=>/\.mp3$/i.test(file)),quietFile]);
+    const [ranges,quietRanges]=rangeResults;
+    for(const result of rangeResults){
+      const type=/\.wav$/i.test(result.file)?/^audio\/(?:x-)?wav(?:e)?(?:;|$)/i:/^audio\/mpeg(?:;|$)/i;
+      assert.equal(result.fullStatus,200);assert(result.total>128);assert.match(result.type,type);
+      assert.equal(result.first.status,206);assert.equal(result.first.contentRange,`bytes 0-127/${result.total}`);assert.deepEqual(result.first.bytes,result.prefix);assert.equal(result.first.type,result.type);
+      assert.equal(result.last.status,206);assert.equal(result.last.contentRange,`bytes ${result.total-32}-${result.total-1}/${result.total}`);assert.deepEqual(result.last.bytes,result.suffix);assert.equal(result.last.type,result.type);
+      assert.equal(result.unsatisfiable.status,416);assert.equal(result.unsatisfiable.contentRange,`bytes */${result.total}`);assert.equal(result.unsatisfiable.bytes.length,0);
+    }
     await offlinePage.evaluate(id=>LingStudio.openReader([id],0,true,'Offline audio'),sectionId);
     const offlineAudio=offlinePage.locator('#readerRoot audio').first();
     await offlineAudio.evaluate(async audio=>{await audio.play();});await offlinePage.waitForTimeout(120);
     const offlinePlayback=await offlineAudio.evaluate(audio=>({time:audio.currentTime,duration:audio.duration,error:audio.error?.message||null}));
     assert(offlinePlayback.time>0&&offlinePlayback.duration>0&&!offlinePlayback.error,'Native player plays the cached recording while offline');
+    assert(/\.mp3$/i.test(await offlineAudio.getAttribute('src')),'Existing MP3 native playback remains covered offline');
+    const quietSection=entries.find(([,ids])=>ids.includes(quietId))[0];
+    await offlinePage.evaluate(id=>LingStudio.openReader([id],0,true,'Offline quiet WAV'),quietSection);
+    const quietAudio=offlinePage.locator(`#readerRoot audio[data-study-audio="${quietId}"]`);
+    await quietAudio.evaluate(async audio=>{await audio.play();});await offlinePage.waitForTimeout(120);
+    const quietPlayback=await quietAudio.evaluate(audio=>({time:audio.currentTime,duration:audio.duration,error:audio.error?.message||null}));
+    assert(quietPlayback.time>0&&quietPlayback.duration>0&&!quietPlayback.error,'Native player plays the quiet gain-only WAV while offline');
     await offlineContext.setOffline(false);await offlineContext.close();
-    fs.writeFileSync('/tmp/ling406-audio-browser-report.json',JSON.stringify({mappedSlides:entries.length,uniqueFiles:files.length,cached,offlinePlayback,rangeChecks:{prefix:{status:ranges.first.status,bytes:ranges.first.bytes.length},suffix:{status:ranges.last.status,bytes:ranges.last.bytes.length},unsatisfiable:{status:ranges.unsatisfiable.status,bytes:ranges.unsatisfiable.bytes.length}}},null,2)+'\n');
+    const rangeProof=result=>({file:result.file,type:result.type,prefix:{status:result.first.status,type:result.first.type,bytes:result.first.bytes.length},suffix:{status:result.last.status,type:result.last.type,bytes:result.last.bytes.length},unsatisfiable:{status:result.unsatisfiable.status,bytes:result.unsatisfiable.bytes.length}});
+    fs.writeFileSync('/tmp/ling406-audio-browser-report.json',JSON.stringify({mappedSlides:entries.length,uniqueFiles:files.length,cached,offlinePlayback,rangeChecks:rangeProof(ranges),quietWav:{clipId:quietId,file:quietFile,offlinePlayback:quietPlayback,rangeChecks:rangeProof(quietRanges)}},null,2)+'\n');
     assert.deepEqual(errors,[]);
-    console.log(`PASS: ${entries.length} mapped slides, ${files.length} browser-decodable audio files, native playback/pause/resume, all transcript editions, single-player and stop behavior, notes/read/quiz preservation, review mapping, removed-player cleanup, light/dark mobile layouts, install-time full audio caching, offline native playback, and byte-range 206/416 handling.`);
+    console.log(`PASS: ${entries.length} mapped slides, ${files.length} browser-decodable audio files, native playback/pause/resume, all transcript editions, single-player and stop behavior, notes/read/quiz preservation, review mapping, removed-player cleanup, light/dark mobile layouts, install-time full audio caching, offline MP3 and quiet WAV native playback, and MIME-preserving byte-range 206/416 handling.`);
   }finally{await browser.close();}
 })().catch(error=>{console.error(error);process.exit(1);});
