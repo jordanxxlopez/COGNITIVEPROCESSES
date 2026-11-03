@@ -1,5 +1,5 @@
 from pathlib import Path
-from PIL import Image,ImageDraw,ImageFont
+from PIL import Image,ImageDraw,ImageFont,ImageChops
 import json,subprocess,hashlib,sys
 ROOT=Path(__file__).resolve().parents[3];OUT=ROOT/'psyc301-videos'
 sys.path.insert(0,str(Path(__file__).parent))
@@ -31,6 +31,14 @@ for c in manifest['clips']:
  if c['id'].startswith('sperling'):
   ids=[i for i in range(120) if 1<=i/60<1.05]
   assert ids==[60,61,62]
+# Inspect rendered pixels at the sample boundaries, including the final sample frame.
+vogel=next(c for c in manifest['clips'] if c['id']=='vogel')
+blank=frame(vogel,.5).crop((180,180,420,460))
+visible=[i for i in range(65,85) if ImageChops.difference(frame(vogel,i/60).crop((180,180,420,460)),blank).getbbox()]
+assert visible==[72,73,74,75,76,77],visible
+word=next(c for c in manifest['clips'] if c['id']=='word-superiority')
+# Last trial is a nonword; its frame at exactly 9.05 s must already be the mask.
+assert ImageChops.difference(frame(word,9.05),frame(word,9.1)).getbbox() is None
 stacks=[[3,2,1],[],[]]
 for a,b in MOVES:
  disk=stacks[a].pop();assert not stacks[b] or stacks[b][-1]>disk;stacks[b].append(disk)

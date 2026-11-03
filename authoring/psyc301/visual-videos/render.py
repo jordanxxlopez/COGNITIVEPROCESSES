@@ -2,12 +2,14 @@
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 import json,math,subprocess,wave,struct,random,hashlib
+from functools import lru_cache
 ROOT=Path(__file__).resolve().parents[3]
 OUT=ROOT/'psyc301-videos'
 MAN=json.loads((OUT/'manifest.json').read_text())
 W,H=960,600
 FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+@lru_cache(maxsize=80)
 def font(n,b=False):return ImageFont.truetype(BOLD if b else FONT,n)
 def text(d,s,x,y,n=30,color='#22272b',anchor='mm',bold=False):d.text((x,y),s,font=font(n,bold),fill=color,anchor=anchor)
 def multiline(d,s,y,n=28):
@@ -22,7 +24,7 @@ def ease(x):x=max(0,min(1,x));return x*x*(3-2*x)
 def lerp(a,b,u):return (a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u)
 def dot(d,x,y,r=22,color='#397da3'):d.ellipse((x-r,y-r,x+r,y+r),fill=color)
 def pastefit(im,img,box):
- x,y,w,h=box;img=img.copy();img.thumbnail((w,h),Image.Resampling.LANCZOS);im.paste(img,(int(x+(w-img.width)/2),int(y+(h-img.height)/2)))
+ x,y,w,h=box;scale=min(w/img.width,h/img.height);img=img.resize((round(img.width*scale),round(img.height*scale)),Image.Resampling.LANCZOS);im.paste(img,(int(x+(w-img.width)/2),int(y+(h-img.height)/2)))
 ROT=Image.open(ROOT/'media/working-memory/slide-17.webp')
 # Coordinates normalized to verified 1386 x 1071 course slide.
 def cropnorm(im,box,base):return im.crop(tuple(round(v*s/b) for v,s,b in zip(box,(im.width,im.height,im.width,im.height),base*2)))
@@ -69,7 +71,7 @@ def frame(c,t):
   pastefit(im,CHAIN,(140,220,680,340))
   multiline(d,'Join the four chains into one closed loop.\nOpening a link costs 2¢; closing it costs 3¢.\nBudget: 15¢.',95,25)
  elif id=='vogel':
-  cross(d);phase=t-1
+  cross(d);phase=round(t-1,8)
   if 0<=phase<.2:text(d,'←',480,245,52)
   if .2<=phase<.3 or 1.2<=phase<3.2:
    for side in [-1,1]:
@@ -104,7 +106,9 @@ def frame(c,t):
   a=(290,110);b=(690,110);length=330
   angle=0 if t<5 else -.68*math.sin((t-5)*math.pi/2)
   end=(b[0]+length*math.sin(angle),b[1]+length*math.cos(angle))
-  d.line((*a,290,440),fill='#675943',width=3);d.line((*b,*end),fill='#675943',width=3)
+  if t>=10:end=(482,366)
+  left=lerp((290,440),(482,366),ease((t-4)/3))
+  d.line((*a,*left),fill='#675943',width=3);d.line((*b,*end),fill='#675943',width=3)
   u=ease((t-2)/2);px,py=lerp((760,510),end,u)
   d.line((px-10,py-14,px+10,py+22),fill='#67717a',width=8);d.line((px+10,py-14,px-10,py+22),fill='#67717a',width=8)
  elif id=='water-jugs':
@@ -185,7 +189,7 @@ def frame(c,t):
   if .8<=phase<1.2:text(d,'←',480,235,48)
   if 1.5<=phase<3.5:dot(d,245 if t<4.5 else 715,320,11,'#222222')
  elif id=='egly':
-  phase=t%4;trial=min(2,int(t//4));cross(d)
+  phase=round(t%4,8);trial=min(2,int(t//4));cross(d)
   for x in [330,630]:d.rectangle((x-35,170,x+35,520),outline='#555555',width=3)
   if 1<=phase<1.1:d.line((295,205,295,170,365,170,365,205),fill='#777777',width=7)
   if 1.3<=phase<3.3:
