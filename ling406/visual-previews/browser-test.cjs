@@ -9,7 +9,7 @@ const path=require('node:path');
  const result={};
  try{
   for(let i=0;i<50;i++){try{await fetch('http://127.0.0.1:8765/ling406/');break}catch{await new Promise(r=>setTimeout(r,100))}}
-  browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required']});
+  browser=await chromium.launch({headless:true,channel:'chrome',args:['--autoplay-policy=no-user-gesture-required']});
   const context=await browser.newContext({viewport:{width:1280,height:900}});
   await context.addInitScript(()=>localStorage.setItem('ling406-study-studio-v1',JSON.stringify({notes:{'sentence-12':'Video regression note'},read:{'sentence-12':true},transcriptVersion:18})));
   const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
