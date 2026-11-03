@@ -17,10 +17,13 @@ jobs:
           import re,pathlib
           p=pathlib.Path('index.html')
           s=re.sub(r'data:image/[^;"\s]+;base64,[A-Za-z0-9+/=\s]+','IMAGE_DATA_REMOVED',p.read_text())
-          pathlib.Path('authoring/psyc301/visual-videos/index-inspection.txt').write_text(s)
+          for n in ['index.html','share.html']:
+           s=re.sub(r'data:image/[^;]+;base64,[A-Za-z0-9+/=\\s]+','IMAGE_DATA_REMOVED',pathlib.Path(n).read_text())
+           for i in range(0,len(s),180000):
+            pathlib.Path('authoring/psyc301/visual-videos/'+n+f'-{i//180000}.txt').write_text(s[i:i+180000])
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add authoring/psyc301/visual-videos/index-inspection.txt
+          git add authoring/psyc301/visual-videos
           git commit -m "Extract PSYC301 code for remote video integration review"
           git push
