@@ -1,0 +1,15 @@
+/* Optional source visuals in the guide only. The original text view is the default. */
+.guide-visual-toggle{display:inline-flex;align-items:center;gap:9px}
+.guide-toggle-track{display:inline-flex;align-items:center;width:32px;height:20px;padding:2px;border:1px solid var(--border);border-radius:20px;background:var(--soft)}
+.guide-toggle-track::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--muted)}
+.guide-visual-toggle[aria-checked=true] .guide-toggle-track{background:var(--accent);border-color:var(--accent)}
+.guide-visual-toggle[aria-checked=true] .guide-toggle-track::before{margin-left:auto;background:var(--accent-ink)}
+.guide-toggle-state{font-size:12px;font-weight:700;min-width:20px}
+.guide-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.guide-explanation,.guide-source{min-width:0}
+.guide-source[hidden]{display:none}
+.guide-pair .guide-source{position:sticky;top:16px;align-self:start;max-height:calc(100dvh - 32px);overflow:auto;padding:0 4px 5px 0;overscroll-behavior:contain}
+.guide-source .section-visual{margin:0;max-width:100%}
+.guide-source .slide{max-height:60vh;object-fit:contain}
+@media(max-width:1000px){.guide-pair{grid-template-columns:minmax(0,1fr);gap:20px}.guide-pair .guide-source{position:static;max-height:none;overflow:visible;padding:0}.guide-source .slide{max-height:65vh}}
+@media print{.guide-visual-toggle,.guide-source{display:none!important}.guide-pair{display:block}}

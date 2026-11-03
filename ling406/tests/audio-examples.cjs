@@ -104,14 +104,14 @@ const BASE=process.env.STUDIO_BASE_URL||'http://localhost:8907/ling406/';
     ]));
     await offlinePage.reload();
     assert(await offlinePage.evaluate(()=>Boolean(navigator.serviceWorker.controller)),'New service worker controls the fresh page');
-    const cached=await offlinePage.evaluate(async files=>{
-      const cache=await caches.open('ling406-audio-1');
+    const cached=await offlinePage.evaluate(async ({files,cacheName})=>{
+      const cache=await caches.open(cacheName);
       const checks=await Promise.all(files.map(async file=>{
         const response=await cache.match(new URL(file,location.href).href);
         return Boolean(response&&response.status===200);
       }));
-      return {cacheName:'ling406-audio-1',files:files.length,fullResponses:checks.filter(Boolean).length};
-    },files);
+      return {cacheName,files:files.length,fullResponses:checks.filter(Boolean).length};
+    },{files,cacheName:/const CACHE='([^']+)'/.exec(fs.readFileSync(__dirname+'/../sw.js','utf8'))[1]});
     assert.equal(cached.fullResponses,files.length,'Every delivered recording is fully cached at install time');
     await offlineContext.setOffline(true);
     const ranges=await offlinePage.evaluate(async file=>{
