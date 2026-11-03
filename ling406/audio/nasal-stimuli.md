@@ -1,3 +1,17 @@
+# Current nasal players use human recordings
+
+The active players now use Tagalog-language recordings by the same credited Lingua Libre speaker, Kunokuno, with separate **[na–ŋa] target** and **[ma–na] control** comparisons. They replace the earlier VocalTractLab players described below. The new excerpts come from recorded *man*, *na* and *nga*, retaining the initial nasal and early /a/ while excluding the final /n/ of *man*. No separate [g] or leading vowel is inserted.
+
+The original within-token pitch and timing remain. The excerpts have different natural core durations of 200, 230 and 255 ms, rather than artificially matched model durations. Scalar level adjustment and a 6 ms end fade are documented. The same [na] waveform occurs in both comparisons, with one second of silence between tokens. These are new pronunciation comparisons, not Narayan et al.'s original recordings or a recreation of the original acoustic matching and listener validation. The recording language and speaker are credited; native-language status was not independently verified.
+
+Source recordings by Kunokuno are licensed CC BY-SA 4.0, with adaptation credits retained in the players. See [current human-voice methods](human-voice-methods.md), the [active manifest](manifest.json), and the Commons pages for [man](https://commons.wikimedia.org/wiki/File:LL-Q34057_(tgl)-Kunokuno-man.wav), [na](https://commons.wikimedia.org/wiki/File:LL-Q34057_(tgl)-Kunokuno-na.wav) and [nga](https://commons.wikimedia.org/wiki/File:LL-Q34057_(tgl)-Kunokuno-nga.wav).
+
+The [active nasal manifest](authoring/human-recordings/nasals/active-manifest.json), [extraction manifest](authoring/human-recordings/nasals/manifest.json) and [source metadata](authoring/human-recordings/nasals/kunokuno_metadata.json) record the current files and credits. The artificial-language streams now also use recorded syllables from this same identified speaker, with their separate processing documented in the [human-voice methods](human-voice-methods.md).
+
+The following document is the **historical VTL implementation record**. Its synthesis parameters and model validation describe the archived model files, not the current human recordings.
+
+---
+
 # Matched nasal syllables for the Narayan example
 
 The target contrast is **[na]–[ŋa]**. The easier comparison is **[ma]–[na]**. [ma] is not a member of the target pair.

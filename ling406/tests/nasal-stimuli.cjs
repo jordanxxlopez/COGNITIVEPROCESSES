@@ -4,6 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const cp=require('node:child_process');
 const path=require('node:path');
+const crypto=require('node:crypto');
 const ROOT=path.resolve(__dirname,'../..');
 const BASE=process.env.STUDIO_BASE_URL||'http://localhost:8907/ling406/';
 const BASELINE='65ac30c';
@@ -18,6 +19,19 @@ function rowsOf(document){
  assert(rows,'Nasal authoring manifest must expose its units/comparison items');
  return Array.isArray(rows)?rows:Object.entries(rows).map(([id,row])=>({id,...row}));
 }
+function pcm16(file){
+ const bytes=fs.readFileSync(path.join(ROOT,'ling406',file));
+ assert.equal(bytes.toString('ascii',0,4),'RIFF');assert.equal(bytes.toString('ascii',8,12),'WAVE');
+ let rate,data;
+ for(let offset=12;offset+8<=bytes.length;){
+  const id=bytes.toString('ascii',offset,offset+4),length=bytes.readUInt32LE(offset+4),start=offset+8;
+  if(id==='fmt '){assert.equal(bytes.readUInt16LE(start),1);assert.equal(bytes.readUInt16LE(start+2),1);rate=bytes.readUInt32LE(start+4);assert.equal(bytes.readUInt16LE(start+14),16);}
+  if(id==='data')data=bytes.subarray(start,start+length);
+  offset=start+length+(length%2);
+ }
+ assert(rate&&data,'PCM16 WAV carries a sample rate and waveform');return {bytes,rate,data};
+}
+function occurrences(data,unit){let count=0,offset=0;while((offset=data.indexOf(unit,offset))>=0){count++;offset+=unit.length;}return count;}
 function teaching(){
  const e=document.querySelector('#readerRoot .reader-transcript');
  return {title:e.querySelector('h2').outerHTML,blocks:[...e.children].filter(n=>n.matches('p,ul')).map(n=>n.outerHTML)};
@@ -30,11 +44,22 @@ function originalCourseFilesUnchanged(){
 }
 (async()=>{
  originalCourseFilesUnchanged();
- const doc=JSON.parse(fs.readFileSync(path.join(ROOT,'ling406/audio/authoring/nasal-stimuli.json'),'utf8'));
+ const doc=JSON.parse(fs.readFileSync(path.join(ROOT,'ling406/audio/authoring/human-recordings/nasals/active-manifest.json'),'utf8'));
  const authoring=rowsOf(doc),byId=Object.fromEntries(authoring.map(row=>[row.id,row]));
  for(const id of [...TARGET,...CONTROL])assert(byId[id],`Reproducible source record for ${id}`);
  assert.deepEqual(byId.nasal_pair_na_nga.sequence,['na','nga','na','nga'],'The critical comparison contains no ma token');
  assert.deepEqual(byId.nasal_pair_ma_na.sequence,['ma','na','ma','na'],'The easier comparison is explicitly separate');
+ const waveforms={};
+ for(const id of [...TARGET,...CONTROL]){
+  const row=byId[id],wav=waveforms[id]=pcm16(row.file);
+  assert.equal(crypto.createHash('sha256').update(wav.bytes).digest('hex'),row.sha256,id+' is the audited human waveform');
+  assert.equal(wav.rate,row.sample_rate);assert.equal(wav.data.length/2/wav.rate,row.duration_seconds,id+' retains its recorded natural duration');
+ }
+ const na=byId.nasal_cv_na,naWave=waveforms.nasal_cv_na;
+ const naCore=naWave.data.subarray(Math.round(na.added_leading_silence_seconds*naWave.rate)*2,naWave.data.length-Math.round(na.added_trailing_silence_seconds*naWave.rate)*2);
+ assert.equal(occurrences(waveforms.nasal_pair_na_nga.data,naCore),2,'The target repeats the exact recorded [na] core twice');
+ assert.equal(occurrences(waveforms.nasal_pair_ma_na.data,naCore),2,'The control reuses the identical recorded [na] core twice');
+
 
  const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox','--autoplay-policy=no-user-gesture-required']});
  try{
@@ -64,7 +89,10 @@ function originalCourseFilesUnchanged(){
   }
   for(const id of [...TARGET,...CONTROL]){
    const clip=m.clips[id];assert(clip?.file,'Each new example points to a real file');
-   assert(/VocalTractLab/i.test([clip.kind,clip.note].join(' ')),id+' identifies its actual synthesis method');
+   assert(/human.*recorded|human recorded/i.test(clip.kind),id+' identifies actual recorded human speech');
+   assert(/Kunokuno/.test(clip.note)&&/Kunokuno/.test(clip.credit),id+' credits the identified source speaker');
+   assert.equal(clip.license,'CC BY-SA 4.0');assert.equal(clip.file,byId[id].file);
+   assert(!/VocalTractLab|VTL|nasal_cv_.*\.mp3/i.test(JSON.stringify(clip)),id+' does not retain retired synthesis metadata');
    assert(!/Esling|full source sound context/i.test(clip.title),id+' has a direct syllable label');
   }
   assert(/ŋa/.test(m.clips.nasal_cv_nga.spokenText),'The velar nasal is represented with IPA ŋ');
@@ -87,13 +115,13 @@ function originalCourseFilesUnchanged(){
    }
   }
   await page.evaluate(()=>LingStudio.openReader(['development1-14'],0,true,'Target contrast'));
-  for(const id of TARGET){
+  await page.evaluate(()=>LingStudio.openReader(['speech1-32'],0,true,'Human target and separate control'));
+  for(const id of [...TARGET,...CONTROL]){
    const player=page.locator(`#readerRoot audio[data-study-audio="${id}"]`);
    await player.evaluate(async a=>{await a.play();});await page.waitForTimeout(90);
    const state=await player.evaluate(a=>({time:a.currentTime,duration:a.duration,error:a.error?.code||null}));
    assert(state.time>0&&state.duration>0&&!state.error,JSON.stringify({id,...state}));
-   if(id==='nasal_pair_na_nga')assert(state.duration>3,'Comparison plays a sequence, not a single consonant demonstration');
-   else assert(state.duration>=.45&&state.duration<=.65,'The examples are approximately half-second CV syllables');
+   assert(Math.abs(state.duration-byId[id].duration_seconds)<=1/byId[id].sample_rate,id+' plays the exact natural-excerpt duration recorded in provenance');
   }
   await page.locator('#readerRoot [data-action="stopAudio"]').click();
   assert(await page.locator('#readerRoot audio').evaluateAll(as=>as.every(a=>a.paused&&a.currentTime===0)));
@@ -111,7 +139,7 @@ function originalCourseFilesUnchanged(){
   await page.locator('#readerRoot img.slide').evaluate(e=>e.decode());
   await page.screenshot({path:'/tmp/ling406-nasal-target-desktop.png'});
   assert.deepEqual(errors,[]);
-  const report={passed:true,baselineCommit:BASELINE,originalContentUnchanged:true,allTranscriptVersions:VERSIONS,targetHasNoMa:true,separateMaNaControl:true,noOldFullContextClipsMapped:true,nativePlayback:true,guideUsesCorrectedExamples:true,studyStatePreserved:true,clips:[...TARGET,...CONTROL],scientificScope:'This test verifies integration, explicit sequence metadata and technical playback. It does not provide native-listener phonetic identification.'};
+  const report={passed:true,baselineCommit:BASELINE,originalContentUnchanged:true,allTranscriptVersions:VERSIONS,targetHasNoMa:true,separateMaNaControl:true,noOldFullContextClipsMapped:true,humanSource:'Kunokuno / Lingua Libre / CC BY-SA 4.0',naturalDurations:true,identicalNaPCMReused:true,nativePlayback:true,guideUsesCorrectedExamples:true,studyStatePreserved:true,clips:[...TARGET,...CONTROL],scientificScope:'This test verifies integration, explicit sequence metadata and technical playback. It does not provide native-listener phonetic identification.'};
   fs.writeFileSync('/tmp/ling406-nasal-integration-report.json',JSON.stringify(report,null,2)+'\n');
   console.log('PASS:',JSON.stringify(report));
  }finally{await browser.close();}

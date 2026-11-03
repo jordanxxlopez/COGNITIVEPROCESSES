@@ -1,5 +1,7 @@
 # Module II audio fidelity audit
 
+**Current recorded-human update.** The [human-voice methods](human-voice-methods.md) document the newer replacements, now 147 player entries and 143 distinct files. Human recordings and recorded-voice editing replace the earlier model-based speech demonstrations; historical electronic stimuli remain in optional collapsed groups. The audit below preserves the earlier correction's history and source decisions. Consult the active manifest and human-recording packages for current playback files.
+
 **Listening-level update.** The 31 sustained acoustic examples now play and download as PCM WAV copies reduced by 12 dB with uniform gain. The formant, pitch, timing and amplitude-rise comparisons remain intact, including exact decoded sample counts. Original source files and historical hashes are retained separately. Rounding to 16-bit PCM introduces a small measured quantization error. This update adds no filtering, compression, normalization or onset fades. See the measured [level-adjustment record](authoring/listening-levels.json).
 
 The correction covers **every previously active recording**, not just the nasal examples. At baseline commit `929574a`, the listening layer contained **107 recording entries across 398 clip-to-slide placements** in 128 lecture/review sections. All 107 entries and all 398 placements were checked against their source content and available stimulus methods. The audit identified **87 placements requiring replacement or removal**. That number counts placements, not 87 different recordings.

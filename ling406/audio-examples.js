@@ -21,12 +21,25 @@
     return `<p>${esc(text)}</p>`;
   }
 
+  function renderClip(clip) {
+    return `<article class="slide-audio-item" data-audio-id="${esc(clip.id)}"><h4>${esc(clip.title)}</h4>${clip.kind ? `<p class="slide-audio-kind">${esc(clip.kind)}</p>` : ''}${clip.spokenText ? `<p class="slide-audio-words">${esc(clip.spokenText)}</p>` : ''}<audio controls preload="none" data-study-audio="${esc(clip.id)}" aria-label="${esc(clip.title)}" src="${esc(clip.file)}">Your browser does not support embedded audio. Use the recording download below.</audio>${clip.scope ? `<p class="slide-audio-scope">${esc(clip.scope)}</p>` : ''}<div class="slide-audio-links">${clip.note || clip.reference ? `<details><summary>Source and method</summary>${clip.note ? `<p>${esc(clip.note)}</p>` : ''}${referenceHTML(clip.reference)}</details>` : ''}<a href="${esc(clip.file)}" download>Download recording</a></div><p class="slide-audio-status" role="status" aria-live="polite"></p></article>`;
+  }
+
   function render(section) {
     const ids = data.sections?.[section.id] || [];
     const clips = ids.map(id => ({id, ...data.clips?.[id]})).filter(clip => clip.title && localFile(clip.file));
     const notices = (data.notices?.[section.id] || []).filter(notice => notice.title && notice.text);
     if (!clips.length && !notices.length) return '';
-    return `<section class="slide-audio-examples" aria-label="Listening examples for this slide" data-audio-section="${esc(section.id)}"><h3>Listen to the examples</h3><div class="slide-audio-list">${notices.map(notice => `<aside class="slide-audio-notice"><h4>${esc(notice.title)}</h4><p>${esc(notice.text)}</p>${referenceHTML(notice.reference)}</aside>`).join('')}${clips.map(clip => `<article class="slide-audio-item" data-audio-id="${esc(clip.id)}"><h4>${esc(clip.title)}</h4>${clip.kind ? `<p class="slide-audio-kind">${esc(clip.kind)}</p>` : ''}${clip.spokenText ? `<p class="slide-audio-words">${esc(clip.spokenText)}</p>` : ''}<audio controls preload="none" data-study-audio="${esc(clip.id)}" aria-label="${esc(clip.title)}" src="${esc(clip.file)}">Your browser does not support embedded audio. Use the recording download below.</audio>${clip.scope ? `<p class="slide-audio-scope">${esc(clip.scope)}</p>` : ''}<div class="slide-audio-links">${clip.note || clip.reference ? `<details><summary>Source and method</summary>${clip.note ? `<p>${esc(clip.note)}</p>` : ''}${referenceHTML(clip.reference)}</details>` : ''}<a href="${esc(clip.file)}" download>Download recording</a></div><p class="slide-audio-status" role="status" aria-live="polite"></p></article>`).join('')}</div></section>`;
+    const extras = [
+      ['technical', 'Estimated voice-source signal (optional)'],
+      ['historical', 'Original synthetic research recordings (optional)']
+    ];
+    const regular = clips.filter(clip => !extras.some(([group]) => clip.displayGroup === group));
+    const grouped = extras.map(([group, title]) => {
+      const members = clips.filter(clip => clip.displayGroup === group);
+      return members.length ? `<details class="slide-audio-extra" data-audio-extra="${group}"><summary>${title}</summary>${members.map(renderClip).join('')}</details>` : '';
+    }).join('');
+    return `<section class="slide-audio-examples" aria-label="Listening examples for this slide" data-audio-section="${esc(section.id)}"><h3>Listen to the examples</h3><div class="slide-audio-list">${notices.map(notice => `<aside class="slide-audio-notice"><h4>${esc(notice.title)}</h4><p>${esc(notice.text)}</p>${referenceHTML(notice.reference)}</aside>`).join('')}${regular.map(renderClip).join('')}${grouped}</div></section>`;
   }
 
   function stop() {
@@ -54,6 +67,16 @@
 
   document.addEventListener('ended', event => {
     if (event.target === active) active = null;
+  }, true);
+
+  document.addEventListener('toggle', event => {
+    const group = event.target;
+    if (!group.matches?.('details.slide-audio-extra') || group.open) return;
+    group.querySelectorAll('audio[data-study-audio]').forEach(audio => {
+      audio.pause();
+      try { audio.currentTime = 0; } catch {}
+      if (active === audio) active = null;
+    });
   }, true);
 
   document.addEventListener('error', event => {

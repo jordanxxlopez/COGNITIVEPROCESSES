@@ -1,4 +1,4 @@
-/* Source-linked examples. Original recordings and new reconstructions are identified individually. */
+/* Source-linked human recordings, recorded-voice transformations and optional historical stimuli. */
 window.LING406_AUDIO={
   "version": 1,
   "clips": {
@@ -444,22 +444,26 @@ window.LING406_AUDIO={
       "scope": "Clear word/nonword reference only. Use the matched research sequence for acoustic comparisons."
     },
     "bear": {
-      "title": "Bear endpoint",
-      "file": "audio/clips/bear.mp3",
+      "title": "Human word reference: bear",
       "spokenText": "bear",
-      "kind": "Printed-word reading",
-      "note": "Kokoro-82M v1.0, American English af_heart voice, speed 1.0. Synthetic clear endpoint or lexical example only. This is not an ambiguous continuum token or original experimental recording.",
-      "reference": "https://jordanxxlopez.github.io/COGNITIVEPROCESSES/ling406/sources/speech1.pdf#page=21",
-      "scope": "Clear word/nonword reference only. Use the matched research sequence for acoustic comparisons."
+      "kind": "Published human-recording stimulus",
+      "scope": "A natural-human research endpoint used as a word reference, not a new experimental trial.",
+      "note": "Actual natural-speech research tokens by Murphy, Nozari and Holt (2025), adult female native American-English speaker. Natural source words were edited in the time domain in 5 ms VOT steps and F0-onset controlled with Praat. This selection holds the published F0 onset at 230 Hz and preserves seven available VOT settings (5,10,15,25,35,40,45 ms). These are the later 2025 materials, not recovered McMurray et al. (2003) files. Playback is uniformly lowered by 6 dB; no additional filtering, time or pitch changes.",
+      "reference": "https://osf.io/5uqx8/",
+      "credit": "Timothy K. Murphy, Nazbanou Nozari and Lori L. Holt (2025)",
+      "license": "Article CC BY 4.0; OSF node supplies no separate dataset license. Retain attribution; no additional license asserted.",
+      "file": "audio/clips/murphy2025-bear-pear-vot005.wav"
     },
     "pear": {
-      "title": "Pear endpoint",
-      "file": "audio/clips/pear.mp3",
+      "title": "Human word reference: pear",
       "spokenText": "pear",
-      "kind": "Printed-word reading",
-      "note": "Kokoro-82M v1.0, American English af_heart voice, speed 1.0. Synthetic clear endpoint or lexical example only. This is not an ambiguous continuum token or original experimental recording.",
-      "reference": "https://jordanxxlopez.github.io/COGNITIVEPROCESSES/ling406/sources/speech1.pdf#page=21",
-      "scope": "Clear word/nonword reference only. Use the matched research sequence for acoustic comparisons."
+      "kind": "Published human-recording stimulus",
+      "scope": "A natural-human research endpoint used as a word reference, not a new experimental trial.",
+      "note": "Actual natural-speech research tokens by Murphy, Nozari and Holt (2025), adult female native American-English speaker. Natural source words were edited in the time domain in 5 ms VOT steps and F0-onset controlled with Praat. This selection holds the published F0 onset at 230 Hz and preserves seven available VOT settings (5,10,15,25,35,40,45 ms). These are the later 2025 materials, not recovered McMurray et al. (2003) files. Playback is uniformly lowered by 6 dB; no additional filtering, time or pitch changes.",
+      "reference": "https://osf.io/5uqx8/",
+      "credit": "Timothy K. Murphy, Nazbanou Nozari and Lori L. Holt (2025)",
+      "license": "Article CC BY 4.0; OSF node supplies no separate dataset license. Retain attribution; no additional license asserted.",
+      "file": "audio/clips/murphy2025-bear-pear-vot045.wav"
     },
     "plug": {
       "title": "Plug lexical candidate",
@@ -552,22 +556,28 @@ window.LING406_AUDIO={
       "scope": "Pronunciation of the printed prime/associate label, not a reconstructed near-boundary priming trial."
     },
     "ganong-corpse-word": {
-      "title": "corpse",
-      "file": "audio/clips/ganong-corpse-word.mp3",
+      "title": "Human word reference: corpse",
       "spokenText": "corpse",
-      "kind": "Printed-word reading",
-      "note": "Kokoro-82M v1.0, American English af_heart voice, speed 1.0. IPA-specified English-model pronunciation of the printed endpoint or nonword. These separate examples do not recreate the original acoustic continuum or its category boundary.",
-      "reference": "https://jordanxxlopez.github.io/COGNITIVEPROCESSES/ling406/sources/speech2.pdf#page=18",
-      "scope": "Clear word/nonword reference only. Use the matched research sequence for acoustic comparisons."
+      "kind": "Recorded human word",
+      "scope": "Original recorded word, with quiet gain only.",
+      "note": "Dvortygirl’s US-English corpse recording, left channel retained without within-token editing. Constant quiet gain only. Source and adapted playback: CC BY-SA 3.0. This is not an original Ganong experimental recording.",
+      "reference": "https://commons.wikimedia.org/wiki/File:En-us-corpse.ogg",
+      "credit": "Dvortygirl, Wikimedia Commons. CC BY-SA 3.0. Level adjustment by Study Studio.",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file": "audio/clips/human-corpse-original.wav"
     },
     "ganong-gorpse-nonword": {
-      "title": "gorpse",
-      "file": "audio/clips/ganong-gorpse-nonword.mp3",
-      "spokenText": "gorpse",
-      "kind": "Printed-word reading",
-      "note": "Kokoro-82M v1.0, American English af_heart voice, speed 1.0. IPA-specified English-model pronunciation of the printed endpoint or nonword. These separate examples do not recreate the original acoustic continuum or its category boundary.",
-      "reference": "https://jordanxxlopez.github.io/COGNITIVEPROCESSES/ling406/sources/speech2.pdf#page=18",
-      "scope": "Clear word/nonword reference only. Use the matched research sequence for acoustic comparisons."
+      "title": "Human-word edit: short-lag gorpse-like endpoint",
+      "spokenText": "gorpse-like short-lag endpoint",
+      "kind": "Recorded human word manipulation",
+      "scope": "A new short-lag endpoint made from recorded corpse, not an unedited human utterance of the nonword.",
+      "note": "New teaching reconstruction from the actual US-English recording of corpse by Dvortygirl. Each member retains the complete 10 ms native release complex and the same entire native periodic vowel, rhotic segment and coda. Different amounts of middle aspiration are deleted from the real recording, retaining 10–70 ms nominal release-to-common-rhyme intervals in 5 ms steps. All audible material comes from that one human recording; no Kokoro, generated buzz, random aspiration, voice cloning or vocoder is used. These are not Ganong (1980) original stimuli, and no perceptual category boundary or endpoint identification is independently established. Uniform quiet playback gain is shared by the family; 150 ms leading/trailing silence is added around individual words. Dvortygirl source and adapted audio: CC BY-SA 3.0. No independent listener category identification is claimed.",
+      "reference": "https://commons.wikimedia.org/wiki/File:En-us-corpse.ogg",
+      "credit": "Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406.",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file": "audio/clips/human-gorpse-corpse-delay010.wav"
     },
     "vowel-series-lexical": {
       "title": "Vowel series in the same consonant frame",
@@ -579,105 +589,98 @@ window.LING406_AUDIO={
       "scope": "New reading of the printed example; speaking prosody is model-generated."
     },
     "source_filter_comparison": {
-      "title": "Hear the same source through three filters",
-      "file": "audio/clips/source_filter_comparison-soft.wav",
-      "spokenText": "Buzz → F1 300/F2 900 → F1 600/F2 900 → F1 300/F2 2200 Hz",
-      "kind": "Praat acoustic model",
-      "note": "Rosenberg-style differentiated glottal source filtered by Praat Sound & FormantGrid via praat-parselmouth 0.4.7 Sequence of newly modeled examples, not original recordings from the cited experiments. Silence separates examples for classroom listening, not within the source tokens. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
-      "reference": "https://www.fon.hum.uva.nl/praat/manual/Source-filter_synthesis.html",
-      "scope": "Sequence of newly modeled examples, not original recordings from the cited experiments. Silence separates examples for classroom listening, not within the source tokens.",
-      "playbackAdjustment": {
-        "gainDb": -12,
-        "sourceFile": "audio/clips/source_filter_comparison.mp3"
-      }
+      "title": "Recorded human voice through three filters",
+      "spokenText": "Human /u/ reference → F1 300/F2 900 → F1 600/F2 900 → F1 300/F2 2200 Hz",
+      "kind": "Recorded-human voice resynthesis",
+      "scope": "Actual human vowel first, then three level-matched transformations using its estimated excitation. The reference vowel is not an unfiltered glottal signal.",
+      "note": "Peter Ladefoged’s recorded cardinal /u/ from the official ACIP chart supplies the human phonation. Praat Burg LPC inverse filtering estimates excitation, which is then passed through the stated formant filters. Natural pitch variation is retained. Each listening example receives a constant level adjustment to keep it quiet. These are new recorded-voice transformations, not original class or participant recordings. Source credit: Peter Ladefoged; ACIP © Keith Johnson, no additional source license asserted.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/chapter9/cardinal/cardinal.html",
+      "file": "audio/clips/natural_original_then_filters_level_matched.wav"
     },
     "source_buzz": {
-      "title": "Unfiltered synthetic voiced source, 120 Hz fundamental",
-      "file": "audio/clips/source_buzz-soft.wav",
-      "spokenText": "",
-      "kind": "Praat acoustic model",
-      "note": "Rosenberg-style differentiated glottal source filtered by Praat Sound & FormantGrid via praat-parselmouth 0.4.7 Acoustic-model teaching demonstration. Newly generated; not original experimental stimuli. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
-      "reference": "https://www.fon.hum.uva.nl/praat/manual/Source-filter_synthesis.html",
-      "scope": "Acoustic-model teaching demonstration. Newly generated; not original experimental stimuli.",
-      "playbackAdjustment": {
-        "gainDb": -12,
-        "sourceFile": "audio/clips/source_buzz.mp3"
-      }
+      "title": "Estimated excitation from a recorded human voice",
+      "spokenText": "LPC inverse-filtered voice-source estimate",
+      "kind": "Recorded-human voice resynthesis",
+      "scope": "An estimated source signal naturally sounds buzzy. It is not a direct recording of the glottis or an ordinary spoken vowel.",
+      "note": "Peter Ladefoged’s recorded cardinal /u/ from the official ACIP chart supplies the human phonation. Praat Burg LPC inverse filtering estimates excitation, which is then passed through the stated formant filters. Natural pitch variation is retained. Each listening example receives a constant level adjustment to keep it quiet. These are new recorded-voice transformations, not original class or participant recordings. Source credit: Peter Ladefoged; ACIP © Keith Johnson, no additional source license asserted.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/chapter9/cardinal/cardinal.html",
+      "displayGroup": "technical",
+      "file": "audio/clips/natural_estimated_excitation.wav"
     },
     "vowel_base": {
-      "title": "Base filter, F1 300 Hz and F2 900 Hz",
-      "file": "audio/clips/vowel_base-soft.wav",
-      "spokenText": "",
-      "kind": "Praat acoustic model",
-      "note": "Rosenberg-style differentiated glottal source filtered by Praat Sound & FormantGrid via praat-parselmouth 0.4.7 New source-filter vowel-like demonstration using stated resonances. Not a recording of the lecturer or a recovered original Praat example. Vowel labels are deliberately omitted because perceptual identity varies with formant configuration and talker scaling. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
-      "reference": "https://www.fon.hum.uva.nl/praat/manual/Source-filter_synthesis.html",
-      "scope": "New source-filter vowel-like demonstration using stated resonances. Not a recording of the lecturer or a recovered original Praat example. Vowel labels are deliberately omitted because perceptual identity varies with formant configuration and talker scaling.",
-      "playbackAdjustment": {
-        "gainDb": -12,
-        "sourceFile": "audio/clips/vowel_base.mp3"
-      }
+      "title": "Human excitation: F1 300 / F2 900 Hz",
+      "spokenText": "F1 300 / F2 900 Hz",
+      "kind": "Recorded-human voice resynthesis",
+      "scope": "Same recorded human excitation, with changed formant filters. Playback levels are matched; no pitch flattening is applied.",
+      "note": "Peter Ladefoged’s recorded cardinal /u/ from the official ACIP chart supplies the human phonation. Praat Burg LPC inverse filtering estimates excitation, which is then passed through the stated formant filters. Natural pitch variation is retained. Each listening example receives a constant level adjustment to keep it quiet. These are new recorded-voice transformations, not original class or participant recordings. Source credit: Peter Ladefoged; ACIP © Keith Johnson, no additional source license asserted.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/chapter9/cardinal/cardinal.html",
+      "file": "audio/clips/natural_base_level_matched.wav"
     },
     "vowel_raise_f1": {
-      "title": "Same source, F1 raised to 600 Hz",
-      "file": "audio/clips/vowel_raise_f1-soft.wav",
-      "spokenText": "",
-      "kind": "Praat acoustic model",
-      "note": "Rosenberg-style differentiated glottal source filtered by Praat Sound & FormantGrid via praat-parselmouth 0.4.7 New source-filter vowel-like demonstration using stated resonances. Not a recording of the lecturer or a recovered original Praat example. Vowel labels are deliberately omitted because perceptual identity varies with formant configuration and talker scaling. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
-      "reference": "https://www.fon.hum.uva.nl/praat/manual/Source-filter_synthesis.html",
-      "scope": "New source-filter vowel-like demonstration using stated resonances. Not a recording of the lecturer or a recovered original Praat example. Vowel labels are deliberately omitted because perceptual identity varies with formant configuration and talker scaling.",
-      "playbackAdjustment": {
-        "gainDb": -12,
-        "sourceFile": "audio/clips/vowel_raise_f1.mp3"
-      }
+      "title": "Human excitation: F1 raised to 600 Hz",
+      "spokenText": "F1 600 / F2 900 Hz",
+      "kind": "Recorded-human voice resynthesis",
+      "scope": "Same recorded human excitation, with changed formant filters. Playback levels are matched; no pitch flattening is applied.",
+      "note": "Peter Ladefoged’s recorded cardinal /u/ from the official ACIP chart supplies the human phonation. Praat Burg LPC inverse filtering estimates excitation, which is then passed through the stated formant filters. Natural pitch variation is retained. Each listening example receives a constant level adjustment to keep it quiet. These are new recorded-voice transformations, not original class or participant recordings. Source credit: Peter Ladefoged; ACIP © Keith Johnson, no additional source license asserted.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/chapter9/cardinal/cardinal.html",
+      "file": "audio/clips/natural_raised_f1_level_matched.wav"
     },
     "vowel_raise_f2": {
-      "title": "Same source, F2 raised to 2200 Hz",
-      "file": "audio/clips/vowel_raise_f2-soft.wav",
-      "spokenText": "",
-      "kind": "Praat acoustic model",
-      "note": "Rosenberg-style differentiated glottal source filtered by Praat Sound & FormantGrid via praat-parselmouth 0.4.7 New source-filter vowel-like demonstration using stated resonances. Not a recording of the lecturer or a recovered original Praat example. Vowel labels are deliberately omitted because perceptual identity varies with formant configuration and talker scaling. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
-      "reference": "https://www.fon.hum.uva.nl/praat/manual/Source-filter_synthesis.html",
-      "scope": "New source-filter vowel-like demonstration using stated resonances. Not a recording of the lecturer or a recovered original Praat example. Vowel labels are deliberately omitted because perceptual identity varies with formant configuration and talker scaling.",
-      "playbackAdjustment": {
-        "gainDb": -12,
-        "sourceFile": "audio/clips/vowel_raise_f2.mp3"
-      }
+      "title": "Human excitation: F2 raised to 2200 Hz",
+      "spokenText": "F1 300 / F2 2200 Hz",
+      "kind": "Recorded-human voice resynthesis",
+      "scope": "Same recorded human excitation, with changed formant filters. Playback levels are matched; no pitch flattening is applied.",
+      "note": "Peter Ladefoged’s recorded cardinal /u/ from the official ACIP chart supplies the human phonation. Praat Burg LPC inverse filtering estimates excitation, which is then passed through the stated formant filters. Natural pitch variation is retained. Each listening example receives a constant level adjustment to keep it quiet. These are new recorded-voice transformations, not original class or participant recordings. Source credit: Peter Ladefoged; ACIP © Keith Johnson, no additional source license asserted.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/chapter9/cardinal/cardinal.html",
+      "file": "audio/clips/natural_raised_f2_level_matched.wav"
     },
     "saffran-stream": {
       "title": "Unsegmented artificial speech stream",
-      "file": "audio/clips/saffran-stream.mp3",
-      "spokenText": "Uniform syllable units; no added word gaps.",
-      "kind": "Controlled resynthesis",
-      "note": "Kokoro-82M v1.0 af_heart explicit IPA inputs; Praat/Parselmouth 0.4.7 PSOLA pitch and duration control Illustrative new stimulus construction. Uses the source slide’s exact displayed sequence, not a claim that these are the original 1996 recordings. All syllables share 160 Hz pitch targets, 250 ms duration and equal RMS, concatenated without added word gaps. PSOLA can leave small pitch-estimation differences and unit joins; no claim of eliminating every acoustic cue in natural speech.",
-      "reference": "https://doi.org/10.1126/science.274.5294.1926",
-      "scope": "Controlled reconstruction of the lecture’s displayed toy sequence, not the complete historical exposure."
+      "spokenText": "tokibugikobagopilatipolutokibugopilatipolutokibugikobagopilagikobatokibugopilatipolugikobatipolugikobatipolugopilatipolutokibugopilatipolutokibugopilatipolutokibugopilagikobatipolutokibugopilagikobatipolugikobatipolugikobatipolutokibugikobagopilatipolugikobatokibugopila",
+      "kind": "Human-recording teaching analogue",
+      "scope": "Human Tagalog CV excerpts, equal250ms units and shared natural pitch contour. New reconstruction of the displayed toy sequence, not original1996 audio.",
+      "note": "Actual human recordings by Lingua Libre speaker Kunokuno (Q424288), licensed CC BY-SA4.0. Praat/Parselmouth PSOLA gives every syllable 250 ms and the same natural ko-derived pitch contour centered near 95 Hz. RMS=.045; identical syllable waveforms repeat at every occurrence, without added word gaps. Natural phonation/formants come from human source recordings, not a glottal synthesizer or neural voice. Pitch tracking, time stretching (up to 2x overall), coarticulation and unit joins leave residual cues; this is not a validated replica of Saffran et al.,1996 or the full historical exposure.",
+      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/authoring/human-recordings/saffran/README.md",
+      "credit": "Kunokuno, Lingua Libre. CC BY-SA4.0. Gating/PSOLA/reassembly by Study Studio.",
+      "license": "CC BY-SA4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file": "audio/clips/human-saffran-stream.wav"
     },
     "saffran-short-stream": {
       "title": "Frequency-matched teaching stream",
-      "file": "audio/clips/saffran-short-stream.mp3",
-      "spokenText": "Uniform syllable units; no added word gaps.",
-      "kind": "Controlled resynthesis",
-      "note": "Kokoro-82M v1.0 af_heart explicit IPA inputs; Praat/Parselmouth 0.4.7 PSOLA pitch and duration control Illustrative new stimulus construction. Uses the source slide’s exact displayed sequence, not a claim that these are the original 1996 recordings. All syllables share 160 Hz pitch targets, 250 ms duration and equal RMS, concatenated without added word gaps. PSOLA can leave small pitch-estimation differences and unit joins; no claim of eliminating every acoustic cue in natural speech.",
-      "reference": "https://doi.org/10.1126/science.274.5294.1926",
-      "scope": "Controlled reconstruction of the lecture’s displayed toy sequence, not the complete historical exposure."
+      "spokenText": "tokibu gikoba gopila gikoba tokibu gopila tokibu gikoba gikoba tokibu",
+      "kind": "Human-recording teaching analogue",
+      "scope": "Human Tagalog CV excerpts, equal250ms units and shared natural pitch contour. New reconstruction of the displayed toy sequence, not original1996 audio.",
+      "note": "Actual human recordings by Lingua Libre speaker Kunokuno (Q424288), licensed CC BY-SA4.0. Praat/Parselmouth PSOLA gives every syllable 250 ms and the same natural ko-derived pitch contour centered near 95 Hz. RMS=.045; identical syllable waveforms repeat at every occurrence, without added word gaps. Natural phonation/formants come from human source recordings, not a glottal synthesizer or neural voice. Pitch tracking, time stretching (up to 2x overall), coarticulation and unit joins leave residual cues; this is not a validated replica of Saffran et al.,1996 or the full historical exposure.",
+      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/authoring/human-recordings/saffran/README.md",
+      "credit": "Kunokuno, Lingua Libre. CC BY-SA4.0. Gating/PSOLA/reassembly by Study Studio.",
+      "license": "CC BY-SA4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file": "audio/clips/human-saffran-short-stream.wav"
     },
     "saffran-word": {
       "title": "Whole-word test example",
-      "file": "audio/clips/saffran-word.mp3",
       "spokenText": "gopila",
-      "kind": "Controlled resynthesis",
-      "note": "Kokoro-82M v1.0 af_heart explicit IPA inputs; Praat/Parselmouth 0.4.7 PSOLA pitch and duration control Illustrative new stimulus construction. Uses the source slide’s exact displayed sequence, not a claim that these are the original 1996 recordings. All syllables share 160 Hz pitch targets, 250 ms duration and equal RMS, concatenated without added word gaps. PSOLA can leave small pitch-estimation differences and unit joins; no claim of eliminating every acoustic cue in natural speech.",
-      "reference": "https://doi.org/10.1126/science.274.5294.1926",
-      "scope": "Controlled reconstruction of the lecture’s displayed toy sequence, not the complete historical exposure."
+      "kind": "Human-recording teaching analogue",
+      "scope": "Human Tagalog CV excerpts, equal250ms units and shared natural pitch contour. New reconstruction of the displayed toy sequence, not original1996 audio.",
+      "note": "Actual human recordings by Lingua Libre speaker Kunokuno (Q424288), licensed CC BY-SA4.0. Praat/Parselmouth PSOLA gives every syllable 250 ms and the same natural ko-derived pitch contour centered near 95 Hz. RMS=.045; identical syllable waveforms repeat at every occurrence, without added word gaps. Natural phonation/formants come from human source recordings, not a glottal synthesizer or neural voice. Pitch tracking, time stretching (up to 2x overall), coarticulation and unit joins leave residual cues; this is not a validated replica of Saffran et al.,1996 or the full historical exposure.",
+      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/authoring/human-recordings/saffran/README.md",
+      "credit": "Kunokuno, Lingua Libre. CC BY-SA4.0. Gating/PSOLA/reassembly by Study Studio.",
+      "license": "CC BY-SA4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file": "audio/clips/human-saffran-word.wav"
     },
     "saffran-part-word": {
       "title": "Part-word test example",
-      "file": "audio/clips/saffran-part-word.mp3",
       "spokenText": "bugiko",
-      "kind": "Controlled resynthesis",
-      "note": "Kokoro-82M v1.0 af_heart explicit IPA inputs; Praat/Parselmouth 0.4.7 PSOLA pitch and duration control Illustrative new stimulus construction. Uses the source slide’s exact displayed sequence, not a claim that these are the original 1996 recordings. All syllables share 160 Hz pitch targets, 250 ms duration and equal RMS, concatenated without added word gaps. PSOLA can leave small pitch-estimation differences and unit joins; no claim of eliminating every acoustic cue in natural speech.",
-      "reference": "https://doi.org/10.1126/science.274.5294.1926",
-      "scope": "Controlled reconstruction of the lecture’s displayed toy sequence, not the complete historical exposure."
+      "kind": "Human-recording teaching analogue",
+      "scope": "Human Tagalog CV excerpts, equal250ms units and shared natural pitch contour. New reconstruction of the displayed toy sequence, not original1996 audio.",
+      "note": "Actual human recordings by Lingua Libre speaker Kunokuno (Q424288), licensed CC BY-SA4.0. Praat/Parselmouth PSOLA gives every syllable 250 ms and the same natural ko-derived pitch contour centered near 95 Hz. RMS=.045; identical syllable waveforms repeat at every occurrence, without added word gaps. Natural phonation/formants come from human source recordings, not a glottal synthesizer or neural voice. Pitch tracking, time stretching (up to 2x overall), coarticulation and unit joins leave residual cues; this is not a validated replica of Saffran et al.,1996 or the full historical exposure.",
+      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/authoring/human-recordings/saffran/README.md",
+      "credit": "Kunokuno, Lingua Libre. CC BY-SA4.0. Gating/PSOLA/reassembly by Study Studio.",
+      "license": "CC BY-SA4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file": "audio/clips/human-saffran-part-word.wav"
     },
     "russian-spichki": {
       "title": "Russian competitor reference: спички (matches)",
@@ -752,49 +755,64 @@ window.LING406_AUDIO={
       "scope": "Language-specific model pronunciation; not original study audio."
     },
     "nasal_cv_ma": {
-      "title": "Control only: [ma] — lip nasal + [a]",
-      "file": "audio/clips/nasal_cv_ma.mp3",
+      "title": "Control only: human Tagalog [ma]",
       "spokenText": "[ma]",
-      "kind": "VocalTractLab articulatory synthesis",
-      "scope": "This belongs to the easier [ma–na] comparison, not the [na–ŋa] target pair.",
-      "note": "New VocalTractLab 2.4 articulatory synthesis using the W02 anatomy preset, one shared [a] vowel, 223 Hz pitch target and 500 ms syllables. Initial nasal closures last about 120 ms, with an open velopharyngeal port. The [ŋa] gesture has no separate [g]. These are new matched teaching stimuli, not Narayan et al.’s original natural female Filipino recordings or a perceptually validated replica.",
-      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/nasal-stimuli.md"
+      "kind": "Human recorded syllable excerpt",
+      "scope": "Real Tagalog pronunciation excerpt, not an original Narayan et al. test token.",
+      "note": "Natural recording by Lingua Libre speaker Kunokuno (Q424288). Excerpt 0.195–0.395 s from the recorded Tagalog man. The final [n] of man is excluded. Original within-token timing and pitch retained. Single scalar RMS normalization to 0.05 and 6 ms end-fade; no phoneme replacement, voice conversion or synthesis. These new word-derived excerpts are not duration-matched or listener-validated experimental tokens. Speaker and recorder Kunokuno, Lingua Libre, 2025-04-07. CC BY-SA 4.0. Excerpt/level adjustment by Study Studio. Adapted recordings are available under CC BY-SA 4.0.",
+      "reference": "https://commons.wikimedia.org/wiki/File:LL-Q34057_(tgl)-Kunokuno-man.wav",
+      "credit": "Speaker and recorder Kunokuno, Lingua Libre, 2025-04-07. CC BY-SA 4.0. Excerpt/level adjustment by Study Studio.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file": "audio/clips/tagalog_human_ma.wav"
     },
     "nasal_cv_na": {
-      "title": "[na] — tongue-tip nasal + [a]",
-      "file": "audio/clips/nasal_cv_na.mp3",
+      "title": "Human Tagalog [na] — recorded CV excerpt",
       "spokenText": "[na]",
-      "kind": "VocalTractLab articulatory synthesis",
-      "scope": "The nasal is followed directly by the shared [a] vowel.",
-      "note": "New VocalTractLab 2.4 articulatory synthesis using the W02 anatomy preset, one shared [a] vowel, 223 Hz pitch target and 500 ms syllables. Initial nasal closures last about 120 ms, with an open velopharyngeal port. The [ŋa] gesture has no separate [g]. These are new matched teaching stimuli, not Narayan et al.’s original natural female Filipino recordings or a perceptually validated replica.",
-      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/nasal-stimuli.md"
+      "kind": "Human recorded syllable excerpt",
+      "scope": "Real Tagalog pronunciation excerpt, not an original Narayan et al. test token.",
+      "note": "Natural recording by Lingua Libre speaker Kunokuno (Q424288). Excerpt 0.165–0.395 s from the recorded Tagalog na, retaining its initial nasal and early /a/ vowel. Original within-token timing and pitch retained. Single scalar RMS normalization to 0.05 and 6 ms end-fade; no phoneme replacement, voice conversion or synthesis. These new word-derived excerpts are not duration-matched or listener-validated experimental tokens. Speaker and recorder Kunokuno, Lingua Libre, 2025-04-07. CC BY-SA 4.0. Excerpt/level adjustment by Study Studio. Adapted recordings are available under CC BY-SA 4.0.",
+      "reference": "https://commons.wikimedia.org/wiki/File:LL-Q34057_(tgl)-Kunokuno-na.wav",
+      "credit": "Speaker and recorder Kunokuno, Lingua Libre, 2025-04-07. CC BY-SA 4.0. Excerpt/level adjustment by Study Studio.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file": "audio/clips/tagalog_human_na.wav"
     },
     "nasal_cv_nga": {
-      "title": "[ŋa] — tongue-back nasal + [a]",
-      "file": "audio/clips/nasal_cv_nga.mp3",
+      "title": "Human Tagalog [ŋa] — recorded CV excerpt",
       "spokenText": "[ŋa]",
-      "kind": "VocalTractLab articulatory synthesis",
-      "scope": "One velar nasal followed directly by [a], without an added [g].",
-      "note": "New VocalTractLab 2.4 articulatory synthesis using the W02 anatomy preset, one shared [a] vowel, 223 Hz pitch target and 500 ms syllables. Initial nasal closures last about 120 ms, with an open velopharyngeal port. The [ŋa] gesture has no separate [g]. These are new matched teaching stimuli, not Narayan et al.’s original natural female Filipino recordings or a perceptually validated replica.",
-      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/nasal-stimuli.md"
+      "kind": "Human recorded syllable excerpt",
+      "scope": "Real Tagalog pronunciation excerpt, not an original Narayan et al. test token.",
+      "note": "Natural recording by Lingua Libre speaker Kunokuno (Q424288). Excerpt 0.140–0.395 s from the recorded Tagalog nga, retaining its initial nasal and early /a/ vowel. Original within-token timing and pitch retained. Single scalar RMS normalization to 0.05 and 6 ms end-fade; no phoneme replacement, voice conversion or synthesis. These new word-derived excerpts are not duration-matched or listener-validated experimental tokens. Speaker and recorder Kunokuno, Lingua Libre, 2025-04-07. CC BY-SA 4.0. Excerpt/level adjustment by Study Studio. Adapted recordings are available under CC BY-SA 4.0.",
+      "reference": "https://commons.wikimedia.org/wiki/File:LL-Q34057_(tgl)-Kunokuno-nga.wav",
+      "credit": "Speaker and recorder Kunokuno, Lingua Libre, 2025-04-07. CC BY-SA 4.0. Excerpt/level adjustment by Study Studio.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file": "audio/clips/tagalog_human_nga.wav"
     },
     "nasal_pair_na_nga": {
-      "title": "Target contrast: [na] → [ŋa]",
-      "file": "audio/clips/nasal_pair_na_nga.mp3",
-      "spokenText": "[na], [ŋa], [na], [ŋa]",
-      "kind": "VocalTractLab articulatory synthesis",
-      "scope": "Only the [na–ŋa] target contrast plays here. The pair repeats once.",
-      "note": "New VocalTractLab 2.4 articulatory synthesis using the W02 anatomy preset, one shared [a] vowel, 223 Hz pitch target and 500 ms syllables. Initial nasal closures last about 120 ms, with an open velopharyngeal port. The [ŋa] gesture has no separate [g]. These are new matched teaching stimuli, not Narayan et al.’s original natural female Filipino recordings or a perceptually validated replica.",
-      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/nasal-stimuli.md"
+      "title": "Target contrast: human [na] → [ŋa]",
+      "spokenText": "na → ŋa → na → ŋa",
+      "kind": "Human recorded syllable comparison",
+      "scope": "Same identified speaker and source vowel phoneme, with natural token-to-token pitch/duration differences retained.",
+      "note": "Alternating original recorded CV excerpts by Kunokuno, Lingua Libre (CC BY-SA 4.0). The identical [na] waveform is reused in the target and control. One second of silence separates vowel offset and the next token onset. No synthesizer, pitch flattening, voice conversion or time stretching. New teaching comparison, not Narayan et al.’s original randomized infant trials. Kunokuno, Lingua Libre, 2025-04-07. CC BY-SA 4.0. Adapted by Study Studio. Adapted recordings are available under CC BY-SA 4.0.",
+      "reference": "https://commons.wikimedia.org/wiki/File:LL-Q34057_(tgl)-Kunokuno-nga.wav",
+      "credit": "Kunokuno, Lingua Libre, 2025-04-07. CC BY-SA 4.0. Adapted by Study Studio.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file": "audio/clips/tagalog_human_pair_na_nga.wav"
     },
     "nasal_pair_ma_na": {
-      "title": "Control contrast: [ma] → [na]",
-      "file": "audio/clips/nasal_pair_ma_na.mp3",
-      "spokenText": "[ma], [na], [ma], [na]",
-      "kind": "VocalTractLab articulatory synthesis",
-      "scope": "The easier control comparison. It uses the same [na] token as the target contrast.",
-      "note": "New VocalTractLab 2.4 articulatory synthesis using the W02 anatomy preset, one shared [a] vowel, 223 Hz pitch target and 500 ms syllables. Initial nasal closures last about 120 ms, with an open velopharyngeal port. The [ŋa] gesture has no separate [g]. These are new matched teaching stimuli, not Narayan et al.’s original natural female Filipino recordings or a perceptually validated replica.",
-      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/nasal-stimuli.md"
+      "title": "Easier control: human [ma] → [na]",
+      "spokenText": "ma → na → ma → na",
+      "kind": "Human recorded syllable comparison",
+      "scope": "Same identified speaker and source vowel phoneme, with natural token-to-token pitch/duration differences retained.",
+      "note": "Alternating original recorded CV excerpts by Kunokuno, Lingua Libre (CC BY-SA 4.0). The identical [na] waveform is reused in the target and control. One second of silence separates vowel offset and the next token onset. No synthesizer, pitch flattening, voice conversion or time stretching. New teaching comparison, not Narayan et al.’s original randomized infant trials. Kunokuno, Lingua Libre, 2025-04-07. CC BY-SA 4.0. Adapted by Study Studio. Adapted recordings are available under CC BY-SA 4.0.",
+      "reference": "https://commons.wikimedia.org/wiki/File:LL-Q34057_(tgl)-Kunokuno-man.wav",
+      "credit": "Kunokuno, Lingua Libre, 2025-04-07. CC BY-SA 4.0. Adapted by Study Studio.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file": "audio/clips/tagalog_human_pair_ma_na.wav"
     },
     "haskins_bdg_all": {
       "title": "Haskins original 13-step b–d–g continuum",
@@ -807,7 +825,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins_bdg_all.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins_bdg_minus_06": {
       "title": "Haskins b–d–g step -6",
@@ -820,7 +839,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins_bdg_minus_06.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins_bdg_zero": {
       "title": "Haskins b–d–g step +0",
@@ -833,7 +853,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins_bdg_zero.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins_bdg_plus_06": {
       "title": "Haskins b–d–g step +6",
@@ -846,7 +867,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins_bdg_plus_06.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "jusczyk_rise_00": {
       "title": "Infant-study sound: 0 ms rise",
@@ -854,7 +876,7 @@ window.LING406_AUDIO={
       "scope": "New matched digital stimulus with the study’s 440 Hz fundamental and published rise/decay duration.",
       "note": "New digital resynthesis of the described 1977 nonspeech stimulus parameters. The original Moog sound was a 440 Hz sawtooth with 0, 30, 60 or 90 ms onset rise and 1020 ms decay. A forty-harmonic band-limited sawtooth is used here; exact analog filtering, modulation and detailed original amplitude envelope were not published. Linear rise and linear decay are explicit reconstruction choices informed by the earlier Cutting–Rosner waveform figure. These are not original tapes or listener-validated category exemplars. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/jusczyk_rise_00-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03199467",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -867,7 +889,7 @@ window.LING406_AUDIO={
       "scope": "New matched digital stimulus with the study’s 440 Hz fundamental and published rise/decay duration.",
       "note": "New digital resynthesis of the described 1977 nonspeech stimulus parameters. The original Moog sound was a 440 Hz sawtooth with 0, 30, 60 or 90 ms onset rise and 1020 ms decay. A forty-harmonic band-limited sawtooth is used here; exact analog filtering, modulation and detailed original amplitude envelope were not published. Linear rise and linear decay are explicit reconstruction choices informed by the earlier Cutting–Rosner waveform figure. These are not original tapes or listener-validated category exemplars. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/jusczyk_rise_30-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03199467",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -880,7 +902,7 @@ window.LING406_AUDIO={
       "scope": "New matched digital stimulus with the study’s 440 Hz fundamental and published rise/decay duration.",
       "note": "New digital resynthesis of the described 1977 nonspeech stimulus parameters. The original Moog sound was a 440 Hz sawtooth with 0, 30, 60 or 90 ms onset rise and 1020 ms decay. A forty-harmonic band-limited sawtooth is used here; exact analog filtering, modulation and detailed original amplitude envelope were not published. Linear rise and linear decay are explicit reconstruction choices informed by the earlier Cutting–Rosner waveform figure. These are not original tapes or listener-validated category exemplars. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/jusczyk_rise_60-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03199467",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -893,7 +915,7 @@ window.LING406_AUDIO={
       "scope": "New matched digital stimulus with the study’s 440 Hz fundamental and published rise/decay duration.",
       "note": "New digital resynthesis of the described 1977 nonspeech stimulus parameters. The original Moog sound was a 440 Hz sawtooth with 0, 30, 60 or 90 ms onset rise and 1020 ms decay. A forty-harmonic band-limited sawtooth is used here; exact analog filtering, modulation and detailed original amplitude envelope were not published. Linear rise and linear decay are explicit reconstruction choices informed by the earlier Cutting–Rosner waveform figure. These are not original tapes or listener-validated category exemplars. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/jusczyk_rise_90-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03199467",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -906,7 +928,7 @@ window.LING406_AUDIO={
       "scope": "New comparison within the study’s reported pluck category. The sequence illustrates the published 30 ms change; it does not reproduce an infant trial.",
       "note": "New digital resynthesis of the described 1977 nonspeech stimulus parameters. The original Moog sound was a 440 Hz sawtooth with 0, 30, 60 or 90 ms onset rise and 1020 ms decay. A forty-harmonic band-limited sawtooth is used here; exact analog filtering, modulation and detailed original amplitude envelope were not published. Linear rise and linear decay are explicit reconstruction choices informed by the earlier Cutting–Rosner waveform figure. These are not original tapes or listener-validated category exemplars. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/jusczyk_pair_00_30-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03199467",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -919,7 +941,7 @@ window.LING406_AUDIO={
       "scope": "New comparison across the study’s reported pluck/bow categories. The sequence illustrates the published 30 ms change; it does not reproduce an infant trial.",
       "note": "New digital resynthesis of the described 1977 nonspeech stimulus parameters. The original Moog sound was a 440 Hz sawtooth with 0, 30, 60 or 90 ms onset rise and 1020 ms decay. A forty-harmonic band-limited sawtooth is used here; exact analog filtering, modulation and detailed original amplitude envelope were not published. Linear rise and linear decay are explicit reconstruction choices informed by the earlier Cutting–Rosner waveform figure. These are not original tapes or listener-validated category exemplars. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/jusczyk_pair_30_60-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03199467",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -932,7 +954,7 @@ window.LING406_AUDIO={
       "scope": "New comparison within the study’s reported bow category. The sequence illustrates the published 30 ms change; it does not reproduce an infant trial.",
       "note": "New digital resynthesis of the described 1977 nonspeech stimulus parameters. The original Moog sound was a 440 Hz sawtooth with 0, 30, 60 or 90 ms onset rise and 1020 ms decay. A forty-harmonic band-limited sawtooth is used here; exact analog filtering, modulation and detailed original amplitude envelope were not published. Linear rise and linear decay are explicit reconstruction choices informed by the earlier Cutting–Rosner waveform figure. These are not original tapes or listener-validated category exemplars. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/jusczyk_pair_60_90-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03199467",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -945,7 +967,7 @@ window.LING406_AUDIO={
       "scope": "Four published rise-time settings, each using a shared 440 Hz sawtooth and the published decay duration. New digital resynthesis.",
       "note": "New digital resynthesis of the described 1977 nonspeech stimulus parameters. The original Moog sound was a 440 Hz sawtooth with 0, 30, 60 or 90 ms onset rise and 1020 ms decay. A forty-harmonic band-limited sawtooth is used here; exact analog filtering, modulation and detailed original amplitude envelope were not published. Linear rise and linear decay are explicit reconstruction choices informed by the earlier Cutting–Rosner waveform figure. These are not original tapes or listener-validated category exemplars. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/jusczyk_rise_four-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03199467",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -958,7 +980,7 @@ window.LING406_AUDIO={
       "scope": "Adult-study sawtooth reconstruction, not the infant stimulus set.",
       "note": "Ordered teaching demonstration of all nine rises, 0 to 80 ms, at 4-second onsets. Not the randomized original identification tape. Frequencies/rises follow Cutting and Rosner (1974); unreported Moog filtering and exact envelope are not recovered. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/cutting_rosner_1974_saw_294_ordered_00_to_80-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03198588",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -971,7 +993,7 @@ window.LING406_AUDIO={
       "scope": "Adult-study sawtooth reconstruction, not the infant stimulus set.",
       "note": "Ordered teaching demonstration of all nine rises, 0 to 80 ms, at 4-second onsets. Not the randomized original identification tape. Frequencies/rises follow Cutting and Rosner (1974); unreported Moog filtering and exact envelope are not recovered. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/cutting_rosner_1974_saw_440_ordered_00_to_80-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03198588",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -984,7 +1006,7 @@ window.LING406_AUDIO={
       "scope": "Adult-study sawtooth reconstruction, not the infant stimulus set.",
       "note": "Nominal 0 ms endpoint, then 80 ms endpoint. A quick teaching comparison, not an original task trial. Frequencies/rises follow Cutting and Rosner (1974); unreported Moog filtering and exact envelope are not recovered. Playback copy lowered by 12 dB with constant gain. Original pitch, timing, filter settings and relative comparison levels are preserved.",
       "file": "audio/clips/cutting_rosner_1974_saw_440_endpoints_00_80-soft.wav",
-      "kind": "Published-parameter reconstruction",
+      "kind": "Nonspeech experiment tone",
       "reference": "https://doi.org/10.3758/BF03198588",
       "playbackAdjustment": {
         "gainDb": -12,
@@ -1002,7 +1024,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-minus20.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins-vot-zero": {
       "title": "Haskins /ba–pa/: nominal VOT 0 ms",
@@ -1015,7 +1038,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-zero.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins-vot-plus20": {
       "title": "Haskins /ba–pa/: nominal VOT +20 ms",
@@ -1028,7 +1052,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-plus20.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins-vot-plus40": {
       "title": "Haskins /ba–pa/: nominal VOT +40 ms",
@@ -1041,7 +1066,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-plus40.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins-vot-plus60": {
       "title": "Haskins /ba–pa/: nominal VOT +60 ms",
@@ -1054,7 +1080,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-plus60.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins-vot-plus80": {
       "title": "Haskins /ba–pa/: nominal VOT +80 ms",
@@ -1067,7 +1094,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-plus80.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins-vot-eimas-across": {
       "title": "Labial CV comparison: +20, +40, +20, +40 ms",
@@ -1080,7 +1108,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-eimas-across.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins-vot-eimas-within-short": {
       "title": "Labial CV comparison: −20, 0, −20, 0 ms",
@@ -1093,7 +1122,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-eimas-within-short.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins-vot-eimas-within-long": {
       "title": "Labial CV comparison: +60, +80, +60, +80 ms",
@@ -1106,7 +1136,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-eimas-within-long.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins-vot-zero-eighty": {
       "title": "Labial CV endpoints: 0 and +80 ms",
@@ -1119,7 +1150,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-zero-eighty.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "haskins-vot-five-step": {
       "title": "Labial CV series: 0, +20, +40, +60, +80 ms",
@@ -1132,7 +1164,8 @@ window.LING406_AUDIO={
       "playbackAdjustment": {
         "gainDb": -12,
         "sourceFile": "audio/clips/haskins-vot-five-step.mp3"
-      }
+      },
+      "displayGroup": "historical"
     },
     "kim2025-beach-peach-step-1": {
       "title": "Published beach–peach continuum: step 1 of 9",
@@ -1179,95 +1212,51 @@ window.LING406_AUDIO={
       "kind": "Published research stimulus",
       "reference": "https://osf.io/36qky/"
     },
-    "bear-pear-vot-005": {
-      "title": "bear-pear: nominal 5 ms release-to-voicing delay",
-      "spokenText": "[bɛɹ] to [pʰɛɹ]",
-      "scope": "New matched word continuum; not original experimental audio",
-      "note": "New teaching reconstruction: an identical source-word burst and an identical word rhyme, with a controlled intervening aperiodic aspiration interval. Kokoro supplies the source word; numerical waveform editing supplies timing. These are not the original study tokens, and their perceptual category boundary has not been validated.",
-      "file": "audio/clips/bear-pear-vot-005.mp3",
-      "kind": "Matched controlled word synthesis",
-      "reference": "https://doi.org/10.1023/A:1021937116271"
-    },
-    "bear-pear-vot-045": {
-      "title": "bear-pear: nominal 45 ms release-to-voicing delay",
-      "spokenText": "[bɛɹ] to [pʰɛɹ]",
-      "scope": "New matched word continuum; not original experimental audio",
-      "note": "New teaching reconstruction: an identical source-word burst and an identical word rhyme, with a controlled intervening aperiodic aspiration interval. Kokoro supplies the source word; numerical waveform editing supplies timing. These are not the original study tokens, and their perceptual category boundary has not been validated.",
-      "file": "audio/clips/bear-pear-vot-045.mp3",
-      "kind": "Matched controlled word synthesis",
-      "reference": "https://doi.org/10.1023/A:1021937116271"
-    },
-    "bear-pear-vot-085": {
-      "title": "bear-pear: nominal 85 ms release-to-voicing delay",
-      "spokenText": "[bɛɹ] to [pʰɛɹ]",
-      "scope": "New matched word continuum; not original experimental audio",
-      "note": "New teaching reconstruction: an identical source-word burst and an identical word rhyme, with a controlled intervening aperiodic aspiration interval. Kokoro supplies the source word; numerical waveform editing supplies timing. These are not the original study tokens, and their perceptual category boundary has not been validated.",
-      "file": "audio/clips/bear-pear-vot-085.mp3",
-      "kind": "Matched controlled word synthesis",
-      "reference": "https://doi.org/10.1023/A:1021937116271"
-    },
     "bear-pear-series": {
-      "title": "bear-pear: full 9-step continuum",
-      "spokenText": "[bɛɹ] to [pʰɛɹ]",
-      "scope": "New matched word continuum; not original experimental audio",
-      "note": "New teaching reconstruction: an identical source-word burst and an identical word rhyme, with a controlled intervening aperiodic aspiration interval. Kokoro supplies the source word; numerical waveform editing supplies timing. These are not the original study tokens, and their perceptual category boundary has not been validated.",
-      "file": "audio/clips/bear-pear-series.mp3",
-      "kind": "Matched controlled word synthesis",
-      "reference": "https://doi.org/10.1023/A:1021937116271"
+      "title": "Human bear–pear: seven published settings",
+      "spokenText": "VOT 5, 10, 15, 25, 35, 40, 45 ms; F0 onset 230 Hz",
+      "kind": "Published human-recording stimulus",
+      "scope": "Natural human voice, time-domain/Praat research manipulations; later published dataset.",
+      "note": "Actual natural-speech research tokens by Murphy, Nozari and Holt (2025), adult female native American-English speaker. Natural source words were edited in the time domain in 5 ms VOT steps and F0-onset controlled with Praat. This selection holds the published F0 onset at 230 Hz and preserves seven available VOT settings (5,10,15,25,35,40,45 ms). These are the later 2025 materials, not recovered McMurray et al. (2003) files. Playback is uniformly lowered by 6 dB; no additional filtering, time or pitch changes. Added silence separates whole archive tokens for this listening sequence, not an original experimental trial.",
+      "reference": "https://osf.io/5uqx8/",
+      "credit": "Timothy K. Murphy, Nazbanou Nozari and Lori L. Holt (2025)",
+      "license": "Article CC BY 4.0; OSF node supplies no separate dataset license. Retain attribution; no additional license asserted.",
+      "file": "audio/clips/murphy2025-bear-pear-series.wav"
     },
     "bear-pear-endpoints": {
-      "title": "bear-pear: short and long delay, repeated",
-      "spokenText": "[bɛɹ] to [pʰɛɹ]",
-      "scope": "New matched word continuum; not original experimental audio",
-      "note": "New teaching reconstruction: an identical source-word burst and an identical word rhyme, with a controlled intervening aperiodic aspiration interval. Kokoro supplies the source word; numerical waveform editing supplies timing. These are not the original study tokens, and their perceptual category boundary has not been validated.",
-      "file": "audio/clips/bear-pear-endpoints.mp3",
-      "kind": "Matched controlled word synthesis",
-      "reference": "https://doi.org/10.1023/A:1021937116271"
-    },
-    "gorpse-corpse-vot-005": {
-      "title": "gorpse-corpse: nominal 5 ms release-to-voicing delay",
-      "spokenText": "[ɡɔɹps] to [kʰɔɹps]",
-      "scope": "New matched word continuum; not original experimental audio",
-      "note": "New teaching reconstruction: an identical source-word burst and an identical word rhyme, with a controlled intervening aperiodic aspiration interval. Kokoro supplies the source word; numerical waveform editing supplies timing. These are not the original study tokens, and their perceptual category boundary has not been validated.",
-      "file": "audio/clips/gorpse-corpse-vot-005.mp3",
-      "kind": "Matched controlled word synthesis",
-      "reference": "https://doi.org/10.1037/0096-1523.6.1.110"
-    },
-    "gorpse-corpse-vot-045": {
-      "title": "gorpse-corpse: nominal 45 ms release-to-voicing delay",
-      "spokenText": "[ɡɔɹps] to [kʰɔɹps]",
-      "scope": "New matched word continuum; not original experimental audio",
-      "note": "New teaching reconstruction: an identical source-word burst and an identical word rhyme, with a controlled intervening aperiodic aspiration interval. Kokoro supplies the source word; numerical waveform editing supplies timing. These are not the original study tokens, and their perceptual category boundary has not been validated.",
-      "file": "audio/clips/gorpse-corpse-vot-045.mp3",
-      "kind": "Matched controlled word synthesis",
-      "reference": "https://doi.org/10.1037/0096-1523.6.1.110"
-    },
-    "gorpse-corpse-vot-085": {
-      "title": "gorpse-corpse: nominal 85 ms release-to-voicing delay",
-      "spokenText": "[ɡɔɹps] to [kʰɔɹps]",
-      "scope": "New matched word continuum; not original experimental audio",
-      "note": "New teaching reconstruction: an identical source-word burst and an identical word rhyme, with a controlled intervening aperiodic aspiration interval. Kokoro supplies the source word; numerical waveform editing supplies timing. These are not the original study tokens, and their perceptual category boundary has not been validated.",
-      "file": "audio/clips/gorpse-corpse-vot-085.mp3",
-      "kind": "Matched controlled word synthesis",
-      "reference": "https://doi.org/10.1037/0096-1523.6.1.110"
+      "title": "Human bear–pear: endpoint comparison",
+      "spokenText": "5 ms → 45 ms → 5 ms → 45 ms; F0 onset 230 Hz",
+      "kind": "Published human-recording stimulus",
+      "scope": "Natural human voice, time-domain/Praat research manipulations; later published dataset.",
+      "note": "Actual natural-speech research tokens by Murphy, Nozari and Holt (2025), adult female native American-English speaker. Natural source words were edited in the time domain in 5 ms VOT steps and F0-onset controlled with Praat. This selection holds the published F0 onset at 230 Hz and preserves seven available VOT settings (5,10,15,25,35,40,45 ms). These are the later 2025 materials, not recovered McMurray et al. (2003) files. Playback is uniformly lowered by 6 dB; no additional filtering, time or pitch changes. Added silence separates whole archive tokens for this listening sequence, not an original experimental trial.",
+      "reference": "https://osf.io/5uqx8/",
+      "credit": "Timothy K. Murphy, Nazbanou Nozari and Lori L. Holt (2025)",
+      "license": "Article CC BY 4.0; OSF node supplies no separate dataset license. Retain attribution; no additional license asserted.",
+      "file": "audio/clips/murphy2025-bear-pear-endpoints.wav"
     },
     "gorpse-corpse-series": {
-      "title": "gorpse-corpse: full 17-step continuum",
-      "spokenText": "[ɡɔɹps] to [kʰɔɹps]",
-      "scope": "New matched word continuum; not original experimental audio",
-      "note": "New teaching reconstruction: an identical source-word burst and an identical word rhyme, with a controlled intervening aperiodic aspiration interval. Kokoro supplies the source word; numerical waveform editing supplies timing. These are not the original study tokens, and their perceptual category boundary has not been validated.",
-      "file": "audio/clips/gorpse-corpse-series.mp3",
-      "kind": "Matched controlled word synthesis",
-      "reference": "https://doi.org/10.1037/0096-1523.6.1.110"
+      "title": "Human gorpse–corpse: 13-step listening continuum",
+      "spokenText": "Nominal delays 10–70 ms, in 5 ms steps",
+      "kind": "Human-recording reconstruction",
+      "scope": "Actual human speech with deleted aspiration; new teaching continuum, not original study tokens.",
+      "note": "New teaching reconstruction from the actual US-English recording of corpse by Dvortygirl. Each member retains the complete 10 ms native release complex and the same entire native periodic vowel, rhotic segment and coda. Different amounts of middle aspiration are deleted from the real recording, retaining 10–70 ms nominal release-to-common-rhyme intervals in 5 ms steps. All audible material comes from that one human recording; no Kokoro, generated buzz, random aspiration, voice cloning or vocoder is used. These are not Ganong (1980) original stimuli, and no perceptual category boundary or endpoint identification is independently established. Uniform quiet playback gain is shared by the family; 150 ms leading/trailing silence is added around individual words. The listening sequence adds 650 ms silence between whole tokens and does not reproduce an original experimental trial. Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406. Adapted audio is licensed CC BY-SA 3.0.",
+      "reference": "https://commons.wikimedia.org/wiki/File:En-us-corpse.ogg",
+      "credit": "Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406.",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file": "audio/clips/human-gorpse-corpse-series.wav"
     },
     "gorpse-corpse-endpoints": {
-      "title": "gorpse-corpse: short and long delay, repeated",
-      "spokenText": "[ɡɔɹps] to [kʰɔɹps]",
-      "scope": "New matched word continuum; not original experimental audio",
-      "note": "New teaching reconstruction: an identical source-word burst and an identical word rhyme, with a controlled intervening aperiodic aspiration interval. Kokoro supplies the source word; numerical waveform editing supplies timing. These are not the original study tokens, and their perceptual category boundary has not been validated.",
-      "file": "audio/clips/gorpse-corpse-endpoints.mp3",
-      "kind": "Matched controlled word synthesis",
-      "reference": "https://doi.org/10.1037/0096-1523.6.1.110"
+      "title": "Human gorpse–corpse: short/long comparison",
+      "spokenText": "10 ms → 70 ms → 10 ms → 70 ms nominal delay",
+      "kind": "Human-recording reconstruction",
+      "scope": "Actual human speech with deleted aspiration; new teaching continuum, not original study tokens.",
+      "note": "New teaching reconstruction from the actual US-English recording of corpse by Dvortygirl. Each member retains the complete 10 ms native release complex and the same entire native periodic vowel, rhotic segment and coda. Different amounts of middle aspiration are deleted from the real recording, retaining 10–70 ms nominal release-to-common-rhyme intervals in 5 ms steps. All audible material comes from that one human recording; no Kokoro, generated buzz, random aspiration, voice cloning or vocoder is used. These are not Ganong (1980) original stimuli, and no perceptual category boundary or endpoint identification is independently established. Uniform quiet playback gain is shared by the family; 150 ms leading/trailing silence is added around individual words. The listening sequence adds 650 ms silence between whole tokens and does not reproduce an original experimental trial. Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406. Adapted audio is licensed CC BY-SA 3.0.",
+      "reference": "https://commons.wikimedia.org/wiki/File:En-us-corpse.ogg",
+      "credit": "Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406.",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file": "audio/clips/human-gorpse-corpse-endpoints.wav"
     },
     "hindi-native-dental-cv": {
       "title": "Hindi dental [t̪a] — native CV excerpt",
@@ -1385,6 +1374,138 @@ window.LING406_AUDIO={
       "file": "audio/clips/english-spear-reference.mp3",
       "kind": "Printed-word reading",
       "reference": "https://jordanxxlopez.github.io/COGNITIVEPROCESSES/ling406/sources/l2-learning.pdf#page=17"
+    },
+    "human-source-reference": {
+      "title": "Original human vowel: Peter Ladefoged’s /u/",
+      "spokenText": "[u]",
+      "kind": "Recorded human pronunciation",
+      "scope": "Actual recorded voice used as the source for the filter demonstration.",
+      "note": "Complete official ACIP cardinal-vowel recording by Peter Ladefoged, with quiet gain only at its original sample rate. Source © Keith Johnson; no additional source license asserted.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/chapter9/cardinal/cardinal.html",
+      "file": "audio/clips/natural_recording_original_rate.wav"
+    },
+    "bear-pear-human-vot005": {
+      "title": "Human bear–pear stimulus: nominal 5 ms VOT",
+      "spokenText": "bear–pear frame; VOT 5 ms, F0 onset 230 Hz",
+      "kind": "Published human-recording stimulus",
+      "scope": "Natural human voice, time-domain/Praat research manipulations; later published dataset.",
+      "note": "Actual natural-speech research tokens by Murphy, Nozari and Holt (2025), adult female native American-English speaker. Natural source words were edited in the time domain in 5 ms VOT steps and F0-onset controlled with Praat. This selection holds the published F0 onset at 230 Hz and preserves seven available VOT settings (5,10,15,25,35,40,45 ms). These are the later 2025 materials, not recovered McMurray et al. (2003) files. Playback is uniformly lowered by 6 dB; no additional filtering, time or pitch changes.",
+      "reference": "https://osf.io/5uqx8/",
+      "credit": "Timothy K. Murphy, Nazbanou Nozari and Lori L. Holt (2025)",
+      "license": "Article CC BY 4.0; OSF node supplies no separate dataset license. Retain attribution; no additional license asserted.",
+      "file": "audio/clips/murphy2025-bear-pear-vot005.wav"
+    },
+    "bear-pear-human-vot025": {
+      "title": "Human bear–pear stimulus: nominal 25 ms VOT",
+      "spokenText": "bear–pear frame; VOT 25 ms, F0 onset 230 Hz",
+      "kind": "Published human-recording stimulus",
+      "scope": "Natural human voice, time-domain/Praat research manipulations; later published dataset.",
+      "note": "Actual natural-speech research tokens by Murphy, Nozari and Holt (2025), adult female native American-English speaker. Natural source words were edited in the time domain in 5 ms VOT steps and F0-onset controlled with Praat. This selection holds the published F0 onset at 230 Hz and preserves seven available VOT settings (5,10,15,25,35,40,45 ms). These are the later 2025 materials, not recovered McMurray et al. (2003) files. Playback is uniformly lowered by 6 dB; no additional filtering, time or pitch changes.",
+      "reference": "https://osf.io/5uqx8/",
+      "credit": "Timothy K. Murphy, Nazbanou Nozari and Lori L. Holt (2025)",
+      "license": "Article CC BY 4.0; OSF node supplies no separate dataset license. Retain attribution; no additional license asserted.",
+      "file": "audio/clips/murphy2025-bear-pear-vot025.wav"
+    },
+    "bear-pear-human-vot045": {
+      "title": "Human bear–pear stimulus: nominal 45 ms VOT",
+      "spokenText": "bear–pear frame; VOT 45 ms, F0 onset 230 Hz",
+      "kind": "Published human-recording stimulus",
+      "scope": "Natural human voice, time-domain/Praat research manipulations; later published dataset.",
+      "note": "Actual natural-speech research tokens by Murphy, Nozari and Holt (2025), adult female native American-English speaker. Natural source words were edited in the time domain in 5 ms VOT steps and F0-onset controlled with Praat. This selection holds the published F0 onset at 230 Hz and preserves seven available VOT settings (5,10,15,25,35,40,45 ms). These are the later 2025 materials, not recovered McMurray et al. (2003) files. Playback is uniformly lowered by 6 dB; no additional filtering, time or pitch changes.",
+      "reference": "https://osf.io/5uqx8/",
+      "credit": "Timothy K. Murphy, Nazbanou Nozari and Lori L. Holt (2025)",
+      "license": "Article CC BY 4.0; OSF node supplies no separate dataset license. Retain attribution; no additional license asserted.",
+      "file": "audio/clips/murphy2025-bear-pear-vot045.wav"
+    },
+    "gorpse-corpse-vot-010": {
+      "title": "Human gorpse–corpse frame: 10 ms nominal delay",
+      "spokenText": "Nominal release-to-common-rhyme delay 10 ms",
+      "kind": "Human-recording reconstruction",
+      "scope": "Actual human speech with deleted aspiration; new teaching continuum, not original study tokens.",
+      "note": "New teaching reconstruction from the actual US-English recording of corpse by Dvortygirl. Each member retains the complete 10 ms native release complex and the same entire native periodic vowel, rhotic segment and coda. Different amounts of middle aspiration are deleted from the real recording, retaining 10–70 ms nominal release-to-common-rhyme intervals in 5 ms steps. All audible material comes from that one human recording; no Kokoro, generated buzz, random aspiration, voice cloning or vocoder is used. These are not Ganong (1980) original stimuli, and no perceptual category boundary or endpoint identification is independently established. Uniform quiet playback gain is shared by the family; 150 ms leading/trailing silence is added around individual words. Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406. Adapted audio is licensed CC BY-SA 3.0.",
+      "reference": "https://commons.wikimedia.org/wiki/File:En-us-corpse.ogg",
+      "credit": "Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406.",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file": "audio/clips/human-gorpse-corpse-delay010.wav"
+    },
+    "gorpse-corpse-vot-040": {
+      "title": "Human gorpse–corpse frame: 40 ms nominal delay",
+      "spokenText": "Nominal release-to-common-rhyme delay 40 ms",
+      "kind": "Human-recording reconstruction",
+      "scope": "Actual human speech with deleted aspiration; new teaching continuum, not original study tokens.",
+      "note": "New teaching reconstruction from the actual US-English recording of corpse by Dvortygirl. Each member retains the complete 10 ms native release complex and the same entire native periodic vowel, rhotic segment and coda. Different amounts of middle aspiration are deleted from the real recording, retaining 10–70 ms nominal release-to-common-rhyme intervals in 5 ms steps. All audible material comes from that one human recording; no Kokoro, generated buzz, random aspiration, voice cloning or vocoder is used. These are not Ganong (1980) original stimuli, and no perceptual category boundary or endpoint identification is independently established. Uniform quiet playback gain is shared by the family; 150 ms leading/trailing silence is added around individual words. Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406. Adapted audio is licensed CC BY-SA 3.0.",
+      "reference": "https://commons.wikimedia.org/wiki/File:En-us-corpse.ogg",
+      "credit": "Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406.",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file": "audio/clips/human-gorpse-corpse-delay040.wav"
+    },
+    "gorpse-corpse-vot-070": {
+      "title": "Human gorpse–corpse frame: 70 ms nominal delay",
+      "spokenText": "Nominal release-to-common-rhyme delay 70 ms",
+      "kind": "Human-recording reconstruction",
+      "scope": "Actual human speech with deleted aspiration; new teaching continuum, not original study tokens.",
+      "note": "New teaching reconstruction from the actual US-English recording of corpse by Dvortygirl. Each member retains the complete 10 ms native release complex and the same entire native periodic vowel, rhotic segment and coda. Different amounts of middle aspiration are deleted from the real recording, retaining 10–70 ms nominal release-to-common-rhyme intervals in 5 ms steps. All audible material comes from that one human recording; no Kokoro, generated buzz, random aspiration, voice cloning or vocoder is used. These are not Ganong (1980) original stimuli, and no perceptual category boundary or endpoint identification is independently established. Uniform quiet playback gain is shared by the family; 150 ms leading/trailing silence is added around individual words. Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406. Adapted audio is licensed CC BY-SA 3.0.",
+      "reference": "https://commons.wikimedia.org/wiki/File:En-us-corpse.ogg",
+      "credit": "Original corpse recording by Dvortygirl (2006), Wikimedia Commons. New aspiration-deletion edits and listening assembly for LING406.",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file": "audio/clips/human-gorpse-corpse-delay070.wav"
+    },
+    "human-cv-pa": {
+      "title": "Recorded human [pa]",
+      "spokenText": "[pa]",
+      "kind": "Recorded human pronunciation",
+      "scope": "A natural syllable reference, not a calibrated equal-F2 or VOT step.",
+      "note": "Peter Ladefoged’s actual before-vowel IPA-chart recording. Complete native waveform retained with one common quiet gain across [ba da ga pa]. No oscillator, generated aspiration, pitch flattening or time stretching. The tokens have naturally different durations and pitch contours. Source © Keith Johnson, no additional reuse license asserted.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/ipachart/consonants1.html",
+      "file": "audio/clips/human-cv-pa.wav"
+    },
+    "human-cv-ba": {
+      "title": "Recorded human [ba]",
+      "spokenText": "[ba]",
+      "kind": "Recorded human pronunciation",
+      "scope": "A natural syllable reference, not a calibrated equal-F2 or VOT step.",
+      "note": "Peter Ladefoged’s actual before-vowel IPA-chart recording. Complete native waveform retained with one common quiet gain across [ba da ga pa]. No oscillator, generated aspiration, pitch flattening or time stretching. The tokens have naturally different durations and pitch contours. Source © Keith Johnson, no additional reuse license asserted.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/ipachart/consonants1.html",
+      "file": "audio/clips/human-cv-ba.wav"
+    },
+    "human-cv-da": {
+      "title": "Recorded human [da]",
+      "spokenText": "[da]",
+      "kind": "Recorded human pronunciation",
+      "scope": "A natural syllable reference, not a calibrated equal-F2 or VOT step.",
+      "note": "Peter Ladefoged’s actual before-vowel IPA-chart recording. Complete native waveform retained with one common quiet gain across [ba da ga pa]. No oscillator, generated aspiration, pitch flattening or time stretching. The tokens have naturally different durations and pitch contours. Source © Keith Johnson, no additional reuse license asserted.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/ipachart/consonants1.html",
+      "file": "audio/clips/human-cv-da.wav"
+    },
+    "human-cv-ga": {
+      "title": "Recorded human [ga]",
+      "spokenText": "[ɡa]",
+      "kind": "Recorded human pronunciation",
+      "scope": "A natural syllable reference, not a calibrated equal-F2 or VOT step.",
+      "note": "Peter Ladefoged’s actual before-vowel IPA-chart recording. Complete native waveform retained with one common quiet gain across [ba da ga pa]. No oscillator, generated aspiration, pitch flattening or time stretching. The tokens have naturally different durations and pitch contours. Source © Keith Johnson, no additional reuse license asserted.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/ipachart/consonants2.html",
+      "file": "audio/clips/human-cv-ga.wav"
+    },
+    "human-cv-bdg": {
+      "title": "Human voice: [ba] → [da] → [ɡa]",
+      "spokenText": "ba → da → ga",
+      "kind": "Recorded human syllable comparison",
+      "scope": "Real human pronunciations. These are separate natural tokens, not a calibrated continuum.",
+      "note": "Full Peter Ladefoged recordings from the official ACIP before-vowel chart, using the same quiet gain and 650 ms between-token silence. No generated consonant, artificial aspiration or pitch flattening. The original historical synthetic stimulus comparisons remain separately available.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/ipachart/consonants1.html",
+      "file": "audio/clips/human-cv-bdg.wav"
+    },
+    "human-cv-ba-pa": {
+      "title": "Human voice: [ba] → [pa] → [ba] → [pa]",
+      "spokenText": "ba → pa → ba → pa",
+      "kind": "Recorded human syllable comparison",
+      "scope": "Real human pronunciations. These are separate natural tokens, not a calibrated continuum.",
+      "note": "Full Peter Ladefoged recordings from the official ACIP before-vowel chart, using the same quiet gain and 650 ms between-token silence. No generated consonant, artificial aspiration or pitch flattening. The original historical synthetic stimulus comparisons remain separately available.",
+      "reference": "https://corpus.linguistics.berkeley.edu/acip/course/ipachart/consonants1.html",
+      "file": "audio/clips/human-cv-ba-pa.wav"
     }
   },
   "sections": {
@@ -1649,9 +1770,9 @@ window.LING406_AUDIO={
       "kim2025-beach-peach-step-9",
       "kim2025-beach-peach-endpoints",
       "kim2025-beach-peach-nine-step",
-      "bear-pear-vot-005",
-      "bear-pear-vot-045",
-      "bear-pear-vot-085",
+      "bear-pear-human-vot005",
+      "bear-pear-human-vot025",
+      "bear-pear-human-vot045",
       "bear-pear-series",
       "bear-pear-endpoints"
     ],
@@ -1667,54 +1788,54 @@ window.LING406_AUDIO={
     "speech2-10": [
       "bear",
       "pear",
-      "bear-pear-vot-005",
-      "bear-pear-vot-045",
-      "bear-pear-vot-085",
+      "bear-pear-human-vot005",
+      "bear-pear-human-vot025",
+      "bear-pear-human-vot045",
       "bear-pear-series",
       "bear-pear-endpoints"
     ],
     "speech2-11": [
       "bear",
       "pear",
-      "bear-pear-vot-005",
-      "bear-pear-vot-045",
-      "bear-pear-vot-085",
+      "bear-pear-human-vot005",
+      "bear-pear-human-vot025",
+      "bear-pear-human-vot045",
       "bear-pear-series",
       "bear-pear-endpoints"
     ],
     "speech2-12": [
       "bear",
       "pear",
-      "bear-pear-vot-005",
-      "bear-pear-vot-045",
-      "bear-pear-vot-085",
+      "bear-pear-human-vot005",
+      "bear-pear-human-vot025",
+      "bear-pear-human-vot045",
       "bear-pear-series",
       "bear-pear-endpoints"
     ],
     "speech2-13": [
       "bear",
       "pear",
-      "bear-pear-vot-005",
-      "bear-pear-vot-045",
-      "bear-pear-vot-085",
+      "bear-pear-human-vot005",
+      "bear-pear-human-vot025",
+      "bear-pear-human-vot045",
       "bear-pear-series",
       "bear-pear-endpoints"
     ],
     "speech2-14": [
       "bear",
       "pear",
-      "bear-pear-vot-005",
-      "bear-pear-vot-045",
-      "bear-pear-vot-085",
+      "bear-pear-human-vot005",
+      "bear-pear-human-vot025",
+      "bear-pear-human-vot045",
       "bear-pear-series",
       "bear-pear-endpoints"
     ],
     "l2-learning-15": [
       "bear",
       "pear",
-      "bear-pear-vot-005",
-      "bear-pear-vot-045",
-      "bear-pear-vot-085",
+      "bear-pear-human-vot005",
+      "bear-pear-human-vot025",
+      "bear-pear-human-vot045",
       "bear-pear-series",
       "bear-pear-endpoints"
     ],
@@ -1795,46 +1916,54 @@ window.LING406_AUDIO={
     "speech2-18": [
       "ganong-corpse-word",
       "ganong-gorpse-nonword",
-      "gorpse-corpse-vot-005",
-      "gorpse-corpse-vot-045",
-      "gorpse-corpse-vot-085",
+      "gorpse-corpse-vot-010",
+      "gorpse-corpse-vot-040",
+      "gorpse-corpse-vot-070",
       "gorpse-corpse-series",
       "gorpse-corpse-endpoints"
     ],
     "speech2-19": [
       "ganong-corpse-word",
       "ganong-gorpse-nonword",
-      "gorpse-corpse-vot-005",
-      "gorpse-corpse-vot-045",
-      "gorpse-corpse-vot-085",
+      "gorpse-corpse-vot-010",
+      "gorpse-corpse-vot-040",
+      "gorpse-corpse-vot-070",
       "gorpse-corpse-series",
       "gorpse-corpse-endpoints"
     ],
     "speech2-20": [
       "ganong-corpse-word",
       "ganong-gorpse-nonword",
-      "gorpse-corpse-vot-005",
-      "gorpse-corpse-vot-045",
-      "gorpse-corpse-vot-085",
+      "gorpse-corpse-vot-010",
+      "gorpse-corpse-vot-040",
+      "gorpse-corpse-vot-070",
       "gorpse-corpse-series",
       "gorpse-corpse-endpoints"
     ],
     "speech2-21": [
       "ganong-corpse-word",
       "ganong-gorpse-nonword",
-      "gorpse-corpse-vot-005",
-      "gorpse-corpse-vot-045",
-      "gorpse-corpse-vot-085",
+      "gorpse-corpse-vot-010",
+      "gorpse-corpse-vot-040",
+      "gorpse-corpse-vot-070",
       "gorpse-corpse-series",
       "gorpse-corpse-endpoints"
     ],
     "speech1-13": [
+      "human-cv-bdg",
+      "human-cv-ba",
+      "human-cv-da",
+      "human-cv-ga",
       "haskins_bdg_all",
       "haskins_bdg_minus_06",
       "haskins_bdg_zero",
       "haskins_bdg_plus_06"
     ],
     "speech1-14": [
+      "human-cv-bdg",
+      "human-cv-ba",
+      "human-cv-da",
+      "human-cv-ga",
       "haskins_bdg_all",
       "haskins_bdg_minus_06",
       "haskins_bdg_zero",
@@ -1844,6 +1973,7 @@ window.LING406_AUDIO={
       "vowel-series-lexical"
     ],
     "speech1-11": [
+      "human-source-reference",
       "vowel-series-lexical",
       "source_filter_comparison"
     ],
@@ -1851,83 +1981,119 @@ window.LING406_AUDIO={
       "vowel-series-lexical"
     ],
     "speech1-06": [
+      "human-source-reference",
       "source_filter_comparison",
-      "source_buzz",
       "vowel_base",
       "vowel_raise_f1",
-      "vowel_raise_f2"
+      "vowel_raise_f2",
+      "source_buzz"
     ],
     "speech1-07": [
+      "human-source-reference",
       "source_filter_comparison",
-      "source_buzz",
       "vowel_base",
       "vowel_raise_f1",
-      "vowel_raise_f2"
+      "vowel_raise_f2",
+      "source_buzz"
     ],
     "speech1-08": [
+      "human-source-reference",
       "source_filter_comparison",
-      "source_buzz",
       "vowel_base",
       "vowel_raise_f1",
-      "vowel_raise_f2"
+      "vowel_raise_f2",
+      "source_buzz"
     ],
     "speech1-09": [
+      "human-source-reference",
       "source_filter_comparison",
-      "source_buzz",
       "vowel_base",
       "vowel_raise_f1",
-      "vowel_raise_f2"
+      "vowel_raise_f2",
+      "source_buzz"
     ],
     "speech1-10": [
+      "human-source-reference",
       "source_filter_comparison",
-      "source_buzz",
       "vowel_base",
       "vowel_raise_f1",
-      "vowel_raise_f2"
+      "vowel_raise_f2",
+      "source_buzz"
     ],
     "speech1-15": [
+      "human-cv-bdg",
+      "human-cv-ba",
+      "human-cv-da",
+      "human-cv-ga",
       "haskins_bdg_all",
       "haskins_bdg_minus_06",
       "haskins_bdg_zero",
       "haskins_bdg_plus_06"
     ],
     "speech1-16": [
+      "human-cv-bdg",
+      "human-cv-ba",
+      "human-cv-da",
+      "human-cv-ga",
       "haskins_bdg_all",
       "haskins_bdg_minus_06",
       "haskins_bdg_zero",
       "haskins_bdg_plus_06"
     ],
     "speech1-17": [
+      "human-cv-bdg",
+      "human-cv-ba",
+      "human-cv-da",
+      "human-cv-ga",
       "haskins_bdg_all",
       "haskins_bdg_minus_06",
       "haskins_bdg_zero",
       "haskins_bdg_plus_06"
     ],
     "review-2": [
+      "human-cv-bdg",
+      "human-cv-ba",
+      "human-cv-da",
+      "human-cv-ga",
       "haskins_bdg_all",
       "haskins_bdg_minus_06",
       "haskins_bdg_zero",
       "haskins_bdg_plus_06"
     ],
     "review-3": [
+      "human-cv-bdg",
+      "human-cv-ba",
+      "human-cv-da",
+      "human-cv-ga",
       "haskins_bdg_all",
       "haskins_bdg_minus_06",
       "haskins_bdg_zero",
       "haskins_bdg_plus_06"
     ],
     "review-4": [
+      "human-cv-bdg",
+      "human-cv-ba",
+      "human-cv-da",
+      "human-cv-ga",
       "haskins_bdg_all",
       "haskins_bdg_minus_06",
       "haskins_bdg_zero",
       "haskins_bdg_plus_06"
     ],
     "review-5": [
+      "human-cv-bdg",
+      "human-cv-ba",
+      "human-cv-da",
+      "human-cv-ga",
       "haskins_bdg_all",
       "haskins_bdg_minus_06",
       "haskins_bdg_zero",
       "haskins_bdg_plus_06"
     ],
     "speech1-25": [
+      "human-cv-ba-pa",
+      "human-cv-ba",
+      "human-cv-pa",
       "haskins-vot-minus20",
       "haskins-vot-zero",
       "haskins-vot-plus20",
@@ -1941,6 +2107,9 @@ window.LING406_AUDIO={
       "haskins-vot-five-step"
     ],
     "development1-05": [
+      "human-cv-ba-pa",
+      "human-cv-ba",
+      "human-cv-pa",
       "haskins-vot-minus20",
       "haskins-vot-zero",
       "haskins-vot-plus20",
@@ -1954,6 +2123,9 @@ window.LING406_AUDIO={
       "haskins-vot-five-step"
     ],
     "review-33": [
+      "human-cv-ba-pa",
+      "human-cv-ba",
+      "human-cv-pa",
       "haskins-vot-minus20",
       "haskins-vot-zero",
       "haskins-vot-plus20",
@@ -2092,31 +2264,34 @@ window.LING406_AUDIO={
     "review-8": [
       "ganong-corpse-word",
       "ganong-gorpse-nonword",
-      "gorpse-corpse-vot-005",
-      "gorpse-corpse-vot-045",
-      "gorpse-corpse-vot-085",
+      "gorpse-corpse-vot-010",
+      "gorpse-corpse-vot-040",
+      "gorpse-corpse-vot-070",
       "gorpse-corpse-series",
       "gorpse-corpse-endpoints"
     ],
     "review-9": [
       "ganong-corpse-word",
       "ganong-gorpse-nonword",
-      "gorpse-corpse-vot-005",
-      "gorpse-corpse-vot-045",
-      "gorpse-corpse-vot-085",
+      "gorpse-corpse-vot-010",
+      "gorpse-corpse-vot-040",
+      "gorpse-corpse-vot-070",
       "gorpse-corpse-series",
       "gorpse-corpse-endpoints"
     ],
     "review-10": [
       "ganong-corpse-word",
       "ganong-gorpse-nonword",
-      "gorpse-corpse-vot-005",
-      "gorpse-corpse-vot-045",
-      "gorpse-corpse-vot-085",
+      "gorpse-corpse-vot-010",
+      "gorpse-corpse-vot-040",
+      "gorpse-corpse-vot-070",
       "gorpse-corpse-series",
       "gorpse-corpse-endpoints"
     ],
     "speech1-31": [
+      "human-cv-ba-pa",
+      "human-cv-ba",
+      "human-cv-pa",
       "haskins-vot-zero",
       "haskins-vot-plus80",
       "haskins-vot-zero-eighty"

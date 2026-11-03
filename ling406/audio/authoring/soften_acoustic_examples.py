@@ -1,6 +1,7 @@
 """Create quieter playback copies without changing stimulus construction.
 
 All selected files receive one fixed -12 dB gain. Original MP3s remain intact.
+The retained level record pins historical inputs after recorded-human replacements.
 Playback copies use PCM16 WAV, avoiding another lossy encoding and preserving
 the exact decoded sample count. Quantization error is measured explicitly.
 Requires NumPy, FFmpeg and ffprobe. No model weights or external calls are used.
@@ -51,6 +52,8 @@ def main():
     destination = args.output_dir.resolve()
     destination.mkdir(parents=True, exist_ok=True)
     manifest = json.loads((COURSE / 'audio/manifest.json').read_text())
+    prior_path = Path(__file__).resolve().parent / 'listening-levels.json'
+    prior = {row['id']: row for row in json.loads(prior_path.read_text())['recordings']} if prior_path.exists() else {}
     selected = {
         key: clip for key, clip in manifest['clips'].items()
         if key in SOURCE_FILTER or key.startswith(PREFIXES)
@@ -58,7 +61,7 @@ def main():
     assert len(selected) == 31, 'Expected the 31 audited acoustic examples'
     records = []
     for key, clip in selected.items():
-        source_file = clip.get('playbackAdjustment', {}).get('sourceFile', clip['file'])
+        source_file = prior.get(key, {}).get('source_file', clip.get('playbackAdjustment', {}).get('sourceFile', clip['file']))
         source = COURSE / source_file
         assert not source.stem.endswith('-soft'), 'Original source is required'
         output = destination / (source.stem + '-soft.wav')

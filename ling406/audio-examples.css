@@ -2,6 +2,10 @@
 .slide-audio-examples{margin-top:16px;border:1px solid var(--border);border-radius:13px;background:var(--panel);color:var(--ink);padding:14px;text-align:left;min-width:0;font-size:14px;line-height:1.5}
 .slide-audio-examples h3{font-size:16px;margin:0 0 10px;line-height:1.4}
 .slide-audio-list{max-height:280px;max-height:30dvh;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding-right:5px}
+.slide-audio-extra{border-top:1px solid var(--border);padding-top:10px;margin-top:12px;min-width:0}
+.slide-audio-extra>summary{cursor:pointer;font-size:13px;line-height:1.5;font-weight:650;color:inherit;overflow-wrap:anywhere}
+.slide-audio-extra[open]>summary{margin-bottom:12px}
+.slide-audio-extra>summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px}
 .slide-audio-notice{border:1px solid var(--border);border-radius:8px;padding:10px;margin:0 0 12px;overflow-wrap:anywhere}
 .slide-audio-notice h4{font-size:14px;line-height:1.5;margin:0 0 5px}
 .slide-audio-notice p{font-size:12px;line-height:1.5;margin:5px 0 0}
@@ -23,6 +27,7 @@
 .expanded-pair .slide-audio-examples{background:#142b35;border-color:#607d89;color:#edf5f7}
 .expanded-pair .slide-audio-examples a{color:#b9deed}
 .expanded-pair .slide-audio-item{border-color:#4c6976}
+.expanded-pair .slide-audio-extra{border-color:#4c6976}
 .expanded-pair .slide-audio-kind{color:#bbcfda}
 .expanded-pair .slide-audio-item audio{color-scheme:dark}
 @media(min-width:761px){.expanded-pair .reader-visual:has(.slide-audio-examples){max-height:calc(100dvh - 145px);overflow:auto;overscroll-behavior:contain;padding:0 4px 5px 0}}
