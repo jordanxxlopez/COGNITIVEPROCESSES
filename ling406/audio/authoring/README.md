@@ -1,5 +1,9 @@
 # LING406 phonetic audio additions
 
+**Current fidelity correction.** [The complete audit](../fidelity-audit.md) reviews all 107 previously active entries and 398 placements. Current source packages, reconstructions and retirement records are in [fidelity/](fidelity/), with a machine-readable [resolution](fidelity-resolution.json). Haskins archives replace the generic lesson F2/CV sets, distinct published-parameter reconstructions replace the adult/infant nonspeech sets, word continua use their own lexical contexts, and native ACIP examples replace the older Hindi/Korean mappings. The unmatched Salish words are retired from the target pair's players, with an explicit unresolved availability notice. Source credit does not imply recovery of a different study's original files.
+
+The generator descriptions below preserve the original implementation record. The older `f2_step_*`, `vot_*`, `nonspeech_attack_*` and full-context language recordings remain archived references rather than current study-specific players. Consult [../manifest.json](../manifest.json), [audio-provenance.json](audio-provenance.json) and the resolution for active mappings. The foundation source/filter demonstrations and source-slide artificial-language reconstructions remain active with their stated limits.
+
 The current Narayan lesson players use the matched consonant-vowel reconstructions in [vocaltract-nasals/](vocaltract-nasals/), documented in [../nasal-stimuli.md](../nasal-stimuli.md). The older `nasal_m`, `nasal_n` and `nasal_ng` IPA-context files described below remain archived references and are not mapped to these lessons.
 
 These are additive listening aids. Original source slides, transcripts and experiment claims must remain unchanged.
