@@ -1,5 +1,7 @@
 # LING406 phonetic audio additions
 
+The current Narayan lesson players use the matched consonant-vowel reconstructions in [vocaltract-nasals/](vocaltract-nasals/), documented in [../nasal-stimuli.md](../nasal-stimuli.md). The older `nasal_m`, `nasal_n` and `nasal_ng` IPA-context files described below remain archived references and are not mapped to these lessons.
+
 These are additive listening aids. Original source slides, transcripts and experiment claims must remain unchanged.
 
 ## Available assets

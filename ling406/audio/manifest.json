@@ -748,33 +748,6 @@
       "reference": "https://www.fon.hum.uva.nl/praat/manual/Source-filter_synthesis.html",
       "scope": "New non-speech acoustic demonstration of fast versus slow amplitude rise. Not a recording of a plucked or bowed instrument and not the original Cutting–Rosner or infant experiment audio."
     },
-    "nasal_m": {
-      "title": "Phonetician John Esling produces /m/, full source sound context",
-      "file": "audio/clips/nasal_m.mp3",
-      "spokenText": "",
-      "kind": "Recorded pronunciation",
-      "note": " Full audio of the source IPA demonstration, including its original vowel/utterance contexts. Illustrates nasal place, not a matched /ma na ŋa/ set and not the original Narayan et al. stimuli. Do not attribute it to the study participants.",
-      "reference": "https://sail.usc.edu/span/rtmri_ipa/videos/je_2015/bilabial_nasal.html",
-      "scope": "Full original sound context; not matched /ma–na–ŋa/ study tokens."
-    },
-    "nasal_n": {
-      "title": "Phonetician John Esling produces /n/, full source sound context",
-      "file": "audio/clips/nasal_n.mp3",
-      "spokenText": "",
-      "kind": "Recorded pronunciation",
-      "note": " Full audio of the source IPA demonstration, including its original vowel/utterance contexts. Illustrates nasal place, not a matched /ma na ŋa/ set and not the original Narayan et al. stimuli. Do not attribute it to the study participants.",
-      "reference": "https://sail.usc.edu/span/rtmri_ipa/videos/je_2015/alveolar_nasal.html",
-      "scope": "Full original sound context; not matched /ma–na–ŋa/ study tokens."
-    },
-    "nasal_ng": {
-      "title": "Phonetician John Esling produces /ŋ/, full source sound context",
-      "file": "audio/clips/nasal_ng.mp3",
-      "spokenText": "",
-      "kind": "Recorded pronunciation",
-      "note": " Full audio of the source IPA demonstration, including its original vowel/utterance contexts. Illustrates nasal place, not a matched /ma na ŋa/ set and not the original Narayan et al. stimuli. Do not attribute it to the study participants.",
-      "reference": "https://sail.usc.edu/span/rtmri_ipa/videos/je_2015/velar_nasal.html",
-      "scope": "Full original sound context; not matched /ma–na–ŋa/ study tokens."
-    },
     "saffran-stream": {
       "title": "Unsegmented artificial speech stream",
       "file": "audio/clips/saffran-stream.mp3",
@@ -945,6 +918,51 @@
       "note": "Spanish-language reading of printed sentence. Accent in está restores standard spelling in metadata only; original slide remains unchanged. Kokoro-82M ef_dora, es frontend.",
       "reference": "https://huggingface.co/hexgrad/Kokoro-82M",
       "scope": "Language-specific model pronunciation; not original study audio."
+    },
+    "nasal_cv_ma": {
+      "title": "Control only: [ma] — lip nasal + [a]",
+      "file": "audio/clips/nasal_cv_ma.mp3",
+      "spokenText": "[ma]",
+      "kind": "VocalTractLab articulatory synthesis",
+      "scope": "This belongs to the easier [ma–na] comparison, not the [na–ŋa] target pair.",
+      "note": "New VocalTractLab 2.4 articulatory synthesis using the W02 anatomy preset, one shared [a] vowel, 223 Hz pitch target and 500 ms syllables. Initial nasal closures last about 120 ms, with an open velopharyngeal port. The [ŋa] gesture has no separate [g]. These are new matched teaching stimuli, not Narayan et al.’s original natural female Filipino recordings or a perceptually validated replica.",
+      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/nasal-stimuli.md"
+    },
+    "nasal_cv_na": {
+      "title": "[na] — tongue-tip nasal + [a]",
+      "file": "audio/clips/nasal_cv_na.mp3",
+      "spokenText": "[na]",
+      "kind": "VocalTractLab articulatory synthesis",
+      "scope": "The nasal is followed directly by the shared [a] vowel.",
+      "note": "New VocalTractLab 2.4 articulatory synthesis using the W02 anatomy preset, one shared [a] vowel, 223 Hz pitch target and 500 ms syllables. Initial nasal closures last about 120 ms, with an open velopharyngeal port. The [ŋa] gesture has no separate [g]. These are new matched teaching stimuli, not Narayan et al.’s original natural female Filipino recordings or a perceptually validated replica.",
+      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/nasal-stimuli.md"
+    },
+    "nasal_cv_nga": {
+      "title": "[ŋa] — tongue-back nasal + [a]",
+      "file": "audio/clips/nasal_cv_nga.mp3",
+      "spokenText": "[ŋa]",
+      "kind": "VocalTractLab articulatory synthesis",
+      "scope": "One velar nasal followed directly by [a], without an added [g].",
+      "note": "New VocalTractLab 2.4 articulatory synthesis using the W02 anatomy preset, one shared [a] vowel, 223 Hz pitch target and 500 ms syllables. Initial nasal closures last about 120 ms, with an open velopharyngeal port. The [ŋa] gesture has no separate [g]. These are new matched teaching stimuli, not Narayan et al.’s original natural female Filipino recordings or a perceptually validated replica.",
+      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/nasal-stimuli.md"
+    },
+    "nasal_pair_na_nga": {
+      "title": "Target contrast: [na] → [ŋa]",
+      "file": "audio/clips/nasal_pair_na_nga.mp3",
+      "spokenText": "[na], [ŋa], [na], [ŋa]",
+      "kind": "VocalTractLab articulatory synthesis",
+      "scope": "Only the [na–ŋa] target contrast plays here. The pair repeats once.",
+      "note": "New VocalTractLab 2.4 articulatory synthesis using the W02 anatomy preset, one shared [a] vowel, 223 Hz pitch target and 500 ms syllables. Initial nasal closures last about 120 ms, with an open velopharyngeal port. The [ŋa] gesture has no separate [g]. These are new matched teaching stimuli, not Narayan et al.’s original natural female Filipino recordings or a perceptually validated replica.",
+      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/nasal-stimuli.md"
+    },
+    "nasal_pair_ma_na": {
+      "title": "Control contrast: [ma] → [na]",
+      "file": "audio/clips/nasal_pair_ma_na.mp3",
+      "spokenText": "[ma], [na], [ma], [na]",
+      "kind": "VocalTractLab articulatory synthesis",
+      "scope": "The easier control comparison. It uses the same [na] token as the target contrast.",
+      "note": "New VocalTractLab 2.4 articulatory synthesis using the W02 anatomy preset, one shared [a] vowel, 223 Hz pitch target and 500 ms syllables. Initial nasal closures last about 120 ms, with an open velopharyngeal port. The [ŋa] gesture has no separate [g]. These are new matched teaching stimuli, not Narayan et al.’s original natural female Filipino recordings or a perceptually validated replica.",
+      "reference": "https://github.com/jordanxxlopez/COGNITIVEPROCESSES/blob/main/ling406/audio/nasal-stimuli.md"
     }
   },
   "sections": {
@@ -1503,19 +1521,23 @@
       "nonspeech_attack_80"
     ],
     "speech1-32": [
-      "nasal_m",
-      "nasal_n",
-      "nasal_ng"
+      "nasal_pair_na_nga",
+      "nasal_cv_na",
+      "nasal_cv_nga",
+      "nasal_pair_ma_na",
+      "nasal_cv_ma"
     ],
     "development1-13": [
-      "nasal_m",
-      "nasal_n",
-      "nasal_ng"
+      "nasal_pair_na_nga",
+      "nasal_cv_na",
+      "nasal_cv_nga",
+      "nasal_pair_ma_na",
+      "nasal_cv_ma"
     ],
     "development1-14": [
-      "nasal_m",
-      "nasal_n",
-      "nasal_ng"
+      "nasal_pair_na_nga",
+      "nasal_cv_na",
+      "nasal_cv_nga"
     ],
     "development2-06": [
       "saffran-stream"
