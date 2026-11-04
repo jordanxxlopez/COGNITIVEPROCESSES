@@ -8,7 +8,7 @@ const server=http.createServer((req,res)=>{let p=path.join(root,decodeURICompone
 try {
  for(const module of ['module1','module2']){
   await page.goto(base+'/ling285/?view=stimuli&module='+module);await page.locator('#content h1').waitFor();
-  assert.equal(await page.locator('.stimulus-card').count(),M.filter(m=>m.modules.includes(module)).length);
+  const actual=await page.locator('.stimulus-card').count();if(!actual)throw Error('Gallery has no stimulus cards. Content='+((await page.locator('#content').innerText()).slice(0,1200)));assert.equal(actual,M.filter(m=>m.modules.includes(module)).length);
   assert.equal(await page.title(),'LING258 · Study Studio');
   await page.screenshot({path:'ling285/stimuli/qa/gallery-'+module+'.png'});
  }
