@@ -12,6 +12,9 @@ try {
   assert.equal(await page.title(),'LING258 · Study Studio');
   await page.screenshot({path:'ling285/stimuli/qa/gallery-'+module+'.png'});
  }
+ // Matching-slide buttons open the actual requested source section.
+ await page.locator('.stimulus-card details').first().evaluate(e=>e.open=true);
+ const link=page.locator('.stimulus-card [data-open-section]').first();const expectedSlide=await link.getAttribute('data-open-section');await link.click();await page.locator('#readerDialog').waitFor();assert.equal(await page.locator('#readerDialog [data-note]').getAttribute('data-note'),expectedSlide);await page.keyboard.press('Escape');
  // Exercise each unique file in real Chrome, including the original course codecs.
  for(const m of M){
   const result=await page.evaluate(async m=>{const el=document.createElement(m.type);el.src=new URL(m.file,location.href).href;el.muted=true;document.body.append(el);try{await new Promise((resolve,reject)=>{const timeout=setTimeout(()=>reject(Error('load timeout')),15000);el.onloadedmetadata=()=>{clearTimeout(timeout);resolve()};el.onerror=()=>{clearTimeout(timeout);reject(Error('media error '+el.error?.code))}});await el.play();await new Promise(r=>setTimeout(r,160));const advanced=el.currentTime>0;el.pause();const duration=el.duration;if(duration>1){el.currentTime=Math.min(duration*.6,3);await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('seek timeout')),10000);el.onseeked=()=>{clearTimeout(timer);resolve()}})}return {id:m.id,duration,advanced,seek:el.currentTime};}finally{el.remove();}},m);

@@ -27,6 +27,9 @@ for m in M:
     dst=Q/'temp-frame.png'
     subprocess.run(['ffmpeg','-y','-v','error','-ss',str(duration*frac),'-i',str(p),'-frames:v','1',str(dst)],check=True)
     im=Image.open(dst).convert('RGB');im.thumbnail((400,240));tile=Image.new('RGB',(420,275),'white');tile.paste(im,(10,30));ImageDraw.Draw(tile).text((8,6),m['id']+f' {frac:.0%}',fill='black');frames.append(tile)
+ if m.get('events'):
+  e=m['events'][0];sample_time=(e['start']+e['end'])/2
+  subprocess.run(['ffmpeg','-y','-v','error','-ss',str(sample_time),'-i',str(p),'-frames:v','1',str(O/'posters'/(m['id']+'.jpg'))],check=True)
  reports.append(dict(id=m['id'],duration=float(r['format']['duration']),streams=[s['codec_type']for s in r['streams']],sha256=hashlib.sha256(p.read_bytes()).hexdigest()))
 for start in range(0,len(frames),12):
  chunk=frames[start:start+12];out=Image.new('RGB',(1260,275*((len(chunk)+2)//3)),'#ddd')
