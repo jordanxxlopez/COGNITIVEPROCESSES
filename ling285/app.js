@@ -158,9 +158,7 @@ function go(next,collectionId,push=true,moduleId) {
   save();applyPreferences();render();window.scrollTo({top:0,behavior:'instant'});$('#content').focus({preventScroll:true});
 }
 
-// Module I is only covered by the newest edition, so a lecture page falls back to the closest edition that has it.
-function editionCovers(version) {return transcriptEditions.has(version) && (view!=='collection' || !VERSIONED_COLLECTIONS.has(selected) || transcriptEditions.get(version).collections.has(selected));}
-function effectiveVersion() {return TRANSCRIPT_VERSIONS.slice(1).reverse().find(version=>Number(version.slice(1))<=Number(state.transcriptVersion.slice(1)) && editionCovers(version)) || 'v1';}
+function effectiveVersion() {return TRANSCRIPT_VERSIONS.slice(1).reverse().find(version=>Number(version.slice(1))<=Number(state.transcriptVersion.slice(1)) && transcriptEditions.has(version)) || 'v1';}
 function currentTranscript() {return transcriptEditions.get(effectiveVersion());}
 function sectionTitle(section) {return currentTranscript()?.sections.get(section.id)?.title || section.title;}
 function teachingParagraphs(section) {return currentTranscript()?.sections.get(section.id)?.teaching ?? (section.teaching || []);}
@@ -170,7 +168,7 @@ function collectionTitle(c) {
 }
 function versionedSections(items) {return items.some(section=>VERSIONED_COLLECTIONS.has(section.collection));}
 function transcriptSelector() {
-  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version">${[['v1','Version 1 · Original'],['v2','Version 2 · Conceptual'],['v3','Version 3 · Clear explanations'],['v4','Version 4 · Teaching notes'],['v7','Version 7 · Teaching notes (bulleted)'],['v10','Version 10 · Direct teaching notes'],['v12','Version 12 · Detailed teaching notes'],['v14','Version 14 · Balanced teaching notes'],['v16','Version 16 · Natural teaching notes'],['v18','Version 18 · Teaching scripts'],['v20','Iskarous · Professor teaching transcript'],['v21','Iskarous B · Focused professor teaching'],['v22','Iskarous C · Natural teaching notes']].map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${id!=='v1' && !editionCovers(id)?'disabled':''}>${esc(transcriptEditions.get(id)?.payload.label || label)}</option>`).join('')}</select>${state.transcriptVersion!==effectiveVersion()?`<small>${esc(state.transcriptVersion.toUpperCase())} unavailable · ${esc(effectiveVersion().toUpperCase())} shown</small>`:''}</label>`;
+  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version">${[['v1','Version 1 · Original'],['v2','Version 2 · Conceptual'],['v3','Version 3 · Clear explanations'],['v4','Version 4 · Teaching notes'],['v7','Version 7 · Teaching notes (bulleted)'],['v10','Version 10 · Direct teaching notes'],['v12','Version 12 · Detailed teaching notes'],['v14','Version 14 · Balanced teaching notes'],['v16','Version 16 · Natural teaching notes'],['v18','Version 18 · Teaching scripts'],['v20','Iskarous · Professor teaching transcript'],['v21','Iskarous B · Focused professor teaching'],['v22','Iskarous C · Natural teaching notes']].map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${id!=='v1' && !transcriptEditions.has(id)?'disabled':''}>${esc(transcriptEditions.get(id)?.payload.label || label)}</option>`).join('')}</select>${state.transcriptVersion!==effectiveVersion()?`<small>${esc(state.transcriptVersion.toUpperCase())} unavailable · ${esc(effectiveVersion().toUpperCase())} shown</small>`:''}</label>`;
 }
 function transcriptNotice() {
   const active=reader?versionedSections(reader.items):view==='collection'?VERSIONED_COLLECTIONS.has(selected):['combined','core'].includes(view) && state.activeModule==='module2';
