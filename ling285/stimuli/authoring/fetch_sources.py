@@ -17,3 +17,7 @@ for i,url in enumerate(urls):
   out.append({'url':url,'final':final,'file':f'page-{i}.html','links':re.findall(r'(?:src|href|data-audio)=[\'"]([^\'"]+)',text),'text':re.sub('<[^>]+>',' ',text)[:15000]})
  except Exception as e:out.append({'url':url,'error':str(e)})
 (O/'web-source-audit.json').write_text(json.dumps(out,indent=2))
+
+for name in ['cons1.gif','cons2.gif']:
+ url='https://d3uxfe7dw0hhy7.cloudfront.net/acip/assets/course/ipachart/'+name
+ (O/name).write_bytes(urllib.request.urlopen(url,timeout=30).read())
