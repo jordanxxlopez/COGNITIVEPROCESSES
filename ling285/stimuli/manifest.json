@@ -2492,5 +2492,103 @@
         "title": "A back constriction reverses the F1 and F2 pattern"
       }
     ]
+  },
+  {
+    "id": "early-network",
+    "title": "The early multilayer network and changed-input quiz",
+    "slides": [
+      "lecture10-p009",
+      "lecture10-p010"
+    ],
+    "kind": "Source slide sequence",
+    "description": "The two original network displays, shown for eight seconds each. The second display is a changed-input quiz; no unprovided downstream values are invented.",
+    "file": "stimuli/clips/early-network.mp4",
+    "poster": "stimuli/posters/early-network.jpg",
+    "type": "video",
+    "modules": [
+      "module1"
+    ],
+    "sourceSlides": [
+      {
+        "id": "lecture10-p009",
+        "title": "Forward propagation through a multilayer perceptron"
+      },
+      {
+        "id": "lecture10-p010",
+        "title": "A changed input and changed weights change the activation"
+      }
+    ]
+  },
+  {
+    "id": "vowel-network-source",
+    "title": "Formants, weights, forward flow and code",
+    "slides": [
+      "lecture14-p021",
+      "lecture14-p022",
+      "lecture14-p023",
+      "lecture14-p024",
+      "lecture14-p025"
+    ],
+    "kind": "Source slide sequence",
+    "description": "Original source pages in sequence, held for five seconds each. Lecture 14 labels its output distribution as illustrative; this sequence preserves that source example rather than claiming to calculate it.",
+    "file": "stimuli/clips/vowel-network-source.mp4",
+    "poster": "stimuli/posters/vowel-network-source.jpg",
+    "type": "video",
+    "modules": [
+      "module2"
+    ],
+    "sourceSlides": [
+      {
+        "id": "lecture14-p021",
+        "title": "Use formants as input to vowel recognition"
+      },
+      {
+        "id": "lecture14-p022",
+        "title": "A fully connected linear vowel network"
+      },
+      {
+        "id": "lecture14-p023",
+        "title": "Random weights assign signed contributions to connections"
+      },
+      {
+        "id": "lecture14-p024",
+        "title": "Forward flow and an illustrative output distribution"
+      },
+      {
+        "id": "lecture14-p025",
+        "title": "Declare the layer sequence in PyTorch"
+      }
+    ]
+  },
+  {
+    "id": "training-source",
+    "title": "Vowel observations and the recorded training plots",
+    "slides": [
+      "lecture16-p005",
+      "lecture16-p015",
+      "lecture16-p016"
+    ],
+    "kind": "Source slide sequence",
+    "description": "Original plots of the 525 formant observations and recorded training curves, held for seven seconds each. These are the existing source results; no new training run or invented dataset is presented.",
+    "file": "stimuli/clips/training-source.mp4",
+    "poster": "stimuli/posters/training-source.jpg",
+    "type": "video",
+    "modules": [
+      "module2"
+    ],
+    "sourceSlides": [
+      {
+        "id": "lecture16-p005",
+        "title": "Vowel formants overlap across five categories"
+      },
+      {
+        "id": "lecture16-p015",
+        "title": "One initialization · training the linear network for 2,000 updates"
+      },
+      {
+        "id": "lecture16-p016",
+        "title": "Ten initializations · different paths, the same final accuracy"
+      }
+    ]
   }
 ]
