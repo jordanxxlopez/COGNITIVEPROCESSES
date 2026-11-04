@@ -1,6 +1,6 @@
-"""Assemble the Iskarous teaching edition of Module II (Version 20).
+"""Assemble the Iskarous teaching editions of Module II (Versions 20, 21 and 22).
 
-Usage: python3 ling285/authoring/build_transcripts_iskarous.py [20 21]
+Usage: python3 ling285/authoring/build_transcripts_iskarous.py [20 21 22]
 Pages are authored in authoring/transcripts-v20/lectureNN.txt in the same
 `page|text >> sub-bullet || next bullet >> sub-bullet` format as Versions 7–18.
 The text follows the class transcripts for Oct 6 to Nov 3: his reasoning and
@@ -18,7 +18,9 @@ from build_transcripts_notes import ROOT,A,LECTURES,BANNED,LABELS,sha,paragraphs
 
 # Version 20 follows the transcripts closely. Version 21 (Version B) keeps the same
 # teaching but trims side stories, names, dates and jargon that are not tested.
-LABELS_BY_VERSION={20:'Iskarous · Professor teaching transcript',21:'Iskarous B · Focused professor teaching'}
+# Version 22 (Version C) is written in the style of the Notes v3 PDFs, with reasoning in
+# words instead of numbers and math, weighted by what he said he would test.
+LABELS_BY_VERSION={20:'Iskarous · Professor teaching transcript',21:'Iskarous B · Focused professor teaching',22:'Iskarous C · Natural teaching notes'}
 VERSION=20
 LABEL=LABELS_BY_VERSION[VERSION]
 GUIDANCE=('Written the way Professor Iskarous teaches the slides in class. Each idea is reasoned out in full, connected '
@@ -26,10 +28,17 @@ GUIDANCE=('Written the way Professor Iskarous teaches the slides in class. Each 
  'fragments, shorthand or reference-sheet lists.')
 GUIDANCE_B=('Version B keeps the same professor-style teaching but removes side stories, names, dates and jargon that '
  'are not tested, so each page stays on the concepts and the reasoning he expects in exam answers.')
+GUIDANCE_C=('Version C follows the Notes v3 style. Every idea is explained in connected sentences that reason about '
+ 'what each part does, with patterns stated in words instead of numbers or calculations, and the fullest '
+ 'explanations go to the ideas he said he would test.')
 # The class transcript teaches two pages that the slides leave as bare prompts.
 TAUGHT_PROMPTS={('lecture14',19),('lecture14',20)}
 # Compressed shorthand the user rejected, such as "Vector in, one number out".
 SHORTHAND=re.compile(r'\b\w+ in, [\w ]+ out\b|\b(?:Theory|Prediction|Setup|Result|Conclusion)\.\s',re.I)
+# Version C also rejects headings disguised as bold fragments, stacked short sentences, dashes
+# and equals signs, and numbers used as measurements or calculations instead of words.
+BOLD_LABEL=re.compile(r'^\*\*(?:(?:\S+\s){0,3}\S+|[^*]{1,40},[^*]{1,30})\.\*\*(?:\s|$)')
+STRICT=re.compile(r'[—–=×]|\b\d+(?:\.\d+)?\s*(?:Hz|hertz|%|percent|kHz)\b|\b\d{3,}\b|\b\d+\.\d+\b|\b(?:four|two|three) times (?:heavier|stiffer)\b|\bshows?\b|\bnote that\b',re.I)
 
 def sentences(text):
  plain=text.replace('**','')
@@ -57,16 +66,25 @@ def build():
     assert not SHORTHAND.search(p),(s['id'],'shorthand',SHORTHAND.search(p).group())
     assert p.count('**')%2==0,(s['id'],'unbalanced bold')
     short+=[(s['id'],t) for t in sentences(p) if len(t.split())<5]
+    if VERSION>=22:
+     ss=sentences(p)
+     assert not BOLD_LABEL.search(p),(s['id'],'bold label fragment',p[:60])
+     assert not STRICT.search(p.replace('**','')),(s['id'],'numbers, symbols or banned wording',STRICT.search(p.replace('**','')).group(),p[:60])
+     assert not (len(ss)>=3 and sum(len(t.split()) for t in ss)/len(ss)<8),(s['id'],'stacked short sentences',p[:60])
+   if VERSION>=22:
+    for x in blocks:
+     assert 1<=len(sentences(x['text']))<=5,(s['id'],'bullets have one to five sentences',x['text'][:60])
+     for c in x['children']:assert 1<=len(sentences(c))<=3,(s['id'],'sub-bullets have one to three sentences',c[:60])
    sections.append({'id':s['id'],'page':b['page'],'title':b['title'],'kind':b['kind'],'teaching':blocks})
   collections[lec]={'title':base['title'],'sections':sections}
  assert not short,('telegraphic sentences',short)
  payload={'id':f'v{VERSION}','label':LABEL,'revision':f'2026-11-03-transcripts-v{VERSION}','baseDataSha256':sha(ROOT/'data.json'),
   'collections':collections,'visualPresentation':copy.deepcopy(v4['visualPresentation']),'references':copy.deepcopy(v4['references']),
-  'writingReference':'LING285 class transcripts, Oct 6 to Nov 3, and the Module II teaching notes','guidance':GUIDANCE_B if VERSION==21 else GUIDANCE,
+  'writingReference':'LING285 class transcripts, Oct 6 to Nov 3, and the Module II teaching notes','guidance':{21:GUIDANCE_B,22:GUIDANCE_C}.get(VERSION,GUIDANCE),
   'metrics':{'instructionalPages':len(counts),'words':sum(counts),'averageWords':round(sum(counts)/len(counts)),'medianWords':statistics.median(counts),'maximumWords':max(counts)}}
  (ROOT/f'transcripts-v{VERSION}.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n')
  print(f'v{VERSION}',payload['metrics'])
 
 if __name__=='__main__':
- for v in (sys.argv[1:] or ['20','21']):
+ for v in (sys.argv[1:] or ['20','21','22']):
   VERSION=int(v);LABEL=LABELS_BY_VERSION[VERSION];build()
