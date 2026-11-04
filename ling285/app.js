@@ -10,7 +10,7 @@ const safeURL = value => {
 };
 const rich = value => esc(value).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 const unique = values => [...new Set(values)];
-const WORK = [ ['guide','What to know by the end'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['combined','Combined notes'], ['test','Current practice test'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
+const WORK = [ ['guide','What to know by the end'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['stimuli','Sounds & videos'], ['combined','Combined notes'], ['test','Current practice test'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
 const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null,sessions:{},practiceSessions:{},activeModule:'module2',practiceMode:'mixed',assessmentVersion:'v2',mcqSelections:{},mcqSubmitted:{},optionOrders:{},flags:{},transcriptVersion:'v18'});
 let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections, moduleMap, practiceData=null,practiceLoadError='';
 const TRANSCRIPT_VERSIONS=['v1','v2','v3','v4','v7','v10','v12','v14','v16','v18'];
@@ -302,7 +302,7 @@ function mediaHTML(s) {
 function visual(s,eager=false) {
   const c=collections.get(s.collection),videoOnly=visualPresentations.get(s.id)?.hideStaticPreview===true && (s.assets || []).some(asset=>asset.type==='video');
   const preview=s.image?`<button class="slide-button" data-image-section="${esc(s.id)}" aria-label="Enlarge original page ${s.page}, ${esc(s.title)}"><img src="${esc(safeURL(s.image))}" alt="Original ${esc(c.title)}, page ${s.page}: ${esc(s.title)}" loading="${eager?'eager':'lazy'}" decoding="async"></button>`:'<p class="source-empty">Open the source document to inspect this page.</p>';
-  return `<figure class="source-figure ${videoOnly?'video-only-source':''}">${videoOnly?mediaHTML(s):preview}<figcaption>Original source · page ${s.page}<br><a href="${esc(pageLink(s))}" target="_blank" rel="noopener">${esc(c.originalFilename || c.title)}</a></figcaption>${videoOnly?'':mediaHTML(s)}</figure>`;
+  return `<figure class="source-figure ${videoOnly?'video-only-source':''}">${videoOnly?mediaHTML(s):preview}<figcaption>Original source · page ${s.page}<br><a href="${esc(pageLink(s))}" target="_blank" rel="noopener">${esc(c.originalFilename || c.title)}</a></figcaption>${videoOnly?'':mediaHTML(s)}${window.Ling285Stimuli.render(s)}</figure>`;
 }
 function noteBox(s,readerMode=false) {const noteId=(readerMode?'reader-note-':'note-')+s.id;return `<div class="notes-box"><label for="${esc(noteId)}">My notes · shared across study views</label><textarea id="${esc(noteId)}" rows="1" data-note="${esc(s.id)}" placeholder="Explain it in your own words, or leave a question…">${esc(state.notes[s.id] || '')}</textarea></div>`;}
 function sourceText(s) {return `<details class="source-excerpt"><summary>Source text & speaker notes</summary><h4>Extracted source text</h4><pre>${esc(s.sourceText || 'No machine-readable text was extracted from this page. Refer to the original visual and source assets.')}</pre>${s.speakerNotes ? '<h4>Original speaker notes</h4><pre>'+esc(Array.isArray(s.speakerNotes)?s.speakerNotes.join('\n'):s.speakerNotes)+'</pre>':''}</details>`;}
@@ -558,7 +558,7 @@ function sources() {
 
 function render() {
   nav();applyPreferences();
-  const routes={home,collection:collectionView,guide,core,experiments,combined,test,quizzes,missed,sources,practice,meadows};
+  const routes={stimuli:()=>window.Ling285Stimuli.gallery(state.activeModule),home,collection:collectionView,guide,core,experiments,combined,test,quizzes,missed,sources,practice,meadows};
   const resume=state.session && !state.session.finished && view!=='practice'?'<p class="small"><button class="text-button" data-go="practice">↳ Resume '+esc(currentModule().title)+' practice</button></p>':'';
   $('#content').innerHTML=resume+(routes[view] || home)();
   document.title='LING258 · Study Studio';

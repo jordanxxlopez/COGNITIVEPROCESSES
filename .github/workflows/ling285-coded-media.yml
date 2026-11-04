@@ -1,0 +1,29 @@
+name: LING285 coded media
+on:
+  push:
+    branches: [preview/ling285-stimuli]
+    paths: ['ling285/stimuli/authoring/render.py', '.github/workflows/ling285-coded-media.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow==11.3.0 numpy==2.2.6 scipy==1.15.3 praat-parselmouth==0.4.6
+      - name: FFmpeg
+        run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+      - run: python ling285/stimuli/authoring/render.py
+      - name: Save media
+        if: always()
+        run: |
+          git config user.name "Study Studio media"
+          git config user.email "actions@users.noreply.github.com"
+          git add ling285/stimuli
+          git diff --cached --quiet || git commit -m "Render deterministic LING285 sound and video demonstrations"
+          git push
