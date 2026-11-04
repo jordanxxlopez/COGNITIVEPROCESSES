@@ -7,7 +7,7 @@ const server=http.createServer((req,res)=>{let p=path.join(root,decodeURICompone
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;const browser=await chromium.launch({channel:'chrome',headless:true,args:['--autoplay-policy=no-user-gesture-required']});const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(String(e)));const checks=[];
 try {
  for(const module of ['module1','module2']){
-  await page.goto(base+'/ling285/?view=stimuli&module='+module);await page.locator('#content h1').waitFor();
+  await page.goto(base+'/ling285/?view=stimuli&module='+module);await page.locator('.stimulus-card').first().waitFor({timeout:30000});
   const actual=await page.locator('.stimulus-card').count();if(!actual)throw Error('Gallery has no stimulus cards. Content='+((await page.locator('#content').innerText()).slice(0,1200)));assert.equal(actual,M.filter(m=>m.modules.includes(module)).length);
   assert.equal(await page.title(),'LING258 · Study Studio');
   await page.screenshot({path:'ling285/stimuli/qa/gallery-'+module+'.png'});
