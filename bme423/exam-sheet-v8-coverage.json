@@ -1,0 +1,736 @@
+{
+  "version": 8,
+  "scope": "Sessions 2\u201313; Session 15 review; HW1/HW2",
+  "excluded": [
+    "Session 14 errors/power",
+    "manual sums-of-squares ANOVA",
+    "R code writing"
+  ],
+  "inputs": {
+    "exam-sheet-v5-data.js": "cd159260f893418bb4a607ef3b98c2c79f22ab17811f6e5c4532a85d07a8204f",
+    "exam-sheet-v7-data.js": "37d91da13a076f8b02a88f45d1fa8d22218da4fd21a52e09266d581cc74d08f8"
+  },
+  "sourceHashes": {
+    "hw1.pdf": "027644291bb93c7659a7b3092b8968d18822b810a819720a4b435f0dfddbadc8",
+    "hw2.pdf": "0059f0a23937bd08fb2bf10fca98ad643f6c1055d9caabc6e06165cbcc2a608d",
+    "midterm-review-transcript.txt": "b51b70b317315705ad1f10f3c56b96ead2355bda9fff865d2f8620ba3a2d7877",
+    "session10.pdf": "f31ecc9df4a82ae75f9f6628b53ebd4a975ca4ba11d8a89de1bec829b530cf05",
+    "session11.pdf": "b6a65c01055cc86f571634da81b3d0c741ff2c3dbbd0056c26f64bbd66f99e7e",
+    "session12.pdf": "322be9ea795ddeab205f51961da95814d7ead9ebd2967d792b1a5e08a4d1919f",
+    "session13.pdf": "cfe8450a0098d751f956e2b814f337d1e4b9404ed698a9d7487793db104a870c",
+    "session15.pdf": "959ca714daebf178e4f17088fcd6f24090a333c541dfbebd64e3fff62b43c394",
+    "session2.pdf": "6c220a2d8706882dfb1cf1b023326a8c94fc212fb3e1111dde649b10229dcf60",
+    "session3.pdf": "30dcc1ceeed9ac364c5e8dfe652c50ca8f7953adc5fdd42bc9b2c7689c723624",
+    "session4.pdf": "ed036e4ab1637b510282555be5d891cef3cb5a7fd9d87f9e68533a067b3323bf",
+    "session5.pdf": "bad665f77fb159771709d429b0d3764349d08915d3306d46fef3613c7df870c2",
+    "session6.pdf": "c3fbf91fd6a0f4b6e8048e8566f64c88531e8d9e5fb6442880f087286e7ccfa5",
+    "session7.pdf": "40fbd96accac3f6b1d5f2e366242b4fc6bb1827a716ab32bc54bb13a4ab59907",
+    "session8.pdf": "3c494a99483d71a7e4c3366a4428fc9fe6d6fbd748679dbe1052c7338d38fcb2",
+    "session9.pdf": "705cfb26877fe443f9e8e58c0832ef8686e5a5be08024db1735e418b30063725",
+    "tables/Chi_Squared_Table1.pdf": "de022efffa1fc7de5d98b8b9e5e4bdd05df63fc7dce77487040c11c9cab3f04e",
+    "tables/Chi_Squared_Table2.pdf": "00b66e7e550f7e938bd49e976ee4f730bddb5b9b71b9b9f5330a77d0352f3acd",
+    "tables/F_table.pdf": "32f731da2d7bb4e6576395a5271d4303f06cd84037b8793769dc52c07f983bb7",
+    "tables/t_table.pdf": "5d4f04d50dd88767f865061a545c81c1a9d52bd36c305de7150b73392f56a54f",
+    "tables/z_table_NormalDist.pdf": "7233a69e4133358f1f034abe4f447ef6e0e0c0dd958ef44a16daf1b75ad50770"
+  },
+  "blocks": {
+    "notation": {
+      "title": "TYPE OF DATA \u2192 CLASSIFY + SYMBOLS",
+      "sources": [
+        "session2.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "data-scales",
+        "notation"
+      ],
+      "page": 1,
+      "column": 1,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: additional symbol meanings",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "summary": {
+      "title": "RAW LIST \u2192 MEAN, VARIANCE, SD, SEM",
+      "sources": [
+        "hw1.pdf",
+        "session2.pdf"
+      ],
+      "topics": [
+        "mean",
+        "variance",
+        "sd",
+        "sem"
+      ],
+      "page": 1,
+      "column": 1,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: squared-sum shortcut and intermediate arithmetic",
+        "V5: estimator properties, uncertainty in variance, evaluated for the same height sample",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "percentile": {
+      "title": "SORTED DATA \u2192 PERCENTILES, MEDIAN, IQR",
+      "sources": [
+        "hw1.pdf",
+        "session2.pdf"
+      ],
+      "topics": [
+        "percentiles",
+        "median",
+        "iqr"
+      ],
+      "page": 1,
+      "column": 1,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: graphical summaries and Normal shape",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "discrete": {
+      "title": "VALUES + PROBABILITIES \u2192 MEAN + VARIANCE",
+      "sources": [
+        "hw1.pdf",
+        "session3.pdf"
+      ],
+      "topics": [
+        "pmf",
+        "expectation",
+        "variance-discrete"
+      ],
+      "page": 1,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "discrete-cdf": {
+      "title": "AT MOST / AT LEAST \u2192 DISCRETE CDF",
+      "sources": [
+        "session3.pdf",
+        "hw1.pdf"
+      ],
+      "topics": [
+        "cdf-discrete",
+        "graph-discrete"
+      ],
+      "page": 1,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "loaded": {
+      "title": "LOADED DIE \u2192 USE THE STATED MASSES",
+      "sources": [
+        "session3.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "loaded-die"
+      ],
+      "page": 1,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "events": {
+      "title": "SUCCESSIVE EVENTS \u2192 UPDATE WHAT REMAINS",
+      "sources": [
+        "session3.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "conditional-probability"
+      ],
+      "page": 1,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "density": {
+      "title": "CONTINUOUS DENSITY \u2192 INTEGRATE THE AREA",
+      "sources": [
+        "session4.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "density",
+        "integration",
+        "cdf-continuous",
+        "moments",
+        "median-continuous"
+      ],
+      "page": 1,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: power rule, dx, constant factors, explicit powers and both bounds",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "piecewise": {
+      "title": "DENSITY CHANGES FORMULA \u2192 PIECEWISE CDF",
+      "sources": [
+        "session4.pdf"
+      ],
+      "topics": [
+        "piecewise-density",
+        "piecewise-cdf"
+      ],
+      "page": 1,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: carry earlier area and subtract the lower bound explicitly",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "endpoint": {
+      "title": "UNKNOWN ENDPOINT \u2192 TOTAL AREA ONE",
+      "sources": [
+        "hw1.pdf",
+        "session4.pdf"
+      ],
+      "topics": [
+        "unknown-support",
+        "quadratic",
+        "continuous-expectation",
+        "continuous-variance"
+      ],
+      "page": 2,
+      "column": 1,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: complete quadratic rearrangement, coefficient labels, root choice, boundary arithmetic",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "uniform": {
+      "title": "CONSTANT DENSITY \u2192 UNIFORM",
+      "sources": [
+        "session4.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "uniform",
+        "unknown-coefficient"
+      ],
+      "page": 2,
+      "column": 1,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: integrate both moments and subtract squared mean",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "normal": {
+      "title": "NORMAL CUTOFFS \u2192 LEFT / RIGHT / BETWEEN",
+      "sources": [
+        "hw1.pdf",
+        "session5.pdf",
+        "tables/z_table_NormalDist.pdf"
+      ],
+      "topics": [
+        "normal",
+        "normal-tails",
+        "normal-table"
+      ],
+      "page": 2,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: correct lookup for the actual supplied paired-column z table",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "quantile": {
+      "title": "GIVEN NORMAL AREA \u2192 CUTOFF / PERCENTILE",
+      "sources": [
+        "hw1.pdf",
+        "session5.pdf"
+      ],
+      "topics": [
+        "inverse-normal",
+        "normal-graph"
+      ],
+      "page": 2,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "continuous-graph": {
+      "title": "ASKED TO DRAW \u2192 CONTINUOUS PDF + CDF",
+      "sources": [
+        "hw1.pdf",
+        "session4.pdf"
+      ],
+      "topics": [
+        "continuous-graph"
+      ],
+      "page": 2,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "sampling": {
+      "title": "AVERAGE OF n \u2192 SAMPLING DISTRIBUTION / SEM",
+      "sources": [
+        "session10.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "sampling",
+        "clt",
+        "sem-probability"
+      ],
+      "page": 2,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "linear": {
+      "title": "SHIFT / SCALE / SUM \u2192 MEAN + VARIANCE",
+      "sources": [
+        "session3.pdf",
+        "session10.pdf"
+      ],
+      "topics": [
+        "linear-transform",
+        "independent-sum"
+      ],
+      "page": 2,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: general expectation of a function",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "precision": {
+      "title": "LARGER SAMPLE \u2192 SMALLER SEM",
+      "sources": [
+        "session10.pdf"
+      ],
+      "topics": [
+        "precision",
+        "sample-size"
+      ],
+      "page": 2,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: estimator properties and uncertainty in sample variance",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "one-t": {
+      "title": "ONE SAMPLE vs FIXED MEAN \u2192 t TEST",
+      "sources": [
+        "hw2.pdf",
+        "session8.pdf"
+      ],
+      "topics": [
+        "one-sample-t",
+        "hypothesis-words"
+      ],
+      "page": 3,
+      "column": 1,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "pooled-t": {
+      "title": "TWO NUMERICAL GROUPS \u2192 POOLED t",
+      "sources": [
+        "hw2.pdf",
+        "session8.pdf"
+      ],
+      "topics": [
+        "pooled-t",
+        "unequal-sample-sizes"
+      ],
+      "page": 3,
+      "column": 1,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "t-output": {
+      "title": "SUPPLIED t OUTPUT \u2192 READ df + p",
+      "sources": [
+        "session8.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "t-output"
+      ],
+      "page": 3,
+      "column": 1,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "anova": {
+      "title": "EQUAL-SIZE NUMERICAL GROUPS \u2192 ANOVA",
+      "sources": [
+        "hw2.pdf",
+        "session6.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "balanced-anova",
+        "anova-variance",
+        "anova-df"
+      ],
+      "page": 3,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "anova-output": {
+      "title": "SUPPLIED ANOVA \u2192 READ F + WITHIN VARIANCE",
+      "sources": [
+        "hw2.pdf",
+        "session7.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "anova-output",
+        "assumptions"
+      ],
+      "page": 3,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: full summary(aov) fields, alpha comparison and residual-SD conversion",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "bonferroni": {
+      "title": "WHICH MEAN PAIRS? \u2192 BONFERRONI",
+      "sources": [
+        "hw2.pdf",
+        "session9.pdf"
+      ],
+      "topics": [
+        "bonferroni",
+        "all-pairs",
+        "pairwise-equations"
+      ],
+      "page": 3,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: requested comparison family, all pairs versus control",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "holm": {
+      "title": "PAIRS vs CONTROL \u2192 HOLM CHI-SQUARE",
+      "sources": [
+        "hw2.pdf",
+        "session9.pdf"
+      ],
+      "topics": [
+        "holm",
+        "chi-square-posthoc"
+      ],
+      "page": 3,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: handle the absent chi-square alpha column with a printed-table bound",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "tables": {
+      "title": "CRITICAL VALUE / p RANGE \u2192 READ THE TABLE",
+      "sources": [
+        "session15.pdf",
+        "session9.pdf",
+        "tables/t_table.pdf",
+        "tables/F_table.pdf",
+        "tables/Chi_Squared_Table1.pdf",
+        "tables/Chi_Squared_Table2.pdf"
+      ],
+      "topics": [
+        "table-reading",
+        "tails"
+      ],
+      "page": 3,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: printed table tails, p-value bracketing, missing rows and TI-84 conversions",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "z-yates": {
+      "title": "TWO PROPORTIONS \u2192 YATES z",
+      "sources": [
+        "session11.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "two-proportions",
+        "yates-z"
+      ],
+      "page": 4,
+      "column": 1,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: authentic supplied chi-square output and corrected z/chi-square equivalence",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "chi2": {
+      "title": "2\u00d72 COUNTS \u2192 YATES CHI-SQUARE",
+      "sources": [
+        "hw2.pdf",
+        "session12.pdf"
+      ],
+      "topics": [
+        "chi-square-2x2",
+        "all-expected-cells",
+        "all-contributions"
+      ],
+      "page": 4,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "large-chi": {
+      "title": "LARGER COUNT TABLE \u2192 ORDINARY CHI-SQUARE",
+      "sources": [
+        "session12.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "chi-square-larger",
+        "all-six-cells"
+      ],
+      "page": 4,
+      "column": 2,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: authentic larger-table output and scientific notation",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "gof": {
+      "title": "ONE LIST vs TARGET % \u2192 GOODNESS OF FIT",
+      "sources": [
+        "session12.pdf"
+      ],
+      "topics": [
+        "goodness-of-fit"
+      ],
+      "page": 4,
+      "column": 1,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: authentic goodness-of-fit output",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "binary": {
+      "title": "ONE EVENT COUNT \u2192 PROPORTION + SE",
+      "sources": [
+        "session11.pdf"
+      ],
+      "topics": [
+        "binary-proportion",
+        "proportion-se"
+      ],
+      "page": 2,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "risk": {
+      "title": "FOLLOWED GROUPS \u2192 RR, ARR, NNT / NNH",
+      "sources": [
+        "session13.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "risk",
+        "arr",
+        "nnt",
+        "nnh"
+      ],
+      "page": 4,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V5: low-baseline-risk NNT/NNH tradeoff",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "folate-risk": {
+      "title": "RISK COMPARISON \u2192 NAME THE NUMERATOR",
+      "sources": [
+        "hw2.pdf",
+        "session13.pdf"
+      ],
+      "topics": [
+        "risk-orientation"
+      ],
+      "page": 4,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "odds": {
+      "title": "CASES CHOSEN BY DISEASE \u2192 ODDS RATIO",
+      "sources": [
+        "session13.pdf"
+      ],
+      "topics": [
+        "odds-ratio",
+        "case-control"
+      ],
+      "page": 4,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "design": {
+      "title": "ASSIGNED / SELECTED / FOLLOWED \u2192 DESIGN",
+      "sources": [
+        "session10.pdf",
+        "session12.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "design",
+        "chi-square-output"
+      ],
+      "page": 4,
+      "column": 3,
+      "provenance": [
+        "V6: explicit equations, operations and hypothesis wording",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "r-normal": {
+      "title": "SUPPLIED NORMAL OUTPUT \u2192 AREA OR CUTOFF?",
+      "sources": [
+        "hw1.pdf",
+        "session5.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "normal-output",
+        "lower-tail"
+      ],
+      "page": 2,
+      "column": 3,
+      "provenance": [
+        "V5: authentic Normal-output examples; interpretation only",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "holm-t": {
+      "title": "ORDERED t PAIRS \u2192 HOLM; STOP AT FAILURE",
+      "sources": [
+        "session9.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "holm-t",
+        "holm-stop"
+      ],
+      "page": 3,
+      "column": 3,
+      "provenance": [
+        "V5: full ordered t example including the stopping decision",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "dioxin": {
+      "title": "ROUNDED PROPORTIONS \u2192 POOL EXACT COUNTS",
+      "sources": [
+        "hw2.pdf",
+        "session11.pdf"
+      ],
+      "topics": [
+        "rounded-proportions",
+        "dioxin"
+      ],
+      "page": 4,
+      "column": 1,
+      "provenance": [
+        "V5: actual HW2 rounded-proportion case, rewritten with V6 operation labels",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "bonferroni-pairs": {
+      "title": "BONFERRONI \u2192 REMAINING DOSE PAIRS",
+      "sources": [
+        "hw2.pdf",
+        "session9.pdf"
+      ],
+      "topics": [
+        "all-pairs",
+        "pairwise-equations"
+      ],
+      "page": 3,
+      "column": 3,
+      "provenance": [
+        "V6: complete Low\u2013High and Medium\u2013High substitutions, adjacent-column continuation",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    },
+    "chi-output": {
+      "title": "SUPPLIED CHI-SQUARE \u2192 READ STATISTIC + p",
+      "sources": [
+        "session11.pdf",
+        "session12.pdf",
+        "session15.pdf"
+      ],
+      "topics": [
+        "chi-square-output",
+        "z-chi-square-equivalence"
+      ],
+      "page": 4,
+      "column": 3,
+      "provenance": [
+        "V5: authentic output, attached to the same clinical data as the risk example",
+        "V8: question-to-method heading; TRIGGER, WRITE, TRAP and applicable TABLE cues"
+      ]
+    }
+  },
+  "selection": "All V7 display mathematics, worked operations, tables and figures retained. Reword prose into recognition cues, model answers, table lookups and common-mistake reminders."
+}

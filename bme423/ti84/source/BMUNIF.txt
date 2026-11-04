@@ -1,0 +1,129 @@
+ClrHome
+Float
+Normal
+Real
+Input "SUPPORT LOW",B
+Input "SUPPORT HIGH",C
+If not(C>B)
+Then
+ClrHome
+Disp "CHECK SUPPORT HIGH"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "INTERVAL LOW",D
+If not(D≥B and D≤C)
+Then
+ClrHome
+Disp "CHECK INTERVAL LOW"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "INTERVAL HIGH",E
+If not(E≥D and E≤C)
+Then
+ClrHome
+Disp "CHECK INTERVAL HIGH"
+Disp "CHECK INPUTS"
+Stop
+End
+(E-D)/(C-B)→P
+(B+C)/2→M
+(C-B)^2/12→S
+ClrHome
+Output(1,1,"UNIFORM RESULTS")
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"PROB=")
+Output(2,6,θ)
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"MEAN=")
+Output(3,6,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"VAR=")
+Output(4,5,θ)
+1/(C-B)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"DENS=")
+Output(5,6,θ)
+Output(6,1,"P=WIDTH/FULL")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"PROBABILITY WORK")
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"LOW=")
+Output(2,5,θ)
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"HIGH=")
+Output(3,6,θ)
+E-D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"WIDTH=")
+Output(4,7,θ)
+C-B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"FULL=")
+Output(5,6,θ)
+Output(6,1,"P=WIDTH/FULL")
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"P=")
+Output(7,3,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"MOMENTS")
+Output(2,1,"MEAN=(A+B)/2")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"A=")
+Output(3,3,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"B=")
+Output(4,3,θ)
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"MEAN=")
+Output(5,6,θ)
+Output(6,1,"VAR=(B-A)^2/12")
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"VAR=")
+Output(7,5,θ)
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

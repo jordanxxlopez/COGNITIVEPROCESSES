@@ -1,0 +1,7710 @@
+[
+  {
+    "page": 1,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Ling 285\u000bHuman Language and Technology\u000bLecture 10\u000b\u000bNeural Networks 1.5\u000b",
+        "bounds": [
+          1524000,
+          1831023,
+          9144000,
+          2387600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Khalil Iskarous\nDepartment of Linguistics\nUniversity of Southern California",
+        "bounds": [
+          1409700,
+          4459288,
+          9144000,
+          1655762
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 2,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "First Exam Next Thursday\u000bPease bring a Pencil!",
+        "bounds": [
+          838200,
+          2675839,
+          10515600,
+          1325563
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 3,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "A Neural Network",
+        "bounds": [
+          713510,
+          -133638,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Imagine you are given many pictures of faces (48 Million pixels), and you’re asked to identify one of 1000 possible people. \nImagine you are given speech waves and you’re asked to to identify for each, which of 25 sounds each speech wave corresponds to.\nWhat can do this? A Neural Network (NN)\nI will not tell you now why it’s called a NN. I will teach you what it is by what it does– how it walks and how it swims.\nThe job of an NN is to take a bunch of numbers the 48M pixels in one image/numbers of a wave and to return a probability distribution.\nFor speech the probability distribution is 25 sounds\nBut let’s say it had just 5 vowels, this is a pdf: [.2,.2,.4,.2,0]\nAnd let’s say we agree the vowel order is read, rad, rude, Rud, rod\nThe p’s must sum to 1 (100%)\nThat says: there’s 20% chance the sound is the v in read, 20% it’s the vowel in rad, 40% the vowel in rude, 20% it’s the vowel in Rud, and 0% it’s the vowel in Rod. ",
+        "bounds": [
+          838199,
+          1027906,
+          8442192,
+          5693090
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 4,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "A Neural Network",
+        "bounds": [
+          713510,
+          -133638,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "The input of an NN is a bunch of numbers, signal, or a vector, e.g., [4,1,-3,2,1,.4,1,2,-3,…] (usually 1000’s of nums). Let’s say these are the pressure numbers of a speech wave\nThe output of the NN is a decision pdf: Given the signal, what’s the p(each object): p of each vowels read, rad, rude, Rud, rod \nHow? How can NNs do that? How can it make a decision.\nThey have knowledge, in a bunch of weights w’s\nAnd somehow the input signal vector is combined with these w’s and a decision about the object detected is made, eventually, as there are many many w’s and many many calculations! Several trillion w’s and billions of calculations.\nThese magical w’s allow the NN to make decisions, but how does it know these w’s???\nFake it till you make it!\nSGD for NNs. You start out with random w’s.\nGive it a signal (let’s say we give it the vowel in Rud)\nForward Propagation: It uses its stupid w’s, and it produces a pdf that doesn’t reflect reality: [.4,.1,.2,.2,.1]\nWe tell it: NO!!!!!!! You should have decided: 0,0,0,1,0], so it realizes it made a big Error or Loss\nIt improves its w’s to reduce the Loss\nGive it another signal and repeat billions of times!\nBut what calculations are actullay made on the signal???\n",
+        "bounds": [
+          838200,
+          714844,
+          10640290,
+          5428312
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 5,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Two Huge Questions",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Learning: How does an NN learn the w’s? Specifically\nInference: How does an NN combine w’s with inputs? Specifically\nWe will answer question 2 first, since 2 is part of 1!!!",
+        "bounds": [
+          838200,
+          1825625,
+          10515600,
+          4351338
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 6,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Neurons, activity, and synaptic weights",
+        "bounds": [
+          457200,
+          266700,
+          11277600,
+          590550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Santiago Ramón y Cajal, Recuerdos de mi vida, vol. II (1917), fig. 40. Cropped and rotated.",
+        "bounds": [
+          809625,
+          6400800,
+          10572750,
+          247650
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Cajal’s retinal circuit",
+        "bounds": [
+          1333500,
+          5857875,
+          9525000,
+          400050
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3369991,
+          4537385,
+          552450,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          3341416,
+          4565960,
+          609600,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3343507,
+          3795829,
+          552450,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−1",
+        "bounds": [
+          3314932,
+          3824404,
+          609600,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3369991,
+          3080757,
+          552450,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          3341416,
+          3109332,
+          609600,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3422960,
+          1915454,
+          552450,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−2",
+        "bounds": [
+          3394385,
+          1944029,
+          609600,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5170913,
+          4537385,
+          552450,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          5142338,
+          4565960,
+          609600,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5356302,
+          3186693,
+          552450,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−2",
+        "bounds": [
+          5327727,
+          3215268,
+          609600,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5462239,
+          1783034,
+          552450,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          5433664,
+          1811609,
+          609600,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5912470,
+          3848797,
+          552450,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          5883895,
+          3877372,
+          609600,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          9620250,
+          3716376,
+          552450,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          9591675,
+          3744951,
+          609600,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4282068,
+          4682351,
+          476250,
+          209550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4234443,
+          4491851,
+          571500,
+          590550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "+2",
+        "bounds": [
+          4177293,
+          4529951,
+          685800,
+          514350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4282068,
+          3331659,
+          476250,
+          209550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4234443,
+          3141159,
+          571500,
+          590550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−1",
+        "bounds": [
+          4177293,
+          3179259,
+          685800,
+          514350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7221809,
+          4682351,
+          476250,
+          209550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7174184,
+          4491851,
+          571500,
+          590550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "+3",
+        "bounds": [
+          7117034,
+          4529951,
+          685800,
+          514350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          7380713,
+          2007452,
+          476250,
+          209550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7333088,
+          1816952,
+          571500,
+          590550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−2",
+        "bounds": [
+          7275938,
+          1855052,
+          685800,
+          514350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3579541,
+          4746935,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3579541,
+          3290307,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3632510,
+          2125004,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5380463,
+          4746935,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5565852,
+          3396243,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5671789,
+          1992584,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "One neuron computes a weighted sum",
+        "bounds": [
+          457200,
+          266700,
+          11277600,
+          590550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4326542,
+          2215869,
+          4491417,
+          1283262
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−2",
+        "bounds": [
+          5977890,
+          2520315,
+          762000,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−1",
+        "bounds": [
+          3524250,
+          1847850,
+          762000,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4343400,
+          3619500,
+          4457700,
+          1
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          5977890,
+          3343275,
+          762000,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          3524250,
+          3371850,
+          762000,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          4326542,
+          3739869,
+          4491417,
+          1283262
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          5977890,
+          4166235,
+          762000,
+          552450
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          3524250,
+          4895850,
+          762000,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "8",
+        "bounds": [
+          8858250,
+          3371850,
+          762000,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "(−1 × −2) + (1 × 3) + (3 × 1) = 8",
+        "bounds": [
+          1428750,
+          5905500,
+          9334500,
+          609600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Cajal: Brain is made of neurons",
+        "bounds": [
+          10485121,
+          266700,
+          1706880,
+          1200329
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Inner Product, Scalar Product, Dot Product, ∫f*g",
+        "bounds": [
+          3699185,
+          1218489,
+          4902304,
+          369332
+        ]
+      }
+    ],
+    "speakerNotes": "Cajal source: Santiago Ramón y Cajal, Recuerdos de mi vida, vol. II: Historia de mi labor científica (1917), Figure 40. https://www.gutenberg.org/files/60675/60675-h/60675-h.htm . Original image: https://www.gutenberg.org/files/60675/60675-h/images/ill_248fig40.jpg . The peripheral half is cropped and rotated 90 degrees counterclockwise so the main direction of flow is rightward. Circles mark the visible neuronal somata. The gold packets and selected contacts are schematic teaching overlays, not a claim about measured activity or a full anatomical reconstruction. Signed numerical activations are artificial-neuron quantities, not negative firing rates.\n\nThe three-input example is an artificial circuit: weights [-2,3,1], activations [-1,1,3], weighted sum 8, no bias.\n\n1. Circles appear over the somata\n2. Positive and negative activations glimmer\n3. Arrows identify selected synaptic contacts\n4. Signals travel rightward through the contacts\n5. Arrows become synaptic w labels\n6. w labels become signed weights\n7. Only three inputs and one receiving neuron remain\n8. Three edges carry weights −2, 3, 1\n9. Input activations are −1, 1, 3\n10. The inner product appears in the receiving neuron"
+  },
+  {
+    "page": 7,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Brain chemistry/electronics  Arithmetic",
+        "bounds": [
+          457200,
+          266700,
+          11277600,
+          590550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1943",
+        "bounds": [
+          334800,
+          3429000,
+          1281120,
+          707886
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1962",
+        "bounds": [
+          5101774,
+          5883414,
+          1281120,
+          707886
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1986",
+        "bounds": [
+          6886544,
+          6253371,
+          1281120,
+          707886
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 8,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Most engineers/neuroscientists/people: Modern AI has nothing to do with how humans  think, perceive, act, decide, etc. The brain is full of chemistry and electrical activity and abstract stuff, and that obviously is not part of LLMs, which are full of numbers and arithmetic!\n\n\n\nA few people, including me: Modern AI is a set of evolutionary tinkerings for 100 years with how arithmetic can emulate brain chemical and electrical activity… And these attempts seem to have succeeded.",
+        "bounds": [
+          515471,
+          1638269,
+          11161058,
+          4401205
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Beliefs: Not on exam!",
+        "bounds": [
+          0,
+          406835,
+          10515600,
+          1325563
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 9,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8778382,
+          5142452,
+          1931753,
+          551930
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8791462,
+          5057039,
+          1905228,
+          48852
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8782524,
+          4519089,
+          1923354,
+          450896
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8756047,
+          3918594,
+          1977044,
+          977659
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8722392,
+          3298378,
+          2045287,
+          1543330
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8689372,
+          2660833,
+          2112245,
+          2143193
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8660321,
+          2010834,
+          2171155,
+          2767626
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8716626,
+          3928718,
+          2056979,
+          1642570
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8750589,
+          3877319,
+          1988111,
+          1070522
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8779013,
+          3806712,
+          1930472,
+          537421
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8791518,
+          3721029,
+          1905117,
+          34892
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8781973,
+          3168916,
+          1924470,
+          465257
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8755149,
+          2567896,
+          1978863,
+          993056
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8721429,
+          1947135,
+          2047241,
+          1559803
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8656602,
+          2653916,
+          2178695,
+          2857044
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8685006,
+          2629701,
+          2121097,
+          2229872
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8717584,
+          2594013,
+          2055037,
+          1625963
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8751510,
+          2542096,
+          1986243,
+          1054964
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8779632,
+          2470960,
+          1929218,
+          522938
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8791554,
+          2385018,
+          1905042,
+          20935
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8781408,
+          1818731,
+          1925616,
+          479640
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6380088,
+          5082906,
+          1717870,
+          169750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6326067,
+          3907268,
+          1827413,
+          1191791
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6257773,
+          2652500,
+          1965898,
+          2369956
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6363896,
+          4347830,
+          1750705,
+          588181
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6373924,
+          3789616,
+          1730370,
+          376167
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6310441,
+          2596394,
+          1859099,
+          1432902
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6310441,
+          3400204,
+          1859099,
+          1432902
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6373924,
+          3263717,
+          1730370,
+          376167
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6363896,
+          2493489,
+          1750705,
+          588181
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6257773,
+          2407044,
+          1965898,
+          2369956
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6326067,
+          2330440,
+          1827413,
+          1191791
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6380088,
+          2176844,
+          1717870,
+          169750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3884650,
+          5080822,
+          1803369,
+          172077
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3869464,
+          4347381,
+          1834161,
+          595052
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3818374,
+          3401293,
+          1937761,
+          1442227
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3766737,
+          2410458,
+          2042469,
+          2377683
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3833455,
+          3897481,
+          1907181,
+          1201087
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3878885,
+          3785197,
+          1815057,
+          381023
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3878885,
+          3263279,
+          1815057,
+          381023
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3833455,
+          2330932,
+          1907181,
+          1201087
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3766737,
+          2641358,
+          2042469,
+          2377683
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3818374,
+          2585981,
+          1937761,
+          1442227
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3869464,
+          2487067,
+          1834161,
+          595052
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3884650,
+          2176601,
+          1803369,
+          172077
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1388121,
+          5090977,
+          1805354,
+          220501
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1334399,
+          3908159,
+          1914289,
+          1256709
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1268261,
+          2651138,
+          2048403,
+          2439319
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1383591,
+          4603119,
+          1814539,
+          373989
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1373547,
+          3824662,
+          1834905,
+          602297
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1307398,
+          2611443,
+          1969041,
+          1698486
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1350181,
+          3876354,
+          1882287,
+          1005802
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1390650,
+          3714750,
+          1800225,
+          1
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1350181,
+          2547343,
+          1882287,
+          1005802
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1307398,
+          3119571,
+          1969041,
+          1698486
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1373547,
+          3002541,
+          1834905,
+          602297
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1383591,
+          2452392,
+          1814539,
+          373989
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1268261,
+          2339043,
+          2048403,
+          2439319
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1334399,
+          2264632,
+          1914289,
+          1256709
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1388121,
+          2118022,
+          1805354,
+          220501
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A multilayer perceptron",
+        "bounds": [
+          457200,
+          266700,
+          11277600,
+          590550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Input",
+        "bounds": [
+          190500,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          1743075,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          2562225,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          3381375,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          4200525,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          5019675,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden 1",
+        "bounds": [
+          2686050,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3209925,
+          2047875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3209925,
+          3381375,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3209925,
+          4714875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden 2",
+        "bounds": [
+          5181600,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          1809750,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          2857500,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          3905250,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          4953000,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden 3",
+        "bounds": [
+          7591425,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8115300,
+          2047875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8115300,
+          3381375,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8115300,
+          4714875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Output",
+        "bounds": [
+          10191750,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          1409700,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          2085975,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          2762250,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          3438525,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          4114800,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          4791075,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          5467350,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2206181,
+          2098548,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          3147251,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          4127373,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          2638806,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1981581,
+          3106293,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2093881,
+          3763232,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          2601277,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          3581400,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2206181,
+          4261485,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2093881,
+          3399568,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          4203954,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          4778597,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1869281,
+          4105275,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          4826508,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2206181,
+          5064252,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4701731,
+          2126456,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          5263229,
+          2842974,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4252532,
+          2860834,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          5263229,
+          4383167,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4814030,
+          2709148,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4027932,
+          3455670,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4701731,
+          3848576,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4140232,
+          4029313,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4814030,
+          3302556,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          5263229,
+          3549729,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4027932,
+          4720590,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4814030,
+          5047059,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7153561,
+          2131219,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          3164919,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          4145042,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          2863215,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7045119,
+          3301127,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7045119,
+          3921204,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          3659505,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          3720227,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7153561,
+          4518184,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          4455795,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          4775835,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          4978003,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9660541,
+          1917573,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          8958453,
+          2254758,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          2765965,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9426512,
+          2827973,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          3760089,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9543526,
+          3519059,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          4754213,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          2125218,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          8958453,
+          3268218,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10011585,
+          3175921,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9075468,
+          3594973,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9777555,
+          3983165,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9192482,
+          4043458,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9543526,
+          4546949,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9660541,
+          3224403,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9426512,
+          3806762,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          8958453,
+          4443984,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9660541,
+          4259104,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9192482,
+          4713732,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9777555,
+          4951905,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          5460968,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          1579626,
+          2362581,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−1",
+        "bounds": [
+          1579626,
+          2919603,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          1579626,
+          3476625,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          1579626,
+          4033647,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−2",
+        "bounds": [
+          1579626,
+          4590669,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          723900,
+          1828800,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          723900,
+          2647950,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          723900,
+          3467100,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "4",
+        "bounds": [
+          723900,
+          4286250,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          723900,
+          5105400,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "4",
+        "bounds": [
+          3219450,
+          2133600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "14",
+        "bounds": [
+          3219450,
+          3467100,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−3",
+        "bounds": [
+          3219450,
+          4800600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "6",
+        "bounds": [
+          5715000,
+          1895475,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−2",
+        "bounds": [
+          5715000,
+          2943225,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "5",
+        "bounds": [
+          5715000,
+          3990975,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          5715000,
+          5038725,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          8124825,
+          2133600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−1",
+        "bounds": [
+          8124825,
+          3467100,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          8124825,
+          4800600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.05",
+        "bounds": [
+          10734675,
+          1504950,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.10",
+        "bounds": [
+          10734675,
+          2181225,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.20",
+        "bounds": [
+          10734675,
+          2857500,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.30",
+        "bounds": [
+          10734675,
+          3533775,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.15",
+        "bounds": [
+          10734675,
+          4210050,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.12",
+        "bounds": [
+          10734675,
+          4886325,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.08",
+        "bounds": [
+          10734675,
+          5562600,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Linear hidden activations",
+        "bounds": [
+          3857625,
+          6219825,
+          4619625,
+          352425
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Softmax output: probabilities sum to 1.00",
+        "bounds": [
+          6191250,
+          6229350,
+          5715000,
+          361950
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2009775,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2009775,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2009775,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2828925,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2828925,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2828925,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          4467225,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          4467225,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          4467225,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          5286375,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          5286375,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          5286375,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          2076450,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          2076450,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          2076450,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          3124200,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          3124200,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          3124200,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          4171950,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          4171950,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          4171950,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          5219700,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          5219700,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          5219700,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      }
+    ],
+    "speakerNotes": "Architecture 5-3-4-3-7. All 60 adjacent-layer connections carry weights. The first displayed fan targets the middle neuron in Hidden 1, with weights [2,-1,1,3,-2].\n\nNumerical demonstration uses no biases and linear hidden layers, as requested. A usual MLP introduces nonlinear hidden activation functions; that additional step is deliberately omitted here. Activations: [2,1,3,4,2] -> [4,14,-3] -> [6,-2,5,1] -> [3,-1,2].\nWeight matrices are written destination-by-source:\nW1 = [[0.5,1,1,-0.5,0.5],[2,-1,1,3,-2],[-1,0.5,0.5,-1,0.5]]\nW2 = [[1,0.25,0.5],[0.5,-0.5,-1],[-1,0.75,0.5],[0.5,0.25,1.5]]\nW3 = [[0.5,1,0.5,-0.5],[-0.5,0.5,0.5,0.5],[0.5,0.5,0.1,-0.5]]\nW4 = [[0.0009145128098591027,-0.00030483760328636755,0.0006096752065727351],[0.14944605150127596,-0.04981535050042533,0.09963070100085065],[0.2979775901926928,-0.09932586339756426,0.19865172679512852],[0.3848629705015851,-0.1282876568338617,0.2565753136677234],[0.2363314318101683,-0.07877714393672276,0.15755428787344553],[0.18851495652855194,-0.06283831884285064,0.12567663768570128],[0.10162957621965951,-0.03387652540655317,0.06775305081310634]]\nOutput logits z = log(p)+3, with p=[0.05,0.10,0.20,0.30,0.15,0.12,0.08]. W4 h3 equals these logits; softmax gives the displayed probabilities, which sum exactly to 1.00. All values are an illustrative, internally consistent example.\n\n1. Five weighted inputs converge on one hidden neuron\n2. Numbers disappear and all input-to-hidden weights appear\n3. All Hidden 1 to Hidden 2 weights appear\n4. All remaining weights appear\n5. Positive input activations appear\n6. Hidden 1 computes its linear activations\n7. Hidden 2 computes its linear activations\n8. Hidden 3 computes its linear activations\n9. Softmax output probabilities appear"
+  },
+  {
+    "page": 10,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8778382,
+          5142452,
+          1931753,
+          551930
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8791462,
+          5057039,
+          1905228,
+          48852
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8782524,
+          4519089,
+          1923354,
+          450896
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8756047,
+          3918594,
+          1977044,
+          977659
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8722392,
+          3298378,
+          2045287,
+          1543330
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8689372,
+          2660833,
+          2112245,
+          2143193
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8660321,
+          2010834,
+          2171155,
+          2767626
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8716626,
+          3928718,
+          2056979,
+          1642570
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8750589,
+          3877319,
+          1988111,
+          1070522
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8779013,
+          3806712,
+          1930472,
+          537421
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8791518,
+          3721029,
+          1905117,
+          34892
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8781973,
+          3168916,
+          1924470,
+          465257
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8755149,
+          2567896,
+          1978863,
+          993056
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8721429,
+          1947135,
+          2047241,
+          1559803
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8656602,
+          2653916,
+          2178695,
+          2857044
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8685006,
+          2629701,
+          2121097,
+          2229872
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8717584,
+          2594013,
+          2055037,
+          1625963
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8751510,
+          2542096,
+          1986243,
+          1054964
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8779632,
+          2470960,
+          1929218,
+          522938
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8791554,
+          2385018,
+          1905042,
+          20935
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8781408,
+          1818731,
+          1925616,
+          479640
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6380088,
+          5082906,
+          1717870,
+          169750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6326067,
+          3907268,
+          1827413,
+          1191791
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6257773,
+          2652500,
+          1965898,
+          2369956
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6363896,
+          4347830,
+          1750705,
+          588181
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6373924,
+          3789616,
+          1730370,
+          376167
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6310441,
+          2596394,
+          1859099,
+          1432902
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6310441,
+          3400204,
+          1859099,
+          1432902
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6373924,
+          3263717,
+          1730370,
+          376167
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6363896,
+          2493489,
+          1750705,
+          588181
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6257773,
+          2407044,
+          1965898,
+          2369956
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6326067,
+          2330440,
+          1827413,
+          1191791
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6380088,
+          2176844,
+          1717870,
+          169750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3884650,
+          5080822,
+          1803369,
+          172077
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3869464,
+          4347381,
+          1834161,
+          595052
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3818374,
+          3401293,
+          1937761,
+          1442227
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3766737,
+          2410458,
+          2042469,
+          2377683
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3833455,
+          3897481,
+          1907181,
+          1201087
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3878885,
+          3785197,
+          1815057,
+          381023
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3878885,
+          3263279,
+          1815057,
+          381023
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3833455,
+          2330932,
+          1907181,
+          1201087
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3766737,
+          2641358,
+          2042469,
+          2377683
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3818374,
+          2585981,
+          1937761,
+          1442227
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3869464,
+          2487067,
+          1834161,
+          595052
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3884650,
+          2176601,
+          1803369,
+          172077
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1388121,
+          5090977,
+          1805354,
+          220501
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1334399,
+          3908159,
+          1914289,
+          1256709
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1268261,
+          2651138,
+          2048403,
+          2439319
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1383591,
+          4603119,
+          1814539,
+          373989
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1373547,
+          3824662,
+          1834905,
+          602297
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1307398,
+          2611443,
+          1969041,
+          1698486
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1350181,
+          3876354,
+          1882287,
+          1005802
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1390650,
+          3714750,
+          1800225,
+          1
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1350181,
+          2547343,
+          1882287,
+          1005802
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1307398,
+          3119571,
+          1969041,
+          1698486
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1373547,
+          3002541,
+          1834905,
+          602297
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1383591,
+          2452392,
+          1814539,
+          373989
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1268261,
+          2339043,
+          2048403,
+          2439319
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1334399,
+          2264632,
+          1914289,
+          1256709
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1388121,
+          2118022,
+          1805354,
+          220501
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Pop Quiz: What is the activation on Hidden 1 Neuron 2?",
+        "bounds": [
+          457200,
+          266700,
+          11277600,
+          590550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Input",
+        "bounds": [
+          190500,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          1743075,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          2562225,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          3381375,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          4200525,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          5019675,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden 1",
+        "bounds": [
+          2686050,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3209925,
+          2047875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3209925,
+          3381375,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3209925,
+          4714875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden 2",
+        "bounds": [
+          5181600,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          1809750,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          2857500,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          3905250,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          4953000,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden 3",
+        "bounds": [
+          7591425,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8115300,
+          2047875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8115300,
+          3381375,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8115300,
+          4714875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Output",
+        "bounds": [
+          10191750,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          1409700,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          2085975,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          2762250,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          3438525,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          4114800,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          4791075,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          5467350,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2206181,
+          2098548,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          3147251,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          4127373,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          2638806,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1981581,
+          3106293,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2093881,
+          3763232,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          2601277,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          3581400,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2206181,
+          4261485,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2093881,
+          3399568,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          4203954,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          4778597,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1869281,
+          4105275,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          4826508,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2206181,
+          5064252,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4701731,
+          2126456,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          5263229,
+          2842974,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4252532,
+          2860834,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          5263229,
+          4383167,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4814030,
+          2709148,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4027932,
+          3455670,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4701731,
+          3848576,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4140232,
+          4029313,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4814030,
+          3302556,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          5263229,
+          3549729,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4027932,
+          4720590,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4814030,
+          5047059,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7153561,
+          2131219,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          3164919,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          4145042,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          2863215,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7045119,
+          3301127,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7045119,
+          3921204,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          3659505,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          3720227,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7153561,
+          4518184,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          4455795,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          4775835,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          4978003,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9660541,
+          1917573,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          8958453,
+          2254758,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          2765965,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9426512,
+          2827973,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          3760089,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9543526,
+          3519059,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          4754213,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          2125218,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          8958453,
+          3268218,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10011585,
+          3175921,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9075468,
+          3594973,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9777555,
+          3983165,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9192482,
+          4043458,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9543526,
+          4546949,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9660541,
+          3224403,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9426512,
+          3806762,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          8958453,
+          4443984,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9660541,
+          4259104,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9192482,
+          4713732,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9777555,
+          4951905,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          5460968,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          1579626,
+          2362581,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−2",
+        "bounds": [
+          1579626,
+          2919603,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          1579626,
+          3476625,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          1579626,
+          4033647,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "5",
+        "bounds": [
+          1579626,
+          4590669,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "-2",
+        "bounds": [
+          723900,
+          1828800,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          723900,
+          2647950,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          723900,
+          3467100,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "-4",
+        "bounds": [
+          723900,
+          4286250,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          723900,
+          5105400,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "4",
+        "bounds": [
+          3219450,
+          2133600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3219450,
+          3467100,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−3",
+        "bounds": [
+          3219450,
+          4800600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "6",
+        "bounds": [
+          5715000,
+          1895475,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−2",
+        "bounds": [
+          5715000,
+          2943225,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "5",
+        "bounds": [
+          5715000,
+          3990975,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          5715000,
+          5038725,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          8124825,
+          2133600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−1",
+        "bounds": [
+          8124825,
+          3467100,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          8124825,
+          4800600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10734675,
+          2181225,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10734675,
+          2857500,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10734675,
+          3533775,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10734675,
+          4210050,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10734675,
+          4886325,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10734675,
+          5562600,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Linear hidden activations",
+        "bounds": [
+          3857625,
+          6219825,
+          4619625,
+          352425
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          2076450,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          2076450,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          2076450,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          3124200,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          3124200,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          3124200,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          4171950,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          4171950,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          4171950,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          5219700,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          5219700,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          5219700,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "-3",
+        "bounds": [
+          3352524,
+          3521341,
+          453970,
+          461665
+        ]
+      }
+    ],
+    "speakerNotes": "Architecture 5-3-4-3-7. All 60 adjacent-layer connections carry weights. The first displayed fan targets the middle neuron in Hidden 1, with weights [2,-1,1,3,-2].\n\nNumerical demonstration uses no biases and linear hidden layers, as requested. A usual MLP introduces nonlinear hidden activation functions; that additional step is deliberately omitted here. Activations: [2,1,3,4,2] -> [4,14,-3] -> [6,-2,5,1] -> [3,-1,2].\nWeight matrices are written destination-by-source:\nW1 = [[0.5,1,1,-0.5,0.5],[2,-1,1,3,-2],[-1,0.5,0.5,-1,0.5]]\nW2 = [[1,0.25,0.5],[0.5,-0.5,-1],[-1,0.75,0.5],[0.5,0.25,1.5]]\nW3 = [[0.5,1,0.5,-0.5],[-0.5,0.5,0.5,0.5],[0.5,0.5,0.1,-0.5]]\nW4 = [[0.0009145128098591027,-0.00030483760328636755,0.0006096752065727351],[0.14944605150127596,-0.04981535050042533,0.09963070100085065],[0.2979775901926928,-0.09932586339756426,0.19865172679512852],[0.3848629705015851,-0.1282876568338617,0.2565753136677234],[0.2363314318101683,-0.07877714393672276,0.15755428787344553],[0.18851495652855194,-0.06283831884285064,0.12567663768570128],[0.10162957621965951,-0.03387652540655317,0.06775305081310634]]\nOutput logits z = log(p)+3, with p=[0.05,0.10,0.20,0.30,0.15,0.12,0.08]. W4 h3 equals these logits; softmax gives the displayed probabilities, which sum exactly to 1.00. All values are an illustrative, internally consistent example.\n\n1. Five weighted inputs converge on one hidden neuron\n2. Numbers disappear and all input-to-hidden weights appear\n3. All Hidden 1 to Hidden 2 weights appear\n4. All remaining weights appear\n5. Positive input activations appear\n6. Hidden 1 computes its linear activations\n7. Hidden 2 computes its linear activations\n8. Hidden 3 computes its linear activations\n9. Softmax output probabilities appear"
+  },
+  {
+    "page": 11,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "First Exam Next Thursday\u000bPease bring a Pencil!",
+        "bounds": [
+          838200,
+          2675839,
+          10515600,
+          1325563
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 12,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8778382,
+          5142452,
+          1931753,
+          551930
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8791462,
+          5057039,
+          1905228,
+          48852
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8782524,
+          4519089,
+          1923354,
+          450896
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8756047,
+          3918594,
+          1977044,
+          977659
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8722392,
+          3298378,
+          2045287,
+          1543330
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8689372,
+          2660833,
+          2112245,
+          2143193
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8660321,
+          2010834,
+          2171155,
+          2767626
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8716626,
+          3928718,
+          2056979,
+          1642570
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8750589,
+          3877319,
+          1988111,
+          1070522
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8779013,
+          3806712,
+          1930472,
+          537421
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8791518,
+          3721029,
+          1905117,
+          34892
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8781973,
+          3168916,
+          1924470,
+          465257
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8755149,
+          2567896,
+          1978863,
+          993056
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8721429,
+          1947135,
+          2047241,
+          1559803
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8656602,
+          2653916,
+          2178695,
+          2857044
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8685006,
+          2629701,
+          2121097,
+          2229872
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8717584,
+          2594013,
+          2055037,
+          1625963
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8751510,
+          2542096,
+          1986243,
+          1054964
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8779632,
+          2470960,
+          1929218,
+          522938
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8791554,
+          2385018,
+          1905042,
+          20935
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8781408,
+          1818731,
+          1925616,
+          479640
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6380088,
+          5082906,
+          1717870,
+          169750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6326067,
+          3907268,
+          1827413,
+          1191791
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6257773,
+          2652500,
+          1965898,
+          2369956
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6363896,
+          4347830,
+          1750705,
+          588181
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6373924,
+          3789616,
+          1730370,
+          376167
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6310441,
+          2596394,
+          1859099,
+          1432902
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6310441,
+          3400204,
+          1859099,
+          1432902
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6373924,
+          3263717,
+          1730370,
+          376167
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6363896,
+          2493489,
+          1750705,
+          588181
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6257773,
+          2407044,
+          1965898,
+          2369956
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6326067,
+          2330440,
+          1827413,
+          1191791
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          6380088,
+          2176844,
+          1717870,
+          169750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3884650,
+          5080822,
+          1803369,
+          172077
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3869464,
+          4347381,
+          1834161,
+          595052
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3818374,
+          3401293,
+          1937761,
+          1442227
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3766737,
+          2410458,
+          2042469,
+          2377683
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3833455,
+          3897481,
+          1907181,
+          1201087
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3878885,
+          3785197,
+          1815057,
+          381023
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3878885,
+          3263279,
+          1815057,
+          381023
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3833455,
+          2330932,
+          1907181,
+          1201087
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3766737,
+          2641358,
+          2042469,
+          2377683
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3818374,
+          2585981,
+          1937761,
+          1442227
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3869464,
+          2487067,
+          1834161,
+          595052
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3884650,
+          2176601,
+          1803369,
+          172077
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1388121,
+          5090977,
+          1805354,
+          220501
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1334399,
+          3908159,
+          1914289,
+          1256709
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1268261,
+          2651138,
+          2048403,
+          2439319
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1383591,
+          4603119,
+          1814539,
+          373989
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1373547,
+          3824662,
+          1834905,
+          602297
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1307398,
+          2611443,
+          1969041,
+          1698486
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1350181,
+          3876354,
+          1882287,
+          1005802
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1390650,
+          3714750,
+          1800225,
+          1
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1350181,
+          2547343,
+          1882287,
+          1005802
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1307398,
+          3119571,
+          1969041,
+          1698486
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1373547,
+          3002541,
+          1834905,
+          602297
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1383591,
+          2452392,
+          1814539,
+          373989
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1268261,
+          2339043,
+          2048403,
+          2439319
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1334399,
+          2264632,
+          1914289,
+          1256709
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          1388121,
+          2118022,
+          1805354,
+          220501
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Learning FITYMI: Pick random w’s, and randomly pick I/O to  \nlearn from x = -2,1,3,-4,2 input and output 0,0,0,0,0,1,0 ",
+        "bounds": [
+          457200,
+          266700,
+          11277600,
+          590550
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Input",
+        "bounds": [
+          190500,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          1743075,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          2562225,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          3381375,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          4200525,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          714375,
+          5019675,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden 1",
+        "bounds": [
+          2686050,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3209925,
+          2047875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3209925,
+          3381375,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3209925,
+          4714875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden 2",
+        "bounds": [
+          5181600,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          1809750,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          2857500,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          3905250,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5705475,
+          4953000,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden 3",
+        "bounds": [
+          7591425,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8115300,
+          2047875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8115300,
+          3381375,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8115300,
+          4714875,
+          666750,
+          666750
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Output",
+        "bounds": [
+          10191750,
+          990600,
+          1714500,
+          381000
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          1409700,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          2085975,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          2762250,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          3438525,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          4114800,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          4791075,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          10725150,
+          5467350,
+          647700,
+          647700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2206181,
+          2098548,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          3147251,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          4127373,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          2638806,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1981581,
+          3106293,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2093881,
+          3763232,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          2601277,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          3581400,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2206181,
+          4261485,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2093881,
+          3399568,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          4203954,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2767679,
+          4778597,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1869281,
+          4105275,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          1532382,
+          4826508,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          2206181,
+          5064252,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4701731,
+          2126456,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          5263229,
+          2842974,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4252532,
+          2860834,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          5263229,
+          4383167,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4814030,
+          2709148,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4027932,
+          3455670,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4701731,
+          3848576,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4140232,
+          4029313,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4814030,
+          3302556,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          5263229,
+          3549729,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4027932,
+          4720590,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          4814030,
+          5047059,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7153561,
+          2131219,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          3164919,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          4145042,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          2863215,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7045119,
+          3301127,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7045119,
+          3921204,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          3659505,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          3720227,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7153561,
+          4518184,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          4455795,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          6502908,
+          4775835,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          7695771,
+          4978003,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9660541,
+          1917573,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          8958453,
+          2254758,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          2765965,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9426512,
+          2827973,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          3760089,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9543526,
+          3519059,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          4754213,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          2125218,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          8958453,
+          3268218,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10011585,
+          3175921,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9075468,
+          3594973,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9777555,
+          3983165,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9192482,
+          4043458,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9543526,
+          4546949,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9660541,
+          3224403,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9426512,
+          3806762,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          8958453,
+          4443984,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9660541,
+          4259104,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9192482,
+          4713732,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          9777555,
+          4951905,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "w",
+        "bounds": [
+          10245614,
+          5460968,
+          228600,
+          266700
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          1579626,
+          2362581,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−1",
+        "bounds": [
+          1579626,
+          2919603,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          1579626,
+          3476625,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          1579626,
+          4033647,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−2",
+        "bounds": [
+          1579626,
+          4590669,
+          533400,
+          476250
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          723900,
+          1828800,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          723900,
+          2647950,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          723900,
+          3467100,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "4",
+        "bounds": [
+          723900,
+          4286250,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          723900,
+          5105400,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "4",
+        "bounds": [
+          3219450,
+          2133600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "14",
+        "bounds": [
+          3219450,
+          3467100,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−3",
+        "bounds": [
+          3219450,
+          4800600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "6",
+        "bounds": [
+          5715000,
+          1895475,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−2",
+        "bounds": [
+          5715000,
+          2943225,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "5",
+        "bounds": [
+          5715000,
+          3990975,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "1",
+        "bounds": [
+          5715000,
+          5038725,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "bounds": [
+          8124825,
+          2133600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "−1",
+        "bounds": [
+          8124825,
+          3467100,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "2",
+        "bounds": [
+          8124825,
+          4800600,
+          647700,
+          495300
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.05",
+        "bounds": [
+          10734675,
+          1504950,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.10",
+        "bounds": [
+          10734675,
+          2181225,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.20",
+        "bounds": [
+          10734675,
+          2857500,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.30",
+        "bounds": [
+          10734675,
+          3533775,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.15",
+        "bounds": [
+          10734675,
+          4210050,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.12",
+        "bounds": [
+          10734675,
+          4886325,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0.08",
+        "bounds": [
+          10734675,
+          5562600,
+          628650,
+          457200
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Linear hidden activations",
+        "bounds": [
+          3857625,
+          6219825,
+          4619625,
+          352425
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Softmax output: probabilities sum to 1.00",
+        "bounds": [
+          6191250,
+          6229350,
+          5715000,
+          361950
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2009775,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2009775,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2009775,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2828925,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2828925,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          2828925,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          4467225,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          4467225,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          4467225,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          5286375,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          5286375,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          981075,
+          5286375,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          3476625,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          2076450,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          2076450,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          2076450,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          3124200,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          3124200,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          3124200,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          4171950,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          4171950,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          4171950,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          5219700,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          5219700,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          5972175,
+          5219700,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          2314575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          3648075,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "",
+        "bounds": [
+          8382000,
+          4981575,
+          133350,
+          133350
+        ]
+      },
+      {
+        "type": "text",
+        "text": "WRONG!!!!!! The actual pdf at the output should be 0,0,0,0,0,1,0. Change w’s to make the output pdf closer to the true one!!~!! Using SGD, now called Backpropagation!\n\nAnd repeat this over and over again with billions of I/O pairs! That’s what’s done at data centers \n\n",
+        "bounds": [
+          457200,
+          990599,
+          11544300,
+          6863417
+        ]
+      }
+    ],
+    "speakerNotes": "Architecture 5-3-4-3-7. All 60 adjacent-layer connections carry weights. The first displayed fan targets the middle neuron in Hidden 1, with weights [2,-1,1,3,-2].\n\nNumerical demonstration uses no biases and linear hidden layers, as requested. A usual MLP introduces nonlinear hidden activation functions; that additional step is deliberately omitted here. Activations: [2,1,3,4,2] -> [4,14,-3] -> [6,-2,5,1] -> [3,-1,2].\nWeight matrices are written destination-by-source:\nW1 = [[0.5,1,1,-0.5,0.5],[2,-1,1,3,-2],[-1,0.5,0.5,-1,0.5]]\nW2 = [[1,0.25,0.5],[0.5,-0.5,-1],[-1,0.75,0.5],[0.5,0.25,1.5]]\nW3 = [[0.5,1,0.5,-0.5],[-0.5,0.5,0.5,0.5],[0.5,0.5,0.1,-0.5]]\nW4 = [[0.0009145128098591027,-0.00030483760328636755,0.0006096752065727351],[0.14944605150127596,-0.04981535050042533,0.09963070100085065],[0.2979775901926928,-0.09932586339756426,0.19865172679512852],[0.3848629705015851,-0.1282876568338617,0.2565753136677234],[0.2363314318101683,-0.07877714393672276,0.15755428787344553],[0.18851495652855194,-0.06283831884285064,0.12567663768570128],[0.10162957621965951,-0.03387652540655317,0.06775305081310634]]\nOutput logits z = log(p)+3, with p=[0.05,0.10,0.20,0.30,0.15,0.12,0.08]. W4 h3 equals these logits; softmax gives the displayed probabilities, which sum exactly to 1.00. All values are an illustrative, internally consistent example.\n\n1. Five weighted inputs converge on one hidden neuron\n2. Numbers disappear and all input-to-hidden weights appear\n3. All Hidden 1 to Hidden 2 weights appear\n4. All remaining weights appear\n5. Positive input activations appear\n6. Hidden 1 computes its linear activations\n7. Hidden 2 computes its linear activations\n8. Hidden 3 computes its linear activations\n9. Softmax output probabilities appear"
+  },
+  {
+    "page": 13,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Python SGD for Average",
+        "bounds": [
+          440635,
+          147918,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "We want to estimate w, the average of [73,90,98,46,400,81,82,78,62,91,61,84,75,84,81,75]\nNote that one of the numbers by mistake is 400 … the actual average of the list is about 100\nBut in reality, the datapoint 400 is a mistake, and the true average of the list, without that mistake is about 80!\nFor ease, we will assume that the list above is the data list in the order we will see them randomly",
+        "bounds": [
+          838200,
+          1473480,
+          10515600,
+          4516503
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  }
+]

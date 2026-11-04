@@ -1,0 +1,681 @@
+===== PDF PAGE 1 =====
+Speech Perception I: Categorical 
+Perception
+
+
+===== PDF PAGE 2 =====
+What is speech perception?
+Somehow we are able to take this mess and retrieve a message:
+We also extract the same message from very different physical stimuli:
+
+
+===== PDF PAGE 3 =====
+One premise:
+Somehow we have to turn a highly variable, analog signal, into 
+something more abstract, so that the language system can 
+operate on it.
+Categorical perception is thought to reflect this kind of 
+“translation” from physical to symbolic.
+Note, next time, we’ll talk about some alternative ideas 
+about this.
+
+
+===== PDF PAGE 4 =====
+Formants and formant transitions
+The shape of the vocal tract is related in lawful ways to the amplification of 
+particular resonant frequencies (from Ladefoged, 1996).
+
+
+===== PDF PAGE 5 =====
+English vowels from Rob Hagiwara: (http://home.cc.umanitoba.ca/~robh/howto.html#formants)
+bead
+bid
+bade
+bed
+bad
+bod
+baud
+bode
+“bood”
+booed
+Here they are as spectrograms
+
+
+===== PDF PAGE 6 =====
+Let’s learn about formants by doing some 
+source-filter synthesis
+(I did all of this with Praat free software for speech analysis, available at praat.org)
+This is a spectrogram of me 
+saying /u/.
+I’ve got the cursor on the 
+first formant, you can 
+see it’s at about 300Hz.
+The second formant is very 
+low, around 900Hz.
+
+
+===== PDF PAGE 7 =====
+Let’s learn about formants by doing some 
+source-filter synthesis
+Actually, Praat can 
+automatically find 
+formants. 
+Here it’s identified five. 
+Only the first three are 
+usually important for 
+phonemic processing.
+In this example, we’ll only 
+deal with the first two.
+
+
+===== PDF PAGE 8 =====
+This is the source…
+So, now what I’ve done is 
+extract the SOURCE from 
+the sound, using a model 
+of the filter based on the 
+formant frequencies.
+(This is a little bit like doing 
+a multiple regression 
+analysis.)
+The result is a more-or-less 
+“unfiltered” version of 
+my voice. It sounds like a 
+buzz…
+
+
+===== PDF PAGE 9 =====
+…and these are the filters!
+Time (s)
+0
+2.5
+0
+1000
+2000
+3000
+4000
+5000
+Time (s)
+0
+2.5
+0
+1000
+2000
+3000
+4000
+5000
+Time (s)
+0
+2.5
+0
+1000
+2000
+3000
+4000
+5000
+Shown here are three different 
+filters we can apply to our source.
+The first is just the first four 
+formants from the original 
+recording.
+In the second one, I’ve just raised 
+the first formant a little.
+In the second one, I’ve raised the 
+second formant a lot.
+
+
+===== PDF PAGE 10 =====
+Multiplying the source by the filters gives 
+us new vowels.
+Time (s)
+0
+2.5
+0
+1000
+2000
+3000
+4000
+5000
+Time (s)
+0
+2.5
+0
+1000
+2000
+3000
+4000
+5000
+Time (s)
+0
+2.5
+0
+1000
+2000
+3000
+4000
+5000
+
+
+===== PDF PAGE 11 =====
+Remember that formant values are 
+partly determined by anatomical 
+features that differ between 
+speakers of the same language, by 
+different rates of speech, and by 
+context (e.g., the phones 
+produced before and after a 
+vowel).  
+Nonetheless, formant values can 
+provide a pretty good description 
+of “vowel space,” especially for a 
+specific talker, speaking carefully.
+All else being equal, we can produce 
+reasonable approximations of 
+vowels by manipulating steady-
+state formants. 
+
+
+===== PDF PAGE 12 =====
+The “pattern playback” synthesizer.
+
+
+===== PDF PAGE 13 =====
+Liberman et al. (1957) available here: http://www.haskins.yale.edu/Reprints/HL0022.pdf
+Stop consonants are 
+distinguished by 
+formant transitions. 
+This is sensible if you 
+think about how 
+they’re produced: the 
+audible part of a /b/, 
+/d/, or /g/, happens 
+while your jaw is 
+opening.
+The pattern playback 
+synthesizer was used 
+to create speech-like 
+sounds that replicated 
+these formant 
+transitions. 
+
+
+===== PDF PAGE 14 =====
+A speech continuum:
+These stimuli are 
+constructed by 
+keeping F1 constant 
+and varying F2 onset 
+frequency linearly
+from stimulus 1 to 13.
+Thus: adjacent stimuli 
+differ by the same 
+amount across the 
+entire continuum.
+
+
+===== PDF PAGE 15 =====
+Liberman et al. (1957) available here: http://www.haskins.yale.edu/Reprints/HL0022.pdf
+A simple “ideal observer” model assuming perception 
+is non-categorical.
+The first thing we’d predict is that categorization 
+would get “blurry” as you move away from category 
+prototypes. We know the endpoints are /b/ and /g/, 
+with /d/ in the middle. Between these points, stimulus 
+ambiguity should scale with the distance from the 
+prototype. So, stimulus 2 would be 75/25 /b/ - /d/. 
+0
+0.5
+1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+/b/
+/d/
+/g/
+Labeling
+
+
+===== PDF PAGE 16 =====
+A simple “ideal observer” model assuming perception 
+is linear.
+But the other important thing we’d predict is that Discrimination performance should 
+be independent of Labeling. 
+Obviously labeling has to have a sort of “peaked” function, because you’ve got three 
+categories, and you’re asking people to make binary responses. But for the 
+discrimination task, you’re just asking people to say “same” or “different.” If 
+perception of differences in F2 onset were constant over the whole continuum, 
+discrimination accuracy would also be constant. 
+0
+0.5
+1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+/b/
+/d/
+/g/
+Labeling
+0
+0.5
+1
+1 vs. 3
+2 vs. 4
+3 vs. 5
+4 vs. 6
+5 vs. 7
+6 vs. 8
+7 vs. 9
+8 vs. 10
+9 vs. 11
+accuracy
+Discrimination
+
+
+===== PDF PAGE 17 =====
+Categorical perception
+Liberman et al. (1957) available here: http://www.haskins.yale.edu/Reprints/HL0022.pdf
+
+
+===== PDF PAGE 18 =====
+Categorical perception demonstration
+
+
+===== PDF PAGE 19 =====
+Categorical perception: Class data
+(prior years)
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+beach-peach_id
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1-
+3
+2-
+4
+3-
+5
+4-
+6
+5-
+7
+6-
+8
+7-
+9
+beach-peach_discrim
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+beach-peach_id
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1-
+3
+2-
+4
+3-
+5
+4-
+6
+5-
+7
+6-
+8
+7-
+9
+beach-peach_discrim
+
+
+===== PDF PAGE 20 =====
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+beach-peach_id
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1-
+3
+2-
+4
+3-
+5
+4-
+6
+5-
+7
+6-
+8
+7-
+9
+beach-peach_discrim
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+beach-peach_id
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1-
+3
+2-
+4
+3-
+5
+4-
+6
+5-
+7
+6-
+8
+7-
+9
+beach-peach_discrim
+Some thoughts:
+Not everyone has exactly 
+the same category 
+boundary.
+But in general, 
+discrimination is best for 
+stimuli perceived as 
+being in different 
+categories.
+BTW, to make the lab do-
+able in a short amount 
+of time, I only included 
+different trials in the 
+Discrim experiment! The 
+“correct” answer on 
+every trial would be 
+“different,” if you were 
+able to discriminate 
+them!
+
+
+===== PDF PAGE 21 =====
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+bear_pear_id
+0
+0.2
+0.4
+0.6
+0.8
+1
+1-3 2-4 3-5 4-6 5-7 6-8
+bear-pear_discrim
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+beach-peach_id
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1-3
+2-4
+3-5
+4-6
+5-7
+6-8
+7-9
+beach-peach_discrim
+The one iron-clad law of 
+experimental research:
+Stuff happens.
+Can you think of some 
+ways this experiment was 
+maybe not the best?
+How would you do it 
+differently?
+
+
+===== PDF PAGE 22 =====
+How would categorical perception help?
+OR:
+What is the advantage of being worse at hearing 
+some differences between sounds?
+
+
+===== PDF PAGE 23 =====
+For next session
+Read:
+Ganong (1980) 
+Download here: http://search.proquest.com.libproxy.usc.edu/docview/614330814
+(you’ll be prompted for USC credentials)
+And McClelland et al. (2006)
+http://psych.stanford.edu/~jlm/papers/McCMirmanHolt06_TiCS.pdf
+(Prof. McClelland posts all of his papers for free on his website!)
+
+
+===== PDF PAGE 24 =====
+Categorical perception in infants
+Infant in the “conditioned head turn 
+procedure from Janet Werker’s website: 
+http://infantstudies.psych.ubc.ca/
+Actually, we’ll be focusing on “high 
+amplitude sucking” results. (image from 
+an unrelated paper, Rochat & Striano, 2001, 
+IBD)
+
+
+===== PDF PAGE 25 =====
+Categorical perception in infants
+Eimas et al. (1971, Science) 
+
+
+===== PDF PAGE 26 =====
+“Perceptual narrowing” for speech categories
+
+
+===== PDF PAGE 27 =====
+A very compelling narrative:
+Speech perception depends on categorical 
+perception abilities that are a special property of 
+the language system.
+These are present very early in development.
+In fact, children start off as “citizens of the world,” 
+able to hear all contrasts, but then rapidly tune 
+their perceptual systems to their specific 
+language. 
+
+
+===== PDF PAGE 28 =====
+Some issues
+Categorical perception:
+- not limited to language
+- not limited to humans
+- task-dependent
+Infant speech perception:
+- not actually “universal”
+
+
+===== PDF PAGE 29 =====
+Categorical perception of non-speech 
+sounds
+Cutting & Rosner (1974, Perception & Psychophysics)
+
+
+===== PDF PAGE 30 =====
+Categorical perception of non-speech 
+sounds…by infants!
+Jusczyk et al. (1977, Perception & Psychophysics)
+
+
+===== PDF PAGE 31 =====
+Categorical perception of speech 
+sounds…by chinchillas!
+Ohlemiller et al.(1999, Behavioral Brain Research, see also Kuhl & Miller, 1975)
+Trained using 
+operant 
+conditioning that 
+either the 0-lag 
+or 80ms-lag 
+stimulus is a SD
+for food.
+
+
+===== PDF PAGE 32 =====
+Some contrasts are less salient than 
+others (for infants).

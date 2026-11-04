@@ -1,0 +1,57 @@
+{
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "sources": {
+    "welch": "hw1.pdf p4: freshman/senior raw heights; requested output-reading example only",
+    "pooled": "hw1.pdf p4: same raw heights",
+    "anova": "session7.pdf pp37,39: actual nitric-oxide data and output",
+    "chi_yates": "session11.pdf pp19–20; session12.pdf pp9–11",
+    "chi_large": "session12.pdf pp13–16",
+    "chi_gof": "session12.pdf pp24–27",
+    "normal": "hw1.pdf p3: glucose mean95 SD8.7"
+  },
+  "outputs": {
+    "welch": "\n\tWelch Two Sample t-test\n\ndata:  freshman and senior\nt = -4.5298, df = 15.611, p-value = 0.0003625\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -7.638477 -2.761523\nsample estimates:\nmean of x mean of y \n     64.5      69.7 \n",
+    "pooled": "\n\tTwo Sample t-test\n\ndata:  freshman and senior\nt = -4.5298, df = 18, p-value = 0.0002594\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -7.611743 -2.788257\nsample estimates:\nmean of x mean of y \n     64.5      69.7 \n",
+    "anova": "            Df Sum Sq Mean Sq F value Pr(>F)  \nGroup        2  779.4   389.7   5.832 0.0106 *\nResiduals   19 1269.5    66.8                 \n---\nSignif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1",
+    "anova_print": "Call:\n   aov(formula = Exhaled_NO ~ Group)\n\nTerms:\n                    Group Residuals\nSum of Squares   779.3819 1269.4927\nDeg. of Freedom         2        19\n\nResidual standard error: 8.174069\nEstimated effects may be unbalanced",
+    "chi_yates": "\n\tPearson's Chi-squared test with Yates' continuity correction\n\ndata:  thrombi\nX-squared = 5.5772, df = 1, p-value = 0.0182\n",
+    "chi_large": "\n\tPearson's Chi-squared test\n\ndata:  depression\nX-squared = 21.176, df = 2, p-value = 2.522e-05\n",
+    "chi_gof": "\n\tChi-squared test for given probabilities\n\ndata:  exercise\nX-squared = 8.4574, df = 2, p-value = 0.01457\n",
+    "pnorm_left": "[1] 0.1251903",
+    "pnorm_right": "[1] 0.01075671",
+    "qnorm_left": "[1] 112.0517",
+    "qnorm_right": "[1] 112.0517"
+  },
+  "numbers": {
+    "welch": [
+      -4.5298336522845215,
+      15.610612790494066,
+      0.0003624697420666485
+    ],
+    "pooled": [
+      -4.5298336522845215,
+      18,
+      0.0002593670796717456
+    ],
+    "anova": [
+      5.83235180706165,
+      0.0105947540794123,
+      66.81540350877192
+    ],
+    "chi_yates": [
+      5.57719298245614,
+      1,
+      0.018195864430772975
+    ],
+    "chi_large": [
+      21.175748591986785,
+      2,
+      0.0000252199730507826
+    ],
+    "chi_gof": [
+      8.457446808510639,
+      2,
+      0.014570979931304125
+    ]
+  }
+}

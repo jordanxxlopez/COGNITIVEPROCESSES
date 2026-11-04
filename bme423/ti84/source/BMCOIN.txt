@@ -1,0 +1,99 @@
+ClrHome
+Float
+Normal
+Real
+Input "NUMBER TOSSES",N
+If not(N≥1 and N=int(N) and N≤100)
+Then
+ClrHome
+Disp "CHECK NUMBER TOSSES"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "HEADS WANTED",K
+If not(K≥0 and K≤N and K=int(K))
+Then
+ClrHome
+Disp "CHECK HEADS WANTED"
+Disp "CHECK INPUTS"
+Stop
+End
+1→T
+For(I,1,K)
+T*(N-I+1)/I→T
+End
+2^N→B
+T/B→P
+ClrHome
+Output(1,1,"EXACT HEAD COUNT")
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"PROB=")
+Output(2,6,θ)
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"WAYS=")
+Output(3,6,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"TOTAL=")
+Output(4,7,θ)
+Output(5,1,"P=WAYS/TOTAL")
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"N=")
+Output(6,3,θ)
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"HEADS=")
+Output(7,7,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"COUNTING WORK")
+Output(2,1,"TOTAL=2^N")
+Output(3,1,"WAYS=N!/(K!*(N-K)!)")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"WAYS=")
+Output(4,6,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"TOTAL=")
+Output(5,7,θ)
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"P=")
+Output(6,3,θ)
+Output(7,1,"FAIR INDEP TOSSES")
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(8,1,"N=")
+Output(8,3,θ)
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(9,1,"K=")
+Output(9,3,θ)
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

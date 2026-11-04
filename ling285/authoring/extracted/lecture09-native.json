@@ -1,0 +1,360 @@
+[
+  {
+    "page": 1,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Ling 285\u000bHuman Language and Technology\u000bLecture 9\u000b\u000bNeural Networks 1\u000b",
+        "bounds": [
+          1524000,
+          1831023,
+          9144000,
+          2387600
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Khalil Iskarous\nDepartment of Linguistics\nUniversity of Southern California",
+        "bounds": [
+          1409700,
+          4459288,
+          9144000,
+          1655762
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 2,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "First Exam Next Thursday",
+        "bounds": [
+          838200,
+          2675839,
+          10515600,
+          1325563
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 3,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Differential Equations are the mathematical expression of dynamical systems",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": " In 1676 Newton wrote a letter to Leibniz and expressed an idea in an anagram, a cryptographic object that would be revealed once he has fully proven the idea-- the way of estabilsihng priority in those days\nThe secret: 6accdae13eff7i3l9n4o4qrr4s8t12ux\nOr in Latin: Data aequatione quotcunque fluentes quantitates involvente fluxiones invenire, et vice versa \nOr completely paraphrased: The laws of nature are expressed by differential equations (Vladimir Arnold paraphrasing).\nBTW: Inference and Learning in LLMs are differential equations.\n",
+        "bounds": [
+          838200,
+          1825625,
+          10515600,
+          4351338
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 4,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Viscous spring, Negative/Balancing feedback",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "x",
+        "bounds": [
+          8525751,
+          1679944,
+          343364,
+          523220
+        ]
+      },
+      {
+        "type": "text",
+        "text": "t",
+        "bounds": [
+          11458776,
+          3478074,
+          300082,
+          523220
+        ]
+      },
+      {
+        "type": "text",
+        "text": "0  1  2  3  4  5  6  7  8….",
+        "bounds": [
+          8525751,
+          3429000,
+          2313454,
+          369332
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 5,
+    "shapes": [],
+    "speakerNotes": ""
+  },
+  {
+    "page": 6,
+    "shapes": [],
+    "speakerNotes": ""
+  },
+  {
+    "page": 7,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "First Exam Next Thursday",
+        "bounds": [
+          838200,
+          2675839,
+          10515600,
+          1325563
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 8,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Now we will do this in Python!",
+        "bounds": [
+          3207895,
+          2428406,
+          6059159,
+          646331
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 9,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Software 1.0",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 10,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "A Neural Network",
+        "bounds": [
+          713510,
+          -133638,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Imagine you are given many pictures of faces (48 Million pixels), and you’re asked to identify one of 1000 possible people. \nImagine you are given speech waves and you’re asked to to identify for each, which of 25 sounds each speech wave corresponds to.\nWhat can do this? A Neural Network (NN)\nI will not tell you now why it’s called a NN. I will teach you what it is by what it does– how it walks and how it swims.\nThe job of an NN is to take a bunch of numbers the 48M pixels in one image/numbers of a wave and to return a probability distribution.\nFor speech the probability distribution is 25 sounds\nBut let’s say it had just 5 vowels, this is a pdf: [.2,.2,.4,.2,0]\nAnd let’s say we agree the vowel order is read, rad, rude, Rud, rod\nThe p’s must sum to 1 (100%)\nThat says: there’s 20% chance the sound is the v in read, 20% it’s the vowel in rad, 40% the vowel in rude, 20% it’s the vowel in Rud, and 0% it’s the vowel in Rod. ",
+        "bounds": [
+          838199,
+          1027906,
+          8442192,
+          5693090
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 11,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "A Neural Network",
+        "bounds": [
+          713510,
+          -133638,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "The input of an NN is a bunch of numbers, signal, or a vector, e.g., [4,1,-3,2,1,.4,1,2,-3,…] (usually 1000’s of nums). Let’s say these are the pressure numbers of a speech wave\nThe output of the NN is a decision pdf: Given the signal, what’s the p(each object): p of each vowels read, rad, rude, Rud, rod \nHow? How can NNs do that? How can it make a decision.\nThey have knowledge, in a bunch of weights w’s\nAnd somehow the input signal vector is combined with these w’s and a decision about the object detected is made, eventually, as there are many many w’s and many many calculations! Several trillion w’s and billions of calculations.\nThese magical w’s allow the NN to make decisions, but how does it know these w’s???\nFake it till you make it!\nSGD for NNs. You start out with random w’s.\nGive it a signal (let’s say we give it the vowel in Rud)\nForward Propagation: It uses its stupid w’s, and it produces a pdf that doesn’t reflect reality: [.4,.1,.2,.2,.1]\nWe tell it: NO!!!!!!! You should have decided: 0,0,0,1,0], so it realizes it made a big Error or Loss\nIt improves its w’s to reduce the Loss\nGive it another signal and repeat billions of times!\nBut what calculations are actullay made on the signal???\n",
+        "bounds": [
+          838200,
+          714844,
+          10640290,
+          5428312
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 12,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Templatic Perception and Hierarchical Perception",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Our Goal: Understand how an NN uses its weights to process the input to make the right decision at the output, e.g., when given a [z] speech signal (= waveform = pressure waveform), the correct decision should be [z], not [s], not [a], etc.\nSomething useful to know is how humans perceive speech, faces, etc. And perhaps knowing how how our own biological neural networks perceive speech, we can use that to understand how NNs model this via an artificial computation.\nSo there are two basic theories of animal perception that inform NN design:\nTemplatic Perception\nHierarchical Perception",
+        "bounds": [
+          838200,
+          1825624,
+          10515600,
+          4772123
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 13,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Templatic Perception",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Here’s a theory of how face perception works\nThe retina in the eye receives light information from the face\nThe brain has a template, a picture of sorts, stroed in it, of every face that the person knows\nThe brain compares the input face with each of its stored templates for faces\nThe template with the highest similarity to the input face is what is perceived\nIf there’s a name associated with the winning template, that name is the perceptual decision \nWhat this theory implies for AI: The knowledge weights of NNs are like perceptual templates. \nRemmber this from before: So the NN combines its currrent weights with the input face pixels and produces a Computed Output that is wrong (when we haven’t learnt anything)!\nSo the way that an NN’s weights/knowledge/templates are combined with the input is that we determine similarity between weights and inputs.\nThis is difficult to understand now, but just keep this in mind.\n",
+        "bounds": [
+          838200,
+          1825625,
+          10515600,
+          4351338
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 14,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Hierarchical Perception",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "For a long time, psychologists and neuroscientists have known that perception is done in stages, hierarchically\nSo the input leads to one new representation, then that representation becomes another, then another, till the output decision is made!",
+        "bounds": [
+          838200,
+          1825625,
+          3635326,
+          4351338
+        ]
+      },
+      {
+        "type": "accessibility-descr",
+        "text": "A diagram of a brain\n\nDescription automatically generated"
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 15,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "NNs are Templatic Hierarchical Perceivers",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Let’s first talk about the templatic aspect\nThe key to templatic perception is that some internal template of numbers is compared to some input set of numbers to find out how similar the template is to the input\nNNs assume: Input is a list or vector of numbers and internal template weights are also a list or vector of numbers\nSo how can we compare two lists of numbers to determine if they are similar or not.\nE.g.\nInput = [-1  3  -2]\nTemp1 = [-2  0  3]\nTemp2  = [-2   2  -1]\nIs list Input more similar to template 1 or 2?\nInner product: \nMultiply 2 lists component-wise\nAdd all products\nIf IP is near 0, the lists are dissimilar\nIf IP is large and positive, lists are similar\n",
+        "bounds": [
+          838200,
+          1825625,
+          10515600,
+          4351338
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  },
+  {
+    "page": 16,
+    "shapes": [
+      {
+        "type": "text",
+        "text": "Neural Networks",
+        "bounds": [
+          838200,
+          365125,
+          10515600,
+          1325563
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Inference: We give the system a signal vector, the w’s are inner producted (template matching) over and over again (hierarchical perception) like Euler’s algorithm \nLearning: We give the system a signal a vector whose identity we know, we ask it to infer its identity, with initial random w’s. It can’t. So the w’s are improved via SGD!",
+        "bounds": [
+          838200,
+          1825625,
+          10515600,
+          4351338
+        ]
+      }
+    ],
+    "speakerNotes": ""
+  }
+]

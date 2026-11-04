@@ -1,0 +1,92 @@
+{
+  "lectureId": "lecture15",
+  "reviewDate": "2026-10-27",
+  "reviewer": "author self-review",
+  "independentReviewer": false,
+  "sourceSha256": "1a72337a07441cab4467ad324d864d8cc488544e533760f69bbe7c468490e304",
+  "sourceBytes": 1449318,
+  "sourcePages": 13,
+  "instructionalPages": 10,
+  "emptyTeachingPages": [
+    1,
+    4,
+    5
+  ],
+  "sourceMedia": {
+    "embeddedRasterImages": 6,
+    "embeddedVideo": 0,
+    "embeddedAudio": 0,
+    "animatedSlides": [
+      2,
+      3,
+      6,
+      7,
+      8,
+      11,
+      12
+    ],
+    "nativeTimingAndSpeakerNotesReviewed": true,
+    "fullSlideshowPlaybackClaimed": false
+  },
+  "visualReview": {
+    "everyRenderedPageAt1600px": true,
+    "allSixEmbeddedImagesReviewed": true,
+    "sourceInkFallbacksRestoredOnPage7": true,
+    "sigmoidSourceStagesReviewed": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "sourceStageExports": "Original shapes and labels at each named stage, without timing; not a new diagram or playback recording."
+  },
+  "numericalCheck": "extracted/lecture15-numerical-check.json",
+  "writing": {
+    "editions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "version4MedianAcrossModuleII": 221,
+    "sourceSpecificAndPlainLanguage": true,
+    "sourceConcepts": [
+      "signed weighted combinations",
+      "forward activations and softmax",
+      "true dean target versus done prediction",
+      "cross-entropy gradient updates using stored original forward values",
+      "direct output versus downstream early-weight influence",
+      "Bellman–Viterbi dynamic programming connection",
+      "110-row input-target alignment",
+      "PyTorch gradient clearing, backward and step",
+      "continuous sigmoid sensitivity and saturation",
+      "nine hidden sigmoids with downstream recomputation",
+      "final logits for cross-entropy"
+    ]
+  },
+  "practice": {
+    "perEditionNewQuestions": 50,
+    "perLectureMCQ": 25,
+    "perLectureWritten": 25,
+    "currentTestSize": 100,
+    "currentTestPerLecture": 20,
+    "currentTestPerLectureMCQ": 10,
+    "currentTestPerLectureWritten": 10,
+    "sourceOnlyPracticeV2Model": "practice-v2-model.json",
+    "examPredictionClaimed": false
+  },
+  "limitations": [
+    "Slide 5 supplies only an exam-information heading, without dates or rules.",
+    "The tensor files named in the program are not included in the upload.",
+    "Default PyTorch initialization and biases differ from the diagram’s hand-selected bias-free parameters.",
+    "Static source-state exports do not reproduce transient traveling-signal motion. The original animated PowerPoint remains available."
+  ],
+  "preservationBaseline": "f990dd31b40273cfa1aebd4a743479e8174266cd",
+  "unresolvedBlockingFindings": []
+}

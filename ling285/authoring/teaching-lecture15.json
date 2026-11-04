@@ -1,0 +1,214 @@
+{
+  "lecture15": {
+    "title": "Neural Networks · Forward propagation, learning, and sigmoid",
+    "sections": [
+      {
+        "page": 1,
+        "title": "Neural Networks",
+        "kind": "title",
+        "teaching": [],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 2,
+        "title": "Two formants feed a fully connected network",
+        "kind": "concept",
+        "teaching": [
+          "The network takes **F1 and F2** as its two inputs and has five outputs labeled **done, dune, dean, Don, and Dan**. Its hidden layers contain three, two, and four neurons. The arrangement is **2 → 3 → 2 → 4 → 5**.",
+          "Each neuron connects to every neuron in the next layer. A **weight** multiplies the value on one connection before the receiving neuron combines it with the other incoming contributions. Different weights let neurons combine the same formants differently. Positive and negative weights can contribute in opposite directions."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 3,
+        "title": "Forward propagation combines weighted inputs",
+        "kind": "concept",
+        "teaching": [
+          "**Forward propagation** multiplies incoming values by their weights and adds the products. With F1 at **320** and F2 at **2000**, the top first-layer neuron receives contributions that total **−0.40**. The other two results are **6.64** and **2.72**.",
+          "Later hidden layers use the preceding layer’s results in the same way. The five final scores are **logits**, and **softmax** turns them into probabilities sharing one total. **Done** has the largest current response, about **55.7%**, while **dean** has about **8.1%**. The hidden activations are linear and no weights change during this forward pass."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 4,
+        "title": "Pop quiz · Forward propagation",
+        "kind": "prompt",
+        "teaching": [],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 5,
+        "title": "Info on Exam 2 and Exam 3",
+        "kind": "logistics",
+        "teaching": [],
+        "issues": [
+          "Only the heading is supplied. No exam dates, coverage changes, or rules are stated on this page."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 6,
+        "title": "Backpropagation uses the difference between prediction and target",
+        "kind": "concept",
+        "teaching": [
+          "The desired output marks **dean** with a 1 and the other four words with zeros. The computed probabilities do not match this target. **Cross-entropy loss** decreases when the network assigns more probability to the true word.",
+          "**Backpropagation** determines how the loss depends on weights, working from the output connections toward the first hidden layer. The update subtracts the learning rate times each gradient from its old weight. All gradients use the original weights and stored forward activations. Updated weights appear in backward order, but the displayed activations are not a new forward pass."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 7,
+        "title": "Predict how changing a marked weight affects error",
+        "kind": "concept",
+        "teaching": [
+          "The pink-marked connection runs from the positive top activation in the last hidden layer to **done**, an incorrect candidate for the **dean** target. Increasing it raises done’s score, reduces the share assigned to dean, and increases the loss.",
+          "The blue-marked **F1** connection affects an early hidden neuron and then many downstream paths. Its error effect depends on those later connections, not just its own sign. The supplied backward calculation gives a positive gradient here too, so a small increase raises the loss for this example."
+        ],
+        "issues": [
+          "The original PowerPoint contains pink and blue ink markings that ordinary PDF conversion drops. The displayed source-state export retains the original raster fallbacks at their original positions."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 8,
+        "title": "Backpropagation reuses downstream error calculations",
+        "kind": "concept",
+        "teaching": [
+          "The last weights, **W5**, affect the output scores directly. The first weights, **W2**, affect hidden activations that continue through several layers, so their effects on error include those later layers.",
+          "**Backpropagation** reuses downstream error calculations when finding earlier effects. This is the course’s connection to **Bellman–Viterbi dynamic programming**. Backpropagation supplies gradients efficiently, and **SGD** uses them to adjust weights."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 9,
+        "title": "Pair each recording with its target row",
+        "kind": "concept",
+        "teaching": [
+          "**Formant_Inputs** has **110 rows and two columns**, containing the F1 and F2 measurements for each recording. **TrueVowel_Outputs** has **110 rows and five columns**, ordered done, dune, dean, Don, Dan.",
+          "Each target row has a 1 at the true word and zeros elsewhere. The input and target rows must remain paired. The illustrated third row contains **320 and 2000** and identifies **dean**, even though the network currently favors done. The visible rows are examples of the matrix layout, not a supplied complete dataset."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 10,
+        "title": "Read one full-batch training step in PyTorch",
+        "kind": "concept",
+        "teaching": [
+          "**torch.load** reads the formant and target tensors, and **nn.Sequential** connects four linear layers in the **2 → 3 → 2 → 4 → 5** order. No hidden sigmoid is declared. The final scores go to **CrossEntropyLoss**, which handles the softmax-related loss internally.",
+          "**zero_grad()** clears old gradients, **net(X)** computes outputs, **backward()** computes gradients, and **step()** updates parameters. All **110 rows** contribute to one step with learning rate **0.1**. The code initializes its own default parameters, so it does not reproduce the drawing’s fixed weights and absent biases automatically."
+        ],
+        "issues": [
+          "The diagram uses fixed illustrative weights and no biases. The minimal PyTorch declarations initialize their own default parameters and bias terms, so they do not reproduce the displayed numerical outputs automatically. The .pt input files are referenced but not supplied."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 11,
+        "title": "Sigmoid turns an inner product into a bounded activation",
+        "kind": "concept",
+        "teaching": [
+          "**Sigmoid** turns a weighted sum into an activation between 0 and 1. Large negative sums approach 0 and large positive sums approach 1. The change is gradual. Inputs of **−4** and **4** give approximately **0.0180** and **0.9820**.",
+          "The curve is steep near its center and flat near its ends. Equal input differences can therefore produce different output differences depending on their position. **Edgar Adrian’s** nerve-activity work provides biological context for activation models, not a claim that firing rates have only two possible values."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 12,
+        "title": "Apply sigmoid while recalculating downstream activity",
+        "kind": "concept",
+        "teaching": [
+          "The **nine hidden neurons** receive sigmoid in first-to-last layer order while the inputs and weights stay fixed. The first value changes from **−0.400** to about **0.401**, and all downstream weighted sums are recalculated after each change.",
+          "The fully sigmoid hidden layers finish near **0.401, 0.999, 0.938**, then **0.713, 0.223**, then **0.599, 0.609, 0.609, 0.481**. Outputs still use **softmax**. **Dan** becomes the largest response at about **32.0%**, while **dean** receives about **23.0%**. This is an activation change rather than a weight-training step."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 13,
+        "title": "Insert sigmoid after the hidden linear layers",
+        "kind": "concept",
+        "teaching": [
+          "**nn.Sigmoid()** follows the first three linear layers. It transforms each hidden weighted sum without changing the layer’s size. The final **nn.Linear(4, 5)** supplies logits to **CrossEntropyLoss** rather than applying sigmoid to the output scores.",
+          "The input files, **110-row** batch, learning rate **0.1**, and training sequence remain the same. **backward()** calculates gradients and **step()** applies the update. Matching the diagram’s exact probabilities would also require its illustrative weights and no-bias setting, which the default declarations do not supply."
+        ],
+        "issues": [
+          "The diagram and minimal code share layer sizes and sigmoid placement, but the code uses default initialization and bias options. The named .pt input files are not included in the upload."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all six embedded raster assets, native text and speaker notes. Inspected PowerPoint reveal timing, original ink fallback annotations, and the ten source-derived sigmoid stages. Numerical statements checked against the supplied matrices.",
+          "limitations": []
+        }
+      }
+    ]
+  }
+}

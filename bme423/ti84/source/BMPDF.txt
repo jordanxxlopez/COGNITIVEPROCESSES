@@ -1,0 +1,177 @@
+ClrHome
+Float
+Normal
+Real
+Input "A: A+B*X",B
+Input "B: A+B*X",C
+Input "SUPPORT LOW",D
+Input "SUPPORT HIGH",E
+If not(E>D)
+Then
+ClrHome
+Disp "CHECK SUPPORT HIGH"
+Disp "CHECK INPUTS"
+Stop
+End
+If not(min(B+C*D,B+C*E)≥0)
+Then
+ClrHome
+Disp "NEGATIVE DENSITY"
+Disp "CHECK INPUTS"
+Stop
+End
+((B)*(E)^1/1+(C)*(E)^2/2)-((B)*(D)^1/1+(C)*(D)^2/2)→T
+If not(abs(T-1)<.00000001)
+Then
+ClrHome
+Disp "PDF AREA NOT 1"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "CDF CUTOFF",L
+Input "INTERVAL LOW",N
+Input "INTERVAL HIGH",O
+If not(O≥N)
+Then
+ClrHome
+Disp "CHECK INTERVAL HIGH"
+Disp "CHECK INPUTS"
+Stop
+End
+((B)*(E)^2/2+(C)*(E)^3/3)-((B)*(D)^2/2+(C)*(D)^3/3)→M
+((B)*(E)^3/3+(C)*(E)^4/4)-((B)*(D)^3/3+(C)*(D)^4/4)→Q
+max(0,Q-M^2)→S
+min(E,max(D,L))→X
+((B)*(X)^1/1+(C)*(X)^2/2)-((B)*(D)^1/1+(C)*(D)^2/2)→K
+min(E,max(D,N))→X
+((B)*(X)^1/1+(C)*(X)^2/2)-((B)*(D)^1/1+(C)*(D)^2/2)→A
+min(E,max(D,O))→X
+((B)*(X)^1/1+(C)*(X)^2/2)-((B)*(D)^1/1+(C)*(D)^2/2)→P
+P-A→P
+D→U
+E→V
+For(J,1,42)
+(U+V)/2→W
+min(E,max(D,W))→X
+((B)*(X)^1/1+(C)*(X)^2/2)-((B)*(D)^1/1+(C)*(D)^2/2)→T
+If T<.5
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→R
+ClrHome
+Output(1,1,"DENSITY RESULTS")
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CDF=")
+Output(2,5,θ)
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"INT P=")
+Output(3,7,θ)
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"MEAN=")
+Output(4,6,θ)
+Q→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"EX2=")
+Output(5,5,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"VAR=")
+Output(6,5,θ)
+R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"MED=")
+Output(7,5,θ)
+Output(8,1,"VAR=EX2-MEAN^2")
+Output(9,1,"PDF=A+B*X")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"CDF AND INTERVAL")
+Output(2,1,"G(X)=A*X+B*X^2/2")
+Output(3,1,"CDF=G(C)-G(L)")
+L→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"CUT=")
+Output(4,5,θ)
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"CDF=")
+Output(5,5,θ)
+Output(6,1,"P=F(HIGH)-F(LOW)")
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"P=")
+Output(7,3,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"EXPECTED VALUE")
+Output(2,1,"A*X^2/2+B*X^3/3")
+Output(3,1,"UPPER MINUS LOW")
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"MEAN=")
+Output(4,6,θ)
+Output(5,1,"ON FULL SUPPORT")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"SECOND MOMENT")
+Output(2,1,"A*X^3/3+B*X^4/4")
+Q→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"EX2=")
+Output(3,5,θ)
+Output(4,1,"VAR=EX2-MEAN^2")
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"VAR=")
+Output(5,5,θ)
+Output(6,1,"CDF(MEDIAN)=.5")
+R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"MED=")
+Output(7,5,θ)
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

@@ -1,0 +1,19 @@
+name: LING285 recording sources
+on:
+  push:
+    branches: [preview/ling285-stimuli]
+    paths: ['ling285/stimuli/authoring/fetch_sources.py']
+permissions:
+  contents: write
+jobs:
+  sources:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: python ling285/stimuli/authoring/fetch_sources.py
+      - run: |
+          git config user.name "Study Studio media"
+          git config user.email "actions@users.noreply.github.com"
+          git add ling285/stimuli/sources
+          git commit -m "Record primary phonetics source mappings"
+          git push

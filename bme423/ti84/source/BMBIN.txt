@@ -1,0 +1,86 @@
+ClrHome
+Float
+Normal
+Real
+Input "EVENT COUNT",B
+If not(B≥0 and B=int(B))
+Then
+ClrHome
+Disp "CHECK EVENT COUNT"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "TOTAL N",N
+If not(N≥1 and N=int(N) and N≥B)
+Then
+ClrHome
+Disp "CHECK TOTAL N"
+Disp "CHECK INPUTS"
+Stop
+End
+B/N→P
+P*(1-P)→S
+√(S)→D
+√(S/N)→E
+ClrHome
+Output(1,1,"BINARY RESULTS")
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"PHAT=")
+Output(2,6,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"VAR X=")
+Output(3,7,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"SD X=")
+Output(4,6,θ)
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"SE P=")
+Output(5,6,θ)
+Output(6,1,"PHAT=EVENTS/N")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"WORK")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"EVENTS=")
+Output(2,8,θ)
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"N=")
+Output(3,3,θ)
+Output(4,1,"VAR=P*(1-P)")
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"VAR=")
+Output(5,5,θ)
+Output(6,1,"SE=SQRT(VAR/N)")
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"SE=")
+Output(7,4,θ)
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

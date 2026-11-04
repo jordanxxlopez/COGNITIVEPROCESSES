@@ -1,0 +1,45 @@
+/* Scoped to the timer while it is inside the expanded reader. */
+.timer[data-reader-timer] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 100%;
+  margin: 3px 0 3px auto;
+  padding: 7px 9px;
+  font-size: 12px;
+  color: var(--ink);
+}
+.timer[data-reader-timer] #duration {
+  flex: none;
+  order: initial;
+  width: auto;
+  min-width: 0;
+  max-width: 95px;
+  padding: 5px 7px;
+  font-size: 12px;
+}
+.timer[data-reader-timer] button {
+  min-height: 30px;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+.timer[data-reader-timer] #clock {
+  flex: none;
+  font-size: 21px;
+  font-variant-numeric: tabular-nums;
+}
+.expanded-toolbar .timer[data-reader-timer] {
+  --panel: #173822;
+  --ink: #edf6e9;
+  --border: #719476;
+  --soft: #234b2c;
+  --accent: #a7d4a0;
+}
+@media (max-width: 760px) {
+  .timer[data-reader-timer] { flex-basis: 100%; width: 100%; margin-left: 0; }
+  .timer[data-reader-timer] #timerMode { display: inline; }
+}
+@media print { .timer[data-reader-timer] { display: none !important; } }

@@ -1,0 +1,199 @@
+ClrHome
+Float
+Normal
+Real
+Input "G1 EVENT",B
+If not(B≥0 and B=int(B))
+Then
+ClrHome
+Disp "CHECK G1 EVENT"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "G1 NO EVENT",C
+If not(C≥0 and C=int(C))
+Then
+ClrHome
+Disp "CHECK G1 NO EVENT"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "G2 EVENT",F
+If not(F≥0 and F=int(F))
+Then
+ClrHome
+Disp "CHECK G2 EVENT"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "G2 NO EVENT",G
+If not(G≥0 and G=int(G))
+Then
+ClrHome
+Disp "CHECK G2 NO EVENT"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "ALPHA .05 ETC",A
+If not(A>0 and A<1)
+Then
+ClrHome
+Disp "CHECK ALPHA .05 ETC"
+Disp "CHECK INPUTS"
+Stop
+End
+If not((B+C)*(F+G)*(B+F)*(C+G)>0)
+Then
+ClrHome
+Disp "ZERO MARGIN"
+Disp "CHECK INPUTS"
+Stop
+End
+{B,C,F,G}→ʟBMO
+B+C+F+G→N
+{(B+C)*(B+F)/N,(B+C)*(C+G)/N,(F+G)*(B+F)/N,(F+G)*(C+G)/N}→ʟBME
+(abs(ʟBMO-ʟBME)-.5)→ʟBMT
+For(I,1,4)
+max(0,ʟBMT(I))^2/ʟBME(I)→ʟBMT(I)
+End
+sum(ʟBMT)→T
+1→D
+χ²cdf(T,1ᴇ99,1)→P
+ClrHome
+Output(1,1,"YATES 2X2 CHI2")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CHI2=")
+Output(2,6,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"DF=")
+Output(3,4,θ)
+If P<.000001
+Then
+Output(4,1,"P<0.000001")
+Else
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"P=")
+Output(4,3,θ)
+End
+If P<A
+Then
+Output(5,1,"REJECT H0")
+Else
+Output(5,1,"DO NOT REJECT")
+End
+Output(6,1,"E=ROW*COL/TOTAL")
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"TOTAL=")
+Output(7,7,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+For(I,1,4)
+ClrHome
+Output(1,1,"CELL WORK")
+I→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CELL=")
+Output(2,6,θ)
+ʟBMO(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"O=")
+Output(3,3,θ)
+ʟBME(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"E=")
+Output(4,3,θ)
+max(0,abs(ʟBMO(I)-ʟBME(I))-.5)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"GAP=")
+Output(5,5,θ)
+Output(6,1,"TERM=GAP^2/E")
+ʟBMT(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"TERM=")
+Output(7,6,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+End
+0→U
+1→V
+While χ²cdf(0,V,D)<1-(A)
+2*V→V
+If not(V<1ᴇ12)
+Then
+ClrHome
+Disp "LEVEL TOO SMALL"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+For(J,1,42)
+(U+V)/2→W
+If χ²cdf(0,W,D)<1-(A)
+Then
+W→U
+Else
+W→V
+End
+End
+(U+V)/2→C
+ClrHome
+Output(1,1,"ADD ALL 4 TERMS")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"CHI2=")
+Output(2,6,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"DF=")
+Output(3,4,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"CRIT=")
+Output(4,6,θ)
+If P<A
+Then
+Output(5,1,"REJECT H0")
+Else
+Output(5,1,"DO NOT REJECT")
+End
+If min(ʟBME)<5
+Then
+Output(6,1,"SMALL E:CHECK")
+Else
+Output(6,1,"YATES INCLUDED")
+End
+Output(7,1,"H0:EQUAL RATES")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

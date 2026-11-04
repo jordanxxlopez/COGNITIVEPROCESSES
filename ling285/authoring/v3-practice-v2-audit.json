@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "edition": "2026-10-20-transcripts-v3-practice-v2",
+  "status": "passed",
+  "kind": "Final structural checks and file bindings. Editorial scope is recorded separately, not inferred from these checks.",
+  "scope": {
+    "sourcePages": 86,
+    "newQuestions": 200,
+    "perLecture": 50,
+    "MCQPerLecture": 25,
+    "writtenPerLecture": 25,
+    "currentTest": 100,
+    "currentTestSplit": [
+      50,
+      50
+    ]
+  },
+  "preservation": {
+    "olderBoundFilesUnchanged": true,
+    "checkedFiles": 21,
+    "baseDataSha256": "f1316545ef0167572ad8b29d250416045801e5a82a1fd8daefe176ff8eb650bd",
+    "originalQuestionCount": 292,
+    "oldFileBindings": [
+      {
+        "file": "authoring/build_transcripts_v2.py",
+        "sha256": "e94fcaf1e7a87c456ed22d6fd78e2cca80bb740bdf22fe87707b0aae8089e8a4"
+      },
+      {
+        "file": "authoring/extracted/lecture11-native.json",
+        "sha256": "32aea5b7402d2a0679ef25335b93ca58ab25c4661214d167edf7efd15acdc6f7"
+      },
+      {
+        "file": "authoring/extracted/lecture12-native.json",
+        "sha256": "39456876615b6b82768eb493e520e553e26133f6baa6f7127a98a7c386a450d4"
+      },
+      {
+        "file": "authoring/extracted/lecture13-native.json",
+        "sha256": "f4d2016ae42dcf228ce0c76653726161ba9ff46ad50ad475a518cbbbfc7ecb42"
+      },
+      {
+        "file": "authoring/extracted/lecture14-native.json",
+        "sha256": "6726245ddc8647560915b4bf0d2fb69b55762b3f52389964c6d0919b72e706e2"
+      },
+      {
+        "file": "authoring/module2-lecture11-practice.json",
+        "sha256": "eed81124c23934da165aa20803bcf3131dc2f807822797faa0d42543aa413312"
+      },
+      {
+        "file": "authoring/module2-lecture12-practice.json",
+        "sha256": "f71e6f782b7a9a9c7e5d910798f5b64b7a973b6cf29ebd812f0f1202ffaabe32"
+      },
+      {
+        "file": "authoring/module2-lecture13-practice.json",
+        "sha256": "684ed733770cf0bdcff113d04d0fd71334df3fb3251ad65a2eea08ebce8cb4ba"
+      },
+      {
+        "file": "authoring/module2-lecture14-practice.json",
+        "sha256": "0c760b62d2b1bc020b1cbe496d677c428007b3f157aa4bd2215f740ce33c6888"
+      },
+      {
+        "file": "authoring/practice-guide.json",
+        "sha256": "064023983dd81b891608eec81de3c8cd5ffe29b0daaaa3452e5c39382d06ae80"
+      },
+      {
+        "file": "authoring/practice-mcq.json",
+        "sha256": "a88ee90e4949826442603b41e818f9eaf6f7750ef7d2746789459e213460ae2f"
+      },
+      {
+        "file": "authoring/teaching-later.json",
+        "sha256": "4d554c7a3eaeec642200c73966839021fd8625d878e3fc80b14c69d21fdf81f9"
+      },
+      {
+        "file": "authoring/teaching-lecture14.json",
+        "sha256": "2454d235e6ceebd66dcdc84ba615c55c72b2132df26203445af48e60e7217ad8"
+      },
+      {
+        "file": "authoring/transcripts-v2-coverage.json",
+        "sha256": "5a3a3e7c37a8925d3bfb39c2bea30ecb6bf6b1bbf901ccdd899513b83af944ee"
+      },
+      {
+        "file": "authoring/transcripts-v2-style-model.json",
+        "sha256": "f97197cba353ea0be7edafebab66e94746cb101f90fba7814221e734d3f97b50"
+      },
+      {
+        "file": "data.json",
+        "sha256": "f1316545ef0167572ad8b29d250416045801e5a82a1fd8daefe176ff8eb650bd"
+      },
+      {
+        "file": "sources/lecture11.pptx",
+        "sha256": "478201e4288ec30c978f740bee4331b431d7c21550359888168c71c922dda85d"
+      },
+      {
+        "file": "sources/lecture12.pptx",
+        "sha256": "18ff0855624cbb9866d4bd0c4a61de0bcfd214b5577181d64e6c95f46ea01cbf"
+      },
+      {
+        "file": "sources/lecture13.pptx",
+        "sha256": "3914b2c587ab34843fbf038ded4df05fd4c93df477af07e9ba2d7f0ccd9acca9"
+      },
+      {
+        "file": "sources/lecture14.pptx",
+        "sha256": "11d3e4f8d97150e680b617ce4be8e62cde790874f48a83a9d351775bbd796d2e"
+      },
+      {
+        "file": "transcripts-v2.json",
+        "sha256": "fc5d06fea9aef64667bc9385422e334b931636fcf1e91f4e1cbed09fd4d0e75c"
+      }
+    ]
+  },
+  "editorialReview": "authoring/v3-practice-v2-review.json",
+  "rootReview": {
+    "teachingRead": [
+      "lecture11",
+      "lecture12",
+      "lecture14"
+    ],
+    "additionalTeachingReview": "Lecture 13 independently checked by practice_core against native source; see editorial record.",
+    "questionBanks": "All L13/L14 prompts, answers, and MCQ choices read; L11/L12 independently reviewed by practice_core. All four banks also have author self-review.",
+    "wordingChanges": [
+      "Replaced unnecessary excursion with movement in the new teaching and question banks.",
+      "Removed backtick markup unsupported by the transcript renderer."
+    ],
+    "writingGoal": "Plain complete explanations; no target reduction in length."
+  },
+  "verification": {
+    "contentAndPreservation": "27 existing content checks plus 3 additional edition/model checks passed.",
+    "browser": "Transcript switching across notes/readers/search/speech, fixed test sizes, saved sessions per edition, answer isolation, legacy migration, export/import, missing-file recovery, Module I, mobile layout and existing app/module smoke checks passed.",
+    "visual": "Desktop lecture notes in light and dark modes and desktop/mobile practice reviewed."
+  },
+  "files": [
+    {
+      "file": "app.js",
+      "sha256": "cad578180f9fc3052981b214748b0a1333fe0fb83185c1437a4ffe64a470111d"
+    },
+    {
+      "file": "index.html",
+      "sha256": "e7713139ea6ddf178da3cb776df00b8eb178a3264d4bd30a30d5cea6c2c3779b"
+    },
+    {
+      "file": "style.css",
+      "sha256": "9cf51e338f42e9816002d9db47481b52029db9e01667aa701e7a33366ca49c8a"
+    },
+    {
+      "file": "transcripts-v3.json",
+      "sha256": "4003f83e723d2fca50be20c8a28cc008e8efca94a671324da5403681aaca6b2b"
+    },
+    {
+      "file": "practice-v2.json",
+      "sha256": "bab3c51d0a37d62f36f1d75236026384afd5e9173ff3ca2ab1248064d8c96676"
+    },
+    {
+      "file": "authoring/build_transcripts_v3.py",
+      "sha256": "80ec34399c6a2884de4895c4f0ab0d16b9de7987f4a6be0247a1fabe6c2f793a"
+    },
+    {
+      "file": "authoring/build_practice_v2.py",
+      "sha256": "7326993bb46c9e3f3fa08ec138b631f11cb22c63efafe2c3f5de136144f2dcb0"
+    },
+    {
+      "file": "authoring/audit_editions_v3.py",
+      "sha256": "16c4bb429089387b0cda54c01e4f1e5890f320a9f9c0eb4802adb6bb5faf523d"
+    },
+    {
+      "file": "authoring/exam-style-evidence-v2.json",
+      "sha256": "b0d9e30b4d15df25f3682a42348834c41738e9f4a40c930fa49ca6a3ba7f8757"
+    },
+    {
+      "file": "authoring/transcripts-v3-writing-reference.json",
+      "sha256": "2a7e7a87e9c7a8f29cf7d0c1d42accd422bac34ff1e2ea200714283b4ace1710"
+    },
+    {
+      "file": "authoring/transcripts-v3-coverage.json",
+      "sha256": "c33609af3ff87ccd681663dab44f07cff4f37f9be5f8681e8ce105b87be6f8c6"
+    },
+    {
+      "file": "authoring/practice-v2-model.json",
+      "sha256": "8ba6364b138c57d2319d1ea302fe393ce8fb60cf3d8bc7831b9f7cdcc40a33c3"
+    },
+    {
+      "file": "authoring/v3-practice-v2-review.json",
+      "sha256": "30aee578831f6e6d7eaafd46755e11595d29206fe4196856adc1cd41524af9b9"
+    },
+    {
+      "file": "authoring/teaching-v3-lecture11.json",
+      "sha256": "774280345d80a6b5c05f130cd607388a67a118dbf276945e602afd8dfbcc0740"
+    },
+    {
+      "file": "authoring/teaching-v3-lecture12.json",
+      "sha256": "60e2553336a4b5bc0f0a519e64ff77c956edb7249fbf416ee420e5005ac978e9"
+    },
+    {
+      "file": "authoring/teaching-v3-lecture13.json",
+      "sha256": "b04aa992ead1e4664e007910016c5b1a90edede0c58ebb4ba9bb4ffebc911e02"
+    },
+    {
+      "file": "authoring/teaching-v3-lecture14.json",
+      "sha256": "39d580ccd63af501efc7ad77fa998223046920a69b87f3a39633619ee575d687"
+    },
+    {
+      "file": "authoring/practice-v2-lecture11.json",
+      "sha256": "a83faca7f024332696a796e19114e9a062dba97bef76c5f764eae4891d4796ae"
+    },
+    {
+      "file": "authoring/practice-v2-lecture12.json",
+      "sha256": "a3e6797383c9dbab4267e503be37a5a7e9fec790d863504ad0d684790c2db6cc"
+    },
+    {
+      "file": "authoring/practice-v2-lecture13.json",
+      "sha256": "03b77950e89e103c2a054310a1b5ee5a11f2361eabaf7182ff562774de697d5b"
+    },
+    {
+      "file": "authoring/practice-v2-lecture14.json",
+      "sha256": "f9eec9b8926cecd7f9d29b26fc45914bef0f2412953a54e9dd712ce193988c06"
+    }
+  ],
+  "limitations": [
+    "The study ranking is not validated against an unseen exam.",
+    "The editorial record distinguishes independent checks from author self-review."
+  ]
+}

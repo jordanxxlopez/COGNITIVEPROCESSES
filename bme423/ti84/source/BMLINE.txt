@@ -1,0 +1,109 @@
+ClrHome
+Float
+Normal
+Real
+Input "COEFF A",B
+Input "COEFF B",C
+Input "SHIFT C",K
+Input "MEAN X",M
+Input "MEAN Y",N
+Input "VAR X NOT SD",F
+If not(F≥0)
+Then
+ClrHome
+Disp "CHECK VAR X NOT SD"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "VAR Y NOT SD",G
+If not(G≥0)
+Then
+ClrHome
+Disp "CHECK VAR Y NOT SD"
+Disp "CHECK INPUTS"
+Stop
+End
+B*M+C*N+K→H
+B^2*F+C^2*G→S
+ClrHome
+Output(1,1,"Z=A*X+B*Y+C")
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"MEAN=")
+Output(2,6,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"VAR=")
+Output(3,5,θ)
+√(S)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"SD=")
+Output(4,4,θ)
+Output(5,1,"INDEPENDENT X,Y")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"MEAN WORK")
+Output(2,1,"A*MX+B*MY+C")
+B*M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"A*MX=")
+Output(3,6,θ)
+C*N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"B*MY=")
+Output(4,6,θ)
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"SHIFT=")
+Output(5,7,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"TOTAL=")
+Output(6,7,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"VARIANCE WORK")
+Output(2,1,"A^2*VX+B^2*VY")
+B^2*F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"TERM1=")
+Output(3,7,θ)
+C^2*G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"TERM2=")
+Output(4,7,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"TOTAL=")
+Output(5,7,θ)
+Output(6,1,"SHIFT ADDS 0 VAR")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

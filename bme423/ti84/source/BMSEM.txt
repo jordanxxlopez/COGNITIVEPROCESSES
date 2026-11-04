@@ -1,0 +1,60 @@
+ClrHome
+Float
+Normal
+Real
+Input "INDIVIDUAL SD",S
+If not(S≥0)
+Then
+ClrHome
+Disp "CHECK INDIVIDUAL SD"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "SAMPLE SIZE N",N
+If not(N≥1 and N=int(N))
+Then
+ClrHome
+Disp "CHECK SAMPLE SIZE N"
+Disp "CHECK INPUTS"
+Stop
+End
+S/√(N)→H
+S^2/N→B
+ClrHome
+Output(1,1,"STANDARD ERROR")
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"SEM=")
+Output(2,5,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"VAR MEAN=")
+Output(3,10,θ)
+Output(4,1,"SEM=SD/SQRT(N)")
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"SD=")
+Output(5,4,θ)
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"N=")
+Output(6,3,θ)
+√(N)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"SQRT N=")
+Output(7,8,θ)
+Output(8,1,"SD IS INDIVIDUAL")
+Output(9,1,"SEM IS MEAN SPREAD")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

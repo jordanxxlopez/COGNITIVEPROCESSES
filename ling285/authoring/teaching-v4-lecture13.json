@@ -1,0 +1,688 @@
+{
+  "lecture13": {
+    "title": "Masses and Springs in Speech Production · Source and Filter",
+    "sections": [
+      {
+        "page": 1,
+        "title": "Masses and Springs in Speech Production",
+        "kind": "title",
+        "teaching": [],
+        "concepts": [],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": []
+        }
+      },
+      {
+        "page": 2,
+        "title": "Mass, stiffness, position, and frequency",
+        "kind": "concept",
+        "teaching": [
+          "**Increasing mass lowers frequency** when stiffness is unchanged, because the moving load becomes harder to turn around. **Increasing stiffness raises frequency** when mass is unchanged, because the stronger restoring force changes the movement more quickly.",
+          "Location matters within a larger system. Added mass strongly affects a mode where the material moves a lot. Extra stiffness matters where neighboring parts stretch or compress strongly. Neighbors can travel together without greatly changing their separation, so strong movement and strong compression are different. Their largest regions alternate in these ideal patterns.",
+          "A normal mode is a coordinated movement that repeats at one frequency. Its parts can move different distances or in opposite directions while still belonging to that pattern. A local change therefore has to be compared with the whole mode’s shape. The same added mass can be important where one mode moves strongly and relatively unimportant where another hardly moves. A point that is a node in one pattern is not necessarily stationary in other patterns or in their combined movement.",
+          "Each movable mass supplies one independent chain mode, generally without exact harmonic spacing. Endpoint conditions select different continuous patterns: fixed–fixed systems fit whole half-waves; fixed–free systems fit odd quarter-waves. The mode’s shape and the changed region together determine how strongly a local mass or stiffness change affects its frequency."
+        ],
+        "concepts": [
+          "Mass increases inertia and lowers frequency at fixed stiffness",
+          "Greater restoring stiffness raises frequency at fixed mass",
+          "Independent normal modes in finite chains",
+          "Local displacement versus local stretching/compression",
+          "Mode-dependent perturbations",
+          "Ideal fixed–fixed harmonics and fixed–free odd resonances",
+          "Finite discrete frequencies and nonuniform vocal tracts differ from ideal series"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": []
+        }
+      },
+      {
+        "page": 3,
+        "title": "One more mass, one more mode",
+        "kind": "media",
+        "teaching": [
+          "Each movable mass adds one independent **normal mode** in the direction being modeled. The chains with one through six masses therefore have one through six modes. The empty spaces mark modes that smaller chains do not have, giving 21 displayed comparisons altogether.",
+          "Within a chain, **Mode 1** has the broadest pattern, with the masses moving together. Higher modes introduce more groups moving in opposite directions. The connections undergo stronger relative changes, and the patterns repeat faster. Fixed endpoints remain still; a stationary mass inside one mode does not mean the whole chain has stopped.",
+          "Within each chain, the masses and connections are equal and both outer supports remain fixed. Changing the mode changes how those same parts move in relation to one another. A higher pattern has more reversals across the chain, so neighboring parts pull against one another in more places. This explains the faster restoring pattern without claiming that a higher mode uses smaller masses or physically stronger replacement springs. Mode number identifies the pattern, not the identity of a particular moving mass.",
+          "Colors identify mode number, while each row identifies the number of masses. The largest movements are scaled to the same displayed size, so height cannot establish which mode is faster. **Amplitude** is movement size; frequency is repetition rate. These separate-mass chains generally lack the exact whole-number frequency spacing of an ideal continuous string."
+        ],
+        "concepts": [
+          "One independent mode per moving degree of freedom",
+          "Rows contain one through six masses",
+          "Lowest-mode coordinated displacement",
+          "Higher-mode spatial reversals and frequency ordering",
+          "Fixed boundaries",
+          "Equal masses/coupling and matched display amplitudes",
+          "Discrete mode ratios are generally noninteger"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 4,
+        "title": "Why fixed–fixed frequencies are integer multiples",
+        "kind": "media",
+        "teaching": [
+          "Both ends of a **fixed–fixed string** must remain stationary, so they are **nodes**. The simplest standing pattern fits one half-wave between them, with one broad moving region. Mode 2 fits two half-waves and adds a stationary middle point; its two regions move oppositely.",
+          "Modes 3, 4, and 5 fit three, four, and five half-waves into the same length. More sections make the wavelength shorter. At the same wave speed, shorter wavelengths give faster repetition, producing whole-number multiples of the **fundamental**, the lowest frequency. Both odd and even multiples satisfy the two fixed endpoints.",
+          "The numbered sections identify places within the standing-wave shape. Every mode has a first section, but only higher modes have the additional ones. These sections stay in place while the string moves up and down; they do not count elapsed cycles or travel sequentially along the string."
+        ],
+        "concepts": [
+          "Displacement nodes at both endpoints",
+          "Half-wave packets",
+          "One through five packets",
+          "Internal nodes and opposite neighboring motion",
+          "Fixed wave speed and shorter wavelengths",
+          "Consecutive integer harmonics",
+          "Standing pattern versus traveling packet"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback.",
+            "The flattened export overlaps reveal content or omits video; individual original overlays and native notes establish the intended stages."
+          ]
+        }
+      },
+      {
+        "page": 5,
+        "title": "A fixed–fixed string combines harmonics",
+        "kind": "media",
+        "teaching": [
+          "A **fixed–fixed string** stays still at both endpoints, which are nodes. Mode 1 fits one half-wave into its length; Modes 2–5 fit two through five. More half-waves mean shorter wavelengths and faster repetition at the same wave speed. These frequencies are consecutive **harmonics**, including odd and even multiples of the fundamental.",
+          "The same string can contain all five modes. Their movements add at each position, reinforcing or canceling as their cycles progress. The combined outline changes even though the component patterns remain regular. Playback slows all modes equally, preserving their relative rates.",
+          "The displayed components are 100, 200, 300, 400, and 500 Hz. These labels identify their repetition rates, whereas the half-wave count identifies their shapes along the string. As the mixture moves, a position can become nearly flat through cancellation and later move strongly as the contributions change. This does not mean that a component frequency has been destroyed and replaced. The measured motion still combines the original patterns, with each contribution depending on how that particular mode moves the pickup location.",
+          "The marked **pickup** measures movement at one point. Its spectrum places frequency horizontally and amplitude vertically. The five peaks correspond to the five components. Their heights are equal because the mode strengths were chosen to give equal contributions at this pickup; another position can give different heights. Equal peaks do not mean equal movement everywhere."
+        ],
+        "concepts": [
+          "Modal superposition",
+          "Local reinforcement and cancellation",
+          "Fundamental and consecutive harmonics",
+          "Uniform slow playback",
+          "Spectrum frequency position versus amplitude height",
+          "Pickup-dependent modal contribution",
+          "Equalized measured peak amplitudes"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 6,
+        "title": "A membrane combines spatial modes",
+        "kind": "media",
+        "teaching": [
+          "A **membrane** moves across a surface with fixed outside edges. Its two-number labels count moving regions along the two surface directions. (1,1) has one broad region; (2,1) and (1,2) divide it in different directions; (2,2) makes four regions; and (3,1) makes three along one direction. Neighboring regions move oppositely, separated by stationary nodes.",
+          "The five movements add at every point. Contributions can reinforce or cancel, producing one changing surface. The combined panel uses a smaller vertical scale, so its apparent height cannot be compared directly with the individual panels.",
+          "A node stays still throughout that mode’s cycle. A moving region can also pass briefly through the resting surface, but that momentary crossing does not make it a node. The distinction matters when reading an animation from one frame. Follow the same region as it rises, crosses rest, and falls while its neighbor moves oppositely. The two numbers describe divisions across the surface, rather than two separate frequencies, two different membranes, or a count of cycles that have already elapsed.",
+          "The pickup records one location. The spectrum gives frequency horizontally and relative amplitude vertically. The component strengths were chosen to make equal peaks there. Frequencies of 100, 200, 300, 400, and 500 Hz were **assigned for the illustration**, rather than calculated as this rectangle’s natural resonances. Their equal spacing demonstrates combining frequencies; it does not establish that every membrane naturally has harmonic spacing."
+        ],
+        "concepts": [
+          "Two-dimensional membrane mode divisions",
+          "Fixed outer edges and internal nodal lines",
+          "Phase reversal",
+          "Pointwise modal addition",
+          "Reduced combined display scale",
+          "Pickup spectrum and engineered equal peaks",
+          "Intentionally assigned frequencies are not natural eigenvalues"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 7,
+        "title": "One fixed end and one free end",
+        "kind": "media",
+        "teaching": [
+          "A **fixed–free system** must have a node at the fixed end and an **antinode**, a place of maximum movement, at the free end. The simplest pattern fits one quarter-wave. The next patterns fit three, five, and seven quarter-waves, giving the first, third, fifth, and seventh harmonics. Mode 2 is therefore the third harmonic, not the second.",
+          "Odd quarter-wave counts preserve the different endpoint conditions. Even counts would put a node at the free end. Higher patterns fit shorter wavelengths into the same length and repeat faster. The mixture’s spectrum gives frequency horizontally and amplitude vertically. Equal excitation produces equal peaks at the free-end pickup; uniformly slowed playback preserves the relative rates.",
+          "An antinode is a place with the greatest movement over a cycle, not a point that stays at its farthest position. It passes through rest and moves to the other side while the fixed endpoint remains still. The illustrated frequencies are 100, 300, 500, and 700 Hz. The second, third, and fourth allowed modes are consequently the third, fifth, and seventh harmonics. Counting allowed shapes and comparing their frequencies answer different questions, even though both descriptions use numbers.",
+          "The fixed–fixed and fixed–free examples were **separately tuned** to the same fundamental. Changing only one endpoint while keeping length and wave speed unchanged would halve the fundamental. Matching displayed labels therefore does not isolate the endpoint’s effect."
+        ],
+        "concepts": [
+          "Fixed node and free antinode",
+          "Quarter-wave fundamental",
+          "Odd harmonics and mode/harmonic indexing",
+          "Free-end measurement and equal excitation",
+          "Slow playback",
+          "Separately tuned examples",
+          "Unchanged length/wave-speed boundary comparison halves fundamental"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 8,
+        "title": "Why fixed–free frequencies are odd multiples",
+        "kind": "media",
+        "teaching": [
+          "A **quarter-wave** joins a node to an antinode. The fixed bottom must be a node, while the free top must be an antinode. One quarter-wave satisfies both conditions. Adding a pair of quarter-waves preserves them while adding an internal reversal.",
+          "The four allowed patterns contain **one, three, five, and seven quarter-waves** in the same length. More sections mean shorter wavelengths and faster vibration at unchanged wave speed. The second mode is the third harmonic, the third is the fifth, and the fourth is the seventh. An even quarter-wave count would finish at a node, giving the wrong condition at the free top.",
+          "The numbered pieces count sections of these shapes. Only higher modes contain the extra pieces, and only the fourth contains sections six and seven. The pieces mark positions in a standing pattern while the material moves back and forth."
+        ],
+        "concepts": [
+          "Node–antinode quarter-wave units",
+          "One/three/five/seven packet counts",
+          "Adding two packets preserves endpoints",
+          "Odd harmonic indexing",
+          "Ordered packet coverage",
+          "Spatial divisions versus elapsed cycles"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback.",
+            "The flattened export overlaps reveal content or omits video; individual original overlays and native notes establish the intended stages."
+          ]
+        }
+      },
+      {
+        "page": 9,
+        "title": "Count quarter-waves from the boundary conditions",
+        "kind": "concept",
+        "teaching": [
+          "Read each **fixed–free pattern** from its endpoint conditions. The fixed bottom is a node, and the free top is an antinode. Each change from a node to an antinode, or back again, spans a quarter-wave. The four patterns contain one, three, five, and seven such sections.",
+          "Fitting more sections into the same length shortens the wavelength. With wave speed unchanged, the higher patterns therefore repeat faster. The numbered divisions describe the standing shape; they remain at fixed positions as the material moves.",
+          "**Mode number** counts the allowed patterns in order. **Harmonic number** compares frequency with the fundamental. They differ here because only odd quarter-wave counts meet both endpoint conditions. The fourth allowed mode is consequently the seventh harmonic, rather than the fourth."
+        ],
+        "concepts": [
+          "Infer quarter-wave count from boundary conditions",
+          "Fixed–free allowed patterns",
+          "Wavelength versus frequency at fixed wave speed",
+          "Mode number differs from harmonic number"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": []
+        }
+      },
+      {
+        "page": 10,
+        "title": "Air in a fixed–free tube has modes",
+        "kind": "media",
+        "teaching": [
+          "Air has **inertia**, so moving air tends to keep moving. Compression produces a restoring effect, represented by the model’s spring-like links. The air elements move **longitudinally**, back and forth along the tube, rather than traveling steadily from the glottis to the lips.",
+          "The glottal end is treated as fixed and the open lips as free. **Mode 1 is F1-like**, the lowest resonance pattern; **Mode 2 is F2-like**, with another internal reversal. In the ideal uniform reference, Mode 2 repeats three times as fast. A changed tract shape can alter that simple relationship.",
+          "A resonance pattern describes the air system’s coordinated back-and-forth movement. F1 and F2 do not identify two separate streams or two positions from which sound is emitted. At one location, neighboring elements may move together while their gaps hardly change. At another, the gaps may repeatedly close and open. A constriction acts on both modes at the same physical place, but their different movement and compression patterns give the changed region a different role in each.",
+          "The /a/ marker is about one-third of the distance from the glottis, /i/ about two-thirds, and /u/ at the lips. Each marks the same place in both modes. Added mass matters where a mode moves strongly; increased springiness matters where it compresses strongly. Comparing these local roles explains why one narrowing can affect F1 and F2 differently."
+        ],
+        "concepts": [
+          "Air inertia and compression restoring response",
+          "Closed glottal and open lip idealization",
+          "Longitudinal displacement and reversal",
+          "Compression versus rarefaction",
+          "F1-like and F2-like air modes",
+          "Ideal uniform-tube odd relation",
+          "One-third /a/,two-thirds /i/,lip /u/ markers"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback.",
+            "The original media crops part of its right-side heading; teaching relies on the readable original labels and native text without reconstructing missing wording."
+          ]
+        }
+      },
+      {
+        "page": 11,
+        "title": "Compression and motion alternate in an air column",
+        "kind": "media",
+        "teaching": [
+          "**Air movement** concerns how far an element travels; **compression** concerns changes in the gaps between neighbors. Elements can travel together with little change in spacing. Elsewhere, neighbors can approach and separate strongly around a point whose own movement is small. Smaller gaps mean compression, while wider gaps mean rarefaction, or more spread-out air.",
+          "The moving **Schwa** row supplies the uniform-tube reference. The F1, F2, and F3 rows separate resonance patterns of that same air column. The closed left end restricts movement and the open right end allows it. Higher modes fit more alternating regions of movement and compression into the tube.",
+          "Compression changes supply a restoring response because crowded air pushes back toward its usual spacing. The moving air also has inertia, so it continues moving as that restoring response changes. Together they support repeated motion around the usual positions. A region with large movement can carry substantial moving mass without being the region that squeezes most strongly. A region with large spacing changes can supply strong restoring action without its central element traveling far. These observations connect the visible circles and gaps with the mass-and-spring explanation.",
+          "Following an element over a cycle reveals movement; following neighboring gaps reveals compression. Added mass matters most where movement is strong, while added stiffness matters most where compression changes strongly. These locations differ between modes. The rows represent different resonances, not separate air streams."
+        ],
+        "concepts": [
+          "Displacement versus spacing changes",
+          "Moving Schwa reference",
+          "Isolated F1/F2/F3 modes",
+          "Longitudinal reversal",
+          "Closed-end constraint and open-end motion",
+          "Alternation of displacement and compression",
+          "Higher-mode spatial complexity"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 12,
+        "title": "Vowel shape locates a constriction",
+        "kind": "concept",
+        "teaching": [
+          "**Tongue height** and **front–back position** describe vowel articulation. The vowel in **dean** is high and front, with its marked narrowing about two-thirds of the way from the glottis to the lips. **Dune** is high and back, with a highlighted narrowing at the lips. Sharing tongue height does not give them the same tract shape.",
+          "**Dan** is low and front; **Don** is low and back, with its narrowing marked about one-third of the distance from the glottis. **Done** is central and labeled “No constriction,” providing the relatively unconstricted reference. Dan has no numbered narrowing position.",
+          "The labels describe related but different features. High versus low concerns tongue height; front versus back concerns its position along the mouth; the marked fraction concerns distance along the air path. A shared label such as high therefore leaves other shape differences open. Dean and dune can both be high while narrowing different places, and those places can play different roles in the second resonance pattern. Describing articulation identifies what changed physically; comparing the air modes explains what that change does to the sound.",
+          "These fractions locate changes along the air passage, starting at the glottis. A narrowing changes the local mass-like and spring-like effects. Its acoustic consequence depends on how each mode moves and compresses that region, connecting vowel shape with the direction of a formant change."
+        ],
+        "concepts": [
+          "Tongue height and front/back/central position",
+          "Dean high-front two-thirds constriction",
+          "Dune high-back lip constriction",
+          "Dan low-front example",
+          "Don low-back one-third constriction",
+          "Done central relatively unconstricted reference",
+          "Articulation versus acoustic mode participation"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": []
+        }
+      },
+      {
+        "page": 13,
+        "title": "Why a constriction can raise one formant and lower another",
+        "kind": "concept",
+        "teaching": [
+          "A **constriction** narrows the air passage. In the lecture’s account, bunching air increases its local density and mass-like effect. Compression also increases resistance to further compression, producing a stronger spring-like effect.",
+          "The **mass effect** matters where the air moves strongly. A greater moving load is harder to turn around, tending to lower frequency. The **stiffness effect** matters where the air compresses and expands strongly. A stronger return toward usual spacing makes the vibration faster, tending to raise frequency.",
+          "To distinguish the two effects, follow one air element and then compare it with its neighbors through the cycle. Its travel shows the movement involved in carrying the local load. The closing and opening gaps show compression and the restoring response. Neither a tongue-height label nor one frozen frame gives both pieces of information. The constriction’s position identifies where the properties changed, and the mode’s movement identifies how that change contributes to the particular resonance being considered.",
+          "These effects do not automatically cancel. Neighbors can move together with little spacing change, or compress strongly near a point with little movement. Each mode places these regions differently. The same narrowing can therefore act mainly through mass for one formant and mainly through stiffness for another, explaining opposite frequency changes without reversing either physical rule."
+        ],
+        "concepts": [
+          "Constriction geometry",
+          "Effective inertia/local density and restoring stiffness",
+          "Opposing qualitative frequency effects",
+          "Motion/compression distributed differently in space",
+          "Mode-dependent local sensitivity",
+          "No automatic cancellation"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": []
+        }
+      },
+      {
+        "page": 14,
+        "title": "Compression and motion alternate in an air column",
+        "kind": "media",
+        "teaching": [
+          "**Air movement** concerns how far an element travels; **compression** concerns changes in the gaps between neighbors. Elements can travel together with little change in spacing. Elsewhere, neighbors can approach and separate strongly around a point whose own movement is small. Smaller gaps mean compression, while wider gaps mean rarefaction, or more spread-out air.",
+          "The moving **Schwa** row supplies the uniform-tube reference. The F1, F2, and F3 rows separate resonance patterns of that same air column. The closed left end restricts movement and the open right end allows it. Higher modes fit more alternating regions of movement and compression into the tube.",
+          "Compression changes supply a restoring response because crowded air pushes back toward its usual spacing. The moving air also has inertia, so it continues moving as that restoring response changes. Together they support repeated motion around the usual positions. A region with large movement can carry substantial moving mass without being the region that squeezes most strongly. A region with large spacing changes can supply strong restoring action without its central element traveling far. These observations connect the visible circles and gaps with the mass-and-spring explanation.",
+          "Following an element over a cycle reveals movement; following neighboring gaps reveals compression. Added mass matters most where movement is strong, while added stiffness matters most where compression changes strongly. These locations differ between modes. The rows represent different resonances, not separate air streams."
+        ],
+        "concepts": [
+          "Follow particle excursion to identify local inertia participation",
+          "Follow neighboring spacing to identify compression",
+          "Compare one location across F1/F2/F3",
+          "Moving Schwa reference",
+          "Longitudinal reversal and boundary conditions"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 15,
+        "title": "Air in a fixed–free tube has modes",
+        "kind": "media",
+        "teaching": [
+          "Air has **inertia**, so moving air tends to keep moving. Compression produces a restoring effect, represented by the model’s spring-like links. The air elements move **longitudinally**, back and forth along the tube, rather than traveling steadily from the glottis to the lips.",
+          "The glottal end is treated as fixed and the open lips as free. **Mode 1 is F1-like**, the lowest resonance pattern; **Mode 2 is F2-like**, with another internal reversal. In the ideal uniform reference, Mode 2 repeats three times as fast. A changed tract shape can alter that simple relationship.",
+          "A resonance pattern describes the air system’s coordinated back-and-forth movement. F1 and F2 do not identify two separate streams or two positions from which sound is emitted. At one location, neighboring elements may move together while their gaps hardly change. At another, the gaps may repeatedly close and open. A constriction acts on both modes at the same physical place, but their different movement and compression patterns give the changed region a different role in each.",
+          "The /a/ marker is about one-third of the distance from the glottis, /i/ about two-thirds, and /u/ at the lips. Each marks the same place in both modes. Added mass matters where a mode moves strongly; increased springiness matters where it compresses strongly. Comparing these local roles explains why one narrowing can affect F1 and F2 differently."
+        ],
+        "concepts": [
+          "Same air column supports multiple modes",
+          "Free-end motion and higher-mode internal alternation",
+          "Common tract markers across modes",
+          "Local displacement versus compression predicts perturbation direction",
+          "Ideal uniform-tube reference"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback.",
+            "The original media crops part of its right-side heading; teaching relies on the readable original labels and native text without reconstructing missing wording."
+          ]
+        }
+      },
+      {
+        "page": 16,
+        "title": "/u/ loads the moving lip end",
+        "kind": "media",
+        "teaching": [
+          "The **/u/ model** adds loading near the open lips, the free end of the air column. Both the F1-like and F2-like patterns have substantial movement there. The enlarged elements represent greater **effective mass**, not heavier individual air molecules.",
+          "More moving mass is harder to speed up and reverse. Where this effect dominates, each cycle takes longer and frequency falls. Because both modes move strongly near the lips, the result is **F1 down and F2 down** relative to the uniform reference.",
+          "The two rows make it possible to compare the same lip location across different resonance patterns. Both have strong movement there, even though their internal arrangements differ. Increasing the load therefore slows both without requiring that their shapes or frequencies become identical. F1 remains the lower resonance and F2 the next one. The important comparison is the direction of each change relative to its own uniform reference, not whether the two frequencies have become equal or whether all parts of the tract move equally.",
+          "The shared direction follows from the changed location’s role in both patterns. It is not a rule that every constriction lowers every resonance. The air continues moving back and forth around its usual positions; the larger elements identify the load involved in that movement."
+        ],
+        "concepts": [
+          "Lip/free-end loading",
+          "Inertia participation at motion antinodes",
+          "Motion dominates both modes",
+          "F1 down and F2 down",
+          "Qualitative prediction versus measured numerical shift"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 17,
+        "title": "/i/ has opposite effects on F1 and F2",
+        "kind": "media",
+        "teaching": [
+          "The **/i/ constriction** lies near the front, about two-thirds of the way from the glottis to the lips. It changes the same physical region in both modes, but that region contributes differently to their movement and compression.",
+          "For **Mode 1**, movement makes the **mass effect** more important. The extra effective load is harder to reverse, slowing the cycle and lowering F1. For **Mode 2**, compression makes the **springiness effect** more important. A stronger restoring response speeds the cycle and raises F2.",
+          "The marked region is not moved to a new location when the mode changes. What changes is the role of that same region within the coordinated movement. Neighbors moving together make extra moving load important; neighbors repeatedly approaching and separating make the restoring response important. Comparing both rows prevents the narrowing from being treated as a single instruction to raise or lower every frequency. The two arrows summarize separate causal explanations, one involving slower movement of added mass and the other a faster return from compression.",
+          "The result is **lower F1 and higher F2** relative to the uniform reference. Increasing mass-like and spring-like effects together does not mean they cancel. Their importance depends on how each mode uses the narrowed region, so one constriction can move the two resonances in opposite directions."
+        ],
+        "concepts": [
+          "Two-thirds/front constriction",
+          "Same position with different modal roles",
+          "F1 motion/inertia dominance",
+          "F2 compression/stiffness dominance",
+          "F1 down and F2 up",
+          "Qualitative model versus independent experiment"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback.",
+            "The original media crops part of its right-side heading; teaching relies on the readable original labels and native text without reconstructing missing wording."
+          ]
+        }
+      },
+      {
+        "page": 18,
+        "title": "/a/ reverses the two effects",
+        "kind": "media",
+        "teaching": [
+          "The **/a/ constriction** lies farther back, about one-third of the way from the glottis to the lips. This changes a different part of each mode from the front /i/ narrowing, while the basic effects of mass and stiffness remain the same.",
+          "For **Mode 1**, compression is important at the changed region. Greater springiness supplies a stronger restoring response, making the cycle faster and raising F1. For **Mode 2**, movement matters more there. Greater effective mass makes the moving air harder to reverse, slowing the cycle and lowering F2.",
+          "The narrowing affects the same back location in both rows, but the rows describe different coordinated movements of the air. A region can have little movement of its own while its neighbors repeatedly squeeze together and spread apart. It can also move strongly with relatively little spacing change. Those two roles explain why the spring-like effect dominates the first mode here while the moving-load effect dominates the second. Changing constriction location changes which role is most important; it does not change what mass or stiffness means.",
+          "The result is **higher F1 and lower F2**, reversing the /i/ pattern. The explanation connects constriction location with local movement or compression, then with the effect on frequency. The directions describe the model’s predicted change rather than numerical measurements of its size."
+        ],
+        "concepts": [
+          "One-third/back constriction",
+          "F1 restoring-stiffness dominance",
+          "F2 motion/inertia dominance",
+          "F1 up and F2 down",
+          "Location changes dominance without changing physical rules",
+          "Schematic prediction versus measured magnitude"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback.",
+            "The original media crops part of its right-side heading; teaching relies on the readable original labels and native text without reconstructing missing wording."
+          ]
+        }
+      },
+      {
+        "page": 19,
+        "title": "Compression and motion alternate in an air column",
+        "kind": "media",
+        "teaching": [
+          "**Air movement** concerns how far an element travels; **compression** concerns changes in the gaps between neighbors. Elements can travel together with little change in spacing. Elsewhere, neighbors can approach and separate strongly around a point whose own movement is small. Smaller gaps mean compression, while wider gaps mean rarefaction, or more spread-out air.",
+          "The moving **Schwa** row supplies the uniform-tube reference. The F1, F2, and F3 rows separate resonance patterns of that same air column. The closed left end restricts movement and the open right end allows it. Higher modes fit more alternating regions of movement and compression into the tube.",
+          "Compression changes supply a restoring response because crowded air pushes back toward its usual spacing. The moving air also has inertia, so it continues moving as that restoring response changes. Together they support repeated motion around the usual positions. A region with large movement can carry substantial moving mass without being the region that squeezes most strongly. A region with large spacing changes can supply strong restoring action without its central element traveling far. These observations connect the visible circles and gaps with the mass-and-spring explanation.",
+          "Following an element over a cycle reveals movement; following neighboring gaps reveals compression. Added mass matters most where movement is strong, while added stiffness matters most where compression changes strongly. These locations differ between modes. The rows represent different resonances, not separate air streams."
+        ],
+        "concepts": [
+          "F1/F2/F3 are resonances of one air system",
+          "Longitudinal reversal",
+          "Compression/rarefaction",
+          "Moving Schwa reference",
+          "Boundary-dependent spatial patterns",
+          "Local perturbation affects modes differently"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "Animation review samples phases rather than inspecting every encoded frame or claiming continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 20,
+        "title": "The source supplies harmonics and the filter shapes their heights",
+        "kind": "concept",
+        "teaching": [
+          "**Source–filter theory** separates vocal-fold vibration from the vocal tract’s shaping of that sound. The repeating source has a fundamental frequency, **F0**, and harmonics at whole-number multiples. F0 sets the spacing between the source lines. The harmonics are 100 Hz apart and extend to 4000 Hz; their equal heights simplify the example.",
+          "The tract acts as a **filter**, strengthening harmonics near its resonances, or **formants**, and weakening others. In this comparison, the source frequency positions stay fixed while their relative heights change. The broad pattern of strengths is the **spectral envelope**. The schwa example labels four resonance regions, F1–F4, with its strongest group at low frequency.",
+          "Frequency runs horizontally and amplitude vertically. A taller line is stronger, not necessarily higher in frequency. **F0 is source repetition; F1 is the lowest tract resonance**. The vowel still contains many harmonics, rather than just four tones. The illustrated resonance values describe this comparison, not fixed values for every speaker."
+        ],
+        "concepts": [
+          "Glottal source versus vocal tract filter",
+          "F0/source repetition and harmonic spacing",
+          "Frequency versus amplitude dimensions",
+          "Filter changes relative harmonic strengths",
+          "Spectral envelope and formants",
+          "Schwa F1 through F4 regions",
+          "Schematic source heights and speaker-dependent resonances"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": []
+        }
+      },
+      {
+        "page": 21,
+        "title": "The /i/ filter keeps F1 low and F2 high",
+        "kind": "concept",
+        "teaching": [
+          "The **/i/ filter** has a low first formant and a high second formant. Its first strong harmonic group is near the low-frequency end; the next is much farther right, with a weak region between them. Further groups occur around F3 and F4.",
+          "The regularly spaced source harmonics stay in the same positions. Changing the tract changes their strengths, making the filter’s effect visible separately from source repetition. The front-constriction account connects this low-F1, high-F2 pattern with the different roles of movement and compression in the two modes.",
+          "A line’s horizontal position gives **frequency**, while its height gives **amplitude**. A tall low-frequency line remains low in frequency even if a higher-frequency line is weaker. The narrow harmonic lines sample the broad formant regions. These illustrated values describe one /i/ comparison, rather than an identical numerical pattern for every speaker."
+        ],
+        "concepts": [
+          "Low F1/high F2 /i/ envelope",
+          "Same source spacing isolates filter",
+          "Front constriction connects to modal sensitivity",
+          "Frequency position versus amplitude prominence",
+          "F3/F4 higher resonances",
+          "Formant envelope versus individual harmonic lines",
+          "Schematic values are not universal"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": []
+        }
+      },
+      {
+        "page": 22,
+        "title": "The /a/ filter raises F1 and lowers F2",
+        "kind": "concept",
+        "teaching": [
+          "Compared with /i/, the **/a/ filter raises F1 and lowers F2**, bringing the first two resonance regions closer together. Groups around F3 and F4 remain higher in frequency. The same regularly spaced source can therefore produce a different vowel pattern when the tract changes.",
+          "The filter changes the broad pattern of harmonic **strengths**. Moving a formant changes the favored frequency region horizontally; changing a harmonic’s amplitude changes its height. Those are different changes to read in the spectrum.",
+          "A formant can lie **between two source harmonics**. For example, the marked 750 Hz target lies between lines at 700 and 800 Hz. Nearby supplied harmonics can become stronger without creating a new source line exactly at the target. A formant names the tract’s resonance region; a harmonic names a component of the repeating source. The drawing’s values are specific to this simplified comparison."
+        ],
+        "concepts": [
+          "High F1/lower F2 /a/ envelope",
+          "Closer first two resonant regions",
+          "Fixed source frequencies versus changed envelope",
+          "Formants can lie between harmonics",
+          "Harmonic sampling of resonances",
+          "F3/F4 higher regions",
+          "Speaker-dependent schematic formants"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": []
+        }
+      },
+      {
+        "page": 23,
+        "title": "A spectrogram places successive spectra in time",
+        "kind": "concept",
+        "teaching": [
+          "A **spectrum** describes frequency components during one short slice of sound. The successive spectra follow /i/ and then /a/. In each spectrum, frequency runs horizontally and amplitude vertically.",
+          "A **spectrogram** places these slices in time from left to right, with frequency running upward. A peak near the right of a spectrum therefore becomes a mark higher in its spectrogram strip. Moving right in the spectrogram means a later time, rather than a higher frequency.",
+          "In this grayscale display, **black means high amplitude, gray medium, and white low**. Peak height becomes darkness, while vertical position gives frequency. A darkening band grows stronger; a rising band moves to a higher frequency. During the /i/ to /a/ transition, **F1 rises and F2 falls**, bringing them closer together. Higher bands remain above them with smaller changes. The display follows changing tract resonances through time."
+        ],
+        "concepts": [
+          "Spectrum at one moment versus spectrogram across time",
+          "Successive /i/ and /a/ spectral examples",
+          "Horizontal spectral frequency becomes vertical spectrogram frequency",
+          "Horizontal spectrogram time",
+          "Amplitude becomes grayscale darkness",
+          "Black/high gray/medium white/low amplitude",
+          "F1 rises/F2 falls during transition",
+          "Frequency position differs from amplitude strength"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "The flattened export overlaps reveal content or omits video; individual original overlays and native notes establish the intended stages."
+          ]
+        }
+      },
+      {
+        "page": 24,
+        "title": "Reflection prompt",
+        "kind": "logistics",
+        "teaching": [],
+        "concepts": [],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": []
+        }
+      },
+      {
+        "page": 25,
+        "title": "Wide harmonic spacing makes formants harder to identify",
+        "kind": "concept",
+        "teaching": [
+          "Closely spaced **source harmonics** provide many samples around each formant. Their heights trace the rise and fall of the vocal tract’s response, making the broad resonance regions easier to identify.",
+          "Increasing **F0** widens the harmonic gaps. With the filter held constant, fewer source frequencies now describe each resonance, and a formant can fall between them. With 100 Hz spacing, the example’s F1 at 300 Hz and F2 at 2100 Hz can shape many harmonics. The 250 Hz sequence supplies fewer nearby components. A single strong line may be near a formant without marking its exact center. Several nearby lines provide a clearer picture of that region’s shape.",
+          "The three spectra and corresponding spectrograms show this change from closely spaced components to more isolated traces. The **toddler** sequence starts at 400 Hz and the **soprano** sequence at 800 Hz. Their higher-pitched voices leave wider gaps, making formants harder to read. The tract does not have to lose a resonance or shift it upward. The source has changed which frequencies are available to reveal the same filter."
+        ],
+        "concepts": [
+          "F0 determines harmonic spacing",
+          "Harmonics sample filter envelope",
+          "Dense samples clarify formants",
+          "Wide spacing creates sparse sampling and off-harmonic formants",
+          "Fixed filter across three source pitches",
+          "Spectra versus spectrogram appearance",
+          "Toddler and soprano high-pitch examples",
+          "Pitch change alone does not establish formant shift"
+        ],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": [
+            "The comparison GIF contains one 640×360 frame with limited small-label resolution; its main labels, relationships, and conditions were checked against native text."
+          ]
+        }
+      },
+      {
+        "page": 26,
+        "title": "Homework 4 lab reminder",
+        "kind": "logistics",
+        "teaching": [],
+        "concepts": [],
+        "review": {
+          "method": "Edited against native source text, source-visible labels, and the already reviewed original visual/media inventory. Mechanisms checked against the corresponding source-aligned Version 3 entry; prior source limitations retained.",
+          "originalSourceReview": "authoring/teaching-v3-lecture13.json",
+          "sourceReviewReused": true,
+          "newMediaGenerated": false,
+          "limitations": []
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+ClrHome
+Float
+Normal
+Real
+Input "HOW MANY",N
+If not(N≥2 and N=int(N) and N≤200)
+Then
+ClrHome
+Disp "CHECK HOW MANY"
+Disp "CHECK INPUTS"
+Stop
+End
+N→dim(ʟBMX)
+For(I,1,N)
+ClrHome
+Disp "ITEM",I
+Input "VALUE",X
+X→ʟBMX(I)
+End
+Input "PERCENT 0..100",P
+If not(P≥0 and P≤100)
+Then
+ClrHome
+Disp "CHECK PERCENT 0..100"
+Disp "CHECK INPUTS"
+Stop
+End
+SortA(ʟBMX)
+1+P*(N-1)/100→R
+int(R)→I
+R-I→F
+ʟBMX(I)→B
+B→T
+If I<N
+B+F*(ʟBMX(I+1)-B)→T
+1+.25*(N-1)→R
+int(R)→I
+ʟBMX(I)+(R-I)*(ʟBMX(I+1)-ʟBMX(I))→C
+1+.75*(N-1)→R
+int(R)→I
+ʟBMX(I)+(R-I)*(ʟBMX(I+1)-ʟBMX(I))→D
+median(ʟBMX)→M
+1+P*(N-1)/100→R
+int(R)→I
+ClrHome
+Output(1,1,"PERCENTILE")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ANS=")
+Output(2,5,θ)
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"PCT=")
+Output(3,5,θ)
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"MED=")
+Output(4,5,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"Q1=")
+Output(5,4,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"Q3=")
+Output(6,4,θ)
+D-C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"IQR=")
+Output(7,5,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"FIND RANK")
+Output(2,1,"R=1+P*(N-1)/100")
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"N=")
+Output(3,3,θ)
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"P=")
+Output(4,3,θ)
+R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"R=")
+Output(5,3,θ)
+I→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"I=")
+Output(6,3,θ)
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"FRAC=")
+Output(7,6,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"INTERPOLATE")
+Output(2,1,"LOW+F*(HI-LOW)")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"LOW=")
+Output(3,5,θ)
+If I<N
+Then
+Output(4,1,"HAS NEXT VALUE")
+Else
+Output(4,1,"AT LAST VALUE")
+End
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"ANS=")
+Output(5,5,θ)
+Output(6,1,"IQR=Q3-Q1")
+D-C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"IQR=")
+Output(7,5,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+B→H
+If I<N
+ʟBMX(I+1)→H
+ClrHome
+Output(1,1,"BRACKETS AND GAP")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"LOW=")
+Output(2,5,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"HIGH=")
+Output(3,6,θ)
+H-B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"GAP=")
+Output(4,5,θ)
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"FRAC=")
+Output(5,6,θ)
+B+F*(H-B)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"ANS=")
+Output(6,5,θ)
+ʟBMX(N)-ʟBMX(1)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"RANGE=")
+Output(7,7,θ)
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

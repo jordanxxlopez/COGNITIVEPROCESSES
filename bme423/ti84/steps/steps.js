@@ -1,0 +1,8 @@
+'use strict';
+try{const s=JSON.parse(localStorage.getItem('bme423-studio-v1')||'{}');if(s.theme)document.documentElement.dataset.mode=s.theme}catch{}
+const $=s=>document.querySelector(s);
+let data,selected='BMONE',page=0;
+function render(){const g=data.guides.find(g=>g.name===selected),s=data.screens[g.pages[page]];$('#lcd').textContent=s.rows.map(r=>r.padEnd(26)).join('\n');$('#count').textContent=`${page+1} / ${g.pages.length}`;$('#prev').disabled=page===0;$('#next').disabled=page===g.pages.length-1;$('#route').textContent='On the calculator: BMSTEPS → '+route(g.label).join(' → ')}
+function route(label){const queue=[['M0',[]]],seen=new Set();while(queue.length){const [menu,path]=queue.shift();if(seen.has(menu))continue;seen.add(menu);for(const item of data.menus[menu].items){if(item.destination===label)return[...path,item.title];if(data.menus[item.destination])queue.push([item.destination,[...path,item.title]])}}return[]}
+$('#method').addEventListener('change',e=>{selected=e.target.value;page=0;render()});$('#prev').addEventListener('click',()=>{if(page>0){page--;render()}});$('#next').addEventListener('click',()=>{const g=data.guides.find(g=>g.name===selected);if(page<g.pages.length-1){page++;render()}});
+fetch('manifest.json?v=ti84-steps').then(r=>{if(!r.ok)throw Error('Guide unavailable');return r.json()}).then(m=>{data=m;const p=new URLSearchParams(location.search).get('method');if(m.guides.some(g=>g.name===p))selected=p;$('#method').replaceChildren(...m.guides.map(g=>{const o=document.createElement('option');o.value=g.name;o.textContent=g.title+' · '+g.name;return o}));$('#method').value=selected;render()}).catch(()=>{$('#route').textContent='Download BMSTEPS above. Reload this page to see its screen previews.'});

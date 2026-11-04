@@ -1,0 +1,12 @@
+.module-i-archive{margin-top:24px;border-top:1px solid var(--line);padding-top:16px}.module-i-archive>summary{cursor:pointer;font-weight:750;padding:10px 0;line-height:1.5}.m2-table{max-width:100%;overflow-x:auto;margin:16px 0}.m2-table table{width:100%;border-collapse:collapse;font-size:.94rem}.m2-table th,.m2-table td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.m2-table th{background:var(--soft);font-weight:750}.m2-answer{border:1px solid var(--line);border-radius:12px;padding:18px;margin:20px 0}.m2-answer label{display:block;font-weight:650}.m2-answer input{display:block;margin:9px 0 15px;width:min(100%,350px);padding:10px;font:inherit;border:1px solid var(--line);border-radius:8px;color:var(--ink);background:var(--paper)}.m2-case-prompt ol{padding-left:25px;line-height:1.8}.m2-case-prompt li{margin-bottom:12px}.m2-hypotheses{padding:12px 18px;border-left:3px solid var(--accent);margin:18px 0}.m2-conclusion{padding:15px;border-left:3px solid var(--accent);background:var(--soft)}.m2-scope p{margin-bottom:0}.viewer-pair .m2-table{font-size:.9em}@media(max-width:650px){.m2-table th,.m2-table td{padding:8px}.m2-answer{padding:12px}.m2-hypotheses{padding:10px}.row select#m2Case{max-width:100%}}@media print{.module-i-archive,.m2-answer button{display:none}.m2-table{overflow:visible}.m2-table table{font-size:10pt}}
+
+.m2-scope{padding:16px 20px;margin:18px 0;border:1px solid var(--line);border-radius:12px;background:linear-gradient(115deg,var(--header-start),var(--header-end))}
+
+@media(max-width:700px){
+ html:has(body.module-ii.expanded){height:100dvh;overflow:hidden}
+ body.module-ii.expanded{position:fixed;inset:0;height:100dvh;max-height:100dvh}
+ .module-ii.expanded #content{overflow:hidden}
+ .module-ii.expanded .viewer-pair{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;flex:1;height:auto;min-height:0;max-height:none;width:100%;overflow:auto}
+ .module-ii.expanded .viewer-pair>.transcript{flex:0 0 auto;width:100%;height:auto;min-height:220px;max-height:50dvh;overflow:auto}
+ .module-ii.expanded .viewer-pair>.slide-wrap{flex:0 0 auto;width:100%;position:static;margin:0}
+}

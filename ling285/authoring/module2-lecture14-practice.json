@@ -1,0 +1,1761 @@
+{
+  "edition": "2026-10-20-v4",
+  "lectureId": "lecture14",
+  "questions": [
+    {
+      "id": "m14-mcq-001",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "The membrane display separates five spatial patterns and then adds them in a combined panel. What does the combined panel represent?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The highest-frequency pattern replaces the slower patterns, which serve as earlier stages before that final mode begins.",
+          "feedback": "The component panels represent simultaneous contributions, not stages that disappear in sequence."
+        },
+        {
+          "id": "b",
+          "text": "The five panels describe separate pieces of material that are joined into a larger membrane with five different physical boundaries.",
+          "feedback": "The display separates modes of the modeled membrane rather than joining separate pieces of material."
+        },
+        {
+          "id": "c",
+          "text": "Contributions from the five displayed motions coexist in one surface, rather than each component being replaced by a new single pattern.",
+          "feedback": "The combined surface is the sum of the illustrated motions. Their spatial patterns and frequency contributions remain relevant to the mixture; the separate panels are a way to examine the components."
+        },
+        {
+          "id": "d",
+          "text": "The five frequencies are averaged into one frequency, so the combined surface has no remaining contribution from the individual modes.",
+          "feedback": "Adding motions does not replace their frequencies with their numerical average."
+        }
+      ],
+      "correctOption": "c",
+      "answer": "The combined surface is the sum of the illustrated motions. Their spatial patterns and frequency contributions remain relevant to the mixture; the separate panels are a way to examine the components.",
+      "rubric": [
+        "Identify superposed contributions to one surface.",
+        "Distinguish components from sequential replacement or separate physical objects."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 2
+        }
+      ],
+      "topic": "Spatial modes and their mixture",
+      "pattern": "interpretation",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-002",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "Why does adding two quarter-wave packets preserve the type of allowed pattern in the fixed–free demonstration?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It makes both endpoints displacement nodes, which is how the free end maintains its largest movement in this comparison.",
+          "feedback": "A free-end antinode is not a displacement node."
+        },
+        {
+          "id": "b",
+          "text": "It changes the fixed end into a free end on the next mode, allowing the boundary conditions to alternate as the packet count grows.",
+          "feedback": "The boundary conditions remain fixed at the bottom and free at the top throughout the sequence."
+        },
+        {
+          "id": "c",
+          "text": "It reduces the number of spatial reversals while leaving the frequency higher, because extra packets make the wavelength longer within the same length.",
+          "feedback": "More packets in the same length shorten the spatial pattern rather than lengthen it."
+        },
+        {
+          "id": "d",
+          "text": "It adds a half-wave while retaining a displacement node at the fixed end and an antinode at the free end.",
+          "feedback": "The allowed shapes fit odd numbers of quarter-waves between their different endpoint conditions. Adding two quarters preserves the node-to-antinode arrangement rather than exchanging the free condition for another node."
+        }
+      ],
+      "correctOption": "d",
+      "answer": "The allowed shapes fit odd numbers of quarter-waves between their different endpoint conditions. Adding two quarters preserves the node-to-antinode arrangement rather than exchanging the free condition for another node.",
+      "rubric": [
+        "Use the different node and antinode end conditions.",
+        "Explain why an added half-wave preserves them."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 4
+        }
+      ],
+      "topic": "Fixed–free boundary reasoning",
+      "pattern": "cause-effect",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-003",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "In the air-column rows, how does strong back-and-forth motion differ from strong compression and rarefaction?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Motion tracks the total airflow leaving the lips, while compression describes that same net transport at the glottis, so local spacing is not needed to compare modes.",
+          "feedback": "The display compares local oscillatory excursion and spacing changes, not two measurements of net transport at the endpoints."
+        },
+        {
+          "id": "b",
+          "text": "Motion and compression mark the same local quantity, so the point with the largest displacement is also the point of greatest compression in each row.",
+          "feedback": "The source distinguishes regions of strong motion from regions of strong compression change."
+        },
+        {
+          "id": "c",
+          "text": "Motion tracks how far the air elements move, while compression and rarefaction track changes in their spacing; the strongest regions differ within a mode.",
+          "feedback": "The air elements move longitudinally. Their displacement and their changing separation are related but distinct quantities, which explains why mass and stiffness perturbations can matter at different places."
+        },
+        {
+          "id": "d",
+          "text": "Motion describes transverse travel across the tube, while compression describes the longitudinal motion of a separate stream of air underneath it.",
+          "feedback": "The modeled air elements move longitudinally in the same air system."
+        }
+      ],
+      "correctOption": "c",
+      "answer": "The air elements move longitudinally. Their displacement and their changing separation are related but distinct quantities, which explains why mass and stiffness perturbations can matter at different places.",
+      "rubric": [
+        "Separate displacement from changing particle spacing.",
+        "Connect their differing local patterns to the model."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 6
+        }
+      ],
+      "topic": "Air motion and compression",
+      "pattern": "distinction",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-004",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "You want a local change that tends to raise a mode’s frequency where air compression is strong but displacement is small. Which comparison best follows the lecture’s mechanism?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increase effective stiffness in that region while controlling other changes, because that mode strongly deforms the region without moving much mass there.",
+          "feedback": "Stiffness matters where local compression or stretching is strong. Small displacement reduces the moving-mass contribution, so isolating the stiffness change tests the proposed upward effect."
+        },
+        {
+          "id": "b",
+          "text": "Increase local mass and stiffness together, then attribute the whole frequency change to mass without examining the mode’s motion and compression.",
+          "feedback": "The mode’s local pattern is needed to separate the two contributions."
+        },
+        {
+          "id": "c",
+          "text": "Add effective mass at that low-displacement point, because a nearly stationary region supplies the strongest moving-inertia effect on the mode.",
+          "feedback": "The mass effect is strongest where the mode moves substantially."
+        },
+        {
+          "id": "d",
+          "text": "Increase stiffness at a region with little compression and assign any frequency difference to that intervention without checking other changes.",
+          "feedback": "A low-deformation region is less sensitive to this stiffness mechanism, and other changes would confound the test."
+        }
+      ],
+      "correctOption": "a",
+      "answer": "Stiffness matters where local compression or stretching is strong. Small displacement reduces the moving-mass contribution, so isolating the stiffness change tests the proposed upward effect.",
+      "rubric": [
+        "Identify strong local deformation as stiffness sensitivity.",
+        "Hold other changes controlled before attributing a frequency shift."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 9
+        }
+      ],
+      "topic": "Choosing a local perturbation",
+      "pattern": "design",
+      "examReviewRefs": [
+        3
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-005",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "In the illustrated /u/ model, both first modes move strongly near the loaded lip end. Which result fits the stated comparison?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Both rise because the enlarged drawn masses indicate increased restoring stiffness rather than a change in moving inertia.",
+          "feedback": "The demonstration explicitly uses added mass loading as its dominant explanation."
+        },
+        {
+          "id": "b",
+          "text": "F1 rises while F2 falls, because free-end loading puts the first mode at a strong compression region but leaves the second moving freely.",
+          "feedback": "The /u/ illustration describes motion dominance for both modes."
+        },
+        {
+          "id": "c",
+          "text": "The added effective mass lowers both F1 and F2, because it participates strongly in the motion of both modes at that location.",
+          "feedback": "The source identifies motion dominance for each mode near the free lip end. Added mass therefore slows both illustrated mode responses rather than imposing the same conclusion at every tract location."
+        },
+        {
+          "id": "d",
+          "text": "F1 falls while F2 rises, because the second mode’s higher frequency makes any added mass act like a stiffness increase.",
+          "feedback": "A higher mode number does not turn the added mass into stiffness. The stated second-mode shift is downward."
+        }
+      ],
+      "correctOption": "c",
+      "answer": "The source identifies motion dominance for each mode near the free lip end. Added mass therefore slows both illustrated mode responses rather than imposing the same conclusion at every tract location.",
+      "rubric": [
+        "Use the lip-end location and strong motion of both modes.",
+        "Predict downward shifts of both resonances."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 11
+        }
+      ],
+      "topic": "The /u/ loading comparison",
+      "pattern": "prediction",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-006",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "At the same illustrated /i/ constriction, F1 is lowered while F2 is raised. Which diagnosis explains the pair without changing the mass-and-stiffness rules?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The two shifts indicate different constriction positions were used for the two rows, because one position cannot have two local mode patterns.",
+          "feedback": "The source explicitly compares the same region within two different modes."
+        },
+        {
+          "id": "b",
+          "text": "Motion makes the mass effect dominant for the first mode, while deformation makes the stiffness effect dominant for the second mode.",
+          "feedback": "A shared physical location can participate differently in different modes. The first-mode mass effect lowers frequency, while the second-mode stiffness effect raises it."
+        },
+        {
+          "id": "c",
+          "text": "Mass is dominant in both modes, but its sign changes for the higher mode, turning added inertia into a faster oscillation.",
+          "feedback": "The physical direction of the mass effect does not reverse with mode number."
+        },
+        {
+          "id": "d",
+          "text": "The first-mode resonance has not changed; a lower source harmonic has simply become stronger, while increased stiffness raises the second resonance.",
+          "feedback": "The model predicts a lowered first-mode resonance through mass loading, not merely an amplitude switch among unchanged source components."
+        }
+      ],
+      "correctOption": "b",
+      "answer": "A shared physical location can participate differently in different modes. The first-mode mass effect lowers frequency, while the second-mode stiffness effect raises it.",
+      "rubric": [
+        "Identify the mass-dominated first-mode response.",
+        "Identify the stiffness-dominated second-mode response at the same position."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 12
+        }
+      ],
+      "topic": "Opposite local effects in /i/",
+      "pattern": "interpretation",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-007",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "Moving from the illustrated /i/ location toward the /a/ location reverses the first-two-formant shift pattern. What changes in the explanation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The local motion and compression relationships change across the modes, so the first mode becomes stiffness-dominated and the second mass-dominated.",
+          "feedback": "At the /a/ comparison location, stiffness raises F1 while effective mass lowers F2. The reversal concerns where the constriction intersects each mode, not a reversal of the underlying physical rules."
+        },
+        {
+          "id": "b",
+          "text": "The source harmonic spacing changes while the tract is held fixed, so both formant shifts arise from a new vocal-fold repetition rate.",
+          "feedback": "The constriction comparison changes the filter geometry rather than merely the source spacing."
+        },
+        {
+          "id": "c",
+          "text": "The mass rule changes so added mass raises the first mode, while the stiffness rule changes so stronger compression lowers the second.",
+          "feedback": "The mass and stiffness directions stay the same. Their local dominance changes."
+        },
+        {
+          "id": "d",
+          "text": "The first and second formant names swap, making the numerical pattern look reversed even though no resonance changes its frequency.",
+          "feedback": "The source keeps the mode and formant order and predicts actual directional shifts in the model."
+        }
+      ],
+      "correctOption": "a",
+      "answer": "At the /a/ comparison location, stiffness raises F1 while effective mass lowers F2. The reversal concerns where the constriction intersects each mode, not a reversal of the underlying physical rules.",
+      "rubric": [
+        "Connect the changed location with different local mode sensitivities.",
+        "Retain stiffness-up and mass-down frequency directions."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 13
+        },
+        {
+          "collection": "lecture14",
+          "page": 12
+        }
+      ],
+      "topic": "Contrasting constriction locations",
+      "pattern": "application",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-008",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "The vowel chart places dean and dune high, yet their constriction examples differ. Which explanation preserves both facts?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Shared height means the two examples have the same constriction location, with front and back serving as alternative spellings for that high position.",
+          "feedback": "Height and frontness/backness are separate dimensions in the source chart."
+        },
+        {
+          "id": "b",
+          "text": "The chart places dean low and dune high, so the difference follows from height without needing any distinction in constriction location.",
+          "feedback": "Both are in the high region of the source chart."
+        },
+        {
+          "id": "c",
+          "text": "The chart distinguishes the two vowels by voicing, with the lip constriction switching vocal-fold vibration off in the dune example.",
+          "feedback": "The source chart concerns vowel configuration and constriction location, not this voicing contrast."
+        },
+        {
+          "id": "d",
+          "text": "Height is one dimension; the front–back and lip locations also differ, so high vowels can perturb the second mode in different ways.",
+          "feedback": "The chart places dean high and front with a constriction near two-thirds from the glottis, while dune involves the lip end. Shared height does not specify the full location or its mode effects."
+        }
+      ],
+      "correctOption": "d",
+      "answer": "The chart places dean high and front with a constriction near two-thirds from the glottis, while dune involves the lip end. Shared height does not specify the full location or its mode effects.",
+      "rubric": [
+        "Separate height from the complete spatial configuration.",
+        "Retain the different constriction locations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 8
+        }
+      ],
+      "topic": "Articulatory coordinates and mode effects",
+      "pattern": "distinction",
+      "examReviewRefs": [
+        14
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-009",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "In this lecture’s filter schematic, /u/ and the row labeled /i/ or /I/ both include a 300 Hz first target. Which additional observation helps distinguish the shown filters?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The /i/ or /I/ row has the lower second target, because the shared first target forces the next target to lie closer to it than in /u/.",
+          "feedback": "The displayed values show the /i/ or /I/ next target higher, at 2200 Hz."
+        },
+        {
+          "id": "b",
+          "text": "Their higher targets differ: /u/ includes 1000 and 2000 Hz, while the /i/ or /I/ row shows its next target at 2200 Hz.",
+          "feedback": "A shared first resonance is a partial similarity rather than a complete filter match. The higher labeled targets distinguish the two schematic examples on this page."
+        },
+        {
+          "id": "c",
+          "text": "The shared 300 Hz target makes their filters equivalent, so the remaining lines must describe different source pitches rather than resonances.",
+          "feedback": "The remaining lines are part of the different filter examples, not source-F0 labels."
+        },
+        {
+          "id": "d",
+          "text": "The /u/ target at 1000 Hz identifies its source F0, while the /i/ or /I/ target at 2200 Hz identifies a different source F0.",
+          "feedback": "These labels are filter resonance targets, not the source harmonic spacing."
+        }
+      ],
+      "correctOption": "b",
+      "answer": "A shared first resonance is a partial similarity rather than a complete filter match. The higher labeled targets distinguish the two schematic examples on this page.",
+      "rubric": [
+        "Treat the shared first target as a partial match.",
+        "Read the higher resonance labels in the actual schematic."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 16
+        }
+      ],
+      "topic": "Interpreting the lecture’s filter targets",
+      "pattern": "interpretation",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-010",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "The source spectra are shown in the same frequency window for F0 values of 100, 250, and 350 Hz. Why are fewer source components visible as F0 increases?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Higher F0 changes the vowel filter into one with fewer resonances, removing source components before they reach the vocal tract.",
+          "feedback": "These are source spectra before filtering. Their spacing is not caused by a changed vowel filter."
+        },
+        {
+          "id": "b",
+          "text": "Higher F0 lowers the horizontal frequency scale, so the same set of component positions is hidden by a different plotted range.",
+          "feedback": "The displayed frequency window is shared; harmonic spacing changes within it."
+        },
+        {
+          "id": "c",
+          "text": "Higher F0 widens the spacing between successive harmonics, so fewer of them fit inside the same displayed frequency interval.",
+          "feedback": "The source comparison changes repetition rate and therefore harmonic spacing. The frequency window remains fixed, so a wider spacing reduces the number of displayed samples."
+        },
+        {
+          "id": "d",
+          "text": "Higher F0 makes adjacent harmonics more closely packed, with fewer components drawn because close spacing raises each line’s amplitude.",
+          "feedback": "The direction of the spacing change is reversed, and amplitude is a different quantity."
+        }
+      ],
+      "correctOption": "c",
+      "answer": "The source comparison changes repetition rate and therefore harmonic spacing. The frequency window remains fixed, so a wider spacing reduces the number of displayed samples.",
+      "rubric": [
+        "Connect F0 to consecutive harmonic spacing.",
+        "Keep the shared frequency window fixed in the comparison."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 15
+        }
+      ],
+      "topic": "Source repetition and harmonic spacing",
+      "pattern": "cause-effect",
+      "examReviewRefs": [
+        13
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-011",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "To isolate the effect of source spacing in the source–filter grid, which comparison should you make?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Move down one vowel column across the source rows, keeping that column’s filter targets fixed while F0 changes.",
+          "feedback": "The columns specify vowel filters and the rows specify source conditions. A vertical comparison holds one filter while changing the density of its harmonic samples."
+        },
+        {
+          "id": "b",
+          "text": "Compare a diagonal pair with different vowels and F0 values, then assign any visible change to source spacing without considering the changed filter.",
+          "feedback": "Both factors change in a diagonal comparison, so the source effect is confounded."
+        },
+        {
+          "id": "c",
+          "text": "Compare the tallest stem in two panels and use its height as the F0 measure without checking which source row or filter column each panel belongs to.",
+          "feedback": "Stem height represents amplitude. Harmonic positions and row labels establish source spacing in this grid."
+        },
+        {
+          "id": "d",
+          "text": "Move across a single source row, interpreting the changed vowel columns as new source spacings while keeping the filter fixed.",
+          "feedback": "Across a row the source condition is shared and the filters differ."
+        }
+      ],
+      "correctOption": "a",
+      "answer": "The columns specify vowel filters and the rows specify source conditions. A vertical comparison holds one filter while changing the density of its harmonic samples.",
+      "rubric": [
+        "Use the row–column organization to hold a filter fixed.",
+        "Change source condition without also changing the vowel column."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 17
+        }
+      ],
+      "topic": "Reading the source–filter grid",
+      "pattern": "design",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-012",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "What does the filter schematic mean when it says a formant encourages nearby harmonics and mutes more distant ones?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The tract assigns a formant name to the tallest available harmonic, so the resonance is defined by whichever source line happened to be strongest.",
+          "feedback": "A formant is a filter resonance, not merely the amplitude rank of one source component."
+        },
+        {
+          "id": "b",
+          "text": "The tract changes relative component amplitudes around its resonance regions rather than moving the source harmonics to new frequency positions.",
+          "feedback": "The source supplies the harmonic frequencies. The filter weights their amplitudes so groups near its resonances become more prominent than groups farther away."
+        },
+        {
+          "id": "c",
+          "text": "The tract shifts nearby source frequencies until each line coincides exactly with a formant, merging all nearby components into one new tone.",
+          "feedback": "The model changes relative amplitudes rather than relocating the source components."
+        },
+        {
+          "id": "d",
+          "text": "The tract changes the source repetition rate separately at each resonance, giving each formant its own independent F0.",
+          "feedback": "The filter’s resonance regions are not independently voiced sources."
+        }
+      ],
+      "correctOption": "b",
+      "answer": "The source supplies the harmonic frequencies. The filter weights their amplitudes so groups near its resonances become more prominent than groups farther away.",
+      "rubric": [
+        "Separate source-frequency positions from filtered amplitudes.",
+        "Explain enhancement near a resonance as part of an envelope."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 16
+        }
+      ],
+      "topic": "Filtering neighboring harmonics",
+      "pattern": "cause-effect",
+      "examReviewRefs": [
+        13
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-013",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "In the illustrated spectrogram, a band becomes darker without changing its vertical position. Which reading fits the supplied key?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amplitude at that frequency increases while the frequency position stays fixed in the display.",
+          "feedback": "The figure maps frequency to vertical position and amplitude to black, gray, or white. Darkening and vertical movement therefore represent different changes."
+        },
+        {
+          "id": "b",
+          "text": "The band’s duration increases, because shade measures how long a frequency has persisted rather than how strongly it is present.",
+          "feedback": "Duration is read across time. The supplied shading key represents amplitude."
+        },
+        {
+          "id": "c",
+          "text": "The source F0 falls, because a darker formant band directly records a smaller gap between neighboring harmonics.",
+          "feedback": "Band darkness does not itself measure harmonic spacing or F0."
+        },
+        {
+          "id": "d",
+          "text": "The frequency increases while amplitude stays fixed, because darker shading represents a higher location on the frequency axis.",
+          "feedback": "Frequency changes require movement on the vertical coordinate, not darkening alone."
+        }
+      ],
+      "correctOption": "a",
+      "answer": "The figure maps frequency to vertical position and amplitude to black, gray, or white. Darkening and vertical movement therefore represent different changes.",
+      "rubric": [
+        "Decode the supplied amplitude key.",
+        "Keep frequency position separate from intensity of shading."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 18
+        }
+      ],
+      "topic": "Decoding amplitude and frequency",
+      "pattern": "application",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-014",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "Which information does the spectrogram add to a single spectrum when describing the /i/–/a/ transition?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It removes the temporal order by averaging the slices into one envelope, so the direction of the transition must be supplied as a written label.",
+          "feedback": "The source explicitly stacks spectra over time and shows the transition direction."
+        },
+        {
+          "id": "b",
+          "text": "It preserves the ordering of successive frequency–amplitude patterns, making the rise of F1 and fall of F2 visible through time.",
+          "feedback": "A spectrum describes one time slice. Stacking slices in time retains the direction of the changing resonance pattern rather than reducing the utterance to one instantaneous distribution."
+        },
+        {
+          "id": "c",
+          "text": "It changes the meaning of frequency to amplitude, so the upward first band and downward second band indicate opposing loudness changes.",
+          "feedback": "Frequency remains a frequency coordinate. Amplitude is separately encoded by darkness."
+        },
+        {
+          "id": "d",
+          "text": "It supplies a more detailed instantaneous frequency scale but leaves transition order unavailable, because its successive columns represent different frequencies rather than different times.",
+          "feedback": "The horizontal direction represents time, so successive columns preserve the ordering of acoustic slices."
+        }
+      ],
+      "correctOption": "b",
+      "answer": "A spectrum describes one time slice. Stacking slices in time retains the direction of the changing resonance pattern rather than reducing the utterance to one instantaneous distribution.",
+      "rubric": [
+        "Identify preserved time ordering as added information.",
+        "Interpret band direction as changing resonance frequency."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 18
+        }
+      ],
+      "topic": "Time ordering in an acoustic display",
+      "pattern": "distinction",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-015",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "In a high-F0 row, few colored harmonic stems fall near a dashed formant target. What conclusion respects the distinction between the target and the samples?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The resonance can be poorly revealed by the available samples even though the target filter is unchanged in that column.",
+          "feedback": "The dashed ticks mark formant targets, while the stems mark source components after filtering. Sparse samples can miss the target neighborhood without showing that the underlying resonance has vanished."
+        },
+        {
+          "id": "b",
+          "text": "The strongest nearby stem establishes the exact target frequency, because wider spacing makes a source component equivalent to the filter peak.",
+          "feedback": "Wider spacing reduces information about the envelope rather than equating a component with its target."
+        },
+        {
+          "id": "c",
+          "text": "The dashed resonance has disappeared physically because an absent stem at its exact position means the tract no longer supports that formant.",
+          "feedback": "An absent exact-frequency source sample does not remove a resonance from the fixed filter."
+        },
+        {
+          "id": "d",
+          "text": "The row must contain lower F0 than the dense row, because fewer components in the same interval mean that successive harmonics are closer together.",
+          "feedback": "Fewer components within the shared interval reflect wider spacing and higher F0 here."
+        }
+      ],
+      "correctOption": "a",
+      "answer": "The dashed ticks mark formant targets, while the stems mark source components after filtering. Sparse samples can miss the target neighborhood without showing that the underlying resonance has vanished.",
+      "rubric": [
+        "Distinguish dashed filter targets from available harmonic stems.",
+        "Avoid inferring absent resonances from sparse sampling."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 17
+        }
+      ],
+      "topic": "Sparse samples and an unchanged filter",
+      "pattern": "interpretation",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-016",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "What do the two input units labeled F1 and F2 supply to this vowel-recognition network?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They supply two learned weights that are shared across the hidden layers, while a new signal enters directly at the output labels.",
+          "feedback": "F1 and F2 are input features of the signal. Connection weights play a separate role."
+        },
+        {
+          "id": "b",
+          "text": "They supply two candidate vowel labels, while the five output units are the first five harmonic frequencies of the same voiced source.",
+          "feedback": "The input labels are formants, and the outputs are category names rather than harmonics."
+        },
+        {
+          "id": "c",
+          "text": "They supply the source fundamental and total amplitude, because the first and second formants are alternative names for pitch and loudness.",
+          "feedback": "F1 and F2 are vocal-tract resonances, distinct from F0 and overall amplitude."
+        },
+        {
+          "id": "d",
+          "text": "They supply two acoustic features of the current signal, while the five output units correspond to the candidate word or vowel categories.",
+          "feedback": "The diagram separates input features from output labels. It uses the first two formants as the numerical evidence that the network transforms, not as names for two of the five categories."
+        }
+      ],
+      "correctOption": "d",
+      "answer": "The diagram separates input features from output labels. It uses the first two formants as the numerical evidence that the network transforms, not as names for two of the five categories.",
+      "rubric": [
+        "Separate numerical formant features from category labels.",
+        "Explain the role of input evidence in the classification task."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 22
+        }
+      ],
+      "topic": "Formants as classifier inputs",
+      "pattern": "distinction",
+      "examReviewRefs": [
+        8,
+        11
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-017",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "The displayed inputs are ordered as F1 = 320 and F2 = 2000. Why is exchanging their positions not generally a neutral way to present the same example?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The positions have different feature meanings and connections, so exchanging values changes what the network receives at those connections even though the two numbers are retained.",
+          "feedback": "A feature vector is ordered. The weights connect particular input positions to later activations, so swapping F1 and F2 can change the computation without supplying any new training."
+        },
+        {
+          "id": "b",
+          "text": "The exchange automatically swaps the five output word labels, preserving the original inference without any effect on hidden activations.",
+          "feedback": "Changing inputs does not automatically relabel output units."
+        },
+        {
+          "id": "c",
+          "text": "The exchange is neutral because a numerical input is a set without ordering, so retaining its two values fixes the response independently of the connections.",
+          "feedback": "The diagram’s input positions have different connections and meanings; it is an ordered vector."
+        },
+        {
+          "id": "d",
+          "text": "The exchange is neutral because random initial weights identify which number belongs to which formant and reorder the pair before the first layer.",
+          "feedback": "No feature-reordering mechanism is supplied by the random connections."
+        }
+      ],
+      "correctOption": "a",
+      "answer": "A feature vector is ordered. The weights connect particular input positions to later activations, so swapping F1 and F2 can change the computation without supplying any new training.",
+      "rubric": [
+        "Retain the semantic order of the feature vector.",
+        "Connect input positions to their weighted contributions rather than treating the values as an unordered set."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 23
+        }
+      ],
+      "topic": "Feature order and learned connections",
+      "pattern": "application",
+      "examReviewRefs": [
+        8,
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-018",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "The network begins with random connection weights. What does that starting point imply about interpreting a category preference from those weights?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A preference identifies the correct vowel because an input’s two formant values directly rename the five output units before the weights are used.",
+          "feedback": "The input does not automatically supply the correct output label."
+        },
+        {
+          "id": "b",
+          "text": "The existence of a preference does not establish that the weights have learned the formant–category relationship; learning would have to be supported by a training process.",
+          "feedback": "Random initialization supplies parameters for computation, not evidence of acquired recognition skill. A network can produce an output before its parameters represent a successfully learned relation."
+        },
+        {
+          "id": "c",
+          "text": "A preference demonstrates a learned relation because assigning a number to each edge is itself the training procedure described by the recognition task.",
+          "feedback": "Parameter initialization and learning from examples are different operations."
+        },
+        {
+          "id": "d",
+          "text": "The weights are the current five category probabilities, so their random signs already state how certain the system is about each word.",
+          "feedback": "There are connection weights throughout the network, distinct from the illustrated five-entry output distribution."
+        }
+      ],
+      "correctOption": "b",
+      "answer": "Random initialization supplies parameters for computation, not evidence of acquired recognition skill. A network can produce an output before its parameters represent a successfully learned relation.",
+      "rubric": [
+        "Distinguish random parameter initialization from learning.",
+        "Avoid treating a preference as proof of recognition accuracy."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 23
+        }
+      ],
+      "topic": "Initialization and acquired knowledge",
+      "pattern": "interpretation",
+      "examReviewRefs": [
+        8,
+        10
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-019",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "A positive input feeds a first-layer connection with a negative weight. Without doing multiplication, what role does that contribution have in the neuron’s weighted sum?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It makes the final category probability negative regardless of the other connections, because the first encountered sign is preserved through the full network.",
+          "feedback": "A contribution does not determine the full activation or final probability interpretation by itself."
+        },
+        {
+          "id": "b",
+          "text": "It contributes in the positive direction because the input is positive, with the weight sign affecting the category name rather than the arithmetic.",
+          "feedback": "The weight sign affects the signed numerical contribution."
+        },
+        {
+          "id": "c",
+          "text": "It contributes in the negative direction and can oppose positive contributions, while the full activation depends on the combined inputs.",
+          "feedback": "The weight scales the signed contribution of its connected input. One negative term is part of a sum rather than a statement that the final output is a negative probability."
+        },
+        {
+          "id": "d",
+          "text": "It converts the connected input into a probability of zero, removing the term before the remaining contributions are combined.",
+          "feedback": "The source uses linear weighted computation, not this thresholding rule."
+        }
+      ],
+      "correctOption": "c",
+      "answer": "The weight scales the signed contribution of its connected input. One negative term is part of a sum rather than a statement that the final output is a negative probability.",
+      "rubric": [
+        "Use the signs of an input and its weight to reason about a contribution.",
+        "Distinguish one term from the complete activation and final representation."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 23
+        }
+      ],
+      "topic": "Signed weighted contributions",
+      "pattern": "cause-effect",
+      "examReviewRefs": [
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-020",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "During the forward-flow illustration, why must the second hidden layer wait for information computed by the first hidden layer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It waits for the first layer to supply the known correct word label, which replaces the input features before any hidden representation is formed.",
+          "feedback": "The hidden layers pass numerical representations, not an already known correct label."
+        },
+        {
+          "id": "b",
+          "text": "Its inputs are the first hidden layer’s activations, so the ordered computation supplies a new representation before the next weighted transformation.",
+          "feedback": "The feed-forward connections pass results between adjacent layers. This explains the order of computation without treating each stage as a separate round of weight learning."
+        },
+        {
+          "id": "c",
+          "text": "It waits because the first layer changes the training weights of every later layer whenever a signal passes through an edge.",
+          "feedback": "Forward flow computes activations using the current weights; it is not itself a training update."
+        },
+        {
+          "id": "d",
+          "text": "It waits for a copy of the final probabilities to move backward, because a forward pass begins at the outputs and reconstructs the formant pair.",
+          "feedback": "The displayed pass proceeds from formant inputs toward category outputs."
+        }
+      ],
+      "correctOption": "b",
+      "answer": "The feed-forward connections pass results between adjacent layers. This explains the order of computation without treating each stage as a separate round of weight learning.",
+      "rubric": [
+        "Explain each layer’s dependence on the preceding activations.",
+        "Separate forward computation from learning or reverse reconstruction."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 24
+        }
+      ],
+      "topic": "Layer-by-layer information flow",
+      "pattern": "procedure",
+      "examReviewRefs": [
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-021",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "Using the displayed output order /done/, /dune/, /dean/, /Don/, /Dan/, what does [.5, .1, .1, .1, .2] support?",
+      "options": [
+        {
+          "id": "a",
+          "text": "/Dan/ is the strongest decision because its entry is last, so the ordering gives later categories priority over earlier categories independently of their values.",
+          "feedback": "The largest value, not the last list position, supplies the strongest illustrated support."
+        },
+        {
+          "id": "b",
+          "text": "/dean/ must be the strongest displayed decision because a human can associate the input values with that word even though its shown probability is .1.",
+          "feedback": "The question asks about the displayed distribution, whose largest entry is at /done/."
+        },
+        {
+          "id": "c",
+          "text": "/done/ has the largest illustrated probability, while the remaining entries retain support for alternatives rather than proving the correct identity of the input.",
+          "feedback": "The largest displayed entry is .5 at /done/. This reads the schematic decision distribution; a known target is a separate matter, and the slide does not supply a matched computation from the declaration-only code."
+        },
+        {
+          "id": "d",
+          "text": "/done/ is established as the true measured vowel because the largest probability is equivalent to an independently supplied correct label.",
+          "feedback": "A prediction preference and a known true category are different kinds of information."
+        }
+      ],
+      "correctOption": "c",
+      "answer": "The largest displayed entry is .5 at /done/. This reads the schematic decision distribution; a known target is a separate matter, and the slide does not supply a matched computation from the declaration-only code.",
+      "rubric": [
+        "Use the stated output order and largest entry.",
+        "Distinguish a displayed preference from verified accuracy or an executed code result."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 24
+        }
+      ],
+      "topic": "Interpreting the illustrated category distribution",
+      "pattern": "interpretation",
+      "examReviewRefs": [
+        11
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-022",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "What does nn.Linear(3, 2, bias=False) contribute at its position in the declared network?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It receives three named vowels and selects two correct labels, because hidden widths specify how many word categories survive a classification step.",
+          "feedback": "Hidden widths count numerical activations, not named vowel categories being eliminated."
+        },
+        {
+          "id": "b",
+          "text": "It receives two activations and returns three, because the first argument describes the number of output units drawn above the code.",
+          "feedback": "The source uses the first argument for inputs and the second for outputs."
+        },
+        {
+          "id": "c",
+          "text": "It receives the original F1 and F2 pair and inserts a third formant, because the width of a later hidden layer changes the number of measured inputs.",
+          "feedback": "The original input remains two features. This layer receives the preceding three activations."
+        },
+        {
+          "id": "d",
+          "text": "It receives the three activations from the first hidden layer and computes two new linear activations for the next stage without an added bias offset.",
+          "feedback": "The arguments specify input and output widths, in that order. The declared stage matches the 3-to-2 part of the diagram rather than introducing new formant labels or a category decision."
+        }
+      ],
+      "correctOption": "d",
+      "answer": "The arguments specify input and output widths, in that order. The declared stage matches the 3-to-2 part of the diagram rather than introducing new formant labels or a category decision.",
+      "rubric": [
+        "Read the layer arguments as incoming and outgoing widths.",
+        "Connect the code stage to the intermediate representation in the diagram."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 25
+        }
+      ],
+      "topic": "Meaning of layer dimensions",
+      "pattern": "interpretation",
+      "examReviewRefs": [
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-023",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "A student removes the declared 2-to-4 hidden transformation but leaves the following 4-to-5 layer unchanged. What structural issue should be addressed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The final layer should expect five incoming values because it has five output words, independently of the width supplied by the preceding stage.",
+          "feedback": "Input width is a separate interface condition from the number of output categories."
+        },
+        {
+          "id": "b",
+          "text": "The network remains structurally identical because removing a hidden layer changes its name but leaves the number of values passing between stages untouched.",
+          "feedback": "The removed layer is what transforms two values into four."
+        },
+        {
+          "id": "c",
+          "text": "Leave the code unchanged and expect nn.Sequential to expand the missing activations, because the container automatically adjusts neighboring layer widths to fit.",
+          "feedback": "The container chains the declared operations. It does not insert the removed width-changing transformation."
+        },
+        {
+          "id": "d",
+          "text": "The preceding layer supplies two activations but the unchanged next layer expects four, so the adjacent interfaces no longer match the depicted sequence.",
+          "feedback": "In the declaration, each layer’s outgoing width supplies the next layer’s incoming width. Removing the intermediate transformation breaks that match unless the architecture is changed coherently."
+        }
+      ],
+      "correctOption": "d",
+      "answer": "In the declaration, each layer’s outgoing width supplies the next layer’s incoming width. Removing the intermediate transformation breaks that match unless the architecture is changed coherently.",
+      "rubric": [
+        "Match the number supplied by the preceding layer to the next layer’s expected input.",
+        "Explain why a diagram change requires a coherent code change."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 25
+        }
+      ],
+      "topic": "Matching adjacent layer widths",
+      "pattern": "design",
+      "examReviewRefs": [
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-024",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "What does bias=False specify in the displayed linear-layer declarations?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It turns the hidden activations into probabilities that sum to one, because a false bias prevents negative intermediate numbers from reaching the output.",
+          "feedback": "Bias removal does not supply probability normalization or eliminate signed activations."
+        },
+        {
+          "id": "b",
+          "text": "It freezes the layer parameters against later training, making the random initial weights permanent rather than available for learning from examples.",
+          "feedback": "The flag removes an additive bias offset. It does not determine whether the remaining weights can be updated by a training procedure."
+        },
+        {
+          "id": "c",
+          "text": "It removes the connection weights so each output becomes a direct copy of one input, while the additive offsets remain available.",
+          "feedback": "The bias is the removed offset; the weights remain part of the layer."
+        },
+        {
+          "id": "d",
+          "text": "It removes an additive bias offset from each layer while retaining the weighted linear transformation between its incoming and outgoing activations.",
+          "feedback": "The source states that bias=False makes each layer a pure linear map without an added offset. It does not remove the connection weights or define a learning procedure."
+        }
+      ],
+      "correctOption": "d",
+      "answer": "The source states that bias=False makes each layer a pure linear map without an added offset. It does not remove the connection weights or define a learning procedure.",
+      "rubric": [
+        "Identify bias as an additive offset.",
+        "Keep bias removal distinct from removing weights, training, or normalizing probabilities."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 25
+        }
+      ],
+      "topic": "The role of bias=False",
+      "pattern": "distinction",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-mcq-025",
+      "type": "mcq",
+      "lectureId": "lecture14",
+      "prompt": "A new articulation changes the measured F1–F2 pair, but the network’s weights are held fixed. What can happen during the next forward pass?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The new articulation changes the five output labels into new formant frequencies, because classification converts category names back into the original acoustic measurements.",
+          "feedback": "The outputs remain candidate categories in the displayed recognition task."
+        },
+        {
+          "id": "b",
+          "text": "The weights change automatically to match the new articulation, because changing the physical vocal-tract filter and training the neural network are the same event.",
+          "feedback": "Physical filter changes and parameter learning are different processes."
+        },
+        {
+          "id": "c",
+          "text": "The output must remain unchanged because fixed weights make the network independent of whichever formant values are supplied at its inputs.",
+          "feedback": "A fixed transformation can produce different results from different inputs."
+        },
+        {
+          "id": "d",
+          "text": "The changed feature pair can produce different intermediate activations and output support, without that pass itself becoming a weight-learning update.",
+          "feedback": "The classifier transforms the current formant evidence using its existing parameters. A physical filter change alters the evidence it receives, while learning would involve changing the network weights."
+        }
+      ],
+      "correctOption": "d",
+      "answer": "The classifier transforms the current formant evidence using its existing parameters. A physical filter change alters the evidence it receives, while learning would involve changing the network weights.",
+      "rubric": [
+        "Trace a changed physical feature pair into the network’s computation.",
+        "Separate changed input evidence from changed learned parameters."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 22
+        },
+        {
+          "collection": "lecture14",
+          "page": 9
+        }
+      ],
+      "topic": "From a physical change to classifier evidence",
+      "pattern": "application",
+      "examReviewRefs": [
+        8,
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-001",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "The membrane animation has equally spaced labeled frequencies and equal pickup peaks. Explain what was chosen for this teaching example and what broader physical claim it does not establish.",
+      "answer": "The frequencies were assigned as illustrative harmonics, and the modal coefficients were chosen to give equal peaks at the specified pickup. The example demonstrates combining spatial modes and reading their components. Those choices do not establish that the rectangular membrane’s natural frequencies are equally spaced or that another measurement point would show the same amplitudes.",
+      "rubric": [
+        "Identify the assigned illustrative frequency spacing.",
+        "Identify the pickup-dependent amplitude construction.",
+        "Keep the demonstrated combination of modes separate from a universal natural-frequency claim."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 2
+        }
+      ],
+      "topic": "What a schematic membrane spectrum establishes",
+      "pattern": "interpretation",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-002",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Explain how a stationary fixed endpoint and a maximally moving free endpoint constrain the shape of an allowed mode before you read any numerical frequency label.",
+      "answer": "The shape must have a displacement node at the fixed end and a displacement antinode at the free end. Starting at the node, an odd number of quarter-wave packets reaches the antinode. The resulting shapes have different numbers of internal reversals while preserving the two end conditions. This is why the illustrated sequence selects odd rather than consecutive integer multiples.",
+      "rubric": [
+        "Use the fixed node and free antinode as simultaneous constraints.",
+        "Explain the odd quarter-wave fit in terms of those constraints.",
+        "Connect higher allowed shapes with additional spatial reversals."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 3
+        },
+        {
+          "collection": "lecture14",
+          "page": 4
+        }
+      ],
+      "topic": "Boundary conditions before frequency labels",
+      "pattern": "cause-effect",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-003",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "How would you use the air-element animation to distinguish back-and-forth particle motion from compression if a still frame made their difference unclear?",
+      "answer": "I would track the same marked region over several phases. The movement of individual elements relative to their resting positions reveals displacement. The changing separation of neighboring elements reveals compression and rarefaction. Comparing both across time prevents a crowded-looking frame from being mistaken for the region of largest particle excursion.",
+      "rubric": [
+        "Track particle excursion through time.",
+        "Separately track changes in neighbor spacing.",
+        "Use the two observations to distinguish motion from compression."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 6
+        }
+      ],
+      "topic": "Following air through a vibration cycle",
+      "pattern": "procedure",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-004",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Why is “the constriction increases both mass and stiffness” insufficient by itself to predict the sign of a particular formant shift?",
+      "answer": "The two changes matter according to different local properties of the mode. Added effective mass matters where the air moves strongly, while increased stiffness matters where compression or stretching is strong. A constriction’s location must therefore be compared with the specified mode’s pattern before deciding which effect dominates. Equal mention of two properties does not imply equal influence.",
+      "rubric": [
+        "Relate the mass effect to local motion.",
+        "Relate the stiffness effect to local deformation.",
+        "Explain why location and mode identity are required before predicting direction."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 9
+        }
+      ],
+      "topic": "Why a constriction needs a local analysis",
+      "pattern": "cause-effect",
+      "examReviewRefs": [
+        3
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-005",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "The illustrated /u/ and /i/ models both lower F1 but differ in their F2 shifts. Explain how the first-mode agreement can coexist with the second-mode difference.",
+      "answer": "The /u/ lip loading is motion-dominated for both first modes, so added effective mass lowers both frequencies. At the /i/ region, the first-mode mass effect still lowers F1, but strong local deformation gives the second-mode stiffness effect greater influence and raises F2. Agreement in one resonance does not imply that the two constrictions occupy equivalent positions in another mode.",
+      "rubric": [
+        "Explain mass dominance for the two /u/ modes.",
+        "Explain the different second-mode dominance at the /i/ region.",
+        "Connect the comparison to mode-specific local patterns."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 11
+        },
+        {
+          "collection": "lecture14",
+          "page": 12
+        }
+      ],
+      "topic": "A shared first-mode shift with different second-mode shifts",
+      "pattern": "distinction",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-006",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "A classmate says the /a/ example raises F1 because mass has begun to increase frequency. Give the spatial explanation that corrects that account.",
+      "answer": "The /a/ location places the first mode in a region where compression and springiness dominate, so increased stiffness raises F1. The second mode is more motion-dominated there, so the mass effect lowers F2. The mass rule has not reversed; moving the constriction changes which local contribution dominates each resonance.",
+      "rubric": [
+        "Assign the upward F1 shift to stiffness dominance.",
+        "Assign the downward F2 shift to mass dominance.",
+        "Keep the physical directions unchanged while explaining the changed spatial weighting."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 13
+        }
+      ],
+      "topic": "The /a/ reversal as a spatial explanation",
+      "pattern": "application",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-007",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Why should a description such as “a constriction one-third of the way along the tract” state whether the distance is measured from the glottis or from the lips?",
+      "answer": "The two ends define different reference directions along the tract. A location described as two-thirds from the glottis can also be one-third back from the lips, whereas one-third from the glottis marks a different region. Since the perturbation depends on the location within a mode, dropping the reference end can produce the wrong formant prediction.",
+      "rubric": [
+        "Keep the endpoint attached to a fractional location.",
+        "Distinguish complementary descriptions from different physical regions.",
+        "Connect a location error with the subsequent mode analysis."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 8
+        }
+      ],
+      "topic": "Reference points for a constriction location",
+      "pattern": "interpretation",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-008",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "You want to determine whether the same proposed constriction region is motion-dominated in the first mode and deformation-dominated in the second. What should you compare in the animation?",
+      "answer": "I would keep the region fixed along the tract and inspect the first and second mode rows separately over their cycles. For each row I would compare particle excursion with local changes in neighbor spacing. The judgment concerns the same location in different spatial mode patterns, rather than comparing unrelated moments and treating a momentary zero displacement as a permanent node.",
+      "rubric": [
+        "Hold the physical region fixed across the mode comparison.",
+        "Compare excursion and deformation across a cycle.",
+        "Avoid diagnosing the local role from one arbitrary phase alone."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 10
+        },
+        {
+          "collection": "lecture14",
+          "page": 6
+        }
+      ],
+      "topic": "Comparing modes at one physical region",
+      "pattern": "design",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-009",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "The source diagram associates a more tightly restoring, effectively lighter fold system with higher F0. Explain the cause-and-effect connection to the spacing of the spectral lines without calculating a rate.",
+      "answer": "A stronger restoring effect and less effective moving mass favor a faster back-and-forth fold cycle in the lecture’s mechanical comparison. A higher repetition rate gives more widely separated source harmonics. Inside the same frequency window, those wider intervals leave fewer components available to sample a vowel filter. The labels illustrate the mechanism rather than defining fixed anatomy for every speaker.",
+      "rubric": [
+        "Connect restoring stiffness and moving mass with cycle speed.",
+        "Connect higher source repetition with wider harmonic spacing.",
+        "Explain the consequence within a shared frequency window."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 15
+        }
+      ],
+      "topic": "Physical changes behind a wider source comb",
+      "pattern": "cause-effect",
+      "examReviewRefs": [
+        2,
+        3
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-010",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Using the filter examples on this page, explain why a recognizer receiving the first 300 Hz target alone could miss a distinction that an F1–F2 pair preserves.",
+      "answer": "The /u/ and /i/ or /I/ examples share that first target, so it does not distinguish the illustrated filters by itself. Their next targets differ, with /u/ showing 1000 Hz and /i/ or /I/ showing 2200 Hz. An ordered pair retains that additional relation, providing different input evidence even when the first coordinate matches.",
+      "rubric": [
+        "Use the shared first target as an example of incomplete evidence.",
+        "Identify the differing next targets on this page.",
+        "Explain what an ordered feature pair adds."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 16
+        },
+        {
+          "collection": "lecture14",
+          "page": 22
+        }
+      ],
+      "topic": "Why one formant is insufficient for this comparison",
+      "pattern": "interpretation",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-011",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "How would you use two comparisons in the source–filter grid to separate a changed vowel filter from changed source spacing?",
+      "answer": "First, compare panels across one source row to hold its F0 condition fixed while changing vowel columns. That reveals different filter shapes under a shared source. Then compare down one vowel column to hold its target resonances fixed while changing source rows. That reveals denser or sparser sampling of one filter. A diagonal comparison changes both factors and is harder to interpret.",
+      "rubric": [
+        "Hold a source row fixed for the filter comparison.",
+        "Hold a vowel column fixed for the source comparison.",
+        "Explain why a diagonal change confounds the two factors."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 17
+        }
+      ],
+      "topic": "Separating the two factors in a grid",
+      "pattern": "design",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-012",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "The /a/ filter illustration places targets close together at 800 and 900 Hz. Why is counting prominent colored harmonic stems in a dense or sparse source row an unreliable way to decide how many filter resonances are represented?",
+      "answer": "The two target resonances belong to the filter and are held fixed within that vowel column. Colored stems are available source harmonics shaped by the combined resonance envelope, so their number and prominence depend on the source spacing as well. Denser sampling can describe that envelope more fully, while sparse sampling can make the close targets hard to distinguish. Counting strong sampled lines does not directly count filter resonances, and dense sampling alone does not guarantee that two nearby resonances appear as two separate peaks.",
+      "rubric": [
+        "Retain the two fixed filter targets in the column.",
+        "Distinguish available source components from underlying resonances.",
+        "Explain how sampling density affects the evidence without guaranteeing separate visible peaks."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 17
+        },
+        {
+          "collection": "lecture14",
+          "page": 16
+        }
+      ],
+      "topic": "Close formants and the limits of peak counting",
+      "pattern": "interpretation",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-013",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "A filter makes one group of source harmonics prominent and attenuates another group. Why does that not by itself mean that the vocal folds have changed their repetition rate?",
+      "answer": "The filter changes relative amplitudes at the frequencies supplied by the source. F0 concerns the spacing of consecutive source components, not which group becomes strongest after filtering. A new envelope can therefore reflect a changed vocal-tract resonance pattern while the source repetition rate remains the same.",
+      "rubric": [
+        "Explain filtering as relative amplitude shaping.",
+        "Use source component spacing rather than amplitude rank to distinguish F0.",
+        "Keep a changed envelope separate from a demonstrated source-rate change."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 16
+        },
+        {
+          "collection": "lecture14",
+          "page": 15
+        }
+      ],
+      "topic": "Filter selection without a new source pitch",
+      "pattern": "cause-effect",
+      "examReviewRefs": [
+        13
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-014",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "If you wanted the amplitude history of one fixed frequency, how would you read it from the spectrogram rather than follow a moving formant band?",
+      "answer": "I would retain the same vertical frequency position and move horizontally through time. The changing shade at that fixed height gives its amplitude under the supplied black–gray–white key. Following a curved formant band instead changes the frequency being sampled, so it answers a different question about the evolving resonance region.",
+      "rubric": [
+        "Hold the frequency coordinate fixed.",
+        "Use horizontal time and the stated amplitude key.",
+        "Explain why tracking a moving band samples changing frequencies."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 18
+        }
+      ],
+      "topic": "Reading one acoustic frequency through time",
+      "pattern": "procedure",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-015",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Suppose one resonance band rises while retaining its shade, and another stays at the same height but darkens. Explain the two different observations under the illustrated key.",
+      "answer": "The first moves to a higher frequency without an indicated amplitude change under the stated conditions. The second gains amplitude at an unchanged frequency. Vertical position and darkness are separate encodings, so the two observations should not be collapsed into a single claim that both bands became higher pitched or louder.",
+      "rubric": [
+        "Read the first change as a frequency shift.",
+        "Read the second as an amplitude change.",
+        "Preserve the unchanged quantity in each case."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 18
+        }
+      ],
+      "topic": "Two independent acoustic changes",
+      "pattern": "interpretation",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-016",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Why can sparse harmonic sampling matter to a recognizer that receives estimated F1 and F2, even before considering how its weights were learned?",
+      "answer": "The input features depend on identifying the filter’s resonances from the acoustic evidence. Sparse harmonics can make a resonance envelope ambiguous, making the feature estimate less securely supported. A network then receives those estimated values rather than direct access to the hidden filter. This concerns the evidence entering the classifier, not proof of a particular classification error or a change in its weights.",
+      "rubric": [
+        "Connect the harmonic samples to the quality of resonance evidence.",
+        "Explain how estimated formants become classifier inputs.",
+        "Separate input uncertainty from a demonstrated model error."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 17
+        },
+        {
+          "collection": "lecture14",
+          "page": 21
+        },
+        {
+          "collection": "lecture14",
+          "page": 22
+        }
+      ],
+      "topic": "Acoustic sampling before classification",
+      "pattern": "application",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-017",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "The hidden layers have three, two, and four units, while the outputs have five word labels. Why should hidden activations not simply be treated as extra measured formants or as words already recognized?",
+      "answer": "The measured formants enter as the two input values. Hidden units contain new numerical combinations formed by the network’s current connections, and their widths specify the intermediate representation sizes. The category names are attached to the five output units. The diagram does not give a separate physical resonance or a final word identity to each hidden unit.",
+      "rubric": [
+        "Separate measured input features from computed hidden activations.",
+        "Explain hidden widths as representation sizes.",
+        "Retain word-category labels at the output stage."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 22
+        }
+      ],
+      "topic": "The role of hidden representations",
+      "pattern": "distinction",
+      "examReviewRefs": [
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-018",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "You want to test the effect of changing a fixed–fixed system to fixed–free. Why do two separately tuned examples with 100 Hz fundamentals not provide that controlled test, and what should you hold fixed?",
+      "answer": "Matching the displayed fundamentals does not establish that the two systems share the same length and wave speed. The source specifies that the examples were separately tuned. To isolate the boundary change, keep length and wave speed fixed while changing the endpoint condition. Under those ideal conditions, the fixed–free fundamental is half the fixed–fixed one. The equal 100 Hz labels therefore reflect the chosen comparison conditions rather than evidence that the boundary has no frequency effect.",
+      "rubric": [
+        "Identify separate tuning as a changed comparison condition.",
+        "Hold length and wave speed fixed to isolate the boundary change.",
+        "State the qualitative halving prediction without treating matched labels as its measured result."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 3
+        }
+      ],
+      "topic": "Controlling a boundary-condition comparison",
+      "pattern": "design",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-019",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Suppose the displayed random weights have been chosen and are then held fixed, with the same ordered input presented again. Why does the word “random” not by itself imply a new result on each forward pass?",
+      "answer": "Random describes how the weights were initially assigned. Once those parameters and the input are fixed, the declared sequence uses the same weighted linear operations again. No new random resampling step is specified for each pass. Different initialization and repeated inference through one fixed initialization are therefore different comparisons.",
+      "rubric": [
+        "Distinguish a random initial assignment from repeated resampling.",
+        "Hold both the input and parameters fixed in the prediction.",
+        "Explain repeated use of the same specified operations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 23
+        },
+        {
+          "collection": "lecture14",
+          "page": 25
+        }
+      ],
+      "topic": "Random initialization versus randomness on each pass",
+      "pattern": "prediction",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-020",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Explain how a hidden neuron receiving positive formant inputs through both positive and negative connections can have contributions that partly oppose each other.",
+      "answer": "Each connection weights its own input. A positive input with a positive weight contributes positively, while a positive input with a negative weight contributes negatively. The neuron combines those terms, so one negative contribution does not determine the entire activation. This is signed internal arithmetic, distinct from interpreting a completed five-category probability distribution.",
+      "rubric": [
+        "Explain the contribution signs without calculating products.",
+        "Describe the combination of opposing terms.",
+        "Separate internal signed values from output probabilities."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 23
+        }
+      ],
+      "topic": "Opposing terms without a calculation",
+      "pattern": "cause-effect",
+      "examReviewRefs": [
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-021",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Describe what must happen in a forward pass before a known answer could be used to improve the network, keeping computation and learning distinct.",
+      "answer": "The formant pair enters the first layer, and each layer forms activations from the preceding values and current weights until an output is obtained. A known answer could then be compared with that prediction to identify a mismatch. Using that information to change weights would be a separate learning step. Passing values through the network does not itself demonstrate that such a step has occurred.",
+      "rubric": [
+        "Trace the ordered use of current weights through the layers.",
+        "Explain why a prediction is required before its mismatch can be assessed.",
+        "Distinguish computing activations from changing parameters."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 24
+        }
+      ],
+      "topic": "Forward computation before learning",
+      "pattern": "procedure",
+      "examReviewRefs": [
+        10,
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-022",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Suppose a teacher subsequently identifies a hypothetical example as /dean/, but the illustrated distribution favors /done/. Explain what the mismatch means without treating the display as an actual reported experiment.",
+      "answer": "The current prediction favors a different category from the supplied hypothetical target. The target identifies which output should receive stronger support, while the displayed probabilities describe the current preference. A learning procedure would try to change the weights to reduce that mismatch. The example illustrates the distinction between prediction and known label, not a measured accuracy result from this deck.",
+      "rubric": [
+        "Separate the hypothetical target from the current preference.",
+        "Identify the disagreement at the category level.",
+        "Connect possible improvement to weight learning rather than relabeling the input."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 24
+        }
+      ],
+      "topic": "Prediction versus a subsequently known label",
+      "pattern": "interpretation",
+      "examReviewRefs": [
+        11,
+        20
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-023",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Explain why the declared sequence 2 → 3 → 2 → 4 → 5 is more than a list of independent layer sizes.",
+      "answer": "Each stage receives the preceding stage’s output. The three values produced by the first transformation are the three inputs of the next, its two values feed the two-input transformation after it, and the resulting four values feed the final four-input layer. The widths therefore describe connected interfaces, while the five final values correspond to the displayed category units.",
+      "rubric": [
+        "Explain that one stage’s output is the next stage’s input.",
+        "Trace the matching widths through the declared order.",
+        "Connect the final width to the five category outputs."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 25
+        }
+      ],
+      "topic": "Reading the code as connected interfaces",
+      "pattern": "procedure",
+      "examReviewRefs": [
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-024",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "The network contains several hidden layers. Why does that number of layers not contradict the slide’s description of this particular declaration as purely linear?",
+      "answer": "The displayed stages are linear transformations with bias removed, and no activation functions are inserted between them. Passing through several weighted linear stages does not add an omitted nonlinear operation. The claim concerns this stated model, rather than a claim that neural networks in general must use the same restricted architecture.",
+      "rubric": [
+        "Use the actual linear-layer declarations and absence of activation functions.",
+        "Explain why additional stages do not supply a missing kind of operation.",
+        "Keep the conclusion limited to the declared architecture."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 25
+        }
+      ],
+      "topic": "Why the declaration remains purely linear",
+      "pattern": "cause-effect",
+      "examReviewRefs": [],
+      "edition": "2026-10-20-v4"
+    },
+    {
+      "id": "m14-written-025",
+      "type": "written",
+      "lectureId": "lecture14",
+      "prompt": "Before claiming that a trained formant recognizer identifies vowels accurately, what evidence would you want beyond a diagram showing information reaching five outputs?",
+      "answer": "I would want examples with measured formant pairs and independently known vowel identities, then compare the network’s decisions with those identities under stated conditions. The diagram establishes a proposed feature-to-category computation, while a numerical preference by itself does not establish correctness. The result should report what was actually evaluated rather than treat an intended training plan or schematic output as an observed success.",
+      "rubric": [
+        "Specify input examples and independently known categories.",
+        "Compare predictions with those categories under stated conditions.",
+        "Distinguish a proposed computation from measured recognition performance."
+      ],
+      "sources": [
+        {
+          "collection": "lecture14",
+          "page": 21
+        },
+        {
+          "collection": "lecture14",
+          "page": 22
+        },
+        {
+          "collection": "lecture14",
+          "page": 24
+        }
+      ],
+      "topic": "Evidence for the proposed recognition task",
+      "pattern": "design",
+      "examReviewRefs": [
+        10,
+        11,
+        19
+      ],
+      "edition": "2026-10-20-v4"
+    }
+  ]
+}

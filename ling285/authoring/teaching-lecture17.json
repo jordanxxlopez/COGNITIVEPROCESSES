@@ -1,0 +1,149 @@
+{
+  "lecture17": {
+    "title": "NNs → LLMs → Agentic Systems",
+    "sections": [
+      {
+        "page": 1,
+        "title": "NNs → LLMs → Agentic Systems",
+        "kind": "title",
+        "teaching": [],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all embedded raster assets, native text and speaker notes. Every click state of pages 4–7 was exported from the original shapes and timing and inspected, because the static export overlaps the page 5 reveals.",
+          "limitations": [
+            "The small spectrogram frames and image patches on page 5 are pieces of one figure and are reviewed through the source-state exports rather than as separate figures."
+          ]
+        }
+      },
+      {
+        "page": 2,
+        "title": "Neural networks, 1943–1986 · a static vector and a few categories",
+        "kind": "concept",
+        "teaching": [
+          "The vowel network summarizes networks from **1943 to 1986**, from **McCulloch and Pitts’s** logical calculus of all-or-none neurons to the 1986 **Parallel Distributed Processing** volumes. Given a **static vector** of formants, such a network decides among **a few categories**.",
+          "The problem is that **human cognition is far more complex**. Speech and language are sequences in time, and a network that maps one fixed vector to a few labels cannot represent what came before."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all embedded raster assets, native text and speaker notes. Every click state of pages 4–7 was exported from the original shapes and timing and inspected, because the static export overlaps the page 5 reveals.",
+          "limitations": [
+            "The small spectrogram frames and image patches on page 5 are pieces of one figure and are reviewed through the source-state exports rather than as separate figures."
+          ]
+        }
+      },
+      {
+        "page": 3,
+        "title": "Jordan’s recurrent network for speech production",
+        "kind": "concept",
+        "teaching": [
+          "In **1985, Michael Jordan developed recurrent neural networks** to understand **speech production**, work that led toward **LLMs** and **agentic AI**. Output units loop back into **state units**, which also feed back to themselves, so each output depends on the **plan units** and the network’s own recent outputs.",
+          "The plot of **Performance on /istrstry/** traces eight articulatory features over 32 time steps. **Round** rises early and stays high, spreading across several sounds, and Sibilant peaks where the s sounds occur. The recurrence lets outputs blend smoothly over time."
+        ],
+        "issues": [
+          "The slide links Jordan’s 1985 recurrent networks to later LLMs and agentic AI without describing the intermediate models. The teaching keeps that summary as stated."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all embedded raster assets, native text and speaker notes. Every click state of pages 4–7 was exported from the original shapes and timing and inspected, because the static export overlaps the page 5 reveals.",
+          "limitations": [
+            "The small spectrogram frames and image patches on page 5 are pieces of one figure and are reviewed through the source-state exports rather than as separate figures."
+          ]
+        }
+      },
+      {
+        "page": 4,
+        "title": "From one neuron to agentic systems",
+        "kind": "concept",
+        "teaching": [
+          "**One neuron** takes a vector and gives one number, an inner product. A **network** of weight layers W₁, W₂, W₃ turns a vector into a **decision vector**. An **LLM** takes **15 token vectors** up through **5 layers** of weights and returns **vector 16**, a probability distribution over the next token.",
+          "An **agentic system** is a **graph of LLMs**, Outline, Write, Critic, Revise and Final, with a **loop** between Critic and Revise. Underneath all of them, **inference is inner products** and **learning is SGD plus DP**."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all embedded raster assets, native text and speaker notes. Every click state of pages 4–7 was exported from the original shapes and timing and inspected, because the static export overlaps the page 5 reveals.",
+          "limitations": [
+            "The small spectrogram frames and image patches on page 5 are pieces of one figure and are reviewed through the source-state exports rather than as separate figures."
+          ]
+        }
+      },
+      {
+        "page": 5,
+        "title": "Fifteen vectors · the same next-item question for any sequence",
+        "kind": "concept",
+        "teaching": [
+          "An LLM receives **15 vectors** and predicts **x₁₆**. The vectors can be **15 words** of a sentence, **15 frames** of a spectrogram, **16 patches** of an image read row by row, or **15 amino acids** of the insulin B chain.",
+          "In each case x₁₆ is the next or missing piece, a word, a frame, a patch, or the residue Y. **The LLM only ever sees vectors**, so one machine answers one question for every kind of sequence, **what is x₁₆?**"
+        ],
+        "issues": [
+          "The protein example ends at L. The speaker notes identify the next residue as Y. The image example has 16 patches, so its fifteenth vector is the last visible patch before the missing one."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all embedded raster assets, native text and speaker notes. Every click state of pages 4–7 was exported from the original shapes and timing and inspected, because the static export overlaps the page 5 reveals.",
+          "limitations": [
+            "The small spectrogram frames and image patches on page 5 are pieces of one figure and are reviewed through the source-state exports rather than as separate figures."
+          ]
+        }
+      },
+      {
+        "page": 6,
+        "title": "Which sequences can be English words?",
+        "kind": "concept",
+        "teaching": [
+          "One-syllable words like Don, mat and fish follow a **consonant, vowel, consonant** pattern. Clusters are allowed **before and after the vowel** only in certain orders, so split, flat, desk and help are words while *sblit, *lfat, *desb and *hepl are impossible, with the order mirroring around the vowel.",
+          "A **long word is a chain of syllables**, each obeying the same rules. t·l is fine across a break in At·lan·tic, but **tl cannot start a syllable**, so *tlantic is impossible, and ng can end a syllable but never start one."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all embedded raster assets, native text and speaker notes. Every click state of pages 4–7 was exported from the original shapes and timing and inspected, because the static export overlaps the page 5 reveals.",
+          "limitations": [
+            "The small spectrogram frames and image patches on page 5 are pieces of one figure and are reviewed through the source-state exports rather than as separate figures."
+          ]
+        }
+      },
+      {
+        "page": 7,
+        "title": "Guessing the next letter reveals phonotactic knowledge",
+        "kind": "concept",
+        "teaching": [
+          "Guessing the **next letter** of a word start shows **phonotactic knowledge**. After a vowel, as in **ra_**, almost anything can follow. At the start of a word the choices narrow, to **l, r or a vowel** after sp_, b_ and f_, and to **only a vowel** after skr_ and m_.",
+          "Each item also has an impossible continuation, such as *spn, *kt, *skrl or *mb. **Guessing the next letter is predicting x₁₆**, so a **GPT** trained only on this game learns English sounds and spelling, with a flat distribution after fa_ and a sharply peaked one after skr_."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all embedded raster assets, native text and speaker notes. Every click state of pages 4–7 was exported from the original shapes and timing and inspected, because the static export overlaps the page 5 reveals.",
+          "limitations": [
+            "The small spectrogram frames and image patches on page 5 are pieces of one figure and are reviewed through the source-state exports rather than as separate figures."
+          ]
+        }
+      },
+      {
+        "page": 8,
+        "title": "Build an LLM together",
+        "kind": "prompt",
+        "teaching": [],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed every original page at 1600px, all embedded raster assets, native text and speaker notes. Every click state of pages 4–7 was exported from the original shapes and timing and inspected, because the static export overlaps the page 5 reveals.",
+          "limitations": [
+            "The small spectrogram frames and image patches on page 5 are pieces of one figure and are reviewed through the source-state exports rather than as separate figures."
+          ]
+        }
+      }
+    ]
+  }
+}

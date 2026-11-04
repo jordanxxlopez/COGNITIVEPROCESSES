@@ -1,0 +1,1854 @@
+{
+  "edition": "2026-10-20-practice-v2",
+  "lectureId": "lecture13",
+  "questions": [
+    {
+      "id": "v2-l13-mcq-001",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "If mass increases while stiffness stays the same, what happens to frequency?",
+      "answer": "Frequency falls when mass increases under unchanged stiffness.",
+      "rubric": [
+        "Identify the downward frequency change."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 2
+        }
+      ],
+      "topic": "Mass and frequency",
+      "pattern": "prediction",
+      "examKeyRefs": [
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "It falls.",
+          "feedback": "The greater moving mass is harder to accelerate and reverse, making a cycle slower."
+        },
+        {
+          "id": "b",
+          "text": "It rises.",
+          "feedback": "A stronger restoring response would tend to raise frequency; added mass has the opposite effect here."
+        },
+        {
+          "id": "c",
+          "text": "It stays the same because the spring is unchanged.",
+          "feedback": "Both mass and stiffness affect the cycle rate, so holding just stiffness fixed does not hold frequency fixed."
+        },
+        {
+          "id": "d",
+          "text": "It becomes equal to the displacement amplitude.",
+          "feedback": "Frequency and amplitude measure different properties."
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l13-mcq-002",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "If stiffness increases while mass stays the same, what happens to frequency?",
+      "answer": "Frequency rises when stiffness increases under unchanged mass.",
+      "rubric": [
+        "Identify the upward frequency change."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 2
+        }
+      ],
+      "topic": "Stiffness and frequency",
+      "pattern": "prediction",
+      "examKeyRefs": [
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "It falls.",
+          "feedback": "That is the direction associated with increasing mass under otherwise fixed conditions."
+        },
+        {
+          "id": "b",
+          "text": "It rises.",
+          "feedback": "The stronger restoring action makes the cycle faster."
+        },
+        {
+          "id": "c",
+          "text": "It stays the same because the mass is unchanged.",
+          "feedback": "Stiffness also helps determine how quickly the system repeats."
+        },
+        {
+          "id": "d",
+          "text": "It becomes the number of moving masses.",
+          "feedback": "Mode count and repetition rate are different quantities."
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l13-mcq-003",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "How many normal modes does the illustrated four-mass chain have?",
+      "answer": "Four normal modes.",
+      "rubric": [
+        "Match the four moving masses to four modes in the modeled chain."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 2
+        },
+        {
+          "collection": "lecture13",
+          "page": 3
+        }
+      ],
+      "topic": "Counting chain modes",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Four.",
+          "feedback": "In this chain model, each independent moving mass adds one normal mode."
+        },
+        {
+          "id": "b",
+          "text": "One.",
+          "feedback": "The masses can move together in the lowest mode, but the chain also has higher patterns."
+        },
+        {
+          "id": "c",
+          "text": "Three.",
+          "feedback": "The four-mass row has four allowed patterns, not three."
+        },
+        {
+          "id": "d",
+          "text": "Five.",
+          "feedback": "The fixed endpoints do not add a fifth moving mass or mode."
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l13-mcq-004",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Within one normal mode, how do the masses relate to one another?",
+      "answer": "They share the mode’s frequency, while their relative displacements form its spatial pattern.",
+      "rubric": [
+        "Separate a common repetition rate from differing spatial movement."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 2
+        },
+        {
+          "collection": "lecture13",
+          "page": 3
+        }
+      ],
+      "topic": "What makes one mode",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Every mass has a different frequency.",
+          "feedback": "Different mode frequencies belong to different patterns, not to each mass within one mode."
+        },
+        {
+          "id": "b",
+          "text": "They must all have the same displacement at every moment.",
+          "feedback": "A mode can include unequal movements, opposite signs, and an internal stationary mass."
+        },
+        {
+          "id": "c",
+          "text": "They repeat at the same frequency but can move different distances and in opposite directions.",
+          "feedback": "One mode has a shared repetition rate and an organized pattern of relative movements."
+        },
+        {
+          "id": "d",
+          "text": "One mass moves while the others become fixed endpoints.",
+          "feedback": "Higher patterns can involve many moving masses at once."
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l13-mcq-005",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Do the finite mass chains have to follow the exact harmonic ratios of an ideal continuous string?",
+      "answer": "No. A finite chain can have several modes without their frequencies forming exact harmonic multiples.",
+      "rubric": [
+        "Distinguish multiple modes from exact integer frequency ratios."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 2
+        },
+        {
+          "collection": "lecture13",
+          "page": 3
+        }
+      ],
+      "topic": "Finite chains and ideal harmonics",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes; counting four masses forces the ratio 1:2:3:4.",
+          "feedback": "The number of modes does not by itself specify integer frequency ratios."
+        },
+        {
+          "id": "b",
+          "text": "Yes; equal mass values make every mode equally spaced in frequency.",
+          "feedback": "Equal masses and couplings do not give that result for the displayed finite chains."
+        },
+        {
+          "id": "c",
+          "text": "No; their mode frequencies are generally not exact whole-number multiples.",
+          "feedback": "The source distinguishes finite-chain frequencies from the ideal string harmonic pattern."
+        },
+        {
+          "id": "d",
+          "text": "No; the chains can have only one frequency each.",
+          "feedback": "Each chain supports its listed modes, each with its own frequency."
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l13-mcq-006",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "What fits into the ideal fixed–fixed string’s second mode?",
+      "answer": "Two half-waves fit, separated by an internal node.",
+      "rubric": [
+        "Identify two half-wave sections and the internal node."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 4
+        }
+      ],
+      "topic": "The second fixed–fixed mode",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "One quarter-wave, ending in a moving free endpoint.",
+          "feedback": "That matches a fixed–free fundamental rather than two fixed ends."
+        },
+        {
+          "id": "b",
+          "text": "Two half-waves, with a stationary middle point.",
+          "feedback": "Two node-to-node sections fit between the fixed endpoints."
+        },
+        {
+          "id": "c",
+          "text": "Three quarter-waves, with a free top.",
+          "feedback": "Those endpoint conditions belong to a fixed–free pattern."
+        },
+        {
+          "id": "d",
+          "text": "One whole string moving sideways without a stationary endpoint.",
+          "feedback": "Both endpoints must remain fixed in the given model."
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l13-mcq-007",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "What produces the combined string shape when several modes occur together?",
+      "answer": "The displacements contributed by the modes add point by point.",
+      "rubric": [
+        "Identify addition of simultaneous component movements."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 5
+        }
+      ],
+      "topic": "Combining string modes",
+      "pattern": "interpretation",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "The highest mode replaces every lower mode.",
+          "feedback": "The component modes coexist in the combined movement."
+        },
+        {
+          "id": "b",
+          "text": "Their frequencies are averaged into one new frequency.",
+          "feedback": "Adding their movements does not erase the component frequencies."
+        },
+        {
+          "id": "c",
+          "text": "Their movements add at every position.",
+          "feedback": "Same-direction contributions reinforce and opposite-direction contributions partly cancel."
+        },
+        {
+          "id": "d",
+          "text": "The separate strings are attached end to end.",
+          "feedback": "The panels separate movements of one string rather than pieces that are joined."
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l13-mcq-008",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "What do the string spectrum’s equal-height peaks establish?",
+      "answer": "They show equal component strengths in the measurement at the selected point.",
+      "rubric": [
+        "Keep the amplitude equality specific to the pickup measurement."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 5
+        }
+      ],
+      "topic": "Equal peaks at a pickup",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Equal movement by every mode at every string position.",
+          "feedback": "Different modes have different spatial patterns, so a local reading does not establish that."
+        },
+        {
+          "id": "b",
+          "text": "Equal measured component strengths at the chosen pickup.",
+          "feedback": "The illustration adjusts the components to give equal readings at that location."
+        },
+        {
+          "id": "c",
+          "text": "Equal frequencies for all five components.",
+          "feedback": "Peak position gives frequency; equal height concerns amplitude."
+        },
+        {
+          "id": "d",
+          "text": "Equal numbers of internal nodes in all modes.",
+          "feedback": "The modes have different numbers of divisions even when their pickup peaks match."
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l13-mcq-009",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why are the membrane’s illustrated frequencies evenly spaced?",
+      "answer": "The harmonic frequencies were deliberately assigned, rather than calculated as this membrane’s natural resonances.",
+      "rubric": [
+        "Identify the illustrative frequency assignment."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 6
+        }
+      ],
+      "topic": "Interpreting a membrane example",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "All rectangular membranes naturally have that harmonic spacing.",
+          "feedback": "The assigned values do not establish this general claim."
+        },
+        {
+          "id": "b",
+          "text": "They were assigned that way for the teaching example.",
+          "feedback": "The source explicitly distinguishes the chosen harmonic frequencies from natural membrane resonances."
+        },
+        {
+          "id": "c",
+          "text": "The pickup forces the membrane to acquire those natural frequencies.",
+          "feedback": "The pickup records local movement; the source describes the frequencies as chosen illustration settings."
+        },
+        {
+          "id": "d",
+          "text": "Equal spectral heights require equal frequency spacing.",
+          "feedback": "Amplitude and frequency spacing are distinct properties."
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l13-mcq-010",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Which harmonic is the fourth allowed fixed–free mode?",
+      "answer": "The seventh harmonic.",
+      "rubric": [
+        "Identify the fourth allowed pattern as the seventh harmonic."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 7
+        },
+        {
+          "collection": "lecture13",
+          "page": 8
+        },
+        {
+          "collection": "lecture13",
+          "page": 9
+        }
+      ],
+      "topic": "Fixed–free mode and harmonic counts",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "The seventh harmonic.",
+          "feedback": "The allowed sequence is the first, third, fifth, and seventh harmonics."
+        },
+        {
+          "id": "b",
+          "text": "The fourth harmonic.",
+          "feedback": "Mode order and harmonic order differ in the odd-harmonic sequence."
+        },
+        {
+          "id": "c",
+          "text": "The fifth harmonic.",
+          "feedback": "That is the third allowed mode."
+        },
+        {
+          "id": "d",
+          "text": "The eighth harmonic.",
+          "feedback": "Even harmonics do not match the displayed node-to-antinode pattern."
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l13-mcq-011",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why is the free end called a displacement antinode?",
+      "answer": "The free end moves through a large back-and-forth movement.",
+      "rubric": [
+        "Define an antinode by movement over the cycle."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 7
+        }
+      ],
+      "topic": "A free-end antinode",
+      "pattern": "interpretation",
+      "examKeyRefs": [
+        18
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "It stays at its farthest position throughout the cycle.",
+          "feedback": "The endpoint still passes through its resting position and reverses."
+        },
+        {
+          "id": "b",
+          "text": "It cannot move from its resting position.",
+          "feedback": "That describes a displacement node."
+        },
+        {
+          "id": "c",
+          "text": "It gives every mode the same frequency.",
+          "feedback": "The boundary restricts allowed shapes; it does not erase their different frequencies."
+        },
+        {
+          "id": "d",
+          "text": "It has a large movement over the cycle.",
+          "feedback": "An antinode describes strong displacement through time, not a permanently displaced endpoint."
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l13-mcq-012",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "How does air-element motion differ from the string’s sideways motion?",
+      "answer": "Air motion is longitudinal along the tube rather than transverse to it.",
+      "rubric": [
+        "Distinguish the lengthwise air path from sideways string motion."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 10
+        },
+        {
+          "collection": "lecture13",
+          "page": 11
+        }
+      ],
+      "topic": "Air and string movement",
+      "pattern": "distinction",
+      "examKeyRefs": [
+        17,
+        18
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "The air elements follow the string’s up-and-down outline.",
+          "feedback": "The transverse outline is not the literal path of an air element."
+        },
+        {
+          "id": "b",
+          "text": "The air elements remain still while only their labels move.",
+          "feedback": "The media show changing positions and spacing."
+        },
+        {
+          "id": "c",
+          "text": "The air elements move along the tube.",
+          "feedback": "The air model is longitudinal, while the string demonstration is transverse."
+        },
+        {
+          "id": "d",
+          "text": "Each air element moves steadily from glottis to lips.",
+          "feedback": "The acoustic motion reverses around usual positions."
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l13-mcq-013",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Where does added mass most strongly affect a particular mode?",
+      "answer": "It matters most in a region of strong movement for that mode.",
+      "rubric": [
+        "Relate the strength of the mass effect to local motion."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 2
+        },
+        {
+          "collection": "lecture13",
+          "page": 13
+        }
+      ],
+      "topic": "Location of a mass effect",
+      "pattern": "cause-effect",
+      "examKeyRefs": [
+        3,
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Where that mode changes neighbor spacing strongly but has little displacement.",
+          "feedback": "That emphasizes compression and restoring stiffness rather than a large moving-mass contribution."
+        },
+        {
+          "id": "b",
+          "text": "At the same position for every mode, regardless of its movement.",
+          "feedback": "The spatial pattern differs by mode, so the location’s role can differ."
+        },
+        {
+          "id": "c",
+          "text": "Where that mode moves the air strongly.",
+          "feedback": "More load matters most where substantial movement must be accelerated and reversed."
+        },
+        {
+          "id": "d",
+          "text": "Where adding mass also removes all stiffness.",
+          "feedback": "The mass effect does not require removing the restoring response."
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l13-mcq-014",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Which observation directly shows changing air compression?",
+      "answer": "Changing gaps between neighboring elements show compression and rarefaction.",
+      "rubric": [
+        "Use neighbor spacing to identify compression change."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 11
+        },
+        {
+          "collection": "lecture13",
+          "page": 14
+        }
+      ],
+      "topic": "Observing compression",
+      "pattern": "interpretation",
+      "examKeyRefs": [
+        17,
+        18
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "One element travels far with unchanged gaps around it.",
+          "feedback": "That shows movement but little change in local compression."
+        },
+        {
+          "id": "b",
+          "text": "A frequency label is farther right on a spectrum.",
+          "feedback": "That identifies a higher frequency, not the spacing of neighboring air elements."
+        },
+        {
+          "id": "c",
+          "text": "The whole group moves together at constant spacing.",
+          "feedback": "The group can move strongly without much internal density change."
+        },
+        {
+          "id": "d",
+          "text": "The gaps between neighbors shrink and widen.",
+          "feedback": "Compression concerns the local spacing and density of the air."
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l13-mcq-015",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "What directions does lip loading give in the /u/ model?",
+      "answer": "F1 and F2 both decrease.",
+      "rubric": [
+        "Give both downward shifts."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 16
+        }
+      ],
+      "topic": "The /u/ directions",
+      "pattern": "prediction",
+      "examKeyRefs": [
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "F1 down and F2 up.",
+          "feedback": "That is the front /i/ comparison."
+        },
+        {
+          "id": "b",
+          "text": "F1 down and F2 down.",
+          "feedback": "Both modes move strongly near the loaded lip end."
+        },
+        {
+          "id": "c",
+          "text": "F1 up and F2 down.",
+          "feedback": "That is the back /a/ comparison."
+        },
+        {
+          "id": "d",
+          "text": "F1 up and F2 up.",
+          "feedback": "The illustrated lip effect is mass-dominated for both modes, not stiffness-dominated."
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l13-mcq-016",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "What directions does the front /i/ narrowing give?",
+      "answer": "F1 decreases and F2 increases.",
+      "rubric": [
+        "Give the downward F1 and upward F2 shifts."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 17
+        }
+      ],
+      "topic": "The /i/ directions",
+      "pattern": "prediction",
+      "examKeyRefs": [
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "F1 up and F2 down.",
+          "feedback": "That reverses the displayed front-constriction result."
+        },
+        {
+          "id": "b",
+          "text": "F1 down and F2 down.",
+          "feedback": "That is the lip-loading pattern."
+        },
+        {
+          "id": "c",
+          "text": "F1 up and F2 up.",
+          "feedback": "The first-mode mass effect lowers F1 rather than raising it."
+        },
+        {
+          "id": "d",
+          "text": "F1 down and F2 up.",
+          "feedback": "Movement matters more for Mode 1 there, while compression and stiffness matter more for Mode 2."
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l13-mcq-017",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "What directions does the back /a/ narrowing give?",
+      "answer": "F1 increases and F2 decreases.",
+      "rubric": [
+        "Give the upward F1 and downward F2 shifts."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 18
+        }
+      ],
+      "topic": "The /a/ directions",
+      "pattern": "prediction",
+      "examKeyRefs": [
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "F1 down and F2 up.",
+          "feedback": "That is the front /i/ pattern."
+        },
+        {
+          "id": "b",
+          "text": "F1 down and F2 down.",
+          "feedback": "That is the /u/ lip-loading pattern."
+        },
+        {
+          "id": "c",
+          "text": "F1 up and F2 up.",
+          "feedback": "The second-mode mass effect slows the cycle and lowers F2."
+        },
+        {
+          "id": "d",
+          "text": "F1 up and F2 down.",
+          "feedback": "The back region emphasizes stiffness in Mode 1 and moving mass in Mode 2."
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l13-mcq-018",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Compared with the illustrated /i/ filter, how are the /a/ filter’s first two formants arranged?",
+      "answer": "The /a/ filter has higher F1 and lower F2 than the /i/ filter.",
+      "rubric": [
+        "Compare the first two formant regions in the correct directions."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 21
+        },
+        {
+          "collection": "lecture13",
+          "page": 22
+        }
+      ],
+      "topic": "Comparing two vowel filters",
+      "pattern": "distinction",
+      "examKeyRefs": [
+        9,
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "F1 is lower and F2 is higher, so they are farther apart.",
+          "feedback": "That reverses the source comparison."
+        },
+        {
+          "id": "b",
+          "text": "F1 is higher and F2 is lower, so the first two regions are closer.",
+          "feedback": "The comparison changes from low-F1/high-F2 /i/ toward the closer /a/ pattern."
+        },
+        {
+          "id": "c",
+          "text": "Both move upward by the same amount.",
+          "feedback": "The first rises while the second falls."
+        },
+        {
+          "id": "d",
+          "text": "Their positions stay fixed, while harmonic spacing doubles.",
+          "feedback": "The comparison holds source spacing while changing the vowel filter."
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l13-mcq-019",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "What sets the spacing between consecutive source harmonics?",
+      "answer": "F0 sets consecutive harmonic spacing.",
+      "rubric": [
+        "Identify source F0 rather than a formant gap or amplitude."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        }
+      ],
+      "topic": "Harmonic spacing",
+      "pattern": "interpretation",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "F0, the source’s repetition frequency.",
+          "feedback": "The harmonics occur at successive multiples of that fundamental."
+        },
+        {
+          "id": "b",
+          "text": "The difference between F1 and F2.",
+          "feedback": "That gap belongs to the filter’s resonance pattern, not consecutive source components."
+        },
+        {
+          "id": "c",
+          "text": "The amplitude of the tallest harmonic.",
+          "feedback": "Amplitude describes strength, not repetition rate or frequency spacing."
+        },
+        {
+          "id": "d",
+          "text": "The number of formants marked on the figure.",
+          "feedback": "Formant count does not set the vocal-fold repetition rate."
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l13-mcq-020",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "The source harmonics keep their positions after filtering. What changes?",
+      "answer": "Their relative amplitudes change while the source spacing is retained.",
+      "rubric": [
+        "Identify the changed amplitude pattern with unchanged source positions."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        }
+      ],
+      "topic": "Filtering source components",
+      "pattern": "interpretation",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "They become only four isolated tones.",
+          "feedback": "The illustrated formants shape groups of many source harmonics."
+        },
+        {
+          "id": "b",
+          "text": "Each harmonic turns into a separate formant.",
+          "feedback": "A harmonic is a source component; a formant is a filter resonance region."
+        },
+        {
+          "id": "c",
+          "text": "They all move to a single common frequency.",
+          "feedback": "Filtering does not merge the harmonic frequencies into one tone."
+        },
+        {
+          "id": "d",
+          "text": "Their relative heights.",
+          "feedback": "The filter emphasizes components near its resonance regions and weakens others relative to them."
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l13-mcq-021",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Which description correctly separates F0 from F1?",
+      "answer": "F0 describes source repetition, while F1 describes the lowest tract resonance.",
+      "rubric": [
+        "Distinguish the source fundamental from the first formant."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        }
+      ],
+      "topic": "F0 and F1",
+      "pattern": "distinction",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "F0 is the first formant; F1 is the first source harmonic.",
+          "feedback": "This exchanges the source and filter roles."
+        },
+        {
+          "id": "b",
+          "text": "F0 and F1 are two names for the same strongest line.",
+          "feedback": "The source fundamental and the first resonance can differ."
+        },
+        {
+          "id": "c",
+          "text": "F0 is source repetition; F1 is the first tract resonance.",
+          "feedback": "The labels refer to different parts of the source–filter system."
+        },
+        {
+          "id": "d",
+          "text": "F0 measures amplitude; F1 measures elapsed time.",
+          "feedback": "Both labels refer to frequencies, not amplitude or time."
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l13-mcq-022",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "The /a/ formant is marked at 750 Hz between source lines at 700 and 800 Hz. How can it affect the sound?",
+      "answer": "The nearby source components can be strengthened even without a harmonic exactly at 750 Hz.",
+      "rubric": [
+        "Allow a filter resonance between actual source harmonics."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 22
+        }
+      ],
+      "topic": "A resonance between harmonics",
+      "pattern": "application",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "It must move onto 700 Hz before it can act.",
+          "feedback": "A resonance does not have to coincide with one harmonic."
+        },
+        {
+          "id": "b",
+          "text": "It replaces the nearby harmonics with a new source fundamental.",
+          "feedback": "The source repetition stays distinct from the filter target."
+        },
+        {
+          "id": "c",
+          "text": "It can strengthen nearby harmonics without adding a line at 750 Hz.",
+          "feedback": "The resonance is a filter property and can lie between supplied source components."
+        },
+        {
+          "id": "d",
+          "text": "It has no effect unless a source harmonic is exactly at 750 Hz.",
+          "feedback": "A resonance region affects nearby components as well as an exact-frequency match."
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l13-mcq-023",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "What does a taller line mean on the illustrated spectrum?",
+      "answer": "It means greater amplitude, not automatically higher frequency.",
+      "rubric": [
+        "Read stem height as amplitude."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        },
+        {
+          "collection": "lecture13",
+          "page": 21
+        }
+      ],
+      "topic": "Reading a spectrum",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Greater amplitude at that line’s frequency.",
+          "feedback": "Line height represents strength; horizontal position represents frequency."
+        },
+        {
+          "id": "b",
+          "text": "Higher frequency regardless of horizontal position.",
+          "feedback": "A line farther right has higher frequency; it can still be short."
+        },
+        {
+          "id": "c",
+          "text": "A later time in the vowel transition.",
+          "feedback": "A single spectrum does not use line height as time."
+        },
+        {
+          "id": "d",
+          "text": "A larger gap between neighboring harmonics.",
+          "feedback": "Spacing is horizontal separation, not stem height."
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l13-mcq-024",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "On the grayscale spectrogram, what represents a stronger component at a fixed frequency?",
+      "answer": "Greater strength is shown by a darker mark at the same frequency height.",
+      "rubric": [
+        "Use darkness for amplitude at fixed frequency."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 23
+        }
+      ],
+      "topic": "Reading spectrogram amplitude",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "A darker mark at the same height.",
+          "feedback": "Darkness represents amplitude and the fixed height preserves frequency."
+        },
+        {
+          "id": "b",
+          "text": "A higher mark with unchanged darkness.",
+          "feedback": "That would indicate a higher frequency rather than greater amplitude."
+        },
+        {
+          "id": "c",
+          "text": "A mark shifted to the left.",
+          "feedback": "Horizontal location identifies time, not strength."
+        },
+        {
+          "id": "d",
+          "text": "A wider gap between frequency bands.",
+          "feedback": "Band separation concerns frequency positions rather than amplitude at one frequency."
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l13-mcq-025",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why can formants be harder to identify in a high-pitched source with the same vowel filter?",
+      "answer": "Higher F0 gives more widely separated harmonics, which describe the fixed filter less densely.",
+      "rubric": [
+        "Connect wider spacing to less detailed sampling of unchanged formants."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 25
+        }
+      ],
+      "topic": "High pitch and visible formants",
+      "pattern": "cause-effect",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Each formant must move up by the same amount as F0.",
+          "feedback": "Changing the source alone does not require the fixed filter targets to move."
+        },
+        {
+          "id": "b",
+          "text": "The vocal tract loses its resonances when the source rises.",
+          "feedback": "The problem is revealing the envelope from sparse components, not eliminating the filter."
+        },
+        {
+          "id": "c",
+          "text": "More harmonics become packed into each frequency region.",
+          "feedback": "A higher F0 spreads the harmonics farther apart."
+        },
+        {
+          "id": "d",
+          "text": "Wider harmonic spacing leaves fewer samples of the resonance regions.",
+          "feedback": "The source provides less detail about the unchanged filter between its components."
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l13-written-001",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why does a spring–mass system move past its resting position instead of stopping there immediately?",
+      "answer": "The spring brings the displaced mass back toward rest, but the moving mass tends to keep moving. It can therefore pass the resting position before the spring pulls it back from the other side.",
+      "rubric": [
+        "Connect the spring’s restoring action to return toward rest.",
+        "Use inertia to explain continued movement past rest."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 2
+        }
+      ],
+      "topic": "Return and overshoot",
+      "pattern": "cause-effect",
+      "examKeyRefs": [
+        17,
+        18
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-002",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why does the location of added mass matter to a mode’s frequency?",
+      "answer": "A mode moves different positions by different amounts. Added mass matters strongly where that mode has to move it through a large movement, making reversal slower. It matters less where the mode moves very little.",
+      "rubric": [
+        "Relate added load to the mode’s local movement.",
+        "Explain why the frequency effect varies with position."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 2
+        }
+      ],
+      "topic": "Position-dependent loading",
+      "pattern": "cause-effect",
+      "examKeyRefs": [
+        3,
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-003",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "How does Mode 1 differ from higher patterns in the finite-chain atlas?",
+      "answer": "In Mode 1, the moving masses are on the same side of their resting positions together. Higher modes divide them into groups that move in opposite directions, with more changes of direction along the chain.",
+      "rubric": [
+        "Describe the broadly same-direction lowest pattern.",
+        "Describe additional opposite-moving regions in higher modes."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 3
+        }
+      ],
+      "topic": "Comparing chain patterns",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-004",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "One mass stays still while its neighbors move in a chain mode. Has the whole chain stopped?",
+      "answer": "No. That mass can lie at a stationary point of the pattern. The other masses can continue their organized back-and-forth movement.",
+      "rubric": [
+        "Interpret a stationary internal position without declaring the whole mode absent."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 3
+        }
+      ],
+      "topic": "An internal stationary point",
+      "pattern": "interpretation",
+      "examKeyRefs": [
+        18
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-005",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why does equal drawing height across atlas panels not prove equal unscaled physical amplitudes?",
+      "answer": "The panels enlarge their movements to the same displayed maximum. That makes shapes easier to compare, but it does not preserve the original amplitude scale between panels.",
+      "rubric": [
+        "Identify the normalized display scale.",
+        "Separate comparable visible shapes from an unscaled amplitude comparison."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 3
+        }
+      ],
+      "topic": "Display scaling and amplitude",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-006",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why can the ideal fixed–fixed string fit both even and odd harmonics?",
+      "answer": "Each whole half-wave starts and ends at a node. Any whole number of those sections can therefore preserve both fixed endpoints. More sections fit shorter wavelengths into the same length and give higher harmonics.",
+      "rubric": [
+        "Relate half-wave counts to node endpoints.",
+        "Explain why both even and odd counts are allowed."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 4
+        }
+      ],
+      "topic": "Why the fixed–fixed sequence is consecutive",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-007",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Both boundary demonstrations label their fundamental 100 Hz. Does that show that freeing one endpoint has no effect?",
+      "answer": "No. The examples were tuned separately. With length and wave speed held fixed, changing fixed–fixed to fixed–free would halve the fundamental, so the shared labels alone do not isolate the endpoint change.",
+      "rubric": [
+        "Distinguish separately tuned examples from a controlled boundary change.",
+        "State the halving under unchanged length and wave speed."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 7
+        }
+      ],
+      "topic": "Interpreting matching labels",
+      "pattern": "interpretation",
+      "examKeyRefs": [
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-008",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why would two quarter-waves fail the fixed–free endpoint requirements?",
+      "answer": "Starting at a node, two quarter-waves finish at another node. The free end requires an antinode, so the allowed counts are odd.",
+      "rubric": [
+        "Trace the endpoint type after an even quarter-wave count.",
+        "Connect its failure to the required free-end antinode."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 8
+        },
+        {
+          "collection": "lecture13",
+          "page": 9
+        }
+      ],
+      "topic": "Checking an allowed shape",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-009",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "A displacement pickup is moved to a node of one mode. What can happen to that mode’s measured contribution?",
+      "answer": "It can disappear from that local displacement reading because the node does not move. Moving the pickup does not by itself remove the mode from the system or change its frequency.",
+      "rubric": [
+        "Connect a node to zero local displacement contribution.",
+        "Separate a changed measurement location from retuning the system."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 5
+        }
+      ],
+      "topic": "A pickup at a node",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-010",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "What do the two indices in the membrane’s mode labels distinguish?",
+      "answer": "They distinguish divisions of the surface along its two directions. Dividing across one direction produces a different spatial pattern from dividing across the other, even though both belong to the same membrane.",
+      "rubric": [
+        "Relate the indices to the two surface directions.",
+        "Distinguish spatial patterns within one connected surface."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 6
+        }
+      ],
+      "topic": "Two-dimensional membrane patterns",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-011",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "How can air move strongly without much local compression change?",
+      "answer": "Neighbors can move together while their gaps stay nearly unchanged. Their movement is large, but their spacing and local density change little.",
+      "rubric": [
+        "Describe shared movement with little changing neighbor spacing."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 11
+        },
+        {
+          "collection": "lecture13",
+          "page": 14
+        }
+      ],
+      "topic": "Motion without strong compression",
+      "pattern": "cause-effect",
+      "examKeyRefs": [
+        17,
+        18
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-012",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why do increased mass and stiffness at a constriction not automatically cancel?",
+      "answer": "Movement and compression are strongest in different parts of a mode. The same narrowing can therefore matter more through its mass effect than its spring effect, or the reverse. Its importance also differs between modes.",
+      "rubric": [
+        "Separate the locations of strong movement and strong compression.",
+        "Explain unequal importance of the two effects at a given location."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 13
+        }
+      ],
+      "topic": "Competing effects at one location",
+      "pattern": "cause-effect",
+      "examKeyRefs": [
+        3,
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-013",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Dean and dune are both high vowels. What important difference does that description leave out?",
+      "answer": "Dean has the front narrowing, while dune has the highlighted lip narrowing. Those positions affect Mode 2 differently, giving the illustrated /i/ increase in F2 and /u/ decrease in F2.",
+      "rubric": [
+        "Identify different constriction locations despite shared height.",
+        "Connect those locations to the differing second-formant directions."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 12
+        },
+        {
+          "collection": "lecture13",
+          "page": 16
+        },
+        {
+          "collection": "lecture13",
+          "page": 17
+        }
+      ],
+      "topic": "Height and narrowing location",
+      "pattern": "distinction",
+      "examKeyRefs": [
+        9
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-014",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why do /u/ and /a/ both lower F2 but affect F1 in opposite directions in the models?",
+      "answer": "For /u/, motion matters strongly near the lips in both modes, so the mass effect lowers both. At the /a/ location, stiffness matters most for Mode 1 and raises F1, while moving mass matters most for Mode 2 and lowers F2. The physical rules are the same, but the changed location has different roles.",
+      "rubric": [
+        "Explain the shared mass-dominated decrease in the second mode.",
+        "Explain the different local roles that give opposite first-formant directions."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 16
+        },
+        {
+          "collection": "lecture13",
+          "page": 18
+        }
+      ],
+      "topic": "Two constrictions under the same rules",
+      "pattern": "distinction",
+      "examKeyRefs": [
+        3,
+        24
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-015",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Do the separate F1, F2, and F3 rows represent three separate streams of air?",
+      "answer": "No. They isolate different resonance patterns of the same air column. Each row makes that pattern’s motion and compression easier to compare.",
+      "rubric": [
+        "Identify different modes of the same air system."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 11
+        },
+        {
+          "collection": "lecture13",
+          "page": 19
+        }
+      ],
+      "topic": "Separate modes and one tract",
+      "pattern": "distinction",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-016",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why is a voiced vowel not a single-frequency vibration?",
+      "answer": "Its repeating source supplies several harmonics. The tract then makes some frequency regions stronger than others. The resulting sound contains a pattern across frequencies rather than just one tone.",
+      "rubric": [
+        "Identify multiple source components.",
+        "Explain filtering as a pattern of strengths across frequencies."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        }
+      ],
+      "topic": "A vowel’s multiple frequencies",
+      "pattern": "cause-effect",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-017",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "What is the difference between a harmonic and a formant?",
+      "answer": "A harmonic is a component supplied by the repeating source. A formant is a resonance region of the tract that shapes the strengths of nearby components.",
+      "rubric": [
+        "Define a source component and a tract resonance as different roles."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        },
+        {
+          "collection": "lecture13",
+          "page": 22
+        }
+      ],
+      "topic": "Harmonic and formant",
+      "pattern": "distinction",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-018",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Every harmonic line is drawn proportionally taller, with its horizontal position unchanged. Has harmonic spacing changed?",
+      "answer": "No. The amplitudes have increased, but the frequency positions and gaps are unchanged.",
+      "rubric": [
+        "Separate a common amplitude change from frequency spacing."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        },
+        {
+          "collection": "lecture13",
+          "page": 21
+        }
+      ],
+      "topic": "Amplitude scaling and frequency",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-019",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Two spectra have the same harmonic spacing but different patterns of relative heights. Which part of the source–filter account differs?",
+      "answer": "The filter emphasis differs in this comparison. The source spacing is retained, while the tract favors different frequency regions and changes the pattern of harmonic strengths.",
+      "rubric": [
+        "Hold source spacing separate from the relative-amplitude envelope.",
+        "Identify changed filter emphasis."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        },
+        {
+          "collection": "lecture13",
+          "page": 21
+        },
+        {
+          "collection": "lecture13",
+          "page": 22
+        }
+      ],
+      "topic": "Same source and different filters",
+      "pattern": "interpretation",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-020",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why would using the gap between F1 and F2 to estimate F0 confuse two different patterns?",
+      "answer": "F1 and F2 are separate tract resonances. F0 determines the gaps between consecutive source harmonics, not the gap between two formants. Both patterns can appear in the same filtered spectrum.",
+      "rubric": [
+        "Identify formant separation as a filter property.",
+        "Identify consecutive harmonic spacing as the source-F0 property."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        }
+      ],
+      "topic": "Two frequency organizations",
+      "pattern": "distinction",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-021",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Schwa and /a/ share one illustrated upper-formant value. Does that make their entire filters the same?",
+      "answer": "No. Their lower formant regions and overall envelopes differ. Matching one resonance does not specify the whole pattern of favored frequencies.",
+      "rubric": [
+        "Distinguish one shared resonance from a matching whole filter."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 20
+        },
+        {
+          "collection": "lecture13",
+          "page": 22
+        }
+      ],
+      "topic": "One shared resonance",
+      "pattern": "distinction",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-022",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "During the illustrated /i/ to /a/ transition, which way do the first two spectrogram bands move?",
+      "answer": "The first rises and the second falls.",
+      "rubric": [
+        "Identify rising F1 and falling F2."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 23
+        }
+      ],
+      "topic": "The vowel-transition directions",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-023",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "How do a rising band and a darkening band differ on this spectrogram?",
+      "answer": "A rising band goes to a higher frequency. A darkening band becomes stronger at its current frequency. Vertical position and darkness encode different properties.",
+      "rubric": [
+        "Read vertical movement as frequency change.",
+        "Read darkness as amplitude."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 23
+        }
+      ],
+      "topic": "Frequency and strength through time",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-024",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "How would you isolate the effect of harmonic spacing on how clearly a vowel’s formants appear?",
+      "answer": "Hold the filter and its formant targets fixed, then compare source rates with different harmonic spacing. That changes the number of available samples without also moving the resonance targets.",
+      "rubric": [
+        "Hold the vocal-tract filter fixed.",
+        "Vary source spacing to isolate the sampling effect."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 25
+        }
+      ],
+      "topic": "A controlled source comparison",
+      "pattern": "design",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    },
+    {
+      "id": "v2-l13-written-025",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture13",
+      "prompt": "Why does one isolated strong harmonic not locate a formant as clearly as several nearby harmonics?",
+      "answer": "One line shows the filter’s response at only that supplied frequency. Several nearby lines can trace the rise and fall around a resonance region. With only one strong sample, the target can still lie in a neighboring gap.",
+      "rubric": [
+        "Contrast one local sample with several samples of the resonance shape.",
+        "Allow the target to lie between supplied harmonics."
+      ],
+      "sources": [
+        {
+          "collection": "lecture13",
+          "page": 25
+        }
+      ],
+      "topic": "One line and a resonance envelope",
+      "pattern": "cause-effect",
+      "examKeyRefs": [
+        16
+      ],
+      "examReviewRefs": [],
+      "edition": "2026-10-20-practice-v2"
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+[
+  {
+    "page": 1,
+    "text": "            Ling 285\nHuman Language and Technology\n           Lecture 15\n        Neural Networks\n\n\n               Khalil Iskarous\n       Department of Linguistics\n     University of Southern California",
+    "ocr": "",
+    "image": "assets/slides/lecture15/001.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 2,
+    "text": "                                                                                                            +0.1       done\n\n\n                                                                                +0.5                                                                                                     +0.1  +0.6   −0.2\n                          +0.005                       −0.4                                            −0.5\n                                                                                                                 +0.8                                               dune\n                                                                                      +0.4                 −0.1\n                   +0.002                                                                                +0.2F1                                                      +0.6                 +0.4\n                          −0.001                                                                       −0.4  +0.2    +0.4                                                       −0.2\n                                                                                +0.7                                               dean                                               −0.7  +0.5                                                −0.5  +0.2\n                         +0.003\n                                                                                +0.7                          +0.1                                 −0.004                                                                                                      −0.3                                                                                                                  −0.2                                                                                      −0.2F2                    +0.002                      −0.5                                                                                +0.3                               +0.2    Don\n                                                                                                           +0.3                                                                                                                   +0.8\n                                                                                                                   +0.8\n                                                                                                            −0.6\n                                           Dan",
+    "ocr": "",
+    "image": "assets/slides/lecture15/002.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 3,
+    "text": "                 Forward propagation\n\n\n                       Top neuron: w₁ F1 + w₂F2\n\n                (+0.005 × 320) + (−0.001 × 2000) = −0.40\n\n                                                                                55.7%                                                                                                            +0.1       done\n                                                           1.57\n                           -0.4                                    +0.5                                                                                                     +0.1  +0.6   −0.2\n                          +0.005                       −0.4                                            −0.5          7.4%                                                                                                                 +0.8                                               dune                                            5.5                                                                                      +0.4                 −0.1      320                   +0.002                                                                                +0.2     -1.95F1                                                      +0.6                 +0.4\n                          −0.001                                                                       −0.4  +0.2    +0.4\n                                                                                8.1%                        6.64           −0.2                     +0.7                                               dean                                               −0.7  +0.5                                                −0.5  +0.2\n                         +0.003\n                                                                                +0.7     -1.95          +0.1                                 −0.004                                            -5.93                              −0.3                                                                                                                  −0.2      2000                                                                     −0.2F2                    +0.002                      −0.5                                          18.5%                                                                                +0.3                               +0.2    Don\n                        2.72                                                              +0.3     +0.8\n                                                              -2.88               +0.8                                                                                                            −0.6\n                                                                                10.2%                                           Dan\n\n                                                                     Softmax: p ᵢ = exp(z ᵢ) / Σ ⱼ exp(z ⱼ)\n\n                                                                Output logits: 0.622  -1.398  -1.300  -0.478  -1.076",
+    "ocr": "",
+    "image": "assets/slides/lecture15/003.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 4,
+    "text": "Pop\nQuiz!",
+    "ocr": "Pop\nForward propagation\n\nTop neuron: w,F1 + w2F2\n\n(+0.005 x 320) + (-0.001 x 2000) = -0.40\nGs) = done\n(4), :\n\n40.5 40.1 40.6 ~ -0.2\nF1 +o.005 5} 0s 08 dune\n+0.002 _= +0.6 +0.4 - : (298) .\nen dean\n+0.003\n0.004\n\nF2 sown Gn) 4s Don\nDan\n\nSoftmax: pi = exp(zi) / 2; exp(zj)\nOutput logits: 0.622 -1.398 -1.300 -0.478 -1.076",
+    "image": "assets/slides/lecture15/004.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 5,
+    "text": "Info on Exam 2 and\nExam 3",
+    "ocr": "Info on Exam 2 and\nExam 3",
+    "image": "assets/slides/lecture15/005.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 6,
+    "text": "                     Backpropagation\n\n\n                    Top neuron: w₁ F1 + w₂F2                            Computed Desired\n                                                                        Output   Output\n             (+0.005 × 320) + (−0.001 × 2000) = −0.40\n\n                                                                         55.7%                                                                                                +0.083+0.1           0    done\n                                                   1.57\n                                                                                                 −0.202−0.2  +0.622+0.6\n                        -0.4                              +0.514+0.5                                                                                +0.185+0.2           +0.129+0.1    −0.078−0.1                       +0.00498+0.005                 −0.4003−0.4                                                                         7.4%                                                0    dune                                       5.5     +0.396+0.4                   +0.803+0.8      320                                                                                       −0.468−0.5F1                                                  -1.95                                                +0.6054+0.6                                                                                                 +0.197+0.2                       +0.00195+0.002                                                                      +0.420+0.4\n                                                                                                         +0.364+0.4\n                    −0.00113−0.001                     6.64         −0.2020−0.2                  +0.704+0.7                 +0.203+0.2         8.1%                                                                                                           −0.506−0.5       1    dean\n                        +0.00270+0.003                −0.6672−0.7                   −0.156−0.2                     +0.164+0.2\n                                                      -1.95    −0.296−0.3     −0.393−0.4                           −0.00403−0.004        +0.5022+0.5                         +0.679+0.7                                      -5.93                                      −0.193−0.2      2000                                                                                                  +0.047+0.1        18.5%F2               +0.00179+0.002                  −0.4866−0.5                                                                                                          +0.804+0.8       0    Don                                                                          +0.253+0.3\n                     2.72                                                       +0.311+0.3                                                                                                         +0.804+0.8\n                                                      -2.88                                                                                                    −0.594−0.6\n                                                                         10.2%                                                0    Dan\n\n           Weight update: W ← W − η ∂L/∂W                         Softmax: p ᵢ = exp(z ᵢ) / Σ ⱼ exp(z ⱼ)\n\n                               Cross-entropy for dean. Forward activationsOutputstaylogits:fixed 0.622during -1.398this backward-1.300 pass.-0.478  -1.076",
+    "ocr": "",
+    "image": "assets/slides/lecture15/006.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 7,
+    "text": "                                             If we increase this w, will the Error go up or\n                         down?\n\nIf we increase this w, will\nthe\nError go up or down?",
+    "ocr": "",
+    "image": "assets/slides/lecture15/007.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 8,
+    "text": "                                                                              First                                                                                        Last\n                                          W2                                                        W5Why do we backpropagate?\n\n\n     •  Let’s think about the problem of w-modification, and let’s\n     compare the last set of w’s and the first\n     •  Last W5: The output probabilities are directly determined by\n      the Last w’s!!!! The error is very directly determined by the last\n      W’s\n     • We can use the error between computed and desired directly\n      to determine better w’s.\n     •  First W2 affects its activations, which affects another 2 layers\n      of activations along with other W’s. It’s really hard to figure out\n      the culpability of W2 for the mistakes made all the way at the\n       end!!!!! Moreover, the effect of W2 on errors INCLUDES the\n       effect of W5 on them, since W5 is downstream of W2!!!!\n     • So which problem is easier: Improving W2 or W5?\n     • W5 is easy! What algorithm do we use to solve small problems\n     then bigger ones that depend on them?\n     • Dynamic programming?\n     •  Backpropagation is Bellman-Viterbi Dynamic Programming!!!\n     •  Backpropagation = SGD + Dynamic programming 😉",
+    "ocr": "",
+    "image": "assets/slides/lecture15/008.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 9,
+    "text": "                        Training matrices\n\n\n          Before backpropagation               Formant_Inputs         TrueVowel_Outputs\n\n                                                       110 × 2                   110 × 5\n\n                                                          55.7%  done        F1        F2       done   dune   dean   Don   Dan\n                                             1.57\n                      -0.4                                   500     1500      1    0    0    0    0\n                                                          7.4%  dune\nF1   320                        5.5          -1.95                   350     1000      0    1    0    0    0\n\n                   6.64                                   8.1%  dean      320     2000      0    0    1    0    0\n\n     2000                       -5.93                           700     1100      0    0    0    1    0F2                                            -1.95\n                                                          18.5%  Don\n                   2.72                                   800     1700      0    0    0    0    1\n\n                                                -2.88\n                                                          10.2%  Dan    ⋮    ⋮    ⋮  ⋮  ⋮  ⋮  ⋮\n\n\n          2 → 3 → 2 → 4 → 5                           Illustrative rows. Each row pairs one recording with its vowel.",
+    "ocr": "",
+    "image": "assets/slides/lecture15/009.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 10,
+    "text": "               The same network in PyTorch\n\n\n\n                                                   import torch          Before backpropagation\n                                                   from torch import nn\n\n\n                                                   # Sizes: X = 110x2, Y = 110x5\n                                                          55.7%  done                                                   X = torch.load(\"Formant_Inputs.pt\").float()                                             1.57\n                                                   Y = torch.load(\"TrueVowel_Outputs.pt\").float()                      -0.4\n                                                          7.4%  dune\nF1   320                        5.5          -1.95                  net = nn.Sequential(\n                                                       nn.Linear(2, 3),\n                   6.64                                   8.1%  dean       nn.Linear(3, 2),\n                                                       nn.Linear(2, 4),\n     2000                       -5.93F2                                            -1.95                                                       nn.Linear(4, 5)\n                                                          18.5%  Don\n                                                   )\n                   2.72\n\n                                                -2.88\n                                                          10.2%  Dan   sgd = torch.optim.SGD(net.parameters(), lr=0.1)\n                                                   sgd.zero_grad()\n                                                   loss = nn.CrossEntropyLoss()(net(X), Y)\n                                                   loss.backward()\n          2 → 3 → 2 → 4 → 5                                                   sgd.step()\n\n\n                                                       One gradient step using all 110 rows",
+    "ocr": "",
+    "image": "assets/slides/lecture15/010.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 11,
+    "text": "             The sigmoid activation function\n\n\n                                                     σ(z) = 1 / (1 + exp(−z))        Lord Edgar Adrian\n\n    Nobel Prize in Physiology or Medicine, 1932\n\n  Neurons are nearly digital! On or off, roughly.\n           If the inner product is large positive,\n sigmoid function is near 1, and if inner product\n      Is large negative, sigmois is basically 0.\nAnimal perception reflects this: some things that seem\nalike, are perceived different, and some things that are\n         Very different are perceived same!\n\n                     If the inner product is −4:\n           σ(−4) = 0.0180\n\n                      If the inner product is 4:\n            σ(4) = 0.9820\n                                                   https://www.vcalc.com/wiki/vcalc/sigmoid-\n                                                   function",
+    "ocr": "",
+    "image": "assets/slides/lecture15/011.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 12,
+    "text": "          Applying sigmoid, one neuron at a time\n\n\n                  HiddenHiddenHiddenHiddenHiddenHiddenHiddenHiddenHiddenInitially:layerlayerlayerlayerlayerlayerlayerlayerlayerall hidden1,2,3,1,1,2,3,3,3, neuronneuronneuronneuronneuronneuronneuronneuronneuronactivations1:2:4:2:3:1:1:2:3: σ(-0.400)σ(-1.248)σ(-0.076)σ(6.640)σ(2.720)σ(0.908)σ(0.401)σ(0.441)σ(0.441)are ======linear.=== 0.9990.9380.7130.5990.6090.6090.4010.2230.481\n\n\n                                                                                55.7%52.6%30.5%25.4%24.5%19.1%19.4%19.4%18.0%16.2%                                               done\n                                                               1.5661.3740.4710.2040.1070.4010.5990.5990.5990.599\n                         0.4010.4010.4010.4010.4010.4010.4010.4010.401-0.4\n                                                                                14.7%16.5%15.9%20.8%19.9%20.5%20.1%20.2%7.4%6.6%                                               dune                                            5.5045.1831.7990.9080.7130.7130.7130.7130.7130.713      320                                                                  -1.948-2.188-0.778-0.511-0.5890.4410.4410.6090.6090.609F1\n\n                         0.9990.9990.9990.9990.9990.9990.9990.9996.646.64                                                   15.5%17.3%16.9%19.0%19.3%18.7%18.3%23.0%8.1%7.6%                                               dean\n                                                                  -1.948-2.188-0.778-0.511-0.5890.4410.4410.4410.6090.609\n                                              -5.928-6.088-2.139-1.248-1.2480.2230.2230.2230.2230.223      2000F2                                                                            18.5%25.9%24.3%25.2%29.0%8.7%7.8%6.6%6.1%8.5%                                           Don\n                         0.9380.9380.9380.9380.9380.9380.9382.722.722.72\n                                                                  -2.879-2.863-1.002-0.556-0.517-0.076-0.076-0.076-0.0760.481\n                                                                                10.2%15.0%15.6%13.6%32.5%33.6%34.8%37.6%32.0%7.2%                                           Dan\n\n                           Purple: linear activation   Green: sigmoid activation\n\n                     Inputs stay as formants. Downstream values recalculate; outputs use softmax.",
+    "ocr": "",
+    "image": "assets/slides/lecture15/012.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  },
+  {
+    "page": 13,
+    "text": "          The same PyTorch program, with sigmoid\n\n\n\n                                                   import torch        Sigmoid hidden activations\n                                                   from torch import nn\n\n\n                                                   # Sizes: X = 110x2, Y = 110x5\n                                                          16.2%  done                                                   X = torch.load(\"Formant_Inputs.pt\").float()                                           0.599\n                                                   Y = torch.load(\"TrueVowel_Outputs.pt\").float()                  0.401\n                                                          20.2%  dune\nF1   320                     0.713        0.609                  net = nn.Sequential(\n                                                       nn.Linear(2, 3), nn.Sigmoid(),\n                  0.999                                  23.0%  dean       nn.Linear(3, 2), nn.Sigmoid(),\n                                                       nn.Linear(2, 4), nn.Sigmoid(),\n     2000                    0.223F2                                        0.609                                                       nn.Linear(4, 5)\n                                                          8.5%  Don\n                                                   )\n                  0.938\n\n                                           0.481\n                                                          32.0%  Dan   sgd = torch.optim.SGD(net.parameters(), lr=0.1)\n                                                   sgd.zero_grad()\n                                                   loss = nn.CrossEntropyLoss()(net(X), Y)\n                                                   loss.backward()\n          2 → 3 → 2 → 4 → 5                                                   sgd.step()\n\n\n                                                                     Sigmoid after each hidden layer",
+    "ocr": "",
+    "image": "assets/slides/lecture15/013.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": true
+  }
+]

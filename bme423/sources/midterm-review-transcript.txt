@@ -1,0 +1,346 @@
+David D'Argenio
+David D'Argenio
+In terms of the test,
+So it's gonna be, oh, sorry, it's gonna be on Monday. And you can bring two sheets of anything you want on either side, okay?
+handwritten or typed. You need to bring the statistical tables that we're going to use, and they're listed here, so we won't be bringing tables for you to use, so you should print out these four tables and make sure you bring them.
+And let's see, a calculator. Bring a calculator, obviously. And the material that we're going to cover is from the beginning of the semester, we really started in earnest in the second lecture on descriptive statistics, all the way through and including Session 13, which talked about association between nominal variables, okay? The material that was.
+presented in the video that you viewed on Monday will not be on this test, okay? So that's that material on types… experiment design and types of error.
+Yes, please. Sorry, so do the tables not count towards our… No, they do not, they're totally separate, so yeah, thank you, thank you. So, your two sheets, anything you want, and then tables, but of course on the tables, don't be writing all that stuff, okay?
+On.
+Oh, so that's… that's the material, and we're going to cover material from descriptive statistics all the way through and including Section 3. In terms of reviewing.
+kind of the obvious things, you know, read the text. It gives kind of, in some cases, different ways of explaining these ideas. You can look at the specific pages are indicated in the syllabus. Obviously, review the lecture slides, the homework assignments, the solutions for the homework assignments. You've got the solution for homework 1. We'll post the solution for homework 2.
+Probably early on Saturday morning. Obviously, you will not have gotten your graded Homework 2 back, but you can look at the solution.
+And that's why we emphasized in homework 2 that that's a Friday at 5 is a hard deadline, okay? So usually there's a period where you can get reduced credit, but we're not going to do that for this homework, okay? So make sure you get those uploaded on Friday by 5, and we'll put the solutions out there.
+And then, as we've mentioned a couple times, there's a lot of other, examples in the, in the book chapters themselves, and certainly at the end of each of the chapters, and so you can look at some of those to get some.
+Idea of the kinds of questions that we might ask as well.
+There will be, between 6 and 8 questions. There'll be a couple on probability.
+And there'll be some things that we're not going to, ask you about, and as we go through today's discussion, we'll emphasize those.
+Okay, any questions at this point? We'll revisit this at the end as well.
+Okay, so, as we've emphasized a number of times, our focus in this class is to say something about a pot… yes, I'm sorry.
+On the exam, will there be any problems that are, like, R-related? Yeah, so I'm going to mention that at the end and give you some, examples of what we will and will not. Whoops.
+what we will in a moment, okay? Yeah.
+So, our focus is…
+in this class is to try to say something about a population. In particular, we're generally interested in asking questions about how one population might be different from a different population, one as a result of maybe some treatment or a different diagnostic procedure they received, a different kind of laboratory experiment they underwent. And so that's our goal, to say something about the population. Well, how
+How do we describe a population? And a population we mean every experimental unit that would ever get therapy, for example, or use a surgical procedure or get that diagnostic.
+Well, one way to think about it is to try to find every… get everybody in the population and measure that response. That's really not realistic for us. Obviously, there'll be people who might get a new diagnostic procedure that you'll invent today, two years from now, so we obviously can't sample everybody, but if we did, like, for example, the heights of the Martians in this example where there's only 200 Martians, you measure every single Martian.
+Martian, or you measure every single Venusian, and that summarizes everything you need to know.
+That's the whole population. We can describe that in different ways. We can talk about something like the central tendency as measured by the mean, or the dispersion. It's kind of single numbers that say something about these distributions in our population. Of course, that's not what we can do in any kind of trial. What we do instead
+is, take a sample from the population, in this case, what, 6 individuals from the population, and measure their.
+height of the six solutions. And then, based on that, we can calculate, and what is an approximation to
+some of these descriptive parameters that describe the population. So, mean is a nice descriptive parameter to measure central tendency, and variance to measure dispersion. We can approximate those, or get an estimate of those.
+Based on the sample by just calculating the sample mean, or the sample dispersion.
+And so, whenever we're going to be making an inference, we're going to start with information from a sample. There might be several groups, so we'll get similar information in each of the groups, and based on that, we want to say something about the population.
+So that's kind of the underlying theme of pretty much everything that we do in the class.
+As we mentioned early on, there's other ways to describe the samples that we get from an experiment.
+In addition to sample mean and sample standard deviation, another measure of central tendency is the median. And that can be very useful, especially if the distribution is not nice and symmetric. We can calculate that or to get another measure of dispersion besides standard deviation, we could look at things like interquartile range or minimum and the maximum value.
+Or in general, if we have a set of data, we can actually calculate any percentiles. And so here's just a little algorithm that you used in homework one to calculate percentiles. And the percentile is that value of the random quantity.
+that P percent of the data, P percent of the data you collected are below, or one minus P is above. So that's a useful way also of trying to do some exploratory data analysis.
+Okay, that's still all based on samples and just describing the data, which is a big part of understanding the result of any kind of experiment that you would do, looking at the data, looking at ways to explore the data. To go beyond that, to think about methods for inference, we've got to categorize our data and our experiment into different types. And this is just a summary of how
+We can…
+talk about classifying our data, because the kind of data we have will determine the way we describe it mathematically, and then how we do an inference. We talked so far in class about two general types of data. We talked about interval data, which is simply measured on a scale, like a ruler or a meter. And the meaning here is that the intervals, the distance between particular values.
+have particular meaning. So, for example, weight, pH, low density lipoprotein, height, those are examples of interval data. You take a measure of scale. That's continuous interval data. Height can be any number over a range, depending on how precisely you can measure it. We can also have discrete interval data.
+So, for example, in our arthritis study, the clinician will actually palpate a lot of joints and count the number that are tender.
+And as… looking at an anti-asthmatic, we often measure that as the ultimate clinical outcome, the number of exacerbations they have, where they have to go to a hospital.
+That's interval data. Another kind of data that's very common in trials is categorical data, where what we're measuring is not an interval scale, it falls into categories. And that has two types. When the categories are ordered, for example, staging of cancer. There's a rigorous way, depending on the type of cancer.
+They characterize the degree of cancer. And at stage 1 through 4, N4 being more cancer than 1.
+The idea here is that these are categories, okay? The difference between 2 and 1 is not the same as 3 and 2.
+Another example of order categorical data is Taylor.
+You can be asked to characterize your pain, maybe on a scale of 1 to 10, or a scale of 1 to 5.
+That's clearly an ordering to that result, but they're categories. We could have categorical data that are just nominal. They're not… there's not any ordering to them. For example, the cause of death. It might be one of a set of levels inside a category.
+That's an example of categorical data. Why is this important? Again, in order to describe these data that you've got from an experiment, we're going to need different kinds of statistical representations or probabilistic representations to do that. That will then be used in our statistical tests.
+Okay, then we spent a bit of time, maybe 3 lectures at least, talking about how we can describe random quantities in theory, okay? We want to come up with a framework for describing, for example.
+what's happening in a population that doesn't involve measuring individuals in the population. We want to come up with some mathematical framework to describe the degree of uncertainty. And that's, that is the area of the field of probability.
+Actually, probability is a subset of another field of mathematics called measure theory, and probability is the way we describe uncertain events. As I've kind of emphasized, notions of probability are not quite so intuitive to us. Some basic ones are, like when we have games of chance, but others are not so intuitive. They're a little harder to comprehend, but they're essential to how we make decisions.
+in general, and certainly how we make decisions in clinical experiments or other kind of biological experiments. So you were introduced to notions of probability through games of chance, and, for example, flipping a coin. We don't know the outcome, particularly ahead of time, and the specific outcome. What we know is one of 2 values, and the way we can describe that, or the way you do describe that
+It's just talk about the probability of getting a particular event.
+And so, flipping a coin, that's… these are the two probabilities. Well, we need to have a way of writing mathematical functions that describe that.
+And if we have a discrete random variable, we introduce the notion of a probability function. And a probability function… so it's some function f of x, defined over the complete number line, that will tell us the probability of getting particular values of x.
+Regardless of what X is. So, in this case, when X is 1 or 2, the probability of getting each of those is 1 half, and the probability of getting anything else, we usually don't think of a function to describe this kind of experiment, flipping a coin, but if we did, the probability of getting anything else at 1.5 is 0.
+So that's a mathematical function that describes this uncertainty in, for example, flipping a coin. We can generalize that.
+into a probability function for any random variable that can take on discrete values. In this case, there's k separate discrete values, and the value of the function, the height of that, is the probability that the random variable will take on any one of those values.
+If there was a value in between here, between 5 and K, the probability of that value occurring is zero. So that's just a general mathematical representation for
+a discrete random variable. There's some obvious properties to a discrete random variable and its probability function. Well, the values of the function are 0 or greater, you can't have a negative probability, and the sum of all of them must be 1.
+Okay, so that's one nice way of writing a function that describes the discrete random variable. Now, we have to put that to use later, and we will. A companion description that can be useful.
+is for discrete random variable is something called a distribution function.
+And so, on the left, if F of X is the probability function, the probability that the random variable, capital X, equals a particular value, the distribution function is denoted capital F of X, and that is the probability that the random variable will be any value up to that particular value of X. And here's just another way to write it, if you have samples. So.
+For example, if we ask, what's the probability function for X equal to 1.5, well, it's the sum of all the probabilities from minus infinity up to 1.5, and that's just one half.
+So it looks like this. There's no new information conveyed in the distribution function relative to the probability function. However, depending on your application, one or the other might be more useful.
+Another important component of probability is, first of all, describing the degree of randomness, but trying to summarize it in single numbers, and like we did with a sample. We can talk about a single number that is the expected value of the random variable, and that's… we denote that mu, and for a discrete random variable.
+It's given here. It's x times f of x summed up over all possible values of x. So the expected value of this function is 1.5.
+It's kind of weird, because when you flip a coin, you can't get, you know, anything, either it has your tail, or in this representation, we use one or two to represent that, but for a general function like this, this is the expected value.
+We can also talk about.
+the expected values of functions of a random variable. And we'll we'll kind of try to
+bring this full circle to how it's used when we develop statistical tests of inference, because we're generally working with functions of our original random variable. We can talk about the expected value of a function of a random variable. Here's two different functions. This one is a useful function because it talks about… it summarizes your dispersion.
+But we can use this formula to describe that.
+Let's move on now to random variables that are interval, that can take on any value over a range. And the question arises, how can we describe the degree of randomness of such a quantity, like height or blood pressure, that can take on any value?
+And the way we do that is with a function that we call a probability density function. The naming can be a little confusing. Don't confuse it with a probability function called the probability density function. And it describes the degree of randomness. And what makes this a little challenging to understand, it's defined implicitly. So we want to come up with a function f of x over the real number line.
+that tells us something about the degree of randomness of a quantity.
+And the way it's defined is, as I said, implicitly. So f of x, the probability density function for some random variable, maybe it's heart rate, is that a function f of x such that when you integrate it between two ranges, you get the probability that the random variable falls in that range.
+So let's say, for example, this were some function f of x that we're calling a probability density function to describe the uncertainty in heart rate in a population.
+And if we take this function and integrate it between 75 and 100, that value that we get will be the probability that the random variable is in that range.
+So that's how it's described. If you kind of want a more intuitive explanation, oh, we'll do that on the next slide. But that kind of summarizes the degree of uncertainty. Obviously, if this is very narrow, we have less uncertainty about heart rate in the population.
+And we're going to use this idea to describe the underlying uncertainty in a population from an experiment or two different or three different populations.
+Here are some properties. We can also talk about single numbers to represent some features of that, because in reality, this is what we're going to be estimating when we have samples, as we'll make clear on a future slide. We're going to be estimating things like, for example, the expected value.
+Or the expected value of a function. And this is the definition of the expected value of a continuous random variable. You can see its relation to a discrete random variable. The intuitive explanation for this, it's the value of X, that
+If you could try to balance this function at a single point, it would be perfectly balanced. Okay, so it might be somewhere in here.
+It can be defined regardless of what the distribution looks like. But here's how it's defined mathematically.
+The companion idea for a continuous random variable's probability density function is also called a distribution function.
+And it is… so we'll denote that by capital F of X, some function, again, over the number line, and by definition, it's the probability that the random variable capital X can take on any value less than or equal to that particular value of X. Okay, so we need to be able to define this at any value of X, and we do it by really looking at the
+probability density function and integrating that from minus infinity to X. That's the distribution function. And this is actually very useful for coming up with single values that help us say something about the degree of uncertainty.
+Here's a few of the properties here to remind you. It's got to be between 0 and 1. It is monotonically non-decreasing from 0 when x is minus infinity to 1 when it's infinity.
+Some other useful relationships that we used extensively in some of our calculations in Homework 1, for example. If
+the probability function f of x, let's say we have it, is the probability that x is less than x, we might want to ask, well, what's the probability that there's a greater value than the particular value of x you have? Well, it's just 1 minus capital F of x. Or if you want to find the probability that a random variable is in a range. And we use these ideas a lot to look at, for example, clinical responses of an individual and
+compared them to the population.
+We might measure someone's resting glucose value and might want to know, well, how does that compare to people in the population? Well, if we have their probability density function of that random variable, or the probability function, then we can simply determine what's the probability that someone has a value less than theirs or greater than theirs. We can do that by if we know this probability.
+probability, this distribution function.
+Here's an example of some calculations that we can do. There's many functions that we… distribution functions, probability density functions, that describe data from clinical trials. One obvious one is a normal density function and a normal distribution function.
+If you have a random variable that's normally distributed, and let's say its mean is 0 and its standard deviation is 1, that's called the standard normal, this is the probability density function that describes it, and this is the corresponding distribution function.
+And so if you want to do a calculation like the one I just mentioned, if we believe that glucose is normally distributed in the population and you measure someone's glucose to be 140, and then you can say, well, how extreme is that, for example, relative to the population? And you might do a calculation and find that 95% of the people in the population have a value less than that.
+So it's really at the high end. And we can calculate that probability by looking at a… we don't have an equation for this, a closed-form solution for this distribution function. You have to do this integral, and there's not a closed-form solution for it, but you can calculate it and construct it and put the values in a table, and this is one of the tables that you need to bring with you. So this gives value.
+I use for the random, the normal standard random deviates starting from zero. And so if you wanted to know the probability that someone who has a value of 0.05, the probability that what's the probability of a value less than that, it's 0.5199 to four digits. So we could use that. So we can do the calculations that I suggested.
+That's a special case, a normal 0-1 distribution. We can go between normal 0-1 distribution and a normal arbitrary mean and arbitrary standard deviation, because these two variables are related.
+We can write a random variable that's got a normal distribution with certain mean, mu, certain variance, sigma squared, in terms of a random variable with a mean of 0 and a standard deviation 1. And this is how they're related. And you can kind of see this, it's just kind of intuitive. You're just shifting this distribution and expanding it or contracting it.
+Why is this useful? Suppose we want to calculate, suppose to the glucose example, we want to calculate the probability that someone has a value of resting glucose greater than the value that we measured in an individual 150. How can we do that? This table only deals with random variables that have a mean of zero and a standard deviation one.
+Well, they're related. So the probability that someone has a value with a normal mu sigma squared as a value less than a particular value can be related to the standard value, standard normal value, and it's shown here.
+So, for example, this area, the probability they have a value less than this value of X, is the same as this area.
+And so, if we have this table, we can calculate any other probabilities that we want. And again, we did some examples of that in the homework assignment, I think it was question 2.
+Okay, let's, before we now start talking about inference, let's talk about this notion of a sampling distribution. We talked about it actually a little later in the class, and we're putting it here on these summary notes, but it kind of makes sense here. We introduced in class what we called sampling distribution, besides a normal one, and we gave them letters, the F distribution.
+the T distribution.
+the Chi-square distribution.
+And these are all probability density functions, and they're used to say something based on samples that we take from an experiment.
+And we'll remind you, and you know this well, but we'll remind you of how they're used. So these are probability density functions.
+and we use them when we do an experiment and take a sample.
+So, when we take a sample from a population, we can construct new random variables. So, for example, I take a sample from a population, I take 5 of you and measure your heart rate, okay?
+and I can find the mean value. Well, that's a new random variable, because if I took another 5 people, I'd get a different X bar another 5 people, I'd get a different X bar that's got its own distribution, and that's called a sampling distribution, and that also has, even if the original distribution is normal, that one might have a different distribution.
+Well, we need to find ways of characterizing sampling distributions, because that's what we have in our experiments. We have sample from group 1, group 2, group 3, and we want to use that to say something about how the population means are different between those groups. But we only have the sample means. So we need a statistical framework, again, using probability for that. And that's called the sampling distribution, and here's just some ideas about it.
+And let's give the example on the next slide that we kind of spent a bit of time
+trying to intuit, let's go back to Mars. This is all of our Martians, and this is all of our heights, and we take a sample of 10 Martians, and here's their value. So, we could find that sample mean. Or we… if we took a different sample, that's their sample.
+We only do this once, so we have this sample V, but if we think of it this way, we can ask, what's the uncertainty between experiments and sample means?
+And we can do that. For example, in this particular experiment, we can
+find the average of all of these sample means. It's not the original population mean at this point yet, it's just a sample mean from group 1, group 2, group 3. But we can find, kind of, the grand mean of these.
+Moreover, and this is really the essence of what's behind the PTAS, the analysis of variance, we could find the variability, the standard deviation of these samples.
+And we spent a bit of time talking about that. This slide kind of illustrates this picture, gives a picture illustration.
+What I said, if this is the sample mean, these are the sample means from those three experiments. I did a bunch more experiments. We see the sample means follow a distribution might not look normal to you, but if we did more of them, it would be it looks like this.
+And this is how we introduce this notion that we then prove as a central limit theorem that the average value of these sample means would be exactly this, but their variability would be less.
+And that's intuitive. How much less? That's given by this important theorem called the central limit theorem. We spent a bunch of time talking about it, and we use this in pretty much all of the tests that we've introduced so far, or this idea. So, here we're talking about a new random variable that's the…
+mean of certain sample size, N, and this related to the original random variable.
+the mean, the true mean of that sample is equal to the population mean, but the variability is not exactly… it's not equal to the variability in the population. It depends also on the square root of that.
+That's… that's this idea of.
+so-called, the sample mean, and we prove this, and I won't show you those slides, using a central limit there.
+In our experiments, of course, we… and usually we want to do this to say something about the variability in the population.
+Or vice versa, say something about the sample mean. But we never really know the variability of the population, we only know it based on the sample. Remember, we're never going to be able to do this calculation by repeating the experiment. We're never going to really be able to do
+this kind of thing. What we can do is we can do it once. And then, using the central limit theorem, even if we only do it once, we can potentially say something about the
+Variability of the sample means in the population.
+but using the central limit theory. And the way we do that is.
+You… small s is an estimate of the population variable. Population variability is all the 200 Martians. We take a sample of 10 of them, we can find their standard deviation, that's S, and then we can find the standard error of the mean, we call it our standard deviation of sample mean. These ideas sometimes seem a little bit circular, but if you try to remember that this is a new random quantity.
+X bar is not X, it's a new random quantity. It might have a new mean and a new standard deviation. In fact, it does, and we can show it's related to the original population standard deviation by that point.
+Okay, armed with all of that, we're really ready to think about our first type of experiment and data set. And as we've emphasized, this chart can be very useful to you in trying to decide which test might be appropriate for a particular kind of both
+data that you have on the on the rows. We have different kinds of data.
+So far, we've talked about just interval data, and in the columns, they have different kinds of experiments.
+And the 1st type of experiment we looked at following the
+flow in your book was, you have 3 or more groups.
+And we introduced the idea called the analysis of variance. And I won't go back to the theoretical motivation for that, just kind of remember what we tried to do is to estimate the variability in the population kind of two ways, and then try to compare those to see if they were comparable, and if they were, we would conclude that everybody comes from the same population.
+That's how your author introduced it. This next two slides just kind of summarize the workflow for doing an analysis of variance.
+We have a random variable that's interval.
+You have a bunch of other conditions, too, that we'll remind you of at the end, but you might have M different treatment groups, and N subjects per group. In this formulation, we've got the same number of subjects per group.
+We want to test the null hypothesis, so we want to be very explicit what statistical tests we're going to use, and what hypothesis that all of the population means
+In each of the groups is the same. That's to say there's no difference. Versus just one that's different. And then, this is a sequence of things that you need to do. Yeah, oh, I'm sorry, you have to calculate sample meanings, sample standard deviation. On the test, what we'll do is we won't have to do these calculations, they're trivial. We'll just give you the sample mean and sample standard deviations.
+to do the analysis of variance. And then you need to calculate, for the analysis of variance, you need to calculate basically the population variability in two different ways. One, we do it by calculating what's called the within-groups variability. So within group, with each group, you've got a standard deviation.
+You've got that in all of the different groups. So if under the hypothesis that the treatment or the procedure has no effect or there's no difference between the two groups, the three groups or whatever, then that variability should be the same.
+It's different from one to the other, just because random sampling.
+Under the null hypothesis, we can simply say if each of them is from the same population, well, let's just average all of them, and that would be our best estimate, at least based on the data that we have, of the variability in the population, and we call that our within groups of estimate.
+Okay? So, it's just pooling all the data, in a sense, and finding the variability.
+We could use the central limit theorem and calculate the variability by looking at the information between groups. So we can take the sample mean in each of the groups, maybe there's 4 of them, and then
+Simply finding the average of those, that's the grand mean. And then using that, we can find the variability, the variance of the sample mean. So this is the normal formula for variance, right?
+Then, using the central limit theorem, we can relate
+This thing, which is by definition the standard error of the sample means we calculated it by data. We can use the central limit theorem, which is kind of hiding here to estimate the population variability. We're going back here to use this idea.
+And then, once we do that, we can say, is… what we do is we look… calculate this ratio to see if it's big or not.
+If there's a lot of variability,
+between the sample means of each of our M groups, that's going to suggest that they're not from the same population, right?
+You can go back and look at some of the slides that we introduced before to give you different examples of what we might have. So, if this number, if this number is kind of small, then that suggests everybody comes from the same population.
+The challenge here is, and now this is where the probability comes in. Even if everybody does come from the same population, it still might be possible, by chance, to get big values of this. It's just but random sampling.
+So, for example, I again, we'll do the we'll do the heart rate example. I could divide the class in half, and then
+Take 5 in one group and 5 in the other.
+and find this… find… and get your data, find the sample means, and do all of this procedure, and find this ratio, it might turn out that just by random sampling, even though everybody's gotten a similar value, we would get a very big value in this ratio. It's just by random sampling that happened. And obviously, when you have small samples, it's a higher chance of that happening.
+So we have to understand that even if we do calculate this ratio, that's big.
+That doesn't necessarily mean they don't come from the same population. It's got a distribution.
+And it looks… it depends on the size of the experiment, but it might have a distribution that looks like this. So this is the distribution.
+of this new random quantity. It's a real complicated function of the original random variable, which is X, okay?
+And so.
+What we do is we say, okay, this is what it could be, even if everybody comes from the same population.
+I know if it's big, there's a likelihood that they come from a different population, so what we're going to do is we're going to pick a value of F, just in some way it's arbitrary.
+And we're going to say, okay, if we do an experiment and we get a value bigger than that value of F, we're going to call it the critical value.
+We're going to conclude that they come from different populations, and we're going to reject the null hypothesis.
+Although we know it's possible that we… the value of F that we calculate, even if it's bigger, could have happened if everybody did come from the same property.
+That's the uncertainty decision we have to make.
+And by convention, in biomedicine and other fields of study, you can argue with it, by convention, we try to be very conservative, and we only will allow a conclusion that the data come from different populations if there's a probability of getting that value
+Of less than 5.05.
+5% of the time.
+And we call that the critical value. So we pick a level of significance, the nominal value is 0.05. We're willing to say that we could make a mistake 5% of the time and reject the null hypothesis, so…
+And it's and then we'll compare our value to that.
+This follows up
+this follows, and I said this F distribution, there's a formula for this, we didn't show it to you. It can be calculated, and so we can look in our table. Depending on the experiment design, we could find for a particular level of significance, the critical value, if ours is greater than the critical value, then we'll say that we reject the null hypothesis.
+Knowing that we could be wrong in doing that, even though we rejected it, everybody could have come from the same population just by random chance, and this is the probability that that happened.
+And that's the theme that we use for all the statistical tasks.
+Just a couple notes for the exam on analysis of variance. If you recall, we also introduced a version of it that is much more general, and that we'll use a lot later on, that allows one to have different number of subjects in each group. That's actually the main version to choose, but we're not going to have you worry about that on the test, so if you do get a
+question on the test, it will be a so-called balanced study, the same number of subjects in each group, and so you don't have to use the so-called sum of squares formulation. The algorithm that I showed you here will handle that.
+Okay.
+But be reminded that there is, of course, this more general version.
+Okay, so with that, then, kind of as our first statistical test to introduce notions of making decisions under uncertainty, we went to look at, in a sense, a simpler case when we just have two groups. And oftentimes, statistical courses in statistics will start with just this two groups and introduce this idea of a so-called t-test.
+The conclusions are going to be very similar, or they are going to be similar to an analysis of variance when you have two groups, but kind of the motivation and derivation is just a little bit different, and somewhat easier to understand, in fact. So, let's suppose we have two groups, interval data, some other assumptions have to apply.
+We can have in this case a different number of subjects in each group.
+We might want to ask, based on our sample results, is the population mean the same between the two groups?
+versus this alternate hypothesis. There's other alternate hypotheses, by the way, that you could have. You could ask, is mu1 greater than mu2, or vice versa? That's… it's a little different… just a little different implementation of this, but we'll look at this for now.
+Well, to answer that question, we'll certainly first look at the sample needs between the two groups, see what they are, and we can also calculate the variability within each of the groups.
+And the idea here is the following. Look at the second equation down below here. We're going to conclude that
+Yeah, there is a difference if the difference between these sample means is big. Obviously, if they're very close to each other, we're not going to want to conclude that there's a difference.
+So we're certainly going to look at what's in the numerator here, how big that difference is. But that's not sufficient, because there's uncertainty. If we did the experiment again, we'd get different values of X1 bar and X2 bar. We did it again, we'd get different values yet again, okay? So we have to ask, we've estimated this difference by just subtracting these two numbers, and how reliable is our estimate of that?
+And so to do that, we can normalize that by asking, well, what's the standard error in our estimate of this difference? Remember, this is a new — so x1 bar and x2 bar are new random variables now. They represent the sample means in those two groups. And their difference is yet another random variable.
+So that new random variable also has a probability distribution. It has a standard deviation. And it turns out this is the standard deviation, we derived it, and where S is the
+estimate of the variability in the whole population that we get when we pool all the data from both groups. It's kind of like the S within analysis of variance.
+And so we can calculate this number. This is a statistic that follows a distribution. It's got a probability density function that we actually gave you.
+And we follow the same logic here. If we do an experiment and we get a particular value of t, we have to compare it to the critical value, which is the value of t that's kind of unlikely to occur, a probability of 0.05 if everybody comes from the same population. And then we'll reject the null hypothesis if it's greater than, once again, realizing that we could make a mistake.
+Some assumptions that we make here in, actually, both the analysis of variance and in the t-test, the data have to be interval data, we know that, okay? The samples have to be independent and random.
+When we were deriving the central limit theorem, it was implied in that derivation that we have independent samples. Also, two assumptions that we'll remove later. The population must be normally distributed, so the underlying random variable must be normally distributed for this to work.
+How do you get an idea if your data come from a normal distribution or not?
+Well, you can use some of the ideas that we talked about in the first part of the class under descriptive statistics, and you had a homework assignment on. You could calculate, for example, percentiles from your data and compare those to the corresponding percentiles from a normal distribution. For example, you can calculate the median from your data and compare it to what the median would be for a normal distribution.
+And compare those two. And there's formal ways to do that. So there's formal statistical tests to be able to determine whether your data are consistent with a normal distribution or not. You'd have to do that first. And then the other also, and this last one, it's actually quite restrictive. The variability in each population has to be the same. And as I said, we'll remove this assumption later. But these are the assumptions for the t-test.
+There's another version of the t-test, if you will, that will apply when you have one group.
+Let's say, again, I just pick 5 of you, and I find the sample heart rate, and I ask, is that… is the sample heart rate from the population, based on the sample of 5, different from, let's say, 72?
+a normal value. So we pose this null hypothesis is the population mean in the group equal to some predetermined number.
+Well, how can we do that? Well, we can actually use a version of a t-test, and our null hypothesis is that the population need, which we're going to
+estimate what the sample mean of the five of you that I picked is some particular value. Or, more precisely, in comparing it to the other t-test, mu minus some nominal value is zero, versus it's not.
+So this is a special case of the T-test, and we proceed pretty much like we did before. We just have one group.
+Here's the sample mean, here's the sample standard deviation, and we then look at the ratio of the sample mean to the standard error of the mean, which now is simply the sample standard deviation divided by N.
+And we… this follows a t-distribution, and so we'll ask, is our value that we calculate in our experiment greater than the critical value, again, at a significance level, and then reject it if the… if that is true.
+So, try to make the distinction between when we're comparing two groups, and then when we just have one group, and we want to ask ourselves, is the sample mean in that group, the population mean in that group from which the sample came, equal to some particular number or not?
+We use this idea to good effect, together with the analysis of variance. Because, if you do an analysis of variance, and you conclude that there's a difference amongst the groups, the next question you might logically ask is, which group is different from which other group?
+So that requires you to do pairwise comparisons.
+And to do that, we can simply use a t-test to look at each of the different pairs and ask.
+which pair is statistically different from which other pair.
+The only thing you have to be careful of is that, and we emphasize this, is that errors accumulate. So, when you're doing each of the pairwise comparisons, if you want to make a statement at the end, and an overall level of significance, let's say a .05, you have to do each one at a smaller level of signal.
+when you add random quantities to the standard deviations that you've got with each random… each variable add up, and we showed you this before with some probability calculations. So, we can do pairwise comparisons.
+with a t-test to isolate differences, but we have to do it at a lower level of significance for each one, and then, moreover, as a practical matter.
+to estimate the overall variability, we can use a result from our analysis of variance, because we have all of the data in analysis of variance, and we found an estimate of the whole population variability that we call the within-group assessment. So, we first do an analysis of variance of
+If there is a difference, then we can use this result.
+You calculate different values of T for each of the pairwise groups. This is just two of the groups, right? And then.
+We have to then.
+do each individual comparison at a lower level of significance relative to the overall one that we want to achieve. So let's say the overall one is 0.05. The individual level of significance using this idea, Bonferroni idea, is just however many comparisons you're going to make divided into 0.05. So you make each one at that lower level of significance. And you did a homework assignment. This is part of homework number two.
+Two of you are doing it, but that uses, I think you use the Bonferroni test.
+Or maybe you use the Holmes test. Another way of doing it, that is a little more powerful, in the sense that it's more often produces a result that has the nominal level of significance. But each of the individual comparisons is simply done at a different level of significance.
+And so you'll have to go back and look at the notes there. But the fundamental idea is as I laid out here, okay?
+Okay, let's keep marching on. The next type of data that we looked at was nominal data, so categorical data are not ordered, just nominal. And we looked at the case where we have two groups in two treatments.
+And so, the first question that we needed to ask is, well, how do we describe data that are not interval, but they're categorical? How can we summarize it? So, we've got two categories, so responders and non-responders, for example.
+And you know, let's say we did an experiment procedure one. We calculated how many responders we got procedure 2, how many responders we got. And again, each one had 2 possible categories, and we want to compare those 2.
+Well, first we need to think about how we can describe, using descriptive statistics, a random quantity that can only take on one of two values, for example. Well, that's a discrete random variable.
+And one way to think about it is just calculate sample proportions.
+So, for example, if you have N subjects, you can calculate how many of them responded, M, okay? So, the proportion responded is just M over N.
+We can also talk about the variability in the response that we get.
+This P hat is just an estimate, really, of the mean value of the population when it's… when it's just
+categorical, we talk about proportions. We can actually talk about the variability. And it turns out, the variability, which we can calculate, we can simply use the calculations for a standard deviation for a discrete random variable, but we showed that the actual variability in the population is related to the, in this case, sample mean. They're not independent quantities, versus a mean and standard deviation.
+deviation of a continuous random variable. Why is that? Well, you can understand that if everybody has the response, n of them, then P bar is 1, then there's no variability. Everybody has a response.
+If everybody doesn't have the response that M is 0, and there's no variability either.
+So the variability changes in proportion to P. So they're not independent quantities. So we need to understand that. And then we can also calculate, to use the analogy to the t-test, we can, if we do an experiment and we get M divided by N, we can then estimate
+how variable P. Hat might be if we could do the experiment over and over. So this is a little diagram from the book. It shows P. Hat from different experiments.
+This is the analogy to sample mean of size. This is sample proportion of
+10. 10 Martians. Well, it turns out, through the central limit theorem, the overall variability, this thing, S, it can be used to calculate this standard deviation of the sample proportion.
+That's important, because we're going to need to know this number to make some inferences, because we're going to have to see how variable this number is, so we can compare it to another number.
+We can only do the experiment once. We can't do which is shown in that picture. But if we can somehow get this estimate based on all the data, we can get this estimate. And again, it depends on that.
+And close… that's what we did, and we did an example… we did this example in class where we had individuals who took aspirin.
+Prior to their, dialysis, and those that didn't, and the response was thrombus formation. So they… we calculated, for example, we asked the question, null hypothesis, is there a difference in thrombus formation between the two groups?
+Is the population proportion in the aspirin group equal to the placebo?
+And we had samples to do that, and so we could make that calculation using what we then… what we call the Z-test. We won't go through it, the derivation towards kind of the final result.
+And if you look at that equation, forget the minus half stuff, if you look at that equation and think about what we just discussed when we talked about the t-test, you see the analogy. The numerator here is the difference in the sample means, and the denominator is the standard error of that difference.
+And so if Z is big, we're likely to conclude that, yes, there's a different population. The samples come from a different population and we'll reject the null hypothesis. It turns out that this does, in fact, follow a normal 0-1 distribution. This is a correction for small sample sizes to make this a better approximation.
+So you should always use this correction. There's no reason not to. And so what we can do is we can calculate our value of Z and compare it to the critical value.
+Where can we get the critical value? Well, we didn't give you a table that had the probability
+Density function for Z.
+We gave you the cumulative value, but when there's infinite degrees of freedom, the T distribution table that we did give you follows a normal 0-1 distribution. So you can just down… look at that last row to find the critical value, and then make this inference.
+Okay, we're almost there, a few more things. We then need to… we need to generalize this idea, though. Well, if we have nominal data in, let's say, more than two groups, what are we going to do?
+How are we going to compare, let's say, the responses across the different groups? Well, for that we introduced another test and it's called the chi-squared test or the chi-squared analysis of contingency. And the general framework is depicted here. We won't go through all of the details, we'll just emphasize the main idea. So suppose we have again.
+We're talking about categorical data that are nominal. And suppose we have all of these different treatment groups. Maybe there's a placebo group and a bunch of different, maybe there's a method, traditional method one for the treatment and a new method three, group three for the treatment. And then we have possibly more than two outcomes.
+We could have multiple outcomes, potentially. There's no response, there's intermediate response, there's maximum response. So then how we can… how can we test a hypothesis as to whether there is a difference in outcome
+across treatments? Well, we'll start off with the null hypothesis not stated here that the response, the population mean is the same across all of them.
+And let's say we do this experiment and these are our observed responses. So this first row represents the group number one, whatever their treatment they got or lack of treatment. This is how many got outcome one, how many got outcome two, etc. And there's a total number of R1 subjects in that group. And then we have another group.
+And we do the same kind of accounting. How many got each of these different possible outcomes that's shown here. So how can we test a null hypothesis? Well, we can think about doing is the following. We can ask the question, what would we expect to see?
+If, in fact, the treatment had no effect.
+That's where we start, the null hypothesis.
+So how could we calculate that, given this experiment design, where we had this number of people in each group? Well, if everybody, if everybody, comes from the same population, we would expect the total number of individuals that got outcome 1, we'll call that C1, regardless of group.
+divided by the total number of individuals altogether, everybody would get that ratio, okay? There would be C1 over R, C1 over… excuse me, C1 over N, that would be the proportion of people that got outcome 1. Again, regardless of which group they're in.
+So, if we did an experiment and there were just R1 people, then we would expect C1 over N times R1 to be the number of individuals in group 1 that got outcome 1.
+etc, and we can do the same. We can calculate the expected number of people that would get outcome number 2 by looking at the ratio, the total number of people that got outcome 2, regardless of what group they were in, divided by the total number in the experiment. That's the ratio, and then if we have R1 people.
+that we would then expect R1 times C2 over N.
+So we could calculate the expected value, and that's called the contingency table, okay?
+That's contingent on the null hypothesis being true. And so, if we have our actual table, so if we have this… our actual observed table and the expected table, the bigger that difference between the corresponding cells is, the more likely it is to conclude that they came from a different population.
+We have to be a little bit careful because we could have different sizes in each of these groups. So we somehow have to normalize for that. And so we can normalize it by looking at this ratio.
+And this was picked because this follows a distribution that one could write out mathematically, and that's the part that we skipped here. So this follows a distribution. If this number is big, then it will be likely that people come from a different population.
+It's a random variable. We could pick a critical value and then proceed just as we did before. Nothing else different.
+Okay? And we… and in Homer 2, you're doing an example in which you will use this chi-square test for this kind of data. Then finally.
+We can also ask the question, suppose we do such an experiment and we conclude that there is a difference amongst the groups. We could ask, well, which group is different from which other group? We can compare group one and two and one and three and two and three, for example.
+And so the idea for that is exactly the same idea that we used when we had an analysis of variance and we wanted to isolate differences. For this, we have to do pairwise comparisons, and we did this example in class. It was looking at depression, where there were three different treatment groups, a drug group, a psychotherapy group, and a combination group. And there was a measure of level of
+depression after the exposure in that clinical trial.
+And we calculated, we did a test like this, and we found out there was a difference. And we asked the question, which group is different from which other group? Well, we can do that, but keeping in mind to do these each pairwise comparisons, we have to do it at a lower level of significance than the overall. And so for that, we can use the Bonferroni idea or the Holmes idea, just like we did before.
+Okay, so nothing really new here except that adjustment for the level of significance.
+One other companion idea, we could compare the result that we got in an experiment, not from the null hypothesis result, which is what we talked about here, huh? Calculating the expected result when we assume that there is no difference. We can ask the question.
+Is our data different from some other expected result, not the null hypothesis expected result? So an example of that to understand is shown here, where we did a survey about students and how much exercise they got.
+And so one university reported or self-reported these values, 60% get no regular exercise, 25% got sporadic exercise, 15% got regular exercise.
+Then the university instituted some incentive to exercise. And then this is the result that they got in this study.
+And then the question would be not whether there's a difference in the exercise level amongst the students. It's whether this result is different from that result.
+That they got before they…
+So these are the observed results we got. And then we can calculate the expected results based on these ratios. So if this were the total number of individuals in this trial, then based on this previous understanding, 60% of them would have reported getting no regular exercise, and 25% here, and then 15% here.
+So those are the new numbers. And so we can compare those by using doing a chi-square test.
+Where the expected result are not null hypothesis results. It's a prior result.
+And this is commonly done if we're comparing, for example, if you have one clinical center that's using a particular procedure, and another one that's using the same procedure, we might ask, is one different from the other? Okay.
+So we can use the idea of the chi-square test. Again, the results are categorical. Here they are, which level of exercise do you fall in? It's only one of three categories.
+And now we have two groups, if you will, the post-incentivized group and the pre-incentivized group.
+So we can compare each of those.
+Then the last, topic that we, talked about, had to do with, degree of association, between categorical random variables. So let me just look at the table. So, we said, suppose we do have, data that are categorical.
+And let's say we're in this column, we have two groups, and let's say that we find out there is a difference. So, for example, we have aspirin and placebo group relative to thrombus formation.
+And let's say we concluded, in fact, there was a difference in the incidence of thromboscopic.
+That's great. That's an important result. But we might want to ask, how big is that thing?
+that can be very useful to and to do that we have to compare the association between those 2 groups. So
+with aspirin and with placebo.
+To do that, we introduced notions called relative risk and odds ratio.
+And these ideas have application.
+Not only to the kinds of experiments that we really kind of been discussing, clinical trials, where you take individuals randomly and you assign them to different treatment groups after they consent, and then you follow them over time to see if they get the result.
+The time might be a short period of time. So, for example, aspirin and placebo, you'll give them that treatment, you'll do dialysis, and then maybe next week, you'll see if there's any thrombus formation.
+That's the typical clinical trial, and we spent a little time talking about that. And the hallmarks of those trials are there's randomization, and they're prospective. You don't know the outcome until you follow over time to see what the outcome is.
+There's other kinds of studies that are what are called epidemiological studies, and the main distinguishing feature here is there's no randomization that occurs.
+The individuals are in particular groups just by the result of whatever the natural system is. So, for example, we can talk about individuals, and for example, we talked about individuals that were part of a nurse's study.
+So nurses were enrolled in the study, and then they were followed over time to see if they got the outcome or not.
+So, that was a prospective, non-randomized study, and it's called an epidemiological study. Another version of that is, again, non-randomized, but it's retrospective. The outcome is already known. So, for example, individuals might be enrolled in a study to see if there is an effect
+based on exposure of an assumed environmental toxin to a particular outcome. So, individuals might be enrolled in the study who actually have that outcome already, you know, so they have this kind of cancer.
+So they're enrolled in the study. They all have this kind of cancer, and then the question is asked, have they been exposed to this particular toxin or not?
+That's clearly a non-randomized study. Obviously, you didn't put them in an exposure group versus not, and it's retrospective, because you enrolled them in the study already knowing that they had this particular response.
+So, these kinds of studies also can be when you have two groups and two outcomes, we can ask questions like, is there a difference in the outcome of the… a difference in the outcome of people who had the cancer and were exposed to a toxin versus those who weren't?
+So we could do that. We could use, for example, the Z test or chi-squared test, but we may also want to ask, what's that degree of difference? So, to do that, we introduce these ideas of relative risk and odds ratio.
+And then this slide kind of summarizes the relative risk idea, and we generally apply this when we have a clinical trial, but it can be applied to any prospective study. So remember, some of these.
+Epidemiological studies can be prospective.
+And here's the idea. Let's say that we have people that were treated, people in the control group, and then we have the number who have the disease and the number who don't have the disease. First of all, we'll ask, is there a difference in the incidence of having the disease?
+depending on which group they're in? And to answer that question, we can use the C test. And suppose we answer, yes, there is a difference, at least we say with a certain probability that there is, and we can ask.
+what is the relative size of that difference? So we can calculate something we call the relative risk, which is simply the probability of getting the event in the treatment group.
+relative to the probability of getting the event, and it controls the relative risk. And we can certainly calculate that number, the chance of probability of getting it in the treatment group is the total number that got the disease here divided by NT, and in the control group, NCD divided by NC, and that's the relative risk.
+When we did this with the data from the aspirin placebo study, we first concluded there was a significant difference, and then we calculated the relative risk of getting thrombus in the treatment group to be 0.4.
+So point 4 relative to the the control groups, a 40% chance of getting it when you're in the treatment group relative to the control.
+Maybe we did it. And even if we showed there was a difference, the relative risk was point 8 or point 9.
+That's a little closer to one, obviously, and maybe that's going to be deemed not so important.
+So, a way of quantifying the degree of a response.
+And then finally, the last one, when we do have a retrospective study.
+Turns out we can't calculate relative risk because we can't get an estimate of the population proportions. Why? Because in an epidemiological study, people already have the result, and we kind of pick them.
+We pick how many people that have the disease. It's up to us. And so we're not getting an estimate of the proportion.
+So we have to use something called the odds ratio.
+And, here's one way to think about it. There's two ways of expressing it. It's the exact same result based on this table. One way of thinking about it is the odds of cases. Cases means diseases. The odds of disease in those who have been exposed.
+and the odds of disease in those who are not just exposed. So think of the environmental toxin example. So, we can look at… all of them are going to have had the disease. They're picked because they have that kind of cancer, for example, but then we look to see who was exposed to the toxin, and who wasn't exposed to the toxin.
+That's the odds. So, to analyze data like this, we first ask the same question, is there a difference in the incidence of getting disease based on the exposure?
+See the Z test, the Chi-square test, and if we conclude there is, then we can say, how big is that? Say, what are the odds? Are you two times more likely to have gotten cancer if you were exposed to the toxin? 1.5 times, or 1.1 times, so that's a way of quantifying the difference, okay?
+Okay, that's a lot. Those are the main topics that we discussed. One last point about coding. You're not going to have to write any code.
+there might be two kinds of questions that… or any programs, I should say. There might be two kinds of questions that you might be asked. Most likely, we might give you some output from, for example, analysis of various t-tests or chi-square tests that you have already done in the discussion sections, talked about that. And then we might ask you, based on those data, then answer some questions. So, for example, in the homework assignment you're doing now, there's one question.
+in which we give you the result of R for a Chi-square test.
+Or is it for ONP?
+I don't have it here. It might be analysis of variance. And we give you the outputs of
+And there were a bunch of different groups, and we said, based on this result, do pairwise comparisons. So, you had to know how to use an output from the program, right, to look at the within-groups variance, and we gave you all the T values, and then you had to do some calculations. So that… those are the kinds of questions that you might ask.
+given the output, and answer some questions based on the output. And obviously, it would only involve the tests that we've discussed.
+Really, these three.
+Okay, is that that clarified?
+Okay?
+All right. I don't have office. I will have office hours today. And if not, we'll see you on both.

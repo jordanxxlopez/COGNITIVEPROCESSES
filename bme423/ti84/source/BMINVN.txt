@@ -1,0 +1,86 @@
+ClrHome
+Float
+Normal
+Real
+Input "MEAN MU",M
+Input "SD NOT VAR",S
+If not(S>0)
+Then
+ClrHome
+Disp "CHECK SD NOT VAR"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "LEFT PROB 0..1",P
+If not(P>0 and P<1)
+Then
+ClrHome
+Disp "CHECK LEFT PROB 0..1"
+Disp "CHECK INPUTS"
+Stop
+End
+invNorm(P,0,1)→Z
+M+Z*S→T
+ClrHome
+Output(1,1,"NORMAL CUTOFF")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"ANS=")
+Output(2,5,θ)
+Z→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"Z=")
+Output(3,3,θ)
+Output(4,1,"X=MU+Z*SD")
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"MU=")
+Output(5,4,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"SD=")
+Output(6,4,θ)
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"LEFT P=")
+Output(7,8,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"REVERSE Z SCORE")
+Output(2,1,"Z=INVNORM(P)")
+Z→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"Z=")
+Output(3,3,θ)
+Z*S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"Z*SD=")
+Output(4,6,θ)
+Output(5,1,"ADD MU")
+T→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"ANS=")
+Output(6,5,θ)
+Output(7,1,"RIGHT P? USE 1-P")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

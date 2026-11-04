@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "edition": "2026-10-20-transcripts-v4",
+  "status": "passed",
+  "reviewer": "/root",
+  "independentReviewer": false,
+  "scope": {
+    "sourcePages": 86,
+    "instructionalPages": 75,
+    "unexpandedNonInstructionalPages": 11,
+    "lectures": [
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "writingRequirement": {
+    "requestedMedianWords": [
+      200,
+      250
+    ],
+    "actualMetrics": {
+      "instructionalPages": 75,
+      "words": 14747,
+      "medianWords": 216,
+      "minimumWords": 122,
+      "maximumWords": 233,
+      "quartiles": [
+        142.0,
+        216.0,
+        226.0
+      ]
+    },
+    "policy": "A median across instructional slides, not a minimum for each slide. Simple pages remain shorter.",
+    "style": "Connected teaching paragraphs in plain words. Explain source terminology, causes, effects, and visual distinctions. No worked calculations, new external content, or decorative padding."
+  },
+  "sourceReview": {
+    "completedEarlierExtractionAndMediaReviewReused": true,
+    "records": [
+      "authoring/source-manifest.json",
+      "authoring/teaching-coverage.json",
+      "authoring/transcripts-v2-audit.json",
+      "authoring/v3-practice-v2-review.json"
+    ],
+    "newEditorialMethod": "Read and revise the source-aligned explanations against their concept inventory, native source wording, and previously reviewed original visuals. Every instructional page has an explicit authored mapping. Repeated text is used only for the same demonstration.",
+    "additionalSourceSpotChecks": [
+      "lecture12 page11 original image and native wording",
+      "lecture13 page22 original image and native wording",
+      "lecture14 page23 original image and native wording"
+    ],
+    "newFullMediaAnalysisClaimed": false,
+    "replacementImagesGenerated": false,
+    "retainedLimits": [
+      "The proposed vocal-fold experiment has no supplied measured outcome.",
+      "Membrane harmonic frequencies were assigned for the illustration.",
+      "Illustrative output probabilities are not verified calculations of the linear network."
+    ]
+  },
+  "editorialFindings": [
+    "Clarified technical terms through the depicted movement and its causes, preserving basic mode labels, counts, and source-visible frequency examples.",
+    "Distinguished movement from compression, local mass effects from stiffness effects, and mode number from harmonic number.",
+    "Retained controlled-boundary comparisons, assigned membrane frequencies, and the difference between a theory illustration and a measured result.",
+    "Explained source harmonics, formants, spectra, spectrogram axes, and output predictions without worked calculations.",
+    "The Lecture 14 page23 heading names orange negative weights, but the rendered labels are green. Version 4 explicitly identifies that discrepancy and uses written signs for direction.",
+    "Lecture 12 page22 follows its own principles slide rather than repeating vowel examples from other pages. Its concept list reflects that source-focused edit."
+  ],
+  "verification": {
+    "sourceAndReferenceChecks": "Passed existing source/content preservation checks and new Version 4 identity, count, reference-hash, and distinction checks.",
+    "browser": "Passed all four transcript choices, all four lecture collections, combined and core notes, shared personal notes/read marks, expanded readers, reload, export/import, practice independence, mobile containment, unavailable-file fallback and recovery.",
+    "practice": "Existing Version 1/2 answer/session, queue, backup, legacy migration, and missing-file recovery regression passed.",
+    "visual": "Reviewed desktop/mobile screenshots and selected original source images."
+  },
+  "preservation": {
+    "status": "passed",
+    "files": [
+      {
+        "file": "data.json",
+        "sha256": "f1316545ef0167572ad8b29d250416045801e5a82a1fd8daefe176ff8eb650bd"
+      },
+      {
+        "file": "transcripts-v2.json",
+        "sha256": "fc5d06fea9aef64667bc9385422e334b931636fcf1e91f4e1cbed09fd4d0e75c"
+      },
+      {
+        "file": "transcripts-v3.json",
+        "sha256": "4003f83e723d2fca50be20c8a28cc008e8efca94a671324da5403681aaca6b2b"
+      },
+      {
+        "file": "practice-v2.json",
+        "sha256": "bab3c51d0a37d62f36f1d75236026384afd5e9173ff3ca2ab1248064d8c96676"
+      },
+      {
+        "file": "authoring/teaching-v2-lecture11.json",
+        "sha256": "b330ed3fea439ce266edc9f8934ef37269f5ba2ce8900257e3e0134d0ac5722d"
+      },
+      {
+        "file": "authoring/teaching-v2-lecture12.json",
+        "sha256": "6e528c970b3ff4e5e389d90f0315b5254e07ef86abc66269a8fcbf9acd320e61"
+      },
+      {
+        "file": "authoring/teaching-v2-lecture13.json",
+        "sha256": "2f5f3189ac43b2e829cf157262b195b660c1ea0413bd9678659d6c7e5e6f79ca"
+      },
+      {
+        "file": "authoring/teaching-v2-lecture14.json",
+        "sha256": "035df4e35da6dc8e15301809276aa6fe325578244997f4ea29c4aa717911e7b5"
+      },
+      {
+        "file": "authoring/teaching-v3-lecture11.json",
+        "sha256": "774280345d80a6b5c05f130cd607388a67a118dbf276945e602afd8dfbcc0740"
+      },
+      {
+        "file": "authoring/teaching-v3-lecture12.json",
+        "sha256": "60e2553336a4b5bc0f0a519e64ff77c956edb7249fbf416ee420e5005ac978e9"
+      },
+      {
+        "file": "authoring/teaching-v3-lecture13.json",
+        "sha256": "b04aa992ead1e4664e007910016c5b1a90edede0c58ebb4ba9bb4ffebc911e02"
+      },
+      {
+        "file": "authoring/teaching-v3-lecture14.json",
+        "sha256": "39d580ccd63af501efc7ad77fa998223046920a69b87f3a39633619ee575d687"
+      },
+      {
+        "file": "authoring/practice-v2-lecture11.json",
+        "sha256": "a83faca7f024332696a796e19114e9a062dba97bef76c5f764eae4891d4796ae"
+      },
+      {
+        "file": "authoring/practice-v2-lecture12.json",
+        "sha256": "a3e6797383c9dbab4267e503be37a5a7e9fec790d863504ad0d684790c2db6cc"
+      },
+      {
+        "file": "authoring/practice-v2-lecture13.json",
+        "sha256": "03b77950e89e103c2a054310a1b5ee5a11f2361eabaf7182ff562774de697d5b"
+      },
+      {
+        "file": "authoring/practice-v2-lecture14.json",
+        "sha256": "f9eec9b8926cecd7f9d29b26fc45914bef0f2412953a54e9dd712ce193988c06"
+      }
+    ],
+    "allEarlierEditionsAndPracticeUnchanged": true
+  },
+  "files": [
+    {
+      "file": "app.js",
+      "sha256": "6088f492e6cc9159fa2d3ca5728bbaa03b3cb8bf65b94271d39050dd8b93bbaf"
+    },
+    {
+      "file": "index.html",
+      "sha256": "e359bd063e917c709d4acaf77f5f477eab894091e8498ee9d843ee3d9ee3ea5a"
+    },
+    {
+      "file": "transcripts-v4.json",
+      "sha256": "e3f2b35191bb1eb5c7b8b58673cff982abc54d66603e1c5280db15212fdae3be"
+    },
+    {
+      "file": "authoring/build_transcripts_v4.py",
+      "sha256": "7cef57d42bce90c541a39b5a2522ecc7e6d6103d2f57eb926bb9da201fdf116b"
+    },
+    {
+      "file": "authoring/version4/notes.py",
+      "sha256": "ad00fcdbc837bc44984525704ce47b329b6812b7c43501f8b21aac921f51684d"
+    },
+    {
+      "file": "authoring/version4/review.py",
+      "sha256": "9598898005266b1a2b5e98a172b4e285ded9b8fae3a76ead0998b1980586247d"
+    },
+    {
+      "file": "authoring/transcripts-v4-coverage.json",
+      "sha256": "de0bd63a8577a7f62a80e308bc379065e0f0437bf2f5626ec7a37890028c3fb1"
+    },
+    {
+      "file": "authoring/transcripts-v4-preservation.json",
+      "sha256": "02916d1afc64d31f0c94da023dd52380798e0c47f24beec21ffa795ba0fdd925"
+    },
+    {
+      "file": "authoring/transcripts-v4-writing-reference.json",
+      "sha256": "5c405156c54cfdf939315d148fdc236cbec6983feb11361c795b0af70ebefa2e"
+    },
+    {
+      "file": "authoring/teaching-v4-lecture11.json",
+      "sha256": "61844929b522cb361bdaf995c322199ba25700bcf94a7250c82151c872b7972d"
+    },
+    {
+      "file": "authoring/teaching-v4-lecture12.json",
+      "sha256": "0ba66e15f2ca5ab62ae409d39a1e9d5e46b1182697271bf0ec7b5c22af5301da"
+    },
+    {
+      "file": "authoring/teaching-v4-lecture13.json",
+      "sha256": "78a8e42faa76163cbd26964046d0a2e932a414efd1e320b147bc2f070c83cf71"
+    },
+    {
+      "file": "authoring/teaching-v4-lecture14.json",
+      "sha256": "dd23d439215ddd2ce31c26966927b1cf7b0ab89d21ef0f567ac2c939fe5c9f92"
+    }
+  ],
+  "unresolvedBlockingFindings": []
+}

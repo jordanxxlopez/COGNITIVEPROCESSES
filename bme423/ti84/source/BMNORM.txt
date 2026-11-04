@@ -1,0 +1,129 @@
+ClrHome
+Float
+Normal
+Real
+Input "MEAN MU",M
+Input "SD NOT VAR",S
+If not(S>0)
+Then
+ClrHome
+Disp "CHECK SD NOT VAR"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "LOW CUTOFF",B
+Input "HIGH CUTOFF",C
+If not(C≥B)
+Then
+ClrHome
+Disp "CHECK HIGH CUTOFF"
+Disp "CHECK INPUTS"
+Stop
+End
+(B-M)/S→D
+(C-M)/S→E
+normalcdf(⁻1ᴇ99,B,M,S)→F
+normalcdf(B,C,M,S)→P
+normalcdf(C,1ᴇ99,M,S)→G
+ClrHome
+Output(1,1,"NORMAL AREAS")
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"LEFT=")
+Output(2,6,θ)
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"BETWN=")
+Output(3,7,θ)
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"RIGHT=")
+Output(4,7,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"Z LOW=")
+Output(5,7,θ)
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"Z HI=")
+Output(6,6,θ)
+Output(7,1,"Z=(X-MU)/SD")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"STANDARDIZE")
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"MU=")
+Output(2,4,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"SD=")
+Output(3,4,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"LOW=")
+Output(4,5,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"HIGH=")
+Output(5,6,θ)
+Output(6,1,"Z=(X-MU)/SD")
+S^2→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"VAR=")
+Output(7,5,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"AREA WORK")
+normalcdf(⁻1ᴇ99,D,0,1)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"PHI L=")
+Output(2,7,θ)
+normalcdf(⁻1ᴇ99,E,0,1)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"PHI H=")
+Output(3,7,θ)
+Output(4,1,"P=PHI H-PHI L")
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"BETWN=")
+Output(5,7,θ)
+Output(6,1,"RIGHT=1-PHI H")
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"RIGHT=")
+Output(7,7,θ)
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

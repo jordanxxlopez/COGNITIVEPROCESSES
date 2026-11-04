@@ -1,0 +1,2533 @@
+ClrHome
+1→P
+1→B
+2→C
+Goto D0
+Lbl M0
+Menu("BMSTEPS","MEANS",M6,"PROBABILITY",M1,"SUMMARIES",M7,"COUNTS/PROPORTIONS",M8,"ADJUST/OUTPUT",M9,"RISK/ODDS",MA,"EXIT",ZZ)
+Lbl M1
+Menu("PROBABILITY","DISCRETE",M2,"DENSITIES",M3,"NORMAL",M4,"TRANSFORM X/Y",M5,"EVENT SEQUENCE",DO,"BACK",M0)
+Lbl M2
+Menu("DISCRETE","TABLE MEAN/CDF",CP,"INTERVAL ENDS",CX,"MISSING CONSTANT",DD,"EXACT FAIR HEADS",DJ,"BACK",M1)
+Lbl M3
+Menu("DENSITIES","UNIFORM",EF,"NORMALIZE PDF",EL,"UNKNOWN ENDPOINT",ER,"LINEAR PDF/CDF",EX,"TWO PIECE PDF",FH,"BACK",M1)
+Lbl M4
+Menu("NORMAL","ONE MEASUREMENT",FS,"FIND CUTOFF",FZ,"SAMPLE AVERAGE",GF,"BACK",M1)
+Lbl M5
+Menu("TRANSFORM","TWO INDEPENDENT X/Y",DT,"SHIFT/SCALE ONE X",DZ,"BACK",M1)
+Lbl M6
+Menu("MEANS","ONE SAMPLE T",AC,"POOLED TWO T",AK,"BALANCED ANOVA",AT,"PAIR AFTER ANOVA",BC,"BACK",M0)
+Lbl M7
+Menu("SUMMARIES","MEAN VAR SD SEM",BJ,"PERCENTILE/IQR",BR,"GIVEN SD TO SEM",BZ,"CHANGE SAMPLE SIZE",CE,"SE OF VARIANCE",CJ,"BACK",M0)
+Lbl M8
+Menu("COUNTS/PROPORTIONS","BINARY SUMMARY",HO,"YATES Z",HU,"YATES 2X2 CHI",IC,"LARGER TABLE",IK,"GOODNESS OF FIT",IS,"BACK",M0)
+Lbl M9
+Menu("ADJUST/OUTPUT","BONFERRONI",GN,"HOLM",GU,"READ OUTPUT",HB,"FIND CUTOFF",HI,"BACK",M0)
+Lbl MA
+Menu("RISK/ODDS","EVENT COUNTS",IZ,"GIVEN EVENT RISKS",JG,"ODDS RATIO",JN,"BACK",M0)
+Lbl AC
+3→P
+3→B
+10→C
+Goto D0
+Lbl AK
+11→P
+11→B
+19→C
+Goto D0
+Lbl AT
+20→P
+20→B
+28→C
+Goto D0
+Lbl BC
+29→P
+29→B
+35→C
+Goto D0
+Lbl BJ
+36→P
+36→B
+43→C
+Goto D0
+Lbl BR
+44→P
+44→B
+51→C
+Goto D0
+Lbl BZ
+52→P
+52→B
+56→C
+Goto D0
+Lbl CE
+57→P
+57→B
+61→C
+Goto D0
+Lbl CJ
+62→P
+62→B
+67→C
+Goto D0
+Lbl CP
+68→P
+68→B
+75→C
+Goto D0
+Lbl CX
+76→P
+76→B
+81→C
+Goto D0
+Lbl DD
+82→P
+82→B
+87→C
+Goto D0
+Lbl DJ
+88→P
+88→B
+92→C
+Goto D0
+Lbl DO
+93→P
+93→B
+97→C
+Goto D0
+Lbl DT
+98→P
+98→B
+103→C
+Goto D0
+Lbl DZ
+104→P
+104→B
+109→C
+Goto D0
+Lbl EF
+110→P
+110→B
+115→C
+Goto D0
+Lbl EL
+116→P
+116→B
+121→C
+Goto D0
+Lbl ER
+122→P
+122→B
+127→C
+Goto D0
+Lbl EX
+128→P
+128→B
+137→C
+Goto D0
+Lbl FH
+138→P
+138→B
+148→C
+Goto D0
+Lbl FS
+149→P
+149→B
+155→C
+Goto D0
+Lbl FZ
+156→P
+156→B
+161→C
+Goto D0
+Lbl GF
+162→P
+162→B
+169→C
+Goto D0
+Lbl GN
+170→P
+170→B
+176→C
+Goto D0
+Lbl GU
+177→P
+177→B
+183→C
+Goto D0
+Lbl HB
+184→P
+184→B
+190→C
+Goto D0
+Lbl HI
+191→P
+191→B
+196→C
+Goto D0
+Lbl HO
+197→P
+197→B
+202→C
+Goto D0
+Lbl HU
+203→P
+203→B
+210→C
+Goto D0
+Lbl IC
+211→P
+211→B
+218→C
+Goto D0
+Lbl IK
+219→P
+219→B
+226→C
+Goto D0
+Lbl IS
+227→P
+227→B
+233→C
+Goto D0
+Lbl IZ
+234→P
+234→B
+240→C
+Goto D0
+Lbl JG
+241→P
+241→B
+247→C
+Goto D0
+Lbl JN
+248→P
+248→B
+253→C
+Goto D0
+Lbl D0
+ClrHome
+If P=1
+Then
+Output(1,1,"BMSTEPS")
+Output(2,1,"READ, THEN FILL IN")
+Output(3,1,"CHOOSE THE QUESTION TYPE.")
+Output(4,1,"COPY YOUR NUMBERS ON")
+Output(5,1,"PAPER.")
+Output(6,1,"FOLLOW EACH FORMULA.")
+Output(7,1,"ENTER=NEXT; LEFT=BACK.")
+Output(8,1,"CLEAR=MAIN MENU.")
+Output(9,1,"EXISTING BME423 DOES MATH.")
+End
+If P=2
+Then
+Output(1,1,"QUICK SYMBOL KEY")
+Output(2,1,"MATH ON THE CE SCREEN")
+Output(3,1,"SQRT(X)=SQUARE ROOT.")
+Output(4,1,"X^2=X SQUARED.")
+Output(5,1,"ABS(X)=MAGNITUDE, NO SIGN.")
+Output(6,1,"SUM=ADD ALL THOSE TERMS.")
+Output(7,1,"____=YOUR NUMBER OR")
+Output(8,1,"RESULT.")
+Output(9,1,"MU=POPULATION MEAN.")
+End
+If P=3
+Then
+Output(1,1,"ONE SAMPLE T")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"ONE SAMPLE VS A REFERENCE.")
+Output(4,1,"NORMAL POPULATION; 2")
+Output(5,1,"TAILS.")
+Output(6,1,"COPY: MEAN, SAMPLE SD, N,")
+Output(7,1,"REFERENCE MU0, ALPHA.")
+Output(8,1,"XBAR = SAMPLE MEAN.")
+End
+If P=4
+Then
+Output(1,1,"ONE SAMPLE T")
+Output(2,1,"1 HYPOTHESES")
+Output(3,1,"H0:MU=MU0")
+Output(4,1,"HA:MU DOES NOT EQUAL MU0.")
+Output(5,1,"NAME THE POPULATION AND")
+Output(6,1,"OUTCOME. MU0 IS THE GIVEN")
+Output(7,1,"REFERENCE VALUE.")
+End
+If P=5
+Then
+Output(1,1,"ONE SAMPLE T")
+Output(2,1,"2 STANDARD ERROR")
+Output(3,1,"SE=SD/SQRT(N)")
+Output(4,1,"SQRT(N)=____")
+Output(5,1,"SE=____/____=____")
+Output(6,1,"SD DESCRIBES INDIVIDUALS.")
+Output(7,1,"SE DESCRIBES THE AVERAGE.")
+End
+If P=6
+Then
+Output(1,1,"ONE SAMPLE T")
+Output(2,1,"3 DIFFERENCE")
+Output(3,1,"GAP=XBAR-MU0")
+Output(4,1,"GAP=____-____=____")
+Output(5,1,"KEEP THE SIGN OF THE GAP.")
+End
+If P=7
+Then
+Output(1,1,"ONE SAMPLE T")
+Output(2,1,"4 TEST STATISTIC")
+Output(3,1,"T=GAP/SE")
+Output(4,1,"T=____/____=____")
+End
+If P=8
+Then
+Output(1,1,"ONE SAMPLE T")
+Output(2,1,"5 DF AND CUTOFF")
+Output(3,1,"DF=N-1=____")
+Output(4,1,"T TABLE: USE THIS DF.")
+Output(5,1,"USE TOTAL 2-TAIL ALPHA.")
+Output(6,1,"POSITIVE CUTOFF C=____")
+End
+If P=9
+Then
+Output(1,1,"ONE SAMPLE T")
+Output(2,1,"6 DECISION")
+Output(3,1,"IF ABS(T)>C: REJECT H0.")
+Output(4,1,"OTHERWISE: DO NOT REJECT.")
+Output(5,1,"OR REJECT WHEN P<ALPHA.")
+Output(6,1,"ABS MEANS IGNORE THE SIGN.")
+End
+If P=10
+Then
+Output(1,1,"ONE SAMPLE T")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"AT ALPHA=____, THE DATA")
+Output(4,1,"SUPPORT / DO NOT ESTABLISH")
+Output(5,1,"A DIFFERENCE BETWEEN THE")
+Output(6,1,"POPULATION MEAN ____ AND")
+Output(7,1,"THE REFERENCE ____.")
+End
+If P=11
+Then
+Output(1,1,"POOLED TWO SAMPLE T")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"2 INDEPENDENT NORMAL")
+Output(4,1,"GROUPS")
+Output(5,1,"WITH EQUAL POPULATION VAR.")
+Output(6,1,"COPY MEAN, SD, N PER")
+Output(7,1,"GROUP.")
+Output(8,1,"SIZES MAY DIFFER.")
+Output(9,1,"COPY ALPHA.")
+End
+If P=12
+Then
+Output(1,1,"POOLED TWO SAMPLE T")
+Output(2,1,"1 HYPOTHESES")
+Output(3,1,"H0:MU1=MU2")
+Output(4,1,"HA:MU1 DOES NOT EQUAL MU2.")
+Output(5,1,"LABEL GROUP 1 AND GROUP 2.")
+End
+If P=13
+Then
+Output(1,1,"POOLED TWO SAMPLE T")
+Output(2,1,"2 SQUARE EACH SD")
+Output(3,1,"V1=SD1^2=____")
+Output(4,1,"V2=SD2^2=____")
+Output(5,1,"IF VARIANCE IS GIVEN, IT")
+Output(6,1,"IS ALREADY SQUARED.")
+End
+If P=14
+Then
+Output(1,1,"POOLED TWO SAMPLE T")
+Output(2,1,"3 DF AND WEIGHTS")
+Output(3,1,"DF=N1+N2-2=____")
+Output(4,1,"A=(N1-1)*V1=____")
+Output(5,1,"B=(N2-1)*V2=____")
+End
+If P=15
+Then
+Output(1,1,"POOLED TWO SAMPLE T")
+Output(2,1,"4 POOLED VARIANCE")
+Output(3,1,"POOL=(A+B)/DF")
+Output(4,1,"POOL=(____+____)/____")
+Output(5,1,"POOL=____")
+Output(6,1,"POOL IS VARIANCE, NOT SD.")
+End
+If P=16
+Then
+Output(1,1,"POOLED TWO SAMPLE T")
+Output(2,1,"5 STANDARD ERROR")
+Output(3,1,"R=1/N1+1/N2=____")
+Output(4,1,"SE=SQRT(POOL*R)")
+Output(5,1,"PRODUCT=____")
+Output(6,1,"SE=SQRT(____)=____")
+End
+If P=17
+Then
+Output(1,1,"POOLED TWO SAMPLE T")
+Output(2,1,"6 TEST STATISTIC")
+Output(3,1,"GAP=MEAN1-MEAN2=____")
+Output(4,1,"T=GAP/SE")
+Output(5,1,"T=____/____=____")
+End
+If P=18
+Then
+Output(1,1,"POOLED TWO SAMPLE T")
+Output(2,1,"7 CUTOFF AND DECISION")
+Output(3,1,"T TABLE: DF=N1+N2-2.")
+Output(4,1,"USE TOTAL 2-TAIL ALPHA.")
+Output(5,1,"POSITIVE CUTOFF C=____")
+Output(6,1,"ABS(T)>C: REJECT H0.")
+Output(7,1,"OR REJECT WHEN P<ALPHA.")
+End
+If P=19
+Then
+Output(1,1,"POOLED TWO SAMPLE T")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"AT ALPHA=____, POPULATION")
+Output(4,1,"MEAN ____ DIFFERS / WAS")
+Output(5,1,"NOT")
+Output(6,1,"SHOWN TO DIFFER BETWEEN")
+Output(7,1,"GROUP ____ AND GROUP ____.")
+End
+If P=20
+Then
+Output(1,1,"BALANCED ANOVA")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"INDEPENDENT NORMAL GROUPS;")
+Output(4,1,"EQUAL POPULATION")
+Output(5,1,"VARIANCES.")
+Output(6,1,"M=NUMBER OF GROUPS.")
+Output(7,1,"N=PEOPLE IN EACH GROUP.")
+Output(8,1,"COPY EACH MEAN, SD, ALPHA.")
+End
+If P=21
+Then
+Output(1,1,"BALANCED ANOVA")
+Output(2,1,"1 HYPOTHESES")
+Output(3,1,"H0:ALL POPULATION MEANS")
+Output(4,1,"ARE EQUAL.")
+Output(5,1,"HA:AT LEAST ONE DIFFERS.")
+Output(6,1,"CHECK SAME N IN EACH")
+Output(7,1,"GROUP.")
+End
+If P=22
+Then
+Output(1,1,"BALANCED ANOVA")
+Output(2,1,"2 WITHIN VARIANCE")
+Output(3,1,"SQUARE EACH GROUP SD.")
+Output(4,1,"WITHIN=SUM(SD^2)/M")
+Output(5,1,"SQUARED SDS: ____")
+Output(6,1,"SUM=____; DIVIDE BY M=____")
+Output(7,1,"WITHIN=____")
+End
+If P=23
+Then
+Output(1,1,"BALANCED ANOVA")
+Output(2,1,"3 GRAND MEAN")
+Output(3,1,"GRAND=SUM(GROUP MEANS)/M")
+Output(4,1,"SUM OF MEANS=____")
+Output(5,1,"GRAND=____/____=____")
+End
+If P=24
+Then
+Output(1,1,"BALANCED ANOVA")
+Output(2,1,"4 DISTANCES OF MEANS")
+Output(3,1,"FOR EACH GROUP:")
+Output(4,1,"GAP=GROUP MEAN-GRAND")
+Output(5,1,"SQUARE EACH GAP.")
+Output(6,1,"Q=SUM(GAP^2)=____")
+End
+If P=25
+Then
+Output(1,1,"BALANCED ANOVA")
+Output(2,1,"5 BETWEEN VARIANCE")
+Output(3,1,"VAR OF MEANS=Q/(M-1)")
+Output(4,1,"VAR OF MEANS=____")
+Output(5,1,"BETWEEN=N*VAR OF MEANS")
+Output(6,1,"BETWEEN=____*____=____")
+End
+If P=26
+Then
+Output(1,1,"BALANCED ANOVA")
+Output(2,1,"6 F AND BOTH DF")
+Output(3,1,"F=BETWEEN/WITHIN")
+Output(4,1,"F=____/____=____")
+Output(5,1,"NUMERATOR DF=M-1=____")
+Output(6,1,"DENOMINATOR DF=M*(N-1)")
+Output(7,1,"DENOMINATOR DF=____")
+End
+If P=27
+Then
+Output(1,1,"BALANCED ANOVA")
+Output(2,1,"7 COMPARE UPPER TAIL")
+Output(3,1,"F TABLE: USE BOTH DF AND")
+Output(4,1,"UPPER-TAIL ALPHA. C=____")
+Output(5,1,"IF F>C: REJECT H0.")
+Output(6,1,"SAVE WITHIN AND ERROR DF")
+Output(7,1,"FOR REQUESTED PAIRS.")
+End
+If P=28
+Then
+Output(1,1,"BALANCED ANOVA")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"AT ALPHA=____, AT LEAST")
+Output(4,1,"ONE")
+Output(5,1,"POPULATION MEAN ____")
+Output(6,1,"DIFFERS / A DIFFERENCE WAS")
+Output(7,1,"NOT ESTABLISHED. IDENTIFY")
+Output(8,1,"SPECIFIC PAIRS BY")
+Output(9,1,"FOLLOW-UP.")
+End
+If P=29
+Then
+Output(1,1,"PAIR AFTER ANOVA")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"COPY MEAN I, MEAN J,")
+Output(4,1,"NI,NJ.")
+Output(5,1,"KEEP ORIGINAL ANOVA WITHIN")
+Output(6,1,"VARIANCE AND ERROR DF.")
+Output(7,1,"COUNT ONLY REQUESTED")
+Output(8,1,"PAIRS.")
+Output(9,1,"K=THAT COMPARISON COUNT.")
+End
+If P=30
+Then
+Output(1,1,"PAIR AFTER ANOVA")
+Output(2,1,"1 PAIR HYPOTHESIS")
+Output(3,1,"H0:MU I=MU J")
+Output(4,1,"HA:THE TWO MEANS DIFFER.")
+Output(5,1,"WITHIN=____; ERROR DF=____")
+End
+If P=31
+Then
+Output(1,1,"PAIR AFTER ANOVA")
+Output(2,1,"2 STANDARD ERROR")
+Output(3,1,"R=1/NI+1/NJ=____")
+Output(4,1,"SE=SQRT(WITHIN*R)")
+Output(5,1,"SE=SQRT(____*____)=____")
+End
+If P=32
+Then
+Output(1,1,"PAIR AFTER ANOVA")
+Output(2,1,"3 PAIR STATISTIC")
+Output(3,1,"GAP=ABS(MEAN I-MEAN J)")
+Output(4,1,"GAP=____")
+Output(5,1,"ABS T=GAP/SE=____")
+Output(6,1,"ONLY STATISTIC ASKED?")
+Output(7,1,"REPORT THIS RESULT.")
+End
+If P=33
+Then
+Output(1,1,"PAIR AFTER ANOVA")
+Output(2,1,"4 BONFERRONI LEVEL")
+Output(3,1,"PAIR ALPHA=FAMILY ALPHA/K")
+Output(4,1,"PAIR ALPHA=____/____=____")
+Output(5,1,"T TABLE: ORIGINAL ERROR")
+Output(6,1,"DF.")
+Output(7,1,"USE TOTAL 2-TAIL PAIR")
+Output(8,1,"LEVEL.")
+Output(9,1,"CUTOFF C=____")
+End
+If P=34
+Then
+Output(1,1,"PAIR AFTER ANOVA")
+Output(2,1,"5 PAIR DECISION")
+Output(3,1,"IF ABS T>C: REJECT PAIR")
+Output(4,1,"H0.")
+Output(5,1,"KEEP PAIR LABEL ATTACHED.")
+Output(6,1,"IF HOLM WAS REQUESTED, USE")
+Output(7,1,"THE HOLM GUIDE FOR FAMILY.")
+End
+If P=35
+Then
+Output(1,1,"PAIR AFTER ANOVA")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"AT FAMILY ALPHA=____, THE")
+Output(4,1,"POPULATION MEANS FOR ____")
+Output(5,1,"AND ____ DIFFER / WERE NOT")
+Output(6,1,"SHOWN TO DIFFER.")
+End
+If P=36
+Then
+Output(1,1,"MEAN VAR SD SEM")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"RAW NUMERICAL")
+Output(4,1,"OBSERVATIONS.")
+Output(5,1,"SAMPLE OR WHOLE")
+Output(6,1,"POPULATION?")
+Output(7,1,"N=NUMBER OF OBSERVATIONS.")
+Output(8,1,"XBAR=AVERAGE.")
+End
+If P=37
+Then
+Output(1,1,"MEAN VAR SD SEM")
+Output(2,1,"1 COUNT AND ADD")
+Output(3,1,"N=____")
+Output(4,1,"TOTAL=SUM(X)=____")
+Output(5,1,"LIST EACH ORIGINAL VALUE.")
+End
+If P=38
+Then
+Output(1,1,"MEAN VAR SD SEM")
+Output(2,1,"2 MEAN")
+Output(3,1,"XBAR=TOTAL/N")
+Output(4,1,"XBAR=____/____=____")
+End
+If P=39
+Then
+Output(1,1,"MEAN VAR SD SEM")
+Output(2,1,"3 SQUARED DISTANCES")
+Output(3,1,"MAKE COLUMNS:")
+Output(4,1,"X | X-XBAR | (X-XBAR)^2")
+Output(5,1,"SUBTRACT MEAN; SQUARE.")
+Output(6,1,"Q=SUM(SQUARED GAPS)=____")
+End
+If P=40
+Then
+Output(1,1,"MEAN VAR SD SEM")
+Output(2,1,"4 SAMPLE VAR AND SD")
+Output(3,1,"SAMPLE VAR=Q/(N-1)")
+Output(4,1,"SAMPLE VAR=____/____=____")
+Output(5,1,"SAMPLE SD=SQRT(VAR)=____")
+End
+If P=41
+Then
+Output(1,1,"MEAN VAR SD SEM")
+Output(2,1,"5 MEAN UNCERTAINTY")
+Output(3,1,"SEM=SD/SQRT(N)")
+Output(4,1,"SEM=____/SQRT(____)=____")
+Output(5,1,"SD:SPREAD OF INDIVIDUALS.")
+Output(6,1,"SEM:SPREAD OF AVERAGES.")
+End
+If P=42
+Then
+Output(1,1,"MEAN VAR SD SEM")
+Output(2,1,"6 WHOLE POPULATION")
+Output(3,1,"ONLY FOR COMPLETE")
+Output(4,1,"POPULATION")
+Output(5,1,"POP VAR=Q/N=____")
+Output(6,1,"POP SD=SQRT(POP VAR)=____")
+Output(7,1,"SAMPLE USES N-1 INSTEAD.")
+End
+If P=43
+Then
+Output(1,1,"MEAN VAR SD SEM")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"MEAN=____; SD=____")
+Output(4,1,"VARIANCE=____; SEM=____")
+Output(5,1,"MEAN,SD,SEM:ORIGINAL")
+Output(6,1,"UNITS.")
+Output(7,1,"VARIANCE:SQUARED UNITS.")
+End
+If P=44
+Then
+Output(1,1,"PERCENTILE MEDIAN IQR")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"RAW SAMPLE + PERCENTILE P.")
+Output(4,1,"P RUNS FROM 0 TO 100.")
+Output(5,1,"COURSE RANK RULE USED.")
+End
+If P=45
+Then
+Output(1,1,"PERCENTILE MEDIAN IQR")
+Output(2,1,"1 SORT AND LABEL")
+Output(3,1,"SORT LOWEST TO HIGHEST.")
+Output(4,1,"WRITE POSITIONS 1,2,…,N.")
+Output(5,1,"N=____; P=____")
+End
+If P=46
+Then
+Output(1,1,"PERCENTILE MEDIAN IQR")
+Output(2,1,"2 RANK")
+Output(3,1,"R=1+P*(N-1)/100")
+Output(4,1,"R=1+____*(____-1)/100")
+Output(5,1,"R=____")
+End
+If P=47
+Then
+Output(1,1,"PERCENTILE MEDIAN IQR")
+Output(2,1,"3 BRACKETS")
+Output(3,1,"I=WHOLE PART OF R=____")
+Output(4,1,"F=R-I=FRACTIONAL PART=____")
+Output(5,1,"LOW=VALUE AT POSITION I")
+Output(6,1,"HIGH=VALUE AT POSITION I+1")
+Output(7,1,"INTEGER R? USE THAT VALUE.")
+End
+If P=48
+Then
+Output(1,1,"PERCENTILE MEDIAN IQR")
+Output(2,1,"4 INTERPOLATE")
+Output(3,1,"GAP=HIGH-LOW=____")
+Output(4,1,"PERCENTILE=LOW+F*GAP")
+Output(5,1,"RESULT=____+____*____=____")
+Output(6,1,"P=100? USE LAST VALUE.")
+End
+If P=49
+Then
+Output(1,1,"PERCENTILE MEDIAN IQR")
+Output(2,1,"5 QUARTILES AND MEDIAN")
+Output(3,1,"REPEAT RANK RULE FOR:")
+Output(4,1,"Q1:P=25; MEDIAN:P=50;")
+Output(5,1,"Q3:P=75.")
+Output(6,1,"Q1=____; MED=____; Q3=____")
+End
+If P=50
+Then
+Output(1,1,"PERCENTILE MEDIAN IQR")
+Output(2,1,"6 SPREAD")
+Output(3,1,"IQR=Q3-Q1=____")
+Output(4,1,"RANGE=MAX-MIN=____")
+End
+If P=51
+Then
+Output(1,1,"PERCENTILE MEDIAN IQR")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"THE ____TH PERCENTILE IS")
+Output(4,1,"____. MEDIAN=____")
+Output(5,1,"IQR=____; RANGE=____")
+Output(6,1,"IN THE ORIGINAL UNITS.")
+End
+If P=52
+Then
+Output(1,1,"SD OF SAMPLE MEANS")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"GIVEN INDIVIDUAL SD AND N.")
+Output(4,1,"ASKED SPREAD OF AN")
+Output(5,1,"AVERAGE.")
+Output(6,1,"SD=SIGMA; N=SAMPLE SIZE.")
+End
+If P=53
+Then
+Output(1,1,"SD OF SAMPLE MEANS")
+Output(2,1,"1 COPY SD AND N")
+Output(3,1,"INDIVIDUAL SD=____; N=____")
+Output(4,1,"VARIANCE GIVEN INSTEAD?")
+Output(5,1,"SD=SQRT(VARIANCE).")
+End
+If P=54
+Then
+Output(1,1,"SD OF SAMPLE MEANS")
+Output(2,1,"2 STANDARD ERROR")
+Output(3,1,"SEM=SD/SQRT(N)")
+Output(4,1,"SQRT(N)=____")
+Output(5,1,"SEM=____/____=____")
+End
+If P=55
+Then
+Output(1,1,"SD OF SAMPLE MEANS")
+Output(2,1,"3 VARIANCE OF MEAN")
+Output(3,1,"VAR(MEAN)=SD^2/N")
+Output(4,1,"OR VAR(MEAN)=SEM^2")
+Output(5,1,"VAR(MEAN)=____")
+Output(6,1,"USE SQUARED UNITS FOR VAR.")
+End
+If P=56
+Then
+Output(1,1,"SD OF SAMPLE MEANS")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"THE SAMPLE MEAN HAS SD")
+Output(4,1,"____ AND VARIANCE ____.")
+Output(5,1,"INDIVIDUAL SD STAYS ____.")
+End
+If P=57
+Then
+Output(1,1,"CHANGE SAMPLE SIZE")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"OLD SEM AND OLD/NEW N")
+Output(4,1,"GIVEN.")
+Output(5,1,"INDIVIDUAL SD STAYS SAME.")
+End
+If P=58
+Then
+Output(1,1,"CHANGE SAMPLE SIZE")
+Output(2,1,"1 COPY THE THREE VALUES")
+Output(3,1,"OLD SEM=____")
+Output(4,1,"OLD N=____; NEW N=____")
+End
+If P=59
+Then
+Output(1,1,"CHANGE SAMPLE SIZE")
+Output(2,1,"2 SIZE CHANGE FACTOR")
+Output(3,1,"R=SQRT(OLD N/NEW N)")
+Output(4,1,"R=SQRT(____/____)=____")
+End
+If P=60
+Then
+Output(1,1,"CHANGE SAMPLE SIZE")
+Output(2,1,"3 NEW SEM")
+Output(3,1,"NEW SEM=OLD SEM*R")
+Output(4,1,"NEW SEM=____*____=____")
+Output(5,1,"LARGER NEW N GIVES A")
+Output(6,1,"SMALLER SEM.")
+End
+If P=61
+Then
+Output(1,1,"CHANGE SAMPLE SIZE")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"WITH NEW SAMPLE SIZE ____,")
+Output(4,1,"THE NEW SEM IS ____.")
+End
+If P=62
+Then
+Output(1,1,"SE OF SAMPLE VARIANCE")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"NORMAL SETTING. ASKED SE")
+Output(4,1,"OF VARIANCE, NOT OF MEAN.")
+Output(5,1,"COPY SAMPLE SD AND N.")
+End
+If P=63
+Then
+Output(1,1,"SE OF SAMPLE VARIANCE")
+Output(2,1,"1 GET SAMPLE VARIANCE")
+Output(3,1,"VAR=SD^2=____")
+Output(4,1,"VARIANCE GIVEN ALREADY?")
+Output(5,1,"USE IT WITHOUT SQUARING.")
+End
+If P=64
+Then
+Output(1,1,"SE OF SAMPLE VARIANCE")
+Output(2,1,"2 MULTIPLIER")
+Output(3,1,"R=SQRT(2/(N-1))")
+Output(4,1,"N-1=____; 2/(N-1)=____")
+Output(5,1,"R=____")
+End
+If P=65
+Then
+Output(1,1,"SE OF SAMPLE VARIANCE")
+Output(2,1,"3 ESTIMATED SE OF VAR")
+Output(3,1,"SE(VAR)=VAR*R")
+Output(4,1,"SE(VAR)=____*____=____")
+Output(5,1,"ANSWER HAS SQUARED UNITS.")
+End
+If P=66
+Then
+Output(1,1,"SE OF SAMPLE VARIANCE")
+Output(2,1,"4 IF SEM ALSO ASKED")
+Output(3,1,"SEM=SD/SQRT(N)=____")
+Output(4,1,"THIS DESCRIBES THE MEAN.")
+Output(5,1,"SE(VAR) DESCRIBES")
+Output(6,1,"VARIANCE.")
+End
+If P=67
+Then
+Output(1,1,"SE OF SAMPLE VARIANCE")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"ESTIMATED SE OF SAMPLE")
+Output(4,1,"VARIANCE=____ SQUARED")
+Output(5,1,"UNITS.")
+End
+If P=68
+Then
+Output(1,1,"DISCRETE TABLE")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"COPY EACH VALUE X AND ITS")
+Output(4,1,"PROBABILITY P.")
+Output(5,1,"MU=EXPECTED VALUE=MEAN.")
+Output(6,1,"F(C)=PROBABILITY X≤C.")
+End
+If P=69
+Then
+Output(1,1,"DISCRETE TABLE")
+Output(2,1,"1 VALID TABLE")
+Output(3,1,"EACH P MUST BE ≥0.")
+Output(4,1,"SUM(P)=1.")
+Output(5,1,"VALUE,PROB PAIRS: ____")
+Output(6,1,"CHECK SUM=____")
+End
+If P=70
+Then
+Output(1,1,"DISCRETE TABLE")
+Output(2,1,"2 EXPECTED VALUE")
+Output(3,1,"MAKE COLUMNS X,P,X*P.")
+Output(4,1,"MU=SUM(X*P)")
+Output(5,1,"EACH X*P=____")
+Output(6,1,"ADD THEM: MU=____")
+End
+If P=71
+Then
+Output(1,1,"DISCRETE TABLE")
+Output(2,1,"3 SECOND MOMENT")
+Output(3,1,"ADD COLUMN X^2*P.")
+Output(4,1,"EX2=SUM(X^2*P)")
+Output(5,1,"SQUARE X, NOT P.")
+Output(6,1,"EACH TERM=____; EX2=____")
+End
+If P=72
+Then
+Output(1,1,"DISCRETE TABLE")
+Output(2,1,"4 VARIANCE")
+Output(3,1,"VAR=EX2-MU^2")
+Output(4,1,"VAR=____-(____)^2=____")
+Output(5,1,"SD IF ASKED=SQRT(VAR)")
+End
+If P=73
+Then
+Output(1,1,"DISCRETE TABLE")
+Output(2,1,"5 CDF AT A CUTOFF")
+Output(3,1,"F(C)=SUM(P FOR X≤C)")
+Output(4,1,"C=____; SELECTED X:____")
+Output(5,1,"ADD THEIR PROBABILITIES.")
+Output(6,1,"F(C)=____; P(X>C)=1-F(C)")
+End
+If P=74
+Then
+Output(1,1,"DISCRETE TABLE")
+Output(2,1,"6 EXPECTED FUNCTION")
+Output(3,1,"ONLY IF H(X) IS ASKED:")
+Output(4,1,"E(H(X))=SUM(H(X)*P)")
+Output(5,1,"APPLY H TO EACH X FIRST.")
+Output(6,1,"MULTIPLY BY ORIGINAL P.")
+Output(7,1,"ADD THE WEIGHTED VALUES.")
+End
+If P=75
+Then
+Output(1,1,"DISCRETE TABLE")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"MEAN=____; EX2=____")
+Output(4,1,"VAR=____; REQUESTED CDF OR")
+Output(5,1,"EXPECTED FUNCTION=____.")
+End
+If P=76
+Then
+Output(1,1,"DISCRETE INTERVAL")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"DISCRETE TABLE AND")
+Output(4,1,"INTERVAL.")
+Output(5,1,"L=LOW END; H=HIGH END.")
+Output(6,1,"CHECK < VERSUS ≤.")
+Output(7,1,"CDF F(C) INCLUDES")
+Output(8,1,"EQUALITY.")
+End
+If P=77
+Then
+Output(1,1,"DISCRETE INTERVAL")
+Output(2,1,"1 SELECT OUTCOMES")
+Output(3,1,"CIRCLE VALUES SATISFYING")
+Output(4,1,"THE EXACT INEQUALITIES.")
+Output(5,1,"LOW END INCLUDED? ____")
+Output(6,1,"HIGH END INCLUDED? ____")
+End
+If P=78
+Then
+Output(1,1,"DISCRETE INTERVAL")
+Output(2,1,"2 DIRECT SUM")
+Output(3,1,"ADD PROBABILITIES OF THE")
+Output(4,1,"CIRCLED VALUES.")
+Output(5,1,"PROB=____+____+…=____")
+Output(6,1,"THIS IS THE SIMPLEST WAY.")
+End
+If P=79
+Then
+Output(1,1,"DISCRETE INTERVAL")
+Output(2,1,"3 CDF METHOD IF NEEDED")
+Output(3,1,"BASE=F(H)-F(L).")
+Output(4,1,"IF LOW INCLUDED:ADD")
+Output(5,1,"P(X=L).")
+Output(6,1,"IF HIGH EXCLUDED:")
+Output(7,1,"SUBTRACT P(X=H).")
+Output(8,1,"FINAL PROBABILITY=____")
+End
+If P=80
+Then
+Output(1,1,"DISCRETE INTERVAL")
+Output(2,1,"4 SAME ENDPOINTS")
+Output(3,1,"IF L=H, INTERVAL IS EMPTY")
+Output(4,1,"UNLESS BOTH ENDS INCLUDED.")
+Output(5,1,"BOTH INCLUDED? USE P(X=L).")
+Output(6,1,"OTHERWISE PROBABILITY=0.")
+End
+If P=81
+Then
+Output(1,1,"DISCRETE INTERVAL")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"P(REQUESTED")
+Output(4,1,"INTERVAL)=____.")
+Output(5,1,"INCLUDED OUTCOMES: ____.")
+End
+If P=82
+Then
+Output(1,1,"MISSING PMF CONSTANT")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"PROBABILITIES ARE")
+Output(4,1,"C*WEIGHT.")
+Output(5,1,"COPY ALL KNOWN WEIGHTS.")
+Output(6,1,"C IS THE UNKNOWN")
+Output(7,1,"MULTIPLIER.")
+End
+If P=83
+Then
+Output(1,1,"MISSING PMF CONSTANT")
+Output(2,1,"1 SUM WEIGHTS")
+Output(3,1,"W=SUM(WEIGHTS)=____")
+Output(4,1,"WEIGHTS MUST BE ≥0.")
+Output(5,1,"W MUST BE POSITIVE.")
+End
+If P=84
+Then
+Output(1,1,"MISSING PMF CONSTANT")
+Output(2,1,"2 TOTAL MUST BE ONE")
+Output(3,1,"C*W=1")
+Output(4,1,"C=1/W")
+Output(5,1,"C=1/____=____")
+End
+If P=85
+Then
+Output(1,1,"MISSING PMF CONSTANT")
+Output(2,1,"3 COMPLETE TABLE")
+Output(3,1,"EACH PROB=C*ITS WEIGHT.")
+Output(4,1,"WRITE VALUE AND NEW PROB.")
+Output(5,1,"PROBS:____")
+End
+If P=86
+Then
+Output(1,1,"MISSING PMF CONSTANT")
+Output(2,1,"4 CHECK")
+Output(3,1,"SUM(NEW PROBABILITIES)=1.")
+Output(4,1,"CHECK SUM=____")
+End
+If P=87
+Then
+Output(1,1,"MISSING PMF CONSTANT")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"C=____. THE COMPLETED")
+Output(4,1,"PROBABILITIES ARE ____.")
+End
+If P=88
+Then
+Output(1,1,"EXACT FAIR COIN HEADS")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"N INDEPENDENT FAIR TOSSES.")
+Output(4,1,"EXACTLY K HEADS REQUESTED.")
+End
+If P=89
+Then
+Output(1,1,"EXACT FAIR COIN HEADS")
+Output(2,1,"1 ALL SEQUENCES")
+Output(3,1,"TOTAL=2^N")
+Output(4,1,"N=____; TOTAL=____")
+Output(5,1,"ALL SEQUENCES EQUALLY")
+Output(6,1,"LIKELY FOR FAIR TOSSES.")
+End
+If P=90
+Then
+Output(1,1,"EXACT FAIR COIN HEADS")
+Output(2,1,"2 FAVORABLE SEQUENCES")
+Output(3,1,"WAYS=N!/(K!*(N-K)!)")
+Output(4,1,"OR USE N NCR K.")
+Output(5,1,"TI:MATH > PRB > NCR.")
+Output(6,1,"N=____; K=____; WAYS=____")
+End
+If P=91
+Then
+Output(1,1,"EXACT FAIR COIN HEADS")
+Output(2,1,"3 DIVIDE COUNTS")
+Output(3,1,"PROB=WAYS/TOTAL")
+Output(4,1,"PROB=____/____=____")
+Output(5,1,"ONE SPECIFIED ORDER?")
+Output(6,1,"FAVORABLE COUNT IS ONE.")
+End
+If P=92
+Then
+Output(1,1,"EXACT FAIR COIN HEADS")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"P(EXACTLY ____ HEADS IN")
+Output(4,1,"____ TOSSES)=____.")
+End
+If P=93
+Then
+Output(1,1,"TWO EVENTS IN A ROW")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"BOTH EVENTS MUST HAPPEN.")
+Output(4,1,"A=FIRST; B=SECOND.")
+Output(5,1,"P(B GIVEN A) IS SECOND")
+Output(6,1,"CHANCE AFTER THE FIRST.")
+End
+If P=94
+Then
+Output(1,1,"TWO EVENTS IN A ROW")
+Output(2,1,"1 FIRST PROBABILITY")
+Output(3,1,"P1=FAVORABLE/TOTAL")
+Output(4,1,"USE THE INITIAL COUNTS.")
+Output(5,1,"P1=____/____=____")
+End
+If P=95
+Then
+Output(1,1,"TWO EVENTS IN A ROW")
+Output(2,1,"2 SECOND PROBABILITY")
+Output(3,1,"WITHOUT REPLACEMENT:")
+Output(4,1,"UPDATE FAVORABLE AND TOTAL")
+Output(5,1,"AFTER THE FIRST OUTCOME.")
+Output(6,1,"P2=____/____=____")
+Output(7,1,"INDEPENDENT? P2 UNCHANGED.")
+End
+If P=96
+Then
+Output(1,1,"TWO EVENTS IN A ROW")
+Output(2,1,"3 MULTIPLY")
+Output(3,1,"P(BOTH)=P1*P2")
+Output(4,1,"P(BOTH)=____*____=____")
+End
+If P=97
+Then
+Output(1,1,"TWO EVENTS IN A ROW")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"P(____ THEN ____)=____.")
+End
+If P=98
+Then
+Output(1,1,"INDEPENDENT X AND Y")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"Z=A*X+B*Y+C.")
+Output(4,1,"X,Y MUST BE INDEPENDENT")
+Output(5,1,"FOR THIS VARIANCE FORMULA.")
+Output(6,1,"COPY BOTH MEANS/VARIANCES.")
+End
+If P=99
+Then
+Output(1,1,"INDEPENDENT X AND Y")
+Output(2,1,"1 IDENTIFY INPUTS")
+Output(3,1,"A=____; B=____; C=____")
+Output(4,1,"MEAN X=____; MEAN Y=____")
+Output(5,1,"VAR X=____; VAR Y=____")
+Output(6,1,"SD GIVEN? SQUARE IT FIRST.")
+End
+If P=100
+Then
+Output(1,1,"INDEPENDENT X AND Y")
+Output(2,1,"2 EXPECTED VALUE")
+Output(3,1,"MEAN Z=A*MEAN X+B*MEAN Y+C")
+Output(4,1,"TERM1=____; TERM2=____")
+Output(5,1,"ADD TERMS AND C:____")
+Output(6,1,"KEEP COEFFICIENT SIGNS.")
+End
+If P=101
+Then
+Output(1,1,"INDEPENDENT X AND Y")
+Output(2,1,"3 VARIANCE")
+Output(3,1,"VAR Z=A^2*VAR X+B^2*VAR Y")
+Output(4,1,"TERM1=____; TERM2=____")
+Output(5,1,"ADD=____")
+Output(6,1,"VARIANCES ADD EVEN WHEN")
+Output(7,1,"THE ORIGINAL TERMS")
+Output(8,1,"SUBTRACT.")
+End
+If P=102
+Then
+Output(1,1,"INDEPENDENT X AND Y")
+Output(2,1,"4 SD IF ASKED")
+Output(3,1,"SD Z=SQRT(VAR Z)=____")
+Output(4,1,"ADDING C CHANGES THE MEAN")
+Output(5,1,"BUT ADDS NO VARIANCE.")
+End
+If P=103
+Then
+Output(1,1,"INDEPENDENT X AND Y")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"MEAN Z=____; VAR Z=____;")
+Output(4,1,"SD Z=____ IF REQUESTED.")
+End
+If P=104
+Then
+Output(1,1,"SHIFT OR SCALE ONE X")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"Y=A+B*X.")
+Output(4,1,"A=ADDED SHIFT.")
+Output(5,1,"B=MULTIPLIER.")
+Output(6,1,"COPY MEAN X; VAR IF ASKED.")
+End
+If P=105
+Then
+Output(1,1,"SHIFT OR SCALE ONE X")
+Output(2,1,"1 MATCH THE EXPRESSION")
+Output(3,1,"X-26: A=-26, B=1.")
+Output(4,1,"2X+1: A=1, B=2.")
+Output(5,1,"YOUR A=____; B=____")
+Output(6,1,"ORIGINAL MEAN=____")
+End
+If P=106
+Then
+Output(1,1,"SHIFT OR SCALE ONE X")
+Output(2,1,"2 NEW EXPECTED VALUE")
+Output(3,1,"MEAN Y=A+B*MEAN X")
+Output(4,1,"MEAN Y=____+____*____")
+Output(5,1,"MEAN Y=____")
+Output(6,1,"ONLY MEAN ASKED? FINISHED.")
+End
+If P=107
+Then
+Output(1,1,"SHIFT OR SCALE ONE X")
+Output(2,1,"3 VARIANCE IF ASKED")
+Output(3,1,"VAR Y=B^2*VAR X")
+Output(4,1,"VAR Y=(____)^2*____=____")
+Output(5,1,"SHIFT A ADDS NO VARIANCE.")
+End
+If P=108
+Then
+Output(1,1,"SHIFT OR SCALE ONE X")
+Output(2,1,"4 SD IF ASKED")
+Output(3,1,"SD Y=ABS(B)*SD X")
+Output(4,1,"OR SQRT(VAR Y).")
+Output(5,1,"NEW SD=____")
+End
+If P=109
+Then
+Output(1,1,"SHIFT OR SCALE ONE X")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"E(Y)=____; VAR(Y)=____;")
+Output(4,1,"SD(Y)=____ AS REQUESTED.")
+End
+If P=110
+Then
+Output(1,1,"UNIFORM DISTRIBUTION")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"UNIFORM ON [A,B].")
+Output(4,1,"L,H=REQUESTED BOUNDS.")
+Output(5,1,"USE THEIR PART INSIDE")
+Output(6,1,"[A,B].")
+End
+If P=111
+Then
+Output(1,1,"UNIFORM DISTRIBUTION")
+Output(2,1,"1 FULL WIDTH")
+Output(3,1,"W=B-A=____")
+Output(4,1,"DENSITY HEIGHT=1/W=____")
+End
+If P=112
+Then
+Output(1,1,"UNIFORM DISTRIBUTION")
+Output(2,1,"2 REQUESTED WIDTH")
+Output(3,1,"CLIP INTERVAL TO SUPPORT.")
+Output(4,1,"WIDTH=HIGH-LOW=____")
+Output(5,1,"COMPLETELY OUTSIDE? P=0.")
+End
+If P=113
+Then
+Output(1,1,"UNIFORM DISTRIBUTION")
+Output(2,1,"3 PROBABILITY")
+Output(3,1,"P=REQUESTED WIDTH/W")
+Output(4,1,"P=____/____=____")
+Output(5,1,"CONTINUOUS ENDPOINTS ADD")
+Output(6,1,"ZERO PROBABILITY.")
+End
+If P=114
+Then
+Output(1,1,"UNIFORM DISTRIBUTION")
+Output(2,1,"4 MOMENTS IF ASKED")
+Output(3,1,"MEAN=(A+B)/2=____")
+Output(4,1,"VAR=(B-A)^2/12=____")
+Output(5,1,"SD=SQRT(VAR) IF ASKED.")
+End
+If P=115
+Then
+Output(1,1,"UNIFORM DISTRIBUTION")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"REQUESTED PROB=____.")
+Output(4,1,"MEAN=____; VAR=____")
+Output(5,1,"AS REQUESTED.")
+End
+If P=116
+Then
+Output(1,1,"NORMALIZE LINEAR PDF")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"F(X)=C*(A+B*X) ON [L,U].")
+Output(4,1,"C=UNKNOWN MULTIPLIER.")
+Output(5,1,"A,B,L,U ARE KNOWN.")
+Output(6,1,"BASE MUST STAY")
+Output(7,1,"NONNEGATIVE.")
+End
+If P=117
+Then
+Output(1,1,"NORMALIZE LINEAR PDF")
+Output(2,1,"1 SET TOTAL AREA")
+Output(3,1,"C*INTEGRAL(A+B*X)=1")
+Output(4,1,"INTEGRATE FROM L TO U.")
+Output(5,1,"A=____; B=____")
+Output(6,1,"L=____; U=____")
+End
+If P=118
+Then
+Output(1,1,"NORMALIZE LINEAR PDF")
+Output(2,1,"2 ANTIDERIVATIVE")
+Output(3,1,"G(X)=A*X+B*X^2/2")
+Output(4,1,"G(U)=____")
+Output(5,1,"G(L)=____")
+Output(6,1,"X INTEGRATES TO X^2/2.")
+End
+If P=119
+Then
+Output(1,1,"NORMALIZE LINEAR PDF")
+Output(2,1,"3 BASE AREA")
+Output(3,1,"AREA=G(U)-G(L)")
+Output(4,1,"AREA=____-____=____")
+End
+If P=120
+Then
+Output(1,1,"NORMALIZE LINEAR PDF")
+Output(2,1,"4 NORMALIZE")
+Output(3,1,"C*AREA=1")
+Output(4,1,"C=1/AREA=____")
+Output(5,1,"SUBSTITUTE C INTO F(X).")
+Output(6,1,"CHECK TOTAL AREA IS ONE.")
+End
+If P=121
+Then
+Output(1,1,"NORMALIZE LINEAR PDF")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"C=____. F(X)=____ ON")
+Output(4,1,"[____,____], ZERO")
+Output(5,1,"ELSEWHERE.")
+End
+If P=122
+Then
+Output(1,1,"UNKNOWN PDF ENDPOINT")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"F(X)=A+B*X ON [0,C].")
+Output(4,1,"A,B ARE NONNEGATIVE.")
+Output(5,1,"C=UNKNOWN POSITIVE END.")
+Output(6,1,"C IS NOT AN OUTSIDE")
+Output(7,1,"FACTOR.")
+End
+If P=123
+Then
+Output(1,1,"UNKNOWN PDF ENDPOINT")
+Output(2,1,"1 SET TOTAL AREA")
+Output(3,1,"INTEGRAL FROM 0 TO C = 1.")
+Output(4,1,"A=____; B=____")
+End
+If P=124
+Then
+Output(1,1,"UNKNOWN PDF ENDPOINT")
+Output(2,1,"2 INTEGRATE")
+Output(3,1,"A*C+B*C^2/2=1")
+Output(4,1,"LOWER END ZERO ADDS ZERO.")
+Output(5,1,"WRITE YOUR COEFFICIENTS")
+Output(6,1,"IN THIS EQUATION.")
+End
+If P=125
+Then
+Output(1,1,"UNKNOWN PDF ENDPOINT")
+Output(2,1,"3 POSITIVE ROOT")
+Output(3,1,"IF B>0:")
+Output(4,1,"ROOT=SQRT(A^2+2*B)")
+Output(5,1,"C=2/(A+ROOT)")
+Output(6,1,"IF B=0 AND A>0:C=1/A.")
+Output(7,1,"ROOT=____; C=____")
+End
+If P=126
+Then
+Output(1,1,"UNKNOWN PDF ENDPOINT")
+Output(2,1,"4 CHECK SUPPORT")
+Output(3,1,"CHECK A*C+B*C^2/2=1.")
+Output(4,1,"KEEP C>0.")
+Output(5,1,"FOR BMPDF, FULL C IS IN T.")
+Output(6,1,"ALPHA THEN T KEY ENTERS")
+Output(7,1,"IT.")
+End
+If P=127
+Then
+Output(1,1,"UNKNOWN PDF ENDPOINT")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"UPPER ENDPOINT C=____.")
+Output(4,1,"SUPPORT IS [0,____].")
+End
+If P=128
+Then
+Output(1,1,"LINEAR PDF AND CDF")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"PDF=A+B*X ON [L,U].")
+Output(4,1,"PDF IS THE DENSITY HEIGHT.")
+Output(5,1,"F(C)=CDF, THE LEFT AREA.")
+Output(6,1,"C=CDF CUTOFF; M=MEDIAN.")
+End
+If P=129
+Then
+Output(1,1,"LINEAR PDF AND CDF")
+Output(2,1,"1 CHECK THE DENSITY")
+Output(3,1,"NONNEGATIVE ON SUPPORT.")
+Output(4,1,"TOTAL INTEGRAL MUST BE 1.")
+Output(5,1,"A=____; B=____")
+Output(6,1,"L=____; U=____")
+Output(7,1,"MISSING MULTIPLIER?")
+Output(8,1,"USE NORMALIZE PDF GUIDE.")
+End
+If P=130
+Then
+Output(1,1,"LINEAR PDF AND CDF")
+Output(2,1,"2 AREA ANTIDERIVATIVE")
+Output(3,1,"G(X)=A*X+B*X^2/2")
+Output(4,1,"USE THIS FOR CDF/AREAS.")
+Output(5,1,"G(L)=____; G(U)=____")
+End
+If P=131
+Then
+Output(1,1,"LINEAR PDF AND CDF")
+Output(2,1,"3 CDF")
+Output(3,1,"INSIDE SUPPORT:")
+Output(4,1,"F(C)=G(C)-G(L)")
+Output(5,1,"C≤L: F(C)=0.")
+Output(6,1,"C≥U: F(C)=1.")
+Output(7,1,"YOUR C=____; F(C)=____")
+End
+If P=132
+Then
+Output(1,1,"LINEAR PDF AND CDF")
+Output(2,1,"4 INTERVAL PROBABILITY")
+Output(3,1,"P(LOW<X<HIGH)=")
+Output(4,1,"F(HIGH)-F(LOW)")
+Output(5,1,"UPPER AREA=____")
+Output(6,1,"LOWER AREA=____; P=____")
+Output(7,1,"EXACT POINT HAS P=0.")
+End
+If P=133
+Then
+Output(1,1,"LINEAR PDF AND CDF")
+Output(2,1,"5 EXPECTED VALUE")
+Output(3,1,"INTEGRATE X*DENSITY:")
+Output(4,1,"H(X)=A*X^2/2+B*X^3/3")
+Output(5,1,"MEAN=H(U)-H(L)")
+Output(6,1,"UPPER=____; LOWER=____")
+Output(7,1,"MEAN=____")
+End
+If P=134
+Then
+Output(1,1,"LINEAR PDF AND CDF")
+Output(2,1,"6 SECOND MOMENT")
+Output(3,1,"INTEGRATE X^2*DENSITY:")
+Output(4,1,"J(X)=A*X^3/3+B*X^4/4")
+Output(5,1,"EX2=J(U)-J(L)")
+Output(6,1,"UPPER=____; LOWER=____")
+Output(7,1,"EX2=____")
+End
+If P=135
+Then
+Output(1,1,"LINEAR PDF AND CDF")
+Output(2,1,"7 VARIANCE AND SD")
+Output(3,1,"VAR=EX2-MEAN^2")
+Output(4,1,"VAR=____-(____)^2=____")
+Output(5,1,"SD IF ASKED=SQRT(VAR).")
+End
+If P=136
+Then
+Output(1,1,"LINEAR PDF AND CDF")
+Output(2,1,"8 MEDIAN IF ASKED")
+Output(3,1,"G(M)-G(L)=.5")
+Output(4,1,"SUBSTITUTE G EXPRESSION.")
+Output(5,1,"SOLVE FOR M.")
+Output(6,1,"KEEP ROOT WITH L≤M≤U.")
+Output(7,1,"MEDIAN=____")
+End
+If P=137
+Then
+Output(1,1,"LINEAR PDF AND CDF")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"REPORT ONLY REQUESTED")
+Output(4,1,"PARTS.")
+Output(5,1,"PROB / CDF=____; MEAN=____")
+Output(6,1,"VAR=____; MEDIAN=____.")
+End
+If P=138
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"ONE LINEAR PDF BEFORE")
+Output(4,1,"SPLIT,")
+Output(5,1,"ANOTHER AFTER THE SPLIT.")
+Output(6,1,"L=LOW; S=SPLIT; U=HIGH.")
+Output(7,1,"FIRST F=A1+B1*X.")
+Output(8,1,"SECOND F=A2+B2*X.")
+End
+If P=139
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"1 INTEGRATE EACH PIECE")
+Output(3,1,"G1(X)=A1*X+B1*X^2/2")
+Output(4,1,"G2(X)=A2*X+B2*X^2/2")
+Output(5,1,"KEEP EACH ON ITS INTERVAL.")
+End
+If P=140
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"2 AREA OF EACH PIECE")
+Output(3,1,"AREA1=G1(S)-G1(L)")
+Output(4,1,"AREA2=G2(U)-G2(S)")
+Output(5,1,"CHECK AREA1+AREA2=1.")
+Output(6,1,"EACH PDF STAYS ≥0.")
+End
+If P=141
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"3 CDF BEFORE SPLIT")
+Output(3,1,"FOR L<C≤S:")
+Output(4,1,"F(C)=G1(C)-G1(L)")
+Output(5,1,"BELOW L: F(C)=0.")
+Output(6,1,"YOUR C=____; F(C)=____")
+End
+If P=142
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"4 CDF AFTER SPLIT")
+Output(3,1,"FOR S<C<U:")
+Output(4,1,"F(C)=AREA1+G2(C)-G2(S)")
+Output(5,1,"ADD ALL OF FIRST PIECE.")
+Output(6,1,"AT OR ABOVE U: F(C)=1.")
+End
+If P=143
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"5 INTERVAL PROBABILITY")
+Output(3,1,"P(LOW<X<HIGH)=")
+Output(4,1,"F(HIGH)-F(LOW)")
+Output(5,1,"WORKS ACROSS THE SPLIT.")
+Output(6,1,"PROBABILITY=____")
+End
+If P=144
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"6 EXPECTED VALUE")
+Output(3,1,"EACH PIECE: INTEGRATE X*F.")
+Output(4,1,"H(X)=A*X^2/2+B*X^3/3")
+Output(5,1,"FIRST:H1(S)-H1(L)=____")
+Output(6,1,"SECOND:H2(U)-H2(S)=____")
+Output(7,1,"MEAN=FIRST+SECOND=____")
+End
+If P=145
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"7 SECOND MOMENT")
+Output(3,1,"EACH PIECE: INTEGRATE")
+Output(4,1,"X^2*F.")
+Output(5,1,"J(X)=A*X^3/3+B*X^4/4")
+Output(6,1,"FIRST:J1(S)-J1(L)=____")
+Output(7,1,"SECOND:J2(U)-J2(S)=____")
+Output(8,1,"EX2=FIRST+SECOND=____")
+End
+If P=146
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"8 VARIANCE")
+Output(3,1,"VAR=EX2-MEAN^2")
+Output(4,1,"VAR=____-(____)^2=____")
+Output(5,1,"SD IF ASKED=SQRT(VAR).")
+End
+If P=147
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"9 MEDIAN IF ASKED")
+Output(3,1,"SOLVE F(M)=.5.")
+Output(4,1,"AREA1≥.5? USE FIRST PIECE.")
+Output(5,1,"OTHERWISE USE SECOND")
+Output(6,1,"PIECE.")
+Output(7,1,"KEEP M INSIDE THAT PIECE.")
+End
+If P=148
+Then
+Output(1,1,"TWO PIECE DENSITY")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"REQUESTED PROB=____;")
+Output(4,1,"MEAN=____; VAR=____;")
+Output(5,1,"MEDIAN=____ AS REQUESTED.")
+End
+If P=149
+Then
+Output(1,1,"NORMAL INDIVIDUAL")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"PROBABILITY FOR ONE PERSON")
+Output(4,1,"OR ONE MEASUREMENT.")
+Output(5,1,"MU=MEAN; SD=INDIVIDUAL SD.")
+Output(6,1,"L,H=MEASUREMENT CUTOFFS.")
+End
+If P=150
+Then
+Output(1,1,"NORMAL INDIVIDUAL")
+Output(2,1,"1 COPY AND SKETCH")
+Output(3,1,"MU=____; SD=____")
+Output(4,1,"SHADE LEFT/RIGHT/BETWEEN.")
+Output(5,1,"VAR GIVEN? SD=SQRT(VAR).")
+End
+If P=151
+Then
+Output(1,1,"NORMAL INDIVIDUAL")
+Output(2,1,"2 STANDARDIZE CUTOFFS")
+Output(3,1,"Z LOW=(L-MU)/SD=____")
+Output(4,1,"Z HIGH=(H-MU)/SD=____")
+Output(5,1,"USE ONLY NEEDED CUTOFFS.")
+End
+If P=152
+Then
+Output(1,1,"NORMAL INDIVIDUAL")
+Output(2,1,"3 READ THE Z TABLE")
+Output(3,1,"PHI(Z)=AREA LEFT OF Z.")
+Output(4,1,"LOW LEFT AREA=____")
+Output(5,1,"HIGH LEFT AREA=____")
+Output(6,1,"NEGATIVE Z:AREA BELOW .5.")
+End
+If P=153
+Then
+Output(1,1,"NORMAL INDIVIDUAL")
+Output(2,1,"4 SELECT YOUR REGION")
+Output(3,1,"LEFT=PHI(Z CUTOFF)")
+Output(4,1,"RIGHT=1-PHI(Z CUTOFF)")
+Output(5,1,"BETWEEN=PHI(HIGH Z)-")
+Output(6,1,"PHI(LOW Z)")
+Output(7,1,"PROBABILITY=____")
+End
+If P=154
+Then
+Output(1,1,"NORMAL INDIVIDUAL")
+Output(2,1,"5 TI CHECK IF NEEDED")
+Output(3,1,"2ND > VARS:DISTR")
+Output(4,1,"NORMALCDF(LOW,HIGH,MU,SD)")
+Output(5,1,"UNBOUNDED END: -1E99/1E99.")
+Output(6,1,"EE KEY IS 2ND COMMA.")
+Output(7,1,"USE (-) FOR NEGATIVE SIGN.")
+End
+If P=155
+Then
+Output(1,1,"NORMAL INDIVIDUAL")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"THE PROBABILITY AN")
+Output(4,1,"INDIVIDUAL MEASUREMENT")
+Output(5,1,"____ IS ____.")
+End
+If P=156
+Then
+Output(1,1,"NORMAL CUTOFF")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"GIVEN AREA; FIND")
+Output(4,1,"MEASUREMENT")
+Output(5,1,"CUTOFF. MU=MEAN,")
+Output(6,1,"SD=SPREAD.")
+Output(7,1,"P MUST BE AREA TO THE")
+Output(8,1,"LEFT.")
+End
+If P=157
+Then
+Output(1,1,"NORMAL CUTOFF")
+Output(2,1,"1 CONVERT AREA")
+Output(3,1,"PERCENTILE PCT: P=PCT/100.")
+Output(4,1,"RIGHT AREA Q: P=1-Q.")
+Output(5,1,"TOP 10% MEANS LEFT P=.90.")
+Output(6,1,"YOUR LEFT P=____")
+End
+If P=158
+Then
+Output(1,1,"NORMAL CUTOFF")
+Output(2,1,"2 FIND STANDARD Z")
+Output(3,1,"Z=INVNORM(P,0,1)")
+Output(4,1,"OR MATCH LEFT AREA IN")
+Output(5,1,"THE SUPPLIED Z TABLE.")
+Output(6,1,"Z=____")
+End
+If P=159
+Then
+Output(1,1,"NORMAL CUTOFF")
+Output(2,1,"3 RETURN TO UNITS")
+Output(3,1,"CUTOFF=MU+Z*SD")
+Output(4,1,"Z*SD=____")
+Output(5,1,"CUTOFF=____+____=____")
+End
+If P=160
+Then
+Output(1,1,"NORMAL CUTOFF")
+Output(2,1,"4 TI CHECK IF NEEDED")
+Output(3,1,"2ND > VARS:DISTR")
+Output(4,1,"INVNORM(LEFT P,MU,SD)")
+Output(5,1,"IF TAIL CHOICE:SELECT")
+Output(6,1,"LEFT.")
+End
+If P=161
+Then
+Output(1,1,"NORMAL CUTOFF")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"CUTOFF=____ UNITS.")
+Output(4,1,"AREA BELOW=____;")
+Output(5,1,"AREA ABOVE=1-P=____.")
+End
+If P=162
+Then
+Output(1,1,"NORMAL SAMPLE AVERAGE")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"PROBABILITY FOR AVERAGE OF")
+Output(4,1,"N")
+Output(5,1,"INDEPENDENT MEASUREMENTS.")
+Output(6,1,"NORMAL INDIVIDUALS OR")
+Output(7,1,"COURSE")
+Output(8,1,"LARGE-SAMPLE CLT SETTING.")
+Output(9,1,"MU=POP MEAN; SD=INDIV SD.")
+End
+If P=163
+Then
+Output(1,1,"NORMAL SAMPLE AVERAGE")
+Output(2,1,"1 COPY QUANTITIES")
+Output(3,1,"MU=____; SD=____; N=____")
+Output(4,1,"AVERAGE BOUNDS:____")
+Output(5,1,"MEAN OF AVERAGES=MU.")
+End
+If P=164
+Then
+Output(1,1,"NORMAL SAMPLE AVERAGE")
+Output(2,1,"2 SPREAD OF AVERAGES")
+Output(3,1,"SEM=SD/SQRT(N)")
+Output(4,1,"SEM=____/SQRT(____)=____")
+Output(5,1,"USE SEM IN THE NEXT STEP.")
+End
+If P=165
+Then
+Output(1,1,"NORMAL SAMPLE AVERAGE")
+Output(2,1,"3 STANDARDIZE AVERAGES")
+Output(3,1,"Z LOW=(LOW-MU)/SEM")
+Output(4,1,"Z HIGH=(HIGH-MU)/SEM")
+Output(5,1,"LOW Z=____; HIGH Z=____")
+End
+If P=166
+Then
+Output(1,1,"NORMAL SAMPLE AVERAGE")
+Output(2,1,"4 READ LEFT AREAS")
+Output(3,1,"USE LEFT-TAIL Z TABLE.")
+Output(4,1,"PHI(LOW Z)=____")
+Output(5,1,"PHI(HIGH Z)=____")
+End
+If P=167
+Then
+Output(1,1,"NORMAL SAMPLE AVERAGE")
+Output(2,1,"5 REQUESTED REGION")
+Output(3,1,"LEFT=PHI(CUTOFF Z)")
+Output(4,1,"RIGHT=1-PHI(CUTOFF Z)")
+Output(5,1,"BETWEEN=PHI(HIGH Z)-")
+Output(6,1,"PHI(LOW Z)")
+Output(7,1,"REQUESTED PROB=____")
+End
+If P=168
+Then
+Output(1,1,"NORMAL SAMPLE AVERAGE")
+Output(2,1,"6 TI CHECK IF NEEDED")
+Output(3,1,"NORMALCDF(LOW,HIGH,MU,SEM)")
+Output(4,1,"ENTER SD/SQRT(N) AS THE")
+Output(5,1,"SPREAD, NOT INDIVIDUAL SD.")
+End
+If P=169
+Then
+Output(1,1,"NORMAL SAMPLE AVERAGE")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"FOR SAMPLE SIZE ____,")
+Output(4,1,"P(SAMPLE AVERAGE")
+Output(5,1,"____)=____.")
+End
+If P=170
+Then
+Output(1,1,"BONFERRONI")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"K=REQUESTED COMPARISONS.")
+Output(4,1,"ALPHA=OVERALL FAMILY")
+Output(5,1,"LEVEL.")
+Output(6,1,"KEEP PAIR LABELS AND DF.")
+End
+If P=171
+Then
+Output(1,1,"BONFERRONI")
+Output(2,1,"1 LIST AND COUNT")
+Output(3,1,"WRITE REQUESTED PAIRS:____")
+Output(4,1,"K=____; FAMILY ALPHA=____")
+Output(5,1,"DO NOT COUNT UNREQUESTED")
+Output(6,1,"COMPARISONS IN THE OUTPUT.")
+End
+If P=172
+Then
+Output(1,1,"BONFERRONI")
+Output(2,1,"2 PAIR LEVEL")
+Output(3,1,"PAIR ALPHA=ALPHA/K")
+Output(4,1,"PAIR ALPHA=____/____=____")
+Output(5,1,"ONLY LEVEL ASKED? REPORT")
+Output(6,1,"IT.")
+End
+If P=173
+Then
+Output(1,1,"BONFERRONI")
+Output(2,1,"3 STATISTIC CUTOFF")
+Output(3,1,"T:TOTAL 2-TAIL PAIR ALPHA,")
+Output(4,1,"WITH ORIGINAL ERROR DF.")
+Output(5,1,"CHI-SQUARE:UPPER PAIR")
+Output(6,1,"ALPHA")
+Output(7,1,"AND THAT COMPARISON DF.")
+Output(8,1,"CUTOFF C=____")
+End
+If P=174
+Then
+Output(1,1,"BONFERRONI")
+Output(2,1,"4 COMPARE EACH PAIR")
+Output(3,1,"ABS T>C OR CHI-SQUARE>C:")
+Output(4,1,"REJECT THAT PAIR H0.")
+Output(5,1,"OR RAW P<PAIR ALPHA.")
+Output(6,1,"WRITE DECISION BY PAIR.")
+End
+If P=175
+Then
+Output(1,1,"BONFERRONI")
+Output(2,1,"5 ADJUSTED P IF ASKED")
+Output(3,1,"ADJ P=MIN(1,K*RAW P)")
+Output(4,1,"ADJ P=____")
+Output(5,1,"COMPARE ADJ P WITH FAMILY")
+Output(6,1,"ALPHA. DO NOT ALSO DIVIDE")
+Output(7,1,"ALPHA IN THAT COMPARISON.")
+End
+If P=176
+Then
+Output(1,1,"BONFERRONI")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"PAIR LEVEL=____.")
+Output(4,1,"AT FAMILY ALPHA=____,")
+Output(5,1,"SIGNIFICANT PAIRS:____.")
+End
+If P=177
+Then
+Output(1,1,"HOLM ORDERED TESTS")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"LIST ONLY REQUESTED PAIRS.")
+Output(4,1,"KEEP LABEL WITH EACH RAW")
+Output(5,1,"P.")
+Output(6,1,"FROM STATS:USE ORIGINAL")
+Output(7,1,"DF.")
+Output(8,1,"K=PAIRS; ALPHA=FAMILY")
+Output(9,1,"LEVEL.")
+End
+If P=178
+Then
+Output(1,1,"HOLM ORDERED TESTS")
+Output(2,1,"1 GET RAW P VALUES")
+Output(3,1,"T:2-TAIL AREA PAST ABS(T).")
+Output(4,1,"CHI-SQUARE:UPPER-TAIL")
+Output(5,1,"AREA.")
+Output(6,1,"OR USE PRINTED RAW P.")
+Output(7,1,"BMHOLM CAN CONVERT STATS")
+Output(8,1,"USING THEIR COMMON DF.")
+End
+If P=179
+Then
+Output(1,1,"HOLM ORDERED TESTS")
+Output(2,1,"2 SORT")
+Output(3,1,"ORDER RAW P LOW TO HIGH.")
+Output(4,1,"KEEP PAIR LABELS ATTACHED.")
+Output(5,1,"SAME TYPE AND SAME DF?")
+Output(6,1,"LARGER ABS T / CHI-SQUARE")
+Output(7,1,"MEANS SMALLER RAW P.")
+End
+If P=180
+Then
+Output(1,1,"HOLM ORDERED TESTS")
+Output(2,1,"3 START AT RANK J=1")
+Output(3,1,"LEVEL=ALPHA/(K-J+1)")
+Output(4,1,"FIRST LEVEL=ALPHA/K.")
+Output(5,1,"NEXT=ALPHA/(K-1), ETC.")
+Output(6,1,"RANK=____; LEVEL=____")
+End
+If P=181
+Then
+Output(1,1,"HOLM ORDERED TESTS")
+Output(2,1,"4 COMPARE AND CONTINUE")
+Output(3,1,"IF SORTED P<LEVEL:")
+Output(4,1,"REJECT THAT H0, GO TO NEXT")
+Output(5,1,"RANK AND RECOMPUTE LEVEL.")
+Output(6,1,"TABLE METHOD:USE THAT")
+Output(7,1,"RANK LEVEL AND ORIGINAL")
+Output(8,1,"DF.")
+End
+If P=182
+Then
+Output(1,1,"HOLM ORDERED TESTS")
+Output(2,1,"5 FIRST FAILURE")
+Output(3,1,"P≥LEVEL? STOP.")
+Output(4,1,"DO NOT REJECT THIS H0 OR")
+Output(5,1,"ANY LATER HYPOTHESIS.")
+Output(6,1,"NEVER RESTART AFTER A")
+Output(7,1,"FAIL.")
+End
+If P=183
+Then
+Output(1,1,"HOLM ORDERED TESTS")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"AT FAMILY ALPHA=____,")
+Output(4,1,"REJECTED PAIRS ARE ____.")
+Output(5,1,"FIRST FAILURE=____")
+Output(6,1,"OR ALL COMPARISONS PASS.")
+End
+If P=184
+Then
+Output(1,1,"READ SUPPLIED OUTPUT")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"GIVEN TEST OUTPUT, NOT RAW")
+Output(4,1,"DATA. COPY STATISTIC, DF,")
+Output(5,1,"P.")
+Output(6,1,"F HAS TWO DF.")
+Output(7,1,"COPY SIGNIFICANCE LEVEL.")
+End
+If P=185
+Then
+Output(1,1,"READ SUPPLIED OUTPUT")
+Output(2,1,"1 IDENTIFY THE NULL")
+Output(3,1,"ANOVA:ALL MEANS EQUAL.")
+Output(4,1,"T:TWO MEANS EQUAL, OR")
+Output(5,1,"ONE MEAN EQUALS REFERENCE.")
+Output(6,1,"CONTINGENCY:NO")
+Output(7,1,"ASSOCIATION.")
+Output(8,1,"GOF:TARGET PROBS HOLD.")
+End
+If P=186
+Then
+Output(1,1,"READ SUPPLIED OUTPUT")
+Output(2,1,"2 USE PRINTED VALUES")
+Output(3,1,"STATISTIC=____; DF=____")
+Output(4,1,"F DENOMINATOR DF=____")
+Output(5,1,"PRINTED P=____; ALPHA=____")
+Output(6,1,"PRINTED P ALREADY BELONGS")
+Output(7,1,"TO THE PRINTED TEST.")
+End
+If P=187
+Then
+Output(1,1,"READ SUPPLIED OUTPUT")
+Output(2,1,"3 IF P IS NOT GIVEN")
+Output(3,1,"T:2-TAIL AREA PAST ABS(T).")
+Output(4,1,"F/CHI-SQUARE:UPPER TAIL.")
+Output(5,1,"BMOUTPUT CALCULATES THIS.")
+Output(6,1,"OR TABLE GIVES CUTOFF OR")
+Output(7,1,"A RANGE FOR P.")
+End
+If P=188
+Then
+Output(1,1,"READ SUPPLIED OUTPUT")
+Output(2,1,"4 DECIDE")
+Output(3,1,"IF P<ALPHA:REJECT H0.")
+Output(4,1,"OTHERWISE DO NOT REJECT.")
+Output(5,1,"ANOVA PAIRS ASKED? KEEP")
+Output(6,1,"RESIDUAL MS AND ERROR DF.")
+End
+If P=189
+Then
+Output(1,1,"READ SUPPLIED OUTPUT")
+Output(2,1,"5 WRITE IN CONTEXT")
+Output(3,1,"NAME THE POPULATION,")
+Output(4,1,"OUTCOME, AND GROUPS.")
+Output(5,1,"DO NOT REJECT DOES NOT")
+Output(6,1,"PROVE THE GROUPS EQUAL.")
+End
+If P=190
+Then
+Output(1,1,"READ SUPPLIED OUTPUT")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"THE ____ TEST GIVES")
+Output(4,1,"EVIDENCE / INSUFFICIENT")
+Output(5,1,"EVIDENCE THAT ____ IN THE")
+Output(6,1,"POPULATION AT ALPHA=____.")
+End
+If P=191
+Then
+Output(1,1,"STATISTICAL CUTOFF")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"COPY DISTRIBUTION AND")
+Output(4,1,"ALPHA.")
+Output(5,1,"Z/T:POSITIVE 2-SIDED")
+Output(6,1,"CUTOFF.")
+Output(7,1,"F/CHI-SQUARE:UPPER TAIL.")
+Output(8,1,"COPY CORRECT DF.")
+End
+If P=192
+Then
+Output(1,1,"STATISTICAL CUTOFF")
+Output(2,1,"1 FIND YOUR DF")
+Output(3,1,"ONE T:N-1. TWO T:N1+N2-2.")
+Output(4,1,"ANOVA PAIR:ERROR DF.")
+Output(5,1,"F:M-1 AND M*(N-1).")
+Output(6,1,"TABLE")
+Output(7,1,"CHI:(ROWS-1)*(COLS-1)")
+Output(8,1,"GOF:K-1; Z HAS NO DF.")
+End
+If P=193
+Then
+Output(1,1,"STATISTICAL CUTOFF")
+Output(2,1,"2 T OR Z")
+Output(3,1,"T TABLE:TOTAL 2-TAIL")
+Output(4,1,"ALPHA,")
+Output(5,1,"AND THE CORRECT DF ROW.")
+Output(6,1,"Z:INV NORM LEFT AREA")
+Output(7,1,"1-ALPHA/2. INFINITE-DF")
+Output(8,1,"T ROW ALSO GIVES Z.")
+End
+If P=194
+Then
+Output(1,1,"STATISTICAL CUTOFF")
+Output(2,1,"3 F OR CHI-SQUARE")
+Output(3,1,"USE UPPER-TAIL ALPHA.")
+Output(4,1,"F NEEDS NUMERATOR AND")
+Output(5,1,"DENOMINATOR DF.")
+Output(6,1,"CHI-SQUARE NEEDS ONE DF.")
+Output(7,1,"CUTOFF=____")
+End
+If P=195
+Then
+Output(1,1,"STATISTICAL CUTOFF")
+Output(2,1,"4 COMPARE")
+Output(3,1,"ABS T OR ABS Z > CUTOFF,")
+Output(4,1,"OR F / CHI > CUTOFF:")
+Output(5,1,"REJECT THE MATCHING H0.")
+Output(6,1,"OTHERWISE DO NOT REJECT.")
+End
+If P=196
+Then
+Output(1,1,"STATISTICAL CUTOFF")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"CUTOFF=____ USING ____")
+Output(4,1,"DF AND ____ TAIL LEVEL.")
+End
+If P=197
+Then
+Output(1,1,"BINARY PROPORTION")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"M=EVENT COUNT; N=GROUP")
+Output(4,1,"SIZE.")
+Output(5,1,"X=1 FOR EVENT, 0")
+Output(6,1,"OTHERWISE.")
+Output(7,1,"PHAT=ESTIMATED PROPORTION.")
+End
+If P=198
+Then
+Output(1,1,"BINARY PROPORTION")
+Output(2,1,"1 PROPORTION")
+Output(3,1,"PHAT=M/N")
+Output(4,1,"PHAT=____/____=____")
+End
+If P=199
+Then
+Output(1,1,"BINARY PROPORTION")
+Output(2,1,"2 INDIVIDUAL VARIANCE")
+Output(3,1,"VAR X=PHAT*(1-PHAT)")
+Output(4,1,"1-PHAT=____")
+Output(5,1,"VAR X=____*____=____")
+Output(6,1,"COURSE PLUG-IN ESTIMATE.")
+End
+If P=200
+Then
+Output(1,1,"BINARY PROPORTION")
+Output(2,1,"3 INDIVIDUAL SD")
+Output(3,1,"SD X=SQRT(VAR X)")
+Output(4,1,"SD X=SQRT(____)=____")
+End
+If P=201
+Then
+Output(1,1,"BINARY PROPORTION")
+Output(2,1,"4 PROPORTION SE")
+Output(3,1,"SE PHAT=SQRT(VAR X/N)")
+Output(4,1,"SE=SQRT(____/____)=____")
+Output(5,1,"THIS IS UNCERTAINTY IN")
+Output(6,1,"THE ESTIMATED PROPORTION.")
+End
+If P=202
+Then
+Output(1,1,"BINARY PROPORTION")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"PHAT=____; VAR X=____;")
+Output(4,1,"SD X=____; SE PHAT=____.")
+End
+If P=203
+Then
+Output(1,1,"YATES TWO PROPORTIONS")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"2 INDEPENDENT BINARY")
+Output(4,1,"GROUPS.")
+Output(5,1,"COPY EVENTS M1,M2 AND")
+Output(6,1,"TOTAL")
+Output(7,1,"SIZES N1,N2; COPY ALPHA.")
+Output(8,1,"COURSE USES YATES")
+Output(9,1,"CORRECTION.")
+End
+If P=204
+Then
+Output(1,1,"YATES TWO PROPORTIONS")
+Output(2,1,"1 PROPORTIONS AND H0")
+Output(3,1,"H0:POP P1=POP P2.")
+Output(4,1,"HA:POP PROPORTIONS DIFFER.")
+Output(5,1,"P1=M1/N1=____")
+Output(6,1,"P2=M2/N2=____")
+End
+If P=205
+Then
+Output(1,1,"YATES TWO PROPORTIONS")
+Output(2,1,"2 POOLED NULL PROPORTION")
+Output(3,1,"P0=(M1+M2)/(N1+N2)")
+Output(4,1,"P0=(____+____)/(____+____)")
+Output(5,1,"P0=____")
+Output(6,1,"POOL COUNTS, NOT GROUP P.")
+End
+If P=206
+Then
+Output(1,1,"YATES TWO PROPORTIONS")
+Output(2,1,"3 NULL STANDARD ERROR")
+Output(3,1,"R=1/N1+1/N2=____")
+Output(4,1,"SE=SQRT(P0*(1-P0)*R)")
+Output(5,1,"PRODUCT=____; SE=____")
+End
+If P=207
+Then
+Output(1,1,"YATES TWO PROPORTIONS")
+Output(2,1,"4 CONTINUITY CORRECTION")
+Output(3,1,"CORR=.5*R=____")
+Output(4,1,"RAW GAP=ABS(P1-P2)=____")
+Output(5,1,"GAP=MAX(0,RAW GAP-CORR)")
+Output(6,1,"CORRECTED GAP=____")
+End
+If P=208
+Then
+Output(1,1,"YATES TWO PROPORTIONS")
+Output(2,1,"5 DIVIDE")
+Output(3,1,"ABS Z=GAP/SE")
+Output(4,1,"ABS Z=____/____=____")
+Output(5,1,"CORRECTED CHI-SQUARE=Z^2")
+Output(6,1,"IF THAT IS REQUESTED.")
+End
+If P=209
+Then
+Output(1,1,"YATES TWO PROPORTIONS")
+Output(2,1,"6 CUTOFF AND DECISION")
+Output(3,1,"Z CUTOFF:LEFT 1-ALPHA/2.")
+Output(4,1,"OR INFINITE-DF T ROW,")
+Output(5,1,"TOTAL 2-TAIL ALPHA.")
+Output(6,1,"ABS Z>C:REJECT H0.")
+End
+If P=210
+Then
+Output(1,1,"YATES TWO PROPORTIONS")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"AT ALPHA=____, POPULATION")
+Output(4,1,"EVENT PROPORTIONS DIFFER /")
+Output(5,1,"WERE NOT SHOWN TO DIFFER")
+Output(6,1,"BETWEEN ____ AND ____.")
+End
+If P=211
+Then
+Output(1,1,"YATES 2X2 CHI-SQUARE")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"COPY COUNTS IN 2X2 TABLE.")
+Output(4,1,"ROWS:GROUP1/GROUP2.")
+Output(5,1,"COLS:EVENT/NO EVENT.")
+Output(6,1,"A,B TOP ROW; C,D BOTTOM.")
+Output(7,1,"COPY ALPHA.")
+End
+If P=212
+Then
+Output(1,1,"YATES 2X2 CHI-SQUARE")
+Output(2,1,"1 HYPOTHESIS AND MARGINS")
+Output(3,1,"H0:EQUAL POP EVENT RATES.")
+Output(4,1,"ROWS:A+B AND C+D.")
+Output(5,1,"COLS:A+C AND B+D.")
+Output(6,1,"N=A+B+C+D=____")
+End
+If P=213
+Then
+Output(1,1,"YATES 2X2 CHI-SQUARE")
+Output(2,1,"2 EXPECTED COUNTS")
+Output(3,1,"E=ROW TOTAL*COL TOTAL/N")
+Output(4,1,"DO THIS FOR EACH CELL.")
+Output(5,1,"E11=____; E12=____")
+Output(6,1,"E21=____; E22=____")
+Output(7,1,"EXPECTED COUNTS CAN")
+Output(8,1,"DECIMAL.")
+End
+If P=214
+Then
+Output(1,1,"YATES 2X2 CHI-SQUARE")
+Output(2,1,"3 CORRECT EACH CELL GAP")
+Output(3,1,"GAP=MAX(0,ABS(O-E)-.5)")
+Output(4,1,"O=OBSERVED; E=EXPECTED.")
+Output(5,1,"SUBTRACT, TAKE MAGNITUDE,")
+Output(6,1,"SUBTRACT .5; FLOOR AT")
+Output(7,1,"ZERO.")
+Output(8,1,"FOUR CORRECTED GAPS:____")
+End
+If P=215
+Then
+Output(1,1,"YATES 2X2 CHI-SQUARE")
+Output(2,1,"4 EACH CELL CONTRIBUTION")
+Output(3,1,"TERM=GAP^2/E")
+Output(4,1,"SQUARE ITS CORRECTED GAP,")
+Output(5,1,"DIVIDE BY ITS EXPECTED.")
+Output(6,1,"FOUR TERMS:____")
+End
+If P=216
+Then
+Output(1,1,"YATES 2X2 CHI-SQUARE")
+Output(2,1,"5 ADD AND FIND DF")
+Output(3,1,"CHI-SQUARE=SUM(4 TERMS)")
+Output(4,1,"CHI-SQUARE=____")
+Output(5,1,"DF=(2-1)*(2-1)=1")
+End
+If P=217
+Then
+Output(1,1,"YATES 2X2 CHI-SQUARE")
+Output(2,1,"6 UPPER TAIL TEST")
+Output(3,1,"CHI TABLE:DF=1, ALPHA.")
+Output(4,1,"CUTOFF=____")
+Output(5,1,"CHI-SQUARE>C:REJECT H0.")
+Output(6,1,"OR REJECT IF P<ALPHA.")
+End
+If P=218
+Then
+Output(1,1,"YATES 2X2 CHI-SQUARE")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"AT ALPHA=____, POPULATION")
+Output(4,1,"EVENT RATES DIFFER / WERE")
+Output(5,1,"NOT SHOWN TO DIFFER")
+Output(6,1,"BETWEEN ____ AND ____.")
+End
+If P=219
+Then
+Output(1,1,"LARGER CONTINGENCY")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"COUNTS IN TABLE >2X2.")
+Output(4,1,"R=ROWS; C=COLUMNS.")
+Output(5,1,"COPY LABELS AND ALPHA.")
+Output(6,1,"NO YATES FOR THIS TABLE.")
+End
+If P=220
+Then
+Output(1,1,"LARGER CONTINGENCY")
+Output(2,1,"1 HYPOTHESIS")
+Output(3,1,"H0:NO ASSOCIATION OR SAME")
+Output(4,1,"CATEGORY DISTRIBUTION")
+Output(5,1,"ACROSS THE GROUPS.")
+Output(6,1,"WRITE THE ACTUAL LABELS.")
+End
+If P=221
+Then
+Output(1,1,"LARGER CONTINGENCY")
+Output(2,1,"2 MARGINS")
+Output(3,1,"ADD EACH ROW.")
+Output(4,1,"ADD EACH COLUMN.")
+Output(5,1,"N=GRAND TOTAL=____")
+Output(6,1,"BOTH SETS OF TOTALS MUST")
+Output(7,1,"ADD TO THE SAME N.")
+End
+If P=222
+Then
+Output(1,1,"LARGER CONTINGENCY")
+Output(2,1,"3 EXPECTED COUNTS")
+Output(3,1,"E=ROW TOTAL*COL TOTAL/N")
+Output(4,1,"COMPUTE FOR EVERY CELL.")
+Output(5,1,"WRITE E BESIDE EACH O.")
+Output(6,1,"O=OBSERVED; E=EXPECTED.")
+End
+If P=223
+Then
+Output(1,1,"LARGER CONTINGENCY")
+Output(2,1,"4 CELL CONTRIBUTIONS")
+Output(3,1,"TERM=(O-E)^2/E")
+Output(4,1,"SUBTRACT; SQUARE; DIVIDE.")
+Output(5,1,"DO EVERY CELL.")
+Output(6,1,"NO .5 CORRECTION HERE.")
+End
+If P=224
+Then
+Output(1,1,"LARGER CONTINGENCY")
+Output(2,1,"5 ADD AND FIND DF")
+Output(3,1,"CHI-SQUARE=SUM(ALL TERMS)")
+Output(4,1,"CHI-SQUARE=____")
+Output(5,1,"DF=(R-1)*(C-1)=____")
+End
+If P=225
+Then
+Output(1,1,"LARGER CONTINGENCY")
+Output(2,1,"6 TEST AND FOLLOW-UP")
+Output(3,1,"UPPER-TAIL CHI TABLE.")
+Output(4,1,"OBSERVED>CUTOFF:REJECT H0.")
+Output(5,1,"IF REQUESTED PAIRS:MAKE")
+Output(6,1,"NEW 2X2 MARGINS; USE YATES")
+Output(7,1,"AND BONFERRONI / HOLM.")
+End
+If P=226
+Then
+Output(1,1,"LARGER CONTINGENCY")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"AT ALPHA=____, EVIDENCE /")
+Output(4,1,"INSUFFICIENT EVIDENCE OF")
+Output(5,1,"ASSOCIATION BETWEEN ____")
+Output(6,1,"AND ____ IN THE")
+Output(7,1,"POPULATION.")
+End
+If P=227
+Then
+Output(1,1,"GOODNESS OF FIT")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"ONE CATEGORY COUNT LIST")
+Output(4,1,"VS FIXED TARGET PROBS.")
+Output(5,1,"K=NUMBER OF CATEGORIES.")
+Output(6,1,"NO TARGETS FITTED FROM")
+Output(7,1,"DATA.")
+End
+If P=228
+Then
+Output(1,1,"GOODNESS OF FIT")
+Output(2,1,"1 TARGET HYPOTHESIS")
+Output(3,1,"H0:POP CATEGORY PROBS")
+Output(4,1,"EQUAL THE GIVEN TARGETS.")
+Output(5,1,"LIST OBSERVED AND TARGET")
+Output(6,1,"P.")
+Output(7,1,"CHECK TARGET PROBS SUM 1.")
+End
+If P=229
+Then
+Output(1,1,"GOODNESS OF FIT")
+Output(2,1,"2 TOTAL AND EXPECTED")
+Output(3,1,"N=SUM(OBSERVED)=____")
+Output(4,1,"EACH EXPECTED E=N*TARGET")
+Output(5,1,"P.")
+Output(6,1,"DO THIS FOR EVERY")
+Output(7,1,"CATEGORY.")
+End
+If P=230
+Then
+Output(1,1,"GOODNESS OF FIT")
+Output(2,1,"3 CATEGORY TERMS")
+Output(3,1,"TERM=(OBSERVED-EXPECTED)^2")
+Output(4,1,"DIVIDED BY EXPECTED.")
+Output(5,1,"DO EVERY CATEGORY.")
+Output(6,1,"TERMS:____")
+End
+If P=231
+Then
+Output(1,1,"GOODNESS OF FIT")
+Output(2,1,"4 ADD AND FIND DF")
+Output(3,1,"CHI-SQUARE=SUM(TERMS)=____")
+Output(4,1,"DF=K-1=____")
+End
+If P=232
+Then
+Output(1,1,"GOODNESS OF FIT")
+Output(2,1,"5 UPPER TAIL TEST")
+Output(3,1,"CHI TABLE:THIS DF, ALPHA.")
+Output(4,1,"CUTOFF=____")
+Output(5,1,"OBSERVED CHI>C:REJECT H0.")
+End
+If P=233
+Then
+Output(1,1,"GOODNESS OF FIT")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"AT ALPHA=____, POPULATION")
+Output(4,1,"CATEGORY PROBS DIFFER /")
+Output(5,1,"WERE NOT SHOWN TO DIFFER")
+Output(6,1,"FROM THE TARGET PATTERN.")
+End
+If P=234
+Then
+Output(1,1,"RISK MEASURES COUNTS")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"SAME ADVERSE EVENT IN BOTH")
+Output(4,1,"TREATMENT AND CONTROL.")
+Output(5,1,"COPY EVENTS AND GROUP")
+Output(6,1,"TOTAL")
+Output(7,1,"FOR EACH. NEED FULL RISK")
+Output(8,1,"DENOMINATORS, AS IN A")
+Output(9,1,"TRIAL.")
+End
+If P=235
+Then
+Output(1,1,"RISK MEASURES COUNTS")
+Output(2,1,"1 EVENT RISKS")
+Output(3,1,"RT=TREAT EVENTS/TREAT")
+Output(4,1,"TOTAL")
+Output(5,1,"RC=CTRL EVENTS/CTRL TOTAL")
+Output(6,1,"RT=____; RC=____")
+Output(7,1,"USE DECIMAL PROBABILITIES.")
+End
+If P=236
+Then
+Output(1,1,"RISK MEASURES COUNTS")
+Output(2,1,"2 RELATIVE CHANGE")
+Output(3,1,"RR=RT/RC=____")
+Output(4,1,"RRR=1-RR=____")
+Output(5,1,"RR<1:LOWER TREATMENT RISK.")
+Output(6,1,"RC=0? RR IS UNDEFINED.")
+End
+If P=237
+Then
+Output(1,1,"RISK MEASURES COUNTS")
+Output(2,1,"3 ABSOLUTE CHANGE")
+Output(3,1,"ARR=RC-RT=____")
+Output(4,1,"POSITIVE:BENEFIT.")
+Output(5,1,"NEGATIVE:HARM.")
+Output(6,1,"PERCENTAGE POINTS=100*ARR.")
+End
+If P=238
+Then
+Output(1,1,"RISK MEASURES COUNTS")
+Output(2,1,"4 RECIPROCAL")
+Output(3,1,"ARR>0: NNT=1/ARR.")
+Output(4,1,"ARR<0: NNH=1/ABS(ARR).")
+Output(5,1,"ARR=0:NO FINITE NNT/NNH.")
+Output(6,1,"YOUR RECIPROCAL=____")
+End
+If P=239
+Then
+Output(1,1,"RISK MEASURES COUNTS")
+Output(2,1,"5 WHOLE PERSON COUNT")
+Output(3,1,"IF ASKED, ROUND UP TO")
+Output(4,1,"NEXT WHOLE PERSON.")
+Output(5,1,"UNROUNDED=____")
+Output(6,1,"WHOLE PERSON ANSWER=____")
+End
+If P=240
+Then
+Output(1,1,"RISK MEASURES COUNTS")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"RR=____; ABSOLUTE")
+Output(4,1,"GAP=____.")
+Output(5,1,"ONE ADDITIONAL EVENT")
+Output(6,1,"AVOIDED")
+Output(7,1,"/ CAUSED PER ____ TREATED,")
+Output(8,1,"COMPARED WITH CONTROL.")
+End
+If P=241
+Then
+Output(1,1,"NNT NNH GIVEN RISKS")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"SAME ADVERSE EVENT.")
+Output(4,1,"TREATMENT AND CONTROL")
+Output(5,1,"RISKS")
+Output(6,1,"GIVEN AS DECIMALS OR")
+Output(7,1,"RATES.")
+End
+If P=242
+Then
+Output(1,1,"NNT NNH GIVEN RISKS")
+Output(2,1,"1 CONVERT TO PROBABILITY")
+Output(3,1,"PERCENT:DIVIDE BY 100.")
+Output(4,1,"PER THOUSAND:DIVIDE BY")
+Output(5,1,"1000.")
+Output(6,1,"RT=TREAT RISK=____")
+Output(7,1,"RC=CONTROL RISK=____")
+End
+If P=243
+Then
+Output(1,1,"NNT NNH GIVEN RISKS")
+Output(2,1,"2 ABSOLUTE CHANGE")
+Output(3,1,"ARR=RC-RT=____")
+Output(4,1,"POSITIVE:LOWER ADVERSE")
+Output(5,1,"RISK.")
+Output(6,1,"NEGATIVE:HIGHER ADVERSE")
+Output(7,1,"RISK.")
+End
+If P=244
+Then
+Output(1,1,"NNT NNH GIVEN RISKS")
+Output(2,1,"3 RECIPROCAL")
+Output(3,1,"RC>RT:NNT=1/(RC-RT)")
+Output(4,1,"RT>RC:NNH=1/(RT-RC)")
+Output(5,1,"EQUAL RISKS:NO FINITE NNT.")
+Output(6,1,"YOUR NNT OR NNH=____")
+End
+If P=245
+Then
+Output(1,1,"NNT NNH GIVEN RISKS")
+Output(2,1,"4 WHOLE PERSON IF ASKED")
+Output(3,1,"ROUND UP, NOT NEAREST.")
+Output(4,1,"WHOLE PERSON COUNT=____")
+End
+If P=246
+Then
+Output(1,1,"NNT NNH GIVEN RISKS")
+Output(2,1,"5 RELATIVE IF ASKED")
+Output(3,1,"RR=RT/RC; RRR=1-RR.")
+Output(4,1,"REQUIRES RC>0.")
+Output(5,1,"ABS PERCENTAGE POINT GAP")
+Output(6,1,"IS 100*ABS(RC-RT).")
+End
+If P=247
+Then
+Output(1,1,"NNT NNH GIVEN RISKS")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"ABOUT ____ PEOPLE TREATED")
+Output(4,1,"PER ADDITIONAL ADVERSE")
+Output(5,1,"EVENT")
+Output(6,1,"AVOIDED / CAUSED, COMPARED")
+Output(7,1,"WITH ____.")
+End
+If P=248
+Then
+Output(1,1,"ODDS RATIO")
+Output(2,1,"WHEN / WHAT TO COPY")
+Output(3,1,"LABEL A 2X2 TABLE.")
+Output(4,1,"EXPOSED:EVENT A, NO EVENT")
+Output(5,1,"B.")
+Output(6,1,"UNEXPOSED:EVENT C, NONE D.")
+Output(7,1,"CASE-CONTROL ALTERNATIVE:")
+Output(8,1,"ROWS CASES/CONTROLS; COLS")
+Output(9,1,"EXPOSED/UNEXPOSED.")
+End
+If P=249
+Then
+Output(1,1,"ODDS RATIO")
+Output(2,1,"1 COPY THE FOUR CELLS")
+Output(3,1,"TOP ROW:A=____, B=____")
+Output(4,1,"BOTTOM:C=____, D=____")
+Output(5,1,"KEEP ROW AND COLUMN LABELS")
+Output(6,1,"FOR THE FINAL SENTENCE.")
+End
+If P=250
+Then
+Output(1,1,"ODDS RATIO")
+Output(2,1,"2 ODDS IN EACH ROW")
+Output(3,1,"FIRST ODDS=A/B")
+Output(4,1,"REFERENCE ODDS=C/D")
+Output(5,1,"ODDS USE EVENT / NO EVENT,")
+Output(6,1,"NOT EVENT / WHOLE ROW.")
+End
+If P=251
+Then
+Output(1,1,"ODDS RATIO")
+Output(2,1,"3 DIAGONAL PRODUCTS")
+Output(3,1,"OR=(A/B)/(C/D)=(A*D)/(B*C)")
+Output(4,1,"MAIN PRODUCT A*D=____")
+Output(5,1,"OTHER PRODUCT B*C=____")
+Output(6,1,"OR=____/____=____")
+Output(7,1,"ZERO DENOM:NO FINITE")
+Output(8,1,"RATIO.")
+End
+If P=252
+Then
+Output(1,1,"ODDS RATIO")
+Output(2,1,"4 INTERPRET")
+Output(3,1,"OR=1:EQUAL ODDS.")
+Output(4,1,"OR>1:HIGHER FIRST ODDS.")
+Output(5,1,"OR<1:LOWER FIRST ODDS.")
+Output(6,1,"CASE-CONTROL:EXPOSURE ODDS")
+Output(7,1,"IN CASES VS CONTROLS.")
+End
+If P=253
+Then
+Output(1,1,"ODDS RATIO")
+Output(2,1,"WRITE THE ANSWER")
+Output(3,1,"ODDS OF ____ ARE ____")
+Output(4,1,"TIMES")
+Output(5,1,"AS HIGH IN ____ AS IN")
+Output(6,1,"____.")
+Output(7,1,"USE THE ACTUAL TABLE")
+Output(8,1,"LABELS.")
+End
+If P=C
+Then
+Output(10,1,"ENTER:MENU LEFT:BACK CLR")
+Else
+Output(10,1,"ENTER> LEFT:BACK CLR:MENU")
+End
+0→θ
+Repeat θ=105 or θ=26 or θ=24 or θ=45
+getKey→θ
+End
+If θ=45
+Goto M0
+If θ=24
+max(B,P-1)→P
+If θ=24
+Goto D0
+If P=C
+Goto M0
+P+1→P
+Goto D0
+Lbl ZZ
+ClrHome
+Stop

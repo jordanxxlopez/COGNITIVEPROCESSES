@@ -1,0 +1,153 @@
+ClrHome
+Float
+Normal
+Real
+Input "HOW MANY",N
+If not(N≥2 and N=int(N) and N≤200)
+Then
+ClrHome
+Disp "CHECK HOW MANY"
+Disp "CHECK INPUTS"
+Stop
+End
+N→dim(ʟBMX)
+For(I,1,N)
+ClrHome
+Disp "ITEM",I
+Input "VALUE",X
+X→ʟBMX(I)
+End
+sum(ʟBMX)→B
+B/N→M
+sum((ʟBMX-M)^2)→H
+H/(N-1)→S
+√(S)→D
+D/√(N)→E
+H/N→F
+√(F)→G
+ClrHome
+Output(1,1,"SAMPLE RESULTS")
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"MEAN=")
+Output(2,6,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"VAR=")
+Output(3,5,θ)
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"SD=")
+Output(4,4,θ)
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"SEM=")
+Output(5,5,θ)
+Output(6,1,"MEAN=SUM/N")
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"SUM=")
+Output(7,5,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(8,1,"SS=")
+Output(8,4,θ)
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(9,1,"N=")
+Output(9,3,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"SAMPLE WORK")
+Output(2,1,"SS=SUM((X-M)^2)")
+M→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"M=")
+Output(3,3,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"SS=")
+Output(4,4,θ)
+Output(5,1,"VAR=SS/(N-1)")
+N-1→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"N-1=")
+Output(6,5,θ)
+S→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(7,1,"VAR=")
+Output(7,5,θ)
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"SD AND SEM")
+Output(2,1,"SD=SQRT(VAR)")
+D→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"SD=")
+Output(3,4,θ)
+Output(4,1,"SEM=SD/SQRT(N)")
+N→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"N=")
+Output(5,3,θ)
+E→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"SEM=")
+Output(6,5,θ)
+Output(7,1,"SD:INDIVIDUALS")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"WHOLE POPULATION")
+Output(2,1,"VAR=SS/N")
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"VAR=")
+Output(3,5,θ)
+Output(4,1,"SD=SQRT(VAR)")
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"SD=")
+Output(5,4,θ)
+Output(6,1,"SAMPLE USES N-1")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

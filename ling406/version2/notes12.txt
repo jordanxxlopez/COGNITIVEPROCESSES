@@ -1,0 +1,570 @@
+===== PAGE 1 =====
+LING406_Lecture12_Notes
+Course: LING406: Psycholinguistics
+Title of Lecture: Lecture 12: Speech Perception II: Words
+Date: 10/1/2026
+Professor: Jason Zevin
+Section 1: A Very Old and Very General Model of Speech Perception
+The model from Klatt (1979, Journal of Phonetics) describes speech perception as a
+series of stages. It begins with the speech waveform, the analog signal that reaches the
+ear. It ends with lexical hypotheses, the candidate words the listener considers. Each
+stage takes the output of the previous stage and turns it into a more abstract
+representation.
+The peripheral auditory system, which includes the cochlea, receives the
+waveform and performs a spectral analysis. This breaks the incoming sound
+into its frequency components.
+The spectral analysis feeds the acoustic property detectors. Their outputs are
+tracked as detector outputs versus time, so they record how specific acoustic
+properties of the signal change from moment to moment.
+The detector outputs feed the phonetic feature detectors. Their outputs are
+feature probabilities versus time. Each phonetic feature, such as whether a
+sound is voiced, receives a probability that changes across time instead of a
+fixed yes-or-no value.
+The feature probabilities feed segmental analysis, which produces a
+segmental feature matrix. This matrix lists the features that make up each
+segment, where a segment is a phoneme.
+The segmental feature matrix feeds the lexical search, which produces the
+lexical hypotheses.
+Categorical perception is the idea that somewhere between the analog signal entering
+through the cochlea and the activation of phonemes in segmental analysis, information
+is lost. Fine acoustic differences within a category are discarded, and what remains is the
+category itself.
+This loss of information is helpful. Phoneme categories can be matched
+against stored word representations, which lets perception make contact with
+higher levels of representation.
+A natural assumption follows from this model. In order to identify words, a listener first
+has to identify their constituent phonemes. Two problems challenge this simple view:
+cascaded processing and feedback.
+Section 2: A Familiar Voicing Continuum
+A voicing continuum is a series of speech sounds that changes in small, equal steps from
+one voicing category to another. Here the continuum runs from "peach" to "beach" in nine
+steps. The cue that changes is voice onset time (VOT), the delay between the release of
+the consonant and the beginning of vocal fold vibration. Moving from "peach" toward
+"beach," the voice onset time becomes shorter.
+The spectrograms plot frequency from 0 to 5000 Hz across 0.5 seconds. In the
+vowel portion, dark horizontal bands mark concentrations of energy at
+particular frequencies, and vertical striations mark the individual pulses of
+vocal fold vibration.
+The "peach" endpoint has a longer interval before voicing begins than the
+"beach" endpoint. The steps in between have intermediate delays.
+The identification function plots how listeners label each of the nine steps. Steps 1
+through 5 receive a value of 1, meaning they are consistently labeled as the "peach" end.
+Step 6 receives a value of about 0.33. Steps 7 through 9 receive a value of 0, meaning they
+are consistently labeled as "beach." The sharp drop between steps 5 and 7 is a step-like
+function rather than a gradual slope, and step 6 (circled in red) is the one stimulus that
+produces mixed labeling.
+
+
+===== PAGE 2 =====
+The discrimination function plots how well listeners tell apart pairs of stimuli that are
+two steps apart: 1-3, 2-4, 3-5, 4-6, 5-7, 6-8, and 7-9. Discrimination is 0 for the pairs 1-3, 2-4,
+and 3-5. It reaches 1 for 4-6 and 5-7, falls to about 0.33 for 6-8, and returns to 0 for 7-9.
+Every pair differs by the same two steps of voice onset time. Listeners
+distinguish the pairs that straddle the category boundary and fail to distinguish
+the pairs that fall inside a single category. This is the signature of categorical
+perception.
+Section 3: How Does Categorical Perception Happen? A Threshold Model
+A threshold model proposes that activity is only passed forward from one level to the
+next when an activity threshold is crossed. Activity below the threshold stays at its own
+level and has no effect on the level above. In this kind of model, categorical perception
+arises at phoneme identification.
+The feature activation and phoneme activation panels make this concrete. Feature
+activation fluctuates over 100 time units, with peaks at about 1.05 and 1.2 and troughs at
+about −0.85 and −0.7. Dashed threshold lines sit at about +1.25 and −1.25. Activity above
+the upper threshold corresponds to +voiced, which maps to
+. Activity below the lower
+threshold corresponds to −voiced, which maps to
+.
+The early peaks in feature activation stay below +1.25, so nothing is passed to
+the phoneme level. Phoneme activation remains flat at 0 for most of the time
+window.
+Near the end, feature activation climbs to about 1.4 and crosses the upper
+threshold. Only then does the phoneme level register
+, jumping to about 1.5.
+The phoneme level therefore receives a categorical output, either
+ or
+,
+and none of the graded fluctuation that occurred in the feature activation
+underneath.
+Section 4: How Does Categorical Perception Happen? A Cascaded Model
+A cascaded model proposes that activity is passed forward continuously over time from
+one level to the next. No threshold has to be crossed before the next level receives the
+activity. In this kind of model, categorical perception might happen later on, or might
+even be an artifact of the task structure.
+In the cascaded version of the same panels, the feature activation curve is identical, with
+the same peaks, troughs, and threshold lines. The phoneme activation curve now follows
+the same oscillating pattern. It rises to about 1.0, falls to about −0.9, rises again to about
+1.1, falls to about −0.85, and finishes near 1.2.
+The phoneme level carries the full graded pattern of feature activation,
+including the stretches where the evidence is weak or ambiguous.
+A categorical response, such as the step-like identification function, would then
+be produced later in processing or by the demands of the task, because the
+phoneme level itself is not categorical.
+Section 5: A Metaphor for Thresholded Activity: Making Furniture
+Making furniture is a metaphor for thresholded activity. The process has three layers.
+Each layer has its own input and output, and each layer works only after the previous
+layer has finished.
+The lumber mill takes trees as input and produces lumber as output.
+The furniture factory takes lumber as input and produces unassembled
+furniture as output.
+The IKEA customer takes unassembled furniture as input and produces
+assembled furniture as output.
+Each layer of the system can only take a specific input that has been transformed
+completely by the previous layer. The furniture factory has to wait for the shipment of
+lumber before it can start manufacturing, and the customer has to wait for the
+unassembled furniture before assembly can begin. Many computer programs function
+this way.
+A partially processed tree cannot be used by the factory. Activity does not pass
+forward until the previous layer has completed its transformation, which is the
+/b/
+/p/
+/b/
+/b/
+/p/
+
+
+===== PAGE 3 =====
+same logic as a threshold that must be crossed before the next level receives
+anything.
+Section 6: A Metaphor for Cascaded Processing: A Food Web
+A food web is a metaphor for cascaded processing. In a desert food web, desert plants are
+eaten by insects, small lizards, and kangaroo rats. Insects are eaten by scorpions and by
+large lizards. Small lizards are eaten by large lizards. Kangaroo rats are eaten by snakes,
+desert foxes, and hawks. Snakes, large lizards, and scorpions are in turn eaten by desert
+foxes and hawks. Many species connect to several others at once.
+The "levels" of a food web continuously interact with one another. A drought that reduces
+the number of plants immediately has an impact on the health of the kangaroo rats,
+which then impacts the snakes, and so on up through the web. No level has to finish
+changing before the next level is affected.
+A food web also contains clear feedback loops. Adding more hawks changes
+the populations of snakes, lizards, and rats, and those changes in turn affect the
+hawks' own food supply.
+The question for speech perception is whether phoneme identification for word
+recognition works more like thresholded processing, as in the lumber mill, or cascaded
+processing, as in the food web.
+Section 7: McMurray et al. (2003): Testing Identification in a Visual World Display
+McMurray, Tanenhaus, Aslin, and Spivey (2003) tested identification of a
+ to
+continuum using a "visual world" display for eye-tracking. The study was published as
+"Probabilistic constraint satisfaction at the lexical/phonetic interface: Evidence for
+gradient effects of within-category VOT on lexical access" in the Journal of
+Psycholinguistic Research, volume 32, pages 77–97.
+Each display contains four pictures: a target (the "pear"), a competitor (the
+"bear"), and two filler items (a "lamp" and a "ship"). Because "bear" and "pear"
+differ only in their first sound, the competitor is the other member of a minimal
+pair.
+Participants used the mouse to select the picture most consistent with what they heard,
+such as a "bear" or a "pear." The resulting identification function was typical and step-like.
+The proportion of
+ responses stays near 0 from 0 ms through about 15 ms of
+VOT, then rises sharply to about 0.95 at 20 ms. It stays at roughly 0.9 to 1.0 from
+20 ms through 40 ms.
+The category boundary was at
+ ms of VOT.
+Mouse responses therefore divide cleanly into two categories, the same way the
+identification function did in the "peach" to "beach" continuum.
+Section 8: Eye Movements Reveal That Ambiguity Is Gradient
+Eye movements during the same task reveal that ambiguity is gradient. There are more
+looks to the competitor for stimuli close to the category boundary. Mouse responses are
+categorical, while eye movements record the competition between the two alternatives as
+it unfolds before the response is made.
+The fixation plots track the proportion of looks to the competitor over time since word
+onset, from 0 to 2000 ms. The left panel includes only trials where the response was
+"bear," so the competitor is the pear. These trials cover VOTs of 0, 5, 10, and 15 ms. The
+right panel includes only trials where the response was "pear," so the competitor is the
+bear. These trials cover VOTs of 20, 25, 30, 35, and 40 ms.
+In both panels, looks to the competitor rise from baseline, peak at roughly 400
+to 500 ms after word onset, and then decline.
+Competitor looks are highest and last longest for the VOT nearest the
+boundary. In the left panel that is 15 ms, with a peak of about 0.15. In the right
+panel that is 20 ms, with a peak of about 0.13 and a slow decline that stays
+elevated past 1200 ms.
+Values farther from the boundary, such as 0 ms on the left and 40 ms on the
+right, produce lower peaks and a faster return to baseline.
+/b/
+/p/
+/p/
+17.5 ± 0.83
+
+
+===== PAGE 4 =====
+The effect of VOT is primarily on the duration of activation. Stimuli nearer the boundary
+keep the competitor active for longer, which is a graded effect even though every one of
+these trials ends in the same categorical response.
+Section 9: Early and Late Windows of Competitor Fixations
+The same data can be summarized by averaging fixations over two time windows: early
+(300–1100 ms), plotted as a dotted line, and late (1100–1900 ms), plotted as a solid line.
+The category boundary sits between 15 and 20 ms, and the lines break there because the
+response flips from "bear" to "pear."
+For "bear" responses (0 to 15 ms of VOT), looks to the pear competitor increase as VOT
+approaches the boundary.
+In the early window, competitor fixations rise from about 0.075 at 0 ms to about
+0.093 at 10 and 15 ms.
+In the late window, competitor fixations rise from about 0.018 at 0 ms to about
+0.043 at 15 ms. The late-window values more than double, which makes the
+gradient easier to see.
+For "pear" responses (20 to 40 ms of VOT), looks to the bear competitor decrease as VOT
+moves away from the boundary.
+In the early window, competitor fixations start at about 0.105 at 20 ms, fall to
+about 0.085 at 25 and 30 ms, and reach a low of about 0.052 at 35 ms before
+rising slightly to about 0.067 at 40 ms.
+In the late window, competitor fixations fall from about 0.053 at 20 ms to about
+0.025 at 25 ms, and then drift down to about 0.015 at 40 ms.
+On both sides of the boundary, the stimuli closest to the boundary draw the most looks to
+the competitor. Stimuli that all produce the same response still differ in how much they
+activate the alternative word.
+Section 10: Cascaded Activation From Features to Phonemes
+The finding is consistent with the idea that activation flows in a cascaded way from
+features to phonemes. The model in the figure has three layers. The feature layer receives
+a pseudo-spectral input representation and has rows labeled POW, VOC, DIFF, ACU,
+GRD, VOI, and BUR across a time axis from 0 to 44. The phoneme layer contains
+phoneme units such as
+,
+, and
+, repeated at many starting times. The word
+layer contains word units, also repeated at many starting times.
+Repeating each unit across time lets a feature, phoneme, or word begin at
+different points in an unfolding utterance.
+Activation moves upward from the feature layer to the phoneme layer as the
+input arrives. Curved connections with filled endpoints link units within the
+same layer.
+Even stimuli that are identified as
+ 100% of the time can vary in how strongly and
+unambiguously the "voiced" feature is activated. Two stimuli can both be labeled
+ on
+every trial while differing in how much evidence for voicing they provide.
+If a stimulus is obviously +bilabial and +stop, this creates some momentary ambiguity
+between
+ and
+. These two phonemes share the bilabial place of articulation and
+the stop manner of articulation. They differ in voicing, so the voicing feature has to
+separate them.
+That ambiguity is reflected in eye movements while the participant decides
+where to click. The competitor receives looks in proportion to how much of its
+supporting activation remains.
+Section 11: Evidence That Partial Activation Can Reach All the Way to the Lexical Level
+Andruski et al. (1994) showed that semantic priming can occur even when the prime is
+a nonword. In a semantic priming task, a word related in meaning to the target speeds the
+response to that target. Here, a prime that is a slightly altered version of a real word still
+speeds responses to the word's semantic associate. "Beace" primes "war," and "ging"
+primes "queen."
+The participants performed a lexical decision task in Experiment 1, judging
+whether each target was a real word.
+/b/ /t/
+/r/
+/b/
+/b/
+/b/
+/p/
+
+
+===== PAGE 5 =====
+Prime word types were unaltered, −1/3, −2/3, and unrelated. The unaltered, −1/3, and
+−2/3 primes are semantically related to the target. Black bars mark "word → word" items,
+where the voiced counterpart of the prime is a real word, as in "pet → bet" or "bill" priming
+"drug." Shaded bars mark "word → nonword" items, where the voiced counterpart is a
+nonword, as in "king → ging."
+For word → word items, mean reaction times are about 858 ms for unaltered
+primes, 857 ms for −1/3, and 888 ms for −2/3. The unrelated condition is slowest
+at about 965 ms.
+For word → nonword items, mean reaction times are about 807 ms for unaltered
+primes, 820 ms for −1/3, and 815 ms for −2/3. The unrelated condition is again
+slowest at about 945 ms.
+Reaction times in the altered conditions stay well below the unrelated baseline
+in both item types, so altered primes still facilitate their semantic associates.
+Lexical representations can therefore be activated even by incomplete phonetic
+evidence. Partial activation does not stop at the phoneme level and reaches the lexical
+level.
+Section 12: Evidence for Cascaded Processing in Speech Perception
+The gradient pattern of looks in McMurray et al. (2003) is one piece of evidence for
+cascaded processing in speech perception. In a thresholded model, only a stimulus that
+crosses the threshold passes any information forward, and activity below the threshold is
+blocked from reaching the phoneme level, as the X on the arrow in the feature-to-
+phoneme panels indicates.
+A thresholded model would predict the same pattern of looks to the competitor
+for all stimuli within a category, since none of their sub-threshold differences
+would reach the next level.
+The number of looks to the other member of the minimal pair instead increases
+gradually as the stimulus approaches the category boundary. This gradual
+increase is hard to explain in a thresholded model and follows directly from
+cascaded activation.
+[CONTINUE]
+Section 13: Feedback From the Lexical Layer to the Phoneme Layer
+The three-layer model with a feature layer, a phoneme layer, and a word layer also
+incorporates feedback from the lexical layer to the phoneme layer. Arrows between the
+word layer and the phoneme layer point in both directions. The upward arrow carries
+activation from phonemes to the words they support, and the downward arrow carries
+activation from words back to their component phonemes. The arrow from the feature
+layer to the phoneme layer points only upward.
+Feedback means that a higher level of representation sends activation back
+down to a lower level. In a model with only upward connections, the phoneme
+level would never be affected by what the word level is doing.
+The word layer contains units written in phonetic notation, such as strings built
+from
+,
+,
+, and
+, each repeated at many starting times. The
+phoneme layer contains units such as
+,
+, and
+, also repeated across
+time. Curved connections with filled endpoints link competing units inside a
+layer.
+Section 14: Gisses and Kifts for Valentine's Day: The Ganong Effect
+The title of this topic is built from two nonwords. "Gisses" and "kifts" are nonwords that
+arise when the initial consonants of the real words "kisses" and "gifts" have their voicing
+swapped, so a listener who hears an ambiguous sound at the start of these items has a real
+word available for only one of the two interpretations.
+Ganong (1980) looked at how phoneme identification is impacted by word knowledge.
+He constructed word/nonword pairs such as "corpse/gorpse," in which one member of the
+pair is a real word and the other differs only in the voicing of the first consonant. He then
+produced continua spanning the relevant phoneme boundary in 5 ms steps.
+/b/ /r/ /i/
+/d/
+/b/ /t/
+/r/
+
+
+===== PAGE 6 =====
+In one kind of continuum, one endpoint is a word and the other is a nonword. In
+the opposite kind of continuum, the lexical status of the endpoints is reversed.
+A third, neutral condition provides a baseline.
+The measure is the proportion of voiced responses at each point along the
+continuum. The horizontal axis runs from a short VOT through steps of −7.5 ms,
+−2.5 ms, +2.5 ms, and +7.5 ms around the boundary, out to a long VOT.
+One prediction comes from a late correction process. In this account, categorical
+perception functions as usual, and the phoneme is identified without any influence from
+the word level. Afterward, there is a bias to report having heard a word, so the listener
+reports whichever interpretation forms a real word.
+Under this prediction, the bias applies equally at every point along the
+continuum. The lexical effect, which is the gap between the two curves, is a flat
+line at about 0.25.
+Even the clearest stimuli would be affected. At the long VOT end, the
+continuum where the voiced interpretation is a word receives about 0.25 voiced
+responses even though the stimulus is clearly voiceless. At the short VOT end,
+the continuum where the voiced interpretation is a nonword receives only
+about 0.75 voiced responses even though the stimulus is clearly voiced.
+In the middle of the continuum, the word-nonword curve falls from about 0.9 at
+−2.5 ms to about 0.45 at +2.5 ms, and the neutral curve falls from about 0.73 to
+about 0.27 across the same steps.
+Section 15: A Prediction If Word Knowledge Shifts the Categorical Boundary
+A second prediction is that word knowledge works to shift the categorical boundary. In
+this account, lexical information changes where the dividing line between
+ and
+falls. The curve for the continuum favoring the voiced interpretation as a word moves
+toward the voiceless end, and the curve for the opposite continuum moves toward the
+voiced end.
+The curves still converge at both endpoints. At the short VOT end, all
+conditions give about 1.0 voiced responses, and at the long VOT end, all
+conditions give about 0.
+The lexical effect is strongest for the items closest to the category boundary. It
+rises from about 0 at the short VOT end to about 0.1 at −7.5 ms, reaches about
+0.38 at both −2.5 ms and +2.5 ms, drops to about 0.1 at +7.5 ms, and returns to
+about 0 at the long VOT end.
+The effect peaks at the boundary because those stimuli are the ones for which
+lexical information can help resolve some ambiguity about the initial phoneme.
+A stimulus that is clearly voiced or clearly voiceless has no ambiguity left to
+resolve.
+Section 16: The Results of Ganong (1980)
+The results are strikingly consistent with the second model. The lexical effect is small at
+the short VOT end, at about 0.02, and rises to about 0.12 at −7.5 ms. It peaks at about 0.32
+at −2.5 ms, which is next to the boundary. It then falls to about 0.19 at +2.5 ms, about 0.12
+at +7.5 ms, and about 0.09 at the long VOT end.
+The word-nonword curve falls from about 0.95 voiced responses at −7.5 ms to
+about 0.67 at −2.5 ms, about 0.28 at +2.5 ms, and about 0.14 at +7.5 ms. It ends
+near 0.11 at the long VOT end.
+The nonword-word curve falls more steeply, from about 0.83 at −7.5 ms to about
+0.34 at −2.5 ms, about 0.09 at +2.5 ms, and about 0.02 at +7.5 ms.
+The gap between the curves is therefore largest near the boundary and shrinks
+toward the endpoints, which is the pattern predicted when word knowledge
+shifts the categorical boundary and not the pattern predicted by a constant bias
+to report a word.
+Ganong raises a number of possibilities for how this could happen, focusing on different
+kinds of guessing strategies. Later models would emphasize the potential role of
+feedback in these shifts.
+Section 17: A Simulation of the Ganong Effect in the TRACE Model
+/b/
+/p/
+
+
+===== PAGE 7 =====
+The simulation follows an input in which the first segment is ambiguous between
+and
+, followed by
+, /\mathrm{^}/ , and
+. Four frames capture phoneme-level
+and word-level activation at successive points as the input unfolds. Word-level activation
+is plotted in the upper half of each frame on a scale up to 0.45 and above, and phoneme-
+level activation is plotted in the lower half on a scale up to 0.7 and above.
+In the first frame, only the ambiguous initial segment has arrived. The phoneme
+units for
+ and
+ are both active at about 0.2, and word-level activity is low.
+In the second frame,
+ has arrived. Activation at the phoneme level now
+includes
+ and
+ alongside
+, and a large cluster of word units is active at
+about 0.1.
+In the third frame, /\mathrm{^}/ has arrived. The word unit for "plug" appears at
+about 0.28, and a cluster of other word units sits at roughly 0.1 to 0.18. "Blood"
+and "blush" are among these, because both begin with the sequence of
+,
+,
+and /\mathrm{^}/ .
+In the fourth frame, the final
+ has arrived. The word unit for "plug" rises to
+the top of the scale, above 0.45. The competing words stay low, because a final
+ is highly inconsistent with "blood" and "blush."
+As the input unfolds over time, activity accumulates for "plug," especially when the final
+ arrives. No word beginning with
+ and continuing with
+, /\mathrm{^}/ , and
+is available to compete, so the lexical evidence favors the interpretation of the ambiguous
+segment as
+.
+This model explains word effects on phoneme category boundaries in terms of top-down
+processing. Top-down processing is influence flowing from higher-level representations,
+here words, down to lower-level representations, here phonemes. Specifically, activity
+from the lexical level can produce feedback to the phoneme level, producing greater
+activation for the phoneme consistent with a word.
+The word "plug" gains activation as its sounds accumulate. That activation
+flows back down to the phoneme level and raises the activation of
+ relative
+to
+.
+The same process accounts for the Ganong data. An ambiguous initial segment
+receives extra support for whichever phoneme completes a real word, which
+moves the boundary between the two categories.
+Section 18: TRACE as a Version of the Interactive Activation Model
+The Interactive Activation Network Model (after McClelland and Rumelhart, 1981) is a
+model of written word recognition with three kinds of units. At the bottom are feature
+units, which correspond to simple line segments such as horizontal, vertical, and
+diagonal strokes. In the middle are letter units, including units for
+,
+, and
+ in the
+final position. At the top are word units, including WEAR, WORK, WORD, and WEAK.
+Feature units send activation up to the letter units that contain those features.
+Letter units send activation up to the words that contain those letters.
+Connections also run back downward, and units at the same level are
+interconnected.
+A hypothetical set of features extracted on a trial in an experiment on word perception
+has parts of the letters covered by black patches. The visible strokes cover the beginning
+of the word clearly, and the final letter is partly hidden, so its visible features are
+compatible with more than one letter.
+With incomplete feature information, several letter units and several word
+units become partially active at once. Activation at the word level feeds back to
+the letter level, so a letter that completes a plausible word receives support
+beyond what its visible features provide.
+The TRACE model is a version of the Interactive Activation model for written word
+recognition. Many of the principles are the same, including units at multiple levels,
+activation passing in both directions, and competition among units. A key issue in speech
+perception is the way the stimuli unfold over time. A printed word is available all at once,
+while a spoken word arrives one segment after another, which is why TRACE repeats its
+units across many starting times.
+Section 19: Categorical Perception and the "Lexical-Phonetic Interface"
+/b/
+/p/
+/l/
+/g/
+/b/
+/p/
+/l/
+/l/
+/r/
+/b/
+/b/ /l/
+/g/
+/g/
+/g/
+/b/
+/l/
+/g/
+/p/
+/p/
+/b/
+D K
+R
+
+
+===== PAGE 8 =====
+Perception appears to be shaped by category boundaries. Given the same physical
+difference, it is more difficult to distinguish stimuli from the same category than stimuli
+from different categories. The evidence about cascaded activation and lexical feedback
+does not undermine that basic finding.
+Ambiguity about phoneme identity does have an impact on word recognition. Partial
+activation of
+ and
+ passes forward to the word level, which is why looks to the
+competitor in the eye-tracking data increase near the boundary and why altered primes
+still activate their semantic associates.
+Word-level information seems to have an impact on phoneme
+categorization. The Ganong effect shifts the category boundary toward the
+interpretation that forms a real word, and the TRACE simulation produces the
+shift through feedback.
+The word recognition system therefore cannot simply wait for the phoneme recognition
+system to finish doing its job, as the lumber mill in the furniture metaphor waits for
+lumber. Spoken word recognition seems to be more interactive than this. Activity
+moves forward continuously and feedback moves backward, so the phoneme and word
+levels influence each other while the input is still arriving.
+Section 20: Spoken Word Recognition Is Also Very Fast (Allopenna et al., 1994)
+Allopenna et al. (1994, Journal of Memory and Language) recorded eye movements as
+listeners heard a spoken word while viewing a grid of pictures. The display is a five-by-
+five grid containing a fixation cross in the center and several objects scattered across the
+squares. The objects include a flask, a speaker, a beetle, and a baby carriage, along with
+plain geometric shapes such as a triangle, a black square, a black circle, and a diamond.
+The pictured objects set up four item types. The referent is the named target, a
+"beaker," which is the flask. The cohort is a word that begins with the same
+sounds as the target, a "beetle." The rhyme is a word that ends with the same
+sounds as the target, a "speaker." The unrelated item shares nothing with the
+target, a "carriage."
+The measure is the probability of fixating each item type over time since target
+onset, in the full competitor condition of Experiment 1, averaged over all
+stimulus sets.
+Fixations to the referent begin to rise at about 200 ms after the onset of the target and
+continue climbing steadily until they level off near 0.95 at roughly 800 ms. The average
+target offset occurs at about 400 ms, and at that moment the probability of fixating the
+referent is only about 0.2. Eye movements are therefore directed toward the target before
+the word has finished.
+Cohort fixations rise along with the referent fixations and are about equal to
+them until roughly 300 to 400 ms, because the beginning of "beaker" and the
+beginning of "beetle" are the same. Cohort fixations peak at about 0.18 at
+around 500 ms, then fall back to near 0 by about 800 ms once the ending of the
+word rules the cohort out.
+Rhyme fixations rise somewhat later and stay lower. They peak at about 0.1 at
+around 500 to 600 ms and decline slowly, and they are still just above baseline
+near 1000 ms. The rhyme competitor receives some activation even though it
+differs from the target at the beginning, because the later part of the word
+matches.
+Unrelated fixations remain near 0 throughout, with only a very small rise at
+later times.
+Section 21: TRACE Predictions for the Eye-Movement Data
+The simulation plots the fixation probabilities predicted by TRACE alongside the
+observed fixation probabilities. In the cohort comparison, TRACE and the data both show
+the referent rising to about 0.95 by 800 to 1000 ms. The predicted curve rises slightly
+earlier and more steeply than the observed curve, and the two converge once they level
+off. The cohort curve in the model peaks at about 0.17 at around 500 ms, closely matching
+the observed cohort peak, and both fall back toward 0 by about 800 ms.
+In the rhyme comparison, the referent curves follow the same pattern. The
+predicted rhyme curve and the observed rhyme curve both peak at about 0.1 at
+/b/
+/p/
+
+
+===== PAGE 9 =====
+around 500 to 600 ms and decline slowly afterward.
+A model with activation at multiple levels and competition among words
+produces both the early overlap between the referent and the cohort and the
+later, smaller rise of the rhyme.
+The simulation is granular. Eye movements give an idea about the changes in "activity"
+for different competitors over time, so cognitive processing can be observed before a final
+response is issued. Each competitor's activation rises and falls on a timescale of hundreds
+of milliseconds, and those changes appear in the fixation record long before a participant
+clicks or answers.
+Within-category differences in how good an exemplar is also produce graded
+effects of category goodness in the categorical perception task. The graded
+pattern in the eye movements follows from the same kind of continuous
+activation.

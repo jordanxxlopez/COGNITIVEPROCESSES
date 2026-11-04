@@ -1,0 +1,166 @@
+ClrHome
+Float
+Normal
+Real
+Input "NUMBER VALUES",N
+If not(N≥1 and N=int(N) and N≤100)
+Then
+ClrHome
+Disp "CHECK NUMBER VALUES"
+Disp "CHECK INPUTS"
+Stop
+End
+N→dim(ʟBMX)
+N→dim(ʟBMP)
+For(I,1,N)
+ClrHome
+Disp "ROW",I
+Input "VALUE",X
+Input "PROB",P
+If not(P≥0 and P≤1)
+Then
+ClrHome
+Disp "CHECK PROB"
+Disp "CHECK INPUTS"
+Stop
+End
+X→ʟBMX(I)
+P→ʟBMP(I)
+End
+If not(abs(sum(ʟBMP)-1)<.00000001)
+Then
+ClrHome
+Disp "PROBS MUST SUM 1"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "LOW ENDPOINT",B
+Input "HIGH ENDPOINT",C
+If not(C≥B)
+Then
+ClrHome
+Disp "CHECK HIGH ENDPOINT"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "INCLUDE LOW 1/0",D
+If not(D=0 or D=1)
+Then
+ClrHome
+Disp "CHECK INCLUDE LOW 1/0"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "INCLUDE HIGH 1/0",E
+If not(E=0 or E=1)
+Then
+ClrHome
+Disp "CHECK INCLUDE HIGH 1/0"
+Disp "CHECK INPUTS"
+Stop
+End
+sum((ʟBMX≤B)*ʟBMP)→F
+sum((ʟBMX≤C)*ʟBMP)→G
+sum((ʟBMX=B)*ʟBMP)→H
+sum((ʟBMX=C)*ʟBMP)→K
+max(0,G-F+D*H-(1-E)*K)→P
+ClrHome
+Output(1,1,"DISCRETE INTERVAL")
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"P=")
+Output(2,3,θ)
+B→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"LOW=")
+Output(3,5,θ)
+C→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"HIGH=")
+Output(4,6,θ)
+If D=1
+Then
+Output(5,1,"LOW INCLUDED")
+Else
+Output(5,1,"LOW EXCLUDED")
+End
+If E=1
+Then
+Output(6,1,"HIGH INCLUDED")
+Else
+Output(6,1,"HIGH EXCLUDED")
+End
+Output(7,1,"ADD SELECTED MASS")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"CDF ENDPOINT WORK")
+G→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"F(HI)=")
+Output(2,7,θ)
+F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"F(LO)=")
+Output(3,7,θ)
+H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"P(X=L)=")
+Output(4,8,θ)
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"P(X=H)=")
+Output(5,8,θ)
+Output(6,1,"START F(HI)-F(LO)")
+Output(7,1,"ADD LOW IF IN")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+ClrHome
+Output(1,1,"ADJUST ENDPOINTS")
+G-F→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"BASE=")
+Output(2,6,θ)
+D*H→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"ADD L=")
+Output(3,7,θ)
+(1-E)*K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"SUB H=")
+Output(4,7,θ)
+Output(5,1,"SUB HIGH IF OUT")
+P→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(6,1,"P=")
+Output(6,3,θ)
+Output(7,1,"CDF INCLUDES <=")
+Output(10,1,"ENTER/CLR:END")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+Stop

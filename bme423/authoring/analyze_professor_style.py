@@ -1,0 +1,11 @@
+"""Reproducible source-evidence model for Version D question design."""
+from pathlib import Path
+import hashlib,json,re,subprocess
+R=Path(__file__).resolve().parents[1]
+features={'compute':r'\b(?:compute|calculate|find)\b','infer':r'\b(?:determine|conclude|difference|hypothesis)\b','justify':r'\b(?:explain|show|characterize|qualitative|conclusion|sentence)\b','sketch':r'\b(?:sketch|plot|p\.d\.f\.|d\.f\.)\b','clinical':r'\b(?:patients|subjects|treatment|population|populations|therapy|disease|infant)\b','table':r'\b(?:table|standard deviation|sample mean|summarized|counts)\b'}
+texts={p.stem:subprocess.check_output(['pdftotext','-layout',str(p),'-']).decode() for p in (R/'sources').glob('*.pdf')}
+V=json.loads((R/'v2-data.js').read_text().split('=',1)[1].rstrip(';\n'))
+ranking=[{k:p[k] for k in ['topic','score','reviewPages','hw1','hw2']} for p in V['priorities'] if not p['excluded']]
+report={'model':'Professor-source task-structure and exam-coverage model, Version D','sourceHashes':{str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (R/'sources').glob('*.pdf')},'features':features,'counts':{k:{f:len(re.findall(rx,v,re.I)) for f,rx in features.items()} for k,v in texts.items()},'coverageRanking':sorted(ranking,key=lambda x:-x['score']),'rules':['Clinical study objective precedes observations and summaries.','Probability cases combine validity, full CDF, sketches, moments and boundary probabilities.','Inference cases require method choice, population null, calculation, table decision and contextual conclusion.','Differentiate all-pairs and against-control families; retain ANOVA residual variance and df.','Use original unrounded counts for pooling; apply course Yates convention to 2x2.','Balanced ANOVA only; no manual sums-of-squares, Session 14 or code-writing tasks.'],'interpretation':'Scores prioritize preparation using explicit review and assignment evidence. Feature counts describe actual source task language; they are not fitted probabilities for unseen exam questions.'}
+(R/'version-d-style-model.json').write_text(json.dumps(report,indent=2)+'\n')
+print('Analyzed',len(texts),'course PDFs; ranked',len(ranking),'included topics using review/homework evidence.')

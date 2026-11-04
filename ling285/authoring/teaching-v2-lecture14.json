@@ -1,0 +1,618 @@
+{
+  "lecture14": {
+    "title": "Speech → Neural Networks",
+    "sections": [
+      {
+        "page": 1,
+        "title": "Speech → Neural Networks",
+        "kind": "title",
+        "concepts": [],
+        "teaching": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 2,
+        "title": "Five membrane modes combine into one motion",
+        "kind": "media",
+        "concepts": [
+          "membrane modes",
+          "fixed edges and internal nodes",
+          "spatial pattern versus oscillation rate",
+          "superposition",
+          "local spectral measurement",
+          "assigned harmonic example"
+        ],
+        "teaching": [
+          "A **mode** is an organized way for the whole membrane to move. Its outside edges stay fixed, while regions inside them rise, pass through their resting position, and fall to the other side. Some modes have one broad moving region. Others divide the surface into several regions that move in opposite directions. The stationary lines between these regions are **nodes**. The regions on either side move while those lines stay in place.",
+          "The pairs of mode labels distinguish divisions along the two directions of the surface. A pattern divided across its width differs from one divided along its length, even though both belong to the same membrane. More divisions make the spatial pattern more complicated. The shape tells us where movement occurs; the frequency tells us how quickly that movement repeats.",
+          "When several modes occur together, the membrane does not choose one shape and discard the others. Their movements add at every location. Contributions in the same direction reinforce one another, while contributions in opposite directions partly cancel. This **superposition** makes the combined surface change shape as its component modes move through different phases.",
+          "A **spectrum** separates that complicated movement into its frequency components. The marked pickup observes one position on the membrane, so the strength it records depends on how much each mode moves there. The equal-height peaks were arranged by adjusting the component amplitudes at that pickup. They do not establish equal movement everywhere on the surface. The combined panel also uses a smaller display scale, so its drawn height cannot be compared directly with the height of an individual mode.",
+          "The five frequencies in this example were deliberately assigned as evenly spaced harmonics. That choice illustrates how components can combine; it does not describe the natural resonance spacing of every membrane. The playback is slowed so that the movement can be followed by eye. The frequency labels describe the intended oscillations, rather than the slow visible playback rate."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original image1.png. Inspected all three latest nonuniform phase grids for media1.mp4, covering 24 sampled times across its duration, and compared its original poster with the changing phases. The media probe reports no audio stream.",
+          "limitations": [
+            "Temporal review uses 24 nonuniform phase samples rather than every encoded frame or continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 3,
+        "title": "A fixed end and a free end select odd harmonics",
+        "kind": "media",
+        "concepts": [
+          "fixed–free boundary conditions",
+          "displacement node",
+          "displacement antinode",
+          "mode number versus harmonic number",
+          "odd harmonics",
+          "controlled boundary comparison"
+        ],
+        "teaching": [
+          "A **fixed end** cannot move sideways, so it must be a displacement node. A **free end** can move through a large excursion, so the permitted standing-wave patterns place a displacement antinode there. An antinode describes where the movement can be greatest over a cycle. It does not mean that the endpoint stays at its greatest displacement at every instant.",
+          "The simplest pattern connects the stationary bottom to the moving top without an internal node. More complicated patterns add stationary points and oppositely moving regions inside the same length. As each region reverses direction, the pattern keeps its nodes in the same places. A nearly straight-looking instant is a phase of the oscillation, rather than the disappearance of the mode.",
+          "The allowed frequencies are the **odd harmonics** of the fundamental. The second allowed mode oscillates at three times the fundamental, followed by five times and seven times. Mode number counts the patterns that are allowed. Harmonic number describes a frequency relative to the fundamental. The second mode is therefore the third harmonic, because a twice-as-fast pattern would fail the endpoint requirements.",
+          "The equal spectral peaks describe the particular mixture measured at the free end. All the displayed modes have antinodes there, and their excitation was chosen to give equal contributions at that location. The spectrum identifies their different rates even while the visible motion has been slowed.",
+          "The fixed–fixed and fixed–free demonstrations use separately tuned examples with the same labelled fundamental. To isolate the effect of changing a boundary, length and wave speed must stay the same. Under those conditions, changing from two fixed ends to one fixed and one free end lowers the fundamental to half its previous frequency. Matching frequency labels in separately adjusted demonstrations therefore do not show that the boundary has no effect."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original image2.png and the tiny cyan ink annotations image12.png through image19.png. Inspected all three latest nonuniform phase grids for media2.mp4, covering 24 sampled times across its duration, and compared its original poster with the changing phases. The media probe reports no audio stream.",
+          "limitations": [
+            "Temporal review uses 24 nonuniform phase samples rather than every encoded frame or continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 4,
+        "title": "Quarter-wavelength packets explain the allowed modes",
+        "kind": "media",
+        "concepts": [
+          "quarter-wavelength geometry",
+          "node–antinode connection",
+          "odd quarter-wave counts",
+          "wavelength and repetition rate",
+          "standing pattern versus traveling packet"
+        ],
+        "teaching": [
+          "A **quarter-wavelength** is enough to connect a displacement node to an antinode. That makes it the simplest piece of a standing-wave pattern that can fit between a fixed end and a free end. The lowest mode fits one such piece into the available length.",
+          "Adding one more quarter-wave would finish at a node, which would make the far end behave like another fixed end. Adding two quarter-waves instead returns the pattern to an antinode. Each extra pair introduces another alternation inside the string while preserving the required endpoint behavior. The allowed patterns therefore contain one, three, five, and seven quarter-waves.",
+          "Fitting more of these pieces into the same length makes each wavelength shorter. With the wave speed unchanged, a shorter wavelength corresponds to a faster repetition. The odd frequency pattern follows from the **boundary conditions**, rather than from an arbitrary choice to omit the even harmonics.",
+          "The numbered pieces divide the shape of a standing wave. They are not objects that travel successively from one end to the other. The string moves back and forth while its nodes remain in place, and the more complicated modes fit more of those alternating regions into the same space."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original image3.png and all seven numbered quarter-wave overlay images image4.png through image10.png. Inspected all three latest nonuniform phase grids for media3.mp4, covering 24 sampled times across its duration, and compared its original poster with the changing phases. The media probe reports no audio stream.",
+          "limitations": [
+            "Temporal review uses 24 nonuniform phase samples rather than every encoded frame or continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 5,
+        "title": "Air moves longitudinally in vocal-tract modes",
+        "kind": "media",
+        "concepts": [
+          "air inertia and compressibility",
+          "longitudinal oscillation",
+          "compression and rarefaction",
+          "ideal closed–open tube",
+          "first two tract resonances",
+          "constriction locations"
+        ],
+        "teaching": [
+          "Air has both **inertia** and **compressibility**. Inertia makes moving air resist a change in its motion. Compressibility allows a region of air to bunch together and then push back toward its usual spacing. A chain of masses and springs separates these two roles so that the air column can be understood through a simpler mechanical system.",
+          "The air elements move **longitudinally**, back and forth along the tube. When neighbors approach one another, the local air is compressed. When they separate, it is rarefied. The elements reverse around their usual positions, so the acoustic movement is different from a steady stream flowing out of the mouth.",
+          "The glottal end is constrained and the lip end is open in this simplified model. The lowest mode has a broad pattern, while the next mode fits an additional alternation into the same tract. In the ideal uniform-tube reference, the second mode repeats three times as fast as the first. That relationship belongs to this reference model, rather than establishing exact harmonic ratios for every discrete chain or every vowel shape.",
+          "The /a/, /i/, and /u/ markers identify a back region, a front region, and the lip end. Each position participates in both modes, but its movement and compression can differ between them. **F1 and F2** label the first two tract resonances. To predict what a narrowing does to them, the local role of the narrowed region must be examined separately in each mode."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original image11.png. Inspected all three latest nonuniform phase grids for media4.mp4, covering 24 sampled times across its duration, and compared its original poster with the changing phases. The media probe reports no audio stream.",
+          "limitations": [
+            "Temporal review uses 24 nonuniform phase samples rather than every encoded frame or continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 6,
+        "title": "Track air motion separately from compression",
+        "kind": "media",
+        "concepts": [
+          "longitudinal particle displacement",
+          "local spacing and density change",
+          "compression versus excursion",
+          "closed–open boundary",
+          "higher air modes",
+          "formant-specific spatial patterns"
+        ],
+        "teaching": [
+          "An air element can move a long way while remaining almost the same distance from its neighbors. A different region can show little movement at its center while the neighbors crowd together and spread apart around it. **Displacement** describes the excursion of an element. **Compression** describes a change in the spacing and density of a group. These are distinct features of the same acoustic motion.",
+          "To follow displacement, track one circle through the cycle as it moves to one side, returns, and reverses. To follow compression, compare neighboring circles over time. A small gap at one instant is evidence of crowding then. Watching the gap widen and narrow reveals the changing compression, rather than just the direction in which the whole group is moving.",
+          "The closed end limits displacement, whereas the open end allows a larger excursion. In the lowest mode, the broad motion pattern places strong compression toward the constrained end. Higher modes introduce more regions that move differently from their neighbors, so strong movement and strong compression alternate more often along the tube.",
+          "The moving schwa reference and the separate **F1, F2, and F3** rows all represent air in the same kind of tract. The rows isolate different resonance patterns so that a single position can be compared across them. A narrowing at that position can affect the moving mass of one mode more strongly and the compressing air of another more strongly. That difference makes opposite formant shifts possible."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original image20.png. Inspected all three latest nonuniform phase grids for media5.mp4, covering 24 sampled times across its duration, and compared its original poster with the changing phases. The media probe reports no audio stream.",
+          "limitations": [
+            "Temporal review uses 24 nonuniform phase samples rather than every encoded frame or continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 7,
+        "title": "Compare positions within an air mode",
+        "kind": "media",
+        "concepts": [
+          "reading local air-mode behavior",
+          "motion versus compression",
+          "tracking changes over a cycle",
+          "mode-specific perturbation reasoning"
+        ],
+        "teaching": [
+          "A position in an air column has to be understood through its movement over a cycle. Following one element reveals how far it travels from its resting position. Following the distances between neighbors reveals how strongly the local air compresses and expands. A still frame can show crowding, but the changing spacing explains the spring-like action that returns the air toward its usual state.",
+          "A region with a large excursion contributes strongly to the mode’s **inertia**. Increasing the effective mass there makes the moving part harder to accelerate and reverse, which tends to lower that resonance. A region with large compression changes contributes strongly to **restoring stiffness**. Strengthening that restoring effect tends to raise the resonance.",
+          "The same position can have a different balance in F1, F2, and F3 because the modes distribute motion and compression differently along the tube. A useful explanation therefore connects the marked location to the particular mode and then explains which effect dominates. The location alone does not determine an arrow without that spatial reasoning."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original image20.png and the native A–F label text. Inspected all three latest nonuniform phase grids for media5.mp4, covering 24 sampled times across its duration, and compared its original poster with the changing phases. The media probe reports no audio stream.",
+          "limitations": [
+            "The A–F labels have no supplied question or answer key, so only the source-supported method of comparing locations is taught.",
+            "Temporal review uses 24 nonuniform phase samples of the shared media5.mp4 rather than every encoded frame or continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 8,
+        "title": "Vowel positions change where the tract is narrowed",
+        "kind": "concept",
+        "concepts": [
+          "vowel articulation",
+          "tongue height and frontness",
+          "lip constriction",
+          "central reference vowel",
+          "distance measured from the glottis",
+          "location-dependent resonance change"
+        ],
+        "teaching": [
+          "Vowels differ because the tongue and lips reshape the air passage above the glottis. **High and low** describe tongue height, while **front and back** describe its position along the mouth. These articulatory descriptions help locate a narrowing. They do not by themselves explain the change in a resonance; that explanation depends on how the narrowing affects moving and compressing air.",
+          "The vowel in dean is high and front, with the narrowing marked about two thirds of the way from the glottis toward the lips. The vowel in dune is high and back, with the highlighted narrowing at the lips. Both are described as high, yet they affect different positions along the air column. Their shared tongue-height category therefore does not require the same formant pattern.",
+          "The vowel in done is the central, relatively unconstricted reference. Dan supplies the low-front comparison, and Don supplies the low-back comparison. The narrowing marked for Don is about one third of the way from the glottis. That puts it farther back along the tract than the front narrowing associated with dean.",
+          "The starting point matters when interpreting these fractions. A position measured from the glottis follows the air path toward the lips. Moving the narrowing along that path places it in a different part of each mode’s pattern. **Articulation** specifies what shape changes, while the acoustic mode explains why that change affects F1 and F2 differently."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original all five vowel images image21.png through image25.png.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 9,
+        "title": "A constriction changes inertia and restoring stiffness",
+        "kind": "concept",
+        "concepts": [
+          "constriction as mass and stiffness perturbation",
+          "inertia slows reversal",
+          "restoring force speeds return",
+          "local participation of a mode",
+          "non-cancellation of competing effects"
+        ],
+        "teaching": [
+          "A constriction changes more than the visible width of the tube. In the lecture’s mass-and-spring account, it changes both the effective **inertia** of the air and its **restoring stiffness**. Predicting a resonance shift means asking which of those changes matters more at the constriction’s location.",
+          "Inertia is the tendency of moving air to keep moving. If a mode requires substantial movement through the narrowed region, the added mass-like loading makes that movement harder to speed up and turn around. A full cycle takes longer when this effect dominates, so the resonance frequency falls. The important link is from local motion to greater effective inertia and then to slower oscillation.",
+          "Compression supplies the spring-like restoring action. Air that is pushed together resists further compression and pushes back toward its usual spacing. Where a mode strongly compresses and expands the narrowed region, a stronger restoring response brings the air back more quickly. The oscillation becomes faster when this stiffness effect dominates, so the resonance frequency rises.",
+          "The effects do not automatically cancel because the air does not move and compress equally at every position. Strong excursion and strong compression occur in different regions, and those regions change with the mode. The same constriction can therefore lower one resonance while raising another. Its acoustic effect depends on where it lies within each mode, rather than simply on the fact that the tract is narrower."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original the two linked original tract images image24.png and image21.png.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 10,
+        "title": "Use both modes to interpret the same tract location",
+        "kind": "media",
+        "concepts": [
+          "same tract location across modes",
+          "longitudinal motion and spacing",
+          "uniform-tube reference",
+          "formants versus source harmonics",
+          "basis for constriction predictions"
+        ],
+        "teaching": [
+          "The first two air modes use the same tract but organize its movement differently. Both are constrained at the glottal end and allow strong movement at the open lip end. The second mode has an additional alternation inside the tube, so its local pattern of motion and compression differs from that of the first.",
+          "A narrowing occupies the same physical place for both modes. What changes between the rows is the role that place plays in the oscillation. Near the lips, both modes move air strongly. Farther inside, a region that moves substantially in one mode can undergo stronger compression changes in the other. This is why a single articulatory change can affect F1 and F2 in different directions.",
+          "The marked back, front, and lip positions make the comparison specific. At each position, first identify how much the local air moves and how much its spacing changes. Dominant inertia predicts a lower resonance, while dominant restoring stiffness predicts a higher one. The prediction follows from the local behavior, rather than from memorizing a single arrow for every constriction.",
+          "The three-times frequency relationship describes the ideal uniform reference. **F1 and F2 are tract resonances**, and changes in tract shape alter them. They are distinct from the harmonics supplied by vocal-fold repetition, whose spacing is controlled by the source fundamental."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original image11.png. Inspected all three latest nonuniform phase grids for media4.mp4, covering 24 sampled times across its duration, and compared its original poster with the changing phases. The media probe reports no audio stream.",
+          "limitations": [
+            "Temporal review uses 24 nonuniform phase samples rather than every encoded frame or continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 11,
+        "title": "Lip loading lowers both F1 and F2 in the /u/ model",
+        "kind": "media",
+        "concepts": [
+          "lip-region loading",
+          "motion-dominated perturbation",
+          "inertia and slower reversal",
+          "F1 decreases",
+          "F2 decreases",
+          "qualitative /u/ prediction"
+        ],
+        "teaching": [
+          "The **/u/ model** places the loading near the open lip end. Both of the first two modes have strong displacement there, so both rely on substantial movement of the affected air. The enlarged masses represent greater effective inertia at that location.",
+          "More inertia means that the moving air resists changes in its motion more strongly. It takes longer to accelerate and reverse when this mass-like effect dominates. Because a cycle takes longer, its repetition rate falls. This links the visible location of the loading to the direction of the acoustic change.",
+          "The same reasoning applies to both modes near the lips. The first resonance, **F1**, decreases, and the second resonance, **F2**, also decreases. Their shared direction comes from the fact that motion dominates for both at this location, rather than from a general rule that every narrowing lowers every resonance.",
+          "This is a qualitative prediction about the /u/ configuration. Its explanation is the chain from lip-region loading to stronger inertia and then to slower oscillation in both modes. The larger air elements still move back and forth; their size does not turn the acoustic oscillation into a steady outward airflow."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original image26.png and the native reasoning-reveal text. Inspected all three latest nonuniform phase grids for media6.mp4, covering 24 sampled times across its duration, and compared its original poster with the changing phases. The media probe reports no audio stream.",
+          "limitations": [
+            "Temporal review uses 24 nonuniform phase samples rather than every encoded frame or continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 12,
+        "title": "A front constriction separates the effects on F1 and F2",
+        "kind": "media",
+        "concepts": [
+          "front constriction location",
+          "mode-specific local participation",
+          "mass-dominated F1 decrease",
+          "stiffness-dominated F2 increase",
+          "qualitative /i/ prediction"
+        ],
+        "teaching": [
+          "The **/i/ model** narrows the front region, about two thirds of the way from the glottis toward the lips. The narrowing stays at that same position in both modes. Its different effects arise because the first and second modes use that region differently.",
+          "For the first mode, the affected region participates strongly in air movement. The constriction’s mass-like contribution therefore dominates. Greater effective inertia makes that moving air harder to turn around, lengthening the cycle and lowering **F1**.",
+          "For the second mode, the same region participates strongly in compression and expansion. The constriction strengthens a restoring effect that matters greatly there. The stronger return toward the usual spacing makes the cycle faster, so **F2** rises.",
+          "The result is a lower first formant and a higher second formant. The physical roles of mass and stiffness have stayed the same throughout. What differs is the spatial pattern of each mode, which changes the relative importance of the two effects at the front narrowing."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original image27.png and the native reasoning-reveal text. Inspected all three latest nonuniform phase grids for media7.mp4, covering 24 sampled times across its duration, and compared its original poster with the changing phases. The media probe reports no audio stream.",
+          "limitations": [
+            "Temporal review uses 24 nonuniform phase samples rather than every encoded frame or continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 13,
+        "title": "A back constriction reverses the F1 and F2 pattern",
+        "kind": "media",
+        "concepts": [
+          "back constriction location",
+          "stiffness-dominated F1 increase",
+          "mass-dominated F2 decrease",
+          "comparison with front constriction",
+          "qualitative /a/ prediction"
+        ],
+        "teaching": [
+          "The **/a/ model** moves the narrowing farther back, to about one third of the tract length from the glottis. The same back region is changed for both modes, but their motion and compression patterns give that region different roles.",
+          "In the first mode, strong local compression makes the restoring effect especially important. Increasing this spring-like response brings the air back more quickly after it is displaced from its usual spacing. The cycle becomes faster, so **F1 rises**.",
+          "In the second mode, the back region participates more strongly in movement. The constriction’s mass-like loading therefore matters more. Greater effective inertia makes reversal slower, lengthens the cycle, and causes **F2 to fall**.",
+          "This pattern reverses the front-constriction pattern because the narrowing has changed location within the modes. It does not reverse the roles of mass and stiffness. Stiffness still tends to speed an oscillation, while inertia tends to slow it. Connecting those effects to the local mode pattern explains the formant directions more reliably than treating vowel labels as isolated facts."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Read native page text and speaker notes, cross-checked extraction, and inspected the rendered original page at readable resolution. Individually inspected linked original image28.png and the native reasoning-reveal text. Inspected all three latest nonuniform phase grids for media8.mp4, covering 24 sampled times across its duration, and compared its original poster with the changing phases. The media probe reports no audio stream.",
+          "limitations": [
+            "Temporal review uses 24 nonuniform phase samples rather than every encoded frame or continuous playback."
+          ]
+        }
+      },
+      {
+        "page": 14,
+        "title": "Air motion and compression in the vocal-tract modes",
+        "kind": "media",
+        "concepts": [
+          "air-column modes",
+          "longitudinal displacement",
+          "compression and rarefaction across phases",
+          "local mass versus spring participation",
+          "same air system at multiple resonances"
+        ],
+        "teaching": [
+          "An acoustic oscillation involves both the movement of air and changes in its local spacing. The circles move along the tube, reverse, and return through their usual positions. **Longitudinal motion** means that this displacement runs along the air passage, rather than sideways like a string’s visible movement.",
+          "A group of neighboring elements can move together through a large excursion without much change in the gaps between them. In another region, neighbors move by different amounts, so the gaps shrink and expand. The first situation emphasizes moving mass. The second emphasizes **compression and rarefaction**, which provide a spring-like restoring action.",
+          "The schwa row represents the moving reference air column, while the separate F1, F2, and F3 rows isolate its different resonance patterns. Higher modes fit more alternations into the same tract. As a result, the regions of strong movement and strong compression are arranged differently for each resonance.",
+          "A constriction affects the air at one location, but that location can have a different role in every mode. Added inertia matters most where air movement contributes strongly. Changed stiffness matters most where local spacing changes contribute strongly. Comparing those roles explains how a single tract shape can produce several resonances with different responses."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered page and original poster inspected. All 24 nonuniform phase samples across the 80-second embedded media5.mp4 inspected, including initial spacing, forward and reverse motion, compressed and expanded regions, and higher-mode alternations. Media probe confirms no audio stream. The source supplies no additional written setup or numerical resonance values on this page.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 15,
+        "title": "The vocal-fold source sets harmonic spacing",
+        "kind": "concept",
+        "concepts": [
+          "vocal-fold source",
+          "fundamental repetition rate",
+          "harmonics and harmonic spacing",
+          "source inertia and restoring tension",
+          "density of frequency components",
+          "illustrative membrane combination"
+        ],
+        "teaching": [
+          "The vibrating vocal-fold **source** supplies a repeating pattern of movement. Its fundamental frequency, **F0**, describes how often the pattern repeats. The source spectrum contains harmonics at successive multiples of that rate, so the fundamental also sets the spacing between neighboring harmonic components.",
+          "Effective inertia and restoring action help explain changes in the source rate. Heavier, looser folds reverse more slowly in this comparison. Lighter, tighter folds can repeat more quickly. The displayed examples move from a lower to a higher F0, and the harmonic stems become farther apart as the repetition rate increases.",
+          "The spectra use the same frequency window. A lower source rate places more harmonic components inside that window, while a higher rate leaves wider gaps and fewer components. This matters because the tract will favor some frequency regions over others. A dense set of harmonics supplies more points through which the shape of a resonance can be seen.",
+          "The membrane example also shows how several component movements combine into one changing motion. Its assigned harmonic spacing makes the combination easy to compare with a harmonic source. The surface patterns and the repetition rates remain different properties, and the deliberately chosen membrane frequencies do not establish that natural membrane resonances are equally spaced.",
+          "A voiced vowel therefore contains multiple frequency components. **F0** describes the source’s repetition and harmonic spacing. The tract resonances describe which regions of that multi-frequency sound become strong. A vowel is not a single pure frequency, and changing source pitch is different from changing the vowel-shaped filter."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 16,
+        "title": "The vocal-tract filter favors nearby harmonics",
+        "kind": "concept",
+        "concepts": [
+          "vocal-tract filtering",
+          "formants as resonances",
+          "relative harmonic strength",
+          "articulation changes the filter",
+          "source frequencies versus resonance targets",
+          "lecture-specific vowel comparisons"
+        ],
+        "teaching": [
+          "The **vocal tract** reshapes the relative strengths of the source harmonics. Its air column resonates more strongly in some frequency regions than in others, so harmonics near those regions become prominent. Harmonics farther from a favored region are weaker in the simplified comparison. The tract acts as a **filter** because it changes the balance among components already supplied by the source.",
+          "A **formant** identifies one of these favored resonance regions. Changing the tongue or lips changes the air passage, which changes where its resonances lie. The closed–open tube provides the reference, and the central, lip-constricted, front-constricted, and back/open vowel configurations give different filter patterns.",
+          "The schwa example has separated lower and higher resonance regions. The /u/ example favors lower regions and also marks a third resonance. The front /i/ or /I/ configuration combines a low first resonance with a much higher second one. The /a/ example brings its first two targets close together. These comparisons describe the pattern of favored frequencies, rather than a different vocal-fold repetition rate for each vowel.",
+          "The marked target is a property of the filter, while a harmonic stem is a component of the source. A resonance can fall between two harmonics. In that case, the nearby components can be emphasized without creating a new source harmonic exactly at the target. Keeping those roles separate explains how the same harmonic source can acquire different vowel qualities."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 17,
+        "title": "One filter can look different at different pitches",
+        "kind": "concept",
+        "concepts": [
+          "controlled source–filter comparison",
+          "fixed formant envelope",
+          "source pitch changes harmonic sampling",
+          "dense versus sparse sampling",
+          "harmonic peaks versus formant targets",
+          "close resonances"
+        ],
+        "teaching": [
+          "The vowel filter and the source repetition rate can be varied separately. Within a column, the tract shape and its **formant envelope** stay fixed. Moving between source rows changes F0 and therefore changes the spacing of the harmonics that pass through that same filter. Across a row, the source spacing stays the same while the vowel filter changes.",
+          "At a lower F0, closely spaced harmonics sample many positions within each favored frequency region. Their relative heights trace the envelope more densely, which makes the resonance pattern easier to recognize. At a higher F0, the wider gaps leave fewer samples. A target can lie between the available harmonics, so the tallest nearby stem can sit beside the target rather than directly on it.",
+          "This is especially important when two resonances are close. The /a/ filter marks two nearby targets, but sparse harmonic stems can make them look like one grouped region. Denser sampling gives more information about the envelope, although it does not guarantee two separately visible peaks in every case.",
+          "The stem positions identify actual harmonic frequencies, and their heights identify strength after filtering. The smooth envelope and target marks identify the filter. If the visible stems become sparse while the targets stay fixed, the evidence supports a change in **sampling**, rather than a change in tract resonance. A formant becoming difficult to estimate does not mean that the physical resonance vanished."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 18,
+        "title": "Map spectra into a spectrogram",
+        "kind": "concept",
+        "concepts": [
+          "spectrum axes",
+          "spectrogram time and frequency axes",
+          "amplitude encoded as darkness",
+          "frequency versus intensity change",
+          "formant trajectories in /ia/",
+          "successive spectral slices"
+        ],
+        "teaching": [
+          "A **spectrum** describes the frequency components in a short slice of sound. Frequency runs from left to right, and the height of a component shows its amplitude. Comparing successive spectra reveals how the distribution of strength changes as speech continues.",
+          "A **spectrogram** puts those successive slices beside one another. Time advances horizontally, and frequency runs vertically. A component that lies farther right in a spectrum belongs higher in the spectrogram. Its amplitude is then represented by darkness instead of by the height of a stem: stronger components are black, intermediate components are gray, and weak components are white in this display.",
+          "These mappings separate two kinds of change. A band that moves upward is moving toward a higher frequency. A band that becomes darker at the same height is becoming stronger at that frequency. Confusing height with darkness would confuse a change in frequency with a change in amplitude.",
+          "During the **/i/ to /a/** transition, the lowest strong band rises while the next strong band falls. Those paths show the changing resonance pattern as the vocal-tract shape changes. The higher bands provide additional frequency information: one upper band shifts downward while a fainter band remains in the higher-frequency region. The continuous-looking paths come from adjacent time slices, rather than from a single spectrum containing a time axis.",
+          "The spectral stems and the spectrogram bands therefore describe related information using different visual arrangements. Following their frequency positions shows which regions are favored. Following their strengths shows how prominently those regions appear in the sound."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant.",
+          "limitations": [
+            "Some reveal-callout wording extends beyond its original raster boundary. Its visible axis arrows and high/medium/low key, supported by the speaker notes, establish the mappings without reconstructing cropped wording."
+          ]
+        }
+      },
+      {
+        "page": 19,
+        "title": "Reflection prompt",
+        "kind": "logistics",
+        "concepts": [],
+        "teaching": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 20,
+        "title": "Speech-complexity experiment prompt",
+        "kind": "logistics",
+        "concepts": [],
+        "teaching": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant.",
+          "limitations": [
+            "No experiment details are inferred from the heading."
+          ]
+        }
+      },
+      {
+        "page": 21,
+        "title": "Use formants as input to vowel recognition",
+        "kind": "concept",
+        "concepts": [
+          "formants as measured features",
+          "vowel classification",
+          "physical description to category mapping",
+          "training objective versus demonstrated performance"
+        ],
+        "teaching": [
+          "**Formants** connect vocal-tract physics to a recognition task. They describe frequency regions favored by the air passage, so a pair of formant measurements gives a compact description of part of the vowel’s acoustic pattern. The proposed network uses those measurements as its input instead of receiving the entire sound waveform.",
+          "The recognition problem asks how that pattern should be mapped to a vowel category. The measurements describe the sound; the output labels describe the alternatives among which the model will choose. Learning this mapping would require relating the input patterns to the intended categories.",
+          "The stated goal is to train on students’ formant measurements. This establishes what information the model is meant to use and what it is meant to recognize. It describes a learning task, rather than supplying a completed test of how accurately the network recognizes the students’ vowels."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 22,
+        "title": "A fully connected linear vowel network",
+        "kind": "concept",
+        "concepts": [
+          "two formant input features",
+          "fully connected layers",
+          "weighted sums",
+          "hidden representations",
+          "five ordered candidate outputs",
+          "purely linear architecture"
+        ],
+        "teaching": [
+          "The network begins with **F1 and F2**, two measurements of the sound. Each input has a particular meaning, so their order is part of the model’s definition. The network receives the formant pair rather than a speech waveform, and its job is to carry that information toward a choice among five labelled candidates.",
+          "A **fully connected layer** gives every receiving neuron a connection from every neuron in the preceding layer. Each connection has its own weight. The receiving neuron weights the incoming values and adds their contributions, allowing the same input pair to be combined differently by different neurons. One connection therefore has one weight; the neuron’s result depends on the combined incoming contributions.",
+          "The first hidden layer produces three internal values, which pass through layers producing two and then four values. These hidden values are intermediate combinations of the inputs. They are not additional formants measured from the sound or word labels already known to be correct. The result of one layer becomes the information available to the next.",
+          "The final five units correspond, from top to bottom, to /done/, /dune/, /dean/, /Don/, and /Dan/. Their order must stay attached to their labels when interpreting an output. A large value in a particular position is meaningful only when the associated candidate is known.",
+          "The architecture is **purely linear**: no activation function changes a weighted result between the displayed layers. Successive layers perform successive weighted combinations. This describes information flow, but a sequence of linear layers does not by itself turn the final values into a probability distribution."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 23,
+        "title": "Random weights assign signed contributions to connections",
+        "kind": "concept",
+        "concepts": [
+          "connection-specific weights",
+          "weighted incoming contributions",
+          "positive and negative influence",
+          "weight magnitude",
+          "random initialization versus learning",
+          "same inputs combined differently"
+        ],
+        "teaching": [
+          "A **weight** controls how an incoming value contributes to a receiving neuron. Each incoming value is scaled by its own connection weight, and the resulting contributions are added. The same F1 and F2 measurements can therefore produce different internal values when different neurons use different weights.",
+          "The sign and size of a weight have different roles. For a given incoming value, changing the sign reverses the direction of its contribution. Changing its magnitude changes how strongly that connection contributes. Positive and negative contributions can reinforce or oppose one another in the receiving neuron’s **weighted sum**, so one strong connection does not determine the result by itself.",
+          "The network begins with **randomly initialized weights**. Their displayed values describe a starting configuration of connections, rather than knowledge acquired from vowel examples. A random weight attached to an output labelled /dean/ is not evidence that the network has learned to recognize dean.",
+          "The distinction between an input and a parameter matters. The formant measurements describe the example currently being presented. The weights describe how the network processes that example and other examples. A forward pass uses the current weights to combine the inputs; learning would change the weights so that the combinations become more useful for the recognition task."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant. All forty labels were mapped to their exact connections using matching edge-N and weight-N names and endpoint coordinates in slide23.xml. Source-node lists provide the top-to-bottom mapping.",
+          "limitations": []
+        }
+      },
+      {
+        "page": 24,
+        "title": "Forward flow and an illustrative output distribution",
+        "kind": "concept",
+        "concepts": [
+          "forward inference",
+          "layer-by-layer weighted information flow",
+          "learning changes weights",
+          "ordered categorical outputs",
+          "probability validity",
+          "illustrative output versus computed output",
+          "prediction versus known target"
+        ],
+        "teaching": [
+          "A **forward pass** carries the current formant measurements through the network using its current weights. The first layer combines the inputs, the next layer combines those results, and the process continues to the five output units. This is **inference**, or producing an output with the model as it currently stands. Learning is different because it changes the weights used in that process.",
+          "The illustrated p(word) bars assign 0.5 to /done/, 0.2 to /Dan/, and 0.1 to each of the other three candidates. The largest bar expresses the strongest support in that distribution. The smaller bars preserve alternative possibilities instead of stating that every other candidate is impossible.",
+          "For values to represent probabilities across these alternatives, they must be nonnegative and add to one. The illustrated bars have those properties. The purely linear code, however, does not supply a rule that ensures them for its outputs. The probability bars illustrate the intended kind of categorical result; they are not a demonstrated calculation from the displayed random weights.",
+          "A predicted label and a **known target** also have different roles. The largest output indicates what the model favors. Deciding whether that choice is correct requires knowing which category the input example actually belongs to. The reaction symbol does not supply that target, so the favored candidate alone cannot establish a measured success or error."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant.",
+          "limitations": [
+            "The intended layer order is supported by the diagram and notes. Temporal playback of the claimed native animation cannot be verified because its timing information is absent."
+          ]
+        }
+      },
+      {
+        "page": 25,
+        "title": "Declare the layer sequence in PyTorch",
+        "kind": "concept",
+        "concepts": [
+          "PyTorch neural-network library",
+          "Sequential information flow",
+          "Linear input and output interfaces",
+          "weighted sums without bias offsets",
+          "parameters remain trainable",
+          "architecture declaration versus execution and training"
+        ],
+        "teaching": [
+          "The PyTorch code turns the drawn layer sequence into a model definition. Importing torch makes the library available, and importing torch.nn as nn gives a shorter name for its neural-network building blocks. The variable net stores the sequence assembled from those blocks.",
+          "**nn.Sequential** specifies the order in which the layers pass their results onward. Each **nn.Linear** layer takes a fixed number of incoming values and produces a fixed number of outgoing weighted sums. Its first argument names the input width and its second names the output width. The output width of one layer matches the input width of the next so that the values can pass from stage to stage.",
+          "The sequence starts with the two formant inputs, passes through the three hidden layers, and ends with five candidate outputs. Each receiving unit has a separate weight for each incoming value. The declaration therefore expresses both which stages are connected and how many values each stage exchanges, without requiring a numerical calculation to understand the flow.",
+          "**bias=False** removes a separately added offset from the receiving units. It does not remove their connection weights or prevent those weights from changing during learning. With no activation functions inserted between the Linear layers, the displayed sequence remains purely linear.",
+          "Defining the architecture establishes how values will be processed. Running a formant example through it would be a forward pass, while learning would require examples and a procedure that changes the weights. The supplied declaration stops at defining the model, so it does not itself demonstrate a trained recognizer or compute the illustrated probability bars."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Version 2 prose was compared with the original page, native text and speaker notes and with the completed Version 1 source review. Rendered source page, native text, OCR and speaker notes inspected and compared. All linked original PNGs inspected individually at original resolution. Native network edge endpoints and matching weight-label names checked directly in the PowerPoint XML where relevant.",
+          "limitations": []
+        }
+      }
+    ]
+  }
+}

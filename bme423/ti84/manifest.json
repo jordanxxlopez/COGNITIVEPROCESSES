@@ -1,0 +1,823 @@
+{
+  "format": "TI-BASIC / .8xp",
+  "compatibility": "TI-84 Plus CE / TI-84 Plus CE Python (TI-BASIC)",
+  "programCount": 37,
+  "priorityMethod": "Transparent evidence-score ranking; not a fitted predictor or question probability. Transcript explicit emphasis: 5; review-page inclusion: 3; HW1 method: 2; HW2 method: 3. Explicit exclusions override to zero. A low score does not remove included course content.",
+  "programs": [
+    {
+      "name": "BMDESC",
+      "title": "Mean, variance, SD and SEM",
+      "topics": [
+        "summary"
+      ],
+      "use": "A list of numerical observations; both sample and whole-population results.",
+      "priority": 5,
+      "example": [
+        5,
+        2,
+        4,
+        4,
+        6,
+        9
+      ],
+      "bytes": 1665,
+      "screens": 4,
+      "download": "programs/BMDESC.8xp",
+      "source": "source/BMDESC.txt",
+      "sha256": "cb58f6590c8301fd40297c02a421599b1306d2b0b8c688f3888dc00de75c514b"
+    },
+    {
+      "name": "BMPCTL",
+      "title": "Percentiles, median, IQR and range",
+      "topics": [
+        "percentile",
+        "plots"
+      ],
+      "use": "An unsorted sample and a percentile number between 0 and 100.",
+      "priority": 5,
+      "example": [
+        5,
+        3,
+        7,
+        8,
+        9,
+        14,
+        30
+      ],
+      "bytes": 2112,
+      "screens": 4,
+      "download": "programs/BMPCTL.8xp",
+      "source": "source/BMPCTL.txt",
+      "sha256": "3a2f18b3ff22ad695ccb1b0de0c0c96df9eb3f4669536b93ec0a3a97a57876e9"
+    },
+    {
+      "name": "BMDISC",
+      "title": "Discrete probability table",
+      "topics": [
+        "pmf",
+        "dcdf",
+        "expect",
+        "variance"
+      ],
+      "use": "Possible values and their actual probabilities; validates the PMF.",
+      "priority": 10,
+      "example": [
+        3,
+        0,
+        0.2,
+        1,
+        0.5,
+        2,
+        0.3,
+        1.5
+      ],
+      "bytes": 2085,
+      "screens": 4,
+      "download": "programs/BMDISC.8xp",
+      "source": "source/BMDISC.txt",
+      "sha256": "c76b5c49fcb3cbaa9d23dc8e6120f65e321f131c93d875e024651228fc7e556e"
+    },
+    {
+      "name": "BMMASS",
+      "title": "Missing PMF constant",
+      "topics": [
+        "pmf",
+        "expect"
+      ],
+      "use": "Probabilities are c times supplied nonnegative weights.",
+      "priority": 10,
+      "example": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "bytes": 959,
+      "screens": 2,
+      "download": "programs/BMMASS.8xp",
+      "source": "source/BMMASS.txt",
+      "sha256": "15ab2b1b76a9497ddf0279ebf1797a7d1dc3504a98222f2b0bced2597d041008"
+    },
+    {
+      "name": "BMEVENT",
+      "title": "Independent or conditional sequence",
+      "topics": [
+        "random",
+        "independent"
+      ],
+      "use": "Two consecutive events; enter the second probability after the first event.",
+      "priority": 0,
+      "example": [
+        0.07692307692307693,
+        0.058823529411764705
+      ],
+      "bytes": 490,
+      "screens": 1,
+      "download": "programs/BMEVENT.8xp",
+      "source": "source/BMEVENT.txt",
+      "sha256": "18ebe065bf01e35ae7b1b526536e5858216f71dcd8141d1c801b3061d89cd8b3"
+    },
+    {
+      "name": "BMLINE",
+      "title": "Linear combinations of independent variables",
+      "topics": [
+        "linear"
+      ],
+      "use": "Z=aX+bY+c with independent X and Y; inputs are means and variances.",
+      "priority": 0,
+      "example": [
+        2,
+        -3,
+        0,
+        10,
+        4,
+        9,
+        1
+      ],
+      "bytes": 1190,
+      "screens": 3,
+      "download": "programs/BMLINE.8xp",
+      "source": "source/BMLINE.txt",
+      "sha256": "976ee989021f516794636a394b30646c9eba7f038707004a0ce48af31b773d6f"
+    },
+    {
+      "name": "BMSHIFT",
+      "title": "Expected value after a shift or rescaling",
+      "topics": [
+        "linear",
+        "expect",
+        "cexpect"
+      ],
+      "use": "Y=a+bX: finds its mean first; variance and SD are optional on ENTER.",
+      "priority": 10,
+      "example": [
+        -26,
+        1,
+        95,
+        75.69
+      ],
+      "bytes": 945,
+      "screens": 2,
+      "download": "programs/BMSHIFT.8xp",
+      "source": "source/BMSHIFT.txt",
+      "sha256": "12466481eabd6fdb5c01efa1a482434762e0fde09dad79cfaa59e8bc0ef06f18"
+    },
+    {
+      "name": "BMUNIF",
+      "title": "Uniform probability and moments",
+      "topics": [
+        "uniform",
+        "density",
+        "cexpect"
+      ],
+      "use": "Uniform(a,b); choose an interval inside the support.",
+      "priority": 10,
+      "example": [
+        2,
+        8,
+        3,
+        5
+      ],
+      "bytes": 1402,
+      "screens": 3,
+      "download": "programs/BMUNIF.8xp",
+      "source": "source/BMUNIF.txt",
+      "sha256": "a1b57d6457aeaa123289ce279a5c7bfe95f1cb9059e2f5d5331b5a9bf091e495"
+    },
+    {
+      "name": "BMCONST",
+      "title": "Normalize a linear density",
+      "topics": [
+        "density",
+        "integrate"
+      ],
+      "use": "f(x)=c(a+bx) on a known support [L,U]; finds c.",
+      "priority": 10,
+      "example": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "bytes": 1054,
+      "screens": 2,
+      "download": "programs/BMCONST.8xp",
+      "source": "source/BMCONST.txt",
+      "sha256": "b3da2c6d4fcac510a3d86cbf5f1a2698ee5e0ad07aa46dbb9ebe390c3af42725"
+    },
+    {
+      "name": "BMEND",
+      "title": "Unknown upper density endpoint",
+      "topics": [
+        "integrate",
+        "density"
+      ],
+      "use": "f(x)=a+bx on [0,c], with a,b nonnegative; finds positive c.",
+      "priority": 10,
+      "example": [
+        0.1,
+        1
+      ],
+      "bytes": 854,
+      "screens": 2,
+      "download": "programs/BMEND.8xp",
+      "source": "source/BMEND.txt",
+      "sha256": "3618bb2a3ddf43f525e2ad8f558acb0ced46d7caf16fcddc7930603f3ecf7468"
+    },
+    {
+      "name": "BMPDF",
+      "title": "Linear PDF, CDF, interval and moments",
+      "topics": [
+        "density",
+        "ccdf",
+        "cexpect"
+      ],
+      "use": "A valid f(x)=a+bx on [L,U]; CDF cutoff, interval, moments and median.",
+      "priority": 10,
+      "example": [
+        0,
+        0.5,
+        0,
+        2,
+        1,
+        1.5,
+        2
+      ],
+      "bytes": 2221,
+      "screens": 4,
+      "download": "programs/BMPDF.8xp",
+      "source": "source/BMPDF.txt",
+      "sha256": "3f08dea66ce4409beea332af1755bb91ab817ddfb330757c35c8427a504c8746"
+    },
+    {
+      "name": "BMPIECE",
+      "title": "Two-piece linear density",
+      "topics": [
+        "density",
+        "ccdf",
+        "cexpect"
+      ],
+      "use": "Two linear pieces meeting at a split, e.g. x then 2-x.",
+      "priority": 10,
+      "example": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        -1,
+        2,
+        1.5,
+        0.5,
+        1.5
+      ],
+      "bytes": 3707,
+      "screens": 6,
+      "download": "programs/BMPIECE.8xp",
+      "source": "source/BMPIECE.txt",
+      "sha256": "3eaab0f6502c48bc04eb9ea6b09750e862accb4809aa74da9400cf06b9c32c03"
+    },
+    {
+      "name": "BMNORM",
+      "title": "Normal probabilities",
+      "topics": [
+        "normal",
+        "normalprob"
+      ],
+      "use": "Individual Normal measurements: left, between and right probabilities.",
+      "priority": 10,
+      "example": [
+        95,
+        8.7,
+        85,
+        115
+      ],
+      "bytes": 1439,
+      "screens": 3,
+      "download": "programs/BMNORM.8xp",
+      "source": "source/BMNORM.txt",
+      "sha256": "1f16559640ce5e07e588bd6d5e1febb567403d3938e2c9b702f528f0a1c8acd3"
+    },
+    {
+      "name": "BMINVN",
+      "title": "Normal percentile or cutoff",
+      "topics": [
+        "normalquant"
+      ],
+      "use": "Normal mean, SD and LEFT-tail probability p; returns the measurement cutoff.",
+      "priority": 7,
+      "example": [
+        95,
+        8.7,
+        0.975
+      ],
+      "bytes": 907,
+      "screens": 2,
+      "download": "programs/BMINVN.8xp",
+      "source": "source/BMINVN.txt",
+      "sha256": "ddd423d15685eafb0a4e7ef73d2bda49eba1dacaacfedca8f58795f6a4a4ee9e"
+    },
+    {
+      "name": "BMSE",
+      "title": "Probability for a sample mean",
+      "topics": [
+        "sampling",
+        "normalprob"
+      ],
+      "use": "Known individual population SD; probabilities for the average of n independent observations.",
+      "priority": 10,
+      "example": [
+        4,
+        1.5,
+        50,
+        3.5,
+        3.8
+      ],
+      "bytes": 1483,
+      "screens": 3,
+      "download": "programs/BMSE.8xp",
+      "source": "source/BMSE.txt",
+      "sha256": "a58508b9a35874fc6a86c75a88b1254ab7b4b6dc0d50d6eda51ea466260767bc"
+    },
+    {
+      "name": "BMSECH",
+      "title": "Change SEM when sample size changes",
+      "topics": [
+        "estimators"
+      ],
+      "use": "Same individual SD, a known old SEM and two sample sizes.",
+      "priority": 3,
+      "example": [
+        3,
+        16,
+        64
+      ],
+      "bytes": 615,
+      "screens": 1,
+      "download": "programs/BMSECH.8xp",
+      "source": "source/BMSECH.txt",
+      "sha256": "8af08775d44b87c50a9e3a20fa65bf988ecbf426ef88ca8b4e92d427c092e080"
+    },
+    {
+      "name": "BMONE",
+      "title": "One-sample t test",
+      "topics": [
+        "onet"
+      ],
+      "use": "One Normal sample compared with a fixed population reference; two-sided.",
+      "priority": 11,
+      "example": [
+        76.8,
+        4.15,
+        5,
+        72,
+        0.05
+      ],
+      "bytes": 2110,
+      "screens": 4,
+      "download": "programs/BMONE.8xp",
+      "source": "source/BMONE.txt",
+      "sha256": "1716115566b88ea49b448f278a9b93d49c8c2da571d8e6e6e9f8cf415e367ea8"
+    },
+    {
+      "name": "BMTWO",
+      "title": "Pooled independent two-sample t",
+      "topics": [
+        "pooledt"
+      ],
+      "use": "Two independent Normal groups, assumed equal population variances; sizes can differ.",
+      "priority": 11,
+      "example": [
+        20,
+        3,
+        12,
+        24,
+        4,
+        16,
+        0.05
+      ],
+      "bytes": 2780,
+      "screens": 5,
+      "download": "programs/BMTWO.8xp",
+      "source": "source/BMTWO.txt",
+      "sha256": "ae99b2f54834ff3e421ac2a4a5346479a7ad816c87686c2a0f847ea193e68761"
+    },
+    {
+      "name": "BMANOVA",
+      "title": "Balanced one-way ANOVA",
+      "topics": [
+        "anova"
+      ],
+      "use": "Equal group sizes, supplied group means and SDs; independent Normal groups and equal variances.",
+      "priority": 10,
+      "example": [
+        3,
+        12,
+        1188,
+        189,
+        1412,
+        217,
+        1363,
+        191,
+        0.05
+      ],
+      "bytes": 2630,
+      "screens": 5,
+      "download": "programs/BMANOVA.8xp",
+      "source": "source/BMANOVA.txt",
+      "sha256": "4371883e67f3bde11f5d3b8d34f80308a66797edc525c96a192d7bcb05d57d12"
+    },
+    {
+      "name": "BMPAIR",
+      "title": "ANOVA pair with Bonferroni",
+      "topics": [
+        "posthoc",
+        "bonferroni"
+      ],
+      "use": "A requested mean pair after ANOVA; retain its within variance and residual df.",
+      "priority": 11,
+      "example": [
+        64.8,
+        43.3,
+        70,
+        70,
+        239.9,
+        207,
+        0.05,
+        3
+      ],
+      "bytes": 2965,
+      "screens": 5,
+      "download": "programs/BMPAIR.8xp",
+      "source": "source/BMPAIR.txt",
+      "sha256": "e72523242b7a9bd5ad1dd701f325a8b59515bb939a4afc5ebda43093af4c6237"
+    },
+    {
+      "name": "BMBONF",
+      "title": "Bonferroni from a supplied statistic",
+      "topics": [
+        "bonferroni",
+        "rcode"
+      ],
+      "use": "A supplied t or chi-square statistic; count only the requested comparisons.",
+      "priority": 13,
+      "example": [
+        0.05,
+        3,
+        1,
+        3.162277660168379,
+        12
+      ],
+      "bytes": 2082,
+      "screens": 3,
+      "download": "programs/BMBONF.8xp",
+      "source": "source/BMBONF.txt",
+      "sha256": "972fdcf672fefc3c03cda913ad95890e41be6f719e9f33de8069ee7fc48908b6"
+    },
+    {
+      "name": "BMHOLM",
+      "title": "Holm ordered comparisons",
+      "topics": [
+        "holm",
+        "rcode"
+      ],
+      "use": "Enter p values, t statistics or chi-square statistics and a numeric ID for each requested pair.",
+      "priority": 13,
+      "example": [
+        2,
+        5,
+        46,
+        0.05,
+        12,
+        2.1,
+        13,
+        2.9,
+        14,
+        2.2,
+        15,
+        2.3,
+        16,
+        3.3
+      ],
+      "bytes": 1536,
+      "screens": 2,
+      "download": "programs/BMHOLM.8xp",
+      "source": "source/BMHOLM.txt",
+      "sha256": "243d28394f7712f185e30f8137a5dacf09f930385e91bb971539453cfdae7196"
+    },
+    {
+      "name": "BMBIN",
+      "title": "Binary proportion and uncertainty",
+      "topics": [
+        "binary"
+      ],
+      "use": "Event count and group total; distinguishes individual binary SD from proportion SE.",
+      "priority": 8,
+      "example": [
+        8,
+        61
+      ],
+      "bytes": 886,
+      "screens": 2,
+      "download": "programs/BMBIN.8xp",
+      "source": "source/BMBIN.txt",
+      "sha256": "b2f34fffd5a25ab036cf997d76b6b9c8cd981a91c2bd26f8f8a4b93e828674bd"
+    },
+    {
+      "name": "BMZ",
+      "title": "Yates-corrected two proportions",
+      "topics": [
+        "zprop",
+        "yates"
+      ],
+      "use": "Two independent binary groups; always applies the course correction.",
+      "priority": 11,
+      "example": [
+        18,
+        25,
+        6,
+        19,
+        0.05
+      ],
+      "bytes": 2518,
+      "screens": 5,
+      "download": "programs/BMZ.8xp",
+      "source": "source/BMZ.txt",
+      "sha256": "1100d1db35c6ba8dcecab9548644c3b245a007abc4577b8577278065f4fc909e"
+    },
+    {
+      "name": "BMCHI2",
+      "title": "Yates-corrected 2 by 2 table",
+      "topics": [
+        "chi",
+        "contingency",
+        "yates"
+      ],
+      "use": "Rows are two groups; columns are event and no event; half-count correction included.",
+      "priority": 11,
+      "example": [
+        18,
+        7,
+        6,
+        13,
+        0.05
+      ],
+      "bytes": 2040,
+      "screens": 3,
+      "download": "programs/BMCHI2.8xp",
+      "source": "source/BMCHI2.txt",
+      "sha256": "b79b43c501c92226a80a9fbab782f9f38925220bdb4dd8a51781b652b150b799"
+    },
+    {
+      "name": "BMCHIR",
+      "title": "Larger contingency table",
+      "topics": [
+        "chi",
+        "contingency"
+      ],
+      "use": "A table larger than 2 by 2; ordinary uncorrected cell contributions.",
+      "priority": 11,
+      "example": [
+        3,
+        2,
+        36,
+        131,
+        41,
+        132,
+        75,
+        104,
+        0.05
+      ],
+      "bytes": 2673,
+      "screens": 4,
+      "download": "programs/BMCHIR.8xp",
+      "source": "source/BMCHIR.txt",
+      "sha256": "964075db12546f2940c88426fc8a9590bda6f27a8e4429017e8a91e76456b3b1"
+    },
+    {
+      "name": "BMGOF",
+      "title": "Chi-square goodness of fit",
+      "topics": [
+        "gof"
+      ],
+      "use": "One observed count list and fixed target probabilities; no fitted parameters.",
+      "priority": 8,
+      "example": [
+        3,
+        255,
+        0.6,
+        125,
+        0.25,
+        90,
+        0.15,
+        0.05
+      ],
+      "bytes": 1984,
+      "screens": 3,
+      "download": "programs/BMGOF.8xp",
+      "source": "source/BMGOF.txt",
+      "sha256": "5cd022e179f1ef15b44870c0acd5871f0ce9e1637a322a46c2755addb3781f25"
+    },
+    {
+      "name": "BMRISK",
+      "title": "RR, ARR, RRR, NNT and NNH from counts",
+      "topics": [
+        "risk",
+        "nnt"
+      ],
+      "use": "Prospective treatment/control groups; enter the same adverse event in both.",
+      "priority": 11,
+      "example": [
+        6,
+        19,
+        18,
+        25
+      ],
+      "bytes": 2675,
+      "screens": 6,
+      "download": "programs/BMRISK.8xp",
+      "source": "source/BMRISK.txt",
+      "sha256": "a35fd5dfb6607d668aac4f970490f5a2c4783349bf07486272163211f3a4ec28"
+    },
+    {
+      "name": "BMNNT",
+      "title": "NNT/NNH from given event risks",
+      "topics": [
+        "nnt",
+        "risk"
+      ],
+      "use": "Adverse-event risks as decimals, e.g. .08; includes absolute and relative changes.",
+      "priority": 11,
+      "example": [
+        0.08,
+        0.03
+      ],
+      "bytes": 2499,
+      "screens": 6,
+      "download": "programs/BMNNT.8xp",
+      "source": "source/BMNNT.txt",
+      "sha256": "df36a1af96a00218ecce9e4c32202723e2fe43aa3480e3ad1ef16f440fc256dc"
+    },
+    {
+      "name": "BMOR",
+      "title": "Odds ratio from a labeled table",
+      "topics": [
+        "odds"
+      ],
+      "use": "Rows are exposed/unexposed; columns are outcome/no outcome, or use the same labeled case-control orientation.",
+      "priority": 11,
+      "example": [
+        20,
+        10,
+        10,
+        20
+      ],
+      "bytes": 1109,
+      "screens": 2,
+      "download": "programs/BMOR.8xp",
+      "source": "source/BMOR.txt",
+      "sha256": "6118b723333f5a9beeae1f163352f9c0d2db79b4230817f7390b2675c3fe5b4a"
+    },
+    {
+      "name": "BMOUTPUT",
+      "title": "Use a supplied test statistic or p value",
+      "topics": [
+        "rcode",
+        "hypothesis"
+      ],
+      "use": "Read the supplied output first; enter its p value, t, F or chi-square statistic.",
+      "priority": 13,
+      "example": [
+        3,
+        5.832,
+        2,
+        19,
+        0.05
+      ],
+      "bytes": 1221,
+      "screens": 2,
+      "download": "programs/BMOUTPUT.8xp",
+      "source": "source/BMOUTPUT.txt",
+      "sha256": "33b27ec37badc4626dd6a6a65c129bdcafd29b13da869157ce1cb267a89b10ba"
+    },
+    {
+      "name": "BMCOIN",
+      "title": "Exactly k heads in fair coin tosses",
+      "topics": [
+        "random"
+      ],
+      "use": "Independent fair tosses; counts all sequences and the favorable combinations.",
+      "priority": 0,
+      "example": [
+        3,
+        2
+      ],
+      "bytes": 1071,
+      "screens": 2,
+      "download": "programs/BMCOIN.8xp",
+      "source": "source/BMCOIN.txt",
+      "sha256": "662709e74bdcee2675d9953a38bf387e7d86de8327924046a79df5128eff7860"
+    },
+    {
+      "name": "BMDCDF",
+      "title": "Discrete interval with endpoint choices",
+      "topics": [
+        "dcdf",
+        "pmf"
+      ],
+      "use": "A probability table and an interval; specify whether each endpoint is included.",
+      "priority": 10,
+      "example": [
+        4,
+        -1,
+        0.55,
+        2,
+        0.15,
+        3,
+        0.1,
+        7,
+        0.2,
+        2,
+        7,
+        1,
+        0
+      ],
+      "bytes": 1801,
+      "screens": 3,
+      "download": "programs/BMDCDF.8xp",
+      "source": "source/BMDCDF.txt",
+      "sha256": "7dfefd0884522d610175fb6f5192bd9e8d6e8445118715c325e7d006a5ea560e"
+    },
+    {
+      "name": "BMSEVAR",
+      "title": "Uncertainty of a sample variance",
+      "topics": [
+        "estimators",
+        "summary"
+      ],
+      "use": "Normal setting: estimated SE of s squared, alongside SD and SEM.",
+      "priority": 5,
+      "example": [
+        4,
+        16
+      ],
+      "bytes": 912,
+      "screens": 2,
+      "download": "programs/BMSEVAR.8xp",
+      "source": "source/BMSEVAR.txt",
+      "sha256": "0ed206cc33a521a2b37eeb4ea29755260e4f283793e302e30340518f91fd7bc2"
+    },
+    {
+      "name": "BMSEM",
+      "title": "SEM from a given SD and n",
+      "topics": [
+        "sampling",
+        "summary"
+      ],
+      "use": "Individual SD and sample size; no mean or probability cutoffs required.",
+      "priority": 8,
+      "example": [
+        5,
+        10
+      ],
+      "bytes": 640,
+      "screens": 1,
+      "download": "programs/BMSEM.8xp",
+      "source": "source/BMSEM.txt",
+      "sha256": "b4f5d7ffee9078e80c61b52bde902574f0d105d59175973905f331ddbceb2d7c"
+    },
+    {
+      "name": "BMCRIT",
+      "title": "Critical values from tail areas",
+      "topics": [
+        "distributions",
+        "hypothesis"
+      ],
+      "use": "Positive two-sided z/t cutoff, or upper-tail F/chi-square cutoff.",
+      "priority": 5,
+      "example": [
+        2,
+        4,
+        0.05
+      ],
+      "bytes": 1345,
+      "screens": 1,
+      "download": "programs/BMCRIT.8xp",
+      "source": "source/BMCRIT.txt",
+      "sha256": "d768c2033d7ae4e6f0e43f50a2477328f3855f068a7583eb59e80bf8e27e4714"
+    },
+    {
+      "name": "BME423",
+      "title": "Program chooser",
+      "topics": [],
+      "use": "Optional menu; download the calculation files you intend to run as well.",
+      "priority": 0,
+      "example": [],
+      "bytes": 1545,
+      "screens": 0,
+      "download": "programs/BME423.8xp",
+      "source": "source/BME423.txt",
+      "sha256": "c43df39e22235de4e711be4e49eb5cdef7f266a69a4ee6fc151de6316d9e0efa"
+    }
+  ]
+}

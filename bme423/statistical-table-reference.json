@@ -1,0 +1,128 @@
+{
+  "files": [
+    {
+      "id": "t_table",
+      "title": "Critical values of t · two-tailed",
+      "path": "sources/tables/t_table.pdf",
+      "sha256": "5d4f04d50dd88767f865061a545c81c1a9d52bd36c305de7150b73392f56a54f"
+    },
+    {
+      "id": "F_table",
+      "title": "F critical values · upper tail",
+      "path": "sources/tables/F_table.pdf",
+      "sha256": "32f731da2d7bb4e6576395a5271d4303f06cd84037b8793769dc52c07f983bb7"
+    },
+    {
+      "id": "z_table_NormalDist",
+      "title": "Standard Normal cumulative distribution",
+      "path": "sources/tables/z_table_NormalDist.pdf",
+      "sha256": "7233a69e4133358f1f034abe4f447ef6e0e0c0dd958ef44a16daf1b75ad50770"
+    },
+    {
+      "id": "Chi_Squared_Table1",
+      "title": "Chi-square critical values · landscape",
+      "path": "sources/tables/Chi_Squared_Table1.pdf",
+      "sha256": "de022efffa1fc7de5d98b8b9e5e4bdd05df63fc7dce77487040c11c9cab3f04e"
+    },
+    {
+      "id": "Chi_Squared_Table2",
+      "title": "Chi-square critical values · upright",
+      "path": "sources/tables/Chi_Squared_Table2.pdf",
+      "sha256": "00b66e7e550f7e938bd49e976ee4f730bddb5b9b71b9b9f5330a77d0352f3acd"
+    },
+    {
+      "id": "Friedman_ChiSquared_Table",
+      "title": "Friedman chi-square critical values",
+      "path": "sources/tables/Friedman_ChiSquared_Table.pdf",
+      "sha256": "50bea319f1256c61b325e26dfb5d7abe536e5501f8f65424ccef0f80290925ce"
+    },
+    {
+      "id": "WilcoxonW_Table",
+      "title": "Wilcoxon W critical values · two-tailed",
+      "path": "sources/tables/WilcoxonW_Table.pdf",
+      "sha256": "d5c6524e1d25014c51046bfe247a7ba77b72d125ef510aedc9a7e59ad944db19"
+    },
+    {
+      "id": "MannWhitney_RankSumT_Table",
+      "title": "Mann–Whitney rank-sum T critical values · two-tailed",
+      "path": "sources/tables/MannWhitney_RankSumT_Table.pdf",
+      "sha256": "2271f705ddbbacefefa6e50faed443f46b37aabd58e29637087c610339cb8533"
+    }
+  ],
+  "t": {
+    "path": "sources/tables/t_table.pdf",
+    "heading": "Critical Values of t (Two-Tailed)",
+    "columns": "Combined probability in both tails",
+    "rows": {
+      "9": {
+        "0.05": 2.262
+      },
+      "11": {
+        "0.05": 2.201
+      },
+      "15": {
+        "0.05": 2.131
+      },
+      "18": {
+        "0.05": 2.101
+      },
+      "19": {
+        "0.01": 2.861
+      },
+      "24": {
+        "0.05": 2.064
+      },
+      "26": {
+        "0.05": 2.056
+      },
+      "30": {
+        "0.05": 2.042
+      },
+      "34": {
+        "0.05": 2.032
+      },
+      "42": {
+        "0.05": 2.018
+      },
+      "200": {
+        "0.05": 1.972
+      },
+      "infinity": {
+        "0.05": 1.96,
+        "0.01": 2.5758
+      }
+    },
+    "firstPageMaxRow": 46,
+    "largeDfRule": "The infinite-df row is a declared Normal approximation for the 1698-df example, not an exact finite-df row. The uploaded lecture/review does not specify a mandatory missing-row convention. A conservative finite-row comparison at df 200 is also shown."
+  },
+  "zExamples": [
+    {
+      "z": 0,
+      "cdf": 0.5
+    },
+    {
+      "z": 1,
+      "cdf": 0.8413
+    },
+    {
+      "z": 1.96,
+      "cdf": 0.975
+    }
+  ],
+  "fExample": {
+    "numerator": 2,
+    "denominator": 42,
+    "alpha": 0.05,
+    "value": 3.22,
+    "page": 2,
+    "style": "lightface"
+  },
+  "chiExample": {
+    "df": 2,
+    "upperTail": 0.05,
+    "value": 5.991,
+    "path": "sources/tables/Chi_Squared_Table2.pdf",
+    "page": 1
+  },
+  "verifiedUploads": "All eight current uploads match the repository PDFs byte for byte."
+}

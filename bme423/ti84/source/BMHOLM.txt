@@ -1,0 +1,164 @@
+ClrHome
+Float
+Normal
+Real
+Input "1 P 2 T 3 CHI",L
+If not(L≥1 and L≤3 and L=int(L))
+Then
+ClrHome
+Disp "CHECK 1 P 2 T 3 CHI"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "HOW MANY PAIRS",K
+If not(K≥1 and K=int(K) and K≤100)
+Then
+ClrHome
+Disp "CHECK HOW MANY PAIRS"
+Disp "CHECK INPUTS"
+Stop
+End
+If L>1
+Then
+Input "COMMON DF",D
+If not(D≥1 and D=int(D))
+Then
+ClrHome
+Disp "CHECK COMMON DF"
+Disp "CHECK INPUTS"
+Stop
+End
+End
+Input "ALPHA .05 ETC",A
+If not(A>0 and A<1)
+Then
+ClrHome
+Disp "CHECK ALPHA .05 ETC"
+Disp "CHECK INPUTS"
+Stop
+End
+K→dim(ʟBMP)
+K→dim(ʟBMID)
+For(I,1,K)
+ClrHome
+Disp "PAIR",I
+Input "PAIR ID EG 13",B
+If not(B≥0 and B=int(B))
+Then
+ClrHome
+Disp "CHECK PAIR ID EG 13"
+Disp "CHECK INPUTS"
+Stop
+End
+Input "P OR STAT",T
+If L=1
+Then
+If not(T≥0 and T≤1)
+Then
+ClrHome
+Disp "P MUST BE 0..1"
+Disp "CHECK INPUTS"
+Stop
+End
+T→P
+End
+If L=2
+min(1,2*tcdf(abs(T),1ᴇ99,D))→P
+If L=3
+Then
+If not(T≥0)
+Then
+ClrHome
+Disp "CHISQ NEEDS >=0"
+Disp "CHECK INPUTS"
+Stop
+End
+χ²cdf(T,1ᴇ99,D)→P
+End
+P→ʟBMP(I)
+B→ʟBMID(I)
+End
+SortA(ʟBMP,ʟBMID)
+0→R
+1→F
+K→dim(ʟBMR)
+For(I,1,K)
+0→ʟBMR(I)
+If F=1
+Then
+If ʟBMP(I)<A/(K-I+1)
+Then
+1→ʟBMR(I)
+R+1→R
+Else
+0→F
+End
+End
+End
+ClrHome
+Output(1,1,"HOLM RESULTS")
+R→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"REJECT=")
+Output(2,8,θ)
+K→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"PAIRS=")
+Output(3,7,θ)
+Output(4,1,"SORT SMALLEST P")
+Output(5,1,"A/(K-RANK+1)")
+Output(6,1,"STOP AT 1ST FAIL")
+Output(7,1,"IDS KEEP PAIRS")
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+For(I,1,K)
+ClrHome
+Output(1,1,"HOLM STEP")
+I→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(2,1,"RANK=")
+Output(2,6,θ)
+ʟBMID(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(3,1,"PAIRID=")
+Output(3,8,θ)
+ʟBMP(I)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(4,1,"P=")
+Output(4,3,θ)
+A/(K-I+1)→θ
+If θ≠0
+round(θ/10^int(log(abs(θ))),5)*10^int(log(abs(θ)))→θ
+Output(5,1,"LEVEL=")
+Output(5,7,θ)
+If ʟBMR(I)=1
+Then
+Output(6,1,"REJECT:CONTINUE")
+Else
+Output(6,1,"NO REJECT:STOP")
+End
+If I>R+1
+Then
+Output(7,1,"STOPPED EARLIER")
+Else
+Output(7,1,"P<LEVEL TO PASS")
+End
+Output(10,1,"ENTER>NEXT CLR>X")
+0→θ
+Repeat θ=105 or θ=45
+getKey→θ
+End
+If θ=45
+Stop
+End
+Stop

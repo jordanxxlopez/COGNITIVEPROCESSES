@@ -1,0 +1,1680 @@
+{
+  "lectureId": "lecture16",
+  "questions": [
+    {
+      "id": "v2-l16-mcq-001",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What is one point in the F1–F2 vowel plot?",
+      "answer": "One recorded vowel token, placed by its F1 and F2 and colored by its correct word.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        }
+      ],
+      "topic": "Reading the vowel scatterplot",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The probability the network assigns to one word.",
+          "feedback": "The axes are F1 and F2 in hertz. Probabilities are network outputs, not plotted data.",
+          "id": "a"
+        },
+        {
+          "text": "One recorded vowel token, placed by its F1 and F2 and colored by its correct word.",
+          "feedback": "One recorded vowel token, placed by its F1 and F2 and colored by its correct word.",
+          "id": "b"
+        },
+        {
+          "text": "One hidden neuron’s activation after training.",
+          "feedback": "The plot shows measured formants of recordings. Hidden activations belong to the network, not to the data.",
+          "id": "c"
+        },
+        {
+          "text": "The average of all 105 tokens of one vowel.",
+          "feedback": "The plot shows every token separately, which is why each vowel forms a cloud of dots.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l16-mcq-002",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "In the scatterplot, which category is set apart by a high F2?",
+      "answer": "i (dean).",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        }
+      ],
+      "topic": "Separated vowel",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "i (dean).",
+          "feedback": "i (dean).",
+          "id": "a"
+        },
+        {
+          "text": "u (dune).",
+          "feedback": "The u tokens sit low in F2, around 1300 Hz, among the overlapping vowels.",
+          "id": "b"
+        },
+        {
+          "text": "schwa (done).",
+          "feedback": "Schwa tokens fall in the crowded middle region with u and a.",
+          "id": "c"
+        },
+        {
+          "text": "a (Don).",
+          "feedback": "The a tokens have the lowest F2 on average, near 1200 Hz.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l16-mcq-003",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Which three categories crowd into the same F1–F2 region?",
+      "answer": "u (dune), a (Don) and schwa (done).",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        }
+      ],
+      "topic": "Overlapping vowels",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "u (dune), a (Don) and schwa (done).",
+          "feedback": "u (dune), a (Don) and schwa (done).",
+          "id": "a"
+        },
+        {
+          "text": "No vowels overlap, because each has its own color.",
+          "feedback": "Color shows the true label, not separation. Many differently colored dots share the same region.",
+          "id": "b"
+        },
+        {
+          "text": "i (dean), u (dune) and ae (Dan).",
+          "feedback": "i stands apart with its high F2, so this set mixes separated and overlapping vowels.",
+          "id": "c"
+        },
+        {
+          "text": "i (dean) and ae (Dan) only.",
+          "feedback": "These two are the most separated categories. i has a high F2 and ae a high F1.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l16-mcq-004",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Why can no F1–F2 classifier label every token in this plot correctly?",
+      "answer": "The tokens look the same to it, so at least one of them must be labeled wrong.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        }
+      ],
+      "topic": "Limits of two formants",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The tokens look the same to it, so at least one of them must be labeled wrong.",
+          "feedback": "The tokens look the same to it, so at least one of them must be labeled wrong.",
+          "id": "a"
+        },
+        {
+          "text": "The classifier can still tell them apart by their colors.",
+          "feedback": "The color is the target label. The classifier receives only F1 and F2.",
+          "id": "b"
+        },
+        {
+          "text": "More training updates will always separate them.",
+          "feedback": "Training cannot separate inputs that are the same. The overlap is in the data the network receives.",
+          "id": "c"
+        },
+        {
+          "text": "The classifier ignores both tokens during training.",
+          "feedback": "All 525 tokens contribute to the loss. Overlapping tokens are trained on like any other.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l16-mcq-005",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "How many recordings of each vowel appear in the plot?",
+      "answer": "105.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        }
+      ],
+      "topic": "Token counts",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "105.",
+          "feedback": "105.",
+          "id": "a"
+        },
+        {
+          "text": "110.",
+          "feedback": "110 is the row count printed on the training-matrix page. The plot itself lists 105 tokens of each vowel.",
+          "id": "b"
+        },
+        {
+          "text": "21.",
+          "feedback": "525 divided by 25 gives 21, but there are five vowels, not twenty-five.",
+          "id": "c"
+        },
+        {
+          "text": "525.",
+          "feedback": "525 is the total across all five vowels.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l16-mcq-006",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does X = Formant_Inputs / 1000 do?",
+      "answer": "It converts hertz to kilohertz, keeping the input numbers small.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Input scaling",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It removes the bias terms from the layers.",
+          "feedback": "bias=False removes biases. Scaling the inputs is a separate step.",
+          "id": "a"
+        },
+        {
+          "text": "It turns the formants into probabilities.",
+          "feedback": "Dividing by 1000 changes the units. Probabilities come from softmax over the final scores.",
+          "id": "b"
+        },
+        {
+          "text": "It keeps only 1000 of the training tokens.",
+          "feedback": "Division changes every value. All 525 tokens are still used.",
+          "id": "c"
+        },
+        {
+          "text": "It converts hertz to kilohertz, keeping the input numbers small.",
+          "feedback": "It converts hertz to kilohertz, keeping the input numbers small.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l16-mcq-007",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What do bias=False and the absence of activations mean for this model?",
+      "answer": "Each layer is a pure weighted sum with no added constant and no nonlinear activation, so the network is all linear.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "All-linear network",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "A network whose hidden layers output word probabilities.",
+          "feedback": "Hidden layers output values for the next layer. Probabilities are formed from the final scores.",
+          "id": "a"
+        },
+        {
+          "text": "A network with sigmoid after every hidden layer.",
+          "feedback": "The comment says no activations. The sigmoid version is a different program.",
+          "id": "b"
+        },
+        {
+          "text": "A network with no weights at all.",
+          "feedback": "The four linear layers hold the weights that SGD updates.",
+          "id": "c"
+        },
+        {
+          "text": "Each layer is a pure weighted sum with no added constant and no nonlinear activation, so the network is all linear.",
+          "feedback": "Each layer is a pure weighted sum with no added constant and no nonlinear activation, so the network is all linear.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l16-mcq-008",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "How many weight updates happen in one epoch of this program?",
+      "answer": "One full-batch update that uses the loss over all 525 tokens.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Full-batch epochs",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Training on 2000 new recordings.",
+          "feedback": "2000 is the number of epochs. The same 525 tokens are used every time.",
+          "id": "a"
+        },
+        {
+          "text": "One full-batch update that uses the loss over all 525 tokens.",
+          "feedback": "One full-batch update that uses the loss over all 525 tokens.",
+          "id": "b"
+        },
+        {
+          "text": "One update for each of the 525 tokens.",
+          "feedback": "The loss is computed on the whole batch and opt.step() is called once per epoch.",
+          "id": "c"
+        },
+        {
+          "text": "A forward pass with no change to the weights.",
+          "feedback": "Each epoch calls backward() and step(), so the weights change.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l16-mcq-009",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What explains the 20% starting level on the accuracy curve?",
+      "answer": "Labeling every token as one vowel gets one of five equally common vowels right, which is 105 of 525.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Starting accuracy",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The network has already learned one fifth of the data.",
+          "feedback": "At the start the network has not been trained. Twenty percent is the level of a single-class guess.",
+          "id": "a"
+        },
+        {
+          "text": "Labeling every token as one vowel gets one of five equally common vowels right, which is 105 of 525.",
+          "feedback": "Labeling every token as one vowel gets one of five equally common vowels right, which is 105 of 525.",
+          "id": "b"
+        },
+        {
+          "text": "Twenty percent of the weights start at zero.",
+          "feedback": "The weights start at random values. The 20% level comes from the five equal-sized classes.",
+          "id": "c"
+        },
+        {
+          "text": "The learning rate of 0.1 sets accuracy to 20%.",
+          "feedback": "The learning rate controls step size. It does not fix an accuracy level.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l16-mcq-010",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does a point on the accuracy curve report?",
+      "answer": "The percentage of the same 525 training tokens whose largest score is the correct class.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Training accuracy",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Accuracy on new recordings the network has never seen.",
+          "feedback": "The accuracy uses the training tokens, so it is training accuracy, not a held-out test.",
+          "id": "a"
+        },
+        {
+          "text": "The percentage of the same 525 training tokens whose largest score is the correct class.",
+          "feedback": "The percentage of the same 525 training tokens whose largest score is the correct class.",
+          "id": "b"
+        },
+        {
+          "text": "The value of the cross-entropy loss.",
+          "feedback": "Loss and accuracy are different quantities. Accuracy counts correct largest-score answers.",
+          "id": "c"
+        },
+        {
+          "text": "The probability the network gives to dean.",
+          "feedback": "Accuracy is computed over all tokens and all five classes, not from one word’s probability.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l16-mcq-011",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does the final 44.95% represent?",
+      "answer": "The network labels 236 of the 525 tokens correctly.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Reading the final value",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Every true word receives a probability of 44.95%.",
+          "feedback": "Accuracy compares the largest score with the target. It is not a probability for each word.",
+          "id": "a"
+        },
+        {
+          "text": "The network labels 236 of the 525 tokens correctly.",
+          "feedback": "The network labels 236 of the 525 tokens correctly.",
+          "id": "b"
+        },
+        {
+          "text": "44.95% of the weights have their correct values.",
+          "feedback": "Accuracy counts correctly labeled tokens. Weights have no correct-or-incorrect label.",
+          "id": "c"
+        },
+        {
+          "text": "44.95% of the updates lowered the loss.",
+          "feedback": "The value is measured on tokens after training, not on updates.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l16-mcq-012",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What produced the accuracy curve shown with the PyTorch code?",
+      "answer": "An equivalent NumPy implementation of the same procedure, because PyTorch was unavailable where the plot was made.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Source of the curve",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "An equivalent NumPy implementation of the same procedure, because PyTorch was unavailable where the plot was made.",
+          "feedback": "An equivalent NumPy implementation of the same procedure, because PyTorch was unavailable where the plot was made.",
+          "id": "a"
+        },
+        {
+          "text": "A separate network that uses hidden sigmoids.",
+          "feedback": "The NumPy run uses the same bias-free, all-linear network as the code.",
+          "id": "b"
+        },
+        {
+          "text": "Hand-drawn estimates of what training might do.",
+          "feedback": "The note states the curve is an executed run, not an estimate.",
+          "id": "c"
+        },
+        {
+          "text": "A test on held-out recordings.",
+          "feedback": "The curve reports training accuracy on the same 525 tokens.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l16-mcq-013",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does with torch.no_grad() mean for the accuracy check?",
+      "answer": "Measuring accuracy does not train the network, so no gradients need to be tracked.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Measuring without training",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It applies sigmoid to the hidden layers.",
+          "feedback": "No activation is added. The network stays linear.",
+          "id": "a"
+        },
+        {
+          "text": "It doubles the learning rate for the next epoch.",
+          "feedback": "The learning rate stays at 0.1 throughout.",
+          "id": "b"
+        },
+        {
+          "text": "It resets all the weights before measuring.",
+          "feedback": "no_grad stops gradient tracking. The trained weights stay as they are.",
+          "id": "c"
+        },
+        {
+          "text": "Measuring accuracy does not train the network, so no gradients need to be tracked.",
+          "feedback": "Measuring accuracy does not train the network, so no gradients need to be tracked.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l16-mcq-014",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Across seeds 0 through 9, which part of training differs?",
+      "answer": "Only the initialization, the random starting weights.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 16
+        }
+      ],
+      "topic": "What varies across runs",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The learning rate.",
+          "feedback": "Every run uses learning rate 0.1.",
+          "id": "a"
+        },
+        {
+          "text": "The vowel data.",
+          "feedback": "All runs train on the same 525 tokens.",
+          "id": "b"
+        },
+        {
+          "text": "Only the initialization, the random starting weights.",
+          "feedback": "Only the initialization, the random starting weights.",
+          "id": "c"
+        },
+        {
+          "text": "The number of updates.",
+          "feedback": "Every run takes 2,000 full-batch updates.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l16-mcq-015",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What final training accuracy do the ten seeds reach?",
+      "answer": "All ten finish at 44.95%.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 16
+        }
+      ],
+      "topic": "Shared end point",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "All ten reach 100% after 2,000 updates.",
+          "feedback": "The curves level off near 45%, far below 100%.",
+          "id": "a"
+        },
+        {
+          "text": "Each seed finishes at a different accuracy.",
+          "feedback": "The curves converge, and the stated result is that all ten end at 44.95%.",
+          "id": "b"
+        },
+        {
+          "text": "The curves are identical from the first update.",
+          "feedback": "They differ early, leaving 20% at different times and dipping differently, before converging.",
+          "id": "c"
+        },
+        {
+          "text": "All ten finish at 44.95%.",
+          "feedback": "All ten finish at 44.95%.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l16-mcq-016",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does the common final value suggest about initialization?",
+      "answer": "Starting weights change the training path but not the final accuracy, which is limited by the network and the data.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 16
+        }
+      ],
+      "topic": "Meaning of the shared ceiling",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Seed 0 is the best possible initialization.",
+          "feedback": "All ten seeds finish at the same accuracy, so no seed is better at the end.",
+          "id": "a"
+        },
+        {
+          "text": "Starting weights change the training path but not the final accuracy, which is limited by the network and the data.",
+          "feedback": "Starting weights change the training path but not the final accuracy, which is limited by the network and the data.",
+          "id": "b"
+        },
+        {
+          "text": "Initialization has no effect at any point in training.",
+          "feedback": "The early parts of the curves differ, so initialization does change the path.",
+          "id": "c"
+        },
+        {
+          "text": "Running more seeds would raise the final accuracy.",
+          "feedback": "Every seed tried ends at the same value, so more seeds give no reason to expect a higher result.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l16-mcq-017",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does “equal seed numbers do not imply equal PyTorch weights” mean?",
+      "answer": "NumPy and PyTorch draw different starting weights from the same seed number.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 16
+        }
+      ],
+      "topic": "NumPy and PyTorch seeds",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "PyTorch trains on different vowel data.",
+          "feedback": "The data are the same. Only the random-number streams differ.",
+          "id": "a"
+        },
+        {
+          "text": "PyTorch ignores the seed number.",
+          "feedback": "torch.manual_seed fixes PyTorch’s weights, but they differ from NumPy’s for the same number.",
+          "id": "b"
+        },
+        {
+          "text": "NumPy and PyTorch draw different starting weights from the same seed number.",
+          "feedback": "NumPy and PyTorch draw different starting weights from the same seed number.",
+          "id": "c"
+        },
+        {
+          "text": "The plotted curve uses hidden sigmoids.",
+          "feedback": "The plotted runs use the same all-linear network.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l16-mcq-018",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What are the numbers listed as output logits?",
+      "answer": "The final scores before softmax turns them into probabilities.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 3
+        }
+      ],
+      "topic": "Output logits",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The final scores before softmax turns them into probabilities.",
+          "feedback": "The final scores before softmax turns them into probabilities.",
+          "id": "a"
+        },
+        {
+          "text": "Connection weights into the output layer.",
+          "feedback": "Weights label the connections. Logits are the weighted sums at the outputs.",
+          "id": "b"
+        },
+        {
+          "text": "The one-hot target values.",
+          "feedback": "The target marks dean with 1 and the rest with 0. Logits come from the network.",
+          "id": "c"
+        },
+        {
+          "text": "The probabilities of done and dean.",
+          "feedback": "The probabilities are 55.7% and 8.1%. Logits are the scores before softmax.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l16-mcq-019",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Where does the backward calculation begin?",
+      "answer": "The output connections, followed by hidden layers 3, 2 and 1.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 7
+        }
+      ],
+      "topic": "Order of updates",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The input connections from F1 and F2.",
+          "feedback": "The input connections come last, because their effect on error depends on everything after them.",
+          "id": "a"
+        },
+        {
+          "text": "All layers at once, in random order.",
+          "feedback": "The reveal follows a fixed backward order from the output connections.",
+          "id": "b"
+        },
+        {
+          "text": "The output connections, followed by hidden layers 3, 2 and 1.",
+          "feedback": "The output connections, followed by hidden layers 3, 2 and 1.",
+          "id": "c"
+        },
+        {
+          "text": "Hidden layer 2, in the middle of the network.",
+          "feedback": "The calculation starts at the output and moves backward layer by layer.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l16-mcq-020",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What makes the first weight layer’s share of the error hard to find?",
+      "answer": "W2 changes activations that pass through two more layers of other weights before reaching the output.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 9
+        }
+      ],
+      "topic": "Blame for early weights",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "W2 is never updated during training.",
+          "feedback": "Backpropagation updates every layer, including W2.",
+          "id": "a"
+        },
+        {
+          "text": "W2 has no effect on the output.",
+          "feedback": "W2 affects the output, but only through the later layers.",
+          "id": "b"
+        },
+        {
+          "text": "W2 changes activations that pass through two more layers of other weights before reaching the output.",
+          "feedback": "W2 changes activations that pass through two more layers of other weights before reaching the output.",
+          "id": "c"
+        },
+        {
+          "text": "W2 connects directly to the output probabilities.",
+          "feedback": "The last weights, W5, connect to the outputs. W2 sits at the start.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l16-mcq-021",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "In Formant_Inputs, what are the two columns?",
+      "answer": "The two formant measurements, F1 and F2.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 10
+        }
+      ],
+      "topic": "Matrix dimensions",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Two vowels being compared.",
+          "feedback": "There are five vowels. The two columns are F1 and F2 for every row.",
+          "id": "a"
+        },
+        {
+          "text": "The two formant measurements, F1 and F2.",
+          "feedback": "The two formant measurements, F1 and F2.",
+          "id": "b"
+        },
+        {
+          "text": "Two training updates.",
+          "feedback": "Updates are steps of the optimizer, not columns of the data.",
+          "id": "c"
+        },
+        {
+          "text": "The two hidden layers that use sigmoid.",
+          "feedback": "The matrix holds data, not layers. Its columns are measurements.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l16-mcq-022",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does the training loop add to the single update?",
+      "answer": "It repeats zero_grad, the loss, backward and step 2,000 times and records accuracy after each update.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "One step versus a loop",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It removes backpropagation.",
+          "feedback": "loss.backward() is still called in every epoch.",
+          "id": "a"
+        },
+        {
+          "text": "It trains on one token per step instead of the full batch.",
+          "feedback": "Each epoch still uses all tokens at once.",
+          "id": "b"
+        },
+        {
+          "text": "It repeats zero_grad, the loss, backward and step 2,000 times and records accuracy after each update.",
+          "feedback": "It repeats zero_grad, the loss, backward and step 2,000 times and records accuracy after each update.",
+          "id": "c"
+        },
+        {
+          "text": "It uses a different loss and optimizer.",
+          "feedback": "Both use CrossEntropyLoss and SGD with learning rate 0.1.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l16-mcq-023",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "How would the hidden layers become nonlinear?",
+      "answer": "Insert nn.Sigmoid() after each of the first three linear layers.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 14
+        }
+      ],
+      "topic": "Adding nonlinearity",
+      "pattern": "application",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Add a sigmoid only after the final Linear(4, 5).",
+          "feedback": "The sigmoid program places sigmoid after the hidden layers, while the final scores go to the loss.",
+          "id": "a"
+        },
+        {
+          "text": "Increase the number of epochs.",
+          "feedback": "More updates do not change the kind of function each layer computes.",
+          "id": "b"
+        },
+        {
+          "text": "Divide the formants by a larger number.",
+          "feedback": "Scaling the inputs changes their size, not the network’s linearity.",
+          "id": "c"
+        },
+        {
+          "text": "Insert nn.Sigmoid() after each of the first three linear layers.",
+          "feedback": "Insert nn.Sigmoid() after each of the first three linear layers.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l16-mcq-024",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Which output leads once every hidden neuron uses sigmoid?",
+      "answer": "Dan, at about 32.0%.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 13
+        }
+      ],
+      "topic": "Sigmoid outputs",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "dean, at about 23.0%.",
+          "feedback": "dean rises to 23.0% but is not the largest.",
+          "id": "a"
+        },
+        {
+          "text": "done, at 55.7%.",
+          "feedback": "55.7% for done is the all-linear starting state.",
+          "id": "b"
+        },
+        {
+          "text": "dune, at about 20.2%.",
+          "feedback": "dune is below both Dan and dean.",
+          "id": "c"
+        },
+        {
+          "text": "Dan, at about 32.0%.",
+          "feedback": "Dan, at about 32.0%.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l16-mcq-025",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "In the sigmoid version of the network, how many sigmoid layers appear?",
+      "answer": "Three, one after each hidden linear layer.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 14
+        }
+      ],
+      "topic": "Counting activations",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "One, at the very end.",
+          "feedback": "Sigmoid follows the first three linear layers.",
+          "id": "a"
+        },
+        {
+          "text": "Nine, one for each hidden neuron.",
+          "feedback": "There are nine hidden neurons, but one nn.Sigmoid() handles a whole layer.",
+          "id": "b"
+        },
+        {
+          "text": "Three, one after each hidden linear layer.",
+          "feedback": "Three, one after each hidden linear layer.",
+          "id": "c"
+        },
+        {
+          "text": "Four, one after every linear layer.",
+          "feedback": "The final Linear(4, 5) is not followed by sigmoid.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l16-written-001",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does each axis, dot and color in the formant plot represent?",
+      "answer": "Each of the 525 dots is one vowel token placed by its F1 along the horizontal axis and F2 along the vertical axis, in hertz. The color gives its correct word. The positions are the network’s two inputs, and the colors are the targets it is trained to match.",
+      "rubric": [
+        "Identify F1, F2 and color correctly.",
+        "Connect positions to inputs and colors to targets."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        }
+      ],
+      "topic": "Reading the scatterplot",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-002",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Compare the separated vowels with the overlapping ones.",
+      "answer": "i sits high on F2, mostly above about 2000 Hz, and ae reaches high F1 values, so their positions set them apart. u, a and schwa crowd into the same lower-middle region, so a token there could belong to any of the three.",
+      "rubric": [
+        "State where i and ae fall.",
+        "Describe the shared region of u, a and schwa."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        }
+      ],
+      "topic": "Separated and overlapping vowels",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-003",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Why can overlap cap accuracy no matter how the network is trained?",
+      "answer": "The classifier sees only F1 and F2. Tokens with different labels that land in the same place give it the same input, so whichever word it chooses for that input, some of those tokens are labeled wrong.",
+      "rubric": [
+        "Explain that equal inputs get the same response.",
+        "Conclude that some overlapping tokens must be wrong."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        }
+      ],
+      "topic": "Overlap as a limit",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-004",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Why does a single-class guess give 20% on these data?",
+      "answer": "Each vowel has 105 of the 525 tokens. A network that labels every token with the same word gets that vowel’s 105 tokens right, which is one fifth, or 20%.",
+      "rubric": [
+        "Use 105 of 525.",
+        "Connect equal class sizes to the one-in-five level."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        }
+      ],
+      "topic": "Equal class sizes",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-005",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does setting the seed control in this run?",
+      "answer": "The seed fixes the random starting weights, so the run starts from one particular initialization and can be repeated exactly. It does not change the data, the loss or the learning rate.",
+      "rubric": [
+        "Link the seed to the starting weights.",
+        "Distinguish it from the other training settings."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Fixing the initialization",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-006",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What is gained by converting hertz to kilohertz?",
+      "answer": "Raw formants are hundreds or thousands of hertz, much larger than the other values in the network. Dividing by 1000 gives kilohertz values that keep the inputs small, so the input weights are not pushed by very large numbers.",
+      "rubric": [
+        "State the unit change.",
+        "Explain why smaller inputs help training."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Scaling the formants",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-007",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "List the four training calls in each epoch and what each does.",
+      "answer": "opt.zero_grad() clears old gradients. loss_fn(model(X), TrueVowel_Outputs) runs the forward pass and computes cross-entropy on all tokens. loss.backward() computes the gradients. opt.step() updates the weights once.",
+      "rubric": [
+        "Give the four calls in order.",
+        "State that one epoch is one full-batch update."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "One epoch",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-008",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "How is percent correct computed after each update?",
+      "answer": "For each token, argmax picks the word with the largest score. The program compares those answers with the correct classes, takes the fraction that match, and multiplies by 100 to save a percentage.",
+      "rubric": [
+        "Mention the largest score as the answer.",
+        "Describe the comparison and percentage."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Computing accuracy",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-009",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Summarize how accuracy changes over the 2,000 updates.",
+      "answer": "Accuracy stays near 20% for about the first 200 updates, then climbs into the 40s. It dips sharply near update 390, recovers, and is essentially flat after about 450 updates, ending at 44.95%, or 236 of 525 tokens.",
+      "rubric": [
+        "Describe the flat start and rise.",
+        "Give the final value."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Shape of the curve",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-010",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What would a training-accuracy curve leave unknown?",
+      "answer": "Accuracy is measured on the same 525 tokens the network learns from. It shows how well the network fits those tokens, but it does not show how it would label new recordings it has never seen.",
+      "rubric": [
+        "Identify the tokens used for measurement.",
+        "State what remains unknown."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "Training versus test accuracy",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-011",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Why was the curve made with NumPy, and what does that mean for reading it?",
+      "answer": "PyTorch was unavailable where the plot was made, so the same network, loss, scaling, learning rate and number of updates were run in NumPy. The code describes the procedure, and the curve is the measured result of running that procedure in an equivalent implementation.",
+      "rubric": [
+        "Give the reason for NumPy.",
+        "State that the procedure is the same."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "NumPy reference",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-012",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Why is the ten-seed experiment a fair comparison of initializations?",
+      "answer": "Each run uses a fresh model and optimizer with the same data, scaling, loss, learning rate and 2,000 full-batch updates. Only the seed, and so the starting weights, changes, so differences between runs come from initialization.",
+      "rubric": [
+        "List what stays the same.",
+        "Identify initialization as the only change."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 16
+        }
+      ],
+      "topic": "Controlled comparison",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-013",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "How do the runs behave before they converge?",
+      "answer": "All start near 20%, but some leave that level within 100 updates while others stay flat for 200 or more. Some dip back toward 20% before recovering, and their peaks along the way differ, reaching close to 47% in some runs.",
+      "rubric": [
+        "Describe differences in timing.",
+        "Mention dips or peaks."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 16
+        }
+      ],
+      "topic": "Early differences",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-014",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Why would trying more seeds not raise the final accuracy here?",
+      "answer": "Every initialization ends at the same accuracy, so the starting weights affect only the path. The limit comes from the network and the data, including the overlapping vowel clouds, rather than from an unlucky start.",
+      "rubric": [
+        "Link the shared value to initialization not mattering at the end.",
+        "Name the network and data as the limit."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 16
+        }
+      ],
+      "topic": "Common ceiling",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-015",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does the caution about seeds mean for reproducing a plotted curve?",
+      "answer": "Each library has its own random-number stream, so the same seed number produces different starting weights. A PyTorch run with a given seed would follow a somewhat different path, even though the overall pattern of varied paths and a common end could still appear.",
+      "rubric": [
+        "Explain separate random streams.",
+        "State the consequence for individual curves."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 16
+        }
+      ],
+      "topic": "Seeds across libraries",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-016",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "How does the vowel data help explain why all runs stop near 45%?",
+      "answer": "Many tokens of u, a and schwa share the same F1–F2 region. A network that sees only these two numbers cannot label all of them correctly, so every run, whatever its starting weights, levels off well below 100%.",
+      "rubric": [
+        "Use the overlapping region.",
+        "Link it to the shared ceiling."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        }
+      ],
+      "topic": "Data and ceiling",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-017",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does softmax do to the logits 0.622, −1.398, −1.300, −0.478 and −1.076?",
+      "answer": "Softmax exponentiates each logit and divides by the sum of all five exponentials. The largest logit, 0.622 for done, becomes the largest probability, 55.7%, and the probabilities add to one.",
+      "rubric": [
+        "Describe exponentiation and normalization.",
+        "Match the largest logit to done."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 3
+        }
+      ],
+      "topic": "Logits to probabilities",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-018",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What is compared when the loss is computed for this example?",
+      "answer": "The computed output is the network’s probabilities, with done highest at 55.7%. The desired output puts 1 at dean and 0 elsewhere. Cross-entropy uses the 8.1% given to dean, and backpropagation finds how each weight affects that loss.",
+      "rubric": [
+        "Name the favored word and the target.",
+        "Connect the target probability to the loss."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 7
+        }
+      ],
+      "topic": "Target and computed output",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-019",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What happens to the dean loss if the marked weight into done increases?",
+      "answer": "The error goes up. The weight carries a positive hidden value into done, so done’s score rises. Softmax shares one total, so dean’s probability falls and the cross-entropy loss increases.",
+      "rubric": [
+        "State that error rises.",
+        "Trace the effect through done and softmax."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 8
+        }
+      ],
+      "topic": "Marked output weight",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-020",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Why are later-layer error calculations computed first?",
+      "answer": "The last weights affect the output directly, while earlier weights act through later layers. Computing the later effects first lets them be reused for earlier weights instead of recomputed, the same reuse of smaller results that dynamic programming uses.",
+      "rubric": [
+        "Contrast direct and indirect effects.",
+        "Explain the reuse."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 9
+        }
+      ],
+      "topic": "Backward reuse",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-021",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What must stay aligned between Formant_Inputs and TrueVowel_Outputs?",
+      "answer": "Each row of the input matrix holds one recording’s F1 and F2, and the same row of the target matrix marks its correct word with a 1. The rows must stay in the same order. These matrices are labeled with 110 rows, while the vowel plot and training runs use 525 tokens.",
+      "rubric": [
+        "Explain row pairing.",
+        "Mention the 110 and 525 labels."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 10
+        }
+      ],
+      "topic": "Paired matrices",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-022",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What does the loop add, and what stays the same?",
+      "answer": "Both use the same network sizes, cross-entropy and SGD with learning rate 0.1. The one-step program updates once, while the loop repeats the update 2,000 times, scales the inputs, removes biases, and records accuracy after each step.",
+      "rubric": [
+        "Name shared settings.",
+        "Name what the loop adds."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "topic": "From one step to training",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-023",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "Why does sigmoid act almost like an on-off switch at its ends?",
+      "answer": "Large negative inner products give outputs near 0 and large positive ones give outputs near 1, such as 0.018 for −4 and 0.982 for 4. At the flat ends the output barely changes, so the neuron behaves almost like it is off or on, while the middle stays graded.",
+      "rubric": [
+        "Use near-0 and near-1 behavior.",
+        "Connect it to nearly digital."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 12
+        }
+      ],
+      "topic": "Saturation",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-024",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What changes, and what stays fixed, as sigmoid is added neuron by neuron?",
+      "answer": "The formants and weights stay fixed, and only the hidden activation rule changes, so downstream values and the outputs change. The target is still dean, and no weights were updated, so the new favorite is not evidence of training.",
+      "rubric": [
+        "State what stays fixed.",
+        "Distinguish an activation change from a weight update."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 13
+        }
+      ],
+      "topic": "Activation change without learning",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l16-written-025",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture16",
+      "prompt": "What edit to the model definition would train the sigmoid network instead of the linear one?",
+      "answer": "Insert nn.Sigmoid() after each of the first three nn.Linear layers, leaving the final Linear(4, 5) to give logits to CrossEntropyLoss. The loop, scaling, loss and optimizer could stay the same.",
+      "rubric": [
+        "Place sigmoid after the hidden layers.",
+        "Keep the final layer’s logits for the loss."
+      ],
+      "sources": [
+        {
+          "collection": "lecture16",
+          "page": 14
+        }
+      ],
+      "topic": "Combining the programs",
+      "pattern": "application",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    }
+  ]
+}

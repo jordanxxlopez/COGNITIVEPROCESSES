@@ -1,0 +1,7912 @@
+{
+  "name": "BMSTEPS",
+  "title": "Read the steps. Fill in my numbers.",
+  "methods": 36,
+  "steps": 179,
+  "pages": 253,
+  "bytes": 49064,
+  "sha256": "7760005ff6ece170d201693f46d1f5b720a3f498623a5d6d34014a4f99b1052a",
+  "compatibility": "TI-84 Plus CE / CE Python; native TI-BASIC; no helpers required",
+  "intro": [
+    "AA",
+    "AB"
+  ],
+  "menus": {
+    "M0": {
+      "title": "BMSTEPS",
+      "items": [
+        {
+          "title": "MEANS",
+          "destination": "M6"
+        },
+        {
+          "title": "PROBABILITY",
+          "destination": "M1"
+        },
+        {
+          "title": "SUMMARIES",
+          "destination": "M7"
+        },
+        {
+          "title": "COUNTS/PROPORTIONS",
+          "destination": "M8"
+        },
+        {
+          "title": "ADJUST/OUTPUT",
+          "destination": "M9"
+        },
+        {
+          "title": "RISK/ODDS",
+          "destination": "MA"
+        },
+        {
+          "title": "EXIT",
+          "destination": "ZZ"
+        }
+      ]
+    },
+    "M1": {
+      "title": "PROBABILITY",
+      "items": [
+        {
+          "title": "DISCRETE",
+          "destination": "M2"
+        },
+        {
+          "title": "DENSITIES",
+          "destination": "M3"
+        },
+        {
+          "title": "NORMAL",
+          "destination": "M4"
+        },
+        {
+          "title": "TRANSFORM X/Y",
+          "destination": "M5"
+        },
+        {
+          "title": "EVENT SEQUENCE",
+          "destination": "DO"
+        },
+        {
+          "title": "BACK",
+          "destination": "M0"
+        }
+      ]
+    },
+    "M2": {
+      "title": "DISCRETE",
+      "items": [
+        {
+          "title": "TABLE MEAN/CDF",
+          "destination": "CP"
+        },
+        {
+          "title": "INTERVAL ENDS",
+          "destination": "CX"
+        },
+        {
+          "title": "MISSING CONSTANT",
+          "destination": "DD"
+        },
+        {
+          "title": "EXACT FAIR HEADS",
+          "destination": "DJ"
+        },
+        {
+          "title": "BACK",
+          "destination": "M1"
+        }
+      ]
+    },
+    "M3": {
+      "title": "DENSITIES",
+      "items": [
+        {
+          "title": "UNIFORM",
+          "destination": "EF"
+        },
+        {
+          "title": "NORMALIZE PDF",
+          "destination": "EL"
+        },
+        {
+          "title": "UNKNOWN ENDPOINT",
+          "destination": "ER"
+        },
+        {
+          "title": "LINEAR PDF/CDF",
+          "destination": "EX"
+        },
+        {
+          "title": "TWO PIECE PDF",
+          "destination": "FH"
+        },
+        {
+          "title": "BACK",
+          "destination": "M1"
+        }
+      ]
+    },
+    "M4": {
+      "title": "NORMAL",
+      "items": [
+        {
+          "title": "ONE MEASUREMENT",
+          "destination": "FS"
+        },
+        {
+          "title": "FIND CUTOFF",
+          "destination": "FZ"
+        },
+        {
+          "title": "SAMPLE AVERAGE",
+          "destination": "GF"
+        },
+        {
+          "title": "BACK",
+          "destination": "M1"
+        }
+      ]
+    },
+    "M5": {
+      "title": "TRANSFORM",
+      "items": [
+        {
+          "title": "TWO INDEPENDENT X/Y",
+          "destination": "DT"
+        },
+        {
+          "title": "SHIFT/SCALE ONE X",
+          "destination": "DZ"
+        },
+        {
+          "title": "BACK",
+          "destination": "M1"
+        }
+      ]
+    },
+    "M6": {
+      "title": "MEANS",
+      "items": [
+        {
+          "title": "ONE SAMPLE T",
+          "destination": "AC"
+        },
+        {
+          "title": "POOLED TWO T",
+          "destination": "AK"
+        },
+        {
+          "title": "BALANCED ANOVA",
+          "destination": "AT"
+        },
+        {
+          "title": "PAIR AFTER ANOVA",
+          "destination": "BC"
+        },
+        {
+          "title": "BACK",
+          "destination": "M0"
+        }
+      ]
+    },
+    "M7": {
+      "title": "SUMMARIES",
+      "items": [
+        {
+          "title": "MEAN VAR SD SEM",
+          "destination": "BJ"
+        },
+        {
+          "title": "PERCENTILE/IQR",
+          "destination": "BR"
+        },
+        {
+          "title": "GIVEN SD TO SEM",
+          "destination": "BZ"
+        },
+        {
+          "title": "CHANGE SAMPLE SIZE",
+          "destination": "CE"
+        },
+        {
+          "title": "SE OF VARIANCE",
+          "destination": "CJ"
+        },
+        {
+          "title": "BACK",
+          "destination": "M0"
+        }
+      ]
+    },
+    "M8": {
+      "title": "COUNTS/PROPORTIONS",
+      "items": [
+        {
+          "title": "BINARY SUMMARY",
+          "destination": "HO"
+        },
+        {
+          "title": "YATES Z",
+          "destination": "HU"
+        },
+        {
+          "title": "YATES 2X2 CHI",
+          "destination": "IC"
+        },
+        {
+          "title": "LARGER TABLE",
+          "destination": "IK"
+        },
+        {
+          "title": "GOODNESS OF FIT",
+          "destination": "IS"
+        },
+        {
+          "title": "BACK",
+          "destination": "M0"
+        }
+      ]
+    },
+    "M9": {
+      "title": "ADJUST/OUTPUT",
+      "items": [
+        {
+          "title": "BONFERRONI",
+          "destination": "GN"
+        },
+        {
+          "title": "HOLM",
+          "destination": "GU"
+        },
+        {
+          "title": "READ OUTPUT",
+          "destination": "HB"
+        },
+        {
+          "title": "FIND CUTOFF",
+          "destination": "HI"
+        },
+        {
+          "title": "BACK",
+          "destination": "M0"
+        }
+      ]
+    },
+    "MA": {
+      "title": "RISK/ODDS",
+      "items": [
+        {
+          "title": "EVENT COUNTS",
+          "destination": "IZ"
+        },
+        {
+          "title": "GIVEN EVENT RISKS",
+          "destination": "JG"
+        },
+        {
+          "title": "ODDS RATIO",
+          "destination": "JN"
+        },
+        {
+          "title": "BACK",
+          "destination": "M0"
+        }
+      ]
+    }
+  },
+  "guides": [
+    {
+      "name": "BMONE",
+      "title": "ONE SAMPLE T",
+      "recognize": [
+        "ONE SAMPLE VS A REFERENCE.",
+        "NORMAL POPULATION; 2 TAILS.",
+        "COPY: MEAN, SAMPLE SD, N,",
+        "REFERENCE MU0, ALPHA.",
+        "XBAR = SAMPLE MEAN."
+      ],
+      "steps": [
+        [
+          "1 HYPOTHESES",
+          [
+            "H0:MU=MU0",
+            "HA:MU DOES NOT EQUAL MU0.",
+            "NAME THE POPULATION AND",
+            "OUTCOME. MU0 IS THE GIVEN",
+            "REFERENCE VALUE."
+          ]
+        ],
+        [
+          "2 STANDARD ERROR",
+          [
+            "SE=SD/SQRT(N)",
+            "SQRT(N)=____",
+            "SE=____/____=____",
+            "SD DESCRIBES INDIVIDUALS.",
+            "SE DESCRIBES THE AVERAGE."
+          ]
+        ],
+        [
+          "3 DIFFERENCE",
+          [
+            "GAP=XBAR-MU0",
+            "GAP=____-____=____",
+            "KEEP THE SIGN OF THE GAP."
+          ]
+        ],
+        [
+          "4 TEST STATISTIC",
+          [
+            "T=GAP/SE",
+            "T=____/____=____"
+          ]
+        ],
+        [
+          "5 DF AND CUTOFF",
+          [
+            "DF=N-1=____",
+            "T TABLE: USE THIS DF.",
+            "USE TOTAL 2-TAIL ALPHA.",
+            "POSITIVE CUTOFF C=____"
+          ]
+        ],
+        [
+          "6 DECISION",
+          [
+            "IF ABS(T)>C: REJECT H0.",
+            "OTHERWISE: DO NOT REJECT.",
+            "OR REJECT WHEN P<ALPHA.",
+            "ABS MEANS IGNORE THE SIGN."
+          ]
+        ]
+      ],
+      "answer": [
+        "AT ALPHA=____, THE DATA",
+        "SUPPORT / DO NOT ESTABLISH",
+        "A DIFFERENCE BETWEEN THE",
+        "POPULATION MEAN ____ AND",
+        "THE REFERENCE ____."
+      ],
+      "label": "AC",
+      "pages": [
+        "AC",
+        "AD",
+        "AE",
+        "AF",
+        "AG",
+        "AH",
+        "AI",
+        "AJ"
+      ]
+    },
+    {
+      "name": "BMTWO",
+      "title": "POOLED TWO SAMPLE T",
+      "recognize": [
+        "2 INDEPENDENT NORMAL GROUPS",
+        "WITH EQUAL POPULATION VAR.",
+        "COPY MEAN, SD, N PER GROUP.",
+        "SIZES MAY DIFFER.",
+        "COPY ALPHA."
+      ],
+      "steps": [
+        [
+          "1 HYPOTHESES",
+          [
+            "H0:MU1=MU2",
+            "HA:MU1 DOES NOT EQUAL MU2.",
+            "LABEL GROUP 1 AND GROUP 2."
+          ]
+        ],
+        [
+          "2 SQUARE EACH SD",
+          [
+            "V1=SD1^2=____",
+            "V2=SD2^2=____",
+            "IF VARIANCE IS GIVEN, IT",
+            "IS ALREADY SQUARED."
+          ]
+        ],
+        [
+          "3 DF AND WEIGHTS",
+          [
+            "DF=N1+N2-2=____",
+            "A=(N1-1)*V1=____",
+            "B=(N2-1)*V2=____"
+          ]
+        ],
+        [
+          "4 POOLED VARIANCE",
+          [
+            "POOL=(A+B)/DF",
+            "POOL=(____+____)/____",
+            "POOL=____",
+            "POOL IS VARIANCE, NOT SD."
+          ]
+        ],
+        [
+          "5 STANDARD ERROR",
+          [
+            "R=1/N1+1/N2=____",
+            "SE=SQRT(POOL*R)",
+            "PRODUCT=____",
+            "SE=SQRT(____)=____"
+          ]
+        ],
+        [
+          "6 TEST STATISTIC",
+          [
+            "GAP=MEAN1-MEAN2=____",
+            "T=GAP/SE",
+            "T=____/____=____"
+          ]
+        ],
+        [
+          "7 CUTOFF AND DECISION",
+          [
+            "T TABLE: DF=N1+N2-2.",
+            "USE TOTAL 2-TAIL ALPHA.",
+            "POSITIVE CUTOFF C=____",
+            "ABS(T)>C: REJECT H0.",
+            "OR REJECT WHEN P<ALPHA."
+          ]
+        ]
+      ],
+      "answer": [
+        "AT ALPHA=____, POPULATION",
+        "MEAN ____ DIFFERS / WAS NOT",
+        "SHOWN TO DIFFER BETWEEN",
+        "GROUP ____ AND GROUP ____."
+      ],
+      "label": "AK",
+      "pages": [
+        "AK",
+        "AL",
+        "AM",
+        "AN",
+        "AO",
+        "AP",
+        "AQ",
+        "AR",
+        "AS"
+      ]
+    },
+    {
+      "name": "BMANOVA",
+      "title": "BALANCED ANOVA",
+      "recognize": [
+        "INDEPENDENT NORMAL GROUPS;",
+        "EQUAL POPULATION VARIANCES.",
+        "M=NUMBER OF GROUPS.",
+        "N=PEOPLE IN EACH GROUP.",
+        "COPY EACH MEAN, SD, ALPHA."
+      ],
+      "steps": [
+        [
+          "1 HYPOTHESES",
+          [
+            "H0:ALL POPULATION MEANS",
+            "ARE EQUAL.",
+            "HA:AT LEAST ONE DIFFERS.",
+            "CHECK SAME N IN EACH GROUP."
+          ]
+        ],
+        [
+          "2 WITHIN VARIANCE",
+          [
+            "SQUARE EACH GROUP SD.",
+            "WITHIN=SUM(SD^2)/M",
+            "SQUARED SDS: ____",
+            "SUM=____; DIVIDE BY M=____",
+            "WITHIN=____"
+          ]
+        ],
+        [
+          "3 GRAND MEAN",
+          [
+            "GRAND=SUM(GROUP MEANS)/M",
+            "SUM OF MEANS=____",
+            "GRAND=____/____=____"
+          ]
+        ],
+        [
+          "4 DISTANCES OF MEANS",
+          [
+            "FOR EACH GROUP:",
+            "GAP=GROUP MEAN-GRAND",
+            "SQUARE EACH GAP.",
+            "Q=SUM(GAP^2)=____"
+          ]
+        ],
+        [
+          "5 BETWEEN VARIANCE",
+          [
+            "VAR OF MEANS=Q/(M-1)",
+            "VAR OF MEANS=____",
+            "BETWEEN=N*VAR OF MEANS",
+            "BETWEEN=____*____=____"
+          ]
+        ],
+        [
+          "6 F AND BOTH DF",
+          [
+            "F=BETWEEN/WITHIN",
+            "F=____/____=____",
+            "NUMERATOR DF=M-1=____",
+            "DENOMINATOR DF=M*(N-1)",
+            "DENOMINATOR DF=____"
+          ]
+        ],
+        [
+          "7 COMPARE UPPER TAIL",
+          [
+            "F TABLE: USE BOTH DF AND",
+            "UPPER-TAIL ALPHA. C=____",
+            "IF F>C: REJECT H0.",
+            "SAVE WITHIN AND ERROR DF",
+            "FOR REQUESTED PAIRS."
+          ]
+        ]
+      ],
+      "answer": [
+        "AT ALPHA=____, AT LEAST ONE",
+        "POPULATION MEAN ____",
+        "DIFFERS / A DIFFERENCE WAS",
+        "NOT ESTABLISHED. IDENTIFY",
+        "SPECIFIC PAIRS BY FOLLOW-UP."
+      ],
+      "label": "AT",
+      "pages": [
+        "AT",
+        "AU",
+        "AV",
+        "AW",
+        "AX",
+        "AY",
+        "AZ",
+        "BA",
+        "BB"
+      ]
+    },
+    {
+      "name": "BMPAIR",
+      "title": "PAIR AFTER ANOVA",
+      "recognize": [
+        "COPY MEAN I, MEAN J, NI,NJ.",
+        "KEEP ORIGINAL ANOVA WITHIN",
+        "VARIANCE AND ERROR DF.",
+        "COUNT ONLY REQUESTED PAIRS.",
+        "K=THAT COMPARISON COUNT."
+      ],
+      "steps": [
+        [
+          "1 PAIR HYPOTHESIS",
+          [
+            "H0:MU I=MU J",
+            "HA:THE TWO MEANS DIFFER.",
+            "WITHIN=____; ERROR DF=____"
+          ]
+        ],
+        [
+          "2 STANDARD ERROR",
+          [
+            "R=1/NI+1/NJ=____",
+            "SE=SQRT(WITHIN*R)",
+            "SE=SQRT(____*____)=____"
+          ]
+        ],
+        [
+          "3 PAIR STATISTIC",
+          [
+            "GAP=ABS(MEAN I-MEAN J)",
+            "GAP=____",
+            "ABS T=GAP/SE=____",
+            "ONLY STATISTIC ASKED?",
+            "REPORT THIS RESULT."
+          ]
+        ],
+        [
+          "4 BONFERRONI LEVEL",
+          [
+            "PAIR ALPHA=FAMILY ALPHA/K",
+            "PAIR ALPHA=____/____=____",
+            "T TABLE: ORIGINAL ERROR DF.",
+            "USE TOTAL 2-TAIL PAIR LEVEL.",
+            "CUTOFF C=____"
+          ]
+        ],
+        [
+          "5 PAIR DECISION",
+          [
+            "IF ABS T>C: REJECT PAIR H0.",
+            "KEEP PAIR LABEL ATTACHED.",
+            "IF HOLM WAS REQUESTED, USE",
+            "THE HOLM GUIDE FOR FAMILY."
+          ]
+        ]
+      ],
+      "answer": [
+        "AT FAMILY ALPHA=____, THE",
+        "POPULATION MEANS FOR ____",
+        "AND ____ DIFFER / WERE NOT",
+        "SHOWN TO DIFFER."
+      ],
+      "label": "BC",
+      "pages": [
+        "BC",
+        "BD",
+        "BE",
+        "BF",
+        "BG",
+        "BH",
+        "BI"
+      ]
+    },
+    {
+      "name": "BMDESC",
+      "title": "MEAN VAR SD SEM",
+      "recognize": [
+        "RAW NUMERICAL OBSERVATIONS.",
+        "SAMPLE OR WHOLE POPULATION?",
+        "N=NUMBER OF OBSERVATIONS.",
+        "XBAR=AVERAGE."
+      ],
+      "steps": [
+        [
+          "1 COUNT AND ADD",
+          [
+            "N=____",
+            "TOTAL=SUM(X)=____",
+            "LIST EACH ORIGINAL VALUE."
+          ]
+        ],
+        [
+          "2 MEAN",
+          [
+            "XBAR=TOTAL/N",
+            "XBAR=____/____=____"
+          ]
+        ],
+        [
+          "3 SQUARED DISTANCES",
+          [
+            "MAKE COLUMNS:",
+            "X | X-XBAR | (X-XBAR)^2",
+            "SUBTRACT MEAN; SQUARE.",
+            "Q=SUM(SQUARED GAPS)=____"
+          ]
+        ],
+        [
+          "4 SAMPLE VAR AND SD",
+          [
+            "SAMPLE VAR=Q/(N-1)",
+            "SAMPLE VAR=____/____=____",
+            "SAMPLE SD=SQRT(VAR)=____"
+          ]
+        ],
+        [
+          "5 MEAN UNCERTAINTY",
+          [
+            "SEM=SD/SQRT(N)",
+            "SEM=____/SQRT(____)=____",
+            "SD:SPREAD OF INDIVIDUALS.",
+            "SEM:SPREAD OF AVERAGES."
+          ]
+        ],
+        [
+          "6 WHOLE POPULATION",
+          [
+            "ONLY FOR COMPLETE POPULATION",
+            "POP VAR=Q/N=____",
+            "POP SD=SQRT(POP VAR)=____",
+            "SAMPLE USES N-1 INSTEAD."
+          ]
+        ]
+      ],
+      "answer": [
+        "MEAN=____; SD=____",
+        "VARIANCE=____; SEM=____",
+        "MEAN,SD,SEM:ORIGINAL UNITS.",
+        "VARIANCE:SQUARED UNITS."
+      ],
+      "label": "BJ",
+      "pages": [
+        "BJ",
+        "BK",
+        "BL",
+        "BM",
+        "BN",
+        "BO",
+        "BP",
+        "BQ"
+      ]
+    },
+    {
+      "name": "BMPCTL",
+      "title": "PERCENTILE MEDIAN IQR",
+      "recognize": [
+        "RAW SAMPLE + PERCENTILE P.",
+        "P RUNS FROM 0 TO 100.",
+        "COURSE RANK RULE USED."
+      ],
+      "steps": [
+        [
+          "1 SORT AND LABEL",
+          [
+            "SORT LOWEST TO HIGHEST.",
+            "WRITE POSITIONS 1,2,...,N.",
+            "N=____; P=____"
+          ]
+        ],
+        [
+          "2 RANK",
+          [
+            "R=1+P*(N-1)/100",
+            "R=1+____*(____-1)/100",
+            "R=____"
+          ]
+        ],
+        [
+          "3 BRACKETS",
+          [
+            "I=WHOLE PART OF R=____",
+            "F=R-I=FRACTIONAL PART=____",
+            "LOW=VALUE AT POSITION I",
+            "HIGH=VALUE AT POSITION I+1",
+            "INTEGER R? USE THAT VALUE."
+          ]
+        ],
+        [
+          "4 INTERPOLATE",
+          [
+            "GAP=HIGH-LOW=____",
+            "PERCENTILE=LOW+F*GAP",
+            "RESULT=____+____*____=____",
+            "P=100? USE LAST VALUE."
+          ]
+        ],
+        [
+          "5 QUARTILES AND MEDIAN",
+          [
+            "REPEAT RANK RULE FOR:",
+            "Q1:P=25; MEDIAN:P=50;",
+            "Q3:P=75.",
+            "Q1=____; MED=____; Q3=____"
+          ]
+        ],
+        [
+          "6 SPREAD",
+          [
+            "IQR=Q3-Q1=____",
+            "RANGE=MAX-MIN=____"
+          ]
+        ]
+      ],
+      "answer": [
+        "THE ____TH PERCENTILE IS",
+        "____. MEDIAN=____",
+        "IQR=____; RANGE=____",
+        "IN THE ORIGINAL UNITS."
+      ],
+      "label": "BR",
+      "pages": [
+        "BR",
+        "BS",
+        "BT",
+        "BU",
+        "BV",
+        "BW",
+        "BX",
+        "BY"
+      ]
+    },
+    {
+      "name": "BMSEM",
+      "title": "SD OF SAMPLE MEANS",
+      "recognize": [
+        "GIVEN INDIVIDUAL SD AND N.",
+        "ASKED SPREAD OF AN AVERAGE.",
+        "SD=SIGMA; N=SAMPLE SIZE."
+      ],
+      "steps": [
+        [
+          "1 COPY SD AND N",
+          [
+            "INDIVIDUAL SD=____; N=____",
+            "VARIANCE GIVEN INSTEAD?",
+            "SD=SQRT(VARIANCE)."
+          ]
+        ],
+        [
+          "2 STANDARD ERROR",
+          [
+            "SEM=SD/SQRT(N)",
+            "SQRT(N)=____",
+            "SEM=____/____=____"
+          ]
+        ],
+        [
+          "3 VARIANCE OF MEAN",
+          [
+            "VAR(MEAN)=SD^2/N",
+            "OR VAR(MEAN)=SEM^2",
+            "VAR(MEAN)=____",
+            "USE SQUARED UNITS FOR VAR."
+          ]
+        ]
+      ],
+      "answer": [
+        "THE SAMPLE MEAN HAS SD",
+        "____ AND VARIANCE ____.",
+        "INDIVIDUAL SD STAYS ____."
+      ],
+      "label": "BZ",
+      "pages": [
+        "BZ",
+        "CA",
+        "CB",
+        "CC",
+        "CD"
+      ]
+    },
+    {
+      "name": "BMSECH",
+      "title": "CHANGE SAMPLE SIZE",
+      "recognize": [
+        "OLD SEM AND OLD/NEW N GIVEN.",
+        "INDIVIDUAL SD STAYS SAME."
+      ],
+      "steps": [
+        [
+          "1 COPY THE THREE VALUES",
+          [
+            "OLD SEM=____",
+            "OLD N=____; NEW N=____"
+          ]
+        ],
+        [
+          "2 SIZE CHANGE FACTOR",
+          [
+            "R=SQRT(OLD N/NEW N)",
+            "R=SQRT(____/____)=____"
+          ]
+        ],
+        [
+          "3 NEW SEM",
+          [
+            "NEW SEM=OLD SEM*R",
+            "NEW SEM=____*____=____",
+            "LARGER NEW N GIVES A",
+            "SMALLER SEM."
+          ]
+        ]
+      ],
+      "answer": [
+        "WITH NEW SAMPLE SIZE ____,",
+        "THE NEW SEM IS ____."
+      ],
+      "label": "CE",
+      "pages": [
+        "CE",
+        "CF",
+        "CG",
+        "CH",
+        "CI"
+      ]
+    },
+    {
+      "name": "BMSEVAR",
+      "title": "SE OF SAMPLE VARIANCE",
+      "recognize": [
+        "NORMAL SETTING. ASKED SE",
+        "OF VARIANCE, NOT OF MEAN.",
+        "COPY SAMPLE SD AND N."
+      ],
+      "steps": [
+        [
+          "1 GET SAMPLE VARIANCE",
+          [
+            "VAR=SD^2=____",
+            "VARIANCE GIVEN ALREADY?",
+            "USE IT WITHOUT SQUARING."
+          ]
+        ],
+        [
+          "2 MULTIPLIER",
+          [
+            "R=SQRT(2/(N-1))",
+            "N-1=____; 2/(N-1)=____",
+            "R=____"
+          ]
+        ],
+        [
+          "3 ESTIMATED SE OF VAR",
+          [
+            "SE(VAR)=VAR*R",
+            "SE(VAR)=____*____=____",
+            "ANSWER HAS SQUARED UNITS."
+          ]
+        ],
+        [
+          "4 IF SEM ALSO ASKED",
+          [
+            "SEM=SD/SQRT(N)=____",
+            "THIS DESCRIBES THE MEAN.",
+            "SE(VAR) DESCRIBES VARIANCE."
+          ]
+        ]
+      ],
+      "answer": [
+        "ESTIMATED SE OF SAMPLE",
+        "VARIANCE=____ SQUARED UNITS."
+      ],
+      "label": "CJ",
+      "pages": [
+        "CJ",
+        "CK",
+        "CL",
+        "CM",
+        "CN",
+        "CO"
+      ]
+    },
+    {
+      "name": "BMDISC",
+      "title": "DISCRETE TABLE",
+      "recognize": [
+        "COPY EACH VALUE X AND ITS",
+        "PROBABILITY P.",
+        "MU=EXPECTED VALUE=MEAN.",
+        "F(C)=PROBABILITY X<=C."
+      ],
+      "steps": [
+        [
+          "1 VALID TABLE",
+          [
+            "EACH P MUST BE >=0.",
+            "SUM(P)=1.",
+            "VALUE,PROB PAIRS: ____",
+            "CHECK SUM=____"
+          ]
+        ],
+        [
+          "2 EXPECTED VALUE",
+          [
+            "MAKE COLUMNS X,P,X*P.",
+            "MU=SUM(X*P)",
+            "EACH X*P=____",
+            "ADD THEM: MU=____"
+          ]
+        ],
+        [
+          "3 SECOND MOMENT",
+          [
+            "ADD COLUMN X^2*P.",
+            "EX2=SUM(X^2*P)",
+            "SQUARE X, NOT P.",
+            "EACH TERM=____; EX2=____"
+          ]
+        ],
+        [
+          "4 VARIANCE",
+          [
+            "VAR=EX2-MU^2",
+            "VAR=____-(____)^2=____",
+            "SD IF ASKED=SQRT(VAR)"
+          ]
+        ],
+        [
+          "5 CDF AT A CUTOFF",
+          [
+            "F(C)=SUM(P FOR X<=C)",
+            "C=____; SELECTED X:____",
+            "ADD THEIR PROBABILITIES.",
+            "F(C)=____; P(X>C)=1-F(C)"
+          ]
+        ],
+        [
+          "6 EXPECTED FUNCTION",
+          [
+            "ONLY IF H(X) IS ASKED:",
+            "E(H(X))=SUM(H(X)*P)",
+            "APPLY H TO EACH X FIRST.",
+            "MULTIPLY BY ORIGINAL P.",
+            "ADD THE WEIGHTED VALUES."
+          ]
+        ]
+      ],
+      "answer": [
+        "MEAN=____; EX2=____",
+        "VAR=____; REQUESTED CDF OR",
+        "EXPECTED FUNCTION=____."
+      ],
+      "label": "CP",
+      "pages": [
+        "CP",
+        "CQ",
+        "CR",
+        "CS",
+        "CT",
+        "CU",
+        "CV",
+        "CW"
+      ]
+    },
+    {
+      "name": "BMDCDF",
+      "title": "DISCRETE INTERVAL",
+      "recognize": [
+        "DISCRETE TABLE AND INTERVAL.",
+        "L=LOW END; H=HIGH END.",
+        "CHECK < VERSUS <=.",
+        "CDF F(C) INCLUDES EQUALITY."
+      ],
+      "steps": [
+        [
+          "1 SELECT OUTCOMES",
+          [
+            "CIRCLE VALUES SATISFYING",
+            "THE EXACT INEQUALITIES.",
+            "LOW END INCLUDED? ____",
+            "HIGH END INCLUDED? ____"
+          ]
+        ],
+        [
+          "2 DIRECT SUM",
+          [
+            "ADD PROBABILITIES OF THE",
+            "CIRCLED VALUES.",
+            "PROB=____+____+...=____",
+            "THIS IS THE SIMPLEST WAY."
+          ]
+        ],
+        [
+          "3 CDF METHOD IF NEEDED",
+          [
+            "BASE=F(H)-F(L).",
+            "IF LOW INCLUDED:ADD P(X=L).",
+            "IF HIGH EXCLUDED:",
+            "SUBTRACT P(X=H).",
+            "FINAL PROBABILITY=____"
+          ]
+        ],
+        [
+          "4 SAME ENDPOINTS",
+          [
+            "IF L=H, INTERVAL IS EMPTY",
+            "UNLESS BOTH ENDS INCLUDED.",
+            "BOTH INCLUDED? USE P(X=L).",
+            "OTHERWISE PROBABILITY=0."
+          ]
+        ]
+      ],
+      "answer": [
+        "P(REQUESTED INTERVAL)=____.",
+        "INCLUDED OUTCOMES: ____."
+      ],
+      "label": "CX",
+      "pages": [
+        "CX",
+        "CY",
+        "CZ",
+        "DA",
+        "DB",
+        "DC"
+      ]
+    },
+    {
+      "name": "BMMASS",
+      "title": "MISSING PMF CONSTANT",
+      "recognize": [
+        "PROBABILITIES ARE C*WEIGHT.",
+        "COPY ALL KNOWN WEIGHTS.",
+        "C IS THE UNKNOWN MULTIPLIER."
+      ],
+      "steps": [
+        [
+          "1 SUM WEIGHTS",
+          [
+            "W=SUM(WEIGHTS)=____",
+            "WEIGHTS MUST BE >=0.",
+            "W MUST BE POSITIVE."
+          ]
+        ],
+        [
+          "2 TOTAL MUST BE ONE",
+          [
+            "C*W=1",
+            "C=1/W",
+            "C=1/____=____"
+          ]
+        ],
+        [
+          "3 COMPLETE TABLE",
+          [
+            "EACH PROB=C*ITS WEIGHT.",
+            "WRITE VALUE AND NEW PROB.",
+            "PROBS:____"
+          ]
+        ],
+        [
+          "4 CHECK",
+          [
+            "SUM(NEW PROBABILITIES)=1.",
+            "CHECK SUM=____"
+          ]
+        ]
+      ],
+      "answer": [
+        "C=____. THE COMPLETED",
+        "PROBABILITIES ARE ____."
+      ],
+      "label": "DD",
+      "pages": [
+        "DD",
+        "DE",
+        "DF",
+        "DG",
+        "DH",
+        "DI"
+      ]
+    },
+    {
+      "name": "BMCOIN",
+      "title": "EXACT FAIR COIN HEADS",
+      "recognize": [
+        "N INDEPENDENT FAIR TOSSES.",
+        "EXACTLY K HEADS REQUESTED."
+      ],
+      "steps": [
+        [
+          "1 ALL SEQUENCES",
+          [
+            "TOTAL=2^N",
+            "N=____; TOTAL=____",
+            "ALL SEQUENCES EQUALLY",
+            "LIKELY FOR FAIR TOSSES."
+          ]
+        ],
+        [
+          "2 FAVORABLE SEQUENCES",
+          [
+            "WAYS=N!/(K!*(N-K)!)",
+            "OR USE N NCR K.",
+            "TI:MATH > PRB > NCR.",
+            "N=____; K=____; WAYS=____"
+          ]
+        ],
+        [
+          "3 DIVIDE COUNTS",
+          [
+            "PROB=WAYS/TOTAL",
+            "PROB=____/____=____",
+            "ONE SPECIFIED ORDER?",
+            "FAVORABLE COUNT IS ONE."
+          ]
+        ]
+      ],
+      "answer": [
+        "P(EXACTLY ____ HEADS IN",
+        "____ TOSSES)=____."
+      ],
+      "label": "DJ",
+      "pages": [
+        "DJ",
+        "DK",
+        "DL",
+        "DM",
+        "DN"
+      ]
+    },
+    {
+      "name": "BMEVENT",
+      "title": "TWO EVENTS IN A ROW",
+      "recognize": [
+        "BOTH EVENTS MUST HAPPEN.",
+        "A=FIRST; B=SECOND.",
+        "P(B GIVEN A) IS SECOND",
+        "CHANCE AFTER THE FIRST."
+      ],
+      "steps": [
+        [
+          "1 FIRST PROBABILITY",
+          [
+            "P1=FAVORABLE/TOTAL",
+            "USE THE INITIAL COUNTS.",
+            "P1=____/____=____"
+          ]
+        ],
+        [
+          "2 SECOND PROBABILITY",
+          [
+            "WITHOUT REPLACEMENT:",
+            "UPDATE FAVORABLE AND TOTAL",
+            "AFTER THE FIRST OUTCOME.",
+            "P2=____/____=____",
+            "INDEPENDENT? P2 UNCHANGED."
+          ]
+        ],
+        [
+          "3 MULTIPLY",
+          [
+            "P(BOTH)=P1*P2",
+            "P(BOTH)=____*____=____"
+          ]
+        ]
+      ],
+      "answer": [
+        "P(____ THEN ____)=____."
+      ],
+      "label": "DO",
+      "pages": [
+        "DO",
+        "DP",
+        "DQ",
+        "DR",
+        "DS"
+      ]
+    },
+    {
+      "name": "BMLINE",
+      "title": "INDEPENDENT X AND Y",
+      "recognize": [
+        "Z=A*X+B*Y+C.",
+        "X,Y MUST BE INDEPENDENT",
+        "FOR THIS VARIANCE FORMULA.",
+        "COPY BOTH MEANS/VARIANCES."
+      ],
+      "steps": [
+        [
+          "1 IDENTIFY INPUTS",
+          [
+            "A=____; B=____; C=____",
+            "MEAN X=____; MEAN Y=____",
+            "VAR X=____; VAR Y=____",
+            "SD GIVEN? SQUARE IT FIRST."
+          ]
+        ],
+        [
+          "2 EXPECTED VALUE",
+          [
+            "MEAN Z=A*MEAN X+B*MEAN Y+C",
+            "TERM1=____; TERM2=____",
+            "ADD TERMS AND C:____",
+            "KEEP COEFFICIENT SIGNS."
+          ]
+        ],
+        [
+          "3 VARIANCE",
+          [
+            "VAR Z=A^2*VAR X+B^2*VAR Y",
+            "TERM1=____; TERM2=____",
+            "ADD=____",
+            "VARIANCES ADD EVEN WHEN",
+            "THE ORIGINAL TERMS SUBTRACT."
+          ]
+        ],
+        [
+          "4 SD IF ASKED",
+          [
+            "SD Z=SQRT(VAR Z)=____",
+            "ADDING C CHANGES THE MEAN",
+            "BUT ADDS NO VARIANCE."
+          ]
+        ]
+      ],
+      "answer": [
+        "MEAN Z=____; VAR Z=____;",
+        "SD Z=____ IF REQUESTED."
+      ],
+      "label": "DT",
+      "pages": [
+        "DT",
+        "DU",
+        "DV",
+        "DW",
+        "DX",
+        "DY"
+      ]
+    },
+    {
+      "name": "BMSHIFT",
+      "title": "SHIFT OR SCALE ONE X",
+      "recognize": [
+        "Y=A+B*X.",
+        "A=ADDED SHIFT.",
+        "B=MULTIPLIER.",
+        "COPY MEAN X; VAR IF ASKED."
+      ],
+      "steps": [
+        [
+          "1 MATCH THE EXPRESSION",
+          [
+            "X-26: A=-26, B=1.",
+            "2X+1: A=1, B=2.",
+            "YOUR A=____; B=____",
+            "ORIGINAL MEAN=____"
+          ]
+        ],
+        [
+          "2 NEW EXPECTED VALUE",
+          [
+            "MEAN Y=A+B*MEAN X",
+            "MEAN Y=____+____*____",
+            "MEAN Y=____",
+            "ONLY MEAN ASKED? FINISHED."
+          ]
+        ],
+        [
+          "3 VARIANCE IF ASKED",
+          [
+            "VAR Y=B^2*VAR X",
+            "VAR Y=(____)^2*____=____",
+            "SHIFT A ADDS NO VARIANCE."
+          ]
+        ],
+        [
+          "4 SD IF ASKED",
+          [
+            "SD Y=ABS(B)*SD X",
+            "OR SQRT(VAR Y).",
+            "NEW SD=____"
+          ]
+        ]
+      ],
+      "answer": [
+        "E(Y)=____; VAR(Y)=____;",
+        "SD(Y)=____ AS REQUESTED."
+      ],
+      "label": "DZ",
+      "pages": [
+        "DZ",
+        "EA",
+        "EB",
+        "EC",
+        "ED",
+        "EE"
+      ]
+    },
+    {
+      "name": "BMUNIF",
+      "title": "UNIFORM DISTRIBUTION",
+      "recognize": [
+        "UNIFORM ON [A,B].",
+        "L,H=REQUESTED BOUNDS.",
+        "USE THEIR PART INSIDE [A,B]."
+      ],
+      "steps": [
+        [
+          "1 FULL WIDTH",
+          [
+            "W=B-A=____",
+            "DENSITY HEIGHT=1/W=____"
+          ]
+        ],
+        [
+          "2 REQUESTED WIDTH",
+          [
+            "CLIP INTERVAL TO SUPPORT.",
+            "WIDTH=HIGH-LOW=____",
+            "COMPLETELY OUTSIDE? P=0."
+          ]
+        ],
+        [
+          "3 PROBABILITY",
+          [
+            "P=REQUESTED WIDTH/W",
+            "P=____/____=____",
+            "CONTINUOUS ENDPOINTS ADD",
+            "ZERO PROBABILITY."
+          ]
+        ],
+        [
+          "4 MOMENTS IF ASKED",
+          [
+            "MEAN=(A+B)/2=____",
+            "VAR=(B-A)^2/12=____",
+            "SD=SQRT(VAR) IF ASKED."
+          ]
+        ]
+      ],
+      "answer": [
+        "REQUESTED PROB=____.",
+        "MEAN=____; VAR=____",
+        "AS REQUESTED."
+      ],
+      "label": "EF",
+      "pages": [
+        "EF",
+        "EG",
+        "EH",
+        "EI",
+        "EJ",
+        "EK"
+      ]
+    },
+    {
+      "name": "BMCONST",
+      "title": "NORMALIZE LINEAR PDF",
+      "recognize": [
+        "F(X)=C*(A+B*X) ON [L,U].",
+        "C=UNKNOWN MULTIPLIER.",
+        "A,B,L,U ARE KNOWN.",
+        "BASE MUST STAY NONNEGATIVE."
+      ],
+      "steps": [
+        [
+          "1 SET TOTAL AREA",
+          [
+            "C*INTEGRAL(A+B*X)=1",
+            "INTEGRATE FROM L TO U.",
+            "A=____; B=____",
+            "L=____; U=____"
+          ]
+        ],
+        [
+          "2 ANTIDERIVATIVE",
+          [
+            "G(X)=A*X+B*X^2/2",
+            "G(U)=____",
+            "G(L)=____",
+            "X INTEGRATES TO X^2/2."
+          ]
+        ],
+        [
+          "3 BASE AREA",
+          [
+            "AREA=G(U)-G(L)",
+            "AREA=____-____=____"
+          ]
+        ],
+        [
+          "4 NORMALIZE",
+          [
+            "C*AREA=1",
+            "C=1/AREA=____",
+            "SUBSTITUTE C INTO F(X).",
+            "CHECK TOTAL AREA IS ONE."
+          ]
+        ]
+      ],
+      "answer": [
+        "C=____. F(X)=____ ON",
+        "[____,____], ZERO ELSEWHERE."
+      ],
+      "label": "EL",
+      "pages": [
+        "EL",
+        "EM",
+        "EN",
+        "EO",
+        "EP",
+        "EQ"
+      ]
+    },
+    {
+      "name": "BMEND",
+      "title": "UNKNOWN PDF ENDPOINT",
+      "recognize": [
+        "F(X)=A+B*X ON [0,C].",
+        "A,B ARE NONNEGATIVE.",
+        "C=UNKNOWN POSITIVE END.",
+        "C IS NOT AN OUTSIDE FACTOR."
+      ],
+      "steps": [
+        [
+          "1 SET TOTAL AREA",
+          [
+            "INTEGRAL FROM 0 TO C = 1.",
+            "A=____; B=____"
+          ]
+        ],
+        [
+          "2 INTEGRATE",
+          [
+            "A*C+B*C^2/2=1",
+            "LOWER END ZERO ADDS ZERO.",
+            "WRITE YOUR COEFFICIENTS",
+            "IN THIS EQUATION."
+          ]
+        ],
+        [
+          "3 POSITIVE ROOT",
+          [
+            "IF B>0:",
+            "ROOT=SQRT(A^2+2*B)",
+            "C=2/(A+ROOT)",
+            "IF B=0 AND A>0:C=1/A.",
+            "ROOT=____; C=____"
+          ]
+        ],
+        [
+          "4 CHECK SUPPORT",
+          [
+            "CHECK A*C+B*C^2/2=1.",
+            "KEEP C>0.",
+            "FOR BMPDF, FULL C IS IN T.",
+            "ALPHA THEN T KEY ENTERS IT."
+          ]
+        ]
+      ],
+      "answer": [
+        "UPPER ENDPOINT C=____.",
+        "SUPPORT IS [0,____]."
+      ],
+      "label": "ER",
+      "pages": [
+        "ER",
+        "ES",
+        "ET",
+        "EU",
+        "EV",
+        "EW"
+      ]
+    },
+    {
+      "name": "BMPDF",
+      "title": "LINEAR PDF AND CDF",
+      "recognize": [
+        "PDF=A+B*X ON [L,U].",
+        "PDF IS THE DENSITY HEIGHT.",
+        "F(C)=CDF, THE LEFT AREA.",
+        "C=CDF CUTOFF; M=MEDIAN."
+      ],
+      "steps": [
+        [
+          "1 CHECK THE DENSITY",
+          [
+            "NONNEGATIVE ON SUPPORT.",
+            "TOTAL INTEGRAL MUST BE 1.",
+            "A=____; B=____",
+            "L=____; U=____",
+            "MISSING MULTIPLIER?",
+            "USE NORMALIZE PDF GUIDE."
+          ]
+        ],
+        [
+          "2 AREA ANTIDERIVATIVE",
+          [
+            "G(X)=A*X+B*X^2/2",
+            "USE THIS FOR CDF/AREAS.",
+            "G(L)=____; G(U)=____"
+          ]
+        ],
+        [
+          "3 CDF",
+          [
+            "INSIDE SUPPORT:",
+            "F(C)=G(C)-G(L)",
+            "C<=L: F(C)=0.",
+            "C>=U: F(C)=1.",
+            "YOUR C=____; F(C)=____"
+          ]
+        ],
+        [
+          "4 INTERVAL PROBABILITY",
+          [
+            "P(LOW<X<HIGH)=",
+            "F(HIGH)-F(LOW)",
+            "UPPER AREA=____",
+            "LOWER AREA=____; P=____",
+            "EXACT POINT HAS P=0."
+          ]
+        ],
+        [
+          "5 EXPECTED VALUE",
+          [
+            "INTEGRATE X*DENSITY:",
+            "H(X)=A*X^2/2+B*X^3/3",
+            "MEAN=H(U)-H(L)",
+            "UPPER=____; LOWER=____",
+            "MEAN=____"
+          ]
+        ],
+        [
+          "6 SECOND MOMENT",
+          [
+            "INTEGRATE X^2*DENSITY:",
+            "J(X)=A*X^3/3+B*X^4/4",
+            "EX2=J(U)-J(L)",
+            "UPPER=____; LOWER=____",
+            "EX2=____"
+          ]
+        ],
+        [
+          "7 VARIANCE AND SD",
+          [
+            "VAR=EX2-MEAN^2",
+            "VAR=____-(____)^2=____",
+            "SD IF ASKED=SQRT(VAR)."
+          ]
+        ],
+        [
+          "8 MEDIAN IF ASKED",
+          [
+            "G(M)-G(L)=.5",
+            "SUBSTITUTE G EXPRESSION.",
+            "SOLVE FOR M.",
+            "KEEP ROOT WITH L<=M<=U.",
+            "MEDIAN=____"
+          ]
+        ]
+      ],
+      "answer": [
+        "REPORT ONLY REQUESTED PARTS.",
+        "PROB / CDF=____; MEAN=____",
+        "VAR=____; MEDIAN=____."
+      ],
+      "label": "EX",
+      "pages": [
+        "EX",
+        "EY",
+        "EZ",
+        "FA",
+        "FB",
+        "FC",
+        "FD",
+        "FE",
+        "FF",
+        "FG"
+      ]
+    },
+    {
+      "name": "BMPIECE",
+      "title": "TWO PIECE DENSITY",
+      "recognize": [
+        "ONE LINEAR PDF BEFORE SPLIT,",
+        "ANOTHER AFTER THE SPLIT.",
+        "L=LOW; S=SPLIT; U=HIGH.",
+        "FIRST F=A1+B1*X.",
+        "SECOND F=A2+B2*X."
+      ],
+      "steps": [
+        [
+          "1 INTEGRATE EACH PIECE",
+          [
+            "G1(X)=A1*X+B1*X^2/2",
+            "G2(X)=A2*X+B2*X^2/2",
+            "KEEP EACH ON ITS INTERVAL."
+          ]
+        ],
+        [
+          "2 AREA OF EACH PIECE",
+          [
+            "AREA1=G1(S)-G1(L)",
+            "AREA2=G2(U)-G2(S)",
+            "CHECK AREA1+AREA2=1.",
+            "EACH PDF STAYS >=0."
+          ]
+        ],
+        [
+          "3 CDF BEFORE SPLIT",
+          [
+            "FOR L<C<=S:",
+            "F(C)=G1(C)-G1(L)",
+            "BELOW L: F(C)=0.",
+            "YOUR C=____; F(C)=____"
+          ]
+        ],
+        [
+          "4 CDF AFTER SPLIT",
+          [
+            "FOR S<C<U:",
+            "F(C)=AREA1+G2(C)-G2(S)",
+            "ADD ALL OF FIRST PIECE.",
+            "AT OR ABOVE U: F(C)=1."
+          ]
+        ],
+        [
+          "5 INTERVAL PROBABILITY",
+          [
+            "P(LOW<X<HIGH)=",
+            "F(HIGH)-F(LOW)",
+            "WORKS ACROSS THE SPLIT.",
+            "PROBABILITY=____"
+          ]
+        ],
+        [
+          "6 EXPECTED VALUE",
+          [
+            "EACH PIECE: INTEGRATE X*F.",
+            "H(X)=A*X^2/2+B*X^3/3",
+            "FIRST:H1(S)-H1(L)=____",
+            "SECOND:H2(U)-H2(S)=____",
+            "MEAN=FIRST+SECOND=____"
+          ]
+        ],
+        [
+          "7 SECOND MOMENT",
+          [
+            "EACH PIECE: INTEGRATE X^2*F.",
+            "J(X)=A*X^3/3+B*X^4/4",
+            "FIRST:J1(S)-J1(L)=____",
+            "SECOND:J2(U)-J2(S)=____",
+            "EX2=FIRST+SECOND=____"
+          ]
+        ],
+        [
+          "8 VARIANCE",
+          [
+            "VAR=EX2-MEAN^2",
+            "VAR=____-(____)^2=____",
+            "SD IF ASKED=SQRT(VAR)."
+          ]
+        ],
+        [
+          "9 MEDIAN IF ASKED",
+          [
+            "SOLVE F(M)=.5.",
+            "AREA1>=.5? USE FIRST PIECE.",
+            "OTHERWISE USE SECOND PIECE.",
+            "KEEP M INSIDE THAT PIECE."
+          ]
+        ]
+      ],
+      "answer": [
+        "REQUESTED PROB=____;",
+        "MEAN=____; VAR=____;",
+        "MEDIAN=____ AS REQUESTED."
+      ],
+      "label": "FH",
+      "pages": [
+        "FH",
+        "FI",
+        "FJ",
+        "FK",
+        "FL",
+        "FM",
+        "FN",
+        "FO",
+        "FP",
+        "FQ",
+        "FR"
+      ]
+    },
+    {
+      "name": "BMNORM",
+      "title": "NORMAL INDIVIDUAL",
+      "recognize": [
+        "PROBABILITY FOR ONE PERSON",
+        "OR ONE MEASUREMENT.",
+        "MU=MEAN; SD=INDIVIDUAL SD.",
+        "L,H=MEASUREMENT CUTOFFS."
+      ],
+      "steps": [
+        [
+          "1 COPY AND SKETCH",
+          [
+            "MU=____; SD=____",
+            "SHADE LEFT/RIGHT/BETWEEN.",
+            "VAR GIVEN? SD=SQRT(VAR)."
+          ]
+        ],
+        [
+          "2 STANDARDIZE CUTOFFS",
+          [
+            "Z LOW=(L-MU)/SD=____",
+            "Z HIGH=(H-MU)/SD=____",
+            "USE ONLY NEEDED CUTOFFS."
+          ]
+        ],
+        [
+          "3 READ THE Z TABLE",
+          [
+            "PHI(Z)=AREA LEFT OF Z.",
+            "LOW LEFT AREA=____",
+            "HIGH LEFT AREA=____",
+            "NEGATIVE Z:AREA BELOW .5."
+          ]
+        ],
+        [
+          "4 SELECT YOUR REGION",
+          [
+            "LEFT=PHI(Z CUTOFF)",
+            "RIGHT=1-PHI(Z CUTOFF)",
+            "BETWEEN=PHI(HIGH Z)-",
+            "PHI(LOW Z)",
+            "PROBABILITY=____"
+          ]
+        ],
+        [
+          "5 TI CHECK IF NEEDED",
+          [
+            "2ND > VARS:DISTR",
+            "NORMALCDF(LOW,HIGH,MU,SD)",
+            "UNBOUNDED END: -1E99/1E99.",
+            "EE KEY IS 2ND COMMA.",
+            "USE (-) FOR NEGATIVE SIGN."
+          ]
+        ]
+      ],
+      "answer": [
+        "THE PROBABILITY AN",
+        "INDIVIDUAL MEASUREMENT",
+        "____ IS ____."
+      ],
+      "label": "FS",
+      "pages": [
+        "FS",
+        "FT",
+        "FU",
+        "FV",
+        "FW",
+        "FX",
+        "FY"
+      ]
+    },
+    {
+      "name": "BMINVN",
+      "title": "NORMAL CUTOFF",
+      "recognize": [
+        "GIVEN AREA; FIND MEASUREMENT",
+        "CUTOFF. MU=MEAN, SD=SPREAD.",
+        "P MUST BE AREA TO THE LEFT."
+      ],
+      "steps": [
+        [
+          "1 CONVERT AREA",
+          [
+            "PERCENTILE PCT: P=PCT/100.",
+            "RIGHT AREA Q: P=1-Q.",
+            "TOP 10% MEANS LEFT P=.90.",
+            "YOUR LEFT P=____"
+          ]
+        ],
+        [
+          "2 FIND STANDARD Z",
+          [
+            "Z=INVNORM(P,0,1)",
+            "OR MATCH LEFT AREA IN",
+            "THE SUPPLIED Z TABLE.",
+            "Z=____"
+          ]
+        ],
+        [
+          "3 RETURN TO UNITS",
+          [
+            "CUTOFF=MU+Z*SD",
+            "Z*SD=____",
+            "CUTOFF=____+____=____"
+          ]
+        ],
+        [
+          "4 TI CHECK IF NEEDED",
+          [
+            "2ND > VARS:DISTR",
+            "INVNORM(LEFT P,MU,SD)",
+            "IF TAIL CHOICE:SELECT LEFT."
+          ]
+        ]
+      ],
+      "answer": [
+        "CUTOFF=____ UNITS.",
+        "AREA BELOW=____;",
+        "AREA ABOVE=1-P=____."
+      ],
+      "label": "FZ",
+      "pages": [
+        "FZ",
+        "GA",
+        "GB",
+        "GC",
+        "GD",
+        "GE"
+      ]
+    },
+    {
+      "name": "BMSE",
+      "title": "NORMAL SAMPLE AVERAGE",
+      "recognize": [
+        "PROBABILITY FOR AVERAGE OF N",
+        "INDEPENDENT MEASUREMENTS.",
+        "NORMAL INDIVIDUALS OR COURSE",
+        "LARGE-SAMPLE CLT SETTING.",
+        "MU=POP MEAN; SD=INDIV SD."
+      ],
+      "steps": [
+        [
+          "1 COPY QUANTITIES",
+          [
+            "MU=____; SD=____; N=____",
+            "AVERAGE BOUNDS:____",
+            "MEAN OF AVERAGES=MU."
+          ]
+        ],
+        [
+          "2 SPREAD OF AVERAGES",
+          [
+            "SEM=SD/SQRT(N)",
+            "SEM=____/SQRT(____)=____",
+            "USE SEM IN THE NEXT STEP."
+          ]
+        ],
+        [
+          "3 STANDARDIZE AVERAGES",
+          [
+            "Z LOW=(LOW-MU)/SEM",
+            "Z HIGH=(HIGH-MU)/SEM",
+            "LOW Z=____; HIGH Z=____"
+          ]
+        ],
+        [
+          "4 READ LEFT AREAS",
+          [
+            "USE LEFT-TAIL Z TABLE.",
+            "PHI(LOW Z)=____",
+            "PHI(HIGH Z)=____"
+          ]
+        ],
+        [
+          "5 REQUESTED REGION",
+          [
+            "LEFT=PHI(CUTOFF Z)",
+            "RIGHT=1-PHI(CUTOFF Z)",
+            "BETWEEN=PHI(HIGH Z)-",
+            "PHI(LOW Z)",
+            "REQUESTED PROB=____"
+          ]
+        ],
+        [
+          "6 TI CHECK IF NEEDED",
+          [
+            "NORMALCDF(LOW,HIGH,MU,SEM)",
+            "ENTER SD/SQRT(N) AS THE",
+            "SPREAD, NOT INDIVIDUAL SD."
+          ]
+        ]
+      ],
+      "answer": [
+        "FOR SAMPLE SIZE ____,",
+        "P(SAMPLE AVERAGE ____)=____."
+      ],
+      "label": "GF",
+      "pages": [
+        "GF",
+        "GG",
+        "GH",
+        "GI",
+        "GJ",
+        "GK",
+        "GL",
+        "GM"
+      ]
+    },
+    {
+      "name": "BMBONF",
+      "title": "BONFERRONI",
+      "recognize": [
+        "K=REQUESTED COMPARISONS.",
+        "ALPHA=OVERALL FAMILY LEVEL.",
+        "KEEP PAIR LABELS AND DF."
+      ],
+      "steps": [
+        [
+          "1 LIST AND COUNT",
+          [
+            "WRITE REQUESTED PAIRS:____",
+            "K=____; FAMILY ALPHA=____",
+            "DO NOT COUNT UNREQUESTED",
+            "COMPARISONS IN THE OUTPUT."
+          ]
+        ],
+        [
+          "2 PAIR LEVEL",
+          [
+            "PAIR ALPHA=ALPHA/K",
+            "PAIR ALPHA=____/____=____",
+            "ONLY LEVEL ASKED? REPORT IT."
+          ]
+        ],
+        [
+          "3 STATISTIC CUTOFF",
+          [
+            "T:TOTAL 2-TAIL PAIR ALPHA,",
+            "WITH ORIGINAL ERROR DF.",
+            "CHI-SQUARE:UPPER PAIR ALPHA",
+            "AND THAT COMPARISON DF.",
+            "CUTOFF C=____"
+          ]
+        ],
+        [
+          "4 COMPARE EACH PAIR",
+          [
+            "ABS T>C OR CHI-SQUARE>C:",
+            "REJECT THAT PAIR H0.",
+            "OR RAW P<PAIR ALPHA.",
+            "WRITE DECISION BY PAIR."
+          ]
+        ],
+        [
+          "5 ADJUSTED P IF ASKED",
+          [
+            "ADJ P=MIN(1,K*RAW P)",
+            "ADJ P=____",
+            "COMPARE ADJ P WITH FAMILY",
+            "ALPHA. DO NOT ALSO DIVIDE",
+            "ALPHA IN THAT COMPARISON."
+          ]
+        ]
+      ],
+      "answer": [
+        "PAIR LEVEL=____.",
+        "AT FAMILY ALPHA=____,",
+        "SIGNIFICANT PAIRS:____."
+      ],
+      "label": "GN",
+      "pages": [
+        "GN",
+        "GO",
+        "GP",
+        "GQ",
+        "GR",
+        "GS",
+        "GT"
+      ]
+    },
+    {
+      "name": "BMHOLM",
+      "title": "HOLM ORDERED TESTS",
+      "recognize": [
+        "LIST ONLY REQUESTED PAIRS.",
+        "KEEP LABEL WITH EACH RAW P.",
+        "FROM STATS:USE ORIGINAL DF.",
+        "K=PAIRS; ALPHA=FAMILY LEVEL."
+      ],
+      "steps": [
+        [
+          "1 GET RAW P VALUES",
+          [
+            "T:2-TAIL AREA PAST ABS(T).",
+            "CHI-SQUARE:UPPER-TAIL AREA.",
+            "OR USE PRINTED RAW P.",
+            "BMHOLM CAN CONVERT STATS",
+            "USING THEIR COMMON DF."
+          ]
+        ],
+        [
+          "2 SORT",
+          [
+            "ORDER RAW P LOW TO HIGH.",
+            "KEEP PAIR LABELS ATTACHED.",
+            "SAME TYPE AND SAME DF?",
+            "LARGER ABS T / CHI-SQUARE",
+            "MEANS SMALLER RAW P."
+          ]
+        ],
+        [
+          "3 START AT RANK J=1",
+          [
+            "LEVEL=ALPHA/(K-J+1)",
+            "FIRST LEVEL=ALPHA/K.",
+            "NEXT=ALPHA/(K-1), ETC.",
+            "RANK=____; LEVEL=____"
+          ]
+        ],
+        [
+          "4 COMPARE AND CONTINUE",
+          [
+            "IF SORTED P<LEVEL:",
+            "REJECT THAT H0, GO TO NEXT",
+            "RANK AND RECOMPUTE LEVEL.",
+            "TABLE METHOD:USE THAT",
+            "RANK LEVEL AND ORIGINAL DF."
+          ]
+        ],
+        [
+          "5 FIRST FAILURE",
+          [
+            "P>=LEVEL? STOP.",
+            "DO NOT REJECT THIS H0 OR",
+            "ANY LATER HYPOTHESIS.",
+            "NEVER RESTART AFTER A FAIL."
+          ]
+        ]
+      ],
+      "answer": [
+        "AT FAMILY ALPHA=____,",
+        "REJECTED PAIRS ARE ____.",
+        "FIRST FAILURE=____",
+        "OR ALL COMPARISONS PASS."
+      ],
+      "label": "GU",
+      "pages": [
+        "GU",
+        "GV",
+        "GW",
+        "GX",
+        "GY",
+        "GZ",
+        "HA"
+      ]
+    },
+    {
+      "name": "BMOUTPUT",
+      "title": "READ SUPPLIED OUTPUT",
+      "recognize": [
+        "GIVEN TEST OUTPUT, NOT RAW",
+        "DATA. COPY STATISTIC, DF, P.",
+        "F HAS TWO DF.",
+        "COPY SIGNIFICANCE LEVEL."
+      ],
+      "steps": [
+        [
+          "1 IDENTIFY THE NULL",
+          [
+            "ANOVA:ALL MEANS EQUAL.",
+            "T:TWO MEANS EQUAL, OR",
+            "ONE MEAN EQUALS REFERENCE.",
+            "CONTINGENCY:NO ASSOCIATION.",
+            "GOF:TARGET PROBS HOLD."
+          ]
+        ],
+        [
+          "2 USE PRINTED VALUES",
+          [
+            "STATISTIC=____; DF=____",
+            "F DENOMINATOR DF=____",
+            "PRINTED P=____; ALPHA=____",
+            "PRINTED P ALREADY BELONGS",
+            "TO THE PRINTED TEST."
+          ]
+        ],
+        [
+          "3 IF P IS NOT GIVEN",
+          [
+            "T:2-TAIL AREA PAST ABS(T).",
+            "F/CHI-SQUARE:UPPER TAIL.",
+            "BMOUTPUT CALCULATES THIS.",
+            "OR TABLE GIVES CUTOFF OR",
+            "A RANGE FOR P."
+          ]
+        ],
+        [
+          "4 DECIDE",
+          [
+            "IF P<ALPHA:REJECT H0.",
+            "OTHERWISE DO NOT REJECT.",
+            "ANOVA PAIRS ASKED? KEEP",
+            "RESIDUAL MS AND ERROR DF."
+          ]
+        ],
+        [
+          "5 WRITE IN CONTEXT",
+          [
+            "NAME THE POPULATION,",
+            "OUTCOME, AND GROUPS.",
+            "DO NOT REJECT DOES NOT",
+            "PROVE THE GROUPS EQUAL."
+          ]
+        ]
+      ],
+      "answer": [
+        "THE ____ TEST GIVES",
+        "EVIDENCE / INSUFFICIENT",
+        "EVIDENCE THAT ____ IN THE",
+        "POPULATION AT ALPHA=____."
+      ],
+      "label": "HB",
+      "pages": [
+        "HB",
+        "HC",
+        "HD",
+        "HE",
+        "HF",
+        "HG",
+        "HH"
+      ]
+    },
+    {
+      "name": "BMCRIT",
+      "title": "STATISTICAL CUTOFF",
+      "recognize": [
+        "COPY DISTRIBUTION AND ALPHA.",
+        "Z/T:POSITIVE 2-SIDED CUTOFF.",
+        "F/CHI-SQUARE:UPPER TAIL.",
+        "COPY CORRECT DF."
+      ],
+      "steps": [
+        [
+          "1 FIND YOUR DF",
+          [
+            "ONE T:N-1. TWO T:N1+N2-2.",
+            "ANOVA PAIR:ERROR DF.",
+            "F:M-1 AND M*(N-1).",
+            "TABLE CHI:(ROWS-1)*(COLS-1)",
+            "GOF:K-1; Z HAS NO DF."
+          ]
+        ],
+        [
+          "2 T OR Z",
+          [
+            "T TABLE:TOTAL 2-TAIL ALPHA,",
+            "AND THE CORRECT DF ROW.",
+            "Z:INV NORM LEFT AREA",
+            "1-ALPHA/2. INFINITE-DF",
+            "T ROW ALSO GIVES Z."
+          ]
+        ],
+        [
+          "3 F OR CHI-SQUARE",
+          [
+            "USE UPPER-TAIL ALPHA.",
+            "F NEEDS NUMERATOR AND",
+            "DENOMINATOR DF.",
+            "CHI-SQUARE NEEDS ONE DF.",
+            "CUTOFF=____"
+          ]
+        ],
+        [
+          "4 COMPARE",
+          [
+            "ABS T OR ABS Z > CUTOFF,",
+            "OR F / CHI > CUTOFF:",
+            "REJECT THE MATCHING H0.",
+            "OTHERWISE DO NOT REJECT."
+          ]
+        ]
+      ],
+      "answer": [
+        "CUTOFF=____ USING ____",
+        "DF AND ____ TAIL LEVEL."
+      ],
+      "label": "HI",
+      "pages": [
+        "HI",
+        "HJ",
+        "HK",
+        "HL",
+        "HM",
+        "HN"
+      ]
+    },
+    {
+      "name": "BMBIN",
+      "title": "BINARY PROPORTION",
+      "recognize": [
+        "M=EVENT COUNT; N=GROUP SIZE.",
+        "X=1 FOR EVENT, 0 OTHERWISE.",
+        "PHAT=ESTIMATED PROPORTION."
+      ],
+      "steps": [
+        [
+          "1 PROPORTION",
+          [
+            "PHAT=M/N",
+            "PHAT=____/____=____"
+          ]
+        ],
+        [
+          "2 INDIVIDUAL VARIANCE",
+          [
+            "VAR X=PHAT*(1-PHAT)",
+            "1-PHAT=____",
+            "VAR X=____*____=____",
+            "COURSE PLUG-IN ESTIMATE."
+          ]
+        ],
+        [
+          "3 INDIVIDUAL SD",
+          [
+            "SD X=SQRT(VAR X)",
+            "SD X=SQRT(____)=____"
+          ]
+        ],
+        [
+          "4 PROPORTION SE",
+          [
+            "SE PHAT=SQRT(VAR X/N)",
+            "SE=SQRT(____/____)=____",
+            "THIS IS UNCERTAINTY IN",
+            "THE ESTIMATED PROPORTION."
+          ]
+        ]
+      ],
+      "answer": [
+        "PHAT=____; VAR X=____;",
+        "SD X=____; SE PHAT=____."
+      ],
+      "label": "HO",
+      "pages": [
+        "HO",
+        "HP",
+        "HQ",
+        "HR",
+        "HS",
+        "HT"
+      ]
+    },
+    {
+      "name": "BMZ",
+      "title": "YATES TWO PROPORTIONS",
+      "recognize": [
+        "2 INDEPENDENT BINARY GROUPS.",
+        "COPY EVENTS M1,M2 AND TOTAL",
+        "SIZES N1,N2; COPY ALPHA.",
+        "COURSE USES YATES CORRECTION."
+      ],
+      "steps": [
+        [
+          "1 PROPORTIONS AND H0",
+          [
+            "H0:POP P1=POP P2.",
+            "HA:POP PROPORTIONS DIFFER.",
+            "P1=M1/N1=____",
+            "P2=M2/N2=____"
+          ]
+        ],
+        [
+          "2 POOLED NULL PROPORTION",
+          [
+            "P0=(M1+M2)/(N1+N2)",
+            "P0=(____+____)/(____+____)",
+            "P0=____",
+            "POOL COUNTS, NOT GROUP P."
+          ]
+        ],
+        [
+          "3 NULL STANDARD ERROR",
+          [
+            "R=1/N1+1/N2=____",
+            "SE=SQRT(P0*(1-P0)*R)",
+            "PRODUCT=____; SE=____"
+          ]
+        ],
+        [
+          "4 CONTINUITY CORRECTION",
+          [
+            "CORR=.5*R=____",
+            "RAW GAP=ABS(P1-P2)=____",
+            "GAP=MAX(0,RAW GAP-CORR)",
+            "CORRECTED GAP=____"
+          ]
+        ],
+        [
+          "5 DIVIDE",
+          [
+            "ABS Z=GAP/SE",
+            "ABS Z=____/____=____",
+            "CORRECTED CHI-SQUARE=Z^2",
+            "IF THAT IS REQUESTED."
+          ]
+        ],
+        [
+          "6 CUTOFF AND DECISION",
+          [
+            "Z CUTOFF:LEFT 1-ALPHA/2.",
+            "OR INFINITE-DF T ROW,",
+            "TOTAL 2-TAIL ALPHA.",
+            "ABS Z>C:REJECT H0."
+          ]
+        ]
+      ],
+      "answer": [
+        "AT ALPHA=____, POPULATION",
+        "EVENT PROPORTIONS DIFFER /",
+        "WERE NOT SHOWN TO DIFFER",
+        "BETWEEN ____ AND ____."
+      ],
+      "label": "HU",
+      "pages": [
+        "HU",
+        "HV",
+        "HW",
+        "HX",
+        "HY",
+        "HZ",
+        "IA",
+        "IB"
+      ]
+    },
+    {
+      "name": "BMCHI2",
+      "title": "YATES 2X2 CHI-SQUARE",
+      "recognize": [
+        "COPY COUNTS IN 2X2 TABLE.",
+        "ROWS:GROUP1/GROUP2.",
+        "COLS:EVENT/NO EVENT.",
+        "A,B TOP ROW; C,D BOTTOM.",
+        "COPY ALPHA."
+      ],
+      "steps": [
+        [
+          "1 HYPOTHESIS AND MARGINS",
+          [
+            "H0:EQUAL POP EVENT RATES.",
+            "ROWS:A+B AND C+D.",
+            "COLS:A+C AND B+D.",
+            "N=A+B+C+D=____"
+          ]
+        ],
+        [
+          "2 EXPECTED COUNTS",
+          [
+            "E=ROW TOTAL*COL TOTAL/N",
+            "DO THIS FOR EACH CELL.",
+            "E11=____; E12=____",
+            "E21=____; E22=____",
+            "EXPECTED COUNTS CAN DECIMAL."
+          ]
+        ],
+        [
+          "3 CORRECT EACH CELL GAP",
+          [
+            "GAP=MAX(0,ABS(O-E)-.5)",
+            "O=OBSERVED; E=EXPECTED.",
+            "SUBTRACT, TAKE MAGNITUDE,",
+            "SUBTRACT .5; FLOOR AT ZERO.",
+            "FOUR CORRECTED GAPS:____"
+          ]
+        ],
+        [
+          "4 EACH CELL CONTRIBUTION",
+          [
+            "TERM=GAP^2/E",
+            "SQUARE ITS CORRECTED GAP,",
+            "DIVIDE BY ITS EXPECTED.",
+            "FOUR TERMS:____"
+          ]
+        ],
+        [
+          "5 ADD AND FIND DF",
+          [
+            "CHI-SQUARE=SUM(4 TERMS)",
+            "CHI-SQUARE=____",
+            "DF=(2-1)*(2-1)=1"
+          ]
+        ],
+        [
+          "6 UPPER TAIL TEST",
+          [
+            "CHI TABLE:DF=1, ALPHA.",
+            "CUTOFF=____",
+            "CHI-SQUARE>C:REJECT H0.",
+            "OR REJECT IF P<ALPHA."
+          ]
+        ]
+      ],
+      "answer": [
+        "AT ALPHA=____, POPULATION",
+        "EVENT RATES DIFFER / WERE",
+        "NOT SHOWN TO DIFFER",
+        "BETWEEN ____ AND ____."
+      ],
+      "label": "IC",
+      "pages": [
+        "IC",
+        "ID",
+        "IE",
+        "IF",
+        "IG",
+        "IH",
+        "II",
+        "IJ"
+      ]
+    },
+    {
+      "name": "BMCHIR",
+      "title": "LARGER CONTINGENCY",
+      "recognize": [
+        "COUNTS IN TABLE >2X2.",
+        "R=ROWS; C=COLUMNS.",
+        "COPY LABELS AND ALPHA.",
+        "NO YATES FOR THIS TABLE."
+      ],
+      "steps": [
+        [
+          "1 HYPOTHESIS",
+          [
+            "H0:NO ASSOCIATION OR SAME",
+            "CATEGORY DISTRIBUTION",
+            "ACROSS THE GROUPS.",
+            "WRITE THE ACTUAL LABELS."
+          ]
+        ],
+        [
+          "2 MARGINS",
+          [
+            "ADD EACH ROW.",
+            "ADD EACH COLUMN.",
+            "N=GRAND TOTAL=____",
+            "BOTH SETS OF TOTALS MUST",
+            "ADD TO THE SAME N."
+          ]
+        ],
+        [
+          "3 EXPECTED COUNTS",
+          [
+            "E=ROW TOTAL*COL TOTAL/N",
+            "COMPUTE FOR EVERY CELL.",
+            "WRITE E BESIDE EACH O.",
+            "O=OBSERVED; E=EXPECTED."
+          ]
+        ],
+        [
+          "4 CELL CONTRIBUTIONS",
+          [
+            "TERM=(O-E)^2/E",
+            "SUBTRACT; SQUARE; DIVIDE.",
+            "DO EVERY CELL.",
+            "NO .5 CORRECTION HERE."
+          ]
+        ],
+        [
+          "5 ADD AND FIND DF",
+          [
+            "CHI-SQUARE=SUM(ALL TERMS)",
+            "CHI-SQUARE=____",
+            "DF=(R-1)*(C-1)=____"
+          ]
+        ],
+        [
+          "6 TEST AND FOLLOW-UP",
+          [
+            "UPPER-TAIL CHI TABLE.",
+            "OBSERVED>CUTOFF:REJECT H0.",
+            "IF REQUESTED PAIRS:MAKE",
+            "NEW 2X2 MARGINS; USE YATES",
+            "AND BONFERRONI / HOLM."
+          ]
+        ]
+      ],
+      "answer": [
+        "AT ALPHA=____, EVIDENCE /",
+        "INSUFFICIENT EVIDENCE OF",
+        "ASSOCIATION BETWEEN ____",
+        "AND ____ IN THE POPULATION."
+      ],
+      "label": "IK",
+      "pages": [
+        "IK",
+        "IL",
+        "IM",
+        "IN",
+        "IO",
+        "IP",
+        "IQ",
+        "IR"
+      ]
+    },
+    {
+      "name": "BMGOF",
+      "title": "GOODNESS OF FIT",
+      "recognize": [
+        "ONE CATEGORY COUNT LIST",
+        "VS FIXED TARGET PROBS.",
+        "K=NUMBER OF CATEGORIES.",
+        "NO TARGETS FITTED FROM DATA."
+      ],
+      "steps": [
+        [
+          "1 TARGET HYPOTHESIS",
+          [
+            "H0:POP CATEGORY PROBS",
+            "EQUAL THE GIVEN TARGETS.",
+            "LIST OBSERVED AND TARGET P.",
+            "CHECK TARGET PROBS SUM 1."
+          ]
+        ],
+        [
+          "2 TOTAL AND EXPECTED",
+          [
+            "N=SUM(OBSERVED)=____",
+            "EACH EXPECTED E=N*TARGET P.",
+            "DO THIS FOR EVERY CATEGORY."
+          ]
+        ],
+        [
+          "3 CATEGORY TERMS",
+          [
+            "TERM=(OBSERVED-EXPECTED)^2",
+            "DIVIDED BY EXPECTED.",
+            "DO EVERY CATEGORY.",
+            "TERMS:____"
+          ]
+        ],
+        [
+          "4 ADD AND FIND DF",
+          [
+            "CHI-SQUARE=SUM(TERMS)=____",
+            "DF=K-1=____"
+          ]
+        ],
+        [
+          "5 UPPER TAIL TEST",
+          [
+            "CHI TABLE:THIS DF, ALPHA.",
+            "CUTOFF=____",
+            "OBSERVED CHI>C:REJECT H0."
+          ]
+        ]
+      ],
+      "answer": [
+        "AT ALPHA=____, POPULATION",
+        "CATEGORY PROBS DIFFER /",
+        "WERE NOT SHOWN TO DIFFER",
+        "FROM THE TARGET PATTERN."
+      ],
+      "label": "IS",
+      "pages": [
+        "IS",
+        "IT",
+        "IU",
+        "IV",
+        "IW",
+        "IX",
+        "IY"
+      ]
+    },
+    {
+      "name": "BMRISK",
+      "title": "RISK MEASURES COUNTS",
+      "recognize": [
+        "SAME ADVERSE EVENT IN BOTH",
+        "TREATMENT AND CONTROL.",
+        "COPY EVENTS AND GROUP TOTAL",
+        "FOR EACH. NEED FULL RISK",
+        "DENOMINATORS, AS IN A TRIAL."
+      ],
+      "steps": [
+        [
+          "1 EVENT RISKS",
+          [
+            "RT=TREAT EVENTS/TREAT TOTAL",
+            "RC=CTRL EVENTS/CTRL TOTAL",
+            "RT=____; RC=____",
+            "USE DECIMAL PROBABILITIES."
+          ]
+        ],
+        [
+          "2 RELATIVE CHANGE",
+          [
+            "RR=RT/RC=____",
+            "RRR=1-RR=____",
+            "RR<1:LOWER TREATMENT RISK.",
+            "RC=0? RR IS UNDEFINED."
+          ]
+        ],
+        [
+          "3 ABSOLUTE CHANGE",
+          [
+            "ARR=RC-RT=____",
+            "POSITIVE:BENEFIT.",
+            "NEGATIVE:HARM.",
+            "PERCENTAGE POINTS=100*ARR."
+          ]
+        ],
+        [
+          "4 RECIPROCAL",
+          [
+            "ARR>0: NNT=1/ARR.",
+            "ARR<0: NNH=1/ABS(ARR).",
+            "ARR=0:NO FINITE NNT/NNH.",
+            "YOUR RECIPROCAL=____"
+          ]
+        ],
+        [
+          "5 WHOLE PERSON COUNT",
+          [
+            "IF ASKED, ROUND UP TO",
+            "NEXT WHOLE PERSON.",
+            "UNROUNDED=____",
+            "WHOLE PERSON ANSWER=____"
+          ]
+        ]
+      ],
+      "answer": [
+        "RR=____; ABSOLUTE GAP=____.",
+        "ONE ADDITIONAL EVENT AVOIDED",
+        "/ CAUSED PER ____ TREATED,",
+        "COMPARED WITH CONTROL."
+      ],
+      "label": "IZ",
+      "pages": [
+        "IZ",
+        "JA",
+        "JB",
+        "JC",
+        "JD",
+        "JE",
+        "JF"
+      ]
+    },
+    {
+      "name": "BMNNT",
+      "title": "NNT NNH GIVEN RISKS",
+      "recognize": [
+        "SAME ADVERSE EVENT.",
+        "TREATMENT AND CONTROL RISKS",
+        "GIVEN AS DECIMALS OR RATES."
+      ],
+      "steps": [
+        [
+          "1 CONVERT TO PROBABILITY",
+          [
+            "PERCENT:DIVIDE BY 100.",
+            "PER THOUSAND:DIVIDE BY 1000.",
+            "RT=TREAT RISK=____",
+            "RC=CONTROL RISK=____"
+          ]
+        ],
+        [
+          "2 ABSOLUTE CHANGE",
+          [
+            "ARR=RC-RT=____",
+            "POSITIVE:LOWER ADVERSE RISK.",
+            "NEGATIVE:HIGHER ADVERSE RISK."
+          ]
+        ],
+        [
+          "3 RECIPROCAL",
+          [
+            "RC>RT:NNT=1/(RC-RT)",
+            "RT>RC:NNH=1/(RT-RC)",
+            "EQUAL RISKS:NO FINITE NNT.",
+            "YOUR NNT OR NNH=____"
+          ]
+        ],
+        [
+          "4 WHOLE PERSON IF ASKED",
+          [
+            "ROUND UP, NOT NEAREST.",
+            "WHOLE PERSON COUNT=____"
+          ]
+        ],
+        [
+          "5 RELATIVE IF ASKED",
+          [
+            "RR=RT/RC; RRR=1-RR.",
+            "REQUIRES RC>0.",
+            "ABS PERCENTAGE POINT GAP",
+            "IS 100*ABS(RC-RT)."
+          ]
+        ]
+      ],
+      "answer": [
+        "ABOUT ____ PEOPLE TREATED",
+        "PER ADDITIONAL ADVERSE EVENT",
+        "AVOIDED / CAUSED, COMPARED",
+        "WITH ____."
+      ],
+      "label": "JG",
+      "pages": [
+        "JG",
+        "JH",
+        "JI",
+        "JJ",
+        "JK",
+        "JL",
+        "JM"
+      ]
+    },
+    {
+      "name": "BMOR",
+      "title": "ODDS RATIO",
+      "recognize": [
+        "LABEL A 2X2 TABLE.",
+        "EXPOSED:EVENT A, NO EVENT B.",
+        "UNEXPOSED:EVENT C, NONE D.",
+        "CASE-CONTROL ALTERNATIVE:",
+        "ROWS CASES/CONTROLS; COLS",
+        "EXPOSED/UNEXPOSED."
+      ],
+      "steps": [
+        [
+          "1 COPY THE FOUR CELLS",
+          [
+            "TOP ROW:A=____, B=____",
+            "BOTTOM:C=____, D=____",
+            "KEEP ROW AND COLUMN LABELS",
+            "FOR THE FINAL SENTENCE."
+          ]
+        ],
+        [
+          "2 ODDS IN EACH ROW",
+          [
+            "FIRST ODDS=A/B",
+            "REFERENCE ODDS=C/D",
+            "ODDS USE EVENT / NO EVENT,",
+            "NOT EVENT / WHOLE ROW."
+          ]
+        ],
+        [
+          "3 DIAGONAL PRODUCTS",
+          [
+            "OR=(A/B)/(C/D)=(A*D)/(B*C)",
+            "MAIN PRODUCT A*D=____",
+            "OTHER PRODUCT B*C=____",
+            "OR=____/____=____",
+            "ZERO DENOM:NO FINITE RATIO."
+          ]
+        ],
+        [
+          "4 INTERPRET",
+          [
+            "OR=1:EQUAL ODDS.",
+            "OR>1:HIGHER FIRST ODDS.",
+            "OR<1:LOWER FIRST ODDS.",
+            "CASE-CONTROL:EXPOSURE ODDS",
+            "IN CASES VS CONTROLS."
+          ]
+        ]
+      ],
+      "answer": [
+        "ODDS OF ____ ARE ____ TIMES",
+        "AS HIGH IN ____ AS IN ____.",
+        "USE THE ACTUAL TABLE LABELS."
+      ],
+      "label": "JN",
+      "pages": [
+        "JN",
+        "JO",
+        "JP",
+        "JQ",
+        "JR",
+        "JS"
+      ]
+    }
+  ],
+  "screens": {
+    "AA": {
+      "label": "AA",
+      "rows": [
+        "BMSTEPS",
+        "READ, THEN FILL IN",
+        "CHOOSE THE QUESTION TYPE.",
+        "COPY YOUR NUMBERS ON",
+        "PAPER.",
+        "FOLLOW EACH FORMULA.",
+        "ENTER=NEXT; LEFT=BACK.",
+        "CLEAR=MAIN MENU.",
+        "EXISTING BME423 DOES MATH.",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": null,
+      "step": "READ, THEN FILL IN",
+      "next": "AB",
+      "prev": "AA",
+      "index": 1
+    },
+    "AB": {
+      "label": "AB",
+      "rows": [
+        "QUICK SYMBOL KEY",
+        "MATH ON THE CE SCREEN",
+        "SQRT(X)=SQUARE ROOT.",
+        "X^2=X SQUARED.",
+        "ABS(X)=MAGNITUDE, NO SIGN.",
+        "SUM=ADD ALL THOSE TERMS.",
+        "____=YOUR NUMBER OR",
+        "RESULT.",
+        "MU=POPULATION MEAN.",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": null,
+      "step": "MATH ON THE CE SCREEN",
+      "next": "M0",
+      "prev": "AA",
+      "index": 2
+    },
+    "AC": {
+      "label": "AC",
+      "rows": [
+        "ONE SAMPLE T",
+        "WHEN / WHAT TO COPY",
+        "ONE SAMPLE VS A REFERENCE.",
+        "NORMAL POPULATION; 2",
+        "TAILS.",
+        "COPY: MEAN, SAMPLE SD, N,",
+        "REFERENCE MU0, ALPHA.",
+        "XBAR = SAMPLE MEAN.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMONE",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "AC",
+      "next": "AD",
+      "index": 3
+    },
+    "AD": {
+      "label": "AD",
+      "rows": [
+        "ONE SAMPLE T",
+        "1 HYPOTHESES",
+        "H0:MU=MU0",
+        "HA:MU DOES NOT EQUAL MU0.",
+        "NAME THE POPULATION AND",
+        "OUTCOME. MU0 IS THE GIVEN",
+        "REFERENCE VALUE.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMONE",
+      "step": "1 HYPOTHESES",
+      "prev": "AC",
+      "next": "AE",
+      "index": 4
+    },
+    "AE": {
+      "label": "AE",
+      "rows": [
+        "ONE SAMPLE T",
+        "2 STANDARD ERROR",
+        "SE=SD/SQRT(N)",
+        "SQRT(N)=____",
+        "SE=____/____=____",
+        "SD DESCRIBES INDIVIDUALS.",
+        "SE DESCRIBES THE AVERAGE.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMONE",
+      "step": "2 STANDARD ERROR",
+      "prev": "AD",
+      "next": "AF",
+      "index": 5
+    },
+    "AF": {
+      "label": "AF",
+      "rows": [
+        "ONE SAMPLE T",
+        "3 DIFFERENCE",
+        "GAP=XBAR-MU0",
+        "GAP=____-____=____",
+        "KEEP THE SIGN OF THE GAP.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMONE",
+      "step": "3 DIFFERENCE",
+      "prev": "AE",
+      "next": "AG",
+      "index": 6
+    },
+    "AG": {
+      "label": "AG",
+      "rows": [
+        "ONE SAMPLE T",
+        "4 TEST STATISTIC",
+        "T=GAP/SE",
+        "T=____/____=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMONE",
+      "step": "4 TEST STATISTIC",
+      "prev": "AF",
+      "next": "AH",
+      "index": 7
+    },
+    "AH": {
+      "label": "AH",
+      "rows": [
+        "ONE SAMPLE T",
+        "5 DF AND CUTOFF",
+        "DF=N-1=____",
+        "T TABLE: USE THIS DF.",
+        "USE TOTAL 2-TAIL ALPHA.",
+        "POSITIVE CUTOFF C=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMONE",
+      "step": "5 DF AND CUTOFF",
+      "prev": "AG",
+      "next": "AI",
+      "index": 8
+    },
+    "AI": {
+      "label": "AI",
+      "rows": [
+        "ONE SAMPLE T",
+        "6 DECISION",
+        "IF ABS(T)>C: REJECT H0.",
+        "OTHERWISE: DO NOT REJECT.",
+        "OR REJECT WHEN P<ALPHA.",
+        "ABS MEANS IGNORE THE SIGN.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMONE",
+      "step": "6 DECISION",
+      "prev": "AH",
+      "next": "AJ",
+      "index": 9
+    },
+    "AJ": {
+      "label": "AJ",
+      "rows": [
+        "ONE SAMPLE T",
+        "WRITE THE ANSWER",
+        "AT ALPHA=____, THE DATA",
+        "SUPPORT / DO NOT ESTABLISH",
+        "A DIFFERENCE BETWEEN THE",
+        "POPULATION MEAN ____ AND",
+        "THE REFERENCE ____.",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMONE",
+      "step": "WRITE THE ANSWER",
+      "prev": "AI",
+      "next": "M0",
+      "index": 10
+    },
+    "AK": {
+      "label": "AK",
+      "rows": [
+        "POOLED TWO SAMPLE T",
+        "WHEN / WHAT TO COPY",
+        "2 INDEPENDENT NORMAL",
+        "GROUPS",
+        "WITH EQUAL POPULATION VAR.",
+        "COPY MEAN, SD, N PER",
+        "GROUP.",
+        "SIZES MAY DIFFER.",
+        "COPY ALPHA.",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMTWO",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "AK",
+      "next": "AL",
+      "index": 11
+    },
+    "AL": {
+      "label": "AL",
+      "rows": [
+        "POOLED TWO SAMPLE T",
+        "1 HYPOTHESES",
+        "H0:MU1=MU2",
+        "HA:MU1 DOES NOT EQUAL MU2.",
+        "LABEL GROUP 1 AND GROUP 2.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMTWO",
+      "step": "1 HYPOTHESES",
+      "prev": "AK",
+      "next": "AM",
+      "index": 12
+    },
+    "AM": {
+      "label": "AM",
+      "rows": [
+        "POOLED TWO SAMPLE T",
+        "2 SQUARE EACH SD",
+        "V1=SD1^2=____",
+        "V2=SD2^2=____",
+        "IF VARIANCE IS GIVEN, IT",
+        "IS ALREADY SQUARED.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMTWO",
+      "step": "2 SQUARE EACH SD",
+      "prev": "AL",
+      "next": "AN",
+      "index": 13
+    },
+    "AN": {
+      "label": "AN",
+      "rows": [
+        "POOLED TWO SAMPLE T",
+        "3 DF AND WEIGHTS",
+        "DF=N1+N2-2=____",
+        "A=(N1-1)*V1=____",
+        "B=(N2-1)*V2=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMTWO",
+      "step": "3 DF AND WEIGHTS",
+      "prev": "AM",
+      "next": "AO",
+      "index": 14
+    },
+    "AO": {
+      "label": "AO",
+      "rows": [
+        "POOLED TWO SAMPLE T",
+        "4 POOLED VARIANCE",
+        "POOL=(A+B)/DF",
+        "POOL=(____+____)/____",
+        "POOL=____",
+        "POOL IS VARIANCE, NOT SD.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMTWO",
+      "step": "4 POOLED VARIANCE",
+      "prev": "AN",
+      "next": "AP",
+      "index": 15
+    },
+    "AP": {
+      "label": "AP",
+      "rows": [
+        "POOLED TWO SAMPLE T",
+        "5 STANDARD ERROR",
+        "R=1/N1+1/N2=____",
+        "SE=SQRT(POOL*R)",
+        "PRODUCT=____",
+        "SE=SQRT(____)=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMTWO",
+      "step": "5 STANDARD ERROR",
+      "prev": "AO",
+      "next": "AQ",
+      "index": 16
+    },
+    "AQ": {
+      "label": "AQ",
+      "rows": [
+        "POOLED TWO SAMPLE T",
+        "6 TEST STATISTIC",
+        "GAP=MEAN1-MEAN2=____",
+        "T=GAP/SE",
+        "T=____/____=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMTWO",
+      "step": "6 TEST STATISTIC",
+      "prev": "AP",
+      "next": "AR",
+      "index": 17
+    },
+    "AR": {
+      "label": "AR",
+      "rows": [
+        "POOLED TWO SAMPLE T",
+        "7 CUTOFF AND DECISION",
+        "T TABLE: DF=N1+N2-2.",
+        "USE TOTAL 2-TAIL ALPHA.",
+        "POSITIVE CUTOFF C=____",
+        "ABS(T)>C: REJECT H0.",
+        "OR REJECT WHEN P<ALPHA.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMTWO",
+      "step": "7 CUTOFF AND DECISION",
+      "prev": "AQ",
+      "next": "AS",
+      "index": 18
+    },
+    "AS": {
+      "label": "AS",
+      "rows": [
+        "POOLED TWO SAMPLE T",
+        "WRITE THE ANSWER",
+        "AT ALPHA=____, POPULATION",
+        "MEAN ____ DIFFERS / WAS",
+        "NOT",
+        "SHOWN TO DIFFER BETWEEN",
+        "GROUP ____ AND GROUP ____.",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMTWO",
+      "step": "WRITE THE ANSWER",
+      "prev": "AR",
+      "next": "M0",
+      "index": 19
+    },
+    "AT": {
+      "label": "AT",
+      "rows": [
+        "BALANCED ANOVA",
+        "WHEN / WHAT TO COPY",
+        "INDEPENDENT NORMAL GROUPS;",
+        "EQUAL POPULATION",
+        "VARIANCES.",
+        "M=NUMBER OF GROUPS.",
+        "N=PEOPLE IN EACH GROUP.",
+        "COPY EACH MEAN, SD, ALPHA.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMANOVA",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "AT",
+      "next": "AU",
+      "index": 20
+    },
+    "AU": {
+      "label": "AU",
+      "rows": [
+        "BALANCED ANOVA",
+        "1 HYPOTHESES",
+        "H0:ALL POPULATION MEANS",
+        "ARE EQUAL.",
+        "HA:AT LEAST ONE DIFFERS.",
+        "CHECK SAME N IN EACH",
+        "GROUP.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMANOVA",
+      "step": "1 HYPOTHESES",
+      "prev": "AT",
+      "next": "AV",
+      "index": 21
+    },
+    "AV": {
+      "label": "AV",
+      "rows": [
+        "BALANCED ANOVA",
+        "2 WITHIN VARIANCE",
+        "SQUARE EACH GROUP SD.",
+        "WITHIN=SUM(SD^2)/M",
+        "SQUARED SDS: ____",
+        "SUM=____; DIVIDE BY M=____",
+        "WITHIN=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMANOVA",
+      "step": "2 WITHIN VARIANCE",
+      "prev": "AU",
+      "next": "AW",
+      "index": 22
+    },
+    "AW": {
+      "label": "AW",
+      "rows": [
+        "BALANCED ANOVA",
+        "3 GRAND MEAN",
+        "GRAND=SUM(GROUP MEANS)/M",
+        "SUM OF MEANS=____",
+        "GRAND=____/____=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMANOVA",
+      "step": "3 GRAND MEAN",
+      "prev": "AV",
+      "next": "AX",
+      "index": 23
+    },
+    "AX": {
+      "label": "AX",
+      "rows": [
+        "BALANCED ANOVA",
+        "4 DISTANCES OF MEANS",
+        "FOR EACH GROUP:",
+        "GAP=GROUP MEAN-GRAND",
+        "SQUARE EACH GAP.",
+        "Q=SUM(GAP^2)=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMANOVA",
+      "step": "4 DISTANCES OF MEANS",
+      "prev": "AW",
+      "next": "AY",
+      "index": 24
+    },
+    "AY": {
+      "label": "AY",
+      "rows": [
+        "BALANCED ANOVA",
+        "5 BETWEEN VARIANCE",
+        "VAR OF MEANS=Q/(M-1)",
+        "VAR OF MEANS=____",
+        "BETWEEN=N*VAR OF MEANS",
+        "BETWEEN=____*____=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMANOVA",
+      "step": "5 BETWEEN VARIANCE",
+      "prev": "AX",
+      "next": "AZ",
+      "index": 25
+    },
+    "AZ": {
+      "label": "AZ",
+      "rows": [
+        "BALANCED ANOVA",
+        "6 F AND BOTH DF",
+        "F=BETWEEN/WITHIN",
+        "F=____/____=____",
+        "NUMERATOR DF=M-1=____",
+        "DENOMINATOR DF=M*(N-1)",
+        "DENOMINATOR DF=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMANOVA",
+      "step": "6 F AND BOTH DF",
+      "prev": "AY",
+      "next": "BA",
+      "index": 26
+    },
+    "BA": {
+      "label": "BA",
+      "rows": [
+        "BALANCED ANOVA",
+        "7 COMPARE UPPER TAIL",
+        "F TABLE: USE BOTH DF AND",
+        "UPPER-TAIL ALPHA. C=____",
+        "IF F>C: REJECT H0.",
+        "SAVE WITHIN AND ERROR DF",
+        "FOR REQUESTED PAIRS.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMANOVA",
+      "step": "7 COMPARE UPPER TAIL",
+      "prev": "AZ",
+      "next": "BB",
+      "index": 27
+    },
+    "BB": {
+      "label": "BB",
+      "rows": [
+        "BALANCED ANOVA",
+        "WRITE THE ANSWER",
+        "AT ALPHA=____, AT LEAST",
+        "ONE",
+        "POPULATION MEAN ____",
+        "DIFFERS / A DIFFERENCE WAS",
+        "NOT ESTABLISHED. IDENTIFY",
+        "SPECIFIC PAIRS BY",
+        "FOLLOW-UP.",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMANOVA",
+      "step": "WRITE THE ANSWER",
+      "prev": "BA",
+      "next": "M0",
+      "index": 28
+    },
+    "BC": {
+      "label": "BC",
+      "rows": [
+        "PAIR AFTER ANOVA",
+        "WHEN / WHAT TO COPY",
+        "COPY MEAN I, MEAN J,",
+        "NI,NJ.",
+        "KEEP ORIGINAL ANOVA WITHIN",
+        "VARIANCE AND ERROR DF.",
+        "COUNT ONLY REQUESTED",
+        "PAIRS.",
+        "K=THAT COMPARISON COUNT.",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPAIR",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "BC",
+      "next": "BD",
+      "index": 29
+    },
+    "BD": {
+      "label": "BD",
+      "rows": [
+        "PAIR AFTER ANOVA",
+        "1 PAIR HYPOTHESIS",
+        "H0:MU I=MU J",
+        "HA:THE TWO MEANS DIFFER.",
+        "WITHIN=____; ERROR DF=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPAIR",
+      "step": "1 PAIR HYPOTHESIS",
+      "prev": "BC",
+      "next": "BE",
+      "index": 30
+    },
+    "BE": {
+      "label": "BE",
+      "rows": [
+        "PAIR AFTER ANOVA",
+        "2 STANDARD ERROR",
+        "R=1/NI+1/NJ=____",
+        "SE=SQRT(WITHIN*R)",
+        "SE=SQRT(____*____)=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPAIR",
+      "step": "2 STANDARD ERROR",
+      "prev": "BD",
+      "next": "BF",
+      "index": 31
+    },
+    "BF": {
+      "label": "BF",
+      "rows": [
+        "PAIR AFTER ANOVA",
+        "3 PAIR STATISTIC",
+        "GAP=ABS(MEAN I-MEAN J)",
+        "GAP=____",
+        "ABS T=GAP/SE=____",
+        "ONLY STATISTIC ASKED?",
+        "REPORT THIS RESULT.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPAIR",
+      "step": "3 PAIR STATISTIC",
+      "prev": "BE",
+      "next": "BG",
+      "index": 32
+    },
+    "BG": {
+      "label": "BG",
+      "rows": [
+        "PAIR AFTER ANOVA",
+        "4 BONFERRONI LEVEL",
+        "PAIR ALPHA=FAMILY ALPHA/K",
+        "PAIR ALPHA=____/____=____",
+        "T TABLE: ORIGINAL ERROR",
+        "DF.",
+        "USE TOTAL 2-TAIL PAIR",
+        "LEVEL.",
+        "CUTOFF C=____",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPAIR",
+      "step": "4 BONFERRONI LEVEL",
+      "prev": "BF",
+      "next": "BH",
+      "index": 33
+    },
+    "BH": {
+      "label": "BH",
+      "rows": [
+        "PAIR AFTER ANOVA",
+        "5 PAIR DECISION",
+        "IF ABS T>C: REJECT PAIR",
+        "H0.",
+        "KEEP PAIR LABEL ATTACHED.",
+        "IF HOLM WAS REQUESTED, USE",
+        "THE HOLM GUIDE FOR FAMILY.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPAIR",
+      "step": "5 PAIR DECISION",
+      "prev": "BG",
+      "next": "BI",
+      "index": 34
+    },
+    "BI": {
+      "label": "BI",
+      "rows": [
+        "PAIR AFTER ANOVA",
+        "WRITE THE ANSWER",
+        "AT FAMILY ALPHA=____, THE",
+        "POPULATION MEANS FOR ____",
+        "AND ____ DIFFER / WERE NOT",
+        "SHOWN TO DIFFER.",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMPAIR",
+      "step": "WRITE THE ANSWER",
+      "prev": "BH",
+      "next": "M0",
+      "index": 35
+    },
+    "BJ": {
+      "label": "BJ",
+      "rows": [
+        "MEAN VAR SD SEM",
+        "WHEN / WHAT TO COPY",
+        "RAW NUMERICAL",
+        "OBSERVATIONS.",
+        "SAMPLE OR WHOLE",
+        "POPULATION?",
+        "N=NUMBER OF OBSERVATIONS.",
+        "XBAR=AVERAGE.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDESC",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "BJ",
+      "next": "BK",
+      "index": 36
+    },
+    "BK": {
+      "label": "BK",
+      "rows": [
+        "MEAN VAR SD SEM",
+        "1 COUNT AND ADD",
+        "N=____",
+        "TOTAL=SUM(X)=____",
+        "LIST EACH ORIGINAL VALUE.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDESC",
+      "step": "1 COUNT AND ADD",
+      "prev": "BJ",
+      "next": "BL",
+      "index": 37
+    },
+    "BL": {
+      "label": "BL",
+      "rows": [
+        "MEAN VAR SD SEM",
+        "2 MEAN",
+        "XBAR=TOTAL/N",
+        "XBAR=____/____=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDESC",
+      "step": "2 MEAN",
+      "prev": "BK",
+      "next": "BM",
+      "index": 38
+    },
+    "BM": {
+      "label": "BM",
+      "rows": [
+        "MEAN VAR SD SEM",
+        "3 SQUARED DISTANCES",
+        "MAKE COLUMNS:",
+        "X | X-XBAR | (X-XBAR)^2",
+        "SUBTRACT MEAN; SQUARE.",
+        "Q=SUM(SQUARED GAPS)=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDESC",
+      "step": "3 SQUARED DISTANCES",
+      "prev": "BL",
+      "next": "BN",
+      "index": 39
+    },
+    "BN": {
+      "label": "BN",
+      "rows": [
+        "MEAN VAR SD SEM",
+        "4 SAMPLE VAR AND SD",
+        "SAMPLE VAR=Q/(N-1)",
+        "SAMPLE VAR=____/____=____",
+        "SAMPLE SD=SQRT(VAR)=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDESC",
+      "step": "4 SAMPLE VAR AND SD",
+      "prev": "BM",
+      "next": "BO",
+      "index": 40
+    },
+    "BO": {
+      "label": "BO",
+      "rows": [
+        "MEAN VAR SD SEM",
+        "5 MEAN UNCERTAINTY",
+        "SEM=SD/SQRT(N)",
+        "SEM=____/SQRT(____)=____",
+        "SD:SPREAD OF INDIVIDUALS.",
+        "SEM:SPREAD OF AVERAGES.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDESC",
+      "step": "5 MEAN UNCERTAINTY",
+      "prev": "BN",
+      "next": "BP",
+      "index": 41
+    },
+    "BP": {
+      "label": "BP",
+      "rows": [
+        "MEAN VAR SD SEM",
+        "6 WHOLE POPULATION",
+        "ONLY FOR COMPLETE",
+        "POPULATION",
+        "POP VAR=Q/N=____",
+        "POP SD=SQRT(POP VAR)=____",
+        "SAMPLE USES N-1 INSTEAD.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDESC",
+      "step": "6 WHOLE POPULATION",
+      "prev": "BO",
+      "next": "BQ",
+      "index": 42
+    },
+    "BQ": {
+      "label": "BQ",
+      "rows": [
+        "MEAN VAR SD SEM",
+        "WRITE THE ANSWER",
+        "MEAN=____; SD=____",
+        "VARIANCE=____; SEM=____",
+        "MEAN,SD,SEM:ORIGINAL",
+        "UNITS.",
+        "VARIANCE:SQUARED UNITS.",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMDESC",
+      "step": "WRITE THE ANSWER",
+      "prev": "BP",
+      "next": "M0",
+      "index": 43
+    },
+    "BR": {
+      "label": "BR",
+      "rows": [
+        "PERCENTILE MEDIAN IQR",
+        "WHEN / WHAT TO COPY",
+        "RAW SAMPLE + PERCENTILE P.",
+        "P RUNS FROM 0 TO 100.",
+        "COURSE RANK RULE USED.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPCTL",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "BR",
+      "next": "BS",
+      "index": 44
+    },
+    "BS": {
+      "label": "BS",
+      "rows": [
+        "PERCENTILE MEDIAN IQR",
+        "1 SORT AND LABEL",
+        "SORT LOWEST TO HIGHEST.",
+        "WRITE POSITIONS 1,2,…,N.",
+        "N=____; P=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPCTL",
+      "step": "1 SORT AND LABEL",
+      "prev": "BR",
+      "next": "BT",
+      "index": 45
+    },
+    "BT": {
+      "label": "BT",
+      "rows": [
+        "PERCENTILE MEDIAN IQR",
+        "2 RANK",
+        "R=1+P*(N-1)/100",
+        "R=1+____*(____-1)/100",
+        "R=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPCTL",
+      "step": "2 RANK",
+      "prev": "BS",
+      "next": "BU",
+      "index": 46
+    },
+    "BU": {
+      "label": "BU",
+      "rows": [
+        "PERCENTILE MEDIAN IQR",
+        "3 BRACKETS",
+        "I=WHOLE PART OF R=____",
+        "F=R-I=FRACTIONAL PART=____",
+        "LOW=VALUE AT POSITION I",
+        "HIGH=VALUE AT POSITION I+1",
+        "INTEGER R? USE THAT VALUE.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPCTL",
+      "step": "3 BRACKETS",
+      "prev": "BT",
+      "next": "BV",
+      "index": 47
+    },
+    "BV": {
+      "label": "BV",
+      "rows": [
+        "PERCENTILE MEDIAN IQR",
+        "4 INTERPOLATE",
+        "GAP=HIGH-LOW=____",
+        "PERCENTILE=LOW+F*GAP",
+        "RESULT=____+____*____=____",
+        "P=100? USE LAST VALUE.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPCTL",
+      "step": "4 INTERPOLATE",
+      "prev": "BU",
+      "next": "BW",
+      "index": 48
+    },
+    "BW": {
+      "label": "BW",
+      "rows": [
+        "PERCENTILE MEDIAN IQR",
+        "5 QUARTILES AND MEDIAN",
+        "REPEAT RANK RULE FOR:",
+        "Q1:P=25; MEDIAN:P=50;",
+        "Q3:P=75.",
+        "Q1=____; MED=____; Q3=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPCTL",
+      "step": "5 QUARTILES AND MEDIAN",
+      "prev": "BV",
+      "next": "BX",
+      "index": 49
+    },
+    "BX": {
+      "label": "BX",
+      "rows": [
+        "PERCENTILE MEDIAN IQR",
+        "6 SPREAD",
+        "IQR=Q3-Q1=____",
+        "RANGE=MAX-MIN=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPCTL",
+      "step": "6 SPREAD",
+      "prev": "BW",
+      "next": "BY",
+      "index": 50
+    },
+    "BY": {
+      "label": "BY",
+      "rows": [
+        "PERCENTILE MEDIAN IQR",
+        "WRITE THE ANSWER",
+        "THE ____TH PERCENTILE IS",
+        "____. MEDIAN=____",
+        "IQR=____; RANGE=____",
+        "IN THE ORIGINAL UNITS.",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMPCTL",
+      "step": "WRITE THE ANSWER",
+      "prev": "BX",
+      "next": "M0",
+      "index": 51
+    },
+    "BZ": {
+      "label": "BZ",
+      "rows": [
+        "SD OF SAMPLE MEANS",
+        "WHEN / WHAT TO COPY",
+        "GIVEN INDIVIDUAL SD AND N.",
+        "ASKED SPREAD OF AN",
+        "AVERAGE.",
+        "SD=SIGMA; N=SAMPLE SIZE.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSEM",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "BZ",
+      "next": "CA",
+      "index": 52
+    },
+    "CA": {
+      "label": "CA",
+      "rows": [
+        "SD OF SAMPLE MEANS",
+        "1 COPY SD AND N",
+        "INDIVIDUAL SD=____; N=____",
+        "VARIANCE GIVEN INSTEAD?",
+        "SD=SQRT(VARIANCE).",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSEM",
+      "step": "1 COPY SD AND N",
+      "prev": "BZ",
+      "next": "CB",
+      "index": 53
+    },
+    "CB": {
+      "label": "CB",
+      "rows": [
+        "SD OF SAMPLE MEANS",
+        "2 STANDARD ERROR",
+        "SEM=SD/SQRT(N)",
+        "SQRT(N)=____",
+        "SEM=____/____=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSEM",
+      "step": "2 STANDARD ERROR",
+      "prev": "CA",
+      "next": "CC",
+      "index": 54
+    },
+    "CC": {
+      "label": "CC",
+      "rows": [
+        "SD OF SAMPLE MEANS",
+        "3 VARIANCE OF MEAN",
+        "VAR(MEAN)=SD^2/N",
+        "OR VAR(MEAN)=SEM^2",
+        "VAR(MEAN)=____",
+        "USE SQUARED UNITS FOR VAR.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSEM",
+      "step": "3 VARIANCE OF MEAN",
+      "prev": "CB",
+      "next": "CD",
+      "index": 55
+    },
+    "CD": {
+      "label": "CD",
+      "rows": [
+        "SD OF SAMPLE MEANS",
+        "WRITE THE ANSWER",
+        "THE SAMPLE MEAN HAS SD",
+        "____ AND VARIANCE ____.",
+        "INDIVIDUAL SD STAYS ____.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMSEM",
+      "step": "WRITE THE ANSWER",
+      "prev": "CC",
+      "next": "M0",
+      "index": 56
+    },
+    "CE": {
+      "label": "CE",
+      "rows": [
+        "CHANGE SAMPLE SIZE",
+        "WHEN / WHAT TO COPY",
+        "OLD SEM AND OLD/NEW N",
+        "GIVEN.",
+        "INDIVIDUAL SD STAYS SAME.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSECH",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "CE",
+      "next": "CF",
+      "index": 57
+    },
+    "CF": {
+      "label": "CF",
+      "rows": [
+        "CHANGE SAMPLE SIZE",
+        "1 COPY THE THREE VALUES",
+        "OLD SEM=____",
+        "OLD N=____; NEW N=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSECH",
+      "step": "1 COPY THE THREE VALUES",
+      "prev": "CE",
+      "next": "CG",
+      "index": 58
+    },
+    "CG": {
+      "label": "CG",
+      "rows": [
+        "CHANGE SAMPLE SIZE",
+        "2 SIZE CHANGE FACTOR",
+        "R=SQRT(OLD N/NEW N)",
+        "R=SQRT(____/____)=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSECH",
+      "step": "2 SIZE CHANGE FACTOR",
+      "prev": "CF",
+      "next": "CH",
+      "index": 59
+    },
+    "CH": {
+      "label": "CH",
+      "rows": [
+        "CHANGE SAMPLE SIZE",
+        "3 NEW SEM",
+        "NEW SEM=OLD SEM*R",
+        "NEW SEM=____*____=____",
+        "LARGER NEW N GIVES A",
+        "SMALLER SEM.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSECH",
+      "step": "3 NEW SEM",
+      "prev": "CG",
+      "next": "CI",
+      "index": 60
+    },
+    "CI": {
+      "label": "CI",
+      "rows": [
+        "CHANGE SAMPLE SIZE",
+        "WRITE THE ANSWER",
+        "WITH NEW SAMPLE SIZE ____,",
+        "THE NEW SEM IS ____.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMSECH",
+      "step": "WRITE THE ANSWER",
+      "prev": "CH",
+      "next": "M0",
+      "index": 61
+    },
+    "CJ": {
+      "label": "CJ",
+      "rows": [
+        "SE OF SAMPLE VARIANCE",
+        "WHEN / WHAT TO COPY",
+        "NORMAL SETTING. ASKED SE",
+        "OF VARIANCE, NOT OF MEAN.",
+        "COPY SAMPLE SD AND N.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSEVAR",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "CJ",
+      "next": "CK",
+      "index": 62
+    },
+    "CK": {
+      "label": "CK",
+      "rows": [
+        "SE OF SAMPLE VARIANCE",
+        "1 GET SAMPLE VARIANCE",
+        "VAR=SD^2=____",
+        "VARIANCE GIVEN ALREADY?",
+        "USE IT WITHOUT SQUARING.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSEVAR",
+      "step": "1 GET SAMPLE VARIANCE",
+      "prev": "CJ",
+      "next": "CL",
+      "index": 63
+    },
+    "CL": {
+      "label": "CL",
+      "rows": [
+        "SE OF SAMPLE VARIANCE",
+        "2 MULTIPLIER",
+        "R=SQRT(2/(N-1))",
+        "N-1=____; 2/(N-1)=____",
+        "R=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSEVAR",
+      "step": "2 MULTIPLIER",
+      "prev": "CK",
+      "next": "CM",
+      "index": 64
+    },
+    "CM": {
+      "label": "CM",
+      "rows": [
+        "SE OF SAMPLE VARIANCE",
+        "3 ESTIMATED SE OF VAR",
+        "SE(VAR)=VAR*R",
+        "SE(VAR)=____*____=____",
+        "ANSWER HAS SQUARED UNITS.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSEVAR",
+      "step": "3 ESTIMATED SE OF VAR",
+      "prev": "CL",
+      "next": "CN",
+      "index": 65
+    },
+    "CN": {
+      "label": "CN",
+      "rows": [
+        "SE OF SAMPLE VARIANCE",
+        "4 IF SEM ALSO ASKED",
+        "SEM=SD/SQRT(N)=____",
+        "THIS DESCRIBES THE MEAN.",
+        "SE(VAR) DESCRIBES",
+        "VARIANCE.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSEVAR",
+      "step": "4 IF SEM ALSO ASKED",
+      "prev": "CM",
+      "next": "CO",
+      "index": 66
+    },
+    "CO": {
+      "label": "CO",
+      "rows": [
+        "SE OF SAMPLE VARIANCE",
+        "WRITE THE ANSWER",
+        "ESTIMATED SE OF SAMPLE",
+        "VARIANCE=____ SQUARED",
+        "UNITS.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMSEVAR",
+      "step": "WRITE THE ANSWER",
+      "prev": "CN",
+      "next": "M0",
+      "index": 67
+    },
+    "CP": {
+      "label": "CP",
+      "rows": [
+        "DISCRETE TABLE",
+        "WHEN / WHAT TO COPY",
+        "COPY EACH VALUE X AND ITS",
+        "PROBABILITY P.",
+        "MU=EXPECTED VALUE=MEAN.",
+        "F(C)=PROBABILITY X≤C.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDISC",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "CP",
+      "next": "CQ",
+      "index": 68
+    },
+    "CQ": {
+      "label": "CQ",
+      "rows": [
+        "DISCRETE TABLE",
+        "1 VALID TABLE",
+        "EACH P MUST BE ≥0.",
+        "SUM(P)=1.",
+        "VALUE,PROB PAIRS: ____",
+        "CHECK SUM=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDISC",
+      "step": "1 VALID TABLE",
+      "prev": "CP",
+      "next": "CR",
+      "index": 69
+    },
+    "CR": {
+      "label": "CR",
+      "rows": [
+        "DISCRETE TABLE",
+        "2 EXPECTED VALUE",
+        "MAKE COLUMNS X,P,X*P.",
+        "MU=SUM(X*P)",
+        "EACH X*P=____",
+        "ADD THEM: MU=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDISC",
+      "step": "2 EXPECTED VALUE",
+      "prev": "CQ",
+      "next": "CS",
+      "index": 70
+    },
+    "CS": {
+      "label": "CS",
+      "rows": [
+        "DISCRETE TABLE",
+        "3 SECOND MOMENT",
+        "ADD COLUMN X^2*P.",
+        "EX2=SUM(X^2*P)",
+        "SQUARE X, NOT P.",
+        "EACH TERM=____; EX2=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDISC",
+      "step": "3 SECOND MOMENT",
+      "prev": "CR",
+      "next": "CT",
+      "index": 71
+    },
+    "CT": {
+      "label": "CT",
+      "rows": [
+        "DISCRETE TABLE",
+        "4 VARIANCE",
+        "VAR=EX2-MU^2",
+        "VAR=____-(____)^2=____",
+        "SD IF ASKED=SQRT(VAR)",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDISC",
+      "step": "4 VARIANCE",
+      "prev": "CS",
+      "next": "CU",
+      "index": 72
+    },
+    "CU": {
+      "label": "CU",
+      "rows": [
+        "DISCRETE TABLE",
+        "5 CDF AT A CUTOFF",
+        "F(C)=SUM(P FOR X≤C)",
+        "C=____; SELECTED X:____",
+        "ADD THEIR PROBABILITIES.",
+        "F(C)=____; P(X>C)=1-F(C)",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDISC",
+      "step": "5 CDF AT A CUTOFF",
+      "prev": "CT",
+      "next": "CV",
+      "index": 73
+    },
+    "CV": {
+      "label": "CV",
+      "rows": [
+        "DISCRETE TABLE",
+        "6 EXPECTED FUNCTION",
+        "ONLY IF H(X) IS ASKED:",
+        "E(H(X))=SUM(H(X)*P)",
+        "APPLY H TO EACH X FIRST.",
+        "MULTIPLY BY ORIGINAL P.",
+        "ADD THE WEIGHTED VALUES.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDISC",
+      "step": "6 EXPECTED FUNCTION",
+      "prev": "CU",
+      "next": "CW",
+      "index": 74
+    },
+    "CW": {
+      "label": "CW",
+      "rows": [
+        "DISCRETE TABLE",
+        "WRITE THE ANSWER",
+        "MEAN=____; EX2=____",
+        "VAR=____; REQUESTED CDF OR",
+        "EXPECTED FUNCTION=____.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMDISC",
+      "step": "WRITE THE ANSWER",
+      "prev": "CV",
+      "next": "M0",
+      "index": 75
+    },
+    "CX": {
+      "label": "CX",
+      "rows": [
+        "DISCRETE INTERVAL",
+        "WHEN / WHAT TO COPY",
+        "DISCRETE TABLE AND",
+        "INTERVAL.",
+        "L=LOW END; H=HIGH END.",
+        "CHECK < VERSUS ≤.",
+        "CDF F(C) INCLUDES",
+        "EQUALITY.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDCDF",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "CX",
+      "next": "CY",
+      "index": 76
+    },
+    "CY": {
+      "label": "CY",
+      "rows": [
+        "DISCRETE INTERVAL",
+        "1 SELECT OUTCOMES",
+        "CIRCLE VALUES SATISFYING",
+        "THE EXACT INEQUALITIES.",
+        "LOW END INCLUDED? ____",
+        "HIGH END INCLUDED? ____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDCDF",
+      "step": "1 SELECT OUTCOMES",
+      "prev": "CX",
+      "next": "CZ",
+      "index": 77
+    },
+    "CZ": {
+      "label": "CZ",
+      "rows": [
+        "DISCRETE INTERVAL",
+        "2 DIRECT SUM",
+        "ADD PROBABILITIES OF THE",
+        "CIRCLED VALUES.",
+        "PROB=____+____+…=____",
+        "THIS IS THE SIMPLEST WAY.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDCDF",
+      "step": "2 DIRECT SUM",
+      "prev": "CY",
+      "next": "DA",
+      "index": 78
+    },
+    "DA": {
+      "label": "DA",
+      "rows": [
+        "DISCRETE INTERVAL",
+        "3 CDF METHOD IF NEEDED",
+        "BASE=F(H)-F(L).",
+        "IF LOW INCLUDED:ADD",
+        "P(X=L).",
+        "IF HIGH EXCLUDED:",
+        "SUBTRACT P(X=H).",
+        "FINAL PROBABILITY=____",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDCDF",
+      "step": "3 CDF METHOD IF NEEDED",
+      "prev": "CZ",
+      "next": "DB",
+      "index": 79
+    },
+    "DB": {
+      "label": "DB",
+      "rows": [
+        "DISCRETE INTERVAL",
+        "4 SAME ENDPOINTS",
+        "IF L=H, INTERVAL IS EMPTY",
+        "UNLESS BOTH ENDS INCLUDED.",
+        "BOTH INCLUDED? USE P(X=L).",
+        "OTHERWISE PROBABILITY=0.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMDCDF",
+      "step": "4 SAME ENDPOINTS",
+      "prev": "DA",
+      "next": "DC",
+      "index": 80
+    },
+    "DC": {
+      "label": "DC",
+      "rows": [
+        "DISCRETE INTERVAL",
+        "WRITE THE ANSWER",
+        "P(REQUESTED",
+        "INTERVAL)=____.",
+        "INCLUDED OUTCOMES: ____.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMDCDF",
+      "step": "WRITE THE ANSWER",
+      "prev": "DB",
+      "next": "M0",
+      "index": 81
+    },
+    "DD": {
+      "label": "DD",
+      "rows": [
+        "MISSING PMF CONSTANT",
+        "WHEN / WHAT TO COPY",
+        "PROBABILITIES ARE",
+        "C*WEIGHT.",
+        "COPY ALL KNOWN WEIGHTS.",
+        "C IS THE UNKNOWN",
+        "MULTIPLIER.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMMASS",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "DD",
+      "next": "DE",
+      "index": 82
+    },
+    "DE": {
+      "label": "DE",
+      "rows": [
+        "MISSING PMF CONSTANT",
+        "1 SUM WEIGHTS",
+        "W=SUM(WEIGHTS)=____",
+        "WEIGHTS MUST BE ≥0.",
+        "W MUST BE POSITIVE.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMMASS",
+      "step": "1 SUM WEIGHTS",
+      "prev": "DD",
+      "next": "DF",
+      "index": 83
+    },
+    "DF": {
+      "label": "DF",
+      "rows": [
+        "MISSING PMF CONSTANT",
+        "2 TOTAL MUST BE ONE",
+        "C*W=1",
+        "C=1/W",
+        "C=1/____=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMMASS",
+      "step": "2 TOTAL MUST BE ONE",
+      "prev": "DE",
+      "next": "DG",
+      "index": 84
+    },
+    "DG": {
+      "label": "DG",
+      "rows": [
+        "MISSING PMF CONSTANT",
+        "3 COMPLETE TABLE",
+        "EACH PROB=C*ITS WEIGHT.",
+        "WRITE VALUE AND NEW PROB.",
+        "PROBS:____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMMASS",
+      "step": "3 COMPLETE TABLE",
+      "prev": "DF",
+      "next": "DH",
+      "index": 85
+    },
+    "DH": {
+      "label": "DH",
+      "rows": [
+        "MISSING PMF CONSTANT",
+        "4 CHECK",
+        "SUM(NEW PROBABILITIES)=1.",
+        "CHECK SUM=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMMASS",
+      "step": "4 CHECK",
+      "prev": "DG",
+      "next": "DI",
+      "index": 86
+    },
+    "DI": {
+      "label": "DI",
+      "rows": [
+        "MISSING PMF CONSTANT",
+        "WRITE THE ANSWER",
+        "C=____. THE COMPLETED",
+        "PROBABILITIES ARE ____.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMMASS",
+      "step": "WRITE THE ANSWER",
+      "prev": "DH",
+      "next": "M0",
+      "index": 87
+    },
+    "DJ": {
+      "label": "DJ",
+      "rows": [
+        "EXACT FAIR COIN HEADS",
+        "WHEN / WHAT TO COPY",
+        "N INDEPENDENT FAIR TOSSES.",
+        "EXACTLY K HEADS REQUESTED.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCOIN",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "DJ",
+      "next": "DK",
+      "index": 88
+    },
+    "DK": {
+      "label": "DK",
+      "rows": [
+        "EXACT FAIR COIN HEADS",
+        "1 ALL SEQUENCES",
+        "TOTAL=2^N",
+        "N=____; TOTAL=____",
+        "ALL SEQUENCES EQUALLY",
+        "LIKELY FOR FAIR TOSSES.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCOIN",
+      "step": "1 ALL SEQUENCES",
+      "prev": "DJ",
+      "next": "DL",
+      "index": 89
+    },
+    "DL": {
+      "label": "DL",
+      "rows": [
+        "EXACT FAIR COIN HEADS",
+        "2 FAVORABLE SEQUENCES",
+        "WAYS=N!/(K!*(N-K)!)",
+        "OR USE N NCR K.",
+        "TI:MATH > PRB > NCR.",
+        "N=____; K=____; WAYS=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCOIN",
+      "step": "2 FAVORABLE SEQUENCES",
+      "prev": "DK",
+      "next": "DM",
+      "index": 90
+    },
+    "DM": {
+      "label": "DM",
+      "rows": [
+        "EXACT FAIR COIN HEADS",
+        "3 DIVIDE COUNTS",
+        "PROB=WAYS/TOTAL",
+        "PROB=____/____=____",
+        "ONE SPECIFIED ORDER?",
+        "FAVORABLE COUNT IS ONE.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCOIN",
+      "step": "3 DIVIDE COUNTS",
+      "prev": "DL",
+      "next": "DN",
+      "index": 91
+    },
+    "DN": {
+      "label": "DN",
+      "rows": [
+        "EXACT FAIR COIN HEADS",
+        "WRITE THE ANSWER",
+        "P(EXACTLY ____ HEADS IN",
+        "____ TOSSES)=____.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMCOIN",
+      "step": "WRITE THE ANSWER",
+      "prev": "DM",
+      "next": "M0",
+      "index": 92
+    },
+    "DO": {
+      "label": "DO",
+      "rows": [
+        "TWO EVENTS IN A ROW",
+        "WHEN / WHAT TO COPY",
+        "BOTH EVENTS MUST HAPPEN.",
+        "A=FIRST; B=SECOND.",
+        "P(B GIVEN A) IS SECOND",
+        "CHANCE AFTER THE FIRST.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMEVENT",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "DO",
+      "next": "DP",
+      "index": 93
+    },
+    "DP": {
+      "label": "DP",
+      "rows": [
+        "TWO EVENTS IN A ROW",
+        "1 FIRST PROBABILITY",
+        "P1=FAVORABLE/TOTAL",
+        "USE THE INITIAL COUNTS.",
+        "P1=____/____=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMEVENT",
+      "step": "1 FIRST PROBABILITY",
+      "prev": "DO",
+      "next": "DQ",
+      "index": 94
+    },
+    "DQ": {
+      "label": "DQ",
+      "rows": [
+        "TWO EVENTS IN A ROW",
+        "2 SECOND PROBABILITY",
+        "WITHOUT REPLACEMENT:",
+        "UPDATE FAVORABLE AND TOTAL",
+        "AFTER THE FIRST OUTCOME.",
+        "P2=____/____=____",
+        "INDEPENDENT? P2 UNCHANGED.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMEVENT",
+      "step": "2 SECOND PROBABILITY",
+      "prev": "DP",
+      "next": "DR",
+      "index": 95
+    },
+    "DR": {
+      "label": "DR",
+      "rows": [
+        "TWO EVENTS IN A ROW",
+        "3 MULTIPLY",
+        "P(BOTH)=P1*P2",
+        "P(BOTH)=____*____=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMEVENT",
+      "step": "3 MULTIPLY",
+      "prev": "DQ",
+      "next": "DS",
+      "index": 96
+    },
+    "DS": {
+      "label": "DS",
+      "rows": [
+        "TWO EVENTS IN A ROW",
+        "WRITE THE ANSWER",
+        "P(____ THEN ____)=____.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMEVENT",
+      "step": "WRITE THE ANSWER",
+      "prev": "DR",
+      "next": "M0",
+      "index": 97
+    },
+    "DT": {
+      "label": "DT",
+      "rows": [
+        "INDEPENDENT X AND Y",
+        "WHEN / WHAT TO COPY",
+        "Z=A*X+B*Y+C.",
+        "X,Y MUST BE INDEPENDENT",
+        "FOR THIS VARIANCE FORMULA.",
+        "COPY BOTH MEANS/VARIANCES.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMLINE",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "DT",
+      "next": "DU",
+      "index": 98
+    },
+    "DU": {
+      "label": "DU",
+      "rows": [
+        "INDEPENDENT X AND Y",
+        "1 IDENTIFY INPUTS",
+        "A=____; B=____; C=____",
+        "MEAN X=____; MEAN Y=____",
+        "VAR X=____; VAR Y=____",
+        "SD GIVEN? SQUARE IT FIRST.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMLINE",
+      "step": "1 IDENTIFY INPUTS",
+      "prev": "DT",
+      "next": "DV",
+      "index": 99
+    },
+    "DV": {
+      "label": "DV",
+      "rows": [
+        "INDEPENDENT X AND Y",
+        "2 EXPECTED VALUE",
+        "MEAN Z=A*MEAN X+B*MEAN Y+C",
+        "TERM1=____; TERM2=____",
+        "ADD TERMS AND C:____",
+        "KEEP COEFFICIENT SIGNS.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMLINE",
+      "step": "2 EXPECTED VALUE",
+      "prev": "DU",
+      "next": "DW",
+      "index": 100
+    },
+    "DW": {
+      "label": "DW",
+      "rows": [
+        "INDEPENDENT X AND Y",
+        "3 VARIANCE",
+        "VAR Z=A^2*VAR X+B^2*VAR Y",
+        "TERM1=____; TERM2=____",
+        "ADD=____",
+        "VARIANCES ADD EVEN WHEN",
+        "THE ORIGINAL TERMS",
+        "SUBTRACT.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMLINE",
+      "step": "3 VARIANCE",
+      "prev": "DV",
+      "next": "DX",
+      "index": 101
+    },
+    "DX": {
+      "label": "DX",
+      "rows": [
+        "INDEPENDENT X AND Y",
+        "4 SD IF ASKED",
+        "SD Z=SQRT(VAR Z)=____",
+        "ADDING C CHANGES THE MEAN",
+        "BUT ADDS NO VARIANCE.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMLINE",
+      "step": "4 SD IF ASKED",
+      "prev": "DW",
+      "next": "DY",
+      "index": 102
+    },
+    "DY": {
+      "label": "DY",
+      "rows": [
+        "INDEPENDENT X AND Y",
+        "WRITE THE ANSWER",
+        "MEAN Z=____; VAR Z=____;",
+        "SD Z=____ IF REQUESTED.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMLINE",
+      "step": "WRITE THE ANSWER",
+      "prev": "DX",
+      "next": "M0",
+      "index": 103
+    },
+    "DZ": {
+      "label": "DZ",
+      "rows": [
+        "SHIFT OR SCALE ONE X",
+        "WHEN / WHAT TO COPY",
+        "Y=A+B*X.",
+        "A=ADDED SHIFT.",
+        "B=MULTIPLIER.",
+        "COPY MEAN X; VAR IF ASKED.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSHIFT",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "DZ",
+      "next": "EA",
+      "index": 104
+    },
+    "EA": {
+      "label": "EA",
+      "rows": [
+        "SHIFT OR SCALE ONE X",
+        "1 MATCH THE EXPRESSION",
+        "X-26: A=-26, B=1.",
+        "2X+1: A=1, B=2.",
+        "YOUR A=____; B=____",
+        "ORIGINAL MEAN=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSHIFT",
+      "step": "1 MATCH THE EXPRESSION",
+      "prev": "DZ",
+      "next": "EB",
+      "index": 105
+    },
+    "EB": {
+      "label": "EB",
+      "rows": [
+        "SHIFT OR SCALE ONE X",
+        "2 NEW EXPECTED VALUE",
+        "MEAN Y=A+B*MEAN X",
+        "MEAN Y=____+____*____",
+        "MEAN Y=____",
+        "ONLY MEAN ASKED? FINISHED.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSHIFT",
+      "step": "2 NEW EXPECTED VALUE",
+      "prev": "EA",
+      "next": "EC",
+      "index": 106
+    },
+    "EC": {
+      "label": "EC",
+      "rows": [
+        "SHIFT OR SCALE ONE X",
+        "3 VARIANCE IF ASKED",
+        "VAR Y=B^2*VAR X",
+        "VAR Y=(____)^2*____=____",
+        "SHIFT A ADDS NO VARIANCE.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSHIFT",
+      "step": "3 VARIANCE IF ASKED",
+      "prev": "EB",
+      "next": "ED",
+      "index": 107
+    },
+    "ED": {
+      "label": "ED",
+      "rows": [
+        "SHIFT OR SCALE ONE X",
+        "4 SD IF ASKED",
+        "SD Y=ABS(B)*SD X",
+        "OR SQRT(VAR Y).",
+        "NEW SD=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSHIFT",
+      "step": "4 SD IF ASKED",
+      "prev": "EC",
+      "next": "EE",
+      "index": 108
+    },
+    "EE": {
+      "label": "EE",
+      "rows": [
+        "SHIFT OR SCALE ONE X",
+        "WRITE THE ANSWER",
+        "E(Y)=____; VAR(Y)=____;",
+        "SD(Y)=____ AS REQUESTED.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMSHIFT",
+      "step": "WRITE THE ANSWER",
+      "prev": "ED",
+      "next": "M0",
+      "index": 109
+    },
+    "EF": {
+      "label": "EF",
+      "rows": [
+        "UNIFORM DISTRIBUTION",
+        "WHEN / WHAT TO COPY",
+        "UNIFORM ON [A,B].",
+        "L,H=REQUESTED BOUNDS.",
+        "USE THEIR PART INSIDE",
+        "[A,B].",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMUNIF",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "EF",
+      "next": "EG",
+      "index": 110
+    },
+    "EG": {
+      "label": "EG",
+      "rows": [
+        "UNIFORM DISTRIBUTION",
+        "1 FULL WIDTH",
+        "W=B-A=____",
+        "DENSITY HEIGHT=1/W=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMUNIF",
+      "step": "1 FULL WIDTH",
+      "prev": "EF",
+      "next": "EH",
+      "index": 111
+    },
+    "EH": {
+      "label": "EH",
+      "rows": [
+        "UNIFORM DISTRIBUTION",
+        "2 REQUESTED WIDTH",
+        "CLIP INTERVAL TO SUPPORT.",
+        "WIDTH=HIGH-LOW=____",
+        "COMPLETELY OUTSIDE? P=0.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMUNIF",
+      "step": "2 REQUESTED WIDTH",
+      "prev": "EG",
+      "next": "EI",
+      "index": 112
+    },
+    "EI": {
+      "label": "EI",
+      "rows": [
+        "UNIFORM DISTRIBUTION",
+        "3 PROBABILITY",
+        "P=REQUESTED WIDTH/W",
+        "P=____/____=____",
+        "CONTINUOUS ENDPOINTS ADD",
+        "ZERO PROBABILITY.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMUNIF",
+      "step": "3 PROBABILITY",
+      "prev": "EH",
+      "next": "EJ",
+      "index": 113
+    },
+    "EJ": {
+      "label": "EJ",
+      "rows": [
+        "UNIFORM DISTRIBUTION",
+        "4 MOMENTS IF ASKED",
+        "MEAN=(A+B)/2=____",
+        "VAR=(B-A)^2/12=____",
+        "SD=SQRT(VAR) IF ASKED.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMUNIF",
+      "step": "4 MOMENTS IF ASKED",
+      "prev": "EI",
+      "next": "EK",
+      "index": 114
+    },
+    "EK": {
+      "label": "EK",
+      "rows": [
+        "UNIFORM DISTRIBUTION",
+        "WRITE THE ANSWER",
+        "REQUESTED PROB=____.",
+        "MEAN=____; VAR=____",
+        "AS REQUESTED.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMUNIF",
+      "step": "WRITE THE ANSWER",
+      "prev": "EJ",
+      "next": "M0",
+      "index": 115
+    },
+    "EL": {
+      "label": "EL",
+      "rows": [
+        "NORMALIZE LINEAR PDF",
+        "WHEN / WHAT TO COPY",
+        "F(X)=C*(A+B*X) ON [L,U].",
+        "C=UNKNOWN MULTIPLIER.",
+        "A,B,L,U ARE KNOWN.",
+        "BASE MUST STAY",
+        "NONNEGATIVE.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCONST",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "EL",
+      "next": "EM",
+      "index": 116
+    },
+    "EM": {
+      "label": "EM",
+      "rows": [
+        "NORMALIZE LINEAR PDF",
+        "1 SET TOTAL AREA",
+        "C*INTEGRAL(A+B*X)=1",
+        "INTEGRATE FROM L TO U.",
+        "A=____; B=____",
+        "L=____; U=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCONST",
+      "step": "1 SET TOTAL AREA",
+      "prev": "EL",
+      "next": "EN",
+      "index": 117
+    },
+    "EN": {
+      "label": "EN",
+      "rows": [
+        "NORMALIZE LINEAR PDF",
+        "2 ANTIDERIVATIVE",
+        "G(X)=A*X+B*X^2/2",
+        "G(U)=____",
+        "G(L)=____",
+        "X INTEGRATES TO X^2/2.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCONST",
+      "step": "2 ANTIDERIVATIVE",
+      "prev": "EM",
+      "next": "EO",
+      "index": 118
+    },
+    "EO": {
+      "label": "EO",
+      "rows": [
+        "NORMALIZE LINEAR PDF",
+        "3 BASE AREA",
+        "AREA=G(U)-G(L)",
+        "AREA=____-____=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCONST",
+      "step": "3 BASE AREA",
+      "prev": "EN",
+      "next": "EP",
+      "index": 119
+    },
+    "EP": {
+      "label": "EP",
+      "rows": [
+        "NORMALIZE LINEAR PDF",
+        "4 NORMALIZE",
+        "C*AREA=1",
+        "C=1/AREA=____",
+        "SUBSTITUTE C INTO F(X).",
+        "CHECK TOTAL AREA IS ONE.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCONST",
+      "step": "4 NORMALIZE",
+      "prev": "EO",
+      "next": "EQ",
+      "index": 120
+    },
+    "EQ": {
+      "label": "EQ",
+      "rows": [
+        "NORMALIZE LINEAR PDF",
+        "WRITE THE ANSWER",
+        "C=____. F(X)=____ ON",
+        "[____,____], ZERO",
+        "ELSEWHERE.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMCONST",
+      "step": "WRITE THE ANSWER",
+      "prev": "EP",
+      "next": "M0",
+      "index": 121
+    },
+    "ER": {
+      "label": "ER",
+      "rows": [
+        "UNKNOWN PDF ENDPOINT",
+        "WHEN / WHAT TO COPY",
+        "F(X)=A+B*X ON [0,C].",
+        "A,B ARE NONNEGATIVE.",
+        "C=UNKNOWN POSITIVE END.",
+        "C IS NOT AN OUTSIDE",
+        "FACTOR.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMEND",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "ER",
+      "next": "ES",
+      "index": 122
+    },
+    "ES": {
+      "label": "ES",
+      "rows": [
+        "UNKNOWN PDF ENDPOINT",
+        "1 SET TOTAL AREA",
+        "INTEGRAL FROM 0 TO C = 1.",
+        "A=____; B=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMEND",
+      "step": "1 SET TOTAL AREA",
+      "prev": "ER",
+      "next": "ET",
+      "index": 123
+    },
+    "ET": {
+      "label": "ET",
+      "rows": [
+        "UNKNOWN PDF ENDPOINT",
+        "2 INTEGRATE",
+        "A*C+B*C^2/2=1",
+        "LOWER END ZERO ADDS ZERO.",
+        "WRITE YOUR COEFFICIENTS",
+        "IN THIS EQUATION.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMEND",
+      "step": "2 INTEGRATE",
+      "prev": "ES",
+      "next": "EU",
+      "index": 124
+    },
+    "EU": {
+      "label": "EU",
+      "rows": [
+        "UNKNOWN PDF ENDPOINT",
+        "3 POSITIVE ROOT",
+        "IF B>0:",
+        "ROOT=SQRT(A^2+2*B)",
+        "C=2/(A+ROOT)",
+        "IF B=0 AND A>0:C=1/A.",
+        "ROOT=____; C=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMEND",
+      "step": "3 POSITIVE ROOT",
+      "prev": "ET",
+      "next": "EV",
+      "index": 125
+    },
+    "EV": {
+      "label": "EV",
+      "rows": [
+        "UNKNOWN PDF ENDPOINT",
+        "4 CHECK SUPPORT",
+        "CHECK A*C+B*C^2/2=1.",
+        "KEEP C>0.",
+        "FOR BMPDF, FULL C IS IN T.",
+        "ALPHA THEN T KEY ENTERS",
+        "IT.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMEND",
+      "step": "4 CHECK SUPPORT",
+      "prev": "EU",
+      "next": "EW",
+      "index": 126
+    },
+    "EW": {
+      "label": "EW",
+      "rows": [
+        "UNKNOWN PDF ENDPOINT",
+        "WRITE THE ANSWER",
+        "UPPER ENDPOINT C=____.",
+        "SUPPORT IS [0,____].",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMEND",
+      "step": "WRITE THE ANSWER",
+      "prev": "EV",
+      "next": "M0",
+      "index": 127
+    },
+    "EX": {
+      "label": "EX",
+      "rows": [
+        "LINEAR PDF AND CDF",
+        "WHEN / WHAT TO COPY",
+        "PDF=A+B*X ON [L,U].",
+        "PDF IS THE DENSITY HEIGHT.",
+        "F(C)=CDF, THE LEFT AREA.",
+        "C=CDF CUTOFF; M=MEDIAN.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPDF",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "EX",
+      "next": "EY",
+      "index": 128
+    },
+    "EY": {
+      "label": "EY",
+      "rows": [
+        "LINEAR PDF AND CDF",
+        "1 CHECK THE DENSITY",
+        "NONNEGATIVE ON SUPPORT.",
+        "TOTAL INTEGRAL MUST BE 1.",
+        "A=____; B=____",
+        "L=____; U=____",
+        "MISSING MULTIPLIER?",
+        "USE NORMALIZE PDF GUIDE.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPDF",
+      "step": "1 CHECK THE DENSITY",
+      "prev": "EX",
+      "next": "EZ",
+      "index": 129
+    },
+    "EZ": {
+      "label": "EZ",
+      "rows": [
+        "LINEAR PDF AND CDF",
+        "2 AREA ANTIDERIVATIVE",
+        "G(X)=A*X+B*X^2/2",
+        "USE THIS FOR CDF/AREAS.",
+        "G(L)=____; G(U)=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPDF",
+      "step": "2 AREA ANTIDERIVATIVE",
+      "prev": "EY",
+      "next": "FA",
+      "index": 130
+    },
+    "FA": {
+      "label": "FA",
+      "rows": [
+        "LINEAR PDF AND CDF",
+        "3 CDF",
+        "INSIDE SUPPORT:",
+        "F(C)=G(C)-G(L)",
+        "C≤L: F(C)=0.",
+        "C≥U: F(C)=1.",
+        "YOUR C=____; F(C)=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPDF",
+      "step": "3 CDF",
+      "prev": "EZ",
+      "next": "FB",
+      "index": 131
+    },
+    "FB": {
+      "label": "FB",
+      "rows": [
+        "LINEAR PDF AND CDF",
+        "4 INTERVAL PROBABILITY",
+        "P(LOW<X<HIGH)=",
+        "F(HIGH)-F(LOW)",
+        "UPPER AREA=____",
+        "LOWER AREA=____; P=____",
+        "EXACT POINT HAS P=0.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPDF",
+      "step": "4 INTERVAL PROBABILITY",
+      "prev": "FA",
+      "next": "FC",
+      "index": 132
+    },
+    "FC": {
+      "label": "FC",
+      "rows": [
+        "LINEAR PDF AND CDF",
+        "5 EXPECTED VALUE",
+        "INTEGRATE X*DENSITY:",
+        "H(X)=A*X^2/2+B*X^3/3",
+        "MEAN=H(U)-H(L)",
+        "UPPER=____; LOWER=____",
+        "MEAN=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPDF",
+      "step": "5 EXPECTED VALUE",
+      "prev": "FB",
+      "next": "FD",
+      "index": 133
+    },
+    "FD": {
+      "label": "FD",
+      "rows": [
+        "LINEAR PDF AND CDF",
+        "6 SECOND MOMENT",
+        "INTEGRATE X^2*DENSITY:",
+        "J(X)=A*X^3/3+B*X^4/4",
+        "EX2=J(U)-J(L)",
+        "UPPER=____; LOWER=____",
+        "EX2=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPDF",
+      "step": "6 SECOND MOMENT",
+      "prev": "FC",
+      "next": "FE",
+      "index": 134
+    },
+    "FE": {
+      "label": "FE",
+      "rows": [
+        "LINEAR PDF AND CDF",
+        "7 VARIANCE AND SD",
+        "VAR=EX2-MEAN^2",
+        "VAR=____-(____)^2=____",
+        "SD IF ASKED=SQRT(VAR).",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPDF",
+      "step": "7 VARIANCE AND SD",
+      "prev": "FD",
+      "next": "FF",
+      "index": 135
+    },
+    "FF": {
+      "label": "FF",
+      "rows": [
+        "LINEAR PDF AND CDF",
+        "8 MEDIAN IF ASKED",
+        "G(M)-G(L)=.5",
+        "SUBSTITUTE G EXPRESSION.",
+        "SOLVE FOR M.",
+        "KEEP ROOT WITH L≤M≤U.",
+        "MEDIAN=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPDF",
+      "step": "8 MEDIAN IF ASKED",
+      "prev": "FE",
+      "next": "FG",
+      "index": 136
+    },
+    "FG": {
+      "label": "FG",
+      "rows": [
+        "LINEAR PDF AND CDF",
+        "WRITE THE ANSWER",
+        "REPORT ONLY REQUESTED",
+        "PARTS.",
+        "PROB / CDF=____; MEAN=____",
+        "VAR=____; MEDIAN=____.",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMPDF",
+      "step": "WRITE THE ANSWER",
+      "prev": "FF",
+      "next": "M0",
+      "index": 137
+    },
+    "FH": {
+      "label": "FH",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "WHEN / WHAT TO COPY",
+        "ONE LINEAR PDF BEFORE",
+        "SPLIT,",
+        "ANOTHER AFTER THE SPLIT.",
+        "L=LOW; S=SPLIT; U=HIGH.",
+        "FIRST F=A1+B1*X.",
+        "SECOND F=A2+B2*X.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPIECE",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "FH",
+      "next": "FI",
+      "index": 138
+    },
+    "FI": {
+      "label": "FI",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "1 INTEGRATE EACH PIECE",
+        "G1(X)=A1*X+B1*X^2/2",
+        "G2(X)=A2*X+B2*X^2/2",
+        "KEEP EACH ON ITS INTERVAL.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPIECE",
+      "step": "1 INTEGRATE EACH PIECE",
+      "prev": "FH",
+      "next": "FJ",
+      "index": 139
+    },
+    "FJ": {
+      "label": "FJ",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "2 AREA OF EACH PIECE",
+        "AREA1=G1(S)-G1(L)",
+        "AREA2=G2(U)-G2(S)",
+        "CHECK AREA1+AREA2=1.",
+        "EACH PDF STAYS ≥0.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPIECE",
+      "step": "2 AREA OF EACH PIECE",
+      "prev": "FI",
+      "next": "FK",
+      "index": 140
+    },
+    "FK": {
+      "label": "FK",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "3 CDF BEFORE SPLIT",
+        "FOR L<C≤S:",
+        "F(C)=G1(C)-G1(L)",
+        "BELOW L: F(C)=0.",
+        "YOUR C=____; F(C)=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPIECE",
+      "step": "3 CDF BEFORE SPLIT",
+      "prev": "FJ",
+      "next": "FL",
+      "index": 141
+    },
+    "FL": {
+      "label": "FL",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "4 CDF AFTER SPLIT",
+        "FOR S<C<U:",
+        "F(C)=AREA1+G2(C)-G2(S)",
+        "ADD ALL OF FIRST PIECE.",
+        "AT OR ABOVE U: F(C)=1.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPIECE",
+      "step": "4 CDF AFTER SPLIT",
+      "prev": "FK",
+      "next": "FM",
+      "index": 142
+    },
+    "FM": {
+      "label": "FM",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "5 INTERVAL PROBABILITY",
+        "P(LOW<X<HIGH)=",
+        "F(HIGH)-F(LOW)",
+        "WORKS ACROSS THE SPLIT.",
+        "PROBABILITY=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPIECE",
+      "step": "5 INTERVAL PROBABILITY",
+      "prev": "FL",
+      "next": "FN",
+      "index": 143
+    },
+    "FN": {
+      "label": "FN",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "6 EXPECTED VALUE",
+        "EACH PIECE: INTEGRATE X*F.",
+        "H(X)=A*X^2/2+B*X^3/3",
+        "FIRST:H1(S)-H1(L)=____",
+        "SECOND:H2(U)-H2(S)=____",
+        "MEAN=FIRST+SECOND=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPIECE",
+      "step": "6 EXPECTED VALUE",
+      "prev": "FM",
+      "next": "FO",
+      "index": 144
+    },
+    "FO": {
+      "label": "FO",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "7 SECOND MOMENT",
+        "EACH PIECE: INTEGRATE",
+        "X^2*F.",
+        "J(X)=A*X^3/3+B*X^4/4",
+        "FIRST:J1(S)-J1(L)=____",
+        "SECOND:J2(U)-J2(S)=____",
+        "EX2=FIRST+SECOND=____",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPIECE",
+      "step": "7 SECOND MOMENT",
+      "prev": "FN",
+      "next": "FP",
+      "index": 145
+    },
+    "FP": {
+      "label": "FP",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "8 VARIANCE",
+        "VAR=EX2-MEAN^2",
+        "VAR=____-(____)^2=____",
+        "SD IF ASKED=SQRT(VAR).",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPIECE",
+      "step": "8 VARIANCE",
+      "prev": "FO",
+      "next": "FQ",
+      "index": 146
+    },
+    "FQ": {
+      "label": "FQ",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "9 MEDIAN IF ASKED",
+        "SOLVE F(M)=.5.",
+        "AREA1≥.5? USE FIRST PIECE.",
+        "OTHERWISE USE SECOND",
+        "PIECE.",
+        "KEEP M INSIDE THAT PIECE.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMPIECE",
+      "step": "9 MEDIAN IF ASKED",
+      "prev": "FP",
+      "next": "FR",
+      "index": 147
+    },
+    "FR": {
+      "label": "FR",
+      "rows": [
+        "TWO PIECE DENSITY",
+        "WRITE THE ANSWER",
+        "REQUESTED PROB=____;",
+        "MEAN=____; VAR=____;",
+        "MEDIAN=____ AS REQUESTED.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMPIECE",
+      "step": "WRITE THE ANSWER",
+      "prev": "FQ",
+      "next": "M0",
+      "index": 148
+    },
+    "FS": {
+      "label": "FS",
+      "rows": [
+        "NORMAL INDIVIDUAL",
+        "WHEN / WHAT TO COPY",
+        "PROBABILITY FOR ONE PERSON",
+        "OR ONE MEASUREMENT.",
+        "MU=MEAN; SD=INDIVIDUAL SD.",
+        "L,H=MEASUREMENT CUTOFFS.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNORM",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "FS",
+      "next": "FT",
+      "index": 149
+    },
+    "FT": {
+      "label": "FT",
+      "rows": [
+        "NORMAL INDIVIDUAL",
+        "1 COPY AND SKETCH",
+        "MU=____; SD=____",
+        "SHADE LEFT/RIGHT/BETWEEN.",
+        "VAR GIVEN? SD=SQRT(VAR).",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNORM",
+      "step": "1 COPY AND SKETCH",
+      "prev": "FS",
+      "next": "FU",
+      "index": 150
+    },
+    "FU": {
+      "label": "FU",
+      "rows": [
+        "NORMAL INDIVIDUAL",
+        "2 STANDARDIZE CUTOFFS",
+        "Z LOW=(L-MU)/SD=____",
+        "Z HIGH=(H-MU)/SD=____",
+        "USE ONLY NEEDED CUTOFFS.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNORM",
+      "step": "2 STANDARDIZE CUTOFFS",
+      "prev": "FT",
+      "next": "FV",
+      "index": 151
+    },
+    "FV": {
+      "label": "FV",
+      "rows": [
+        "NORMAL INDIVIDUAL",
+        "3 READ THE Z TABLE",
+        "PHI(Z)=AREA LEFT OF Z.",
+        "LOW LEFT AREA=____",
+        "HIGH LEFT AREA=____",
+        "NEGATIVE Z:AREA BELOW .5.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNORM",
+      "step": "3 READ THE Z TABLE",
+      "prev": "FU",
+      "next": "FW",
+      "index": 152
+    },
+    "FW": {
+      "label": "FW",
+      "rows": [
+        "NORMAL INDIVIDUAL",
+        "4 SELECT YOUR REGION",
+        "LEFT=PHI(Z CUTOFF)",
+        "RIGHT=1-PHI(Z CUTOFF)",
+        "BETWEEN=PHI(HIGH Z)-",
+        "PHI(LOW Z)",
+        "PROBABILITY=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNORM",
+      "step": "4 SELECT YOUR REGION",
+      "prev": "FV",
+      "next": "FX",
+      "index": 153
+    },
+    "FX": {
+      "label": "FX",
+      "rows": [
+        "NORMAL INDIVIDUAL",
+        "5 TI CHECK IF NEEDED",
+        "2ND > VARS:DISTR",
+        "NORMALCDF(LOW,HIGH,MU,SD)",
+        "UNBOUNDED END: -1E99/1E99.",
+        "EE KEY IS 2ND COMMA.",
+        "USE (-) FOR NEGATIVE SIGN.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNORM",
+      "step": "5 TI CHECK IF NEEDED",
+      "prev": "FW",
+      "next": "FY",
+      "index": 154
+    },
+    "FY": {
+      "label": "FY",
+      "rows": [
+        "NORMAL INDIVIDUAL",
+        "WRITE THE ANSWER",
+        "THE PROBABILITY AN",
+        "INDIVIDUAL MEASUREMENT",
+        "____ IS ____.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMNORM",
+      "step": "WRITE THE ANSWER",
+      "prev": "FX",
+      "next": "M0",
+      "index": 155
+    },
+    "FZ": {
+      "label": "FZ",
+      "rows": [
+        "NORMAL CUTOFF",
+        "WHEN / WHAT TO COPY",
+        "GIVEN AREA; FIND",
+        "MEASUREMENT",
+        "CUTOFF. MU=MEAN,",
+        "SD=SPREAD.",
+        "P MUST BE AREA TO THE",
+        "LEFT.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMINVN",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "FZ",
+      "next": "GA",
+      "index": 156
+    },
+    "GA": {
+      "label": "GA",
+      "rows": [
+        "NORMAL CUTOFF",
+        "1 CONVERT AREA",
+        "PERCENTILE PCT: P=PCT/100.",
+        "RIGHT AREA Q: P=1-Q.",
+        "TOP 10% MEANS LEFT P=.90.",
+        "YOUR LEFT P=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMINVN",
+      "step": "1 CONVERT AREA",
+      "prev": "FZ",
+      "next": "GB",
+      "index": 157
+    },
+    "GB": {
+      "label": "GB",
+      "rows": [
+        "NORMAL CUTOFF",
+        "2 FIND STANDARD Z",
+        "Z=INVNORM(P,0,1)",
+        "OR MATCH LEFT AREA IN",
+        "THE SUPPLIED Z TABLE.",
+        "Z=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMINVN",
+      "step": "2 FIND STANDARD Z",
+      "prev": "GA",
+      "next": "GC",
+      "index": 158
+    },
+    "GC": {
+      "label": "GC",
+      "rows": [
+        "NORMAL CUTOFF",
+        "3 RETURN TO UNITS",
+        "CUTOFF=MU+Z*SD",
+        "Z*SD=____",
+        "CUTOFF=____+____=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMINVN",
+      "step": "3 RETURN TO UNITS",
+      "prev": "GB",
+      "next": "GD",
+      "index": 159
+    },
+    "GD": {
+      "label": "GD",
+      "rows": [
+        "NORMAL CUTOFF",
+        "4 TI CHECK IF NEEDED",
+        "2ND > VARS:DISTR",
+        "INVNORM(LEFT P,MU,SD)",
+        "IF TAIL CHOICE:SELECT",
+        "LEFT.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMINVN",
+      "step": "4 TI CHECK IF NEEDED",
+      "prev": "GC",
+      "next": "GE",
+      "index": 160
+    },
+    "GE": {
+      "label": "GE",
+      "rows": [
+        "NORMAL CUTOFF",
+        "WRITE THE ANSWER",
+        "CUTOFF=____ UNITS.",
+        "AREA BELOW=____;",
+        "AREA ABOVE=1-P=____.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMINVN",
+      "step": "WRITE THE ANSWER",
+      "prev": "GD",
+      "next": "M0",
+      "index": 161
+    },
+    "GF": {
+      "label": "GF",
+      "rows": [
+        "NORMAL SAMPLE AVERAGE",
+        "WHEN / WHAT TO COPY",
+        "PROBABILITY FOR AVERAGE OF",
+        "N",
+        "INDEPENDENT MEASUREMENTS.",
+        "NORMAL INDIVIDUALS OR",
+        "COURSE",
+        "LARGE-SAMPLE CLT SETTING.",
+        "MU=POP MEAN; SD=INDIV SD.",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSE",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "GF",
+      "next": "GG",
+      "index": 162
+    },
+    "GG": {
+      "label": "GG",
+      "rows": [
+        "NORMAL SAMPLE AVERAGE",
+        "1 COPY QUANTITIES",
+        "MU=____; SD=____; N=____",
+        "AVERAGE BOUNDS:____",
+        "MEAN OF AVERAGES=MU.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSE",
+      "step": "1 COPY QUANTITIES",
+      "prev": "GF",
+      "next": "GH",
+      "index": 163
+    },
+    "GH": {
+      "label": "GH",
+      "rows": [
+        "NORMAL SAMPLE AVERAGE",
+        "2 SPREAD OF AVERAGES",
+        "SEM=SD/SQRT(N)",
+        "SEM=____/SQRT(____)=____",
+        "USE SEM IN THE NEXT STEP.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSE",
+      "step": "2 SPREAD OF AVERAGES",
+      "prev": "GG",
+      "next": "GI",
+      "index": 164
+    },
+    "GI": {
+      "label": "GI",
+      "rows": [
+        "NORMAL SAMPLE AVERAGE",
+        "3 STANDARDIZE AVERAGES",
+        "Z LOW=(LOW-MU)/SEM",
+        "Z HIGH=(HIGH-MU)/SEM",
+        "LOW Z=____; HIGH Z=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSE",
+      "step": "3 STANDARDIZE AVERAGES",
+      "prev": "GH",
+      "next": "GJ",
+      "index": 165
+    },
+    "GJ": {
+      "label": "GJ",
+      "rows": [
+        "NORMAL SAMPLE AVERAGE",
+        "4 READ LEFT AREAS",
+        "USE LEFT-TAIL Z TABLE.",
+        "PHI(LOW Z)=____",
+        "PHI(HIGH Z)=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSE",
+      "step": "4 READ LEFT AREAS",
+      "prev": "GI",
+      "next": "GK",
+      "index": 166
+    },
+    "GK": {
+      "label": "GK",
+      "rows": [
+        "NORMAL SAMPLE AVERAGE",
+        "5 REQUESTED REGION",
+        "LEFT=PHI(CUTOFF Z)",
+        "RIGHT=1-PHI(CUTOFF Z)",
+        "BETWEEN=PHI(HIGH Z)-",
+        "PHI(LOW Z)",
+        "REQUESTED PROB=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSE",
+      "step": "5 REQUESTED REGION",
+      "prev": "GJ",
+      "next": "GL",
+      "index": 167
+    },
+    "GL": {
+      "label": "GL",
+      "rows": [
+        "NORMAL SAMPLE AVERAGE",
+        "6 TI CHECK IF NEEDED",
+        "NORMALCDF(LOW,HIGH,MU,SEM)",
+        "ENTER SD/SQRT(N) AS THE",
+        "SPREAD, NOT INDIVIDUAL SD.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMSE",
+      "step": "6 TI CHECK IF NEEDED",
+      "prev": "GK",
+      "next": "GM",
+      "index": 168
+    },
+    "GM": {
+      "label": "GM",
+      "rows": [
+        "NORMAL SAMPLE AVERAGE",
+        "WRITE THE ANSWER",
+        "FOR SAMPLE SIZE ____,",
+        "P(SAMPLE AVERAGE",
+        "____)=____.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMSE",
+      "step": "WRITE THE ANSWER",
+      "prev": "GL",
+      "next": "M0",
+      "index": 169
+    },
+    "GN": {
+      "label": "GN",
+      "rows": [
+        "BONFERRONI",
+        "WHEN / WHAT TO COPY",
+        "K=REQUESTED COMPARISONS.",
+        "ALPHA=OVERALL FAMILY",
+        "LEVEL.",
+        "KEEP PAIR LABELS AND DF.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBONF",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "GN",
+      "next": "GO",
+      "index": 170
+    },
+    "GO": {
+      "label": "GO",
+      "rows": [
+        "BONFERRONI",
+        "1 LIST AND COUNT",
+        "WRITE REQUESTED PAIRS:____",
+        "K=____; FAMILY ALPHA=____",
+        "DO NOT COUNT UNREQUESTED",
+        "COMPARISONS IN THE OUTPUT.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBONF",
+      "step": "1 LIST AND COUNT",
+      "prev": "GN",
+      "next": "GP",
+      "index": 171
+    },
+    "GP": {
+      "label": "GP",
+      "rows": [
+        "BONFERRONI",
+        "2 PAIR LEVEL",
+        "PAIR ALPHA=ALPHA/K",
+        "PAIR ALPHA=____/____=____",
+        "ONLY LEVEL ASKED? REPORT",
+        "IT.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBONF",
+      "step": "2 PAIR LEVEL",
+      "prev": "GO",
+      "next": "GQ",
+      "index": 172
+    },
+    "GQ": {
+      "label": "GQ",
+      "rows": [
+        "BONFERRONI",
+        "3 STATISTIC CUTOFF",
+        "T:TOTAL 2-TAIL PAIR ALPHA,",
+        "WITH ORIGINAL ERROR DF.",
+        "CHI-SQUARE:UPPER PAIR",
+        "ALPHA",
+        "AND THAT COMPARISON DF.",
+        "CUTOFF C=____",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBONF",
+      "step": "3 STATISTIC CUTOFF",
+      "prev": "GP",
+      "next": "GR",
+      "index": 173
+    },
+    "GR": {
+      "label": "GR",
+      "rows": [
+        "BONFERRONI",
+        "4 COMPARE EACH PAIR",
+        "ABS T>C OR CHI-SQUARE>C:",
+        "REJECT THAT PAIR H0.",
+        "OR RAW P<PAIR ALPHA.",
+        "WRITE DECISION BY PAIR.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBONF",
+      "step": "4 COMPARE EACH PAIR",
+      "prev": "GQ",
+      "next": "GS",
+      "index": 174
+    },
+    "GS": {
+      "label": "GS",
+      "rows": [
+        "BONFERRONI",
+        "5 ADJUSTED P IF ASKED",
+        "ADJ P=MIN(1,K*RAW P)",
+        "ADJ P=____",
+        "COMPARE ADJ P WITH FAMILY",
+        "ALPHA. DO NOT ALSO DIVIDE",
+        "ALPHA IN THAT COMPARISON.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBONF",
+      "step": "5 ADJUSTED P IF ASKED",
+      "prev": "GR",
+      "next": "GT",
+      "index": 175
+    },
+    "GT": {
+      "label": "GT",
+      "rows": [
+        "BONFERRONI",
+        "WRITE THE ANSWER",
+        "PAIR LEVEL=____.",
+        "AT FAMILY ALPHA=____,",
+        "SIGNIFICANT PAIRS:____.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMBONF",
+      "step": "WRITE THE ANSWER",
+      "prev": "GS",
+      "next": "M0",
+      "index": 176
+    },
+    "GU": {
+      "label": "GU",
+      "rows": [
+        "HOLM ORDERED TESTS",
+        "WHEN / WHAT TO COPY",
+        "LIST ONLY REQUESTED PAIRS.",
+        "KEEP LABEL WITH EACH RAW",
+        "P.",
+        "FROM STATS:USE ORIGINAL",
+        "DF.",
+        "K=PAIRS; ALPHA=FAMILY",
+        "LEVEL.",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMHOLM",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "GU",
+      "next": "GV",
+      "index": 177
+    },
+    "GV": {
+      "label": "GV",
+      "rows": [
+        "HOLM ORDERED TESTS",
+        "1 GET RAW P VALUES",
+        "T:2-TAIL AREA PAST ABS(T).",
+        "CHI-SQUARE:UPPER-TAIL",
+        "AREA.",
+        "OR USE PRINTED RAW P.",
+        "BMHOLM CAN CONVERT STATS",
+        "USING THEIR COMMON DF.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMHOLM",
+      "step": "1 GET RAW P VALUES",
+      "prev": "GU",
+      "next": "GW",
+      "index": 178
+    },
+    "GW": {
+      "label": "GW",
+      "rows": [
+        "HOLM ORDERED TESTS",
+        "2 SORT",
+        "ORDER RAW P LOW TO HIGH.",
+        "KEEP PAIR LABELS ATTACHED.",
+        "SAME TYPE AND SAME DF?",
+        "LARGER ABS T / CHI-SQUARE",
+        "MEANS SMALLER RAW P.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMHOLM",
+      "step": "2 SORT",
+      "prev": "GV",
+      "next": "GX",
+      "index": 179
+    },
+    "GX": {
+      "label": "GX",
+      "rows": [
+        "HOLM ORDERED TESTS",
+        "3 START AT RANK J=1",
+        "LEVEL=ALPHA/(K-J+1)",
+        "FIRST LEVEL=ALPHA/K.",
+        "NEXT=ALPHA/(K-1), ETC.",
+        "RANK=____; LEVEL=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMHOLM",
+      "step": "3 START AT RANK J=1",
+      "prev": "GW",
+      "next": "GY",
+      "index": 180
+    },
+    "GY": {
+      "label": "GY",
+      "rows": [
+        "HOLM ORDERED TESTS",
+        "4 COMPARE AND CONTINUE",
+        "IF SORTED P<LEVEL:",
+        "REJECT THAT H0, GO TO NEXT",
+        "RANK AND RECOMPUTE LEVEL.",
+        "TABLE METHOD:USE THAT",
+        "RANK LEVEL AND ORIGINAL",
+        "DF.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMHOLM",
+      "step": "4 COMPARE AND CONTINUE",
+      "prev": "GX",
+      "next": "GZ",
+      "index": 181
+    },
+    "GZ": {
+      "label": "GZ",
+      "rows": [
+        "HOLM ORDERED TESTS",
+        "5 FIRST FAILURE",
+        "P≥LEVEL? STOP.",
+        "DO NOT REJECT THIS H0 OR",
+        "ANY LATER HYPOTHESIS.",
+        "NEVER RESTART AFTER A",
+        "FAIL.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMHOLM",
+      "step": "5 FIRST FAILURE",
+      "prev": "GY",
+      "next": "HA",
+      "index": 182
+    },
+    "HA": {
+      "label": "HA",
+      "rows": [
+        "HOLM ORDERED TESTS",
+        "WRITE THE ANSWER",
+        "AT FAMILY ALPHA=____,",
+        "REJECTED PAIRS ARE ____.",
+        "FIRST FAILURE=____",
+        "OR ALL COMPARISONS PASS.",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMHOLM",
+      "step": "WRITE THE ANSWER",
+      "prev": "GZ",
+      "next": "M0",
+      "index": 183
+    },
+    "HB": {
+      "label": "HB",
+      "rows": [
+        "READ SUPPLIED OUTPUT",
+        "WHEN / WHAT TO COPY",
+        "GIVEN TEST OUTPUT, NOT RAW",
+        "DATA. COPY STATISTIC, DF,",
+        "P.",
+        "F HAS TWO DF.",
+        "COPY SIGNIFICANCE LEVEL.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOUTPUT",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "HB",
+      "next": "HC",
+      "index": 184
+    },
+    "HC": {
+      "label": "HC",
+      "rows": [
+        "READ SUPPLIED OUTPUT",
+        "1 IDENTIFY THE NULL",
+        "ANOVA:ALL MEANS EQUAL.",
+        "T:TWO MEANS EQUAL, OR",
+        "ONE MEAN EQUALS REFERENCE.",
+        "CONTINGENCY:NO",
+        "ASSOCIATION.",
+        "GOF:TARGET PROBS HOLD.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOUTPUT",
+      "step": "1 IDENTIFY THE NULL",
+      "prev": "HB",
+      "next": "HD",
+      "index": 185
+    },
+    "HD": {
+      "label": "HD",
+      "rows": [
+        "READ SUPPLIED OUTPUT",
+        "2 USE PRINTED VALUES",
+        "STATISTIC=____; DF=____",
+        "F DENOMINATOR DF=____",
+        "PRINTED P=____; ALPHA=____",
+        "PRINTED P ALREADY BELONGS",
+        "TO THE PRINTED TEST.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOUTPUT",
+      "step": "2 USE PRINTED VALUES",
+      "prev": "HC",
+      "next": "HE",
+      "index": 186
+    },
+    "HE": {
+      "label": "HE",
+      "rows": [
+        "READ SUPPLIED OUTPUT",
+        "3 IF P IS NOT GIVEN",
+        "T:2-TAIL AREA PAST ABS(T).",
+        "F/CHI-SQUARE:UPPER TAIL.",
+        "BMOUTPUT CALCULATES THIS.",
+        "OR TABLE GIVES CUTOFF OR",
+        "A RANGE FOR P.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOUTPUT",
+      "step": "3 IF P IS NOT GIVEN",
+      "prev": "HD",
+      "next": "HF",
+      "index": 187
+    },
+    "HF": {
+      "label": "HF",
+      "rows": [
+        "READ SUPPLIED OUTPUT",
+        "4 DECIDE",
+        "IF P<ALPHA:REJECT H0.",
+        "OTHERWISE DO NOT REJECT.",
+        "ANOVA PAIRS ASKED? KEEP",
+        "RESIDUAL MS AND ERROR DF.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOUTPUT",
+      "step": "4 DECIDE",
+      "prev": "HE",
+      "next": "HG",
+      "index": 188
+    },
+    "HG": {
+      "label": "HG",
+      "rows": [
+        "READ SUPPLIED OUTPUT",
+        "5 WRITE IN CONTEXT",
+        "NAME THE POPULATION,",
+        "OUTCOME, AND GROUPS.",
+        "DO NOT REJECT DOES NOT",
+        "PROVE THE GROUPS EQUAL.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOUTPUT",
+      "step": "5 WRITE IN CONTEXT",
+      "prev": "HF",
+      "next": "HH",
+      "index": 189
+    },
+    "HH": {
+      "label": "HH",
+      "rows": [
+        "READ SUPPLIED OUTPUT",
+        "WRITE THE ANSWER",
+        "THE ____ TEST GIVES",
+        "EVIDENCE / INSUFFICIENT",
+        "EVIDENCE THAT ____ IN THE",
+        "POPULATION AT ALPHA=____.",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMOUTPUT",
+      "step": "WRITE THE ANSWER",
+      "prev": "HG",
+      "next": "M0",
+      "index": 190
+    },
+    "HI": {
+      "label": "HI",
+      "rows": [
+        "STATISTICAL CUTOFF",
+        "WHEN / WHAT TO COPY",
+        "COPY DISTRIBUTION AND",
+        "ALPHA.",
+        "Z/T:POSITIVE 2-SIDED",
+        "CUTOFF.",
+        "F/CHI-SQUARE:UPPER TAIL.",
+        "COPY CORRECT DF.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCRIT",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "HI",
+      "next": "HJ",
+      "index": 191
+    },
+    "HJ": {
+      "label": "HJ",
+      "rows": [
+        "STATISTICAL CUTOFF",
+        "1 FIND YOUR DF",
+        "ONE T:N-1. TWO T:N1+N2-2.",
+        "ANOVA PAIR:ERROR DF.",
+        "F:M-1 AND M*(N-1).",
+        "TABLE",
+        "CHI:(ROWS-1)*(COLS-1)",
+        "GOF:K-1; Z HAS NO DF.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCRIT",
+      "step": "1 FIND YOUR DF",
+      "prev": "HI",
+      "next": "HK",
+      "index": 192
+    },
+    "HK": {
+      "label": "HK",
+      "rows": [
+        "STATISTICAL CUTOFF",
+        "2 T OR Z",
+        "T TABLE:TOTAL 2-TAIL",
+        "ALPHA,",
+        "AND THE CORRECT DF ROW.",
+        "Z:INV NORM LEFT AREA",
+        "1-ALPHA/2. INFINITE-DF",
+        "T ROW ALSO GIVES Z.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCRIT",
+      "step": "2 T OR Z",
+      "prev": "HJ",
+      "next": "HL",
+      "index": 193
+    },
+    "HL": {
+      "label": "HL",
+      "rows": [
+        "STATISTICAL CUTOFF",
+        "3 F OR CHI-SQUARE",
+        "USE UPPER-TAIL ALPHA.",
+        "F NEEDS NUMERATOR AND",
+        "DENOMINATOR DF.",
+        "CHI-SQUARE NEEDS ONE DF.",
+        "CUTOFF=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCRIT",
+      "step": "3 F OR CHI-SQUARE",
+      "prev": "HK",
+      "next": "HM",
+      "index": 194
+    },
+    "HM": {
+      "label": "HM",
+      "rows": [
+        "STATISTICAL CUTOFF",
+        "4 COMPARE",
+        "ABS T OR ABS Z > CUTOFF,",
+        "OR F / CHI > CUTOFF:",
+        "REJECT THE MATCHING H0.",
+        "OTHERWISE DO NOT REJECT.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCRIT",
+      "step": "4 COMPARE",
+      "prev": "HL",
+      "next": "HN",
+      "index": 195
+    },
+    "HN": {
+      "label": "HN",
+      "rows": [
+        "STATISTICAL CUTOFF",
+        "WRITE THE ANSWER",
+        "CUTOFF=____ USING ____",
+        "DF AND ____ TAIL LEVEL.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMCRIT",
+      "step": "WRITE THE ANSWER",
+      "prev": "HM",
+      "next": "M0",
+      "index": 196
+    },
+    "HO": {
+      "label": "HO",
+      "rows": [
+        "BINARY PROPORTION",
+        "WHEN / WHAT TO COPY",
+        "M=EVENT COUNT; N=GROUP",
+        "SIZE.",
+        "X=1 FOR EVENT, 0",
+        "OTHERWISE.",
+        "PHAT=ESTIMATED PROPORTION.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBIN",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "HO",
+      "next": "HP",
+      "index": 197
+    },
+    "HP": {
+      "label": "HP",
+      "rows": [
+        "BINARY PROPORTION",
+        "1 PROPORTION",
+        "PHAT=M/N",
+        "PHAT=____/____=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBIN",
+      "step": "1 PROPORTION",
+      "prev": "HO",
+      "next": "HQ",
+      "index": 198
+    },
+    "HQ": {
+      "label": "HQ",
+      "rows": [
+        "BINARY PROPORTION",
+        "2 INDIVIDUAL VARIANCE",
+        "VAR X=PHAT*(1-PHAT)",
+        "1-PHAT=____",
+        "VAR X=____*____=____",
+        "COURSE PLUG-IN ESTIMATE.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBIN",
+      "step": "2 INDIVIDUAL VARIANCE",
+      "prev": "HP",
+      "next": "HR",
+      "index": 199
+    },
+    "HR": {
+      "label": "HR",
+      "rows": [
+        "BINARY PROPORTION",
+        "3 INDIVIDUAL SD",
+        "SD X=SQRT(VAR X)",
+        "SD X=SQRT(____)=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBIN",
+      "step": "3 INDIVIDUAL SD",
+      "prev": "HQ",
+      "next": "HS",
+      "index": 200
+    },
+    "HS": {
+      "label": "HS",
+      "rows": [
+        "BINARY PROPORTION",
+        "4 PROPORTION SE",
+        "SE PHAT=SQRT(VAR X/N)",
+        "SE=SQRT(____/____)=____",
+        "THIS IS UNCERTAINTY IN",
+        "THE ESTIMATED PROPORTION.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMBIN",
+      "step": "4 PROPORTION SE",
+      "prev": "HR",
+      "next": "HT",
+      "index": 201
+    },
+    "HT": {
+      "label": "HT",
+      "rows": [
+        "BINARY PROPORTION",
+        "WRITE THE ANSWER",
+        "PHAT=____; VAR X=____;",
+        "SD X=____; SE PHAT=____.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMBIN",
+      "step": "WRITE THE ANSWER",
+      "prev": "HS",
+      "next": "M0",
+      "index": 202
+    },
+    "HU": {
+      "label": "HU",
+      "rows": [
+        "YATES TWO PROPORTIONS",
+        "WHEN / WHAT TO COPY",
+        "2 INDEPENDENT BINARY",
+        "GROUPS.",
+        "COPY EVENTS M1,M2 AND",
+        "TOTAL",
+        "SIZES N1,N2; COPY ALPHA.",
+        "COURSE USES YATES",
+        "CORRECTION.",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMZ",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "HU",
+      "next": "HV",
+      "index": 203
+    },
+    "HV": {
+      "label": "HV",
+      "rows": [
+        "YATES TWO PROPORTIONS",
+        "1 PROPORTIONS AND H0",
+        "H0:POP P1=POP P2.",
+        "HA:POP PROPORTIONS DIFFER.",
+        "P1=M1/N1=____",
+        "P2=M2/N2=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMZ",
+      "step": "1 PROPORTIONS AND H0",
+      "prev": "HU",
+      "next": "HW",
+      "index": 204
+    },
+    "HW": {
+      "label": "HW",
+      "rows": [
+        "YATES TWO PROPORTIONS",
+        "2 POOLED NULL PROPORTION",
+        "P0=(M1+M2)/(N1+N2)",
+        "P0=(____+____)/(____+____)",
+        "P0=____",
+        "POOL COUNTS, NOT GROUP P.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMZ",
+      "step": "2 POOLED NULL PROPORTION",
+      "prev": "HV",
+      "next": "HX",
+      "index": 205
+    },
+    "HX": {
+      "label": "HX",
+      "rows": [
+        "YATES TWO PROPORTIONS",
+        "3 NULL STANDARD ERROR",
+        "R=1/N1+1/N2=____",
+        "SE=SQRT(P0*(1-P0)*R)",
+        "PRODUCT=____; SE=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMZ",
+      "step": "3 NULL STANDARD ERROR",
+      "prev": "HW",
+      "next": "HY",
+      "index": 206
+    },
+    "HY": {
+      "label": "HY",
+      "rows": [
+        "YATES TWO PROPORTIONS",
+        "4 CONTINUITY CORRECTION",
+        "CORR=.5*R=____",
+        "RAW GAP=ABS(P1-P2)=____",
+        "GAP=MAX(0,RAW GAP-CORR)",
+        "CORRECTED GAP=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMZ",
+      "step": "4 CONTINUITY CORRECTION",
+      "prev": "HX",
+      "next": "HZ",
+      "index": 207
+    },
+    "HZ": {
+      "label": "HZ",
+      "rows": [
+        "YATES TWO PROPORTIONS",
+        "5 DIVIDE",
+        "ABS Z=GAP/SE",
+        "ABS Z=____/____=____",
+        "CORRECTED CHI-SQUARE=Z^2",
+        "IF THAT IS REQUESTED.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMZ",
+      "step": "5 DIVIDE",
+      "prev": "HY",
+      "next": "IA",
+      "index": 208
+    },
+    "IA": {
+      "label": "IA",
+      "rows": [
+        "YATES TWO PROPORTIONS",
+        "6 CUTOFF AND DECISION",
+        "Z CUTOFF:LEFT 1-ALPHA/2.",
+        "OR INFINITE-DF T ROW,",
+        "TOTAL 2-TAIL ALPHA.",
+        "ABS Z>C:REJECT H0.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMZ",
+      "step": "6 CUTOFF AND DECISION",
+      "prev": "HZ",
+      "next": "IB",
+      "index": 209
+    },
+    "IB": {
+      "label": "IB",
+      "rows": [
+        "YATES TWO PROPORTIONS",
+        "WRITE THE ANSWER",
+        "AT ALPHA=____, POPULATION",
+        "EVENT PROPORTIONS DIFFER /",
+        "WERE NOT SHOWN TO DIFFER",
+        "BETWEEN ____ AND ____.",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMZ",
+      "step": "WRITE THE ANSWER",
+      "prev": "IA",
+      "next": "M0",
+      "index": 210
+    },
+    "IC": {
+      "label": "IC",
+      "rows": [
+        "YATES 2X2 CHI-SQUARE",
+        "WHEN / WHAT TO COPY",
+        "COPY COUNTS IN 2X2 TABLE.",
+        "ROWS:GROUP1/GROUP2.",
+        "COLS:EVENT/NO EVENT.",
+        "A,B TOP ROW; C,D BOTTOM.",
+        "COPY ALPHA.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHI2",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "IC",
+      "next": "ID",
+      "index": 211
+    },
+    "ID": {
+      "label": "ID",
+      "rows": [
+        "YATES 2X2 CHI-SQUARE",
+        "1 HYPOTHESIS AND MARGINS",
+        "H0:EQUAL POP EVENT RATES.",
+        "ROWS:A+B AND C+D.",
+        "COLS:A+C AND B+D.",
+        "N=A+B+C+D=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHI2",
+      "step": "1 HYPOTHESIS AND MARGINS",
+      "prev": "IC",
+      "next": "IE",
+      "index": 212
+    },
+    "IE": {
+      "label": "IE",
+      "rows": [
+        "YATES 2X2 CHI-SQUARE",
+        "2 EXPECTED COUNTS",
+        "E=ROW TOTAL*COL TOTAL/N",
+        "DO THIS FOR EACH CELL.",
+        "E11=____; E12=____",
+        "E21=____; E22=____",
+        "EXPECTED COUNTS CAN",
+        "DECIMAL.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHI2",
+      "step": "2 EXPECTED COUNTS",
+      "prev": "ID",
+      "next": "IF",
+      "index": 213
+    },
+    "IF": {
+      "label": "IF",
+      "rows": [
+        "YATES 2X2 CHI-SQUARE",
+        "3 CORRECT EACH CELL GAP",
+        "GAP=MAX(0,ABS(O-E)-.5)",
+        "O=OBSERVED; E=EXPECTED.",
+        "SUBTRACT, TAKE MAGNITUDE,",
+        "SUBTRACT .5; FLOOR AT",
+        "ZERO.",
+        "FOUR CORRECTED GAPS:____",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHI2",
+      "step": "3 CORRECT EACH CELL GAP",
+      "prev": "IE",
+      "next": "IG",
+      "index": 214
+    },
+    "IG": {
+      "label": "IG",
+      "rows": [
+        "YATES 2X2 CHI-SQUARE",
+        "4 EACH CELL CONTRIBUTION",
+        "TERM=GAP^2/E",
+        "SQUARE ITS CORRECTED GAP,",
+        "DIVIDE BY ITS EXPECTED.",
+        "FOUR TERMS:____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHI2",
+      "step": "4 EACH CELL CONTRIBUTION",
+      "prev": "IF",
+      "next": "IH",
+      "index": 215
+    },
+    "IH": {
+      "label": "IH",
+      "rows": [
+        "YATES 2X2 CHI-SQUARE",
+        "5 ADD AND FIND DF",
+        "CHI-SQUARE=SUM(4 TERMS)",
+        "CHI-SQUARE=____",
+        "DF=(2-1)*(2-1)=1",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHI2",
+      "step": "5 ADD AND FIND DF",
+      "prev": "IG",
+      "next": "II",
+      "index": 216
+    },
+    "II": {
+      "label": "II",
+      "rows": [
+        "YATES 2X2 CHI-SQUARE",
+        "6 UPPER TAIL TEST",
+        "CHI TABLE:DF=1, ALPHA.",
+        "CUTOFF=____",
+        "CHI-SQUARE>C:REJECT H0.",
+        "OR REJECT IF P<ALPHA.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHI2",
+      "step": "6 UPPER TAIL TEST",
+      "prev": "IH",
+      "next": "IJ",
+      "index": 217
+    },
+    "IJ": {
+      "label": "IJ",
+      "rows": [
+        "YATES 2X2 CHI-SQUARE",
+        "WRITE THE ANSWER",
+        "AT ALPHA=____, POPULATION",
+        "EVENT RATES DIFFER / WERE",
+        "NOT SHOWN TO DIFFER",
+        "BETWEEN ____ AND ____.",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMCHI2",
+      "step": "WRITE THE ANSWER",
+      "prev": "II",
+      "next": "M0",
+      "index": 218
+    },
+    "IK": {
+      "label": "IK",
+      "rows": [
+        "LARGER CONTINGENCY",
+        "WHEN / WHAT TO COPY",
+        "COUNTS IN TABLE >2X2.",
+        "R=ROWS; C=COLUMNS.",
+        "COPY LABELS AND ALPHA.",
+        "NO YATES FOR THIS TABLE.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHIR",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "IK",
+      "next": "IL",
+      "index": 219
+    },
+    "IL": {
+      "label": "IL",
+      "rows": [
+        "LARGER CONTINGENCY",
+        "1 HYPOTHESIS",
+        "H0:NO ASSOCIATION OR SAME",
+        "CATEGORY DISTRIBUTION",
+        "ACROSS THE GROUPS.",
+        "WRITE THE ACTUAL LABELS.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHIR",
+      "step": "1 HYPOTHESIS",
+      "prev": "IK",
+      "next": "IM",
+      "index": 220
+    },
+    "IM": {
+      "label": "IM",
+      "rows": [
+        "LARGER CONTINGENCY",
+        "2 MARGINS",
+        "ADD EACH ROW.",
+        "ADD EACH COLUMN.",
+        "N=GRAND TOTAL=____",
+        "BOTH SETS OF TOTALS MUST",
+        "ADD TO THE SAME N.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHIR",
+      "step": "2 MARGINS",
+      "prev": "IL",
+      "next": "IN",
+      "index": 221
+    },
+    "IN": {
+      "label": "IN",
+      "rows": [
+        "LARGER CONTINGENCY",
+        "3 EXPECTED COUNTS",
+        "E=ROW TOTAL*COL TOTAL/N",
+        "COMPUTE FOR EVERY CELL.",
+        "WRITE E BESIDE EACH O.",
+        "O=OBSERVED; E=EXPECTED.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHIR",
+      "step": "3 EXPECTED COUNTS",
+      "prev": "IM",
+      "next": "IO",
+      "index": 222
+    },
+    "IO": {
+      "label": "IO",
+      "rows": [
+        "LARGER CONTINGENCY",
+        "4 CELL CONTRIBUTIONS",
+        "TERM=(O-E)^2/E",
+        "SUBTRACT; SQUARE; DIVIDE.",
+        "DO EVERY CELL.",
+        "NO .5 CORRECTION HERE.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHIR",
+      "step": "4 CELL CONTRIBUTIONS",
+      "prev": "IN",
+      "next": "IP",
+      "index": 223
+    },
+    "IP": {
+      "label": "IP",
+      "rows": [
+        "LARGER CONTINGENCY",
+        "5 ADD AND FIND DF",
+        "CHI-SQUARE=SUM(ALL TERMS)",
+        "CHI-SQUARE=____",
+        "DF=(R-1)*(C-1)=____",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHIR",
+      "step": "5 ADD AND FIND DF",
+      "prev": "IO",
+      "next": "IQ",
+      "index": 224
+    },
+    "IQ": {
+      "label": "IQ",
+      "rows": [
+        "LARGER CONTINGENCY",
+        "6 TEST AND FOLLOW-UP",
+        "UPPER-TAIL CHI TABLE.",
+        "OBSERVED>CUTOFF:REJECT H0.",
+        "IF REQUESTED PAIRS:MAKE",
+        "NEW 2X2 MARGINS; USE YATES",
+        "AND BONFERRONI / HOLM.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMCHIR",
+      "step": "6 TEST AND FOLLOW-UP",
+      "prev": "IP",
+      "next": "IR",
+      "index": 225
+    },
+    "IR": {
+      "label": "IR",
+      "rows": [
+        "LARGER CONTINGENCY",
+        "WRITE THE ANSWER",
+        "AT ALPHA=____, EVIDENCE /",
+        "INSUFFICIENT EVIDENCE OF",
+        "ASSOCIATION BETWEEN ____",
+        "AND ____ IN THE",
+        "POPULATION.",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMCHIR",
+      "step": "WRITE THE ANSWER",
+      "prev": "IQ",
+      "next": "M0",
+      "index": 226
+    },
+    "IS": {
+      "label": "IS",
+      "rows": [
+        "GOODNESS OF FIT",
+        "WHEN / WHAT TO COPY",
+        "ONE CATEGORY COUNT LIST",
+        "VS FIXED TARGET PROBS.",
+        "K=NUMBER OF CATEGORIES.",
+        "NO TARGETS FITTED FROM",
+        "DATA.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMGOF",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "IS",
+      "next": "IT",
+      "index": 227
+    },
+    "IT": {
+      "label": "IT",
+      "rows": [
+        "GOODNESS OF FIT",
+        "1 TARGET HYPOTHESIS",
+        "H0:POP CATEGORY PROBS",
+        "EQUAL THE GIVEN TARGETS.",
+        "LIST OBSERVED AND TARGET",
+        "P.",
+        "CHECK TARGET PROBS SUM 1.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMGOF",
+      "step": "1 TARGET HYPOTHESIS",
+      "prev": "IS",
+      "next": "IU",
+      "index": 228
+    },
+    "IU": {
+      "label": "IU",
+      "rows": [
+        "GOODNESS OF FIT",
+        "2 TOTAL AND EXPECTED",
+        "N=SUM(OBSERVED)=____",
+        "EACH EXPECTED E=N*TARGET",
+        "P.",
+        "DO THIS FOR EVERY",
+        "CATEGORY.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMGOF",
+      "step": "2 TOTAL AND EXPECTED",
+      "prev": "IT",
+      "next": "IV",
+      "index": 229
+    },
+    "IV": {
+      "label": "IV",
+      "rows": [
+        "GOODNESS OF FIT",
+        "3 CATEGORY TERMS",
+        "TERM=(OBSERVED-EXPECTED)^2",
+        "DIVIDED BY EXPECTED.",
+        "DO EVERY CATEGORY.",
+        "TERMS:____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMGOF",
+      "step": "3 CATEGORY TERMS",
+      "prev": "IU",
+      "next": "IW",
+      "index": 230
+    },
+    "IW": {
+      "label": "IW",
+      "rows": [
+        "GOODNESS OF FIT",
+        "4 ADD AND FIND DF",
+        "CHI-SQUARE=SUM(TERMS)=____",
+        "DF=K-1=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMGOF",
+      "step": "4 ADD AND FIND DF",
+      "prev": "IV",
+      "next": "IX",
+      "index": 231
+    },
+    "IX": {
+      "label": "IX",
+      "rows": [
+        "GOODNESS OF FIT",
+        "5 UPPER TAIL TEST",
+        "CHI TABLE:THIS DF, ALPHA.",
+        "CUTOFF=____",
+        "OBSERVED CHI>C:REJECT H0.",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMGOF",
+      "step": "5 UPPER TAIL TEST",
+      "prev": "IW",
+      "next": "IY",
+      "index": 232
+    },
+    "IY": {
+      "label": "IY",
+      "rows": [
+        "GOODNESS OF FIT",
+        "WRITE THE ANSWER",
+        "AT ALPHA=____, POPULATION",
+        "CATEGORY PROBS DIFFER /",
+        "WERE NOT SHOWN TO DIFFER",
+        "FROM THE TARGET PATTERN.",
+        "",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMGOF",
+      "step": "WRITE THE ANSWER",
+      "prev": "IX",
+      "next": "M0",
+      "index": 233
+    },
+    "IZ": {
+      "label": "IZ",
+      "rows": [
+        "RISK MEASURES COUNTS",
+        "WHEN / WHAT TO COPY",
+        "SAME ADVERSE EVENT IN BOTH",
+        "TREATMENT AND CONTROL.",
+        "COPY EVENTS AND GROUP",
+        "TOTAL",
+        "FOR EACH. NEED FULL RISK",
+        "DENOMINATORS, AS IN A",
+        "TRIAL.",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMRISK",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "IZ",
+      "next": "JA",
+      "index": 234
+    },
+    "JA": {
+      "label": "JA",
+      "rows": [
+        "RISK MEASURES COUNTS",
+        "1 EVENT RISKS",
+        "RT=TREAT EVENTS/TREAT",
+        "TOTAL",
+        "RC=CTRL EVENTS/CTRL TOTAL",
+        "RT=____; RC=____",
+        "USE DECIMAL PROBABILITIES.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMRISK",
+      "step": "1 EVENT RISKS",
+      "prev": "IZ",
+      "next": "JB",
+      "index": 235
+    },
+    "JB": {
+      "label": "JB",
+      "rows": [
+        "RISK MEASURES COUNTS",
+        "2 RELATIVE CHANGE",
+        "RR=RT/RC=____",
+        "RRR=1-RR=____",
+        "RR<1:LOWER TREATMENT RISK.",
+        "RC=0? RR IS UNDEFINED.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMRISK",
+      "step": "2 RELATIVE CHANGE",
+      "prev": "JA",
+      "next": "JC",
+      "index": 236
+    },
+    "JC": {
+      "label": "JC",
+      "rows": [
+        "RISK MEASURES COUNTS",
+        "3 ABSOLUTE CHANGE",
+        "ARR=RC-RT=____",
+        "POSITIVE:BENEFIT.",
+        "NEGATIVE:HARM.",
+        "PERCENTAGE POINTS=100*ARR.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMRISK",
+      "step": "3 ABSOLUTE CHANGE",
+      "prev": "JB",
+      "next": "JD",
+      "index": 237
+    },
+    "JD": {
+      "label": "JD",
+      "rows": [
+        "RISK MEASURES COUNTS",
+        "4 RECIPROCAL",
+        "ARR>0: NNT=1/ARR.",
+        "ARR<0: NNH=1/ABS(ARR).",
+        "ARR=0:NO FINITE NNT/NNH.",
+        "YOUR RECIPROCAL=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMRISK",
+      "step": "4 RECIPROCAL",
+      "prev": "JC",
+      "next": "JE",
+      "index": 238
+    },
+    "JE": {
+      "label": "JE",
+      "rows": [
+        "RISK MEASURES COUNTS",
+        "5 WHOLE PERSON COUNT",
+        "IF ASKED, ROUND UP TO",
+        "NEXT WHOLE PERSON.",
+        "UNROUNDED=____",
+        "WHOLE PERSON ANSWER=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMRISK",
+      "step": "5 WHOLE PERSON COUNT",
+      "prev": "JD",
+      "next": "JF",
+      "index": 239
+    },
+    "JF": {
+      "label": "JF",
+      "rows": [
+        "RISK MEASURES COUNTS",
+        "WRITE THE ANSWER",
+        "RR=____; ABSOLUTE",
+        "GAP=____.",
+        "ONE ADDITIONAL EVENT",
+        "AVOIDED",
+        "/ CAUSED PER ____ TREATED,",
+        "COMPARED WITH CONTROL.",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMRISK",
+      "step": "WRITE THE ANSWER",
+      "prev": "JE",
+      "next": "M0",
+      "index": 240
+    },
+    "JG": {
+      "label": "JG",
+      "rows": [
+        "NNT NNH GIVEN RISKS",
+        "WHEN / WHAT TO COPY",
+        "SAME ADVERSE EVENT.",
+        "TREATMENT AND CONTROL",
+        "RISKS",
+        "GIVEN AS DECIMALS OR",
+        "RATES.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNNT",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "JG",
+      "next": "JH",
+      "index": 241
+    },
+    "JH": {
+      "label": "JH",
+      "rows": [
+        "NNT NNH GIVEN RISKS",
+        "1 CONVERT TO PROBABILITY",
+        "PERCENT:DIVIDE BY 100.",
+        "PER THOUSAND:DIVIDE BY",
+        "1000.",
+        "RT=TREAT RISK=____",
+        "RC=CONTROL RISK=____",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNNT",
+      "step": "1 CONVERT TO PROBABILITY",
+      "prev": "JG",
+      "next": "JI",
+      "index": 242
+    },
+    "JI": {
+      "label": "JI",
+      "rows": [
+        "NNT NNH GIVEN RISKS",
+        "2 ABSOLUTE CHANGE",
+        "ARR=RC-RT=____",
+        "POSITIVE:LOWER ADVERSE",
+        "RISK.",
+        "NEGATIVE:HIGHER ADVERSE",
+        "RISK.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNNT",
+      "step": "2 ABSOLUTE CHANGE",
+      "prev": "JH",
+      "next": "JJ",
+      "index": 243
+    },
+    "JJ": {
+      "label": "JJ",
+      "rows": [
+        "NNT NNH GIVEN RISKS",
+        "3 RECIPROCAL",
+        "RC>RT:NNT=1/(RC-RT)",
+        "RT>RC:NNH=1/(RT-RC)",
+        "EQUAL RISKS:NO FINITE NNT.",
+        "YOUR NNT OR NNH=____",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNNT",
+      "step": "3 RECIPROCAL",
+      "prev": "JI",
+      "next": "JK",
+      "index": 244
+    },
+    "JK": {
+      "label": "JK",
+      "rows": [
+        "NNT NNH GIVEN RISKS",
+        "4 WHOLE PERSON IF ASKED",
+        "ROUND UP, NOT NEAREST.",
+        "WHOLE PERSON COUNT=____",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNNT",
+      "step": "4 WHOLE PERSON IF ASKED",
+      "prev": "JJ",
+      "next": "JL",
+      "index": 245
+    },
+    "JL": {
+      "label": "JL",
+      "rows": [
+        "NNT NNH GIVEN RISKS",
+        "5 RELATIVE IF ASKED",
+        "RR=RT/RC; RRR=1-RR.",
+        "REQUIRES RC>0.",
+        "ABS PERCENTAGE POINT GAP",
+        "IS 100*ABS(RC-RT).",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMNNT",
+      "step": "5 RELATIVE IF ASKED",
+      "prev": "JK",
+      "next": "JM",
+      "index": 246
+    },
+    "JM": {
+      "label": "JM",
+      "rows": [
+        "NNT NNH GIVEN RISKS",
+        "WRITE THE ANSWER",
+        "ABOUT ____ PEOPLE TREATED",
+        "PER ADDITIONAL ADVERSE",
+        "EVENT",
+        "AVOIDED / CAUSED, COMPARED",
+        "WITH ____.",
+        "",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMNNT",
+      "step": "WRITE THE ANSWER",
+      "prev": "JL",
+      "next": "M0",
+      "index": 247
+    },
+    "JN": {
+      "label": "JN",
+      "rows": [
+        "ODDS RATIO",
+        "WHEN / WHAT TO COPY",
+        "LABEL A 2X2 TABLE.",
+        "EXPOSED:EVENT A, NO EVENT",
+        "B.",
+        "UNEXPOSED:EVENT C, NONE D.",
+        "CASE-CONTROL ALTERNATIVE:",
+        "ROWS CASES/CONTROLS; COLS",
+        "EXPOSED/UNEXPOSED.",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOR",
+      "step": "WHEN / WHAT TO COPY",
+      "prev": "JN",
+      "next": "JO",
+      "index": 248
+    },
+    "JO": {
+      "label": "JO",
+      "rows": [
+        "ODDS RATIO",
+        "1 COPY THE FOUR CELLS",
+        "TOP ROW:A=____, B=____",
+        "BOTTOM:C=____, D=____",
+        "KEEP ROW AND COLUMN LABELS",
+        "FOR THE FINAL SENTENCE.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOR",
+      "step": "1 COPY THE FOUR CELLS",
+      "prev": "JN",
+      "next": "JP",
+      "index": 249
+    },
+    "JP": {
+      "label": "JP",
+      "rows": [
+        "ODDS RATIO",
+        "2 ODDS IN EACH ROW",
+        "FIRST ODDS=A/B",
+        "REFERENCE ODDS=C/D",
+        "ODDS USE EVENT / NO EVENT,",
+        "NOT EVENT / WHOLE ROW.",
+        "",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOR",
+      "step": "2 ODDS IN EACH ROW",
+      "prev": "JO",
+      "next": "JQ",
+      "index": 250
+    },
+    "JQ": {
+      "label": "JQ",
+      "rows": [
+        "ODDS RATIO",
+        "3 DIAGONAL PRODUCTS",
+        "OR=(A/B)/(C/D)=(A*D)/(B*C)",
+        "MAIN PRODUCT A*D=____",
+        "OTHER PRODUCT B*C=____",
+        "OR=____/____=____",
+        "ZERO DENOM:NO FINITE",
+        "RATIO.",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOR",
+      "step": "3 DIAGONAL PRODUCTS",
+      "prev": "JP",
+      "next": "JR",
+      "index": 251
+    },
+    "JR": {
+      "label": "JR",
+      "rows": [
+        "ODDS RATIO",
+        "4 INTERPRET",
+        "OR=1:EQUAL ODDS.",
+        "OR>1:HIGHER FIRST ODDS.",
+        "OR<1:LOWER FIRST ODDS.",
+        "CASE-CONTROL:EXPOSURE ODDS",
+        "IN CASES VS CONTROLS.",
+        "",
+        "",
+        "ENTER> LEFT:BACK CLR:MENU"
+      ],
+      "method": "BMOR",
+      "step": "4 INTERPRET",
+      "prev": "JQ",
+      "next": "JS",
+      "index": 252
+    },
+    "JS": {
+      "label": "JS",
+      "rows": [
+        "ODDS RATIO",
+        "WRITE THE ANSWER",
+        "ODDS OF ____ ARE ____",
+        "TIMES",
+        "AS HIGH IN ____ AS IN",
+        "____.",
+        "USE THE ACTUAL TABLE",
+        "LABELS.",
+        "",
+        "ENTER:MENU LEFT:BACK CLR"
+      ],
+      "method": "BMOR",
+      "step": "WRITE THE ANSWER",
+      "prev": "JR",
+      "next": "M0",
+      "index": 253
+    }
+  }
+}
