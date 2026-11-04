@@ -31,6 +31,9 @@ GUIDANCE_B=('Version B keeps the same professor-style teaching but removes side 
 GUIDANCE_C=('Version C follows the Notes v3 style. Every idea is explained in connected sentences that reason about '
  'what each part does, with patterns stated in words instead of numbers or calculations, and the fullest '
  'explanations go to the ideas he said he would test.')
+# Version C also covers the Module I lecture decks, written fresh from the slides, their
+# speaker notes and the Exam 1 key, so the whole course can be reviewed in one style.
+MODULE1=['lecture01','lecture02','lecture03','lecture04','lecture05-06','lecture07','lecture08','lecture09','lecture10']
 # The class transcript teaches two pages that the slides leave as bare prompts.
 TAUGHT_PROMPTS={('lecture14',19),('lecture14',20)}
 # Compressed shorthand the user rejected, such as "Vector in, one number out".
@@ -48,15 +51,18 @@ def build():
  folder=A/f'transcripts-v{VERSION}'
  data=json.loads((ROOT/'data.json').read_text());v4=json.loads((ROOT/'transcripts-v4.json').read_text())
  collections={};counts=[];short=[]
- for lec in LECTURES:
-  source=next(c for c in data['collections'] if c['id']==lec);base=v4['collections'][lec]
+ for lec in (MODULE1+LECTURES if VERSION>=22 else LECTURES):
+  source=next(c for c in data['collections'] if c['id']==lec)
+  # Module I has no earlier transcript edition, so its page titles and kinds come from the course data.
+  base=v4['collections'][lec] if lec in v4['collections'] else {'title':source['title'],'sections':[{k:x.get(k) for k in ('id','page','title','kind')}|{'teaching':x.get('teaching',[])} for x in source['sections']]}
   authored=parse(folder/f'{lec}.txt')
   assert sorted(authored)==[int(s['page']) for s in source['sections']],(lec,'pages must match the source deck in order')
   sections=[]
   for s,b in zip(source['sections'],base['sections']):
    assert s['id']==b['id'];page=int(s['page']);blocks=authored[page]
    assert not isinstance(blocks,tuple),(lec,page,'every page is written out in full')
-   if (lec,page) not in TAUGHT_PROMPTS:assert bool(blocks)==bool(b['teaching']),(s['id'],'title, blank and prompt-only pages stay empty')
+   if lec in MODULE1:assert page!=1 or not blocks,(s['id'],'title pages stay empty')
+   elif (lec,page) not in TAUGHT_PROMPTS:assert bool(blocks)==bool(b['teaching']),(s['id'],'title, blank and prompt-only pages stay empty')
    if blocks:
     assert any(x['children'] for x in blocks),(s['id'],'notes need nested bullets');counts.append(words(blocks))
    for p in paragraphs(blocks):

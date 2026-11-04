@@ -1,7 +1,8 @@
 'use strict';
 (() => {
 const KEY = 'ling285-study-studio-v1';
-const VERSIONED_COLLECTIONS=new Set(['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17']);
+const MODULE2_COLLECTIONS=new Set(['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17']);
+const VERSIONED_COLLECTIONS=new Set(['lecture01','lecture02','lecture03','lecture04','lecture05-06','lecture07','lecture08','lecture09','lecture10','lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17']);
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeURL = value => {
@@ -157,7 +158,9 @@ function go(next,collectionId,push=true,moduleId) {
   save();applyPreferences();render();window.scrollTo({top:0,behavior:'instant'});$('#content').focus({preventScroll:true});
 }
 
-function effectiveVersion() {return TRANSCRIPT_VERSIONS.slice(1).reverse().find(version=>Number(version.slice(1))<=Number(state.transcriptVersion.slice(1)) && transcriptEditions.has(version)) || 'v1';}
+// Module I is only covered by the newest edition, so a lecture page falls back to the closest edition that has it.
+function editionCovers(version) {return transcriptEditions.has(version) && (view!=='collection' || !VERSIONED_COLLECTIONS.has(selected) || transcriptEditions.get(version).collections.has(selected));}
+function effectiveVersion() {return TRANSCRIPT_VERSIONS.slice(1).reverse().find(version=>Number(version.slice(1))<=Number(state.transcriptVersion.slice(1)) && editionCovers(version)) || 'v1';}
 function currentTranscript() {return transcriptEditions.get(effectiveVersion());}
 function sectionTitle(section) {return currentTranscript()?.sections.get(section.id)?.title || section.title;}
 function teachingParagraphs(section) {return currentTranscript()?.sections.get(section.id)?.teaching ?? (section.teaching || []);}
@@ -167,7 +170,7 @@ function collectionTitle(c) {
 }
 function versionedSections(items) {return items.some(section=>VERSIONED_COLLECTIONS.has(section.collection));}
 function transcriptSelector() {
-  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version">${[['v1','Version 1 · Original'],['v2','Version 2 · Conceptual'],['v3','Version 3 · Clear explanations'],['v4','Version 4 · Teaching notes'],['v7','Version 7 · Teaching notes (bulleted)'],['v10','Version 10 · Direct teaching notes'],['v12','Version 12 · Detailed teaching notes'],['v14','Version 14 · Balanced teaching notes'],['v16','Version 16 · Natural teaching notes'],['v18','Version 18 · Teaching scripts'],['v20','Iskarous · Professor teaching transcript'],['v21','Iskarous B · Focused professor teaching'],['v22','Iskarous C · Natural teaching notes']].map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${id!=='v1' && !transcriptEditions.has(id)?'disabled':''}>${esc(transcriptEditions.get(id)?.payload.label || label)}</option>`).join('')}</select>${state.transcriptVersion!==effectiveVersion()?`<small>${esc(state.transcriptVersion.toUpperCase())} unavailable · ${esc(effectiveVersion().toUpperCase())} shown</small>`:''}</label>`;
+  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version">${[['v1','Version 1 · Original'],['v2','Version 2 · Conceptual'],['v3','Version 3 · Clear explanations'],['v4','Version 4 · Teaching notes'],['v7','Version 7 · Teaching notes (bulleted)'],['v10','Version 10 · Direct teaching notes'],['v12','Version 12 · Detailed teaching notes'],['v14','Version 14 · Balanced teaching notes'],['v16','Version 16 · Natural teaching notes'],['v18','Version 18 · Teaching scripts'],['v20','Iskarous · Professor teaching transcript'],['v21','Iskarous B · Focused professor teaching'],['v22','Iskarous C · Natural teaching notes']].map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${id!=='v1' && !editionCovers(id)?'disabled':''}>${esc(transcriptEditions.get(id)?.payload.label || label)}</option>`).join('')}</select>${state.transcriptVersion!==effectiveVersion()?`<small>${esc(state.transcriptVersion.toUpperCase())} unavailable · ${esc(effectiveVersion().toUpperCase())} shown</small>`:''}</label>`;
 }
 function transcriptNotice() {
   const active=reader?versionedSections(reader.items):view==='collection'?VERSIONED_COLLECTIONS.has(selected):['combined','core'].includes(view) && state.activeModule==='module2';
@@ -193,7 +196,7 @@ async function loadConceptualTranscripts(version) {
     const payload=await response.json();if(payload.id!==version || !payload.collections || typeof payload.collections!=='object')throw new Error('The transcript file has an invalid edition.');
     const editionSections=new Map(),editionCollections=new Map();
     for(const collection of affected){
-      const revised=payload.collections[collection.id];if(!revised || !Array.isArray(revised.sections))throw new Error('Missing transcript collection '+collection.id+'.');
+      const revised=payload.collections[collection.id];if(!revised && !MODULE2_COLLECTIONS.has(collection.id))continue;if(!revised || !Array.isArray(revised.sections))throw new Error('Missing transcript collection '+collection.id+'.');
       const overrides=new Map();
       for(const item of revised.sections){
         const original=sections.get(item.id);
