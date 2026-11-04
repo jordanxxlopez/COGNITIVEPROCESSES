@@ -1,0 +1,35 @@
+name: LING285 media checks
+on:
+  push:
+    branches: [preview/ling285-stimuli]
+    paths: ['ling285/stimuli/authoring/verify.py', 'ling285/stimuli/authoring/browser-test.cjs', '.github/workflows/ling285-media-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow==11.3.0
+      - run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+      - run: python ling285/stimuli/authoring/extra.py
+      - run: python ling285/stimuli/authoring/verify.py
+      - run: node --test ling285/tests/content.test.cjs ling285/tests/lecture15.test.cjs ling285/tests/lectures16-17.test.cjs ling285/tests/transcripts-v4.test.cjs
+      - run: npm install --no-save --package-lock=false playwright@1.56.1
+      - run: npx playwright install --with-deps chrome
+      - run: node ling285/stimuli/authoring/browser-test.cjs
+      - name: Save validation evidence
+        if: always()
+        run: |
+          git config user.name "Study Studio media"
+          git config user.email "actions@users.noreply.github.com"
+          git add ling285/stimuli
+          git diff --cached --quiet || git commit -m "Validate LING285 preservation, media and browser playback"
+          git push
