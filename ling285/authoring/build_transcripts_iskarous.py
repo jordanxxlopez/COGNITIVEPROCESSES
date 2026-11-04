@@ -1,6 +1,6 @@
 """Assemble the Iskarous teaching edition of Module II (Version 20).
 
-Usage: python3 ling285/authoring/build_transcripts_iskarous.py
+Usage: python3 ling285/authoring/build_transcripts_iskarous.py [20 21]
 Pages are authored in authoring/transcripts-v20/lectureNN.txt in the same
 `page|text >> sub-bullet || next bullet >> sub-bullet` format as Versions 7–18.
 The text follows the class transcripts for Oct 6 to Nov 3: his reasoning and
@@ -16,11 +16,16 @@ import sys
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from build_transcripts_notes import ROOT,A,LECTURES,BANNED,LABELS,sha,paragraphs,words,parse
 
+# Version 20 follows the transcripts closely. Version 21 (Version B) keeps the same
+# teaching but trims side stories, names, dates and jargon that are not tested.
+LABELS_BY_VERSION={20:'Iskarous · Professor teaching transcript',21:'Iskarous B · Focused professor teaching'}
 VERSION=20
-LABEL='Iskarous · Professor teaching transcript'
+LABEL=LABELS_BY_VERSION[VERSION]
 GUIDANCE=('Written the way Professor Iskarous teaches the slides in class. Each idea is reasoned out in full, connected '
  'sentences that read aloud naturally, with his own examples and only the numbers that carry a result. No telegraphic '
  'fragments, shorthand or reference-sheet lists.')
+GUIDANCE_B=('Version B keeps the same professor-style teaching but removes side stories, names, dates and jargon that '
+ 'are not tested, so each page stays on the concepts and the reasoning he expects in exam answers.')
 # The class transcript teaches two pages that the slides leave as bare prompts.
 TAUGHT_PROMPTS={('lecture14',19),('lecture14',20)}
 # Compressed shorthand the user rejected, such as "Vector in, one number out".
@@ -57,9 +62,11 @@ def build():
  assert not short,('telegraphic sentences',short)
  payload={'id':f'v{VERSION}','label':LABEL,'revision':f'2026-11-03-transcripts-v{VERSION}','baseDataSha256':sha(ROOT/'data.json'),
   'collections':collections,'visualPresentation':copy.deepcopy(v4['visualPresentation']),'references':copy.deepcopy(v4['references']),
-  'writingReference':'LING285 class transcripts, Oct 6 to Nov 3, and the Module II teaching notes','guidance':GUIDANCE,
+  'writingReference':'LING285 class transcripts, Oct 6 to Nov 3, and the Module II teaching notes','guidance':GUIDANCE_B if VERSION==21 else GUIDANCE,
   'metrics':{'instructionalPages':len(counts),'words':sum(counts),'averageWords':round(sum(counts)/len(counts)),'medianWords':statistics.median(counts),'maximumWords':max(counts)}}
  (ROOT/f'transcripts-v{VERSION}.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n')
  print(f'v{VERSION}',payload['metrics'])
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+ for v in (sys.argv[1:] or ['20','21']):
+  VERSION=int(v);LABEL=LABELS_BY_VERSION[VERSION];build()
