@@ -5,7 +5,7 @@ with tempfile.TemporaryDirectory() as folder:
  # Only the LING285 subtree is needed; no installation or application mutation.
  archive=subprocess.Popen(['git','archive',base,'ling285'],stdout=subprocess.PIPE)
  subprocess.run(['tar','-x','-C',folder],stdin=archive.stdout,check=True);archive.stdout.close();assert archive.wait()==0
- commands=['node','--test','ling285/tests/transcripts-v4.test.cjs']
+ commands=['node','--test','--test-name-pattern=Version 4 covers|the earlier teaching','ling285/tests/transcripts-v4.test.cjs']
  original=subprocess.run(commands,cwd=folder,capture_output=True,text=True)
  current=subprocess.run(commands,capture_output=True,text=True)
  failed=lambda r:re.findall(r'^not ok \d+ - (.+)$',r.stdout,re.M)

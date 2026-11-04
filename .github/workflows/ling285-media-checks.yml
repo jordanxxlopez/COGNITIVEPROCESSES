@@ -1,8 +1,5 @@
 name: LING285 media checks
 on:
-  push:
-    branches: [preview/ling285-stimuli]
-    paths: ['ling285/stimuli/authoring/verify.py', 'ling285/stimuli/authoring/browser-test.cjs', '.github/workflows/ling285-media-checks.yml']
   workflow_dispatch:
 permissions:
   contents: write

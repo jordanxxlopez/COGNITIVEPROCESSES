@@ -68,7 +68,7 @@ for c in D['collections']:
   stages=sorted([a for a in s.get('assets',[]) if a.get('sourceStage') is not None],key=lambda a:a['sourceStage'])
   if stages:stage_movie('states-'+s['id'],s['title'],[s['id']]+(['lecture16-p013'] if s['id']=='lecture15-p012' else []),[a['file'] for a in stages],4)
 # Source slides for dynamic programming retain the actual network and edge costs.
-stage_movie('bellman-source','Bellman values, working backward',slides('lecture04',range(3,17)),[SE[f'lecture04-p{p:03}']['image'] for p in [3,7,8,9,13,16,10,11]],4)
+stage_movie('bellman-source','Bellman values, working backward',slides('lecture04',range(3,17)),[SE[f'lecture04-p{p:03}']['image'] for p in [3,7,8,9,10,11,13,16]],4)
 # Exact SGD example from lecture 3.
 obs=[98,85,76,68,98,72,78,67,98,85,76,68];xs=[130.]
 for y in obs:xs.append(xs[-1]-.25*(xs[-1]-y))
@@ -84,7 +84,9 @@ def sgd(t):
  pts=[(px(j),py(x)) for j,x in enumerate(xs[:n+1])]+[(px(n+u),py(xs[n]+u*(xs[n+1]-xs[n])))]
  if len(pts)>1:line(d,pts,RED,4)
  for x,y in pts:dot(d,x,y)
- txt(d,(90,635),'Update     0                    3                    6                    9                   12',22)
+ txt(d,(90,650),'Update',22)
+ for tick in [0,3,6,9,12]:
+  line(d,[(px(tick),598),(px(tick),606)],INK,1);txt(d,(px(tick),623),tick,21,anchor='mm')
  txt(d,(90,680),'Green line = data mean 80.25. The estimate can move up or down.',21,GREEN)
  return im
 encode('sgd',24,sgd);register('sgd','Watch the estimate learn from observations',slides('lecture03',range(13,30))+slides('lecture02',[16]),'Calculated demonstration','Uses lecture 3’s exact observations, initial estimate 130 and learning rate 0.25. Arithmetic uses full precision; displayed values are rounded.')
@@ -247,8 +249,10 @@ def sound_sequence(id,title,ids,labels,arrays,description,kind='Human recordings
   txt(d,(600,200),'Recorded voice' if kind=='Human recordings' else kind,24,BLUE,'mm')
   # Real waveform of the active token, not a decorative signal.
   if current:
-   start,end,label,x=current;inds=np.linspace(0,len(x)-1,1000).astype(int)
-   line(d,[(100+j,400-float(x[i])*450)for j,i in enumerate(inds)],BLUE,2)
+   start,end,label,x=current;edges=np.linspace(0,len(x),1001).astype(int)
+   for j in range(1000):
+    chunk=x[edges[j]:max(edges[j]+1,edges[j+1])]
+    line(d,[(100+j,400-float(chunk.min())*450),(100+j,400-float(chunk.max())*450)],BLUE,1)
    xx=100+1000*(t-start)/(end-start);line(d,[(xx,290),(xx,510)],RED,3)
   else:line(d,[(100,400),(1100,400)],GRAY,2)
   txt(d,(600,595),' → '.join(labels),32,INK,'mm')

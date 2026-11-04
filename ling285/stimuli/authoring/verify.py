@@ -17,6 +17,7 @@ for m in M:
  p=R/m['file'];assert p.exists(),str(p)
  r=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(p)]))
  assert float(r['format']['duration'])>0
+ if m.get('expectedDuration'):assert abs(float(r['format']['duration'])-m['expectedDuration'])<.1,m['id']
  if m['type']=='video':
   assert any(s['codec_type']=='video'for s in r['streams'])
   if not m.get('original'):
