@@ -463,3 +463,10 @@ body.reader-open { overflow: hidden; }
 
 .practice-version{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:.79rem;color:var(--muted);font-weight:650}.practice-version select{min-width:210px;max-width:100%;font-size:.8rem;flex:none}.practice-edition-toolbar{align-items:center}.practice-edition-toolbar .small-button{margin-left:auto}.practice-evidence{margin-top:24px}.practice-evidence li{margin-bottom:10px}
 @media(max-width:760px){.practice-version{width:100%}.practice-version select{min-width:0;max-width:100%}.practice-edition-toolbar .small-button{margin-left:0}}
+
+/* Version 23 pins each slide beside its notes while the notes scroll, on screens wide enough for two columns. */
+@media (min-width: 1201px) {
+  /* Clipping keeps the rounded card while letting the slide stick, which hidden overflow would prevent. */
+  body.follow-slides .source-section { overflow: clip; }
+  body.follow-slides .section-body .section-pair > .source-figure { position: sticky; top: 16px; align-self: start; max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; }
+}

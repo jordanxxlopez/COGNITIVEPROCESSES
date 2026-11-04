@@ -1,6 +1,7 @@
 'use strict';
 (() => {
 const KEY = 'ling285-study-studio-v1';
+const FOLLOWING_SLIDE_VERSIONS={v23:'v22'};
 const MODULE2_COLLECTIONS=new Set(['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17']);
 const VERSIONED_COLLECTIONS=new Set(['lecture01','lecture02','lecture03','lecture04','lecture05-06','lecture07','lecture08','lecture09','lecture10','lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17']);
 const $ = selector => document.querySelector(selector);
@@ -14,7 +15,7 @@ const unique = values => [...new Set(values)];
 const WORK = [ ['guide','What to know by the end'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['stimuli','Sounds & videos'], ['combined','Combined notes'], ['test','Current practice test'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
 const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null,sessions:{},practiceSessions:{},activeModule:'module2',practiceMode:'mixed',assessmentVersion:'v2',mcqSelections:{},mcqSubmitted:{},optionOrders:{},flags:{},transcriptVersion:'v18'});
 let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections, moduleMap, practiceData=null,practiceLoadError='';
-const TRANSCRIPT_VERSIONS=['v1','v2','v3','v4','v7','v10','v12','v14','v16','v18','v20','v21','v22'];
+const TRANSCRIPT_VERSIONS=['v1','v2','v3','v4','v7','v10','v12','v14','v16','v18','v20','v21','v22','v23'];
 const transcriptEditions=new Map(),transcriptErrors=new Map(),visualPresentations=new Map(),practiceQuestionIds=new Set();
 let storageAvailable = true, reader = null, lastReaderFocus = null, view = 'home', selected = '', saveTimeout, searchQuery = '';
 let timer = {duration:30 * 60,remaining:30 * 60,end:null,interval:null,mode:'Study'};
@@ -168,7 +169,7 @@ function collectionTitle(c) {
 }
 function versionedSections(items) {return items.some(section=>VERSIONED_COLLECTIONS.has(section.collection));}
 function transcriptSelector() {
-  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version">${[['v1','Version 1 · Original'],['v2','Version 2 · Conceptual'],['v3','Version 3 · Clear explanations'],['v4','Version 4 · Teaching notes'],['v7','Version 7 · Teaching notes (bulleted)'],['v10','Version 10 · Direct teaching notes'],['v12','Version 12 · Detailed teaching notes'],['v14','Version 14 · Balanced teaching notes'],['v16','Version 16 · Natural teaching notes'],['v18','Version 18 · Teaching scripts'],['v20','Iskarous · Professor teaching transcript'],['v21','Iskarous B · Focused professor teaching'],['v22','Iskarous C · Natural teaching notes']].map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${id!=='v1' && !transcriptEditions.has(id)?'disabled':''}>${esc(transcriptEditions.get(id)?.payload.label || label)}</option>`).join('')}</select>${state.transcriptVersion!==effectiveVersion()?`<small>${esc(state.transcriptVersion.toUpperCase())} unavailable · ${esc(effectiveVersion().toUpperCase())} shown</small>`:''}</label>`;
+  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version">${[['v1','Version 1 · Original'],['v2','Version 2 · Conceptual'],['v3','Version 3 · Clear explanations'],['v4','Version 4 · Teaching notes'],['v7','Version 7 · Teaching notes (bulleted)'],['v10','Version 10 · Direct teaching notes'],['v12','Version 12 · Detailed teaching notes'],['v14','Version 14 · Balanced teaching notes'],['v16','Version 16 · Natural teaching notes'],['v18','Version 18 · Teaching scripts'],['v20','Iskarous · Professor teaching transcript'],['v21','Iskarous B · Focused professor teaching'],['v22','Iskarous C · Natural teaching notes'],['v23','Version 23 · Iskarous C with following slides']].map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${id!=='v1' && !transcriptEditions.has(id)?'disabled':''}>${esc(transcriptEditions.get(id)?.payload.label || label)}</option>`).join('')}</select>${state.transcriptVersion!==effectiveVersion()?`<small>${esc(state.transcriptVersion.toUpperCase())} unavailable · ${esc(effectiveVersion().toUpperCase())} shown</small>`:''}</label>`;
 }
 function transcriptNotice() {
   const active=reader?versionedSections(reader.items):view==='collection'?VERSIONED_COLLECTIONS.has(selected):['combined','core'].includes(view) && state.activeModule==='module2';
@@ -190,8 +191,10 @@ function changeTranscriptVersion(value) {
 async function loadConceptualTranscripts(version) {
   const affected=D.collections.filter(collection=>VERSIONED_COLLECTIONS.has(collection.id));if(!affected.length)return;
   try{
-    const response=await fetch('transcripts-'+version+'.json',{cache:'no-cache'});if(!response.ok)throw new Error('Transcript file returned '+response.status+'.');
-    const payload=await response.json();if(payload.id!==version || !payload.collections || typeof payload.collections!=='object')throw new Error('The transcript file has an invalid edition.');
+    // Version 23 reuses the Version 22 notes and only changes the layout, pinning each slide beside its notes.
+    const file=FOLLOWING_SLIDE_VERSIONS[version] || version;
+    const response=await fetch('transcripts-'+file+'.json',{cache:'no-cache'});if(!response.ok)throw new Error('Transcript file returned '+response.status+'.');
+    let payload=await response.json();if(file!==version && payload.id===file)payload={...payload,id:version,label:'Version 23 · Iskarous C with following slides'};if(payload.id!==version || !payload.collections || typeof payload.collections!=='object')throw new Error('The transcript file has an invalid edition.');
     const editionSections=new Map(),editionCollections=new Map();
     for(const collection of affected){
       const revised=payload.collections[collection.id];if(!revised && !MODULE2_COLLECTIONS.has(collection.id))continue;if(!revised || !Array.isArray(revised.sections))throw new Error('Missing transcript collection '+collection.id+'.');
@@ -558,7 +561,7 @@ function sources() {
 }
 
 function render() {
-  nav();applyPreferences();
+  nav();applyPreferences();document.body.classList.toggle('follow-slides',Boolean(FOLLOWING_SLIDE_VERSIONS[effectiveVersion()]));
   const routes={stimuli:()=>window.Ling285Stimuli.gallery(state.activeModule),home,collection:collectionView,guide,core,experiments,combined,test,quizzes,missed,sources,practice,meadows};
   const resume=state.session && !state.session.finished && view!=='practice'?'<p class="small"><button class="text-button" data-go="practice">↳ Resume '+esc(currentModule().title)+' practice</button></p>':'';
   $('#content').innerHTML=resume+(routes[view] || home)();

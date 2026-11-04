@@ -62,5 +62,5 @@ test('Version C keeps numbers, dates and calculations out of the teaching',()=>{
 
 test('the dropdown offers the Iskarous edition beside the earlier ones',()=>{
  const app=fs.readFileSync(path.join(root,'app.js'),'utf8');
- assert(app.includes("'v18','v20','v21','v22']"));assert(app.includes("['v22','Iskarous C · Natural teaching notes']"));assert(app.includes("['v21','Iskarous B · Focused professor teaching']"));assert(app.includes("['v20','Iskarous · Professor teaching transcript']"));
+ assert(app.includes("'v18','v20','v21','v22','v23']"));assert(app.includes("['v23','Version 23 · Iskarous C with following slides']"));assert(app.includes("['v22','Iskarous C · Natural teaching notes']"));assert(app.includes("['v21','Iskarous B · Focused professor teaching']"));assert(app.includes("['v20','Iskarous · Professor teaching transcript']"));
 });
