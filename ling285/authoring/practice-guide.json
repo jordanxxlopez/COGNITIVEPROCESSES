@@ -1768,6 +1768,46 @@
       "collection": "lecture15",
       "page": 13,
       "reason": "Identify hidden sigmoid placement and final logits in the supplied program."
+    },
+    {
+      "collection": "lecture16",
+      "page": 5,
+      "reason": "Read the vowel scatterplot and explain how overlapping F1–F2 clouds limit any two-formant classifier."
+    },
+    {
+      "collection": "lecture16",
+      "page": 15,
+      "reason": "Explain the full-batch training loop, how training accuracy is computed, and the shape of the single-run curve."
+    },
+    {
+      "collection": "lecture16",
+      "page": 16,
+      "reason": "Explain what changes across ten initializations and why every run ends at the same accuracy."
+    },
+    {
+      "collection": "lecture17",
+      "page": 3,
+      "reason": "Explain how state units and feedback make Jordan’s network recurrent, and read feature spreading in its output."
+    },
+    {
+      "collection": "lecture17",
+      "page": 4,
+      "reason": "Trace one neuron, a network, an LLM and an agentic graph, and name inference and learning operations."
+    },
+    {
+      "collection": "lecture17",
+      "page": 5,
+      "reason": "Explain why any sequence of vectors poses the same next-item question to an LLM."
+    },
+    {
+      "collection": "lecture17",
+      "page": 6,
+      "reason": "Use CVC syllables, onset and coda clusters, and syllable breaks to explain English phonotactics."
+    },
+    {
+      "collection": "lecture17",
+      "page": 7,
+      "reason": "Connect constrained next-letter guesses to next-token prediction and phonotactic learning."
     }
   ],
   "guide": [
@@ -2267,6 +2307,81 @@
         {
           "collection": "lecture15",
           "page": 13
+        }
+      ],
+      "kind": "demonstration"
+    },
+    {
+      "title": "Connect the vowel data to the training results",
+      "explanation": "Read the F1–F2 scatterplot, identify the separated and overlapping vowels, and use the overlap to explain why full-batch training of the linear network levels off near 45% training accuracy.",
+      "refs": [
+        {
+          "collection": "lecture16",
+          "page": 5
+        },
+        {
+          "collection": "lecture16",
+          "page": 15
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Explain what initialization does and does not change",
+      "explanation": "Compare ten runs that differ only in their starting weights. Describe how their early paths differ and why all of them finish at the same accuracy.",
+      "refs": [
+        {
+          "collection": "lecture16",
+          "page": 15
+        },
+        {
+          "collection": "lecture16",
+          "page": 16
+        }
+      ],
+      "kind": "demonstration"
+    },
+    {
+      "title": "Trace the path from static classifiers to LLMs",
+      "explanation": "Explain what a static-vector network can decide, how Jordan’s state units add memory of past outputs, and how one neuron, a network, an LLM and an agentic graph share inner products and SGD with dynamic programming.",
+      "refs": [
+        {
+          "collection": "lecture17",
+          "page": 2
+        },
+        {
+          "collection": "lecture17",
+          "page": 3
+        },
+        {
+          "collection": "lecture17",
+          "page": 4
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Treat any sequence as vectors with a next item",
+      "explanation": "Use the sentence, spectrogram, image and protein examples to explain what x₁₆ is in each case and why an LLM only ever sees vectors.",
+      "refs": [
+        {
+          "collection": "lecture17",
+          "page": 5
+        }
+      ],
+      "kind": "demonstration"
+    },
+    {
+      "title": "Use phonotactics to explain next-letter prediction",
+      "explanation": "Explain CVC syllables, onset and coda clusters, mirrored order and syllable breaks, then show how next-letter guesses follow those rules and why a GPT trained on the game learns them.",
+      "refs": [
+        {
+          "collection": "lecture17",
+          "page": 6
+        },
+        {
+          "collection": "lecture17",
+          "page": 7
         }
       ],
       "kind": "demonstration"

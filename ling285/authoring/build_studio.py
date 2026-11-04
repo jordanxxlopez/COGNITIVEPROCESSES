@@ -12,7 +12,7 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 manifest=read('source-manifest.json');inventory={(p['source'],p['page']):p for p in read('page-inventory.json')}
 media={a['sha256']:a for a in read('unique-embedded.json')}
 authored={}
-for name in ['teaching-early.json','teaching-middle.json','teaching-later.json','teaching-readings.json','teaching-lecture14.json','teaching-lecture15.json']:
+for name in ['teaching-early.json','teaching-middle.json','teaching-later.json','teaching-readings.json','teaching-lecture14.json','teaching-lecture15.json','teaching-lecture16.json','teaching-lecture17.json']:
  for key,value in read(name).items():
   assert key not in authored,key
   authored[key]=value
@@ -80,7 +80,7 @@ for key in lecture_keys+other_keys:
   raw=p.get('native',{});shape_text='\n'.join(s.get('text','') if 'text' in s else '\n'.join(' | '.join(row) for row in s.get('rows',[])) for s in raw.get('shapes',[]))
   # Preserve exact extracted wording separately from authored teaching.
   original_text=p['text'].strip() or p['ocr'].strip() or shape_text.strip()
-  if key in ['lecture14','lecture15']:
+  if key in ['lecture14','lecture15','lecture16','lecture17']:
    # PDF text can omit labels retained as native PowerPoint text. Keep the
    # complete new-slide wording without changing earlier released sections.
    native_text='\n'.join(s.get('text','') for s in raw.get('shapes',[]) if s.get('type')=='text').strip()
@@ -113,10 +113,14 @@ for key in lecture_keys+other_keys:
   if key=='lecture15' and page==12:
    for stage in read('extracted/lecture15-animation-stages.json'):
     assets.append({'file':stage['file'],'type':'image','label':'Original reveal stage '+str(stage['stage'])+' · '+stage['caption'],'sourceDerived':True,'sourcePage':12,'sourceStage':stage['stage'],'animated':False,'originalFilename':'slide12.xml · stage '+str(stage['stage'])})
+  if key=='lecture17':
+   # Click states exported from the original shapes and timing; page 5's static export overlaps its reveals.
+   for stage in [s for s in read('extracted/lecture17-animation-stages.json') if s['page']==page]:
+    assets.append({'file':stage['file'],'type':'image','label':'Original click state '+str(stage['stage'])+' · '+stage['caption'],'sourceDerived':True,'sourcePage':page,'sourceStage':stage['stage'],'animated':False,'originalFilename':f'slide{page}.xml · click state '+str(stage['stage'])})
   is_core=(key,page) in core
   # Internal authoring observations belong in the audit, not the student flow.
   display_issues=[s for s in section.get('issues',[]) if not re.search(r'agent instruction|new user request|instructions? (?:issued |to the assistant)|not instructions|source policy is recorded',s,re.I)]
-  sections.append({'id':sid,'page':page,'title':section['title'],'kind':section['kind'],'teaching':section['teaching'],'image':'assets/slides/lecture15/007-ink.webp' if key=='lecture15' and page==7 else p['image'],'assets':assets,'sourceText':original_text,'speakerNotes':raw.get('speakerNotes',''),'issues':display_issues,'core':is_core,'coreReason':core.get((key,page),'')})
+  sections.append({'id':sid,'page':page,'title':section['title'],'kind':section['kind'],'teaching':section['teaching'],'image':'assets/slides/lecture15/007-ink.webp' if key=='lecture15' and page==7 else 'assets/slides/lecture16/008-ink.webp' if key=='lecture16' and page==8 else p['image'],'assets':assets,'sourceText':original_text,'speakerNotes':raw.get('speakerNotes',''),'issues':display_issues,'core':is_core,'coreReason':core.get((key,page),'')})
   audit.append({'id':sid,'source':key,'page':page,'kind':section['kind'],'teachingParagraphs':len(section['teaching']),'words':sum(len(t.split()) for t in section['teaching']),'core':is_core,'review':review,'issues':section.get('issues',[]),'sourceSha256':entry['sha256']})
   source_issues.extend(display_issues)
   p['renderedPageInspected']=True;p['detailedVisualReviewComplete']=True;p['teachingCoverageVerified']=True

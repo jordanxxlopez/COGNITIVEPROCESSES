@@ -1,0 +1,16 @@
+1|
+2|=lecture15:2
+3|=lecture15:3
+4|
+5|The scatterplot holds all **525** vowel tokens, **105** per vowel, placed by **F1** across and **F2** up, in hertz. >> Each dot is one recording, and its color gives the correct word. >> The plot pairs every input the network sees with its answer. || The colors match the five outputs. >> Red **i (dean)**, magenta **ae (Dan)**, blue **u (dune)**, cyan **a (Don)**, green **schwa (done)**. >> Each vowel spreads into a cloud because its formants vary from token to token. >> All rows are kept, including a few strays. || **i** and **ae** stand apart. >> **i** sits high on F2, mostly above about 2000 Hz. >> **ae** reaches far along F1, past 800 Hz. || **u**, **a** and **schwa** overlap in the lower middle. >> They share roughly 300 to 800 Hz in F1 and 800 to 1600 Hz in F2. >> A token there could belong to any of the three. || Overlap caps what F1 and F2 alone can sort. >> Tokens in the same spot look the same to the network. >> Any classifier using only these two numbers mislabels some of them, so accuracy stays well below perfect.
+6|
+7|=lecture15:6
+8|=lecture15:7
+9|=lecture15:8
+10|=lecture15:9
+11|=lecture15:10
+12|=lecture15:11
+13|=lecture15:12
+14|=lecture15:13
+15|The code trains the all-linear vowel network from one starting point, set by **torch.manual_seed(0)**. >> Four **nn.Linear** layers with **bias=False** keep the 2, 3, 2, 4, 5 sizes, with no activations between them. >> Dividing the formants by **1000** converts hertz to kilohertz. >> **argmax(1)** gives each token’s correct class number. || **CrossEntropyLoss** and plain **SGD** at **learning rate 0.1** run for **2,000 epochs**. >> Each epoch clears gradients, computes the loss on every token, backpropagates and steps once. >> Every epoch is one **full-batch update**. || Accuracy is measured after every update. >> The largest score is the network’s answer. >> Accuracy is the percentage of the **525** training tokens it gets right, so this is **training accuracy**. || The curve rises from **20%** to **44.95%**. >> It holds at 20%, the one-in-five level, for about 200 updates, then jumps into the 40s. >> A sharp dip near update 390 recovers quickly. >> From about 450 updates on it stays flat, finishing at 236 of 525 correct. || The curve comes from an equivalent **NumPy** run. >> PyTorch was unavailable where the plot was made, so NumPy ran the same network, loss, scaling and updates.
+16|Training repeats with **seeds 0 through 9**, each with a fresh model and optimizer. >> Only the **initialization**, the starting weights, changes. >> Everything else is identical across the ten runs. || All ten curves start near **20%** and then take different routes. >> Some climb within 100 updates, others wait 200 or more. >> Some dip back toward 20% briefly, and peaks reach close to **47%**. || The runs converge. >> The fastest settle by about 350 updates, the slowest by about 1,000. >> **All ten finish at 44.95%**, and their curves overlap. || The starting weights change the path, not the destination. >> Extra seeds would not raise the final accuracy. >> The ceiling comes from the network and the overlapping vowel data. || The curves are executed **NumPy** reference runs. >> NumPy and PyTorch draw different starting weights from the same seed number, so individual lines would differ in PyTorch while the pattern holds.

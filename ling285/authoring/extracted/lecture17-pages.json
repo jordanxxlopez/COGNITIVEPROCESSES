@@ -1,0 +1,106 @@
+[
+  {
+    "page": 1,
+    "text": "             Ling 285\n Human Language and Technology\n            Lecture 17\n\nNNs  LLMs  Agentic Systems!!!!\n\n\n               Khalil Iskarous\n        Department of Linguistics\n      University of Southern California",
+    "ocr": "",
+    "image": "assets/slides/lecture17/001.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 2,
+    "text": "                 NNs\n                    1943-1986\n\n                                                                                                                   +0.1        done\n\n                                                                                    +0.5                                                                                                            +0.1  +0.6   −0.2\n                             +0.005                      −0.4                                            −0.5                                                                                                                     +0.8      dune\n                                                                                         +0.4                 −0.1  F1             +0.002                                                        +0.2                                                        +0.6                 +0.4\n                             −0.001                                                                       −0.4  +0.2    +0.4                                                          −0.2\n                                                                                    +0.7                                                       dean                                                   −0.7  +0.5                                                −0.5  +0.2\n                            +0.003\n                                                                                    +0.7                           +0.1                                   −0.004                                                                                                          −0.3                                                                                                                     −0.2                                                                                         −0.2  F2                    +0.002                      −0.5                                                                                    +0.3                               +0.2     Don\n                                                                                                              +0.3                                                                                                                      +0.8\n                                                                                                                      +0.8\n                                                                                                             −0.6       Dan\n\nGiven some static vector, of formants, the NN could make a decision about\na few possible categories… Problem: Human cognition is far more complex…",
+    "ocr": "",
+    "image": "assets/slides/lecture17/002.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 3,
+    "text": "1985: Michael Jordan developed Recurrent Neural Networks to make\nsense of speech production…. which became LLMs… then Agentic AI ☺️",
+    "ocr": "",
+    "image": "assets/slides/lecture17/003.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 4,
+    "text": "                                                                                                                 Outline LLM\nx\n                      W₁    W₂   W₃            W  W  W  W  W  W  W  W  W  W  W  W    16\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W    PDF\n      w                                                                                                  Write LLM\n\n\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W\n\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W\n\n                     y                                                                                                              Critic LLM\n\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W            Σ                                                                                                                                                                                   layers\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W\n                                          5                                                                                                       loop\n\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W                Revise LLM\n\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W\n\n\n\n\n\n                                                                       W                                                                          W                                                                            W                                                                               W                                                                                  W                                                                                    W                                                                                       W                                                                                          W                                                                                            W                                                                                               W                                                                                                  W                                                                                                    W\n\n                                                                       W                                                                          W                                                                            W                                                                               W                                                                                  W                                                                                    W                                                                                       W                                                                                          W                                                                                            W                                                                                               W                                                                                                  W                                                                                                    W                   Final LLM\n\n\n\n\n                                                                                                                           vectors 1 … 15 in\n\n       Vector in,                      Vector in,                 LLM: dynamical system with                Agentic system:\n     1 number out               Decision vector out        many vectors in, 1 decision vector out         a graph of LLMs\n\n                                Inference: inner products\n                                  Learning: SGD + DP",
+    "ocr": "",
+    "image": "assets/slides/lecture17/004.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 5,
+    "text": "15 vectors. Vectors of what?\n\n              x₁        x₂        x₃        x₄        x₅        x₆        x₇        x₈        x₉        x₁₀          x₁₁         x₁₂         x₁₃        x₁₄         x₁₅         x₁₆\n\n                                                                                             ?\n\n\n\n\n        TheF       catV      thatN      theQ     dogH    chasedL       ranC      upG      theS       oldH      treeL     andV       satE      onA      theL      ???\n                                                                                                                     ?\n\n\n\n\n                                                                                                                            helix\n\n                                              5 kHz                                1       2      3       4\n                                                ?      A      V      H\n                                                                                        5       6      7       8\n         The cat that the dog chasedL  ranE up theL  oldS tree and ?sat on the ____\n\n                                                                                        9       10      11      12\n                                                           a sentence, cut into 15 words    G\n                                                 0\n                                                                                        13      14      15   ?                                                        time →\n                                                                                  C\n                                                         a spectrogram, cut into 15 frames                                        N    F        N        H\n                                                    an image,V cut into 16 patches,Q      read rowL  by row\n\n                                                  a protein (insulin, B chain), read as 15 amino acids\n\n  The LLM only ever sees vectors. Words, sounds, pixels, molecules: one machine, one question: what is x₁₆?",
+    "ocr": "",
+    "image": "assets/slides/lecture17/005.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 6,
+    "text": "Which sequences can be English words?\n\n\n            Don     mat          sit      shave     cup      dog      pen        fish      bed       ship\n1 syllable,\nsingle C V C\n                  kite      rope     bath      chin     wet     gum      tub       ring         lick      van\n\n                A simple syllable in English can have a consonant then a vowel then a consonant\n\n\n                                                     onsets →                                                                codas →\n\n                    split         flat      black      glad      stop      desk      box      help      milk     lamp\n1 syllable,\nclusters\n                  *sblit       *lfat    *bnack    *dlad     *tsop    *desb    *bokp    *hepl     *mikl    *lapm\n\n                       Only certain sequences are allowed before the vowel and after the vowel\n\n\n\n               ba·na·na    win·dow    pump·kin     nap·kin      At·lan·tic     ath·lete      ad·mit     spa·ghet·ti\nmany\nsyllables\n             *bnanana                            *ngapkin      *tlantic      *thlete      *dmit     *sbaghetti\n\n         A long word is a chain of syllables: t·l is fine across a break (At·lan·tic), but tl cannot start a syllable\n\n\n\n                                 · syllable break    * impossible in English",
+    "ocr": "",
+    "image": "assets/slides/lecture17/006.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 7,
+    "text": "Pop Quiz!\nHow phonotactic knowledge can be revealed through GPT learning\n\nEach is the start of an English word. Guess the next letter.\n\n\n\n  1                               2                               3                               4                               5\n    ra _       sp _       k _        skr _    m _\n\n         t n r l                      l r a e i o                     i e a n            a e i u           a e i o u\n\n    after a vowel, almost anything               l, r or a vowel  never *spn      a vowel, or n (knee)  never *kt        only a vowel  never *skrl           only a vowel  never *mb\n\n\n\n\n                   6                               7                               8                               9\n       bram _     b _            f _        sh _\n\n               b                r l a e i o u           r l a e i o u        a e i o u r\n\n                     bramble, or a new syllable                  r, l or a vowel  never *bn                  r, l or a vowel  never *fn      a vowel, or r (shrimp)  never *shb\n\n\n\n    Guessing the next letter is predicting x₁₆. A GPT trained only on this game learns English sounds and spelling.",
+    "ocr": "",
+    "image": "assets/slides/lecture17/007.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  },
+  {
+    "page": 8,
+    "text": "Now we will build an LLM together by designing\n       an agentic system that learns the\nknowledge of English syllables that you have!!!!",
+    "ocr": "",
+    "image": "assets/slides/lecture17/008.webp",
+    "links": [],
+    "annotations": [],
+    "size": [
+      960.0094604492188,
+      540.0
+    ],
+    "visualReviewed": false
+  }
+]

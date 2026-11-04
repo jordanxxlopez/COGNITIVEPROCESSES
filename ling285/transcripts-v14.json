@@ -2,7 +2,7 @@
   "id": "v14",
   "label": "Version 14 · Balanced teaching notes",
   "revision": "2026-10-31-transcripts-v14",
-  "baseDataSha256": "cae8456ec5cda4e93436d3beaa26ed2833e3164726de2d0f3edc09dc0dba5cfa",
+  "baseDataSha256": "25d65a7840aa72efcda917badc577f2847e880f9e6267e45c161babb76254868",
   "collections": {
     "lecture11": {
       "title": "Masses and Springs · Theory and Prediction",
@@ -3774,6 +3774,892 @@
           ]
         }
       ]
+    },
+    "lecture16": {
+      "title": "Neural Networks · Vowel data, training runs, and initialization",
+      "sections": [
+        {
+          "id": "lecture16-p001",
+          "page": 1,
+          "title": "Neural Networks",
+          "kind": "title",
+          "teaching": []
+        },
+        {
+          "id": "lecture16-p002",
+          "page": 2,
+          "title": "Two formants feed a fully connected network",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The vowel network takes in **F1** and **F2** and gives one response for each of five words, **done, dune, dean, Don** and **Dan**, top to bottom.",
+              "children": [
+                "The inputs are measurements of the sound in hertz.",
+                "The outputs are the network’s responses to each word.",
+                "Both are drawn as circles, but their jobs differ."
+              ]
+            },
+            {
+              "text": "Three **hidden layers** sit between them, with **three, two and four** neurons.",
+              "children": [
+                "The layout runs **2 to 3 to 2 to 4 to 5**.",
+                "The numbers count neurons per layer, not recordings or trials.",
+                "Each hidden neuron receives the previous layer’s values and sends its result onward."
+              ]
+            },
+            {
+              "text": "The network is **fully connected**, every neuron linked to every neuron in the next layer.",
+              "children": [
+                "Each connection has a **weight**, and all **40** signed weights are shown, from tiny ones like **+0.005** and **−0.001** to larger ones like **+0.6** and **−0.4**.",
+                "A weight sets how the traveling value contributes to the receiving neuron. Positive weights keep the sign, and negative weights reverse it."
+              ]
+            },
+            {
+              "text": "F1 and F2 each reach all three first-layer neurons.",
+              "children": [
+                "Each of those six connections has its own weight.",
+                "So each first-layer neuron blends the same two measurements differently."
+              ]
+            },
+            {
+              "text": "The weights stay fixed in this description.",
+              "children": [
+                "Changing a formant changes what flows through.",
+                "Changing a weight changes how strongly a link counts.",
+                "A weight is one connection’s contribution, never a word’s probability."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p003",
+          "page": 3,
+          "title": "Forward propagation combines weighted inputs",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**Forward propagation** carries the input forward, layer by layer, to the outputs. The example input is **F1 = 320** and **F2 = 2000**.",
+              "children": []
+            },
+            {
+              "text": "The top first-layer neuron computes **w₁ times F1 plus w₂ times F2**.",
+              "children": [
+                "Its weights are **+0.005** and **−0.001**.",
+                "F1 adds a positive amount, F2 adds a larger negative amount, and the sum is **−0.40**."
+              ]
+            },
+            {
+              "text": "Multiply-then-add is an **inner product**.",
+              "children": [
+                "The other two first-layer neurons, with their own weights, give **6.64** and **2.72**.",
+                "A negative value is still a usable value for the next layer."
+              ]
+            },
+            {
+              "text": "Each later layer repeats the same operation.",
+              "children": [
+                "The second layer gives about **5.50** and **−5.93**.",
+                "The third gives about **1.57, −1.95, −1.95** and **−2.88**.",
+                "Order matters, since each layer needs the finished results of the one before."
+              ]
+            },
+            {
+              "text": "The five final sums are **logits**, scores that are not yet probabilities, **0.622, −1.398, −1.300, −0.478** and **−1.076**.",
+              "children": [
+                "**Softmax** raises e to each logit and divides by the total of all five.",
+                "The resulting probabilities are positive and add to 1, even where logits are negative."
+              ]
+            },
+            {
+              "text": "**Done** gets the most, about **55.7%**, and **dean** gets about **8.1%**.",
+              "children": [
+                "Don, Dan and dune fall in between or below, at about 18.5%, 10.2% and 7.4%.",
+                "These are current responses, not the true word. The hidden activations are linear, and the weights stay fixed during the pass."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p004",
+          "page": 4,
+          "title": "Pop quiz · Forward propagation",
+          "kind": "prompt",
+          "teaching": []
+        },
+        {
+          "id": "lecture16-p005",
+          "page": 5,
+          "title": "Vowel formants overlap across five categories",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The scatterplot shows all **525** vowel tokens, **105** per vowel, with **F1** across and **F2** up, in hertz.",
+              "children": [
+                "Each dot is one recording, and its color gives the correct word.",
+                "These are the same two numbers the network receives."
+              ]
+            },
+            {
+              "text": "Five colors match the five outputs.",
+              "children": [
+                "Red **i (dean)**, magenta **ae (Dan)**, blue **u (dune)**, cyan **a (Don)**, green **schwa (done)**.",
+                "Each vowel forms a cloud, since its formants vary from token to token.",
+                "No tokens were removed, so a few strays sit far from their clouds."
+              ]
+            },
+            {
+              "text": "**i** and **ae** stand out.",
+              "children": [
+                "**i** sits high on F2, mostly above about 2000 Hz, with a low F1.",
+                "**ae** spreads toward high F1, past 800 Hz."
+              ]
+            },
+            {
+              "text": "**u**, **a** and **schwa** overlap.",
+              "children": [
+                "They crowd into about 300 to 800 Hz in F1 and 800 to 1600 Hz in F2.",
+                "A token there could belong to any of the three."
+              ]
+            },
+            {
+              "text": "Overlap limits any classifier that uses only F1 and F2.",
+              "children": [
+                "Tokens in the same place look identical to the network.",
+                "No rule based on these two numbers can label them all correctly, so accuracy stays well below perfect."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p006",
+          "page": 6,
+          "title": "Info on Exam 2 and Exam 3",
+          "kind": "logistics",
+          "teaching": []
+        },
+        {
+          "id": "lecture16-p007",
+          "page": 7,
+          "title": "Backpropagation uses the difference between prediction and target",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**Backpropagation** starts by setting the network’s answer beside the right answer.",
+              "children": [
+                "The **computed output** gives **done 55.7%** and **dean** only **8.1%**.",
+                "The **desired output** puts **1** on **dean** and **0** on the rest, because dean was spoken.",
+                "The target names the correct word, so it can disagree with the network’s favorite."
+              ]
+            },
+            {
+              "text": "**Cross-entropy loss** measures the mismatch through the true word’s probability.",
+              "children": [
+                "Here it is the negative log of the probability of dean.",
+                "More probability on dean lowers the loss, and less raises it."
+              ]
+            },
+            {
+              "text": "The calculation runs **backward**, from outputs to inputs.",
+              "children": [
+                "The final weights’ contribution is found first.",
+                "That result feeds the calculation for hidden layer 3, then 2, then 1.",
+                "Each step swaps in updated weights, such as **+0.1** becoming **+0.083** and **+0.6** becoming **+0.622**."
+              ]
+            },
+            {
+              "text": "A **gradient** says how the loss changes when a weight changes slightly.",
+              "children": [
+                "The update subtracts the learning rate, **η**, times the gradient.",
+                "A positive gradient lowers a weight, and a negative one raises it, so learning does not simply enlarge positive weights."
+              ]
+            },
+            {
+              "text": "Stored forward activations stay fixed through the backward pass.",
+              "children": [
+                "Every gradient uses the original weights, forming one simultaneous update.",
+                "A new forward pass is needed to see the updated predictions.",
+                "Input connections get a smaller learning rate, because their inputs are raw hertz values."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p008",
+          "page": 8,
+          "title": "Predict how changing a marked weight affects error",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**If we increase this w, will the error go up or down?** The target is **dean**, but the network favors **done**, so the question is what a small change does to dean’s probability.",
+              "children": []
+            },
+            {
+              "text": "The **pink-marked** connection joins the top neuron of the last hidden layer to **done**.",
+              "children": [
+                "The weight is positive, and the neuron’s activation is about **1.57**.",
+                "Increasing the weight raises done’s score.",
+                "Softmax shares one total among five words, so a stronger done leaves dean less, and the loss **rises**.",
+                "The update should therefore decrease this weight."
+              ]
+            },
+            {
+              "text": "The **blue-marked** connection joins **F1** to the top first-layer neuron.",
+              "children": [
+                "Increasing it raises that neuron’s value, since F1 is positive.",
+                "That change then flows through many signed connections to every output.",
+                "The first connection’s sign alone cannot predict whether the error rises or falls."
+              ]
+            },
+            {
+              "text": "The full backward calculation decides it.",
+              "children": [
+                "For this network and the dean target, the blue connection’s gradient is also positive.",
+                "A small increase raises the error, so the update decreases this weight too.",
+                "Both marked weights fall here. The late one can be read almost straight from the output, while the early one needed every downstream path combined, which is the work backpropagation does."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p009",
+          "page": 9,
+          "title": "Backpropagation reuses downstream error calculations",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Why **backpropagate**? Comparing the **last** weights with the **first** answers it.",
+              "children": []
+            },
+            {
+              "text": "The **last weights, W5**, determine the output probabilities directly.",
+              "children": [
+                "The error depends very directly on them.",
+                "The gap between computed and desired outputs gives better W5 values right away."
+              ]
+            },
+            {
+              "text": "The **first weights, W2**, sit far from the output.",
+              "children": [
+                "They shape the first activations, which pass through two more layers and other weights first.",
+                "Their culpability for an error made at the very end is really hard to work out.",
+                "Their effect also **includes** W5’s effect, since W5 is downstream."
+              ]
+            },
+            {
+              "text": "So **W5 is the easy problem**, and the W2 problem contains it.",
+              "children": [
+                "Solving small problems first and reusing their answers for bigger, dependent ones is **dynamic programming**.",
+                "**Backpropagation is Bellman–Viterbi dynamic programming.**",
+                "It computes output-side effects once and reuses them for each earlier layer, instead of redoing the downstream work for every early weight.",
+                "Working backward matches the structure, because an early layer’s effect includes every layer after it."
+              ]
+            },
+            {
+              "text": "**Backpropagation = SGD + dynamic programming.**",
+              "children": [
+                "**SGD**, stochastic gradient descent, adjusts the weights.",
+                "Backpropagation supplies its gradients efficiently through dynamic programming."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p010",
+          "page": 10,
+          "title": "Pair each recording with its target row",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Training needs examples paired with answers, held in two **training matrices**.",
+              "children": []
+            },
+            {
+              "text": "**Formant_Inputs** is **110 × 2**.",
+              "children": [
+                "Each row is one recording’s **F1** and **F2** in hertz.",
+                "The two columns are sound measurements, and each row is one example."
+              ]
+            },
+            {
+              "text": "**TrueVowel_Outputs** is **110 × 5**.",
+              "children": [
+                "Its columns are **done, dune, dean, Don** and **Dan**.",
+                "Each row has a **1** under the correct word and **0** elsewhere, a **one-hot** target."
+              ]
+            },
+            {
+              "text": "Illustrative rows pair formants with words.",
+              "children": [
+                "**500, 1500** is **done**, **350, 1000** is **dune** and **320, 2000** is **dean**, the network’s example.",
+                "**700, 1100** is **Don**, and **800, 1700** is **Dan**.",
+                "These rows show the layout, not the full data."
+              ]
+            },
+            {
+              "text": "The two matrices must stay aligned row by row.",
+              "children": [
+                "The third input row, 320 and 2000, matches the third target row, dean.",
+                "Moving an input row without its target would pair sounds with wrong answers.",
+                "Equal row counts are not enough, since the order must agree too.",
+                "Five target columns list the categories. Each recording is still one example."
+              ]
+            },
+            {
+              "text": "The network’s output is separate from the targets.",
+              "children": [
+                "Before backpropagation, it favors **done**, at 55.7%, for the dean example.",
+                "Training compares the output with the target and never replaces the target with the network’s guess."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p011",
+          "page": 11,
+          "title": "Read one full-batch training step in PyTorch",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "A short **PyTorch** program performs one **full-batch** training step over all 110 recordings.",
+              "children": []
+            },
+            {
+              "text": "Loading comes first.",
+              "children": [
+                "**X = torch.load(\"Formant_Inputs.pt\").float()** loads the **110 × 2** formants.",
+                "**Y = torch.load(\"TrueVowel_Outputs.pt\").float()** loads the **110 × 5** targets.",
+                "**.float()** makes both floating-point. The files must already exist."
+              ]
+            },
+            {
+              "text": "**nn.Sequential** declares the layers in order.",
+              "children": [
+                "**nn.Linear(2, 3)**, **nn.Linear(3, 2)**, **nn.Linear(2, 4)** and **nn.Linear(4, 5)** keep the **2 to 3 to 2 to 4 to 5** layout.",
+                "No sigmoid sits between them."
+              ]
+            },
+            {
+              "text": "Five lines make the step.",
+              "children": [
+                "**sgd = torch.optim.SGD(net.parameters(), lr=0.1)** sets up gradient descent at a **learning rate of 0.1**.",
+                "**sgd.zero_grad()** clears stored gradients.",
+                "**loss = nn.CrossEntropyLoss()(net(X), Y)** runs the forward pass and scores it against Y, handling the softmax step internally, so the last layer gives logits.",
+                "**loss.backward()** computes every parameter’s gradient.",
+                "**sgd.step()** updates the parameters."
+              ]
+            },
+            {
+              "text": "The jobs stay separate.",
+              "children": [
+                "Computing a gradient changes no weight, and clearing gradients erases no learned value.",
+                "All **110 rows** feed one step, with no training loop.",
+                "The code uses PyTorch’s default weights and biases, so it matches the drawing’s sizes but not its numbers."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p012",
+          "page": 12,
+          "title": "Sigmoid turns an inner product into a bounded activation",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The **sigmoid activation function**, **σ(z) = 1 / (1 + exp(−z))**, turns an inner product z into a value between 0 and 1.",
+              "children": []
+            },
+            {
+              "text": "Its two limits catch the extremes.",
+              "children": [
+                "A **large positive** inner product gives a sigmoid **near 1**.",
+                "A **large negative** one gives a sigmoid **basically 0**.",
+                "**σ(−4) = 0.0180**, and **σ(4) = 0.9820**."
+              ]
+            },
+            {
+              "text": "The curve is an S.",
+              "children": [
+                "**Linear activation**, the weighted sum, runs across, and **sigmoid activation** runs up.",
+                "It is steep through the middle and flat at both ends.",
+                "On the flat ends, big input changes make small output changes, so the response is gradual, not a pure switch."
+              ]
+            },
+            {
+              "text": "The formula explains the shape.",
+              "children": [
+                "Large positive z makes exp(−z) tiny, so the output nears 1.",
+                "Large negative z makes exp(−z) huge, so the output nears 0."
+              ]
+            },
+            {
+              "text": "**Lord Edgar Adrian**, **Nobel Prize in Physiology or Medicine, 1932**, gives biological context.",
+              "children": [
+                "**Neurons are nearly digital**, on or off, roughly.",
+                "His work concerned firing rates, so the sigmoid models graded activity that acts almost like a switch at its extremes."
+              ]
+            },
+            {
+              "text": "**Animal perception** shows the same pattern.",
+              "children": [
+                "Some things that seem alike are perceived as different, and some very different things are perceived as the same.",
+                "Inputs on opposite sides of the steep middle give very different outputs, and inputs near a flat end give nearly equal ones."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p013",
+          "page": 13,
+          "title": "Apply sigmoid while recalculating downstream activity",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "Sigmoid is switched on **one neuron at a time**, with inputs fixed at **F1 = 320** and **F2 = 2000** and the weights unchanged.",
+              "children": [
+                "**Purple** neurons stay linear.",
+                "**Green** neurons pass their inner product through sigmoid.",
+                "The nine hidden neurons switch in layer order, three, two, then four."
+              ]
+            },
+            {
+              "text": "The first switch moves the top first-layer neuron from **−0.400** to about **0.401**.",
+              "children": [
+                "Every neuron downstream now receives a different value.",
+                "All later values are **recalculated**, through to the outputs.",
+                "This builds a real sigmoid network. Wrapping sigmoid around the old stored numbers would give a different, wrong result."
+              ]
+            },
+            {
+              "text": "With the first layer done, its outputs are about **0.401, 0.999** and **0.938**.",
+              "children": [
+                "The second layer, recalculated and squashed, gives about **0.713** and **0.223**.",
+                "The third ends at about **0.599, 0.609, 0.609** and **0.481**."
+              ]
+            },
+            {
+              "text": "The outputs still use **softmax**.",
+              "children": [
+                "With every hidden neuron on sigmoid, **Dan** leads at about **32.0%**.",
+                "**Dean** reaches about **23.0%**, while **done** drops to about 16.2%.",
+                "Inputs and weights never changed, yet the output pattern shifted a great deal."
+              ]
+            },
+            {
+              "text": "The weights were not trained.",
+              "children": [
+                "Dean improves over 8.1% but still trails Dan.",
+                "So sigmoid can change the network’s favorite without the network having learned the right answer."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p014",
+          "page": 14,
+          "title": "Insert sigmoid after the hidden linear layers",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The sigmoid version of the PyTorch program repeats the earlier one with three additions.",
+              "children": [
+                "**X** and **Y** load the same **110 × 2** formants and **110 × 5** targets.",
+                "**nn.Sigmoid()** now follows **nn.Linear(2, 3)**, **nn.Linear(3, 2)** and **nn.Linear(2, 4)**.",
+                "Each hidden layer combines its inputs and then transforms the sums before passing them on."
+              ]
+            },
+            {
+              "text": "Sigmoid changes values, not their number.",
+              "children": [
+                "Three values stay three, so **nn.Linear(3, 2)** still gets the size it expects.",
+                "The same holds after the two- and four-value layers, so the layout stays **2 to 3 to 2 to 4 to 5**."
+              ]
+            },
+            {
+              "text": "**nn.Linear(4, 5)** has no sigmoid after it.",
+              "children": [
+                "Its five logits feed **CrossEntropyLoss**, which handles the softmax-related step.",
+                "Hidden sigmoids reshape intermediate values, and the last layer scores the words. No hidden neuron becomes a word category."
+              ]
+            },
+            {
+              "text": "The training lines are unchanged.",
+              "children": [
+                "**zero_grad**, the forward pass with loss, **backward** and **step** run in that order.",
+                "The learning rate is still **0.1**, with all 110 recordings in one step."
+              ]
+            },
+            {
+              "text": "The drawing and the code start differently.",
+              "children": [
+                "The drawing uses the original illustrative weights without biases, giving Dan **32.0%** and dean **23.0%**.",
+                "The code starts from PyTorch’s defaults. Matching the structure does not reproduce those exact probabilities without the same weights and bias choices."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p015",
+          "page": 15,
+          "title": "One initialization · training the linear network for 2,000 updates",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The code trains the all-linear vowel network from one starting point, fixed by **torch.manual_seed(0)**.",
+              "children": [
+                "Four **nn.Linear** layers with **bias=False** keep the sizes 2, 3, 2, 4 and 5, with no activations.",
+                "Formants are divided by **1000**, turning hertz into kilohertz.",
+                "**argmax(1)** gives each token’s correct class number."
+              ]
+            },
+            {
+              "text": "Training uses **CrossEntropyLoss** and **SGD** at **learning rate 0.1** for **2,000 epochs**.",
+              "children": [
+                "Each epoch clears gradients, computes the loss on all tokens, backpropagates and steps once.",
+                "So each epoch is one **full-batch update**."
+              ]
+            },
+            {
+              "text": "Accuracy is checked after every update.",
+              "children": [
+                "The largest score is the network’s answer.",
+                "Accuracy is the share of the **525** training tokens it gets right, so this is **training accuracy**."
+              ]
+            },
+            {
+              "text": "The curve starts near **20%** and ends at **44.95%**.",
+              "children": [
+                "It stays flat for about 200 updates, then climbs into the 40s.",
+                "A sharp dip near update 390 recovers quickly.",
+                "After about 450 updates it is flat, at 236 of 525 tokens correct."
+              ]
+            },
+            {
+              "text": "The curve comes from an equivalent **NumPy** run, since PyTorch was unavailable where it was made.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "lecture16-p016",
+          "page": 16,
+          "title": "Ten initializations · different paths, the same final accuracy",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The training repeats with **seeds 0 through 9**, each with a fresh model and optimizer.",
+              "children": [
+                "Only the **initialization**, the starting weights, changes.",
+                "Data, scaling, loss, learning rate and the 2,000 updates are identical."
+              ]
+            },
+            {
+              "text": "All ten runs start near **20%** and then diverge.",
+              "children": [
+                "Some climb within 100 updates, others stay flat for 200 or more.",
+                "Several dip back toward 20% briefly, and peaks reach close to **47%**."
+              ]
+            },
+            {
+              "text": "The runs then converge.",
+              "children": [
+                "The fastest settle by about 350 updates, the slowest by about 1,000.",
+                "**All ten finish at 44.95%**, and the curves overlap."
+              ]
+            },
+            {
+              "text": "Starting weights change the path but not the end point.",
+              "children": [
+                "More seeds would not raise the final accuracy.",
+                "The limit comes from the network and the overlapping vowel data."
+              ]
+            },
+            {
+              "text": "The curves are **NumPy** reference runs.",
+              "children": [
+                "Equal seed numbers do not give equal PyTorch weights, so individual PyTorch lines would differ."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "lecture17": {
+      "title": "NNs → LLMs → Agentic Systems",
+      "sections": [
+        {
+          "id": "lecture17-p001",
+          "page": 1,
+          "title": "NNs → LLMs → Agentic Systems",
+          "kind": "title",
+          "teaching": []
+        },
+        {
+          "id": "lecture17-p002",
+          "page": 2,
+          "title": "Neural networks, 1943–1986 · a static vector and a few categories",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The vowel network stands for neural networks from **1943 to 1986**.",
+              "children": [
+                "Two formants pass through three weighted hidden layers to five word outputs.",
+                "The weights are the same illustrative signed weights as before."
+              ]
+            },
+            {
+              "text": "**McCulloch and Pitts (1943)** begin the period.",
+              "children": [
+                "**“A Logical Calculus of the Ideas Immanent in Nervous Activity”** starts from the **“all-or-none” character of nervous activity**.",
+                "It treats neural events with propositional logic."
+              ]
+            },
+            {
+              "text": "The **Parallel Distributed Processing** volumes of **1986** end it.",
+              "children": [
+                "They popularized trainable networks of many simple connected units."
+              ]
+            },
+            {
+              "text": "**Given some static vector of formants, the NN could make a decision about a few possible categories.**",
+              "children": [
+                "A static vector is one fixed list of numbers from one moment.",
+                "Here it is F1 and F2, and the decision is one of five words."
+              ]
+            },
+            {
+              "text": "**Human cognition is far more complex.**",
+              "children": [
+                "Speech and sentences are sequences, where what comes next depends on what came before.",
+                "A network that maps one fixed vector to a few labels cannot track earlier inputs."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture17-p003",
+          "page": 3,
+          "title": "Jordan’s recurrent network for speech production",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "In **1985, Michael Jordan developed recurrent neural networks** for **speech production**.",
+              "children": [
+                "That work led toward **LLMs** and then **agentic AI**.",
+                "The photo is Michael Jordan."
+              ]
+            },
+            {
+              "text": "The network has four kinds of units.",
+              "children": [
+                "**Plan units** say which sequence to produce.",
+                "**Hidden units** combine, and **output units** respond.",
+                "Outputs loop back into **state units**, which also feed back to themselves."
+              ]
+            },
+            {
+              "text": "The loops make it **recurrent**.",
+              "children": [
+                "State units hold a trace of the latest outputs.",
+                "Each new output depends on the plan and on what the network just produced."
+              ]
+            },
+            {
+              "text": "**Performance on /istrstry/** plots eight features over 32 time steps.",
+              "children": [
+                "The rows are **Voice, Place, Sonorant, Sibilant, Nasal, Height, Back and Round**.",
+                "Sibilant peaks at the s sounds, while Nasal and Height stay flat."
+              ]
+            },
+            {
+              "text": "**Round** rises early and stays high.",
+              "children": [
+                "A feature spreads across several sounds instead of switching for each one.",
+                "Feeding outputs back lets them blend smoothly over time."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture17-p004",
+          "page": 4,
+          "title": "From one neuron to agentic systems",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "One **neuron** takes a vector **x**, weights it by **w** and sums into one number **y**.",
+              "children": [
+                "**Vector in, one number out**, an inner product."
+              ]
+            },
+            {
+              "text": "A **network** of 4, 3, 4 and 5 units uses **W₁, W₂ and W₃**.",
+              "children": [
+                "Each W maps one vector to the next.",
+                "The last layer is a **decision vector**, so it is **vector in, decision vector out**."
+              ]
+            },
+            {
+              "text": "An **LLM** passes **vectors 1 through 15** up through **5 layers** of W blocks.",
+              "children": [
+                "Six colors mark six kinds of weight sets.",
+                "**Vector 16** comes out as a **PDF**, a probability distribution over the next token.",
+                "It is **a dynamical system with many vectors in and one decision vector out**."
+              ]
+            },
+            {
+              "text": "An **agentic system is a graph of LLMs**.",
+              "children": [
+                "**Outline, Write, Critic, Revise and Final** LLMs run in order.",
+                "A **loop** between Critic and Revise sends work back for revision."
+              ]
+            },
+            {
+              "text": "Two operations run under every step.",
+              "children": [
+                "**Inference is inner products.**",
+                "**Learning is SGD plus DP**, gradient descent organized by backpropagation."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture17-p005",
+          "page": 5,
+          "title": "Fifteen vectors · the same next-item question for any sequence",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**15 vectors**, **x₁ to x₁₅**, and an empty **x₁₆** raise the question **vectors of what?**",
+              "children": [
+                "An LLM reads a sequence of vectors and predicts the next one."
+              ]
+            },
+            {
+              "text": "**A sentence cut into 15 words**.",
+              "children": [
+                "“The cat that the dog chased ran up the old tree and sat on the ___.”",
+                "**x₁₆ is the missing word**, which depends on words far back."
+              ]
+            },
+            {
+              "text": "**A spectrogram cut into 15 frames** and **an image cut into 16 patches**.",
+              "children": [
+                "The spectrogram spans 0 to 5 kHz over time, and **x₁₆ is the next frame**.",
+                "The image is read row by row, and **x₁₆ is the missing bottom-right patch**."
+              ]
+            },
+            {
+              "text": "**A protein, the insulin B chain**, read as **15 amino acids**.",
+              "children": [
+                "F V N Q H L C G S H L V E A L fold into a helix, and **x₁₆ is the next residue, Y**."
+              ]
+            },
+            {
+              "text": "**The LLM only ever sees vectors.**",
+              "children": [
+                "Words, sounds, pixels and molecules become the same kind of input.",
+                "**One machine asks one question, what is x₁₆?**"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture17-p006",
+          "page": 6,
+          "title": "Which sequences can be English words?",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**Which sequences can be English words?**",
+              "children": [
+                "Twenty **one-syllable words** like Don, mat, cup and fish each have one consonant, one vowel and one consonant.",
+                "**A simple syllable in English can have a consonant, then a vowel, then a consonant.**"
+              ]
+            },
+            {
+              "text": "**Clusters** come as **onsets** before the vowel and **codas** after it.",
+              "children": [
+                "Onsets appear in split, flat, black, glad and stop.",
+                "Codas appear in desk, box, help, milk and lamp.",
+                "Each has a starred impossible twin, such as *sblit, *lfat, *desb and *hepl."
+              ]
+            },
+            {
+              "text": "Order matters.",
+              "children": [
+                "flat and *lfat, help and *hepl, lamp and *lapm use the same letters in different orders.",
+                "The allowed order mirrors around the vowel.",
+                "**Only certain sequences are allowed before the vowel and after the vowel.**"
+              ]
+            },
+            {
+              "text": "Long words have several syllables.",
+              "children": [
+                "At·lan·tic, ath·lete and ad·mit hold t·l, th·l and d·m across breaks.",
+                "Those pairs cannot start a word, so *tlantic, *thlete and *dmit are impossible.",
+                "ng ends a syllable, as in ring, but never starts one, so *ngapkin is impossible."
+              ]
+            },
+            {
+              "text": "**A long word is a chain of syllables**, each with the same rules.",
+              "children": [
+                "**t·l is fine across a break, but tl cannot start a syllable.**",
+                "This knowledge is **phonotactics**, known without being taught."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture17-p007",
+          "page": 7,
+          "title": "Guessing the next letter reveals phonotactic knowledge",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The quiz reveals **phonotactic knowledge through GPT learning**.",
+              "children": [
+                "Each item starts an English word, and the task is to **guess the next letter**.",
+                "People agree quickly, and agreement varies by item."
+              ]
+            },
+            {
+              "text": "After a vowel, almost anything fits.",
+              "children": [
+                "After **ra_**, t, n, r and l are all likely."
+              ]
+            },
+            {
+              "text": "At a word start, choices narrow.",
+              "children": [
+                "**sp_**, **b_** and **f_** take **l, r or a vowel**, never *spn, *bn or *fn.",
+                "**k_** takes a vowel or **n**, as in knee, never *kt.",
+                "**sh_** takes a vowel or **r**, as in shrimp, never *shb."
+              ]
+            },
+            {
+              "text": "Some starts allow only vowels.",
+              "children": [
+                "**skr_** and **m_** take only a vowel, never *skrl or *mb.",
+                "**bram_** nearly forces b, as in bramble, unless a new syllable starts."
+              ]
+            },
+            {
+              "text": "**Guessing the next letter is predicting x₁₆.**",
+              "children": [
+                "A **GPT trained only on this game learns English sounds and spelling**.",
+                "Its distribution is flat after fa_ and sharply peaked after skr_."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture17-p008",
+          "page": 8,
+          "title": "Build an LLM together",
+          "kind": "prompt",
+          "teaching": []
+        }
+      ]
     }
   },
   "visualPresentation": {
@@ -3974,10 +4860,10 @@
   "writingReference": "PSYC301 Module II and LING406 Version 14",
   "guidance": "Study Studio Prompt 1 with a 225-word average and a 350-word maximum. Restatements and closing summaries that add no new fact are removed and long sentences are split.",
   "metrics": {
-    "instructionalPages": 85,
-    "words": 16802,
-    "averageWords": 198,
-    "medianWords": 190,
+    "instructionalPages": 104,
+    "words": 20298,
+    "averageWords": 195,
+    "medianWords": 190.0,
     "maximumWords": 261
   }
 }

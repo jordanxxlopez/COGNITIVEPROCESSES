@@ -36,7 +36,7 @@ test('four editions teach the real pages; both banks add fifty usable source-lin
   const qs=bank.filter(q=>q.lectureId==='lecture15');assert.equal(qs.length,50);assert.equal(qs.filter(q=>q.type==='mcq').length,25);assert.equal(qs.filter(q=>q.type==='written').length,25);assert.equal(new Set(qs.map(q=>q.prompt)).size,50);
   for(const q of qs){assert(q.answer&&q.rubric.length);assert(q.sources.every(r=>r.collection==='lecture15'&&lecture.sections[r.page-1].teaching.length));if(q.type==='mcq'){assert.equal(q.options.length,4);assert(q.options.some(o=>o.id===q.correctOption));assert(q.options.every(o=>o.feedback&&o.text))}}
  }
- assert.equal(P.questions.length,250);assert.equal(D.modules[1].questionCount,250);
+ assert.equal(P.questions.length,350);assert.equal(D.modules[1].questionCount,350);
 });
 function serve(){return http.createServer((req,res)=>{let name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(name.endsWith('/'))name+='index.html';const f=path.resolve(repo,'.'+name);if(!f.startsWith(repo+path.sep)){res.writeHead(403);return res.end()}fs.stat(f,(e,s)=>{if(e||!s.isFile()){res.writeHead(404);return res.end()}res.setHeader('Content-Type',{'.html':'text/html','.js':'text/javascript','.json':'application/json','.css':'text/css','.webp':'image/webp','.png':'image/png','.mp4':'video/mp4'}[path.extname(f)]||'application/octet-stream');fs.createReadStream(f).pipe(res)})})}
 test('all pages, teaching editions, saved notes, review tools and five-way cumulative practice work in the browser',{timeout:160000},async()=>{
@@ -60,7 +60,7 @@ test('all pages, teaching editions, saved notes, review tools and five-way cumul
   await work('test');assert(await p.locator('.saved-set-notice').count());assert((await p.locator('.saved-set-notice').textContent()).includes('all current lectures'));
   for(const version of ['v1','v2']){
    await p.locator('[data-assessment-version]').selectOption(version);await p.locator('[data-start="mixed"]').click();let state=await p.evaluate(k=>JSON.parse(localStorage.getItem(k)),KEY);const bank=version==='v1'?D.questions:P.questions;const qs=state.session.ids.map(id=>bank.find(q=>q.id===id));assert.equal(qs.length,100);assert.equal(new Set(qs.map(q=>q.id)).size,100);
-   for(const lectureId of ['lecture11','lecture12','lecture13','lecture14','lecture15']){const group=qs.filter(q=>q.lectureId===lectureId);assert.equal(group.length,20);assert.equal(group.filter(q=>q.type==='mcq').length,10);assert.equal(group.filter(q=>q.type==='written').length,10)}
+   for(const lectureId of ['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17']){const group=qs.filter(q=>q.lectureId===lectureId);assert([14,15].includes(group.length));assert([7,8].includes(group.filter(q=>q.type==='mcq').length));assert([7,8].includes(group.filter(q=>q.type==='written').length))}
    await work('quizzes');await p.locator('[data-start="lecture:lecture15"]').click();state=await p.evaluate(k=>JSON.parse(localStorage.getItem(k)),KEY);const quiz=state.session.ids.map(id=>bank.find(q=>q.id===id));assert.equal(quiz.length,50);assert(quiz.every(q=>q.lectureId==='lecture15'));assert.equal(quiz.filter(q=>q.type==='mcq').length,25);
    await work('test');
   }

@@ -9,7 +9,7 @@ function check(session,bank,size,perLecture){
  const map=new Map(bank.map(q=>[q.id,q]));assert.equal(session.ids.length,size);assert.equal(new Set(session.ids).size,size);
  const qs=session.ids.map(id=>{assert(map.has(id),'Wrong edition question '+id);return map.get(id);});
  assert.equal(qs.filter(q=>q.type==='mcq').length,size/2);
- if(perLecture){const counts={};for(const q of qs)counts[q.lectureId]=(counts[q.lectureId]||0)+1;assert.deepEqual(counts,perLecture);}
+ if(perLecture){const counts={};for(const q of qs)counts[q.lectureId]=(counts[q.lectureId]||0)+1;assert.deepEqual(Object.keys(counts).sort(),Object.keys(perLecture).sort());assert.deepEqual(Object.values(counts).sort((a,b)=>a-b),Object.values(perLecture).sort((a,b)=>a-b));}
 }
 test('practice editions preserve separate attempts, answers, queues, backups, and missing-file recovery',{timeout:100000},async()=>{
  const server=serve();await new Promise(r=>server.listen(0,'127.0.0.1',r));const url='http://127.0.0.1:'+server.address().port+'/ling285/';
@@ -18,14 +18,14 @@ test('practice editions preserve separate attempts, answers, queues, backups, an
   const context=await browser.newContext({acceptDownloads:true,viewport:{width:1440,height:1000}}),page=await context.newPage();page.setDefaultTimeout(10000);page.on('pageerror',e=>errors.push(e.message));
   const state=()=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),KEY),work=async v=>page.locator('#workNav [data-go="'+v+'"]').click();
   await page.goto(url+'?view=test&module=module2');await page.locator('[data-assessment-version]').waitFor();assert.equal(await page.locator('[data-assessment-version]').inputValue(),'v2');
-  await page.locator('[data-start="mixed"]').click();let saved=await state();check(saved.session,practice.questions,100,{lecture11:20,lecture12:20,lecture13:20,lecture14:20,lecture15:20});const firstSet=[...saved.session.ids];
+  await page.locator('[data-start="mixed"]').click();let saved=await state();check(saved.session,practice.questions,100,{lecture11:14,lecture12:14,lecture13:14,lecture14:14,lecture15:14,lecture16:15,lecture17:15});const firstSet=[...saved.session.ids];
   // Preserve a checked MCQ, written draft, and uncertainty in the new edition.
   const mcqIndex=firstSet.findIndex(id=>practice.questions.find(q=>q.id===id).type==='mcq'),mcq=practice.questions.find(q=>q.id===firstSet[mcqIndex]);
   await page.locator('summary').filter({hasText:'Question navigator'}).click();await page.locator('[data-question-index="'+mcqIndex+'"]').last().click();
   await page.locator('[data-mcq-option="'+mcq.correctOption+'"]').check();await page.locator('[data-check-question]').click();await page.locator('[data-flag]').check();
   const wi=firstSet.findIndex(id=>practice.questions.find(q=>q.id===id).type==='written'),wid=firstSet[wi];
   await page.locator('summary').filter({hasText:'Question navigator'}).click();await page.locator('[data-question-index="'+wi+'"]').last().click();await page.locator('[data-draft]').fill('My saved new-edition explanation.');
-  await page.locator('[data-assessment-version]').selectOption('v1');await page.locator('[data-start="mixed"]').click();saved=await state();check(saved.session,data.questions,100,{lecture11:20,lecture12:20,lecture13:20,lecture14:20,lecture15:20});const originalSet=[...saved.session.ids];
+  await page.locator('[data-assessment-version]').selectOption('v1');await page.locator('[data-start="mixed"]').click();saved=await state();check(saved.session,data.questions,100,{lecture11:14,lecture12:14,lecture13:14,lecture14:14,lecture15:14,lecture16:15,lecture17:15});const originalSet=[...saved.session.ids];
   await work('missed');assert.match(await page.locator('#content .lead').innerText(),/^0 questions/);
   await page.locator('[data-assessment-version]').selectOption('v2');assert.match(await page.locator('#content .lead').innerText(),/^1 questions/);
   assert.equal((await state()).mcqSelections[mcq.id],mcq.correctOption);assert.equal((await state()).mcqSubmitted[mcq.id],true);

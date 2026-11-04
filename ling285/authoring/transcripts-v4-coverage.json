@@ -2856,21 +2856,638 @@
       "paragraphs": 4,
       "originalImage": "assets/slides/lecture15/013.webp",
       "originalAssets": []
+    },
+    {
+      "id": "lecture16-p001",
+      "page": 1,
+      "title": "Neural Networks",
+      "kind": "title",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 1",
+      "concepts": [],
+      "words": 0,
+      "version3Words": 0,
+      "paragraphs": 0,
+      "originalImage": "assets/slides/lecture16/001.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p002",
+      "page": 2,
+      "title": "Two formants feed a fully connected network",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 2",
+      "concepts": [
+        "formant inputs",
+        "hidden layers",
+        "fully connected",
+        "signed weights"
+      ],
+      "words": 288,
+      "version3Words": 288,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/002.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p003",
+      "page": 3,
+      "title": "Forward propagation combines weighted inputs",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 3",
+      "concepts": [
+        "inner product",
+        "linear hidden activations",
+        "logits",
+        "softmax",
+        "prediction versus target"
+      ],
+      "words": 271,
+      "version3Words": 271,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/003.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p004",
+      "page": 4,
+      "title": "Pop quiz · Forward propagation",
+      "kind": "prompt",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 4",
+      "concepts": [],
+      "words": 0,
+      "version3Words": 0,
+      "paragraphs": 0,
+      "originalImage": "assets/slides/lecture16/004.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/578a201565eeba977543.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture16-p005",
+      "page": 5,
+      "title": "Vowel formants overlap across five categories",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 5",
+      "concepts": [
+        "525 tokens",
+        "F1 versus F2",
+        "five vowel clouds",
+        "category overlap",
+        "limits on accuracy"
+      ],
+      "words": 331,
+      "version3Words": 331,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/005.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p006",
+      "page": 6,
+      "title": "Info on Exam 2 and Exam 3",
+      "kind": "logistics",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 6",
+      "concepts": [],
+      "words": 0,
+      "version3Words": 0,
+      "paragraphs": 0,
+      "originalImage": "assets/slides/lecture16/006.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p007",
+      "page": 7,
+      "title": "Backpropagation uses the difference between prediction and target",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 7",
+      "concepts": [
+        "computed versus desired output",
+        "cross-entropy",
+        "gradient",
+        "backward order",
+        "stored activations"
+      ],
+      "words": 287,
+      "version3Words": 287,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/007.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p008",
+      "page": 8,
+      "title": "Predict how changing a marked weight affects error",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 8",
+      "concepts": [
+        "marked output weight",
+        "marked input weight",
+        "direction of error",
+        "downstream paths"
+      ],
+      "words": 235,
+      "version3Words": 235,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/008-ink.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/5cc370b56f25f0bbfbf3.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture16-p009",
+      "page": 9,
+      "title": "Backpropagation reuses downstream error calculations",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 9",
+      "concepts": [
+        "W2 versus W5",
+        "credit assignment",
+        "dynamic programming",
+        "SGD versus gradients"
+      ],
+      "words": 246,
+      "version3Words": 246,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/009.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/6ee1e5e5debfc8afcaf2.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture16-p010",
+      "page": 10,
+      "title": "Pair each recording with its target row",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 10",
+      "concepts": [
+        "matrix rows and columns",
+        "one-hot target",
+        "paired observations",
+        "prediction versus target"
+      ],
+      "words": 250,
+      "version3Words": 250,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/010.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p011",
+      "page": 11,
+      "title": "Read one full-batch training step in PyTorch",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 11",
+      "concepts": [
+        "tensor inputs",
+        "linear layer dimensions",
+        "zero_grad",
+        "cross-entropy logits",
+        "backward versus step",
+        "full batch"
+      ],
+      "words": 259,
+      "version3Words": 259,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/011.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p012",
+      "page": 12,
+      "title": "Sigmoid turns an inner product into a bounded activation",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 12",
+      "concepts": [
+        "sigmoid",
+        "bounded graded activation",
+        "saturation",
+        "linear versus sigmoid",
+        "rate coding context"
+      ],
+      "words": 274,
+      "version3Words": 274,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/012.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/07f692ce6b18fe7e4d92.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture16-p013",
+      "page": 13,
+      "title": "Apply sigmoid while recalculating downstream activity",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 13",
+      "concepts": [
+        "nine hidden neurons",
+        "unchanged formants and weights",
+        "downstream recomputation",
+        "sigmoid versus training",
+        "softmax outputs"
+      ],
+      "words": 259,
+      "version3Words": 259,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/013.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p014",
+      "page": 14,
+      "title": "Insert sigmoid after the hidden linear layers",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 14",
+      "concepts": [
+        "hidden sigmoid placement",
+        "unchanged layer sizes",
+        "final logits",
+        "training sequence",
+        "diagram versus defaults"
+      ],
+      "words": 259,
+      "version3Words": 259,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/014.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p015",
+      "page": 15,
+      "title": "One initialization · training the linear network for 2,000 updates",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 15",
+      "concepts": [
+        "bias-free linear layers",
+        "Hz to kHz scaling",
+        "full-batch SGD epochs",
+        "training accuracy",
+        "20% starting level",
+        "44.95% final accuracy"
+      ],
+      "words": 338,
+      "version3Words": 338,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/015.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture16-p016",
+      "page": 16,
+      "title": "Ten initializations · different paths, the same final accuracy",
+      "kind": "concept",
+      "lectureId": "lecture16",
+      "sourceSha256": "5fbd4abc1e994e963c74c205b84a4225ce3ee9cb34a32bf9dd0dc0a8cedcbb03",
+      "authoringEntry": "teaching-v4-lecture16.json page 16",
+      "concepts": [
+        "ten seeds",
+        "initialization",
+        "different learning paths",
+        "shared 44.95% ceiling",
+        "NumPy reference runs"
+      ],
+      "words": 302,
+      "version3Words": 302,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture16/016.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture17-p001",
+      "page": 1,
+      "title": "NNs → LLMs → Agentic Systems",
+      "kind": "title",
+      "lectureId": "lecture17",
+      "sourceSha256": "215eb9f4b6cb97b3d5ee8545770d17145991f649636eb0372934d82c239b34d5",
+      "authoringEntry": "teaching-v4-lecture17.json page 1",
+      "concepts": [],
+      "words": 0,
+      "version3Words": 0,
+      "paragraphs": 0,
+      "originalImage": "assets/slides/lecture17/001.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture17-p002",
+      "page": 2,
+      "title": "Neural networks, 1943–1986 · a static vector and a few categories",
+      "kind": "concept",
+      "lectureId": "lecture17",
+      "sourceSha256": "215eb9f4b6cb97b3d5ee8545770d17145991f649636eb0372934d82c239b34d5",
+      "authoringEntry": "teaching-v4-lecture17.json page 2",
+      "concepts": [
+        "1943–1986",
+        "McCulloch and Pitts",
+        "all-or-none activity",
+        "Parallel Distributed Processing",
+        "static vector",
+        "few categories"
+      ],
+      "words": 301,
+      "version3Words": 301,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture17/002.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/9f49d09e8f552d711583.png"
+        },
+        {
+          "type": "image",
+          "file": "assets/original/8e94f01e246d664284fb.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture17-p003",
+      "page": 3,
+      "title": "Jordan’s recurrent network for speech production",
+      "kind": "concept",
+      "lectureId": "lecture17",
+      "sourceSha256": "215eb9f4b6cb97b3d5ee8545770d17145991f649636eb0372934d82c239b34d5",
+      "authoringEntry": "teaching-v4-lecture17.json page 3",
+      "concepts": [
+        "1985 recurrent networks",
+        "plan, state, hidden and output units",
+        "feedback loops",
+        "sequence over time",
+        "articulatory features",
+        "feature spreading"
+      ],
+      "words": 299,
+      "version3Words": 299,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture17/003.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/bbdce3f9933dac6c87cf.png"
+        },
+        {
+          "type": "image",
+          "file": "assets/original/e3300f809963aac4e0d6.png"
+        },
+        {
+          "type": "image",
+          "file": "assets/original/cccb74b3d0c99166870b.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture17-p004",
+      "page": 4,
+      "title": "From one neuron to agentic systems",
+      "kind": "concept",
+      "lectureId": "lecture17",
+      "sourceSha256": "215eb9f4b6cb97b3d5ee8545770d17145991f649636eb0372934d82c239b34d5",
+      "authoringEntry": "teaching-v4-lecture17.json page 4",
+      "concepts": [
+        "one neuron",
+        "decision vector",
+        "LLM layers and token vectors",
+        "next-token distribution",
+        "agentic graph with a critic loop",
+        "inner products and SGD + DP"
+      ],
+      "words": 334,
+      "version3Words": 334,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture17/004.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p004-stage-00.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p004-stage-01.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p004-stage-02.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p004-stage-03.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p004-stage-04.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p004-stage-05.webp"
+        }
+      ]
+    },
+    {
+      "id": "lecture17-p005",
+      "page": 5,
+      "title": "Fifteen vectors · the same next-item question for any sequence",
+      "kind": "concept",
+      "lectureId": "lecture17",
+      "sourceSha256": "215eb9f4b6cb97b3d5ee8545770d17145991f649636eb0372934d82c239b34d5",
+      "authoringEntry": "teaching-v4-lecture17.json page 5",
+      "concepts": [
+        "15 input vectors",
+        "x₁₆ prediction",
+        "words, frames, patches, amino acids",
+        "vectors as a common format"
+      ],
+      "words": 287,
+      "version3Words": 287,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture17/005.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/c0c83b8d56de0feb4318.png"
+        },
+        {
+          "type": "image",
+          "file": "assets/original/720182d232b8b83fc2a9.png"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p005-stage-00.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p005-stage-01.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p005-stage-02.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p005-stage-03.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p005-stage-04.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p005-stage-05.webp"
+        }
+      ]
+    },
+    {
+      "id": "lecture17-p006",
+      "page": 6,
+      "title": "Which sequences can be English words?",
+      "kind": "concept",
+      "lectureId": "lecture17",
+      "sourceSha256": "215eb9f4b6cb97b3d5ee8545770d17145991f649636eb0372934d82c239b34d5",
+      "authoringEntry": "teaching-v4-lecture17.json page 6",
+      "concepts": [
+        "CVC syllables",
+        "onset and coda clusters",
+        "impossible twins",
+        "order mirrors around the vowel",
+        "syllable breaks",
+        "phonotactics"
+      ],
+      "words": 360,
+      "version3Words": 360,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture17/006.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p006-stage-00.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p006-stage-01.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p006-stage-02.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p006-stage-03.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p006-stage-04.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p006-stage-05.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p006-stage-06.webp"
+        }
+      ]
+    },
+    {
+      "id": "lecture17-p007",
+      "page": 7,
+      "title": "Guessing the next letter reveals phonotactic knowledge",
+      "kind": "concept",
+      "lectureId": "lecture17",
+      "sourceSha256": "215eb9f4b6cb97b3d5ee8545770d17145991f649636eb0372934d82c239b34d5",
+      "authoringEntry": "teaching-v4-lecture17.json page 7",
+      "concepts": [
+        "next-letter prediction",
+        "constrained versus open continuations",
+        "impossible continuations",
+        "next-token prediction",
+        "GPT learning phonotactics"
+      ],
+      "words": 305,
+      "version3Words": 305,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture17/007.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p007-stage-00.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p007-stage-01.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture17/stages/p007-stage-02.webp"
+        }
+      ]
+    },
+    {
+      "id": "lecture17-p008",
+      "page": 8,
+      "title": "Build an LLM together",
+      "kind": "prompt",
+      "lectureId": "lecture17",
+      "sourceSha256": "215eb9f4b6cb97b3d5ee8545770d17145991f649636eb0372934d82c239b34d5",
+      "authoringEntry": "teaching-v4-lecture17.json page 8",
+      "concepts": [],
+      "words": 0,
+      "version3Words": 0,
+      "paragraphs": 0,
+      "originalImage": "assets/slides/lecture17/008.webp",
+      "originalAssets": []
     }
   ],
   "metrics": {
-    "instructionalPages": 85,
-    "words": 17375,
-    "medianWords": 221,
+    "instructionalPages": 104,
+    "words": 22860,
+    "medianWords": 225.0,
     "minimumWords": 122,
-    "maximumWords": 288,
+    "maximumWords": 360,
     "quartiles": [
-      157.0,
-      221.0,
-      229.5
+      208.0,
+      225.0,
+      246.0
     ]
   },
   "medianRule": "The user requested a 200–250-word median, not a per-slide minimum. Shorter explanations remain where sufficient.",
-  "emptyPagesPreserved": 14,
+  "emptyPagesPreserved": 19,
   "sourceAndVisualsUnchanged": true
 }
