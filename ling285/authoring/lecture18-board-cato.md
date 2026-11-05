@@ -25,3 +25,26 @@ The duplicate-prompt gate was repaired by rephrasing only the new Lecture18 writ
 I read `lecture18-tests.log`, which records36 passed and zero failed tests, and `lecture18-browser.log`, which records actual browser checks of both100-question editions with50MCQs/50written and all eight lectures including18. Version23 expanded notes were checked on desktop and mobile with no console errors or horizontal overflow. My initial request for useful visual evidence was addressed by retaking screenshots with Lecture18 page3 expanded and the mobile sidebar closed. I inspected those corrected images: the actual notes and original slide are visible, side by side on desktop and flowing within the mobile width. I do not claim to have personally driven the browser test or duplicated all source-state inspection.
 
 No unresolved process objection remains. Scientific/source disclosures and static-animation limitations stay visible in their source report. The chair may sign off and publish the reviewed snapshot; any later teaching or practice edit requires its relevant review/gates again. This approval is for the prepared artifacts and does not claim that GitHub publication or deployment has already succeeded.
+
+## Follow-up — seven-option Lecture18 selector
+
+The user subsequently clarified that Lecture18's dropdown should expose exactly seven existing choices: Original,16,18,20,21,22 and23. That instruction supersedes the earlier all-selectable-options implementation for this collection; it does not require rewriting the approved content. I independently reviewed the app/index/test diff. `selectableTranscriptVersions()` restricts only `view==='collection'` with `selected==='lecture18'`; other lecture selectors retain their existing list. `effectiveVersion()` follows the same scoped list. The authored content and Version23's reuse of22 are preserved, and the app cache key is bumped.
+
+The previous whole-app byte-identity assertion no longer applies because this UI change is now expressly requested. The saved-progress key assertion remains; actual seven-choice switching and unchanged Lecture17 options are the relevant new browser regression gate. No scope or process objection is indicated by this diff. Final follow-up approval awaits that test's actual result. This light review does not represent a repeat full scientific-content review.
+
+### New integration finding and correction
+
+The stronger individual-lecture browser test exposed a real omission in the first integration: `VERSIONED_COLLECTIONS` and `MODULE2_COLLECTIONS` stopped at17. Although the Lecture18 authored payloads were present and matched the approved inputs, the app had not registered the new collection for edition loading/individual selection. The previous combined-view browser check and screenshots were insufficient to prove that Lecture18 actually displayed the selected edition. My earlier statement accepting those as Version23 display evidence is therefore withdrawn to that extent. The scientific content approvals and preservation checks remain separate and valid.
+
+The chair acknowledged the error to the user and extended both app registries to18. I independently read this correction and the selector diff. Approval of the corrected UI remains contingent on the stronger test actually switching all seven options and observing six distinct teaching texts, with C and23 sharing text as intended, and on verifying that another lecture retains its14 options. This is a recorded missed gate and repaired test, not a newly invented claim of prior coverage.
+
+### Follow-up final disposition
+
+**APPROVE the corrected seven-option UI for publication.** The chair supplied the actual individual-browser result: all seven options switch; the Original/16/18/20/21/22 page3 DOM text lengths are1821/3009/2317/2494/2227/2545 characters;23 matches22 at2545. Thus six distinct teaching texts are observed, with the intended C/23 equivalence, rather than a mere selector-value change. Lecture17 retains14 options. The reproducible regression is now saved as `tests/lecture18-selector.cjs`; I read it and verified that it checks the exact options, actual text differences and equality, and the other lecture's option count. The chair reports the36 regression tests pass after the registry change. I did not personally drive this follow-up browser run.
+
+The missed earlier integration gate and the withdrawn UI claim remain recorded above and in the chair report. The actual correction extends both registries to18 and scopes only Lecture18's individual option list. Scientific teaching approvals remain unchanged. This is approval for the repaired UI snapshot, not an assertion that the first publication had worked or that a new deployment has succeeded.
+
+Current follow-up files:
+- `app.js` SHA256 `81af297c80ca33c61f7f0621e1f6f79a87c9997f63ec71abf39dea6202adda8b`
+- `index.html` SHA256 `da4f98e56f3b94d3f44a63b5ec476c16c4fc5443914d92622dca3da294f39235`
+- `tests/lecture18-selector.cjs` SHA256 `26adbadf609460bfa1158f5a70f4cf50b31e43ff9dda05370af9909b0f43c982`

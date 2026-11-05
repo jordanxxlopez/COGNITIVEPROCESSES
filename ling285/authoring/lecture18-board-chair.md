@@ -17,3 +17,7 @@ Gideon’s version gates, source order and exact prior-content preservation chec
 Integration catches were fixed without weakening gates: duplicate new question prompts were revised within Lecture18, and a stale authoring input for the previously revised Lecture17 question was synchronized with the released question so a rebuild preserves it. Four new guide entries use the established readiness kind. Raw findings and final rechecks remain recorded. Existing prior collections and question content are unchanged. Source/media caveats remain in the source-review report.
 
 Margaret approves this verified addition for publication. Deployment confirmation will be recorded separately after push.
+
+## Individual Lecture18 selector correction
+
+The user’s follow-up revealed a real omitted integration step. Both app registries stopped at17, so written18edition payloads were not applied to18 and its individual page had no version dropdown. Prior combined-page UI checks missed that failure; their edition-switching claim is withdrawn. Registered18in both registries, scoped its individual dropdown to the requested seven choices (Original,16,18,20,21,22,23), and bumped the app cache URL. The focused browser regression verifies all seven switch, six distinct actual teaching texts appear,22/23share text as designed, and17retains its full14options. Existing teaching content is unchanged. The whole-app immutability test is replaced with the stable progress-key check because the user explicitly requested this UI change.
