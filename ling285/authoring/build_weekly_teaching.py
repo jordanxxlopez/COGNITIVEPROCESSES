@@ -15,6 +15,7 @@ import importlib,json,sys
 A=Path(__file__).resolve().parent
 sys.path.insert(0,str(A))
 REVIEW={
+ 18:{"method":"Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.","limitations":["No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."]},
  16:{'method':'Reviewed every original page at 1600px, the six embedded raster assets (all shared with Lecture 15), native text, chart data and speaker notes. Twelve pages were matched to Lecture 15 slide XML and rendered pixels. Page 8 uses the deck’s own raster ink fallbacks. Scatter and accuracy values were read from the native chart series.','limitations':[]},
  17:{'method':'Reviewed every original page at 1600px, all embedded raster assets, native text and speaker notes. Every click state of pages 4–7 was exported from the original shapes and timing and inspected, because the static export overlaps the page 5 reveals.','limitations':['The small spectrogram frames and image patches on page 5 are pieces of one figure and are reviewed through the source-state exports rather than as separate figures.']},
 }

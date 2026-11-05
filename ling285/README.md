@@ -178,3 +178,13 @@ node --test ling285/tests/lectures16-17.test.cjs ling285/tests/content.test.cjs
 
 Run the two extraction commands separately, because two LibreOffice conversions started at once can fail.
 
+
+## Lecture 18 — Neuron, Neural Networks, LLMs and Agents
+
+The eight original pages of `Ling285_F26_L18.pptx` join Module II in source order, with the preserved PowerPoint, PDF, speaker notes, original figures and 29 original click-state exports. The click states expose material obscured by the flattened modality examples. These are static exports of source shapes and timing, not recordings of native animation playback.
+
+Every existing teaching edition covers the new lecture in its established style, including Versions 16 and 18 and Iskarous editions A/B/C (20/21/22). Version 23 retains its existing following-slide layout and reuses Version C. Earlier lecture content remains unchanged. Earlier classroom transcripts inform style only; no Lecture 18 classroom transcript was supplied. Source ambiguities and review limitations are documented in `authoring/lecture18-source-review.md`.
+
+Both practice editions add a complete 50-question Lecture 18 quiz, with 25 multiple-choice and 25 written questions and distinct saved IDs. The current Module II test remains 100 questions, equally split by format, sampled across all eight available lectures. Existing attempts remain available; a new full attempt includes the added lecture. Four guide entries and four selected core pages extend the review tools.
+
+Rebuild using `build_weekly_teaching.py 18`, `lecture18_practice.py`, `refresh_inventory.py`, `build_studio.py`, the v2/v3/v4 transcript builders, `build_transcripts_notes.py`, `build_transcripts_iskarous.py`, and `build_practice_v2.py`. `tests/lecture18.test.cjs` checks source order, all editions, complete banks and preservation against the pre-addition Git baseline. Raw board objections and final reviews remain in the Lecture 18 authoring reports.

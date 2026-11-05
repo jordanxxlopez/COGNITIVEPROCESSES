@@ -13,7 +13,7 @@ from assessment_ranking import tokens
 
 ROOT = Path(__file__).resolve().parents[1]
 A = ROOT / 'authoring'
-LECTURES = [f'lecture{n}' for n in range(11, 18)]
+LECTURES = [f'lecture{n}' for n in range(11, 19)]
 PATTERNS = ['cause-effect', 'distinction', 'application', 'interpretation', 'prediction', 'procedure', 'design']
 def read(p): return json.loads(p.read_text())
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()

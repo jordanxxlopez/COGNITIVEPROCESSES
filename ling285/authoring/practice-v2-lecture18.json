@@ -1,0 +1,1680 @@
+{
+  "lectureId": "lecture18",
+  "questions": [
+    {
+      "id": "v2-l18-mcq-001",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "How does the single neuron combine its inputs?",
+      "answer": "A weighted sum of the input values, called an inner product.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 2
+        }
+      ],
+      "topic": "Inner products",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "A weighted sum of the input values, called an inner product.",
+          "feedback": "A weighted sum of the input values, called an inner product.",
+          "id": "a"
+        },
+        {
+          "text": "It connects several LLMs in a loop.",
+          "feedback": "The graph of LLMs is the agentic-system column.",
+          "id": "b"
+        },
+        {
+          "text": "It copies the entire input vector unchanged.",
+          "feedback": "The summation combines weighted inputs into one value.",
+          "id": "c"
+        },
+        {
+          "text": "It chooses the next word from a vocabulary.",
+          "feedback": "Next-token prediction belongs to the LLM column, not this single-neuron diagram.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l18-mcq-002",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What changes between the first two columns?",
+      "answer": "The network produces a decision vector rather than one number.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 2
+        }
+      ],
+      "topic": "Network decision",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The network must produce a whole sentence.",
+          "feedback": "Its pictured output is a decision vector, not necessarily a sentence.",
+          "id": "a"
+        },
+        {
+          "text": "The network has no weights.",
+          "feedback": "The network layers are connected by weight sets W₁, W₂ and W₃.",
+          "id": "b"
+        },
+        {
+          "text": "The network produces a decision vector rather than one number.",
+          "feedback": "The network produces a decision vector rather than one number.",
+          "id": "c"
+        },
+        {
+          "text": "The network cannot take a vector as input.",
+          "feedback": "Both columns take vector input.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l18-mcq-003",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What are the nodes of the pictured agentic graph?",
+      "answer": "Separate LLMs assigned roles such as outlining, writing, criticizing and revising.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 2
+        }
+      ],
+      "topic": "Agents",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Separate amino acids in a protein.",
+          "feedback": "Amino acids occur in the sequence example, not the agent graph.",
+          "id": "a"
+        },
+        {
+          "text": "The weights inside one neuron.",
+          "feedback": "The boxes are full LLMs with roles.",
+          "id": "b"
+        },
+        {
+          "text": "Separate LLMs assigned roles such as outlining, writing, criticizing and revising.",
+          "feedback": "Separate LLMs assigned roles such as outlining, writing, criticizing and revising.",
+          "id": "c"
+        },
+        {
+          "text": "Individual letters in a single input word.",
+          "feedback": "The boxes perform tasks rather than representing letters.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l18-mcq-004",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Which operation runs the model and which changes its weights?",
+      "answer": "Inference uses inner products; learning uses SGD and dynamic programming.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 2
+        }
+      ],
+      "topic": "Shared operations",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Inference is the Critic LLM; learning is the Final LLM.",
+          "feedback": "Those are agent roles, not the two computational operations.",
+          "id": "a"
+        },
+        {
+          "text": "Inference copies images; learning copies words.",
+          "feedback": "The distinction concerns computation and weight adjustment, not data type.",
+          "id": "b"
+        },
+        {
+          "text": "Inference changes weights with SGD; learning only reads them.",
+          "feedback": "That reverses running the model and training it.",
+          "id": "c"
+        },
+        {
+          "text": "Inference uses inner products; learning uses SGD and dynamic programming.",
+          "feedback": "Inference uses inner products; learning uses SGD and dynamic programming.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l18-mcq-005",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What does “many parallel heads” mean here?",
+      "answer": "Several parallel computations within a layer, pictured as different experts.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 3
+        }
+      ],
+      "topic": "Parallel heads",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Several parallel computations within a layer, pictured as different experts.",
+          "feedback": "Several parallel computations within a layer, pictured as different experts.",
+          "id": "a"
+        },
+        {
+          "text": "The possible letters at the model’s final output.",
+          "feedback": "Heads contribute to representations, rather than naming output letters.",
+          "id": "b"
+        },
+        {
+          "text": "Separate agents that outline and revise an essay.",
+          "feedback": "The agent graph is a different level of organization.",
+          "id": "c"
+        },
+        {
+          "text": "The layers placed one above another.",
+          "feedback": "Layers are successive stages; heads work in parallel within a stage.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l18-mcq-006",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "How do the pictured experts contribute to the next representation?",
+      "answer": "Their contributions are brought together to improve the representations passed onward.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 3
+        }
+      ],
+      "topic": "Combining heads",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Each head writes an unrelated finished answer.",
+          "feedback": "The heads contribute within a layer rather than each completing the full task.",
+          "id": "a"
+        },
+        {
+          "text": "One head’s output is randomly kept and all others are discarded.",
+          "feedback": "The explanation says knowledge from the heads is brought together.",
+          "id": "b"
+        },
+        {
+          "text": "The heads replace all later layers.",
+          "feedback": "The same process occurs again in the next layer.",
+          "id": "c"
+        },
+        {
+          "text": "Their contributions are brought together to improve the representations passed onward.",
+          "feedback": "Their contributions are brought together to improve the representations passed onward.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l18-mcq-007",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "How does the process continue across layers?",
+      "answer": "The next layer performs another set of parallel computations and combines their contributions.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 3
+        }
+      ],
+      "topic": "Depth and repetition",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Only the final output word is passed through every head.",
+          "feedback": "The layers transform the input representations before the final decision.",
+          "id": "a"
+        },
+        {
+          "text": "The next layer performs another set of parallel computations and combines their contributions.",
+          "feedback": "The next layer performs another set of parallel computations and combines their contributions.",
+          "id": "b"
+        },
+        {
+          "text": "All learning ends permanently.",
+          "feedback": "This describes forward processing through layers, not the end of training.",
+          "id": "c"
+        },
+        {
+          "text": "The model must restart from unrelated random input.",
+          "feedback": "The next layer receives the representations produced by the preceding layer.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l18-mcq-008",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What is fed back when the rule runs again?",
+      "answer": "The data produced by one application becomes input to another application.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Dynamical rule",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The data must consist of English words.",
+          "feedback": "The oscillator uses numbers, showing that the principle is broader.",
+          "id": "a"
+        },
+        {
+          "text": "The rule is applied only once.",
+          "feedback": "The repeated return of its result is central to this example.",
+          "id": "b"
+        },
+        {
+          "text": "The rule receives unrelated data every time.",
+          "feedback": "The feedback arrow connects the output to the next input.",
+          "id": "c"
+        },
+        {
+          "text": "The data produced by one application becomes input to another application.",
+          "feedback": "The data produced by one application becomes input to another application.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l18-mcq-009",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Which two changing quantities are updated in the oscillator?",
+      "answer": "Position and velocity.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Oscillator variables",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "A model’s training accuracy and loss.",
+          "feedback": "The graph illustrates the oscillator’s changing state, not training curves.",
+          "id": "a"
+        },
+        {
+          "text": "Word identity and grammatical category.",
+          "feedback": "The example is an oscillator, with position and velocity as its state.",
+          "id": "b"
+        },
+        {
+          "text": "The Critic and Revise agents.",
+          "feedback": "Those belong to the separate agent graph.",
+          "id": "c"
+        },
+        {
+          "text": "Position and velocity.",
+          "feedback": "Position and velocity.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l18-mcq-010",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What does the subscript on x in the velocity update tell you?",
+      "answer": "The newly updated position x at the next step.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Alternating updates",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The average position of all English words.",
+          "feedback": "The variables belong to the oscillator, not the word vectors.",
+          "id": "a"
+        },
+        {
+          "text": "The newly updated position x at the next step.",
+          "feedback": "The newly updated position x at the next step.",
+          "id": "b"
+        },
+        {
+          "text": "Only the original position at the start of the entire run.",
+          "feedback": "The rule uses the updated position on each step, not a permanently fixed start.",
+          "id": "c"
+        },
+        {
+          "text": "A randomly selected earlier position.",
+          "feedback": "The equation specifies the next-step position.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l18-mcq-011",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What direction does positive velocity contribute to the next position?",
+      "answer": "It increases position relative to its current value.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Changing position",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It leaves position unchanged whenever x is positive.",
+          "feedback": "The position change depends on velocity and step size, not simply the sign of x.",
+          "id": "a"
+        },
+        {
+          "text": "It decreases position regardless of velocity.",
+          "feedback": "The position update adds step size times velocity.",
+          "id": "b"
+        },
+        {
+          "text": "It makes position a probability distribution.",
+          "feedback": "The rule updates a numerical oscillator state.",
+          "id": "c"
+        },
+        {
+          "text": "It increases position relative to its current value.",
+          "feedback": "It increases position relative to its current value.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l18-mcq-012",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "How does positive updated position affect velocity in the displayed rule?",
+      "answer": "A negative change to velocity.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Restoring change",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It necessarily makes velocity positive.",
+          "feedback": "The rule subtracts a positive contribution; the final sign also depends on current velocity.",
+          "id": "a"
+        },
+        {
+          "text": "A negative change to velocity.",
+          "feedback": "A negative change to velocity.",
+          "id": "b"
+        },
+        {
+          "text": "It copies position directly into velocity.",
+          "feedback": "The rule changes the current velocity rather than replacing it with position.",
+          "id": "c"
+        },
+        {
+          "text": "It leaves velocity unchanged.",
+          "feedback": "A nonzero positive position produces a subtracted contribution.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l18-mcq-013",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What gives the network a trace of earlier output?",
+      "answer": "The output is copied back into state that contributes to later processing.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Recurrent state",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The network must be a single weighted sum with no loop.",
+          "feedback": "The copied output and state create the recurrence.",
+          "id": "a"
+        },
+        {
+          "text": "The output is copied back into state that contributes to later processing.",
+          "feedback": "The output is copied back into state that contributes to later processing.",
+          "id": "b"
+        },
+        {
+          "text": "Every output is discarded before the next step.",
+          "feedback": "Discarding it would remove the pictured feedback path.",
+          "id": "c"
+        },
+        {
+          "text": "The plan is the final answer produced by the network.",
+          "feedback": "Plan units are an input; output is a separate part of the diagram.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l18-mcq-014",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What does following one number upward through the layers illustrate?",
+      "answer": "Depth, as a representation changes from one layer to the next.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Depth as time",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The number of words allowed in the vocabulary.",
+          "feedback": "Vocabulary size does not identify successive transformations.",
+          "id": "a"
+        },
+        {
+          "text": "The Critic’s position in an agent graph.",
+          "feedback": "The pictured comparison follows values within an LLM’s layers.",
+          "id": "b"
+        },
+        {
+          "text": "The clock time required for a person to read the answer.",
+          "feedback": "The comparison concerns transformations across layers, not reading duration.",
+          "id": "c"
+        },
+        {
+          "text": "Depth, as a representation changes from one layer to the next.",
+          "feedback": "Depth, as a representation changes from one layer to the next.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l18-mcq-015",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What does “a curve, just not a cosine” mean?",
+      "answer": "It changes across layers, but its path is not the oscillator’s specific cosine pattern.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Curves across depth",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Every LLM value is an exact cosine.",
+          "feedback": "The explanation explicitly distinguishes the layer curve from a cosine.",
+          "id": "a"
+        },
+        {
+          "text": "No numerical value can change between layers.",
+          "feedback": "Following its change is the point of the layer illustration.",
+          "id": "b"
+        },
+        {
+          "text": "It changes across layers, but its path is not the oscillator’s specific cosine pattern.",
+          "feedback": "It changes across layers, but its path is not the oscillator’s specific cosine pattern.",
+          "id": "c"
+        },
+        {
+          "text": "The curve is the spelling of a word.",
+          "feedback": "It tracks a numerical component through transformations.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l18-mcq-016",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What does the model predict after the fifteen given word vectors?",
+      "answer": "A possible next word after “sat on the.”",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 5
+        }
+      ],
+      "topic": "Next word",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The first word “The.”",
+          "feedback": "That word is already part of the given sequence.",
+          "id": "a"
+        },
+        {
+          "text": "A full replacement of the preceding sentence.",
+          "feedback": "The missing slot is one next item.",
+          "id": "b"
+        },
+        {
+          "text": "A possible next word after “sat on the.”",
+          "feedback": "A possible next word after “sat on the.”",
+          "id": "c"
+        },
+        {
+          "text": "The weight matrix for layer sixteen.",
+          "feedback": "The subscript labels the sequence item, not a weight layer.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l18-mcq-017",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "How is speech made into the pictured sequence?",
+      "answer": "A short frame of the spectrogram, ordered through time.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 5
+        }
+      ],
+      "topic": "Speech frames",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "A short frame of the spectrogram, ordered through time.",
+          "feedback": "A short frame of the spectrogram, ordered through time.",
+          "id": "a"
+        },
+        {
+          "text": "One separate speaker’s complete lifetime of speech.",
+          "feedback": "The cuts divide a spectrogram into short successive frames.",
+          "id": "b"
+        },
+        {
+          "text": "A list of the model’s agent roles.",
+          "feedback": "The vectors represent speech data, not agents.",
+          "id": "c"
+        },
+        {
+          "text": "One entire image patch grid.",
+          "feedback": "Image patches are a different example.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l18-mcq-018",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Which position comes last in the pictured four-by-four patch order?",
+      "answer": "The bottom-right patch.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 5
+        }
+      ],
+      "topic": "Image order",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The bottom-right patch.",
+          "feedback": "The bottom-right patch.",
+          "id": "a"
+        },
+        {
+          "text": "A randomly chosen patch with no order.",
+          "feedback": "The picture specifies row-by-row order and numbers the preceding patches.",
+          "id": "b"
+        },
+        {
+          "text": "The whole first row.",
+          "feedback": "Each slot represents one patch, not a whole row.",
+          "id": "c"
+        },
+        {
+          "text": "The top-left patch.",
+          "feedback": "That is the first patch in row-by-row order.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l18-mcq-019",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "How does the protein example change what the sequence items stand for?",
+      "answer": "Amino acids along a protein chain.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 5
+        }
+      ],
+      "topic": "Protein representation",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Successive words describing a protein in English.",
+          "feedback": "The sequence uses amino-acid symbols, not a prose description.",
+          "id": "a"
+        },
+        {
+          "text": "Rows of the English onset table.",
+          "feedback": "Those belong to the phonotactics examples.",
+          "id": "b"
+        },
+        {
+          "text": "Amino acids along a protein chain.",
+          "feedback": "Amino acids along a protein chain.",
+          "id": "c"
+        },
+        {
+          "text": "Only the weights of the neural network.",
+          "feedback": "The amino-acid sequence is the represented data.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l18-mcq-020",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What does CVC count in this example?",
+      "answer": "Consonant and vowel sounds; “sh” represents the final consonant sound.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 6
+        }
+      ],
+      "topic": "Sounds and letters",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The final h is a second vowel.",
+          "feedback": "The final written pair represents a consonant sound.",
+          "id": "a"
+        },
+        {
+          "text": "Every written letter is necessarily a separate syllable.",
+          "feedback": "Letters do not each form syllables.",
+          "id": "b"
+        },
+        {
+          "text": "CVC means any word with exactly four letters.",
+          "feedback": "CVC describes sound positions rather than that spelling length.",
+          "id": "c"
+        },
+        {
+          "text": "Consonant and vowel sounds; “sh” represents the final consonant sound.",
+          "feedback": "Consonant and vowel sounds; “sh” represents the final consonant sound.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l18-mcq-021",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Where do onset and coda clusters occur relative to the vowel?",
+      "answer": "Onset clusters come before the vowel; coda clusters come after it.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 6
+        }
+      ],
+      "topic": "Onset and coda",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Onset clusters come after the vowel and codas before it.",
+          "feedback": "That reverses their positions.",
+          "id": "a"
+        },
+        {
+          "text": "Onset clusters come before the vowel; coda clusters come after it.",
+          "feedback": "Onset clusters come before the vowel; coda clusters come after it.",
+          "id": "b"
+        },
+        {
+          "text": "Both names refer only to silent letters.",
+          "feedback": "They identify groups of consonant sounds around the vowel.",
+          "id": "c"
+        },
+        {
+          "text": "Onsets are vowels and codas are entire words.",
+          "feedback": "Both are syllable positions for consonants.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l18-mcq-022",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Why is reversing the consonants significant?",
+      "answer": "The allowed order of consonants depends on their position around the vowel.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 6
+        }
+      ],
+      "topic": "Cluster order",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "English has no consonant clusters.",
+          "feedback": "The unstarred examples contain allowed clusters.",
+          "id": "a"
+        },
+        {
+          "text": "Any ordering of the same consonants is equally allowed.",
+          "feedback": "The starred reversals show that ordering matters.",
+          "id": "b"
+        },
+        {
+          "text": "The allowed order of consonants depends on their position around the vowel.",
+          "feedback": "The allowed order of consonants depends on their position around the vowel.",
+          "id": "c"
+        },
+        {
+          "text": "The star means a second pronunciation is always preferred.",
+          "feedback": "The source uses the star for an impossible English form.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l18-mcq-023",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "How does a syllable break change the interpretation of t followed by l?",
+      "answer": "In Atlantic the consonants straddle a syllable break; in *tlantic they would begin a syllable together.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 6
+        }
+      ],
+      "topic": "Syllable boundaries",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "In Atlantic the consonants straddle a syllable break; in *tlantic they would begin a syllable together.",
+          "feedback": "In Atlantic the consonants straddle a syllable break; in *tlantic they would begin a syllable together.",
+          "id": "a"
+        },
+        {
+          "text": "Every pair of consonants is permitted at the start of a word.",
+          "feedback": "The starred form shows that the starting cluster is restricted.",
+          "id": "b"
+        },
+        {
+          "text": "The written dot is pronounced as a vowel.",
+          "feedback": "The dot marks a syllable boundary.",
+          "id": "c"
+        },
+        {
+          "text": "Atlantic contains no consonants before vowels.",
+          "feedback": "The issue is the location of the boundary, not absence of consonants.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l18-mcq-024",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Which beginning leaves the next-letter choice more constrained?",
+      "answer": "skr_ is more constrained; the displayed choices are vowels, while ra_ permits a wider range.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 7
+        }
+      ],
+      "topic": "Restricted continuations",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Both beginnings require b next.",
+          "feedback": "The b example belongs to bram_, not these two starts.",
+          "id": "a"
+        },
+        {
+          "text": "skr_ is more constrained; the displayed choices are vowels, while ra_ permits a wider range.",
+          "feedback": "skr_ is more constrained; the displayed choices are vowels, while ra_ permits a wider range.",
+          "id": "b"
+        },
+        {
+          "text": "ra_ has only one possible continuation and skr_ permits anything.",
+          "feedback": "That reverses the displayed contrast.",
+          "id": "c"
+        },
+        {
+          "text": "Neither beginning supplies any information about the next letter.",
+          "feedback": "The quiz illustrates that the beginning constrains continuations.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l18-mcq-025",
+      "type": "mcq",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What must successful guesses become sensitive to?",
+      "answer": "Which continuations fit the preceding letters in English.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 7
+        }
+      ],
+      "topic": "Prediction and knowledge",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Which continuations fit the preceding letters in English.",
+          "feedback": "Which continuations fit the preceding letters in English.",
+          "id": "a"
+        },
+        {
+          "text": "A fixed next letter for every possible beginning.",
+          "feedback": "Different beginnings support different choices.",
+          "id": "b"
+        },
+        {
+          "text": "Only the total number of letters, regardless of their order.",
+          "feedback": "The quiz contrasts particular beginnings and their allowed continuations.",
+          "id": "c"
+        },
+        {
+          "text": "The instructor’s identity rather than the input sequence.",
+          "feedback": "The learning task uses the sequence to predict its continuation.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l18-written-001",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain how one neuron turns a vector into one number.",
+      "answer": "Each input value is multiplied by its corresponding weight. Summing those products produces one output number, the inner product.",
+      "rubric": [
+        "Identify weighted input contributions.",
+        "Explain summation into one output."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 2
+        }
+      ],
+      "topic": "Inner products",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-002",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Compare the input and output of a single neuron with those of the pictured neural network.",
+      "answer": "Both take vector input. One neuron combines its inputs into one number; the network transforms a vector through layers and produces a decision vector.",
+      "rubric": [
+        "State the shared vector input.",
+        "Distinguish scalar from decision-vector output."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 2
+        }
+      ],
+      "topic": "Network decision",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-003",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain what the Critic–Revise loop contributes to the agentic system.",
+      "answer": "The graph connects separate Outline, Write, Critic, Revise and Final LLMs. A draft can be criticized and sent for revision; the revised work can return through the loop before the final stage, so the graph can improve an output rather than only pass it forward once.",
+      "rubric": [
+        "Identify critique and revision roles.",
+        "Explain why the loop allows another pass."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 2
+        }
+      ],
+      "topic": "Agents",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-004",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain the difference between inference and learning in the diagram.",
+      "answer": "Inference uses the current weights to compute outputs through inner products. Learning adjusts weights using stochastic gradient descent and dynamic programming for the needed gradients.",
+      "rubric": [
+        "Explain use of existing weights.",
+        "Explain adjustment of weights."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 2
+        }
+      ],
+      "topic": "Shared operations",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-005",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain the difference between a head and a layer in the pictured LLM.",
+      "answer": "Several heads work in parallel within one layer. Their contributions are brought together into improved representations, which then enter the next layer.",
+      "rubric": [
+        "Locate parallel heads within a layer.",
+        "Locate successive layers after combination."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 3
+        }
+      ],
+      "topic": "Parallel heads",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-006",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Why does the model combine different heads rather than treat each as a separate final answer?",
+      "answer": "The heads contribute different information to the representation at the same stage. Bringing it together gives the next layer a representation informed by those contributions.",
+      "rubric": [
+        "Explain distinct parallel contributions.",
+        "Explain their combination before the next layer."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 3
+        }
+      ],
+      "topic": "Combining heads",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-007",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Describe how parallel processing and successive processing work together in the LLM.",
+      "answer": "Heads perform parallel computations within a layer. Their contributions are combined, and the resulting representations pass to another layer where the process happens again.",
+      "rubric": [
+        "Describe within-layer parallelism.",
+        "Describe between-layer succession."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 3
+        }
+      ],
+      "topic": "Depth and repetition",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-008",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain “a rule for data, fed back to itself” in plain language.",
+      "answer": "A rule changes the current data into new data. That new result is used as the input for the next application, creating an unfolding sequence.",
+      "rubric": [
+        "Explain the update from current data.",
+        "Explain reuse of the result."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Dynamical rule",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-009",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What is the oscillator’s state made of, and what happens to it over repeated steps?",
+      "answer": "The state includes position x and velocity v. Applying the update rule repeatedly changes both quantities and produces the pictured oscillating trajectory.",
+      "rubric": [
+        "Identify position and velocity.",
+        "Describe their repeated updating."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Oscillator variables",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-010",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Describe the order of the oscillator updates without calculating numbers.",
+      "answer": "First, position is updated using the current velocity. Then velocity is updated using that new position. The two quantities take turns in determining the next state.",
+      "rubric": [
+        "Put position update first.",
+        "State that velocity uses the newly updated position."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Alternating updates",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-011",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Predict the direction of the first position change for positive velocity and positive step size.",
+      "answer": "Position increases because the rule adds a positive contribution from velocity. This is a directional prediction, not a numerical calculation.",
+      "rubric": [
+        "State that position increases.",
+        "Link the direction to the added positive contribution."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Changing position",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-012",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain the direction of the velocity change when the updated position is positive.",
+      "answer": "A positive position contributes a decrease in velocity because the rule subtracts step size times that position. This describes the change, and does not by itself determine the final sign of velocity.",
+      "rubric": [
+        "Identify the negative contribution.",
+        "Separate change in velocity from its final sign."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Restoring change",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-013",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain how the copy connection changes what the next output can depend on.",
+      "answer": "The copy sends output back into the state used for later processing. Later outputs can therefore depend on a trace of what the network produced before.",
+      "rubric": [
+        "Identify the copied output.",
+        "Connect state to later outputs."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Recurrent state",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-014",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Compare following the oscillator across steps with following one number up the LLM’s layers.",
+      "answer": "The oscillator’s state changes with each repeated update. In the LLM illustration, a representation changes as successive layers apply their weights; depth takes the analogous role of time. The resulting curve is not required to be a cosine.",
+      "rubric": [
+        "Explain successive oscillator updates.",
+        "Explain layer depth as the comparison."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Depth as time",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-015",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Why can both examples illustrate changing state without drawing the same curve?",
+      "answer": "Both show values changing through successive transformations. The oscillator follows its particular update rule, while LLM layers apply their weight transformations, so shared successive change does not require identical trajectories.",
+      "rubric": [
+        "Identify successive transformations.",
+        "Distinguish the rules and resulting paths."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "topic": "Curves across depth",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-016",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain the role of the preceding words in the sentence-prediction example.",
+      "answer": "The fifteen words provide context for a possible continuation after “sat on the.” The missing sixteenth item is predicted using that context rather than being an isolated label.",
+      "rubric": [
+        "Identify the given context.",
+        "Identify the missing next word."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 5
+        }
+      ],
+      "topic": "Next word",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-017",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain how next-item prediction is applied to the spectrogram.",
+      "answer": "The spectrogram is divided into short frames through time. Earlier frames form the input sequence, and the missing item is the next frame of speech rather than the next written word.",
+      "rubric": [
+        "Identify time-ordered frames.",
+        "Identify the next frame as the target."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 5
+        }
+      ],
+      "topic": "Speech frames",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-018",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "How does the picture become a sequence even though its parts are arranged in two dimensions?",
+      "answer": "The image is cut into patches and a row-by-row order is assigned. The first fifteen patches become the given sequence, and the bottom-right sixteenth patch is the missing item.",
+      "rubric": [
+        "Describe division into patches.",
+        "Explain the assigned order and missing final patch."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 5
+        }
+      ],
+      "topic": "Image order",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-019",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "What remains shared when the examples change from words to speech, images and protein?",
+      "answer": "In the protein example, vectors represent amino acids along the chain. The other examples represent words, spectrogram frames and image patches, but each supplies an ordered sequence of vectors with a missing next item. The common question is what should occupy that next position.",
+      "rubric": [
+        "Identify different represented data.",
+        "Identify the common ordered prediction problem."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 5
+        }
+      ],
+      "topic": "Protein representation",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-020",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain what the CVC pattern captures using “fish.”",
+      "answer": "The pattern describes a consonant sound, a vowel sound and a consonant sound. In “fish,” the written pair sh represents the last consonant, so the sound pattern is CVC despite four letters.",
+      "rubric": [
+        "State the sound sequence.",
+        "Distinguish written letters from the final consonant sound."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 6
+        }
+      ],
+      "topic": "Sounds and letters",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-021",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Use “flat” and “help” to distinguish an onset cluster from a coda cluster.",
+      "answer": "The fl in flat occurs before the vowel and is an onset cluster. The lp in help occurs after the vowel and is a coda cluster.",
+      "rubric": [
+        "Locate fl before the vowel.",
+        "Locate lp after the vowel."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 6
+        }
+      ],
+      "topic": "Onset and coda",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-022",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain what the starred reversals teach about English syllables.",
+      "answer": "Keeping the same consonants does not preserve an allowed sequence when their order changes. The examples contrast allowed and disallowed orderings before and after a vowel.",
+      "rubric": [
+        "Explain that order matters.",
+        "Use the allowed/starred contrast."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 6
+        }
+      ],
+      "topic": "Cluster order",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-023",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain why a sequence across a syllable break can be allowed when the same sequence cannot start a syllable.",
+      "answer": "A consonant can end one syllable while another begins the next. That differs from requiring both to form one onset, as the contrast between At·lan·tic and *tlantic shows.",
+      "rubric": [
+        "Explain different syllable memberships.",
+        "Contrast with one disallowed onset."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 6
+        }
+      ],
+      "topic": "Syllable boundaries",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-024",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Explain how different next-letter predictions can reveal learned English patterns.",
+      "answer": "Different beginnings allow different continuations. skr_ is more constrained than ra_: the displayed choices after skr_ are vowels, while ra_ allows a wider range. A model that predicts them successfully must distinguish these patterns, so its predictions can reveal learned sound and spelling patterns.",
+      "rubric": [
+        "Describe the differing constraints.",
+        "Connect successful prediction to learning the patterns."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 7
+        }
+      ],
+      "topic": "Restricted continuations",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l18-written-025",
+      "type": "written",
+      "moduleId": "module2",
+      "lectureId": "lecture18",
+      "prompt": "Connect guessing the next letter with the x₁₆ prediction problem.",
+      "answer": "The letters already supplied form the context, and the next letter is the missing item. As with the vector examples, the model uses an ordered sequence to predict what can follow. Successful guesses must become sensitive to the English sound and spelling patterns that constrain continuations.",
+      "rubric": [
+        "Map supplied letters to context.",
+        "Map the next letter to the missing next item."
+      ],
+      "sources": [
+        {
+          "collection": "lecture18",
+          "page": 7
+        }
+      ],
+      "topic": "Prediction and knowledge",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    }
+  ]
+}

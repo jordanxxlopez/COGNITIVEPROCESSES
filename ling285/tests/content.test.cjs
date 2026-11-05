@@ -41,18 +41,18 @@ function sha256(file) { return crypto.createHash('sha256').update(fs.readFileSyn
 test('the assembled studio covers the supplied LING285 scope without absorbing LING406', () => {
   assert.equal(data.course.code, 'LING285');
   assert.equal(data.course.title, 'Human Language and Technology');
-  assert.equal(Object.keys(manifest).length, 30);
-  assert.equal(Object.values(manifest).reduce((total, source) => total + source.pages, 0), 414);
-  assert.equal(data.collections.length, 29);
-  assert.equal(sections.length, 377);
-  assert.equal(lectures.length, 16);
-  assert.equal(lectures.reduce((total, collection) => total + collection.sections.length, 0), 278);
-  assert.deepEqual(lectures.map(collection => collection.id), [...originalLectureIds,'lecture14','lecture15','lecture16','lecture17']);
+  assert.equal(Object.keys(manifest).length, 31);
+  assert.equal(Object.values(manifest).reduce((total, source) => total + source.pages, 0), 422);
+  assert.equal(data.collections.length, 30);
+  assert.equal(sections.length, 385);
+  assert.equal(lectures.length, 17);
+  assert.equal(lectures.reduce((total, collection) => total + collection.sections.length, 0), 286);
+  assert.deepEqual(lectures.map(collection => collection.id), [...originalLectureIds,'lecture14','lecture15','lecture16','lecture17','lecture18']);
   assert(!byCollection.has('ling406-reference'));
   assert.equal(manifest['ling406-reference'].role, 'style-reference');
   assert.equal(data.coverage.pageCount, sections.length);
-  assert.equal(data.coverage.lecturePageCount, 278);
-  assert.equal(data.coverage.sourceCount, 30);
+  assert.equal(data.coverage.lecturePageCount, 286);
+  assert.equal(data.coverage.sourceCount, 31);
 });
 
 test('each student section has a stable unique ID, source page, and preserved visual', () => {
@@ -96,7 +96,7 @@ test('embedded original assets match their content-addressed filenames', () => {
 });
 
 test('practice questions and study guides point to usable source sections', () => {
-  assert.equal(data.questions.length, 442);
+  assert.equal(data.questions.length, 492);
   assert.equal(new Set(data.questions.map(item => item.id)).size, data.questions.length);
   const primaryCounts = new Map(lectures.map(collection => [collection.id, 0]));
   for (const question of data.questions) {
@@ -130,14 +130,14 @@ test('the module boundary preserves the first midterm and focuses the active wor
   assert.deepEqual(data.modules.map(module => module.id), ['module1', 'module2']);
   const [first, second] = data.modules;
   assert.deepEqual(first.lectureIds, ['lecture01','lecture02','lecture03','lecture04','lecture05-06','lecture07','lecture08','lecture09','lecture10']);
-  assert.deepEqual(second.lectureIds, ['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17']);
+  assert.deepEqual(second.lectureIds, ['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17','lecture18']);
   assert.equal(first.lectureIds.length, 9);
-  assert.equal(second.lectureIds.length, 7);
+  assert.equal(second.lectureIds.length, 8);
   assert.match(second.futureNote, /new lectures|extend/i);
   assert.deepEqual(first.meadowsIds, ['notes-08-25-1','notes-08-25-2','notes-09-01','notes-09-03','notes-09-15','notes-09-17']);
   assert.deepEqual(second.meadowsIds, []);
   const numbered = data.modules.flatMap(module => module.lectureIds);
-  assert.equal(new Set(numbered).size, 16);
+  assert.equal(new Set(numbered).size, 17);
   assert.deepEqual(new Set(numbered), new Set(lectures.map(collection => collection.id)));
   for (const collection of data.collections) {
     assert(['lectures', 'meadows', 'sources'].includes(collection.workspaceGroup), collection.id);
@@ -176,10 +176,10 @@ test('all original written questions retain their exact IDs, wording, answers, r
   const preserved = written.map(question => Object.fromEntries(originalFields.map(field => [field, question[field]])));
   const digest = crypto.createHash('sha256').update(JSON.stringify(preserved)).digest('hex');
   assert.equal(digest, '4b7a8590e451360a02cd2454da67a2082a762913d7d082ddce9e3d63e03f91b6', 'Existing written prompts, explanations, rubrics, or source mappings changed');
-  assert.equal(data.questions.filter(question => question.type === 'written').length, 231);
-  assert.equal(data.coverage.writtenQuestionCount, 231);
-  assert.equal(data.coverage.mcqQuestionCount, 211);
-  assert.equal(data.coverage.questionCount, 442);
+  assert.equal(data.questions.filter(question => question.type === 'written').length, 256);
+  assert.equal(data.coverage.writtenQuestionCount, 256);
+  assert.equal(data.coverage.mcqQuestionCount, 236);
+  assert.equal(data.coverage.questionCount, 492);
 });
 
 test('expanding Module II preserves the entire released 134-question content bank', () => {
@@ -203,9 +203,9 @@ test('expanding Module II preserves the entire released 134-question content ban
 test('each Module II lecture owns exactly 25 multiple-choice and 25 written questions', () => {
   const module = data.modules.find(item => item.id === 'module2');
   assert.deepEqual(module.assessmentPolicy, {lectureQuizSize:50, currentTestSize:100, mcqShare:.5});
-  assert.equal(module.questionCount, 350);
-  assert.equal(module.mcqCount, 175);
-  assert.equal(module.writtenCount, 175);
+  assert.equal(module.questionCount, 400);
+  assert.equal(module.mcqCount, 200);
+  assert.equal(module.writtenCount, 200);
   const pool = data.questions.filter(question => question.moduleId === 'module2');
   for (const question of pool) {
     assert(module.lectureIds.includes(question.lectureId), `${question.id} has no authoritative lecture owner`);
@@ -226,7 +226,7 @@ test('each Module II lecture owns exactly 25 multiple-choice and 25 written ques
 
 test('multiple-choice questions have independently explained distractors and stable balanced keys', () => {
   const multipleChoice = data.questions.filter(question => question.type === 'mcq');
-  assert.equal(multipleChoice.length, 211);
+  assert.equal(multipleChoice.length, 236);
   const correctPositions = [0, 0, 0, 0];
   for (const question of multipleChoice) {
     assert.equal(question.options.length, 4, `${question.id} requires four options`);
@@ -310,7 +310,7 @@ test('executed relevance rankings cover the bank and reproduce each module order
 
 test('core review remains a justified selection and excludes the non-exam beliefs segment', () => {
   const core = sections.filter(item => item.core);
-  assert.equal(core.length, 71);
+  assert.equal(core.length, 75);
   assert.equal(data.coverage.coreCount, core.length);
   for (const item of core) {
     assert(item.coreReason?.trim(), `Missing selection reason on ${item.id}`);

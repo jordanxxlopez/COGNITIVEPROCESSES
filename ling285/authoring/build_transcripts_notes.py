@@ -14,7 +14,7 @@ import statistics
 import sys
 
 ROOT=Path(__file__).resolve().parents[1];A=ROOT/'authoring'
-LECTURES=['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17']
+LECTURES=['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17','lecture18']
 # One entry per edition, mirroring the matching PSYC301 and LING406 editions.
 EDITIONS={
  7:{'label':'Version 7 · Teaching notes (bulleted)','guidance':'Study Studio Prompt 1 (updated). Bolded main bullets of connected read-aloud sentences with nested sub-bullets for each mechanism step, demonstration and figure value. Key terms defined where they appear.','max':None},

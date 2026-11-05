@@ -2,7 +2,7 @@
   "id": "v18",
   "label": "Version 18 · Teaching scripts",
   "revision": "2026-10-31-transcripts-v18",
-  "baseDataSha256": "25d65a7840aa72efcda917badc577f2847e880f9e6267e45c161babb76254868",
+  "baseDataSha256": "8864e033b08f01533b46518bb1293dd63eaaaee473d5676c8ab1d7c60efb2c28",
   "collections": {
     "lecture11": {
       "title": "Masses and Springs · Theory and Prediction",
@@ -4647,6 +4647,241 @@
           "teaching": []
         }
       ]
+    },
+    "lecture18": {
+      "title": "Neuron, Neural Networks, LLMs and Agents",
+      "sections": [
+        {
+          "id": "lecture18-p001",
+          "page": 1,
+          "title": "Neuron, neural networks, LLMs and agents",
+          "kind": "title",
+          "teaching": []
+        },
+        {
+          "id": "lecture18-p002",
+          "page": 2,
+          "title": "From a neuron to agents that communicate",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**A single neuron converts a list of inputs into one weighted sum, while a network converts an input vector into a decision vector.** Each layer combines the responses produced by the preceding layer, so the final responses can distinguish the possible answers.",
+              "children": [
+                "The basic calculation is an inner product, multiplying inputs by weights and adding the products."
+              ]
+            },
+            {
+              "text": "**A large language model processes a sequence of vectors and predicts the next item.** Its layers transform the representations until the output expresses a probability distribution over possible next tokens.",
+              "children": [
+                "The example uses fifteen input vectors and predicts the sixteenth."
+              ]
+            },
+            {
+              "text": "**An agentic system joins whole LLMs into a graph.** Different models outline, write, criticize, revise and finalize the response, and the revision can return to the critic for another evaluation.",
+              "children": [
+                "The agents pass information to one another in English and can work in other human languages and computer languages."
+              ]
+            },
+            {
+              "text": "**Inference processes the inputs with learned weights, while learning changes those weights.** Inner products support inference, and stochastic gradient descent changes the weights using the backward calculation organized through dynamic programming.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p003",
+          "page": 3,
+          "title": "Parallel heads and successive layers",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**A language model uses many layers because predicting the next word requires developing useful representations of the sequence.** Each layer receives the vectors produced by the previous layer and transforms them further.",
+              "children": [
+                "The prediction depends on the representations produced by the whole sequence of processing stages."
+              ]
+            },
+            {
+              "text": "**Several heads work in parallel within each layer.** The heads act as different experts whose contributions are brought together, allowing the layer to combine different information in its representations.",
+              "children": [
+                "A head is a processing component inside the layer, and the experts are parts of the model rather than people supplying answers."
+              ]
+            },
+            {
+              "text": "**The combined representations become the input to the following layer.** That layer again combines its heads’ contributions, so successive layers build on the work already done.",
+              "children": [
+                "Parallel heads contribute within a stage, while successive layers develop the representations across stages."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p004",
+          "page": 4,
+          "title": "A dynamical rule across time and depth",
+          "kind": "mechanism",
+          "teaching": [
+            {
+              "text": "**A dynamical system repeatedly transforms its current state into a new state.** An oscillator’s state contains position and velocity, and the output of an update becomes the starting point for the next update.",
+              "children": [
+                "Position is updated using the old velocity, and velocity is then updated using the new position. The repeated alternation produces oscillation."
+              ]
+            },
+            {
+              "text": "**Jordan’s recurrent network carries its recent output into the next moment.** Plan and state units feed the hidden layer, which produces an output that is copied back into the state units.",
+              "children": [
+                "The state units also retain a fading trace through their self-connections. Reusing the same weights lets the network produce a sequence influenced by its recent history."
+              ]
+            },
+            {
+              "text": "**The LLM comparison treats depth as a sequence of state changes.** One layer transforms the vectors, and the next layer transforms the resulting vectors again.",
+              "children": [
+                "Following a single value through the layers gives a changing trajectory, although its curve is not a cosine."
+              ]
+            },
+            {
+              "text": "**An oscillator or recurrent network reuses its rule across time, while the LLM has different weights at different layers.** The connection lies in how each new state develops from the preceding state.",
+              "children": [
+                "Depth plays the role of time in the comparison, while each layer supplies its own transformation."
+              ]
+            },
+            {
+              "text": "The small stock-return graph traces Small, Medium and Large series over the same period. They fluctuate, rise and fall over the years, giving another example of quantities changing over time.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p005",
+          "page": 5,
+          "title": "One prediction task for different sequences",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "An LLM reads **15 vectors** and has to guess the **16th**.",
+              "children": [
+                "The question is what those vectors stand for."
+              ]
+            },
+            {
+              "text": "They can be **words in a sentence**.",
+              "children": [
+                "“The cat that the dog chased ran up the old tree and sat on the ___.”",
+                "The 16th vector is the **missing word**."
+              ]
+            },
+            {
+              "text": "They can be **slices of sound** or **pieces of a picture**.",
+              "children": [
+                "For a spectrogram, the 16th vector is the **next slice of sound**.",
+                "For a picture cut into squares, it is the **missing corner square**."
+              ]
+            },
+            {
+              "text": "They can even be the parts of a **protein**.",
+              "children": [
+                "Here they are the first **15 amino acids** of the insulin B chain.",
+                "The 16th vector is the **next amino acid**."
+              ]
+            },
+            {
+              "text": "**The LLM only ever sees vectors.**",
+              "children": [
+                "Words, sounds, pictures and molecules are all represented as vectors.",
+                "Each time, it answers one question, **what comes next?**"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p006",
+          "page": 6,
+          "title": "Which sequences can be English words?",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "This page asks which strings of sounds could be **English words**.",
+              "children": [
+                "A simple English syllable can be a **consonant, a vowel, and a consonant**, as in Don, mat or fish."
+              ]
+            },
+            {
+              "text": "Consonants can also come in **clusters**.",
+              "children": [
+                "English allows split, flat and stop at the start of a word.",
+                "It allows desk, help and lamp at the end."
+              ]
+            },
+            {
+              "text": "But only certain clusters are allowed, and **order matters**.",
+              "children": [
+                "*lfat, *hepl and *lapm use the same letters as flat, help and lamp in the wrong order.",
+                "The allowed order flips around the vowel."
+              ]
+            },
+            {
+              "text": "Long words are **chains of syllables**.",
+              "children": [
+                "In At·lan·tic, t and l sit on two sides of a syllable break, so they are fine.",
+                "A word cannot start with tl, so *tlantic is impossible.",
+                "ng can end a syllable, as in ring, but cannot start one."
+              ]
+            },
+            {
+              "text": "This knowledge of allowed sound patterns is called **phonotactics**.",
+              "children": [
+                "English speakers know these rules without ever being taught them."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p007",
+          "page": 7,
+          "title": "Guessing the next letter reveals phonotactic knowledge",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "This pop quiz gives the start of an English word and asks you to **guess the next letter**.",
+              "children": [
+                "The starts include ra_, sp_, skr_ and m_."
+              ]
+            },
+            {
+              "text": "After a vowel, almost **any letter** can come next.",
+              "children": [
+                "After ra_, the guesses are spread across many letters."
+              ]
+            },
+            {
+              "text": "At the start of a word, the choices are **narrow**.",
+              "children": [
+                "After sp_, b_ or f_, only l, r or a vowel can come next.",
+                "After skr_ or m_, only a vowel can come next."
+              ]
+            },
+            {
+              "text": "Some letters can **never** come next.",
+              "children": [
+                "English has no words starting with *spn, *skrl or *mb."
+              ]
+            },
+            {
+              "text": "**Guessing the next letter is the same game an LLM plays.**",
+              "children": [
+                "A GPT trained only on this game learns English sounds and spelling.",
+                "Its guesses are spread out after a vowel and focused on a few letters after skr_."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p008",
+          "page": 8,
+          "title": "Design an agentic system for English syllables",
+          "kind": "prompt",
+          "teaching": []
+        }
+      ]
     }
   },
   "visualPresentation": {
@@ -4847,10 +5082,10 @@
   "writingReference": "PSYC301 Module II and LING406 Version 18",
   "guidance": "Study Studio Prompt 2 with no word limit. Figures are explained by their scientific meaning instead of a walkthrough of panels, axes or colors, only the numbers that define conditions or carry key results are kept, and wording avoids crowded or tongue-twisting phrases.",
   "metrics": {
-    "instructionalPages": 104,
-    "words": 20242,
-    "averageWords": 195,
-    "medianWords": 196.0,
+    "instructionalPages": 110,
+    "words": 21214,
+    "averageWords": 193,
+    "medianWords": 195.0,
     "maximumWords": 244
   }
 }

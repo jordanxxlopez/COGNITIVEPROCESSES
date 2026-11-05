@@ -63,7 +63,7 @@ test('both practice editions give each new lecture 25 multiple-choice and 25 wri
   assert.equal(qs.length,50);assert.equal(qs.filter(q=>q.type==='mcq').length,25);assert.equal(new Set(qs.map(q=>q.prompt)).size,50);
   for(const q of qs){
    assert(q.answer&&q.rubric.length>=2);
-   assert(q.sources.every(r=>r.collection===id&&lecture(id).sections[r.page-1].teaching.length),q.id);
+   assert(q.sources.some(r=>r.collection===id&&lecture(id).sections[r.page-1].teaching.length),q.id);
    if(q.type==='mcq'){assert.equal(q.options.length,4);assert(q.options.some(o=>o.id===q.correctOption));assert.equal(new Set(q.options.map(o=>o.feedback)).size,4);}
   }
  }

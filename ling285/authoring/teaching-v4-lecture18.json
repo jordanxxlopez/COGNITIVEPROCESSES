@@ -1,0 +1,198 @@
+{
+  "lecture18": {
+    "title": "Neuron, Neural Networks, LLMs and Agents",
+    "sections": [
+      {
+        "page": 1,
+        "title": "Neuron, neural networks, LLMs and agents",
+        "kind": "title",
+        "teaching": [],
+        "concepts": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 2,
+        "title": "From a neuron to agents that communicate",
+        "kind": "concept",
+        "teaching": [
+          "**A neuron takes a vector and returns one number.** Each input is multiplied by its weight, and the products are added to give the output. This weighted sum is an **inner product**. A neural network joins many such operations into layers, so one input vector becomes a **decision vector**, with a response for each possible answer.",
+          "**A large language model takes many vectors and predicts what comes next.** Fifteen token vectors pass through five layers in the example. Each layer changes their representations through its weights, and the final output is the sixteenth vector, a **probability distribution** over the next token. The values express which continuations the model treats as more or less likely.",
+          "**An agentic system connects several LLMs into a graph.** The Outline model develops a plan, the Write model produces a draft, the Critic model evaluates it, the Revise model changes it, and the Final model produces the answer. The connection between Critic and Revise forms a loop, allowing a revision to be evaluated again. The agents communicate through **language**. One model’s written output becomes information another model can use, so the graph coordinates whole language models rather than individual neurons. The agents can speak to each other in English, while the models can also work in other human languages and computer languages.",
+          "**Inference uses inner products, and learning uses SGD with dynamic programming.** Inference processes the current inputs with the learned weights. **Stochastic gradient descent**, or SGD, changes weights to reduce prediction error, while backpropagation uses **dynamic programming** to organize the backward calculation. These operations support the small network as well as the language models joined into the agentic graph."
+        ],
+        "concepts": [
+          "inner product",
+          "decision vector",
+          "next-token probability",
+          "agent graph",
+          "critic and revision loop",
+          "human and computer languages",
+          "inference versus learning"
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 3,
+        "title": "Parallel heads and successive layers",
+        "kind": "concept",
+        "teaching": [
+          "**Predicting the next word is difficult because the prediction depends on information spread through the sequence.** A language model therefore uses many layers of processing. Each layer receives representations of the input and changes them before passing them onward, giving the following layer more useful information for the prediction.",
+          "**Within a layer, several heads work in parallel.** A head is one of the processing components that contributes to the layer’s representation. The heads are described as different experts because each can contribute a different part of the information the layer uses. They work alongside one another rather than waiting for one head to finish before another begins.",
+          "**The layer brings the heads’ contributions together.** The result is an improved set of representations, written as **x**, for the sequence. A representation is the information carried by a vector about an input item. Combining several contributions lets that representation incorporate more than one head contributes on its own. **The next layer repeats the process with the representations it receives.** It has parallel heads whose contributions are combined again. The model therefore develops its representations through a succession of layers, rather than making its final prediction directly from the original input vectors.",
+          "**Heads and layers add different kinds of structure.** Heads provide parallel contributions within one processing stage, while layers provide successive stages that refine the vectors further. The prediction at the end depends on these contributions being combined within stages and developed across stages."
+        ],
+        "concepts": [
+          "next-word prediction",
+          "parallel heads",
+          "heads as experts",
+          "combined representations",
+          "successive layers",
+          "parallel versus successive processing"
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 4,
+        "title": "A dynamical rule across time and depth",
+        "kind": "mechanism",
+        "teaching": [
+          "**A dynamical system takes a state, applies a rule, and uses the resulting state as input again.** In the oscillator example, the state contains position **x** and velocity **v**. It begins with position one and velocity zero, and repeatedly updating those two quantities produces the changing motion.",
+          "**Position and velocity take turns being updated.** The new position uses the old velocity, and the new velocity then uses that new position. The step size **h** determines how far the calculation advances at each update. Position traces a cosine-like oscillation while velocity follows a shifted oscillation, so a simple repeated rule builds an entire changing trajectory.",
+          "**Jordan’s recurrent network also feeds its output back into its input.** Plan units and state units feed a hidden layer, which produces an output. That output is copied into the state units, and their small self-loops preserve a fading trace of earlier states. The weights are reused at each time step, allowing recent outputs to influence the next output in a sequence of speech movements. **In the LLM comparison, depth plays the role of time.** Fifteen vectors enter the first layer and are transformed by its weights. The resulting vectors enter the next layer, where another transformation takes place. Following one number upward through the layers gives a sequence of changing values, which can be drawn as a curve even though it is not the oscillator’s cosine.",
+          "**The rules are organized differently in these systems.** The oscillator and Jordan network apply the same rule repeatedly as time advances. The LLM uses a separate set of weights at each layer, so its successive transformations follow the depth of the network. What connects the examples is the dependence of each new state on the state produced just before it. The small stock-return graph traces Small, Medium and Large series over the same period. They fluctuate, rise and fall over the years, giving another example of quantities changing over time."
+        ],
+        "concepts": [
+          "state and rule",
+          "interleaved position and velocity updates",
+          "feedback",
+          "Jordan state units",
+          "reused weights",
+          "depth as time",
+          "layer-specific weights"
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 5,
+        "title": "One prediction task for different sequences",
+        "kind": "concept",
+        "teaching": [
+          "The page starts with **15 vectors, x₁ to x₁₅**, and an empty slot for **x₁₆**, and asks **vectors of what?** An LLM receives a sequence of vectors and predicts the next one. The four reveals show four different kinds of sequence fed into the same arrangement.",
+          "First, a **sentence cut into 15 words**. “The cat that the dog chased ran up the old tree and sat on the ___.” Each vector stands for one word, and **x₁₆ is the missing word**. Predicting it requires using words far back in the sentence, since it is the cat that sat on something.",
+          "Next, the words disappear and a **spectrogram is cut into 15 frames**, from 0 to 5 kHz along the vertical axis with time running to the right. Each vector is now one slice of sound, and **x₁₆ is the next frame**. Then an **image of a house, a tree and the sun is cut into 16 patches**, read row by row. Fifteen patches are vectors, and **x₁₆ is the missing bottom-right patch**. The last example is a **protein, the insulin B chain**, read as **15 amino acids**, F V N Q H L C G S H L V E A L, drawn folding into a helix. Each amino acid is a vector, and **x₁₆ is the next residue**, which is **Y**. The same sixteenth slot sits at the end of every sequence.",
+          "The takeaway states the point of the four examples. **The LLM only ever sees vectors.** Words, sounds, pixels and molecules all become sequences of vectors, so **one machine asks one question, what is x₁₆?** Whatever the source, learning to predict the next vector in a sequence is the task the model is built for."
+        ],
+        "concepts": [
+          "15 input vectors",
+          "x₁₆ prediction",
+          "words, frames, patches, amino acids",
+          "vectors as a common format"
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 6,
+        "title": "Which sequences can be English words?",
+        "kind": "concept",
+        "teaching": [
+          "The page asks which strings of sounds can be English words, building the answer in three rows. The first row has twenty **one-syllable words with a single consonant, a single vowel and a single consonant**, such as Don, mat, sit, cup, fish and ring. Consonants are dark, vowels red, and a silent e grey. The rule for this row is that **a simple syllable in English can have a consonant, then a vowel, then a consonant**.",
+          "The second row adds **clusters**, groups of consonants. Real words with clusters before the vowel, called **onsets**, include split, flat, black, glad and stop. Real words with clusters after the vowel, called **codas**, include desk, box, help, milk and lamp. Each real word has an **impossible twin** below it, marked with a star, such as *sblit, *lfat, *bnack, *dlad and *tsop, and *desb, *bokp, *hepl, *mikl and *lapm.",
+          "Many twins use the same letters in the opposite order, flat and *lfat, help and *hepl, lamp and *lapm. **Order matters**, and the pattern mirrors around the vowel. An onset like fl is fine, but the same sounds reversed as lf cannot start a word, although the reversed order can end a word. The rule for this row is that **only certain sequences are allowed before the vowel and after the vowel**. The third row has **words of many syllables**, with dots marking syllable breaks, such as **ba·na·na, win·dow, pump·kin, nap·kin, At·lan·tic, ath·lete, ad·mit and spa·ghet·ti**. Atlantic, athlete and admit contain t followed by l, th followed by l, and d followed by m. Those pairs are fine inside the word because a syllable break falls between them, but they cannot begin a word, so *tlantic, *thlete and *dmit are impossible. Likewise ng can end a syllable, as in ring, but never start one, so *ngapkin is impossible.",
+          "The rule for the whole page is that **a long word is a chain of syllables**, and every syllable obeys the same rules. **t·l is fine across a break, but tl cannot start a syllable.** This is **phonotactic knowledge**, the knowledge of which sound sequences a language allows, and English speakers have it without ever being taught it."
+        ],
+        "concepts": [
+          "CVC syllables",
+          "onset and coda clusters",
+          "impossible twins",
+          "order mirrors around the vowel",
+          "syllable breaks",
+          "phonotactics"
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 7,
+        "title": "Guessing the next letter reveals phonotactic knowledge",
+        "kind": "concept",
+        "teaching": [
+          "The pop quiz asks how **phonotactic knowledge can be revealed through GPT learning**. Each item is the start of an English word, and the task is to **guess the next letter**. The nine starts are ra_, sp_, k_, skr_, m_, bram_, b_, f_ and sh_. People agree quickly on most of them, and how much they agree changes from item to item.",
+          "After **ra_**, likely letters include t, n, r and l. **After a vowel, almost anything** can follow, so the guesses spread out. After **sp_**, the next letter is **l, r or a vowel**, and *spn is never possible. After **k_**, a vowel or **n**, as in knee, and never *kt. After **b_** and **f_**, the choices are **r, l or a vowel**, never *bn or *fn. After **sh_**, a vowel or **r**, as in shrimp, never *shb.",
+          "Some starts narrow the choices even more. After **skr_** only a vowel can come next, never *skrl, and after **m_** at the start of a word only a vowel, never *mb. After **bram_**, the letter b is almost forced, as in bramble, though a new syllable could also start there. At the start of a word the choices shrink sharply, while after a vowel they open up again. These guesses follow the rules for English syllables. What can follow a starting consonant is exactly what an English onset allows, and the impossible continuations are clusters that English never allows at the start of a syllable. Guessing well requires knowing English phonotactics.",
+          "The takeaway connects this to LLMs. **Guessing the next letter is predicting x₁₆.** A **GPT trained only on this game learns English sounds and spelling**, because its predicted distribution has to match these patterns. After ra_ its distribution is spread broad over many letters, and after skr_ it is sharply peaked on a few vowels."
+        ],
+        "concepts": [
+          "next-letter prediction",
+          "constrained versus open continuations",
+          "impossible continuations",
+          "next-token prediction",
+          "GPT learning phonotactics"
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 8,
+        "title": "Design an agentic system for English syllables",
+        "kind": "prompt",
+        "teaching": [],
+        "concepts": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      }
+    ]
+  }
+}

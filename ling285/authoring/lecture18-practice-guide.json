@@ -1,0 +1,79 @@
+{
+  "questions": [],
+  "coreReview": [
+    {
+      "collection": "lecture18",
+      "page": 3,
+      "reason": "Distinguish parallel heads within a layer from successive layers and explain their combination."
+    },
+    {
+      "collection": "lecture18",
+      "page": 4,
+      "reason": "Connect repeated state updates, recurrent feedback and layer-by-layer transformation without conflating their trajectories."
+    },
+    {
+      "collection": "lecture18",
+      "page": 5,
+      "reason": "Explain the shared next-item prediction problem across different kinds of vector data."
+    },
+    {
+      "collection": "lecture18",
+      "page": 7,
+      "reason": "Use constrained next-letter choices as evidence about learned English patterns."
+    }
+  ],
+  "guide": [
+    {
+      "title": "Separate heads, layers and agents",
+      "explanation": "Explain what happens in parallel within a layer, what happens successively across layers and what happens between separate LLMs in a critique-and-revision graph.",
+      "refs": [
+        {
+          "collection": "lecture18",
+          "page": 2
+        },
+        {
+          "collection": "lecture18",
+          "page": 3
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Follow changing state through a rule",
+      "explanation": "Read the oscillator updates in order, explain how copied output carries information into a recurrent state and describe depth as the LLM comparison to time. Predict directions of change without working numerical exercises.",
+      "refs": [
+        {
+          "collection": "lecture18",
+          "page": 4
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Identify what the vectors represent",
+      "explanation": "Map words, spectrogram frames, image patches and amino acids to the ordered sequence and its missing next item. Distinguish shared prediction structure from the different data being represented.",
+      "refs": [
+        {
+          "collection": "lecture18",
+          "page": 5
+        }
+      ],
+      "kind": "readiness"
+    },
+    {
+      "title": "Explain why the next letter is constrained",
+      "explanation": "Use sound-based CVC syllables, onset and coda ordering and syllable boundaries to explain the contrast between open and restricted continuations in the next-letter task.",
+      "refs": [
+        {
+          "collection": "lecture18",
+          "page": 6
+        },
+        {
+          "collection": "lecture18",
+          "page": 7
+        }
+      ],
+      "kind": "readiness"
+    }
+  ]
+}

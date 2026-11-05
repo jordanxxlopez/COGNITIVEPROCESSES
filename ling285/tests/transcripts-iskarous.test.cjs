@@ -2,7 +2,7 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const root=path.resolve(__dirname,'..'),read=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
 const D=read('data.json'),EDITIONS={v20:read('transcripts-v20.json'),v21:read('transcripts-v21.json'),v22:read('transcripts-v22.json')};
 const MODULE1=['lecture01','lecture02','lecture03','lecture04','lecture05-06','lecture07','lecture08','lecture09','lecture10'];
-const LECTURES=['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17'];
+const LECTURES=['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17','lecture18'];
 const TAUGHT_PROMPTS=new Set(['lecture14-p019','lecture14-p020']);
 const plain=b=>[b.text,...b.children].join(' ').replace(/\*\*/g,'');
 

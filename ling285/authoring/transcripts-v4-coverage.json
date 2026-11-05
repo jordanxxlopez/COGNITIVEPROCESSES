@@ -3473,21 +3473,320 @@
       "paragraphs": 0,
       "originalImage": "assets/slides/lecture17/008.webp",
       "originalAssets": []
+    },
+    {
+      "id": "lecture18-p001",
+      "page": 1,
+      "title": "Neuron, neural networks, LLMs and agents",
+      "kind": "title",
+      "lectureId": "lecture18",
+      "sourceSha256": "110d3a08325f62087e8e70bba529b129c3267c589a20f0e36f05afb14a784872",
+      "authoringEntry": "teaching-v4-lecture18.json page 1",
+      "concepts": [],
+      "words": 0,
+      "version3Words": 0,
+      "paragraphs": 0,
+      "originalImage": "assets/slides/lecture18/001.webp",
+      "originalAssets": []
+    },
+    {
+      "id": "lecture18-p002",
+      "page": 2,
+      "title": "From a neuron to agents that communicate",
+      "kind": "concept",
+      "lectureId": "lecture18",
+      "sourceSha256": "110d3a08325f62087e8e70bba529b129c3267c589a20f0e36f05afb14a784872",
+      "authoringEntry": "teaching-v4-lecture18.json page 2",
+      "concepts": [
+        "inner product",
+        "decision vector",
+        "next-token probability",
+        "agent graph",
+        "critic and revision loop",
+        "human and computer languages",
+        "inference versus learning"
+      ],
+      "words": 274,
+      "version3Words": 274,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture18/002.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p002-stage-00.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p002-stage-01.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p002-stage-02.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p002-stage-03.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p002-stage-04.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p002-stage-05.webp"
+        }
+      ]
+    },
+    {
+      "id": "lecture18-p003",
+      "page": 3,
+      "title": "Parallel heads and successive layers",
+      "kind": "concept",
+      "lectureId": "lecture18",
+      "sourceSha256": "110d3a08325f62087e8e70bba529b129c3267c589a20f0e36f05afb14a784872",
+      "authoringEntry": "teaching-v4-lecture18.json page 3",
+      "concepts": [
+        "next-word prediction",
+        "parallel heads",
+        "heads as experts",
+        "combined representations",
+        "successive layers",
+        "parallel versus successive processing"
+      ],
+      "words": 242,
+      "version3Words": 242,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture18/003.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/4ca533428958a074de04.png"
+        }
+      ]
+    },
+    {
+      "id": "lecture18-p004",
+      "page": 4,
+      "title": "A dynamical rule across time and depth",
+      "kind": "mechanism",
+      "lectureId": "lecture18",
+      "sourceSha256": "110d3a08325f62087e8e70bba529b129c3267c589a20f0e36f05afb14a784872",
+      "authoringEntry": "teaching-v4-lecture18.json page 4",
+      "concepts": [
+        "state and rule",
+        "interleaved position and velocity updates",
+        "feedback",
+        "Jordan state units",
+        "reused weights",
+        "depth as time",
+        "layer-specific weights"
+      ],
+      "words": 321,
+      "version3Words": 321,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture18/004.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/7e633a497674ff0f8597.png"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p004-stage-00.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p004-stage-01.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p004-stage-02.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p004-stage-03.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p004-stage-04.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p004-stage-05.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p004-stage-06.webp"
+        }
+      ]
+    },
+    {
+      "id": "lecture18-p005",
+      "page": 5,
+      "title": "One prediction task for different sequences",
+      "kind": "concept",
+      "lectureId": "lecture18",
+      "sourceSha256": "110d3a08325f62087e8e70bba529b129c3267c589a20f0e36f05afb14a784872",
+      "authoringEntry": "teaching-v4-lecture18.json page 5",
+      "concepts": [
+        "15 input vectors",
+        "x₁₆ prediction",
+        "words, frames, patches, amino acids",
+        "vectors as a common format"
+      ],
+      "words": 287,
+      "version3Words": 287,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture18/005.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/original/c0c83b8d56de0feb4318.png"
+        },
+        {
+          "type": "image",
+          "file": "assets/original/720182d232b8b83fc2a9.png"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p005-stage-00.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p005-stage-01.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p005-stage-02.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p005-stage-03.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p005-stage-04.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p005-stage-05.webp"
+        }
+      ]
+    },
+    {
+      "id": "lecture18-p006",
+      "page": 6,
+      "title": "Which sequences can be English words?",
+      "kind": "concept",
+      "lectureId": "lecture18",
+      "sourceSha256": "110d3a08325f62087e8e70bba529b129c3267c589a20f0e36f05afb14a784872",
+      "authoringEntry": "teaching-v4-lecture18.json page 6",
+      "concepts": [
+        "CVC syllables",
+        "onset and coda clusters",
+        "impossible twins",
+        "order mirrors around the vowel",
+        "syllable breaks",
+        "phonotactics"
+      ],
+      "words": 360,
+      "version3Words": 360,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture18/006.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p006-stage-00.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p006-stage-01.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p006-stage-02.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p006-stage-03.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p006-stage-04.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p006-stage-05.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p006-stage-06.webp"
+        }
+      ]
+    },
+    {
+      "id": "lecture18-p007",
+      "page": 7,
+      "title": "Guessing the next letter reveals phonotactic knowledge",
+      "kind": "concept",
+      "lectureId": "lecture18",
+      "sourceSha256": "110d3a08325f62087e8e70bba529b129c3267c589a20f0e36f05afb14a784872",
+      "authoringEntry": "teaching-v4-lecture18.json page 7",
+      "concepts": [
+        "next-letter prediction",
+        "constrained versus open continuations",
+        "impossible continuations",
+        "next-token prediction",
+        "GPT learning phonotactics"
+      ],
+      "words": 305,
+      "version3Words": 305,
+      "paragraphs": 4,
+      "originalImage": "assets/slides/lecture18/007.webp",
+      "originalAssets": [
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p007-stage-00.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p007-stage-01.webp"
+        },
+        {
+          "type": "image",
+          "file": "assets/slides/lecture18/stages/p007-stage-02.webp"
+        }
+      ]
+    },
+    {
+      "id": "lecture18-p008",
+      "page": 8,
+      "title": "Design an agentic system for English syllables",
+      "kind": "prompt",
+      "lectureId": "lecture18",
+      "sourceSha256": "110d3a08325f62087e8e70bba529b129c3267c589a20f0e36f05afb14a784872",
+      "authoringEntry": "teaching-v4-lecture18.json page 8",
+      "concepts": [],
+      "words": 0,
+      "version3Words": 0,
+      "paragraphs": 0,
+      "originalImage": "assets/slides/lecture18/008.webp",
+      "originalAssets": []
     }
   ],
   "metrics": {
-    "instructionalPages": 104,
-    "words": 22860,
-    "medianWords": 225.0,
+    "instructionalPages": 110,
+    "words": 24649,
+    "medianWords": 226.0,
     "minimumWords": 122,
     "maximumWords": 360,
     "quartiles": [
       208.0,
-      225.0,
-      246.0
+      226.0,
+      259.0
     ]
   },
   "medianRule": "The user requested a 200–250-word median, not a per-slide minimum. Shorter explanations remain where sufficient.",
-  "emptyPagesPreserved": 19,
+  "emptyPagesPreserved": 21,
   "sourceAndVisualsUnchanged": true
 }

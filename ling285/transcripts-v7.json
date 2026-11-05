@@ -2,7 +2,7 @@
   "id": "v7",
   "label": "Version 7 · Teaching notes (bulleted)",
   "revision": "2026-10-31-transcripts-v7",
-  "baseDataSha256": "25d65a7840aa72efcda917badc577f2847e880f9e6267e45c161babb76254868",
+  "baseDataSha256": "8864e033b08f01533b46518bb1293dd63eaaaee473d5676c8ab1d7c60efb2c28",
   "collections": {
     "lecture11": {
       "title": "Masses and Springs · Theory and Prediction",
@@ -4735,6 +4735,238 @@
           "teaching": []
         }
       ]
+    },
+    "lecture18": {
+      "title": "Neuron, Neural Networks, LLMs and Agents",
+      "sections": [
+        {
+          "id": "lecture18-p001",
+          "page": 1,
+          "title": "Neuron, neural networks, LLMs and agents",
+          "kind": "title",
+          "teaching": []
+        },
+        {
+          "id": "lecture18-p002",
+          "page": 2,
+          "title": "From a neuron to agents that communicate",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**A neuron takes a vector and returns one number.** Each input is multiplied by its weight, and the products are added to give the output. This weighted sum is an **inner product**. A neural network joins many such operations into layers, so one input vector becomes a **decision vector**, with a response for each possible answer.",
+              "children": [
+                "**A large language model takes many vectors and predicts what comes next.** Fifteen token vectors pass through five layers in the example. Each layer changes their representations through its weights, and the final output is the sixteenth vector, a **probability distribution** over the next token. The values express which continuations the model treats as more or less likely.",
+                "The drawn network uses layers of four, three, four and five units, while the language-model example processes fifteen input vectors through five layers."
+              ]
+            },
+            {
+              "text": "**An agentic system connects several LLMs into a graph.** The Outline model develops a plan, the Write model produces a draft, the Critic model evaluates it, the Revise model changes it, and the Final model produces the answer. The connection between Critic and Revise forms a loop, allowing a revision to be evaluated again.",
+              "children": [
+                "The agents communicate through **language**. One model’s written output becomes information another model can use, so the graph coordinates whole language models rather than individual neurons. The agents can speak to each other in English, while the models can also work in other human languages and computer languages."
+              ]
+            },
+            {
+              "text": "**Inference uses inner products, and learning uses SGD with dynamic programming.** Inference processes the current inputs with the learned weights. **Stochastic gradient descent**, or SGD, changes weights to reduce prediction error, while backpropagation uses **dynamic programming** to organize the backward calculation. These operations support the small network as well as the language models joined into the agentic graph.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p003",
+          "page": 3,
+          "title": "Parallel heads and successive layers",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "**Predicting the next word is difficult because the prediction depends on information spread through the sequence.** A language model therefore uses many layers of processing. Each layer receives representations of the input and changes them before passing them onward, giving the following layer more useful information for the prediction.",
+              "children": [
+                "**Within a layer, several heads work in parallel.** A head is one of the processing components that contributes to the layer’s representation. The heads are described as different experts because each can contribute a different part of the information the layer uses. They work alongside one another rather than waiting for one head to finish before another begins."
+              ]
+            },
+            {
+              "text": "**The layer brings the heads’ contributions together.** The result is an improved set of representations, written as **x**, for the sequence. A representation is the information carried by a vector about an input item. Combining several contributions lets that representation incorporate more than one head contributes on its own.",
+              "children": [
+                "**The next layer repeats the process with the representations it receives.** It has parallel heads whose contributions are combined again. The model therefore develops its representations through a succession of layers, rather than making its final prediction directly from the original input vectors.",
+                "The repeating groups of weights express the same parallel organization at every successive processing stage."
+              ]
+            },
+            {
+              "text": "**Heads and layers add different kinds of structure.** Heads provide parallel contributions within one processing stage, while layers provide successive stages that refine the vectors further. The prediction at the end depends on these contributions being combined within stages and developed across stages.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p004",
+          "page": 4,
+          "title": "A dynamical rule across time and depth",
+          "kind": "mechanism",
+          "teaching": [
+            {
+              "text": "**A dynamical system takes a state, applies a rule, and uses the resulting state as input again.** In the oscillator example, the state contains position **x** and velocity **v**. It begins with position one and velocity zero, and repeatedly updating those two quantities produces the changing motion.",
+              "children": [
+                "**Position and velocity take turns being updated.** The new position uses the old velocity, and the new velocity then uses that new position. The step size **h** determines how far the calculation advances at each update. Position traces a cosine-like oscillation while velocity follows a shifted oscillation, so a simple repeated rule builds an entire changing trajectory."
+              ]
+            },
+            {
+              "text": "**Jordan’s recurrent network also feeds its output back into its input.** Plan units and state units feed a hidden layer, which produces an output. That output is copied into the state units, and their small self-loops preserve a fading trace of earlier states. The weights are reused at each time step, allowing recent outputs to influence the next output in a sequence of speech movements.",
+              "children": [
+                "**In the LLM comparison, depth plays the role of time.** Fifteen vectors enter the first layer and are transformed by its weights. The resulting vectors enter the next layer, where another transformation takes place. Following one number upward through the layers gives a sequence of changing values, which can be drawn as a curve even though it is not the oscillator’s cosine."
+              ]
+            },
+            {
+              "text": "**The rules are organized differently in these systems.** The oscillator and Jordan network apply the same rule repeatedly as time advances. The LLM uses a separate set of weights at each layer, so its successive transformations follow the depth of the network. What connects the examples is the dependence of each new state on the state produced just before it.",
+              "children": []
+            },
+            {
+              "text": "The small stock-return graph traces Small, Medium and Large series over the same period. They fluctuate, rise and fall over the years, giving another example of quantities changing over time.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p005",
+          "page": 5,
+          "title": "One prediction task for different sequences",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The page starts with **15 vectors, x₁ to x₁₅**, an empty slot for **x₁₆**, and the question **vectors of what?**",
+              "children": [
+                "An LLM receives a sequence of vectors and predicts the next one.",
+                "Four reveals fill the same arrangement with four kinds of sequence."
+              ]
+            },
+            {
+              "text": "First, **a sentence cut into 15 words**.",
+              "children": [
+                "“The cat that the dog chased ran up the old tree and sat on the ___.”",
+                "Each vector stands for one word, and **x₁₆ is the missing word**.",
+                "Filling it in needs words far back in the sentence, since the cat is the one sitting."
+              ]
+            },
+            {
+              "text": "Next, **a spectrogram cut into 15 frames**, then **an image cut into 16 patches**.",
+              "children": [
+                "The spectrogram runs from 0 to 5 kHz up the side with time to the right, and **x₁₆ is the next frame**.",
+                "The image of a house, a tree and the sun is read row by row, and **x₁₆ is the missing bottom-right patch**."
+              ]
+            },
+            {
+              "text": "Last, **a protein, the insulin B chain**, read as **15 amino acids**.",
+              "children": [
+                "The letters are F V N Q H L C G S H L V E A L, drawn folding into a helix.",
+                "**x₁₆ is the next residue**, which is **Y**."
+              ]
+            },
+            {
+              "text": "**The LLM only ever sees vectors.**",
+              "children": [
+                "Words, sounds, pixels and molecules all become sequences of vectors.",
+                "So **one machine asks one question, what is x₁₆?**, whatever the source of the sequence."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p006",
+          "page": 6,
+          "title": "Which sequences can be English words?",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The page asks **which sequences can be English words**, in three rows.",
+              "children": [
+                "Row one has twenty **one-syllable words**, each a single consonant, a single vowel and a single consonant, such as Don, mat, sit, cup, fish and ring.",
+                "Consonants are dark, vowels red, and a silent e grey.",
+                "**A simple syllable in English can have a consonant, then a vowel, then a consonant.**"
+              ]
+            },
+            {
+              "text": "Row two adds **clusters**, groups of consonants.",
+              "children": [
+                "Clusters before the vowel are **onsets**, as in split, flat, black, glad and stop.",
+                "Clusters after the vowel are **codas**, as in desk, box, help, milk and lamp.",
+                "Each real word has a starred impossible twin, such as *sblit, *lfat, *bnack, *dlad, *tsop, *desb, *bokp, *hepl, *mikl and *lapm."
+              ]
+            },
+            {
+              "text": "Many twins use the same letters in the other order.",
+              "children": [
+                "flat and *lfat, help and *hepl, lamp and *lapm differ only in order.",
+                "**Order matters**, and the pattern mirrors around the vowel.",
+                "**Only certain sequences are allowed before the vowel and after the vowel.**"
+              ]
+            },
+            {
+              "text": "Row three has **words of many syllables**, with dots marking the breaks.",
+              "children": [
+                "ba·na·na, win·dow, pump·kin, nap·kin, At·lan·tic, ath·lete, ad·mit and spa·ghet·ti are real words.",
+                "t then l, th then l, and d then m are fine across a break, but cannot start a word, so *tlantic, *thlete and *dmit are impossible.",
+                "ng can end a syllable, as in ring, but never start one, so *ngapkin is impossible."
+              ]
+            },
+            {
+              "text": "**A long word is a chain of syllables**, each obeying the same rules.",
+              "children": [
+                "**t·l is fine across a break, but tl cannot start a syllable.**",
+                "This knowledge of allowed sound sequences is **phonotactics**, and English speakers have it without being taught."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p007",
+          "page": 7,
+          "title": "Guessing the next letter reveals phonotactic knowledge",
+          "kind": "concept",
+          "teaching": [
+            {
+              "text": "The pop quiz asks how **phonotactic knowledge can be revealed through GPT learning**.",
+              "children": [
+                "Each item is the start of an English word, and the task is to **guess the next letter**.",
+                "The starts are ra_, sp_, k_, skr_, m_, bram_, b_, f_ and sh_.",
+                "People agree quickly, and how much they agree changes from item to item."
+              ]
+            },
+            {
+              "text": "After a vowel the choices open up.",
+              "children": [
+                "After **ra_**, letters like t, n, r and l are all likely, since **after a vowel almost anything** can follow."
+              ]
+            },
+            {
+              "text": "At the start of a word the choices narrow.",
+              "children": [
+                "After **sp_**, **b_** and **f_**, only **l, r or a vowel**, never *spn, *bn or *fn.",
+                "After **k_**, a vowel or **n** as in knee, never *kt.",
+                "After **sh_**, a vowel or **r** as in shrimp, never *shb."
+              ]
+            },
+            {
+              "text": "Some starts leave almost no choice.",
+              "children": [
+                "After **skr_** and after **m_**, only a vowel, never *skrl or *mb.",
+                "After **bram_**, b is nearly forced, as in bramble, though a new syllable could also start there."
+              ]
+            },
+            {
+              "text": "**Guessing the next letter is predicting x₁₆.**",
+              "children": [
+                "A **GPT trained only on this game learns English sounds and spelling**, because it must match these patterns.",
+                "Its predicted distribution is broad after ra_ and sharply peaked after skr_."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lecture18-p008",
+          "page": 8,
+          "title": "Design an agentic system for English syllables",
+          "kind": "prompt",
+          "teaching": []
+        }
+      ]
     }
   },
   "visualPresentation": {
@@ -4935,10 +5167,10 @@
   "writingReference": "PSYC301 Module II and LING406 Version 7",
   "guidance": "Study Studio Prompt 1 (updated). Bolded main bullets of connected read-aloud sentences with nested sub-bullets for each mechanism step, demonstration and figure value. Key terms defined where they appear.",
   "metrics": {
-    "instructionalPages": 104,
-    "words": 24912,
-    "averageWords": 240,
-    "medianWords": 238.5,
-    "maximumWords": 284
+    "instructionalPages": 110,
+    "words": 26488,
+    "averageWords": 241,
+    "medianWords": 240.5,
+    "maximumWords": 321
   }
 }
