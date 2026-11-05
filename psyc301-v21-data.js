@@ -6,7 +6,8 @@ window.PSYC301_V21 = {
   9,
   10,
   11,
-  12
+  12,
+  13
  ],
  "scripts": {
   "6:1": [],
@@ -1992,6 +1993,372 @@ window.PSYC301_V21 = {
     "text": "Anger followed the opposite pattern. For sacred value holders, expected anger **rose** when the taboo deal came with incentives or sanctions, while anger stayed low for everyone else.",
     "children": [
      "Material incentives and penalties can backfire when a value is held as sacred."
+    ]
+   }
+  ],
+  "13:1": [],
+  "13:2": [
+   {
+    "text": "Emotions are part of good decision making. People with damage to part of the **prefrontal cortex** who have **flattened emotions** make worse decisions, not better ones.",
+    "children": [
+     "Feeling less does not make a person more rational."
+    ]
+   },
+   {
+    "text": "**Anxious people** steer away from choices that could lead to a big loss, which is called **risk avoidance**. **Optimistic people** tend to ignore bad news and focus on the good, and too much optimism leads to poor decisions.",
+    "children": [
+     "Each emotion changes which information a person pays attention to."
+    ]
+   }
+  ],
+  "13:3": [
+   {
+    "text": "**Expected emotions** are the feelings we predict we will have about an outcome. They help decide how much risk we take, because expecting to feel terrible after a loss makes us avoid that risk.",
+    "children": [
+     "This is one source of **risk aversion**, the tendency to avoid risks."
+    ]
+   },
+   {
+    "text": "The trouble is that we predict our feelings badly. We expect a loss to hurt more than an equal gain would help, and that belief makes us even more cautious.",
+    "children": [
+     "We end up passing on risks that would have been reasonable to take."
+    ]
+   }
+  ],
+  "13:4": [
+   {
+    "text": "**Kermer and colleagues** gave people some money and told them a coin flip would decide whether they won a bit more or lost a little. Before the flip, people expected the loss to hurt about twice as much as the win would help, even though the loss was the smaller amount.",
+    "children": [
+     "Their predictions were lopsided toward the loss."
+    ]
+   },
+   {
+    "text": "After the flip, losing hurt far less than they had predicted. We have **coping mechanisms** that kick in after a loss, but we leave them out when we imagine how we will feel.",
+    "children": [
+     "That is why people overestimate how bad a loss will feel."
+    ]
+   }
+  ],
+  "13:5": [
+   {
+    "text": "**Incidental emotions** are feelings that have nothing to do with the decision itself. They can come from a person’s usual temperament, from something that just happened, or from the surroundings, such as the weather.",
+    "children": [
+     "They still find their way into the choice."
+    ]
+   },
+   {
+    "text": "**Simonsohn** found that admissions decisions weighed applicants’ academic records more heavily on cloudy days than on sunny days. In a second study, students visiting a highly rated university were more likely to enroll if they had visited on a cloudy day.",
+    "children": [
+     "The weather said nothing about the applicants or the school, yet it shaped big decisions."
+    ]
+   }
+  ],
+  "13:6": [
+   {
+    "text": "**Lerner and colleagues** put people in a sad, disgusted or neutral mood with a short film clip, then had them set prices for a set of highlighters. Some prices were for selling the highlighters, and others were for buying them.",
+    "children": [
+     "The clips had nothing to do with highlighters."
+    ]
+   },
+   {
+    "text": "Disgust made people value the highlighters less, so they asked less to sell and offered less to buy. Sadness lowered the selling price but raised the buying price above the neutral group.",
+    "children": [
+     "A mood from something unrelated changed how much the same object seemed worth."
+    ]
+   }
+  ],
+  "13:7": [
+   {
+    "text": "Doctors judged whether a hypothetical patient should have a **cesarean section**, a surgical delivery of a baby. The patient was always the same, but some doctors read four serious cases first, some read four routine cases first, and some read the patient first.",
+    "children": [
+     "Only what came before the patient changed."
+    ]
+   },
+   {
+    "text": "Doctors who had just read four routine cases recommended a cesarean significantly more often. The earlier cases set the standard the same patient was judged against.",
+    "children": [
+     "Even experts are swayed by the context of a decision."
+    ]
+   }
+  ],
+  "13:8": [
+   {
+    "text": "How choices are presented changes what people choose. When people must actively sign up to be organ donors, fewer than a third consent, but when they are donors unless they opt out, nearly everyone consents.",
+    "children": [
+     "The choice is the same, and only the default differs."
+    ]
+   },
+   {
+    "text": "This happens because of the **status quo bias**, the tendency to do nothing when a decision is hard. In the story **The International Community**, a chef asks a group of birds what sauce they want to be eaten with and tells the one bird that does not want to be eaten that this is out of the question.",
+    "children": [
+     "The only choice ever offered was the sauce."
+    ]
+   }
+  ],
+  "13:9": [
+   {
+    "text": "The **framing effect** is when the way a choice is worded changes the decision. The wording can point people toward what they might gain or what they might lose.",
+    "children": [
+     "The outcomes themselves can stay exactly the same."
+    ]
+   },
+   {
+    "text": "**Tversky and Kahneman** found that when a choice is framed as gains, people play it safe and take the sure thing. When the same choice is framed as losses, people take the gamble instead.",
+    "children": [
+     "Wording alone can flip someone from avoiding risk to seeking it."
+    ]
+   }
+  ],
+  "13:10": [],
+  "13:11": [
+   {
+    "text": "A disease is expected to kill six hundred people, and two programs are described in terms of lives saved. One program saves two hundred people for sure, while the other has a one in three chance of saving everyone and a two in three chance of saving no one.",
+    "children": [
+     "This is the gain frame."
+    ]
+   },
+   {
+    "text": "Most people, about seven in ten, chose the sure thing. They locked in two hundred lives rather than risk saving no one.",
+    "children": [
+     "In a gain frame, people avoid risk."
+    ]
+   }
+  ],
+  "13:12": [
+   {
+    "text": "Now the same choice is described in terms of deaths. One program means four hundred people die for sure, while the other has a one in three chance that no one dies and a two in three chance that everyone dies.",
+    "children": [
+     "This is the loss frame."
+    ]
+   },
+   {
+    "text": "This time most people, about four in five, chose the gamble. The sure option is identical to before, since saving two hundred of six hundred means four hundred die, so only the wording changed.",
+    "children": [
+     "That reversal is the framing effect."
+    ]
+   }
+  ],
+  "13:13": [
+   {
+    "text": "**Neuroeconomics** combines psychology, neuroscience and economics to study how people make decisions. It looks at the choice, the thinking behind it and the brain activity that goes with it.",
+    "children": [
+     "Each field covers a different side of the same decision."
+    ]
+   },
+   {
+    "text": "One of its findings is that emotions shape decisions, and those emotions are tied to activity in specific areas of the brain. Even a choice about money can depend on how a person feels about it.",
+    "children": [
+     "Emotion is built into the decision, not added on top of it."
+    ]
+   }
+  ],
+  "13:14": [
+   {
+    "text": "**Sanfey and coworkers** used the **ultimatum game**, in which a proposer gets ten dollars and offers the responder some way to split it. The responder can accept the split or reject it, and if the responder rejects it, neither player gets anything.",
+    "children": [
+     "A rejection costs both players."
+    ]
+   },
+   {
+    "text": "According to utility theory, the rational decision for the responder is to accept any offer at all. Even a single dollar is worth more than the nothing that comes from rejecting.",
+    "children": [
+     "A purely rational responder would never turn down free money."
+    ]
+   }
+  ],
+  "13:15": [
+   {
+    "text": "People played many rounds, some against human partners and some against a computer. Fair offers were accepted almost every time, but very unfair offers from humans were often rejected, while the same offers from a computer were accepted much more often.",
+    "children": [
+     "People did not behave the way utility theory predicts."
+    ]
+   },
+   {
+    "text": "People rejected unfair offers because they felt angry, and they were less angry at a computer. Those who showed more activity in the **right anterior insula**, an area tied to emotion, rejected more offers.",
+    "children": [
+     "Emotion led people to give up money rather than accept an unfair deal."
+    ]
+   }
+  ],
+  "13:16": [
+   {
+    "text": "**Deductive reasoning** is deciding whether a conclusion logically follows from its **premises**, the statements we start from. A **syllogism**, introduced by **Aristotle**, is the basic form, with two premises and a conclusion.",
+    "children": [
+     "The only question is whether the conclusion follows."
+    ]
+   },
+   {
+    "text": "A **categorical syllogism** relates two categories using all, no or some. All birds are animals, and all animals eat food, so all birds eat food.",
+    "children": [
+     "Birds fit inside animals, and animals fit inside things that eat food."
+    ]
+   }
+  ],
+  "13:17": [
+   {
+    "text": "A syllogism is **valid** if its conclusion follows from its premises, and if a valid syllogism has true premises, its conclusion must be true. Validity is about the form of the reasoning, while truth is about whether the statements match the world.",
+    "children": [
+     "The two are easy to mix up."
+    ]
+   },
+   {
+    "text": "All birds are animals, all animals have four legs, so all birds have four legs. That reasoning is valid, because it has the same form as the first bird example, but its conclusion is false because one premise is false.",
+    "children": [
+     "A valid argument can still reach a false conclusion."
+    ]
+   }
+  ],
+  "13:18": [
+   {
+    "text": "Because validity and truth are different, it is hard to judge reasoning. All of the students are tired and some tired people are irritable, but it does not follow that some of the students are irritable.",
+    "children": [
+     "The irritable tired people might not include any students."
+    ]
+   },
+   {
+    "text": "This leads to **belief bias**, the tendency to call a syllogism valid when its conclusion sounds believable. Most people accept invalid reasoning as long as the conclusion seems true.",
+    "children": [
+     "A believable conclusion hides a broken argument."
+    ]
+   }
+  ],
+  "13:19": [
+   {
+    "text": "There is no easy method for checking validity. In the pool table problem, a black ball is directly above the cue ball, the green ball is to the cue ball’s right, and a red ball sits between them.",
+    "children": [
+     "You move so that the red ball is between you and the black ball."
+    ]
+   },
+   {
+    "text": "The cue ball ends up to the **left** of your line of sight. Most people work this out by imagining the table and where they are standing.",
+    "children": [
+     "This ability to imagine situations is the basis of Johnson-Laird’s mental model approach."
+    ]
+   }
+  ],
+  "13:20": [
+   {
+    "text": "In the **mental model approach** proposed by **Johnson-Laird**, a **mental model** is a specific situation we imagine to help judge whether a syllogism is valid. We build a model of the situation, draw a tentative conclusion and then look for exceptions that would prove it false.",
+    "children": [
+     "Searching for exceptions is the key step."
+    ]
+   },
+   {
+    "text": "A conclusion is valid only if no model of the premises can prove it false. Even one situation where the premises are true but the conclusion is not makes it invalid.",
+    "children": [
+     "A single counterexample is enough to sink it."
+    ]
+   }
+  ],
+  "13:21": [
+   {
+    "text": "**Conditional syllogisms** start with a premise of the form if p, then q, where p is a condition and q is what follows from it. There are four major types, and they differ in the second premise and the conclusion.",
+    "children": [
+     "Two of the types are valid and two are not."
+    ]
+   },
+   {
+    "text": "The valid types either confirm that p happened or deny that q happened. The invalid types either confirm that q happened or deny that p happened.",
+    "children": [
+     "People find some of the four much harder to judge than others."
+    ]
+   }
+  ],
+  "13:22": [
+   {
+    "text": "In **modus ponens**, if I study, I will get a good grade, and I studied, so I will get a good grade. The condition happened, so what follows from it must happen too.",
+    "children": [
+     "The reasoning moves forward, in the same direction as the rule."
+    ]
+   },
+   {
+    "text": "This form is valid, and nearly everyone judges it correctly. It is the easiest of the four types.",
+    "children": [
+     "Reasoning forward from a condition feels natural to people."
+    ]
+   }
+  ],
+  "13:23": [
+   {
+    "text": "In **modus tollens**, if I study, I will get a good grade, and I did not get a good grade, so I did not study. If studying always brings a good grade, then no good grade means no studying.",
+    "children": [
+     "The reasoning moves backward from a result that did not happen."
+    ]
+   },
+   {
+    "text": "This form is just as valid as modus ponens, but only a little more than half of people judge it correctly. Working backward from something missing is harder.",
+    "children": [
+     "Valid does not always mean easy."
+    ]
+   }
+  ],
+  "13:24": [
+   {
+    "text": "In the third type, if I study, I will get a good grade, and I got a good grade, so I studied. This is **not valid**, because the rule never says studying is the only way to get a good grade.",
+    "children": [
+     "Fewer than half of people judge it correctly."
+    ]
+   },
+   {
+    "text": "Swapping in other content makes the mistake obvious. If I live in Tucson, then I live in Arizona, and I live in Arizona, but that does not mean I live in Tucson.",
+    "children": [
+     "Plenty of people live in Arizona without living in Tucson."
+    ]
+   }
+  ],
+  "13:25": [
+   {
+    "text": "In the fourth type, if I study, I will get a good grade, and I did not study, so I did not get a good grade. This is **not valid**, because the rule says nothing about what happens without studying.",
+    "children": [
+     "A good grade could come some other way."
+    ]
+   },
+   {
+    "text": "Fewer than half of people judge this form correctly, just like the third type. Across all four, the valid forms are judged correctly more often than the invalid ones.",
+    "children": [
+     "The invalid forms trip up most people."
+    ]
+   }
+  ],
+  "13:26": [
+   {
+    "text": "In the **Wason four-card problem**, the cards show E, K, 4 and 7, and the rule says that if one side has a vowel, the other side has an even number. The task is to turn over the fewest cards needed to test the rule.",
+    "children": [
+     "The E clearly needs to be turned over."
+    ]
+   },
+   {
+    "text": "The answer is the E and the 7, since an odd number behind the E or a vowel behind the 7 would break the rule. Close to half of people pick the 4, which can never break the rule, and very few pick the 7.",
+    "children": [
+     "People check cards that could confirm the rule instead of cards that could break it."
+    ]
+   }
+  ],
+  "13:27": [
+   {
+    "text": "The **falsification principle** says that to test a rule, you have to look for the cases that could prove it false. Most people fail to do this with the letters and numbers.",
+    "children": [
+     "That is why so few choose the 7."
+    ]
+   },
+   {
+    "text": "When the rule is about everyday life, such as if someone is drinking beer, then they are twenty-one, most people get it right. The cards to check are the beer drinker and the sixteen-year-old, because an underage drinker is the only case that breaks the rule.",
+    "children": [
+     "The logic is the same, but familiar content makes it far easier."
+    ]
+   }
+  ],
+  "13:28": [
+   {
+    "text": "A **permission schema** is a familiar rule of the form if a condition is met, then something is allowed. Being twenty-one is the condition, and drinking beer is what it allows.",
+    "children": [
+     "People already know how rules like this work."
+    ]
+   },
+   {
+    "text": "The concrete versions are easier because they call up a permission schema, so people know what to check. Context matters a great deal, but familiarity on its own does not always explain the improvement.",
+    "children": [
+     "The setting of the problem shapes how well people reason about it."
     ]
    }
   ]

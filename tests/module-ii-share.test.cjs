@@ -15,10 +15,10 @@ test('friend link provides only Module II teaching and tools with independent pr
   assert.equal(await page.title(),'PSYC301 · Module II · Study Studio');
   assert.equal(await page.locator('[data-course-select],#examOneArchive,[data-explanation-version]').count(),0);
   assert.equal(await page.locator('#workspaceNav [data-view^="m2"]').count(),8);
-  assert.equal(await page.locator('#moduleNav [data-module]').count(),5);
+  assert.equal(await page.locator('#moduleNav [data-module]').count(),6);
   assert.equal(await page.evaluate(()=>state.personalNotes['6:2']),undefined);
   assert.equal(await page.evaluate(()=>state.missed.length),0);
-  assert.deepEqual(await page.evaluate(()=>M.map(m=>m.id)),[6,9,10,11,12]);
+  assert.deepEqual(await page.evaluate(()=>M.map(m=>m.id)),[6,9,10,11,12,13]);
   for(const tool of ['m2guide','m2core','m2experiments','m2combined','m2test','m2lectures','m2missed','m2sources']){
    await page.click('[data-view="'+tool+'"]');
    assert((await page.locator('#content h1').count())>0,tool);
@@ -27,10 +27,10 @@ test('friend link provides only Module II teaching and tools with independent pr
   }
   await page.click('[data-view="m2test"]');await page.click('[data-start="m2all"]');
   assert.equal(await page.evaluate(()=>quiz.items.length),100);
-  assert.deepEqual(await page.evaluate(()=>secondHalf.modules.map(id=>quiz.items.filter(q=>q.module===id).length)),[20,20,20,20,20]);
+  {const counts=await page.evaluate(()=>secondHalf.modules.map(id=>quiz.items.filter(q=>q.module===id).length));assert.equal(counts.length,6);assert.equal(counts.reduce((a,b)=>a+b,0),100);assert(Math.max(...counts)-Math.min(...counts)<=1,counts.join());}
   await page.click('#revealAnswer');await page.click('#uncertain');
   await page.click('[data-view="m2missed"]');assert.equal(await page.evaluate(()=>state.missed.length),1);
-  for(const id of [6,9,10,11,12]){
+  for(const id of [6,9,10,11,12,13]){
    await page.click('[data-module="'+id+'"]');
    assert.equal(await page.evaluate(id=>state.explanationVersions[id],id),'18');
    assert.equal(await page.locator('#content .section').count(),await page.evaluate(id=>moduleBy(id).sections.length,id));

@@ -6,7 +6,8 @@ window.PSYC301_V6 = {
     9,
     10,
     11,
-    12
+    12,
+    13
   ],
   "scripts": {
     "6:1": [],
@@ -752,6 +753,142 @@ window.PSYC301_V6 = {
       "Their **anticipated anger if the government accepted** was highest with the financial incentive. It was also elevated with sanctions compared with the baseline. Payment therefore accompanied both lower approval and a stronger expected negative public response.",
       "Participants without the sacred commitment had much higher approval and lower anger across the energy conditions. Their ratings changed relatively little among the offers. The large separation concerned the status of nuclear energy as a value.",
       "Material benefits and costs therefore interacted with that commitment. The results do not support treating money as an automatic way to purchase acceptance of a sacred compromise. The unmodified agreement received the highest approval and lowest anger within the sacred-value group, despite offering neither the added funds nor the sanctions threat."
+    ],
+    "13:1": [],
+    "13:2": [
+      "**Emotions** are part of how decisions get made. **People with damage to an area of their prefrontal cortex, who suffer from flattened emotions, have impaired decision making.** When emotion is weakened, choices get worse rather than better.",
+      "**Anxious people tend to avoid making decisions that could potentially lead to large negative consequences.** This pattern is called **risk avoidance**. An option that carries the chance of a large loss feels too threatening, so it is passed up.",
+      "**Optimistic people are more likely to ignore negative information and focus on positive information.** **Too much optimism can lead to poor decision making**, because the negative side of a choice is left out. A decision made without the whole picture is more likely to go wrong."
+    ],
+    "13:3": [
+      "**Expected emotions** are emotions that people **predict** they will feel concerning an outcome. Before choosing, a person imagines how a good result or a bad result would feel. Those predicted feelings then shape the choice.",
+      "Expected emotions are one of the determinants of **risk aversion**, the tendency to avoid taking risks. Someone who expects to feel very bad after a loss is less willing to accept a chance of that loss.",
+      "**People inaccurately predict their emotions.** In particular, people tend to believe that **a particular loss will have a greater impact than a gain of the same size**. That belief increases risk aversion, since losses are expected to hurt more than equal gains would help."
+    ],
+    "13:4": [
+      "**Kermer and colleagues (2006)** compared people’s **expected emotions** with their **actual emotions**. Participants were given **$5** and told that a coin flip would decide whether they **won an additional $5 or lost $3**. They rated their happiness before the experiment started, which gave each person a baseline.",
+      "Participants then predicted how they would feel if they won or lost. They expected losing $3 to drop their happiness by about 4 points and winning $5 to raise it by about 2 points. The smaller loss was expected to matter about twice as much as the larger gain.",
+      "After the flip, losing lowered happiness by only about 1 point, and winning raised it by about 1.2 points. People **overestimated their negative feeling**.",
+      "We usually have **coping mechanisms** that get activated after a loss, but we do not consider them when predicting emotions. Those coping mechanisms are why the real loss felt much milder than expected."
+    ],
+    "13:5": [
+      "**Incidental emotions** are emotions that are **not specifically related to decision-making**. They may come from a person’s general disposition or personality, from some recent experience, or from the general environment or surroundings. They have nothing to do with the choice, yet they can still change it.",
+      "**Simonsohn (2007)** analyzed university admissions decisions and found that applicants’ **academic attributes were more heavily weighted on cloudy days than on sunny days**. The weather changed what the decision makers paid attention to.",
+      "**Simonsohn (2009)** found that prospective students visiting an academically highly rated university were **more likely to enroll if they had visited the campus on a cloudy day**. The weather during a visit is unrelated to the school, but it still carried into a major decision."
+    ],
+    "13:6": [
+      "**Lerner and colleagues (2004)** had participants watch one of three clips. A clip of **a person dying** created the **sad** condition, a clip of **a person using a dirty toilet** created the **disgust** condition, and a clip of **fish at the Great Barrier Reef** was **neutral**.",
+      "Participants were then given a set of highlighters and asked to set two prices. One was the price at which they would be willing to **sell** the highlighters, and the other was the price at which they would be willing to **buy** them.",
+      "For selling, the neutral group asked about $4.50, the disgust group about $2.70 and the sad group about $3.00. For buying, the neutral group offered about $3.50, the disgust group about $3.00 and the sad group about $4.50. Disgust lowered both prices, while sadness lowered the selling price and raised the buying price.",
+      "The clips had nothing to do with highlighters. Their effect on price means that **a person’s mood can influence decision making**."
+    ],
+    "13:7": [
+      "**Decisions can depend on the context within which they are made.** Physicians were given a hypothetical test case of a possible candidate for **cesarean section**, a surgical delivery of a baby. The test case stayed the same in three different contexts.",
+      "In the **control** context, the test case was presented first. In the **serious previous cases** context, it came after four cases with serious complications. In the **not serious previous cases** context, it came after four fairly routine cases.",
+      "**Significantly more doctors recommended cesarean after reading about non-serious cases first.** Since the test case never changed, the cases read before it changed the recommendation."
+    ],
+    "13:8": [
+      "**Decisions depend on how choices are presented.** In an **opt-in procedure**, a person must take an active step to become an organ donor, and countries with opt-in procedures have **less than a 28% consent rate**. In an **opt-out procedure**, a person is a donor unless they request not to be, and these countries have **over a 99% consent rate**.",
+      "The **status quo bias** is the tendency to **do nothing when faced with a difficult decision**. Under opt-in, doing nothing means not donating, and under opt-out, doing nothing means donating. That is why the two consent rates are so far apart.",
+      "In the story **The International Community**, a chicken, a duck, a turkey, a pheasant, a quail and a partridge are summoned to a summit, where the king’s chef asks what sauce they would like to be eaten with. When one bird says it does not want to be eaten at all, the chef replies that this is out of the question. The only choice the birds are given is the sauce."
+    ],
+    "13:9": [
+      "The **framing effect** means that decisions are influenced by **how a decision is stated**. The statement can highlight one aspect of the situation, such as what might be gained or what might be lost. The facts can stay the same while the focus changes.",
+      "**Tversky and Kahneman (1981)** found that when situations are framed in terms of **gains**, people tend toward a **risk-aversion strategy** and prefer the sure option. When situations are framed in terms of **losses**, people tend toward a **risk-taking strategy** and prefer the gamble.",
+      "The same person can switch between avoiding risk and taking risk depending only on the wording. Framing changes the decision without changing the outcomes being chosen between."
+    ],
+    "13:10": [],
+    "13:11": [
+      "In the **gain frame**, a disease is expected to kill **600 people**, and two programs to combat it have been proposed. With **Program A**, **200 people will be saved**. With **Program B**, there is a **1/3 probability that 600 people will be saved** and a **2/3 probability that no people will be saved**.",
+      "Program A is a sure outcome, while Program B is a gamble. **72% chose Program A**, and 28% chose Program B.",
+      "When the outcome is described as lives saved, most people take the certain result. That preference matches the risk-aversion strategy that a gain frame encourages."
+    ],
+    "13:12": [
+      "In the **loss frame**, the same disease is expected to kill 600 people. With **Program C**, **400 people will die**. With **Program D**, there is a **1/3 probability that no one will die** and a **2/3 probability that 600 people will die**.",
+      "This time **78% chose Program D**, the gamble, and 22% chose Program C. Most people now accepted the risk.",
+      "Program C has the same outcome as Program A, since saving 200 of 600 people means that 400 die. Program D is the same gamble as Program B. Only the wording changed, so the switch from the sure option to the gamble is the **framing effect**."
+    ],
+    "13:13": [
+      "**Neuroeconomics** combines research from **psychology, neuroscience and economics**. It studies decisions about value together with the brain activity that goes with them.",
+      "One finding is that **decisions are influenced by emotions**, and those emotions are **associated with activity in specific areas of the brain**. Emotion is therefore part of the decision process, and its role can be traced in the brain.",
+      "A choice that looks purely economic, such as whether to accept an amount of money, can depend on how the person feels about it."
+    ],
+    "13:14": [
+      "**Sanfey and coworkers (2003)** used the **ultimatum game**, which has two players, a **proposer** and a **responder**. The proposer gets **$10** and makes an offer to the responder about how the money should be split.",
+      "The responder can **accept or reject** the offer. If the responder rejects it, **neither player receives anything**. A rejection therefore costs both players money.",
+      "According to **utility theory**, the rational decision for the responder is to **accept any offer**. Utility theory judges a choice by the value of its outcome, and any offer, even $1, is worth more than the nothing that comes from rejecting. The game puts that rational choice against fairness."
+    ],
+    "13:15": [
+      "In **Sanfey’s experiment**, participants played **20 separate games**, **10 with human partners** and **10 with computer partners**. Even offers of $5 and $5 were accepted about 100% of the time, and $7 and $3 offers about 95%, from both kinds of partner.",
+      "Lower offers split the partners apart. An $8 and $2 offer was accepted about 53% of the time from a human and about 85% from a computer, and a $9 and $1 offer about 37% from a human and about 68% from a computer.",
+      "Participants **often rejected low offers because they became angry that the offers were unfair**, and they were **less angry with an unfair computer**.",
+      "People with **more activation of the right anterior insula**, an area connected with emotional states, were **more likely to reject more offers**. **Emotion is important in decision-making.**"
+    ],
+    "13:16": [
+      "**Deductive reasoning** is determining whether a conclusion **logically follows from premises**. A premise is a statement the reasoning starts from.",
+      "A **syllogism** is the basic form of deductive reasoning, introduced by **Aristotle**. It has **two statements called premises** and a **third statement called the conclusion**.",
+      "A **categorical syllogism** describes the relation between two categories using **all, no or some**. In the example, all birds are animals, and all animals eat food, so all birds eat food. Birds fall inside animals, and animals fall inside things that eat food."
+    ],
+    "13:17": [
+      "A syllogism is **valid** if its conclusion follows logically from its two premises. **If the two premises of a valid syllogism are true, its conclusion must be true.**",
+      "**Validity** should not be confused with **truth**. All birds are animals, all animals have four legs, so all birds have four legs. That syllogism is **valid**, because it has the same form as the first example, even though its conclusion is false.",
+      "Validity is about whether the conclusion follows from the premises. If it does and the premises are true, the conclusion must be true. A false premise can still lead a valid syllogism to a false conclusion."
+    ],
+    "13:18": [
+      "The difference between validity and truth makes it hard to judge whether reasoning is logical. **Valid syllogisms can result in false conclusions**, and **syllogisms can be invalid even though each premise and the conclusion seem reasonable**.",
+      "All of the students are tired, some tired people are irritable, so some of the students are irritable. Every statement sounds reasonable, but the syllogism is **not valid**, because the conclusion does not follow.",
+      "People make many errors because good reasoning and truth are not the same thing. **Belief bias** is the tendency to think a syllogism is valid if its **conclusion is believable**. **71%** of participants judged invalid syllogisms with believable conclusions as valid."
+    ],
+    "13:19": [
+      "**There is no easy method for determining whether a syllogism is valid or invalid.** One way people work out what follows is to picture the situation.",
+      "In the pool table problem, a black ball is directly above the cue ball, the green ball is to the right of the cue ball, and a red ball is between them. The speaker moves so that the red ball is between the speaker and the black ball, and the task is to say on which side of the speaker’s line of sight the cue ball lies.",
+      "The answer is that the cue ball is to the **left** of the line of sight. Picturing the table puts the black ball above the cue ball, with the red ball and then the green ball to the cue ball’s right. Standing so the red ball blocks the black ball means looking past the red ball toward the black ball, and from there the cue ball sits off to the left.",
+      "**Most people solve this by imagining the way the balls are arranged on the pool table.** This ability to imagine situations is the basis of **Johnson-Laird’s** proposal that people use **mental models** in deductive reasoning."
+    ],
+    "13:20": [
+      "In the **mental model approach (Johnson-Laird, 1999)**, a **mental model** is a specific situation represented in a person’s mind that can help determine the validity of syllogisms. The person reasons from a picture of what the premises describe.",
+      "The person creates a model of the situation, generates tentative conclusions about the model, looks for exceptions to falsify the model, and then determines the validity of the syllogism. Looking for exceptions means searching for a case where the premises are true but the conclusion is false.",
+      "**A conclusion is valid only if it cannot be refuted by any model of the premises.** One model that fits the premises but not the conclusion is enough to show that the conclusion does not follow."
+    ],
+    "13:21": [
+      "**Conditional syllogisms** have two premises and a conclusion, and the first premise has the form **if p, then q**. The letter p stands for a condition, and q stands for what follows when the condition is met.",
+      "There are **four major types** of conditional syllogism. They share the first premise and differ in the second premise, which is p, not q, q or not p, and in the conclusion drawn from it.",
+      "Two of the types are valid and two are not, and people judge some of them correctly far more often than others."
+    ],
+    "13:22": [
+      "**Conditional syllogism 1** is **modus ponens**. If I study, I’ll get a good grade. I studied. Therefore, I’ll get a good grade.",
+      "In letters, the second premise is p, and the conclusion is therefore q. Because the condition is met, what follows from it must follow too.",
+      "This syllogism is **valid**, and **97%** of participants judged it correctly. It is the easiest of the four types to evaluate."
+    ],
+    "13:23": [
+      "**Conditional syllogism 2** is **modus tollens**. If I study, I’ll get a good grade. I didn’t get a good grade. Therefore, I didn’t study.",
+      "In letters, the second premise is not q, and the conclusion is therefore not p. If studying always leads to a good grade, then missing the good grade means the studying did not happen.",
+      "This syllogism is **valid**, but only **60%** of participants judged it correctly. It is as valid as modus ponens, yet much harder for people to evaluate."
+    ],
+    "13:24": [
+      "In **conditional syllogism 3**, if I study, I’ll get a good grade. I got a good grade. Therefore, I studied. In letters, the second premise is q, and the conclusion is therefore p.",
+      "This syllogism is **not valid**, and only **40%** of participants judged it correctly. The first premise does not say that studying is the only way to get a good grade.",
+      "The same form with other content makes the problem clear. If I live in Tucson, then I live in Arizona. I live in Arizona. Therefore, I live in Tucson. A person can live in Arizona without living in Tucson, so the conclusion does not follow."
+    ],
+    "13:25": [
+      "In **conditional syllogism 4**, if I study, I’ll get a good grade. I didn’t study. Therefore, I didn’t get a good grade. In letters, the second premise is not p, and the conclusion is therefore not q.",
+      "This syllogism is **not valid**, and only **40%** of participants judged it correctly. The first premise says nothing about what happens without studying, and a good grade could come about some other way.",
+      "Across the four types, the valid forms were judged correctly at 97% and 60%, and the invalid forms at 40% each."
+    ],
+    "13:26": [
+      "The **Wason four-card problem** tests the effect of using real-world items in a conditional-reasoning problem. The cards read **E, K, 4 and 7**. The task is to turn over the minimum number of cards needed to test the rule that if there is a vowel on one side, there is an even number on the other side.",
+      "**E needs to be turned over.** **46%** of participants said that 4 needed to be turned over, which is an error, and **only 7%** said that 7 needed to be turned over, which is correct.",
+      "A 7 with a vowel on its other side would break the rule, so it is a real test. A 4 cannot break the rule no matter what is on its back, and K is not a vowel, so the answer is to turn over the E and the 7."
+    ],
+    "13:27": [
+      "The **falsification principle** says that **to test a rule, you must look for situations that falsify the rule**. To falsify a rule is to prove that it is false. **Most participants fail to do this**.",
+      "**When the problem is stated in concrete everyday terms, correct responses greatly increase.** In the concrete version, the rule is if drinking beer, then 21 years old, and the cards read beer, soda, 16 years old and 21 years old.",
+      "**73%** of participants answered the concrete version correctly. Its logical form is the same as the vowel and number rule, but the items are familiar. Following the falsification principle, the cards to turn over are **beer** and **16 years old**, because someone drinking beer while under 21 is the only case that breaks the rule."
+    ],
+    "13:28": [
+      "A **permission schema** is the idea that **if A is satisfied, B can be carried out**. Being 21 years old is the condition that must be satisfied, and drinking beer is what can then be carried out.",
+      "Permission schemas are used in the **concrete versions**, since **people are familiar with rules** like this one. A rule that grants permission is easier to reason about than an abstract rule about letters and numbers.",
+      "**Context is important**, because the same logical problem becomes easier in a familiar setting. **Familiarity is not always important**, so familiarity alone does not explain the improvement."
     ]
   },
   "mathSpeech": {

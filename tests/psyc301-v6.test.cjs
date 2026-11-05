@@ -8,7 +8,7 @@ async function displayed(locator){return locator.evaluateAll(es=>es.map(el=>{con
 test('Version 6 adds only independently authored Module II text and edition assets',()=>{
  execFileSync('python',['authoring/psyc301/version6/verify.py'],{cwd:root,stdio:'pipe'});
  for(const name of ['index.html','share.html'])assert.equal(stripPsycV6Assets(fs.readFileSync(path.join(root,name),'utf8')),execFileSync('git',['show','1be9d5a:'+name],{cwd:root,encoding:'utf8',maxBuffer:50*1024*1024}));
- assert.equal(Object.keys(V.scripts).length,148);assert.deepEqual(Array.from(V.scope),[6,9,10,11,12]);
+ assert.equal(Object.keys(V.scripts).length,176);assert.deepEqual(Array.from(V.scope),[6,9,10,11,12,13]);
  for(const id of [3,5,2,7,4,8,1,0])assert(!Object.keys(V.scripts).some(key=>key.startsWith(id+':')));
  assert.deepEqual(Array.from(V.scripts['6:22']),[],'Do not invent a transcript for a page containing only case-video links');
  assert.equal(127-21-2*3,100);assert.equal(15+3,18);assert.equal(28-3,25);assert.equal(3*(2+3),15);assert.equal(43*6,258);assert.equal(1000-100,900);assert(1/10>7/100);

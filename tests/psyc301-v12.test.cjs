@@ -6,7 +6,7 @@ const bare=t=>t.replace(/\*\*/g,'').replace(/\\\[[\s\S]*?\\\]/g,'[equation]').re
 async function displayed(locator){return locator.evaluateAll(es=>es.map(el=>{const copy=el.cloneNode(true);copy.querySelectorAll('.katex').forEach(k=>k.replaceWith(document.createTextNode('[equation]')));return copy.textContent.replace(/\s+/g,' ').trim()}))}
 test('Version 12 adds only authored Module II notes and its own assets',()=>{
  execFileSync('python3',['authoring/psyc301/version12/verify.py'],{cwd:root,stdio:'pipe'});
- assert.equal(Object.keys(V.scripts).length,148);assert.deepEqual(Array.from(V.scope),[6,9,10,11,12]);
+ assert.equal(Object.keys(V.scripts).length,176);assert.deepEqual(Array.from(V.scope),[6,9,10,11,12,13]);
 });
 function serve(){return http.createServer((req,res)=>{let name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(name.endsWith('/'))name+='index.html';const file=path.resolve(root,'.'+name);if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end()}fs.stat(file,(e,s)=>{if(e||!s.isFile()){res.writeHead(404);return res.end()}res.writeHead(200,{'Content-Type':{'.html':'text/html','.js':'application/javascript','.css':'text/css','.webp':'image/webp','.woff2':'font/woff2'}[path.extname(file)]||'application/octet-stream'});fs.createReadStream(file).pipe(res)})})}
 test('both PSYC301 entries render every V12 page beside the earlier editions',{timeout:300000},async()=>{

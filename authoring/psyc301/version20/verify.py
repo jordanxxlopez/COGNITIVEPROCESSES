@@ -6,8 +6,8 @@ H=runpy.run_path(str(HERE/'build.py'))
 load=lambda p:json.loads((ROOT/p).read_text().split(' = ',1)[1].rstrip(';\n'))
 V=load('psyc301-v20-data.js');V18=load('psyc301-v18-data.js');C=json.loads((HERE/'coverage.json').read_text())
 P=json.loads((HERE/'pages.json').read_text())
-assert V['scope']==V18['scope']==[6,9,10,11,12] and len(V['scripts'])==C['sourcePages']==148
-assert sum(bool(b)for b in V['scripts'].values())==C['teachingPages']==141
+assert V['scope']==V18['scope']==[6,9,10,11,12,13] and len(V['scripts'])==C['sourcePages']==176
+assert sum(bool(b)for b in V['scripts'].values())==C['teachingPages']==167
 assert C['words']==sum(H['words'](b)for b in V['scripts'].values())
 # Every page earlier editions cover is present, in source order, and rewritten.
 assert list(V['scripts'])==list(V18['scripts'])
@@ -44,31 +44,34 @@ facts={
  '12:16':['Lord and coworkers (1979)','myside'],'12:17':['2, 4, 6','increasing order of magnitude'],'12:20':['1/10','7/100'],
  '12:22':['Ritov and Baron (1999)','63%','Twelve percent'],'12:25':['5.4','2.5'],'12:26':['601','535','719'],
  '12:28':['46%','54%'],'12:31':['1,997','14%','13%','Baron and Spranca'],'12:32':['$40 billion','sanctions'],'12:33':['SV','noSV','lowered','raised'],
+ '13:4':['Kermer and colleagues (2006)','$5','$3','about 4 points','about 1 point'],'13:6':['Lerner and colleagues (2004)','$4.50','$2.70','$4.50'],'13:8':['28%','99%','status quo bias'],
+ '13:11':['600','200','1/3','72%'],'13:12':['400','78%','22%'],'13:15':['20 separate games','53%','85%','37%','68%','right anterior insula'],
+ '13:18':['71%','Belief bias'],'13:22':['97%','modus ponens'],'13:23':['60%','modus tollens'],'13:24':['40%','Tucson'],'13:26':['46%','7%'],'13:27':['73%','falsification principle'],
 }
 for key,terms in facts.items():
  text=' '.join(H['paragraphs'](V['scripts'][key])).replace('**','')
  missing=[t for t in terms if t not in text];assert not missing,(key,missing)
 # Earlier editions and studio data stay byte-for-byte as they were when Version 20 was added.
 KEPT={
- 'psyc301-v6-data.js':'3c751a5d05a6fed16eb16b18b485427c6382103951ec4464844380e774dd4dff',
+ 'psyc301-v6-data.js':'bd195e0154ecf2dcef73fe9d4e32f5fd35b4bff7b47b30344fa68828558ad634',
  'psyc301-v6.js':'ef2183c4d0fcba164b9c530c7eb9daee8a0e1be1abefb52e1b25b2c7270a40f8',
  'psyc301-v6.css':'372d2df6beca09d4807741708e60ecbb268e0aa71d9350cd44c76418205b221c',
- 'psyc301-v10-data.js':'181ef950d361c428969349dcaf6da0e16a2f02c02141ea16efd719ca62875eff',
+ 'psyc301-v10-data.js':'5b9fffa31a6a81f756dd52305ffcfc1893338b9f5a40966839a492831c8ab82d',
  'psyc301-v10.js':'a4a9973d098910e4eac08d35d2b3e7015fd78e11b6ed8b98bbbfc69e40f1d12a',
  'psyc301-v10.css':'84461cfd3a801fdbadec18c494a2e4152dcd357d5760ae3c3cab0b06901b4b5c',
- 'psyc301-v12-data.js':'e733ccec6064e7c68169264ef5c10b958afc9eb3bb3df910556cc9eb053871df',
+ 'psyc301-v12-data.js':'7d824235e0e890e4850e5aa6c8c1681cd8581e276df6a8f0c85a8c98e15e4990',
  'psyc301-v12.js':'654c1b18709818be2a25916151cd77adf572a774267b9e047292c79f717dc3c2',
- 'psyc301-v14-data.js':'686fe836d251513ed9d5868c8a1ee64417511eafa4bf7546fed2d4fd34670a47',
+ 'psyc301-v14-data.js':'5d3c8483cae940a59a1b75027e4096a83695a310808baa95228110543db599e4',
  'psyc301-v14.js':'1292ca713d1d0090b4ead1d84863e31c07ec088cacf19dc547ce75a520240a2a',
- 'psyc301-v16-data.js':'ad36d4403d2d022257c09d649c4abea2dec56c2c2140fd0d9e3588f4552eb8b7',
+ 'psyc301-v16-data.js':'9fb13e77ea81b5fab42b1537a0d7dc2e8ba15651aee158ce3a5cbc32b76707a0',
  'psyc301-v16.js':'63d1eabda74b15d2103010e0aa4c04f641ea412cda74499d1af15de7e49ddab8',
- 'psyc301-v18-data.js':'159824e57d0e8f3ad17403406d7b9ae1aaee51a20a4fb5694c0a3ffbdf70b62a',
+ 'psyc301-v18-data.js':'d1d9cd3de8f08dce9506a1f02e1c81e80712ecea42436ceebcf745ca3a820f2d',
  'psyc301-v18.js':'3f4d3d2d65ea6d0e46b59a7bdb236d835a8f5858c1ddf7176ec5badceeeb3090',
- 'module2-data.js':'849e09d7a5de2ac985d3cbbb0d99749ef1f9cde2d7ef97214ade688041523133',
- 'module2-workspace.js':'1d40f498dcbce69acf5c9b00e09512234519f2d5984934a84cf01ba4bff2dfda',
+ 'module2-data.js':'70f1379056a127633e6a57b07b326e90cbcf325a2a634ee5815309add4e81708',
+ 'module2-workspace.js':'26529dc71bd531198046e321255d4d1ce1a4dcdc84594f1d297fafc8320b1fc8',
 }
 for name,digest in KEPT.items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,name
-tags=['<script src="psyc301-v20-data.js?v=psyc301-module2-v20"></script>','<script src="psyc301-v20.js?v=psyc301-module2-v20"></script>']
+tags=['<script src="psyc301-v20-data.js?v=psyc301-module2-v20-l14"></script>','<script src="psyc301-v20.js?v=psyc301-module2-v20"></script>']
 for name in ['index.html','share.html']:
  text=(ROOT/name).read_text()
  for tag in tags:assert text.count(tag)==1,(name,tag)

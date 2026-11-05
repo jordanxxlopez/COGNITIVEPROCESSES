@@ -37,7 +37,7 @@ def build():
   for p in blocks:
    assert p.count('\\[')==p.count('\\]'),key
    for eq in re.findall(r'\\\[(.*?)\\\]',p):assert eq in mathSpeech,(key,eq)
- payload={'version':6,'revision':'psyc301-module2-v6','scope':[6,9,10,11,12],'scripts':scripts,'mathSpeech':mathSpeech}
+ payload={'version':6,'revision':'psyc301-module2-v6','scope':[6,9,10,11,12,13],'scripts':scripts,'mathSpeech':mathSpeech}
  (ROOT/'psyc301-v6-data.js').write_text('window.PSYC301_V6 = '+json.dumps(payload,ensure_ascii=False,indent=2)+';\n')
  report={'version':6,'scope':source['scope'],'sourcePages':len(scripts),'teachingPages':sum(bool(x)for x in scripts.values()),'words':sum(words(x)for x in scripts.values()),'guidelines':'Natural detailed teaching per source slide. Define necessary terms, teach tasks and mechanisms directly, retain essential quantitative contrasts, avoid incidental figure detail and presentation narration. Title/divider and link-only pages remain visible without invented explanations. Earlier versions are not rewritten.','pages':coverage}
  (HERE/'coverage.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')

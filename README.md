@@ -26,7 +26,7 @@ The `index.html` can also be downloaded and opened in a browser; study text and 
 
 ## Growing Module 2 workspace
 
-Module 2 includes a lecture-based study guide, core review, experiments, combined notes, current practice test, lecture quizzes, missed-question queue, and source coverage. It covers collection 09 · Short-Term Memory, collection 10 · Working Memory, collection 11 · Problem Solving and Reasoning, collection 12 · Problem Solving and Reasoning · Part II, and collection 13 · Judgment, Decision Making, and Reasoning. Every collection retains all original pages in order, including its title. Original note and read-progress keys remain intact.
+Module 2 includes a lecture-based study guide, core review, experiments, combined notes, current practice test, lecture quizzes, missed-question queue, and source coverage. It covers collection 09 · Short-Term Memory, collection 10 · Working Memory, collection 11 · Problem Solving and Reasoning, collection 12 · Problem Solving and Reasoning · Part II, collection 13 · Judgment, Decision Making, and Reasoning, and collection 14 · Judgment, Decision, and Reasoning · Part II. Every collection retains all original pages in order, including its title. Original note and read-progress keys remain intact.
 
 When new lectures are supplied, add their sections with stable IDs and update `module2-data.js`: extend `modules` and `collections`, add topic/experiment groups with an explicit `module` and source `pages`, and append source-based questions to the lecture pools. Keep existing question IDs and contents intact. Increase `revision` and update the Module 2 script version queries in both HTML entry points, retain IDs for unchanged questions, and assign new IDs to changed questions. Retire a question only when its contents actually change; otherwise preserve it and its retry history. Topic `progressKey` values keep guide checkboxes stable across coverage revisions. Do not automatically generate coverage for lectures that have not been supplied. The site does not ingest new lectures automatically.
 
@@ -167,6 +167,26 @@ verify with `node --test tests/*.test.cjs`. The judgment tests verify exact
 preservation of the earlier bank, all source assets and page anchors, the
 instructional graph comparisons, balanced tests, answer grading, shared notes
 across readers, both entry points, and responsive light/dark expanded views.
+
+## Collection 14 · Judgment, Decision, and Reasoning · Part II
+
+All 28 original pages of `CogPsych_Ch13_2 F26.pdf` appear in order. The title and
+the Risky Decisions Lab placeholder have no transcript, and the 26 instructional
+pages are taught in the Original notes and in Versions 6, 10, 12, 14, 16, 18, 20
+and 21, so every explanation version in the dropdown covers the lecture. Notes
+cover emotions and expected emotions, Kermer's coin flip, incidental emotions,
+Lerner's prices, context and defaults, framing, the ultimatum game, deductive
+validity, belief bias, mental models, the four conditional syllogisms and the
+Wason four-card problem. The unchanged PDF is at `sources/CogPsych_Ch13_2_F26.pdf`;
+page renders and extraction provenance are in `media/judgment-part2/` and
+`authoring/psyc301/judgment-part2-source.json`.
+
+Nine guide groups, five core-review groups, ten experiment groups and 50
+source-linked questions extend every review tool. The pool is now 300 questions
+across six collections, and the 100-question test draws 16 or 17 per collection.
+Rebuild with `python authoring/psyc301/build_judgment_part2.py`, then rebuild each
+version with its `authoring/psyc301/versionN/build.py`. `tests/judgment-part2.test.cjs`
+checks the collection, the question pool and every version's coverage.
 
 ## PSYC301 Module II · Version 6 teaching
 
