@@ -1,0 +1,6 @@
+/* Version 21 keeps each slide beside its notes while the notes scroll, on screens wide enough for two columns. */
+@media (min-width: 1001px) {
+  /* Clipping keeps the rounded card while letting the slide stick, which hidden overflow would prevent. */
+  details.section:has(.psyc-v21-follow) { overflow: clip; }
+  .notegrid:has(.psyc-v21-follow) > .picturebox { position: sticky; top: 16px; align-self: start; max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; }
+}
