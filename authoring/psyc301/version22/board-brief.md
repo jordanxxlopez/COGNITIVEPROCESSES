@@ -1,0 +1,7 @@
+# PSYC301 Version 22 — chair brief
+
+Create an additive edition covering all source pages in individual collections 09–14. Retain Version 21 teaching, source order, following-slide layout and personal-state keys. Restore source-supported researcher names, years and natural study attribution using Version 20 and the corresponding original sources. Use Name (year), two authors joined by and, and three or more as Name and colleagues (year). Attribute model proposals as proposals, not experiments. No invented names, dates, outcomes, or complete-sentence label stubs. Missing source dates remain documented rather than guessed.
+
+The Version 21 rejection of years caused this user-visible defect. Version 22 permits parenthetical citation years while preserving the other direct, connected teaching rules. Earlier editions, original course and practice data remain unchanged. This is an attribution revision, not a summary or full teaching rewrite. Record additions and supporting source anchors in page-level evidence ledgers.
+
+Margaret integrates; three paired editors cover all six collections. They then cross-review another editor’s pair, recording Gideon requirements, Vera/Sage source accuracy, Rook objections and Ada/Flint fit. No editor independently approves their own pair. Cato separately audits process, preservation, actual UI switching and final hash approvals before publication. Reuse verified prior visual review, inspect original evidence where the attribution requires it, and scope claims honestly.

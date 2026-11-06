@@ -25,7 +25,7 @@ test('collection 14 teaches every supplied page and joins the current review too
 });
 test('every transcript version covers collection 14 page by page',()=>{
  const pages=collection.sections.map(s=>s.page);
- for(const v of [6,10,12,14,16,18,20,21]){
+ for(const v of [6,10,12,14,16,18,20,21,22]){
   const pack=load(`psyc301-v${v}-data.js`,' = ');
   assert.deepEqual(Array.from(pack.scope),[6,9,10,11,12,13],v);
   for(const p of pages){

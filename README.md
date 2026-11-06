@@ -332,3 +332,11 @@ saved choices are unchanged. Rebuild with
 `python authoring/psyc301/version18/build.py`. Verify with
 `python authoring/psyc301/version18/verify.py` and
 `node --test tests/psyc301-v18.test.cjs`.
+
+## PSYC301 Version 22 — researchers and years
+
+Version 22 keeps Version 21’s natural teaching notes and following-slide layout, restoring source-supported researcher names, citation years, experiment attributions and model origins across collections 09–14. All 176 source pages were audited against Versions 20/21 and the original slide evidence; 75 teaching pages required changes. For example, the episodic buffer is attributed to Baddeley (2000), and experimental comparisons name the researchers in the explanatory prose rather than only in figure captions.
+
+Earlier editions, course and practice data, and saved-state keys are preserved. Missing source dates are recorded rather than guessed. Three narrowly documented corrections also distinguish farm/library counts from occupational base rates, qualify the ultimatum game’s monetary prediction, and retain the association rather than a causal claim for insula activity. The source ledgers and independent cross-review reports are under `authoring/psyc301/version22/`.
+
+Build with `python3 authoring/psyc301/version22/build.py` and verify with `python3 authoring/psyc301/version22/verify.py`. The browser test in `tests/psyc301-v22-browser.cjs` checks all six selectors, every source-page renderer output, citation examples, the following-slide layout, the Visual + transcript reader, and saved selection. It accepts `STUDIO_BASE_URL` and `CHROMIUM_EXECUTABLE` for local or live checks.

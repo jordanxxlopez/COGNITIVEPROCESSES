@@ -1,0 +1,15 @@
+# Version 22 memory-collection authoring handoff
+
+Scope: module 6 / collection 09 Short-Term Memory, all 47 source pages; module 9 / collection 10 Working Memory, all 22 source pages.
+
+I read the entire Version 20 and Version 21 authored files for both collections page by page, extracted and read all 69 original PDF pages, and compared the named studies with their original source text. The prior full source-board visual analysis was reused. I separately inspected the original Miller article reproduction and the uncredited change-detection plot. The reproduction gives an address date in 1955; the adjacent original source explicitly supplies Miller (1956), which is the capacity-paper year used in the teaching. No publication year was inferred for Tulving from the APA hyperlink.
+
+The two Version 22 files preserve Version 21's explanations, paragraph/block organization, and every source page role. They make 43 logged attribution edits on 38 pages, including naturally attributing results continued on later pages. These include Atkinson and Shiffrin (1968), Sperling (1960), Brown (1958), Peterson and Peterson (1959), Miller (1956), Alvarez and Cavanagh (2004), Ericsson and colleagues (1980), Chase and Simon (1973), Baddeley and Hitch (1974), Conrad (1964), Baddeley and colleagues (1975, 1984), Ellis and Hennelly (1980), Brooks (1968), Shepard and Metzler (1971), Miyake and colleagues (2000), Baddeley (2000), and Vogel and colleagues (2005). The source's Mr. Wizard’s World demonstration name is restored without inventing a date. Ericsson's “coworkers” is changed to the requested “and colleagues.”
+
+The user's episodic-buffer example is fixed both where the fourth component is introduced on working-memory page 4 and where it is taught on page 19. The missing source-backed study references elsewhere are addressed as well, not just that example.
+
+`evidence-memory.json` contains every exact old/new edited span, original PDF file/page/quoted anchor, rationale, and a checked/no-change record for all 69 pages. All edits were independently reversed programmatically to reconstruct the exact Version 21 files, confirming there are no unlogged content changes or cuts. The root's new Version 22 prose checker reports zero problems for both files, including the two-year Baddeley citation. Original Version 20 and Version 21 files were not edited.
+
+Limitations remain explicit. Tulving's name is supplied without a source year. The original generic change-detection diagrams on STM pages 38–42 do not supply an author/year, so no Luck/Vogel attribution was inferred. The existing empty Clive Wearing/Memento media page stays empty, and no unseen video or audio was claimed. The source's assignment of trial-series patterns to Brown and Peterson and Peterson is preserved without claiming a fresh historical research correction. Short repeated task names, such as “Brown-Peterson task,” remain task names rather than being inflated into new study claims.
+
+This is an author handoff and self-check record, not independent board approval. Cross-review and application/runtime checks remain required.
