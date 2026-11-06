@@ -12,10 +12,10 @@ const safeURL = value => {
 };
 const rich = value => esc(value).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 const unique = values => [...new Set(values)];
-const WORK = [ ['guide','What to know by the end'], ['review','Exam 2 review guide'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['stimuli','Sounds & videos'], ['combined','Combined notes'], ['test','Current practice test'], ['writing','Writing exam · Exam 2 style'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
+const WORK = [ ['guide','What to know by the end'], ['review','Exam 2 review guide'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['stimuli','Sounds & videos'], ['combined','Combined notes'], ['codeblocks','Code blocks'], ['figures','Figures'], ['test','Current practice test'], ['writing','Writing exam · Exam 2 style'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
 const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null,sessions:{},practiceSessions:{},activeModule:'module2',practiceMode:'mixed',assessmentVersion:'v2',mcqSelections:{},mcqSubmitted:{},optionOrders:{},flags:{},transcriptVersion:'v18'});
 let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections, moduleMap, practiceData=null,practiceLoadError='';
-let practiceV3=null,practiceV3Error='',examReview=null,examReviewError='';const practiceV3Ids=new Set(),EXAM2_VIEWS=new Set(['review','writing']);
+let practiceV3=null,practiceV3Error='',examReview=null,examReviewError='';const practiceV3Ids=new Set(),EXAM2_VIEWS=new Set(['review','writing','codeblocks','figures']);let codeFigures=null,codeFiguresError='';
 const TRANSCRIPT_VERSIONS=['v1','v2','v3','v4','v7','v10','v12','v14','v16','v18','v20','v21','v22','v23','vB','v24'];
 const transcriptEditions=new Map(),transcriptErrors=new Map(),visualPresentations=new Map(),practiceQuestionIds=new Set();
 let storageAvailable = true, reader = null, lastReaderFocus = null, view = 'home', selected = '', saveTimeout, searchQuery = '';
@@ -253,6 +253,29 @@ async function loadPracticeV3() {
     for(const q of payload.questions)practiceV3Ids.add(q.id);
     practiceV3=payload;
   }catch(error){practiceV3Error=error.message;console.warn('Practice v3 unavailable: '+error.message);}
+}
+async function loadCodeFigures() {
+  try{
+    const response=await fetch('module2-code-figures.json',{cache:'no-cache'});if(!response.ok)throw new Error('Code and figures returned '+response.status+'.');
+    const payload=await response.json();if(!Array.isArray(payload.codeBlocks) || !Array.isArray(payload.figures))throw new Error('Code and figures file is incomplete.');
+    codeFigures=payload;
+  }catch(error){codeFiguresError=error.message;console.warn('Code and figures unavailable: '+error.message);}
+}
+function codeFigureLinks(item) {
+  const links=(item.exam || []).map(e=>`<li>${esc(e.text)}${e.why?` <span class="small muted">· ${esc(e.why)}</span>`:''}</li>`).join('');
+  return links?`<h3>Related practice</h3><ul>${links}</ul>`:'<p class="small muted">No practice question covers this item yet.</p>';
+}
+function codeBlocksView() {
+  if(state.activeModule!=='module2')return module2OnlyNotice('Code blocks');
+  if(!codeFigures)return `${scopeBanner()}<h1>Code blocks</h1><p class="notice" role="status">Code blocks could not be loaded. ${esc(codeFiguresError)}</p>`;
+  const cards=codeFigures.codeBlocks.map(item=>`<article class="card guide-card" id="${esc(item.id)}"><span class="tag">${esc(item.lecture)} · page ${item.page}</span><h2>${esc(item.title)}</h2>${item.code?`<pre class="code-block"><code>${esc(item.code)}</code></pre>`:''}${item.note?`<p class="small muted">${esc(item.note)}</p>`:''}<h3>Transcript</h3><ul>${item.transcript.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>${codeFigureLinks(item)}</article>`).join('');
+  return `${scopeBanner()}<span class="eyebrow">Module II · code</span><h1>Code blocks.</h1><p class="lead">Each code block from the Module II slides, with the transcript for teaching it and the practice questions it connects to.</p><p class="small muted">${esc(codeFigures.note)}</p>${cards}`;
+}
+function figuresView() {
+  if(state.activeModule!=='module2')return module2OnlyNotice('Figures');
+  if(!codeFigures)return `${scopeBanner()}<h1>Figures</h1><p class="notice" role="status">Figures could not be loaded. ${esc(codeFiguresError)}</p>`;
+  const cards=codeFigures.figures.map(item=>`<article class="card guide-card" id="${esc(item.id)}"><span class="tag">${esc(item.lecture)} · page ${item.page}</span><h2>${esc(item.title)}</h2><h3>Transcript</h3><ul>${item.transcript.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>${codeFigureLinks(item)}</article>`).join('');
+  return `${scopeBanner()}<span class="eyebrow">Module II · figures</span><h1>Figures.</h1><p class="lead">Each figure from the Module II slides, with the transcript for teaching it and the practice questions it connects to.</p><p class="small muted">${esc(codeFigures.note)}</p>${cards}`;
 }
 async function loadExamReview() {
   try{
@@ -628,7 +651,7 @@ function sources() {
 
 function render() {
   nav();applyPreferences();document.body.classList.toggle('follow-slides',Boolean(FOLLOWING_SLIDE_VERSIONS[effectiveVersion()]));
-  const routes={stimuli:()=>window.Ling285Stimuli.gallery(state.activeModule),review:examReviewView,writing:writingExamView,home,collection:collectionView,guide,core,experiments,combined,test,quizzes,missed,sources,practice,meadows};
+  const routes={stimuli:()=>window.Ling285Stimuli.gallery(state.activeModule),review:examReviewView,codeblocks:codeBlocksView,figures:figuresView,writing:writingExamView,home,collection:collectionView,guide,core,experiments,combined,test,quizzes,missed,sources,practice,meadows};
   const resume=state.session && !state.session.finished && view!=='practice'?'<p class="small"><button class="text-button" data-go="practice">↳ Resume '+esc(currentModule().title)+' practice</button></p>':'';
   $('#content').innerHTML=resume+(routes[view] || home)();
   document.title='LING258 · Study Studio';
@@ -826,7 +849,7 @@ async function init() {
       if(isMCQ(q) && (!Array.isArray(q.options) || q.options.length!==4 || new Set(q.options.map(o=>o.id)).size!==4 || !q.options.some(o=>o.id===q.correctOption)))throw new Error('A multiple-choice question has an invalid answer map.');
       questionMap.set(q.id,q);
     });
-    allSections=[...sections.values()];await Promise.all([...TRANSCRIPT_VERSIONS.slice(1).map(version=>loadConceptualTranscripts(version)),loadPracticeEdition(),loadPracticeV3(),loadExamReview()]);loadState();readRoute();applyPreferences();render();tick();
+    allSections=[...sections.values()];await Promise.all([...TRANSCRIPT_VERSIONS.slice(1).map(version=>loadConceptualTranscripts(version)),loadPracticeEdition(),loadPracticeV3(),loadExamReview(),loadCodeFigures()]);loadState();readRoute();applyPreferences();render();tick();
   } catch(error) {
     $('#saveStatus').textContent='Course could not be opened';
     $('#content').innerHTML='<span class="eyebrow">LING285 Study Studio</span><h1>The course could not load.</h1><p>'+esc(error.message)+'</p><p>Reload this page when the course data is available. A static web server is required when opening a local copy.</p><a href="./">Reload studio</a>';
