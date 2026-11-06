@@ -1,0 +1,7 @@
+# Lecture 18 Version 24 source and structure check
+
+Version 24 presents Lecture 18 against the eight original PowerPoint pages. Each section retains its source page ID, title and page order; title slide 1 remains empty. Explanatory paragraphs were mapped from the approved November 5 transcript-and-slide notes v6: neuron/network/agent graph to slide 2; sequence prediction, attention and heads/layers to slide 3; dynamics to slide 4; multimodal sequences to slide 5; phonotactics to slide 6; next-letter training and its reported outcome to slide 7; Software 1.0–3.0 and Shannon to slide 8's model-building prompt. The wording keeps design, observed output and proposed extensions distinct.
+
+The instructor-provided 40-page transcript was used as an authoring source and is identified in Version B and Version 24 metadata; its raw PDF is not redistributed in the repository. Version B preserves the focused updated transcript work from the prior edit. The original Versions 21 and 22 were restored from the pre-edit repository commit; Version 23 continues to alias the original Version 22 following-slides layout.
+
+Validation confirms the Version 24 and Version B payloads parse, preserve all eight Lecture 18 section IDs in order, and retain empty title-page teaching. The existing Lecture 18 test suite passes all four checks, including page/source order and unaffected collections. `git diff --check` passes. The visual side-by-side mode is selected for Version 24 by the existing following-slides rendering path.

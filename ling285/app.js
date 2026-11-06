@@ -1,7 +1,7 @@
 'use strict';
 (() => {
 const KEY = 'ling285-study-studio-v1';
-const FOLLOWING_SLIDE_VERSIONS={v23:'v22'};
+const FOLLOWING_SLIDE_VERSIONS={v23:'v22',v24:'v24'};
 const MODULE2_COLLECTIONS=new Set(['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17','lecture18']);
 const VERSIONED_COLLECTIONS=new Set(['lecture01','lecture02','lecture03','lecture04','lecture05-06','lecture07','lecture08','lecture09','lecture10','lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17','lecture18']);
 const $ = selector => document.querySelector(selector);
@@ -15,7 +15,7 @@ const unique = values => [...new Set(values)];
 const WORK = [ ['guide','What to know by the end'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['stimuli','Sounds & videos'], ['combined','Combined notes'], ['test','Current practice test'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
 const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null,sessions:{},practiceSessions:{},activeModule:'module2',practiceMode:'mixed',assessmentVersion:'v2',mcqSelections:{},mcqSubmitted:{},optionOrders:{},flags:{},transcriptVersion:'v18'});
 let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections, moduleMap, practiceData=null,practiceLoadError='';
-const TRANSCRIPT_VERSIONS=['v1','v2','v3','v4','v7','v10','v12','v14','v16','v18','v20','v21','v22','v23'];
+const TRANSCRIPT_VERSIONS=['v1','v2','v3','v4','v7','v10','v12','v14','v16','v18','v20','v21','v22','v23','vB','v24'];
 const transcriptEditions=new Map(),transcriptErrors=new Map(),visualPresentations=new Map(),practiceQuestionIds=new Set();
 let storageAvailable = true, reader = null, lastReaderFocus = null, view = 'home', selected = '', saveTimeout, searchQuery = '';
 let timer = {duration:30 * 60,remaining:30 * 60,end:null,interval:null,mode:'Study'};
@@ -159,8 +159,8 @@ function go(next,collectionId,push=true,moduleId) {
   save();applyPreferences();render();window.scrollTo({top:0,behavior:'instant'});$('#content').focus({preventScroll:true});
 }
 
-function selectableTranscriptVersions() {return view==='collection' && selected==='lecture18' ? ['v1','v16','v18','v20','v21','v22','v23'] : TRANSCRIPT_VERSIONS;}
-function effectiveVersion() {return selectableTranscriptVersions().slice(1).reverse().find(version=>Number(version.slice(1))<=Number(state.transcriptVersion.slice(1)) && transcriptEditions.has(version)) || 'v1';}
+function selectableTranscriptVersions() {return view==='collection' && selected==='lecture18' ? ['v1','v16','v18','v20','v21','v22','v23','vB','v24'] : TRANSCRIPT_VERSIONS.filter(version=>!['vB','v24'].includes(version));}
+function effectiveVersion() {const choices=selectableTranscriptVersions(),requested=choices.indexOf(state.transcriptVersion),limit=requested<0?choices.length-1:requested;return [...choices].reverse().find(version=>choices.indexOf(version)<=limit && transcriptEditions.has(version)) || 'v1';}
 function currentTranscript() {return transcriptEditions.get(effectiveVersion());}
 function sectionTitle(section) {return currentTranscript()?.sections.get(section.id)?.title || section.title;}
 function teachingParagraphs(section) {return currentTranscript()?.sections.get(section.id)?.teaching ?? (section.teaching || []);}
@@ -170,7 +170,7 @@ function collectionTitle(c) {
 }
 function versionedSections(items) {return items.some(section=>VERSIONED_COLLECTIONS.has(section.collection));}
 function transcriptSelector() {
-  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version">${[['v1','Version 1 · Original'],['v2','Version 2 · Conceptual'],['v3','Version 3 · Clear explanations'],['v4','Version 4 · Teaching notes'],['v7','Version 7 · Teaching notes (bulleted)'],['v10','Version 10 · Direct teaching notes'],['v12','Version 12 · Detailed teaching notes'],['v14','Version 14 · Balanced teaching notes'],['v16','Version 16 · Natural teaching notes'],['v18','Version 18 · Teaching scripts'],['v20','Iskarous · Professor teaching transcript'],['v21','Iskarous B · Focused professor teaching'],['v22','Iskarous C · Natural teaching notes'],['v23','Version 23 · Iskarous C with following slides']].filter(([id])=>selectableTranscriptVersions().includes(id)).map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${id!=='v1' && !transcriptEditions.has(id)?'disabled':''}>${esc(transcriptEditions.get(id)?.payload.label || label)}</option>`).join('')}</select>${state.transcriptVersion!==effectiveVersion()?`<small>${esc(state.transcriptVersion.toUpperCase())} unavailable · ${esc(effectiveVersion().toUpperCase())} shown</small>`:''}</label>`;
+  return `<label class="transcript-version"><span>Transcript</span><select data-transcript-version aria-label="Transcript version">${[['v1','Version 1 · Original'],['v2','Version 2 · Conceptual'],['v3','Version 3 · Clear explanations'],['v4','Version 4 · Teaching notes'],['v7','Version 7 · Teaching notes (bulleted)'],['v10','Version 10 · Direct teaching notes'],['v12','Version 12 · Detailed teaching notes'],['v14','Version 14 · Balanced teaching notes'],['v16','Version 16 · Natural teaching notes'],['v18','Version 18 · Teaching scripts'],['v20','Iskarous · Professor teaching transcript'],['v21','Iskarous B · Focused professor teaching'],['v22','Iskarous C · Natural teaching notes'],['v23','Version 23 · Iskarous C with following slides'],['vB','Version B · Focused Lecture 18 notes'],['v24','Version 24 · Detailed slide-by-slide teaching notes']].filter(([id])=>selectableTranscriptVersions().includes(id)).map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${id!=='v1' && !transcriptEditions.has(id)?'disabled':''}>${esc(transcriptEditions.get(id)?.payload.label || label)}</option>`).join('')}</select>${state.transcriptVersion!==effectiveVersion()?`<small>${esc(state.transcriptVersion.toUpperCase())} unavailable · ${esc(effectiveVersion().toUpperCase())} shown</small>`:''}</label>`;
 }
 function transcriptNotice() {
   const active=reader?versionedSections(reader.items):view==='collection'?VERSIONED_COLLECTIONS.has(selected):['combined','core'].includes(view) && state.activeModule==='module2';
