@@ -2618,26 +2618,24 @@
           "kind": "concept",
           "teaching": [
             {
-              "text": "**A neuron converts a list of numbers into one weighted sum, and a neural network combines many of these calculations into a decision vector.** Each input is multiplied by its weight, and the products are added through an inner product.",
+              "text": "**A neuron multiplies each input by a weight and adds the results into one response.** This inner product turns an input vector, a list of numbers, into an output that a later layer can use.",
               "children": [
-                "The network’s last vector contains a response for each possible answer."
+                "The small network applies this operation through layers until its final vector gives a response for each possible answer. In a vowel recognizer, those responses support a choice among vowel categories.",
+                "**A language model applies the same general idea to a sequence.** It transforms the vectors for the words already supplied and predicts probabilities for the next item. The fifteen-to-sixteen example makes the prediction target explicit."
               ]
             },
             {
-              "text": "**A language model takes a sequence of vectors and predicts what comes next.** Its layers transform those vectors until the output gives a probability distribution over the next token.",
+              "text": "**An agentic system links whole language models so they can handle different parts of a task.** An outline model plans, a writing model drafts, a critic evaluates, and a reviser responds to the critique before a final model completes the answer.",
               "children": [
-                "The example predicts the sixteenth item from fifteen input vectors."
+                "The critic and reviser can form a loop, while a controller directs information between models. Shared memory can keep information available across their interactions.",
+                "This graph connects complete models. Attention heads, by contrast, are processing parts inside one model."
               ]
             },
             {
-              "text": "**An agentic system connects whole language models into a graph.** Different models plan, draft, criticize, revise and finalize an answer, with a loop allowing the critic to evaluate a revision again.",
+              "text": "**Inference uses learned weights to process an input; training changes the weights.** When a next-word prediction is wrong, backpropagation traces the error through earlier connections, and weight updates make a suitable continuation more likely.",
               "children": [
-                "The agents communicate in English and can also work in other human languages and computer languages."
+                "Stochastic gradient descent uses these error signals to adjust weights. Running an already trained model is therefore different from training it."
               ]
-            },
-            {
-              "text": "**Inference processes an input with learned weights, while learning changes those weights.** Inner products support inference, and stochastic gradient descent uses backpropagation’s dynamic programming to organize learning.",
-              "children": []
             }
           ]
         },
@@ -2648,21 +2646,22 @@
           "kind": "concept",
           "teaching": [
             {
-              "text": "**A language model develops its representations through many layers because next-word prediction is difficult.** A layer transforms the input vectors, and the following layer starts from those transformed vectors.",
+              "text": "**A language model uses layers to build representations that help predict what comes next.** Each layer transforms the vectors it receives, and later layers work with those changed representations.",
               "children": [
-                "This gives successive processing stages a chance to develop information useful for prediction."
+                "A useful representation carries information that supports the prediction. Its values do not become useful simply by getting larger."
               ]
             },
             {
-              "text": "**Several heads work in parallel within each layer.** Each head contributes as an expert, and the layer brings their contributions together into improved representations.",
+              "text": "**Several attention heads contribute in parallel within one layer.** Each head learns weights that let it contribute a different view of the sequence, and the layer combines those contributions before passing the result onward.",
               "children": [
-                "The heads are components within the model, while an agentic graph connects whole language models."
+                "Think of several experts contributing to one group decision. The experts correspond to heads, and the group corresponds to a layer.",
+                "An exam answer should distinguish parallel contributions by heads from successive transformations by layers."
               ]
             },
             {
-              "text": "**The next layer repeats this pattern with the representations it receives.** Its heads contribute in parallel again, and their combined result is passed onward.",
+              "text": "**Attention helps connect words whose relationship matters even when other words intervene.** In “the dog that my parents ... barks,” the verb agrees with dog, not the nearer plural parents.",
               "children": [
-                "Heads provide different contributions within one stage, while layers develop the vectors across successive stages."
+                "The relevant information must remain available across the intervening words. The combined head contributions help form a representation that supports this dependency."
               ]
             }
           ]
@@ -2674,30 +2673,22 @@
           "kind": "mechanism",
           "teaching": [
             {
-              "text": "**A dynamical system repeatedly uses its current state to compute the next state.** In the oscillator, position and velocity take turns changing. New position depends on old velocity, and new velocity then depends on that new position.",
+              "text": "**A dynamical system applies a rule to its current state to calculate a new state.** In the oscillator, position changes using velocity, then velocity changes using the new position.",
               "children": [
-                "Repeating these updates from the initial state produces oscillation."
+                "With initial position one and velocity zero, position first stays still. The positive position makes velocity negative; that negative velocity then carries position downward. Repeating the updates produces the trajectory."
               ]
             },
             {
-              "text": "**Jordan’s recurrent network also uses feedback to carry a state forward.** Plan and state units feed the hidden layer, and the resulting output is copied back into the state units.",
+              "text": "**A recurrent network carries information forward through feedback.** Plan and state units feed a hidden layer, whose output returns to the state units.",
               "children": [
-                "The state units keep a fading trace through their self-connections. Reusing the same weights lets recent output affect the next output."
+                "Self-connections preserve a fading trace of the earlier state. The same weights are reused at each moment, so recent output can affect what comes next."
               ]
             },
             {
-              "text": "**In the LLM comparison, successive layers play the role of successive moments.** Each layer transforms the vectors produced by the previous layer, so following one value through the network gives a changing trajectory.",
+              "text": "**Depth plays the role of successive moments in the language-model comparison.** Each layer transforms the representation from the layer before it, so values develop along a path through the network.",
               "children": [
-                "This curve is not the oscillator’s cosine, even though both develop step by step from an initial state."
+                "The oscillator and recurrent network reuse one rule over time. Different language-model layers can have different weights, even though each stage depends on the state produced before it."
               ]
-            },
-            {
-              "text": "**The oscillator and Jordan network reuse their rule across time, while each LLM layer has its own weights.** Depth supplies the sequence of transformations in the language-model comparison.",
-              "children": []
-            },
-            {
-              "text": "The small stock-return graph traces Small, Medium and Large series over the same period. They fluctuate, rise and fall over the years, giving another example of quantities changing over time.",
-              "children": []
             }
           ]
         },
@@ -2708,32 +2699,18 @@
           "kind": "concept",
           "teaching": [
             {
-              "text": "**A language model takes a sequence of vectors and predicts the next item.** A vector is a list of numbers, so the same input format can represent different kinds of material.",
+              "text": "**A model can predict the next item in different kinds of sequences.** Fifteen input vectors can stand for fifteen words, sound frames, picture patches or amino acids; the model then predicts item sixteen.",
               "children": [
-                "The prediction task stays the same even when the sequence comes from a different source."
+                "In “The cat that the dog chased ran up the old tree and sat on the ___,” the sentence’s relationships indicate that the cat is the one that sat.",
+                "A spectrogram represents successive sound frames, with the next frame predicted after the supplied sequence. A four-by-four picture has sixteen patches; after fifteen are supplied, the missing patch is at bottom right.",
+                "The insulin B-chain example supplies fifteen amino acids and predicts Y as the following residue."
               ]
             },
             {
-              "text": "**The vectors can represent words in a sentence.** In the cat that the dog chased ran up the old tree and sat on the blank, the task is to predict the missing next word.",
+              "text": "**The input format is shared, but the vectors represent different information.** Sound frames unfold over time, picture patches follow a reading order, and amino acids follow positions in a chain.",
               "children": [
-                "The prediction uses the sentence so far, including the fact that the cat is the one that sat."
+                "Using vectors gives the model a numerical sequence to process. It does not make sound, images, words and proteins the same kind of data."
               ]
-            },
-            {
-              "text": "**The vectors can represent pieces of sound or a picture.** A spectrogram is divided into consecutive frames, and the model predicts the next frame of sound. A picture is divided into patches read row by row, and the task is to predict the missing bottom-right patch.",
-              "children": [
-                "The input represents an unfolding sound in one case and an ordered set of picture pieces in the other."
-              ]
-            },
-            {
-              "text": "**The vectors can also represent amino acids in a protein.** The insulin B-chain example gives a sequence of amino acids and leaves the following residue to be predicted.",
-              "children": [
-                "The amino acid at the next position is Y."
-              ]
-            },
-            {
-              "text": "**Words, sounds, picture patches and amino acids reach the model as sequences of vectors.** The model uses the preceding vectors to predict the following one, even though the original materials are different.",
-              "children": []
             }
           ]
         },
@@ -2744,23 +2721,22 @@
           "kind": "concept",
           "teaching": [
             {
-              "text": "English allows only **certain sequences of sounds** in its words, and knowing which sequences are allowed is called **phonotactic knowledge**. **A simple syllable in English can have a consonant, then a vowel, then a consonant**, as in Don, mat, sit, cup, dog and fish.",
+              "text": "**Phonotactics is knowledge of which sound sequences a language permits.** An English syllable can follow a consonant-vowel-consonant pattern, as in mat or fish.",
               "children": [
-                "The pattern is about sounds, not letters, so the silent e in shave, kite and rope does not count, and two letters can spell one consonant sound, as in ship, chin and bath."
+                "The pattern concerns sounds rather than letters. The final e in shave is silent, while two letters can spell one consonant sound, as in ship."
               ]
             },
             {
-              "text": "Syllables can also have **clusters**, groups of consonants together. A cluster before the vowel is an **onset**, as in split, flat and black, and a cluster after the vowel is a **coda**, as in desk, help and lamp.",
+              "text": "**English consonant clusters have restrictions on their order.** A cluster before the vowel is an onset, as in split; a cluster after it is a coda, as in help.",
               "children": [
-                "Each real word has an impossible twin marked with a star, and many twins use the same letters in the other order, such as flat and lfat, help and hepl, and lamp and lapm, so order matters.",
-                "**The order mirrors around the vowel.** In flat the l sits right next to the vowel with the f farther out, and in help the l again sits next to the vowel, now on the other side, with the p farther out. Each impossible twin puts the wrong consonant against the vowel."
+                "Flat places l next to the vowel, while the starred form *lfat reverses the onset order. Help places l next to the vowel before p; *hepl reverses the coda order.",
+                "Other languages allow different sequences. Russian permits initial clusters such as zb, while Spanish may place a vowel before an initial s-plus-consonant sequence."
               ]
             },
             {
-              "text": "**A long word is a chain of syllables**, such as ba-na-na, At-lan-tic and ath-lete. The sounds t and l are fine across a syllable break, but tl cannot start a syllable, which is why Atlantic is a word but tlantic is impossible.",
+              "text": "**Syllable boundaries affect which sound sequences are possible.** The t and l in At-lan-tic can occur across a syllable break, while *tlantic begins with a cluster English does not allow.",
               "children": [
-                "The sound ng can end a syllable, as in ring, but it can never start one.",
-                "So whether a sequence of sounds is allowed depends on where the syllable breaks fall."
+                "Likewise, ng can end a syllable, as in ring, but it cannot start one in the English examples. A sequence’s position in the word matters."
               ]
             }
           ]
@@ -2772,23 +2748,25 @@
           "kind": "concept",
           "teaching": [
             {
-              "text": "**Phonotactic knowledge can be revealed through GPT learning.** Each item is the start of an English word, and the task is to guess the next letter. People agree on their guesses quickly, and how much they agree changes from item to item.",
-              "children": []
-            },
-            {
-              "text": "**After a vowel, almost anything can follow.** After ra, likely letters include t, n, r and l, and many others are possible too, because once a vowel has come the onset is over.",
+              "text": "**A next-letter prediction task can test whether a model learns sound and spelling patterns.** A beginning such as ra allows many continuations, while the start skr permits only a vowel in the examples.",
               "children": [
-                "**At the start of a word, the choices narrow sharply** to exactly what an English onset allows. After sp the next letter is l, r or a vowel and never n, and after k it is a vowel or n, as in knee.",
-                "After b and f it is r, l or a vowel, after sh it is a vowel or r, as in shrimp, and after skr or m at the start of a word only a vowel can come.",
-                "After bram, the letter b is almost forced, as in bramble, though a new syllable could also start there."
+                "After sp, l, r or a vowel can follow, but *spn does not fit. After k, a vowel or n can follow, as in knee; after sh, a vowel or r can follow, as in shrimp.",
+                "The probabilities form a distribution over possible next letters. A broad set of plausible continuations spreads probability, while a restricted onset concentrates it."
               ]
             },
             {
-              "text": "**Guessing the next letter is predicting the sixteenth item**, the same next-token game an LLM plays. A GPT trained only on this game learns English sounds and spelling, because its predictions can only get good by matching the patterns of English syllables.",
+              "text": "**A small language model can be trained to predict the next letter from English word patterns.** The described design uses four heads in each of five layers, 64 numbers per token vector, and 1,000 randomly selected English words.",
               "children": [
-                "Its prediction is a probability distribution over the next letter, and the shape of that distribution carries the knowledge.",
-                "After ra the distribution is broad, spread over many letters, while after skr it is sharply peaked on a few vowels, because English allows nothing else there.",
-                "The more the letters so far restrict what can come next, the more the probability piles onto a few letters."
+                "The model predicts from the letters already supplied and updates its weights after an error. Ten generated examples after each step provide samples of its current output.",
+                "A pronunciation lexicon can guide learning toward word sounds rather than treating every written letter as a separate sound."
+              ]
+            },
+            {
+              "text": "**The initial output remained largely gibberish, so the run did not establish successful syllable learning.** Some vowel-like forms were only a tentative observation.",
+              "children": [
+                "Training on 10,000 words and running more iterations were proposed extensions. They are possible next steps, not evidence of a successful result.",
+                "An agentic system can use an English instruction to build and run the smaller model. NumPy and a pronunciation resource were reported as implementation components; the larger system’s abilities do not mean the new model already knows English.",
+                "Shannon’s earlier statistical examples show how adding constraints makes letter sequences more English-like. They illustrate sequence structure, not modern attention-based architecture."
               ]
             }
           ]
