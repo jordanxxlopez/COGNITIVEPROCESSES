@@ -9,6 +9,9 @@ MAN=json.loads((OUT/'manifest.json').read_text())
 W,H=960,600
 FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+if not Path(FONT).exists():
+ FONT='/System/Library/Fonts/Supplemental/Arial.ttf'
+ BOLD='/System/Library/Fonts/Supplemental/Arial Bold.ttf'
 @lru_cache(maxsize=80)
 def font(n,b=False):return ImageFont.truetype(BOLD if b else FONT,n)
 def text(d,s,x,y,n=30,color='#22272b',anchor='mm',bold=False):d.text((x,y),s,font=font(n,bold),fill=color,anchor=anchor)
@@ -25,6 +28,54 @@ def lerp(a,b,u):return (a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u)
 def dot(d,x,y,r=22,color='#397da3'):d.ellipse((x-r,y-r,x+r,y+r),fill=color)
 def pastefit(im,img,box):
  x,y,w,h=box;scale=min(w/img.width,h/img.height);img=img.resize((round(img.width*scale),round(img.height*scale)),Image.Resampling.LANCZOS);im.paste(img,(int(x+(w-img.width)/2),int(y+(h-img.height)/2)))
+def draw_link(d,cx,cy,angle=0,scale=1.0,open_amount=0,color='#414b50',width=6):
+ # Draw an elongated chain link as a rotated oval. open_amount removes a growing arc
+ # at the right-hand end so the disassembly step is visible rather than implied.
+ rx,ry=27*scale,15*scale;pts=[]
+ if open_amount<=0:
+  start,end=0,2*math.pi
+ else:
+  start=math.radians(38+open_amount*68);end=math.radians(322-open_amount*68)
+ steps=max(8,int((end-start)*32))
+ for i in range(steps+1):
+  a=start+(end-start)*i/steps;x=rx*math.cos(a);y=ry*math.sin(a)
+  pts.append((cx+x*math.cos(angle)-y*math.sin(angle),cy+x*math.sin(angle)+y*math.cos(angle)))
+ d.line(pts,fill=color,width=max(2,round(width*scale)),joint='curve')
+ if open_amount>0:
+  for x,y in (pts[0],pts[-1]):d.ellipse((x-3,y-3,x+3,y+3),fill=color)
+def chain_piece(d,centers,color,open_levels=None,scale=1):
+ open_levels=open_levels or [0]*len(centers)
+ for i,(x,y) in enumerate(centers):draw_link(d,x,y,0 if i%2==0 else math.pi/2,scale,open_levels[i],color)
+def draw_chain_solution(d,t):
+ # Start after the original puzzle has been shown. A/B/C become the three sides;
+ # the three links opened from D travel to the corners as connectors.
+ colors=['#2d6f9e','#438b61','#9b653d'];verts=[(390,260),(570,260),(480,410)]
+ side_centers=[]
+ for i in range(3):
+  a,b=verts[i],verts[(i+1)%3];side_centers.append([lerp(a,b,k/4) for k in (1,2,3)])
+ # Cost counter remains explicit throughout the modeled solution.
+ d.rounded_rectangle((42,83,918,143),radius=14,fill='#f1f3f3',outline='#c7cecf',width=2)
+ if t<8.5:text(d,'Open three links: 3 × 2¢ = 6¢',480,113,27,'#22272b','mm',True)
+ elif t<10.5:text(d,'Close three connectors: 3 × 3¢ = 9¢',480,113,27,'#22272b','mm',True)
+ else:
+  text(d,'Open: 3 × 2¢ = 6¢     Close: 3 × 3¢ = 9¢',480,113,26,'#22272b','mm',True)
+  text(d,'Total: 15¢',480,169,27,'#2f633e','mm',True)
+ # Draw the three intact source pieces around the loop, with open endpoints at joins.
+ for i,centers in enumerate(side_centers):
+  for j,(x,y) in enumerate(centers):
+   draw_link(d,x,y,math.atan2(verts[(i+1)%3][1]-verts[i][1],verts[(i+1)%3][0]-verts[i][0])+(math.pi/2 if j%2 else 0),1.25,0,colors[i],6)
+ # Three source links opened from D are released in sequence and move toward the corners.
+ progress=max(0,min(1,(t-6.0)/4.0))
+ for i,(vx,vy) in enumerate(verts):
+  start=(160+i*320,520);u=ease((t-(6+i*.75))/1.45)
+  x,y=lerp(start,(vx,vy),u)
+  opened=1-ease((t-(8.5+i*.45))/.7)
+  if t<8.5+i*.45:opened=1
+  draw_link(d,x,y,math.radians(25+i*55),.9,opened,'#b17c26',7)
+ if t<10.5:
+  text(d,'The opened links connect the three remaining chains end to end.',480,555,24,'#333333')
+ else:
+  text(d,'One chain supplies the three connectors; the other three form the loop.',480,545,23,'#333333')
 ROT=Image.open(ROOT/'media/working-memory/slide-17.webp')
 # Coordinates normalized to verified 1386 x 1071 course slide.
 def cropnorm(im,box,base):return im.crop(tuple(round(v*s/b) for v,s,b in zip(box,(im.width,im.height,im.width,im.height),base*2)))
@@ -68,8 +119,20 @@ def frame(c,t):
  elif id=='rotation':
   pastefit(im,ROTS[min(2,int(t//5))],(110,145,740,360))
  elif id=='chain':
-  pastefit(im,CHAIN,(140,220,680,340))
-  multiline(d,'Join the four chains into one closed loop.\nOpening a link costs 2¢; closing it costs 3¢.\nBudget: 15¢.',95,25)
+  if t<3:
+   pastefit(im,CHAIN,(70,175,430,295))
+   multiline(d,'Join four three-link chains into one closed loop.\nOpen a link: 2¢. Close a link: 3¢.\nBudget: 15¢.',475,25)
+  elif t<6:
+   text(d,'Open every link in one chain and use them as connectors',480,100,28,'#22272b','mm',True)
+   for i,(label,y) in enumerate(zip('ABCD',[210,300,390,490])):
+    col=['#2d6f9e','#438b61','#9b653d','#b17c26'][i];text(d,label,120,y,26,col,'mm',True)
+    levels=[0,0,0]
+    if i==3:
+     for j in range(3):levels[j]=ease((t-(3+j*.65))/.45)
+    chain_piece(d,[(345,y),(390,y),(435,y)],col,levels,.82)
+   text(d,'Each opened link costs 2¢',700,270,25,'#333333')
+   text(d,f'Opening cost: {2*sum(ease((t-(3+j*.65))/.45) for j in range(3)):.0f}¢',700,315,25,'#333333','mm',True)
+  else:draw_chain_solution(d,t)
  elif id=='vogel':
   cross(d);phase=round(t-1,8)
   if 0<=phase<.2:text(d,'←',480,245,52)
