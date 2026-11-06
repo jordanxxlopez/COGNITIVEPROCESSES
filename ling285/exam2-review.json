@@ -1,0 +1,646 @@
+{
+ "id": "exam2-review",
+ "title": "Exam 2 review guide",
+ "examDate": "Thursday, November 12",
+ "reviewDate": "Tuesday, November 10",
+ "baseDataSha256": "8864e033b08f01533b46518bb1293dd63eaaaee473d5676c8ab1d7c60efb2c28",
+ "model": {
+  "title": "How Iskarous asks and grades questions",
+  "patterns": [
+   "He reuses the review sheet. On Exam 1, about 15 of the 25 questions came from the review sheet, most of them almost word for word, with only the sounds, numbers or list positions changed. Expect the same for Exam 2, so learn the reasoning behind each review answer, not only the answer.",
+   "He asks what happens if something goes up or down, and why. The answer always names the direction and then the reason, such as raising mass lowers frequency because a heavier mass is harder to turn around.",
+   "He asks where. Most physics questions come down to whether a spot is moving or stretching in a given mode, so the answer has to say what that spot is doing before it says what changes.",
+   "He asks you to describe something in your own words, such as a spectrogram, forward propagation or how a network learns. A good answer walks through the process step by step in full sentences.",
+   "He asks small counts and identifications, such as how many modes, how many hidden layers or which mode is highest. These still expect one sentence of why.",
+   "He never asks for arithmetic beyond simple multiples, years, the word seed, ablation or code written from scratch. He can ask what a line of code does or ask you to change the layer sizes."
+  ],
+  "grading": [
+   "The Exam 1 key gives full answers in two to five sentences. Each one states the answer and then the reason in plain words, with the course terms used correctly.",
+   "Short answers such as a count, a frequency or rise or fall are accepted alone when the question only asks for that, but a question that says why always needs the reason.",
+   "The space after each question suggests how many sentences to write."
+  ],
+  "cues": [
+   {
+    "date": "Oct 15",
+    "text": "Formants come up again and again, and homework 4 is all about formants, so make sure you understand what a formant is."
+   },
+   {
+    "date": "Oct 15",
+    "text": "He called the figure of the air in the vocal tract, with its motion and compression, really important to understand."
+   },
+   {
+    "date": "Oct 27",
+    "text": "He said he will ask what happens to a probability if an activation or a weight goes up, and that he will never ask you to multiply the numbers."
+   },
+   {
+    "date": "Oct 27",
+    "text": "He said you are guaranteed questions on why backpropagation starts at the end."
+   },
+   {
+    "date": "Oct 27",
+    "text": "All you need to know about probabilities is that they add up to one and what they mean as a decision."
+   },
+   {
+    "date": "Oct 29",
+    "text": "He can ask what the import lines do and what Sequential means, which he called a very good question for the exam, but not ask you to write the code from scratch."
+   },
+   {
+    "date": "Oct 29",
+    "text": "He can ask why accuracy starts at twenty percent."
+   },
+   {
+    "date": "Oct 29",
+    "text": "Exam 2 is on Thursday, November 12, in the same short to long answer style, and it covers only the material since Exam 1."
+   },
+   {
+    "date": "Nov 5",
+    "text": "He said heads are a question on the exam, so pay attention to what heads are and how they sit inside layers."
+   }
+  ],
+  "wontAsk": [
+   "arithmetic such as multiplying two decimals",
+   "years and dates",
+   "the word seed",
+   "ablation",
+   "writing PyTorch from scratch, or where the dots and brackets go"
+  ],
+  "likely": [
+   {
+    "tier": "Almost certain",
+    "items": [
+     "Why multiple masses give multiple frequencies, and which mode is highest and why",
+     "What happens to each mode when one mass or one spring changes, reasoned from whether that spot moves or stretches",
+     "Harmonics of a string fixed at both ends, with a new base frequency or mode number",
+     "Why fixed-free formants are odd multiples, and that the air in the vocal tract is the fixed-free system of speech",
+     "Where the springiness is in a drawn mode of a string or a building",
+     "What a constriction does to a formant, depending on motion or springiness at that spot",
+     "Describing a spectrogram",
+     "Counting hidden layers in an nn.Sequential and changing the layer sizes",
+     "Why backpropagation starts at the end",
+     "What heads are and how they relate to layers"
+    ]
+   },
+   {
+    "tier": "Likely",
+    "items": [
+     "Drawing a spectrum of harmonics from a given F0",
+     "Source and filter, and why a formant makes the nearest harmonics audible",
+     "The F1 and F2 changes for /i/, /a/ and /u/",
+     "Whether raising an activation or a weight raises a probability",
+     "Whether a list is a valid probability distribution, and writing the desired output",
+     "Why accuracy starts at twenty percent",
+     "What the import lines and Sequential mean",
+     "The sigmoid and where the idea came from",
+     "Gestalt closure and how a large language model learns by predicting the next item"
+    ]
+   },
+   {
+    "tier": "Possible",
+    "items": [
+     "The ma and na splicing experiment and what it means for speech perception",
+     "Why vowel data overlap limits accuracy",
+     "Agentic systems as a graph of language models",
+     "Phonotactics and guessing the next letter",
+     "An LLM as a dynamical system"
+    ]
+   }
+  ]
+ },
+ "items": [
+  {
+   "id": "exam2-review-01",
+   "number": 1,
+   "question": "Why do multiple mass systems have multiple frequencies?",
+   "figure": "",
+   "answer": "A system with several masses can vibrate in several different ways, called modes, because the masses can move together or against each other. Each mode uses a different amount of the springs. When the masses go against each other, the springs between them stretch and compress more, so more stiffness is working and that mode vibrates faster. So each mode has its own frequency, and a system with N masses has N modes and N frequencies.",
+   "code": "",
+   "teaching": [
+    "A **mode** is one way of vibrating. With two masses, they can go up and down **together**, or they can go **against each other**, and those are two different modes.",
+    "In the together mode, the spring between the masses just rides along like a rigid bar and never stretches, so effectively fewer springs are working. In the against mode, every spring stretches and compresses.",
+    "**More springs working means more stiffness, and more stiffness means a higher frequency.** That is why the modes come out at different frequencies even though the masses and springs themselves never changed."
+   ],
+   "change": "He could ask the same question about a membrane such as the vocal folds, or ask why the highest mode is the fastest. The reasoning is the same, so name the modes and explain the springs.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture11",
+     "page": 4
+    },
+    {
+     "collection": "lecture12",
+     "page": 5
+    },
+    {
+     "collection": "lecture12",
+     "page": 6
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-02",
+   "number": 2,
+   "question": "How many modes does a 3-mass system have?",
+   "figure": "",
+   "answer": "A 3-mass system has three modes, because a system with N masses has N modes of vibration.",
+   "code": "",
+   "teaching": [
+    "The rule is that **N masses give N modes**. One mass has one way to vibrate, two masses have two, three have three, and the pattern continues for every chain.",
+    "Each new mass adds one more way for the masses to move together or against each other, so it adds exactly one more mode."
+   ],
+   "change": "Expect a different number of masses. Four masses give four modes, and six masses give six.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture12",
+     "page": 6
+    },
+    {
+     "collection": "lecture13",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-03",
+   "number": 3,
+   "question": "Which mode of the 3-mass system has the highest frequency? Why?",
+   "figure": "",
+   "answer": "Mode 3 has the highest frequency. In Mode 3 all three masses go against each other, so every spring is stretching and compressing as much as possible. That puts the most stiffness to work, and more stiffness makes the system go back to equilibrium faster, so Mode 3 vibrates fastest.",
+   "code": "",
+   "teaching": [
+    "In **Mode 1**, all three masses move **together**, the springs hardly stretch, and the frequency is the **lowest**.",
+    "In **Mode 2**, the **middle mass stays still** while the outer masses go against each other, so there is more stretching and a higher frequency.",
+    "In **Mode 3**, **every mass goes against its neighbor**, so this mode has the most stretching and compression and the **highest frequency**."
+   ],
+   "change": "He could ask which mode is the lowest, or ask the same about a 4-mass system. The highest mode is always the one where every mass goes against its neighbors.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture12",
+     "page": 6
+    },
+    {
+     "collection": "lecture13",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-04",
+   "number": 4,
+   "question": "If you increase mass 2, what happens to the frequencies of each of the modes?",
+   "figure": "",
+   "answer": "Mode 1 goes down, because the middle mass moves in Mode 1 and a heavier moving mass slows the system. Mode 2 stays the same, because the middle mass does not move in Mode 2, and a mass that does not move has no effect on frequency. Mode 3 goes down, and it goes down more than Mode 1, because the middle mass moves even more in Mode 3, and the more a mass moves, the more its weight lowers the frequency.",
+   "code": "",
+   "teaching": [
+    "The rule is that **a mass only matters if it moves**. Adding weight to a mass that is standing still changes nothing, however heavy it gets.",
+    "So the answer depends on what mass 2 is doing in each mode. It moves in Mode 1, it is **frozen in Mode 2**, and it moves the most in Mode 3.",
+    "This is the same reasoning as perturbation, where a change at one spot affects each mode by a different amount."
+   ],
+   "change": "He could change the middle spring instead of the middle mass. A spring only matters where it stretches, so stiffening a spring that rides along like a rigid bar in a mode does nothing to that mode.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture12",
+     "page": 6
+    },
+    {
+     "collection": "lecture12",
+     "page": 9
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-05",
+   "number": 5,
+   "question": "What do you get when you have an infinite number of masses and springs?",
+   "figure": "",
+   "answer": "You get a string, like a guitar or piano string. Every little piece of a string has mass and every little piece stretches like a spring, so a string vibrates in modes just like a chain of masses, only with infinitely many of them.",
+   "code": "",
+   "teaching": [
+    "Packing in more and more masses and springs, all the way to an **infinite number**, turns the chain into a **string**.",
+    "A surface built the same way, such as a **drum** or the **vocal folds**, is a **membrane**, which is also an infinite number of masses and springs."
+   ],
+   "change": "He could ask what a drum or the vocal folds are in these terms. Both are membranes made of an infinite number of masses and springs.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture12",
+     "page": 7
+    },
+    {
+     "collection": "lecture12",
+     "page": 12
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-06",
+   "number": 6,
+   "question": "This is Mode 5 of a string. Circle the areas where there is most springiness.",
+   "figure": "Mode 5 of a string fixed at both ends, with five bumps that alternate up and down.",
+   "answer": "Circle the places where the string crosses its middle line, which are the four points between the bumps, along with the two fixed ends. At those points the string does not move, but the pieces on either side move in opposite directions, so the string there is stretched and compressed the most. The tops of the bumps have the most motion and the least springiness.",
+   "code": "",
+   "teaching": [
+    "**Where there is the most movement there is the least stretching, and where there is the most stretching there is the least movement.** Motion and springiness alternate along the string.",
+    "The **peaks of the bumps** move up and down the most, so they act like mass. The **still points** between bumps and at the fixed ends do not move, so they are where the springs work hardest.",
+    "Mode 5 has five bumps, so it has four still points inside the string plus the two ends."
+   ],
+   "change": "Expect another mode number. Mode N of a string fixed at both ends has N bumps and N minus one still points inside, and the springiness is always at the still points and the ends.",
+   "image": "assets/exam2/q06-string-mode5.png",
+   "sources": [
+    {
+     "collection": "lecture12",
+     "page": 9
+    },
+    {
+     "collection": "lecture12",
+     "page": 22
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-07",
+   "number": 7,
+   "question": "The string above is fixed on both sides. If mode 1 has frequency 200 Hz, what frequency does Mode 5 have?",
+   "figure": "",
+   "answer": "Mode 5 has a frequency of 1000 Hz. In a string fixed at both ends, each mode is a whole-number multiple of the base frequency, so Mode 5 is five times 200 Hz.",
+   "code": "",
+   "teaching": [
+    "The **base frequency** belongs to Mode 1. In a system **fixed at both ends**, Mode 2 is twice the base, Mode 3 is three times, and so on.",
+    "Only simple multiples like this are asked. He does not ask for harder arithmetic."
+   ],
+   "change": "He could give a different base frequency or mode, or switch to a system fixed at one end and free at the other. Then only odd multiples occur, so Mode 2 is three times the base and Mode 3 is five times the base.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture12",
+     "page": 8
+    },
+    {
+     "collection": "lecture13",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-08",
+   "number": 8,
+   "question": "Why are the frequencies of fixed-fixed vibratory systems spaced the way they are?",
+   "figure": "",
+   "answer": "In a system fixed at both ends, the first mode is half a wave that goes from no motion at one end to the most motion in the middle and back to no motion. Every higher mode has to fit a whole number of those pieces into the same length, because both ends must stay still. Mode 2 fits two of them, so it vibrates twice as fast, Mode 3 fits three, so it vibrates three times as fast, and so the frequencies are evenly spaced whole-number multiples of the base.",
+   "code": "",
+   "teaching": [
+    "The multiples come from **counting how many copies of the first mode fit** into each higher mode.",
+    "More pieces in the same length means **shorter waves and faster vibration**, so the frequency grows by one base frequency each time.",
+    "These evenly spaced frequencies are called **harmonics**, and the vocal folds are the main fixed-edge system in speech."
+   ],
+   "change": "He could ask the same question for a fixed-free system, which gives odd multiples instead. Compare the two counting rules side by side.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture13",
+     "page": 4
+    },
+    {
+     "collection": "lecture12",
+     "page": 9
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-09",
+   "number": 9,
+   "question": "Draw the spectrum for the string above up to mode 6.",
+   "figure": "",
+   "answer": "Draw a frequency axis along the bottom and an amplitude axis going up. Put six evenly spaced spikes at 200, 400, 600, 800, 1000 and 1200 Hz, one for each mode. If each mode is equally strong, the spikes can be drawn the same height.",
+   "code": "",
+   "teaching": [
+    "A **spectrum** shows **which frequencies a vibration has and how much amplitude is in each one**, with frequency along one axis and amplitude along the other.",
+    "Because a string fixed at both ends has every whole-number multiple, its spikes are **evenly spaced**, one base frequency apart."
+   ],
+   "change": "He could ask for a fixed-free system instead. Then the spikes fall only at odd multiples, so with a base of 200 Hz they sit at 200, 600, 1000 and 1400 Hz.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture12",
+     "page": 8
+    },
+    {
+     "collection": "lecture13",
+     "page": 5
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-10",
+   "number": 10,
+   "question": "If vocal folds have their base frequency, F0, at 150, draw the spectrum for the first 5 harmonics.",
+   "figure": "",
+   "answer": "Draw spikes at 150, 300, 450, 600 and 750 Hz, with frequency along the bottom and amplitude going up. The vocal folds are a membrane fixed on its edges, so their harmonics are whole-number multiples of F0 and the spikes are evenly spaced 150 Hz apart.",
+   "code": "",
+   "teaching": [
+    "**F0** is the base frequency of the vocal folds, the frequency of their lowest mode.",
+    "The vocal folds are **fixed on their edges**, so they follow the fixed-fixed rule and give **evenly spaced harmonics**. This was the prediction checked in Praat, where the second harmonic came out at about double the first.",
+    "**Heavier, looser folds give a lower F0** with harmonics packed closer together, and **tighter, lighter folds give a higher F0** with harmonics spaced farther apart."
+   ],
+   "change": "Expect a different F0, or a question about what happens to the spacing when the folds get tighter or heavier.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture13",
+     "page": 20
+    },
+    {
+     "collection": "lecture14",
+     "page": 15
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-11",
+   "number": 11,
+   "question": "This picture shows mode 4 of a building. Circle the areas where there is the most springiness.",
+   "figure": "Mode 4 of a building with a fixed bottom and a free top, drawn as a line that curves back and forth across its resting position.",
+   "answer": "Circle the fixed bottom and the three points where the building line crosses its resting position. Those points do not move, but the parts above and below them move in opposite directions, so the structure there stretches and compresses the most. The free top moves the most and has the least springiness, so it is not circled.",
+   "code": "",
+   "teaching": [
+    "A building is **fixed at the ground and free at the top**, so it is a **fixed-free system**.",
+    "In every mode of a fixed-free system, the **fixed end always has springiness** and the **free end always has the most motion**.",
+    "Mode 4 holds **seven quarter-wave packets**, so between the fixed bottom and the free top there are three more still points where springiness is greatest."
+   ],
+   "change": "He could show Mode 2 or Mode 3 instead. Mode 2 has one still point above the base, and Mode 3 has two, and the base is always springy while the top is always moving.",
+   "image": "assets/exam2/q11-building-mode4.png",
+   "sources": [
+    {
+     "collection": "lecture13",
+     "page": 7
+    },
+    {
+     "collection": "lecture13",
+     "page": 9
+    },
+    {
+     "collection": "lecture14",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-12",
+   "number": 12,
+   "question": "What in speech is this building analogous to?",
+   "figure": "",
+   "answer": "The building is analogous to the air in the vocal tract.",
+   "code": "",
+   "teaching": [
+    "The air in the vocal tract is **fixed at the vocal folds**, where the closed folds keep it from moving, and **free at the lips**, where it moves in and out easily.",
+    "The vibrations of this air are the **formants**, and they make the vowels and consonants of speech."
+   ],
+   "change": "He could ask the reverse, what in the physical world is like the air in the vocal tract, and the answer is a building or a string fixed at one end and free at the other.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture13",
+     "page": 7
+    },
+    {
+     "collection": "lecture13",
+     "page": 10
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-13",
+   "number": 13,
+   "question": "Why does this analogy hold?",
+   "figure": "",
+   "answer": "Both are fixed at one end and free at the other. A building is fixed to the ground and free to sway at the top, and the air in the vocal tract is fixed at the closed vocal folds and free to move at the open lips. Because the ends are the same, both have the same kind of modes, with springiness at the fixed end, motion at the free end, and frequencies at odd multiples of the first.",
+   "code": "",
+   "teaching": [
+    "An analogy holds in this course when two systems are made of **masses and springs with the same ends**. The materials do not matter, only how the system is held.",
+    "Mode 1 of the air is the same idea as a building swaying in Mode 1, with **no motion at the bottom and the most motion at the top**."
+   ],
+   "change": "He could ask how the building differs. Engineers design buildings to sway only in Mode 1, while the air in the vocal tract vibrates in all of its modes at once.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture13",
+     "page": 7
+    },
+    {
+     "collection": "lecture13",
+     "page": 10
+    },
+    {
+     "collection": "lecture14",
+     "page": 5
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-14",
+   "number": 14,
+   "question": "If we increase the stiffness and mass of the string at the location in box, what happened to Mode 3 and Mode 4's frequencies and why?",
+   "figure": "Mode 3 (300 Hz) and Mode 4 (400 Hz) of a string fixed at both ends. The box sits where Mode 3 crosses its middle line and where Mode 4 is at the top of a bump.",
+   "answer": "Mode 3 goes up and Mode 4 goes down. In Mode 3 the boxed spot does not move but is stretched the most, so the added mass does nothing and the added stiffness raises the frequency. In Mode 4 the boxed spot moves the most and is not stretched, so the added mass lowers the frequency and the added stiffness does nothing.",
+   "code": "",
+   "teaching": [
+    "Raising mass and stiffness together does **not** cancel out in a system with many masses, because **where** the change happens decides which effect counts.",
+    "At a **still point**, only stiffness matters, so the frequency **goes up**. At a **moving point**, only mass matters, so the frequency **goes down**.",
+    "Always check each mode separately, because the same spot can be still in one mode and moving in another."
+   ],
+   "change": "He could move the box or swap the modes. Read off whether each mode is at a crossing point or at a peak inside the box, then apply the rule.",
+   "image": "assets/exam2/q14-string-modes-3-4.png",
+   "sources": [
+    {
+     "collection": "lecture12",
+     "page": 11
+    },
+    {
+     "collection": "lecture13",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-15",
+   "number": 15,
+   "question": "If we increase the mass and stiffness of the building at its very top, what would happen to the frequency of vibration of mode 4, and why?",
+   "figure": "Mode 4 of a building with a fixed bottom and a free top.",
+   "answer": "The frequency of Mode 4 goes down. The top of the building is the free end, so it has the most motion and no springiness. The added mass matters because the top is moving a lot, so it lowers the frequency, while the added stiffness does nothing because nothing is stretching there.",
+   "code": "",
+   "teaching": [
+    "The free end of a fixed-free system **moves the most in every mode**, so it always acts like a **mass**.",
+    "This is the same idea as **loading the free end** in /u/, where rounding the lips adds mass right where the air moves the most, so the formants go down."
+   ],
+   "change": "He could ask about adding mass and stiffness at the very bottom instead. The base never moves but is always springy, so the added stiffness wins and the frequency goes up.",
+   "image": "assets/exam2/q15-building-mode4.png",
+   "sources": [
+    {
+     "collection": "lecture13",
+     "page": 7
+    },
+    {
+     "collection": "lecture13",
+     "page": 16
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-16",
+   "number": 16,
+   "question": "Why are the formants of fixed-free system 1,3,5 etc. multiples of the base frequency?",
+   "figure": "",
+   "answer": "In a fixed-free system the basic piece runs from no motion at the fixed end to the most motion at the free end, which is a quarter-wave packet. Every mode has to start still at the fixed end and end with the most motion at the free end. Adding one packet would leave a still point at the free end, which is not allowed, so packets are added two at a time. That gives one, three, five and seven packets, so the formants are odd multiples of the base frequency.",
+   "code": "",
+   "teaching": [
+    "Compare it with a system **fixed at both ends**, where the basic piece goes from still to moving and back to still, and every whole number of pieces fits.",
+    "In the fixed-free system the ends are different, so **only odd numbers of quarter-wave packets fit**, and the frequencies jump from one to three to five times the base."
+   ],
+   "change": "He could give a base frequency, such as 500 Hz, and ask for the next two formants. They are 1500 and 2500 Hz, not 1000 and 1500.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture13",
+     "page": 8
+    },
+    {
+     "collection": "lecture13",
+     "page": 9
+    },
+    {
+     "collection": "lecture14",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-17",
+   "number": 17,
+   "question": "What aspect of speech has the properties in 16?",
+   "figure": "",
+   "answer": "The formants of the air in the vocal tract have these properties. The air is fixed at the vocal folds and free at the lips, so its frequencies of vibration, the formants, are odd multiples of the first formant.",
+   "code": "",
+   "teaching": [
+    "**Formants are the frequencies of vibration of a system fixed on one side and completely free on the other.** In speech, that system is the **air in the vocal tract**.",
+    "For **schwa**, with no constriction, the formants sit at evenly spaced odd multiples. Every other vowel moves them by squeezing the air somewhere in the tract."
+   ],
+   "change": "He could ask what aspect of speech has whole-number multiples instead, and the answer is the harmonics of the vocal folds.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture13",
+     "page": 8
+    },
+    {
+     "collection": "lecture13",
+     "page": 10
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-18",
+   "number": 18,
+   "question": "Describe a spectrogram.",
+   "figure": "",
+   "answer": "A spectrogram stacks many spectra next to each other over time. Time runs along the horizontal axis and frequency runs up the vertical axis, and how dark a spot is tells how much amplitude there is at that frequency and time. The formants show up as dark bands, so you can follow them rising and falling as the speaker changes sounds, such as F1 rising and F2 falling from /i/ to /a/.",
+   "code": "",
+   "teaching": [
+    "A **spectrum captures one instant**, while a **spectrogram captures how the spectrum changes over time**.",
+    "Black means high amplitude, gray means medium and white means low.",
+    "Speech is never one steady vowel, so the formants are always moving, and the spectrogram is how that movement is seen."
+   ],
+   "change": "He could ask how a spectrum and a spectrogram differ, or what the dark bands are.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture13",
+     "page": 23
+    },
+    {
+     "collection": "lecture14",
+     "page": 18
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-19",
+   "number": 19,
+   "question": "If I constrict the vocal tract somewhere and I raise the formant a great deal, what must be true of air motion vs. springiness at this location?",
+   "figure": "",
+   "answer": "At that location the air must be very springy and hardly moving for that mode. A constriction raises both the mass and the stiffness of the air there. Since the formant went up a great deal, the added stiffness must be what counted, and stiffness only counts where the air is compressing and expanding, while the added mass did nothing because the air there was not moving.",
+   "code": "",
+   "teaching": [
+    "**Squeezing air makes it stiffer**, like pumping up a tire, and **bunching it up makes it heavier**, so a constriction always raises both.",
+    "Which effect wins depends on **whether that mode is moving or compressing at the constriction**. Compressing means the formant goes up, and moving means it goes down.",
+    "In /i/, the constriction two thirds of the way up is at a moving spot for Mode 1 and a springy spot for Mode 2, so F1 goes down and F2 goes up."
+   ],
+   "change": "He could ask the opposite, a constriction that lowers a formant a great deal, which means the air there is moving a lot and barely compressing, as at the lips for /u/.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture13",
+     "page": 13
+    },
+    {
+     "collection": "lecture14",
+     "page": 9
+    },
+    {
+     "collection": "lecture14",
+     "page": 12
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-20",
+   "number": 20,
+   "question": "How many hidden layers does this NN have?",
+   "figure": "net = nn.Sequential( nn.Linear(2, 3), nn.Linear(3, 2), nn.Linear(2, 4), nn.Linear(4, 5) )",
+   "answer": "It has three hidden layers, with three, two and four neurons. The network has five layers in all, the input layer with two numbers, the three hidden layers and the output layer with five, but only four Linear lines, because the input layer does no processing.",
+   "code": "",
+   "teaching": [
+    "Each **nn.Linear** line is one processing layer. Its first number is how many values come in, and its second number is how many neurons the layer has.",
+    "The second number of the **last line** is the **output layer**, so the hidden layers are the second numbers of every line except the last.",
+    "Each layer's output size must match the next layer's input size, so the numbers can flow all the way through."
+   ],
+   "change": "He could give a longer or shorter Sequential, or one with nn.Sigmoid lines in between. Sigmoid lines are not layers, so count only the Linear lines.",
+   "image": "assets/exam2/q20-sequential-code.png",
+   "sources": [
+    {
+     "collection": "lecture14",
+     "page": 25
+    },
+    {
+     "collection": "lecture15",
+     "page": 10
+    }
+   ]
+  },
+  {
+   "id": "exam2-review-21",
+   "number": 21,
+   "question": "Write the code for an NN with an additional hidden layer right before the output layer with 3 neurons, and adjust the other layers.",
+   "figure": "",
+   "answer": "Change the last Linear line so it makes three numbers instead of five, then add a new line that takes those three numbers and makes the five outputs. The new hidden layer of three neurons now sits right before the output layer, and every layer still takes in exactly as many numbers as the layer before it makes.",
+   "code": "net = nn.Sequential(\n    nn.Linear(2, 3),\n    nn.Linear(3, 2),\n    nn.Linear(2, 4),\n    nn.Linear(4, 3),\n    nn.Linear(3, 5)\n)",
+   "teaching": [
+    "Adding a layer means adding one Linear line and **fixing the sizes on both sides of it**, so the line before it must output three numbers and the new line must take in three.",
+    "He said he will not ask you to write PyTorch from scratch or worry about dots and brackets, but changing the layer sizes like this is fair game."
+   ],
+   "change": "He could ask for an extra layer right after the input, or for a layer with a different number of neurons. Always match the numbers where the lines meet.",
+   "image": "",
+   "sources": [
+    {
+     "collection": "lecture14",
+     "page": 25
+    },
+    {
+     "collection": "lecture16",
+     "page": 14
+    }
+   ]
+  }
+ ]
+}

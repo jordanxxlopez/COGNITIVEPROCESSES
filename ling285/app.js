@@ -12,9 +12,10 @@ const safeURL = value => {
 };
 const rich = value => esc(value).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 const unique = values => [...new Set(values)];
-const WORK = [ ['guide','What to know by the end'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['stimuli','Sounds & videos'], ['combined','Combined notes'], ['test','Current practice test'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
+const WORK = [ ['guide','What to know by the end'], ['review','Exam 2 review guide'], ['core','Must know · core review'], ['experiments','Demonstrations & connections'], ['stimuli','Sounds & videos'], ['combined','Combined notes'], ['test','Current practice test'], ['writing','Writing exam · Exam 2 style'], ['quizzes','Lecture quizzes'], ['missed','Missed & uncertain'], ['sources','Sources & coverage'] ];
 const defaults = () => ({notes:{},read:{},ready:{},drafts:{},ratings:{},revealed:{},open:{},theme:'light',size:18,sideClosed:innerWidth <= 760,session:null,sessions:{},practiceSessions:{},activeModule:'module2',practiceMode:'mixed',assessmentVersion:'v2',mcqSelections:{},mcqSubmitted:{},optionOrders:{},flags:{},transcriptVersion:'v18'});
 let state = defaults(), D, collections, sections, questionMap, lectureCollections, allSections, moduleMap, practiceData=null,practiceLoadError='';
+let practiceV3=null,practiceV3Error='',examReview=null,examReviewError='';const practiceV3Ids=new Set(),EXAM2_VIEWS=new Set(['review','writing']);
 const TRANSCRIPT_VERSIONS=['v1','v2','v3','v4','v7','v10','v12','v14','v16','v18','v20','v21','v22','v23','vB','v24'];
 const transcriptEditions=new Map(),transcriptErrors=new Map(),visualPresentations=new Map(),practiceQuestionIds=new Set();
 let storageAvailable = true, reader = null, lastReaderFocus = null, view = 'home', selected = '', saveTimeout, searchQuery = '';
@@ -56,11 +57,11 @@ function currentModule() {return moduleMap.get(state.activeModule) || D.modules.
 function moduleLectures(id=state.activeModule) {return (moduleMap.get(id)?.lectureIds || []).map(cid=>collections.get(cid)).filter(Boolean);}
 function moduleReadings(id=state.activeModule) {return (moduleMap.get(id)?.meadowsIds || []).map(cid=>collections.get(cid)).filter(Boolean);}
 function moduleCoreCollections() {return [...moduleLectures(),...moduleReadings()];}
-function effectiveAssessmentVersion(moduleId=state.activeModule,preference=state.assessmentVersion) {return moduleId==='module2' && preference==='v2' && practiceData?'v2':'v1';}
-function questionAssessmentVersion(q) {return practiceQuestionIds.has(q?.id)?'v2':'v1';}
+function effectiveAssessmentVersion(moduleId=state.activeModule,preference=state.assessmentVersion) {if(moduleId!=='module2')return 'v1';if(preference==='v3' && practiceV3)return 'v3';return preference==='v2' && practiceData?'v2':'v1';}
+function questionAssessmentVersion(q) {return practiceV3Ids.has(q?.id)?'v3':practiceQuestionIds.has(q?.id)?'v2':'v1';}
 function pendingPracticeId(id) {return !!practiceLoadError && typeof id==='string' && /^v2-[a-z0-9-]{1,120}$/.test(id);}
 function sessionKey(moduleId,version=effectiveAssessmentVersion(moduleId)) {return moduleId+':'+version;}
-function moduleQuestions(id=state.activeModule) {return (effectiveAssessmentVersion(id)==='v2'?practiceData.questions:D.questions).filter(q=>questionModule(q)===id);}
+function moduleQuestions(id=state.activeModule) {const version=effectiveAssessmentVersion(id);return (version==='v3'?practiceV3.questions:version==='v2'?practiceData.questions:D.questions).filter(q=>questionModule(q)===id);}
 function moduleGuides() {return D.guide.map((g,index)=>({g,index})).filter(({g})=>(g.moduleIds || unique((g.refs || []).map(ref=>moduleForCollection(ref.collection)).filter(Boolean))).includes(state.activeModule));}
 function isMCQ(q) {return q?.type==='mcq';}
 function validOrder(q,order) {return isMCQ(q) && Array.isArray(order) && order.length===q.options.length && new Set(order).size===order.length && order.every(id=>q.options.some(option=>option.id===id));}
@@ -99,10 +100,10 @@ function validateState(raw) {
   if(moduleMap.has(raw.activeModule))clean.activeModule=raw.activeModule;
   if(['mixed','mcq','written'].includes(raw.practiceMode))clean.practiceMode=raw.practiceMode;
   if(TRANSCRIPT_VERSIONS.includes(raw.transcriptVersion))clean.transcriptVersion=raw.transcriptVersion;
-  if(['v1','v2'].includes(raw.assessmentVersion))clean.assessmentVersion=raw.assessmentVersion;
+  if(['v1','v2','v3'].includes(raw.assessmentVersion))clean.assessmentVersion=raw.assessmentVersion;
   // Partition older module sessions by their original question IDs. Neither a
   // transcript choice nor a new practice edition can rebind a previous answer.
-  for(const module of D.modules)for(const version of module.id==='module2'?['v1','v2']:['v1']){
+  for(const module of D.modules)for(const version of module.id==='module2'?['v1','v2','v3']:['v1']){
     const key=sessionKey(module.id,version);
     for(const rawSession of [raw.sessions?.[module.id],raw.practiceSessions?.[key],raw.session]){
       if(rawSession?.moduleId && rawSession.moduleId!==module.id)continue;
@@ -240,17 +241,38 @@ async function loadPracticeEdition() {
     for(const q of payload.questions){questionMap.set(q.id,q);practiceQuestionIds.add(q.id);}
   }catch(error){practiceLoadError=error.message;console.warn('Practice v2 unavailable: '+error.message);}
 }
+async function loadPracticeV3() {
+  try{
+    const response=await fetch('practice-v3.json',{cache:'no-cache'});if(!response.ok)throw new Error('Practice Version 3 returned '+response.status+'.');
+    const payload=await response.json();if(payload.id!=='v3' || !Array.isArray(payload.questions) || !payload.questions.length || !payload.policy?.blueprint)throw new Error('Practice Version 3 has an invalid edition.');
+    for(const q of payload.questions){
+      validateQuestion(q);
+      if(q.moduleId!=='module2' || moduleForCollection(q.lectureId)!=='module2' || !Array.isArray(q.sources) || !q.sources.length || !q.sources.every(ref=>allSections.some(s=>s.collection===ref.collection && s.page===Number(ref.page))))throw new Error('Practice Version 3 has an invalid source or lecture mapping.');
+      questionMap.set(q.id,q);
+    }
+    for(const q of payload.questions)practiceV3Ids.add(q.id);
+    practiceV3=payload;
+  }catch(error){practiceV3Error=error.message;console.warn('Practice v3 unavailable: '+error.message);}
+}
+async function loadExamReview() {
+  try{
+    const response=await fetch('exam2-review.json',{cache:'no-cache'});if(!response.ok)throw new Error('The review guide returned '+response.status+'.');
+    const payload=await response.json();if(!Array.isArray(payload.items) || !payload.items.length)throw new Error('The review guide is empty.');
+    examReview=payload;
+  }catch(error){examReviewError=error.message;console.warn('Exam 2 review unavailable: '+error.message);}
+}
 function practiceVersionSelector() {
   if(state.activeModule!=='module2')return '';
-  return `<label class="practice-version"><span>Practice version</span><select data-assessment-version aria-label="Practice version"><option value="v1" ${effectiveAssessmentVersion()==='v1'?'selected':''}>Version 1 · Original practice</option><option value="v2" ${effectiveAssessmentVersion()==='v2'?'selected':''} ${practiceData?'':'disabled'}>${esc(practiceData?.label || 'Version 2 · Exam style')}</option></select></label>`;
+  return `<label class="practice-version"><span>Practice version</span><select data-assessment-version aria-label="Practice version"><option value="v1" ${effectiveAssessmentVersion()==='v1'?'selected':''}>Version 1 · Original practice</option><option value="v2" ${effectiveAssessmentVersion()==='v2'?'selected':''} ${practiceData?'':'disabled'}>${esc(practiceData?.label || 'Version 2 · Exam style')}</option><option value="v3" ${effectiveAssessmentVersion()==='v3'?'selected':''} ${practiceV3?'':'disabled'}>${esc(practiceV3?.label || 'Version 3 · Exam 2 style')}</option></select></label>`;
 }
 function practiceVersionBar() {
   if(state.activeModule!=='module2')return '';
-  const other=effectiveAssessmentVersion()==='v2'?'v1':'v2',saved=state.practiceSessions[sessionKey('module2',other)];
-  return `<div class="toolbar practice-edition-toolbar">${practiceVersionSelector()}${saved && (other==='v1' || practiceData)?`<button class="small-button" data-resume-assessment="${other}">Open Version ${other.slice(1)} saved ${saved.finished?'results':'practice'} · ${saved.ids.length} questions</button>`:''}</div>${state.assessmentVersion==='v2' && !practiceData?`<p class="notice practice-version-status" role="status">Practice Version 2 could not be loaded. The original Version 1 questions remain available. ${esc(practiceLoadError)}</p>`:''}`;
+  const current=effectiveAssessmentVersion(),others=['v1','v2','v3'].filter(version=>version!==current && (version==='v1' || (version==='v2'?practiceData:practiceV3)));
+  const resume=others.map(version=>{const saved=state.practiceSessions[sessionKey('module2',version)];return saved?`<button class="small-button" data-resume-assessment="${version}">Open Version ${version.slice(1)} saved ${saved.finished?'results':'practice'} · ${saved.ids.length} questions</button>`:'';}).join('');
+  return `<div class="toolbar practice-edition-toolbar">${practiceVersionSelector()}${resume}</div>${current==='v3'?`<p class="notice practice-version-status">${esc(practiceV3.model?.summary || '')}</p>`:''}${state.assessmentVersion==='v3' && !practiceV3?`<p class="notice practice-version-status" role="status">Practice Version 3 could not be loaded. ${esc(practiceV3Error)}</p>`:''}${state.assessmentVersion==='v2' && !practiceData?`<p class="notice practice-version-status" role="status">Practice Version 2 could not be loaded. The original Version 1 questions remain available. ${esc(practiceLoadError)}</p>`:''}`;
 }
 function changeAssessmentVersion(version,resume=false) {
-  if(!['v1','v2'].includes(version) || (version==='v2' && !practiceData) || state.activeModule!=='module2')return;
+  if(!['v1','v2','v3'].includes(version) || (version==='v2' && !practiceData) || (version==='v3' && !practiceV3) || state.activeModule!=='module2')return;
   closeReader(false);rememberSession();state.assessmentVersion=version;
   state.session=state.practiceSessions[sessionKey('module2',version)] || null;save();
   if(resume || view==='practice' && !state.session)go(resume?'practice':'test');else render();
@@ -268,10 +290,10 @@ function nav() {
   $('#moduleNav').innerHTML=D.modules.map(module=>`<button data-module="${esc(module.id)}" class="${state.activeModule===module.id?'active':''}" aria-pressed="${state.activeModule===module.id}"><span>${esc(module.title)}</span><small>${esc(module.subtitle || '')}</small></button>`).join('');
   $('#activeModuleLabel').innerHTML=`<strong>${esc(m.title)}</strong> <span>· ${esc(m.subtitle || '')}</span>`;
   $('#workspaceModuleLabel').textContent='Your workspace · '+m.title;
-  $('#workNav').innerHTML=WORK.map(([id,title])=>`<button data-go="${id}" class="${view===id?'active':''}" ${view===id?'aria-current="page"':''}>${esc(title)}${id==='missed'?' · '+queue:''}</button>`).join('');
+  $('#workNav').innerHTML=WORK.filter(([id])=>state.activeModule==='module2' || !EXAM2_VIEWS.has(id)).map(([id,title])=>`<button data-go="${id}" class="${view===id?'active':''}" ${view===id?'aria-current="page"':''}>${esc(title)}${id==='missed'?' · '+queue:''}</button>`).join('');
   const collectionButton=c=>`<button data-collection="${esc(c.id)}" class="${view==='collection' && selected===c.id?'active':''}" ${view==='collection' && selected===c.id?'aria-current="page"':''}><span class="nav-number">${esc(c.number)}</span><span>${esc(collectionTitle(c))}</span></button>`;
   $('#collectionNav').innerHTML=moduleLectures().map(collectionButton).join('');
-  $('#archiveWorkNav').innerHTML=WORK.map(([id,title])=>`<button data-go="${id}" data-scope-module="module1" class="${state.activeModule==='module1' && view===id?'active':''}">${esc(title)}${id==='missed'?' · '+queueQuestions('module1').length:''}</button>`).join('');
+  $('#archiveWorkNav').innerHTML=WORK.filter(([id])=>!EXAM2_VIEWS.has(id)).map(([id,title])=>`<button data-go="${id}" data-scope-module="module1" class="${state.activeModule==='module1' && view===id?'active':''}">${esc(title)}${id==='missed'?' · '+queueQuestions('module1').length:''}</button>`).join('');
   $('#archiveCollectionNav').innerHTML=moduleLectures('module1').map(collectionButton).join('');
   $('#moduleArchive').hidden=state.activeModule==='module1';
   if(state.activeModule==='module1')$('#moduleArchive').open=false;
@@ -324,6 +346,7 @@ function home() {
 }
 
 function assessmentPolicy(module=currentModule()) {
+  if(module.id==='module2' && effectiveAssessmentVersion('module2')==='v3'){const p=practiceV3.policy;return {fixed:true,currentTestSize:p.currentTestSize,lectureQuizSize:practiceV3.questions.filter(q=>q.lectureId==='lecture11').length,mcqShare:p.mcqCount/p.currentTestSize};}
   const raw=module.assessmentPolicy || {},fixed=module.id==='module2';
   const currentTestSize=Number.isInteger(raw.currentTestSize) && raw.currentTestSize>0?raw.currentTestSize:fixed?100:20;
   const lectureQuizSize=Number.isInteger(raw.lectureQuizSize) && raw.lectureQuizSize>0?raw.lectureQuizSize:fixed?50:20;
@@ -428,6 +451,22 @@ function missed() {
   return `${scopeBanner()}<span class="eyebrow">Your next review</span><h1>Missed & uncertain.</h1>${practiceVersionBar()}<p class="lead">${pool.length} questions in this module need another try. A checked correct answer clears a multiple-choice mistake unless it remains flagged. Written explanations use your self-rating.</p>${pool.length?`<div class="row toolbar"><button class="primary" data-start="missed">Practice this module’s review queue</button></div>${pool.map(q=>`<article class="card guide-card"><span class="tag">${isMCQ(q)?'Multiple choice':'Written'} · ${state.flags[q.id]?'uncertain':esc(state.ratings[q.id] || 'review')}</span><h3 style="margin-top:15px">${esc(q.prompt)}</h3><div class="row"><button data-single-question="${esc(q.id)}">Try this question</button>${isMCQ(q) && state.ratings[q.id]==='review'?'':`<button class="small-button" data-remove-queue="${esc(q.id)}">Remove from queue</button>`}</div></article>`).join('')}`:'<div class="empty"><p>Incorrect multiple-choice responses, uncertain flags, and written answers rated for review appear here.</p><button data-go="test">Choose practice</button></div>'}`;
 }
 
+function module2OnlyNotice(title) {return `${scopeBanner()}<h1>${esc(title)}</h1><p class="lead">This page covers Exam 2, which is on Module II.</p><button data-go="${esc(view)}" data-scope-module="module2">Open it for Module II</button>`;}
+function examReviewView() {
+  if(state.activeModule!=='module2')return module2OnlyNotice('Exam 2 review guide');
+  if(!examReview)return `${scopeBanner()}<h1>Exam 2 review guide</h1><p class="notice" role="status">The review guide could not be loaded. ${esc(examReviewError)}</p>`;
+  const m=examReview.model,list=items=>`<ul>${items.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`;
+  const card=item=>{const ready=state.ready[item.id];return `<article class="card guide-card review-card" id="${esc(item.id)}"><span class="tag">Review question ${item.number}</span><h2>${esc(item.question)}</h2>${item.image?`<img class="review-image" src="${esc(safeURL(item.image))}" alt="${esc(item.figure || 'Figure from the review sheet')}" loading="lazy">`:''}${item.figure?`<p class="small muted review-figure">Figure · ${esc(item.figure)}</p>`:''}<label class="draft-label" for="draft-${esc(item.id)}">Try it first · your answer is saved in this browser</label><textarea id="draft-${esc(item.id)}" class="draft review-draft" data-draft="${esc(item.id)}" placeholder="Write your answer the way you would on the exam…">${esc(state.drafts[item.id] || '')}</textarea><details class="review-answer"><summary>Show how to answer it and what it means</summary><h3>How to answer it on the exam</h3><p>${rich(item.answer)}</p>${item.code?`<pre class="review-code"><code>${esc(item.code)}</code></pre>`:''}<h3>What it means</h3>${list(item.teaching)}<h3>How he could change it on the exam</h3><p>${rich(item.change)}</p></details><div class="row">${sourceRefs(item)}</div><label class="readiness"><input type="checkbox" data-ready="${esc(item.id)}" ${ready?'checked':''}> I can answer this without the guide</label></article>`;};
+  const done=examReview.items.filter(item=>state.ready[item.id]).length;
+  return `${scopeBanner()}<span class="eyebrow">Review ${esc(examReview.reviewDate)} · Exam ${esc(examReview.examDate)}</span><h1>Exam 2<br>review guide.</h1><p class="lead">All 21 review questions, answered the way you would write them on the exam, with the reasoning behind each one. Try each question first, then open the answer. ${done} of ${examReview.items.length} marked ready.</p><div class="row toolbar"><button class="primary" data-start="writing">Take a 25-question writing exam</button><button data-go="test">Exam 2 style practice test</button></div><details class="card review-model" open><summary><strong>${esc(m.title)}</strong></summary><h3>How he writes questions</h3>${list(m.patterns)}<h3>How answers are graded</h3>${list(m.grading)}<h3>What he said in class</h3><ul>${m.cues.map(c=>`<li><strong>${esc(c.date)}</strong> · ${esc(c.text)}</li>`).join('')}</ul><h3>What he said he will not ask</h3>${list(m.wontAsk)}</details><details class="card review-model"><summary><strong>Most likely on Exam 2</strong></summary>${m.likely.map(t=>`<h3>${esc(t.tier)}</h3>${list(t.items)}`).join('')}<p class="small muted">These are predictions from the review sheet, the Exam 1 pattern and his cues in class, not a list from the professor.</p></details>${examReview.items.map(card).join('')}`;
+}
+function writingExamView() {
+  if(state.activeModule!=='module2')return module2OnlyNotice('Writing exam');
+  if(!practiceV3)return `${scopeBanner()}<h1>Writing exam</h1><p class="notice" role="status">Practice Version 3 could not be loaded. ${esc(practiceV3Error)}</p>`;
+  const policy=practiceV3.policy,pool=practiceV3.questions.filter(q=>!isMCQ(q)),saved=state.practiceSessions[sessionKey('module2','v3')];
+  const open=saved && saved.scope==='writing'?`<button data-resume-assessment="v3">Open your saved writing exam · ${saved.finished?'results':'question '+(saved.index+1)+' of '+saved.ids.length}</button>`:'';
+  return `${scopeBanner()}<span class="eyebrow">Exam 2 · ${esc(examReview?.examDate || 'Thursday, November 12')} · 1 hour 20 minutes</span><h1>Writing exam.<br>Answer in full sentences.</h1><p class="lead">Every question is written, in the forms the professor uses: what happens if something goes up or down and why, describe it in your own words, compare two things, is this valid, and small counts with a reason. Write your answer, then reveal the model answer and rate yourself.</p><div class="row toolbar"><button class="primary" data-start="writing">Start a new 25-question writing exam</button>${open}<button data-go="review">Exam 2 review guide</button></div><div class="card"><h2>How the 25 questions are spread</h2><p class="small">More questions come from Lectures 12 to 14 because most of the review sheet covers masses, springs, formants and spectrograms.</p><ul>${moduleLectures().filter(c=>policy.blueprint[c.id]).map(c=>`<li>${esc(c.number)} · ${esc(collectionTitle(c))} · ${policy.blueprint[c.id]} questions</li>`).join('')}</ul><p class="small muted">${pool.length} written questions in the bank. Questions from the review sheet and topics he said he would test are picked more often.</p></div>`;
+}
 function shuffle(items) {
   const array = [...items];for(let i=array.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[array[i],array[j]]=[array[j],array[i]];}return array;
 }
@@ -477,7 +516,33 @@ function balancedAssessmentSample(pool,size,share,lectureIds) {
   }
   return items.length===size && new Set(items.map(q=>q.id)).size===size?shuffle(items):[];
 }
+function exam2Sample(writtenOnly) {
+  const policy=practiceV3.policy,pool=practiceV3.questions,items=[];
+  const lectures=Object.keys(policy.blueprint),withChoice=new Set(writtenOnly?[]:shuffle(lectures).slice(0,policy.mcqCount));
+  for(const id of lectures){
+    const count=policy.blueprint[id],choice=withChoice.has(id)?1:0;
+    const written=weightedPick(pool.filter(q=>q.lectureId===id && !isMCQ(q))).slice(0,count-choice);
+    const mcq=weightedPick(pool.filter(q=>q.lectureId===id && isMCQ(q))).slice(0,choice);
+    items.push(...mcq,...written);
+  }
+  const size=writtenOnly?policy.writingExamSize:policy.currentTestSize;
+  return items.length===size && new Set(items.map(q=>q.id)).size===size?shuffle(items):[];
+}
+function startExam2(scope) {
+  if(!practiceV3){announce('Practice Version 3 could not be loaded. '+practiceV3Error);return;}
+  if(state.activeModule!=='module2')activateModule('module2');
+  if(state.assessmentVersion!=='v3'){rememberSession();state.assessmentVersion='v3';}
+  const writing=scope==='writing',items=exam2Sample(writing);
+  if(!items.length){announce('The Exam 2 question set is not complete yet.');return;}
+  state.session={ids:items.map(q=>q.id),index:0,title:writing?'Module II · writing exam · 25 written questions':'Module II · Exam 2 style test · 25 questions',finished:false,edition:String(practiceV3.revision || ''),assessmentVersion:'v3',scope,mode:writing?'written':'mixed',moduleId:'module2'};
+  for(const q of items){
+    if(isMCQ(q)){state.optionOrders[q.id]=shuffle(q.options.map(option=>option.id));delete state.mcqSelections[q.id];state.mcqSubmitted[q.id]=false;}
+    else state.revealed[q.id]=false;
+  }
+  save();go('practice');
+}
 function startPractice(scope,exactId) {
+  if(scope==='writing' || (scope==='mixed' && !exactId && effectiveAssessmentVersion()==='v3' && state.activeModule==='module2')){startExam2(scope);return;}
   const fullLecture=scope.startsWith('lecture:'),focusLecture=scope.startsWith('focus-lecture:');
   const lectureId=fullLecture?scope.slice(8):focusLecture?scope.slice(14):null;
   if(lectureId){const owner=moduleForCollection(lectureId);if(owner)activateModule(owner);}
@@ -563,7 +628,7 @@ function sources() {
 
 function render() {
   nav();applyPreferences();document.body.classList.toggle('follow-slides',Boolean(FOLLOWING_SLIDE_VERSIONS[effectiveVersion()]));
-  const routes={stimuli:()=>window.Ling285Stimuli.gallery(state.activeModule),home,collection:collectionView,guide,core,experiments,combined,test,quizzes,missed,sources,practice,meadows};
+  const routes={stimuli:()=>window.Ling285Stimuli.gallery(state.activeModule),review:examReviewView,writing:writingExamView,home,collection:collectionView,guide,core,experiments,combined,test,quizzes,missed,sources,practice,meadows};
   const resume=state.session && !state.session.finished && view!=='practice'?'<p class="small"><button class="text-button" data-go="practice">↳ Resume '+esc(currentModule().title)+' practice</button></p>':'';
   $('#content').innerHTML=resume+(routes[view] || home)();
   document.title='LING258 · Study Studio';
@@ -761,7 +826,7 @@ async function init() {
       if(isMCQ(q) && (!Array.isArray(q.options) || q.options.length!==4 || new Set(q.options.map(o=>o.id)).size!==4 || !q.options.some(o=>o.id===q.correctOption)))throw new Error('A multiple-choice question has an invalid answer map.');
       questionMap.set(q.id,q);
     });
-    allSections=[...sections.values()];await Promise.all([...TRANSCRIPT_VERSIONS.slice(1).map(version=>loadConceptualTranscripts(version)),loadPracticeEdition()]);loadState();readRoute();applyPreferences();render();tick();
+    allSections=[...sections.values()];await Promise.all([...TRANSCRIPT_VERSIONS.slice(1).map(version=>loadConceptualTranscripts(version)),loadPracticeEdition(),loadPracticeV3(),loadExamReview()]);loadState();readRoute();applyPreferences();render();tick();
   } catch(error) {
     $('#saveStatus').textContent='Course could not be opened';
     $('#content').innerHTML='<span class="eyebrow">LING285 Study Studio</span><h1>The course could not load.</h1><p>'+esc(error.message)+'</p><p>Reload this page when the course data is available. A static web server is required when opening a local copy.</p><a href="./">Reload studio</a>';
