@@ -488,3 +488,11 @@ body.reader-open { overflow: hidden; }
 .code-block{overflow-x:auto;padding:14px 16px;border-radius:12px;background:rgba(0,0,0,.06);font-size:.9rem;line-height:1.5;white-space:pre}
 .code-figure-slide{margin:14px 0}
 .code-figure-slide img{display:block;width:100%;max-width:960px;height:auto;border-radius:12px;background:#fff}
+/* Code blocks and Figures: keep slides inside their card */
+.code-figure-card{min-width:0;max-width:100%;overflow:hidden}
+.code-figure-card .section-pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.code-figure-card .section-pair > div{min-width:0}
+.code-figure-card .source-figure{width:100%;max-width:100%;min-width:0;margin:0 0 12px;overflow:hidden}
+.code-figure-card .source-figure img{display:block;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:12px;background:#fff}
+.code-figure-card figcaption{font-size:.85rem;margin-top:6px}
+@media (max-width: 900px){.code-figure-card .section-pair{grid-template-columns:minmax(0,1fr)}}

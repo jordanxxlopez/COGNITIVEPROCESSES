@@ -271,13 +271,13 @@ function codeFigureLinks(item) {
 function codeBlocksView() {
   if(state.activeModule!=='module2')return module2OnlyNotice('Code blocks');
   if(!codeFigures)return `${scopeBanner()}<h1>Code blocks</h1><p class="notice" role="status">Code blocks could not be loaded. ${esc(codeFiguresError)}</p>`;
-  const cards=codeFigures.codeBlocks.map(item=>`<article class="card guide-card" id="${esc(item.id)}"><span class="tag">${esc(item.lecture)} · page ${item.page}</span><h2>${esc(item.title)}</h2><div class="section-pair"><div>${item.code?`<pre class="code-block"><code>${esc(item.code)}</code></pre>`:''}${item.note?`<p class="small muted">${esc(item.note)}</p>`:''}<h3>Transcript</h3><ul>${item.transcript.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>${codeFigureLinks(item)}</div><div>${codeFigureSlides(item)}</div></div></article>`).join('');
+  const cards=codeFigures.codeBlocks.map(item=>`<article class="card guide-card code-figure-card" id="${esc(item.id)}"><span class="tag">${esc(item.lecture)} · page ${item.page}</span><h2>${esc(item.title)}</h2><div class="section-pair"><div>${item.code?`<pre class="code-block"><code>${esc(item.code)}</code></pre>`:''}${item.note?`<p class="small muted">${esc(item.note)}</p>`:''}<h3>Transcript</h3><ul>${item.transcript.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>${codeFigureLinks(item)}</div><div>${codeFigureSlides(item)}</div></div></article>`).join('');
   return `${scopeBanner()}<span class="eyebrow">Module II · code</span><h1>Code blocks.</h1><p class="lead">Each code block from the Module II slides, with the transcript for teaching it and the practice questions it connects to.</p><p class="small muted">${esc(codeFigures.note)}</p>${cards}`;
 }
 function figuresView() {
   if(state.activeModule!=='module2')return module2OnlyNotice('Figures');
   if(!codeFigures)return `${scopeBanner()}<h1>Figures</h1><p class="notice" role="status">Figures could not be loaded. ${esc(codeFiguresError)}</p>`;
-  const cards=codeFigures.figures.map(item=>`<article class="card guide-card" id="${esc(item.id)}"><span class="tag">${esc(item.lecture)} · page ${item.page}</span><h2>${esc(item.title)}</h2><div class="section-pair"><div><h3>Transcript</h3><ul>${item.transcript.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>${codeFigureLinks(item)}</div><div>${codeFigureSlides(item)}</div></div></article>`).join('');
+  const cards=codeFigures.figures.map(item=>`<article class="card guide-card code-figure-card" id="${esc(item.id)}"><span class="tag">${esc(item.lecture)} · page ${item.page}</span><h2>${esc(item.title)}</h2><div class="section-pair"><div><h3>Transcript</h3><ul>${item.transcript.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>${codeFigureLinks(item)}</div><div>${codeFigureSlides(item)}</div></div></article>`).join('');
   return `${scopeBanner()}<span class="eyebrow">Module II · figures</span><h1>Figures.</h1><p class="lead">Each figure from the Module II slides, with the transcript for teaching it and the practice questions it connects to.</p><p class="small muted">${esc(codeFigures.note)}</p>${cards}`;
 }
 async function loadExamReview() {
