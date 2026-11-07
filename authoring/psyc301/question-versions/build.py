@@ -37,7 +37,19 @@ CITE = re.compile(r'\b((?:19|20)\d{2})[a-z]?(?=\)|;|, (?:19|20)\d{2}\))')  # a y
 
 def load_bank():
     raw = (ROOT / 'module2-data.js').read_text()
-    return json.loads(raw.split('window.SECOND_HALF = ', 1)[1].rstrip(';\n'))
+    bank = json.loads(raw.split('window.SECOND_HALF = ', 1)[1].rstrip(';\n'))
+    # Collection 15 (Articles and Labs) is added at load time from psyc301-c15-data.js, so module2-data.js stays pinned.
+    extra = ROOT / 'psyc301-c15-data.js'
+    if extra.exists():
+        line = next(l for l in extra.read_text().split('\n') if l.startswith('window.C15_BANK = '))
+        c = json.loads(line[len('window.C15_BANK = '):].rstrip(';'))
+        cid = c['collection']['id']
+        bank['collections'] = [x for x in bank['collections'] if x['id'] != cid] + [c['collection']]
+        bank['questions'] = [q for q in bank['questions'] if q['module'] != cid] + c['questions']
+        bank['modules'] = [m for m in bank['modules'] if m != cid] + [cid]
+        for key in ('topics', 'coreReview', 'experiments'):
+            bank[key] = [g for g in bank[key] if g.get('module') != cid] + c[key]
+    return bank
 
 
 def lecture_pages():
