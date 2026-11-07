@@ -12,10 +12,11 @@
    "title": "The same network in PyTorch",
    "code": "import torch\nimport torch.nn as nn\n\n# purely linear: 2 → 3 → 2 → 4 → 5\nnet = nn.Sequential(\n    nn.Linear(2, 3, bias=False),  # 2 in → 3 out\n    nn.Linear(3, 2, bias=False),  # 3 in → 2 out\n    nn.Linear(2, 4, bias=False),  # 2 in → 4 out\n    nn.Linear(4, 5, bias=False),  # 4 in → 5 out\n)",
    "transcript": [
-    "This code declares a stack of four linear layers. Each Linear layer multiplies its input by a grid of weights. Setting bias to False means the layer adds no constant, so each layer stays purely linear.",
-    "The two numbers in each Linear call set the sizes. The first layer takes 2 values and produces 3, the second takes those 3 and produces 2, and the third takes those 2 and produces 4. The last layer takes 4 values and produces 5 scores.",
-    "The input has 2 values and the output has 5. Every layer between them is a hidden layer. Three layers sit between input and output, with 3, 2 and 4 units, so the network has three hidden layers.",
-    "No training happens in this code. It only declares the network."
+    "**nn.Sequential** stacks layers in the order information passes through them, and each **nn.Linear** layer produces weighted sums of its inputs. The network is a stack of four linear layers, stored under the name **net**.",
+    "The two numbers in each Linear call give its input and output sizes. The first layer takes 2 values and produces 3, the second turns those 3 into 2, the third turns 2 into 4, and the last turns 4 into 5. Each output count matches the next layer’s input count, so values pass through the whole sequence, and the final 5 values are the scores for the five vowel labels.",
+    "**bias=False** removes the extra constant that would be added to each weighted sum. Every connection still keeps its weight. No activation layers appear between the Linear layers, so the whole network stays **purely linear**.",
+    "The input layer has 2 values and the output layer has 5. The three layers in between, with 3, 2 and 4 units, are **hidden layers**, so four Linear calls produce a network with **three hidden layers**.",
+    "This code only declares the network. It does not train it, because training needs examples and a way to change the weights."
    ],
    "exam": [
     {
@@ -52,9 +53,10 @@
    "title": "The same network in PyTorch, one gradient step",
    "code": "import torch\nfrom torch import nn\n\n# Sizes: X = 110x2, Y = 110x5\nX = torch.load(\"Formant_Inputs.pt\").float()\nY = torch.load(\"TrueVowel_Outputs.pt\").float()\nnet = nn.Sequential(\n    nn.Linear(2, 3),\n    nn.Linear(3, 2),\n    nn.Linear(2, 4),\n    nn.Linear(4, 5)\n)\nsgd = torch.optim.SGD(net.parameters(), lr=0.1)\nsgd.zero_grad()\nloss = nn.CrossEntropyLoss()(net(X), Y)\nloss.backward()\nsgd.step()",
    "transcript": [
-    "The input X holds 110 rows of two formant values, and the target Y holds 110 rows of five vowel scores. The same four-layer stack from the earlier code receives the formants.",
-    "The loss measures how far the five output scores are from the correct vowels. backward computes how each weight should change. step applies those changes to the weights, so step is the call that actually updates the network.",
-    "This code performs one update using all 110 rows. The learning rate is 0.1, so each update moves the weights by a tenth of the computed change."
+    "**X** holds the two formant values for each of 110 recordings, and **Y** holds the five-position target for each one. **torch.load** reads these saved tensor files, and **.float()** turns the values into floating-point numbers.",
+    "The model keeps the same layer sizes, 2, 3, 2, 4 and 5, but these Linear calls leave out bias=False, so each layer keeps PyTorch’s default bias. No sigmoid appears between the layers.",
+    "**SGD** receives the network’s weights and a **learning rate of 0.1**. **zero_grad** clears old gradients, **net(X)** runs the forward pass, and **CrossEntropyLoss** compares the five output scores with Y. **loss.backward** computes how each weight should change, and **sgd.step** is the call that actually changes the weights.",
+    "All **110 rows** feed this single update, and there is no training loop. The code starts from PyTorch’s own random weights, so it matches the layer sizes of the hand-worked network without reproducing its numbers."
    ],
    "exam": [
     {
@@ -88,10 +90,10 @@
    "title": "One initialization, the full training loop",
    "code": "import torch  # Tensors\nfrom torch import nn  # Layers and loss\nimport matplotlib.pyplot as plt  # Plotting\ntorch.manual_seed(0)  # Initialization\nX = Formant_Inputs / 1000  # Hz to kHz\ny = TrueVowel_Outputs.argmax(1)  # Correct classes\nmodel = nn.Sequential(  # The supplied widths\n    nn.Linear(2, 3, bias=False),  # No bias\n    nn.Linear(3, 2, bias=False),  # No bias\n    nn.Linear(2, 4, bias=False),  # No bias\n    nn.Linear(4, 5, bias=False),  # Five scores\n)  # No activations\nloss_fn = nn.CrossEntropyLoss()  # One-hot cross-entropy\nopt = torch.optim.SGD(model.parameters(), lr=0.1)  # Plain SGD\naccuracy = []  # Percent correct\nfor epoch in range(2000):  # Full-batch updates\n    opt.zero_grad()  # Clear old gradients\n    loss = loss_fn(model(X), TrueVowel_Outputs)  # Forward + loss\n    loss.backward()  # Backpropagate\n    opt.step()  # Update weights\n    with torch.no_grad():  # Accuracy only\n        pred = model(X).argmax(1)  # Largest score wins\n        correct = (pred == y).float().mean().item()  # Fraction correct\n        accuracy.append(100 * correct)  # Save percent correct\nplt.plot(range(1, 2001), accuracy)  # Accuracy curve\nplt.ylim(0, 100)  # Full percent scale\nplt.xlabel('Epoch')  # Epoch axis\nplt.ylabel('Accuracy (%)')  # Accuracy axis\nplt.show()  # Display the curve",
    "transcript": [
-    "Each pass through the loop is one full-batch update. All 525 training examples are used together, so 2000 passes mean 2000 weight updates.",
-    "Every update runs in the same order. zero_grad clears the old gradients. The forward pass with the loss function measures the error. backward computes the gradients, and step applies them to the weights.",
-    "The accuracy check sits inside torch.no_grad, so it only measures performance and does not change any weights. The largest of the five output scores is the predicted vowel, and the fraction of correct predictions is saved as a percentage.",
-    "The curve plots that saved accuracy against the epoch number. This run finishes at 44.95 percent training accuracy. The deck states that PyTorch was unavailable, so this curve comes from the equivalent NumPy implementation, and equal seed numbers do not imply equal PyTorch weights."
+    "This loop trains the same 2, 3, 2, 4, 5 network with **bias=False** in every layer and no activations. **torch.manual_seed(0)** fixes the random starting weights, so the run begins from one particular **initialization**. The formants are divided by 1000, which turns hertz into kilohertz.",
+    "The loss is **CrossEntropyLoss** and the optimizer is plain **SGD** with a **learning rate of 0.1**. Each of the **2,000 epochs** clears old gradients, computes the loss on all 525 tokens at once, backpropagates, and takes one step, so every epoch is exactly one weight update.",
+    "After each update, the accuracy check runs inside **torch.no_grad**, so measuring does not change any weights. For each token, the largest of the five scores is the network’s answer, and accuracy is the percentage of tokens answered correctly. These are the same 525 tokens the network learns from, so this is **training accuracy**.",
+    "PyTorch was not available where the curve was made, so the plotted run comes from an equivalent **NumPy** version of the same network, loss, scaling, learning rate and number of updates. The run ends at **44.95 percent** training accuracy."
    ],
    "exam": [
     {
@@ -129,8 +131,8 @@
    "title": "Ten initializations, the same training block",
    "code": null,
    "transcript": [
-    "The training block from the one-initialization code repeats for seeds 0 through 9. Each seed starts a fresh model and a fresh optimizer, so each run begins from different starting weights.",
-    "All ten runs finish at 44.95 percent training accuracy. The deck states that these curves come from NumPy reference runs, so they are not PyTorch recordings, and equal seed numbers do not imply equal PyTorch weights."
+    "The same training block runs ten times, with **seeds 0 through 9**. Each run builds a fresh model and a fresh SGD optimizer, so only the **initialization**, the random starting weights, changes between runs. The data, scaling, loss, learning rate and 2,000 updates stay identical.",
+    "All ten runs finish at **44.95 percent** training accuracy. The curves are NumPy reference runs, and the same seed number in NumPy and PyTorch does not give the same starting weights, so a PyTorch run would not trace exactly the same line."
    ],
    "exam": [
     {
@@ -162,8 +164,9 @@
    "page": 16,
    "title": "/u/ as free-end loading",
    "transcript": [
-    "The reveal labels /u/ as free-end loading. Two modes follow, and the page states that motion dominates in both of them.",
-    "The last line of the reveal lists F1 and F2 as moving lower. The page gives no further reasoning, so these lines are the full content of this reveal."
+    "The **/u/ model** adds loading near the open lips, which is the **free end** of the air column. The added load means greater **effective mass** in the air that moves there, not heavier air molecules.",
+    "Both the first and second modes have strong motion near the lips, so motion dominates there in both. More moving mass is harder to speed up and reverse, so each cycle takes longer and the frequency falls. **F1 and F2 both go down** compared with the uniform tube.",
+    "The shared direction comes from where the load sits. It is not a rule that every constriction lowers every resonance."
    ],
    "exam": [],
    "slides": [
@@ -187,8 +190,9 @@
    "page": 20,
    "title": "Source and filter for schwa",
    "transcript": [
-    "The source on the left is a harmonic comb, with lines every 100 Hz up to 4000 Hz. The vocal tract filter on the right changes the height of each harmonic, so the outline of those heights is the vowel.",
-    "For schwa, the formants sit at 500, 1500, 2500 and 3500 Hz. Harmonics near each formant rise to the tallest heights in the output."
+    "**Source-filter theory** separates the vibration of the vocal folds, the **source**, from the shaping done by the vocal tract, the **filter**. The source repeats at a fundamental frequency, **F0**, and produces **harmonics** at whole-number multiples of F0. Here the harmonics are 100 Hz apart up to 4000 Hz, all at the same height.",
+    "The filter strengthens harmonics near its resonances, the **formants**, and weakens the rest. The harmonics stay at the same frequencies, and only their heights change. The outline of those heights is the **spectral envelope**, and that envelope is the vowel.",
+    "For schwa, the formants sit at **500, 1500, 2500 and 3500 Hz**. Frequency runs along the horizontal axis and amplitude up the vertical axis, so a taller line is stronger, not higher in frequency."
    ],
    "exam": [
     {
@@ -216,8 +220,8 @@
    "page": 21,
    "title": "Source and filter for /i/",
    "transcript": [
-    "The source is the same harmonic comb, with lines every 100 Hz. For /i/, the filter places the formants at 300, 2300, 3000 and 3600 Hz.",
-    "The harmonics near 300 Hz and near 2300 Hz are the tallest peaks. Between about 3000 and 3600 Hz the heights stay fairly high, so the upper formants form a broad band of energy."
+    "The **/i/ filter** has a low first formant and a high second formant, with **F1 at 300 Hz** and **F2 at 2300 Hz**. F3 and F4 sit at 3000 and 3600 Hz.",
+    "The source harmonics stay in the same places, 100 Hz apart, and only their strengths change. The strongest group sits near 300 Hz, the next group is far to the right near 2300 Hz, and the region between them is weak."
    ],
    "exam": [],
    "slides": [
@@ -240,8 +244,8 @@
    "page": 22,
    "title": "Source and filter for /a/",
    "transcript": [
-    "The source is the same harmonic comb. For /a/, the formants sit at 750, 1200, 2600 and 3500 Hz.",
-    "The first two formants are close together, at 750 and 1200 Hz, so the low-frequency peaks sit near each other. The two upper formants, at 2600 and 3500 Hz, are spaced further apart."
+    "Compared with /i/, the **/a/ filter raises F1 and lowers F2**. F1 sits at 750 Hz and F2 at 1200 Hz, so the first two formants come close together. F3 and F4 stay higher, at 2600 and 3500 Hz.",
+    "A formant can fall **between two harmonics**. The 750 Hz target lies between the source lines at 700 and 800 Hz, so those nearby harmonics get stronger without any new line appearing at exactly 750 Hz."
    ],
    "exam": [],
    "slides": [
@@ -264,9 +268,9 @@
    "page": 23,
    "title": "Spectrum and spectrogram for /ia/",
    "transcript": [
-    "A spectrum is one instant. A spectrogram stacks many spectra over time, so the horizontal axis is time and the vertical axis is frequency from 0 to 4000 Hz.",
-    "Spectrum height becomes darkness. High amplitude is black, medium amplitude is gray, and low amplitude is white.",
-    "In the /ia/ spectrogram, the lowest dark band starts near 300 Hz on the /i/ side and reaches about 750 Hz on the /a/ side. The second band starts near 2300 Hz and falls to about 1200 Hz, so the formants move as the vowel changes."
+    "A **spectrum** gives the frequency components in one short slice of sound. A **spectrogram** lines up many of these slices in time, with time running left to right and frequency running upward from 0 to 4000 Hz.",
+    "Spectrum height becomes darkness. **Black means high amplitude, gray medium and white low**, so a darkening band is getting stronger, while a rising band is moving to a higher frequency.",
+    "During the change from /i/ to /a/, **F1 rises and F2 falls**. The lowest band climbs from near 300 Hz to about 750 Hz, and the second band drops from near 2300 Hz to about 1200 Hz, so the two come closer together."
    ],
    "exam": [
     {
@@ -298,10 +302,10 @@
    "page": 15,
    "title": "Membrane modes and harmonic spacing",
    "transcript": [
-    "Each fixed-fixed membrane mode has a pair of numbers and a frequency. Mode 1 is at 100 Hz, mode 2 at 200 Hz, mode 3 at 300 Hz, mode 4 at 400 Hz and mode 5 at 500 Hz. The last panel is the sum of all five modes.",
-    "The bottom part is the source. The vocal folds vibrate at the fundamental frequency, F0, and the harmonics are the multiples of F0.",
-    "At F0 100 Hz the harmonics come every 100 Hz, so the spectrum has dense lines. At F0 250 Hz they come every 250 Hz, and at F0 350 Hz every 350 Hz. Lower F0 gives denser harmonic sampling, and higher F0 gives sparser sampling.",
-    "Big loose vocal folds give the lowest F0, and tighter, lighter folds give a higher one. Very tight and light folds give the highest F0 shown."
+    "The vocal folds supply the voiced **source**. Its repetition rate, **F0**, sets the spacing between the harmonics, which are whole-number multiples of F0.",
+    "With F0 at **100 Hz**, harmonics fall at 100, 200, 300 and so on, giving many closely spaced lines. At **250 Hz** they fall at 250, 500 and 750, and at **350 Hz** at 350, 700 and 1050. In the same 0 to 4000 Hz window, a lower F0 gives denser sampling and a higher F0 gives sparser sampling.",
+    "Big, loose vocal folds go with the low 100 Hz F0, and tighter, lighter folds go with the higher values. Heavier folds resist changes in movement, so they repeat more slowly.",
+    "The membrane panels give modes 1 to 5 at 100, 200, 300, 400 and 500 Hz, and the last panel sums all five. These frequencies are assigned for this example, not a general result for all membranes."
    ],
    "exam": [
     {
@@ -329,9 +333,10 @@
    "page": 16,
    "title": "Fixed-free filter and vowel formants",
    "transcript": [
-    "The vocal tract is a fixed-free filter, with one end closed and one end open. A formant is a peak of this filter, and the vowel shape sets where the formants fall.",
-    "A formant encourages the harmonics nearest to it to be audible, and harmonics far from it are muted. The voiced source supplies the harmonics, and the filter chooses which of them survive.",
-    "Schwa has formants at 500 and 1500 Hz. /u/ has 300, 1000 and 2000 Hz. /i/ or /l/ has 300 and 2200 Hz. /a/ has two formants close together, at 800 and 900 Hz."
+    "The vocal tract is a **fixed-free** tube, closed at one end and open at the other, and it acts as a **filter** on the harmonics from the source. Its resonances, the **formants**, depend on the shape of the tongue and lips.",
+    "A formant makes the closest harmonics audible, and harmonics far from it are muted. The voiced source supplies the harmonics, and the filter chooses which of them survive.",
+    "Schwa has formants at **500 and 1500 Hz**. /u/ places them lower, at **300 and 1000 Hz**, and adds one at 2000 Hz. /i/ or /I/ has a low F1 at **300 Hz** and a much higher F2 at **2200 Hz**. /a/ has its first two formants close together, at **800 and 900 Hz**.",
+    "A formant target can sit between two harmonics and still strengthen the ones nearby. Harmonic spacing comes from the source, while the formant pattern comes from the filter."
    ],
    "exam": [
     {
@@ -359,9 +364,9 @@
    "page": 17,
    "title": "Source and filter together",
    "transcript": [
-    "Each column is one vowel filter, with dashed red ticks marking its formant targets. Each row is one source, labeled by its F0, at 100, 250 and 350 Hz.",
-    "The grey curve in each cell is the filter shape, and the colored stems are the actual harmonics after filtering. Dense harmonics trace the formant shape well. Sparse harmonics can miss a formant or make the peaks look ambiguous.",
-    "So the same vowel filter gives a clearer shape from the low F0 source than from the high F0 source."
+    "Each column keeps one **vowel filter** fixed while F0 changes from row to row, at **100, 250 and 350 Hz**. Each row keeps the harmonic spacing fixed while the vowel changes, so the grid separates the effect of the source from the effect of the filter.",
+    "At low F0, many harmonics fall near each formant, and their heights trace the filter’s **envelope** well. At high F0 the gaps widen, so a strong harmonic may sit beside a formant target rather than on it, even though the target has not moved.",
+    "The two close /a/ formants can then look like a single region. Sparse harmonics make a formant harder to read, but the formant has not disappeared."
    ],
    "exam": [],
    "slides": [
@@ -384,8 +389,10 @@
    "page": 5,
    "title": "Vowel formants, 525 observations",
    "transcript": [
-    "Each point is one recorded vowel token. The horizontal axis is the first formant, F1, and the vertical axis is the second formant, F2, both in hertz.",
-    "The plot contains 525 observations, with 105 tokens of each vowel. The two formant values for each token are the inputs that the network receives in the code that follows."
+    "Each dot is one recorded vowel, placed by its **F1** along the horizontal axis and its **F2** along the vertical axis, both in hertz. The data has **525 observations**, **105 tokens of each vowel**, and these two formant numbers are exactly what the network receives as input.",
+    "The five vowels match the network’s five outputs. Each vowel forms a cloud rather than a single point, because the same vowel comes out with different formants from token to token.",
+    "Some vowels are easy to separate. The i tokens of dean sit high on F2, mostly above about 2000 Hz, and the ae tokens of Dan spread to high F1, past about 800 Hz. The u, a and schwa tokens overlap heavily.",
+    "A classifier sees only F1 and F2, so tokens in the same spot look identical to it. This **overlap** limits how many tokens any rule based on these two numbers can label correctly, which helps explain why the trained networks stay far from perfect accuracy."
    ],
    "exam": [],
    "slides": [
@@ -409,8 +416,8 @@
    "page": 15,
    "title": "Accuracy across one training run",
    "transcript": [
-    "The vertical axis is accuracy from 0 to 100 percent. The horizontal axis is the epoch, and each epoch is one full-batch update, so the curve records training accuracy after every update.",
-    "The run ends at 44.95 percent training accuracy. The deck states that PyTorch was unavailable, so this is an equivalent NumPy run and not a PyTorch recording."
+    "Training accuracy runs up the vertical axis, from 0 to 100 percent, and the update number, from 1 to 2,000, runs along the horizontal axis. Each epoch is one full-batch update on the same 525 tokens.",
+    "The curve starts at about **20 percent** and ends at **44.95 percent** training accuracy. PyTorch was not available where the curve was made, so it comes from an equivalent **NumPy** run of the same procedure."
    ],
    "exam": [
     {
@@ -443,8 +450,9 @@
    "page": 16,
    "title": "Ten initializations",
    "transcript": [
-    "Ten curves are plotted, one for each seed from 0 through 9. The same vertical accuracy scale from 0 to 100 percent applies to all of them.",
-    "All ten finish at 44.95 percent. The deck notes that the curves are NumPy reference runs, and that equal seed numbers do not imply equal PyTorch weights."
+    "Each colored line is one seed, 0 through 9. All ten start near **20 percent**, but they leave that level at different times, some within the first 100 updates and others staying flat for 200 or more, and some reach close to 47 percent along the way.",
+    "The runs settle between about 350 and about 1,000 updates, and then the lines overlap. **All ten finish at 44.95 percent**, so different starting weights take different paths but reach the same final accuracy on these data.",
+    "These are NumPy reference runs, and the same seed number in PyTorch would not give the same starting weights or the exact same line."
    ],
    "exam": [
     {
@@ -473,8 +481,10 @@
    "page": 5,
    "title": "Fifteen vectors, predicting the next word",
    "transcript": [
-    "The sentence is cut into 15 word positions, and each position is a vector. The question on the page asks what the vectors are, and the answer is a sentence cut into 15 words.",
-    "The sentence is “The cat that the dog chased ran up the old tree and sat on the” followed by a blank. The question mark marks the position to predict, so the network predicts the word at x16 from the 15 vectors before it."
+    "The arrangement holds **15 vectors, x1 to x15**, and an empty slot for **x16**. An LLM receives a sequence of vectors and predicts the next one.",
+    "In the first example, a sentence is cut into **15 words**, “The cat that the dog chased ran up the old tree and sat on the,” and x16 is the missing word. Predicting it means using words far back in the sentence, because it is the cat that sat.",
+    "The same slots then hold a **spectrogram cut into 15 frames**, where x16 is the next frame of sound, and an **image cut into 16 patches**, where x16 is the missing bottom-right patch.",
+    "**The LLM only ever sees vectors.** Words, sounds, pixels and molecules all become sequences of vectors, so one machine answers one question, what is x16."
    ],
    "exam": [
     {
@@ -515,8 +525,8 @@
    "page": 2,
    "title": "One neuron, many weights",
    "transcript": [
-    "A neuron takes a vector in and gives one number out. Each input value gets its own weight, labeled W1, W2 and W3, and the weighted values are added together, which the sigma symbol marks.",
-    "Many neurons side by side take the same vector in and produce a decision vector out. The page labels both the single number output and the vector output."
+    "**A neuron takes a vector in and gives one number out.** Each input is multiplied by its own weight, W1, W2 and W3, and the products are added together. This weighted sum is an **inner product**.",
+    "A neural network joins many of these weighted sums into layers. One input vector then becomes a **decision vector**, with one response for each possible answer."
    ],
    "exam": [],
    "slides": [
@@ -540,8 +550,9 @@
    "page": 4,
    "title": "A dynamical system, the harmonic oscillator",
    "transcript": [
-    "A dynamical system is a rule for data that feeds its own output back in again and again. In the harmonic oscillator, the rule updates a position x and a velocity v in turn, with a step size h.",
-    "The position is updated first, using the old velocity. Then the velocity is updated using the new position, so x and v take turns at each step. Repeating this step by step draws a cosine, as the page states."
+    "**A dynamical system takes a state, applies a rule, and feeds the result back in as the next state.** In the harmonic oscillator, the state is a position **x** and a velocity **v**, starting at position 1.00 and velocity 0.00.",
+    "Position and velocity take turns. The new position uses the old velocity, then the new velocity uses that new position, and the step size **h** sets how far each update moves. Repeating this rule step by step traces a cosine.",
+    "**Jordan’s recurrent network** feeds its output back the same way. The output is copied into state units, which feed the hidden layer again along with plan units, so recent outputs shape the next one in a sequence of speech movements."
    ],
    "exam": [],
    "slides": [
