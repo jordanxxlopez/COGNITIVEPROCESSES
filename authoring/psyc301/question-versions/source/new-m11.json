@@ -1,0 +1,1452 @@
+[
+ {
+  "id": 5001,
+  "module": 11,
+  "page": 2,
+  "kind": "application",
+  "college": {
+   "stem": "Two versions of the mutilated-checkerboard problem describe an identical board, the same two removed corners and the same goal of tiling it with dominoes, but only one version stresses that each domino lies on one square of each color. Why can the second version be easier to solve?",
+   "options": [
+    "Stating the problem that way makes the one-of-each-color pairing constraint easier to represent.",
+    "Identical starting and goal states force every solver to follow the same sequence of moves regardless of wording.",
+    "Emphasizing color physically alters how many squares remain on the board to be tiled.",
+    "Once a goal is stated, solvers no longer need to represent any relationships among the problem's elements."
+   ],
+   "correct": 0,
+   "why": "How a problem is stated can affect its difficulty by changing which relationships the solver represents. The board is physically unchanged, and the same start and goal do not dictate one route."
+  },
+  "simple": {
+   "stem": "Two descriptions of the same puzzle use the same board and goal but emphasize different details. Why might one description be easier to solve?",
+   "options": [
+    "The way a problem is stated can make the key idea easier to notice.",
+    "Puzzles with the same start and goal are always exactly equally hard.",
+    "Changing the wording changes the actual pieces of the puzzle itself.",
+    "Once the goal is stated, the wording of the problem no longer matters."
+   ],
+   "correct": 0,
+   "why": "How a problem is stated can affect its difficulty, because wording changes what the solver notices. The puzzle itself stays the same.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5002,
+  "module": 11,
+  "page": 3,
+  "kind": "application",
+  "college": {
+   "stem": "In the Russian marriage problem, 32 bachelors and 32 unmarried women were matched into 32 marriages, and then two bachelors died. Someone argues that 31 heterosexual marriages are possible because the 62 survivors divide evenly into 31 pairs. What does this argument ignore?",
+   "options": [
+    "Every marriage needs one man and one woman, and only 30 men remain to fill that role.",
+    "All existing marriages must remain intact, even though the matchmaker is free to rearrange the surviving villagers.",
+    "The matchmaker's actual goal is 32 marriages rather than the 31 that the problem asks about.",
+    "Survivors whose earlier partnerships ended can no longer be counted toward any new marriage."
+   ],
+   "correct": 0,
+   "why": "Sixty-two people is enough for 31 pairs by headcount, but each pair must contain one man and one woman, and only 30 men survive. No rearrangement removes the 30-versus-32 imbalance."
+  },
+  "simple": {
+   "stem": "In the Russian marriage problem, two of the 32 bachelors die, leaving 30 men and 32 women. Why can't the matchmaker arrange 31 heterosexual marriages?",
+   "options": [
+    "Each marriage needs one man, and only 30 men are left.",
+    "The matchmaker is not allowed to rearrange any existing couples.",
+    "Sixty-two people cannot be split evenly into pairs of two.",
+    "The problem requires 32 marriages rather than 31 marriages."
+   ],
+   "correct": 0,
+   "why": "With only 30 men, at most 30 man-woman pairs are possible. Sixty-two people do split evenly into pairs, but not into 31 pairs that each contain one man and one woman.",
+   "kind": "application"
+  }
+ },
+ {
+  "id": 5003,
+  "module": 11,
+  "page": 4,
+  "kind": "application",
+  "college": {
+   "stem": "In the mutilated-checkerboard problem, two opposite corner squares of the same color are removed, and each domino must lie on two adjacent squares of different colors. Why will no amount of rearranging the dominoes produce a complete tiling?",
+   "options": [
+    "Every possible placement still pairs one square of each color, but the two colors now have unequal counts.",
+    "Rearranging the dominoes changes how many squares of each color are on the board before tiling even begins.",
+    "Only the first domino placed causes the difficulty, so a different first placement would solve the problem.",
+    "Removing two squares leaves an odd number of squares, so no domino can be placed anywhere on the board."
+   ],
+   "correct": 0,
+   "why": "The 62 remaining squares are an even number, so area is not the barrier. The barrier is 32 squares of one color and 30 of the other under a one-of-each-color rule, which holds for every arrangement."
+  },
+  "simple": {
+   "stem": "In the mutilated-checkerboard problem, two corner squares of the same color are removed. Why can dominoes never tile the remaining board?",
+   "options": [
+    "Each domino covers one square of each color, but the colors are now unequal.",
+    "The remaining board has an odd number of squares left on it.",
+    "The dominoes are too large to fit along the edges and corners of the board.",
+    "Only the very first domino placement causes the whole problem."
+   ],
+   "correct": 0,
+   "why": "Each domino needs one square of each color, and removing two same-color squares leaves 32 of one color and 30 of the other. The 62 squares are an even number, so the count is not the issue.",
+   "kind": "application"
+  }
+ },
+ {
+  "id": 5004,
+  "module": 11,
+  "page": 5,
+  "kind": "definition",
+  "college": {
+   "stem": "A solver who has already worked through the Russian marriage problem uses its logic to see why the mutilated checkerboard cannot be tiled. Which description of the problems' roles is correct?",
+   "options": [
+    "The marriage problem serves as source, the checkerboard as target, and carrying the pairing logic across is analogical transfer.",
+    "The checkerboard serves as source because it is the problem currently being worked on, and the marriage problem is therefore the target.",
+    "Both problems count as targets, since a source problem must contain the same physical objects as the new problem.",
+    "The marriage problem is merely a surface feature of the board, so no relationship between categories is transferred."
+   ],
+   "correct": 0,
+   "why": "The target is the problem being solved now; a source problem is another problem that shares some similarities with it. Moving the solution from one to the other is analogical transfer, even though people and squares are different objects."
+  },
+  "simple": {
+   "stem": "In analogical problem solving, what is the target problem?",
+   "options": [
+    "It is the new problem that the person is currently trying to solve.",
+    "It is the earlier problem whose solution the person already knows.",
+    "It is any problem that contains exactly the same objects as another.",
+    "It is the final answer reached after an analogy has been used."
+   ],
+   "correct": 0,
+   "why": "The target problem is the one being solved. A source problem is a different, similar problem whose solution can guide the solution to the target.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5005,
+  "module": 11,
+  "page": 6,
+  "kind": "application",
+  "college": {
+   "stem": "In Duncker's radiation problem, a high-intensity ray would destroy the stomach tumor but also the healthy tissue along its path, whereas a low-intensity ray would spare the tissue but leave the tumor intact. Which procedure satisfies both constraints?",
+   "options": [
+    "Aim several low-intensity rays from different directions so that they converge on the tumor at once.",
+    "Send one high-intensity ray along a single path and rely on its strength dropping just before it reaches the tumor.",
+    "Use a single low-intensity ray on its own, without combining its effect with any other ray.",
+    "Spread weak rays across different parts of the body so that they never meet at the tumor."
+   ],
+   "correct": 0,
+   "why": "Each path carries only a harmless low intensity, while simultaneous convergence adds up to a destructive intensity at the tumor. Any single ray, strong or weak, fails one of the two constraints."
+  },
+  "simple": {
+   "stem": "What is the solution to Duncker's radiation problem?",
+   "options": [
+    "Several weak rays aimed from different directions meet at the tumor.",
+    "One very strong ray is aimed straight at the tumor.",
+    "The doctor operates first and then uses one weak ray.",
+    "Weak rays are spread out across the body so they never reach the tumor together."
+   ],
+   "correct": 0,
+   "why": "Weak rays spare the healthy tissue they pass through, and meeting at the tumor gives a strong combined effect there. One strong ray would destroy healthy tissue, and operating is impossible.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5006,
+  "module": 11,
+  "page": 7,
+  "kind": "application",
+  "college": {
+   "stem": "In the fortress story, the general's whole army could capture the fortress, but any large force on a road would set off the mines, while small groups could pass safely. What makes a successful attack possible?",
+   "options": [
+    "Small groups travel along different roads and arrive together, combining into a full-strength force at the fortress.",
+    "The full army marches down one road after the general confirms that the fortress is the true objective.",
+    "Each small group can capture the fortress entirely on its own, so the timing and coordination of the groups' arrival do not matter.",
+    "The general must first weaken the fortress from a distance before dividing the army in any way."
+   ],
+   "correct": 0,
+   "why": "Dividing the army keeps each road's traffic small enough to avoid the mines, and simultaneous arrival restores the full force at the fortress. A single small group would not be strong enough alone."
+  },
+  "simple": {
+   "stem": "In the fortress story, how could the general capture the fortress without setting off the mines?",
+   "options": [
+    "Split the army into small groups that come down different roads at once.",
+    "Send the whole army down the one road that the dictator left without mines.",
+    "Wait until the dictator removes the mines from all of the roads.",
+    "Send one small group, which can capture the fortress by itself."
+   ],
+   "correct": 0,
+   "why": "Small groups can cross the mines safely, and arriving together gives the full army's strength at the fortress. Every road was mined, and one small group would be too weak.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5007,
+  "module": 11,
+  "page": 8,
+  "kind": "application",
+  "college": {
+   "stem": "When the fortress story is mapped onto the radiation problem, which correspondence keeps the relationship that produces the solution?",
+   "options": [
+    "The small groups of soldiers correspond to low-intensity rays that combine at the central target.",
+    "The surrounding villages correspond to the tumor, since both have to be destroyed for the plan to succeed.",
+    "The fortress corresponds to a single incoming ray, because each of them travels along a road.",
+    "The full army on one road corresponds to several weak rays coming in from different directions."
+   ],
+   "correct": 0,
+   "why": "Both problems share separate, safe contributions that converge into a strong effect at the center. The villages correspond to healthy tissue rather than the tumor, and the full army on one road corresponds to one strong ray."
+  },
+  "simple": {
+   "stem": "In the analogy between the fortress story and the radiation problem, what do the small groups of soldiers correspond to?",
+   "options": [
+    "They correspond to the weak rays that meet at the tumor.",
+    "They correspond to the tumor that must be destroyed.",
+    "They correspond to the healthy tissue that must be protected.",
+    "They correspond to the doctor who chooses the treatment."
+   ],
+   "correct": 0,
+   "why": "Each small group, like each weak ray, is harmless on its own path but strong when combined at the target. The fortress, not the soldiers, corresponds to the tumor.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5008,
+  "module": 11,
+  "page": 9,
+  "kind": "researcher",
+  "college": {
+   "stem": "In Gick and Holyoak's research on the radiation problem, about 30% of participants solved it after encountering the fortress story, but about 75% did when told to think about that story. Which step of analogical problem solving does this gap most directly point to?",
+   "options": [
+    "Noticing that a known story is relevant to a new problem can fail even after the story has been encountered.",
+    "The fortress story contains a usable solution only if the hint changes the way the story ends.",
+    "Encountering any source story automatically guarantees that its solution will be recognized and then applied to the target problem.",
+    "The hint makes mapping unnecessary, since the tumor and the fortress become the same object."
+   ],
+   "correct": 0,
+   "why": "Both groups had the fortress story; the rise from about 30% to about 75% with a hint shows that noticing the analogous relationship, the crucial and most difficult step, often fails without help."
+  },
+  "simple": {
+   "stem": "In Gick and Holyoak's research, what happened when participants who knew the fortress story were told to think about it while solving the radiation problem?",
+   "options": [
+    "Success rose to about 75%, compared with about 30% without the hint.",
+    "Success fell, because the hint distracted them from the medical problem.",
+    "Success stayed near 10%, the same as for people without the story.",
+    "Every single participant solved the problem once given the hint."
+   ],
+   "correct": 0,
+   "why": "Being told to think about the story raised success from about 30% to about 75%. The story helped much more once people noticed that it applied.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5009,
+  "module": 11,
+  "page": 10,
+  "kind": "definition",
+  "college": {
+   "stem": "Which item reflects surface features rather than the shared structure of the fortress and radiation problems?",
+   "options": [
+    "The fortress and the tumor, as the particular objects that occupy the central target role.",
+    "The need to combine several weak contributions so that they act together at one destination.",
+    "A constraint that makes a single strong approach dangerous along its path.",
+    "The link between separate safe approaches and a strong combined effect at the target."
+   ],
+   "correct": 0,
+   "why": "Surface features are the specific elements of a problem, such as a fortress versus a tumor. The other options describe the underlying principle that governs the solution, which is structural."
+  },
+  "simple": {
+   "stem": "Which of these is a surface feature of the fortress and radiation problems?",
+   "options": [
+    "One story involves a fortress and the other involves a tumor.",
+    "Both stories require several weak forces to meet at one point.",
+    "In both stories, one strong force would cause damage on the way.",
+    "Both stories are solved by splitting a force into smaller parts."
+   ],
+   "correct": 0,
+   "why": "Surface features are the specific objects in a problem, like a fortress or a tumor. The other choices describe the shared underlying principle, which is a structural feature.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5010,
+  "module": 11,
+  "page": 11,
+  "kind": "application",
+  "college": {
+   "stem": "Ruth's sealed lightbulb cannot be opened. A high-intensity laser would fuse the broken filament but shatter the glass, and a low-intensity laser would do neither. Which procedure repairs the filament while keeping the glass intact?",
+   "options": [
+    "Point several low-intensity lasers at the filament from different directions so that they converge at once.",
+    "Keep using one high-intensity laser and simply accept the broken glass as a reasonable side effect of completing the repair.",
+    "Use one low-intensity laser by itself, with no way to raise its effect at the break in the filament.",
+    "Aim each laser at a different, unrelated spot on the bulb so that their effects never combine."
+   ],
+   "correct": 0,
+   "why": "Convergence supplies enough combined intensity at the filament while each spot on the glass receives only a weak beam. The goal requires both fusing the filament and keeping the glass intact."
+  },
+  "simple": {
+   "stem": "In the lightbulb problem, how can Ruth fuse the filament without breaking the glass?",
+   "options": [
+    "Aim several weak lasers so they all meet at the filament.",
+    "Use one strong laser aimed straight at the filament.",
+    "Open the glass bulb and fix the filament by hand.",
+    "Use one weak laser aimed at the glass instead of the filament."
+   ],
+   "correct": 0,
+   "why": "Weak beams do not break the glass, but where they meet their combined effect fuses the filament. One strong beam would break the glass, and the bulb is sealed.",
+   "kind": "application"
+  }
+ },
+ {
+  "id": 5011,
+  "module": 11,
+  "page": 12,
+  "kind": "design",
+  "college": {
+   "stem": "In the lightbulb study, 81% of participants who already knew Duncker's radiation problem solved the lightbulb problem, compared with 10% of controls. What makes this pairing of problems useful to compare with transfer from the fortress story to the radiation problem?",
+   "options": [
+    "The radiation and lightbulb problems share beam-like surface elements as well as the same convergence principle.",
+    "The lightbulb problem has no surrounding glass that needs protecting, unlike the radiation problem.",
+    "Knowing the radiation solution physically repairs the bulb before the participant even starts.",
+    "The two problems share no structural relationship at all, so only the length of each written story could affect solving."
+   ],
+   "correct": 0,
+   "why": "Rays and lasers aimed at an internal target are similar surface elements, unlike a fortress and a tumor. The comparison asks whether greater surface similarity helps people notice a source that also shares the useful structure."
+  },
+  "simple": {
+   "stem": "In the lightbulb study, how did knowing Duncker's radiation problem affect solving the lightbulb problem?",
+   "options": [
+    "About 81% of those who knew it solved the lightbulb problem, compared with about 10% of controls.",
+    "About 10% of those who knew it solved the lightbulb problem, which was exactly the same rate as controls.",
+    "Knowing it made people worse, because the two stories seemed too different.",
+    "Everyone solved the lightbulb problem whether or not they knew it."
+   ],
+   "correct": 0,
+   "why": "Knowing the radiation problem raised success on the lightbulb problem from about 10% to about 81%. The two problems have similar surface features, which made the link easier to notice.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5012,
+  "module": 11,
+  "page": 13,
+  "kind": "definition",
+  "college": {
+   "stem": "Two lightbulb stories involve the same bulb, filament and lasers but differ in why a single beam cannot do the job. How should their structural and surface features be distinguished?",
+   "options": [
+    "Why one beam fails is a structural feature, while the bulb, filament and lasers are surface features.",
+    "Any number mentioned in a story is structural, whereas every relationship between elements is surface detail.",
+    "A named laser is structural, while protecting the surrounding glass is only a difference in wording.",
+    "Structural differences require different objects, so two lightbulb stories cannot differ in structure."
+   ],
+   "correct": 0,
+   "why": "Structural features are the underlying principles that govern the solution, such as the reason convergence is needed. The same objects can appear in stories with different structures, as in fragile glass versus too-weak lasers."
+  },
+  "simple": {
+   "stem": "What is a structural feature of a problem?",
+   "options": [
+    "It is the underlying principle that governs how the problem is solved.",
+    "It is a specific object or character that appears in the problem.",
+    "It is the setting where the story of the problem takes place.",
+    "It is the number of words used to state the problem."
+   ],
+   "correct": 0,
+   "why": "Structural features are the underlying principles that govern the solution. Specific objects, characters and settings are surface features.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5013,
+  "module": 11,
+  "page": 14,
+  "kind": "application",
+  "college": {
+   "stem": "In the fragile-glass version, Ruth's converging low-intensity lasers fuse the filament without harming the glass. Which element of this story corresponds to the healthy-tissue constraint in the radiation problem?",
+   "options": [
+    "Each beam must stay weak enough along its path to avoid damage before the beams combine at the target.",
+    "The filament and the tumor must both stay undamaged, because each of them serves as a protective surrounding for the target.",
+    "A single strong beam can pass safely through the surroundings in both of the problems.",
+    "The glass must be opened first, just as surgery is needed before the tumor can be treated."
+   ],
+   "correct": 0,
+   "why": "Fragile glass and healthy tissue both limit how intense any one approach can be. Converging weak beams protects those surroundings while supplying a strong effect at the target."
+  },
+  "simple": {
+   "stem": "In the fragile-glass version of the lightbulb problem, what was the danger of using one strong laser?",
+   "options": [
+    "The strong laser would break the fragile glass around the filament.",
+    "The strong laser would be too weak to fuse the filament.",
+    "The strong laser would miss the tiny filament inside the sealed bulb entirely.",
+    "The strong laser would damage the other lasers around the bulb."
+   ],
+   "correct": 0,
+   "why": "In this version a strong beam could fuse the filament but would also break the glass, just as a strong ray would destroy healthy tissue in the radiation problem.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5014,
+  "module": 11,
+  "page": 15,
+  "kind": "design",
+  "college": {
+   "stem": "Ruth uses converging lasers in both the insufficient-intensity and the fragile-glass versions. Why do the two versions differ structurally?",
+   "options": [
+    "In one, convergence is needed because the laser is too weak, not because a strong beam would damage the glass.",
+    "In one, all of the objects change from bulbs and lasers into armies, roads and fortresses.",
+    "In one, the beams must avoid meeting, so the two solutions have opposite spatial layouts.",
+    "In one, there is no target that needs a stronger combined effect of any kind."
+   ],
+   "correct": 0,
+   "why": "Both versions use the same objects and the same converging procedure. Only the fragile-glass version shares the radiation problem's key constraint that a strong approach damages the surroundings."
+  },
+  "simple": {
+   "stem": "In the insufficient-intensity version of the lightbulb problem, why did Ruth need several lasers?",
+   "options": [
+    "Her laser made only weak beams, too weak to fuse the filament alone.",
+    "A strong beam would have shattered the fragile glass of the bulb.",
+    "She needed to fix several broken filaments at the very same moment.",
+    "The bulb was too large for a single laser beam to reach inside."
+   ],
+   "correct": 0,
+   "why": "In this version the problem is that the laser is too weak, so beams are combined to reach the needed intensity. Breaking the glass is the problem in the other, fragile-glass version.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5015,
+  "module": 11,
+  "page": 16,
+  "kind": "definition",
+  "college": {
+   "stem": "Which activity best fits the definition of analogical encoding?",
+   "options": [
+    "Comparing two problems to determine which similarities they share in their underlying relationships.",
+    "Memorizing the specific nouns in one story without looking at any second problem.",
+    "Counting how many objects two different stories name while ignoring how those objects relate to one another in each story.",
+    "Applying the first familiar procedure to a new problem without considering any other problem."
+   ],
+   "correct": 0,
+   "why": "Analogical encoding is the process of comparing two problems and determining their similarities. Its value is that it draws attention to structural features that support problem solving."
+  },
+  "simple": {
+   "stem": "What is analogical encoding?",
+   "options": [
+    "Comparing two problems to find out how they are similar.",
+    "Memorizing one story word for word before solving a problem.",
+    "Solving a problem without thinking about any other problem.",
+    "Turning a story problem into numbers so it can be calculated."
+   ],
+   "correct": 0,
+   "why": "Analogical encoding means comparing two problems and determining what they have in common, which helps people focus on structural features.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5016,
+  "module": 11,
+  "page": 17,
+  "kind": "definition",
+  "college": {
+   "stem": "Which statement captures the analogical paradox?",
+   "options": [
+    "People often struggle to use analogies in laboratory tasks, yet they routinely use analogies in real-world settings.",
+    "People solve every laboratory analogy easily but almost never draw on their prior experience when working on everyday problems.",
+    "A source problem must always contain the same objects as the target for any analogy to work.",
+    "Scientists cannot use analogies, because their lab meetings take place outside formal experiments."
+   ],
+   "correct": 0,
+   "why": "The paradox is the contrast between difficult analogy use in the laboratory and frequent analogy use in the real world, where scientists use about 3 to 15 analogies in a 1-hour lab meeting."
+  },
+  "simple": {
+   "stem": "What is the analogical paradox?",
+   "options": [
+    "People find analogies hard to use in the lab but use them often in real life.",
+    "People use analogies easily in the lab but almost never use them in real life.",
+    "Analogies only work when two problems share exactly the same objects.",
+    "Experts use fewer analogies than beginners do in their own field."
+   ],
+   "correct": 0,
+   "why": "The paradox is that analogies are hard to apply in laboratory tasks even though people, including scientists in lab meetings, use them routinely in the real world.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5017,
+  "module": 11,
+  "page": 18,
+  "kind": "application",
+  "college": {
+   "stem": "An experienced chess player solves chess problems quickly. Which claim is consistent with how expertise is defined?",
+   "options": [
+    "Extensive learning, practice and application of knowledge can produce recognized skill within that particular field.",
+    "Being recognized as a chess expert implies equal expertise in every unrelated area of knowledge.",
+    "A large number of practice hours, by itself and regardless of field, guarantees flexible success on every new type of problem.",
+    "An expert must start every problem faster than a beginner, because analysis is no longer needed."
+   ],
+   "correct": 0,
+   "why": "An expert has devoted a large amount of time to learning, practicing and applying knowledge in a field and is acknowledged as highly skilled in that field. Expertise does not imply skill everywhere or a faster start."
+  },
+  "simple": {
+   "stem": "About how much time has a chess expert typically spent studying and playing chess?",
+   "options": [
+    "Somewhere around 10,000 to 20,000 hours of study and play.",
+    "Fewer than 100 hours spent learning the rules of chess.",
+    "Roughly 500 hours spread across a single year of play.",
+    "No set amount, since chess skill is mostly inborn talent."
+   ],
+   "correct": 0,
+   "why": "A chess expert is someone who has spent 10,000 to 20,000 hours studying and playing chess. Fewer than 100 hours describes the beginner in the chess memory study.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5018,
+  "module": 11,
+  "page": 19,
+  "kind": "researcher",
+  "college": {
+   "stem": "Chase and Simon (1973) had a chess master and a beginner reproduce board arrangements viewed for 5 seconds, using either actual game positions or random placements. Why is the random condition important for interpreting the master's advantage?",
+   "options": [
+    "It removes familiar game patterns, testing whether stored, meaningful chunks support the master's better recall.",
+    "It lets the master study the board for longer while the beginner gets less viewing time.",
+    "It measures only how quickly pieces are moved, so memory plays no part in the task.",
+    "It changes the number of squares on the board so that an entirely different game must be learned."
+   ],
+   "correct": 0,
+   "why": "The master did much better only with actual game positions, which were stored in long-term memory and accessed in chunks. Those chunks were not available for random arrangements, so the advantage reflects chess knowledge rather than a better general memory."
+  },
+  "simple": {
+   "stem": "In Chase and Simon's (1973) study, when did the chess master remember piece positions much better than the beginner?",
+   "options": [
+    "When the pieces were arranged in positions from actual games.",
+    "When the pieces were placed randomly on the chessboard.",
+    "In both conditions, by about the same large margin.",
+    "Only when the master could study the board for several minutes."
+   ],
+   "correct": 0,
+   "why": "The master did much better with real game positions, which could be recalled as chunks from long-term memory. Random arrangements offered no familiar chunks.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5019,
+  "module": 11,
+  "page": 20,
+  "kind": "researcher",
+  "college": {
+   "stem": "Chi and colleagues (1982) asked physics faculty members and students with one semester of physics to sort 24 physics problems into groups by similarity. Which pattern did they report?",
+   "options": [
+    "Novices grouped problems by their surface features, while experts grouped them by underlying physics principles.",
+    "Experts grouped problems by how their physical objects looked, while novices grouped them by the underlying physics principles.",
+    "Both groups were told to use the same named principle, so their groupings did not differ.",
+    "The task actually compared how well each group memorized chessboard positions instead of physics problems."
+   ],
+   "correct": 0,
+   "why": "The sorting task shows how knowledge is organized. Experts grouped by structural features (underlying principles), while novices grouped by surface features (what the objects looked like)."
+  },
+  "simple": {
+   "stem": "In Chi and colleagues' (1982) study, how did physics experts sort physics problems?",
+   "options": [
+    "By the underlying physics principles needed to solve them.",
+    "By what the objects in the problems looked like.",
+    "By how long each problem took them to solve.",
+    "By the order in which the problems were handed out to them."
+   ],
+   "correct": 0,
+   "why": "Experts sorted by structural features, the underlying physics principles. Novices sorted by surface features, such as the objects shown.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5020,
+  "module": 11,
+  "page": 21,
+  "kind": "application",
+  "college": {
+   "stem": "In Chi and colleagues' (1982) sorting task, a novice puts problems 23 and 24 together because both show inclined planes, while an expert puts problems 21 and 24 together even though problem 21 involves a spring. What explains the expert's grouping?",
+   "options": [
+    "Problems 21 and 24 both call for conservation of energy as the principle used to solve them.",
+    "The expert ignores how problems relate and groups them only by the identical look of their diagrams.",
+    "The novice's grouping shows that an inclined plane and a spring are physically the same object.",
+    "All three problem numbers refer to the same physical task with no difference in setup."
+   ],
+   "correct": 0,
+   "why": "The expert grouped by a shared physics principle across different-looking objects, while the novice grouped by the shared inclined plane. Problem 24 fits either grouping depending on which similarity is used."
+  },
+  "simple": {
+   "stem": "In Chi and colleagues' (1982) sorting task, why did the expert group problem 21 (a spring) with problem 24 (an inclined plane)?",
+   "options": [
+    "Both problems involve the same principle, conservation of energy.",
+    "Both problems show objects that look almost exactly alike.",
+    "Both problems were printed right next to each other.",
+    "Both problems contain the same numbers in their diagrams."
+   ],
+   "correct": 0,
+   "why": "The expert grouped the problems by a shared physics principle, conservation of energy, even though their objects look different.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5021,
+  "module": 11,
+  "page": 22,
+  "kind": "application",
+  "college": {
+   "stem": "An expert spends longer than a novice analyzing a problem before starting, yet reaches a correct solution more efficiently overall. Which interpretation fits how experts solve problems?",
+   "options": [
+    "A slower start spent on analysis can reveal relevant structure, which usually pays off over the whole task.",
+    "A slower start disproves the person's expertise, regardless of how good, accurate or quick the final solution turns out to be.",
+    "Experts never analyze problems, so the observed analysis must reflect an error in measurement.",
+    "The initial analysis guarantees that the same advantage will appear in every unrelated field."
+   ],
+   "correct": 0,
+   "why": "Experts spend more time analyzing a problem, giving a slower start, but this strategy usually pays off. It does not extend their advantage to problems outside their field."
+  },
+  "simple": {
+   "stem": "How do experts usually begin working on a problem compared with novices?",
+   "options": [
+    "They spend more time analyzing it first, which usually pays off.",
+    "They start right away and skip any analysis of the problem.",
+    "They copy the approach that a novice would usually use on the same problem.",
+    "They give up sooner whenever the problem seems difficult."
+   ],
+   "correct": 0,
+   "why": "Experts spend more time analyzing the problem at the start. The slower start usually pays off.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5022,
+  "module": 11,
+  "page": 23,
+  "kind": "application",
+  "college": {
+   "stem": "A design team has brainstormed many possible approaches but has not yet evaluated them, planned a response or taken action. Which stages of creative problem solving remain unfinished?",
+   "options": [
+    "Problem solving, which includes evaluation and planning, and solution implementation, which involves taking action.",
+    "None, since generating a large number of ideas already counts as the finished product of creative work, with nothing left to do.",
+    "Only problem generation, because taking action is not considered part of creative problem solving.",
+    "Only idea finding, because producing more ideas automatically evaluates the ones already proposed."
+   ],
+   "correct": 0,
+   "why": "Generating ideas is only one part of the creative process. Evaluation and planning (problem solving) and taking action (solution implementation) are separate later stages."
+  },
+  "simple": {
+   "stem": "Which stage of creative problem solving involves taking action?",
+   "options": [
+    "Solution implementation, the final stage of the process.",
+    "Problem generation, which includes problem finding and fact finding.",
+    "Problem formulation, which includes defining the problem and idea finding.",
+    "Problem solving, which includes evaluation and planning."
+   ],
+   "correct": 0,
+   "why": "The four stages are problem generation, problem formulation, problem solving and solution implementation. Taking action belongs to solution implementation.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5023,
+  "module": 11,
+  "page": 24,
+  "kind": "application",
+  "college": {
+   "stem": "A highly knowledgeable solver keeps applying a standard procedure even though the task calls for a less familiar approach. How can this knowledge hinder creative problem solving?",
+   "options": [
+    "The familiar procedure can narrow the options considered and make it harder to adopt a better-fitting alternative.",
+    "Any amount of knowledge makes it impossible to form a new connection between existing ideas.",
+    "The standard procedure becomes correct simply because an experienced person prefers to use it.",
+    "Flexible thinking requires throwing out all relevant knowledge entirely, rather than rethinking how that knowledge is being applied."
+   ],
+   "correct": 0,
+   "why": "Too much knowledge can sometimes hinder creative problem solving when a problem requires flexible thinking and rejecting accepted procedures. The issue is rigid application, not knowledge as such."
+  },
+  "simple": {
+   "stem": "How can too much knowledge sometimes hurt creative problem solving?",
+   "options": [
+    "It can make a person stick to usual methods when a new approach is needed.",
+    "It always makes a person forget the basic facts and rules of their own field.",
+    "It makes a person produce far too many ideas to choose from.",
+    "It has no effect, since knowledge only ever helps creativity."
+   ],
+   "correct": 0,
+   "why": "Problems often require flexible thinking and rejecting accepted procedures. A lot of knowledge can make it harder to let go of the usual way of doing things.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5024,
+  "module": 11,
+  "page": 5,
+  "kind": "application",
+  "college": {
+   "stem": "When the marriage-problem solution is transferred to the mutilated checkerboard, which mapping keeps the critical pairing relationship?",
+   "options": [
+    "The men and women correspond to the two square colors, and each marriage corresponds to one domino.",
+    "Each individual person corresponds to a whole domino, so each marriage corresponds to four squares.",
+    "The two bachelors who died correspond to one removed square of each color.",
+    "The matchmaker corresponds to one square color, and the two groups of people correspond to the board's total area."
+   ],
+   "correct": 0,
+   "why": "Both problems require pairs containing one member from each of two categories. Two bachelors (one category) dying corresponds to removing two squares of the same color, which creates the same imbalance."
+  },
+  "simple": {
+   "stem": "In the analogy between the marriage and checkerboard problems, what does one marriage correspond to?",
+   "options": [
+    "One domino, which always pairs one square of each color.",
+    "One removed corner square of the whole checkerboard.",
+    "The entire checkerboard, since all the villagers live together.",
+    "A single color of square, since every marriage looks alike."
+   ],
+   "correct": 0,
+   "why": "A marriage pairs one man with one woman, just as a domino pairs one square of each color. The removed squares correspond to the two bachelors who died.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5025,
+  "module": 11,
+  "page": 6,
+  "kind": "design",
+  "college": {
+   "stem": "A proposed answer to Duncker's radiation problem uses several low-intensity rays, but they are aimed at different parts of the body and never meet at the tumor. Which requirement is still unmet?",
+   "options": [
+    "A strong enough combined intensity has to reach the tumor itself, not just weak rays at scattered spots.",
+    "Every individual path has to carry a high-intensity ray that destroys the tissue around it.",
+    "The tumor must first be reached through an operation on the patient before any ray, weak or strong, can have an effect on it.",
+    "The procedure must keep all radiation away from the tumor and treat only the healthy tissue."
+   ],
+   "correct": 0,
+   "why": "Dividing the radiation into weak rays protects healthy tissue, but the rays must also converge so that their combined intensity destroys the tumor."
+  },
+  "simple": {
+   "stem": "Why would several weak rays that never meet at the tumor fail to solve Duncker's radiation problem?",
+   "options": [
+    "Their combined strength never builds up at the tumor itself.",
+    "Each weak ray would destroy the healthy tissue it passes through.",
+    "Weak rays cannot pass through the body under any conditions.",
+    "The patient would need an operation before any rays were used."
+   ],
+   "correct": 0,
+   "why": "A single weak ray is harmless to tissue but also does not affect the tumor. Only when the weak rays converge does their combined intensity destroy it.",
+   "kind": "application"
+  }
+ },
+ {
+  "id": 5026,
+  "module": 11,
+  "page": 8,
+  "kind": "application",
+  "college": {
+   "stem": "A participant maps the tumor onto the fortress but cannot say what corresponds to the roads or to the small groups of soldiers. Which step of analogical problem solving is incomplete?",
+   "options": [
+    "Mapping the full set of relevant correspondences between the fortress story and the radiation problem.",
+    "Constructing an additional medical target that the radiation problem never specified.",
+    "Noticing the analogy, even though the participant has already linked the tumor to the fortress.",
+    "Applying divergent thinking, since mapping plays no part in using an analogy."
+   ],
+   "correct": 0,
+   "why": "Mapping requires matching elements of the fortress story to elements of the radiation problem. Linking one object is not enough if the roads and soldiers, which carry the solution, are left unmatched; noticing has clearly already occurred."
+  },
+  "simple": {
+   "stem": "In analogical problem solving, what is mapping?",
+   "options": [
+    "Matching the parts of one problem to the corresponding parts of another.",
+    "Drawing a picture of the problem before trying to solve it.",
+    "Noticing that a story might be relevant to a new problem.",
+    "Writing down every possible solution without judging or comparing any of them."
+   ],
+   "correct": 0,
+   "why": "Mapping means matching elements of one problem to elements of the other. Noticing that a story is relevant is a separate, earlier step.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5027,
+  "module": 11,
+  "page": 9,
+  "kind": "design",
+  "college": {
+   "stem": "A researcher wants to separate failing to notice a relevant story from never having encountered it. Which design follows the logic of Gick and Holyoak's hint manipulation?",
+   "options": [
+    "Give both groups the fortress story, then tell only one group to think about it while solving the target.",
+    "Give the fortress story only to the group that also gets the hint, so exposure and hint always go together.",
+    "Let one group change the target problem's constraints while the other group must keep them.",
+    "Compare a group handed the finished target solution with a group that may not attempt the target."
+   ],
+   "correct": 0,
+   "why": "Holding exposure to the story constant while varying the hint isolates noticing. If only the hint group had the story, exposure and hint would be confounded."
+  },
+  "simple": {
+   "stem": "In Gick and Holyoak's research, which step of using an analogy was the most difficult?",
+   "options": [
+    "Noticing that the earlier story was related to the new problem.",
+    "Mapping the soldiers onto the rays after the link was seen.",
+    "Applying the solution once all the matches were worked out.",
+    "Remembering the events of the fortress story at all."
+   ],
+   "correct": 0,
+   "why": "Noticing the analogous relationship is the crucial and most difficult step. Many people who knew the story did not think to use it until given a hint.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5028,
+  "module": 11,
+  "page": 9,
+  "kind": "researcher",
+  "college": {
+   "stem": "Gick and Holyoak found that telling participants to think about the fortress story raised their success on the radiation problem. Which interpretation best fits this result?",
+   "options": [
+    "A useful story can be available in memory without being spontaneously recognized as relevant to a new problem.",
+    "A useful story produces transfer as soon as it has been encountered, so the hint played no real role.",
+    "Because its military setting differs from a medical one, the story cannot share any structural relationship with the radiation problem.",
+    "The hint replaced the need to generate any corresponding procedure for the radiation problem."
+   ],
+   "correct": 0,
+   "why": "Participants who had the story still often failed to use it; a hint to think about it raised success. Noticing, mapping and applying remain separate steps, and the hint helped with noticing."
+  },
+  "simple": {
+   "stem": "In Gick and Holyoak's research, about what share of participants failed to see the correspondence between the fortress story and the radiation problem on their own?",
+   "options": [
+    "About 70% of participants failed to see the correspondence.",
+    "About 10% of participants failed to see the correspondence.",
+    "About 30% of participants failed to see the correspondence.",
+    "Almost no participants failed to see the correspondence."
+   ],
+   "correct": 0,
+   "why": "About 30% solved the problem after the fortress story, so about 70% did not see the correspondences on their own. A hint raised success to about 75%.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5029,
+  "module": 11,
+  "page": 10,
+  "kind": "application",
+  "college": {
+   "stem": "A learner dismisses the fortress story as irrelevant to the radiation problem because one is military and the other medical. What relationship is the learner overlooking?",
+   "options": [
+    "Both need a strong combined effect at a central target while each separate approach stays safe.",
+    "Both require the same named people and objects for one of them to serve as a valid source.",
+    "Both allow a single unrestricted high-intensity approach through the surrounding area.",
+    "Both are solved simply by noticing that the words fortress and tumor mean the same thing."
+   ],
+   "correct": 0,
+   "why": "Military and medical settings are surface features. The shared structure is that safe, separate approaches combine to produce a strong effect at the target."
+  },
+  "simple": {
+   "stem": "Why do people often fail to notice that the fortress story can help with the radiation problem?",
+   "options": [
+    "They focus on surface features, like a fortress versus a tumor.",
+    "They focus too much on the shared principle of converging forces.",
+    "The two stories have completely different underlying solutions.",
+    "The fortress story is too short for anyone to remember it."
+   ],
+   "correct": 0,
+   "why": "Noticing is hard partly because people focus on surface features, such as a fortress versus a tumor, rather than the shared convergence principle.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5030,
+  "module": 11,
+  "page": 12,
+  "kind": "researcher",
+  "college": {
+   "stem": "In the lightbulb study, 81% of participants who knew Duncker's radiation problem solved the lightbulb problem, compared with 10% of a control group. Which conclusion does this support?",
+   "options": [
+    "A relevant earlier problem with similar surface elements can help people generate the converging-beam solution.",
+    "Knowing the radiation problem somehow changes the real glass of the bulb so that it no longer breaks under a single strong beam.",
+    "Surface similarity guarantees perfect transfer for every participant who knows the earlier problem.",
+    "The control group's low success proves that the lightbulb problem has no possible solution."
+   ],
+   "correct": 0,
+   "why": "Knowing a problem with similar surface features was linked to much higher success. It did not guarantee success for everyone, and control failures do not show the problem is unsolvable."
+  },
+  "simple": {
+   "stem": "What did the lightbulb study show about surface similarity?",
+   "options": [
+    "Similar surface features between two problems helped people solve the new one.",
+    "Similar surface features between two problems made people more confused.",
+    "Surface features had no effect at all on solving the lightbulb problem.",
+    "Only structural features, never surface features, can help people transfer a solution."
+   ],
+   "correct": 0,
+   "why": "Surface similarity helped: about 81% of people who knew the radiation problem solved the lightbulb problem, compared with about 10% of controls.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5031,
+  "module": 11,
+  "page": 13,
+  "kind": "design",
+  "college": {
+   "stem": "An experiment keeps the bulb, filament and laser descriptions alike but changes whether a strong beam would damage the glass or whether the laser is simply too weak. What is being manipulated?",
+   "options": [
+    "The structural features that determine why combining several beams is necessary.",
+    "Only the surface category of the objects, since constraints are not part of a problem's structure.",
+    "The number of target problems, without any change in a relationship relevant to the solution.",
+    "Whether the solution uses a filament at all, since one version swaps the bulb for a fortress."
+   ],
+   "correct": 0,
+   "why": "The two versions keep the surface features the same and vary the structural features: the underlying reason the beams must be combined."
+  },
+  "simple": {
+   "stem": "In the two versions of the lightbulb problem, what stayed the same and what changed?",
+   "options": [
+    "The surface features stayed the same, while the structural features changed.",
+    "The structural features stayed the same, while the surface features changed.",
+    "Both the surface and the structural features changed completely.",
+    "Nothing changed except the name of the research assistant."
+   ],
+   "correct": 0,
+   "why": "Both versions used the same bulb, filament and lasers (surface features) but differed in why a single beam would not work (structural features).",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5032,
+  "module": 11,
+  "page": 14,
+  "kind": "application",
+  "college": {
+   "stem": "A learner recalls that Ruth used several lasers but forgets that the glass had to be protected. Which correspondence to the radiation problem has been lost?",
+   "options": [
+    "The fragile glass and the healthy tissue both limit how intense a beam can safely be along any single path.",
+    "The filament and the tumor are identical in every physical and biological respect.",
+    "The surroundings must receive the strongest intensity before any beam reaches the target.",
+    "Both problems allow the surroundings to be opened up first, so that the target can be reached and removed directly by hand."
+   ],
+   "correct": 0,
+   "why": "The need to protect fragile surroundings explains why a single strong approach fails in both problems. Remembering only the multiple lasers leaves out this structural relationship."
+  },
+  "simple": {
+   "stem": "In the fragile-glass version of the lightbulb problem, which part matches the healthy tissue in the radiation problem?",
+   "options": [
+    "The fragile glass that surrounds the filament inside the bulb.",
+    "The broken filament that needs to be fused back together.",
+    "The several lasers placed in a circle around the bulb.",
+    "Ruth, the research assistant who finds the broken bulb."
+   ],
+   "correct": 0,
+   "why": "The glass, like healthy tissue, would be damaged by one strong beam and must be protected. The filament matches the tumor, and the lasers match the rays.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5033,
+  "module": 11,
+  "page": 15,
+  "kind": "researcher",
+  "college": {
+   "stem": "Transfer to the radiation problem was 69% after the fragile-glass solution but 33% after the insufficient-intensity solution, although both stories involve a bulb and converging lasers. Which explanation fits this comparison?",
+   "options": [
+    "Sharing the radiation problem's constraint about damage along the path aids transfer beyond similar objects and beam layout.",
+    "Only the fragile-glass version contains any beam, so the comparison removes all structural information.",
+    "The insufficient-intensity solution uses no convergence and so offers no shared procedure at all.",
+    "Transfer depends only on whether the two problems carry the same title."
+   ],
+   "correct": 0,
+   "why": "The two versions keep the surface elements and the converging solution but differ in structure. Only the fragile-glass version shares the radiation problem's need to protect the surroundings, and it produced more transfer."
+  },
+  "simple": {
+   "stem": "Which version of the lightbulb problem helped more people solve the radiation problem afterward?",
+   "options": [
+    "The fragile-glass version, with about 69% solving it versus about 33%.",
+    "The insufficient-intensity version, with about 69% solving it versus about 33%.",
+    "Both versions helped equally, with about half of people solving it.",
+    "Neither version helped, since only about 10% solved it after either."
+   ],
+   "correct": 0,
+   "why": "About 69% solved the radiation problem after the fragile-glass version, which shares its structure, compared with about 33% after the insufficient-intensity version.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5034,
+  "module": 11,
+  "page": 16,
+  "kind": "design",
+  "college": {
+   "stem": "Which study activity most directly promotes analogical encoding instead of memorizing isolated story details?",
+   "options": [
+    "Having learners compare two stories and explain the shared relationships that make both solutions work.",
+    "Having learners list only the characters' names without comparing any of the problems.",
+    "Preventing learners from thinking about more than one story at any point while they study.",
+    "Having learners sort the stories only by how many sentences each one contains."
+   ],
+   "correct": 0,
+   "why": "Comparing stories and identifying their similarities is analogical encoding, and it directs attention to structural features. Listing names or counting sentences does not."
+  },
+  "simple": {
+   "stem": "Why does comparing two stories help people solve analogy problems?",
+   "options": [
+    "It makes them pay attention to the shared structural features.",
+    "It makes them memorize the surface details of each separate story word for word.",
+    "It lets them skip working on the target problem entirely.",
+    "It makes the stories shorter and easier to remember."
+   ],
+   "correct": 0,
+   "why": "Comparing stories (analogical encoding) is an effective way to get people to focus on structural features, which aids problem solving.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5035,
+  "module": 11,
+  "page": 16,
+  "kind": "application",
+  "college": {
+   "stem": "A student notices that an army story and a radiation story both involve convergence. What would make this similarity structural rather than superficial?",
+   "options": [
+    "It links several safe, separate approaches to the strong combined effect needed at the destination.",
+    "It rests only on both stories including a person who wants to succeed at something.",
+    "It requires the army and the radiation to look identical on the surface.",
+    "It concerns only whether the two stories were printed on the same page."
+   ],
+   "correct": 0,
+   "why": "A structural similarity is an underlying principle that explains how the solution meets the problem's constraints. Generic details or where a story appears do not supply that principle."
+  },
+  "simple": {
+   "stem": "Which similarity between the fortress and radiation problems is a structural feature?",
+   "options": [
+    "Weak forces from many directions combine to make a strong force at one point.",
+    "Both stories feature a main character who is trying hard to reach an important goal.",
+    "Both stories take place somewhere with roads or paths.",
+    "Both stories were written as short paragraphs of text."
+   ],
+   "correct": 0,
+   "why": "The shared principle of combining weak forces at one point governs both solutions, so it is structural. The other choices are incidental details.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5036,
+  "module": 11,
+  "page": 17,
+  "kind": "design",
+  "college": {
+   "stem": "A researcher observes scientists solving problems during their regular lab meetings. Which advantage and limitation describe this in vivo approach?",
+   "options": [
+    "It keeps a naturalistic setting, but it is time-consuming and cannot isolate and control variables.",
+    "It guarantees full experimental control over every contributing factor while removing the ordinary work setting entirely.",
+    "It records only final written answers and cannot capture any reasoning as it happens.",
+    "It removes any need to find out whether people actually use analogies in their work."
+   ],
+   "correct": 0,
+   "why": "In vivo research observes how people solve problems in the real world. Its advantage is the naturalistic setting; its disadvantages are that it is time-consuming and cannot isolate and control variables."
+  },
+  "simple": {
+   "stem": "What is in vivo problem-solving research?",
+   "options": [
+    "Observing people to see how they solve problems in the real world.",
+    "Giving people puzzles in a lab under tightly controlled conditions.",
+    "Asking people to sort problems into groups by similarity.",
+    "Measuring brain activity while people solve math problems."
+   ],
+   "correct": 0,
+   "why": "In vivo research observes people solving problems in natural, real-world settings, such as scientists in lab meetings.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5037,
+  "module": 11,
+  "page": 17,
+  "kind": "application",
+  "college": {
+   "stem": "Scientists use analogies repeatedly during ordinary work, yet many participants fail to use an analogy offered in an experiment. Which interpretation accounts for both observations?",
+   "options": [
+    "The conditions that lead people to notice and use analogies can differ between lab tasks and real-world activity.",
+    "Every failed lab transfer shows that analogical reasoning never happens outside the lab.",
+    "Any analogy observed in a meeting proves that every controlled transfer task must be easy.",
+    "The two observations involve unrelated processes, since analogies between a source and a target problem can exist only in the lab."
+   ],
+   "correct": 0,
+   "why": "This contrast is the analogical paradox. Neither observation cancels the other; analogy use simply appears easier in real-world settings than in laboratory tasks."
+  },
+  "simple": {
+   "stem": "About how many analogies do scientists use in a 1-hour lab meeting?",
+   "options": [
+    "Somewhere between about 3 and 15 analogies.",
+    "Fewer than one analogy in a typical meeting.",
+    "Somewhere between about 50 and 100 analogies.",
+    "None, because analogies are used only in experiments."
+   ],
+   "correct": 0,
+   "why": "Scientists use about 3 to 15 analogies in a 1-hour lab meeting, which shows how routinely analogies are used in real-world settings.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5038,
+  "module": 11,
+  "page": 18,
+  "kind": "application",
+  "college": {
+   "stem": "A person is highly skilled at chess after years of study but has little experience in a new professional field. What prediction follows from the domain-specific nature of expertise?",
+   "options": [
+    "Organized chess knowledge does not by itself give this person an expert advantage on problems in the new field.",
+    "This person will outperform beginners in the new field by the same large margin that appears when the person plays chess.",
+    "This person's chess expertise will vanish as soon as an unrelated problem appears.",
+    "Since expertise depends only on confidence, knowledge of the new field is irrelevant."
+   ],
+   "correct": 0,
+   "why": "Experts are no better than novices when given problems outside their field. Chess knowledge does not disappear, but it does not transfer automatically to an unrelated domain."
+  },
+  "simple": {
+   "stem": "A chess master tries to solve a plumbing problem, a field she knows nothing about. What should be expected?",
+   "options": [
+    "She will likely do no better than a plumbing novice.",
+    "She will easily outperform plumbing novices thanks to chess.",
+    "She will lose her chess skill while working on plumbing.",
+    "She will solve it faster, because experts never need analysis."
+   ],
+   "correct": 0,
+   "why": "Experts are no better than novices on problems outside their field, so her chess expertise gives no special advantage in plumbing.",
+   "kind": "application"
+  }
+ },
+ {
+  "id": 5039,
+  "module": 11,
+  "page": 19,
+  "kind": "design",
+  "college": {
+   "stem": "In Chase and Simon's (1973) chess recall study, which manipulation most directly tests whether familiar long-term chunks produce the expert's advantage?",
+   "options": [
+    "Comparing actual game positions with random arrangements of the same pieces after the same 5-second view.",
+    "Letting the expert inspect a meaningful board indefinitely while the novice sees it only briefly.",
+    "Asking the expert to play chess while the novice completes an unrelated task.",
+    "Replacing recall with ratings of how much each participant enjoys chess."
+   ],
+   "correct": 0,
+   "why": "Game positions contain familiar patterns that random arrangements lack, while viewing time stays equal. Unequal viewing or different tasks would introduce another explanation for the advantage."
+  },
+  "simple": {
+   "stem": "In Chase and Simon's (1973) study, how long did players look at each board before reproducing it?",
+   "options": [
+    "About 5 seconds before reproducing the positions.",
+    "About 5 minutes before reproducing the positions.",
+    "As long as they wanted before reproducing the positions.",
+    "About half a second before reproducing the positions."
+   ],
+   "correct": 0,
+   "why": "Players saw each arrangement for 5 seconds and then tried to reproduce it, with either actual game positions or random placements.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5040,
+  "module": 11,
+  "page": 19,
+  "kind": "researcher",
+  "college": {
+   "stem": "Why does the Chase and Simon (1973) result not require the expert to remember each piece's location as a separate item?",
+   "options": [
+    "Familiar relationships let several piece positions be retrieved together as a chunk stored in long-term memory.",
+    "Experts can reproduce any random arrangement without having to view the board first.",
+    "Each chess piece leaves a physical mark on the square where it previously stood.",
+    "The recall task explicitly prevents using any knowledge from earlier chess experience."
+   ],
+   "correct": 0,
+   "why": "Actual game positions were stored in long-term memory and accessed in chunks, so many pieces could be recalled as one meaningful chunk. Those chunks were not available for random arrangements."
+  },
+  "simple": {
+   "stem": "In Chase and Simon's (1973) study, why did the chess master not do much better than the beginner with random arrangements?",
+   "options": [
+    "The stored chunks from real games did not fit random arrangements.",
+    "The master was given much less time to view each of the random boards.",
+    "Random arrangements used more pieces than real game positions did.",
+    "The beginner had practiced random arrangements beforehand."
+   ],
+   "correct": 0,
+   "why": "The master's advantage came from chunks of real game positions stored in long-term memory. Random arrangements do not match those chunks.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5041,
+  "module": 11,
+  "page": 20,
+  "kind": "design",
+  "college": {
+   "stem": "Which procedure matches how Chi and colleagues (1982) studied the organization of physics knowledge?",
+   "options": [
+    "Have physics faculty members and students with one semester of physics sort the same problems by similarity, then compare the groupings.",
+    "Give the faculty members only chess positions and the students only radiation stories, then compare how many answers each group produces.",
+    "Require both groups to copy a ready-made grouping scheme so that no individual sorting decisions remain.",
+    "Measure only total years of schooling without asking either group to organize any problems."
+   ],
+   "correct": 0,
+   "why": "Sorting the same 24 problems shows how each group relates problems to one another. The result contrasted grouping by surface features with grouping by underlying principles."
+  },
+  "simple": {
+   "stem": "In Chi and colleagues' (1982) study, who were the experts and the novices?",
+   "options": [
+    "Physics faculty members and students with one semester of physics.",
+    "Chess masters and players with fewer than 100 hours of chess.",
+    "Medical doctors and first-year students studying medicine.",
+    "Graduate students and high school students taking physics."
+   ],
+   "correct": 0,
+   "why": "The experts were physics faculty members and the novices were students who had taken one semester of physics.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5042,
+  "module": 11,
+  "page": 20,
+  "kind": "application",
+  "college": {
+   "stem": "A student groups every problem involving a spring together, while a physics faculty member groups a spring problem with an incline problem under an energy principle. Which contrast is most accurate?",
+   "options": [
+    "The student is relying on surface features, while the faculty member is relying on a structural principle relevant to solving.",
+    "The student must be using deeper structure, since every named object in a physics problem defines its own single physical principle.",
+    "The faculty member's grouping implies that springs and inclined planes are the same physical object.",
+    "Neither person is using knowledge organization, because sorting can reveal only factual recall."
+   ],
+   "correct": 0,
+   "why": "Grouping by a shared object reflects surface features; grouping different-looking problems by a shared solving principle reflects structural features, as in the expert-novice sorting pattern."
+  },
+  "simple": {
+   "stem": "In Chi and colleagues' (1982) study, how did novices sort physics problems?",
+   "options": [
+    "By surface features, such as what the objects looked like.",
+    "By the underlying physics principles needed to solve them.",
+    "By how difficult each of the problems seemed to them.",
+    "By the order in which the problems were handed out."
+   ],
+   "correct": 0,
+   "why": "Novices sorted by surface features, such as similar objects. Experts sorted by underlying physics principles.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5043,
+  "module": 11,
+  "page": 21,
+  "kind": "application",
+  "college": {
+   "stem": "In Chi and colleagues' (1982) physics sorting task, problem 24 is paired with problem 23 by the novice and with problem 21 by the expert. What does this difference show?",
+   "options": [
+    "The same problem can be grouped by the look of its objects or by the principle needed to solve it.",
+    "Problem 24 must have had a different physical setup in each of the two groupings.",
+    "Every physics problem has exactly one correct partner, whatever relationship is used.",
+    "Experts sort at random whenever the objects in two problems look different."
+   ],
+   "correct": 0,
+   "why": "The novice paired the two inclined-plane problems, while the expert paired the two conservation-of-energy problems. The difference lies in how knowledge is organized, not in problem 24 itself."
+  },
+  "simple": {
+   "stem": "In Chi and colleagues' (1982) physics sorting task, why did the novice group problem 23 with problem 24?",
+   "options": [
+    "Both problems involve the same kind of object, an inclined plane.",
+    "Both problems rely on the very same principle, conservation of energy.",
+    "Both problems include a spring pushing against a block.",
+    "Both problems had the same final numerical answer."
+   ],
+   "correct": 0,
+   "why": "The novice grouped them because both show inclined planes, a surface feature. The expert instead grouped problem 24 with a spring problem by conservation of energy.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5044,
+  "module": 11,
+  "page": 22,
+  "kind": "application",
+  "college": {
+   "stem": "A procedure that works in many expert tasks fails on a new problem that demands flexible thinking. Which response best addresses the obstacle?",
+   "options": [
+    "Rethink how the problem is framed and whether a less frequently used procedure fits its constraints.",
+    "Keep repeating the usual procedure, since expertise makes that procedure valid under every possible constraint the problem could impose.",
+    "Ignore the details of the current problem and rely only on the solver's standing as an expert.",
+    "Assume that a novice must do worse on every task, including tasks outside the expert's field."
+   ],
+   "correct": 0,
+   "why": "Experts are less likely to be open to new ways of looking at problems, which is a disadvantage when the solution requires rejecting usual procedures in favor of less frequently used ones."
+  },
+  "simple": {
+   "stem": "When can being an expert be a disadvantage?",
+   "options": [
+    "When a problem requires flexible thinking and rejecting usual procedures.",
+    "When a problem falls squarely within the expert's own field of long practice.",
+    "When a problem can be solved with the usual procedures.",
+    "When an expert has extra time to analyze the problem first."
+   ],
+   "correct": 0,
+   "why": "Experts are less open to new ways of looking at problems, which hurts when the solution requires rejecting usual procedures in favor of less common ones.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5045,
+  "module": 11,
+  "page": 22,
+  "kind": "design",
+  "college": {
+   "stem": "To test whether an expert's advantage is specific to a domain, which comparison is most informative?",
+   "options": [
+    "Comparing experts and novices on problems both inside and outside the expert's field.",
+    "Testing only problems the expert has memorized and assuming the same result holds for every field.",
+    "Measuring only whether colleagues recognize the expert, without observing any problem solving.",
+    "Giving novices no opportunity to attempt the problems from outside the expert's field."
+   ],
+   "correct": 0,
+   "why": "Testing both domains shows whether the advantage depends on field-specific knowledge; experts are no better than novices outside their field. An inside-field result alone cannot show that."
+  },
+  "simple": {
+   "stem": "Which finding shows that expertise is specific to a field?",
+   "options": [
+    "Experts do no better than novices on problems outside their field.",
+    "Experts solve problems in their own field faster than novices.",
+    "Experts spend more time analyzing problems before starting.",
+    "Experts sort physics problems by their underlying principles."
+   ],
+   "correct": 0,
+   "why": "Only the outside-field finding shows the limit of expertise. The other findings describe how experts perform within their own field.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5046,
+  "module": 11,
+  "page": 23,
+  "kind": "definition",
+  "college": {
+   "stem": "Which description best fits divergent thinking?",
+   "options": [
+    "An open-ended process that produces a large number of potential solutions or new connections.",
+    "Committing immediately to one accepted procedure before considering any alternatives.",
+    "Carrying out a fully chosen plan without generating any new possibilities along the way.",
+    "Recalling one familiar label with no chance to produce alternative responses."
+   ],
+   "correct": 0,
+   "why": "Divergent thinking is open-ended and yields a large number of potential solutions. It differs from committing to, or carrying out, a single plan."
+  },
+  "simple": {
+   "stem": "What is divergent thinking?",
+   "options": [
+    "Open-ended thinking that produces many possible solutions.",
+    "Focusing on one single correct answer as quickly as possible.",
+    "Following a fixed set of steps without any changes.",
+    "Remembering the answer to a problem solved before."
+   ],
+   "correct": 0,
+   "why": "Divergent thinking is open-ended and generates a large number of potential solutions, which is part of creativity.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5047,
+  "module": 11,
+  "page": 23,
+  "kind": "application",
+  "college": {
+   "stem": "A group has defined a problem and proposed several ideas, then compares those ideas and builds a plan before acting. How do these activities map onto the stages of creative problem solving?",
+   "options": [
+    "Comparing ideas and planning belong to problem solving, while acting belongs to solution implementation.",
+    "Acting belongs to problem generation, while comparing ideas lies entirely outside creative work.",
+    "Every stage ends once the first idea appears, so planning and acting fall outside the process.",
+    "Fact finding is part of solution implementation, while acting means only identifying a new problem to work on next."
+   ],
+   "correct": 0,
+   "why": "The stages are problem generation (problem and fact finding), problem formulation (definition and idea finding), problem solving (evaluation and planning) and solution implementation (taking action)."
+  },
+  "simple": {
+   "stem": "Which stage of creative problem solving includes problem finding and fact finding?",
+   "options": [
+    "Problem generation, the first stage of the process.",
+    "Problem formulation, where the problem gets defined.",
+    "Problem solving, where ideas are evaluated and planned.",
+    "Solution implementation, where action is finally taken."
+   ],
+   "correct": 0,
+   "why": "Problem generation is the first stage and includes problem finding and fact finding. Formulation, solving and implementation come after it.",
+   "kind": "definition"
+  }
+ },
+ {
+  "id": 5048,
+  "module": 11,
+  "page": 24,
+  "kind": "application",
+  "college": {
+   "stem": "A team produces many ideas but refuses to revise an accepted procedure that conflicts with the task. Which interpretation fits the nature of creative problem solving?",
+   "options": [
+    "Generating ideas helps, but rigid reliance on accepted procedures can still block a workable creative solution.",
+    "Having many ideas proves that evaluation, planning and implementation have all already been completed successfully by the team.",
+    "Accepted procedures can never hinder a person who has enough experience in the field.",
+    "Creativity requires cutting every connection to existing knowledge and to earlier ideas."
+   ],
+   "correct": 0,
+   "why": "Generating ideas is only one part of the creative process; without ideas it stops, but problems often require flexible thinking and rejecting accepted procedures."
+  },
+  "simple": {
+   "stem": "Why is generating ideas only one part of the creative process?",
+   "options": [
+    "Ideas are needed to keep going, but they must still be evaluated and carried out.",
+    "Ideas are not needed at all if a person knows enough facts.",
+    "Generating ideas automatically finishes every other stage of the creative process at once.",
+    "Ideas matter only after a solution has already been carried out."
+   ],
+   "correct": 0,
+   "why": "Without ideas the process stops, but creative problem solving also includes evaluation, planning and implementation, often with a lengthy period of trial and error.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5049,
+  "module": 11,
+  "page": 9,
+  "kind": "application",
+  "college": {
+   "stem": "A learner recognizes that the fortress story is relevant, correctly matches its roads and fortress to parts of the radiation problem, and then aims several weak rays to converge on the tumor. Which steps of analogical problem solving has the learner completed?",
+   "options": [
+    "Noticing the analogy, mapping the correspondences, and applying the mapping to produce a solution.",
+    "Applying a mapping before recognizing any relationship, then memorizing only surface names.",
+    "Noticing alone, because producing a procedure for the target adds no further step.",
+    "Divergent thinking alone, without forming any correspondence between the two problems."
+   ],
+   "correct": 0,
+   "why": "Gick and Holyoak's steps are noticing the analogous relationship, mapping correspondences between the two problems, and applying the mapping to generate a parallel solution. The learner did all three."
+  },
+  "simple": {
+   "stem": "Which three steps of analogical problem solving did Gick and Holyoak identify?",
+   "options": [
+    "Noticing the analogy, mapping the correspondences, and applying the mapping.",
+    "Generating the problem, formulating the problem, and then implementing the solution.",
+    "Hearing the story, memorizing it, and repeating it aloud later.",
+    "Sorting problems, chunking them, and recalling them afterward."
+   ],
+   "correct": 0,
+   "why": "The three steps are noticing an analogous relationship, mapping correspondences, and applying the mapping. Generation, formulation and implementation are stages of creative problem solving.",
+   "kind": "recall"
+  }
+ },
+ {
+  "id": 5050,
+  "module": 11,
+  "page": 15,
+  "kind": "design",
+  "college": {
+   "stem": "Someone argues that the two lightbulb versions test only surface similarity, since both mention lasers and a filament. What feature of the manipulation contradicts this claim?",
+   "options": [
+    "The reason a single beam fails differs, so the underlying constraints change while the objects stay alike.",
+    "One version swaps the filament for a chessboard and the lasers for dominoes, changing the whole set of surface objects.",
+    "Neither version includes a solution, so no comparison of transfer can be made at all.",
+    "Only the titles differ, and both stories describe identical constraints in every way."
+   ],
+   "correct": 0,
+   "why": "The fragile-glass and insufficient-intensity versions keep the same objects but differ in whether damage to the surroundings rules out a strong beam. That is a structural difference."
+  },
+  "simple": {
+   "stem": "How does the insufficient-intensity lightbulb version differ from the fragile-glass version?",
+   "options": [
+    "It keeps the lasers and filament but drops the danger of breaking the glass.",
+    "It keeps the danger of breaking the glass but drops the lasers entirely.",
+    "It changes the lasers into soldiers marching along several roads.",
+    "It is identical to the fragile-glass version in every single respect, including the glass."
+   ],
+   "correct": 0,
+   "why": "Both versions use the same objects, but in the insufficient-intensity version the laser is simply too weak; there is no risk to the glass, so it lacks the radiation problem's key structural feature.",
+   "kind": "recall"
+  }
+ }
+]
