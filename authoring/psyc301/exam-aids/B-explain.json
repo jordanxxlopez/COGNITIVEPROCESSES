@@ -1,0 +1,84 @@
+{
+ "explain": [
+  {
+   "title": "Pairing problems: marriage and checkerboard",
+   "paragraphs": [
+    "Start with the checkerboard, because it is the problem that tricks people. A checkerboard has 64 squares, and 32 dominoes, each covering two neighboring squares, cover it completely. Now cut off two opposite corners. That leaves 62 squares, and 31 dominoes cover 62 squares, so the numbers seem to fit and people start laying dominoes down. But no number of failed attempts would ever prove a covering impossible.",
+    "The way out is to change what you pay attention to, and the colors are the key. Neighboring squares are always different colors, so every domino, wherever you put it, covers exactly one dark square and one light square. Opposite corners are the same color, so removing them takes away two squares of one color. What remains is 32 squares of one color and 30 of the other. Thirty-one dominoes would need 31 squares of each color, and that is simply not there.",
+    "The Russian marriage problem shows the same structure plainly. A village has 32 bachelors and 32 unmarried women, and the matchmaker has arranged 32 marriages. Then two bachelors die, and the question is whether she can arrange 31 marriages among the 62 survivors. It sounds possible until you notice that every marriage pairs one man with one woman. There are now 30 men and 32 women, so at most 30 marriages are possible and two women are left over. The smaller group sets the limit.",
+    "Now map one problem onto the other. Men and women are the two colors of squares, marriages are dominoes, and the two dead bachelors are the two missing corners. Rearranging cannot help, because the imbalance rules out the last pair before any piece is placed. This is analogical transfer, with the marriage story as the source problem and the checkerboard as the target. Presentation matters too: when squares were labeled bread and butter, which come in pairs, participants solved it twice as fast as with a blank board."
+   ]
+  },
+  {
+   "title": "Converging solution (radiation, fortress, lightbulb)",
+   "paragraphs": [
+    "Duncker's radiation problem sets two demands against each other. A patient has an inoperable malignant tumor in his stomach. A kind of ray can destroy the tumor if it arrives all at once at a high enough intensity. Unfortunately, at that intensity the healthy tissue the rays pass through on the way will be destroyed too. At lower intensities the rays are harmless to the tissue, but they do nothing to the tumor either. The tumor needs high intensity and the tissue needs low intensity, so no single ray can satisfy both. Only 10% of participants reach the answer without help.",
+    "The answer is to send several low-intensity rays from different directions so that they converge on the tumor at the same time. Each ray is weak enough to pass through healthy tissue safely, and where they meet, their combined strength destroys the tumor.",
+    "The fortress problem has the same shape. A rebel general knows his whole army could take a dictator's fortress, but the roads are mined so that only small groups pass safely, and a large force would blow up the road and the villages around it. He divides the army into small groups, sends them along different roads, and has them arrive at the same time. The mines play the healthy tissue, the small groups are the weak rays, and the fortress is the tumor.",
+    "This shows how hard it is to notice a good analogy. After the fortress story, only 30% solved the radiation problem, against 10% without it. Gick and Holyoak described three steps: noticing the analogy, which is the hardest, mapping the parts, and applying the mapping. When told to think about the story, success rose to 75%. The lightbulb problem, where a strong laser would break fragile glass around a broken filament, looks more like the radiation problem, and 81% of participants who knew the radiation problem solved it, against 10% of the control group."
+   ]
+  },
+  {
+   "title": "Base rates and Jack",
+   "paragraphs": [
+    "A base rate is simply how common each category is in the population. The idea behind this topic is that when you judge what category someone belongs to, the starting point should be those numbers, and the description should adjust them, not replace them. This is hard because a description is vivid and a base rate is a dry number, so the description tends to push the number out of the judgment completely.",
+    "Walk through the setup slowly. A group has 100 people, 70 lawyers and 30 engineers, and one person is picked at random. With nothing else known, the chance of an engineer is 30%, and people get this right. People use base rate information if it is all that is available, but when a description is available they disregard the base rate.",
+    "Now add Jack. He is a 45-year-old man, married with four children, generally conservative, careful and ambitious, and uninterested in political and social issues. He spends most of his free time on hobbies, including home carpentry, sailing and mathematical puzzles. People say that Jack is an engineer, because his careful nature and love of puzzles fit the engineer stereotype, and that fit outweighs the base rate. But look at what the description actually rules out. Nothing in it rules out a lawyer. A lawyer could be careful and conservative and enjoy puzzles, and the group still contains many more lawyers than engineers.",
+    "The right idea is to keep both pieces of information in play. The 70 and 30 are still true after you read about Jack, so the description has to be weighed against them and cannot settle the question by itself. This is the representativeness heuristic at work, judging class membership by resemblance. The same happens with Robert, who wears glasses, speaks quietly and reads a lot: people say librarian and ignore that America has about 2.2 million farms and 120,000 libraries."
+   ]
+  },
+  {
+   "title": "Conjunction rule (Linda)",
+   "paragraphs": [
+    "The conjunction rule says that the probability of two events occurring together cannot be higher than the probability of either single event alone. A conjunction just means two things being true at once. The rule is easy to state and surprisingly easy to break, because a more detailed story feels more likely even though it is less likely. Each added detail narrows the possibilities, and narrower things are less probable.",
+    "Here is the problem. Linda is described as 31 years old, single, outspoken and very bright, and she majored in philosophy. As a student she was deeply concerned with issues of discrimination and social justice, and she also took part in antinuclear demonstrations. People are asked which is more probable: that Linda is a bank teller, or that Linda is a bank teller who is active in the feminist movement. Because Linda sounds like a feminist, the second option feels more like her.",
+    "Now reason about the groups rather than about Linda's personality. Picture everyone who is a bank teller. Some of those people are active in the feminist movement and many are not. The feminist bank tellers are a smaller group sitting inside the larger group of all bank tellers. Anyone who belongs to the smaller group also belongs to the larger one, so the larger group can never have fewer members, and a group contained inside another can never be more probable than the one containing it. Bank teller alone must be at least as probable as feminist bank teller.",
+    "Eighty-two percent picked the second option, which breaks the rule. The sense of fit overrides the logic, which is the representativeness heuristic producing an error. Linda resembles a feminist, so people judge the resembling option as more likely, and they stop thinking about the sizes of the categories. The lesson is that how well a story fits a person tells you nothing about whether a combination can be more probable than one of its parts."
+   ]
+  },
+  {
+   "title": "Sample size (hospital question)",
+   "paragraphs": [
+    "This problem tests whether you notice how much information a sample contains. A town has two hospitals. In the larger one about 45 babies are born each day, and in the smaller one about 15. About 50% of all babies are boys, but the exact percentage varies from day to day, sometimes higher and sometimes lower. For one year, each hospital recorded the days on which more than 60% of the babies born were boys. Which hospital recorded more such days: the larger, the smaller, or about the same?",
+    "Most people get this wrong. Fifty-six percent said about the same, and the larger and the smaller hospital were each chosen by only 22%. The reasoning behind that answer is that both hospitals have the same true rate of about 50% boys, so both should have unusual days equally often. They fix on the 50% that applies to both and overlook that the question is about day-to-day variation, which depends on how many babies are born each day as well as on the average rate.",
+    "Think it through slowly. With about 15 births in a day, chance can easily tilt a day heavily toward boys, so a day with more than 60% boys happens fairly often. With about 45 births, chance variations even out over more births, and the share of boys stays nearer 50%. So the smaller hospital records many more days over 60% boys, and the correct answer is the smaller hospital, which only 22% chose.",
+    "The law of large numbers states that the larger the number of individuals randomly drawn from a population, the more representative the resulting group will be of the entire population. A small random sample can be thrown off by a few unusual cases, so it may differ a lot from the population. People often assume that representativeness holds for small samples, and this results in errors in reasoning. Those who answered about the same were expecting every sample to look like the population, which is the representativeness heuristic applied where sample size matters."
+   ]
+  },
+  {
+   "title": "Probability as a ratio (jellybeans)",
+   "paragraphs": [
+    "This is a problem about what counts as your chance of winning. The idea is simple: chance is the number of winning items divided by the total number of items. It is not the number of winning items. The error comes from the fact that a count is easy to see and a proportion takes a little work, so people judge by what looks like more.",
+    "The setup is the jellybean study. Participants could earn up to $7 by receiving $1 every time they drew a red jellybean, and each time they chose between two bowls. One bowl held 1 red jellybean out of 10, so the odds were 1 in 10. The other held 7 red jellybeans out of 100, so the odds were 7 in 100, or 0.7 in 10. The bowls differ in both the number of red beans and the proportion of red beans, and that is where the confusion starts.",
+    "Do the arithmetic for each bowl. One in 10 is 10%, and 7 in 100 is 7%. So the first bowl gives the better chance of a red bean. Yet most participants chose the 7 in 100 bowl. The second bowl has more red beans, seven instead of one, so it seems to offer more chances, even though it also holds many more white beans that hide those reds.",
+    "Their choice was influenced by considerations other than probabilities. People paid attention to the number of winning beans instead of their proportion, and by choosing by appearance instead of probability they lowered their real chance of winning. The way to avoid it is to write each bowl as red out of total, convert to a percentage, and compare the percentages, never the red counts."
+   ]
+  },
+  {
+   "title": "Expected utility",
+   "paragraphs": [
+    "Decision making means making judgments that involve choices between different courses of action. To judge a choice you need a way of saying how good it is, and utility is the word for that. Utility refers to outcomes that are desirable because they are in the person's best interest, so an option with higher utility leads to a better outcome for that person. Expected utility theory builds on this by also bringing in chance.",
+    "The theory begins from the claim that people are rational. It holds that if people have all the relevant information, they will make the decision that results in the maximum expected utility. Expected utility combines how good each outcome is with how likely it is. In its early form, utility meant maximum monetary payoff, so the best choice was the one that paid the most money on average.",
+    "The procedure is clear. For each option, multiply the value of every possible outcome by its probability, add the products, and then pick the option with the largest total. That is why the approach has a real advantage: it offers specific procedures for determining the best choice and tells you what a fully rational decision maker would pick. It works as a benchmark, because you can compare real choices with its predictions.",
+    "The comparison is where the theory shows its limits. Utility is not necessarily money, because people find value in other things, such as safety, fairness or how they feel about a choice. People are not utility maximization machines. People gamble in casinos all the time even though they know the odds are very much against them, because they value the thrill or the chance at a big win. Ritov and Baron (1999) found that 63% did not choose to send a convoy to the second refugee camp, although the utility of 900 more lives saved says to reroute, because actively causing harm weighs more than failing to prevent it. So the theory is a strong standard but a weak description of how people really choose."
+   ]
+  },
+  {
+   "title": "Inductive evidence strength",
+   "paragraphs": [
+    "Inductive reasoning is reasoning based on observations: you reach conclusions from evidence, going from particular cases to a general conclusion. Scientists do this deliberately, making observations, collecting data and proposing a general rule that fits the many cases they have seen. Ordinary people do it constantly too, predicting what will happen from what has happened in the past. The important thing to learn is that the conclusion is only probably true, never definitely true, so the real question is always how strong the support is.",
+    "Three things decide the strength of an inductive argument. The first is the representativeness of the observations, meaning how well they stand for the whole category. Many observations from a narrow group can still lead to a wrong conclusion, so a big pile of evidence that all comes from one corner of a category does not help much. The second is the number of observations, because more observations give stronger support.",
+    "The third is the quality of the observations. Careful and accurate observations count for more, and sometimes one very compelling, high-quality observation can carry a lot of weight. People often miss this one because they assume strength is just a matter of counting cases. But look at what an inductive conclusion is. It is a general claim built from particular cases, so a single clear counterexample can prove it false, however many cases supported it before.",
+    "That is why conclusions reached this way are always open to revision. The conclusions are suggested with various degrees of certainty, and a new observation can always overturn a conclusion drawn from earlier ones. The right way to judge an inductive argument is therefore to check how representative the observations are, how many there are, and how good each one is, and to remember that quality can outweigh quantity."
+   ]
+  }
+ ],
+ "notes": [
+  "Lecture gives no researcher or year for the marriage, checkerboard, Jack, Linda, hospital or jellybean problems, so none is attributed; the bread and butter study is described without names.",
+  "Duncker is named for the radiation problem and Gick and Holyoak for the three analogy steps; the lecture gives no years for them, so none are stated.",
+  "Old Inductive example (white swans, black swan) is not in the lecture transcript; the explanation uses only what the lecture says about induction (representativeness, number, quality, one compelling observation) and omits swans. Consider replacing the example.",
+  "Old Expected utility example only mentions casino gambling; the explanation adds the lecture's Ritov and Baron (1999) convoy result (63%) as the lecture's own illustration.",
+  "Old Converging text does not conflict with the transcript; the transcript's detail that the radiation problem is solved by only 10% unaided, 30% after the fortress story, 75% when told to use it, and 81% for the lightbulb with radiation as source is included.",
+  "Old Linda/Jack/sample-size/jellybean figures (82%, 70/30, 56%, 22%, 10% vs 7%) match the transcript."
+ ]
+}

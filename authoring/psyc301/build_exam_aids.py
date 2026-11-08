@@ -14,6 +14,12 @@ for g in 'ABCD':
             if a:
                 assert len(a) == len(t['questions']), t['topic']
                 t['answers'] = a
+    ep = SRC / (g + '-explain.json')
+    if ep.exists():
+        ex = {a['title']: a['paragraphs'] for a in json.loads(ep.read_text())['explain']}
+        for t in d.get('explainers', []):
+            if t['title'] in ex:
+                t['explain'] = ex[t['title']]
     for k in out:
         out[k] += d.get(k, [])
 (ROOT / 'psyc301-exam-aids-data.js').write_text(
