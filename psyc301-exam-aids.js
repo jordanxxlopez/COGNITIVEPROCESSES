@@ -36,6 +36,7 @@
   }
   return `<details class="guide aid-explain"><summary>${e(x.title)}</summary><p>${e(x.plain)}</p>${row('Worked example',x.example)}${row('Watch out',x.watchOut)}</details>`;
  }
+ const qa=(a)=>a.questions.map((q,i)=>a.answers&&a.answers[i]?`<details class="aid-qa"><summary>${e(q)}</summary><p>${e(a.answers[i])}</p></details>`:`<p class="aid-q">${e(q)}</p>`).join('');
  function groupBy(list){const g={};for(const x of list)(g[x.module]=g[x.module]||[]).push(x);return g}
  function sectioned(list,fn,intro){
   const g=groupBy(list.filter(keep));
