@@ -49,6 +49,10 @@ bank = dict(
                 dict(module=ID, title='Decision-making labs', pages=[10, 11, 12]),
                 dict(module=ID, title='Assigned articles', pages=[13, 14, 15, 16, 17, 18])])
 versions = {str(v): {str(s['page']): s['v%d' % v] for s in text} for v in (20, 21, 22)}
+# Rewritten, stand-alone editions (keys r20, r21, r22): each study explained on its own, no other researchers.
+rewrite = load('text-rewrite.json')
+for key in ('r20', 'r21', 'r22'):
+    versions[key] = {str(s['page']): rewrite[str(s['page'])][key] for s in text}
 mediasec = {str(s['page']): dict(credit=media[str(s['page'])]['credit'], description=media[str(s['page'])]['description'],
                                  doi=media[str(s['page'])].get('doi', ''), source=media[str(s['page'])].get('source', ''),
                                  videos=media[str(s['page'])].get('videos', []), kind=media[str(s['page'])].get('kind', 'article')) for s in text}

@@ -6,7 +6,7 @@
 (() => {
  const ID=14,text=window.C15_TEXT,pack=window.C15_MEDIA;
  if(!text||!pack||typeof versionControl!=='function'||typeof sectionHTML!=='function'||typeof sectionBullets!=='function')return;
- const LABELS={A:'Original','20':'Version 20 · natural teaching transcript','21':'Version 21 · natural teaching notes','22':'Version 22 · natural teaching notes with researchers and years'};
+ const LABELS={A:'Original','20':'Version 20 · natural teaching transcript','21':'Version 21 · natural teaching notes','22':'Version 22 · natural teaching notes with researchers and years',r20:'Version 20 (rewritten) · each study on its own',r21:'Version 21 (rewritten) · notes beside the slide, each study on its own',r22:'Version 22 (rewritten) · each study with its researchers and year'};
  if(!LABELS[state.explanationVersions[ID]])state.explanationVersions[ID]='22';
  const beforeControl=versionControl,beforeBullets=sectionBullets,beforeSection=sectionHTML;
  const sourceId=(m,s)=>s.sourceModule??m.id;
@@ -16,13 +16,13 @@
  versionControl=function(m){
   if(m.id!==ID)return beforeControl(m);
   const now=choice();
-  return `<label class="explanation-version">Explanation version <select data-explanation-version="${ID}" aria-label="Explanation version for ${esc(m.title)}">${['A','20','21','22'].map(k=>`<option value="${k}"${k===now?' selected':''}>${LABELS[k]}</option>`).join('')}</select></label>`;
+  return `<label class="explanation-version">Explanation version <select data-explanation-version="${ID}" aria-label="Explanation version for ${esc(m.title)}">${['A','20','21','22','r20','r21','r22'].map(k=>`<option value="${k}"${k===now?' selected':''}>${LABELS[k]}</option>`).join('')}</select></label>`;
  };
  sectionBullets=function(m,s){
   if(sourceId(m,s)!==ID||choice()==='A')return beforeBullets(m,s);
   const now=choice(),script=text[now]&&text[now][s.page];
   if(!script)throw Error('Missing collection 15 text '+now+':'+s.page);
-  const follow=now==='22'?'<span class="psyc-v22-follow" hidden></span>':'';
+  const follow=(now==='22'||now==='r22')?'<span class="psyc-v22-follow" hidden></span>':'';
   return script.map((b,i)=>(i?'':follow)+prose(b.text)+(b.children.length?`<ul class="psyc-v10-sub">${b.children.map(c=>`<li>${prose(c)}</li>`).join('')}</ul>`:''));
  };
  const link=(href,label)=>href?` <a href="${esc(href)}" target="_blank" rel="noopener">${label}</a>`:'';
