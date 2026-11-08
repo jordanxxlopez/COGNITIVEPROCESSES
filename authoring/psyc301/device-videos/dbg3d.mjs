@@ -1,0 +1,10 @@
+import puppeteer from 'puppeteer-core';
+const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'] });
+const page = await browser.newPage(); await page.setViewport({ width: 1280, height: 720 });
+page.on('pageerror', e => console.log('pageerror:', e.message));
+await page.goto('http://localhost:8767/index3d.html', { waitUntil: 'load' });
+await page.waitForFunction('window.sceneReady3d === true', { timeout: 30000 });
+console.log('dur', await page.evaluate(() => window.scene3d.duration));
+let t = Date.now(); await page.evaluate(ms => window.renderScene3d(null, ms), 6000); console.log('eval ms', Date.now() - t);
+t = Date.now(); await page.screenshot({ type: 'png', clip: { x: 0, y: 0, width: 1280, height: 720 } }); console.log('shot ms', Date.now() - t);
+await browser.close(); process.exit(0);

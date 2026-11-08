@@ -1,0 +1,14 @@
+import puppeteer from 'puppeteer-core';
+const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox'] });
+const page = await browser.newPage(); await page.setViewport({ width: 1400, height: 900 });
+await page.goto('http://localhost:8790/index.html', { waitUntil: 'load' }); await new Promise(r => setTimeout(r, 1500));
+const res = await page.evaluate(() => {
+  view = 'module'; selected = 14; mode = 'expanded'; render();
+  return new Promise(r => setTimeout(() => {
+    const sp = document.querySelector('.split'); if (!sp) return r({ found: false });
+    const t = sp.querySelector('.transcript-pane'), v = sp.querySelector('.visual-pane');
+    r({ found: true, transcriptX: t && Math.round(t.getBoundingClientRect().x), visualX: v && Math.round(v.getBoundingClientRect().x), transcriptText: t && t.innerText.length });
+  }, 500));
+});
+console.log(JSON.stringify(res));
+await browser.close(); process.exit(0);

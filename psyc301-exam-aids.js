@@ -32,6 +32,7 @@
  function explainerHTML(x){
   return `<details class="guide aid-explain"><summary>${e(x.title)}</summary><p>${e(x.plain)}</p>${x.steps&&x.steps.length?`<ol>${x.steps.map(s=>`<li>${e(String(s).replace(/^\s*(step\s*)?\d+[.):]\s*/i,''))}</li>`).join('')}</ol>`:''}${row('Worked example',x.example)}${row('Watch out',x.watchOut)}</details>`;
  }
+ const qa=(a)=>a.questions.map((q,i)=>a.answers&&a.answers[i]?`<details class="aid-qa"><summary>${e(q)}</summary><p>${e(a.answers[i])}</p></details>`:`<p class="aid-q">${e(q)}</p>`).join('');
  function groupBy(list){const g={};for(const x of list)(g[x.module]=g[x.module]||[]).push(x);return g}
  function sectioned(list,fn,intro){
   const g=groupBy(list.filter(keep));
@@ -39,7 +40,7 @@
  }
  function askHTML(){
   const g=groupBy(ask.filter(keep));
-  return Object.keys(g).sort((a,b)=>a-b).map(m=>`<h2 class="aid-h">${e(modTitle(m))}</h2>`+g[m].map(a=>`<details class="guide aid-ask" open><summary>${e(a.topic)}</summary><ul>${a.questions.map(q=>`<li>${e(q)}</li>`).join('')}</ul>${a.remember?`<p class="aid-row"><b>Remember</b> ${e(a.remember)}</p>`:''}</details>`).join('')).join('');
+  return Object.keys(g).sort((a,b)=>a-b).map(m=>`<h2 class="aid-h">${e(modTitle(m))}</h2>`+g[m].map(a=>`<details class="guide aid-ask" open><summary>${e(a.topic)}</summary><div class="aid-qas">${qa(a)}</div>${a.remember?`<p class="aid-row"><b>Remember</b> ${e(a.remember)}</p>`:''}</details>`).join('')).join('');
  }
  const prior=secondScreen;
  secondScreen=function(){
@@ -58,7 +59,7 @@
   for(const a of ask){
    const marker='<summary>'+esc(a.topic)+'</summary>';
    if(!html.includes(marker))continue;
-   const block=`<div class="aid-inline"><b>What you can be asked</b><ul>${a.questions.map(q=>`<li>${e(q)}</li>`).join('')}</ul></div>`;
+   const block=`<div class="aid-inline"><b>What you can be asked</b><div class="aid-qas">${qa(a)}</div></div>`;
    html=html.replace(marker,marker+block);
   }
   return html;
@@ -69,7 +70,7 @@
   else if(t.matches&&t.matches('[data-aid-test]')){aid().test=t.checked;save();render()}
  });
  const style=document.createElement('style');
- style.textContent='.aid-bar{gap:18px;align-items:center;margin:10px 0 4px}.aid-h{margin:26px 0 10px}.aid-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}.aid-card h3{margin:0 0 4px}.aid-who{margin:0 0 8px;font-weight:600;opacity:.85}.aid-row{margin:6px 0}.aid-row summary{cursor:pointer;font-weight:600}.aid-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}.aid-side{padding:10px;border-radius:8px;background:rgba(120,120,160,.12)}.aid-side h4{margin:0 0 4px}.aid-side p{margin:0}.aid-inline{margin:8px 0 12px;padding:8px 12px;border-left:3px solid rgba(120,90,200,.6);background:rgba(120,90,200,.08);border-radius:6px}.aid-inline ul{margin:4px 0 0 18px}@media(max-width:560px){.aid-pair{grid-template-columns:1fr}}';
+ style.textContent='.aid-bar{gap:18px;align-items:center;margin:10px 0 4px}.aid-h{margin:26px 0 10px}.aid-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}.aid-card h3{margin:0 0 4px}.aid-who{margin:0 0 8px;font-weight:600;opacity:.85}.aid-row{margin:6px 0}.aid-row summary{cursor:pointer;font-weight:600}.aid-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}.aid-side{padding:10px;border-radius:8px;background:rgba(120,120,160,.12)}.aid-side h4{margin:0 0 4px}.aid-side p{margin:0}.aid-inline{margin:8px 0 12px;padding:8px 12px;border-left:3px solid rgba(120,90,200,.6);background:rgba(120,90,200,.08);border-radius:6px}.aid-inline ul{margin:4px 0 0 18px}'+'.aid-qa{margin:6px 0}.aid-qa summary{cursor:pointer;font-weight:600}.aid-qa p{margin:6px 0 10px 14px;line-height:1.55}.aid-q{margin:6px 0;font-weight:600}@media(max-width:560px){.aid-pair{grid-template-columns:1fr}}';
  document.head.appendChild(style);
  window.PSYC301ExamAids={cards,contrasts,ask,explainers};
  try{render()}catch{}

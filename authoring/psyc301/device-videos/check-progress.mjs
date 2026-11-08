@@ -1,0 +1,12 @@
+import puppeteer from 'puppeteer-core';
+const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox'] });
+const page = await browser.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
+const url = 'http://localhost:8790/index.html';
+await page.goto(url, { waitUntil: 'load' }); await new Promise(r => setTimeout(r, 1500));
+await page.evaluate(() => { startEssentialPractice(DATA.essentials[0].id); });
+await new Promise(r => setTimeout(r, 300));
+await page.evaluate(() => { quiz.index = 2; quiz.answers = [0, 1]; render(); });
+await page.reload({ waitUntil: 'load' }); await new Promise(r => setTimeout(r, 1500));
+const after = await page.evaluate(() => ({ view, quizIndex: quiz && quiz.index, answers: quiz && quiz.answers }));
+console.log('after reload:', JSON.stringify(after), 'errors:', errs.slice(0, 3));
+await browser.close(); process.exit(0);

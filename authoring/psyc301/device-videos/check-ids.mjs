@@ -1,0 +1,10 @@
+import puppeteer from 'puppeteer-core';
+const ids = ['L12-utility','L12-lord-myside','L12-september-flying','L13-cloudy-admissions','L13-framing','L13-prefrontal-emotion','L10-kohler-circle','L12-tetlock-tragic','L12-ginges-deals','L12-iran-study','L13-lerner-mood','L13-pool-table','L13-mental-models','L13-permission-schema','L10-water-jugs-beaker','L13-coin-flip','L12-tetlock-taboo'];
+const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox'] });
+const page = await browser.newPage();
+await page.goto('https://jordanxxlopez.github.io/COGNITIVEPROCESSES/index.html', { waitUntil: 'load' });
+await new Promise(r => setTimeout(r, 3000));
+const live = await page.evaluate(() => window.PsycVideos.clips.map(c => c.id));
+console.log('live clips:', live.length);
+console.log('missing live:', ids.filter(i => !live.includes(i)));
+await browser.close(); process.exit(0);

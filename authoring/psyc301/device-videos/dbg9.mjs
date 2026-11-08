@@ -1,0 +1,10 @@
+import puppeteer from 'puppeteer-core';
+import { spawn } from 'node:child_process';
+const srv = spawn('python3', ['-m', 'http.server', '8768'], { stdio: 'ignore', detached: true }); srv.unref();
+await new Promise(r => setTimeout(r, 700));
+const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox'] });
+const page = await browser.newPage(); page.on('pageerror', e => console.log('pageerror:', e.message));
+await page.goto('http://localhost:8768/index.html', { waitUntil: 'load' });
+await new Promise(r => setTimeout(r, 1500));
+console.log(await page.evaluate(() => Object.keys(window.sceneList || {}).slice(-4)));
+await browser.close(); srv.kill(); process.exit(0);

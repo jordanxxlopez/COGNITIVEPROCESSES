@@ -1,0 +1,13 @@
+import puppeteer from 'puppeteer-core';
+const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox'] });
+const page = await browser.newPage(); const f = [];
+page.on('response', r => { if (r.status() >= 400) f.push(r.url()); });
+await page.setViewport({ width: 1400, height: 900 });
+await page.goto('http://localhost:8790/index.html', { waitUntil: 'load' }); await new Promise(r => setTimeout(r, 1500));
+await page.evaluate(() => { state.explanationVersions[14] = 'r22'; selected = 14; view = 'module'; render(); });
+await new Promise(r => setTimeout(r, 500));
+const t = await page.evaluate(() => document.querySelector('#content').innerText);
+console.log([...t.matchAll(/.{40}lecture.{30}/gi)].map(m => m[0]));
+console.log('sections shown:', await page.evaluate(() => document.querySelectorAll('#content section, #content .topic, #content article').length), 'prose:', await page.evaluate(() => document.querySelectorAll('#content .psyc-v6-prose').length));
+console.log('404s:', f);
+await browser.close(); process.exit(0);

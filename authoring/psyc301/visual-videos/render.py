@@ -89,6 +89,13 @@ def hanoi(n,a,b,c):
  if not n:return []
  return hanoi(n-1,a,c,b)+[(a,b)]+hanoi(n-1,c,b,a)
 MOVES=hanoi(3,0,2,1)
+def pair(d,pr,idx,pct):
+ left,right=pr
+ for x,lines in [(60,left),(490,right)]:
+  d.rounded_rectangle((x,190,x+410,460),radius=12,fill='#eef3f7',outline='#555555',width=2)
+  text(d,lines[0],x+205,235,28,bold=True)
+  for j,ln in enumerate(lines[1:]):text(d,ln,x+205,290+j*34,22)
+ if pct:text(d,pct,265 if 'A' in pct else 695,500,30,'#23415a',bold=True)
 def frame(c,t):
  id=c['id'];im,d=canvas(c,'#202427' if id=='conrad' else 'white')
  if id.startswith('sperling'):
@@ -294,6 +301,52 @@ def frame(c,t):
   phase=t%5
   if phase<1:cross(d)
   elif phase<4:text(d,'GARDEN' if t<5 else 'GARDENK',480,300,56)
+ elif id=='opt-default':
+  if t<4:
+   text(d,'Opt-in procedure',480,120,36,bold=True)
+   text(d,'[   ]  I want to be an organ donor',480,300,34)
+   text(d,'An active step is needed to become a donor.',480,380,26,'#55606a')
+   text(d,'Countries with opt-in procedures have less than 28% consent rate.',480,470,24)
+  else:
+   text(d,'Opt-out procedure',480,120,36,bold=True)
+   text(d,'[X]  Organ donor unless you request not to be',480,300,34)
+   text(d,'Doing nothing keeps the default in place.',480,380,26,'#55606a')
+   text(d,'Countries with opt-out procedures have over 99% consent rate.',480,470,24)
+ elif id=='framing-programs':
+  pairs=[(['Program A','200 will be saved'],['Program B','1/3 probability that 600','people will be saved, and 2/3','probability that no people will be saved']),
+         (['Program C','400 people will die'],['Program D','1/3 probability that no one','will die, and 2/3 probability','that 600 people will die'])]
+  text(d,'A disease is expected to kill 600 people. Two programs are proposed.',480,95,24)
+  if t<4:pair(d,pairs[0],0,None)
+  elif t<8:pair(d,pairs[1],1,None)
+  elif t<10:pair(d,pairs[0],0,'72% chose A')
+  else:pair(d,pairs[1],1,'78% chose D')
+ elif id=='ultimatum':
+  human=t<6;u=t%6;offer=2
+  text(d,'Human partner' if human else 'Computer partner',480,100,34,bold=True)
+  text(d,'Proposer receives $10 and offers part of it to the responder.',480,150,24)
+  x0,x1=170,790;split=x0+(x1-x0)*(10-offer)/10
+  d.rectangle((x0,220,split,300),fill='#4f86b8');d.rectangle((split,220,x1,300),fill='#d98c3e')
+  text(d,f'Proposer keeps $8',(x0+split)/2,260,24,'white');text(d,f'Offer $2',(split+x1)/2,260,24,'white')
+  if u>=3:
+   accepted=not human
+   text(d,'Responder: accept' if accepted else 'Responder: reject',480,370,34,'#2b6b3a' if accepted else '#9d2c2c',bold=True)
+   text(d,'Both receive $8 and $2.' if accepted else 'Both receive $0.',480,430,28)
+  else:text(d,'Responder decides whether to accept or reject.',480,380,26,'#55606a')
+  text(d,'Illustrative decision, not a participant record.',480,520,20,'#55606a')
+ elif id=='wason-four-card':
+  if t<10:
+   multiline(d,'If there is a vowel on one side,\nthen there is an even number on the other side.',115,26)
+   cards=['E','K','4','7']; marked={'E','7'} if t>=6 else set()
+  else:
+   multiline(d,'If a person drinks beer,\nthen the person is 21 years old.',115,26)
+   cards=['Beer','Soda','16 years old','21 years old']; marked={'Beer','16 years old'} if t>=12 else set()
+  for i,lbl in enumerate(cards):
+   x=180+i*200;y=340
+   d.rounded_rectangle((x-70,y-100,x+70,y+100),radius=12,fill='white',outline='#b6302f' if lbl in marked else '#555555',width=5 if lbl in marked else 2)
+   text(d,lbl,x,y,44 if len(lbl)<3 else 26,bold=True)
+   if lbl in marked:text(d,'Turn over',x,y+135,24,'#b6302f')
+  text(d,'Which cards must be turned over to test the rule?',480,545,24,'#55606a')
+
  return im
 def render(c):
  fps=c['fps'];out=ROOT/c['file'];out.parent.mkdir(parents=True,exist_ok=True)

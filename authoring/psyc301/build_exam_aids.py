@@ -6,6 +6,14 @@ SRC = ROOT / 'authoring/psyc301/exam-aids'
 out = {'cards': [], 'contrasts': [], 'ask': [], 'explainers': [], 'notes': []}
 for g in 'ABCD':
     d = json.loads((SRC / (g + '.json')).read_text())
+    ap = SRC / (g + '-answers.json')
+    if ap.exists():
+        ans = {a['topic']: a['answers'] for a in json.loads(ap.read_text())['answers']}
+        for t in d.get('ask', []):
+            a = ans.get(t['topic'])
+            if a:
+                assert len(a) == len(t['questions']), t['topic']
+                t['answers'] = a
     for k in out:
         out[k] += d.get(k, [])
 (ROOT / 'psyc301-exam-aids-data.js').write_text(

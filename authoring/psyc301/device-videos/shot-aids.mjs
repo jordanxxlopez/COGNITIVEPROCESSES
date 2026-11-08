@@ -1,0 +1,10 @@
+import puppeteer from 'puppeteer-core';
+const S='/private/tmp/claude-501/-Users-jordanlopez-BEHAVNEUR392-Revisions/d87b0a3b-bce4-4a1c-af1e-8fdf2eb98e97/scratchpad/';
+const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox'] });
+const page = await browser.newPage(); await page.setViewport({ width: 1300, height: 1000 });
+await page.goto('http://localhost:8790/index.html', { waitUntil: 'load' }); await new Promise(r => setTimeout(r, 1500));
+await page.evaluate(() => { state.aids = { filter: '13', test: true }; view = 'm2cards'; render(); }); await new Promise(r => setTimeout(r, 400));
+await page.screenshot({ path: S + 'aids-cards.png' });
+await page.evaluate(() => { state.aids = { filter: '13', test: false }; view = 'm2explain'; render(); document.querySelector('.aid-explain').open = true; }); await new Promise(r => setTimeout(r, 400));
+await page.screenshot({ path: S + 'aids-explain.png' });
+await browser.close(); process.exit(0);

@@ -1,0 +1,28 @@
+file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:69
+            this._reject(callback, new TargetCloseError('Target closed'));
+                                   ^
+
+TargetCloseError: Protocol error (Page.captureScreenshot): Target closed
+    at CallbackRegistry.clear (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:69:36)
+    at CdpCDPSession._onClosed (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/CDPSession.js:98:25)
+    at #onClose (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Connection.js:163:21)
+    at WebSocket.<anonymous> (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/node/NodeWebSocketTransport.js:43:30)
+    at callListener (/Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/ws/lib/event-target.js:290:14)
+    at WebSocket.onClose (/Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/ws/lib/event-target.js:220:9)
+    at WebSocket.emit (node:events:514:20)
+    at WebSocket.emitClose (/Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/ws/lib/websocket.js:292:10)
+    at Socket.socketOnClose (/Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/ws/lib/websocket.js:1379:15)
+    at Socket.emit (node:events:514:20) {
+  cause: ProtocolError
+      at <instance_members_initializer> (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:89:14)
+      at new Callback (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:93:16)
+      at CallbackRegistry.create (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:19:26)
+      at Connection._rawSend (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Connection.js:86:26)
+      at CdpCDPSession.send (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/CDPSession.js:63:33)
+      at CdpPage._screenshot (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Page.js:740:62)
+      at CdpPage.screenshot (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/api/Page.js:1058:41)
+      at async CdpPage.<anonymous> (file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/node_modules/puppeteer-core/lib/esm/puppeteer/util/decorators.js:157:24)
+      at async file:///Users/jordanlopez/Documents/Codex/2026-11-02/con/work/COGNITIVEPROCESSES/authoring/psyc301/device-videos/render2.mjs:21:15
+}
+
+Node.js v26.13.0

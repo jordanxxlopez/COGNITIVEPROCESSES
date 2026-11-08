@@ -1,0 +1,12 @@
+import puppeteer from 'puppeteer-core';
+const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--no-sandbox']});
+const g=await b.newPage();await g.setViewport({width:1200,height:900});
+await g.goto('http://localhost:8790/index.html');await new Promise(r=>setTimeout(r,1500));
+await g.evaluate(()=>{view='m2ask';state.aids.filter='13';render();document.querySelector('.aid-qa').open=true});
+console.log(await g.evaluate(()=>({qa:document.querySelectorAll('.aid-qa').length,plain:document.querySelectorAll('.aid-q').length,t:document.querySelector('.aid-qa p').textContent.slice(0,160)})));
+await g.evaluate(()=>{view='m2guide';render()});
+console.log('inline',await g.evaluate(()=>document.querySelectorAll('.aid-inline .aid-qa').length));
+await g.evaluate(()=>{state.aids.filter='all';save()});
+await g.evaluate(()=>{view='m2ask';render();document.querySelector('.aid-qa').open=true});
+await g.screenshot({path:'/private/tmp/claude-501/-Users-jordanlopez-BEHAVNEUR392-Revisions/d87b0a3b-bce4-4a1c-af1e-8fdf2eb98e97/scratchpad/ask.png'});
+await b.close();

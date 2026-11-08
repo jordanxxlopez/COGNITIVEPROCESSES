@@ -1,0 +1,106 @@
+[
+ {
+  "cap": {
+   "A": 21,
+   "B": 127,
+   "C": 3
+  },
+  "vol": {
+   "A": 0,
+   "B": 127,
+   "C": 0
+  },
+  "caption": "Problem 1: jugs A 21, B 127, C 3. Goal: 100 quarts. Fill B."
+ },
+ {
+  "cap": {
+   "A": 21,
+   "B": 127,
+   "C": 3
+  },
+  "vol": {
+   "A": 21,
+   "B": 106,
+   "C": 0
+  },
+  "caption": "Pour B into A until A is full: B has 127 \u2212 21 = 106."
+ },
+ {
+  "cap": {
+   "A": 21,
+   "B": 127,
+   "C": 3
+  },
+  "vol": {
+   "A": 0,
+   "B": 106,
+   "C": 0
+  },
+  "caption": "Empty A. The 21 quarts are removed from B: B \u2212 A."
+ },
+ {
+  "cap": {
+   "A": 21,
+   "B": 127,
+   "C": 3
+  },
+  "vol": {
+   "A": 0,
+   "B": 103,
+   "C": 3
+  },
+  "caption": "Pour B into C until C is full: B has 106 \u2212 3 = 103."
+ },
+ {
+  "cap": {
+   "A": 21,
+   "B": 127,
+   "C": 3
+  },
+  "vol": {
+   "A": 0,
+   "B": 103,
+   "C": 0
+  },
+  "caption": "Empty C. This removes one C-sized amount: B \u2212 A \u2212 C."
+ },
+ {
+  "cap": {
+   "A": 21,
+   "B": 127,
+   "C": 3
+  },
+  "vol": {
+   "A": 0,
+   "B": 100,
+   "C": 3
+  },
+  "caption": "Pour B into C again: B now holds 103 \u2212 3 = 100. Goal reached: B \u2212 A \u2212 2C = 100."
+ },
+ {
+  "cap": {
+   "A": 28,
+   "B": 59,
+   "C": 3
+  },
+  "vol": {
+   "A": 28,
+   "B": 0,
+   "C": 0
+  },
+  "caption": "Problem 8: jugs A 28, B 59, C 3. Goal: 25 quarts. Fill A."
+ },
+ {
+  "cap": {
+   "A": 28,
+   "B": 59,
+   "C": 3
+  },
+  "vol": {
+   "A": 25,
+   "B": 0,
+   "C": 3
+  },
+  "caption": "Pour A into C until C is full: A has 28 \u2212 3 = 25. Goal reached: A \u2212 C = 25, a simpler two-jug route."
+ }
+]
