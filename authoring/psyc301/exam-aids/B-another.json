@@ -1,0 +1,69 @@
+{
+ "another": [
+  {
+   "title": "Pairing problems: marriage and checkerboard",
+   "paragraphs": [
+    "Think of a shoe store that sells shoes only as matched pairs, one left and one right. Someone wheels in a cart with 30 left shoes and 32 right shoes and asks how many pairs you can sell. You would not say 31 just because there are 62 shoes in all. A pair needs one of each kind, so you count the lefts and the rights separately, and the smaller pile decides. Thirty pairs, and two right shoes stay on the cart no matter how you shuffle them around.",
+    "What makes this feel so obvious in the shoe store is that you instinctively look at the two kinds instead of the total. Nobody tries to build a pair out of two left shoes, so the only question is whether one kind runs out first. The moment you see that one kind runs out, you can stop trying, because there is nothing left to try. Rearranging, pairing in a different order, or starting from the other end cannot create a right shoe that is not there.",
+    "Now say it back the way you would to a friend. Left and right shoes are the two colors of squares, or the men and the women. A pair is a domino, or a marriage. The total number of pieces tells you nothing, because every pair must use one of each kind, and when the counts are unequal some pieces are left over however cleverly you arrange them. The whole trick is asking what each pair must contain and then counting those things."
+   ]
+  },
+  {
+   "title": "Converging solution (radiation, fortress, lightbulb)",
+   "paragraphs": [
+    "Imagine a chef who wants to melt and brown the sugar on one spot of a dessert, but the dish and the table underneath are delicate and would scorch under a hot flame. One strong burner aimed at the spot would do the job at the target and ruin everything it passes over. One gentle warming lamp keeps everything safe but never browns anything. The chef seems stuck, because the target needs lots of heat and the surroundings can take only a little.",
+    "The way out is to stop asking one source to do everything. Set up several gentle lamps around the dessert, each aimed at the same spot from a different side. Anywhere along the way, only one lamp is shining, so the dish and the table feel something mild. At the one spot where all the beams cross, the warmth of every lamp adds up, and there it is strong enough to brown the sugar. The strong effect exists only where the weak parts meet.",
+    "So you could explain it like this. When something needs a strong effect in one place and a weak effect everywhere else, split the strength into several weak pieces that travel along separate paths, and make sure they all point at the same spot together. If you aim only one lamp at it, you are back to a single gentle source and nothing browns. The target is the dessert spot, the weak pieces are the lamps, and the safe surroundings are the healthy tissue or the mined roads."
+   ]
+  },
+  {
+   "title": "Base rates and Jack",
+   "paragraphs": [
+    "Picture a party of 100 people where 90 belong to the chess club and 10 play on the basketball team. You are told that one person, picked at random, is tall, quick on their feet and loves jumping. Almost everyone would guess basketball, because the description sounds like a basketball player. But stop and look at the room. There are 90 chess club members, and with that many people, plenty of them are tall, quick and love jumping too.",
+    "Before you heard anything about the person, the chance of basketball was 10 out of 100. That starting point does not vanish when the description arrives. The description should push your guess up from there, maybe quite a lot, but it is pushing from a low starting point, so it has to be very convincing to end up above even. A good fit tells you that basketball is more likely than it was a minute ago. It does not tell you that basketball is more likely than chess club.",
+    "To say it aloud, the numbers about the crowd tell you where to begin, and the description tells you how far to move from there. The mistake is letting the vivid description replace the dull numbers entirely, as if the room only contained the type of person who was described. Jack is the same case with the groups reversed, since a careful, puzzle-loving man still has to be weighed against a group made mostly of lawyers."
+   ]
+  },
+  {
+   "title": "Conjunction rule (Linda)",
+   "paragraphs": [
+    "Suppose a friend texts you that she is somewhere in Illinois. Later she texts that she is in a coffee shop in Chicago. Which of those two statements is more likely to be true, given only that you know she loves coffee and big cities? The second one sounds more like her, but it cannot be the more likely one. If she is in a Chicago coffee shop, then she is in Illinois, so the second statement is true only when the first one is.",
+    "Think about it as nested regions on a map. Illinois is a large area, Chicago sits inside it, and a particular coffee shop sits inside Chicago. Each time you add a detail you draw a smaller region, and a smaller region can hold fewer of the possible places she might be. She could be in Illinois in a hundred ways that have nothing to do with Chicago, such as a small town or a farm, and all of those count toward the first statement but not the second.",
+    "So when you explain it to a friend, say that every extra detail is like zooming in on the map. A detailed story can feel more believable because it paints a clearer picture, but it can only be equally likely or less likely than the broader version it lives inside. That is exactly the Linda situation: bank teller is the big region, feminist bank teller is the smaller region inside it, and fit with her personality cannot make the inside region larger than the one around it."
+   ]
+  },
+  {
+   "title": "Sample size (hospital question)",
+   "paragraphs": [
+    "Think of a basketball player who makes about half of her shots over a whole season. In one game she takes only six shots, and in another she takes sixty. In which game is she more likely to end up shooting better than 60%? Most of us feel she is a 50% shooter, so both games should look about the same. But a six-shot game needs just one or two lucky bounces to land well above half, and that happens in plenty of games.",
+    "In the sixty-shot game, the lucky and unlucky shots keep canceling each other out. To finish above 60%, she would need to be luckier than usual for a long stretch, over and over, and that is rare. Her ability is the same in both games. What differs is how many chances there are for luck to even out, and a small number of chances lets luck dominate.",
+    "Now you can tell it back like this. The true rate describes the long run, and it does not promise that every short stretch will look like it. The fewer attempts in a stretch, the more it can stray from the true rate in either direction, so extreme results show up much more often in small samples. The six-shot game is the small hospital with about 15 births a day, the sixty-shot game is the larger hospital, and the days above 60% are the unusually lucky games."
+   ]
+  },
+  {
+   "title": "Probability as a ratio (jellybeans)",
+   "paragraphs": [
+    "Say you are at a school fair choosing between two raffles. In the first, there are 20 tickets in the drum and 3 of them win. In the second, there are 100 tickets and 12 of them win. A lot of people lean toward the second drum because twelve winning tickets sounds far better than three. But your ticket is one single pull from the drum, and what matters is how crowded that drum is with losers.",
+    "Work it out one drum at a time. Three winners out of 20 tickets is 15 out of every 100, which is 15%. Twelve winners out of 100 tickets is 12%. So the small drum with fewer winners is actually the better bet, because its winners make up a bigger share of what you might pull out. The big drum has more winners, but it also has many more losing tickets standing between you and them.",
+    "To say this to a friend, explain that a count of winners only means something once you know how big the whole pile is. Always turn each option into winners out of total, convert both to percentages, and compare those. It is the same move as with the red jellybeans, where seven reds sounded better than one red but sat inside a much larger bowl."
+   ]
+  },
+  {
+   "title": "Expected utility",
+   "paragraphs": [
+    "Consider deciding each morning whether to carry an umbrella. Suppose there is a 30% chance of rain. Carrying the umbrella costs you a small, certain annoyance, because it is one more thing in your hands. Leaving it at home costs you nothing if the sky stays dry, but a soaking and a ruined afternoon if it rains. You do not ask only whether it will rain. You ask how much each result would matter to you and how likely it is.",
+    "If getting soaked bothers you a great deal, then even a 30% chance of it can outweigh the small nuisance of carrying the umbrella, so you carry it. If you are going to be indoors all day, the soaking matters much less and you leave it. Notice that nothing here is about money. The values are how good or bad each outcome feels to you, and the chances act as weights on those values. Add up the weighted outcomes for each choice and the larger total is the one the theory says to pick.",
+    "When you explain it aloud, say that the theory is a way of weighing what you might get by how likely it is, and that what counts as good is whatever the person values, not just dollars. It tells you what a perfectly rational chooser would do, which makes it a handy yardstick. Real people do not always follow it, for example when how a choice is worded pulls them away from the larger total, which is why it is a standard to compare choices against and not a full description of them."
+   ]
+  },
+  {
+   "title": "Inductive evidence strength",
+   "paragraphs": [
+    "Say you are deciding whether a new pizza place is any good, and you are reading reviews. The conclusion you are heading toward is something like all their pizzas are great. You can never be completely sure of that, because it is a general claim built from the few pizzas other people happened to try. So the real question is how well the reviews support it, not whether they prove it.",
+    "First, who wrote the reviews? If every review comes from people who ordered the same cheese pizza on Friday nights, a hundred of them still tell you little about the rest of the menu, because they do not stand for the whole category. Second, how many are there? Twenty reviews support the conclusion better than two. Third, how good are they? One detailed review from someone who tried many dishes, described them carefully and sounded trustworthy can count for more than a pile of one-line ratings.",
+    "Then there is the catch you can explain to a friend. A general claim like all their pizzas are great can be knocked down by one clear case, such as one soggy, burnt pizza from that kitchen, however many happy reviews came before. That is why the strength of an inductive argument depends on how representative, how many and how good the observations are, and why the conclusion always stays open to revision."
+   ]
+  }
+ ],
+ "notes": []
+}

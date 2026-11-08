@@ -6,7 +6,7 @@
  const pack=window.EXAM_AIDS;
  if(!pack||typeof secondTools==='undefined'||typeof secondScreen!=='function'||typeof secondGuide!=='function')return;
  const cards=pack.cards||[],contrasts=pack.contrasts||[],ask=pack.ask||[],explainers=pack.explainers||[];
- const NEW=[['m2ask','What you can be asked'],['m2cards','Experiment cards'],['m2contrasts','Side-by-side contrasts'],['m2explain','Hard topics, step by step']];
+ const NEW=[['m2ask','What you can be asked'],['m2cards','Experiment cards'],['m2contrasts','Side-by-side contrasts'],['m2explain','Hard topics, explained']];
  const at=secondTools.findIndex(t=>t[0]==='m2guide')+1;
  secondTools.splice(at,0,...NEW);
  const mine=new Set(NEW.map(t=>t[0]));
@@ -30,9 +30,12 @@
   return `<div class="card aid-card"><h3>${e(c.title)}</h3><div class="aid-pair">${side(c.a)}${side(c.b)}</div>${row('How to tell them apart',c.tell)}${row('Example',c.example)}</div>`;
  }
  function explainerHTML(x){
-  return `<details class="guide aid-explain"><summary>${e(x.title)}</summary>${x.explain&&x.explain.length?x.explain.map(t=>`<p class="aid-long">${e(t)}</p>`).join('')+'<p class="aid-short"><b>In short</b> '+e(x.plain)+'</p>':`<p>${e(x.plain)}</p>`}${x.steps&&x.steps.length?'<p class="aid-short"><b>The steps</b></p>':''}${x.steps&&x.steps.length?`<ol>${x.steps.map(s=>`<li>${e(String(s).replace(/^\s*(step\s*)?\d+[.):]\s*/i,''))}</li>`).join('')}</ol>`:''}${row('Worked example',x.example)}${row('Watch out',x.watchOut)}</details>`;
+  if(x.explain&&x.explain.length){
+   const paras=[...x.explain,...(x.another||[])];
+   return `<details class="guide aid-explain"><summary>${e(x.title)}</summary>${paras.map(t=>`<p class="aid-long">${e(t)}</p>`).join('')}</details>`;
+  }
+  return `<details class="guide aid-explain"><summary>${e(x.title)}</summary><p>${e(x.plain)}</p>${row('Worked example',x.example)}${row('Watch out',x.watchOut)}</details>`;
  }
- const qa=(a)=>a.questions.map((q,i)=>a.answers&&a.answers[i]?`<details class="aid-qa"><summary>${e(q)}</summary><p>${e(a.answers[i])}</p></details>`:`<p class="aid-q">${e(q)}</p>`).join('');
  function groupBy(list){const g={};for(const x of list)(g[x.module]=g[x.module]||[]).push(x);return g}
  function sectioned(list,fn,intro){
   const g=groupBy(list.filter(keep));
@@ -49,7 +52,7 @@
   if(view==='m2ask')body=`<h1>What you can be asked</h1><p>For each topic, the kinds of questions the exam asks about it, with a one-line cue to the key point.</p>${filterBar(false)}${askHTML()}`;
   else if(view==='m2cards')body=`<h1>Experiment cards</h1><p>Every study in the same format: who, what was manipulated, what was measured, what they found, and what it means.</p>${filterBar(true)}${sectioned(cards,cardHTML,'No cards for this lecture.')}`;
   else if(view==='m2contrasts')body=`<h1>Side-by-side contrasts</h1><p>Pairs of ideas that are easy to mix up, with how to tell them apart.</p>${filterBar(false)}${sectioned(contrasts,contrastHTML,'No contrasts for this lecture.')}`;
-  else body=`<h1>Hard topics, step by step</h1><p>Plain-language walk-throughs for the ideas that are hardest to follow, each with a worked example.</p>${filterBar(false)}${(()=>{const g=groupBy(explainers.filter(keep));return Object.keys(g).sort((a,b)=>a-b).map(m=>`<h2 class="aid-h">${e(modTitle(m))}</h2>${g[m].map(explainerHTML).join('')}`).join('')||'<p>No walk-throughs for this lecture.</p>'})()}`;
+  else body=`<h1>Hard topics, explained</h1><p>The ideas that are hardest to follow, explained slowly in plain language, each with a fresh everyday example.</p>${filterBar(false)}${(()=>{const g=groupBy(explainers.filter(keep));return Object.keys(g).sort((a,b)=>a-b).map(m=>`<h2 class="aid-h">${e(modTitle(m))}</h2>${g[m].map(explainerHTML).join('')}`).join('')||'<p>No walk-throughs for this lecture.</p>'})()}`;
   return '<span class="tag">MODULE 2 · SECOND HALF</span>'+secondScope()+body;
  };
  // Under each topic of "What to know by the end", show what can be asked about it.
