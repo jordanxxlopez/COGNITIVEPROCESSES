@@ -1,0 +1,10 @@
+import puppeteer from 'puppeteer-core';
+const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--no-sandbox']});
+const g=await b.newPage();const errs=[];g.on('pageerror',e=>errs.push(e.message));await g.setViewport({width:1100,height:900});
+await g.goto('http://localhost:8790/index.html');await new Promise(r=>setTimeout(r,1500));
+await g.evaluate(()=>{view='m2explain';state.aids.filter='13';render();document.querySelector('.aid-explain').open=true});
+console.log(await g.evaluate(()=>({btn:document.querySelectorAll('.aid-slides button').length,first:document.querySelector('.aid-slides button').dataset.source,imgs:0})));
+await g.click('.aid-slides button');await new Promise(r=>setTimeout(r,800));
+console.log(await g.evaluate(()=>({modal:!!document.querySelector('.modal, dialog, #modal, [role=dialog]'),imgs:[...document.querySelectorAll('img')].filter(i=>i.offsetParent).length,txt:document.body.innerText.slice(0,0)})));
+await g.screenshot({path:'/private/tmp/claude-501/-Users-jordanlopez-BEHAVNEUR392-Revisions/d87b0a3b-bce4-4a1c-af1e-8fdf2eb98e97/scratchpad/slide.png'});
+await g.evaluate(()=>{state.aids.filter='all';save()});console.log('errors',errs);await b.close();

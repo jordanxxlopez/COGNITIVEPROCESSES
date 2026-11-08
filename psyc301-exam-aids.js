@@ -32,7 +32,8 @@
  function explainerHTML(x){
   if(x.explain&&x.explain.length){
    const paras=[...x.explain,...(x.another||[])];
-   return `<details class="guide aid-explain"><summary>${e(x.title)}</summary>${paras.map(t=>`<p class="aid-long">${e(t)}</p>`).join('')}</details>`;
+   const slides=(x.pages||[]).length?`<p class="aid-slides"><b>Aligned slides</b> ${x.pages.map(n=>`<button class="tiny" data-source="${x.module}:${n}">Slide ${n} + notes</button>`).join(' ')}</p>`:'';
+   return `<details class="guide aid-explain"><summary>${e(x.title)}</summary>${slides}${paras.map(t=>`<p class="aid-long">${e(t)}</p>`).join('')}</details>`;
   }
   return `<details class="guide aid-explain"><summary>${e(x.title)}</summary><p>${e(x.plain)}</p>${row('Worked example',x.example)}${row('Watch out',x.watchOut)}</details>`;
  }
@@ -74,7 +75,7 @@
   else if(t.matches&&t.matches('[data-aid-test]')){aid().test=t.checked;save();render()}
  });
  const style=document.createElement('style');
- style.textContent='.aid-bar{gap:18px;align-items:center;margin:10px 0 4px}.aid-h{margin:26px 0 10px}.aid-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}.aid-card h3{margin:0 0 4px}.aid-who{margin:0 0 8px;font-weight:600;opacity:.85}.aid-row{margin:6px 0}.aid-row summary{cursor:pointer;font-weight:600}.aid-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}.aid-side{padding:10px;border-radius:8px;background:rgba(120,120,160,.12)}.aid-side h4{margin:0 0 4px}.aid-side p{margin:0}.aid-inline{margin:8px 0 12px;padding:8px 12px;border-left:3px solid rgba(120,90,200,.6);background:rgba(120,90,200,.08);border-radius:6px}.aid-inline ul{margin:4px 0 0 18px}'+'.aid-qa{margin:6px 0}.aid-qa summary{cursor:pointer;font-weight:600}.aid-qa p{margin:6px 0 10px 14px;line-height:1.55}.aid-q{margin:6px 0;font-weight:600}'+'.aid-long{line-height:1.65;margin:10px 0}.aid-short{margin:12px 0 4px}@media(max-width:560px){.aid-pair{grid-template-columns:1fr}}';
+ style.textContent='.aid-bar{gap:18px;align-items:center;margin:10px 0 4px}.aid-h{margin:26px 0 10px}.aid-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}.aid-card h3{margin:0 0 4px}.aid-who{margin:0 0 8px;font-weight:600;opacity:.85}.aid-row{margin:6px 0}.aid-row summary{cursor:pointer;font-weight:600}.aid-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}.aid-side{padding:10px;border-radius:8px;background:rgba(120,120,160,.12)}.aid-side h4{margin:0 0 4px}.aid-side p{margin:0}.aid-inline{margin:8px 0 12px;padding:8px 12px;border-left:3px solid rgba(120,90,200,.6);background:rgba(120,90,200,.08);border-radius:6px}.aid-inline ul{margin:4px 0 0 18px}'+'.aid-qa{margin:6px 0}.aid-qa summary{cursor:pointer;font-weight:600}.aid-qa p{margin:6px 0 10px 14px;line-height:1.55}.aid-q{margin:6px 0;font-weight:600}'+'.aid-slides{margin:8px 0 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.aid-long{line-height:1.65;margin:10px 0}.aid-short{margin:12px 0 4px}@media(max-width:560px){.aid-pair{grid-template-columns:1fr}}';
  document.head.appendChild(style);
  window.PSYC301ExamAids={cards,contrasts,ask,explainers};
  try{render()}catch{}

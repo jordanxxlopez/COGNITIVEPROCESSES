@@ -26,6 +26,15 @@ for g in 'ABCD':
         for t in d.get('explainers', []):
             if t['title'] in an:
                 t['another'] = an[t['title']]
+    fp = SRC / (g + '-final.json')
+    if fp.exists():
+        fin = {a['title']: a for a in json.loads(fp.read_text())['final']}
+        for t in d.get('explainers', []):
+            f = fin.get(t['title'])
+            if f:
+                t['explain'] = f['paragraphs']
+                t['pages'] = f.get('pages', [])
+                t.pop('another', None)
     for k in out:
         out[k] += d.get(k, [])
 (ROOT / 'psyc301-exam-aids-data.js').write_text(

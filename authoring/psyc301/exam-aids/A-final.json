@@ -1,0 +1,94 @@
+{
+ "final": [
+  {
+   "title": "Mental multiplication: 43 times 6",
+   "paragraphs": [
+    "Working memory is a limited-capacity system for the temporary storage and manipulation of information during complex tasks such as comprehension, learning and reasoning. Baddeley and Hitch (1974) proposed it because the older picture of short-term memory was too simple: there, short-term memory was mostly a waiting room where information sat until it was used or lost. Storage keeps something on hand briefly, and manipulation works on it. The hard part to grasp is that both happen at the same moment and draw on one shared, limited capacity.",
+    "Multiplying 43 times 6 in your head is a small, concrete case of exactly that. You picture the whole problem and keep it in mind so later steps can return to it. You multiply 3 by 6 and get 18. You hold the 8 in memory as the ones digit and carry the 1 over to the 4. You multiply 6 by 4 to get 24 and add the carried 1 to make 25. Finally you combine that 25 with the 8 that has been held all along, and the answer is 258.",
+    "Keeping the 8 alive while everything else goes on is storage. Carrying, multiplying and adding are active processes, because each one changes the information. The common mistake is to treat working memory as a shelf that only holds things. The 8 has to last through several steps while other operations run, so the answer depends on storage and processing working together, and that combination is the job of working memory.",
+    "The same thing happens when you push a cart through a grocery store and keep a running bill in your head. Rice at 6 dollars and sauce at 4 give a total of 10, and that total is what you are holding. When the cheese at 5 goes in, you have to act on the held number, adding 5 and replacing it with 15. If you only kept the total, you would be staring at a number, and if you only added, you would have nothing to add to.",
+    "Because both jobs share one small amount of mental room, a friend calling out a question halfway down the aisle can make the total vanish. Capacity was spent on something else and the held number slipped away. In the same way, if the 8 slips away while you work on the tens, or the carried 1 is never added, the multiplication comes out wrong. Mental arithmetic is therefore a direct test of working memory: a kept piece and active work, done together, in the same limited workspace."
+   ],
+   "pages": [
+    3,
+    4
+   ]
+  },
+  {
+   "title": "Tower of Hanoi with subgoals",
+   "paragraphs": [
+    "Newell and Simon (1956) treated problem solving as a search that happens between the posing of a problem and its solution, where the Gestalt tradition had looked only at the starting structure and the structure reached once it is solved. Every problem has an initial state, intermediate states along the way, and a goal state, and operators are the rules that say which moves are allowed and carry you from one state to another. In the Tower of Hanoi, the stack of three disks starts on the first peg and must end in the same order on the third. Disks move one at a time, only when nothing is on top, and never onto a smaller disk.",
+    "The goal is easy to picture, which is what makes people go wrong. The stack cannot move all at once, so heading straight for the goal fails. Smaller disks keep having to get out of the way, and the middle peg serves as a temporary parking spot. The number of moves explodes as disks are added: with 64 disks it would take a trillion years, even at one correct move per second.",
+    "Means-end analysis is the strategy that tames this. It aims to reduce the differences between the initial state and the goal state, and it relies on subgoals, which are smaller goals that create intermediate states closer to the goal. The main difference is that the whole stack is on the wrong peg, and the largest disk cannot move until the disks above it are cleared. The first subgoal is therefore to free the large disk: the smallest disk goes from the first peg to the third, and the middle disk goes from the first peg to the middle peg.",
+    "The second subgoal is to free the third peg. The smallest disk moves from the third peg onto the middle disk, so the two smaller disks sit legally together on the middle peg and the large disk has a place to go. The third subgoal is to move the large disk onto the third peg, where it is in its final place. Putting the smallest disk on the third peg and then taking it off looks wasteful, but that detour frees the space the large disk needs, and means-end analysis accepts detours that remove an obstacle.",
+    "Reaching the third subgoal is not finishing, because the same strategy still has to move the two smaller disks onto the large one. A heavy piano shows the pattern. It sits in the living room under a pile of chairs, and the bedroom it is headed for is full of boxes, so the question stops being how to move the piano and becomes what is stopping it. The chairs go to the hallway, the boxes follow, and only then does the piano roll in. Setting the chairs aside looks pointless on its own, but each act removes a specific obstacle, just like parking a small disk. When the piano is in place, the chairs and boxes still have to be arranged around it, as the smaller disks still have to be stacked on the large one."
+   ],
+   "pages": [
+    13,
+    14,
+    17,
+    18
+   ]
+  },
+  {
+   "title": "Mutilated checkerboard",
+   "paragraphs": [
+    "A checkerboard has 64 squares and can be completely covered by 32 dominoes, each covering 2 neighboring squares. The mutilated checkerboard problem removes two opposite corners and asks whether the remaining 62 squares can be covered with 31 dominoes. It is hard because the numbers seem to fit: 31 dominoes at two squares each cover exactly 62 squares. The arithmetic suggests a covering exists, so people start laying dominoes down one at a time, which could take a very long time and could never prove that a covering is impossible.",
+    "The answer is no, and the colors of the squares hold the key. Neighboring squares are always different colors, so every domino covers one dark square and one light square. Opposite corners share the same color, so removing them leaves 32 squares of one color and 30 of the other. Thirty-one dominoes would need 31 squares of each color, so a full covering is impossible. Once the board is represented by its colors, a single count settles the question before any domino is placed. Equal area, 62 squares and 31 dominoes, is never enough; the covering also needs equal numbers of the two colors.",
+    "The key is understanding two things: each domino covers two squares, and those squares must be of different colors. Experimental conditions differed in how much information was given about the squares. Condition 1 was a blank board, condition 2 a colored board, condition 3 wrote the words black and pink on the squares, and condition 4 wrote the words bread and butter. The bread and butter condition emphasized the difference between the squares, since bread and butter naturally come in pairs, one of each, and participants solved it twice as fast as the blank condition. The board and dominoes were identical throughout, so only the representation changed.",
+    "A school dance shows the same logic. With 62 students in the gym and a rule that every dancer needs a partner, one leader and one follower, 62 people can form 31 pairs. Matching students up one pair after pair could take all evening. A glance at the name tags showing 32 leaders and only 30 followers settles it at once, because 31 pairs would need 31 of each kind. The problem was never about total head count but about the two kinds. The removed corners are like sending two followers home.",
+    "Think-aloud protocols show this shift happening. Before participants realize that the words bread and butter are important, they talk about laying down dominoes, and afterward they talk about pairing the two kinds of squares. That is similar to the Gestalt idea of a representational shift. The way the squares are described is what lets the solver see that the numbers matching up does not matter, and that the kinds matching up does."
+   ],
+   "pages": [
+    20,
+    21,
+    22
+   ]
+  },
+  {
+   "title": "Chain problem",
+   "paragraphs": [
+    "The chain problem was one of the insight problems used by Metcalfe and Wiebe (1987), who designed an experiment to distinguish insight from noninsight problems. The triangle problem and the chain problem were the insight problems, and algebra problems were the noninsight ones. Participants gave warmth judgments every 15 seconds, rating how close they felt to the answer. Metcalfe and Wiebe expected that in insight problems people would not be good at predicting how near they were to a solution, because if insight comes suddenly the solver should feel far away right until the answer arrives.",
+    "The task is to join four short pieces of chain, each with three links, into a single closed loop. Opening a link costs 2 cents, closing a link costs 3 cents, and only 15 cents is available. The obvious plan opens one link on each piece and uses it to join the next piece. That is four links at 2 to open and 3 to close, which is 20 cents and goes over budget. Opening and closing one link costs 5 cents, so 15 cents allows only three links, and the obvious plan needs four.",
+    "The answer comes from seeing the parts differently. Open all three links of one piece and use those three open links to join the other three pieces into a loop, closing each once. That costs 3 times (2 plus 3), which is exactly 15 cents. The shift is treating one whole piece of chain as a set of connectors instead of as a piece to be joined.",
+    "Making a bracelet from four short strands of beads, each ending in a metal ring, works the same way when a jeweler will open and close only three rings. Opening a ring on every strand needs four and fails when counted. One strand has to be sacrificed as a supply of parts: its three rings are opened once each and used as connectors for the other three strands. The sacrificed strand stops being a strand with beads and becomes a bag of connectors, and the count comes to exactly three.",
+    "This answer does not come from gradual improvement, and trying the first plan harder never helps. It requires leaving the obvious approach behind, and because the problem looks simple, the obvious approach is hard to give up. This is the kind of restructuring that Gestalt psychologists linked to insight. Steadily rising warmth would mean gradual progress, while low warmth followed by a sudden jump means insight, and that is the pattern these problems were chosen to produce."
+   ],
+   "pages": [
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "title": "Triangle problem",
+   "paragraphs": [
+    "The triangle problem is the second of the insight problems used by Metcalfe and Wiebe (1987). They compared insight problems, the triangle and chain problems, with noninsight algebra problems, and asked participants for warmth judgments every 15 seconds, rating from cold to hot how close they felt to the answer. With noninsight problems, which involve a more methodical process, people know how close they are because every finished step brings the answer visibly closer. With insight problems, people should not be very good at predicting how near they are, because the solution arrives suddenly.",
+    "The task is to move three of the blue dots so the triangle points to the bottom of the page. The triangle has ten dots arranged in rows of one, two, three and four, with the point on top, and the rule is that seven dots stay where they are while only three move. It is hard because the problem looks simple, which makes the obvious approach hard to give up, and the obvious approach does not work.",
+    "The top dot, the one at the point, goes below the middle of the bottom row. The two ends of the bottom row go up beside the row of two dots. The row that held two dots now has four, and below it sit the rows of three, two and one. The rows run four, three, two and one, so the triangle points down, and only three dots moved.",
+    "A team photo with players in rows of one, two, three and four, narrow at the front and wide at the back, shows why nudging fails. If the coach asks for the formation to point the other way with only three players moving, the natural instinct is to shift everybody a little in hope that it slowly turns into the new shape. It never gets there, because small nudges keep the old shape intact. What works is to see the team as people who can be regrouped, leave most of them in place, and move only the ones who formed the old point and the old base to the opposite end.",
+    "Nothing about this comes from gradual improvement. You cannot get nearer by small adjustments; you have to give up the picture of an upward triangle and see the dots as parts that can be regrouped. That is the restructuring that Gestalt psychologists linked to insight. It explains why warmth stays low and then jumps, from feeling cold to knowing you have it, instead of rising steadily."
+   ],
+   "pages": [
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "title": "Water-jug problems and mental set",
+   "paragraphs": [
+    "A mental set is a preconceived notion about how to approach a problem, based on a person's past experiences with the problem or with similar problems. It is a broader form of fixation: a method that worked before gets used again, even when a better method is available. The water-jug problem reveals how it works. The task is to obtain a required volume of water, given three empty jars for measuring. Each problem gives the capacities of jugs A, B and C and a final desired quantity, in quarts, and only filling, pouring and emptying are allowed.",
+    "In problem 1 the jugs hold 21, 127 and 3 quarts and the target is 100. Fill jug B with 127 quarts and pour from B into A until A is full, which leaves 106 quarts in B. Pour from B into C until C is full, empty C and fill it once more, which leaves exactly 100 quarts in B. The formula is B minus A minus twice C, or 127 minus 21 minus 2 times 3, which is 100. The same formula solves each of the early problems.",
+    "That success has a cost. Participants started applying the formula automatically, and that automatic habit is the mental set. It forms because the formula keeps working. Later problems test the habit. Problem 7 has jugs of 15, 39 and 3 quarts and a target of 18. The long formula still works, giving 39 minus 15 minus 6, but simply adding A and C, 15 plus 3, gives 18 directly. Problem 8 has jugs of 28, 59 and 3 and a target of 25, which A minus C solves directly, 28 minus 3, even though the familiar formula also works.",
+    "Walking to class along the main road for weeks works the same way. It has never failed, so you stop thinking about it, and when a footpath opens through the park that would halve the trip, you are on autopilot and walk past the entrance. The main road did not stop working. Because it worked so many times, you stopped looking for anything else, and the shorter way sat in plain view. Someone new to campus, with no habit, would probably spot the footpath at once.",
+    "The experiment shows that the mental set inhibited participants from using the simpler solutions, and people who had not worked through the earlier problems found the short methods far more often. A set speeds up solving when problems are alike, but once the problems change, the same set hides the easier paths. Past success can therefore become an obstacle in its own right. The familiar method is not wrong in problems 7 and 8; it blocks the simpler one."
+   ],
+   "pages": [
+    10,
+    11
+   ]
+  }
+ ],
+ "notes": []
+}
