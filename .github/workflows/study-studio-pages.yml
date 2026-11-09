@@ -1,0 +1,52 @@
+name: Publish Study Studio
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Stage unchanged static site files
+        run: |
+          python3 - <<'PY'
+          import pathlib, shutil, subprocess
+          target = pathlib.Path('_site')
+          target.mkdir()
+          count = size = 0
+          for name in subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0'):
+              if not name:
+                  continue
+              src = pathlib.Path(name)
+              if src.parts[0] in ('authoring', '.github') or 'node_modules' in src.parts or src.name in ('.gitignore', '_config.yml'):
+                  continue
+              if src.is_symlink():
+                  raise RuntimeError(f'Unexpected symlink: {name}')
+              dest = target / src
+              dest.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copyfile(src, dest)
+              count += 1
+              size += src.stat().st_size
+          assert (target / 'index.html').is_file()
+          assert size < 1_000_000_000, f'Site exceeds size budget: {size}'
+          print(f'Staged {count} unchanged files ({size:,} bytes)')
+          PY
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Publish to existing Study Studio URL
+        id: deployment
+        uses: actions/deploy-pages@v5
