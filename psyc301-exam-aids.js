@@ -5,15 +5,15 @@
 (() => {
  const pack=window.EXAM_AIDS;
  if(!pack||typeof secondTools==='undefined'||typeof secondScreen!=='function'||typeof secondGuide!=='function')return;
- const cards=pack.cards||[],contrasts=pack.contrasts||[],ask=pack.ask||[],explainers=pack.explainers||[];
+ const cards=pack.cards||[],contrasts=pack.contrasts||[],contrastsV2=window.CONTRASTS_V2||[],ask=pack.ask||[],explainers=pack.explainers||[];
  const NEW=[['m2ask','What you can be asked'],['m2cards','Experiment cards'],['m2contrasts','Side-by-side contrasts'],['m2explain','Hard topics, explained']];
  const at=secondTools.findIndex(t=>t[0]==='m2guide')+1;
  secondTools.splice(at,0,...NEW);
  const mine=new Set(NEW.map(t=>t[0]));
  if(!state.aids||typeof state.aids!=='object')state.aids={};
- const aid=()=>{const a=state.aids;if(!a.filter)a.filter='all';if(typeof a.test!=='boolean')a.test=false;return a};
+ const aid=()=>{const a=state.aids;if(!a.filter)a.filter='all';if(a.cv!=='old')a.cv='new';if(!a.ctier)a.ctier='all';if(a.csort!=='likely')a.csort='lecture';if(typeof a.test!=='boolean')a.test=false;return a};
  const modTitle=id=>{try{return secondModules().find(m=>m.id===Number(id))?.title||('Lecture '+id)}catch{return 'Lecture '+id}};
- const ids=()=>[...new Set([...cards,...contrasts,...ask,...explainers].map(x=>x.module))].sort((a,b)=>a-b);
+ const ids=()=>[...new Set([...cards,...contrasts,...contrastsV2,...ask,...explainers].map(x=>x.module))].sort((a,b)=>a-b);
  const keep=x=>aid().filter==='all'||String(x.module)===String(aid().filter);
  const e=s=>esc(String(s==null?'':s));
  const filterBar=(withTest)=>`<div class="row aid-bar"><label>Lecture <select data-aid-filter>${['all',...ids()].map(v=>`<option value="${v}"${String(aid().filter)===String(v)?' selected':''}>${v==='all'?'All lectures':e(modTitle(v))}</option>`).join('')}</select></label>${withTest?`<label class="aid-test"><input type="checkbox" data-aid-test ${aid().test?'checked':''}> Test myself (hide results until I click)</label>`:''}</div>`;
@@ -28,6 +28,28 @@
  function contrastHTML(c){
   const side=s=>`<div class="aid-side"><h4>${e(s.term)}</h4><p>${e(s.definition)}</p></div>`;
   return `<div class="card aid-card"><h3>${e(c.title)}</h3><div class="aid-pair">${side(c.a)}${side(c.b)}</div>${row('How to tell them apart',c.tell)}${row('Example',c.example)}</div>`;
+ }
+
+ const CT={high:'Know first',mid:'Know next',low:'Know last'};
+ function contrastV2HTML(c,showLecture){
+  const side=s=>`<div class="aid-side"><h4>${e(s.term)}</h4><p>${e(s.definition)}</p></div>`;
+  return `<div class="card aid-card aid-c2"><div class="aid-c2top"><h3>${e(c.title)}</h3><span class="qa-tier qa-${c.tier}">${CT[c.tier]}</span></div>${showLecture?`<p class="aid-who">${e(modTitle(c.module))}</p>`:''}<div class="aid-pair">${side(c.a)}${side(c.b)}</div><p class="aid-row"><b>How they differ</b> ${e(c.diff)}</p><p class="aid-row"><b>Example</b> ${e(c.example)}</p><p class="aid-row"><b>Watch out</b> ${e(c.watch)}</p></div>`;
+ }
+ const contrastBar=()=>{
+  const a=aid(),old=a.cv==='old';
+  const ver=`<label>Version <select data-aid-cv><option value="new"${old?'':' selected'}>New · explained, ranked by study priority</option><option value="old"${old?' selected':''}>Original · short version</option></select></label>`;
+  const lec=`<label>Lecture <select data-aid-filter>${['all',...ids()].map(v=>`<option value="${v}"${String(a.filter)===String(v)?' selected':''}>${v==='all'?'All lectures':e(modTitle(v))}</option>`).join('')}</select></label>`;
+  const extra=old?'':`<label>Likelihood <select data-aid-ctier>${[['all','All contrasts'],['high','Know first (most likely)'],['mid','Know next'],['low','Know last (least likely)']].map(([v,l])=>`<option value="${v}"${a.ctier===v?' selected':''}>${l}</option>`).join('')}</select></label><label>Order <select data-aid-csort><option value="lecture"${a.csort==='lecture'?' selected':''}>By lecture, most likely first</option><option value="likely"${a.csort==='likely'?' selected':''}>Most likely first, all lectures</option></select></label>`;
+  return `<div class="row aid-bar">${ver}${lec}${extra}</div>`;
+ };
+ function contrastsView(){
+  if(aid().cv==='old')return `<h1>Side-by-side contrasts · original</h1><p>Pairs of ideas that are easy to mix up, with how to tell them apart.</p>${contrastBar()}${sectioned(contrasts,contrastHTML,'No contrasts for this lecture.')}`;
+  const list=contrastsV2.filter(x=>keep(x)&&(aid().ctier==='all'||x.tier===aid().ctier));
+  const intro=`<h1>Side-by-side contrasts</h1><p>${contrastsV2.length} pairs of ideas that are easy to mix up. Each says what the two sides are, how they differ and why, gives an example tied to the researcher and year, and flags the usual slip. A tag shows how high each pair ranks for study: a heuristic ranking built from how many and how highly ranked the Q&amp;A questions are that depend on the pair. It orders what to learn first and is not a validated prediction of the exam, so the last tier is still worth knowing. Lecture 15 items are placed by the slide topic each article or lab extends.</p>${contrastBar()}`;
+  if(!list.length)return intro+'<p>No contrasts match these filters.</p>';
+  if(aid().csort==='likely')return intro+`<div class="grid aid-grid aid-grid2">${list.slice().sort((a,b)=>b.score-a.score).map(x=>contrastV2HTML(x,true)).join('')}</div>`;
+  const g=groupBy(list);
+  return intro+Object.keys(g).sort((a,b)=>a-b).map(m=>`<h2 class="aid-h">${e(modTitle(m))} <span class="qa-count">${g[m].length} contrasts</span></h2><div class="grid aid-grid aid-grid2">${g[m].slice().sort((a,b)=>b.score-a.score).map(x=>contrastV2HTML(x,false)).join('')}</div>`).join('');
  }
  function explainerHTML(x){
   if(x.explain&&x.explain.length){
@@ -53,7 +75,7 @@
   let body;
   if(view==='m2ask')body=`<h1>What you can be asked</h1><p>For each topic, the kinds of questions the exam asks about it, with a one-line cue to the key point.</p>${filterBar(false)}${askHTML()}`;
   else if(view==='m2cards')body=`<h1>Experiment cards</h1><p>Every study in the same format: who, what was manipulated, what was measured, what they found, and what it means.</p>${filterBar(true)}${sectioned(cards,cardHTML,'No cards for this lecture.')}`;
-  else if(view==='m2contrasts')body=`<h1>Side-by-side contrasts</h1><p>Pairs of ideas that are easy to mix up, with how to tell them apart.</p>${filterBar(false)}${sectioned(contrasts,contrastHTML,'No contrasts for this lecture.')}`;
+  else if(view==='m2contrasts')body=contrastsView();
   else body=`<h1>Hard topics, explained</h1><p>The ideas that are hardest to follow, explained slowly in plain language, each with a fresh everyday example.</p>${filterBar(false)}${(()=>{const g=groupBy(explainers.filter(keep));return Object.keys(g).sort((a,b)=>a-b).map(m=>`<h2 class="aid-h">${e(modTitle(m))}</h2>${g[m].map(explainerHTML).join('')}`).join('')||'<p>No walk-throughs for this lecture.</p>'})()}`;
   return '<span class="tag">MODULE 2 · SECOND HALF</span>'+secondScope()+body;
  };
@@ -73,10 +95,13 @@
   const t=ev.target;
   if(t.matches&&t.matches('[data-aid-filter]')){aid().filter=t.value;save();render()}
   else if(t.matches&&t.matches('[data-aid-test]')){aid().test=t.checked;save();render()}
+  else if(t.matches&&t.matches('[data-aid-cv]')){aid().cv=t.value;save();render()}
+  else if(t.matches&&t.matches('[data-aid-ctier]')){aid().ctier=t.value;save();render()}
+  else if(t.matches&&t.matches('[data-aid-csort]')){aid().csort=t.value;save();render()}
  });
  const style=document.createElement('style');
- style.textContent='.aid-bar{gap:18px;align-items:center;margin:10px 0 4px}.aid-h{margin:26px 0 10px}.aid-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}.aid-card h3{margin:0 0 4px}.aid-who{margin:0 0 8px;font-weight:600;opacity:.85}.aid-row{margin:6px 0}.aid-row summary{cursor:pointer;font-weight:600}.aid-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}.aid-side{padding:10px;border-radius:8px;background:rgba(120,120,160,.12)}.aid-side h4{margin:0 0 4px}.aid-side p{margin:0}.aid-inline{margin:8px 0 12px;padding:8px 12px;border-left:3px solid rgba(120,90,200,.6);background:rgba(120,90,200,.08);border-radius:6px}.aid-inline ul{margin:4px 0 0 18px}'+'.aid-qa{margin:6px 0}.aid-qa summary{cursor:pointer;font-weight:600}.aid-qa p{margin:6px 0 10px 14px;line-height:1.55}.aid-q{margin:6px 0;font-weight:600}'+'.aid-slides{margin:8px 0 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.aid-long{line-height:1.65;margin:10px 0}.aid-short{margin:12px 0 4px}@media(max-width:560px){.aid-pair{grid-template-columns:1fr}}';
+ style.textContent='.aid-bar{gap:18px;align-items:center;margin:10px 0 4px}.aid-h{margin:26px 0 10px}.aid-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}.aid-card h3{margin:0 0 4px}.aid-who{margin:0 0 8px;font-weight:600;opacity:.85}.aid-row{margin:6px 0}.aid-row summary{cursor:pointer;font-weight:600}.aid-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}.aid-side{padding:10px;border-radius:8px;background:rgba(120,120,160,.12)}.aid-side h4{margin:0 0 4px}.aid-side p{margin:0}.aid-inline{margin:8px 0 12px;padding:8px 12px;border-left:3px solid rgba(120,90,200,.6);background:rgba(120,90,200,.08);border-radius:6px}.aid-inline ul{margin:4px 0 0 18px}'+'.aid-qa{margin:6px 0}.aid-qa summary{cursor:pointer;font-weight:600}.aid-qa p{margin:6px 0 10px 14px;line-height:1.55}.aid-q{margin:6px 0;font-weight:600}'+'.aid-slides{margin:8px 0 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.aid-long{line-height:1.65;margin:10px 0}.aid-short{margin:12px 0 4px}'+'.aid-grid2{grid-template-columns:repeat(auto-fill,minmax(360px,1fr))}.aid-c2top{display:flex;gap:10px;justify-content:space-between;align-items:flex-start}.aid-c2 .aid-row{line-height:1.55}.aid-h .qa-count{font-size:.6em;font-weight:400;opacity:.7}@media(max-width:560px){.aid-pair{grid-template-columns:1fr}}';
  document.head.appendChild(style);
- window.PSYC301ExamAids={cards,contrasts,ask,explainers};
+ window.PSYC301ExamAids={cards,contrasts,contrastsV2,ask,explainers};
  try{render()}catch{}
 })();
