@@ -1,14 +1,61 @@
 /* PSYC301 workspace containers only. Preserve text, sources and collection styles. */
-#content.workspace-modern :is(details.guide,details.aid-explain){padding:0;margin:22px 0;border:1px solid var(--line);border-radius:16px;background:var(--paper);overflow:hidden}
-#content.workspace-modern :is(details.guide,details.aid-explain)>summary{display:block;background-image:var(--studio-pop-heading);padding:20px 22px;list-style-position:inside;border-radius:0}
+#content.workspace-containers:not(.workspace-modern) :is(details.guide,details.aid-explain){padding:0;margin:22px 0;border:1px solid var(--line);border-radius:16px;background:var(--paper);overflow:hidden}
+#content.workspace-containers:not(.workspace-modern) :is(details.guide,details.aid-explain)>summary{display:block;background-image:var(--studio-pop-heading);padding:20px 22px;list-style-position:inside;border-radius:0}
+#content.workspace-containers:not(.workspace-modern) :is(details.guide,details.aid-explain)>summary::before{content:'▸';display:inline-block;margin-right:10px}
+#content.workspace-containers:not(.workspace-modern) :is(details.guide,details.aid-explain)[open]>summary::before{content:'▾'}
+#content.workspace-containers:not(.workspace-modern) :is(details.guide,details.aid-explain)>.aid-split{padding:20px}
+#content.workspace-containers:not(.workspace-modern) :is(details.guide,details.aid-explain)>:is(p,ul,.row,.aid-inline){margin-left:20px;margin-right:20px}
+#content.workspace-containers:not(.workspace-modern) :is(.aid-qa,.qa-item){border:1px solid var(--line);border-radius:12px;margin:12px 0;padding:0;background:var(--paper);overflow:hidden}
+#content.workspace-containers:not(.workspace-modern) :is(.aid-qa,.qa-item)>summary{display:block;position:relative;padding:16px 44px 16px 18px;list-style:none;background:none}
+#content.workspace-containers:not(.workspace-modern) :is(.aid-qa,.qa-item)>summary::-webkit-details-marker{display:none}
+#content.workspace-containers:not(.workspace-modern) :is(.aid-qa,.qa-item)>summary::after{content:'+';position:absolute;right:17px;top:14px;color:var(--purple);font-size:22px;font-weight:400}
+#content.workspace-containers:not(.workspace-modern) :is(.aid-qa,.qa-item)[open]>summary::after{content:'−'}
+#content.workspace-containers:not(.workspace-modern) :is(.aid-qa,.qa-item)>:not(summary){margin-left:18px;margin-right:18px;margin-bottom:18px}
+#content.workspace-containers:not(.workspace-modern) :is(.aid-qa,.qa-item)[open]>summary{border-bottom:1px solid var(--line);margin-bottom:16px}
+
+/* Opt-in workspace presentation only; collection views never receive this class. */
+.workspace-layout-switch{display:flex;align-items:center;gap:9px;margin:10px 0 20px;font-size:13px;color:var(--muted);width:fit-content;padding:9px 12px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+.workspace-layout-switch input{width:32px;height:18px;accent-color:#7951bf}
+#content.workspace-modern{--ws-accent:#6538ad;--ws-blue:#245f9f;--ws-space:20px}
+html[data-theme=dark] #content.workspace-modern{--ws-accent:#ccb2ff;--ws-blue:#9bc9ff}
+#content.workspace-modern :is(.guide,.aid-card,.qa-block){border-radius:16px;overflow:hidden}
+#content.workspace-modern :is(details.guide,details.aid-explain){padding:0;margin:24px 0;border:1px solid var(--line);background:var(--paper)}
+#content.workspace-modern :is(details.guide,details.aid-explain)>summary{display:block;background-image:var(--studio-pop-heading);padding:20px 22px;font-size:1.05rem;font-weight:700;line-height:1.5;list-style-position:inside;border-radius:0}
 #content.workspace-modern :is(details.guide,details.aid-explain)>summary::before{content:'▸';display:inline-block;margin-right:10px}
 #content.workspace-modern :is(details.guide,details.aid-explain)[open]>summary::before{content:'▾'}
-#content.workspace-modern :is(details.guide,details.aid-explain)>.aid-split{padding:20px}
-#content.workspace-modern :is(details.guide,details.aid-explain)>:is(p,ul,.row,.aid-inline){margin-left:20px;margin-right:20px}
-#content.workspace-modern :is(.aid-qa,.qa-item){border:1px solid var(--line);border-radius:12px;margin:12px 0;padding:0;background:var(--paper);overflow:hidden}
-#content.workspace-modern :is(.aid-qa,.qa-item)>summary{display:block;position:relative;padding:16px 44px 16px 18px;list-style:none;background:none}
+#content.workspace-modern :is(.aid-split,.aid-inline){padding:22px;gap:28px}
+#content.workspace-modern .aid-split .aid-inline{padding:0}
+#content.workspace-modern :is(.aid-qa,.qa-item){position:relative;border:1px solid var(--line);border-radius:12px;margin:16px 0;background:var(--paper);padding:0;overflow:hidden}
+#content.workspace-modern :is(.aid-qa,.qa-item)>summary{display:block;padding:18px 46px 18px 20px;line-height:1.6;font-size:1rem;font-weight:650;background:none;position:relative;list-style:none}
 #content.workspace-modern :is(.aid-qa,.qa-item)>summary::-webkit-details-marker{display:none}
-#content.workspace-modern :is(.aid-qa,.qa-item)>summary::after{content:'+';position:absolute;right:17px;top:14px;color:var(--purple);font-size:22px;font-weight:400}
+#content.workspace-modern :is(.aid-qa,.qa-item)>summary::after{content:'+';position:absolute;right:18px;top:17px;font-size:22px;color:var(--ws-accent);font-weight:400}
 #content.workspace-modern :is(.aid-qa,.qa-item)[open]>summary::after{content:'−'}
-#content.workspace-modern :is(.aid-qa,.qa-item)>:not(summary){margin-left:18px;margin-right:18px;margin-bottom:18px}
-#content.workspace-modern :is(.aid-qa,.qa-item)[open]>summary{border-bottom:1px solid var(--line);margin-bottom:16px}
+#content.workspace-modern :is(.aid-qa,.qa-item)>p{margin:0;padding:8px 22px 22px;line-height:1.9;max-width:76ch}
+#content.workspace-modern :is(.aid-long,.aid-row,.aid-kids,.teaching p,.qa-answer){line-height:1.9;margin-top:16px;margin-bottom:18px}
+#content.workspace-modern :is(p,li) :is(b,strong){color:var(--ws-accent);background:none!important;background-image:none!important}
+#content.workspace-modern :is(h2,h3,h4){line-height:1.4}
+#content.workspace-modern .aid-card{padding:24px;margin-bottom:20px}
+#content.workspace-modern .aid-card>.aid-split{padding:12px 0 0}
+#content.workspace-modern .aid-h{margin:32px 0 18px}
+#content.workspace-modern .aid-bar{gap:14px 20px;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+#content.workspace-modern .qa-tag,#content.workspace-modern .qa-tier{display:inline-block;padding:3px 8px;font-size:12px;line-height:1.4;vertical-align:middle;margin:0 7px 5px 0;border-radius:6px}
+#content.workspace-modern .qa-group{margin:28px 0 12px;font-size:14px;letter-spacing:.025em;color:var(--ws-accent)}
+/* Guided path for topic-based explanations and questions. */
+#content.workspace-modern[data-workspace-pattern=path] .aid-qas{border-left:2px solid var(--line);padding-left:22px;margin-left:7px}
+#content.workspace-modern[data-workspace-pattern=path] .aid-qas>.aid-qa{overflow:visible}
+#content.workspace-modern[data-workspace-pattern=path] .aid-qas>.aid-qa::before{content:'';position:absolute;width:11px;height:11px;left:-29px;top:25px;border-radius:50%;background-image:var(--studio-pop-heading);border:1px solid var(--ws-accent)}
+/* Organized list retains slide/priority labels without squeezing question text. */
+#content.workspace-modern[data-workspace-pattern=list] .qa-item{margin:0;border-width:0 0 1px;border-radius:0}
+#content.workspace-modern[data-workspace-pattern=list] .qa-item[open]{margin:12px 0;border:1px solid var(--line);border-radius:12px}
+#content.workspace-modern[data-workspace-pattern=list] .qa-item>summary{padding-top:18px;padding-bottom:18px}
+#content.workspace-modern .aid-pair{gap:20px}
+#content.workspace-modern .aid-side{padding:18px;border-radius:10px}
+@media(max-width:650px){#content.workspace-modern .aid-split{padding:16px;gap:20px}#content.workspace-modern .aid-card{padding:16px}#content.workspace-modern .aid-qas{padding-left:14px!important}#content.workspace-modern .aid-qas>.aid-qa::before{left:-21px!important}#content.workspace-modern .aid-bar{padding:12px}#content.workspace-modern .aid-pair{grid-template-columns:1fr}}
+
+#content.workspace-modern .aid-card>h3,#content.workspace-modern .aid-card>.aid-c2top{background-image:var(--studio-pop-heading);margin:-24px -24px 22px;padding:20px 24px;border-radius:15px 15px 0 0}
+#content.workspace-modern .aid-card>.aid-c2top h3{margin:0}
+#content.workspace-modern details.guide>:is(p,ul,.row){margin-left:22px;margin-right:22px}
+@media(max-width:650px){#content.workspace-modern .aid-card>h3,#content.workspace-modern .aid-card>.aid-c2top{margin:-16px -16px 18px;padding:18px 20px}}
+/* Stack the source column before the teaching text becomes a narrow strip. */
+#content.workspace-modern .aid-split{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+@media(max-width:1200px){#content.workspace-modern .aid-split{grid-template-columns:minmax(0,1fr)}}
