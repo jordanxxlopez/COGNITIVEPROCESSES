@@ -1,0 +1,596 @@
+[
+ {
+  "module": 13,
+  "title": "Valid vs true",
+  "a": {
+   "term": "Valid",
+   "definition": "The conclusion follows logically from the premises. It depends on the form of the reasoning."
+  },
+  "b": {
+   "term": "True",
+   "definition": "The statements match the world."
+  },
+  "diff": "Ask two separate questions: does it follow, and are the statements correct. A valid syllogism with a false premise can have a false conclusion, and an invalid one can have statements that all seem reasonable.",
+  "example": "All birds are animals, all animals have four legs, therefore all birds have four legs is valid, but its conclusion is false because premise 2 is false.",
+  "watch": "Validity and truth can come apart in both directions: a valid argument can have a false conclusion, and an invalid one can have a true conclusion.",
+  "score": 8.5,
+  "tier": "mid",
+  "basis": "4 matching Q&A questions, best 7.6"
+ },
+ {
+  "module": 13,
+  "title": "Modus ponens vs modus tollens",
+  "a": {
+   "term": "Modus ponens",
+   "definition": "If p then q; p; therefore q. Valid, and 97 percent judged it correctly."
+  },
+  "b": {
+   "term": "Modus tollens",
+   "definition": "If p then q; not q; therefore not p. Valid, but only 60 percent judged it correctly."
+  },
+  "diff": "Ponens affirms p and gets q. Tollens denies q and gets not p. Both are valid, but tollens feels harder.",
+  "example": "If I study I'll get a good grade; I didn't get a good grade; therefore I didn't study.",
+  "watch": "Both valid forms were judged correctly more often than both invalid ones.",
+  "score": 7.9,
+  "tier": "mid",
+  "basis": "2 matching Q&A questions, best 7.6"
+ },
+ {
+  "module": 13,
+  "title": "Modus tollens vs syllogism 3",
+  "a": {
+   "term": "Modus tollens",
+   "definition": "From if p then q, plus not q, you may conclude not p. This form is valid."
+  },
+  "b": {
+   "term": "Syllogism 3",
+   "definition": "From if p then q, plus q, you may not conclude p. This form is not valid, and only 40 percent judged it correctly."
+  },
+  "diff": "Valid forms move from p to q or from not q to not p. Going from q back to p is not valid because there may be other ways to get q.",
+  "example": "If I live in Tucson I live in Arizona; I live in Arizona; therefore I live in Tucson does not follow.",
+  "watch": "The first premise says what follows from being in Tucson, not that Tucson is the only way to be in Arizona.",
+  "score": 7.9,
+  "tier": "mid",
+  "basis": "2 matching Q&A questions, best 7.6"
+ },
+ {
+  "module": 13,
+  "title": "Syllogism 3 vs syllogism 4",
+  "a": {
+   "term": "Syllogism 3",
+   "definition": "If p then q; q; therefore p. Not valid."
+  },
+  "b": {
+   "term": "Syllogism 4",
+   "definition": "If p then q; not p; therefore not q. Not valid."
+  },
+  "diff": "Both are invalid, and 40 percent judged each correctly. In 3 the second premise is q, and in 4 it is not p. In 4, the first premise says nothing about what happens when someone does not study.",
+  "example": "If I study I'll get a good grade; I did not study; so I did not get a good grade does not follow, because a good grade could come another way.",
+  "watch": "Do not confuse them with the valid forms of the same premises.",
+  "score": 7.9,
+  "tier": "mid",
+  "basis": "2 matching Q&A questions, best 7.6"
+ },
+ {
+  "module": 13,
+  "title": "Inductive vs deductive reasoning",
+  "a": {
+   "term": "Inductive reasoning",
+   "definition": "Reasoning from observations to conclusions that are probably but not definitely true."
+  },
+  "b": {
+   "term": "Deductive reasoning",
+   "definition": "Determining whether a conclusion logically follows from the premises."
+  },
+  "diff": "The strength of an inductive argument depends on the representativeness, number and quality of the observations. Many white swans support an expectation, and one clearly observed black swan contradicts it. Deduction asks whether the conclusion follows, not whether it is probable.",
+  "example": "Seeing many white swans and expecting the next to be white is inductive. Checking whether a conclusion follows from two premises is deductive.",
+  "watch": "Induction yields probable conclusions and deduction yields valid or invalid ones.",
+  "score": 3.6,
+  "tier": "low",
+  "basis": "1 matching Q&A question, best 3.6"
+ },
+ {
+  "module": 13,
+  "title": "Abstract vs concrete Wason problem",
+  "a": {
+   "term": "Abstract version",
+   "definition": "Cards E, K, 4, 7 with the rule vowel then even number. The correct cards are E and 7. 46 percent chose the 4 and only 7 percent chose the 7."
+  },
+  "b": {
+   "term": "Concrete version",
+   "definition": "The rule is 'If drinking beer, then 21 years old', with cards Beer, Soda, 16 years old and 21 years old. The correct cards are beer and 16 years old, and 73 percent answered correctly."
+  },
+  "diff": "It is the same if p then q form. Concrete, familiar content calls up a permission schema. The falsification principle says to look for situations that falsify the rule.",
+  "example": "Someone drinking beer while under 21 is the only case that breaks the rule.",
+  "watch": "Context matters, but familiarity alone is not always the reason.",
+  "score": 8.1,
+  "tier": "mid",
+  "basis": "2 matching Q&A questions, best 7.8"
+ },
+ {
+  "module": 13,
+  "title": "Permission schema vs plain familiarity",
+  "a": {
+   "term": "Permission schema",
+   "definition": "Stored knowledge that if a condition is satisfied, an action may be carried out, for example that being 21 permits drinking beer. It leads you to check for anyone doing the action without the condition."
+  },
+  "b": {
+   "term": "Plain familiarity",
+   "definition": "Simply having experience with the content. By itself it does not always improve reasoning."
+  },
+  "diff": "The improvement does not come from familiarity alone. A permission rule is easier to reason about than an abstract rule about letters and numbers.",
+  "example": "Being 21 is the condition and drinking beer is what can then be carried out.",
+  "watch": "The setting helps when it calls up a permission schema, and familiarity alone is not the reason.",
+  "score": 6.4,
+  "tier": "low",
+  "basis": "1 matching Q&A question, best 6.4"
+ },
+ {
+  "module": 13,
+  "title": "Gain frame vs loss frame",
+  "a": {
+   "term": "Gain frame",
+   "definition": "Outcomes are described as people saved. Program A saves 200 for certain, while Program B has a 1/3 chance that all 600 are saved and a 2/3 chance that none are. 72 percent chose the sure A, a risk-averse choice."
+  },
+  "b": {
+   "term": "Loss frame",
+   "definition": "The same outcomes are described as people who die. Program C means 400 die for certain, while Program D has a 1/3 chance that no one dies and a 2/3 chance that 600 die. 78 percent chose the gamble D, a risk-taking choice."
+  },
+  "diff": "Program A is the same outcome as C, and B is the same gamble as D, so only the wording changed (Tversky and Kahneman, 1981). In the gain frame people avoid the uncertain option, and in the loss frame they accept uncertainty in the hope of avoiding a certain loss.",
+  "example": "600 people are expected to die, and the choice is between a sure option and a gamble.",
+  "watch": "Same facts, different wording, opposite choice.",
+  "score": 10.1,
+  "tier": "high",
+  "basis": "3 matching Q&A questions, best 9.5"
+ },
+ {
+  "module": 13,
+  "title": "Opt-in vs opt-out",
+  "a": {
+   "term": "Opt-in",
+   "definition": "You must take a step to be an organ donor. Consent is under 28 percent."
+  },
+  "b": {
+   "term": "Opt-out",
+   "definition": "You are a donor unless you request otherwise. Consent is over 99 percent."
+  },
+  "diff": "Look at what doing nothing gives you. The status quo bias is the tendency to do nothing when faced with a difficult decision, so the default decides the result.",
+  "example": "Doing nothing leaves you a non-donor under opt-in and a donor under opt-out.",
+  "watch": "The rates differ because of the default, not the underlying attitude.",
+  "score": 7.7,
+  "tier": "mid",
+  "basis": "1 matching Q&A question, best 7.7"
+ },
+ {
+  "module": 13,
+  "title": "Expected emotions vs incidental emotions",
+  "a": {
+   "term": "Expected emotions",
+   "definition": "Emotions people predict they will feel about an outcome."
+  },
+  "b": {
+   "term": "Incidental emotions",
+   "definition": "Emotions not specifically related to the decision, from disposition, recent experience or surroundings."
+  },
+  "diff": "Expected emotions are predictions about the outcome itself. Incidental emotions come from something unrelated yet still change the decision.",
+  "example": "Kermer and colleagues (2006) studied predicted feelings about a coin flip. Lerner and colleagues (2004) induced mood with a film clip.",
+  "watch": "A person's general disposition counts as an incidental source, so it can change a decision even when it has nothing to do with the choice.",
+  "score": 10.2,
+  "tier": "high",
+  "basis": "2 matching Q&A questions, best 9.9"
+ },
+ {
+  "module": 13,
+  "title": "Predicted vs actual feelings (Kermer, 2006)",
+  "a": {
+   "term": "Predicted feelings",
+   "definition": "Participants expected losing $3 to lower happiness about 4 points and winning $5 to raise it about 2."
+  },
+  "b": {
+   "term": "Actual feelings",
+   "definition": "The actual drop from losing was about 1 point and the rise from winning about 1.2."
+  },
+  "diff": "People overestimate the negative feeling because they do not consider the coping mechanisms that soften a loss. That feeds risk aversion.",
+  "example": "Kermer and colleagues (2006) gave participants $5 and a coin flip to win $5 more or lose $3.",
+  "watch": "People believe a loss will have a greater impact than a gain of the same size.",
+  "score": 9.5,
+  "tier": "high",
+  "basis": "1 matching Q&A question, best 9.5"
+ },
+ {
+  "module": 13,
+  "title": "Sadness vs disgust: buying and selling prices (Lerner, 2004)",
+  "a": {
+   "term": "Sadness",
+   "definition": "Lowered the selling price to about $3.00 but raised the buying price to about $4.50."
+  },
+  "b": {
+   "term": "Disgust",
+   "definition": "Lowered both prices: selling about $2.70 versus $4.50 neutral, and buying about $3.00 versus $3.50 neutral."
+  },
+  "diff": "The clips were unrelated to the choice, so these were incidental emotions, and they changed how much the same object seemed worth.",
+  "example": "A sad clip of a person dying, a disgust clip of a dirty toilet, or a neutral clip of fish at the Great Barrier Reef, then prices for highlighters.",
+  "watch": "Do not group the two emotions together, because they differ on the buying price.",
+  "score": 9.9,
+  "tier": "high",
+  "basis": "1 matching Q&A question, best 9.9"
+ },
+ {
+  "module": 13,
+  "title": "Cloudy vs sunny days (Simonsohn, 2007, 2009)",
+  "a": {
+   "term": "Cloudy days",
+   "definition": "Applicants' academic attributes were weighted more heavily, and prospective students were more likely to enroll."
+  },
+  "b": {
+   "term": "Sunny days",
+   "definition": "Academic attributes were weighted less heavily."
+  },
+  "diff": "The weather is unrelated to the applicants or the school but still changed the decision. Incidental emotions include the surroundings, like the weather.",
+  "example": "Simonsohn (2007) analyzed admissions decisions. Simonsohn (2009) found that visitors to a highly rated university were more likely to enroll if they came on a cloudy day.",
+  "watch": "These are not decisions about the weather.",
+  "score": 9.5,
+  "tier": "high",
+  "basis": "1 matching Q&A question, best 9.5"
+ },
+ {
+  "module": 13,
+  "title": "Human vs computer partner (Sanfey, 2003)",
+  "a": {
+   "term": "Human partner",
+   "definition": "An $8 and $2 offer was accepted about 53 percent of the time, and $9 and $1 about 37 percent."
+  },
+  "b": {
+   "term": "Computer partner",
+   "definition": "The same offers were accepted about 85 percent and 68 percent."
+  },
+  "diff": "Participants became angry at unfair offers, and they were less angry with an unfair computer. Fair offers were accepted almost every time for both.",
+  "example": "Sanfey and colleagues (2003) had participants play 20 games, 10 with each partner type.",
+  "watch": "The offers were identical. Only the partner changed.",
+  "score": 8.9,
+  "tier": "mid",
+  "basis": "2 matching Q&A questions, best 8.6"
+ },
+ {
+  "module": 13,
+  "title": "Rational responder vs actual responder",
+  "a": {
+   "term": "Rational responder",
+   "definition": "According to utility theory, accept any offer, because even $1 is worth more than nothing."
+  },
+  "b": {
+   "term": "Actual responders",
+   "definition": "Often rejected low offers, and participants with more right anterior insula activation rejected more, even though rejecting meant getting nothing."
+  },
+  "diff": "Emotion is important in decision making, and it can lead people to give up money. In Sanfey and colleagues (2003), fair offers of $5 and $5 and $7 and $3 were accepted almost every time, while lower offers were often rejected. Neuroeconomics combines psychology, neuroscience and economics to study this.",
+  "example": "The proposer gets $10 and offers the responder a split. If the responder rejects, neither receives anything.",
+  "watch": "Rejecting is irrational by utility theory, yet common.",
+  "score": 6.8,
+  "tier": "low",
+  "basis": "2 matching Q&A questions, best 6.5"
+ },
+ {
+  "module": 14,
+  "title": "Decay vs interference as read from the Brown-Peterson task",
+  "a": {
+   "term": "Decay account",
+   "definition": "Peterson and Peterson (1959) concluded that information fades from short-term memory over time unless it is rehearsed, because counting backward is so unlike remembering letters that it should not interfere with them."
+  },
+  "b": {
+   "term": "Interference account",
+   "definition": "Keppel and Underwood (1962) offered the alternative that forgetting comes from other material getting in the way, as when letters from earlier trials compete with the set being tested."
+  },
+  "diff": "Both accounts explain the same result, recall that gets worse the longer the counting lasts, but they predict different things. Decay depends only on time passing, so the trial history should not matter. Interference depends on what else is in memory, so recall at the same delay should be worse when more earlier sets have piled up, which is the pattern in the trial-by-trial data.",
+  "example": "Peterson and Peterson (1959) read the drop in recall across longer delays as decay, while the trial-by-trial pattern is what points to proactive interference.",
+  "watch": "Say who concluded what: the original authors chose decay, and the interference reading came from the later account.",
+  "score": 9.5,
+  "tier": "high",
+  "basis": "extends the Brown-Peterson topic (Q&A 9.5)"
+ },
+ {
+  "module": 14,
+  "title": "Heard lists vs read lists (modality effect)",
+  "a": {
+   "term": "Heard lists",
+   "definition": "When items are heard, memory for the last items in the list is better. The advantage also appears for lip-read or mouthed lists."
+  },
+  "b": {
+   "term": "Read lists",
+   "definition": "When items are only read silently, the memory advantage for the last items is smaller."
+  },
+  "diff": "Neath and Surprenant (2003) tie the effect to extra information that comes with hearing, namely how the list sounded. The finding shaped ideas about sensory memory, because the end-of-list advantage seems to rely on a brief trace of the sound.",
+  "example": "A list spoken aloud is remembered better at its end than the same list read on a screen.",
+  "watch": "The effect concerns the last items of the list, not the whole list.",
+  "score": 5.5,
+  "tier": "low",
+  "basis": "extends the echo and phonological loop topics (Q&A 3.6 to 9.5)"
+ },
+ {
+  "module": 14,
+  "title": "Sound code vs look code (Conrad, 1964; Murray, 1968)",
+  "a": {
+   "term": "Phonological code",
+   "definition": "A speech-based form of the items. If the items are held this way, sound-alike items are confused with one another."
+  },
+  "b": {
+   "term": "Visual code",
+   "definition": "A memory of how the items look. If the items were held this way, look-alike items would be confused instead."
+  },
+  "diff": "Conrad (1964) and Murray (1968) found that sound-alike lists were recalled worse, even when they were read silently. When articulatory suppression was applied to visually presented lists, the sound-alike cost disappeared, which shows people had been turning what they saw into a sound code.",
+  "example": "The letters E and F look alike, but it was similar-sounding letters that were recalled worse.",
+  "watch": "What matters is the code used to hold the items, not the format in which they arrived.",
+  "score": 8.6,
+  "tier": "mid",
+  "basis": "extends Conrad (1964) (Q&A 8.6)"
+ },
+ {
+  "module": 14,
+  "title": "Phonological similarity vs neighborhood size",
+  "a": {
+   "term": "Phonological similarity effect",
+   "definition": "Items that sound alike are recalled worse because their sound codes overlap and get confused."
+  },
+  "b": {
+   "term": "Neighborhood size effect",
+   "definition": "Words that have many similar-sounding neighbors in the language are recalled better, because long-term word knowledge supports the short-term trace."
+  },
+  "diff": "One effect shows sound overlap hurting recall within the list, and the other shows what you already know about words helping recall. Roodenrys and colleagues (2002) found that large-neighborhood words were recalled better in short-term memory tasks, so memory span is not a pure measure of short-term capacity.",
+  "example": "Cat is a large-neighborhood word and hippopotamus a small-neighborhood word, and Roodenrys and colleagues (2002) found large-neighborhood words are recalled better.",
+  "watch": "Do not treat neighborhood size as another kind of sound confusion. It is a long-term memory benefit.",
+  "score": 6.5,
+  "tier": "low",
+  "basis": "extends the phonological loop topic (Q&A 4.0 to 9.5)"
+ },
+ {
+  "module": 14,
+  "title": "Framing effect vs default effect",
+  "a": {
+   "term": "Framing effect",
+   "definition": "Choices change with the wording or context of equivalent options. Gain wording leads people to choose the sure option, and loss wording leads them to choose the gamble."
+  },
+  "b": {
+   "term": "Default effect",
+   "definition": "People tend to choose the option that is already preselected, whatever the wording."
+  },
+  "diff": "Framing is about how the options are described, and the default is about which option is already chosen. Giuliani and colleagues (2023) found a risky default raised risk taking, a sure default did not raise risk aversion, and the framing and default effects were additive.",
+  "example": "In Giuliani and colleagues (2023), a risky default raised risk taking on top of the framing effect.",
+  "watch": "People who rated the default as most rational followed it most, but that question came after the choice, so it does not show why they chose it.",
+  "score": 8.0,
+  "tier": "mid",
+  "basis": "extends the framing effect (Q&A 9.2) and opt-in vs opt-out (7.7)"
+ },
+ {
+  "module": 14,
+  "title": "Unconscious attribute substitution vs error sensitivity",
+  "a": {
+   "term": "Unconscious attribute substitution",
+   "definition": "Kahneman and Frederick (2002) explain the error as answering an easier question in place of the one asked, for example by overlooking the words 'more than'."
+  },
+  "b": {
+   "term": "Error sensitivity",
+   "definition": "Hoover and Healy (2019) prefer this term, because substitution cannot be confirmed as the cause of the error."
+  },
+  "diff": "Substitution names a cause for the wrong answer, while error sensitivity stays closer to what was observed. Hoover and Healy (2019) found that wrong reasoners mostly remembered 'more than', so the phrase was not simply overlooked, which counts against the idea that it was dropped.",
+  "example": "In the bat-and-ball problem (Frederick, 2005), Hoover and Healy (2019) checked what wrong reasoners remembered about the wording.",
+  "watch": "Do not say the study proved substitution. It showed the cause cannot be confirmed.",
+  "score": 6.0,
+  "tier": "low",
+  "basis": "article on heuristic errors, extends the Q&A heuristic topics (4.4 to 6.5)"
+ },
+ {
+  "module": 14,
+  "title": "Reward system vs cognitive-control system",
+  "a": {
+   "term": "Reward system",
+   "definition": "The ventral striatum and orbitofrontal cortex. Peers watching can make these regions more active."
+  },
+  "b": {
+   "term": "Cognitive-control system",
+   "definition": "The lateral prefrontal cortex, which matures slowly and supports controlling impulses."
+  },
+  "diff": "In Chein and colleagues (2011), adolescents watched by friends took more risks and showed more reward-region activity, while cognitive-control regions did not change with peers. Albert, Chein and Steinberg (2013) read this as the peer effect working mainly through reward circuitry and not through weaker reasoning.",
+  "example": "An adolescent driving riskily when friends watch is explained by a more active reward system, not a less active control system.",
+  "watch": "Peers raised reward activity, but they did not lower cognitive control.",
+  "score": 5.5,
+  "tier": "low",
+  "basis": "neuroscience of risky decisions, extends Sanfey (2003) (Q&A 8.6)"
+ },
+ {
+  "module": 14,
+  "title": "Offloading vs rehearsal",
+  "a": {
+   "term": "Offloading",
+   "definition": "Using actions such as writing things down to reduce the mental load on memory."
+  },
+  "b": {
+   "term": "Rehearsal",
+   "definition": "Repeating information mentally so that it is not lost."
+  },
+  "diff": "Offloading puts the load outside the head, and rehearsal keeps it inside. Morrison and Richmond (2020) found that offloading improved memory, especially at high loads, and that people offloaded more as the load grew, while memory ability did not predict who offloaded.",
+  "example": "When Morrison and Richmond (2020) let people use pen and paper, memory improved most when the list was long.",
+  "watch": "Offloading looks like a strategy used across abilities, not only by people with weak memory.",
+  "score": 6.0,
+  "tier": "low",
+  "basis": "extends maintenance rehearsal (Q&A 4.5)"
+ },
+ {
+  "module": 14,
+  "title": "Verbal vs spatial items under irrelevant speech",
+  "a": {
+   "term": "Verbal items",
+   "definition": "Items that can be named and held in a speech-based code, such as pictured objects."
+  },
+  "b": {
+   "term": "Spatial items",
+   "definition": "Items defined by where they are, such as dot locations."
+  },
+  "diff": "Leist and colleagues (2022) found that ignored speech hurt serial recall of verbal items but not spatial items, in both children and adults. That fits interference with phonological codes better than accounts based on attention capture or changing-state speech.",
+  "example": "Third graders and adults were hurt on the objects but not on the dot locations.",
+  "watch": "The speech effect is specific to verbal material, so it does not show a general loss of attention.",
+  "score": 7.0,
+  "tier": "mid",
+  "basis": "extends the loop vs sketchpad contrast (Q&A 9.5)"
+ },
+ {
+  "module": 14,
+  "title": "Falsifying a rule vs confirming it (Wason and Shapiro, 1971)",
+  "a": {
+   "term": "Falsify",
+   "definition": "Choosing the cases that could show the rule is broken."
+  },
+  "b": {
+   "term": "Confirm",
+   "definition": "Choosing a case that can only agree with the rule and so cannot test it."
+  },
+  "diff": "A card that cannot break the rule teaches nothing, however well it fits, because the rule says nothing about what is behind it. On the abstract rule Wason and Shapiro (1971) found most people picked a confirming card, while thematic rules were much easier because relevant experience helps people test them.",
+  "example": "On the abstract rule most people added a confirming card to the correct one, instead of the card that could break the rule.",
+  "watch": "A choice that agrees with the rule is not a test of it.",
+  "score": 7.8,
+  "tier": "mid",
+  "basis": "extends the Wason problem (Q&A 7.8)"
+ },
+ {
+  "module": 14,
+  "title": "Younger vs older children and functional fixedness",
+  "a": {
+   "term": "Older children",
+   "definition": "German and Defeyter (2000) found children aged 6 and 7 were slower after seeing the box used as a container, so one shown use had locked the object in."
+  },
+  "b": {
+   "term": "Younger children",
+   "definition": "German and Defeyter (2000) found the 5-year-olds were not slowed, and were even faster than the older children after seeing the box as a container."
+  },
+  "diff": "The results suggest younger children have a more fluid idea of function, so one shown use did not lock the object in. This is immunity to functional fixedness in young children.",
+  "example": "German and Defeyter (2000) first showed the children the box used as a container and then measured how fast they solved the problem.",
+  "watch": "The finding is about speed after being shown a use, so it does not say young children never show fixedness.",
+  "score": 6.5,
+  "tier": "low",
+  "basis": "extends functional fixedness and the candle problem (Q&A 6.5)"
+ },
+ {
+  "module": 14,
+  "title": "Staying vs switching in the Monty Hall problem",
+  "a": {
+   "term": "Staying",
+   "definition": "Keeping the first choice keeps only the chance that the first guess was right, which is the smaller share."
+  },
+  "b": {
+   "term": "Switching",
+   "definition": "Switching wins the larger share, because the first guess was probably wrong and the revealed option removes a wrong one."
+  },
+  "diff": "The first pick keeps its original chance, so the remaining chance moves to the one other option left. Many people think it makes no difference, which is the intuition the problem is used to show is mistaken.",
+  "example": "After the first choice, a losing option is revealed, and switching then wins more often than staying.",
+  "watch": "Do not reason that two options left means equal chances.",
+  "score": 5.0,
+  "tier": "low",
+  "basis": "extends judgment and probability topics (Q&A 6.8 to 7.6)"
+ },
+ {
+  "module": 14,
+  "title": "Percent correct vs the pattern of position errors",
+  "a": {
+   "term": "Percent correct",
+   "definition": "Counts only how many items were placed in exactly the right position."
+  },
+  "b": {
+   "term": "Position error pattern",
+   "definition": "Looks at where the wrong items went. Items were usually placed correctly, and errors were systematic, with the item landing in an adjacent position."
+  },
+  "diff": "People keep approximate position information even when they miss the exact one. A percent-correct score hides this, because an item one place off counts as completely wrong.",
+  "example": "An item placed one position away from its true spot is scored as an error but still shows partial knowledge of its position.",
+  "watch": "Look at which errors were made, not only how many.",
+  "score": 4.5,
+  "tier": "low",
+  "basis": "lab result with no direct Q&A link"
+ },
+ {
+  "module": 14,
+  "title": "Self-report of imagery vs an imagery task (Shepard and Metzler, 1971)",
+  "a": {
+   "term": "Self-report of imagery",
+   "definition": "Asking people to describe their mental images is unreliable, because you cannot tell whether the images or only the descriptions differ."
+  },
+  "b": {
+   "term": "An imagery task with a varied critical part",
+   "definition": "Shepard and Metzler (1971) had people judge whether two block shapes were the same or mirror images when one was turned."
+  },
+  "diff": "The larger the turn, the longer the response, at a constant rate. This suggests mental images are much like real images, because people mentally rotate them.",
+  "example": "Response time rose at a constant rate as the turn between the two shapes grew.",
+  "watch": "The evidence is the pattern of response times, not what people say they see.",
+  "score": 9.0,
+  "tier": "high",
+  "basis": "repeats Shepard and Metzler (Q&A 9.5)"
+ },
+ {
+  "module": 13,
+  "title": "Validity vs believability (belief bias and mental models)",
+  "a": {
+   "term": "Validity",
+   "definition": "Asks whether the conclusion must follow if the premises are true. It depends on the form of the argument and not on what the words say."
+  },
+  "b": {
+   "term": "Believability",
+   "definition": "Asks whether the conclusion sounds true given what you know. Belief bias is judging a syllogism valid because its conclusion is believable."
+  },
+  "diff": "These are separate questions, and belief bias is answering the second when asked the first: 71 percent judged invalid syllogisms with believable conclusions as valid. The mental model approach (Johnson-Laird, 1999) is the safeguard. You build a model of the premises, form a tentative conclusion, then search for an exception where the premises hold but the conclusion fails, and the conclusion is valid only if no such model exists.",
+  "example": "All of the students are tired, some tired people are irritable, so some of the students are irritable. It seems reasonable but is invalid.",
+  "watch": "A believable conclusion does not make a syllogism valid, and an unbelievable one does not make it invalid.",
+  "score": 7.0,
+  "tier": "mid",
+  "basis": "1 matching Q&A question, best 7.0"
+ },
+ {
+  "module": 13,
+  "title": "Context of a decision (cesarean case)",
+  "a": {
+   "term": "Seen alone",
+   "definition": "Physicians read the hypothetical cesarean test case by itself as the control."
+  },
+  "b": {
+   "term": "Seen after other cases",
+   "definition": "Physicians read the same case after four cases with serious complications, or after four fairly routine cases."
+  },
+  "diff": "Significantly more doctors recommended cesarean after reading the non-serious cases first, so the cases just considered changed how the same patient was judged.",
+  "example": "The identical patient was judged differently depending on the cases read before.",
+  "watch": "Decisions depend on context and on how choices are presented.",
+  "score": 7.7,
+  "tier": "mid",
+  "basis": "1 matching Q&A question, best 7.7"
+ },
+ {
+  "module": 13,
+  "title": "Emotion as a help vs a hindrance in decisions",
+  "a": {
+   "term": "Emotion that helps",
+   "definition": "People with damage to an area of the prefrontal cortex who have flattened emotions have impaired decision making, so emotion takes part in decisions."
+  },
+  "b": {
+   "term": "Emotion in excess",
+   "definition": "Anxious people tend toward risk avoidance, and optimistic people ignore negative information, which in excess can lead to poor decisions."
+  },
+  "diff": "Emotions take part in decision making and do not only get in its way. Whether they help depends on how they push the choice.",
+  "example": "Passing up choices that could lead to large negative consequences is the anxious pattern.",
+  "watch": "Emotion is not simply the opposite of good decision making.",
+  "score": 4.5,
+  "tier": "low",
+  "basis": "1 matching Q&A question, best 4.5"
+ },
+ {
+  "module": 13,
+  "title": "Categorical vs conditional syllogism",
+  "a": {
+   "term": "Categorical syllogism",
+   "definition": "Describes the relation between two categories using all, no or some, such as All birds are animals, All animals eat food, therefore all birds eat food."
+  },
+  "b": {
+   "term": "Conditional syllogism",
+   "definition": "Has a first premise of the form If p, then q, where p is the condition and q is what follows."
+  },
+  "diff": "Both have two premises and a conclusion, and Aristotle introduced the syllogism. The conditional kind has four types that differ in the second premise, two valid and two not valid.",
+  "example": "If I study I'll get a good grade is a conditional first premise.",
+  "watch": "A syllogism can be invalid even when every statement seems reasonable.",
+  "score": 7.0,
+  "tier": "mid",
+  "basis": "1 matching Q&A question, best 7.0"
+ }
+]

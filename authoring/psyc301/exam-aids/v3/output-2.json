@@ -1,0 +1,529 @@
+[
+ {
+  "title": "States vs operators",
+  "blocks": [
+   {
+    "text": "**States** describe where the problem stands: the **initial state**, the **intermediate states** along the way, and the **goal state**. **Operators** are the **rules that say which moves are allowed**, and applying one changes the problem from one state to another.",
+    "children": [
+     "States are the positions, and operators are the moves between them."
+    ]
+   },
+   {
+    "text": "For instance, in the **Tower of Hanoi** the starting stack is the initial state and the completed stack on the target peg is the goal. The operators are **one disk at a time**, **only a disk with nothing on top**, and **never a larger disk on a smaller one**.",
+    "children": [
+     "Operators are the rules of legal movement, not the positions themselves."
+    ]
+   },
+   {
+    "text": "Knowing the initial and goal states does not tell you which intermediate states connect them. It would be a mistake to think that describing the finished board solves the problem, as in the numbered-tile puzzle, where you can picture the end arrangement and still not know the moves.",
+    "children": [
+     "Solving means finding a **sequence of operator applications** that reaches the goal.",
+     "Stating the goal exactly is not the same as knowing the route."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Problem solving as search vs as restructuring",
+  "blocks": [
+   {
+    "text": "**Search**, from **Newell and Simon (1956)**, treats problem solving as the activity between posing a problem and reaching a solution, which is finding a route through possible states. **Means-end analysis** drives it by reducing the difference between the current state and the goal.",
+    "children": [
+     "Search is progress through states, step by step."
+    ]
+   },
+   {
+    "text": "**Restructuring**, from the Gestalt view of **Koffka (1935)**, is a perceptual account. The way the problem is organized in the mind affects which solution is available, and restructuring **reorganizes the representation** so a hidden relationship becomes usable.",
+    "children": [
+     "Restructuring changes the representation so the answer appears."
+    ]
+   },
+   {
+    "text": "In **Köhler's circle problem**, for instance, the black line is one diagonal of a rectangle whose other diagonal is a radius. The two diagonals of a rectangle are equal, so **x = r**. Some problems yield to successive operations and others to a sudden reorganization, and it would be a mistake to attribute restructuring to Newell and Simon, who developed the **Logic Theorist** for the search view.",
+    "children": [
+     "Search and restructuring explain different routes to a solution.",
+     "Newell and Simon belong to search, the Gestalt psychologists to restructuring."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Insight vs noninsight problems",
+  "blocks": [
+   {
+    "text": "An **insight problem**, such as the **triangle** and **chain** problems, is solved by a **sudden realization after the representation changes**. A **noninsight problem**, such as **algebra**, is solved by **successive operations** that bring the solver closer.",
+    "children": [
+     "Insight depends on a change of representation, noninsight on steady steps."
+    ]
+   },
+   {
+    "text": "**Metcalfe and Wiebe (1987)** had people rate how close they felt to the solution, called warmth, **every 15 seconds**. For algebra, **warmth rose gradually** as the solution approached. For insight problems it **stayed low until close to the solution and then jumped sharply, from about 3 to 7**.",
+    "children": [
+     "Algebra feels like gradual progress, insight problems feel like nothing and then everything."
+    ]
+   },
+   {
+    "text": "This means people **cannot anticipate how near they are** on insight problems. It would be a mistake to think every problem is solved with an Aha experience, because some allow a methodical route.",
+    "children": [
+     "The sudden jump in warmth is the signature of insight."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Functional fixedness vs mental set",
+  "blocks": [
+   {
+    "text": "**Functional fixedness** is **restricting an object to its familiar function**. **Mental set** is a **preconceived notion about how to approach a problem**, based on past experience with that problem or similar ones. Fixedness concerns what an object is for, and a set concerns which method keeps being applied.",
+    "children": [
+     "Fixedness is about an object's use, and set is about a solving method."
+    ]
+   },
+   {
+    "text": "Both are forms of **fixation**, which Gestalt psychologists saw as a major obstacle. For instance, seeing the matchbox only as a container blocks the **candle solution**, which is functional fixedness. In the **water-jug problems**, the familiar **B − A − 2C** procedure blocks the simpler **A + C** and **A − C**, which is mental set.",
+    "children": [
+     "Both are fixation, so the question is what is blocking the solver.",
+     "An object blocked means fixedness, a procedure blocked means set."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Candle problem vs two-string problem",
+  "blocks": [
+   {
+    "text": "Both are cases of **functional fixedness**. In the **candle problem**, the task is to mount a candle on a corkboard so wax does not drip, and the box is seen as a container and not as a platform. The solution is to **tack the matchbox to the board**, and participants given **empty matchboxes were twice as likely** to solve it.",
+    "children": [
+     "The candle problem hides the box as a platform."
+    ]
+   },
+   {
+    "text": "In the **two-string problem**, two strings hang too far apart to reach both, and the pliers are seen as a gripping tool and not as a weight. The solution is to **tie the pliers to one string as a pendulum**. When an experimenter **accidentally set a string in motion, most participants solved it**, because a hint that restructured the representation made the string something that could swing within reach.",
+    "children": [
+     "The two-string problem hides the pliers as a weight.",
+     "A hint that restructures the representation can break the fixation."
+    ]
+   },
+   {
+    "text": "In both problems the objects and the requirements stay the same. What changes is that the solver finds a different relationship among them, which means a new use for a familiar object.",
+    "children": [
+     "Each solution requires a new use for a familiar object."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Blank board vs bread-and-butter board",
+  "blocks": [
+   {
+    "text": "How a problem is stated changes its difficulty. On a **blank or colored board** the squares are unlabeled or only colored, so nothing points the solver toward the pairing a domino needs. On the **bread-and-butter board** the squares are labeled, which **emphasizes the difference between the two kinds of square** and the pairing a domino needs.",
+    "children": [
+     "The labels make the domino's need for one of each kind easier to represent."
+    ]
+   },
+   {
+    "text": "The result was that participants in the bread-and-butter condition **solved the problem twice as fast** as those with the blank board. With a **think-aloud protocol**, solvers in that condition shifted from treating squares as positions to considering the relationship between the two kinds of square.",
+    "children": [
+     "Labels moved solvers from thinking about positions to thinking about relationships."
+    ]
+   },
+   {
+    "text": "The objects and the requirement did not change. Only the **representation** did, which is why the difference in difficulty points to representation and not to the problem itself.",
+    "children": [
+     "Same problem, different representation, different difficulty."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Total area vs pairing (mutilated checkerboard)",
+  "blocks": [
+   {
+    "text": "**Total area reasoning** notes that **62 squares matches the area of 31 dominoes**, so it seems the board can be covered. **Pairing reasoning** notes that **every domino covers one square of each color**, and that the two removed corners are the **same color**, so the colors are unequal.",
+    "children": [
+     "Area counts squares, and pairing counts what kinds of squares each domino needs."
+    ]
+   },
+   {
+    "text": "For instance, an ordinary board has 64 squares and 32 dominoes cover it. Remove two opposite corners and 62 squares remain, but they are **30 of one color and 32 of the other**, while 31 dominoes would need **31 of each**.",
+    "children": [
+     "The color counts do not match what 31 dominoes require."
+    ]
+   },
+   {
+    "text": "Equal total area does not guarantee a legal arrangement. The color imbalance applies to **every possible placement**, and moving the dominoes around cannot change it, so the covering is impossible.",
+    "children": [
+     "Pairs expose a constraint that area alone hides."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Goal vs subgoal",
+  "blocks": [
+   {
+    "text": "A **goal** is the condition you are trying to reach, such as the **whole stack moved to the third peg**. A **subgoal** is a condition that makes part of the larger task possible, and it is not the final answer.",
+    "children": [
+     "The goal is the end condition, and a subgoal is a stepping stone toward it."
+    ]
+   },
+   {
+    "text": "**Means-end analysis** organizes search around reducing the difference between the current situation and the goal, and subgoals are the steps that do it. Different subgoals address different obstacles to the same move, one at the source and one at the destination.",
+    "children": [
+     "Subgoals are how means-end analysis shrinks the gap to the goal."
+    ]
+   },
+   {
+    "text": "In the **Tower of Hanoi**, for instance, the first subgoal is **freeing the large disk**, the second is **freeing the third peg**, and the third is **moving the large disk**. It would be a mistake to treat that as the answer, because the smaller disks still have to be brought over afterward.",
+    "children": [
+     "Reaching a subgoal does not finish the problem."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Surface features vs structural features",
+  "blocks": [
+   {
+    "text": "**Surface features** are the specific elements used to describe a problem, such as a **fortress, a tumor, a lightbulb, a laser or a ray**. **Structural features** are the underlying principle that governs the solution, such as a **strong force that would damage the surroundings if sent through one path**.",
+    "children": [
+     "Surface features are what the objects are, and structure is why the solution works."
+    ]
+   },
+   {
+    "text": "Similar surface features can help a person notice a possible link, but **transfer depends on matching structure**. For instance, a fortress and a tumor do not look alike, yet they share the structure, and two lightbulb versions can keep the same surface features while changing the structure.",
+    "children": [
+     "Surface similarity helps noticing, but only matching structure supports transfer."
+    ]
+   },
+   {
+    "text": "In the **radiation** and **fragile-glass** problems, a strong ray would damage the surroundings on its way to an internal target, so **several low-intensity beams must converge**.",
+    "children": [
+     "The shared structure is a strong force that is dangerous along one path and safe when divided."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Noticing vs mapping vs applying",
+  "blocks": [
+   {
+    "text": "**Gick and Holyoak** distinguished steps in using an analogy. **Noticing** is recognizing that a source problem may be relevant to the target, and it is crucial and can be the hardest step. **Mapping and applying** is linking the elements and relationships of the source to the target, then using that link to generate a parallel solution.",
+    "children": [
+     "Noticing is finding the source, and mapping is linking it to the target."
+    ]
+   },
+   {
+    "text": "After reading the fortress story, only about **30 percent** of participants solved the radiation problem. When told to think about the story, success rose to about **75 percent**. Having the source in memory did not guarantee spontaneous use, which points to **noticing as a major bottleneck**.",
+    "children": [
+     "The jump from 30 to 75 percent shows the source was stored but not noticed."
+    ]
+   },
+   {
+    "text": "It would be a mistake to describe noticing as the same thing as mapping. For instance, in the **Russian marriage problem** mapped to the checkerboard, marriages correspond to dominoes and the two groups of people to the two square colors, but that mapping can happen only once the source has been recognized as relevant.",
+    "children": [
+     "Noticing comes first, and mapping comes after it."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Source problem vs target problem",
+  "blocks": [
+   {
+    "text": "In **analogical problem solving**, a solution is transferred from a source to a target. The **source problem** has relevant similarities and its solution guides a new problem. The **target problem** is the problem currently being solved.",
+    "children": [
+     "The source is what you already know, and the target is what you need to solve now."
+    ]
+   },
+   {
+    "text": "For instance, the **Russian marriage problem** is the source and the **mutilated checkerboard** is the target. In another pairing, **Duncker's radiation problem** is the source for the **lightbulb problem**.",
+    "children": [
+     "The same kind of problem can serve as a source for one target and a target for something else."
+    ]
+   },
+   {
+    "text": "What transfers is **the relationship among the elements, not their identical appearance**. A problem is useful as a source because of how its parts relate, not because it looks like the target.",
+    "children": [
+     "Relationships transfer, appearances do not need to."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Spontaneous vs prompted use of an analogy",
+  "blocks": [
+   {
+    "text": "**Spontaneous use** means a source in memory is used without a hint. After just reading the **fortress story**, a rebel general sends small groups along different roads so mines do not explode, and they arrive together to attack. Only about **30 percent** then solved the radiation problem.",
+    "children": [
+     "Without a hint, few people use the story they just read."
+    ]
+   },
+   {
+    "text": "**Prompted use** means the person is told to think about the story they read, and then about **75 percent** solved the radiation problem. The people and the story in memory were the same, and only the hint differed.",
+    "children": [
+     "Only the hint changed, and success more than doubled."
+    ]
+   },
+   {
+    "text": "So having the source available was not enough. The reminder made the relevant source available for mapping and application, and **noticing is a major bottleneck**. Only about **10 percent** reach the solution without a helpful analogy, so a source in memory is not the same as a source in use.",
+    "children": [
+     "Having a source in memory is not the same as using it."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Fragile-glass vs insufficient-intensity lightbulb sources",
+  "blocks": [
+   {
+    "text": "Both are lightbulb sources, so the surface story is similar, and both use converging beams. The difference is the **structural constraint**. In the **fragile-glass source**, a high-intensity beam would break the glass, which matches the **healthy-tissue constraint** in the radiation problem.",
+    "children": [
+     "The fragile-glass source shares the surrounding-damage constraint with the target."
+    ]
+   },
+   {
+    "text": "In the **insufficient-intensity source**, the laser can only make **low-intensity beams that cannot fuse the filament**, so beams are combined. There is **no surrounding-damage constraint**, so the structure is weaker for the target.",
+    "children": [
+     "The insufficient-intensity source converges beams for a different reason."
+    ]
+   },
+   {
+    "text": "The transfer rates follow how well the underlying constraint matches the target. About **69 percent** who read the fragile-glass version solved the radiation problem, against about **33 percent** who read the insufficient-intensity version.",
+    "children": [
+     "The better the structural match, the more transfer: 69 versus 33 percent."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Lightbulb with vs without the radiation source",
+  "blocks": [
+   {
+    "text": "Reading the **radiation problem as a source** led about **81 percent** to solve the lightbulb problem, while the **control without the source** had about **10 percent**. The radiation problem works as a source because it shares the structure. The tumor and the filament are both targets needing a strong local effect, and healthy tissue and fragile glass are both surroundings that a single strong approach would damage.",
+    "children": [
+     "A source with matching structure raised success from about 10 to about 81 percent."
+    ]
+   },
+   {
+    "text": "The surface features also overlap, since both problems direct a beam toward an internal target, which makes the link easier to notice. So the match helps on both levels, in what the problems look like and in how they work.",
+    "children": [
+     "Overlapping surface features make the structural link easier to notice."
+    ]
+   },
+   {
+    "text": "For instance, Ruth's sealed lightbulb has a broken filament, and **several low-intensity lasers from different directions** fuse it without breaking the glass. The solution is several weak beams converging, not one strong beam.",
+    "children": [
+     "Weak beams converging solve both problems."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Experts vs novices organizing problems",
+  "blocks": [
+   {
+    "text": "In **Chi et al. (1982)**, physics professors and students sorted **24 physics problems** into groups by similarity. **Experts**, the professors, sorted by **structural features** such as conservation of energy. **Novices**, students with one semester of physics, sorted by **surface features** such as inclined planes.",
+    "children": [
+     "Experts sort by principle, and novices sort by appearance."
+    ]
+   },
+   {
+    "text": "The same problem **24** got a different partner under the two organizations. Novices paired **23 and 24** because both have inclines. Experts paired **21 and 24** through conservation of energy, even though 21 has a block and spring on a horizontal surface.",
+    "children": [
+     "One problem was grouped differently depending on what counted as similar."
+    ]
+   },
+   {
+    "text": "Expertise changes which relationship is the basis for similarity. Novices go by what the problem looks like, and experts go by the principle that solves it.",
+    "children": [
+     "Knowledge reshapes what a person sees as similar."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Meaningful vs random chess positions",
+  "blocks": [
+   {
+    "text": "In **Chase and Simon (1973)**, a chess master and a beginner with **fewer than 100 hours** of experience each had **five seconds** with the board. The master was much better on **actual game positions**, where familiar groups of pieces are each recalled as **one chunk drawn from long-term memory**.",
+    "children": [
+     "On real positions the master recalls chunks, not single pieces."
+    ]
+   },
+   {
+    "text": "On **random arrangements**, the same kinds of pieces sit on the same board with no meaningful relationships. There are no familiar chunks, so the master must remember piece by piece, and the **advantage was greatly reduced**.",
+    "children": [
+     "Without meaning there are no chunks, and the master's edge shrinks."
+    ]
+   },
+   {
+    "text": "Only the meaning of the arrangement changed, so the edge comes from **organized domain knowledge**. It would be a mistake to say a chess master has a better memory in general.",
+    "children": [
+     "The master's memory advantage is specific to meaningful chess positions."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Comparing sources vs using one source",
+  "blocks": [
+   {
+    "text": "With **one source**, you apply a single familiar story or problem to a new target, and what you notice depends on how much the target looks like that source. The structure stays buried in that story's details.",
+    "children": [
+     "One source leaves structure tangled up with details."
+    ]
+   },
+   {
+    "text": "**Analogical encoding** means **comparing two sources** and working out what they share, for example two stories in which separate weak forces converge on one target. Because the details do not match, what is left in common is the **structure**, which directs reasoning toward structural features.",
+    "children": [
+     "Comparison strips away details and leaves the shared structure."
+    ]
+   },
+   {
+    "text": "A later target can then be approached through the common relationship and not through one familiar situation. For instance, compare the fortress story with a second convergence story, then try the radiation problem. It would be a mistake to treat analogical encoding as being reminded of one source, since it is about comparing sources.",
+    "children": [
+     "The benefit comes from the comparison, not from a single reminder."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Laboratory analogies vs in vivo analogies",
+  "blocks": [
+   {
+    "text": "In **laboratory tasks**, researchers give a source and a target under controlled conditions, and people often fail to use the analogy on their own. Fortress to radiation gave only about **30 percent** unprompted. In **in vivo** problem solving, researchers observe people solving real problems in their ordinary setting, where analogies are used routinely, and scientists use about **3 to 15 analogies** in a one-hour laboratory meeting.",
+    "children": [
+     "Analogies are rarely used spontaneously in the laboratory and routinely used at work."
+    ]
+   },
+   {
+    "text": "This is the **analogical paradox**: analogies are hard to use in the laboratory and routine in real work. It is a contrast in how often analogies are used, not a contradiction in the theory.",
+    "children": [
+     "The paradox describes a gap in usage, not a flaw in the account."
+    ]
+   },
+   {
+    "text": "Each method has a cost. **In vivo research** keeps the ordinary context but is time-consuming and gives up control of variables, while **laboratory work** isolates variables but removes the context.",
+    "children": [
+     "In vivo trades control for context, and laboratory work trades context for control."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Expert strengths vs expert limits",
+  "blocks": [
+   {
+    "text": "Within the field, an expert is extremely knowledgeable after a very long time learning and practicing, perhaps **10,000 to 20,000 hours for chess**. Experts solve problems in their field **faster and more successfully** than beginners and spend more time analyzing before proceeding.",
+    "children": [
+     "Inside the field, experts are faster, more successful and more deliberate."
+    ]
+   },
+   {
+    "text": "Outside the field and in new situations, the advantage is **specific to the field**, so experts are no better than novices outside it. Too much knowledge can lock in a familiar approach and make the expert **less open to new ways** of looking at a problem. Expert does not mean better at everything.",
+    "children": [
+     "The expert's edge does not travel beyond the field."
+    ]
+   },
+   {
+    "text": "The same knowledge causes both. It lets experts recognize the principle behind a problem, as when physics professors in **Chi et al. (1982)** sorted problems by principle. But when a problem needs the usual procedure dropped, the knowledge can act like a **mental set**, as when a familiar procedure dominates in the water-jug problems.",
+    "children": [
+     "Knowledge is a strength for recognizing principles and a risk when a procedure must be dropped."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Triangle problem vs chain problem",
+  "blocks": [
+   {
+    "text": "In the **triangle problem**, ten dots form an upward-pointing triangle, and you must **move exactly three dots** to make it point down, with seven staying in place. In the **chain problem**, four short sections of chain must become one closed loop, where **opening a link costs 2 cents**, **closing it costs 3 cents** and the budget is **15 cents**.",
+    "children": [
+     "Both are puzzles with a tight constraint and an unobvious solution."
+    ]
+   },
+   {
+    "text": "Both are **insight problems** used by **Metcalfe and Wiebe (1987)**, and both are solved by a change in representation. In the triangle, the top dot becomes a new bottom point. In the chain, one three-link section is opened into separate links that join the other three sections, and three open-and-close operations use the full 15 cents.",
+    "children": [
+     "Each is solved by seeing the pieces in a new way."
+    ]
+   },
+   {
+    "text": "Metcalfe and Wiebe (1987) compared both with algebra and found that warmth **jumped late** for them, from about **3 to 7**, unlike the gradual rise for algebra.",
+    "children": [
+     "Late warmth jumps mark both as insight problems."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Problem vs knowing the goal",
+  "blocks": [
+   {
+    "text": "A **problem** is a situation with a **present state**, a **goal** and an **obstacle** between them, where the solution is not immediately obvious. **Stating the goal** is only being able to describe exactly what the finished situation looks like.",
+    "children": [
+     "A problem needs an obstacle, and describing the goal does not remove it."
+    ]
+   },
+   {
+    "text": "The difficulty is the route and not whether the goal has been stated. In the **numbered-tile puzzle**, for instance, the initial state is 8, empty, 6 over 5, 4, 7 over 2, 3, 1, and the goal is empty, 1, 2 over 3, 4, 5 over 6, 7, 8. You can describe that goal arrangement exactly and still not know the sequence of moves that gets there.",
+    "children": [
+     "Knowing the goal is not knowing the moves."
+    ]
+   },
+   {
+    "text": "It would be a mistake to think a tile being on the board means it is in its required position, because the **whole arrangement defines the state**.",
+    "children": [
+     "A state is the full arrangement, not any single tile."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Russian marriage problem vs mutilated checkerboard",
+  "blocks": [
+   {
+    "text": "In the **Russian marriage problem**, the source, there are **32 bachelors and 32 unmarried women**. After two bachelors die, 30 men and 32 women remain and the question is whether **31 heterosexual marriages** can be formed. The answer is **no**.",
+    "children": [
+     "The source problem shows that unequal groups cannot be fully paired."
+    ]
+   },
+   {
+    "text": "In the **mutilated checkerboard**, the target, removing two opposite corners leaves **62 squares**, which matches the area of 31 dominoes. But the two removed squares are the same color, so the covering is impossible.",
+    "children": [
+     "The target has the same hidden imbalance."
+    ]
+   },
+   {
+    "text": "**Marriages correspond to dominoes**, the two groups of people correspond to the two square colors, and removing two bachelors corresponds to removing two same-colored squares. A valid marriage needs one member of each group, just as a domino needs one square of each color. Dividing 62 by two gives 31 pairs by total size but ignores which kinds each pair must contain.",
+    "children": [
+     "The relationship among the elements transfers, not their identical appearance."
+    ]
+   }
+  ]
+ },
+ {
+  "title": "Having an idea vs creative problem solving",
+  "blocks": [
+   {
+    "text": "**Having an idea** is generating a novel idea or new connection. It rests on **divergent thinking**, which is open-ended and allows many potential solutions. Ideas are necessary, since without them the process stops.",
+    "children": [
+     "An idea is the raw material of creativity."
+    ]
+   },
+   {
+    "text": "**Creative problem solving** is a fuller process that includes **problem generation, formulation, solving with evaluation and planning, and solution implementation**, usually after a lengthy period of trial and error. Generating ideas does not evaluate, plan or carry out a response.",
+    "children": [
+     "Creative problem solving covers the whole path from finding a problem to acting on a solution."
+    ]
+   },
+   {
+    "text": "Finding the problem, defining it and finding ideas come before evaluating and acting on them. Creativity is more than getting an idea.",
+    "children": [
+     "Ideas are one stage of the process, not the whole of it."
+    ]
+   }
+  ]
+ }
+]
