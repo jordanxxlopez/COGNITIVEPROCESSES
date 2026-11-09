@@ -6,6 +6,10 @@
  const pack=window.EXAM_AIDS;
  if(!pack||typeof secondTools==='undefined'||typeof secondScreen!=='function'||typeof secondGuide!=='function')return;
  const cards=pack.cards||[],contrasts=pack.contrasts||[],contrastsV2=window.CONTRASTS_V2||[],contrastsV3=window.CONTRASTS_V3||[],cardsV4=window.CARDS_V4||[],topicsV4=window.TOPICS_V4||[],ask=pack.ask||[],explainers=pack.explainers||[];
+ const LK=window.AID_LINKS||{contrasts:{},asks:{},topics:{}};
+ for(const x of [...contrastsV2,...contrastsV3,...(pack.contrasts||[])]){if(!x.pages)x.pages=LK.contrasts[x.module+'|'+x.a.term+' / '+x.b.term]||[]}
+ for(const a of ask){if(!a.pages)a.pages=LK.asks[a.module+'|'+a.topic]||[]}
+ for(const x of topicsV4){if(!(x.pages||[]).length)x.pages=LK.topics[x.title]||[]}
  const NEW=[['m2ask','What you can be asked'],['m2cards','Experiment cards'],['m2contrasts','Side-by-side contrasts'],['m2explain','Hard topics, explained']];
  const at=secondTools.findIndex(t=>t[0]==='m2guide')+1;
  secondTools.splice(at,0,...NEW);
@@ -21,26 +25,30 @@
  const row=(label,text,hide)=>text?(hide?`<details class="aid-row"><summary>${label}</summary><p>${e(text)}</p></details>`:`<p class="aid-row"><b>${label}</b> ${e(text)}</p>`):'';
  function cardHTML(c){
   const t=aid().test;
-  return `<div class="card aid-card"><h3>${e(c.title)}</h3>${c.researcher?`<p class="aid-who">${e(c.researcher)}</p>`:''}`+
+  const text=(c.researcher?`<p class="aid-who">${e(c.researcher)}</p>`:'')+
    row('Question tested',c.aim)+row('What was manipulated',c.manipulated)+row('What was measured',c.measured)+
-   row('What they found',c.found,t)+row('What it means',c.means,t)+(c.trap?row('Watch out',c.trap,t):'')+src(c.module,c.pages)+'</div>';
+   row('What they found',c.found,t)+row('What it means',c.means,t)+(c.trap?row('Watch out',c.trap,t):'')+src(c.module,c.pages);
+  return `<div class="card aid-card"><h3>${e(c.title)}</h3>${aidSplit(text,aidSlides(c.module,c.pages))}</div>`;
  }
  function contrastHTML(c){
   const side=s=>`<div class="aid-side"><h4>${e(s.term)}</h4><p>${e(s.definition)}</p></div>`;
-  return `<div class="card aid-card"><h3>${e(c.title)}</h3><div class="aid-pair">${side(c.a)}${side(c.b)}</div>${row('How to tell them apart',c.tell)}${row('Example',c.example)}</div>`;
+  const text=`<div class="aid-pair">${side(c.a)}${side(c.b)}</div>${row('How to tell them apart',c.tell)}${row('Example',c.example)}`;
+  return `<div class="card aid-card"><h3>${e(c.title)}</h3>${aidSplit(text,aidSlides(c.module,c.pages))}</div>`;
  }
 
  const CT={high:'Know first',mid:'Know next',low:'Know last'};
  function contrastV2HTML(c,showLecture){
   const side=s=>`<div class="aid-side"><h4>${e(s.term)}</h4><p>${e(s.definition)}</p></div>`;
-  return `<div class="card aid-card aid-c2"><div class="aid-c2top"><h3>${e(c.title)}</h3><span class="qa-tier qa-${c.tier}">${CT[c.tier]}</span></div>${showLecture?`<p class="aid-who">${e(modTitle(c.module))}</p>`:''}<div class="aid-pair">${side(c.a)}${side(c.b)}</div><p class="aid-row"><b>How they differ</b> ${e(c.diff)}</p><p class="aid-row"><b>Example</b> ${e(c.example)}</p><p class="aid-row"><b>Watch out</b> ${e(c.watch)}</p></div>`;
+  const text=`<div class="aid-pair">${side(c.a)}${side(c.b)}</div><p class="aid-row"><b>How they differ</b> ${e(c.diff)}</p><p class="aid-row"><b>Example</b> ${e(c.example)}</p><p class="aid-row"><b>Watch out</b> ${e(c.watch)}</p>`;
+  return `<div class="card aid-card aid-c2"><div class="aid-c2top"><h3>${e(c.title)}</h3><span class="qa-tier qa-${c.tier}">${CT[c.tier]}</span></div>${showLecture?`<p class="aid-who">${e(modTitle(c.module))}</p>`:''}${aidSplit(text,aidSlides(c.module,c.pages))}</div>`;
  }
 
  const bold=t=>e(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
  function contrastV3HTML(c,showLecture){
   const side=s=>`<div class="aid-side"><h4>${e(s.term)}</h4><p>${e(s.definition)}</p></div>`;
   const blocks=(c.blocks||[]).map(b=>`<p class="aid-long">${bold(b.text)}</p>${(b.children||[]).length?`<ul class="aid-kids">${b.children.map(k=>`<li>${bold(k)}</li>`).join('')}</ul>`:''}`).join('');
-  return `<div class="card aid-card aid-c2 aid-c3"><div class="aid-c2top"><h3>${e(c.title)}</h3><span class="qa-tier qa-${c.tier}">${CT[c.tier]}</span></div>${showLecture?`<p class="aid-who">${e(modTitle(c.module))}</p>`:''}<div class="aid-pair">${side(c.a)}${side(c.b)}</div>${blocks}</div>`;
+  const text=`<div class="aid-pair">${side(c.a)}${side(c.b)}</div>${blocks}`;
+  return `<div class="card aid-card aid-c2 aid-c3"><div class="aid-c2top"><h3>${e(c.title)}</h3><span class="qa-tier qa-${c.tier}">${CT[c.tier]}</span></div>${showLecture?`<p class="aid-who">${e(modTitle(c.module))}</p>`:''}${aidSplit(text,aidSlides(c.module,c.pages))}</div>`;
  }
 
  const verBar=(attr,key,talkLabel,withTest)=>{
@@ -49,11 +57,12 @@
  };
  const blocksHTML=bl=>(bl||[]).map(b=>`<p class="aid-long">${bold(b.text)}</p>${(b.children||[]).length?`<ul class="aid-kids">${b.children.map(k=>`<li>${bold(k)}</li>`).join('')}</ul>`:''}`).join('');
  function cardV4HTML(c){
-  return `<div class="card aid-card aid-c3"><h3>${e(c.title)}</h3>${c.researcher?`<p class="aid-who">${e(c.researcher)}</p>`:''}${blocksHTML(c.blocks)}${src(c.module,c.pages)}</div>`;
+  const text=`${c.researcher?`<p class="aid-who">${e(c.researcher)}</p>`:''}${blocksHTML(c.blocks)}${src(c.module,c.pages)}`;
+  return `<div class="card aid-card aid-c3"><h3>${e(c.title)}</h3>${aidSplit(text,aidSlides(c.module,c.pages))}</div>`;
  }
  function topicV4HTML(x){
   const slides=(x.pages||[]).length?`<p class="aid-slides"><b>Aligned slides</b> ${x.pages.map(n=>`<button class="tiny" data-source="${x.module}:${n}">Slide ${n} + notes</button>`).join(' ')}</p>`:'';
-  return `<details class="guide aid-explain aid-c3"><summary>${e(x.title)}</summary>${slides}${blocksHTML(x.blocks)}</details>`;
+  return `<details class="guide aid-explain aid-c3" open><summary>${e(x.title)}</summary>${aidSplit(`${slides}${blocksHTML(x.blocks)}`,aidSlides(x.module,x.pages))}</details>`;
  }
  const contrastBar=()=>{
   const a=aid(),old=a.cv==='old';
@@ -76,7 +85,7 @@
   if(x.explain&&x.explain.length){
    const paras=[...x.explain,...(x.another||[])];
    const slides=(x.pages||[]).length?`<p class="aid-slides"><b>Aligned slides</b> ${x.pages.map(n=>`<button class="tiny" data-source="${x.module}:${n}">Slide ${n} + notes</button>`).join(' ')}</p>`:'';
-   return `<details class="guide aid-explain"><summary>${e(x.title)}</summary>${slides}${paras.map(t=>`<p class="aid-long">${e(t)}</p>`).join('')}</details>`;
+   return `<details class="guide aid-explain" open><summary>${e(x.title)}</summary>${aidSplit(`${slides}${paras.map(t=>`<p class="aid-long">${e(t)}</p>`).join('')}`,aidSlides(x.module,x.pages))}</details>`;
   }
   return `<details class="guide aid-explain"><summary>${e(x.title)}</summary><p>${e(x.plain)}</p>${row('Worked example',x.example)}${row('Watch out',x.watchOut)}</details>`;
  }
@@ -88,7 +97,7 @@
  }
  function askHTML(){
   const g=groupBy(ask.filter(keep));
-  return Object.keys(g).sort((a,b)=>a-b).map(m=>`<h2 class="aid-h">${e(modTitle(m))}</h2>`+g[m].map(a=>`<details class="guide aid-ask" open><summary>${e(a.topic)}</summary><div class="aid-qas">${qa(a)}</div>${a.remember?`<p class="aid-row"><b>Remember</b> ${e(a.remember)}</p>`:''}</details>`).join('')).join('');
+  return Object.keys(g).sort((a,b)=>a-b).map(m=>`<h2 class="aid-h">${e(modTitle(m))}</h2>`+g[m].map(a=>`<details class="guide aid-ask" open><summary>${e(a.topic)}</summary>${aidSplit(`<div class="aid-qas">${qa(a)}</div>${a.remember?`<p class="aid-row"><b>Remember</b> ${e(a.remember)}</p>`:''}`,aidSlides(a.module,a.pages))}</details>`).join('')).join('');
  }
  const prior=secondScreen;
  secondScreen=function(){

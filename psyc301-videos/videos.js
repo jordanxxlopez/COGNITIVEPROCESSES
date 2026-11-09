@@ -13,7 +13,7 @@
  }
  function inline(m,s){const found=matching(m,s);return found.length?'<section class="pv-inline" aria-label="Experiment video previews">'+found.map(c=>card(c)).join('')+'</section>':''}
  function insert(html,selector,addition){if(!addition)return html;const t=document.createElement('template');t.innerHTML=html;const node=t.content.querySelector(selector);if(node)node.insertAdjacentHTML('beforeend',addition);return t.innerHTML}
- const oldSection=sectionHTML;sectionHTML=function(m,s,n){return insert(oldSection(m,s,n),'.picturebox',inline(m,s))};
+ window.pvInline=inline;const oldSection=sectionHTML;sectionHTML=function(m,s,n){return insert(oldSection(m,s,n),'.picturebox',inline(m,s))};
  const oldTeach=teach;teach=function(m,expanded=false){return insert(oldTeach(m,expanded),'.visual-pane',inline(m,m.sections[teachIndex]))};
  const oldReview=reviewSource;reviewSource=function(id,p){oldReview(id,p);const m=moduleBy(id),s=m?.sections.find(s=>s.page===Number(p));if(s)document.querySelector('#modal .notegrid > div')?.insertAdjacentHTML('beforeend',inline(m,s))};
  const groups=[...new Set(clips.map(c=>c.group))];

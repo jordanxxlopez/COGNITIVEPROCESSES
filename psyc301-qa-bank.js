@@ -25,7 +25,7 @@
  const TIER_O={high:'Study first',mid:'Study next',low:'Study last'};
  function itemHTMLSlides(x,n){
   const btns=x.slides.map(n=>`<button class="tiny" data-source="${x.module}:${n}">Slide ${n} + notes</button>`).join(' ');
-  return `<details class="aid-qa qa-item" id="qa-${n}"><summary><span class="qa-tag">${label(x.slides)}</span><span class="qa-tier qa-${x.tier}">${TIER_O[x.tier]}</span> ${e(x.q)}</summary><p>${e(x.a)}</p>${x.note?`<p class="qa-note"><b>Outside the slides</b> ${e(x.note)}</p>`:''}<p class="aid-slides">${btns}</p></details>`;
+  return `<details class="aid-qa qa-item" id="qa-${n}"><summary><span class="qa-tag">${label(x.slides)}</span><span class="qa-tier qa-${x.tier}">${TIER_O[x.tier]}</span> ${e(x.q)}</summary>${aidSplit(`<p>${e(x.a)}</p>${x.note?`<p class="qa-note"><b>Outside the slides</b> ${e(x.note)}</p>`:''}<p class="aid-slides">${btns}</p>`,aidSlides(x.module,x.slides))}</details>`;
  }
  function bodyHTMLSlides(){
   const f=qb().filter;
@@ -38,7 +38,7 @@
  }
  function itemHTML(x,n,rank){
   const btns=x.slides.map(n=>`<button class="tiny" data-source="${x.module}:${n}">Slide ${n} + notes</button>`).join(' ');
-  return `<details class="aid-qa qa-item" id="qa-${n}"><summary><span class="qa-rank">${rank}.</span> ${e(x.q)}</summary><p>${e(x.a)}</p>${x.note?`<p class="qa-note"><b>Outside the slides</b> ${e(x.note)}</p>`:''}<p class="qa-meta"><span class="qa-tier qa-${x.tier}">${TIER[x.tier]}</span><span class="qa-tag">${label(x.slides)}</span></p><p class="aid-slides">${btns}</p></details>`;
+  return `<details class="aid-qa qa-item" id="qa-${n}"><summary><span class="qa-rank">${rank}.</span> ${e(x.q)}</summary>${aidSplit(`<p>${e(x.a)}</p>${x.note?`<p class="qa-note"><b>Outside the slides</b> ${e(x.note)}</p>`:''}<p class="qa-meta"><span class="qa-tier qa-${x.tier}">${TIER[x.tier]}</span><span class="qa-tag">${label(x.slides)}</span></p><p class="aid-slides">${btns}</p>`,aidSlides(x.module,x.slides))}</details>`;
 }
 function bodyHTML(){
   const f=qb().filter;
@@ -73,7 +73,7 @@ const V3=()=>window.QA_V3||[];
  function v3Item(x){
   const btns=x.slides.slice(0,8).map(n=>`<button class="tiny" data-source="${x.module}:${n}">Slide ${n} + notes</button>`).join(' ');
   const tag=x.kind==='relate'?(x.slides.length>1?'Slides '+x.slides[0]+'–'+x.slides[x.slides.length-1]:'Slide '+x.slides[0]):label(x.slides);
-  return `<details class="aid-qa qa-item" id="v3-${x.id}"><summary><span class="qa-tag">${tag}</span><span class="qa-tier qa-${x.tier}">${TIER_O[x.tier]}</span> ${e(x.q)}</summary>${((qb().layout==='v4'||qb().layout==='v5')&&ANSMAP()[x.id])?`<div class="v4-ans">${v4Answer(ANSMAP()[x.id])}</div>`:`<p>${e(x.a)}</p>`}${x.note?`<p class="qa-note"><b>Outside the slides</b> ${e(x.note)}</p>`:''}${x.flag?`<p class="qa-note"><b>Across topics</b> ${e(x.flag)}</p>`:''}<p class="aid-slides">${btns}</p></details>`;
+  return `<details class="aid-qa qa-item" id="v3-${x.id}"><summary><span class="qa-tag">${tag}</span><span class="qa-tier qa-${x.tier}">${TIER_O[x.tier]}</span> ${e(x.q)}</summary>${aidSplit(`${((qb().layout==='v4'||qb().layout==='v5')&&ANSMAP()[x.id])?`<div class="v4-ans">${v4Answer(ANSMAP()[x.id])}</div>`:`<p>${e(x.a)}</p>`}${x.note?`<p class="qa-note"><b>Outside the slides</b> ${e(x.note)}</p>`:''}${x.flag?`<p class="qa-note"><b>Across topics</b> ${e(x.flag)}</p>`:''}<p class="aid-slides">${btns}</p>`,aidSlides(x.module,x.slides.slice(0,8)))}</details>`;
  }
  function v3Body(){
   const f=qb().filter,t=qb().tier,ord=qb().sort==='likely';
