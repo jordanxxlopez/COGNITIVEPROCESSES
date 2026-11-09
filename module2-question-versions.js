@@ -73,7 +73,7 @@
   }
  });
  const style=document.createElement('style');
- style.textContent='.m2-qversion{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 18px;padding:10px 14px;border:1px solid var(--line,#d9dde3);border-radius:10px;background:var(--panel,#ffffff99)}.m2-qversion select{font:inherit;padding:5px 8px;border-radius:8px}.m2-qversion .quiet{font-size:.85rem}';
+ style.textContent='.m2-qversion{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 18px;padding:10px 14px;border:1px solid var(--line,#d9dde3);border-radius:10px;background:var(--paper,#fff)}.m2-qversion select{font:inherit;padding:5px 8px;border-radius:8px}.m2-qversion .quiet{font-size:.85rem}html[data-theme=dark] .m2-qversion{background:var(--paper,#202735);background-image:var(--studio-pop-panel);color:#edf0f7;border-color:#67758f}html[data-theme=dark] .m2-qversion .quiet{color:#d5def0;opacity:1}html[data-theme=dark] .m2-qversion strong{color:#edf0f7}';
  document.head.appendChild(style);
  window.PsycQuestionVersions={apply,get current(){return current},labels:LABELS};
  apply(current);
