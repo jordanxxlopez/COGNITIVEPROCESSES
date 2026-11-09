@@ -5,9 +5,9 @@
 (() => {
  const pack=window.EXAM_AIDS;
  if(!pack||typeof secondTools==='undefined'||typeof secondScreen!=='function'||typeof secondGuide!=='function')return;
- const cards=pack.cards||[],contrasts=pack.contrasts||[],contrastsV2=window.CONTRASTS_V2||[],contrastsV3=window.CONTRASTS_V3||[],cardsV4=window.CARDS_V4||[],topicsV4=window.TOPICS_V4||[],ask=pack.ask||[],explainers=pack.explainers||[];
+ const cards=pack.cards||[],contrasts=pack.contrasts||[],contrastsV2=window.CONTRASTS_V2||[],contrastsV3=window.CONTRASTS_V3||[],contrastsV21=window.CONTRASTS_V21||[],cardsV4=window.CARDS_V4||[],topicsV4=window.TOPICS_V4||[],ask=pack.ask||[],explainers=pack.explainers||[];
  const LK=window.AID_LINKS||{contrasts:{},asks:{},topics:{}};
- for(const x of [...contrastsV2,...contrastsV3,...(pack.contrasts||[])]){if(!x.pages)x.pages=LK.contrasts[x.module+'|'+x.a.term+' / '+x.b.term]||[]}
+ for(const x of [...contrastsV2,...contrastsV3,...contrastsV21,...(pack.contrasts||[])]){if(!x.pages)x.pages=LK.contrasts[x.module+'|'+x.a.term+' / '+x.b.term]||[]}
  for(const a of ask){if(!a.pages)a.pages=LK.asks[a.module+'|'+a.topic]||[]}
  for(const x of topicsV4){if(!(x.pages||[]).length)x.pages=LK.topics[x.title]||[]}
  const NEW=[['m2ask','What you can be asked'],['m2cards','Experiment cards'],['m2contrasts','Side-by-side contrasts'],['m2explain','Hard topics, explained']];
@@ -15,7 +15,7 @@
  secondTools.splice(at,0,...NEW);
  const mine=new Set(NEW.map(t=>t[0]));
  if(!state.aids||typeof state.aids!=='object')state.aids={};
- const aid=()=>{const a=state.aids;if(!a.filter)a.filter='all';if(!['talk','new','old'].includes(a.cv))a.cv='talk';if(!a.ctier)a.ctier='all';if(a.csort!=='likely')a.csort='lecture';if(a.cardv!=='old')a.cardv='talk';if(a.topv!=='old')a.topv='talk';if(typeof a.test!=='boolean')a.test=false;return a};
+ const aid=()=>{const a=state.aids;if(!a.filter)a.filter='all';if(!['talk','new','old','v21'].includes(a.cv))a.cv='talk';if(!a.ctier)a.ctier='all';if(a.csort!=='likely')a.csort='lecture';if(a.cardv!=='old')a.cardv='talk';if(a.topv!=='old')a.topv='talk';if(typeof a.test!=='boolean')a.test=false;return a};
  const modTitle=id=>{try{return secondModules().find(m=>m.id===Number(id))?.title||('Lecture '+id)}catch{return 'Lecture '+id}};
  const ids=()=>[...new Set([...cards,...contrasts,...contrastsV2,...contrastsV3,...cardsV4,...topicsV4,...ask,...explainers].map(x=>x.module))].sort((a,b)=>a-b);
  const keep=x=>aid().filter==='all'||String(x.module)===String(aid().filter);
@@ -66,16 +66,16 @@
  }
  const contrastBar=()=>{
   const a=aid(),old=a.cv==='old';
-  const ver=`<label>Version <select data-aid-cv><option value="talk"${a.cv==='talk'?' selected':''}>Written like the Version 20 transcripts · explained in sentences</option><option value="new"${a.cv==='new'?' selected':''}>Labeled · definition, how they differ, example, watch out</option><option value="old"${old?' selected':''}>Original · short version</option></select></label>`;
+  const ver=`<label>Version <select data-aid-cv><option value="talk"${a.cv==='talk'?' selected':''}>Written like the Version 20 transcripts · explained in sentences</option><option value="new"${a.cv==='new'?' selected':''}>Labeled · definition, how they differ, example, watch out</option><option value="v21"${a.cv==='v21'?' selected':''}>Version 21 · clearer sentences, slide terms kept</option><option value="old"${old?' selected':''}>Original · short version</option></select></label>`;
   const lec=`<label>Lecture <select data-aid-filter>${['all',...ids()].map(v=>`<option value="${v}"${String(a.filter)===String(v)?' selected':''}>${v==='all'?'All lectures':e(modTitle(v))}</option>`).join('')}</select></label>`;
   const extra=old?'':`<label>Likelihood <select data-aid-ctier>${[['all','All contrasts'],['high','Know first (most likely)'],['mid','Know next'],['low','Know last (least likely)']].map(([v,l])=>`<option value="${v}"${a.ctier===v?' selected':''}>${l}</option>`).join('')}</select></label><label>Order <select data-aid-csort><option value="lecture"${a.csort==='lecture'?' selected':''}>By lecture, most likely first</option><option value="likely"${a.csort==='likely'?' selected':''}>Most likely first, all lectures</option></select></label>`;
   return `<div class="row aid-bar">${ver}${lec}${extra}</div>`;
  };
  function contrastsView(){
   if(aid().cv==='old')return `<h1>Side-by-side contrasts · original</h1><p>Pairs of ideas that are easy to mix up, with how to tell them apart.</p>${contrastBar()}${sectioned(contrasts,contrastHTML,'No contrasts for this lecture.')}`;
-  const talk=aid().cv==='talk',pool=talk?contrastsV3:contrastsV2,draw=talk?contrastV3HTML:contrastV2HTML;
+  const v21=aid().cv==='v21',talk=aid().cv==='talk'||v21,pool=v21?contrastsV21:talk?contrastsV3:contrastsV2,draw=talk?contrastV3HTML:contrastV2HTML;
   const list=pool.filter(x=>keep(x)&&(aid().ctier==='all'||x.tier===aid().ctier));
-  const intro=`<h1>Side-by-side contrasts</h1><p>${pool.length} pairs of ideas that are easy to mix up. ${talk?'Each pair gives the two sides in a box, then explains in sentences how they differ and why, with the studies and examples worked in, written the way the Version 20 transcripts are.':'Each says what the two sides are, how they differ and why, gives an example tied to the researcher and year, and flags the usual slip.'} A tag shows how high each pair ranks for study: a heuristic ranking built from how many and how highly ranked the Q&amp;A questions are that depend on the pair. It orders what to learn first and is not a validated prediction of the exam, so the last tier is still worth knowing. Lecture 15 items are placed by the slide topic each article or lab extends.</p>${contrastBar()}`;
+  const intro=`<h1>Side-by-side contrasts</h1><p>${pool.length} pairs of ideas that are easy to mix up. ${v21?'Version 21 keeps the terms exactly as the slides give them, then explains each one in connected sentences, with the same pairs, researchers, findings and evidence as Version 20.':talk?'Each pair gives the two sides in a box, then explains in sentences how they differ and why, with the studies and examples worked in, written the way the Version 20 transcripts are.':'Each says what the two sides are, how they differ and why, gives an example tied to the researcher and year, and flags the usual slip.'} A tag shows how high each pair ranks for study: a heuristic ranking built from how many and how highly ranked the Q&amp;A questions are that depend on the pair. It orders what to learn first and is not a validated prediction of the exam, so the last tier is still worth knowing. Lecture 15 items are placed by the slide topic each article or lab extends.</p>${contrastBar()}`;
   if(!list.length)return intro+'<p>No contrasts match these filters.</p>';
   if(aid().csort==='likely')return intro+`<div class="grid aid-grid aid-grid2">${list.slice().sort((a,b)=>b.score-a.score).map(x=>draw(x,true)).join('')}</div>`;
   const g=groupBy(list);
