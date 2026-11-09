@@ -62,7 +62,7 @@ for name in ['index.html', 'psyc301-module2.html', 'share.html']:
     html = p.read_text()
     if 'psyc301-qa-v3-data.js' in html:
         continue
-    anchor = '<script src="psyc301-qa-bank.js?v=qa-10"></script>'
+    anchor = '<script src="psyc301-qa-bank.js?v=qa-11"></script>'
     assert anchor in html, name
     p.write_text(html.replace(anchor, anchor + tags, 1))
 from collections import Counter
