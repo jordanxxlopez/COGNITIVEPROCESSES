@@ -1,0 +1,151 @@
+/* Module II presentation only. The PSYC301 shared sheet supplies the guide,
+   integrated Q&A path, list, card-heading and comparison patterns. */
+html #content.module2-workspace.workspace-modern {
+  --paper:var(--surface);
+  --panel:var(--surface);
+  --purple:var(--accent);
+  --ws-accent:var(--accent);
+  --ws-blue:var(--accent);
+  min-width:0;
+  color:var(--ink);
+  container-type:inline-size;
+}
+#content.module2-workspace h1 {font-size:clamp(1.9rem,3vw,2.4rem);line-height:1.2;margin:24px 0 16px;letter-spacing:-.035em}
+#content.module2-workspace :is(.lead,p,li) {line-height:1.9}
+#content.module2-workspace .lead {font-size:1rem;margin-bottom:24px}
+#content.module2-workspace :is(.modern-topic,.modern-qa,.modern-answer,.modern-wording,.modern-response textarea) {background-color:var(--surface);color:var(--ink);border-color:var(--line);box-shadow:none}
+#content.module2-workspace .modern-topic {margin:24px 0;border-radius:16px}
+#content.module2-workspace .modern-topic-body {padding:22px;min-width:0}
+#content.module2-workspace .modern-topic-body:has(>.aid-split) {padding:0}
+#content.module2-workspace .modern-topic>.modern-topic-body>.aid-split {padding:22px}
+#content.module2-workspace .modern-topic>summary {color:var(--ink)}
+#content.module2-workspace summary {color:var(--ink)}
+/* Theme surfaces and foregrounds change together instead of briefly mixing
+   a light foreground with a dark surface during a color transition. */
+#content.module2-workspace :is(button,summary,a,input,textarea,select) {transition-property:box-shadow,outline-color}
+#content.module2-workspace .modern-topic-body>.readiness {padding-top:0;margin:20px 0}
+#content.module2-workspace .modern-guide-point {margin-top:22px;padding:20px 0}
+#content.module2-workspace .modern-teaching {max-width:80ch;line-height:1.9}
+#content.module2-workspace .modern-teaching>li {margin:16px 0}
+#content.module2-workspace .module2-guide-questions {padding:22px;margin:-22px -22px 24px;border-radius:0 0 12px 12px;background:var(--accent-soft);border-left:3px solid var(--accent)}
+#content.module2-workspace .module2-guide-questions>strong {color:var(--ink);font-size:1rem}
+#content.module2-workspace .qa-answer {padding:0 22px 22px;min-width:0}
+#content.module2-workspace .qa-answer>p {margin:12px 0 18px}
+#content.module2-workspace .aid-qas {margin-top:14px}
+#content.module2-workspace .qa-block {padding:22px;margin:0;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 0 14px 14px}
+#content.module2-workspace .qa-block>strong {color:var(--ink)}
+#content.module2-workspace .qa-subsection {margin-top:26px;min-width:0}
+#content.module2-workspace .qa-group {font-size:.88rem;line-height:1.6;color:var(--accent);margin:22px 0 12px}
+#content.module2-workspace .qa-count {font-size:.8rem;font-weight:400;color:var(--muted);margin-left:8px}
+#content.module2-workspace .qa-tag {background:var(--surface-3);color:var(--ink)}
+#content.module2-workspace .qa-tier {background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
+#content.module2-workspace .qa-tier[data-study-tier=first] {background:var(--accent-soft);border-color:var(--accent)}
+#content.module2-workspace .modern-answer {padding:0;min-width:0}
+#content.module2-workspace .modern-answer>p {padding:8px 22px 22px;margin:0}
+#content.module2-workspace .modern-answer>pre {margin:0 22px 22px}
+#content.module2-workspace .modern-answer>summary {overflow-wrap:anywhere}
+#content.module2-workspace .modern-qa>summary .qa-tag {margin-bottom:5px}
+#content.module2-workspace .aid-split {display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:start;gap:28px;min-width:0;width:100%}
+#content.module2-workspace .aid-split>* {min-width:0;max-width:100%}
+#content.module2-workspace .aid-text {min-width:0}
+#content.module2-workspace .aid-text>p:first-child {margin-top:0}
+#content.module2-workspace .aid-visual {min-width:0;max-width:100%;max-height:min(80vh,820px);overflow-y:auto;padding-right:6px;scrollbar-gutter:stable}
+#content.module2-workspace :is(figure,.source-figure,.aid-fig,.source-media,.media-item) {min-width:0;max-width:100%;margin-inline:0}
+#content.module2-workspace .aid-fig {margin:0 0 18px}
+#content.module2-workspace :is(.aid-visual,.modern-qa-pair,.source-figure) :is(img,video,audio) {display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
+#content.module2-workspace .modern-qa-pair>figure {min-width:0;margin:0}
+#content.module2-workspace .slide-button {display:block;width:100%;min-width:0;max-width:100%;padding:0;background:white;line-height:0}
+#content.module2-workspace .slide-button img {display:block;width:100%;max-width:100%;height:auto;object-fit:contain}
+#content.module2-workspace figcaption {font-size:.78rem;line-height:1.6;color:var(--muted);margin-top:8px;overflow-wrap:anywhere}
+#content.module2-workspace .aid-card {padding:24px;background-color:var(--surface);border:1px solid var(--line)}
+#content.module2-workspace .aid-card>.modern-topic-body {padding:0}
+#content.module2-workspace .aid-card>.modern-topic-body>.aid-split {padding:12px 0 0}
+#content.module2-workspace .aid-card>.aid-card-title {font-size:1.12rem;line-height:1.5;letter-spacing:0;margin:-24px -24px 22px;padding:20px 24px;background-image:var(--studio-pop-heading);color:var(--ink)}
+#content.module2-workspace .modern-comparison {margin:0 0 22px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+#content.module2-workspace .modern-comparison .aid-side {min-width:0;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:18px}
+#content.module2-workspace .modern-comparison h3 {font-size:1rem;line-height:1.5}
+#content.module2-workspace .modern-comparison p {font-size:1rem;line-height:1.9}
+#content.module2-workspace .module2-lecture-group {margin:28px 0}
+#content.module2-workspace .aid-h {font-size:1.3rem;line-height:1.45;letter-spacing:-.01em;margin:32px 0 18px}
+#content.module2-workspace .module2-group-body {padding:6px 22px 22px}
+#content.module2-workspace .module2-combined-group>.source-section {margin:14px 22px}
+#content.module2-workspace .module2-core-group .modern-core {margin:14px 0}
+#content.module2-workspace .aid-bar {display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--surface);color:var(--ink);margin:18px 0 24px}
+#content.module2-workspace .aid-bar label {display:flex;flex-direction:row;align-items:center;gap:8px;max-width:100%;min-width:0;font-size:.9rem}
+#content.module2-workspace .aid-bar select {width:auto;max-width:min(360px,100%);min-width:0;background:var(--surface);color:var(--ink)}
+#content.module2-workspace .aid-bar .layout-speak {flex-basis:100%;font-size:.85rem}
+#content.module2-workspace [type=search] {display:block;width:100%;max-width:100%;margin-top:8px;padding:12px 15px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+#content.module2-workspace .modern-wording {width:fit-content;max-width:100%;margin:0}
+#content.module2-workspace .modern-wording select {width:auto}
+#content.module2-workspace .toolbar:has(>.modern-wording) {border:0;padding:0}
+#content.module2-workspace :is(button,select,textarea,input,summary):focus-visible {outline:2px solid var(--focus);outline-offset:3px}
+#content.module2-workspace input[type=checkbox] {accent-color:var(--accent);width:1rem;height:1rem;flex:none}
+#content.module2-workspace .readiness {display:flex;align-items:flex-start;gap:9px;font-size:.9rem;line-height:1.6}
+#content.module2-workspace .readiness input {margin-top:5px}
+#content.module2-workspace .modern-response textarea {background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+#content.module2-workspace .writing-ratings [aria-pressed=true] {background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+#content.module2-workspace .module2-writing-prompt {display:block;font-size:1rem;line-height:1.6}
+#content.module2-workspace .module2-answer-action {display:block;font-size:.78rem;font-weight:400;color:var(--muted);margin-top:8px}
+#content.module2-workspace .modern-writing>.modern-topic-body {padding:22px}
+#content.module2-workspace .modern-writing .qa-item[open] {margin:16px 0}
+#content.module2-workspace .modern-writing .modern-answer>p {max-width:80ch}
+#content.module2-workspace .review-image {display:block;max-width:100%;height:auto;object-fit:contain;margin:18px auto}
+#content.module2-workspace pre {min-width:0;max-width:100%;overflow:auto;background:var(--surface-2);color:var(--ink)}
+#content.module2-workspace .modern-table-wrap {border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+#content.module2-workspace .modern-table-wrap table {font-size:.88rem}
+#content.module2-workspace .modern-table-wrap th {background:var(--surface-2);color:var(--ink)}
+#content.module2-workspace .modern-source-entry {padding:20px 0}
+#content.module2-workspace .modern-quiz-card {padding:24px;border-radius:16px}
+#content.module2-workspace .modern-quiz-card h2 {font-size:1.08rem;line-height:1.5}
+#content.module2-workspace .modern-quiz-card .row {gap:10px}
+#content.module2-workspace .module2-assessment-path {display:block}
+#content.module2-workspace .module2-assessment-path>.card {margin:24px 0;padding:24px;border-radius:16px}
+#content.module2-workspace .module2-assessment-path h2 {font-size:1.25rem}
+#content.module2-workspace .module2-quick-check {margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+#content.module2-workspace .module2-quick-check h2 {font-size:1rem}
+#content.module2-workspace .module2-lecture-grid {grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px}
+#content.module2-workspace .module2-lecture-grid .modern-quiz-card {display:flex;flex-direction:column;gap:8px}
+#content.module2-workspace .module2-lecture-grid .modern-quiz-card>.row {margin-top:auto}
+#content.module2-workspace .modern-source-entry.aid-card {margin:18px 0;border-radius:16px}
+#content.module2-workspace .modern-source-entry h3 {font-size:1.05rem}
+#content.module2-workspace[data-workspace-view=missed]>.empty {background:none;border:0;text-align:left;padding:0}
+#content.module2-workspace .stimulus-card.aid-card {min-width:0;margin-top:0;border-radius:16px;background:var(--surface);color:var(--ink)}
+#content.module2-workspace .stimulus-card>.aid-card-title {font-size:1.05rem;margin-bottom:18px}
+#content.module2-workspace .stimulus-card :is(video,audio,img) {width:100%;max-width:100%;height:auto;object-fit:contain}
+#content.module2-workspace :is(.stim-gallery-card,.stim-panel) {min-width:0;background-color:var(--surface);color:var(--ink);border-color:var(--line)}
+#content.module2-workspace :is(.stim-gallery-card,.stim-panel) :is(img,video) {max-width:100%;height:auto;object-fit:contain}
+body[data-workspace-scope=module2] :is(#readerDialog,#imageDialog) :is(img,video) {max-width:100%;height:auto;object-fit:contain}
+body[data-workspace-scope=module2] #readerDialog .section-pair {grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+body[data-workspace-scope=module2] #readerDialog .source-figure {position:static;min-width:0}
+body[data-workspace-scope=module2] #readerDialog .source-figure video {width:100%}
+/* Available reading width matters when the navigation is open or text zooms. */
+@container(max-width:1000px){
+ #content.module2-workspace :is(.aid-split,.modern-qa-pair,.section-pair) {grid-template-columns:minmax(0,1fr)}
+ #content.module2-workspace .aid-visual {max-height:none;overflow:visible;padding-right:0;scrollbar-gutter:auto}
+}
+@media(max-width:1200px){
+ #content.module2-workspace :is(.aid-split,.modern-qa-pair,.section-pair) {grid-template-columns:minmax(0,1fr)}
+ #content.module2-workspace .aid-visual {max-height:none;overflow:visible;padding-right:0;scrollbar-gutter:auto}
+ body[data-workspace-scope=module2] #readerDialog .section-pair {grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:650px){
+ #content.module2-workspace .modern-topic-body {padding:16px}
+ #content.module2-workspace .module2-guide-questions {margin:-16px -16px 20px;padding:16px}
+ #content.module2-workspace .aid-card {padding:16px}
+ #content.module2-workspace .aid-card>.aid-card-title {margin:-16px -16px 18px;padding:18px 20px}
+ #content.module2-workspace .modern-topic>.modern-topic-body>.aid-split {padding:16px}
+ #content.module2-workspace .modern-comparison {grid-template-columns:minmax(0,1fr)}
+ #content.module2-workspace .aid-bar {padding:12px;gap:12px}
+ #content.module2-workspace .aid-bar label {width:100%;justify-content:space-between;flex-wrap:wrap}
+ #content.module2-workspace .aid-bar select {width:100%;max-width:100%;flex-basis:100%}
+ #content.module2-workspace .aid-bar .layout-speak {justify-content:flex-start;flex-wrap:nowrap}
+ #content.module2-workspace .module2-group-body {padding:4px 16px 16px}
+ #content.module2-workspace .module2-combined-group>.source-section {margin-inline:12px}
+ #content.module2-workspace .modern-writing>.modern-topic-body {padding:16px}
+ #content.module2-workspace .qa-block {padding:16px}
+}
+@media print{
+ #content.module2-workspace .aid-visual {max-height:none;overflow:visible}
+ #content.module2-workspace .aid-split {display:block}
+ #content.module2-workspace .module2-group-controls {display:none}
+}

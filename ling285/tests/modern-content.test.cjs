@@ -25,6 +25,10 @@ test('original content, editions and uploaded documents retain their frozen hash
   assert.equal(hash('app.js'), read('modern/build-manifest.json').sourceAppSha256);
 });
 
+test('Module II layout changes preserve every modern authored content file exactly', () => {
+  for (const [file, expected] of Object.entries(read('modern/layout-content-lock.json'))) assert.equal(hash(file), expected, file);
+});
+
 test('all five new editions preserve every source page and unpadded title page', () => {
   assert.equal(Object.keys(pack.editions).length, 5);
   assert.equal(lectures.reduce((n, c) => n + c.sections.length, 0), 286);
