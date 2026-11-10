@@ -1,6 +1,6 @@
 """Build the isolated modern studio without changing original content or saved keys."""
 from pathlib import Path
-import hashlib, json
+import hashlib, json, re
 from modern_content import CONCEPTS
 from modern_guide import GUIDES
 from modern_model import rank
@@ -110,17 +110,15 @@ def build():
     pack=dict(revision='2026-11-modern-1',concepts=CONCEPTS,guides=GUIDES,model=model,asked=ASK,qa=qa,pageConcepts=MAP,cards=CARDS,contrasts=CONTRASTS,hard=HARD,review=REVIEW,core=CORE,connections=CONNECTIONS,editions=editions,code=CODE,figures=FIGURES,questions=questions,writing=writing,summaries=SUMMARIES,readings=READINGS,coverage=coverage,uploads=uploads)
     (OUT/'content.js').write_text('window.LING285_MODERN = '+json.dumps(pack,ensure_ascii=False,indent=1)+';\n')
     html=(ROOT/'index.html').read_text().replace('<head>','<head>\n  <base href="../">')
-    html=html.replace('<link rel="stylesheet" href="fitting.css?v=1">','').replace('<link rel="stylesheet" href="fitting.css?v=2">','')
-    html=html.replace('<link rel="stylesheet" href="reader-panels.css?v=1">','')
-    html=html.replace('</head>','<link rel="stylesheet" href="modern/modern.css?v=1"><link rel="stylesheet" href="../workspace-modern.css?v=layout-switch-4"><link rel="stylesheet" href="modern/module2-layout.css?v=2"><link rel="stylesheet" href="fitting.css?v=2"><link rel="stylesheet" href="reader-panels.css?v=1"></head>')
+    html=re.sub(r'<link rel="stylesheet" href="(?:fitting|reader-panels)\.css\?v=[^\"]+">','',html)
+    html=html.replace('</head>','<link rel="stylesheet" href="modern/modern.css?v=1"><link rel="stylesheet" href="../workspace-modern.css?v=layout-switch-4"><link rel="stylesheet" href="modern/module2-layout.css?v=2"><link rel="stylesheet" href="fitting.css?v=3"><link rel="stylesheet" href="reader-panels.css?v=2"></head>')
     html=html.replace('<script src="app.js?v=ling285-source-fidelity-3" defer></script>','<script src="modern/content.js?v=1" defer></script><script src="modern/app.js?v=1" defer></script>')
     # Match the actual current asset tag while preserving the source shell otherwise.
-    import re
     html=re.sub(r'\s*<a id="modernWorkspaceEntry".*?</a>','',html)
     html=html.replace('<a href="./" class="brand">','<a href="modern/" class="brand">')
     html=re.sub(r'<script src="app\.js[^\"]*" defer></script>', '<script src="modern/content.js?v=1" defer></script><script src="modern/app.js?v=1" defer></script>',html)
     assert 'src="modern/app.js' in html
-    html=html.replace('modern/app.js?v=1','modern/app.js?v=original-c-d-1')
+    html=html.replace('modern/app.js?v=1','modern/app.js?v=psyc-reader-modes-1')
     html=html.replace('modern/content.js?v=1','modern/content.js?v=original-c-d-1')
     html=html.replace('<div class="nav-label" id="workspaceModuleLabel">','<a class="workspace-switch" href="./">Open original workspace</a><div class="nav-label" id="workspaceModuleLabel">')
     (OUT/'index.html').write_text(html)

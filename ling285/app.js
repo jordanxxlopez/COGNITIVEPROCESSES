@@ -19,6 +19,8 @@ let practiceV3=null,practiceV3Error='',examReview=null,examReviewError='';const 
 const TRANSCRIPT_VERSIONS=['v1','v2','v3','v4','v7','v10','v12','v14','v16','v18','v20','v21','v22','v23','vB','v24'];
 const transcriptEditions=new Map(),transcriptErrors=new Map(),visualPresentations=new Map(),practiceQuestionIds=new Set();
 let storageAvailable = true, reader = null, lastReaderFocus = null, view = 'home', selected = '', saveTimeout, searchQuery = '';
+const readerPositions=new Map();
+try{for(const [key,value] of Object.entries(JSON.parse(sessionStorage.getItem('ling285-reader-page-positions') || '{}')))readerPositions.set(key,Number(value));}catch{}
 let timer = {duration:30 * 60,remaining:30 * 60,end:null,interval:null,mode:'Study'};
 const own = (object,key) => Object.prototype.hasOwnProperty.call(object,key);
 function storageError(message) {
@@ -364,7 +366,11 @@ function sectionBody(s,readerMode=false,recall=false) {
 }
 function sectionHTML(s,index=0) {return `<details class="source-section ${s.core?'core-section':''}" data-section="${esc(s.id)}" ${own(state.open,s.id) ? state.open[s.id]?'open':'' : index === 0?'open':''}><summary><span class="page-index">${String(s.page).padStart(2,'0')}</span><span class="section-title">${esc(sectionTitle(s))}</span>${badge(s)}</summary>${sectionBody(s)}</details>`;}
 function searchTools(label='Search teaching notes') {return `<label class="search-wrap"><span>${esc(label)}</span><input type="search" id="noteSearch" class="search" value="${esc(searchQuery)}" placeholder="Find a concept, source example, or explanation…"></label><p class="small muted" id="searchCount" aria-live="polite"></p>`;}
-function studyToolbar(kind) {return `<div class="toolbar">${versionedSections(matchingSections(kind))?transcriptSelector():''}<button class="primary" data-reader="${kind}" data-expanded="false">Visual + teaching</button><button data-reader="${kind}" data-expanded="true">Expand visual + teaching</button><button data-action="smaller" aria-label="Decrease teaching text size">A−</button><button data-action="larger" aria-label="Increase teaching text size">A+</button><button data-action="expandSections">Expand sections</button><button data-action="collapseSections">Collapse sections</button><button class="push" data-action="print">Print notes</button></div>`;}
+function studyToolbar(kind) {
+  const active=reader?.kind===kind && reader.returnView===view,c=kind==='lecture'?collections.get(selected):null;
+  const quiz=c?.role==='lecture'?lecturePracticeButtons(c).replaceAll('<button ','<button role="tab" aria-selected="false" '):'';
+  return `<div class="study-mode-toolbar" data-study-toolbar="${esc(kind)}"><div class="study-version-row" data-study-version>${versionedSections(matchingSections(kind))?transcriptSelector():''}</div><div class="study-mode-tabs" role="tablist" aria-label="Study view"><button role="tab" data-action="teachingNotes" aria-selected="${!active}">Teaching notes</button><button role="tab" data-reader="${kind}" data-expanded="false" aria-selected="${Boolean(active && !reader.expanded)}">Visual + transcript</button><button role="tab" data-reader="${kind}" data-expanded="true" aria-selected="${Boolean(active && reader.expanded)}">Expand visual + transcript</button>${quiz}</div></div><div class="toolbar notes-actions"><button data-action="smaller" aria-label="Decrease teaching text size">A−</button><button data-action="larger" aria-label="Increase teaching text size">A+</button><button data-action="expandSections">Expand sections</button><button data-action="collapseSections">Collapse sections</button><button class="push" data-action="print">Print notes</button></div>`;
+}
 function home() {
   const m=currentModule(),lectures=moduleLectures(),pages=lectures.flatMap(c=>c.sections),read=pages.filter(s=>state.read[s.id]).length;
   const other=D.modules.find(module=>module.id!==m.id),otherLectures=moduleLectures(other?.id),pool=moduleQuestions();
@@ -422,7 +428,7 @@ function collectionCard(c) {
 
 function collectionView() {
   const c=collections.get(selected);if(!c)return '<h1>Collection unavailable</h1>';
-  return `${moduleForCollection(c.id)?scopeBanner():'<span class="tag">Supporting course source</span>'}<span class="eyebrow">${esc(collectionLabel(c))}</span><h1>${esc(collectionTitle(c))}</h1><p class="small muted">${c.sections.length} source pages · ${esc(c.originalFilename || '')}</p>${issueHTML(c.issues)}${c.role==='lecture' && moduleForCollection(c.id)==='module2'?practiceVersionBar():''}<div class="row"><a class="small" href="${esc(safeURL(c.sourceFile || c.pdfFile))}" target="_blank" rel="noopener">Open original source</a>${c.pdfFile && c.sourceFile!==c.pdfFile?`<a class="small" href="${esc(safeURL(c.pdfFile))}" target="_blank" rel="noopener">Open PDF</a>`:''}${lecturePracticeButtons(c)}${c.role!=='lecture'?'<button class="small-button" data-go="sources">All sources & coverage</button>':''}</div>${studyToolbar('lecture')}${searchTools()}<div class="section-list">${c.sections.map(sectionHTML).join('')}</div>`;
+  return `${moduleForCollection(c.id)?scopeBanner():'<span class="tag">Supporting course source</span>'}<span class="eyebrow">${esc(collectionLabel(c))}</span><h1>${esc(collectionTitle(c))}</h1><p class="small muted">${c.sections.length} source pages · ${esc(c.originalFilename || '')}</p>${issueHTML(c.issues)}${c.role==='lecture' && moduleForCollection(c.id)==='module2'?practiceVersionBar():''}<div class="row"><a class="small" href="${esc(safeURL(c.sourceFile || c.pdfFile))}" target="_blank" rel="noopener">Open original source</a>${c.pdfFile && c.sourceFile!==c.pdfFile?`<a class="small" href="${esc(safeURL(c.pdfFile))}" target="_blank" rel="noopener">Open PDF</a>`:''}${c.role!=='lecture'?'<button class="small-button" data-go="sources">All sources & coverage</button>':''}</div>${studyToolbar('lecture')}${searchTools()}<div class="section-list">${c.sections.map(sectionHTML).join('')}</div>`;
 }
 
 function combined() {return `${scopeBanner()}<span class="eyebrow">${esc(currentModule().title)} lecture collections</span><h1>Combined teaching notes.</h1><p class="lead">The numbered lecture decks from this module, in source order.</p>${studyToolbar('combined')}${searchTools('Search this module’s lecture collections')}${moduleLectures().map(c=>`<section class="section-group search-group"><h2>${esc(c.number)} · ${esc(collectionTitle(c))}</h2>${c.sections.map(sectionHTML).join('')}</section>`).join('')}`;}
@@ -679,31 +685,56 @@ function matchingSections(kind) {
   return moduleLectures().flatMap(c=>c.sections);
 }
 
-function openReader(ids,index=0,expanded=true,label='Visual + teaching') {
+function readerPositionKey(kind) {return kind==='lecture'?selected:state.activeModule+':'+kind;}
+function rememberReaderPosition() {
+  if(!reader?.kind)return;
+  readerPositions.set(reader.positionKey,reader.index);
+  try{sessionStorage.setItem('ling285-reader-page-positions',JSON.stringify(Object.fromEntries(readerPositions)));}catch{}
+}
+function captureReaderContext(kind) {
+  const toolbar=$('#content [data-study-toolbar="'+kind+'"]');if(!toolbar)return '';
+  const nodes=[];for(const node of $('#content').children){nodes.push(node.outerHTML);if(node===toolbar)break;}
+  return nodes.join('');
+}
+function readerContextHTML() {
+  if(!reader.contextHTML)return `<h1>${esc(reader.label)}</h1>`;
+  const template=document.createElement('template');template.innerHTML=reader.contextHTML;
+  const version=template.content.querySelector('[data-study-version]');if(version && version.innerHTML.trim())version.innerHTML=transcriptSelector();
+  for(const button of template.content.querySelectorAll('[role=tab]'))button.setAttribute('aria-selected',String(Boolean(button.dataset.reader===reader.kind && (button.dataset.expanded==='true')===reader.expanded)));
+  return template.innerHTML;
+}
+function openReader(ids,index=0,expanded=true,label='Visual + teaching',kind=null) {
   const items=unique(ids).map(id=>sections.get(id)).filter(Boolean);if(!items.length)return;
   pauseMedia();stopSpeech();lastReaderFocus=document.activeElement;
-  reader={items,index:Math.max(0,Math.min(items.length-1,index)),expanded,recall:false,label,returnView:view};
+  const positionKey=kind?readerPositionKey(kind):null,contextHTML=kind?captureReaderContext(kind):'';
+  if(kind && readerPositions.has(positionKey))index=readerPositions.get(positionKey);
+  reader={items,index:Math.max(0,Math.min(items.length-1,index)),expanded,recall:false,label,returnView:view,kind,positionKey,contextHTML};
   renderReader();
 }
-function readerControls() {return `<div class="reader-controls"><button data-action="closeReader">✕ Close</button>${versionedSections(reader.items)?transcriptSelector():''}<button data-action="readerPrevious" ${reader.index === 0?'disabled':''}>← Previous</button><select id="readerSelect" aria-label="Select source page">${reader.items.map((s,index)=>`<option value="${index}" ${index === reader.index?'selected':''}>${esc(collections.get(s.collection).number || '')} · p${s.page} · ${esc(sectionTitle(s))}</option>`).join('')}</select><button data-action="readerNext" ${reader.index === reader.items.length-1?'disabled':''}>Next →</button>${reader.expanded?'': '<button data-action="expandReader">Expand</button>'}<button data-action="recall">${reader.recall?'Show teaching':'Try recall'}</button><button data-action="readAloud">Read aloud</button><button data-action="stopSpeech">Stop</button><button data-action="smaller" aria-label="Decrease teaching text size">A−</button><button data-action="larger" aria-label="Increase teaching text size">A+</button><span class="reader-position">${reader.index+1} / ${reader.items.length}</span></div>`;}
+function readerControls() {return `<div class="reader-controls">${reader.expanded || !reader.contextHTML?`${versionedSections(reader.items)?transcriptSelector():''}<button data-action="closeReader">✕ Close</button>`:''}<button data-action="readerPrevious" ${reader.index === 0?'disabled':''}>← Previous</button><select id="readerSelect" aria-label="Select source page">${reader.items.map((s,index)=>`<option value="${index}" ${index === reader.index?'selected':''}>${esc(collections.get(s.collection).number || '')} · p${s.page} · ${esc(sectionTitle(s))}</option>`).join('')}</select><button data-action="readerNext" ${reader.index === reader.items.length-1?'disabled':''}>Next →</button><button data-action="recall">${reader.recall?'Reveal transcript':'Hide transcript'}</button><button data-action="readAloud">Read aloud</button><button data-action="stopSpeech">Stop audio</button><button data-action="smaller" aria-label="Decrease teaching text size">A−</button><button data-action="larger" aria-label="Increase teaching text size">A+</button>${reader.expanded?`<span class="reader-position">${reader.index+1} / ${reader.items.length}</span>`:''}</div>`;}
 function renderReader() {
   if(!reader)return;
   const s=reader.items[reader.index];
-  const html=`<div class="reader-shell">${readerControls()}<div class="reader-stage">${sectionBody(s,true,reader.recall)}</div></div>`;
+  rememberReaderPosition();document.body.classList.toggle('follow-slides',Boolean(FOLLOWING_SLIDE_VERSIONS[effectiveVersion()]));
+  const html=`<div class="reader-shell">${readerControls()}${reader.expanded?'':`<p class="reader-helper">Page ${reader.index+1} / ${reader.items.length}. Arrow keys move between source pages.</p>`}<div class="reader-stage">${sectionBody(s,true,reader.recall)}</div></div>`;
   if(reader.expanded) {
-    if($('#content .inline-reader'))$('#content').innerHTML='';
+    // The collection heading and view tabs remain in the page under the overlay.
+    $('#content .inline-reader')?.remove();
     $('#readerDialog').innerHTML=html;
     if(!$('#readerDialog').open)$('#readerDialog').showModal();
     document.body.classList.add('reader-open');
   } else {
     if($('#readerDialog').open)$('#readerDialog').close();
+    $('#readerDialog').innerHTML='';
     document.body.classList.remove('reader-open');
-    $('#content').innerHTML=`<span class="eyebrow">${esc(reader.label)}</span><div class="inline-reader">${html}</div>`;
+    $('#content').innerHTML=`${readerContextHTML()}<div class="inline-reader">${html}</div>`;
   }
-  sizeNotes();transcriptNotice();$('#readerSelect')?.focus({preventScroll:true});
+  sizeNotes();transcriptNotice();(reader.expanded?$('#readerDialog #readerSelect'):$('#content #readerSelect'))?.focus({preventScroll:true});
 }
 function closeReader(restore=true) {
-  if(!reader)return;pauseMedia();stopSpeech();const expanded=reader.expanded;reader=null;
+  if(!reader)return;pauseMedia();stopSpeech();rememberReaderPosition();
+  if(restore && reader.expanded && reader.contextHTML){reader.expanded=false;renderReader();$('#content [data-reader][data-expanded=true]')?.focus({preventScroll:true});return;}
+  reader=null;
   if($('#readerDialog').open)$('#readerDialog').close();$('#readerDialog').innerHTML='';document.body.classList.remove('reader-open');
   if(restore){render();if(lastReaderFocus?.isConnected)lastReaderFocus.focus({preventScroll:true});else $('#content').focus({preventScroll:true});}
 }
@@ -758,6 +789,7 @@ function handleAction(action) {
   if(action==='expandSections' || action==='collapseSections'){document.querySelectorAll('.source-section:not([hidden])').forEach(s=>s.open=action==='expandSections');return;}
   if(action==='closeImage'){$('#imageDialog').close();return;}
   if(action==='closeReader'){closeReader();return;}
+  if(action==='teachingNotes'){if(reader){reader.expanded=false;closeReader();}return;}
   if(action==='readerPrevious'){moveReader(reader.index-1);return;}
   if(action==='readerNext'){moveReader(reader.index+1);return;}
   if(action==='expandReader'){reader.expanded=true;renderReader();return;}
@@ -776,7 +808,11 @@ document.addEventListener('click',event=>{
   if(button.dataset.collection){go('collection',button.dataset.collection);return;}
   if(button.dataset.theme){state.theme=button.dataset.theme;applyPreferences();save();return;}
   if(button.dataset.action){handleAction(button.dataset.action);return;}
-  if(button.dataset.reader){openReader(matchingSections(button.dataset.reader).map(s=>s.id),0,button.dataset.expanded==='true',button.dataset.reader==='lecture'?collections.get(selected).title:button.dataset.reader==='meadows'?'Meadows · systems and feedback':currentModule().title+' · visual + teaching');return;}
+  if(button.dataset.reader){
+    const kind=button.dataset.reader,expanded=button.dataset.expanded==='true';
+    if(reader?.kind===kind && reader.returnView===view){pauseMedia();stopSpeech();reader.expanded=expanded;renderReader();return;}
+    openReader(matchingSections(kind).map(s=>s.id),0,expanded,kind==='lecture'?collections.get(selected).title:kind==='meadows'?'Meadows · systems and feedback':currentModule().title+' · visual + teaching',kind);return;
+  }
   if(button.dataset.openSection){openReader([button.dataset.openSection]);return;}
   if(button.dataset.guideReader){const g=D.guide[Number(button.dataset.guideReader)];openReader(refsFor(g).map(s=>s.id),0,true,g.title);return;}
   if(button.dataset.imageSection){const s=sections.get(button.dataset.imageSection);$('#enlargedImage').src=safeURL(s.image);$('#enlargedImage').alt='Original page '+s.page+' · '+s.title;$('#imageSource').href=pageLink(s);$('#imageDialog').showModal();return;}

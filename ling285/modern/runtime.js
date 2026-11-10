@@ -227,7 +227,7 @@ function installModern() {
   const c=collections.get(selected);
   if(!c || c.role!=='lecture')return originalCollectionView();
   return intro(collectionTitle(c),pack.summaries[c.id])+
-   `<p class="small muted">Collection ${esc(c.number)} · ${c.sections.length} original source pages</p><div class="row"><a href="${esc(safeURL(c.sourceFile))}" target="_blank" rel="noopener">Original PowerPoint</a><a href="${esc(safeURL(c.pdfFile))}" target="_blank" rel="noopener">Source PDF</a><button data-start="lecture:${esc(c.id)}">Open collection quiz</button></div>`+
+   `<p class="small muted">Collection ${esc(c.number)} · ${c.sections.length} original source pages</p><div class="row"><a href="${esc(safeURL(c.sourceFile))}" target="_blank" rel="noopener">Original PowerPoint</a><a href="${esc(safeURL(c.pdfFile))}" target="_blank" rel="noopener">Source PDF</a></div>`+
    studyToolbar('lecture')+searchTools('Search this collection’s rewritten teaching')+
    c.sections.map(sectionHTML).join('');
  };

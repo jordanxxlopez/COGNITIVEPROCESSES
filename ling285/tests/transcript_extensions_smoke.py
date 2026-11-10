@@ -24,7 +24,7 @@ def run(base, browser):
         for cid, collection in original['collections'].items():
             module = 'module1' if int(cid[7:9]) < 11 else 'module2'
             page.goto(f'{base}/ling285/modern/?view=collection&lecture={cid}&module={module}')
-            page.locator('.inline-reader [data-action="closeReader"]').click()
+            page.wait_for_selector('.source-section')
             page.wait_for_function('document.querySelectorAll("[data-transcript-version] option:not(:disabled)").length === 7')
             for edition, payload in [('original-c', original), ('d', d)]:
                 page.locator('[data-transcript-version]').select_option(edition)
@@ -59,7 +59,7 @@ def run(base, browser):
     # Existing note/read identities are shared across all choices and both studios.
     page.set_viewport_size({'width': 1600, 'height': 1000})
     page.goto(f'{base}/ling285/modern/?view=collection&lecture=lecture15&module=module2')
-    page.locator('.inline-reader [data-action="closeReader"]').click()
+    page.wait_for_selector('.source-section')
     selector = page.locator('[data-transcript-version]')
     selector.select_option('original-c')
     section = page.locator('[data-section="lecture15-p008"]')
@@ -75,9 +75,9 @@ def run(base, browser):
         assert state['notes']['lecture15-p008'] == 'My existing note stays with this source page.'
         assert state['read']['lecture15-p008']
     page.reload()
-    page.wait_for_selector('.reader-transcript')
+    page.wait_for_selector('.source-section')
     assert selector.input_value() == 'd'
-    page.locator('[data-action="expandReader"]').click()
+    page.locator('[data-reader="lecture"][data-expanded="true"]').click()
     page.locator('#readerDialog[open]').wait_for()
     page.locator('#readerSelect').select_option('7')
     for edition, text in [('original-c', 'Why the weights are changed from the end backward'),
@@ -87,7 +87,7 @@ def run(base, browser):
         assert page.locator('#readerSelect').input_value() == '7'
         assert page.locator('#readerDialog [data-action="readerNext"]').is_enabled()
     page.locator('[data-action="closeReader"]').click()
-    page.locator('.inline-reader [data-action="closeReader"]').click()
+    page.locator('[data-action="teachingNotes"]').click()
     # The previous C is still available unchanged after using both additions.
     selector.select_option('c')
     assert 'The difficult early-weight problem' not in section.inner_text()

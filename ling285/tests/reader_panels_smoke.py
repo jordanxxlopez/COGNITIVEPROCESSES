@@ -18,8 +18,21 @@ def run(base, browser):
     def route(edition, cid='lecture11'):
         module = 'module1' if int(cid[7:9]) < 11 else 'module2'
         page.goto(f'{base}/ling285/{edition}?view=collection&module={module}&lecture={cid}')
+        page.wait_for_selector('.study-mode-tabs')
+        assert not page.locator('.inline-reader').count(), 'collections open in Teaching notes'
+        assert page.locator('[data-action=teachingNotes]').get_attribute('aria-selected')=='true'
+        title=page.locator('#content>h1').inner_text()
+        prefix=header_prefix()
+        page.locator('[data-reader=lecture][data-expanded=false]').click()
         page.wait_for_selector('.inline-reader .reader-transcript')
-        page.wait_for_function('document.querySelector(".reader-tools") && document.querySelector("#readerSelect")')
+        assert page.locator('#content>h1').inner_text()==title
+        assert header_prefix()==prefix, 'the complete collection context stays above the view tabs'
+        assert page.locator('[data-reader=lecture][data-expanded=false]').get_attribute('aria-selected')=='true'
+        assert page.locator('[data-reader=lecture][data-expanded=true]').count()==1
+        page.locator('.inline-reader').scroll_into_view_if_needed()
+
+    def header_prefix():
+        return page.evaluate('''()=>{const result=[];for(const node of document.querySelector('#content').children){if(node.matches('[data-study-toolbar]'))break;result.push([node.tagName,node.textContent.replace(/\\s+/g,' ').trim(),[...node.querySelectorAll('a')].map(a=>a.href)]);}return result;}''')
 
     def geometry(root='.inline-reader', stacked=False):
         result = page.locator(root).evaluate('''root=>{
@@ -38,10 +51,10 @@ def run(base, browser):
             assert a[1] < b[1] and abs(a[0]-b[0])<2, result
         else:
             assert a[0] < b[0] and abs(a[1]-b[1])<2 and abs(a[3]-b[3])<2, result
-        assert min(a[2:4]+b[2:4])>40 and max(a[4],b[4])<=result['viewport']+1, result
+        assert min(a[2:4]+b[2:4])>40 and max(a[4],b[4])<=result['viewport']+2, result
         assert all(overflow=='auto' and overscroll=='contain' for overflow,overscroll in result['scrolls']), result
 
-    # Every numbered collection opens in the paired reader, including title pages.
+    # Every collection starts in notes. Explicit visual mode retains its header.
     for edition in ['', 'modern/']:
         for c in lectures:
             route(edition,c['id'])
@@ -49,13 +62,14 @@ def run(base, browser):
             for theme in ['light','dark']:
                 page.evaluate('theme=>document.documentElement.dataset.theme=theme',theme)
                 geometry()
-        print(f'PASS: every collection in {edition or "original"}, both themes, text left and source right', flush=True)
+        print(f'PASS: every collection in {edition or "original"}, explicit notes/visual modes, retained title/context, both themes and left/right panels', flush=True)
 
         route(edition)
         page.locator('[data-transcript-version]').select_option('d' if edition else 'v23')
         page.locator('#readerSelect').select_option('3')
         page.set_viewport_size({'width':1600,'height':720})
         page.wait_for_timeout(100)
+        page.locator('.inline-reader').scroll_into_view_if_needed()
         text=page.locator('.reader-transcript');visual=page.locator('.reader-visual')
         snapshot=lambda:page.evaluate('''()=>({page:scrollY,text:document.querySelector('.reader-transcript').scrollTop,visual:document.querySelector('.reader-visual').scrollTop,controls:document.querySelector('.reader-controls').getBoundingClientRect().top})''')
         before=snapshot();text.hover();page.mouse.wheel(0,450);page.wait_for_timeout(150);after=snapshot()
@@ -75,16 +89,50 @@ def run(base, browser):
         assert snapshot()==before, (before,snapshot(),'visual top leaked')
         page.locator('[data-action=readerNext]').click();assert page.locator('#readerSelect').input_value()=='4'
         assert text.evaluate('(e)=>e.scrollTop')==0 and visual.evaluate('(e)=>e.scrollTop')==0
-        page.locator('[data-action=expandReader]').click();page.locator('#readerDialog[open] .reader-transcript').wait_for();geometry('#readerDialog')
+        title=page.locator('#content>h1').inner_text();prefix=header_prefix()
+        page.evaluate('window.originalTimer=document.querySelector(".timer")')
+        page.locator('#timerStart').click()
+        page.wait_for_function('document.querySelector("#clock").textContent!=="30:00"')
+        page.locator('[data-reader=lecture][data-expanded=true]').click();page.locator('#readerDialog[open] .reader-transcript').wait_for();geometry('#readerDialog')
+        assert page.evaluate('document.querySelector(".timer")===window.originalTimer')
+        assert page.locator('.timer').count()==1
+        assert page.locator('#readerDialog .timer').evaluate('(e)=>getComputedStyle(e).flexWrap')=='nowrap'
+        assert page.locator('#readerDialog .timer').evaluate('(e)=>e.getBoundingClientRect().height')<65
+        assert not page.locator('#readerDialog .timer .fit-selection,#readerDialog .timer .fit-select-field').count()
+        assert page.locator('#content>h1').inner_text()==title
         page.locator('#readerDialog [data-action=closeReader]').click();page.locator('.inline-reader .reader-transcript').wait_for()
         assert page.locator('#readerSelect').input_value()=='4'
+        assert page.locator('#content>h1').inner_text()==title and header_prefix()==prefix
+        assert page.evaluate('document.querySelector(".topbar .timer")===window.originalTimer')
+        assert page.locator('#timerStart').inner_text()=='Pause'
+        page.locator('#timerStart').click()
         for width,height in [(1024,800),(390,844)]:
-            page.set_viewport_size({'width':width,'height':height});page.wait_for_timeout(100);geometry(stacked=width<=760)
+            page.set_viewport_size({'width':width,'height':height});page.wait_for_timeout(100)
+            page.locator('.inline-reader').scroll_into_view_if_needed();geometry(stacked=width<=760)
         page.set_viewport_size({'width':1600,'height':900})
-        page.locator('.inline-reader [data-action=closeReader]').click()
+        page.locator('[data-action=teachingNotes]').click()
         assert page.locator('.source-section').count()==11
         assert not page.locator('.inline-reader').count()
-        print(f'PASS: real independent scrolling, boundary containment, stable controls, page/expanded navigation and mobile fitting in {edition or "original"}',flush=True)
+        assert page.locator('#content>h1').inner_text()==title
+        # Expanding directly from notes also closes into visual mode, as PSYC301 does.
+        page.locator('[data-reader=lecture][data-expanded=true]').click()
+        page.locator('#readerDialog[open]').wait_for()
+        assert page.locator('#readerDialog #readerSelect').input_value()=='4'
+        page.keyboard.press('Escape');page.locator('.inline-reader .reader-transcript').wait_for()
+        assert page.locator('#readerSelect').input_value()=='4'
+        page.locator('[data-action=teachingNotes]').click()
+        page.reload();page.wait_for_selector('.study-mode-tabs')
+        assert not page.locator('.inline-reader').count()
+        assert page.locator('[data-action=teachingNotes]').get_attribute('aria-selected')=='true'
+        page.locator('[data-reader=lecture][data-expanded=false]').click()
+        assert page.locator('#readerSelect').input_value()=='4'
+        page.locator('.reader-controls [data-action=recall]').click();assert page.locator('.recall-cover').count()==1
+        page.locator('.reader-controls [data-action=recall]').click();assert not page.locator('.recall-cover').count()
+        page.locator('[data-start="lecture:lecture11"]').click()
+        page.wait_for_function('new URLSearchParams(location.search).get("view")==="practice"')
+        assert not page.locator('.inline-reader').count()
+        assert page.locator('.timer').count()==1
+        print(f'PASS: independent scrolling, retained header/view tabs, inline/fullscreen/notes round trips, one running single-row timer, reveal and quiz entry in {edition or "original"}',flush=True)
 
     # Workspace pairs also retain text on the left at ordinary desktop widths.
     for width in [2000,1600,1024]:
