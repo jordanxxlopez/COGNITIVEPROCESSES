@@ -83,6 +83,9 @@
   players.set(video,{update,player});video.controls=false;video.playsInline=true;update();
  }
  function fitFooter(pair){
+  // Readers keep their notes and read controls in the independently scrolling
+  // transcript panel. Full-width footers belong to the workspace cards only.
+  if(pair.closest('.reader-shell'))return;
   const parent=pair.parentElement,left=pair.firstElementChild;
   if(!parent || !left || pair.dataset.fitFooter)return;
   pair.dataset.fitFooter='true';
@@ -123,6 +126,7 @@
   }
   for(const figure of query('.section-pair>.source-figure')){
    const pair=figure.parentElement,stage=figure.closest('.reader-stage');
+   if(stage){figure.removeAttribute('data-fit-follow');continue;}
    const room=(stage?.clientHeight || innerHeight)-32;
    const follows=document.body.classList.contains('follow-slides') && getComputedStyle(pair).gridTemplateColumns.split(' ').length>1 && figure.getBoundingClientRect().height<=room;
    figure.toggleAttribute('data-fit-follow',follows);

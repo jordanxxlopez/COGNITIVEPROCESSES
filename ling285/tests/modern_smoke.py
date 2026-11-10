@@ -71,9 +71,10 @@ def run(base, browser):
     assert page.locator('.modern-qa').count() > 0
 
     route('collection', lecture='lecture11')
+    page.locator('.inline-reader [data-action="closeReader"]').click()
     styles = page.locator('[data-transcript-version]')
-    assert styles.locator('option').count() == 5
-    for edition in ['professor','b','c','follow','v20']:
+    assert styles.locator('option').count() == 7
+    for edition in ['professor','b','c','follow','v20','original-c','d']:
         styles.select_option(edition)
         assert styles.input_value() == edition
         assert page.locator('.source-section').count() == 11
@@ -159,11 +160,11 @@ def run(base, browser):
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 2'), view
     route('collection', lecture='lecture18')
     page.locator('[data-transcript-version]').select_option('v20')
-    assert page.locator('.source-section').count() == 8
+    assert page.locator('#readerSelect option').count() == 8
     assert not errors, errors
     assert not failed, failed
     context.close()
-    print('PASS: original entry, section routes, 5 editions, shared notes, 100-question test, 8 quizzes, wording state, writing, backup and mobile layout')
+    print('PASS: original entry, section routes, 7 editions, shared notes, 100-question test, 8 quizzes, wording state, writing, backup and mobile layout')
 
 
 if __name__ == '__main__':

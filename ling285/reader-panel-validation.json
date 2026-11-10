@@ -1,0 +1,47 @@
+{
+  "existingCourseWriting": "Preserved exactly; content.js changes are limited to two selector entries. All five previous modern transcript files retain their frozen SHA-256 values.",
+  "originalC": {
+    "source": "transcripts-v22.json, the non-modern v23 selector base",
+    "pages": 286,
+    "originalTeaching": "Verbatim"
+  },
+  "d": {
+    "baseTextRemoved": 0,
+    "baseTextRewritten": 0,
+    "addedPassages": 57,
+    "pagesWithAdditions": 51,
+    "provenance": "modern/edition-c-d-provenance.json"
+  },
+  "browserChecks": {
+    "fittingRouteThemeViewportCombinations": 496,
+    "extensionCollectionEditionThemeViewportCombinations": 136,
+    "collectionReaders": 34,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "desktopWorkspaceWidths": [
+      2000,
+      1600,
+      1024
+    ],
+    "actualScrolling": "Both panels independently; top/bottom wheel gestures do not move the other panel or page.",
+    "functionality": [
+      "All source pages remain available",
+      "Inline/expanded page navigation",
+      "Original and modern saved notes/read marks",
+      "Seven modern transcript choices",
+      "Playback/seek/rate/full source proportions",
+      "100-question current test",
+      "Eight 50-question lecture quizzes",
+      "Writing drafts and progress backup"
+    ]
+  },
+  "commands": [
+    "node --test ling285/tests/modern-content.test.cjs",
+    "python3 ling285/tests/modern_smoke.py",
+    "python3 ling285/tests/transcript_extensions_smoke.py",
+    "python3 ling285/tests/reader_panels_smoke.py",
+    "python3 ling285/tests/content_fitting_smoke.py"
+  ]
+}

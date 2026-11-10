@@ -25,14 +25,24 @@ test('original content, editions and uploaded documents retain their frozen hash
   assert.equal(hash('app.js'), read('modern/build-manifest.json').sourceAppSha256);
 });
 
-test('Module II layout changes preserve every modern authored content file exactly', () => {
-  for (const [file, expected] of Object.entries(read('modern/layout-content-lock.json'))) assert.equal(hash(file), expected, file);
+test('the two additional choices preserve all previous modern writing and editions', () => {
+  const previous = ['professor','b','c','follow','v20'];
+  for (const [file, expected] of Object.entries(read('modern/layout-content-lock.json'))) {
+    if (file !== 'modern/content.js') { assert.equal(hash(file), expected, file); continue; }
+    // Restore only the old selector metadata, leaving the rest of the file's
+    // bytes untouched. Its pre-extension SHA must still match the frozen one.
+    const labels = Object.fromEntries(previous.map(id => [id, pack.editions[id]]));
+    const restored = fs.readFileSync(path.join(root, file), 'utf8').replace(
+      /("editions": )\{[\s\S]*?\n \}/,
+      (_, prefix) => prefix + JSON.stringify(labels, null, 1).replace(/\n/g, '\n '));
+    assert.equal(crypto.createHash('sha256').update(restored).digest('hex'), expected, file);
+  }
 });
 
-test('all five new editions preserve every source page and unpadded title page', () => {
-  assert.equal(Object.keys(pack.editions).length, 5);
+test('the existing five modern editions preserve every source page and unpadded title page', () => {
+  assert.deepEqual(Object.keys(pack.editions), ['professor','b','c','follow','v20','original-c','d']);
   assert.equal(lectures.reduce((n, c) => n + c.sections.length, 0), 286);
-  for (const edition of Object.keys(pack.editions)) {
+  for (const edition of ['professor','b','c','follow','v20']) {
     const payload = read(`modern/transcripts-${edition}.json`);
     assert.equal(payload.id, edition);
     for (const original of lectures) {
@@ -47,6 +57,56 @@ test('all five new editions preserve every source page and unpadded title page',
         if (expected) assert.notDeepEqual(s.teaching, original.sections[s.page - 1].teaching);
       }
     }
+  }
+});
+
+test('Original C copies the complete non-modern Version 23 base verbatim', () => {
+  const source = read('transcripts-v22.json');
+  const original = read('modern/transcripts-original-c.json');
+  assert.equal(original.id, 'original-c');
+  assert.equal(original.origin.sha256, hash('transcripts-v22.json'));
+  assert.equal(original.origin.originalSelector, 'v23');
+  for (const key of Object.keys(source).filter(key => !['id','label'].includes(key))) {
+    assert.deepEqual(original[key], source[key], key);
+  }
+  assert.match(pack.editions['original-c'], /Original C.*Version 23.*following slides/);
+});
+
+test('D keeps every Original C parent and child in order and integrates traceable additions', () => {
+  const original = read('modern/transcripts-original-c.json');
+  const d = read('modern/transcripts-d.json');
+  const report = read('modern/edition-c-d-provenance.json');
+  assert.equal(d.id, 'd');
+  assert.equal(report.addedPassages, report.placements.length);
+  assert.equal(new Set(report.placements.map(p => p.text)).size, report.placements.length);
+  assert.deepEqual(report.evidence, read('authoring/c-d-teaching-evidence.json'));
+  assert.equal(report.baseTextRemoved, 0);
+  assert.equal(report.baseTextRewritten, 0);
+  const recovered = structuredClone(d.collections);
+  let interleaved = 0;
+  for (const p of report.placements) {
+    const base = original.collections[p.collection].sections[p.page - 1];
+    assert.equal(p.sectionId, base.id);
+    assert.equal(p.originalParent, base.teaching[p.originalBlock].text);
+    assert(report.evidence.excerpts[p.evidence].length);
+    for (const e of report.evidence.excerpts[p.evidence]) {
+      assert(e.quote.trim().length > 30);
+      assert(e.startLine > 0 && e.endLine <= report.evidence.source.lineCount);
+    }
+    const children = recovered[p.collection].sections[p.page - 1].teaching[p.originalBlock].children;
+    assert.equal(children.filter(t => t === p.text).length, 1);
+    children.splice(children.indexOf(p.text), 1);
+    assert(!/\b(?:the lecture|the class|the professor|he says|she says|need not|earlier slides?|later slides?)\b/i.test(p.text));
+    assert(p.text.includes('**'), p.id);
+    if (p.originalBlock < base.teaching.length - 1 || p.beforeOriginalChild < base.teaching[p.originalBlock].children.length) interleaved++;
+  }
+  assert(interleaved > report.placements.length * .75, 'additions belong inside the existing explanations');
+  assert.deepEqual(recovered, original.collections);
+  assert.deepEqual(d.visualPresentation, original.visualPresentation);
+  for (const c of lectures) {
+    assert.deepEqual(d.collections[c.id].sections.map(s => [s.id,s.page]), c.sections.map(s => [s.id,s.page]));
+    if (c.moduleId === 'module1') assert.deepEqual(d.collections[c.id], original.collections[c.id]);
+    else assert(report.placements.some(p => p.collection === c.id));
   }
 });
 

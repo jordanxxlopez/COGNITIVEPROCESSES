@@ -1,0 +1,81 @@
+/* PSYC301 reader structure: controls, then equally sized transcript/visual cards.
+   Only the panels scroll; original text, media and study controls stay intact. */
+html[data-ling-fitting] #content[data-split-reader] {
+ min-block-size:0;max-inline-size:none;padding:16px clamp(16px,2vw,32px);
+}
+html[data-ling-fitting] #content>.collection-reader-title {
+ font-size:clamp(1rem,1.5vw,1.3rem);line-height:1.4;margin:0 0 12px;letter-spacing:normal;
+}
+html[data-ling-fitting] #content .inline-reader.split-reader {
+ block-size:var(--split-reader-height,calc(100dvh - 180px));min-block-size:0;margin:0;
+}
+html[data-ling-fitting] :is(#content,#readerDialog) .split-reader .reader-shell {
+ display:flex;flex-direction:column;block-size:100%;min-block-size:0;
+}
+html[data-ling-fitting] #readerDialog.split-reader {inline-size:min(1800px,calc(100vw - 24px));block-size:calc(100dvh - 24px)}
+html[data-ling-fitting] :is(#content,#readerDialog).split-reader .reader-controls,
+html[data-ling-fitting] #content .split-reader .reader-controls {
+ position:relative;inset-block-start:auto;flex:none;display:grid;align-items:center;
+ gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;
+ background:var(--surface-2);z-index:2;max-block-size:none;overflow:visible;overscroll-behavior:contain;
+}
+html[data-ling-fitting] .split-reader :is(.reader-navigation,.reader-tools) {display:flex;align-items:center;flex-wrap:wrap;gap:8px;min-inline-size:0}
+html[data-ling-fitting] .split-reader .reader-controls .transcript-version {display:flex;align-items:center;flex-wrap:wrap;gap:8px;flex:1 1 300px;min-inline-size:0;max-inline-size:600px}
+html[data-ling-fitting] .split-reader .reader-controls .transcript-version>span:not(.fit-selection) {flex:none}
+html[data-ling-fitting] .split-reader .reader-controls .transcript-version select {inline-size:100%;min-inline-size:0;max-inline-size:100%}
+html[data-ling-fitting] .split-reader .reader-controls .fit-select-field {flex:2 1 290px;min-inline-size:0;max-inline-size:none}
+html[data-ling-fitting] .split-reader .reader-controls .fit-select-field select {inline-size:100%;min-inline-size:0;max-inline-size:100%}
+html[data-ling-fitting] .split-reader .reader-stage {
+ display:flex;flex:1;min-block-size:0;padding:18px 0 0;overflow:visible;
+}
+html[data-ling-fitting] #readerDialog.split-reader .reader-stage {padding:18px}
+html[data-ling-fitting] .split-reader .reader-stage>.section-body {
+ display:flex;flex:1;min-inline-size:0;min-block-size:0;block-size:100%;padding:0;border:0;
+}
+html[data-ling-fitting] :is(#content,#readerDialog) .split-reader .section-pair,
+html[data-ling-fitting] #readerDialog.split-reader .section-pair {
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;
+ gap:clamp(16px,2vw,24px);block-size:100%;min-block-size:0;min-inline-size:0;
+}
+html[data-ling-fitting] :is(#content,#readerDialog) .split-reader .reader-stage .section-pair>:is(.reader-transcript,.reader-visual),
+html[data-ling-fitting] #readerDialog.split-reader .reader-stage .section-pair>:is(.reader-transcript,.reader-visual) {
+ position:static;align-self:stretch;min-block-size:0;block-size:100%;max-block-size:none;
+ min-inline-size:0;max-inline-size:100%;inline-size:100%;margin:0;
+ padding:clamp(18px,1.8vw,26px);border:1px solid var(--line);border-radius:18px;
+ background:var(--surface);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;
+ scroll-padding-block:20px;overflow-wrap:anywhere;
+}
+html[data-ling-fitting] .split-reader .reader-transcript {grid-column:1;grid-row:1}
+html[data-ling-fitting] .split-reader .reader-visual {grid-column:2;grid-row:1}
+html[data-ling-fitting] :is(#content,#readerDialog) .split-reader .reader-visual,
+html[data-ling-fitting] #readerDialog.split-reader .reader-visual {border-color:var(--accent)}
+html[data-ling-fitting] .split-reader :is(.reader-transcript,.reader-visual):focus-visible {outline:3px solid var(--focus);outline-offset:-4px}
+html[data-ling-fitting] .split-reader .reader-transcript .teaching {max-inline-size:none}
+html[data-ling-fitting] .split-reader .reader-transcript h2 {font-size:clamp(1.1rem,1.5vw,1.5rem);line-height:1.45}
+html[data-ling-fitting] .split-reader .reader-visual :is(img,video) {inline-size:100%;block-size:auto;max-block-size:none;object-fit:contain}
+html[data-ling-fitting] .split-reader .reader-visual .slide-button {overflow:visible}
+html[data-ling-fitting] .split-reader .reader-visual .media-item {padding:0;border:0;background:transparent}
+html[data-ling-fitting] .split-reader .reader-visual>.source-caption {margin-block-end:0}
+@media(max-width:760px){
+ html[data-ling-fitting] :is(#content,#readerDialog) .split-reader .section-pair,
+ html[data-ling-fitting] #readerDialog.split-reader .section-pair {
+  grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:12px;
+ }
+ html[data-ling-fitting] .split-reader .reader-transcript {grid-column:1;grid-row:1}
+ html[data-ling-fitting] .split-reader .reader-visual {grid-column:1;grid-row:2}
+ html[data-ling-fitting] .split-reader .reader-controls {gap:6px;padding:10px}
+ html[data-ling-fitting] .split-reader .reader-controls .transcript-version,
+ html[data-ling-fitting] .split-reader .reader-controls .fit-select-field {flex:1 1 100%;max-inline-size:100%}
+ html[data-ling-fitting] .split-reader .reader-tools {max-block-size:22dvh;overflow:auto;overscroll-behavior:contain;padding:2px}
+ html[data-ling-fitting] .split-reader .reader-stage {padding-block-start:12px}
+ html[data-ling-fitting] :is(#content,#readerDialog) .split-reader :is(.reader-transcript,.reader-visual),
+ html[data-ling-fitting] #readerDialog.split-reader :is(.reader-transcript,.reader-visual) {padding:16px;border-radius:12px}
+}
+@media print{
+ html[data-ling-fitting] #content .inline-reader.split-reader {block-size:auto}
+ html[data-ling-fitting] .split-reader .reader-shell,
+ html[data-ling-fitting] .split-reader .reader-stage,
+ html[data-ling-fitting] .split-reader .reader-stage>.section-body {display:block;block-size:auto}
+ html[data-ling-fitting] :is(#content,#readerDialog) .split-reader .section-pair {display:block;block-size:auto}
+ html[data-ling-fitting] :is(#content,#readerDialog) .split-reader :is(.reader-transcript,.reader-visual) {block-size:auto;overflow:visible}
+}

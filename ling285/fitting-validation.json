@@ -4,9 +4,9 @@
   "fixes": [
     "Natural-height source galleries keep every slide and caption in document flow.",
     "Card and reader bodies own consistent inner spacing; nested pairs do not cancel it.",
-    "Text and media reflow according to the available reading width while preserving normal type size and source proportions.",
+    "Desktop workspace pairs retain text on the left and source visuals on the right; the broad 1450px stacking rule has been removed.",
     "Playback controls occupy a separate row below each video instead of covering its content.",
-    "Existing notes, read marks and source controls use a full-width footer.",
+    "Workspace cards retain their full-width study footers; readers keep notes and read controls in their independently scrollable transcript panel.",
     "Long code, tables and selected option descriptions fit without hiding their contents."
   ],
   "validation": {
@@ -26,5 +26,20 @@
       "Saved notes and reader controls",
       "Current 100-question test, eight lecture quizzes, writing drafts and backup workflow"
     ]
+  },
+  "readerPanels": {
+    "appliesTo": [
+      "Original studio",
+      "Modern studio",
+      "Both modules",
+      "All 17 numbered collections",
+      "Inline readers",
+      "Expanded readers from every workspace section"
+    ],
+    "referenceStructure": "PSYC301 controls plus transcript and visual cards, with the corresponding LING406 reader structure inspected.",
+    "desktop": "Two equal columns with transcript left and original slide/video right.",
+    "scrolling": "Separate overflow and scroll containment, including real wheel checks at both boundaries.",
+    "mobile": "PSYC/LING406-style narrow-screen adaptation with individually scrollable panels; no source cropping.",
+    "controls": "Previous/selected page/next remain above both panels; source-page positions survive expansion and return."
   }
 }

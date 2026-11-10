@@ -105,11 +105,8 @@ html[data-ling-fitting] #imageDialog>img {place-self:center;inline-size:auto;blo
 html[data-ling-fitting] body.follow-slides #content .source-section {overflow:visible}
 html[data-ling-fitting] body.follow-slides #content .section-pair>.source-figure {position:static;max-block-size:none;overflow:visible}
 html[data-ling-fitting] body.follow-slides #content .section-pair>.source-figure[data-fit-follow] {position:sticky;inset-block-start:16px}
-@container ling-reading (max-width:1450px){
- html[data-ling-fitting] #content :is(.aid-split,.modern-qa-pair,.section-pair) {grid-template-columns:minmax(0,1fr)}
-}
-@media(max-width:1600px){
- html[data-ling-fitting] #readerDialog :is(.aid-split,.modern-qa-pair,.section-pair) {grid-template-columns:minmax(0,1fr)}
+@media(max-width:760px){
+ html[data-ling-fitting] :is(#content,#readerDialog) :is(.aid-split,.modern-qa-pair,.section-pair) {grid-template-columns:minmax(0,1fr)}
 }
 @media(max-width:700px){
  html[data-ling-fitting] .fit-player-controls {gap:9px;padding:10px}

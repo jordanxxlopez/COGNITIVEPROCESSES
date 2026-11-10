@@ -1,0 +1,1201 @@
+{
+  "originalSource": {
+    "file": "transcripts-v22.json",
+    "sha256": "8f6e6d67bb1b757be51a493981e3c4d4e6facb0762809774b9b723bb099c942d",
+    "selector": "v23",
+    "label": "Version 23 · Iskarous C with following slides"
+  },
+  "preservedModernEditions": [
+    "professor",
+    "b",
+    "c",
+    "follow",
+    "v20"
+  ],
+  "pagesPerEdition": 286,
+  "baseTextRemoved": 0,
+  "baseTextRewritten": 0,
+  "addedPassages": 57,
+  "pagesWithAdditions": 51,
+  "preservedWithoutAdditions": [
+    "lecture01",
+    "lecture02",
+    "lecture03",
+    "lecture04",
+    "lecture05-06",
+    "lecture07",
+    "lecture08",
+    "lecture09",
+    "lecture10"
+  ],
+  "evidence": {
+    "source": {
+      "title": "LING285-11-17 transcript (includes Nov 5 / Lecture 18)",
+      "url": "https://docs.google.com/document/d/1Sn0smbBkTzC9E6e2dOHQA5PYTUHFi3kCacjJ8ZegEEE/edit",
+      "sha256": "5f89ff905e718e5f95d70ab3d4082dfa2f972ba6d702d0bb362455d37f89c658",
+      "lineCount": 5655,
+      "coverage": "Oct 6–Nov 5, 2026; no Module I verbal transcript in this source."
+    },
+    "method": "New passages are authored explanations grounded in the retained original slide teaching and these verbal excerpts, rather than verbatim quotations. A repeated source diagram can use its fuller explanation from another meeting. Original C is retained throughout D without condensation. No new passages are presented as confirmed exam questions. Each placement also identifies the original source slide. Explanations of the preserved visual demonstrations are grounded in that slide as well as the accompanying verbal context.",
+    "excerpts": {
+      "accuracy-limit": [
+        {
+          "startLine": 4190,
+          "endLine": 4208,
+          "quote": "So, very often when we learn, each of our households have different vocabulary, different voices, the language we get from our caretakers is actually quite different.\nBut at, let's say, 4 years old, They speak the same language.\nSo, each… ones… Language… Input is randomly different from each other's\nThere are things about the language that are really fundamentally the same.\nSo we end up all leveling to the same learning, even though we start off with random information.\nQuestrian?\nBut you, with Bryce help your hand.\nOkay.\nSo this gives you an idea of… again, you don't… I'm not going to give you this… this was just for the plotting of all the…\nFancy things and so on, so… So… This…\nIt's a really nice picture of showing you\nseveral things. Number one, why do you think we level off at 40%?\nAnd keep this in mind.\nWhy do you think we love Belafet?\n40%.\nThis is the actual data.\nSo 40% is not 100%, 40% is pretty low.\nIt's not chance.\nBut it's still pretty low. Why is it not excellent? It's a neural network, it's AI."
+        },
+        {
+          "startLine": 4217,
+          "endLine": 4236,
+          "quote": "Or if I were to point here.\nYou would have to really think quite a bit before\nYou say, oh, it's probably one of the green ones.\nMike? Yeah, is it just that there's too much information, like, inputs there for the discernment? No, it's because the points are very overlapped with each other.\nRight. You see? Yeah. Yeah, yeah. So it's… I'm just restating what you're saying, exactly. Like, if you look here, whether there are red points, green points…\nlight blue, there are basically… all of them are here. But if you really look very, very hard.\nWhat's the likelihood that this is E, the red ones?\nThere are, you know, there's a… there are a bunch of red ones here, but is this likely… if I give you one of… instead of this white here, if I were to… someone comes in, and I say, you know, come up, and I record their performance, and imagine their formances are here.\nin this white spot. Is it likely that it's one of the red ones?\nNot really. There are red ones nearby, but most of the red ones are up there.\nDo y'all see the point?\nOr, if I were to get a point, let's say, here.\nOkay, I bring in someone, I report their F1 and F2, and it's here.\nIs it likely to be one of the red ones?\nThere are hardly any red ones.\nI'd say it's either one of the pink ones, or one of the green ones.\nSo, the decision-making is very, very hard for humans, So it's not so surprising.\nthat it's the same for machines…"
+        }
+      ],
+      "agent-roles": [
+        {
+          "startLine": 5162,
+          "endLine": 5176,
+          "quote": "the LLM that you're communicating with is instructed\nConstruct an outline for what the answer should look like.\nIt's an LLM. Looks exactly like this.\nWith potentially hundreds of layers, And its job is to just produce an outline. That's not what you see.\nIt produces for itself an outline of what the answer should be like.\nIn the same way that when you took creative writing, your teachers told you, construct an outline before you write.\nYou're going to produce a much better essay.\nthan if you were to just write from the first word to the last word. When you do that, you only write 10,000 times, because you keep changing your mind. Whereas if you come up with an outline, it fixes what you're going to do in the future, so it becomes a much more filling-in procedure. So you put in a lot of time in constructing the outline.\nAt which you start to… the work that you're doing is filling in the details once you've figured out the full structure.\nYep.\nSo, that first LLM constructs an outline.\nsends it to the second LLM, and says, Bright…\na response to the prompt using the outline that I produced. So, it talks to it in English, so the agents, which are just LLMs, speak to each other in English.\nAnd… It tells it, now ride it out. Just like, you know.\nYou could be given an assignment to write an essay, and you tell yourself, not another… not someone else, hopefully."
+        },
+        {
+          "startLine": 5180,
+          "endLine": 5187,
+          "quote": "So, that second LLM writes out the whole… response…\nby predicting the next word, and from it the next word, and from it the next word, etc, until a whole response is… but that's not what it gives you.\nUntil maybe 3 years ago, that's what it would give you, and then it didn't make much sense, and then there were lots of hallucinations, and things like that, and…\nBecause then it goes to a critic LLM, whose instruction is, take this essay, and\nfigure out if every statement follows from the previous statement. This is like when we tell you, you have to proofread what you write.\nSo we've built that into the communication amongst these LLMs.\nSo, there's a Gritic LLM, That goes through a loop, with a revision LLM, Where a loop is…\nyou know, write a new version, and then there's a… the critic goes again. Write another version, and the critic goes again. So every chat instance, you're actually talking to a team of multiple, yeah, multiple agents? Absolutely. And sometimes you can see in very fast…"
+        }
+      ],
+      "air-boundaries": [
+        {
+          "startLine": 1406,
+          "endLine": 1415,
+          "quote": "Which is the air inside of your vocal tract.\nThe air inside of the vocal tract.\nis fixed, at the bottom.\nIt cannot vibrate because it's so far below everything else that's that's exposed to the air out here. But the air out here can go in and out quite easily.\nBut the air down there is very fixed.\nAnd so this is, like, the bottom of the vocal tract, and this is the top of the vocal tract. At the bottom of the vocal tract, there is no movement.\nBecause you have vocal folds, and the vocal folds are closed.\nand the air can't rush by them. It's stuck there.\nBut unlike buildings, The air in your vocal tract vibrates in all of these ways.\nAnd you will see how, by speaking, we are changing the masses and springs of the different parts, and that's how you know what vowel I'm making, what consonant I'm making, what words I'm saying."
+        },
+        {
+          "startLine": 1786,
+          "endLine": 1795,
+          "quote": "This F right? Do you see how the air is just\ngoing back. Let's trace these 2 lines. You see how they're just going back and forth.\nBecause they can, because the air is… your lips are open, so the air can go back and forth.\nDo you see it?\nWhereas here, The air can't move because there is the the vocal folds are closed.\nSo that's the fixed end.\nAnd this is the free end.\nfixed because of the vocal folds are closed. So air doesn't have freedom to vibrate.\nand open… here, because the air can go back and forth.\nIt may be hard to imagine that air ever goes back in after it goes out, but it does."
+        }
+      ],
+      "air-nodes": [
+        {
+          "startLine": 1843,
+          "endLine": 1850,
+          "quote": "So, when we're discussing buildings…\nThe third mode is where you have So…\nJust one end is fixed, the other end is moving. Here we have…\n2 fixed points, as Andre pointed out. You see, there is a fixed point here.\nAnd there's a fixed point here.\nHere we have 3 of them.\nNo motion, no motion, no motion.\nAnd you see the same… so, use your mind's eye, you're doing, you know, the thing that I'm claiming is very good for you to do."
+        },
+        {
+          "startLine": 1883,
+          "endLine": 1890,
+          "quote": "Okay. And what you're supposed to notice is the fact that where there is just one node here.\nSo, there is only complete lack of motion in this location.\nHere, there is complete lack of motion here, but there is also complete lack of motion around here.\nDo you see where I have my, Do you see how… More or less.\nOh, sorry, yeah. More or less, like this, this guy doesn't even move back and forth. You see that? Only the slightest, slightest bit.\nYou all see that There is lots of what around it.\nThere is no motion there. Therefore there is lots of Springiness.\nand you can see it."
+        }
+      ],
+      "air-spacing": [
+        {
+          "startLine": 1771,
+          "endLine": 1777,
+          "quote": "Air is stretching and compressing, stretching and compressing, stretching and compressing, stretching.\nThere are locations\nSo can you pick out the the easiest location in which? So when the the these, the lines of particles are coming really close together and really far apart. That's a very good sign that there is lots of springiness of the air.\nWhen the the lines of particles just move and back and forth like this.\nWhat do you think that's evidence of?\nPardon? Mass, exactly. There is no springiness. So what's the easiest location that you can just spot\nIn… in the motion where all… where air is acting as a mass."
+        },
+        {
+          "startLine": 2327,
+          "endLine": 2339,
+          "quote": "So, the air in the vocal tract has many modes of vibration. So, in the first mode of vibration, it's just this part is very springy.\nthen less and less springy, more and more mass-like. And you can tell by the fact that the… kind of the slivers of air come very close together and far apart on this end. Do you all see that?\nWe're on this end.\nThe slivers of air are equidistant from each other and are just mass going back and forth.\nIs that picture clear?\nAnd we have higher and higher modes in which there are… so here, for instance, here we see a lot of springiness, here we see a lot of movement.\nSpringiness, movement.\nSo, this is something you can actually observe. So, tell me where there is lots of spring units as I move.\nSpringer is… Springer does.\nSpringerness.\nNow, in this section, do you see how there is very little\nchange in the distance. This is a slide that maybe here is better. You see how they're just going back and forth, back and forth, but they're not really getting closer to each other.\nAs I move further, you'll get springiness, and then more massive, and then more springiness."
+        }
+      ],
+      "backward-reuse": [
+        {
+          "startLine": 3471,
+          "endLine": 3479,
+          "quote": "Why is it… more difficult. Why do we first change this 0.1?\nthan this…\nSo why do we first change this weight, then this way? And your answer would be something like, well.\nChanging this weight, Changing this weight's influence on the probabilities is a much more involved\nMuch more complex, much more mediated, Set of calculations.\nthat finally changed the probabilities, whereas changing this way\nchanges the probabilities right away. So, changing this way Is a simple, trivial problem.\nWhereas changing this weight, Is a complex, big problem that already includes the effect of this.\nSo, that's the kind of thing that I would expect it to say. So I would give you, like, you know, 4 or 5 sentences, and say this, and that's exactly what it is."
+        },
+        {
+          "startLine": 3493,
+          "endLine": 3502,
+          "quote": "That when you have a problem.\nThat consists of smaller and smaller and smaller and smaller problems.\nFirst, solve the most trivial, easiest problem.\nThat's going to allow you to solve the bigger problem, and the bigger problem, and the bigger problem, until you've solved the most complicated problem.\nAnd here, what we have… The effect of this…\nweight on the final probabilities, on the decision made, is very direct, very easy.\nAnd… Changing these weights is more complicated, because they act… their final…\nContribution depends already on lease rates.\nAnd the same thing, so that these weights depend on these, and these, and these.\nAnd therefore, it's a much bigger problem. So, backpropagation is… combining"
+        }
+      ],
+      "cancellation": [
+        {
+          "startLine": 1525,
+          "endLine": 1540,
+          "quote": "Yeah, they would cancel out each other, it seems.\nIt may seem That, if I increase the mass, I lower the frequency.\nIf I increase the stiffness, I raise the frequency.\nOkay.\nSo it may seem like they cancel each other out.\nSo raising both mass and stiffness would have no audible effect. Do you see what I mean by audible? Because these frequencies we hear in our ears.\nBut that's false.\nDo not think that.\nIt's only true of one single system, the system with a mass, a single mass.\na single mass system. So a single mass system. If I increase the mass, its frequency will drop.\nIf I increase the stiffness.\nthe frequency will go up, and the 2 effects will cancel out.\nBut under what circumstance, based on what we've already learned.\nCould it be that I could increase both mass and stiffness at some location?\nAnd… the the effects would not cancel. What? What's the crucial fact? That's 1 of the principles\nthat I haven't listed yet, That's behind the fact that they won't cancel."
+        },
+        {
+          "startLine": 1560,
+          "endLine": 1572,
+          "quote": "Yeah.\nBecause… There's no movement at this part, so I can increase the mass all day.\nThe frequency never goes down.\nBecause there is no movement. A mass is something that just moves. So if there is no movement, the mass doesn't matter.\nwhereas if I increase the stiffness here, this is exactly where there is compression, compression, stretching, compression, stretching. It's absolutely\nyou know, an area where springiness matters. So if I increase the mass here, and I increase the\nstiffness here, what would happen to the frequency?\nSo, if I increase the mass.\nAnd the stiffness here.\nWould the frequency stay the same, go up, or…\nIt'll increase because mass wise it doesn't matter. There is no movement. So raising the mass has no effect.\nBut raising the stiffness here.\nRaising the stiffness raises the frequency, so the frequency will go up."
+        }
+      ],
+      "chance": [
+        {
+          "startLine": 4148,
+          "endLine": 4165,
+          "quote": "So, at the very beginning, we got 20%… why do you think 20%? What's the significance of 20%?\nThis I can ask you about in the exhibits.\nWhy does it start at 20%?\nRemember, at the beginning, it's stupid.\nIts W's are completely random. Why… why is it not 0% accuracy? So the Y axis is how accurate it is in deciding which vowel…\nUseful.\n05.\nvowel. There are 5 vowels.\nAnd… 20% is 0.2, so if you're just…\nIf we just, you know, if I give you two numbers, and you know nothing, and I ask you what vowels, and you say E,\nWell, 1 out of 5 times, you're gonna be right.\nWe say in statistics and in machine learning, 20% is chance.\nSo the word chance means if you were just guessing randomly, So…\nYou know, two numbers, one vowel.\nthere's a 20% chance that this is correct, because there are 5 outs. So if you're just guessing randomly, by chance.\nYou have a 20% chance of getting it right. It's just one of five possibilities.\nSo, even if you know nothing.\nYou would get… you would have a 5% cha… Sorry, 20% chance of being right."
+        }
+      ],
+      "context-window": [
+        {
+          "startLine": 4525,
+          "endLine": 4539,
+          "quote": "Both… so you see here, we give this system a vector, which is a bunch of numbers, and it produces a single number, one number out.\na neural network also takes a bunch of numbers, but it produces a whole decision vector out. Are you all following this difference?\nBut now look at the large language model of today.\nit takes a whole bunch of vectors. So here, I show you 15 vectors. What do you think the 15 vectors could be related to in the discussions we've been having?\nWhat do you think every vector could represent if\nMichael Jordan was indeed right, and…\ncognition is the way it is. So what do you think\nBy the way, 15 in reality today are a million. So these 15 vectors, we usually call the context window.\nAnd it can have a million. That's why we need all the data forms, etc.\nBecause we're processing not a single vector, but…\nhundreds of thousands, if not millions, nowadays, but I'm only showing you 15. So what do you think are these 15 things, which, again, could be\nThousands and thousands.\nSo… They're representing Something that happens at this moment in time.\nthis vector is something that happens the next moment in time, etc. So, for instance.\nThey're words. So this could be a word of your language, this is another word, this is another word, so there could be 15 words."
+        },
+        {
+          "startLine": 4576,
+          "endLine": 4583,
+          "quote": "X vectors, because we call these axes.\nHow big is each of these vectors?\nWhat… what does it say? It's probably going to say, I don't really know, because it's proprietary, but most likely it's about how much? How many?\nVery easy.\nYeah, a million tokens of content. Okay, so the… that answer is about, as I was just saying, about how many vectors, and now ask it, how big is each of these vectors?\nAnthony.\n4,000 to 16,000-ish.\n12,000, most likely."
+        }
+      ],
+      "dynamic-depth": [
+        {
+          "startLine": 5363,
+          "endLine": 5374,
+          "quote": "So, a dynamical system, think of it roughly, think back to the day that I gave you a dynamical system for X and V,\nRemember? And then I told you X is 1, V is 0. What's going to happen next? You plugged in the numbers in the dynamical system, which is kind of a rule, and then you figured out, oh, X will stay the same, but V will go down.\nOkay? Then use the rule again to keep modifying each of X and V, and that whole thing generated a\nSo, we gave the system…\nSome data, it applied a rule to the data, it produced other numbers, we put the other numbers back in, and that's what a dynamical system is doing.\nIt's a loop.\nThe same kind of thing that's in agents, by the way. Okay.\nAnd…\nWe learned it this way. If we know the rule, then we can keep combining the X and the V to predict the future.\nYep.\nThat's what a dynamical system is. There is some initial data you have, there is some rule, you put the data in the rule, you can predict the next.\nthing, you plug it back in, and you keep predicting the future. That's what a dynamical system is. By the way."
+        },
+        {
+          "startLine": 5386,
+          "endLine": 5407,
+          "quote": "what I… what I told you on Tuesday is that people realize that a neural network itself\nwasn't sufficient to do things like cognition. And I told you how Michael Jordan Realize that\nYou need something much more like a dynamical system, so he created a neural network.\nwhich output is fed back to the input. Do you see that same structure that we have in a\nin a dynamical system. So you take the inputs.\nYou do some inner products, you come up with the output, and then you feed this… the,\nthe inputs back… the outputs back to the inputs. So do you see how this recurrent neural network\ncomes from… Combining the idea of a neural network\nWith the idea of a rule that feeds back on itself, which is a dynamical system.\nAnd then, it took 30-plus years, so this was from… 1985,\nAnd it took a good 30 years until 2017, For people to realize that\nYou have to kind of unfurl this dynamical system in the same way that we unfurled when we were doing the spring. And remember, we did a whole program to predict the next state of the spring from the previous state, and remember explicit Euler, and I showed you those little movie.\nabout Catherine Johnson. In that same way, the LLM.\nis… An unfurling of this recurrent neural network.\nAnd that's… At the very center of today's technology is science, art, center.\nOkay. So, we haven't left the topic.\nOf dynamical systems, because large language models are them…"
+        }
+      ],
+      "equilibrium": [
+        {
+          "startLine": 9,
+          "endLine": 14,
+          "quote": "And you know, we have a mass hooked up to a spring. And remember the functioning of this kind of system.\nThe spring likes to be in its equilibrium position.\nBut a mass is the kind of thing that if you pull it or push it, it wants to go. Sorry if if it's moving the mass, if it's moving, it keeps on moving.\nOkay? So if we were to pull the system out.\nquite a bit.\nIt's going to want to start to go back. But since the mass is moving, it keeps on moving until the the spring is squished, and it just vibrates forever and ever."
+        },
+        {
+          "startLine": 25,
+          "endLine": 29,
+          "quote": "And they're… so those two systems move in exactly the same way, because if I pull up the mass, the springs are extended, strings hate being extended, so they make the mass go down.\nBut once the mass is moving, it keeps on moving.\nstretching the the the springs You see? Stretch.\nGo back up, stretch, stretch, stretch, stretch.\nAnd when it's level, there is no stretching, but the mass is moving, so it keeps on moving. So is it easy for you to understand both of them? Okay."
+        }
+      ],
+      "formant-count": [
+        {
+          "startLine": 1987,
+          "endLine": 1995,
+          "quote": "And notice how, again, the, F. 2. The second one is much higher than f. 1.\nBecause… We have more of these.\nYou know, if we have one quarter of a wave, No motion.\nSo lots of motion. Here we have no motion, lots of motion, lots of motion, no motion.\nNo motion, lots of motion, 3 of them. So this one, if this one is 500, this one is 1,500.\nAnd you see how the masses out there are moving very freely.\nOkay.\nNow…\nstay with me. The fact that we're just going to concentrate on F1 and F2, the first format and the second format."
+        }
+      ],
+      "formant-example": [
+        {
+          "startLine": 1875,
+          "endLine": 1882,
+          "quote": "Yeah, let's redo this. So, so, let's do it with 100. I've just confused myself. So, if this one is 200,\nThis one will be 3 times that.\nSo how much is that?\n600.\nAnd how much is this third one?\nSo, 3 times… Sorry, 5 times 200, 1,000.\nSo, this one, if this one is 200,\nThis one will be 3 times that, which is 600. This one will be 5 times that, which is 1,000."
+        },
+        {
+          "startLine": 1901,
+          "endLine": 1904,
+          "quote": "So yeah, I should figure out that it was 200.\nOh, I just made that up. Yeah.\nSo that has to do literally with how heavy is the air, and how springy is the air.\nAnd that's not the actual number that we want. As a matter of fact, you've just set up the pop quiz"
+        }
+      ],
+      "heads": [
+        {
+          "startLine": 5291,
+          "endLine": 5302,
+          "quote": "That… so, besides the layers, we have something called heads.\nIt's a question on the exam, so pay attention.\nSo what are these heads? So, to understand this in terms of improvement, which is the job of the layers.\nHere's what a head is like. So, again, the whole job is to improve\nthese tuerto representations, such that at the very end, we can make a prediction of the next one. So imagine… so here is an example of what a head is. Imagine\nI have, like, 5 classes, one after the other, okay?\nand I want to do some kind of self-improvement. So I can come into this class, and I would ask each person.\nAthena, how can I improve myself? Mike, how can I improve myself?\nEliza, how can I include myself? Gustavo Hager. And I can take everybody's opinion. In this case, everybody is not ahead.\nAhead is an expert in how to improve\na numerical representation. So I can take all of the information from all of these heads and combine them with each other to figure out\nLate 285, once I've consulted all the experts, tells me that's how I should improve."
+        },
+        {
+          "startLine": 5340,
+          "endLine": 5355,
+          "quote": "Okay, so that's… so you've learned now the basic structure of an LLM. It consists of layers.\nAnd in the most modern systems, there are 100-plus layers.\nAnd each layer is made of many independent heads, each of which is an expert. And by the way, what's an expert? It has knowledge? And what is knowledge? It's a W. So each of these little things is a W,\nthat's trained independently in this layer.\nTo learn how to improve the,\nthe representations. And you may ask, how does it know to do that? Well.\nyou know, we can pick up a newspaper, and in the newspaper, there may be a story that says, the dog that blah blah blah blah blah blah blah barks. And we take that sentence, and we tell it, we predict the next word, and it says maybe the next word is, you know.\nVery. That's the wrong word. So we tell it, no, change all of your values, all of your experts, and all of your layers.\nSo that the next… if I give you this sequence of words again, your prediction is closer to marks.\npatents.\nthese systems absorbing a lot of the water in many states. So there are states where something like 20-30%\nOf the water is…\nabsorbed by doing backpropagation for all of these others. So please think and help society improve this problem.\nSo… So that's the basic structure.\nof an LLM. It has layers, and it has heads. Each head is a bunch of W's.\nAnd… Their job is to make improvements, and make improvements such that Prediction of the next word."
+        }
+      ],
+      "heads-width-depth": [
+        {
+          "startLine": 5314,
+          "endLine": 5317,
+          "quote": "Then I go to my other class.\nAnd the other class, I ask everybody, how should I improve? And each person gives me an opinion, I combine all the opinions, and then I generate another layer of\nImproved vectors, all the way to the end. So do you see how there are layers\nfrom the beginning of the LLM to the end, but there's a width also. So, can someone go on and say."
+        },
+        {
+          "startLine": 5330,
+          "endLine": 5339,
+          "quote": "So… so it's as if, yeah, we have hundreds of students who I can come in. So… so again, the analogy is, like, each layer is a class.\nOkay, and I have many classes, and in each class, I have a bunch of\nexperts, and I could come…\nHow should I improve? How should I improve? How I should improve? From each student slash head, I get an opinion, I combine all the opinions.\nAnd I improve each of the vectors.\nDo you now understand what this picture means?\nThen I go to my next class, and I ask, I'm trying to improve, can each of you tell me an opinion of how I should improve?\nSo I'm treating each of you as a head, and I get the opinions, I combine them, and make a better decision for each of the vectors, what it should look like. And all the way at the end.\nHopefully, if the system has been Trained well enough.\nI can predict what the next one is."
+        }
+      ],
+      "inference-learning": [
+        {
+          "startLine": 4895,
+          "endLine": 4897,
+          "quote": "And we won't really discuss this until we go to vibecoding.\nOkay, so what I want to show you, and just to remind you, yes, inference.\nIt's done by inner products, learning is done by SGD and dynamic programming. I hope you see how cool it is that in this very, you know, elementary course, you've already learned lots of little pieces that are part of how this modern technology works."
+        },
+        {
+          "startLine": 5413,
+          "endLine": 5425,
+          "quote": "And what… what is the rule?\nBy which you can take these representations and make better representations.\nThey're Ws. The W's in the heads.\nin each layer.\nHow do we know them?\nThrough backpropagation.\nBy trying to predict The next word, and the very last slide.\nGood.\nSo, this is a, this is,\nI've represented to you what the structure of a large language model is in as much detail as I want to go through.\nYep.\nBecause the goal is not really for you to know every little formula.\nthe goal is for you to understand the general structure and how it's a dynamical system, which is the theme that has gone throughout the whole course. Okay. Now, I want to actually…"
+        }
+      ],
+      "initialization": [
+        {
+          "startLine": 4170,
+          "endLine": 4182,
+          "quote": "And remember, with SGD, You know, every time, the W's are different at the initial time.\nSo, I wanted to show you\n10 different times of running this.\nSo the curves that you see here are…\nI give it the same data, but every time, it starts with different W's. The different W's we call different seeds. You don't need to memorize this word, I won't ask you about it, but a seed means… so the zero C means one set of random numbers.\nGotta seed one. Another different… Bunch of numbers that are the W's.\nSo each of these seeds gives you a different… but they're all kind of similar.\nBecause the learning process is very similar.\nBut do you see, they're different from each other.\nOne of them, for instance, takes a long time, takes 500 epics.\nTo get up from the 20% to the 40%.\nThe red one here, Maybe after the 50, it goes up to 40%.\nThere is one of them that's kind of more gradual, kind of in the middle."
+        }
+      ],
+      "intonation": [
+        {
+          "startLine": 2580,
+          "endLine": 2595,
+          "quote": "and how tough or loose their vocal… their vocal folds are, will have a different F0, which is the…\nThe very first\nspike here, and then there will be repetition. So that's the major property of the harmonics of the vocal folds. They are all the multiples, so 100, 200, 300, 250, 500, 750, 350, 700, 1050.\nAnd each person will have a different one. And here's something that just makes life more complicated.\nOnly if I speak like this, like a robot is a zero fixed.\nSo, we don't talk like this, we actually talk like this, where F0 is actually varying all the time. That's one of the complexities of speech. And I can tell you, the dog slept here versus the dog slept here.\nAnd the only thing I'm changing is changing F0 throughout my errands. I'll show you this.\nJust so that you understand how complicated things get.\nAnd that's what we're driving towards.\nThe dog slept here.\nThe dog slept here.\nSo this is the bit that I wasn't showing you earlier.\nSo, this blue thing is actually F0.\nAnd you see how it's not the same. It just keeps changing and changing in every single vowel, I'm sorry. And at the very end, in this one.\nIt goes down, at the very end of this one, it goes up, and that's how you know how… that I'm making a… that I'm asking a question. I'm sorry, but this is how we speak.\nSo, even F-Zero is trending all the time as well. And you, as a listener, are completely, completely, having learned speech, are perfectly adept."
+        }
+      ],
+      "learning-commands": [
+        {
+          "startLine": 4115,
+          "endLine": 4137,
+          "quote": "these last few lines, all I want you to know about all of these lines, these are the only lines you need in PyTorch to do learning.\nwhat are… what are letters you can identify in these lines? So look through these lines. What do you see that says… oh, I know this.\nSo please read those lines and tell me what shots out.\nThank you.\nBuilder?\nSVD!\nIt's doing SGD. What's another two letters that you actually know in that same line?\nWhat do you think LR means?\nLearning race, exactly.\nIt's SGD from the first week of class.\nThat's how this neural network will learn.\nAnd we're telling it what the learning body is.\nPointing twice.\nHuh?\nAnd it's the same concept, if you make 0.1 greater, you will learn a lot faster, but you will be less accurate. If you make 0.1 lower, you will become more accurate, but you will learn much slower.\nOkay, so the stuff that we learned about in the beginning of the semester applies here as well.\nThe other things aren't as important, but here also, you know what this is loss.\nLoss is the mistake. Calculate the mistakes, and learn from the mistakes.\nAnd do you see this word? What do you think this word means?\nBack propagation.\nHuh?\nSo, this is the real program.\nFor running back propagation for this neural network."
+        }
+      ],
+      "letter-learning": [
+        {
+          "startLine": 5533,
+          "endLine": 5544,
+          "quote": "The goal of the LLM is to… Learn English.\nsyllable… structure.\nPick… A thousand words, Randomly, And… train it.\ntrain the LLM on them. Train the LLM on them is it… it means it takes… take every letter, try to predict the next letter. Improve the W so that it makes a better prediction for the next letter.\nOkay? Everything here should be understandable.\nOn them?\nAnd… After every step of training, Show me 10 words.\nTraining. It doesn't matter if you have spelling mistakes, because it's very intelligent. Show me 10 words that illustrate…\nIt's current… understanding…\nof English. So this is going to take a couple of minutes.\n100 words? Yeah, okay, 1,000 words, good point. 1,000 words, thank you.\nAnd at every step of training, show me 10 words that illustrate its current understanding of English, okay?"
+        }
+      ],
+      "local-mass": [
+        {
+          "startLine": 985,
+          "endLine": 999,
+          "quote": "If I were to raise the mass.\nof mass number 2.\nWould the frequency go up or down, or would it stay the same?\nSo up, down, or the same.\nDown.\nOkay? Because the mass is moving.\nAnd if I make a mess heavier, the whole system will go up and down fewer times.\nWhat would happen to the second mode's frequency of vibration if I increase the mass.\n3… Nothing.\nBecause the mass isn't even moving.\nWhat would happen to the third?\nThe 3rd frequent, the 3rd modes frequency of vibration.\nYeah.\nDecrease. Decrease, exactly.\nOkay? Because it's moving!"
+        }
+      ],
+      "mass-stiffness": [
+        {
+          "startLine": 183,
+          "endLine": 188,
+          "quote": "Mass and stiffness. Mass and stiffness. If we raise the mass, we lower the frequency.\nAnd if we… So,\nSo here we have our mass spring. If we make the mass much heavier, we go back and forth.\nfewer times.\nIf we make the spring much stiffer, we go back and forth really quickly. Remember, this is… this is the kind of thing that if I'm just introducing it to you, it feels like, why is he telling us about this, like, just technical information? This is how you hear.\nThis is how your auditory system works."
+        }
+      ],
+      "motion-compression": [
+        {
+          "startLine": 1165,
+          "endLine": 1177,
+          "quote": "Okay? So, when this system is moving the most…\nMovement is in the middle. Where is the most stretching and compression?\nIt's on the sides. Okay, you see, you can. You see how\nThis mass is pulling up and down on this, these, this\nSpring is just going up and down for the ride.\nAnd this is happening everywhere.\nLots and lots of movement.\nVery little stretching, much more stretching out there.\nSo there is alternation. The areas in which the most movement is occurring have least stretching.\nSo, lots of movement.\nBut do you see how, when there is movement here, there is very little stretching of the string. The string is going just up and down.\nIt's not being stretched.\non the sides. So, for instance, here it's being stretched."
+        },
+        {
+          "startLine": 1221,
+          "endLine": 1230,
+          "quote": "Where there is a maximal movement, there is no stretching.\nand where there is maximal stretching there is no movement. That's the principle we've just learned.\nSo the areas in which you have the most movement, the mass, the springs just go up and down.\nThey're not stretching.\nand where there is the most stretching like against the wall, or\nThe sign of that is there is no movement.\nOkay.\nA,\nA stiffness case increase raises frequency proportional to how much the spring stretches compresses. If there is no stretching compression, there is no effect on frequency.\nIf there is lots of stretching and compression, lots of increase in frequency."
+        }
+      ],
+      "network-io": [
+        {
+          "startLine": 2884,
+          "endLine": 2900,
+          "quote": "And we'll learn the W's. Remember, the W's contain the knowledge in the neural network?\nFor it to make a decision.\nabout what vowel is being heard. So the neural network will be structured like this.\nSo remember, this is a neural network, an artificial neural network.\nIt's going to have two inputs, one input.\nwill be F1, the other input will be F2.\nSo this… this is how we're now combining all the speech stuff we've done with the AI stuff we've done. So F1 is the… the first formant, the frequency of vibration of the first mode of vibration of air that we're measuring in spectrograms.\nAnd F2?\nOkay, so that's an indication of what vowel is being spoken.\nThen there are lots of weights, then we have another layer.\nSo remember what a deep neural network is like. So it receives information, numbers.\nit does inner products, remember, W's times inputs, we'll do this in a second, and then it makes a representation or activations here.\nthen these go through these W's, then we make another representation. That's just, like, information arriving at your ear, and then it's processed in, like, some part of your brain, like the thalamus, and then it's another part of your brain, like the basal ganglia.\nYou don't need to memorize any of this. And then another part of your brain, like the… your auditory cortex.\nThen, your brain decides, what did I just hear?\nAnd remember, the output is going to…"
+        },
+        {
+          "startLine": 2950,
+          "endLine": 2960,
+          "quote": "I'm just sort of looking at it.\n16 hours a month.\nThank you for the wonderful podcasting.\nIt's worth, please.\nThis is an impact.\nOkay, hi, everyone.\nSo, we're going to now just continue our discussion of, Of, neural networks.\nSo, we're going to be,\nTaking what we've learned about speech.\nand using it to start to understand artificial intelligence. Soon, you're going to be realizing that\nthe… the kinds of neural networks that are built from the neural networks that you'll be learning about today. So, the neural networks you're learning about today are neural networks that from about 15 or 20 years ago."
+        }
+      ],
+      "next-target": [
+        {
+          "startLine": 4724,
+          "endLine": 4733,
+          "quote": "And now the question comes… becomes, how do you… how does the system… how does an LLM learn the Ws?\nWell…\nI take a sentence from the newspaper. The cat sat on the… I know that the next word is mat.\nOkay, so I give it, as its vector, the cat sat on the.\nOkay? Just four words. And I ask it to predict the next word.\nWell, if it's stupid, because its W's are random at the beginning, which is what always happens with AI,\nIt'll just do all of these things, and it'll predict the cat sat on in.\nSo it'll predict maybe IN, but there is no such sentence in English.\nThere is no… the cat.\nsat on the in, because the cannot be followed by N. So, this is why we need the data centers."
+        }
+      ],
+      "odd-multiples": [
+        {
+          "startLine": 1422,
+          "endLine": 1427,
+          "quote": "I like they increased by 200 instead of one.\nThey're increasing by 2. Wait a minute. 100, 300,\nDid I get the numbers right?\nYes, yeah, they're they're increasing by different numbers. So 100 300. Remember, we had 100, 200, 300, 400. Now we're jumping.\n100, 300, 500,\nWhy? Why is this the case? Look at this mode of vibration. It's fixed on one side, and it has a peak on the other. Do you see what I mean?"
+        },
+        {
+          "startLine": 1443,
+          "endLine": 1450,
+          "quote": "And here Nothing. Lots of motion.\nSo, how many… Of these, can we fit into here?\n3.\nAnd therefore, if this is 100, this is 300.\nHow many can we fit into here?\nI'm an expert, so I can see them right away. One.\n2… 3. Oh, maybe I'm not such an expert. Let's do it again.\none."
+        }
+      ],
+      "ordered-patches": [
+        {
+          "startLine": 4959,
+          "endLine": 4972,
+          "quote": "There are pictures.\nSo, you see, this is a picture.\nWhat if we cut up every picture on the web.\ninto little pieces. So this is 1… 1, 2, 3, 4, 5, 6, 7, 8, etc. And then we take the first piece.\nAnd we assign it a vector.\nAnd the second piece…\nAnd we assign it to vector, so we call these patches of images. See, this has nothing to do with language.\nBut…\nBecause you're dealing with vectors, which are just lists of numbers, the list of numbers could represent a word, the list of numbers could represent frequencies and stuff like that, or the bunch of numbers could represent pixels.\nAnd these systems are supposed to predict what's missing here, like the stem of a tree.\nAnd these became… Basically, ImageNet and Google ImageNet, which became The best classifier of images.\nAnd computer vision started this way.\nBy using the same exact technology that's modeling human language.\nBut to do this different problem, by treating every patch of…"
+        }
+      ],
+      "overlap": [
+        {
+          "startLine": 3849,
+          "endLine": 3859,
+          "quote": "the E's are different from the S, but do you see how much overlap there is?\nDo you see how many of the pink ones overlap with the red ones? Many of the pink ones overlap with the green ones, etc. This is the real data from your speech.\nAnd this is real life.\nDo you see how hard… AI is?\nIn this extremely simple.\nexperiment that we ran in your lab, where we collected F1 and F2 from each person.\nthere is so much overlap. So, this is difficult, because how can a system decide\nImagine I give it a new F1 and F2 up here.\nOkay? So that's like someone who's not in the class, and I bring them in, and I record their F1 and F2, and imagine it's here. What do you think…\nIt should think that the vowel is\nIs it very likely to be… The… the green ones."
+        },
+        {
+          "startLine": 4201,
+          "endLine": 4236,
+          "quote": "several things. Number one, why do you think we level off at 40%?\nAnd keep this in mind.\nWhy do you think we love Belafet?\n40%.\nThis is the actual data.\nSo 40% is not 100%, 40% is pretty low.\nIt's not chance.\nBut it's still pretty low. Why is it not excellent? It's a neural network, it's AI.\nshould be superior. Why is it not so superior?\nI'm not tricking you, it's an easy answer.\nBecause it's so hard to figure out what each point…\nWhich category each point is in.\nDo you all see that? It's a very hard problem, and AI is not magic.\nIf the problem is really hard for you, if I point here, and I were to say, if I have a point here.\nWhat is it? You would have to squint and look quite a bit, and then maybe at the end you would say.\nThe blue ones.\nOr if I were to point here.\nYou would have to really think quite a bit before\nYou say, oh, it's probably one of the green ones.\nMike? Yeah, is it just that there's too much information, like, inputs there for the discernment? No, it's because the points are very overlapped with each other.\nRight. You see? Yeah. Yeah, yeah. So it's… I'm just restating what you're saying, exactly. Like, if you look here, whether there are red points, green points…\nlight blue, there are basically… all of them are here. But if you really look very, very hard.\nWhat's the likelihood that this is E, the red ones?\nThere are, you know, there's a… there are a bunch of…"
+        }
+      ],
+      "perturbation": [
+        {
+          "startLine": 1518,
+          "endLine": 1527,
+          "quote": "Somehow, I have increased the mass and the stiffness of a system.\nWhat does that mean to the\nfrequency. If I increase both of them.\nIf this is the only principle we have.\nWhat would it mean?\nfor us. Yeah, Fatumata.\nOh.\nYeah, they would cancel out each other, it seems.\nIt may seem That, if I increase the mass, I lower the frequency.\nIf I increase the stiffness, I raise the frequency."
+        },
+        {
+          "startLine": 1553,
+          "endLine": 1572,
+          "quote": "Yeah. So you're all describing This fact… that… Let's take… This little piece here\nOkay? And imagine that I increase the mass here.\nand increase the\nthe stiffness. So imagine that I take this little piece of the string, and I make it heavier and stiffer.\nWould the effects of raising both stiffness and mass cancel out?\nYeah, why not?\nWhy wouldn't it cancel out?\nYeah.\nBecause… There's no movement at this part, so I can increase the mass all day.\nThe frequency never goes down.\nBecause there is no movement. A mass is something that just moves. So if there is no movement, the mass doesn't matter.\nwhereas if I increase the stiffness here, this is exactly where there is compression, compression, stretching, compression, stretching. It's absolutely\nyou know, an area where springiness matters. So if I increase the mass here, and I increase the\nstiffness here, what would happen to the frequency?\nSo, if I increase the mass.\nAnd the stiffness here.\nWould the frequency stay the same, go up, or…\nIt'll increase because mass wise it doesn't matter. There is no movement. So raising the mass has no effect.\nBut raising the stiffness here.\nRaising the stiffness raises the frequency, so the frequency will go up."
+        }
+      ],
+      "probabilities": [
+        {
+          "startLine": 2987,
+          "endLine": 2994,
+          "quote": "Not pretend as if, now, these are inputs to further processing of the same type by the weights here. So we do more inner products and get the numbers here, and then here, and then here, and now, finally, these final numbers have to be normalized to becoming a probability distribution.\nAnd remember, a probability distribution is a bunch of numbers that add up to 1,\nthat are the decision of the neural network. So, for instance, if this number is 0.1, it means I'm… there's 10% chance\nThat the input formants were for the vowel in… the vowel in done.\nOkay? And let's say, you know, this is…\n10% chance, 10% chance. So, so far it's 30, then imagine this is a 60% chance.\nHuh?\nAnd that would mean I am 60% sure that the vowel that you gave me is A, as in, Don."
+        },
+        {
+          "startLine": 3460,
+          "endLine": 3464,
+          "quote": "So, absolutely yes. So, all this will depend… I'm not actually giving you the calculation for how you compute the probability. All you need to know about probability is that the number should add up to 1.\nAnd what the probabilities mean, in the sense that You know, their decision.\nAnd we know what the decision should be like, and this gives us an error.\nAnd then somehow, we need to back-propagate the information about the error to improve the W's.\nBut the closer the W is to the error, the fewer computations we need to make."
+        }
+      ],
+      "processing-layers": [
+        {
+          "startLine": 4095,
+          "endLine": 4107,
+          "quote": "Then each of the following lines\nIs about one of the processing layers.\nProcessing means a layer has weights.\nand it does the inner product between the weights and the incoming information. So what's the first layer that does any processing? Does this layer do any processing?\nThis layer does not do any processing, it's just receiving information. You see, I tell it 320, 2000.\nSo, this… So, if you count the layers, 1, 2, 3, 4, pi.\nThere are 5 letters, but how many lines are there? 4 lines.\nThat's because the lines here are only for the processing layers.\nOkay? So, this is the first processing layer.\nAnd what 2-3 says, I receive information from two neurons, and I provide and I have 3 neurons.\nAnd do you see how all the next ones make sense?\nI take information from 3 neurons, and I have 2 neurons.\nI take information from 2 neurons, and I have 4 neurons. I take information from 4 neurons, and I have 5 neurons."
+        }
+      ],
+      "quarter-waves": [
+        {
+          "startLine": 1427,
+          "endLine": 1445,
+          "quote": "Why? Why is this the case? Look at this mode of vibration. It's fixed on one side, and it has a peak on the other. Do you see what I mean?\nHow many of those oscillations How many of this shape?\nIs there here?\nHmm.\nDo you see what I mean? So here you just have nothing happening, and then more and more stuff happening.\nHow many of these shapes can you fit into here?\nSo let me try and draw that.\nfor you.\nSo, nothing… And lots of motion.\nNothing.\nAnd lots of motion. Do you see how this is like a miniature? This is a miniature of this.\nDo you all see what I'm talking about?\nAnd now, here's another one.\nNothing.\nLots of motion.\nIs that cool?\nAnd here Nothing. Lots of motion.\nSo, how many… Of these, can we fit into here?\n3."
+        }
+      ],
+      "recurrent-feedback": [
+        {
+          "startLine": 4444,
+          "endLine": 4458,
+          "quote": "that actually… so it's called recurrent, because it takes the output and sends it back to some aspect of the input. We don't need to learn how recurrent neural networks work.\nExcept to know that even though Michael Jordan was one of the people that contributed to the parallel distributed processing books that I just showed you on the last slide, and therefore\nNeural networks, he also realized that can be enough.\nCognition in general, and very particularly the problem of speech production, requires you to understand a whole unfolding of cognitive events in time.\nAnd that must be a hugely important part of\nAI, which wasn't part of the original neural network. So he invented this thing called the recurrent neural network, and then people have fiddled\nWith the recurrent neural network.\nfrom 1985 all the way to 2017, when we got something called the Large Language Model.\nWhich is, as you'll see, is just…\nAn Agentic system is a bunch of large language models.\nSo, so this… so what… when it goes back to the recurrent, is it the part where it's, like, measuring error and loss? Is that what's happening there? Actually, partly, yes, but even more importantly, this is a neural network that kind of…\nIt produces something, At one moment of time.\nAnd then uses that to make a decision about the next moment in time, what the next upcoming\npiece of information. It was like.\nAnd then it uses tha…"
+        }
+      ],
+      "sequential-linear": [
+        {
+          "startLine": 4087,
+          "endLine": 4102,
+          "quote": "Now, these lines are the important ones that I want you to know, but again, I'm not going to ask you to write it from scratch, because that's…\nI don't know this from scratch, or it's, you know, it's a little silly to ask you. But what I can ask you, what does sequential mean?\nThat's a very good question for the exam.\nSo, sequential means Give me a neural network.\nThat has a sequence of layers, which is… which are all the neural networks that you've learned about.\nThey're just a sequence of layers, and you may ask, well, when is a neural network not a sequence of layers?\nA large language model, which we're going to start to talk about next week.\nOkay, so that's what… Sequential means.\nThen each of the following lines\nIs about one of the processing layers.\nProcessing means a layer has weights.\nand it does the inner product between the weights and the incoming information. So what's the first layer that does any processing? Does this layer do any processing?\nThis layer does not do any processing, it's just receiving information. You see, I tell it 320, 2000.\nSo, this… So, if you count the layers, 1, 2, 3, 4, pi.\nThere are 5 letters, but how many lines are there? 4 lines.\nThat's because the lines here are only for the processing layers."
+        },
+        {
+          "startLine": 4110,
+          "endLine": 4115,
+          "quote": "And linear means when you're doing forward propagation, just use inner products.\nDo you see, like, without Margaret Hamilton, I would have written down the formulas for doing inner products and adding, you know, adding and all that stuff.\nlinear… assumes that someone else did that work for me, so I can just say linear.\nAnd it's doing all the… It knows what to go for.\nOkay.\nthese last few lines, all I want you to know about all of these lines, these are the only lines you need in PyTorch to do learning."
+        }
+      ],
+      "sgd-and-dp": [
+        {
+          "startLine": 3502,
+          "endLine": 3512,
+          "quote": "And therefore, it's a much bigger problem. So, backpropagation is… combining\nStochastic gradient descent, which allows us to change the number, Gradually.\nAnd dynamic programming, and dynamic programming is what gives us the back of backpropagation.\nSo we solve… We improve these, then these, then these, then these.\nYep.\nAnd that's… people didn't understand how to do that until the mid-'80s, until 1986. So Jeff Hinton, who figured this out and didn't credit Richard Bellman, unfortunately, won a Nobel Prize for the backpropagation algorithm.\nBecause people realized in 2024, there would be no AI without backpropagation, and that's the Bellman idea.\nYou solve the easiest problem, then the next easiest.\nPut the next harder, and next harder until you've solved the most complex problem.\nAnd here, the complexity is because of how difficult it is to make a decision about whether to raise this or lower. Well, if I raise this, but these go… this one goes up, and this one goes down, and what if this one goes out, and this one goes down, then maybe I should have raised this, not lowered it, etc.\nstop there at a certain point, like, once the"
+        }
+      ],
+      "sigmoid": [
+        {
+          "startLine": 4269,
+          "endLine": 4286,
+          "quote": "So, imagine we have… An inner product of minus 4.\nthere is a function called the sigmoid function, which kind of works like Lord Adrian's idea.\nSo this… this is a function.\nyou feed it the number, and then you read out the number at the output. So if you give it minus 4, what do I read?\nWhat am I pointing to here? What's the y-axis?\nAbout zero.\nYup, see?\nIf it's… but you get… if it's minus 6, it's also about 0. If it's minus 1,000, it's also about 0.\nSo the sigmoid is just this function that goes like this, and then like this, and like this.\nSo, if my activation is 2, I get, like, a 0.8 or 0.9 sigma.\nIf it's 4, I get, like, 1 sigma. If it's 6, or 100, I get 1 sigma.\nDo you see how this function digitizes neural processing.\nSo this function is working like duplicating some chemistry in your brain that makes neurons be digital.\nBy the way, if neurons were in digital.\nyou know, I don't know, fire would be coming out of your head all the time, because if you had, like, activation of a thousand, I don't know, like.\nThere'd be some, like, lightning or something coming out of your head.\nBut actually, the chemistry makes it so that\nYou know, either brain… brain neurons or… Either off, or they're on."
+        }
+      ],
+      "sigmoid-code": [
+        {
+          "startLine": 4288,
+          "endLine": 4291,
+          "quote": "Do you see how we add the sigmoid? So this is the modified program.\nSo, so, you see the linear, 2, 3, and then we say, sigmoided…\nSo, I take 2 runs, and I produce three.\nneurons worth of information, and apply the sigmoid. So NM.sigmoid means apply the sigmoid, which means make it digital."
+        }
+      ],
+      "sigmoid-control": [
+        {
+          "startLine": 4287,
+          "endLine": 4296,
+          "quote": "So one of the things that you'll be, adding to the program is that ability, and you're going to discover, does that make things better or worse? So…\nDo you see how we add the sigmoid? So this is the modified program.\nSo, so, you see the linear, 2, 3, and then we say, sigmoided…\nSo, I take 2 runs, and I produce three.\nneurons worth of information, and apply the sigmoid. So NM.sigmoid means apply the sigmoid, which means make it digital.\nHuh?\nAnd you're going to, to then…\nthat's in the 1920s, that people decided we could do this. But then people thought more and realized that\nIt's… the sigmoid can be changed to other types of functions.\nSo, on Monday, you'll put in different words for functions that look different. So, there is a function called relu, and there are other functions, and you're going to try your hand at, do these functions improve the recognition, or do they make it worse?"
+        }
+      ],
+      "source-filter": [
+        {
+          "startLine": 2203,
+          "endLine": 2213,
+          "quote": "So when we are looking at a spectrum of someone actually speaking, we are seeing both things happening at the same time, because the vocal folds are vibrating and the air in the vocal tract is vibrating.\nSo the vocal folds are vibrating to give you this signal.\nBut here are our formants. You see, this is 500, 1500, 2500, 3500, and they are… you can see them in kind of the shaping of the harmonics.\nSo some harmonics are very low amplitude, and where the formants are, you see high amplitudes.\nSo this is this is the actual\nSound that you're hearing is structured like this.\nThere are the harmonics, but the amplitudes of the harmonics are shaped by where the formants are.\nYeah.\nand for each different kind of vowel, where the formants are in different places, you will find that the harmonics are shaped\nin a different way, because so the the harmonics are still all there.\nBut the formants are in different locations because there are different vowels."
+        },
+        {
+          "startLine": 2614,
+          "endLine": 2621,
+          "quote": "What those formats are for your own speech yesterday in lab, and they'll be, you know, either above or below that, depending on how long your vocal tract is, and in general, how heavy the air is and how stiff it is.\nAll these things are determined by many factors, like how wet your vocal tract is, and many other factors.\nAnd if I make the vowel O based on the reasoning that we've done, F1 will go down, F2 will go down. If you say E, F1 will go down, F2 will go up. If you say A…\nF1 will go up, F2 will go down. But what is the meaning of these formats? The meaning of these formats is what's written… this is the core rule for understanding the interaction\nBetween formats and… So, formats are all about where the constriction is in your vocal tract, Okay?\nAnd a foreman encourages the closest harmonics to be audible.\nSo, if you have harmonics near 500, they will be kind of amplified. And the further you are from 500,\nThe harmonics that are there in your voice will actually not be audible out to where you are."
+        }
+      ],
+      "sparse-harmonics": [
+        {
+          "startLine": 2637,
+          "endLine": 2643,
+          "quote": "But imagine you have… Very, very light.\nVery, very stiff vocal folds.\nThen these are your harmonics.\nAt, let's say, 350, $700, 1050, 1400, etc.\nAnd you see that the foreman at 500 has no harmonics to even excite.\nsurface.\nOkay? Do you see that?"
+        },
+        {
+          "startLine": 2668,
+          "endLine": 2683,
+          "quote": "when you recorded your voice, and your TA really had to help you, With where the formants are.\nBecause… The higher… the tighter your vocal folds are,\nThe… the less of a correspondence between the formants, so there will be formants, you see 500, where there is no energy to be amplified at all.\nAlso, not just opera singers.\nUnless you're used to talking to a very small child at 2 or 3, you have no idea what they're saying.\nUnless you're one of their caretakers, and you're used to how to interpret their speech. It's for the same reason. A very small child, their F… their F0 is 500. Their second harmonic is 1000.\netc.\nAnd the correspondence between formants and harmonics are very, very indirect.\nAnd therefore, if you hear them ski, you can kind of start to tell what they're saying, but it's really, really difficult.\nBecause when you're talking to adults.\nit's more like this, and like this, less like this, or even worse. So, a child will be, like, the foreman's, the harmonics will be, like, here, here, here.\nSo there will be very few of them.\nOkay?\nSo that's the complexity of, correspondence between formants and harmonics. The higher your… your…\nF0 is, the lowest one, the more of a chance that there is\nthat there is miscorrespondence between the… where the formants are and where the harmonics are. Alaiza?"
+        }
+      ],
+      "spectrogram": [
+        {
+          "startLine": 2221,
+          "endLine": 2225,
+          "quote": "this Axis is time.\nSo, blah blah blah blah blah blah blah blah.\nOkay, so the X-axis is the progression of time.\nThe Y-axis is now the frequency.\nSo do you see how this is frequency, like, you know, 100, 200, 300, 400, 500, etc."
+        },
+        {
+          "startLine": 2720,
+          "endLine": 2728,
+          "quote": "So, let's take a little slice of the spectrogram. So, the x-axis is time.\nThe y-axis is frequency.\nSo, low frequency, higher frequency, higher, higher, higher, higher.\nAre we all good?\nAnd how dark…\nthings are, is how much energy or amplitude there is. So when you're looking, and you see\nSomething like this… So, if I click here.\nYou see that horizontally, this is 530Hz.\nAnd there's something pretty stationary here. But over here, the second formant is going up."
+        }
+      ],
+      "spectrum": [
+        {
+          "startLine": 1131,
+          "endLine": 1134,
+          "quote": "like the voice, the the waveforms of the speech that you produce.\nbecause it has many frequencies at the same time. So the amplitude says, how much vibration is there? So this says, there is 100, there is 200, there is 300 up to 500 in this sound.\nSo, the spectrum…\nof a wave tells us how many frequencies it has, and how much amplitude in each of them. So this is the simplest spectrum we can see."
+        }
+      ],
+      "splice": [
+        {
+          "startLine": 2757,
+          "endLine": 2764,
+          "quote": "two syllables. Ma and NA.\nOkay? Ma and NA. And we're going to play a trick, and I'll show you the result of the trick. So, just say Ma and NA.\nMa… Oh, sorry.\nAlright. Ma…\nGood. Thanks.\nOkay, so please pay attention to this. So here is the Ma. I'm gonna get rid of all the stuff before, so I'm gonna…\nEdit, and cut this part.\nAnd I'm going to, take this part and cut it out."
+        },
+        {
+          "startLine": 2780,
+          "endLine": 2802,
+          "quote": "Okay, and I'm going to paste it here, so this is the M.\nOkay, so that's now the M.\nAnd now I'm going to take the A from here.\nAnd I'm going to copy it.\nAnd I'm going to paste it here.\nNo magic. What should I hear?\nMa, right? Because I took the M,\nAnd I took an A, so let's listen to it.\nNone.\nNone.\nNone.\nIs that cool?\nI… no magic. There is no magic.\nLet's listen to them again.\nMa…\nNone.\nNone.\nLet's play both of these.\nNone.\nDo you see that that's surprising?\nIt should sound like Ma, because I took the M from the… from the moth.\nand the R from the NAR,\nAnd I combine them, and it sounds like na, not ma."
+        },
+        {
+          "startLine": 2815,
+          "endLine": 2835,
+          "quote": "And the next portion is A, and that's just A, and that's it. A. A. A. A. Okay.\nBut that's not how speech perception works.\nSpeech perception works by…\nListening to a whole bit of speech, and then making a decision about the whole bit of speech.\nAnd it turns out, the reason that this… this sleight of hand is possible, it turns out that your perception of whether I'm saying mmm or m\nis more due to the vowel than the sound that's coming out of my vocal tract when I make the m or n.\nSo when I take the M portion, And I copied it here.\nAnd when I take the A portion.\nfrom NA, and I put it here, and I play the whole thing, you hear NA. NA, not ma, because your perception of the N is more from the vowel portion than from the nasal portion.\nThis was one of the first really interesting results about speech perception from the 1950s, from someone named Malasau, Andre Malasau, who was a French linguist, and he discovered this, and he was just…\nHe couldn't believe it, and he published this as a study.\nAbout how complex your perception is.\nBecause you're not… as you're listening to sounds, you're not making absolute decision about everything that you're hearing, and…\nthen you hear something different, and then you make a decision, and then you make another decision. That's not the way it works. You're actually listening to whole bits, and you're processing them.\nAnd then you make a decision …"
+        }
+      ],
+      "target-error": [
+        {
+          "startLine": 3254,
+          "endLine": 3273,
+          "quote": "The only way they become smarter is by us telling them No, no, no, no, no.\nThis was an up.\nThis was E.\nBecause remember how we tell them that? We tell them.\nYou know what? There is 0% chance that you heard, there is 0% chance that you heard OH,\nThere's a 100% chance that you've heard E, 0%, 0% path.\nAnd this is what we call a one-hot encoding.\nWhich tells them, with zeros and ones, what the true answer is.\nNow, we don't usually have a person telling the neural network, this is right and this is wrong. We actually give them the information, so when we\nDo the neural network that will recognize your vowels.\nThe way we did that is in lab, there was a, you know, a… some… some…\nyou know, sheet, some Google Sheet or something, that has on the first line, let's say, mics…\nyou know, When he, you know, with 4 months, 200, and… 2300.\nThat's an E.\nBecause we wrote down what the E for each person was.\nAnd then maybe the second line, oh, Mike, when he said, you know, as in done, the 4 months were, you know, 400 and 1800.\nSo, we give the neural network this information. We tell it, when a person produced this formant and this formant, the vowel they made is such and such.\nThat's what we call the desired output, the output that the neural network we wish had given if it were smart.\nSo there's an algorithm called back propagation.\nWhich is all about changing the W's, changing all these W's, and all these W's, and all these W's, and all these W's, so that the neural network becomes a little smarter."
+        },
+        {
+          "startLine": 3287,
+          "endLine": 3293,
+          "quote": "Another piece of data, and we learned from it, etc.\nSo this is exactly what we're going to do with this neural network. We start out with random Ws.\nWe give it someone's… F1 and F2 for a particular vowel. We figure out what its computed output is.\nWe compare it with the desired output that we know, because we collected the data.\nand we tell it, change your W's such that\nIf I were to give you those two numbers again.\nThe answer should be closer to Very little."
+        }
+      ],
+      "target-matrix": [
+        {
+          "startLine": 3541,
+          "endLine": 3563,
+          "quote": "So… When we train a neural network, so imagine this is our neural network.\nWe have to tell the machine what the…\nWhat the desired output is for every input.\nSo, we have to give it…\ntwo matrices. A matrix is just a table of numbers.\nSo this is a table, and this is a table. This was an… this is an actual table that we collected from all of you, so let's say we have 110 students.\nOne matrix that we have to give the system is the matrix of formats. So the first row\nLet's say it's 500, 1500.\nAnd what is the first row here telling us?\nwhat is… What are the 500 and 1500, in fact?\nSo what is… what is the information in the very first row?\nIt's, it's done!\nOkay? And the second row, it's Dune. And the third row, it's Dean. It doesn't have to be, you know, exactly this way, but for every two fortunates.\nwe have to give it what the desired output is. So, when we're actually building a neural network using software.\nWe have to give it the design, so we have to tell it… the first neuron has two\nThe first, the input player has two neurons.\nThe next layer has 3, 2, then 4, then 5.\nAnd then we give it this information. If I give you 800 and 1700, you'd better say that this is at, as intended.\nIf I give you 700 and 1100, the desired answer is A as in Don.\nEtc, for 110.\nblows.\nSo, do you understand what these two… so for these inputs, so they have to be the same… so the 110 is the number of…\nPieces of data there are."
+        },
+        {
+          "startLine": 3259,
+          "endLine": 3264,
+          "quote": "There's a 100% chance that you've heard E, 0%, 0% path.\nAnd this is what we call a one-hot encoding.\nWhich tells them, with zeros and ones, what the true answer is.\nNow, we don't usually have a person telling the neural network, this is right and this is wrong. We actually give them the information, so when we\nDo the neural network that will recognize your vowels.\nThe way we did that is in lab, there was a, you know, a… some… some…"
+        }
+      ],
+      "three-modes": [
+        {
+          "startLine": 326,
+          "endLine": 331,
+          "quote": "Two of the other sides will go opposite directions, and the middle one\nYeah. So imagine the middle one being fixed.\nSo we started. We start out the system. We do. We don't touch the middle one, but we pull them 2 outside ones apart from each other.\nSo they're gonna go back and forth like this, and the middle one doesn't even move.\nThe 3rd one is easiest to see transversely. Does anyone wanna\nGuess what the third one will be like?"
+        }
+      ],
+      "two-modes": [
+        {
+          "startLine": 69,
+          "endLine": 80,
+          "quote": "On the left are the longitudinal. Try to look at how the longitudinal system goes. So, what's common between the longitudinal and the transverse is, in the first mode. The masses go together, left to right, because longitudinal is about left to right.\nSo left to right.\nTogether means this.\nAre you all following?\nBy the way, this whole lecture, and how we build on it in the next few lectures.\nreally requires you to think there is nothing. If you try to memorize this, you'll be memorizing tens of pages.\nand you will understand nothing, and you won't be able to answer any questions. So it's important that you actually\nStay with me, think about what I'm saying, and ask questions if you don't understand, okay?\nSo let's think about the 1st mode. If I in the transverse\nvisualization. If I pull them both up, they will go up and down together.\nIn the longitudinal, if I pull them to the left.\nThey will go back and forth, left and right together."
+        },
+        {
+          "startLine": 141,
+          "endLine": 145,
+          "quote": "Okay? So what we've established so far, in that if you have multiple masses and multiple springs.\nYou're going to have… different ways or modes. So a mode is just another way word for way.\nYou're going to have multiple ways of vibrating.\nAnd those multiple ways are distinguished by Are the masses going together?\nOr are they going oppositely to each other?"
+        }
+      ],
+      "voice-test": [
+        {
+          "startLine": 621,
+          "endLine": 624,
+          "quote": "But we now have built intuition for how these systems will work, so I make a prediction, because this is science. And that prediction, if I measure any of your laryngeal signals.\nThey will have a spectrum with equidistant. So these spikes we call harmonics.\nSo the harmonics will be equidistant volunteer.\nMay I have a volunteer? Actually, several people to volunteer, and we will do this one by one, so please volunteer and come up."
+        },
+        {
+          "startLine": 657,
+          "endLine": 664,
+          "quote": "Okay, what do you?\nWhat hertz will this one be?\nin or around.\nThey're equidistant. So if the 1st one is about a hundred, what will the second one be?\n200, yeah.\nYou see? 205, 206, somewhere like that. Third one.\n300… 400… 500…\nYou see how science works? We're in the prediction, and it's actually true. And the prediction was so hand-wavy, and it's like, oh, and they go together, and they… Do you see how precise our prediction is?"
+        }
+      ],
+      "vowel-i-test": [
+        {
+          "startLine": 2149,
+          "endLine": 2163,
+          "quote": "Is there more motion here, or more compression? And\nmore compression and expansion.\nPardon motion. There is lots and lots of motion, so it is mass dominated, and hardly any compression.\nWhat about in mode 2?\nmore motion or more compression, expansion.\nLots of compression.\nWhat's going to happen to formant one when I've squeezed the air in this E… location.\nSo, two-thirds from the end, which is exactly like this. What will happen… so, for… so the first mode.\nIt's all motion oriented. What's going to happen to the frequency will go up or down if I increase the mass.\ndown, increasing the mass when there is motion of mass will decrease the frequency.\nWhat's going to happen to the second format?\nIf I increase the stiffness. So remember, making constriction is\nstiffening and increasing mass. So what will happen to F 2\nWe'll go up or down. It's very stiffness oriented.\nWe'll go up. So can you volunteer since you've got the right answer."
+        },
+        {
+          "startLine": 2164,
+          "endLine": 2181,
+          "quote": "and then say.\nSo we're going to start out again with the schwa, and then make E. E.\nI… Thank you.\nand I forgot your name, Bella.\nOh!\nYou see how beautiful?\nOops.\nBye.\nDo you see?\nHere are the two formats.\nAnd do you see how much the 1st one drops? The second one goes up.\nThis is all real. I'm not making any of this stuff up.\nAnd this is how we can tell. And it's all messes and springs.\nYou're controlling the messes and strings to generate\nthe vocal fold vibration, which affects the air thereof, which travels through the air, which gets into your ear, and that has a mass spring structure, and then your brain, by the way, does oscillations too, that's your brain waves.\nAnd that's how you know what I'm saying.\nAnd we wouldn't have any culture, we wouldn't have any science, we wouldn't have any art if we didn't speak to each other.\nto see how cool this is. And this is the this is the principle. So as we're building up the principles, do you see how"
+        }
+      ],
+      "vowel-u-test": [
+        {
+          "startLine": 2116,
+          "endLine": 2124,
+          "quote": "is to start out with that 1st vowel that Athena made, but then make OO. So say, Oh…\nThanks.\nNow, why did I? What's your name? Sophia? Why did I ask Sophia to make this particular sound?\nis the vowel that we've seen before, and we saw that its formants are about 500, 1,500, 2,500.\nWhen I round my lips, What am I doing to the air there when I'm squeezing the lips?\nI'm compressing the air. What does that may do to this? The the mass and the stiffness of the air when I compress it.\nthe air here.\nYeah. So, the mass…\nwill be increasing. The stiffness increases, too, but it doesn't matter, because this is an area where there is lots of back and forth motion. So let's look at Sophia's."
+        },
+        {
+          "startLine": 2126,
+          "endLine": 2136,
+          "quote": "So do you see her?\nThese are the frequencies, these black bands, you'll see, I guess today is… we're gonna run out of time, but… So, so for Sophia's speech, the first formant is about 700.\nDo you see this number here?\nAnd the second format?\nwill therefore be about, yeah, it doesn't really work very well. But the main thing to see is the following. Do you see how this one lowers?\nAnd this one lowers.\nBecause there is a reduction in the… there's an increase in the mass.\nor density of the air between the lips.\nand that will lower the formants. And you can see This dropping…\nAnd you can see this dropping.\nAnd you'll learn in,"
+        }
+      ],
+      "weight-direction": [
+        {
+          "startLine": 3388,
+          "endLine": 3408,
+          "quote": "that this W has contributed to.\nDo you understand in what sense, therefore, I can say this W…\nall the way up here. I could have used any of these W's, but let's just pick on this one.\nIs very directly responsible For the error made by this neural network.\nDo y'all see that?\nBecause…\nthere is… there are very few calculations we need to make to figure out how increasing this 0.1 will lead, because there's just one inner product, so if I increase this 0.1, the 55.7 will increase, which would actually make things worse.\nRight?\nBy the way, just by looking at this.\nDo you think I should increase the 0.1 or decrease it?\nIf it's true… if it's… if the desired output is 0% for that top\nfor that top, neuron. Should I increase the W, or should I decrease it?\nYup?\nI have to decrease it, because if I decrease this.\nThe inner product that will lead to 55.7, will become smaller.\nDo you see how crystal clear this idea is?\nSo this point one, Its contribution is 1.57 times .1.\nThat's the contribution of this weight to the inner product.\nAnd our goal is to make the 55.7 smaller.\nWell, if I could, you know, I would even, like, make this as small as possible.\nBecause if I make it as small as possible, the contribution of 1.57 will be much smaller, and therefore the 55.7 maybe would go to, like, 50% or 40% or something."
+        }
+      ],
+      "weights-activations": [
+        {
+          "startLine": 2970,
+          "endLine": 2988,
+          "quote": "Yes, so we've already started to look a little bit at neural networks before, so I want to kind of refresh your, understanding, because\non Thursday, and then during the… your next lab, you're going to be seeing this neural network,\nTo actually take the data that we collected\nin lab last week, on your vowels, and to use it to actually build a neural network that acts as a very rudimentary speech recognizer. So this neural network will take F1 and F2,\nSo, remember, these are input neurons, they just take information from the environment.\nSo maybe, Hannah's…\nF1 for some vowel is 400, and F2 for that same vowel is, is 1900.\nSo then I put this, the first number here, and the second number here. And these are the inputs to the neural network. And the neural network is just a numerical processing machine.\nand it processes that, input, and then makes a decision. So, the processing of the input travels through all of these neurons. What are the… what are the numbers that the neural network knows? What do we call these numbers?\nSo what is the knowledge? Yeah, Gustavo? The weights. The weights. So each of these neurons, so for instance, this neuron has a weight here and a weight here.\nAnd what do we do with this number and this number to get the activation here?\nWhat's the name of the operation?\nSo, if I know the weight from this neuron to this neuron, and if I know the weight from this neuron to this neuron.\nhow can I… process… the incoming information with the weights that I know, To get this activation.\nYeah? Inner product. Inner product, exactly. So I will take this weight, multiply it by this number, this weight multiplied by this number, and I add.\nAnd that's how I got a number here.\nAre we good? And then I use these weights to get the number here, and then these weights. Now, we pretend as if\nNot pretend as if, now, these are inputs to further processing of the same type by the weights here. So we do more inner products and get the numbers here, and then here, and then here, and now, finally, these final numbers have to be normalized to becoming a probability distribution.\nAnd remember, a probability distribution is a bunch of numbers that add up to 1,"
+        },
+        {
+          "startLine": 3020,
+          "endLine": 3027,
+          "quote": "So, that's how forward propagation works. And you'll see a slight complication later on today, but I hope you fully, you know, understand this concept.\nKnowledge has been reduced to Just positive and negative numbers, something you were introduced to in second grade.\nForward-order propagation uses Times… Because it's some, you know, some number times some… await, so await…\nTimes an input number, plus a weight, times some input number.\nWe are using plus n times, which you are also introduced to in the second or third or fourth grade.\nDo you see how fascinating that is?\nthat… And this is literally with slight complications that just add a little bit of complication.\nAre the basic things being done"
+        }
+      ]
+    }
+  },
+  "placements": [
+    {
+      "id": "d-lecture11-p2-b0-c1",
+      "collection": "lecture11",
+      "page": 2,
+      "sectionId": "lecture11-p002",
+      "originalBlock": 0,
+      "beforeOriginalChild": 1,
+      "originalParent": "A **mass-spring system** is a mass hooked up to a spring, and it vibrates because of what each part wants. **The spring wants to be at its equilibrium position**, its resting length, so whenever it is stretched or squished it pulls or pushes to get back there. **A mass that is moving wants to keep on moving**, so once it gets going it does not stop on its own.",
+      "evidence": "equilibrium",
+      "text": "Reaching **equilibrium** means the spring has reached its resting length. It does not mean the mass has stopped. The mass still has motion at that point, which is why returning toward equilibrium becomes an ongoing cycle rather than a single trip back."
+    },
+    {
+      "id": "d-lecture11-p3-b0-c1",
+      "collection": "lecture11",
+      "page": 3,
+      "sectionId": "lecture11-p003",
+      "originalBlock": 0,
+      "beforeOriginalChild": 1,
+      "originalParent": "Two things set how fast a mass-spring system vibrates, and they are the **mass** and the **stiffness** of the spring. The number of back-and-forth cycles the system completes each second is called its **frequency**.",
+      "evidence": "mass-stiffness",
+      "text": "The prediction concerns **how quickly the cycle repeats**, rather than how far the mass travels. To explain a slower vibration, connect the added mass to the greater difficulty of reversing its motion while the spring stays the same."
+    },
+    {
+      "id": "d-lecture11-p4-b0-c1",
+      "collection": "lecture11",
+      "page": 4,
+      "sectionId": "lecture11-p004",
+      "originalBlock": 0,
+      "beforeOriginalChild": 1,
+      "originalParent": "With **two masses**, the system has two walls, a spring from each wall to a mass, and one spring between the two masses. All the masses are equal and all the springs are equal, and this system can vibrate in **two different ways**, which are called **modes**. **A mode is just another word for a way of vibrating**, and the two modes are told apart by asking whether the masses go together or against each other.",
+      "evidence": "two-modes",
+      "text": "**Mode 1 and mode 2 name patterns of the whole system.** They do not name the first and second masses. Both masses participate in either pattern, and the distinction is whether their movements agree or oppose one another."
+    },
+    {
+      "id": "d-lecture11-p6-b0-c1",
+      "collection": "lecture11",
+      "page": 6,
+      "sectionId": "lecture11-p006",
+      "originalBlock": 0,
+      "beforeOriginalChild": 1,
+      "originalParent": "With **three masses**, the system has **three modes**, one more than with two masses, and each mode is a different way the masses move relative to each other. In the first mode all three go back and forth together, and this mode has the lowest frequency. In the second mode the middle mass stays perfectly still while the two outer masses move against each other, and this is the middle frequency. In the third mode the middle mass moves opposite to the two outer masses, and this is the highest frequency.",
+      "evidence": "three-modes",
+      "text": "A still middle mass is part of the **second-mode pattern**. Its stillness does not turn the system into a two-mass system. The three masses still permit three modes, with the middle mass participating differently in each one."
+    },
+    {
+      "id": "d-lecture11-p8-b2-c1",
+      "collection": "lecture11",
+      "page": 8,
+      "sectionId": "lecture11-p008",
+      "originalBlock": 2,
+      "beforeOriginalChild": 1,
+      "originalParent": "The **spectrum** of a sound tells which frequencies are in it and how much of each there is.",
+      "evidence": "spectrum",
+      "text": "A spike’s **frequency** tells which vibration it represents, while its **amplitude** tells how much of that vibration is present. A taller spike means a stronger contribution, rather than a faster vibration."
+    },
+    {
+      "id": "d-lecture11-p10-b1-c0",
+      "collection": "lecture11",
+      "page": 10,
+      "sectionId": "lecture11-p010",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "For the voice, the theory says that **the vocal folds are a membrane** built from many masses and springs, so they vibrate in many modes at once. Their equations are the same type as the spring equations, only more of them and slightly more complicated, so the intuition built from masses and springs is enough to reason with. The prediction is that **any laryngeal vibration signal will have a spectrum with evenly spaced spikes**, and these evenly spaced spikes are called **harmonics**.",
+      "evidence": "voice-test",
+      "text": "The test is whether the measured spikes follow the predicted **regular spacing**. Different voices can begin at different frequencies and still support the same prediction, because each voice has its own lowest frequency and multiples of that frequency."
+    },
+    {
+      "id": "d-lecture11-p11-b1-c0",
+      "collection": "lecture11",
+      "page": 11,
+      "sectionId": "lecture11-p011",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "This changes which modes are possible, because **only the odd harmonics occur**, meaning one, three, five and seven times the lowest frequency. The modes at two and four times the lowest frequency are missing, because those patterns cannot end with free motion at the top.",
+      "evidence": "odd-multiples",
+      "text": "The **second mode** is the second allowed pattern. In this fixed–free system it is three times the lowest frequency, rather than twice that frequency. Counting allowed modes and counting multiples of the lowest frequency therefore give different numbers."
+    },
+    {
+      "id": "d-lecture12-p6-b2-c1",
+      "collection": "lecture12",
+      "page": 6,
+      "sectionId": "lecture12-p006",
+      "originalBlock": 2,
+      "beforeOriginalChild": 1,
+      "originalParent": "**Making the middle mass heavier** affects only the modes in which that mass moves.",
+      "evidence": "local-mass",
+      "text": "The physical change is the same heavier middle mass in every case. What differs is the **mode being considered**. One change can therefore lower the first and third mode frequencies while leaving the second unchanged."
+    },
+    {
+      "id": "d-lecture12-p9-b2-c0",
+      "collection": "lecture12",
+      "page": 9,
+      "sectionId": "lecture12-p009",
+      "originalBlock": 2,
+      "beforeOriginalChild": 0,
+      "originalParent": "**Where there is maximal movement there is no stretching, and where there is maximal stretching there is no movement.** So **increasing a spring's stiffness raises frequency in proportion to how much that spring stretches and compresses**, which also depends on where it is.",
+      "evidence": "motion-compression",
+      "text": "A point can remain still while the material beside it stretches and compresses. **No local displacement does not mean no restoring action.** The stiffness effect depends on that changing separation between neighboring parts, rather than on how far the marked point travels."
+    },
+    {
+      "id": "d-lecture12-p11-b0-c0",
+      "collection": "lecture12",
+      "page": 11,
+      "sectionId": "lecture12-p011",
+      "originalBlock": 0,
+      "beforeOriginalChild": 0,
+      "originalParent": "On a string, one small section is marked where the **fourth mode is moving a lot** while the **fifth mode has no motion at all but lots of stretching**. Raising both the mass and the stiffness of that section has a different effect on each mode, so each effect has to be reasoned out separately.",
+      "evidence": "perturbation",
+      "text": "Both changes are made at **one marked location**. The opposite results come from the fourth and fifth modes using that location differently, rather than from moving the added mass to one spot and the added stiffness to another."
+    },
+    {
+      "id": "d-lecture12-p14-b0-c1",
+      "collection": "lecture12",
+      "page": 14,
+      "sectionId": "lecture12-p014",
+      "originalBlock": 0,
+      "beforeOriginalChild": 1,
+      "originalParent": "A **building** is a system fixed on one side and free on the other. Structural engineers design it to sway in the first mode, all together, and never in higher modes, where some floors would go one way while others go the other way. **The air inside the vocal tract is also fixed on one side and free on the other.**",
+      "evidence": "air-boundaries",
+      "text": "**Fixed and free describe the air’s motion at the two ends of the model.** The closed vocal-fold end prevents the adjacent air from moving back and forth, while the open lip end permits that motion. The analogy concerns those endpoint conditions."
+    },
+    {
+      "id": "d-lecture12-p15-b1-c1",
+      "collection": "lecture12",
+      "page": 15,
+      "sectionId": "lecture12-p015",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "The first two modes matter most for vowels. The first mode corresponds to **F1**, the lowest air mode of the tube, with its motion still at the glottis and growing toward the lips. The second mode corresponds to **F2**, and it vibrates three times faster than the first.",
+      "evidence": "formant-count",
+      "text": "Calling F2 the **second formant** puts it second in the ordering of the air resonances. It does not say that its frequency is twice F1. The three-times relationship belongs to the uniform fixed–free tube illustrated here."
+    },
+    {
+      "id": "d-lecture12-p23-b0-c1",
+      "collection": "lecture12",
+      "page": 23,
+      "sectionId": "lecture12-p023",
+      "originalBlock": 0,
+      "beforeOriginalChild": 1,
+      "originalParent": "In the uniform tube for **schwa** and in the separate rows for the first, second and third modes, some places have air **moving a lot** and others have air **compressing a lot**, and the two alternate along the tube. **Motion** is how far a bit of air travels back and forth, while **compression** is how much the spacing between neighboring bits of air changes.",
+      "evidence": "air-spacing",
+      "text": "Follow the **spacing between adjacent lines of air** as well as their travel. Lines can move a long way together without being squeezed closer to each other. Compression is the change in their spacing, so large motion by itself does not establish large compression."
+    },
+    {
+      "id": "d-lecture13-p2-b0-c1",
+      "collection": "lecture13",
+      "page": 2,
+      "sectionId": "lecture13-p002",
+      "originalBlock": 0,
+      "beforeOriginalChild": 1,
+      "originalParent": "The first principle is the simplest one. **As mass goes up, frequency goes down, and as stiffness goes up, frequency goes up.** That principle by itself invites a **false argument**, because if something raises both the mass and the stiffness of a system, it can seem that the two effects cancel and nothing audible changes.",
+      "evidence": "cancellation",
+      "text": "Opposite tendencies alone do not establish cancellation. For a frequency to stay unchanged, the effective increases must actually balance. In a system with many parts, the **location of the change and the mode’s movement there** decide how strongly each tendency counts."
+    },
+    {
+      "id": "d-lecture13-p8-b0-c0",
+      "collection": "lecture13",
+      "page": 8,
+      "sectionId": "lecture13-p008",
+      "originalBlock": 0,
+      "beforeOriginalChild": 0,
+      "originalParent": "The basic piece from a node to an antinode is called a **quarter-wave packet**, and each mode of a system with one free end holds an odd number of them. The first mode holds one packet, the second holds three, the third holds five and the fourth holds seven.",
+      "evidence": "quarter-waves",
+      "text": "A **quarter-wave packet** is a piece of the spatial pattern. Adding more of those pieces within the same overall length produces a higher allowed frequency. The requirement to finish at a free, moving end is what excludes an even packet count."
+    },
+    {
+      "id": "d-lecture13-p10-b1-c1",
+      "collection": "lecture13",
+      "page": 10,
+      "sectionId": "lecture13-p010",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "The first mode corresponds to **F1**, the lowest air mode of the tube, with its motion still at the fixed end and growing toward the free end. The second mode corresponds to **F2**, and it fits three of the pieces that run from no motion to lots of motion, while the first mode fits only one.",
+      "evidence": "formant-example",
+      "text": "For example, if this uniform tube has F1 at **200 Hz**, its second and third formants are **600 Hz and 1,000 Hz**. The useful reasoning is one, three and five times the first frequency; 200 is an illustrative starting value rather than a value shared by every vocal tract."
+    },
+    {
+      "id": "d-lecture13-p11-b2-c1",
+      "collection": "lecture13",
+      "page": 11,
+      "sectionId": "lecture13-p011",
+      "originalBlock": 2,
+      "beforeOriginalChild": 1,
+      "originalParent": "**The first mode of the air is the same idea as a building swaying in its first mode.** There is no motion at the bottom but lots of compression and expansion there, and there is lots of motion at the top but no compression.",
+      "evidence": "air-nodes",
+      "text": "The still locations belong to a particular **mode pattern**. They do not mean that all the air has stopped. Air elsewhere in that same mode continues to move, while neighboring regions compress and expand around the still locations."
+    },
+    {
+      "id": "d-lecture13-p16-b1-c0",
+      "collection": "lecture13",
+      "page": 16,
+      "sectionId": "lecture13-p016",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "**A recording confirms what the reasoning predicts.** Starting from schwa, a student moved into /u/, and both the first and second formants dropped.",
+      "evidence": "vowel-u-test",
+      "text": "The comparison starts with **schwa and then changes to /u/** in the same voice. Both formants moving downward is the predicted result of loading the freely moving lip region, so the measurement checks the mechanism rather than just naming the vowel."
+    },
+    {
+      "id": "d-lecture13-p17-b1-c0",
+      "collection": "lecture13",
+      "page": 17,
+      "sectionId": "lecture13-p017",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "**A recording confirms this prediction as well.** Starting from schwa and moving into /i/, the first formant dropped a lot and the second formant went up.",
+      "evidence": "vowel-i-test",
+      "text": "**F1 falling while F2 rises** is especially informative because the two changes go in opposite directions. The result follows from one constriction meeting a mass-dominated part of one mode and a stiffness-dominated part of the other."
+    },
+    {
+      "id": "d-lecture13-p20-b1-c1",
+      "collection": "lecture13",
+      "page": 20,
+      "sectionId": "lecture13-p020",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "The **filter** is the air in the vocal tract, and **the vocal tract filter sculpts the heights of those harmonics**. For schwa, the filter places its formants evenly up the spectrum.",
+      "evidence": "source-filter",
+      "text": "The filter acts on the **harmonics already supplied by the source**. A formant indicates where that source energy is favored. It does not replace the harmonic comb with a new set of spikes at the formant frequencies."
+    },
+    {
+      "id": "d-lecture14-p6-b0-c0",
+      "collection": "lecture14",
+      "page": 6,
+      "sectionId": "lecture14-p006",
+      "originalBlock": 0,
+      "beforeOriginalChild": 0,
+      "originalParent": "The air does **two different things** at different places, and both can be seen directly. Where the slivers of air come very close together and then move far apart, the air is compressing and expanding, which is **springiness**, and that happens near the closed end, because air can be squeezed against something closed. Where the slivers stay equally spaced and just move back and forth, the air is acting like a **mass**, and that happens near the open end, because there is nothing there to squeeze against.",
+      "evidence": "air-spacing",
+      "text": "The visible evidence for springiness is that neighboring air slices **approach and separate**. When the slices travel together at nearly constant separation, their visible behavior instead emphasizes the moving mass. This distinction lets the animation support a causal explanation."
+    },
+    {
+      "id": "d-lecture14-p15-b1-c1",
+      "collection": "lecture14",
+      "page": 15,
+      "sectionId": "lecture14-p015",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "**F0 is not fixed during speech.** Only a robot keeps F0 constant, while real speech changes F0 all the time, in every vowel.",
+      "evidence": "intonation",
+      "text": "The same words, **“the dog slept here,”** can become a statement or a question as their pitch contour changes. That change concerns the vocal-fold vibration and its F0, while the vowel’s formant pattern concerns the shape of the tract."
+    },
+    {
+      "id": "d-lecture14-p16-b1-c1",
+      "collection": "lecture14",
+      "page": 16,
+      "sectionId": "lecture14-p016",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "The formants interact with the harmonics by one **core rule**, which is that **a formant encourages the closest harmonics to be audible, while harmonics far from that formant are muted.** Harmonics near a formant get amplified, and harmonics farther away get weaker until they cannot be heard.",
+      "evidence": "source-filter",
+      "text": "The harmonic nearest a formant becomes prominent **at the harmonic’s own frequency**. The formant shapes the relative strengths of the available harmonics; it does not require a harmonic to sit exactly at the resonance."
+    },
+    {
+      "id": "d-lecture14-p17-b1-c0",
+      "collection": "lecture14",
+      "page": 17,
+      "sectionId": "lecture14-p017",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "Now picture very light, very stiff vocal folds, whose harmonics are widely spaced. The first formant may have no harmonic close by to amplify, so **sparse harmonics can miss a formant or make it look ambiguous**.",
+      "evidence": "sparse-harmonics",
+      "text": "A formant can still be a resonance even when **no harmonic lies close enough to show it clearly**. Sparse source harmonics make the filter harder to read from the resulting spectrum, which explains why a high-pitched voice can obscure the vowel pattern."
+    },
+    {
+      "id": "d-lecture14-p18-b0-c0",
+      "collection": "lecture14",
+      "page": 18,
+      "sectionId": "lecture14-p018",
+      "originalBlock": 0,
+      "beforeOriginalChild": 0,
+      "originalParent": "**A spectrum captures one instant, and a spectrogram stacks many spectra over time.** Time runs along the horizontal axis, frequency runs up the vertical axis, and darkness tells how much energy there is, with high amplitude black, medium gray and low white. So a formant appears as a dark band at its frequency, and its rise and fall over time can be followed.",
+      "evidence": "spectrogram",
+      "text": "The amplitude shown by **height in a spectrum** becomes **darkness in a spectrogram**. Frequency still identifies which vibration is present, while the added time axis shows how those strengths and formant locations develop as the mouth moves."
+    },
+    {
+      "id": "d-lecture14-p20-b1-c0",
+      "collection": "lecture14",
+      "page": 20,
+      "sectionId": "lecture14-p020",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "**Listeners decide which consonant they heard mostly from the vowel that follows it.** In the a that follows m, the formants stay fairly stationary, while in the a that follows n, one formant drops sharply. That drop in a formant inside the vowel tells the listener n, so it overrides the m that was pasted in front.",
+      "evidence": "splice",
+      "text": "The crucial manipulation keeps the **consonant from ma** but supplies the **vowel from na**. Hearing na shows that the decision about the consonant uses the following vowel’s transition, rather than being fixed by the isolated consonant segment alone."
+    },
+    {
+      "id": "d-lecture14-p22-b0-c2",
+      "collection": "lecture14",
+      "page": 22,
+      "sectionId": "lecture14-p022",
+      "originalBlock": 0,
+      "beforeOriginalChild": 2,
+      "originalParent": "This network only multiplies and adds, with **no activation functions** between the layers. It takes two inputs, passes them through three hidden layers, and ends in five outputs, and the two inputs are F1 and F2, the frequencies of the first two modes of the air's vibration.",
+      "evidence": "network-io",
+      "text": "One pair of formant measurements leads to **one decision across five alternatives**. The five output neurons represent competing vowel identities for that same input, rather than five different recordings."
+    },
+    {
+      "id": "d-lecture15-p2-b1-c1",
+      "collection": "lecture15",
+      "page": 2,
+      "sectionId": "lecture15-p002",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "**The weights are the network's knowledge.** Every connection between two neurons has a weight, a positive or negative number, and everything the network knows about vowels is stored in these numbers.",
+      "evidence": "weights-activations",
+      "text": "The **formant values** describe the particular recording being recognized. The **weights** describe how the network uses those values. A new recording supplies new inputs, while learning changes the weights that will be used to process recordings."
+    },
+    {
+      "id": "d-lecture15-p3-b3-c1",
+      "collection": "lecture15",
+      "page": 3,
+      "sectionId": "lecture15-p003",
+      "originalBlock": 3,
+      "beforeOriginalChild": 1,
+      "originalParent": "After the last layer, the final numbers are turned into a **probability distribution**, which is a set of numbers that add up to one, and those numbers are the network's decision. The operation that does this is called **softmax**, and it just converts numbers into probabilities, so a bigger score always ends up as a bigger probability.",
+      "evidence": "probabilities",
+      "text": "Adding up to one makes the output a **valid probability distribution**, but it does not make the answer correct. The largest probability can still belong to the wrong vowel. Correctness requires comparing the prediction with the known vowel."
+    },
+    {
+      "id": "d-lecture15-p6-b1-c1",
+      "collection": "lecture15",
+      "page": 6,
+      "sectionId": "lecture15-p006",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "The output the network actually produced is called the **computed output**, and the gap between it and the desired output is the **error**. Here the network gave dean only a small chance when it should have given dean all of it, so the error is large. **Backpropagation** is the algorithm that changes all the weights so that the network becomes a little smarter.",
+      "evidence": "target-error",
+      "text": "The **desired output** comes from knowing which vowel produced the recording. It supplies the standard against which the computed output is judged. Learning changes the network’s weights to approach that standard, rather than changing the answer to agree with the network."
+    },
+    {
+      "id": "d-lecture15-p7-b1-c1",
+      "collection": "lecture15",
+      "page": 7,
+      "sectionId": "lecture15-p007",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "**The weight from the last hidden layer to done is an easy problem.** Done's large probability comes from an inner product that includes this positive weight times a positive activation. If the weight went up, that contribution would grow, done's probability would go up, and the network would get more wrong, since done should have no probability at all.",
+      "evidence": "weight-direction",
+      "text": "For this marked connection, a **positive activation and positive weight** contribute positively to done. Making that weight smaller reduces its contribution. The explanation depends on this connection’s sign and destination, rather than on a rule that every weight should decrease."
+    },
+    {
+      "id": "d-lecture15-p8-b1-c1",
+      "collection": "lecture15",
+      "page": 8,
+      "sectionId": "lecture15-p008",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "**Improving W2 is a much harder problem.** W2 affects its own activations, which then affect another two layers of activations along with many other weights, so it is really hard to figure out how much blame W2 deserves for mistakes made all the way at the end.",
+      "evidence": "backward-reuse",
+      "text": "The difficult early-weight problem **contains the downstream problem**. Solving from the output backward makes the downstream error information available when its contribution is needed for an earlier connection, instead of treating each early weight as an unrelated problem."
+    },
+    {
+      "id": "d-lecture15-p8-b2-c0",
+      "collection": "lecture15",
+      "page": 8,
+      "sectionId": "lecture15-p008",
+      "originalBlock": 2,
+      "beforeOriginalChild": 0,
+      "originalParent": "**When a problem contains smaller and smaller problems inside it, the algorithm to use is dynamic programming.** Dynamic programming solves the easiest problem first and then uses its answer to solve the next bigger one, and it comes from Bellman and Viterbi.",
+      "evidence": "sgd-and-dp",
+      "text": "**Dynamic programming supplies the order and reuse of the error calculation. SGD supplies the gradual adjustment of the weights.** Together they explain both why the calculation starts near the output and how repeated small changes improve the network."
+    },
+    {
+      "id": "d-lecture15-p9-b0-c2",
+      "collection": "lecture15",
+      "page": 9,
+      "sectionId": "lecture15-p009",
+      "originalBlock": 0,
+      "beforeOriginalChild": 2,
+      "originalParent": "To train the network, it has to be told **the desired output for every input**, and that information is given as **two matrices**, which are just tables of numbers. Both come from the class's own lab data, with one row for each recording.",
+      "evidence": "target-matrix",
+      "text": "The zeros in a **one-hot target** do not stand for missing recordings. Each zero says that its vowel is not the answer for this row, while the single one identifies the vowel that actually produced this pair of formants."
+    },
+    {
+      "id": "d-lecture15-p10-b1-c0",
+      "collection": "lecture15",
+      "page": 10,
+      "sectionId": "lecture15-p010",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "**The word Sequential means that the network is a sequence of layers**, one layer after another, which describes every network built so far. **The word Linear means a layer that does inner products** by multiplying and adding.",
+      "evidence": "sequential-linear",
+      "text": "**Sequential specifies the order of the layers, and Linear specifies the weighted multiplication and addition within a processing layer.** Those lines describe how information will be processed. The learning commands are what use an error to improve the weights."
+    },
+    {
+      "id": "d-lecture15-p10-b2-c0",
+      "collection": "lecture15",
+      "page": 10,
+      "sectionId": "lecture15-p010",
+      "originalBlock": 2,
+      "beforeOriginalChild": 0,
+      "originalParent": "The last lines are the only lines PyTorch needs for learning. **SGD** is stochastic gradient descent with a learning rate that sets the size of each step, the **loss** is the mistake, the gap between the computed and desired outputs, **backward** is backpropagation, and **step** actually changes the weights.",
+      "evidence": "learning-commands",
+      "text": "**Backward** works out how the error depends on the weights, and **step** applies the weight changes. The backward calculation is part of learning; an ordinary prediction still carries the input forward toward the output."
+    },
+    {
+      "id": "d-lecture15-p11-b1-c2",
+      "collection": "lecture15",
+      "page": 11,
+      "sectionId": "lecture15-p011",
+      "originalBlock": 1,
+      "beforeOriginalChild": 2,
+      "originalParent": "**Adrian** discovered that **neurons are nearly digital**, meaning that they either fire or they do not fire. A real neuron's activation is basically off or on, while the vowel network's neurons can take any value at all, with no limit.",
+      "evidence": "sigmoid",
+      "text": "Near the middle of the **S-shaped curve**, a small input change can produce a substantial response change. Near either flat end, a comparable input change has much less effect. That gives the model its contrast between a sensitive transition and a nearly settled response."
+    },
+    {
+      "id": "d-lecture15-p12-b1-c0",
+      "collection": "lecture15",
+      "page": 12,
+      "sectionId": "lecture15-p012",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "**After each switch, everything that comes after it is recalculated**, because later neurons get their inputs from earlier ones. So the old linear numbers cannot simply be run through the sigmoid one at a time, since each new value has to come from the updated layer before it.",
+      "evidence": "sigmoid-control",
+      "text": "Keeping the **input and weights fixed** isolates the effect of the activation function. A different output after switching on sigmoid shows that processing changed, rather than showing that the network learned from a new target."
+    },
+    {
+      "id": "d-lecture16-p5-b1-c0",
+      "collection": "lecture16",
+      "page": 5,
+      "sectionId": "lecture16-p005",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "**But there is a lot of overlap.** The vowels of dune, Don and done crowd into the same region, so a new speaker whose formants land there could be saying any of the three. Some points are probably errors, but real data always has errors, so they stay in because that is what real life is like.",
+      "evidence": "overlap",
+      "text": "A point in an overlapping region can have formants compatible with **more than one vowel label**. This is an information problem for the two measured inputs. Moving a decision boundary cannot give the same pair of numbers a uniquely recoverable identity when the recordings overlap."
+    },
+    {
+      "id": "d-lecture16-p11-b1-c1",
+      "collection": "lecture16",
+      "page": 11,
+      "sectionId": "lecture16-p011",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "**The word Sequential means a neural network that is a sequence of layers.** All the networks built so far are a sequence of layers, while a large language model is a network that is not just a sequence of layers. **Each Linear line is one processing layer**, a layer that has weights and does inner products with the incoming information.",
+      "evidence": "processing-layers",
+      "text": "The **input layer receives F1 and F2** without taking an inner product. That is why counting all the layers in the diagram gives one more layer than counting the Linear processing instructions in the program."
+    },
+    {
+      "id": "d-lecture16-p12-b2-c0",
+      "collection": "lecture16",
+      "page": 12,
+      "sectionId": "lecture16-p012",
+      "originalBlock": 2,
+      "beforeOriginalChild": 0,
+      "originalParent": "Near zero the curve is steep, so a small change in the inner product makes a big change in the output, while far from zero it is flat, so even big changes barely matter. **Animal perception reflects this S shape too**, since some things that seem alike are perceived as different and some things that are very different are perceived as the same.",
+      "evidence": "sigmoid",
+      "text": "The steep middle and flatter ends explain why sigmoid behaves **almost like a switch** while still allowing intermediate values. The output is bounded, but the curve remains gradual rather than assigning only an exact zero or an exact one."
+    },
+    {
+      "id": "d-lecture16-p13-b0-c1",
+      "collection": "lecture16",
+      "page": 13,
+      "sectionId": "lecture16-p013",
+      "originalBlock": 0,
+      "beforeOriginalChild": 1,
+      "originalParent": "The sigmoid is added **one hidden neuron at a time**, while the input and every weight stay the same. The first neuron to switch has an inner product just below zero, on the steep middle of the curve, so it comes out just under one half and now sends a positive number instead of a negative one.",
+      "evidence": "sigmoid-control",
+      "text": "When one hidden activation changes, **every downstream layer must use that new value**. Keeping the connection weights unchanged does not keep later activations unchanged, because their inputs have just changed."
+    },
+    {
+      "id": "d-lecture16-p14-b0-c1",
+      "collection": "lecture16",
+      "page": 14,
+      "sectionId": "lecture16-p014",
+      "originalBlock": 0,
+      "beforeOriginalChild": 1,
+      "originalParent": "The command **nn.Sigmoid** is added after each of the first three linear layers, and it means apply the sigmoid, which makes the neurons digital. The layer sizes stay exactly the same, because the sigmoid changes the values but not how many there are.",
+      "evidence": "sigmoid-code",
+      "text": "**Linear computes a weighted sum; Sigmoid transforms the result of that sum.** Placing Sigmoid after a hidden linear layer gives those two operations a definite order before the resulting activations enter the next layer."
+    },
+    {
+      "id": "d-lecture16-p15-b1-c0",
+      "collection": "lecture16",
+      "page": 15,
+      "sectionId": "lecture16-p015",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "**Accuracy starts at twenty percent because that is the level of chance.** At the start the weights are random, so the network knows nothing, but it still is not at zero, because with five vowels a random guess is right one time in five.",
+      "evidence": "chance",
+      "text": "**Knowing nothing does not imply zero correct guesses.** With five alternatives, a random guess can still land on the right vowel. The one-in-five chance level explains the approximate 20% starting accuracy before the weights carry useful knowledge."
+    },
+    {
+      "id": "d-lecture16-p16-b0-c1",
+      "collection": "lecture16",
+      "page": 16,
+      "sectionId": "lecture16-p016",
+      "originalBlock": 0,
+      "beforeOriginalChild": 1,
+      "originalParent": "The same training is run **ten times**, each time starting from different random weights, while everything else stays identical. All ten runs start near chance, some leave chance quickly and others stay flat longer, and several briefly drop back toward chance. After a few hundred epochs they come together, and **all ten finish at the same accuracy, a little below half**.",
+      "evidence": "initialization",
+      "text": "The repeated runs keep the **same training data** and change the **starting weights**. Their different paths therefore show how the starting point affects learning, rather than comparing different sets of recorded vowels."
+    },
+    {
+      "id": "d-lecture16-p16-b1-c1",
+      "collection": "lecture16",
+      "page": 16,
+      "sectionId": "lecture16-p016",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "**The network levels off well below perfect accuracy because the data overlap so much.** Its final accuracy is clearly better than chance, so the network has learned something, but it is still pretty low, because AI is not magic.",
+      "evidence": "accuracy-limit",
+      "text": "Similar final accuracy does not mean the runs took the same route. The important contrast is **different learning paths reaching a similar limit**, with the overlap in the two-formant data helping explain why that limit remains below perfect recognition."
+    },
+    {
+      "id": "d-lecture17-p3-b1-c0",
+      "collection": "lecture17",
+      "page": 3,
+      "sectionId": "lecture17-p003",
+      "originalBlock": 1,
+      "beforeOriginalChild": 0,
+      "originalParent": "**The network is called recurrent because it takes its output and sends it back into part of its input.** It produces something at one moment, that output loops back into the state units, and the network uses it to predict the next moment, and then the moment after that.",
+      "evidence": "recurrent-feedback",
+      "text": "This feedback carries information about **what the system just produced into its next moment of processing**. It is different from describing the backward error calculation used to learn the weights. The recurrence gives the running network a history."
+    },
+    {
+      "id": "d-lecture17-p4-b2-c1",
+      "collection": "lecture17",
+      "page": 4,
+      "sectionId": "lecture17-p004",
+      "originalBlock": 2,
+      "beforeOriginalChild": 1,
+      "originalParent": "**A large language model takes in many lists of numbers, one for each moment in a sequence, and gives back one decision about what comes next.** Here it takes fifteen vectors, each standing for something at one moment in time, such as one word of a sentence, and its job is to predict the sixteenth.",
+      "evidence": "context-window",
+      "text": "The **number of vectors** tells how many items are in the context, while the **numbers within each vector** describe an item. These are two different dimensions of the representation, so a long context is not the same thing as a large vector."
+    },
+    {
+      "id": "d-lecture17-p4-b4-c0",
+      "collection": "lecture17",
+      "page": 4,
+      "sectionId": "lecture17-p004",
+      "originalBlock": 4,
+      "beforeOriginalChild": 0,
+      "originalParent": "**A large language model learns by predicting the next word and correcting its mistakes.** Given the cat sat on the, with mat as the real next word, a new model with random weights predicts something silly like in, and backpropagation adjusts all of its weights so that the prediction moves toward mat.",
+      "evidence": "next-target",
+      "text": "A real sequence supplies the **training answer**. Hiding the next word in an existing sentence gives the model something to predict and then compare against, so the next-word task creates repeated opportunities to correct the weights."
+    },
+    {
+      "id": "d-lecture17-p4-b5-c0",
+      "collection": "lecture17",
+      "page": 4,
+      "sectionId": "lecture17-p004",
+      "originalBlock": 5,
+      "beforeOriginalChild": 0,
+      "originalParent": "**An agentic system is a graph of large language models**, and an agent in AI today is just one of these models. One model outlines the answer, another writes it out in smooth sentences, a **critic** criticizes the draft, a reviser sends it back to the critic if it is not good enough, and a final model produces the output.",
+      "evidence": "agent-roles",
+      "text": "The outline, draft, criticism and revision are **different jobs assigned to whole language models**. Passing the draft back for another criticism forms a loop, so this example is organized by the roles and messages between models."
+    },
+    {
+      "id": "d-lecture17-p5-b0-c0",
+      "collection": "lecture17",
+      "page": 5,
+      "sectionId": "lecture17-p005",
+      "originalBlock": 0,
+      "beforeOriginalChild": 0,
+      "originalParent": "**A large language model takes fifteen vectors and predicts the sixteenth**, and since a vector is just a list of numbers, those numbers can stand for almost anything. Whatever they stand for, the machine plays the same game of predicting the next one.",
+      "evidence": "context-window",
+      "text": "**Fifteen vectors and a sixteenth prediction are the small example.** The organizing idea is to use the available context to predict the next item. The same idea applies when the context contains many more items."
+    },
+    {
+      "id": "d-lecture18-p2-b3-c0",
+      "collection": "lecture18",
+      "page": 2,
+      "sectionId": "lecture18-p002",
+      "originalBlock": 3,
+      "beforeOriginalChild": 0,
+      "originalParent": "**Inference uses learned weights to process an input, while learning changes those weights.** Inner products supply the weighted combinations used in inference, and stochastic gradient descent adjusts the weights using the backward calculation organized through dynamic programming.",
+      "evidence": "inference-learning",
+      "text": "During **inference**, the learned weights supply the knowledge used to produce a response. During **learning**, the mismatch with a known target is used to revise that knowledge. Producing a new response and improving the weights are different operations."
+    },
+    {
+      "id": "d-lecture18-p3-b1-c1",
+      "collection": "lecture18",
+      "page": 3,
+      "sectionId": "lecture18-p003",
+      "originalBlock": 1,
+      "beforeOriginalChild": 1,
+      "originalParent": "**Several heads work in parallel inside each layer.** Each acts as a different expert, contributing information that the layer combines with the contributions of the other heads. The result is a new set of representations that brings those contributions together.",
+      "evidence": "heads",
+      "text": "Calling a head an **expert** means that it has learned weights for contributing to the numerical representation. It is a component inside the language model, rather than a separate model that receives an outline or writes a draft."
+    },
+    {
+      "id": "d-lecture18-p3-b2-c0",
+      "collection": "lecture18",
+      "page": 3,
+      "sectionId": "lecture18-p003",
+      "originalBlock": 2,
+      "beforeOriginalChild": 0,
+      "originalParent": "**The following layer repeats the process using the representations it receives.** Its heads again work in parallel, and their contributions are combined before the vectors continue onward.",
+      "evidence": "heads-width-depth",
+      "text": "The diagram has both **width and depth**. Several heads contribute within one layer, and successive layers transform the combined representations again. More heads and more layers therefore describe different aspects of the organization."
+    },
+    {
+      "id": "d-lecture18-p4-b2-c1",
+      "collection": "lecture18",
+      "page": 4,
+      "sectionId": "lecture18-p004",
+      "originalBlock": 2,
+      "beforeOriginalChild": 1,
+      "originalParent": "**An LLM develops its vectors through successive layers, so depth plays the role of time in this comparison.** One layer transforms the vectors, and the next layer uses those transformed vectors as its own input.",
+      "evidence": "dynamic-depth",
+      "text": "The comparison follows the **representation as it develops through the model**. Each stage starts from what the preceding stage produced. This explains the dynamical-system connection without treating an LLM’s changing numerical trajectory as a literal spring oscillation."
+    },
+    {
+      "id": "d-lecture18-p5-b2-c1",
+      "collection": "lecture18",
+      "page": 5,
+      "sectionId": "lecture18-p005",
+      "originalBlock": 2,
+      "beforeOriginalChild": 1,
+      "originalParent": "**The vectors can represent pieces of sound or a picture.** A spectrogram is divided into consecutive frames, and the model predicts the next frame of sound. A picture is divided into patches read row by row, and the task is to predict the missing bottom-right patch.",
+      "evidence": "ordered-patches",
+      "text": "Sound already unfolds in time, while the picture is given an **order by its sequence of patches**. What the prediction task needs in both cases is a sequence of vector representations and a next item to predict."
+    },
+    {
+      "id": "d-lecture18-p7-b2-c0",
+      "collection": "lecture18",
+      "page": 7,
+      "sectionId": "lecture18-p007",
+      "originalBlock": 2,
+      "beforeOriginalChild": 0,
+      "originalParent": "**Guessing the next letter is the same as predicting the sixteenth item**, which is the same game of predicting the next token that a large language model plays. A GPT trained only on this game learns English sounds and spelling, because its predictions can only get good by matching the patterns of English syllables.",
+      "evidence": "letter-learning",
+      "text": "**Good next-letter predictions require knowledge of the patterns in the words.** Repeated prediction and correction can put those constraints into the weights, even though the immediate task is to guess a continuation rather than recite a list of phonotactic rules."
+    }
+  ]
+}
