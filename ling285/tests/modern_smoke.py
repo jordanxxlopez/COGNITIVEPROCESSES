@@ -66,7 +66,7 @@ def run(base, browser):
     page.locator('[data-modern-qa="qaLecture"]').select_option('lecture18')
     page.locator('.modern-qa > summary').first.click()
     assert page.locator('.modern-qa[open]').count() == 1
-    page.locator('[data-modern-qa="qaLayout"]').select_option('connections')
+    page.locator('[data-layout-field="qaMode"]').select_option('connections')
     page.locator('[data-modern-qa="qaLecture"]').select_option('all')
     assert page.locator('.modern-qa').count() > 0
 
@@ -142,6 +142,7 @@ def run(base, browser):
     assert card.locator('textarea').input_value() == 'My saved conceptual explanation.'
     assert card.locator('.modern-answer').get_attribute('open') is not None
     route('missed')
+    page.locator(f'.modern-queue:has([data-single-question="{question_id}"]) > summary').click()
     page.locator(f'[data-single-question="{question_id}"]').click()
     assert state()['session']['ids'] == [question_id]
     route('sources')

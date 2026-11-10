@@ -393,4 +393,5 @@ function installModern() {
   }
   nav();applyPreferences();$('#content').innerHTML=modernRoutes[view]();sizeNotes();
  };
+ // MODULE_II_LAYOUT_HOOK
 }

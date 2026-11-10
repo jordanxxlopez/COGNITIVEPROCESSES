@@ -108,7 +108,7 @@ def build():
     pack=dict(revision='2026-11-modern-1',concepts=CONCEPTS,guides=GUIDES,model=model,asked=ASK,qa=qa,pageConcepts=MAP,cards=CARDS,contrasts=CONTRASTS,hard=HARD,review=REVIEW,core=CORE,connections=CONNECTIONS,editions=editions,code=CODE,figures=FIGURES,questions=questions,writing=writing,summaries=SUMMARIES,readings=READINGS,coverage=coverage,uploads=uploads)
     (OUT/'content.js').write_text('window.LING285_MODERN = '+json.dumps(pack,ensure_ascii=False,indent=1)+';\n')
     html=(ROOT/'index.html').read_text().replace('<head>','<head>\n  <base href="../">')
-    html=html.replace('</head>','<link rel="stylesheet" href="modern/modern.css?v=1"></head>')
+    html=html.replace('</head>','<link rel="stylesheet" href="modern/modern.css?v=1"><link rel="stylesheet" href="../workspace-modern.css?v=layout-switch-4"><link rel="stylesheet" href="modern/module2-layout.css?v=2"></head>')
     html=html.replace('<script src="app.js?v=ling285-source-fidelity-3" defer></script>','<script src="modern/content.js?v=1" defer></script><script src="modern/app.js?v=1" defer></script>')
     # Match the actual current asset tag while preserving the source shell otherwise.
     import re
@@ -116,11 +116,13 @@ def build():
     html=html.replace('<a href="./" class="brand">','<a href="modern/" class="brand">')
     html=re.sub(r'<script src="app\.js[^\"]*" defer></script>', '<script src="modern/content.js?v=1" defer></script><script src="modern/app.js?v=1" defer></script>',html)
     assert 'src="modern/app.js' in html
+    html=html.replace('modern/app.js?v=1','modern/app.js?v=module2-layout-2')
     html=html.replace('<div class="nav-label" id="workspaceModuleLabel">','<a class="workspace-switch" href="./">Open original workspace</a><div class="nav-label" id="workspaceModuleLabel">')
     (OUT/'index.html').write_text(html)
     app=(ROOT/'app.js').read_text()
     app=app.replace("const KEY = 'ling285-study-studio-v1';","const KEY = 'ling285-modern-studio-v1';")
-    app=app.replace('init();\n})();', (OUT/'runtime.js').read_text()+'\ninstallModern();\ninit();\n})();')
+    runtime=(OUT/'runtime.js').read_text().replace('// MODULE_II_LAYOUT_HOOK',(OUT/'module2-layout.js').read_text())
+    app=app.replace('init();\n})();', runtime+'\ninstallModern();\ninit();\n})();')
     (OUT/'app.js').write_text(app)
     dump(OUT/'build-manifest.json', {'sourceAppSha256':hashlib.sha256((ROOT/'app.js').read_bytes()).hexdigest(),'guideTopics':len(GUIDES),'originalContentUnchanged':True})
 
