@@ -42,7 +42,7 @@ app = app.replace("if('serviceWorker'in navigator&&location.protocol.startsWith(
 app = app.replace("LING406-notes-and-progress.json", "LING406-ModuleIII-notes-and-progress.json")
 
 replace_function('nav', r"""function nav(){
- $('#courseNav').innerHTML=`<button data-go="home" class="${view==='home'?'active':''}">Course overview</button><a class="button" href="../?view=home">Module II · Midterm 2</a><div class="small muted" style="padding:8px 13px">Module III · Weeks 10–12</div>`;
+ $('#courseNav').innerHTML=`<button data-go="home" class="${view==='home'?'active':''}">Course overview</button><a class="button" href="../?view=home">Module II · Midterm 2</a><div class="small muted" style="padding:8px 13px">Module III · Final</div>`;
  $('#workNav').innerHTML=WORK.map(([id,title])=>`<button data-go="${id}" class="${view===id?'active':''}">${title}</button>`).join('');
  $('#collectionNav').innerHTML=collections.map(m=>`<button data-lecture="${m.id}" class="${view==='collection'&&selected===m.id?'active':''}"><span class="nav-num">${m.number}</span>${esc(m.title)}</button>`).join('');
 }""")

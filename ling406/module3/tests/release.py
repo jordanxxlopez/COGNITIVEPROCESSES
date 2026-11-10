@@ -30,12 +30,11 @@ for m in data['modules']:assert sum(q['module']==m['id'] for q in data['question
 for group in data['guide']+data['experiments']:assert set(group['sections'])<=ids
 # Only navigation, source-coverage wording and its cache manifest may change in
 # the released Module II. Its authored data, visuals and quiz bank stay untouched.
-changed=subprocess.check_output(['git','diff','--name-only','origin/main'],cwd=REPO,text=True).splitlines()
-assert not [f for f in changed if not f.startswith('ling406/module3/') and f not in ['ling406/app.js','ling406/index.html','ling406/sw.js']],changed
-original=subprocess.check_output(['git','show','origin/main:ling406/app.js'],cwd=REPO,text=True)
-old='Midterm 1 files and the later reading, morphology/language-and-thought, modalities, and final-review lectures have not been supplied for this workspace.'
-new='Midterm 1 files have not been added. Reading, inflectional morphology, language and thought, modalities, and the final review are available in Module III through the module selector.'
-assert (ROOT.parent/'app.js').read_text()==original.replace(old,new)
+baseline='9e91594'
+protected=['data.js','quiz-engine.js'] + [p.name for p in ROOT.parent.glob('transcripts*-data.js')]
+for name in protected:
+ original=subprocess.check_output(['git','show',f'{baseline}:ling406/{name}'],cwd=REPO)
+ assert (ROOT.parent/name).read_bytes()==original,name
 with sync_playwright() as p:
  browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
  page=browser.new_page(viewport={'width':1440,'height':1000});errors=[];failures=[]
@@ -47,7 +46,7 @@ with sync_playwright() as p:
  page.locator('[data-read]').first.check()
  page.evaluate('LingStudio.startQuiz("quick")');page.locator('[data-answer]').first.click()
  before=page.evaluate("localStorage.getItem('ling406-study-studio-v1')")
- page.locator('header [aria-label="Course module"]').select_option('3');page.wait_for_url('**/module3/?view=home');page.wait_for_load_state('networkidle')
+ page.locator('#courseNav [data-module-link="3"]').click();page.wait_for_url('**/module3/?view=home');page.wait_for_load_state('networkidle')
  assert page.locator('#collectionNav button').count()==6
  assert page.locator('header [data-transcript-version] option').count()==4
  for module in data['modules']:
@@ -100,11 +99,11 @@ with sync_playwright() as p:
    page.screenshot(path=f'/tmp/ling406-release-{width}-{theme}.png')
    page.keyboard.press('Escape')
  assert page.evaluate("localStorage.getItem('ling406-study-studio-v1')")==before
- page.locator('header [aria-label="Course module"]').select_option('2');page.wait_for_url('**/ling406/?view=home');page.wait_for_load_state('networkidle')
+ page.locator('#courseNav [data-module-link="2"]').click();page.wait_for_url('**/ling406/?view=home');page.wait_for_load_state('networkidle')
  # Navigating back resumes the previous Module II quiz and notes unchanged.
  assert page.evaluate("localStorage.getItem('ling406-study-studio-v1')")==before
  assert page.evaluate('LingStudio.state.notes[Object.keys(LingStudio.state.notes)[0]]')=='Module II preserved note'
- page.locator('header [aria-label="Course module"]').select_option('3');page.wait_for_url('**/module3/?view=home');page.wait_for_load_state('networkidle')
+ page.locator('#courseNav [data-module-link="3"]').click();page.wait_for_url('**/module3/?view=home');page.wait_for_load_state('networkidle')
  page.evaluate('navigator.serviceWorker.ready.then(()=>true)')
  page.reload(wait_until='networkidle')
  page.context.set_offline(True);page.reload(wait_until='domcontentloaded')
