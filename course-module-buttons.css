@@ -6,6 +6,8 @@
 #courseModuleButtons .workspace-entry {margin-bottom:16px}
 #courseModuleButtons .nav-label {margin:20px 8px 10px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px}
 body:has(#courseModuleButtons) #courseNav,body:has(#courseModuleButtons) #moduleNav.module-nav {display:none}
-body:has(#courseModuleButtons) #workspaceNav > button[data-view="home"],body:has(#courseModuleButtons) #workspaceNav > .label:first-of-type,body:has(#courseModuleButtons) #workNav > button[data-view="courseOverview"] {display:none}
+body:has(#courseModuleButtons) #workspaceNav > button[data-view="home"],body:not([data-psyc-course-module="1"]):has(#courseModuleButtons) #workspaceNav > .label:first-of-type,body:has(#courseModuleButtons) #workNav > button[data-view="courseOverview"] {display:none}
 .pending-course-module #content,.pending-course-module #workNav,.pending-course-module #workspaceNav,.pending-course-module #moduleNav,.pending-course-module #collectionNav,.pending-course-module #moduleArchive,.pending-course-module #activeModuleLabel,.pending-course-module #workspaceModuleLabel,.pending-course-module #sidebar > .nav-label,.pending-course-module #sidebar > .reading-nav {display:none!important}
 #pendingCourseModule[hidden]{display:none}
+
+body[data-psyc-course-module="1"] #workspace-layout-switch,body[data-psyc-course-module="3"] #workspace-layout-switch {display:none}

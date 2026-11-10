@@ -6,7 +6,7 @@
   const course = script.dataset.course;
   const ling = course === 'ling285';
   const modern = ling && location.pathname.includes('/modern/');
-  let pending = new URL(location.href).searchParams.get('pendingModule') === '3';
+  let pending = !window.PsycCourseFocus && new URL(location.href).searchParams.get('pendingModule') === '3';
   const sidebar = document.querySelector('#sidebar');
   if (!sidebar) return;
   const host = document.createElement('section');
@@ -24,8 +24,9 @@
   empty.id = 'pendingCourseModule'; empty.tabIndex = -1; empty.hidden = true;
   empty.innerHTML = `<div class="hero"><span class="tag">${course.toUpperCase()} · MODULE III</span><h1>Module III</h1><p>Module III materials have not been added yet.</p></div>`;
   document.querySelector('#content').after(empty);
-  const labels = ling ? ['Module I · Midterm 1','Module II · Midterm 2','Module III'] : course === 'bme423' ? ['Module I · Midterm','Module II · Second half','Module III'] : ['Module I · Exam 1','Module II · Exam 2','Module III'];
+  const labels = ling ? ['Module I · Midterm 1','Module II · Midterm 2','Module III'] : course === 'bme423' ? ['Module I · Midterm','Module II · Second half','Module III'] : ['Module I · Midterm 1','Module II · Midterm 2','Module III'];
   function activeModule() {
+    if (course==='psyc301' && window.PsycCourseFocus) return window.PsycCourseFocus.active();
     if (pending) return 3;
     if (ling) return Number(document.querySelector('#moduleNav [aria-pressed="true"]')?.dataset.module?.replace('module','')) || 2;
     if (course === 'bme423') return typeof inModuleII === 'function' && inModuleII() ? 2 : (typeof view !== 'undefined' && view === 'courseOverview' ? 0 : 1);
@@ -64,6 +65,9 @@
     const button = e.target.closest('[data-studio-module]'); if (!button) return;
     const id = button.dataset.studioModule;
     if ('speechSynthesis' in window) speechSynthesis.cancel();
+    if (course==='psyc301' && window.PsycCourseFocus) {
+      clearPending();window.PsycCourseFocus.open(id==='overview'?window.PsycCourseFocus.active():Number(id));install();return;
+    }
     if (id === '3') {
       pending = true;
       const url = new URL(location.href); url.searchParams.set('pendingModule','3'); history.replaceState(null,'',url);
