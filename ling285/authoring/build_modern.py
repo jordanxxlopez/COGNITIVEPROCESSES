@@ -22,6 +22,7 @@ from modern_lectures import SUMMARIES
 from modern_readings import READINGS
 from original_c_d import build_editions
 from clear_editions import build_clear_editions
+from visual_meaning import build_visual_meaning
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'modern'
@@ -109,6 +110,7 @@ def build():
         editions[edition]=label
     editions.update(build_editions(ROOT,OUT))
     editions.update(build_clear_editions(ROOT,OUT))
+    editions.update(build_visual_meaning(ROOT,OUT))
     pack=dict(revision='2026-11-modern-1',concepts=CONCEPTS,guides=GUIDES,model=model,asked=ASK,qa=qa,pageConcepts=MAP,cards=CARDS,contrasts=CONTRASTS,hard=HARD,review=REVIEW,core=CORE,connections=CONNECTIONS,editions=editions,code=CODE,figures=FIGURES,questions=questions,writing=writing,summaries=SUMMARIES,readings=READINGS,coverage=coverage,uploads=uploads)
     (OUT/'content.js').write_text('window.LING285_MODERN = '+json.dumps(pack,ensure_ascii=False,indent=1)+';\n')
     html=(ROOT/'index.html').read_text().replace('<head>','<head>\n  <base href="../">')
@@ -120,8 +122,8 @@ def build():
     html=html.replace('<a href="./" class="brand">','<a href="modern/" class="brand">')
     html=re.sub(r'<script src="app\.js[^\"]*" defer></script>', '<script src="modern/content.js?v=1" defer></script><script src="modern/app.js?v=1" defer></script>',html)
     assert 'src="modern/app.js' in html
-    html=html.replace('modern/app.js?v=1','modern/app.js?v=clear-teaching-2')
-    html=html.replace('modern/content.js?v=1','modern/content.js?v=clear-teaching-2')
+    html=html.replace('modern/app.js?v=1','modern/app.js?v=visual-meaning-3')
+    html=html.replace('modern/content.js?v=1','modern/content.js?v=visual-meaning-3')
     html=html.replace('<div class="nav-label" id="workspaceModuleLabel">','<a class="workspace-switch" href="./">Open original workspace</a><div class="nav-label" id="workspaceModuleLabel">')
     (OUT/'index.html').write_text(html)
     app=(ROOT/'app.js').read_text()

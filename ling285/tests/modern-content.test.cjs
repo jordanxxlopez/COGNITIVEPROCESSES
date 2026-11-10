@@ -53,7 +53,7 @@ test('the two additional choices preserve all previous modern writing and editio
 });
 
 test('the existing five modern editions preserve every source page and unpadded title page', () => {
-  assert.deepEqual(Object.keys(pack.editions), [...retainedEditionIds,'original-c-v2','d-v2','notes-v7']);
+  assert.deepEqual(Object.keys(pack.editions), [...retainedEditionIds,'original-c-v2','d-v2','notes-v7','original-c-v3']);
   assert.equal(lectures.reduce((n, c) => n + c.sections.length, 0), 286);
   for (const edition of ['professor','b','c','follow','v20']) {
     const payload = read(`modern/transcripts-${edition}.json`);
@@ -204,6 +204,54 @@ test('Version 7 reproduces the supplied notes on their original slides without i
     if (lecture.moduleId === 'module1') assert(sections.every(s => s.teaching.length === 0));
     else assert.deepEqual(sections.map(s => s.teaching), source.collections[lecture.id].pages.map(p => p.teaching));
   }
+});
+
+test('Version 3 preserves all ten prior choices, course content and layout assets', () => {
+  const lock = read('modern/visual-meaning-preserved.json');
+  assert.equal(Object.keys(lock.editions).length, 10);
+  for (const [id, label] of Object.entries(lock.editions)) assert.equal(pack.editions[id], label);
+  for (const [file, expected] of Object.entries(lock.files)) {
+    const actual = file === 'modern/content.js'
+      ? crypto.createHash('sha256').update(restoreEditionMetadata(file, Object.keys(lock.editions))).digest('hex')
+      : hash(file);
+    assert.equal(actual, expected, file);
+  }
+});
+
+test('Version 3 explains source visual meanings in place and keeps unaffected pages verbatim', () => {
+  const base = read('modern/transcripts-original-c-v2.json');
+  const payload = read('modern/transcripts-original-c-v3.json');
+  const report = read('modern/visual-meaning-provenance.json');
+  assert.equal(payload.origin.baseSha256, hash('modern/transcripts-original-c-v2.json'));
+  assert.deepEqual(payload.visualPresentation, base.visualPresentation);
+  assert.equal(report.reviewedPages, 286);
+  assert.equal(report.pages.length, report.reviewedPages);
+  assert.equal(report.revisedPages, report.pages.filter(p => p.revised).length);
+  for (const [file, expected] of Object.entries(report.authoringFiles)) assert.equal(hash(file), expected, file);
+  for (const lecture of lectures) {
+    const rewritten = payload.collections[lecture.id].sections;
+    assert.deepEqual(rewritten.map(({teaching,...metadata}) => metadata),
+      base.collections[lecture.id].sections.map(({teaching,...metadata}) => metadata));
+    for (const section of rewritten) {
+      const original = base.collections[lecture.id].sections[section.page-1];
+      const record = report.pages.find(p => p.sectionId === section.id);
+      assert(record, section.id);
+      if (!record.revised) {assert.deepEqual(section.teaching, original.teaching);continue;}
+      assert(original.teaching.length && section.teaching.length, 'Keep title/logistical pages unpadded.');
+      assert.notDeepEqual(section.teaching, original.teaching);
+      assert(record.explained.length && record.evidence.slides.length, section.id);
+      const prose = section.teaching.flatMap(b => [b.text,...b.children]).join(' ');
+      assert(!/\b(?:the lecture|the class|the professor|he says|she says|need not|as we saw|we will see|previous slides?|next slides?)\b/i.test(prose), section.id);
+      assert(prose.includes('**'), section.id);
+      for (const b of section.teaching) for (const t of [b.text,...b.children]) assert.equal(t.split('**').length % 2, 1, section.id);
+    }
+    assert(report.pages.some(p => p.collection === lecture.id && p.revised), lecture.id);
+  }
+  // The user's concrete example must retain the baseline, symbols, relative
+  // conditions and rate meanings rather than only the general directional rule.
+  const text = JSON.stringify(payload.collections.lecture11.sections[2].teaching);
+  for (const pattern of [/reference/i,/mass/i,/stiffness/i,/4m/,/4K/,/four times/i,/half/i,/twice/i,/cycles/i]) assert.match(text, pattern);
+  assert.equal(report.rules.repeatedExplanationTemplate, false);
 });
 
 test('new section content and question answers resolve to original source pages', () => {

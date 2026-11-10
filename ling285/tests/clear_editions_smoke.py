@@ -11,10 +11,11 @@ from modern_smoke import KEY, LEGACY, ROOT, QuietHandler
 from content_fitting_smoke import DIAGNOSTICS
 
 
-def run(base, browser):
+def run(base, browser, edition_ids=('original-c-v2', 'd-v2', 'notes-v7'), report_name='clear-editions-validation.json'):
     studio = ROOT / 'ling285'
     editions = {key: json.loads((studio / f'modern/transcripts-{key}.json').read_text())
-                for key in ['original-c-v2', 'd-v2', 'notes-v7']}
+                for key in edition_ids}
+    primary_edition = edition_ids[0]
     context = browser.new_context(viewport={'width': 1600, 'height': 1000})
     page = context.new_page()
     errors = []
@@ -22,7 +23,7 @@ def run(base, browser):
     checks = 0
     for width in [1600, 390]:
         page.set_viewport_size({'width': width, 'height': 1000 if width > 500 else 844})
-        for cid, collection in editions['original-c-v2']['collections'].items():
+        for cid, collection in editions[primary_edition]['collections'].items():
             module = 'module1' if int(cid[7:9]) < 11 else 'module2'
             page.goto(f'{base}/ling285/modern/?view=collection&lecture={cid}&module={module}')
             page.wait_for_selector('.source-section')
@@ -62,7 +63,7 @@ def run(base, browser):
     page.set_viewport_size({'width': 1600, 'height': 900})
     page.goto(f'{base}/ling285/modern/?view=collection&lecture=lecture11&module=module2')
     page.wait_for_selector('.source-section')
-    page.locator('[data-transcript-version]').select_option('original-c-v2')
+    page.locator('[data-transcript-version]').select_option(primary_edition)
     section = page.locator('[data-section="lecture11-p004"]')
     section.evaluate('(node)=>node.open=true')
     section.locator('[data-note]').fill('Keep my explanation of the two modes.')
@@ -96,19 +97,20 @@ def run(base, browser):
     page.locator('[data-action="closeReader"]').click()
     assert page.locator('.inline-reader #readerSelect').input_value() == '3'
     page.locator('[data-action="teachingNotes"]').click()
-    page.locator('[data-transcript-version]').select_option('d-v2')
+    saved_edition = 'd-v2' if 'd-v2' in editions else primary_edition
+    page.locator('[data-transcript-version]').select_option(saved_edition)
     page.reload()
     page.wait_for_selector('.source-section')
-    assert page.locator('[data-transcript-version]').input_value() == 'd-v2'
+    assert page.locator('[data-transcript-version]').input_value() == saved_edition
     for key in [KEY, LEGACY]:
         saved = page.evaluate('key=>JSON.parse(localStorage.getItem(key))', key)
         assert saved['notes']['lecture11-p004'] == 'Keep my explanation of the two modes.'
         assert saved['read']['lecture11-p004']
     assert not errors, errors
-    report = dict(collectionEditionViewportThemeChecks=checks, completeTeaching=True,
+    report = dict(editions=list(edition_ids), collectionEditionViewportThemeChecks=checks, completeTeaching=True,
                   boldEmphasis=True, preservedPageIds=True, notesAndReadMarksShared=True,
                   readerSwitching=True, originalEditions='Frozen hashes verified separately.')
-    (studio / 'modern/clear-editions-validation.json').write_text(json.dumps(report, indent=2) + '\n')
+    (studio / 'modern' / report_name).write_text(json.dumps(report, indent=2) + '\n')
     context.close()
     print(f'PASS: {checks} fitting checks; inline and expanded choices, shared notes/read marks and reload', flush=True)
 

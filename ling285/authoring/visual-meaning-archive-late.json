@@ -1,0 +1,1413 @@
+{
+  "review": {
+    "base": "modern/transcripts-original-c-v2.json",
+    "scope": "All 77 source pages in lecture05-06 and lectures07–10 were compared with C2. Only pages with meaningful unexplained visual notation receive replacement teaching. Empty title, blank and logistical pages retain C2.",
+    "inspection": "Existing all-page contact sheets were reviewed; detailed source slides/native speaker notes and page-inventory OCR were checked for equations, labels and ordered animation states. Original magnesium and learning-rate figures were read at full available resolution. Air-spacing, cosine, combined-frequency and cycle-count media were sampled at six time positions during C2 review, and those reviewed frames were rechecked for scales and labels.",
+    "limitations": [
+      "Sampling establishes the inspected states rather than full frame-by-frame animation or audio coverage. Original source media remain available.",
+      "No raw verbal transcript is available for these Module I pages; no additional spoken emphasis is claimed.",
+      "The hearing mechanism uses supplied notes-lecture07 pages8–9 and15 because the primary hearing pages have headings/labels rather than a complete embedded animation.",
+      "Brain-area abbreviations are identified as source diagram names without inventing unprovided functions for every area. Historical dates, decorative score details and title-page metadata do not become memorization lists.",
+      "Approximation and linear-network corrections follow the supplied source notes and existing source issues rather than silently treating flattened overlay numbers as complete coherent computations."
+    ]
+  },
+  "collections": {
+    "lecture05-06": {
+      "reviewedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "pages": [
+        {
+          "page": 3,
+          "teaching": [
+            {
+              "text": "A **harmonic oscillator** has two quantities that change together. **Position, x,** tells where something is relative to its resting position. **Velocity, v,** tells how its position is changing.",
+              "children": [
+                "A dot above a letter means its **rate of change**. The symbol ẋ is the rate of change of position, while v̇ is the rate of change of velocity."
+              ]
+            },
+            {
+              "text": "The rule **ẋ = v** says that velocity determines how position changes. Positive velocity makes position increase, and negative velocity makes it decrease.",
+              "children": []
+            },
+            {
+              "text": "The rule **v̇ = −x** says that position changes velocity with the sign reversed. Positive position makes velocity decrease, while negative position makes velocity increase.",
+              "children": [
+                "The minus sign gives the opposing direction of this effect. Position and velocity keep changing one another through this loop."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "x is position; v is velocity",
+            "dots mean rates of change, not extra variables",
+            "minus sign in v̇=−x reverses the sign of position"
+          ]
+        },
+        {
+          "page": 4,
+          "teaching": [
+            {
+              "text": "**Velocity, v,** determines the direction in which **position, x,** changes. In the example **v = −5**, the negative sign means position decreases.",
+              "children": [
+                "This describes the direction of motion. It does not say that the current position itself must be negative."
+              ]
+            },
+            {
+              "text": "In the example **x = −5**, position is on the negative side of equilibrium. The rule **v̇ = −x** then makes the change in velocity positive.",
+              "children": [
+                "Velocity rises because the rule reverses the sign of position. It can become less negative before it becomes positive, so rising velocity does not always mean speeding up in the current direction."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "v=−5 is a velocity example, not a negative position",
+            "x=−5 is a position example, not a velocity",
+            "rate sign versus current state sign"
+          ]
+        },
+        {
+          "page": 5,
+          "teaching": [
+            {
+              "text": "The rule **ẋ = v** connects velocity to changing position. If **v** is positive, **x** rises. If v is negative, x falls.",
+              "children": [
+                "The dot belongs to the rate of change, so positive ẋ means position is increasing rather than saying where the object currently is."
+              ]
+            },
+            {
+              "text": "The rule **v̇ = −x** connects position to changing velocity. If x is positive, **v** falls. If x is negative, v rises.",
+              "children": [
+                "An object can be on the positive side while moving toward smaller positions. Its position, velocity, and change in velocity describe different aspects of its motion."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "x/ẋ and v/v̇ distinguish a quantity from its rate",
+            "positive/negative values identify side or direction according to the quantity"
+          ]
+        },
+        {
+          "page": 10,
+          "teaching": [
+            {
+              "text": "During **compression**, air particles move closer together and pressure becomes higher. During **rarefaction**, they move farther apart and pressure becomes lower.",
+              "children": [
+                "The particles stay the same size. What changes is the space between them."
+              ]
+            },
+            {
+              "text": "The dashed boundary marks the slice’s **equilibrium size**. The highlighted pair makes its changing distance visible.",
+              "children": [
+                "**100%** means the pair is at its equilibrium spacing. A percentage below 100% means the particles are closer together, while a percentage above 100% means they are farther apart."
+              ]
+            },
+            {
+              "text": "The slice repeatedly contracts and expands through these states. The percentages describe relative spacing rather than the percentage of particles present.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "100% is equilibrium distance of the marked pair",
+            "below/above100% means compression/rarefaction",
+            "dot size and particle count remain fixed"
+          ]
+        },
+        {
+          "page": 11,
+          "teaching": [
+            {
+              "text": "A **cosine** describes the repeating expansion and compression of the air slice. **x** is a scaled measure of expansion.",
+              "children": [
+                "**+1** means maximum rarefaction, with the particles farthest apart. **0** means equilibrium spacing. **−1** means maximum compression, with the particles closest together. These are relative values rather than distances in centimeters."
+              ]
+            },
+            {
+              "text": "The horizontal axis shows **phase**, meaning how far the motion has progressed through its repeating cycle. The marks are phase values rather than seconds.",
+              "children": [
+                "From **0 to 2π** is one complete cycle. At 0 the air is maximally expanded, at **π** it is maximally compressed, and at 2π it is maximally expanded again. The range to **6π** contains three cycles."
+              ]
+            },
+            {
+              "text": "The moving point connects a value on the curve with the air spacing at that moment. The curve shows changing expansion rather than the path followed by individual particles.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "x is normalized expansion, not pressure/distance",
+            "+1/0/−1 correspond to rarefaction/equilibrium/compression",
+            "phase is cycle progress; 2π per cycle and6π for3cycles"
+          ]
+        },
+        {
+          "page": 13,
+          "teaching": [
+            {
+              "text": "A vowel can combine **more than one frequency**. Each component is a repeating vibration, and adding the components produces a more complex pattern.",
+              "children": [
+                "The illustrative **/i/** model combines **1 Hz and 4 Hz**. The illustrative **/a/** model combines **2 Hz and 3 Hz**. **Hertz, Hz,** means cycles per second. These deliberately slow values make the patterns visible."
+              ]
+            },
+            {
+              "text": "In the graphs, **t** is signal time in seconds, and **x(t)** is the combined expansion at that time. Each cosine term contributes one component vibration.",
+              "children": [
+                "The **vertical axis is scaled from −2 to +2** for the sum of two component waves. Positive values show rarefaction, zero shows equilibrium spacing, and negative values show compression.",
+                "The multiplying factors inside the cosine terms set the components’ repetition rates. They are not measurements of the air’s pressure or spacing."
+              ]
+            },
+            {
+              "text": "Both combinations begin at the same expanded state and return to it once per second, but their motion within that second differs.",
+              "children": [
+                "Which frequencies are combined determines the detailed pattern. These are visible models rather than measured frequencies of human vowels."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              13
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "/i/ and /a/ label illustrative vowel models",
+            "1/4Hz versus2/3Hz are componentfrequencies",
+            "t is seconds; x(t) is combined expansion; ±2 is combined model scale"
+          ]
+        },
+        {
+          "page": 19,
+          "teaching": [
+            {
+              "text": "The magnesium example compares a historical shell picture with a **quantum orbital** picture. **Mg** names magnesium, and neutral magnesium has **12 electrons**.",
+              "children": [
+                "The shell arrangement **2–8–2** counts the electrons assigned to the first, second, and third shells. It does not give vibration frequencies."
+              ]
+            },
+            {
+              "text": "The orbital picture describes **electron density**, with darker regions representing greater density rather than a tiny particle travelling on a fixed circular path.",
+              "children": [
+                "**1s, 2s, 2p, and 3s** name the occupied orbital groups. The raised numbers in **1s² 2s² 2p⁶ 3s²** count the electrons contributing from those groups."
+              ]
+            },
+            {
+              "text": "The total-density picture combines those occupied-group contributions. The separate thumbnails use their own scales, so their drawn sizes are not a shared distance measurement.",
+              "children": [
+                "These **wave modes** are allowed quantum patterns. The use of wave patterns does not make magnesium a simple classical harmonic oscillator."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              19
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "Mg and12electrons",
+            "2–8–2 counts shells rather thanfrequencies",
+            "orbitalgroupnamesandsuperscriptelectroncounts",
+            "darknessisdensity; separatethumbnailscales"
+          ]
+        }
+      ]
+    },
+    "lecture07": {
+      "reviewedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pages": [
+        {
+          "page": 2,
+          "teaching": [
+            {
+              "text": "**Position, x,** tells where something is relative to its resting position. **Velocity, v,** tells how that position changes. A dot over either letter means its **rate of change with time**.",
+              "children": []
+            },
+            {
+              "text": "In **ẋ = v**, velocity determines the change in position. Positive v makes x rise, while negative v makes x fall.",
+              "children": []
+            },
+            {
+              "text": "In **v̇ = −x**, position determines the change in velocity with the sign reversed. Positive x makes v fall, while negative x makes v rise.",
+              "children": [
+                "The two arrows connect these effects into a **feedback loop**. The dot distinguishes a change from the quantity being changed."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              2
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "x/v are position/velocity",
+            "ẋ/v̇ are rates",
+            "opposing signs in secondrule; arrows indicate mutual effects"
+          ]
+        },
+        {
+          "page": 5,
+          "teaching": [
+            {
+              "text": "**Compression** brings air particles closer together and raises pressure. **Rarefaction** spreads them farther apart and lowers pressure.",
+              "children": [
+                "The same particles remain present and keep the same size. Their spacing changes as the air slice contracts and expands."
+              ]
+            },
+            {
+              "text": "The dashed boundary marks the **equilibrium size**, and the highlighted pair tracks the spacing between particles.",
+              "children": [
+                "**100%** is that pair’s equilibrium distance. A smaller percentage means compression, while a larger percentage means rarefaction. It is a comparison with the resting spacing, not a count of particles."
+              ]
+            },
+            {
+              "text": "Compressed air pushes back, and moving air has mass. Those returning and continuing effects provide the ingredients for vibration.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "dashed equilibrium size",
+            "highlighted pairpercentage is relative distance;100%=equilibrium",
+            "smaller/largerpercentages reflectcompression/rarefaction"
+          ]
+        },
+        {
+          "page": 6,
+          "teaching": [
+            {
+              "text": "**Negative feedback**, also called **balancing feedback**, reduces displacement from **equilibrium**, the resting position at **x = 0**. Here x means displacement, and **ẋ** means its rate of change.",
+              "children": [
+                "In **ẋ = −⅓x**, the minus sign makes the change oppose the displacement. Positive x gives a negative rate and x falls. Negative x gives a positive rate and x rises."
+              ]
+            },
+            {
+              "text": "The **one-third coefficient** sets the strength of the returning effect in this model. Its size determines how strongly the current displacement affects the rate of change.",
+              "children": [
+                "The starting value **x = 1** is an **initial condition**, the position from which the return begins. As the displacement shrinks, the return-driving rate becomes smaller too."
+              ]
+            },
+            {
+              "text": "The vertical axis shows **x**, and the horizontal **t** axis shows time. A curve approaching zero steeply and then flattening means a fast initial return that gradually slows.",
+              "children": [
+                "A larger returning coefficient makes the approach faster. The negative sign supplies the direction; the coefficient’s magnitude supplies the strength."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "x/displacement; ẋ/rate; t/time",
+            "zero is equilibrium;1 is initialcondition",
+            "negative sign versus coefficientstrength−1/3"
+          ]
+        },
+        {
+          "page": 7,
+          "teaching": [
+            {
+              "text": "**Inertia** is the tendency of a mass to continue its motion unless something changes that motion. The arrow in the demonstration shows the direction of **constant velocity**.",
+              "children": [
+                "Constant velocity means travelling the same distance during each equal time interval. The position changes even though velocity stays the same."
+              ]
+            },
+            {
+              "text": "A moving mass does not stop simply because it reaches a particular place. This is why a mass moving toward equilibrium can pass through it.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "arrow is velocitydirection; equalintervals/equaldistances expressconstantvelocity"
+          ]
+        },
+        {
+          "page": 8,
+          "teaching": [
+            {
+              "text": "**Displacement, x,** measures distance and direction from the spring’s natural position. **x = 0** is equilibrium, **x = +1** is the stretched-side example, and **x = −1** is the compressed-side example.",
+              "children": [
+                "The signs identify opposite sides of the same resting position. They do not tell whether the endpoint is currently moving toward or away from equilibrium."
+              ]
+            },
+            {
+              "text": "In the spring-only model, the endpoint approaches zero without repeatedly crossing it. The blue and red traces begin on opposite sides and approach the same resting position.",
+              "children": []
+            },
+            {
+              "text": "Attaching a **mass** changes the motion. The spring brings the mass toward equilibrium, but the mass continues through it because it is already moving.",
+              "children": [
+                "The spring then acts from the other side and turns the mass back. The oscillating trace crosses zero repeatedly, while its peaks become smaller."
+              ]
+            },
+            {
+              "text": "The trace’s vertical value is displacement and its horizontal direction follows time. A zero crossing is a moment at the resting position; a peak or trough is a turning point in the motion.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "x=0equilibrium and±1 opposite exampledisplacements",
+            "blue/red directreturns versus oscillatingtrace",
+            "tracevalue is displacementovertime"
+          ]
+        },
+        {
+          "page": 9,
+          "teaching": [
+            {
+              "text": "The **cosine** curve follows the expansion and compression of the air slice. **x** is a relative measure of expansion rather than a physical distance or a pressure reading.",
+              "children": [
+                "**+1** means maximum rarefaction, **0** means equilibrium spacing, and **−1** means maximum compression."
+              ]
+            },
+            {
+              "text": "The horizontal axis shows **phase**, how far the vibration has progressed through its repeating cycle. From **0 to 2π** is one cycle, not two seconds.",
+              "children": [
+                "The motion starts maximally expanded at 0, becomes maximally compressed at **π**, and returns to maximum expansion at 2π. The range through **6π** shows three cycles."
+              ]
+            },
+            {
+              "text": "The moving point connects the graph with the particle spacing at that stage. The air particles do not travel along the wavy shape of the curve.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              9
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "relative x scale±1/0",
+            "phase ratherthanseconds;πhalfcycle2πonecycle6πthreecycles"
+          ]
+        },
+        {
+          "page": 11,
+          "teaching": [
+            {
+              "text": "**Frequency** describes how many complete cycles occur in a given time. The three panels all cover the **same 0–12-second interval**.",
+              "children": [
+                "The low-frequency example completes **3 cycles**, the middle one completes **6**, and the high one completes **9**. Those numbers count cycles over twelve seconds; they are not labels saying 3, 6, or 9 cycles per second."
+              ]
+            },
+            {
+              "text": "Time runs along each horizontal axis. The vertical **x** value measures relative expansion, with **+1** for maximum rarefaction, **0** for equilibrium spacing, and **−1** for maximum compression.",
+              "children": []
+            },
+            {
+              "text": "The spacing range is the same in all three panels. **The extent of expansion and the frequency are different properties.** More cycles fit into the same time when the motion repeats faster.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "3/6/9cycles share12seconds,notHz",
+            "horizontal timeinseconds;vertical relativeexpansionx",
+            "sameamplitudeversusdifferentfrequency"
+          ]
+        },
+        {
+          "page": 12,
+          "teaching": [
+            {
+              "text": "The illustrative **/i/** and **/a/** models combine different frequency components. The /i/ model uses **1 Hz and 4 Hz**, while the /a/ model uses **2 Hz and 3 Hz**.",
+              "children": [
+                "**Hertz, Hz,** means cycles per second. The slow frequencies allow the combined movement to be seen rather than giving measured human vowel frequencies."
+              ]
+            },
+            {
+              "text": "The horizontal **t** axis is signal time in seconds, and **x(t)** means combined expansion at that time. Each cosine contributes one component to that combined value.",
+              "children": [
+                "The **vertical axis is scaled from −2 to +2** for the sum of two component waves. Positive values mean rarefaction, zero means equilibrium spacing, and negative values mean compression.",
+                "The multiplying factors inside the cosine terms set the components’ repetition rates. They are not measurements of the air’s pressure or spacing."
+              ]
+            },
+            {
+              "text": "Both patterns begin at the same expanded state and repeat once per second, but their motion within each second is different.",
+              "children": [
+                "Their different component frequencies create different arrangements of peaks and troughs. The moving points and particle diagrams show the resulting combined vibration."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              12
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "/i///a/ modelnamesandcomponentHz",
+            "x(t)/t andseconds",
+            "±2 combinedamplitude; sharedrepeatdoesnotimplysamepattern"
+          ]
+        },
+        {
+          "page": 13,
+          "teaching": [
+            {
+              "text": "**Perturbation theory** predicts how a system changes when one of its properties changes. In the notation, **m** means mass, **k** means stiffness, and **f** means frequency.",
+              "children": [
+                "An upward arrow means an increase, and a downward arrow means a decrease."
+              ]
+            },
+            {
+              "text": "Increasing **m**, while stiffness stays fixed, lowers **f**. A heavier mass is harder to slow and turn around, so each cycle takes longer.",
+              "children": [
+                "Increasing **k**, while mass stays fixed, raises f. A stronger returning force turns the mass around sooner, so the cycle repeats faster."
+              ]
+            },
+            {
+              "text": "The arrow summaries express these directions of change. They do not give a particular frequency value or require a calculation.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              13
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "m mass;k stiffness;ffrequency",
+            "arrowdirectionmeansincrease/decrease",
+            "otherpropertyheldfixed"
+          ]
+        },
+        {
+          "page": 14,
+          "teaching": [
+            {
+              "text": "The **basilar membrane** has different mass and stiffness along its length. **Large M and small k** describe its heavier, less stiff end, while **small m and large K** describe its lighter, stiffer end.",
+              "children": [
+                "The size distinctions describe how much mass or stiffness each region has. They do not name different kinds of material."
+              ]
+            },
+            {
+              "text": "The heavier, less stiff end responds to **lower frequencies**. The lighter, stiffer end responds to **higher frequencies**.",
+              "children": [
+                "Greater mass favors slower vibration, while greater stiffness favors faster vibration."
+              ]
+            },
+            {
+              "text": "Neurons carry signals from different places along the membrane to the brain. **Where the vibration occurs** therefore provides information about which frequencies are present in the sound.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              14
+            ],
+            "transcriptLines": [],
+            "supplementalSources": [
+              {
+                "file": "sources/notes-lecture07.pdf",
+                "pages": [
+                  8,
+                  9,
+                  15
+                ]
+              }
+            ]
+          },
+          "explained": [
+            "M/m largemass/smallmass andK/k largestiffness/smallstiffness inhearingnotes",
+            "frequencyversusphysicalplace; neuronscarrysignals"
+          ]
+        },
+        {
+          "page": 15,
+          "teaching": [
+            {
+              "text": "The **learning rate, γ**, controls the size of each correction to an estimate. In the graphs, the vertical **x** value is the current estimate, and the horizontal **Epochs** axis records the displayed count of learning updates.",
+              "children": [
+                "The red, green, and blue runs start near **130, 80, and 10**. They are different starting estimates moving toward a target near **80**."
+              ]
+            },
+            {
+              "text": "The panels compare learning rates of **1%, 10%, 50%, and 80%**. A larger percentage makes each update more responsive to the current observation.",
+              "children": [
+                "At 1%, the runs move steadily but approach slowly. At 10%, they reach the target region sooner with small fluctuations. At 50% and 80%, they reach it quickly but continue bouncing more widely."
+              ]
+            },
+            {
+              "text": "This is the **speed–accuracy tradeoff**. Reaching the target region quickly differs from remaining close to it.",
+              "children": [
+                "The arrow summaries say that increasing γ raises speed but lowers steadiness or accuracy in these runs. Decreasing γ reverses that tradeoff."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              15
+            ],
+            "transcriptLines": [],
+            "supplementalSources": [
+              {
+                "file": "sources/notes-lecture07.pdf",
+                "pages": [
+                  8,
+                  9,
+                  15
+                ]
+              }
+            ]
+          },
+          "explained": [
+            "gamma learningratepercentage",
+            "x currentestimate;Epochs axiscountsdisplayedlearningupdates",
+            "130/80/10 initialestimates;80target",
+            "1/10/50/80% compareupdateamountnotaccuracy"
+          ]
+        }
+      ]
+    },
+    "lecture08": {
+      "reviewedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "pages": [
+        {
+          "page": 3,
+          "teaching": [
+            {
+              "text": "The spring’s **equilibrium** is its natural resting position, marked **x = 0**. **x** is displacement from that position, so positive and negative values identify its two sides.",
+              "children": [
+                "In the spring-only model, a stretched endpoint approaches zero from one side and a compressed endpoint approaches it from the other."
+              ]
+            },
+            {
+              "text": "A **mass–spring system** also has inertia. The spring moves the mass toward equilibrium, and the mass continues through it because it is already moving.",
+              "children": [
+                "The spring then acts from the other side and turns the mass back. This interaction gives repeated crossings and turns, which make an **oscillation**."
+              ]
+            },
+            {
+              "text": "The traces show displacement changing with time. Reaching zero means arriving at the resting position; it does not by itself mean the moving mass has stopped.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "x displacement;0 equilibrium;±sides",
+            "traceisdisplacementovertime"
+          ]
+        },
+        {
+          "page": 4,
+          "teaching": [
+            {
+              "text": "**Perturbation theory** predicts the effect of changing mass or stiffness. **m** means mass, **k** means stiffness, and **f** means frequency. The arrows indicate increases or decreases.",
+              "children": [
+                "Increasing m lowers f when stiffness stays fixed. More mass takes longer to turn around.",
+                "Increasing k raises f when mass stays fixed. A stiffer spring provides a stronger returning action."
+              ]
+            },
+            {
+              "text": "During speech, changing the shape of the **vocal tract** changes how different portions of air behave. The air can vibrate at several frequencies, and the pattern differs between speech sounds.",
+              "children": [
+                "The listener’s ear separates the frequencies present in that pattern so that different speech sounds can be distinguished."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "m/k/f andarrowmeaning",
+            "frequencydirectionswithotherpropertyfixed"
+          ]
+        },
+        {
+          "page": 7,
+          "teaching": [
+            {
+              "text": "Different locations on the **basilar membrane** respond to different frequencies. The heavier, less stiff end responds to low frequencies. The lighter, stiffer end responds to high frequencies.",
+              "children": [
+                "The mass and stiffness distinctions concern the membrane’s physical properties. **Frequency** concerns how quickly the vibration repeats."
+              ]
+            },
+            {
+              "text": "The **neurons** carry signals from those locations **to the brain**. The information path runs from sound-driven vibration to activity at particular places and then to the brain.",
+              "children": [
+                "Activity at different locations tells the brain which frequencies are present in the incoming sound."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": [],
+            "supplementalSources": [
+              {
+                "file": "sources/notes-lecture07.pdf",
+                "pages": [
+                  8,
+                  9,
+                  15
+                ]
+              }
+            ]
+          },
+          "explained": [
+            "frequencyisvibrationrate;neuronstobraininformationpath"
+          ]
+        },
+        {
+          "page": 8,
+          "teaching": [
+            {
+              "text": "The **vocal folds** are small muscles with both mass and stiffness. The stated **one-centimeter length and one-millimeter height** describe their physical size.",
+              "children": [
+                "Other muscles can stretch the folds to make them stiffer or bunch them to make them effectively heavier. Stiffer folds vibrate faster, while heavier folds vibrate more slowly."
+              ]
+            },
+            {
+              "text": "Their vibration rate is the **fundamental frequency, F0**. The zero is part of the frequency’s name, not a claim that the folds vibrate zero times.",
+              "children": [
+                "This rate is closely connected with **pitch**. Changing it allows singing and can signal questions, surprise, or emotion. In a **tone language**, pitch differences can distinguish word meanings."
+              ]
+            },
+            {
+              "text": "Vibration begins when pressure builds beneath closed folds and pushes them apart. Air flows through the opening, and the airflow draws the folds inward again.",
+              "children": [
+                "This inward effect is called the **Bernoulli force**. Repeated opening and closing can occur hundreds of times per second; that is a rate of vibration rather than a physical dimension."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "1cm/1mm physicaldimensions",
+            "F0 fundamentalvibrationfrequency;0partofname",
+            "hundredsoftimespersecondisrate,notdimensions"
+          ]
+        },
+        {
+          "page": 9,
+          "teaching": [
+            {
+              "text": "The oscillator tracks **position, x,** and **velocity, v**. It starts at **x = 1 and v = 0**, meaning an initial displacement with no initial motion.",
+              "children": [
+                "**k** means stiffness and **m** means mass. The displayed **k/m = 1** sets their ratio for this example. **Δt**, also written **dt**, is the time step, set to **0.5** model-time units."
+              ]
+            },
+            {
+              "text": "At each step, velocity is used to update position, and the **new position** is then used to update velocity.",
+              "children": [
+                "The x and v lists store the successive states. The plotted decimals are rounded values of position or velocity at those sampled times, rather than new coefficients."
+              ]
+            },
+            {
+              "text": "The horizontal **t** axes show time, and the vertical axes show x or v. Position passes through zero while velocity can still be nonzero. At a turning point in position, velocity is zero.",
+              "children": [
+                "The plotted swings stay near their original range. Which state each update uses is part of the procedure."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              9
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "x position;vvelocity;kstiffness;mmass; k/m=1ratio",
+            "x=1/v=0initialstate;dt/Δt=0.5timestep",
+            "listsanddecimalsaresampledstatevalues",
+            "t timeaxis;separatex/vverticalaxes"
+          ]
+        },
+        {
+          "page": 10,
+          "teaching": [
+            {
+              "text": "**Explicit Euler** tracks **position, x,** and **velocity, v**, with **k** for stiffness and **m** for mass. The example starts at **x[0] = 1 and v[0] = 0**, with k and m both set to 1.",
+              "children": [
+                "**dt = 0.5** is the time step. The bracketed **n** counts update steps, and **n−1** identifies the preceding step. These indexes identify when a value was stored."
+              ]
+            },
+            {
+              "text": "Both new values use the **previous pair**, x[n−1] and v[n−1]. The velocity update uses the old position rather than the position just computed.",
+              "children": [
+                "Each list holds successive positions or velocities. The decimals beside the plotted points are rounded results for those states rather than new equation coefficients."
+              ]
+            },
+            {
+              "text": "The horizontal axes show **time**, while the vertical axes separately show x and v. The swings grow larger as time advances.",
+              "children": [
+                "That growing **amplitude**, or extent of the swings, comes from the numerical approximation with this time step. It does not mean an extra physical force was added to the oscillator."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "x/v state; k/m settings;dt0.5 timestep",
+            "ncurrentstep;n−1previousstep;bracketsindexstates",
+            "initialstate1/0;plotdecimalsroundedstates",
+            "timeaxesandgrowingamplitudenumericalerror"
+          ]
+        },
+        {
+          "page": 11,
+          "teaching": [
+            {
+              "text": "**Euler’s explicit method** turns a rule about change into repeated arithmetic. In **x[n]**, x is the changing quantity and n identifies its update step. **x[n−1]** is its value at the previous step.",
+              "children": [
+                "**dt** is the small time interval. The update adds the estimated change during that interval to the previous value."
+              ]
+            },
+            {
+              "text": "Repeating this operation builds an approximate sequence of states. A computer can follow a system’s changing behavior through the same simple operation again and again.",
+              "children": [
+                "The result is an **approximation**. Its accuracy depends on the time step and the way the update is performed."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "x[n]quantityatstepn;x[n−1]previousvalue",
+            "dtistimeinterval;rate-to-changeinterpretation"
+          ]
+        }
+      ]
+    },
+    "lecture09": {
+      "reviewedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "pages": [
+        {
+          "page": 4,
+          "teaching": [
+            {
+              "text": "**Negative feedback**, or **balancing feedback**, makes a change oppose the current displacement. Here **x** is the changing value, **ẋ** is its rate of change, and **t** is time.",
+              "children": [
+                "In **ẋ = −⅓x**, the minus sign supplies the opposing direction and one third supplies the strength of the effect. A value above zero decreases toward zero, while a value below zero increases toward zero."
+              ]
+            },
+            {
+              "text": "The **initial condition** is **x = 100 at t = 0**. It identifies the starting value and starting time rather than a separate target.",
+              "children": [
+                "The approximate value near **66 or 67** is a result of applying one displayed update. It is not a changed coefficient. Each update is then based on the current, smaller value."
+              ]
+            },
+            {
+              "text": "The horizontal axis follows time, and the vertical axis follows x. As the discrepancy from equilibrium shrinks, the return slows and the curve flattens.",
+              "children": [
+                "**Euler’s method** constructs this approximate sequence by using the previous value to estimate the next. A time subscript identifies which value in that sequence is being used."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "xstate;ẋrate;ttime",
+            "negativecoefficientdirectionversusstrength",
+            "100initialvalue/0initialtime/66ishapproximateupdatedvalue",
+            "timesubscriptsidentifysamplestates"
+          ]
+        },
+        {
+          "page": 10,
+          "teaching": [
+            {
+              "text": "A **neural network** takes an input represented by numbers and produces an answer about its identity.",
+              "children": [
+                "The face example’s **48 million pixels** count input measurements, while **1,000 people** count possible identities. In the speech example, **25 sounds** are possible output categories rather than 25 input measurements."
+              ]
+            },
+            {
+              "text": "The simplified output uses five vowels in the order **read, rad, rude, Rud, rod**. Its **probability distribution**, abbreviated **pdf** here, is **[0.2, 0.2, 0.4, 0.2, 0]**.",
+              "children": [
+                "The first, second, and fourth categories each receive 20%, the third receives 40%, and the fifth receives 0%. **Rude** is therefore the best-supported answer."
+              ]
+            },
+            {
+              "text": "The probabilities add up to **one**, meaning 100% distributed across the possible answers. Each position belongs to a category in the agreed order.",
+              "children": [
+                "These output probabilities express support for identities. They are different from signed pressure measurements in the input waveform."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "48millionpixelsinputdimensions/1000identitychoices/25soundchoices",
+            "pdflabelprobabilitydistribution",
+            "ordered5classesand0.2/0.4/0probabilities",
+            "1means100%total;inputmeasurementsversusoutputprobabilities"
+          ]
+        },
+        {
+          "page": 11,
+          "teaching": [
+            {
+              "text": "The input is a **vector**, a list of numbers representing a signal. Values such as **4, 1, and −3** stand for waveform measurements in the example.",
+              "children": [
+                "Positive or negative signs belong to those signal values. They are not probabilities. The **w** labels mean **weights**, the learned numbers combined with the input."
+              ]
+            },
+            {
+              "text": "**Forward propagation** computes an answer using the current weights. With random starting weights, the output **[0.4, 0.1, 0.2, 0.2, 0.1]** favors the first category, read.",
+              "children": [
+                "The input’s known identity is the vowel in **Rud**, the fourth category in the order read, rad, rude, Rud, rod. Its **target [0, 0, 0, 1, 0]** puts one at that correct position and zeros elsewhere."
+              ]
+            },
+            {
+              "text": "The target’s one identifies the correct category, while its zeros identify the other categories. It is a label for the answer rather than a measured speech waveform.",
+              "children": [
+                "Comparing the computed output with the target gives an **error**, or **loss**. **Learning** changes the weights to reduce that loss and repeats the process with other known examples."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "signedinputwaveformvaluesversusweightsw",
+            "computedprobabilityvectorfavorsfirstclass",
+            "targetonehotfourthclassinagreedorder",
+            "targetones/zerosarecategorylabelsnotwaveformvalues"
+          ]
+        },
+        {
+          "page": 12,
+          "teaching": [
+            {
+              "text": "A recognizer receiving the speech sound **[z]** should identify it as [z], rather than **[s]** or **[a]**. The bracketed symbols name speech sounds; they are not numerical input entries.",
+              "children": []
+            },
+            {
+              "text": "**Templatic perception** compares incoming information with stored patterns. **Hierarchical perception** processes information through several stages.",
+              "children": [
+                "A network can combine the two by comparing numerical patterns at successive stages before making its output decision."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              12
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "[z]/[s]/[a]phoneticsoundlabelsnotvectornumbers"
+          ]
+        },
+        {
+          "page": 14,
+          "teaching": [
+            {
+              "text": "**Hierarchical perception** builds a decision through several stages. A **representation** is the form in which a stage holds or describes the information.",
+              "children": [
+                "One stage transforms the input into a new representation. That result becomes information that another stage can transform again."
+              ]
+            },
+            {
+              "text": "Labels such as **V1, V2, V3, and V4** name different brain areas in the diagram. The numbers are parts of those names rather than activation values.",
+              "children": [
+                "The arrows show connections and directions of interaction. There are several routes and returning connections, so the diagram describes connected processing stages rather than one isolated step from input to decision."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              14
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "V1/V2/V3/V4arebrainareanamesnotnumericstates",
+            "arrowsconnections/interactionratherthansinglefeedforwardchain"
+          ]
+        },
+        {
+          "page": 15,
+          "teaching": [
+            {
+              "text": "The **input vector [−1, 3, −2]** is compared with **Temp1 [−2, 0, 3]** and **Temp2 [−2, 2, −1]**. Temp1 and Temp2 are names for two complete **template vectors**, not individual neurons.",
+              "children": [
+                "An **inner product** multiplies entries in matching positions and adds the products. The three entries in each template pair with the three entries in the input."
+              ]
+            },
+            {
+              "text": "The first comparison gives a score of **−4**, while the second gives **10**. The second template is the better match under this comparison rule because it gives the larger positive score.",
+              "children": [
+                "Those results are **match scores**, not probabilities. They can be negative or exceed one. In this rule, a large positive result indicates stronger match, while a result near zero indicates little match."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              15
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "Temp1/Temp2wholetemplatevectors",
+            "matchingpositionswithinthreecomponentvectors",
+            "−4/10innerproductscoresnotprobabilities"
+          ]
+        },
+        {
+          "page": 16,
+          "teaching": [
+            {
+              "text": "**Inference** uses the current **weights, w,** to compute an answer for a signal **vector**, the list of input measurements. **Inner products** compare numerical patterns, and several stages turn those comparisons into an output.",
+              "children": []
+            },
+            {
+              "text": "**Learning** uses an input with a known identity to improve the weights. The network first performs inference, compares its answer with the target, and then changes the weights to reduce the error.",
+              "children": [
+                "**Stochastic gradient descent, SGD,** supplies weight updates. Computing an answer and improving the weights are different operations, even though a learning step includes both."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              16
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "wlearnedweights;vectorinputmeasurements",
+            "SGDweightupdateprocessdistinctfrominference"
+          ]
+        }
+      ]
+    },
+    "lecture10": {
+      "reviewedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "pages": [
+        {
+          "page": 3,
+          "teaching": [
+            {
+              "text": "A **neural network** receives numbers representing a signal and returns a **probability distribution** over possible identities.",
+              "children": [
+                "The **48 million pixels** in the face example are input measurements. The **1,000 possible people** are output choices. In the speech example, **25 sounds** are possible identities rather than the number of waveform measurements."
+              ]
+            },
+            {
+              "text": "The smaller example has five categories in the order **read, rad, rude, Rud, rod**. The output **[0.2, 0.2, 0.4, 0.2, 0]** assigns 40% to the third vowel, **rude**, the largest share.",
+              "children": [
+                "The first, second, and fourth categories each receive 20%, while rod receives 0%. The category order tells what each position means."
+              ]
+            },
+            {
+              "text": "The output is called a **pdf** here, meaning a probability distribution. The probabilities add up to **one**, or 100% of the support distributed among the possible answers.",
+              "children": [
+                "Input signal values describe the presented pattern. Output probabilities describe support for the category identities."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "inputpixelcountvsoutputcategorycount",
+            "fiveorderedvowelsandnumericprobabilities",
+            "pdfdistribution;1/100%total"
+          ]
+        },
+        {
+          "page": 4,
+          "teaching": [
+            {
+              "text": "A network’s **weights, w,** carry its learned knowledge. The input **vector** is a list of signal measurements, such as positive and negative pressure values from a waveform.",
+              "children": [
+                "Numbers in the input are different from output probabilities. The network combines them with the weights to compute its answer."
+              ]
+            },
+            {
+              "text": "**Forward propagation** moves the calculation from input to output using the current weights. With random starting weights, the example output **[0.4, 0.1, 0.2, 0.2, 0.1]** favors read, the first category.",
+              "children": [
+                "The correct vowel is in **Rud**, the fourth category in the order read, rad, rude, Rud, rod. The **target [0, 0, 0, 1, 0]** places one there and zeros in the other positions."
+              ]
+            },
+            {
+              "text": "The target encodes the known identity. Comparing it with the computed distribution gives the **loss**, or error.",
+              "children": [
+                "During **learning**, the weights change to reduce that error. Repeating prediction, comparison, and adjustment with many known examples improves the network’s decisions."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "wweightsversussignedsignalvector",
+            "computedfirstclassvsfourthcorrectclass",
+            "onehot targetpositionsandcategoryorder"
+          ]
+        },
+        {
+          "page": 5,
+          "teaching": [
+            {
+              "text": "**Inference** combines the input with the current **weights, w,** to compute an output. **Learning** determines how those weights should change.",
+              "children": [
+                "The two numbered questions separate these jobs. The numbers label questions rather than layers or stages of a forward pass."
+              ]
+            },
+            {
+              "text": "A learning step must compute the current answer before comparing it with the correct answer. Inference is therefore part of learning, but computing an output by itself does not improve the weights.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "w weights",
+            "numbers1/2labelquestionsnotcomputationalstates"
+          ]
+        },
+        {
+          "page": 6,
+          "teaching": [
+            {
+              "text": "An **activation** is the numerical signal associated with a unit. A **weight, w,** controls how strongly an incoming activation contributes to a receiving unit.",
+              "children": [
+                "Numbers inside the schematic units are activations. Numbers on the connections are weights. Their positions identify different roles even when their values look similar."
+              ]
+            },
+            {
+              "text": "The three-input example uses activations **−1, 1, and 3**, paired with connection weights **−2, 3, and 1**. Each activation is multiplied by its own weight, and the contributions are added.",
+              "children": [
+                "The resulting **8** is the receiving unit’s activation. This operation is the **weighted sum**, also called an **inner product**, **scalar product**, or **dot product**."
+              ]
+            },
+            {
+              "text": "The sign depends on both members of a pair. Two negative values make a positive contribution, while a positive value paired with a negative weight makes a negative contribution.",
+              "children": [
+                "The retinal drawing shows biological connections. The signed numbers are part of an arithmetic model rather than measured firing rates."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "unitnumbersactivations;edgenumbersweightsw",
+            "−1/1/3activationspairedwith−2/3/1weights",
+            "8receivingactivation;weighted sum synonyms"
+          ]
+        },
+        {
+          "page": 9,
+          "teaching": [
+            {
+              "text": "A **multilayer perceptron** has input, hidden, and output layers. The diagram has **5 input units**, hidden layers of **3, 4, and 3 units**, and **7 output units**.",
+              "children": [
+                "**Hidden 1, Hidden 2, and Hidden 3** identify successive processing layers. Their names do not give an activation value or the number of units in each layer."
+              ]
+            },
+            {
+              "text": "Every unit in one layer connects to every unit in the next. A **w** on a line marks a **weight**, while a number inside a circle marks that unit’s **activation**.",
+              "children": [
+                "The displayed fan of weights converges on the middle unit in Hidden 1. Its activation **14** is a weighted-sum result, not a weight on one connection."
+              ]
+            },
+            {
+              "text": "A hidden unit combines the previous layer’s activations through an **inner product**. Its new activation becomes input to the next layer.",
+              "children": [
+                "**Forward propagation** repeats this computation toward the output. Hidden activations can be negative in this linear example."
+              ]
+            },
+            {
+              "text": "The output uses **softmax** to turn final values into probabilities that add up to **1.00**. The largest displayed probability is **0.30**, meaning 30% for the fourth output category.",
+              "children": [
+                "These seven circles are category outputs. Their probabilities describe support for answers, while the hidden-layer numbers describe intermediate computations."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              9
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "5/3/4/3/7unitcounts;Hidden1/2/3layernames",
+            "wconnectionweightsversusunitactivations;14weightedresult",
+            "0.30fourthclassprobabilityand1.00totalsupport",
+            "negativehiddenactivationsnotnegativeprobabilities"
+          ]
+        },
+        {
+          "page": 10,
+          "teaching": [
+            {
+              "text": "**Hidden 1, Neuron 2** means the second unit in the first hidden layer. Its **activation** is found from the five input values and the five weights on the lines entering that unit.",
+              "children": [
+                "Each input is paired with its own connection weight. Multiplying each pair and adding the contributions gives the unit’s **inner product**."
+              ]
+            },
+            {
+              "text": "The displayed answer **−3** is the receiving unit’s activation. It is not a probability or a new weight placed on one of the lines.",
+              "children": [
+                "Its negative sign means the negative contributions outweigh the positive contributions. Both the signs of the inputs and the signs of the weights matter."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "Hidden1Neuron2 identifieslayerandunit",
+            "5inputsand5incomingweights",
+            "−3activationnotprobabilityorweight"
+          ]
+        },
+        {
+          "page": 12,
+          "teaching": [
+            {
+              "text": "**I/O** means **input/output**. A training pair supplies an input and its known correct output. Here **x** names the input vector, and **w** names the network’s weights.",
+              "children": [
+                "The target **[0, 0, 0, 0, 0, 1, 0]** identifies the **sixth** of seven output categories. Its one marks the correct category, and the zeros mark the others."
+              ]
+            },
+            {
+              "text": "The computed distribution instead has its largest probability, **0.30**, at the **fourth** category. It assigns **0.12** to the correct sixth category.",
+              "children": [
+                "Those are probabilities, so 0.30 means 30% support and 0.12 means 12% support. Comparing the computed output with the known target gives an **error**, or **loss**."
+              ]
+            },
+            {
+              "text": "**Backpropagation** works backward through the layers to determine how the weights contributed to that error. **Stochastic gradient descent, SGD,** uses the information to adjust the weights in a direction that reduces the loss.",
+              "children": [
+                "Prediction, comparison, and adjustment repeat across many pairs. **Inference** computes with the current weights, while **learning** changes them."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              12
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "I/Oinput/output;xinputvector;wweights",
+            "7positiontargetonesixthcategory",
+            "0.30fourthversus0.12sixthprobabilities",
+            "backpropagationerrorderivativesversusSGDupdates"
+          ]
+        },
+        {
+          "page": 13,
+          "teaching": [
+            {
+              "text": "The **w** being estimated here is the **average** of the observations. Its role is a single learned estimate, rather than a number naming one observation.",
+              "children": [
+                "The list contains **400**, identified as a data mistake. Most other observations are much lower."
+              ]
+            },
+            {
+              "text": "Including that mistake pulls the average to about **100**. Without it, the average is about **80**.",
+              "children": [
+                "These are two averages of different data lists. They are not learning rates or percentages. Their difference shows how one bad observation can distort the quantity being learned."
+              ]
+            },
+            {
+              "text": "An update based on the mistaken value pulls the estimate toward it. **Learning from supplied data does not automatically correct errors in those data.**",
+              "children": [
+                "A small update limits how much a single observation changes the estimate, but it does not establish that the observation is valid."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              13
+            ],
+            "transcriptLines": []
+          },
+          "explained": [
+            "westimatedaverage",
+            "400mistakenobservation;100/80averagesratherthanlearningrates"
+          ]
+        }
+      ]
+    }
+  }
+}

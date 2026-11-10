@@ -73,8 +73,8 @@ def run(base, browser):
     route('collection', lecture='lecture11')
     assert page.locator('.source-section').count() == 11
     styles = page.locator('[data-transcript-version]')
-    assert styles.locator('option').count() == 10
-    for edition in ['professor','b','c','follow','v20','original-c','d','original-c-v2','d-v2','notes-v7']:
+    assert styles.locator('option').count() == 11
+    for edition in ['professor','b','c','follow','v20','original-c','d','original-c-v2','d-v2','notes-v7','original-c-v3']:
         styles.select_option(edition)
         assert styles.input_value() == edition
         assert page.locator('.source-section').count() == 11
@@ -165,7 +165,7 @@ def run(base, browser):
     assert not errors, errors
     assert not failed, failed
     context.close()
-    print('PASS: original entry, section routes, 10 editions, shared notes, 100-question test, 8 quizzes, wording state, writing, backup and mobile layout')
+    print('PASS: original entry, section routes, 11 editions, shared notes, 100-question test, 8 quizzes, wording state, writing, backup and mobile layout')
 
 
 if __name__ == '__main__':

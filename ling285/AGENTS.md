@@ -74,3 +74,20 @@ in a few connected paragraphs using plain words. Give the space to mechanisms,
 source-supported distinctions, and reading the original visuals. Do not pad
 simple pages or repeat generic caveats to meet a count. Keep title, blank, and
 prompt-only pages unpadded. Preserve Versions 1–3 and both practice editions.
+
+## Explain the meaning of the source visuals
+
+Connect concepts to the meaningful symbols, numbers and labels in the original
+visual. Introduce a symbol with its course term, such as mass (m) or stiffness
+(k), using the case shown in the source. Identify a reference condition and
+explain what changes and what stays fixed in the compared conditions. Explain
+what relevant values, multiples, units, axes, colors, table dimensions, indices
+and code variables represent. Distinguish a label or count from a measured
+value, a weight from an activation, and a score from a probability.
+
+Integrate these meanings where they help explain the particular slide. Retain
+numbers needed to understand its comparison without reciting every coefficient
+or turning it into a calculation exercise. Do not impose a glossary, repeated
+labels, fixed explanation order or bullet quota. Keep exact technical terms,
+natural complete sentences, explanatory sub-bullets and bold emphasis. Add a
+new edition when requested and keep every existing edition and the layout.

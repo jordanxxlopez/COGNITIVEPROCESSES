@@ -1,0 +1,4948 @@
+{
+  "edition": "original-c-v3",
+  "baseFile": "modern/transcripts-original-c-v2.json",
+  "baseSha256": "532a827c40911755032f0f1717f38063530193fc776d39cf1e1b22b8694c0a44",
+  "authoringFiles": {
+    "authoring/visual-meaning-archive-early.json": "88c5d57a91d742f6bcf301b7b363183a478af036c5e6ea95d29519ac51366aff",
+    "authoring/visual-meaning-archive-late.json": "045696397b55290cc66428f68d840564fabeaf3101360983cf1812ca278fbf7f",
+    "authoring/visual-meaning-physics.json": "da78503bf22f3c6c51877500ccbcad43b19319df275c1f03ae73e74e42f65606",
+    "authoring/visual-meaning-ai.json": "f2abba367154ebdc2942c327546f5c646298cb3db15321d8686111bc41314805"
+  },
+  "reviewedPages": 286,
+  "revisedPages": 195,
+  "dataSha256": "8864e033b08f01533b46518bb1293dd63eaaaee473d5676c8ab1d7c60efb2c28",
+  "inventorySha256": "566ca39694894ac4cebd07dcd8a7b132847a360ea824c58efb960c56c3ce25cb",
+  "transcriptSha256": "5f89ff905e718e5f95d70ab3d4082dfa2f972ba6d702d0bb362455d37f89c658",
+  "sourceReviews": {
+    "visual-meaning-archive-early.json": {
+      "scope": "All78 source pages in lecture01–04 were reviewed against sourceText, existing page inventories and Original C Version2. Patches replace only teaching on pages where meaningful visual notation or comparison needed clarification. Unmapped pages inherit Version2 unchanged.",
+      "visualInspection": "All78 static slide previews inspected in contact sheets; key tables, vector diagrams, SGD plots and Bellman network/equation pages inspected at full1600px slide resolution. Existing original visual assets are retained.",
+      "limitations": [
+        "No raw Module I verbal transcript was available. Evidence uses the supplied slides, source extraction, retained inventories and existing source-grounded teaching.",
+        "Static preview review does not establish animation or audio coverage. No unseen animation or audio behavior is asserted."
+      ],
+      "approach": "Explain what displayed values, indices, colors, arrows, axes, reference conditions and symbols mean in the actual source example. Preserve readable explanatory bullets and sub-bullets without calculation recitals, fixed counts or repeated labels."
+    },
+    "visual-meaning-archive-late.json": {
+      "base": "modern/transcripts-original-c-v2.json",
+      "scope": "All 77 source pages in lecture05-06 and lectures07–10 were compared with C2. Only pages with meaningful unexplained visual notation receive replacement teaching. Empty title, blank and logistical pages retain C2.",
+      "inspection": "Existing all-page contact sheets were reviewed; detailed source slides/native speaker notes and page-inventory OCR were checked for equations, labels and ordered animation states. Original magnesium and learning-rate figures were read at full available resolution. Air-spacing, cosine, combined-frequency and cycle-count media were sampled at six time positions during C2 review, and those reviewed frames were rechecked for scales and labels.",
+      "limitations": [
+        "Sampling establishes the inspected states rather than full frame-by-frame animation or audio coverage. Original source media remain available.",
+        "No raw verbal transcript is available for these Module I pages; no additional spoken emphasis is claimed.",
+        "The hearing mechanism uses supplied notes-lecture07 pages8–9 and15 because the primary hearing pages have headings/labels rather than a complete embedded animation.",
+        "Brain-area abbreviations are identified as source diagram names without inventing unprovided functions for every area. Historical dates, decorative score details and title-page metadata do not become memorization lists.",
+        "Approximation and linear-network corrections follow the supplied source notes and existing source issues rather than silently treating flattened overlay numbers as complete coherent computations."
+      ]
+    },
+    "visual-meaning-physics.json": {
+      "baseFile": "modern/transcripts-original-c-v2.json",
+      "baseSha256": "532a827c40911755032f0f1717f38063530193fc776d39cf1e1b22b8694c0a44",
+      "scope": "Reviewed all61 source pages of Lectures11–13 against Original C Version2. Patches supply complete replacement teaching blocks; unpatched pages inherit that edition without alteration.",
+      "visualReview": "All static source-page contact sheets and selected full-size figure panels were inspected. The15 distinct embedded videos were checked through frames at12%,47% and79% of duration during the preceding source review, and their original image assets and visible labels were rechecked for this edition. This is sampled visual review, not complete animation or audio playback. The harmonics/formants GIF has one frame and was inspected as a still image.",
+      "sourceTranscriptSha256": "5f89ff905e718e5f95d70ab3d4082dfa2f972ba6d702d0bb362455d37f89c658",
+      "meaningfulValues": "Retains values that identify a condition, location, axis, relative rate or resonance/source distinction. Does not recite every footnote ratio, playback setting or frequency label, and adds no worked calculation.",
+      "sourceCorrections": "The printed L12 stiffness-down arrow remains untouched in the source visual and is explained as a typo in the new teaching. Membrane frequency values remain identified as assigned illustration settings rather than natural rectangle resonances."
+    },
+    "visual-meaning-ai.json": {
+      "scope": "All70sourcepages in Lectures14–18 reviewed against C2, sourceText, speakerNotes, original previews and supplied transcript evidence. Only new V3 teaching replacements are supplied; unmapped pages inherit C2. No previous edition or UI file is changed.",
+      "staticReview": "All70previews inspected in collection contact sheets, with32targeted full-size diagram/code/plot previews inspected for exact identifiers, axes, legends, numerical roles and repeated-number ambiguities.",
+      "mediaReview": "Three sampled frames at8%,45%and82%of each of8unique original L14videos inspected. Frame sampling supports the visible labels, positions and representative states; it is not full animation/audio inspection. Existing source transcript and inventories supply movement explanations.",
+      "knownSourceIssue": "L14p23 subtitle calls negative weights orange, while the visible negative labels are green. V3 explains the signed values and actual connection positions without teaching that inconsistent color rule.",
+      "teachingStyle": "Identifiers are defined inside their conceptual explanation; no detached glossary, repeated labels, fixed bullet count, outside theory, class narration, or worked arithmetic.",
+      "trainingCurveProvenance": "The L16p15–16 source figures show executed NumPy reference runs alongside requested PyTorch code. This construction distinction is retained here rather than inserted into spoken teaching. Teaching retains the actual graph conditions:525trainingexamples,full-batchupdates,randominitializations,seeds0–9,2,000updates,learningrate0.1and44.95%finaltrainingaccuracy."
+    }
+  },
+  "pages": [
+    {
+      "collection": "lecture01",
+      "sectionId": "lecture01-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture01",
+      "sectionId": "lecture01-p002",
+      "page": 2,
+      "revised": false
+    },
+    {
+      "collection": "lecture01",
+      "sectionId": "lecture01-p003",
+      "page": 3,
+      "revised": false
+    },
+    {
+      "collection": "lecture01",
+      "sectionId": "lecture01-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "curved air passage versus straightened model",
+        "orange arrows connect representations"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture01",
+      "sectionId": "lecture01-p005",
+      "page": 5,
+      "revised": false
+    },
+    {
+      "collection": "lecture01",
+      "sectionId": "lecture01-p006",
+      "page": 6,
+      "revised": false
+    },
+    {
+      "collection": "lecture01",
+      "sectionId": "lecture01-p007",
+      "page": 7,
+      "revised": false
+    },
+    {
+      "collection": "lecture01",
+      "sectionId": "lecture01-p008",
+      "page": 8,
+      "revised": false
+    },
+    {
+      "collection": "lecture01",
+      "sectionId": "lecture01-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "place columns versus voicing rows",
+        "j and th labels identify speech sounds",
+        "images locate constriction"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture01",
+      "sectionId": "lecture01-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "stop rows group place",
+        "columns compare voicing and oral/nasal air route"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p002",
+      "page": 2,
+      "revised": false
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p003",
+      "page": 3,
+      "revised": false
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "table columns and rows",
+        "MRI narrowing locations",
+        "j sound label"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p005",
+      "page": 5,
+      "revised": true,
+      "explained": [
+        "rows hold place fixed",
+        "across-row comparisons of voicing and nasal route"
+      ],
+      "evidence": {
+        "slides": [
+          5
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "combined table place columns and manner groups",
+        "voicing subdivisions",
+        "d/n controlled comparison",
+        "j speech label"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p007",
+      "page": 7,
+      "revised": false
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p008",
+      "page": 8,
+      "revised": false
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p009",
+      "page": 9,
+      "revised": false
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p010",
+      "page": 10,
+      "revised": false
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "input strips represent per-word vectors",
+        "1024 counts entries per input word",
+        "10000 counts output candidate probabilities",
+        "input representations versus candidate-word output"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p012",
+      "page": 12,
+      "revised": true,
+      "explained": [
+        "x input versus w weight",
+        "pdf output probabilities",
+        "weight count versus vector and vocabulary size"
+      ],
+      "evidence": {
+        "slides": [
+          12
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p013",
+      "page": 13,
+      "revised": true,
+      "explained": [
+        "150 trillion counts connections rather than words or connection strength"
+      ],
+      "evidence": {
+        "slides": [
+          13
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p014",
+      "page": 14,
+      "revised": false
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p015",
+      "page": 15,
+      "revised": false
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p016",
+      "page": 16,
+      "revised": false
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p017",
+      "page": 17,
+      "revised": true,
+      "explained": [
+        "x estimate and d observation",
+        "bracket indices count steps",
+        "signed discrepancy direction",
+        "10 percent controls update fraction",
+        "initial and updated estimates"
+      ],
+      "evidence": {
+        "slides": [
+          17
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p018",
+      "page": 18,
+      "revised": true,
+      "explained": [
+        "x and Epochs axes",
+        "IC starting estimates and color key",
+        "1/10/50/80 percent panel meaning",
+        "within-panel versus across-panel comparison"
+      ],
+      "evidence": {
+        "slides": [
+          18
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture02",
+      "sectionId": "lecture02-p019",
+      "page": 19,
+      "revised": true,
+      "explained": [
+        "gamma and increase/decrease arrows",
+        "estimate direction versus setting change",
+        "rate panels and graph axes"
+      ],
+      "evidence": {
+        "slides": [
+          19
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p002",
+      "page": 2,
+      "revised": false
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p003",
+      "page": 3,
+      "revised": false
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p004",
+      "page": 4,
+      "revised": false
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p005",
+      "page": 5,
+      "revised": false
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p006",
+      "page": 6,
+      "revised": false
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p007",
+      "page": 7,
+      "revised": false
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p008",
+      "page": 8,
+      "revised": false
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "per-word input strips versus candidate-word output",
+        "x tokens and W weights",
+        "output candidate labels"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "given sequence versus known target",
+        "target word identifies output entry"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p011",
+      "page": 11,
+      "revised": false
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p012",
+      "page": 12,
+      "revised": false
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p013",
+      "page": 13,
+      "revised": true,
+      "explained": [
+        "initial guess versus average target",
+        "x and bracketed time index",
+        "red estimate and green target",
+        "Update and estimate axes",
+        "gamma 25 percent update fraction"
+      ],
+      "evidence": {
+        "slides": [
+          13
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p014",
+      "page": 14,
+      "revised": true,
+      "explained": [
+        "x0 and d0 roles",
+        "red estimate versus blue observation",
+        "signed 32 discrepancy",
+        "whole-data target versus selected datum",
+        "graph axes"
+      ],
+      "evidence": {
+        "slides": [
+          14
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p015",
+      "page": 15,
+      "revised": true,
+      "explained": [
+        "25 percent equals 0.25 correction fraction",
+        "initial estimate selected datum gap and updated estimate",
+        "x1 means after one update",
+        "red estimate and green full-data target",
+        "axes"
+      ],
+      "evidence": {
+        "slides": [
+          15
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p016",
+      "page": 16,
+      "revised": true,
+      "explained": [
+        "current versus selected versus updated value",
+        "bracket indices count corrections",
+        "0.25 update fraction",
+        "red estimates green target and update axis"
+      ],
+      "evidence": {
+        "slides": [
+          16
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p017",
+      "page": 17,
+      "revised": true,
+      "explained": [
+        "selected datum current estimate and signed discrepancy",
+        "quarter gap and update index",
+        "estimate versus data average",
+        "graph axes"
+      ],
+      "evidence": {
+        "slides": [
+          17
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p018",
+      "page": 18,
+      "revised": true,
+      "explained": [
+        "d3 datum versus current estimate",
+        "0.25 fraction and x4 index",
+        "datum versus average target",
+        "axes and color key"
+      ],
+      "evidence": {
+        "slides": [
+          18
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p019",
+      "page": 19,
+      "revised": true,
+      "explained": [
+        "high datum relative to estimate",
+        "negative signed discrepancy",
+        "subtract negative raises value",
+        "x5 update count",
+        "fixed target and update axis"
+      ],
+      "evidence": {
+        "slides": [
+          19
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p020",
+      "page": 20,
+      "revised": true,
+      "explained": [
+        "d selected observation versus x estimate",
+        "quarter correction and x6 step index",
+        "fixed average versus random observation",
+        "axes and curve meaning"
+      ],
+      "evidence": {
+        "slides": [
+          20
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p021",
+      "page": 21,
+      "revised": true,
+      "explained": [
+        "current estimate datum and gap roles",
+        "quarter correction and x7 index",
+        "datum versus target",
+        "graph axes and colors"
+      ],
+      "evidence": {
+        "slides": [
+          21
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p022",
+      "page": 22,
+      "revised": true,
+      "explained": [
+        "d7 versus current estimate",
+        "x8 updated estimate",
+        "quarter fraction",
+        "target not direct update input",
+        "axes and color key"
+      ],
+      "evidence": {
+        "slides": [
+          22
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p023",
+      "page": 23,
+      "revised": true,
+      "explained": [
+        "selected high datum and negative signed gap",
+        "x9 updated estimate",
+        "quarter negative raises estimate",
+        "observation improvement versus average-target fluctuation"
+      ],
+      "evidence": {
+        "slides": [
+          23
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p024",
+      "page": 24,
+      "revised": true,
+      "explained": [
+        "nearby datum versus estimate",
+        "small gap versus changed learning rate",
+        "x10 step index",
+        "target average axes and flat segment"
+      ],
+      "evidence": {
+        "slides": [
+          24
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p025",
+      "page": 25,
+      "revised": true,
+      "explained": [
+        "datum and current estimate roles",
+        "x11 update count",
+        "quarter gap",
+        "red trajectory green target and update axis"
+      ],
+      "evidence": {
+        "slides": [
+          25
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p026",
+      "page": 26,
+      "revised": true,
+      "explained": [
+        "d11 versus current estimate",
+        "25 percent correction fraction",
+        "x12 updated estimate near target",
+        "estimates versus observations on graph"
+      ],
+      "evidence": {
+        "slides": [
+          26
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p027",
+      "page": 27,
+      "revised": true,
+      "explained": [
+        "SGD term meanings",
+        "initial estimate versus target average",
+        "axes and red/green key",
+        "individual fluctuation versus overall tendency"
+      ],
+      "evidence": {
+        "slides": [
+          27
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p028",
+      "page": 28,
+      "revised": true,
+      "explained": [
+        "x0 initial estimate and 80 target",
+        "t and t+1 step indices",
+        "0.25 correction fraction",
+        "mean motion graph",
+        "loss symbol squared discrepancy and half scale",
+        "estimate versus loss axes and red/green/blue key"
+      ],
+      "evidence": {
+        "slides": [
+          28
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p029",
+      "page": 29,
+      "revised": true,
+      "explained": [
+        "negative initial estimate versus target",
+        "held data and rate versus changed initial condition",
+        "estimate rise versus loss fall",
+        "half squared target gap",
+        "different vertical axes"
+      ],
+      "evidence": {
+        "slides": [
+          29
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p030",
+      "page": 30,
+      "revised": true,
+      "explained": [
+        "IC values and color key",
+        "initial guesses versus shared target",
+        "x and Epochs axes",
+        "1/10/50/80 percent fractions",
+        "within-panel versus across-panel comparison"
+      ],
+      "evidence": {
+        "slides": [
+          30
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture03",
+      "sectionId": "lecture03-p031",
+      "page": 31,
+      "revised": true,
+      "explained": [
+        "gamma and increase/decrease arrows",
+        "rate settings versus estimate direction",
+        "graph axes and percent-panel meaning",
+        "speed versus fluctuation"
+      ],
+      "evidence": {
+        "slides": [
+          31
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p002",
+      "page": 2,
+      "revised": false
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "state letters and stages",
+        "arrow direction",
+        "12/7 immediate transition costs",
+        "complete path total versus single edge"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "7-versus-12 initial greedy choice",
+        "immediate edge cost versus full remaining route",
+        "start and destination"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p005",
+      "page": 5,
+      "revised": false
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "complete A-to-J path versus individual arrow",
+        "state labels versus costs"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "V and endpoint subscripts",
+        "12/7 immediate costs",
+        "best remaining continuation values",
+        "min compares complete alternatives"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p008",
+      "page": 8,
+      "revised": true,
+      "explained": [
+        "unknown continuation values versus known edgecosts",
+        "endpoint subscripts and min comparison"
+      ],
+      "evidence": {
+        "slides": [
+          8
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "G/H/I terminal costs 5/9/8",
+        "endpoint values versus edge costs",
+        "8 plus VGJ roles",
+        "min alternatives",
+        "red dependency arrows versus travel direction"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "value versus arrowcost",
+        "12/7 plus continuation comparison",
+        "min operation",
+        "equation dependency versus route direction"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "late 9 edgecost influences predecessor values",
+        "red calculation dependencies versus black travel arrows"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p012",
+      "page": 12,
+      "revised": true,
+      "explained": [
+        "V endpoint labels and min operation",
+        "red arrows supply known values",
+        "edge plus continuation"
+      ],
+      "evidence": {
+        "slides": [
+          12
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p013",
+      "page": 13,
+      "revised": true,
+      "explained": [
+        "V endpoint notation",
+        "8 plus VGJ roles",
+        "min over complete continuations",
+        "terminal values",
+        "red reuse/dependency arrows"
+      ],
+      "evidence": {
+        "slides": [
+          13
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p014",
+      "page": 14,
+      "revised": true,
+      "explained": [
+        "12 early and 9 late transition costs",
+        "constant-speed reference versus differing-speed condition",
+        "bent route minimizes total time"
+      ],
+      "evidence": {
+        "slides": [
+          14
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p015",
+      "page": 15,
+      "revised": true,
+      "explained": [
+        "air/water speed labels",
+        "apparent pencil bend",
+        "shortest distance versus least time",
+        "early/later path costs"
+      ],
+      "evidence": {
+        "slides": [
+          15
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p016",
+      "page": 16,
+      "revised": true,
+      "explained": [
+        "arrowcost versus handwritten remaining value",
+        "30 B cost-and-choice annotation",
+        "18 D 13 G 5 J annotations",
+        "chosen A-B-D-G-J route",
+        "12/7 local comparison versus total"
+      ],
+      "evidence": {
+        "slides": [
+          16
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p017",
+      "page": 17,
+      "revised": false
+    },
+    {
+      "collection": "lecture04",
+      "sectionId": "lecture04-p018",
+      "page": 18,
+      "revised": true,
+      "explained": [
+        "learning axes IC color values and rate",
+        "temperature axes and units",
+        "18 degrees fixed equilibrium versus starting temperatures",
+        "shared behavior despite differing quantities"
+      ],
+      "evidence": {
+        "slides": [
+          18
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p002",
+      "page": 2,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "x is position; v is velocity",
+        "dots mean rates of change, not extra variables",
+        "minus sign in v̇=−x reverses the sign of position"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "v=−5 is a velocity example, not a negative position",
+        "x=−5 is a position example, not a velocity",
+        "rate sign versus current state sign"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p005",
+      "page": 5,
+      "revised": true,
+      "explained": [
+        "x/ẋ and v/v̇ distinguish a quantity from its rate",
+        "positive/negative values identify side or direction according to the quantity"
+      ],
+      "evidence": {
+        "slides": [
+          5
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p006",
+      "page": 6,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p007",
+      "page": 7,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p008",
+      "page": 8,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p009",
+      "page": 9,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "100% is equilibrium distance of the marked pair",
+        "below/above100% means compression/rarefaction",
+        "dot size and particle count remain fixed"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "x is normalized expansion, not pressure/distance",
+        "+1/0/−1 correspond to rarefaction/equilibrium/compression",
+        "phase is cycle progress; 2π per cycle and6π for3cycles"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p012",
+      "page": 12,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p013",
+      "page": 13,
+      "revised": true,
+      "explained": [
+        "/i/ and /a/ label illustrative vowel models",
+        "1/4Hz versus2/3Hz are componentfrequencies",
+        "t is seconds; x(t) is combined expansion; ±2 is combined model scale"
+      ],
+      "evidence": {
+        "slides": [
+          13
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p014",
+      "page": 14,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p015",
+      "page": 15,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p016",
+      "page": 16,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p017",
+      "page": 17,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p018",
+      "page": 18,
+      "revised": false
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p019",
+      "page": 19,
+      "revised": true,
+      "explained": [
+        "Mg and12electrons",
+        "2–8–2 counts shells rather thanfrequencies",
+        "orbitalgroupnamesandsuperscriptelectroncounts",
+        "darknessisdensity; separatethumbnailscales"
+      ],
+      "evidence": {
+        "slides": [
+          19
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture05-06",
+      "sectionId": "lecture05-06-p020",
+      "page": 20,
+      "revised": false
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p002",
+      "page": 2,
+      "revised": true,
+      "explained": [
+        "x/v are position/velocity",
+        "ẋ/v̇ are rates",
+        "opposing signs in secondrule; arrows indicate mutual effects"
+      ],
+      "evidence": {
+        "slides": [
+          2
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p003",
+      "page": 3,
+      "revised": false
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p004",
+      "page": 4,
+      "revised": false
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p005",
+      "page": 5,
+      "revised": true,
+      "explained": [
+        "dashed equilibrium size",
+        "highlighted pairpercentage is relative distance;100%=equilibrium",
+        "smaller/largerpercentages reflectcompression/rarefaction"
+      ],
+      "evidence": {
+        "slides": [
+          5
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "x/displacement; ẋ/rate; t/time",
+        "zero is equilibrium;1 is initialcondition",
+        "negative sign versus coefficientstrength−1/3"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "arrow is velocitydirection; equalintervals/equaldistances expressconstantvelocity"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p008",
+      "page": 8,
+      "revised": true,
+      "explained": [
+        "x=0equilibrium and±1 opposite exampledisplacements",
+        "blue/red directreturns versus oscillatingtrace",
+        "tracevalue is displacementovertime"
+      ],
+      "evidence": {
+        "slides": [
+          8
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "relative x scale±1/0",
+        "phase ratherthanseconds;πhalfcycle2πonecycle6πthreecycles"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p010",
+      "page": 10,
+      "revised": false
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "3/6/9cycles share12seconds,notHz",
+        "horizontal timeinseconds;vertical relativeexpansionx",
+        "sameamplitudeversusdifferentfrequency"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p012",
+      "page": 12,
+      "revised": true,
+      "explained": [
+        "/i///a/ modelnamesandcomponentHz",
+        "x(t)/t andseconds",
+        "±2 combinedamplitude; sharedrepeatdoesnotimplysamepattern"
+      ],
+      "evidence": {
+        "slides": [
+          12
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p013",
+      "page": 13,
+      "revised": true,
+      "explained": [
+        "m mass;k stiffness;ffrequency",
+        "arrowdirectionmeansincrease/decrease",
+        "otherpropertyheldfixed"
+      ],
+      "evidence": {
+        "slides": [
+          13
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p014",
+      "page": 14,
+      "revised": true,
+      "explained": [
+        "M/m largemass/smallmass andK/k largestiffness/smallstiffness inhearingnotes",
+        "frequencyversusphysicalplace; neuronscarrysignals"
+      ],
+      "evidence": {
+        "slides": [
+          14
+        ],
+        "transcriptLines": [],
+        "supplementalSources": [
+          {
+            "file": "sources/notes-lecture07.pdf",
+            "pages": [
+              8,
+              9,
+              15
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "collection": "lecture07",
+      "sectionId": "lecture07-p015",
+      "page": 15,
+      "revised": true,
+      "explained": [
+        "gamma learningratepercentage",
+        "x currentestimate;Epochs axiscountsdisplayedlearningupdates",
+        "130/80/10 initialestimates;80target",
+        "1/10/50/80% compareupdateamountnotaccuracy"
+      ],
+      "evidence": {
+        "slides": [
+          15
+        ],
+        "transcriptLines": [],
+        "supplementalSources": [
+          {
+            "file": "sources/notes-lecture07.pdf",
+            "pages": [
+              8,
+              9,
+              15
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p002",
+      "page": 2,
+      "revised": false
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "x displacement;0 equilibrium;±sides",
+        "traceisdisplacementovertime"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "m/k/f andarrowmeaning",
+        "frequencydirectionswithotherpropertyfixed"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p005",
+      "page": 5,
+      "revised": false
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p006",
+      "page": 6,
+      "revised": false
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "frequencyisvibrationrate;neuronstobraininformationpath"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": [],
+        "supplementalSources": [
+          {
+            "file": "sources/notes-lecture07.pdf",
+            "pages": [
+              8,
+              9,
+              15
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p008",
+      "page": 8,
+      "revised": true,
+      "explained": [
+        "1cm/1mm physicaldimensions",
+        "F0 fundamentalvibrationfrequency;0partofname",
+        "hundredsoftimespersecondisrate,notdimensions"
+      ],
+      "evidence": {
+        "slides": [
+          8
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "x position;vvelocity;kstiffness;mmass; k/m=1ratio",
+        "x=1/v=0initialstate;dt/Δt=0.5timestep",
+        "listsanddecimalsaresampledstatevalues",
+        "t timeaxis;separatex/vverticalaxes"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "x/v state; k/m settings;dt0.5 timestep",
+        "ncurrentstep;n−1previousstep;bracketsindexstates",
+        "initialstate1/0;plotdecimalsroundedstates",
+        "timeaxesandgrowingamplitudenumericalerror"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "x[n]quantityatstepn;x[n−1]previousvalue",
+        "dtistimeinterval;rate-to-changeinterpretation"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p012",
+      "page": 12,
+      "revised": false
+    },
+    {
+      "collection": "lecture08",
+      "sectionId": "lecture08-p013",
+      "page": 13,
+      "revised": false
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p002",
+      "page": 2,
+      "revised": false
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p003",
+      "page": 3,
+      "revised": false
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "xstate;ẋrate;ttime",
+        "negativecoefficientdirectionversusstrength",
+        "100initialvalue/0initialtime/66ishapproximateupdatedvalue",
+        "timesubscriptsidentifysamplestates"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p005",
+      "page": 5,
+      "revised": false
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p006",
+      "page": 6,
+      "revised": false
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p007",
+      "page": 7,
+      "revised": false
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p008",
+      "page": 8,
+      "revised": false
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p009",
+      "page": 9,
+      "revised": false
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "48millionpixelsinputdimensions/1000identitychoices/25soundchoices",
+        "pdflabelprobabilitydistribution",
+        "ordered5classesand0.2/0.4/0probabilities",
+        "1means100%total;inputmeasurementsversusoutputprobabilities"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "signedinputwaveformvaluesversusweightsw",
+        "computedprobabilityvectorfavorsfirstclass",
+        "targetonehotfourthclassinagreedorder",
+        "targetones/zerosarecategorylabelsnotwaveformvalues"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p012",
+      "page": 12,
+      "revised": true,
+      "explained": [
+        "[z]/[s]/[a]phoneticsoundlabelsnotvectornumbers"
+      ],
+      "evidence": {
+        "slides": [
+          12
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p013",
+      "page": 13,
+      "revised": false
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p014",
+      "page": 14,
+      "revised": true,
+      "explained": [
+        "V1/V2/V3/V4arebrainareanamesnotnumericstates",
+        "arrowsconnections/interactionratherthansinglefeedforwardchain"
+      ],
+      "evidence": {
+        "slides": [
+          14
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p015",
+      "page": 15,
+      "revised": true,
+      "explained": [
+        "Temp1/Temp2wholetemplatevectors",
+        "matchingpositionswithinthreecomponentvectors",
+        "−4/10innerproductscoresnotprobabilities"
+      ],
+      "evidence": {
+        "slides": [
+          15
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture09",
+      "sectionId": "lecture09-p016",
+      "page": 16,
+      "revised": true,
+      "explained": [
+        "wlearnedweights;vectorinputmeasurements",
+        "SGDweightupdateprocessdistinctfrominference"
+      ],
+      "evidence": {
+        "slides": [
+          16
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p002",
+      "page": 2,
+      "revised": false
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "inputpixelcountvsoutputcategorycount",
+        "fiveorderedvowelsandnumericprobabilities",
+        "pdfdistribution;1/100%total"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "wweightsversussignedsignalvector",
+        "computedfirstclassvsfourthcorrectclass",
+        "onehot targetpositionsandcategoryorder"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p005",
+      "page": 5,
+      "revised": true,
+      "explained": [
+        "w weights",
+        "numbers1/2labelquestionsnotcomputationalstates"
+      ],
+      "evidence": {
+        "slides": [
+          5
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "unitnumbersactivations;edgenumbersweightsw",
+        "−1/1/3activationspairedwith−2/3/1weights",
+        "8receivingactivation;weighted sum synonyms"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p007",
+      "page": 7,
+      "revised": false
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p008",
+      "page": 8,
+      "revised": false
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "5/3/4/3/7unitcounts;Hidden1/2/3layernames",
+        "wconnectionweightsversusunitactivations;14weightedresult",
+        "0.30fourthclassprobabilityand1.00totalsupport",
+        "negativehiddenactivationsnotnegativeprobabilities"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "Hidden1Neuron2 identifieslayerandunit",
+        "5inputsand5incomingweights",
+        "−3activationnotprobabilityorweight"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p011",
+      "page": 11,
+      "revised": false
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p012",
+      "page": 12,
+      "revised": true,
+      "explained": [
+        "I/Oinput/output;xinputvector;wweights",
+        "7positiontargetonesixthcategory",
+        "0.30fourthversus0.12sixthprobabilities",
+        "backpropagationerrorderivativesversusSGDupdates"
+      ],
+      "evidence": {
+        "slides": [
+          12
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture10",
+      "sectionId": "lecture10-p013",
+      "page": 13,
+      "revised": true,
+      "explained": [
+        "westimatedaverage",
+        "400mistakenobservation;100/80averagesratherthanlearningrates"
+      ],
+      "evidence": {
+        "slides": [
+          13
+        ],
+        "transcriptLines": []
+      }
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p002",
+      "page": 2,
+      "revised": true,
+      "explained": [
+        "mass label m",
+        "equilibrium guide",
+        "longitudinal/transverse direction"
+      ],
+      "evidence": {
+        "slides": [
+          2
+        ],
+        "transcriptLines": [
+          [
+            9,
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "Reference condition",
+        "mass (m)",
+        "total restoring stiffness (K)",
+        "4m compared with m",
+        "4K compared with K",
+        "half/twice frequency",
+        "one changed property at a time"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": [
+          [
+            180,
+            193
+          ],
+          [
+            281,
+            291
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "mass numbers versus mode numbers",
+        "equilibrium marks",
+        "Both modes row",
+        "two frequencies in combined motion"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": [
+          [
+            31,
+            145
+          ],
+          [
+            195,
+            280
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p005",
+      "page": 5,
+      "revised": false
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "object identifiers 1/2/3",
+        "mode numbers",
+        "All three combined row"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": [
+          [
+            294,
+            386
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "N as count",
+        "rows versus columns",
+        "same-system comparison",
+        "same-mode comparison"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": [
+          [
+            396,
+            510
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p008",
+      "page": 8,
+      "revised": true,
+      "explained": [
+        "mode row versus Hz frequency",
+        "100/200 Hz comparison",
+        "combined All 5 modes",
+        "pickup point",
+        "frequency/amplitude axes",
+        "equal peak height"
+      ],
+      "evidence": {
+        "slides": [
+          8
+        ],
+        "transcriptLines": [
+          [
+            542,
+            591
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "two-number membrane identifiers",
+        "spatial pattern versus rate",
+        "All 5 modes",
+        "pickup point",
+        "frequency/relative-amplitude axes",
+        "assigned frequency values"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": [
+          [
+            594,
+            610
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p010",
+      "page": 10,
+      "revised": false
+    },
+    {
+      "collection": "lecture11",
+      "sectionId": "lecture11-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "fixed-bottom/free-top boundary labels",
+        "mode index versus Hz",
+        "100/300 Hz relationship",
+        "odd-harmonic spectrum",
+        "frequency versus amplitude"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": [
+          [
+            494,
+            540
+          ],
+          [
+            1422,
+            1475
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p002",
+      "page": 2,
+      "revised": true,
+      "explained": [
+        "black/gray variable key",
+        "peaks/troughs",
+        "stabilization depiction"
+      ],
+      "evidence": {
+        "slides": [
+          2
+        ],
+        "transcriptLines": [
+          [
+            753,
+            894
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "mass label m",
+        "equilibrium guide",
+        "longitudinal/transverse direction"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": [
+          [
+            899,
+            909
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "Reference condition",
+        "mass (m)",
+        "total restoring stiffness (K)",
+        "4m compared with m",
+        "4K compared with K",
+        "half/twice frequency",
+        "one changed property at a time"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": [
+          [
+            910,
+            918
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p005",
+      "page": 5,
+      "revised": true,
+      "explained": [
+        "mass numbers versus mode numbers",
+        "equilibrium marks",
+        "Both modes row",
+        "two frequencies in combined motion"
+      ],
+      "evidence": {
+        "slides": [
+          5
+        ],
+        "transcriptLines": [
+          [
+            919,
+            970
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "object identifiers 1/2/3",
+        "mode numbers",
+        "All three combined row"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": [
+          [
+            970,
+            1028
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "N as count",
+        "rows versus columns",
+        "same-system comparison",
+        "same-mode comparison"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": [
+          [
+            1031,
+            1111
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p008",
+      "page": 8,
+      "revised": true,
+      "explained": [
+        "mode row versus Hz frequency",
+        "100/200 Hz comparison",
+        "combined All 5 modes",
+        "pickup point",
+        "frequency/amplitude axes",
+        "equal peak height"
+      ],
+      "evidence": {
+        "slides": [
+          8
+        ],
+        "transcriptLines": [
+          [
+            1112,
+            1134
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "increase/decrease arrows",
+        "mass m",
+        "stiffness k",
+        "count n",
+        "printed stiffness-arrow correction"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": [
+          [
+            1200,
+            1250
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "mode row versus Hz frequency",
+        "100/200 Hz comparison",
+        "combined All 5 modes",
+        "pickup point",
+        "frequency/amplitude axes",
+        "equal peak height"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": [
+          [
+            1148,
+            1199
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "green location marker",
+        "mode 4/5 identifiers",
+        "400/500 Hz starting rates",
+        "m/k changes at one location"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": [
+          [
+            1268,
+            1348
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p012",
+      "page": 12,
+      "revised": true,
+      "explained": [
+        "two-number membrane identifiers",
+        "spatial pattern versus rate",
+        "All 5 modes",
+        "pickup point",
+        "frequency/relative-amplitude axes",
+        "assigned frequency values"
+      ],
+      "evidence": {
+        "slides": [
+          12
+        ],
+        "transcriptLines": [
+          [
+            1351,
+            1363
+          ],
+          [
+            594,
+            610
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p013",
+      "page": 13,
+      "revised": false
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p014",
+      "page": 14,
+      "revised": true,
+      "explained": [
+        "fixed-bottom/free-top boundary labels",
+        "mode index versus Hz",
+        "100/300 Hz relationship",
+        "odd-harmonic spectrum",
+        "frequency versus amplitude"
+      ],
+      "evidence": {
+        "slides": [
+          14
+        ],
+        "transcriptLines": [
+          [
+            1404,
+            1475
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p015",
+      "page": 15,
+      "revised": true,
+      "explained": [
+        "same air column in two modes",
+        "F1/F2 resonance ordering",
+        "fixed glottal/free lip endpoints",
+        "1/3 and 2/3 anatomical distances",
+        "vowel-location markers"
+      ],
+      "evidence": {
+        "slides": [
+          15
+        ],
+        "transcriptLines": [
+          [
+            1441,
+            1475
+          ],
+          [
+            1746,
+            1795
+          ],
+          [
+            1982,
+            1995
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p016",
+      "page": 16,
+      "revised": true,
+      "explained": [
+        "vowel-space labels",
+        "tongue height versus pitch",
+        "fractions measured from glottis",
+        "constriction position"
+      ],
+      "evidence": {
+        "slides": [
+          16
+        ],
+        "transcriptLines": [
+          [
+            1999,
+            2037
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p017",
+      "page": 17,
+      "revised": false
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p018",
+      "page": 18,
+      "revised": true,
+      "explained": [
+        "same air column in two modes",
+        "F1/F2 resonance ordering",
+        "fixed glottal/free lip endpoints",
+        "1/3 and 2/3 anatomical distances",
+        "vowel-location markers"
+      ],
+      "evidence": {
+        "slides": [
+          18
+        ],
+        "transcriptLines": [
+          [
+            1982,
+            1995
+          ],
+          [
+            2060,
+            2085
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p019",
+      "page": 19,
+      "revised": true,
+      "explained": [
+        "larger blue free-end masses",
+        "same local change in two modes",
+        "F1/F2 identities",
+        "down arrows mean frequency decrease"
+      ],
+      "evidence": {
+        "slides": [
+          19
+        ],
+        "transcriptLines": [
+          [
+            2086,
+            2140
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p020",
+      "page": 20,
+      "revised": true,
+      "explained": [
+        "2/3 highlighted constriction",
+        "anatomical fraction versus formant label",
+        "F1 decrease/F2 increase arrows",
+        "same modification in both rows"
+      ],
+      "evidence": {
+        "slides": [
+          20
+        ],
+        "transcriptLines": [
+          [
+            2141,
+            2178
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p021",
+      "page": 21,
+      "revised": true,
+      "explained": [
+        "1/3 highlighted constriction",
+        "fixed-end distance",
+        "mode 1/F1 and mode 2/F2",
+        "frequency-change arrows"
+      ],
+      "evidence": {
+        "slides": [
+          21
+        ],
+        "transcriptLines": [
+          [
+            2006,
+            2085
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p022",
+      "page": 22,
+      "revised": true,
+      "explained": [
+        "increase/decrease arrows",
+        "mass m",
+        "stiffness k",
+        "count n",
+        "printed stiffness-arrow correction"
+      ],
+      "evidence": {
+        "slides": [
+          22
+        ],
+        "transcriptLines": [
+          [
+            1200,
+            1250
+          ],
+          [
+            1268,
+            1348
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p023",
+      "page": 23,
+      "revised": true,
+      "explained": [
+        "Schwa combined row",
+        "Mode 1 @ F1/Mode 2 @ F2/Mode 3 @ F3",
+        "blue particle groups",
+        "left closed/right open orientation",
+        "resonance ordering"
+      ],
+      "evidence": {
+        "slides": [
+          23
+        ],
+        "transcriptLines": [
+          [
+            1746,
+            1907
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture12",
+      "sectionId": "lecture12-p024",
+      "page": 24,
+      "revised": false
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p002",
+      "page": 2,
+      "revised": true,
+      "explained": [
+        "increase/decrease arrows",
+        "mass m",
+        "stiffness k",
+        "count n",
+        "printed stiffness-arrow correction"
+      ],
+      "evidence": {
+        "slides": [
+          2
+        ],
+        "transcriptLines": [
+          [
+            1512,
+            1635
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "N as count",
+        "rows versus columns",
+        "same-system comparison",
+        "same-mode comparison"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": [
+          [
+            1616,
+            1635
+          ],
+          [
+            1031,
+            1104
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "yellow half-wave count",
+        "mode count versus frequency multiple",
+        "100 Hz example base",
+        "same string length"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": [
+          [
+            1642,
+            1697
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p005",
+      "page": 5,
+      "revised": true,
+      "explained": [
+        "mode row versus Hz frequency",
+        "100/200 Hz comparison",
+        "combined All 5 modes",
+        "pickup point",
+        "frequency/amplitude axes",
+        "equal peak height"
+      ],
+      "evidence": {
+        "slides": [
+          5
+        ],
+        "transcriptLines": [
+          [
+            542,
+            591
+          ],
+          [
+            1112,
+            1134
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "two-number membrane identifiers",
+        "spatial pattern versus rate",
+        "All 5 modes",
+        "pickup point",
+        "frequency/relative-amplitude axes",
+        "assigned frequency values"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": [
+          [
+            1682,
+            1686
+          ],
+          [
+            594,
+            610
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "fixed-bottom/free-top boundary labels",
+        "mode index versus Hz",
+        "100/300 Hz relationship",
+        "odd-harmonic spectrum",
+        "frequency versus amplitude"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": [
+          [
+            1699,
+            1745
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p008",
+      "page": 8,
+      "revised": true,
+      "explained": [
+        "yellow quarter-wave packet count",
+        "column versus packet count"
+      ],
+      "evidence": {
+        "slides": [
+          8
+        ],
+        "transcriptLines": [
+          [
+            1707,
+            1735
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "yellow quarter-wave overlays",
+        "packet numbering versus mode numbering"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": [
+          [
+            1707,
+            1735
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "same air column in two modes",
+        "F1/F2 resonance ordering",
+        "fixed glottal/free lip endpoints",
+        "1/3 and 2/3 anatomical distances",
+        "vowel-location markers"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": [
+          [
+            1746,
+            1795
+          ],
+          [
+            1870,
+            1907
+          ],
+          [
+            1982,
+            1995
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "Schwa combined row",
+        "Mode 1 @ F1/Mode 2 @ F2/Mode 3 @ F3",
+        "blue particle groups",
+        "left closed/right open orientation",
+        "resonance ordering"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": [
+          [
+            1746,
+            1907
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p012",
+      "page": 12,
+      "revised": true,
+      "explained": [
+        "vowel-space labels",
+        "tongue height versus pitch",
+        "fractions measured from glottis",
+        "constriction position"
+      ],
+      "evidence": {
+        "slides": [
+          12
+        ],
+        "transcriptLines": [
+          [
+            1999,
+            2037
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p013",
+      "page": 13,
+      "revised": true,
+      "explained": [
+        "open/narrowed vocal-tract image comparison",
+        "shape-change arrow"
+      ],
+      "evidence": {
+        "slides": [
+          13
+        ],
+        "transcriptLines": [
+          [
+            2039,
+            2089
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p014",
+      "page": 14,
+      "revised": true,
+      "explained": [
+        "Schwa combined row",
+        "Mode 1 @ F1/Mode 2 @ F2/Mode 3 @ F3",
+        "blue particle groups",
+        "left closed/right open orientation",
+        "resonance ordering"
+      ],
+      "evidence": {
+        "slides": [
+          14
+        ],
+        "transcriptLines": [
+          [
+            1746,
+            1907
+          ],
+          [
+            2060,
+            2089
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p015",
+      "page": 15,
+      "revised": true,
+      "explained": [
+        "same air column in two modes",
+        "F1/F2 resonance ordering",
+        "fixed glottal/free lip endpoints",
+        "1/3 and 2/3 anatomical distances",
+        "vowel-location markers"
+      ],
+      "evidence": {
+        "slides": [
+          15
+        ],
+        "transcriptLines": [
+          [
+            1982,
+            1995
+          ],
+          [
+            2060,
+            2089
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p016",
+      "page": 16,
+      "revised": true,
+      "explained": [
+        "larger blue free-end masses",
+        "same local change in two modes",
+        "F1/F2 identities",
+        "down arrows mean frequency decrease"
+      ],
+      "evidence": {
+        "slides": [
+          16
+        ],
+        "transcriptLines": [
+          [
+            2086,
+            2140
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p017",
+      "page": 17,
+      "revised": true,
+      "explained": [
+        "2/3 highlighted constriction",
+        "anatomical fraction versus formant label",
+        "F1 decrease/F2 increase arrows",
+        "same modification in both rows"
+      ],
+      "evidence": {
+        "slides": [
+          17
+        ],
+        "transcriptLines": [
+          [
+            2141,
+            2178
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p018",
+      "page": 18,
+      "revised": true,
+      "explained": [
+        "1/3 highlighted constriction",
+        "fixed-end distance",
+        "mode 1/F1 and mode 2/F2",
+        "frequency-change arrows"
+      ],
+      "evidence": {
+        "slides": [
+          18
+        ],
+        "transcriptLines": [
+          [
+            2006,
+            2089
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p019",
+      "page": 19,
+      "revised": true,
+      "explained": [
+        "Schwa combined row",
+        "Mode 1 @ F1/Mode 2 @ F2/Mode 3 @ F3",
+        "blue particle groups",
+        "left closed/right open orientation",
+        "resonance ordering"
+      ],
+      "evidence": {
+        "slides": [
+          19
+        ],
+        "transcriptLines": [
+          [
+            1746,
+            1907
+          ],
+          [
+            2060,
+            2089
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p020",
+      "page": 20,
+      "revised": true,
+      "explained": [
+        "source-before/filter-after comparison",
+        "frequency Hz/amplitude axes",
+        "100 Hz harmonic spacing",
+        "500/1500 Hz formant positions",
+        "F1 through F4 resonance ordering"
+      ],
+      "evidence": {
+        "slides": [
+          20
+        ],
+        "transcriptLines": [
+          [
+            2184,
+            2213
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p021",
+      "page": 21,
+      "revised": true,
+      "explained": [
+        "source spacing versus formant position",
+        "300/2300 Hz low-F1/high-F2 example",
+        "same harmonic frequencies",
+        "vertical amplitude comparison"
+      ],
+      "evidence": {
+        "slides": [
+          21
+        ],
+        "transcriptLines": [
+          [
+            2184,
+            2213
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p022",
+      "page": 22,
+      "revised": true,
+      "explained": [
+        "750/1200 Hz formant pair",
+        "100 Hz source spacing",
+        "frequency/amplitude axes",
+        "same-source before/after comparison"
+      ],
+      "evidence": {
+        "slides": [
+          22
+        ],
+        "transcriptLines": [
+          [
+            2184,
+            2213
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p023",
+      "page": 23,
+      "revised": true,
+      "explained": [
+        "spectrum sample indices",
+        "Hz frequency scale",
+        "high/medium/low darkness key",
+        "spectrum height becomes darkness"
+      ],
+      "evidence": {
+        "slides": [
+          23
+        ],
+        "transcriptLines": [
+          [
+            2215,
+            2239
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p024",
+      "page": 24,
+      "revised": false
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p025",
+      "page": 25,
+      "revised": true,
+      "explained": [
+        "F0 versus F1/F2",
+        "fixed filter across pitches",
+        "100/250/350 Hz F0 comparison",
+        "300/2100 Hz formant positions",
+        "source-frequency examples"
+      ],
+      "evidence": {
+        "slides": [
+          25
+        ],
+        "transcriptLines": [
+          [
+            2244,
+            2257
+          ],
+          [
+            2637,
+            2643
+          ],
+          [
+            2668,
+            2683
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture13",
+      "sectionId": "lecture13-p026",
+      "page": 26,
+      "revised": false
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p002",
+      "page": 2,
+      "revised": true,
+      "explained": [
+        "Mode 1–5",
+        "(1,1),(2,1),(1,2),(2,2),(3,1)",
+        "All5modes",
+        "pickup point",
+        "Frequency (Hz)",
+        "Relative amplitude",
+        "100–500Hz"
+      ],
+      "evidence": {
+        "slides": [
+          2
+        ],
+        "transcriptLines": [
+          [
+            2320,
+            2339
+          ],
+          [
+            2540,
+            2560
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "free top",
+        "fixed bottom",
+        "Mode 1–4",
+        "100,300,500,700Hz",
+        "Frequency (Hz)",
+        "Amplitude"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": [
+          [
+            2340,
+            2365
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "Mode 1–4",
+        "quarter-wave counts1,3,5,7",
+        "1×100Hz,3×100Hz,5×100Hz,7×100Hz"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": [
+          [
+            2360,
+            2390
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p005",
+      "page": 5,
+      "revised": true,
+      "explained": [
+        "Mode 1 (F1-like)",
+        "Mode 2 (F2-like)",
+        "blue masses",
+        "springs",
+        "fixed/free ends",
+        "1/3 /a/",
+        "2/3 /i/",
+        "/u/",
+        "3× faster"
+      ],
+      "evidence": {
+        "slides": [
+          5
+        ],
+        "transcriptLines": [
+          [
+            2390,
+            2420
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "Schwa",
+        "Mod1@F1",
+        "Mod2@F2",
+        "Mod3@F3",
+        "blue circles",
+        "closed/open tube ends",
+        "changing spacing"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": [
+          [
+            2327,
+            2339
+          ],
+          [
+            2420,
+            2455
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "A–F location markers",
+        "Schwa",
+        "Mod1@F1",
+        "Mod2@F2",
+        "Mod3@F3"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": [
+          [
+            2420,
+            2480
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p008",
+      "page": 8,
+      "revised": true,
+      "explained": [
+        "High/Low",
+        "Front/Back/Central",
+        "1/3 from glottis",
+        "2/3 from glottis",
+        "glottis",
+        "dean/dune/done/Don/Dan"
+      ],
+      "evidence": {
+        "slides": [
+          8
+        ],
+        "transcriptLines": [
+          [
+            2450,
+            2500
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p009",
+      "page": 9,
+      "revised": false
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "Mode1/F1",
+        "Mode2/F2",
+        "1/3",
+        "2/3",
+        "/u/",
+        "circle displacement",
+        "spring compression"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": [
+          [
+            2490,
+            2535
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "red constriction region",
+        "blue masses",
+        "Mode1/F1",
+        "Mode2/F2",
+        "↑/↓",
+        "1/3 and2/3 positions"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": [
+          [
+            2490,
+            2555
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p012",
+      "page": 12,
+      "revised": true,
+      "explained": [
+        "red constriction region",
+        "blue masses",
+        "Mode1/F1",
+        "Mode2/F2",
+        "↑/↓",
+        "1/3 and2/3 positions"
+      ],
+      "evidence": {
+        "slides": [
+          12
+        ],
+        "transcriptLines": [
+          [
+            2500,
+            2560
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p013",
+      "page": 13,
+      "revised": true,
+      "explained": [
+        "red constriction region",
+        "blue masses",
+        "Mode1/F1",
+        "Mode2/F2",
+        "↑/↓",
+        "1/3 and2/3 positions"
+      ],
+      "evidence": {
+        "slides": [
+          13
+        ],
+        "transcriptLines": [
+          [
+            2510,
+            2560
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p014",
+      "page": 14,
+      "revised": true,
+      "explained": [
+        "Schwa",
+        "Mod1@F1",
+        "Mod2@F2",
+        "Mod3@F3",
+        "blue circles",
+        "closed/open tube ends",
+        "changing spacing"
+      ],
+      "evidence": {
+        "slides": [
+          14
+        ],
+        "transcriptLines": [
+          [
+            2327,
+            2339
+          ],
+          [
+            2490,
+            2535
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p015",
+      "page": 15,
+      "revised": true,
+      "explained": [
+        "F0",
+        "100/250/350Hz",
+        "0–4000Hz",
+        "harmonic stems",
+        "mode numbers",
+        "pickup point"
+      ],
+      "evidence": {
+        "slides": [
+          15
+        ],
+        "transcriptLines": [
+          [
+            2540,
+            2595
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p016",
+      "page": 16,
+      "revised": true,
+      "explained": [
+        "Hz",
+        "1k/2k/3k/4k",
+        "F1/F2 formant ordering",
+        "schwa /ə/",
+        "/u/",
+        "/i/ or/I/",
+        "/a/",
+        "formant ticks"
+      ],
+      "evidence": {
+        "slides": [
+          16
+        ],
+        "transcriptLines": [
+          [
+            2595,
+            2621
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p017",
+      "page": 17,
+      "revised": true,
+      "explained": [
+        "rowsF0 100/250/350",
+        "vowel columns",
+        "dashed red formant targets",
+        "colored harmonic stems",
+        "gray filter curves",
+        "0–4k frequency"
+      ],
+      "evidence": {
+        "slides": [
+          17
+        ],
+        "transcriptLines": [
+          [
+            2630,
+            2683
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p018",
+      "page": 18,
+      "revised": true,
+      "explained": [
+        "frequencyHz vertical axis",
+        "time horizontal axis",
+        "spectrum height",
+        "black/gray/white amplitude key",
+        "/i/→/a/"
+      ],
+      "evidence": {
+        "slides": [
+          18
+        ],
+        "transcriptLines": [
+          [
+            2700,
+            2728
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p019",
+      "page": 19,
+      "revised": false
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p020",
+      "page": 20,
+      "revised": false
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p021",
+      "page": 21,
+      "revised": true,
+      "explained": [
+        "F1/F2 inputs",
+        "W weights",
+        "vowel category outputs"
+      ],
+      "evidence": {
+        "slides": [
+          21
+        ],
+        "transcriptLines": [
+          [
+            2884,
+            2900
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p022",
+      "page": 22,
+      "revised": true,
+      "explained": [
+        "F1/F2 Hz",
+        "input2",
+        "hidden1·3/hidden2·2/hidden3·4",
+        "output5",
+        "connections",
+        "vowel names"
+      ],
+      "evidence": {
+        "slides": [
+          22
+        ],
+        "transcriptLines": [
+          [
+            2884,
+            2943
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p023",
+      "page": 23,
+      "revised": true,
+      "explained": [
+        "320/2000Hz input pair",
+        "connection labels−0.35/0.30",
+        "weight sign/magnitude",
+        "neurons vs connections",
+        "hidden/output counts"
+      ],
+      "evidence": {
+        "slides": [
+          23
+        ],
+        "transcriptLines": [
+          [
+            2884,
+            2943
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p024",
+      "page": 24,
+      "revised": true,
+      "explained": [
+        "320/2000Hz",
+        "p(word)",
+        "0.5/0.1 probabilities",
+        "largestbar",
+        "layer counts"
+      ],
+      "evidence": {
+        "slides": [
+          24
+        ],
+        "transcriptLines": [
+          [
+            2884,
+            2943
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture14",
+      "sectionId": "lecture14-p025",
+      "page": 25,
+      "revised": true,
+      "explained": [
+        "torch",
+        "nn",
+        "net",
+        "nn.Sequential",
+        "nn.Linear(2,3)",
+        "bias=False",
+        "2→3→2→4→5"
+      ],
+      "evidence": {
+        "slides": [
+          25
+        ],
+        "transcriptLines": [
+          [
+            2884,
+            2943
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p002",
+      "page": 2,
+      "revised": true,
+      "explained": [
+        "F1/F2 Hz",
+        "connection weights",
+        "circle activations",
+        "2→3→2→4→5",
+        "five vowel outputs"
+      ],
+      "evidence": {
+        "slides": [
+          2
+        ],
+        "transcriptLines": [
+          [
+            2970,
+            2995
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "F1=320/F2=2000Hz",
+        "w₁/w₂",
+        "connectionweight vs circleactivation",
+        "−0.4 repeated label",
+        "zᵢ scores/logits",
+        "pᵢ probabilities",
+        "Σ sum",
+        "softmax"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": [
+          [
+            2980,
+            3035
+          ],
+          [
+            3240,
+            3248
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p004",
+      "page": 4,
+      "revised": false
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p005",
+      "page": 5,
+      "revised": false
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "computed percentages",
+        "desired0/1",
+        "W",
+        "L",
+        "η",
+        "∂L/∂W gradient",
+        "← replace",
+        "fixed forward activations"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": [
+          [
+            3254,
+            3293
+          ],
+          [
+            3320,
+            3355
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "circled+0.1 finalweight",
+        "1.57 activation",
+        "circled+0.005 earlyweight",
+        "computed/desired outputs",
+        "directionoferror"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": [
+          [
+            3380,
+            3435
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p008",
+      "page": 8,
+      "revised": true,
+      "explained": [
+        "FirstW2",
+        "LastW5",
+        "weight sets vs individual values",
+        "SGD",
+        "dynamic programming"
+      ],
+      "evidence": {
+        "slides": [
+          8
+        ],
+        "transcriptLines": [
+          [
+            3465,
+            3512
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "Formant_Inputs110×2",
+        "TrueVowel_Outputs110×5",
+        "F1/F2 Hz columns",
+        "one-hot vowel columns",
+        "320/2000highlightedrow",
+        "same-row alignment"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": [
+          [
+            3541,
+            3563
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "torch/nn",
+        "X/Y",
+        "110×2/110×5",
+        "net(X)",
+        "net.parameters",
+        "Sequential/Linear",
+        "lr=0.1",
+        "zero_grad",
+        "CrossEntropyLoss",
+        "loss.backward",
+        "sgd.step"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": [
+          [
+            3580,
+            3632
+          ],
+          [
+            4087,
+            4137
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "σ(z)",
+        "z linearactivation",
+        "sigmoidactivation axis",
+        "−4→0.018",
+        "4→0.982",
+        "input/output values"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": [
+          [
+            4250,
+            4286
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p012",
+      "page": 12,
+      "revised": true,
+      "explained": [
+        "320/2000Hz",
+        "purplelinear/greensigmoid",
+        "hiddenlayer3neuron4",
+        "σ(−0.076)=0.481",
+        "neuron coordinates vs values",
+        "outputpercentages"
+      ],
+      "evidence": {
+        "slides": [
+          12
+        ],
+        "transcriptLines": [
+          [
+            4250,
+            4296
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture15",
+      "sectionId": "lecture15-p013",
+      "page": 13,
+      "revised": true,
+      "explained": [
+        "X/Y",
+        "net",
+        "Linear(2,3)",
+        "nn.Sigmoid",
+        "2→3→2→4→5",
+        "five output scores",
+        "CrossEntropyLoss"
+      ],
+      "evidence": {
+        "slides": [
+          13
+        ],
+        "transcriptLines": [
+          [
+            4287,
+            4296
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p002",
+      "page": 2,
+      "revised": true,
+      "explained": [
+        "F1/F2 Hz",
+        "connection weights",
+        "circle activations",
+        "2→3→2→4→5",
+        "five vowel outputs"
+      ],
+      "evidence": {
+        "slides": [
+          2
+        ],
+        "transcriptLines": [
+          [
+            3660,
+            3695
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "F1=320/F2=2000Hz",
+        "w₁/w₂",
+        "connectionweight vs circleactivation",
+        "−0.4 repeated label",
+        "zᵢ scores/logits",
+        "pᵢ probabilities",
+        "Σ sum",
+        "softmax"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": [
+          [
+            3670,
+            3735
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p004",
+      "page": 4,
+      "revised": false
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p005",
+      "page": 5,
+      "revised": true,
+      "explained": [
+        "F1/F2Hz axes",
+        "525observations",
+        "105tokenspervowel",
+        "legendcolors",
+        "overlap"
+      ],
+      "evidence": {
+        "slides": [
+          5
+        ],
+        "transcriptLines": [
+          [
+            3790,
+            3859
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p006",
+      "page": 6,
+      "revised": false
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "computed percentages",
+        "desired0/1",
+        "W",
+        "L",
+        "η",
+        "∂L/∂W gradient",
+        "← replace",
+        "fixed forward activations"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": [
+          [
+            3870,
+            3945
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p008",
+      "page": 8,
+      "revised": true,
+      "explained": [
+        "circled+0.1 finalweight",
+        "1.57 activation",
+        "circled+0.005 earlyweight",
+        "computed/desired outputs",
+        "directionoferror"
+      ],
+      "evidence": {
+        "slides": [
+          8
+        ],
+        "transcriptLines": [
+          [
+            3940,
+            3998
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p009",
+      "page": 9,
+      "revised": true,
+      "explained": [
+        "FirstW2",
+        "LastW5",
+        "weight sets vs individual values",
+        "SGD",
+        "dynamic programming"
+      ],
+      "evidence": {
+        "slides": [
+          9
+        ],
+        "transcriptLines": [
+          [
+            4000,
+            4055
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p010",
+      "page": 10,
+      "revised": true,
+      "explained": [
+        "Formant_Inputs110×2",
+        "TrueVowel_Outputs110×5",
+        "F1/F2 Hz columns",
+        "one-hot vowel columns",
+        "320/2000highlightedrow",
+        "same-row alignment"
+      ],
+      "evidence": {
+        "slides": [
+          10
+        ],
+        "transcriptLines": [
+          [
+            4050,
+            4085
+          ],
+          [
+            4180,
+            4236
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p011",
+      "page": 11,
+      "revised": true,
+      "explained": [
+        "torch/nn",
+        "X/Y",
+        "110×2/110×5",
+        "net(X)",
+        "net.parameters",
+        "Sequential/Linear",
+        "lr=0.1",
+        "zero_grad",
+        "CrossEntropyLoss",
+        "loss.backward",
+        "sgd.step"
+      ],
+      "evidence": {
+        "slides": [
+          11
+        ],
+        "transcriptLines": [
+          [
+            4087,
+            4137
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p012",
+      "page": 12,
+      "revised": true,
+      "explained": [
+        "σ(z)",
+        "z linearactivation",
+        "sigmoidactivation axis",
+        "−4→0.018",
+        "4→0.982",
+        "input/output values"
+      ],
+      "evidence": {
+        "slides": [
+          12
+        ],
+        "transcriptLines": [
+          [
+            4250,
+            4286
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p013",
+      "page": 13,
+      "revised": true,
+      "explained": [
+        "320/2000Hz",
+        "purplelinear/greensigmoid",
+        "hiddenlayer3neuron4",
+        "σ(−0.076)=0.481",
+        "neuron coordinates vs values",
+        "outputpercentages"
+      ],
+      "evidence": {
+        "slides": [
+          13
+        ],
+        "transcriptLines": [
+          [
+            4250,
+            4296
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p014",
+      "page": 14,
+      "revised": true,
+      "explained": [
+        "X/Y",
+        "net",
+        "Linear(2,3)",
+        "nn.Sigmoid",
+        "2→3→2→4→5",
+        "five output scores",
+        "CrossEntropyLoss"
+      ],
+      "evidence": {
+        "slides": [
+          14
+        ],
+        "transcriptLines": [
+          [
+            4287,
+            4296
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p015",
+      "page": 15,
+      "revised": true,
+      "explained": [
+        "seed0",
+        "X=Formant_Inputs/1000",
+        "Hz→kHz",
+        "y/argmax",
+        "model/loss_fn/opt",
+        "epoch",
+        "2000full-batchupdates",
+        "lr0.1",
+        "accuracy/pred/correct",
+        "20%chance",
+        "44.95%trainingaccuracy",
+        "NumPyreference"
+      ],
+      "evidence": {
+        "slides": [
+          15
+        ],
+        "transcriptLines": [
+          [
+            4148,
+            4165
+          ],
+          [
+            4170,
+            4208
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture16",
+      "sectionId": "lecture16-p016",
+      "page": 16,
+      "revised": true,
+      "explained": [
+        "seeds0–9",
+        "tencurves",
+        "freshmodelandoptimizer",
+        "Epoch",
+        "trainingaccuracy%",
+        "same525recordings",
+        "44.95%",
+        "overlappingcurves",
+        "NumPyreference"
+      ],
+      "evidence": {
+        "slides": [
+          16
+        ],
+        "transcriptLines": [
+          [
+            4170,
+            4236
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture17",
+      "sectionId": "lecture17-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture17",
+      "sectionId": "lecture17-p002",
+      "page": 2,
+      "revised": true,
+      "explained": [
+        "F1/F2 staticvector",
+        "twoentries/fiveoutputs",
+        "NNs/PDP",
+        "weights"
+      ],
+      "evidence": {
+        "slides": [
+          2
+        ],
+        "transcriptLines": [
+          [
+            4335,
+            4400
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture17",
+      "sectionId": "lecture17-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "Plan Units",
+        "State Units",
+        "Hidden Units",
+        "Output Units",
+        "feedbackarrows",
+        "Time0–32",
+        "Voice/Place/Sonorant/Sibilant/Nasal/Height/Back/Round"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": [
+          [
+            4415,
+            4458
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture17",
+      "sectionId": "lecture17-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "xinputvector",
+        "wweights",
+        "Σweighted-sum",
+        "yresponse",
+        "W1/W2/W3",
+        "seveninputs/fiveoutputs",
+        "15vectors/16thprediction",
+        "PDFprobabilitydistribution",
+        "SGD/DP",
+        "agentboxes/arrows/loop"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": [
+          [
+            4500,
+            4583
+          ],
+          [
+            4724,
+            4733
+          ],
+          [
+            4890,
+            4897
+          ],
+          [
+            4825,
+            4845
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture17",
+      "sectionId": "lecture17-p005",
+      "page": 5,
+      "revised": true,
+      "explained": [
+        "x1…x15",
+        "x16?",
+        "vectorentryvssequenceindex",
+        "spectrogramframes/5kHz",
+        "imagepatches1–16",
+        "aminoacidlettercodes",
+        "wordsoundpictureprotein"
+      ],
+      "evidence": {
+        "slides": [
+          5
+        ],
+        "transcriptLines": [
+          [
+            4576,
+            4583
+          ],
+          [
+            4915,
+            4972
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture17",
+      "sectionId": "lecture17-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "CVC",
+        "redvowels",
+        "onset/coda",
+        "star*",
+        "dot·syllablebreak",
+        "phonotacticorder"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": [
+          [
+            4980,
+            5005
+          ],
+          [
+            5450,
+            5510
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture17",
+      "sectionId": "lecture17-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "underscoreblank",
+        "greencontinuations",
+        "starredexcludedclusters",
+        "x16",
+        "letterpredictiondistribution"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": [
+          [
+            4980,
+            5005
+          ],
+          [
+            5515,
+            5544
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture17",
+      "sectionId": "lecture17-p008",
+      "page": 8,
+      "revised": false
+    },
+    {
+      "collection": "lecture18",
+      "sectionId": "lecture18-p001",
+      "page": 1,
+      "revised": false
+    },
+    {
+      "collection": "lecture18",
+      "sectionId": "lecture18-p002",
+      "page": 2,
+      "revised": true,
+      "explained": [
+        "x/w/Σ/y",
+        "seveninputvalues",
+        "W1/W2/W3",
+        "fiveoutputentries",
+        "15contextvectors/16thdistribution",
+        "PDF",
+        "SGD/DP",
+        "LLMagentarrows"
+      ],
+      "evidence": {
+        "slides": [
+          2
+        ],
+        "transcriptLines": [
+          [
+            5120,
+            5187
+          ],
+          [
+            5413,
+            5425
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture18",
+      "sectionId": "lecture18-p003",
+      "page": 3,
+      "revised": true,
+      "explained": [
+        "xrepresentations",
+        "15inputvectors",
+        "five layers",
+        "heads arrowhorizontal",
+        "Wweights",
+        "16PDFprobabilityoutput",
+        "widthvsdepth"
+      ],
+      "evidence": {
+        "slides": [
+          3
+        ],
+        "transcriptLines": [
+          [
+            5291,
+            5302
+          ],
+          [
+            5314,
+            5317
+          ],
+          [
+            5330,
+            5355
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture18",
+      "sectionId": "lecture18-p004",
+      "page": 4,
+      "revised": true,
+      "explained": [
+        "numbersin/out",
+        "x_n/x_n+1",
+        "v_n/v_n+1",
+        "h",
+        "x0/x1/v0/v1",
+        "nstepaxis",
+        "copy/statearrows",
+        "W1…W5",
+        "fivelayers",
+        "representationtrajectories"
+      ],
+      "evidence": {
+        "slides": [
+          4
+        ],
+        "transcriptLines": [
+          [
+            5363,
+            5374
+          ],
+          [
+            5386,
+            5407
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture18",
+      "sectionId": "lecture18-p005",
+      "page": 5,
+      "revised": true,
+      "explained": [
+        "x1…x15/x16",
+        "vectorentries",
+        "15knownimagepatches/missing16th",
+        "spectrogramHz/time",
+        "aminoacidcodes/Y"
+      ],
+      "evidence": {
+        "slides": [
+          5
+        ],
+        "transcriptLines": [
+          [
+            5426,
+            5455
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture18",
+      "sectionId": "lecture18-p006",
+      "page": 6,
+      "revised": true,
+      "explained": [
+        "CVC",
+        "onset/coda",
+        "*impossible",
+        "·syllablebreak",
+        "writtenlettervsphoneticsound"
+      ],
+      "evidence": {
+        "slides": [
+          6
+        ],
+        "transcriptLines": [
+          [
+            5450,
+            5510
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture18",
+      "sectionId": "lecture18-p007",
+      "page": 7,
+      "revised": true,
+      "explained": [
+        "underscore",
+        "greenletters",
+        "*excludedcluster",
+        "x16prediction",
+        "broad/concentratedprobability"
+      ],
+      "evidence": {
+        "slides": [
+          7
+        ],
+        "transcriptLines": [
+          [
+            5515,
+            5544
+          ]
+        ]
+      }
+    },
+    {
+      "collection": "lecture18",
+      "sectionId": "lecture18-p008",
+      "page": 8,
+      "revised": true,
+      "explained": [
+        "character/token",
+        "fourheads",
+        "fivelayers",
+        "64-dimensionalvectors",
+        "attentionheads",
+        "weightadjustment"
+      ],
+      "evidence": {
+        "slides": [
+          8
+        ],
+        "transcriptLines": [
+          [
+            5522,
+            5580
+          ],
+          [
+            5635,
+            5650
+          ]
+        ]
+      }
+    }
+  ],
+  "retainedContentLock": "modern/visual-meaning-preserved.json",
+  "rules": {
+    "sourceSpecific": true,
+    "repeatedExplanationTemplate": false,
+    "workedCalculationsAdded": false,
+    "unchangedPagesInheritBaseVerbatim": true
+  }
+}

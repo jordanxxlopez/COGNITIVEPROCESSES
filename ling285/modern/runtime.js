@@ -7,7 +7,7 @@ function installModern() {
  FOLLOWING_SLIDE_VERSIONS.follow='c';
  FOLLOWING_SLIDE_VERSIONS['original-c']='original-c';
  FOLLOWING_SLIDE_VERSIONS.d='d';
- for(const id of ['original-c-v2','d-v2','notes-v7'])FOLLOWING_SLIDE_VERSIONS[id]=id;
+ for(const id of ['original-c-v2','d-v2','notes-v7','original-c-v3'])FOLLOWING_SLIDE_VERSIONS[id]=id;
  const modernEditionAvailable=id=>id!=='notes-v7' || state.activeModule==='module2';
  effectiveVersion=function(){return modernEditionAvailable(state.transcriptVersion)&&transcriptEditions.has(state.transcriptVersion)?state.transcriptVersion:transcriptEditions.has('v20')?'v20':[...transcriptEditions.keys()][0] || 'v1';};
  selectableTranscriptVersions=function(){return Object.keys(pack.editions).filter(modernEditionAvailable);};
