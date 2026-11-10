@@ -39,6 +39,17 @@
         '<div class="nav-label label">Course modules</div><nav aria-label="Switch course module"><button class="course-module-button" data-studio-module="overview">Course overview</button>' +
         labels.map((text,i)=>`<button class="course-module-button${active===i+1?' active':''}" data-studio-module="${i+1}" aria-pressed="${active===i+1}">${text}</button>`).join('')+'</nav>';
     }
+    const heading = document.querySelector('#headerModule,#courseHeading,.topbar > div > small');
+    if (heading) {
+      if (pending) {
+        if (!heading.hasAttribute('data-module-heading')) heading.dataset.moduleHeading = heading.textContent;
+        const title = course.toUpperCase() + ' / MODULE III';
+        if (heading.textContent !== title) heading.textContent = title;
+      } else if (heading.hasAttribute('data-module-heading')) {
+        heading.textContent = heading.dataset.moduleHeading;
+        delete heading.dataset.moduleHeading;
+      }
+    }
     document.body.classList.toggle('pending-course-module', pending);
     if (empty.hidden === pending) empty.hidden = !pending;
     const content = document.querySelector('#content');
