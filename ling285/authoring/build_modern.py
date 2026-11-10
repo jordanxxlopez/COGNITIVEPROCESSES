@@ -108,7 +108,8 @@ def build():
     pack=dict(revision='2026-11-modern-1',concepts=CONCEPTS,guides=GUIDES,model=model,asked=ASK,qa=qa,pageConcepts=MAP,cards=CARDS,contrasts=CONTRASTS,hard=HARD,review=REVIEW,core=CORE,connections=CONNECTIONS,editions=editions,code=CODE,figures=FIGURES,questions=questions,writing=writing,summaries=SUMMARIES,readings=READINGS,coverage=coverage,uploads=uploads)
     (OUT/'content.js').write_text('window.LING285_MODERN = '+json.dumps(pack,ensure_ascii=False,indent=1)+';\n')
     html=(ROOT/'index.html').read_text().replace('<head>','<head>\n  <base href="../">')
-    html=html.replace('</head>','<link rel="stylesheet" href="modern/modern.css?v=1"><link rel="stylesheet" href="../workspace-modern.css?v=layout-switch-4"><link rel="stylesheet" href="modern/module2-layout.css?v=2"></head>')
+    html=html.replace('<link rel="stylesheet" href="fitting.css?v=1">','')
+    html=html.replace('</head>','<link rel="stylesheet" href="modern/modern.css?v=1"><link rel="stylesheet" href="../workspace-modern.css?v=layout-switch-4"><link rel="stylesheet" href="modern/module2-layout.css?v=2"><link rel="stylesheet" href="fitting.css?v=1"></head>')
     html=html.replace('<script src="app.js?v=ling285-source-fidelity-3" defer></script>','<script src="modern/content.js?v=1" defer></script><script src="modern/app.js?v=1" defer></script>')
     # Match the actual current asset tag while preserving the source shell otherwise.
     import re

@@ -1,0 +1,128 @@
+/* LING285 content fitting. Shared by the preserved and modern studio shells.
+   Text, source assets, editions and progress identities are unchanged. */
+html[data-ling-fitting] #content {
+ --fit-padding:clamp(18px,2vw,28px);
+ --fit-gap:clamp(24px,2.4vw,40px);
+ --panel:var(--surface);
+ --paper:var(--surface);
+ container:ling-reading / inline-size;
+ min-inline-size:0;
+}
+html[data-ling-fitting] :is(#content,#readerDialog) :is(.aid-split,.modern-qa-pair,.section-pair) {
+ display:grid;
+ grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+ gap:var(--fit-gap,32px);
+ align-items:start;
+ inline-size:100%;
+ min-inline-size:0;
+ max-inline-size:100%;
+}
+html[data-ling-fitting] :is(#content,#readerDialog) :is(.aid-split,.modern-qa-pair,.section-pair)>* {min-inline-size:0;max-inline-size:100%}
+html[data-ling-fitting] #content :is(details,article,.card,.guide,.source-section,.modern-topic,.modern-qa,.modern-answer,.code-figure-card) {overflow:visible;max-block-size:none}
+html[data-ling-fitting] #content details.modern-topic.aid-card {padding:0}
+html[data-ling-fitting] #content .modern-topic>.modern-topic-body {padding:var(--fit-padding)}
+html[data-ling-fitting] #content article.modern-topic.aid-card>.modern-topic-body {padding:0}
+html[data-ling-fitting] #content .modern-topic>.modern-topic-body>:is(.aid-split,.modern-qa-pair) {padding:0}
+html[data-ling-fitting] #content .modern-topic>summary {border-radius:15px 15px 0 0}
+html[data-ling-fitting] #content .modern-topic:not([open])>summary {border-radius:15px}
+html[data-ling-fitting] #content .module2-guide-questions {margin:calc(-1 * var(--fit-padding)) calc(-1 * var(--fit-padding)) 24px;padding:var(--fit-padding)}
+html[data-ling-fitting] #content :is(.aid-card-title,.source-section>summary,.guide>summary) {overflow-wrap:break-word}
+html[data-ling-fitting] #content :is(.aid-visual,.aid-figs,.source-figure,.source-media,.media-item) {
+ min-inline-size:0;
+ max-inline-size:100%;
+ max-block-size:none;
+ block-size:auto;
+ overflow:visible;
+ scrollbar-gutter:auto;
+}
+html[data-ling-fitting] #content .aid-visual {padding-inline:0}
+html[data-ling-fitting] :is(#content,#readerDialog) :is(.aid-visual,.source-figure) {inline-size:100%;max-inline-size:min(100%,1120px);justify-self:start}
+html[data-ling-fitting] #content :is(.aid-fig,.source-figure,figure) {margin-inline:0}
+html[data-ling-fitting] #content .aid-fig {margin-block:0 24px}
+html[data-ling-fitting] #content .aid-fig:last-child {margin-block-end:0}
+html[data-ling-fitting] :is(#content,#readerDialog) :is(img,video) {
+ display:block;
+ max-inline-size:100%;
+ max-block-size:none;
+ block-size:auto;
+ object-fit:contain;
+}
+html[data-ling-fitting] :is(#content,#readerDialog) :is(.source-figure,.aid-visual,.modern-qa-pair,.stimulus-card) :is(img,video) {inline-size:100%}
+html[data-ling-fitting] :is(#content,#readerDialog) .slide-button {max-inline-size:100%;min-inline-size:0;line-height:0}
+html[data-ling-fitting] :is(#content,#readerDialog) figcaption {max-inline-size:100%;white-space:normal;overflow-wrap:anywhere;margin-block:10px 0;line-height:1.6}
+html[data-ling-fitting] :is(#content,#readerDialog) :is(.teaching,.modern-teaching) {margin-block:0;max-inline-size:74ch}
+html[data-ling-fitting] :is(#content,#readerDialog) :is(.teaching,.modern-teaching)>:first-child {margin-block-start:0}
+html[data-ling-fitting] :is(#content,#readerDialog) .modern-teaching>li:first-child {margin-block-start:0}
+html[data-ling-fitting] :is(#content,#readerDialog) .aid-text>:first-child {margin-block-start:0}
+html[data-ling-fitting] :is(#content,#readerDialog) .aid-text {max-inline-size:74ch}
+html[data-ling-fitting] :is(#content,#readerDialog) .modern-qa-pair>div:first-child>p {max-inline-size:74ch}
+html[data-ling-fitting] #content .aid-split.aid-text {padding:var(--fit-padding)}
+html[data-ling-fitting] #content .modern-topic-body.aid-split {padding:var(--fit-padding)}
+html[data-ling-fitting] .fit-study-footer {min-inline-size:0;inline-size:100%;margin-block-start:24px;padding-block-start:20px;border-block-start:1px solid var(--line)}
+html[data-ling-fitting] .fit-study-footer>:first-child {margin-block-start:0}
+html[data-ling-fitting] .fit-study-footer .section-tools {margin-block-start:0;border-block-start:0;padding-block-start:0}
+html[data-ling-fitting] .fit-study-footer .notes-box {inline-size:100%;margin-block:16px}
+html[data-ling-fitting] .fit-study-footer .notes-box textarea {inline-size:100%;min-block-size:90px;max-inline-size:100%}
+html[data-ling-fitting] .fit-study-footer .modern-evidence {margin-block:16px 0}
+html[data-ling-fitting] #content details.aid-qa>.fit-study-footer {inline-size:auto;margin-inline:22px;margin-block-end:22px}
+html[data-ling-fitting] #content .modern-topic>.fit-study-footer {inline-size:auto;margin-inline:var(--fit-padding);margin-block-end:var(--fit-padding)}
+html[data-ling-fitting] :is(#content,#readerDialog) .fit-selection {display:block;flex-basis:100%;inline-size:100%;min-inline-size:0;max-inline-size:100%;contain:inline-size;white-space:normal;overflow-wrap:anywhere;font-size:.88rem;font-weight:400;line-height:1.6;color:var(--muted)}
+html[data-ling-fitting] :is(#content,#readerDialog) label:has(>.fit-selection) {flex-wrap:wrap;min-inline-size:0;max-inline-size:100%}
+html[data-ling-fitting] .fit-select-field {display:flex;flex:1 1 320px;align-items:center;flex-wrap:wrap;gap:7px;min-inline-size:0;max-inline-size:100%}
+html[data-ling-fitting] .fit-select-field>select {flex:1;min-inline-size:0;max-inline-size:100%}
+html[data-ling-fitting] :is(#content,#readerDialog) :is(input,textarea,select) {max-inline-size:100%;min-inline-size:0}
+html[data-ling-fitting] :is(#content,#readerDialog) :is(.toolbar,.reader-controls,.modern-filters,.row) {min-inline-size:0;max-inline-size:100%;flex-wrap:wrap}
+html[data-ling-fitting] #content :is(pre,.source-excerpt pre,.review-code,.code-block) {max-block-size:none;max-inline-size:100%;white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;overflow:visible;tab-size:4}
+html[data-ling-fitting] #content :is(.table-scroll,.modern-table-wrap) {max-block-size:none;overflow:visible}
+html[data-ling-fitting] #content table {inline-size:100%;min-inline-size:0;table-layout:fixed}
+html[data-ling-fitting] #content :is(th,td) {overflow-wrap:anywhere;white-space:normal}
+
+/* Playback chrome is a separate row, so it cannot cover a diagram or caption. */
+html[data-ling-fitting] .fit-player {inline-size:100%;max-inline-size:100%;min-inline-size:0;block-size:auto;background:var(--surface,#fff);border:1px solid var(--line);border-radius:10px}
+html[data-ling-fitting] .fit-video-stage {inline-size:100%;min-inline-size:0;background:#fff;border-radius:9px 9px 0 0}
+html[data-ling-fitting] .fit-player .fit-video-stage video {display:block;inline-size:100%;max-inline-size:100%;block-size:auto;max-block-size:none;object-fit:contain;border-radius:9px 9px 0 0}
+html[data-ling-fitting] .fit-player-controls {display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:12px;background:var(--surface-2);color:var(--ink);border-block-start:1px solid var(--line);border-radius:0 0 9px 9px;font-size:.85rem;line-height:1.5}
+html[data-ling-fitting] .fit-player-controls button {min-block-size:40px;padding:7px 11px;font-size:.85rem;background:var(--surface);color:var(--ink)}
+html[data-ling-fitting] .fit-player-controls label {display:flex;align-items:center;gap:7px;min-inline-size:0;max-inline-size:100%;margin:0}
+html[data-ling-fitting] .fit-player-controls select {inline-size:auto;max-inline-size:100%;padding:7px;font-size:.85rem;background:var(--surface);color:var(--ink)}
+html[data-ling-fitting] .fit-player-controls .fit-timeline {display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;flex:1 1 100%;inline-size:100%;min-inline-size:0}
+html[data-ling-fitting] .fit-player-controls input[type=range] {inline-size:100%;min-inline-size:0;accent-color:var(--accent);padding:0}
+html[data-ling-fitting] .fit-player-controls input.fit-volume[type=range] {inline-size:90px;flex:none}
+html[data-ling-fitting] .fit-player-controls .fit-video-time {font-variant-numeric:tabular-nums;white-space:nowrap}
+html[data-ling-fitting] .fit-player-controls a {color:var(--accent);overflow-wrap:anywhere}
+html[data-ling-fitting] .fit-player-status {flex-basis:100%;margin:0;font-size:.85rem}
+html[data-ling-fitting] .fit-player-status:empty {display:none}
+html[data-ling-fitting] .fit-player :focus-visible {outline:2px solid var(--focus);outline-offset:3px}
+html[data-ling-fitting] .fit-player:fullscreen {display:flex;flex-direction:column;inline-size:100vw;block-size:100dvh;max-inline-size:none;border:0;border-radius:0;background:var(--surface)}
+html[data-ling-fitting] .fit-player:fullscreen .fit-video-stage {flex:1;min-block-size:0;display:flex;align-items:center;justify-content:center;overflow:visible}
+html[data-ling-fitting] .fit-player:fullscreen .fit-video-stage video {inline-size:100%;block-size:100%;min-block-size:0;object-fit:contain}
+html[data-ling-fitting] .fit-player:fullscreen .fit-player-controls {flex:none;border-radius:0}
+html[data-ling-fitting] .reader-stage .source-figure {position:static;max-block-size:none;overflow:visible}
+html[data-ling-fitting] .reader-stage .section-body {padding:0}
+html[data-ling-fitting] #readerDialog {max-block-size:calc(100dvh - 24px)}
+html[data-ling-fitting] #imageDialog[open] {display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:14px;block-size:calc(100dvh - 24px);max-block-size:calc(100dvh - 24px);max-inline-size:calc(100vw - 24px)}
+html[data-ling-fitting] #imageDialog>img {place-self:center;inline-size:auto;block-size:auto;min-block-size:0;max-inline-size:100%;max-block-size:100%;margin:0;object-fit:contain}
+html[data-ling-fitting] body.follow-slides #content .source-section {overflow:visible}
+html[data-ling-fitting] body.follow-slides #content .section-pair>.source-figure {position:static;max-block-size:none;overflow:visible}
+html[data-ling-fitting] body.follow-slides #content .section-pair>.source-figure[data-fit-follow] {position:sticky;inset-block-start:16px}
+@container ling-reading (max-width:1450px){
+ html[data-ling-fitting] #content :is(.aid-split,.modern-qa-pair,.section-pair) {grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:1600px){
+ html[data-ling-fitting] #readerDialog :is(.aid-split,.modern-qa-pair,.section-pair) {grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:700px){
+ html[data-ling-fitting] .fit-player-controls {gap:9px;padding:10px}
+ html[data-ling-fitting] .fit-player-controls input.fit-volume[type=range] {inline-size:76px}
+ html[data-ling-fitting] .reader-controls select {flex-basis:100%;min-inline-size:0;max-inline-size:100%}
+ html[data-ling-fitting] .reader-controls .fit-select-field {order:2;flex-basis:100%}
+ html[data-ling-fitting] #content .fit-table :is(thead,tbody,tr,th,td) {display:block;inline-size:100%}
+ html[data-ling-fitting] #content .fit-table thead tr {display:flex;flex-wrap:wrap;gap:8px}
+ html[data-ling-fitting] #content .fit-table thead th {inline-size:auto;font-size:.82rem}
+ html[data-ling-fitting] #content .fit-table tbody tr {margin-block:16px;border:1px solid var(--line);border-radius:10px}
+ html[data-ling-fitting] #content .fit-table td::before {content:attr(data-fit-label);display:block;font-weight:700;color:var(--ink);margin-block-end:5px}
+}
+@media print{
+ html[data-ling-fitting] .fit-player-controls {display:none}
+ html[data-ling-fitting] #content :is(.aid-split,.section-pair,.modern-qa-pair) {display:block}
+}
