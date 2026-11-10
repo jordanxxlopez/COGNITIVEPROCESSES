@@ -1,0 +1,11 @@
+/* Use each course's existing palette. Only navigation geometry is shared. */
+#courseModuleButtons {margin-bottom:20px}
+#courseModuleButtons nav {display:grid;gap:8px}
+#courseModuleButtons .course-module-button {box-sizing:border-box;display:block;width:100%;text-align:left;padding:14px 13px;border:1px solid var(--nav-line,var(--line,var(--border,#a8b3c4)));border-radius:12px;font-family:inherit;font-size:14px;font-weight:650;line-height:1.4;text-decoration:none;background:transparent;color:var(--nav-ink,var(--ink,inherit));cursor:pointer}
+#courseModuleButtons .course-module-button:hover,#courseModuleButtons .course-module-button.active {background:var(--studio-pop-active,var(--soft,transparent));border-color:var(--accent,currentColor)}
+#courseModuleButtons .workspace-entry {margin-bottom:16px}
+#courseModuleButtons .nav-label {margin:20px 8px 10px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px}
+body:has(#courseModuleButtons) #courseNav,body:has(#courseModuleButtons) #moduleNav.module-nav {display:none}
+body:has(#courseModuleButtons) #workspaceNav > button[data-view="home"],body:has(#courseModuleButtons) #workspaceNav > .label:first-of-type,body:has(#courseModuleButtons) #workNav > button[data-view="courseOverview"] {display:none}
+.pending-course-module #content,.pending-course-module #workNav,.pending-course-module #workspaceNav,.pending-course-module #moduleNav,.pending-course-module #collectionNav,.pending-course-module #moduleArchive,.pending-course-module #activeModuleLabel,.pending-course-module #workspaceModuleLabel,.pending-course-module #sidebar > .nav-label,.pending-course-module #sidebar > .reading-nav {display:none!important}
+#pendingCourseModule[hidden]{display:none}
