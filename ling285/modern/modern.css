@@ -1,0 +1,28 @@
+.workspace-switch{display:block;margin:16px 0;padding:13px 15px;border:1px solid #ffffff55;border-radius:14px;color:inherit;text-decoration:none;font-weight:700}
+.modern-topic{margin:18px 0;background:var(--panel,#fff);border:1px solid var(--line,#dfc5cf);border-radius:20px;overflow:hidden;box-shadow:0 8px 28px #4d153908}
+.modern-topic>summary{padding:22px 25px;font-size:1.18rem;font-weight:750;cursor:pointer;background:linear-gradient(105deg,#7823430d,#d7668c13)}
+.modern-topic-body{padding:5px 25px 25px}
+.modern-guide-point{padding:23px 0;border-top:1px solid var(--line,#ead8e0);margin-top:18px}
+.modern-teaching{font-size:var(--text-size,18px);line-height:1.8;padding-left:24px;max-width:80ch}
+.modern-teaching>li{margin:14px 0}.modern-teaching ul{padding-left:24px}.modern-teaching ul li{margin:12px 0}
+.modern-answer{margin-top:20px;border:1px solid var(--line,#dfc5cf);border-radius:12px;padding:17px 20px;background:var(--panel,#fff)}
+.modern-answer>summary{cursor:pointer;font-weight:700;line-height:1.65}.modern-answer p{line-height:1.8}
+.modern-source-links{margin-top:15px}.modern-topic-body .readiness{padding-top:15px}
+.modern-qa{margin:15px 0;border:1px solid var(--line,#dfc5cf);border-radius:17px;overflow:hidden;background:var(--panel,#fff)}
+.modern-qa>summary{padding:21px;cursor:pointer;font-weight:700;line-height:1.6}.modern-qa>summary .tag{margin-right:14px;margin-bottom:10px}
+.modern-qa-pair{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:25px;padding:0 23px 23px}.modern-qa-pair>div{min-width:0}
+.modern-qa-pair p{font-size:var(--text-size,18px);line-height:1.8}.modern-qa-pair figure{margin:8px 0;min-width:0}.modern-qa-pair figure img{width:100%;height:auto}
+.modern-evidence{margin-top:20px;font-size:.88rem;color:var(--muted,#705965)}.modern-evidence summary{cursor:pointer}.modern-evidence p{font-size:.88rem}
+.modern-comparison{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:25px 0}.modern-comparison section{padding:20px;border:1px solid var(--line,#dfc5cf);border-radius:14px;background:#b6385a08}.modern-comparison h3{margin-top:0}
+.modern-contrast p,.modern-experiment p{font-size:var(--text-size,18px);line-height:1.8}.modern-contrast>.modern-topic-body,.modern-experiment>.modern-topic-body{padding-top:23px}
+.modern-review>.modern-topic-body{padding-top:24px}.modern-response{margin:20px 0}.modern-response summary{cursor:pointer;font-weight:650;margin-bottom:12px}.modern-response textarea{display:block;width:100%;min-height:120px;padding:15px;border-radius:12px;border:1px solid var(--line,#dfc5cf);background:var(--panel,#fff);color:inherit;font:inherit;line-height:1.6;resize:vertical}
+.modern-review .readiness{margin-top:22px}.modern-review .review-image{max-width:100%;height:auto}
+.modern-code>.modern-topic-body{padding-top:20px}.modern-code pre{max-width:100%;overflow:auto;font-size:.9rem;line-height:1.65}.modern-code code{white-space:pre}
+.modern-wording{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 16px;border:1px solid var(--line,#dfc5cf);border-radius:12px;background:var(--panel,#fff)}
+.modern-writing>.modern-topic-body{padding-top:22px}.modern-writing h2{line-height:1.55}.writing-ratings{margin:20px 0}.writing-ratings [aria-pressed=true]{background:var(--accent,#a93559);color:white}.modern-writing .review-image{max-width:100%;height:auto}
+.modern-question-image{max-width:760px;margin:22px 0}.modern-question-image img{display:block;max-width:100%;height:auto;border-radius:12px;background:white}.modern-quiz-card p{line-height:1.7}
+.modern-source-entry{padding:15px 0;border-bottom:1px solid var(--line,#dfc5cf)}.modern-table-wrap{overflow:auto;max-width:100%}.modern-table-wrap table{border-collapse:collapse;min-width:630px}.modern-table-wrap th,.modern-table-wrap td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line,#dfc5cf)}
+.modern-filters{align-items:end;min-width:0}.modern-filters label{display:flex;flex-direction:column;gap:6px;max-width:min(290px,100%);min-width:0}.modern-filters select{width:100%;max-width:100%;min-width:0}
+[data-theme=dark] .modern-topic,[data-theme=dark] .modern-answer{background:#251b29;border-color:#5c3b50}
+@media(max-width:760px){.modern-topic>summary{padding:18px}.modern-topic-body{padding:0 18px 18px}.modern-teaching{padding-left:20px}.modern-teaching ul{padding-left:18px}.modern-qa-pair{grid-template-columns:1fr;padding:0 18px 18px}.modern-filters select{max-width:100%}.modern-comparison{grid-template-columns:1fr}}
+@media print{.modern-topic{break-inside:auto;box-shadow:none}.modern-topic>summary{list-style:none}.modern-topic-body{display:block!important}}

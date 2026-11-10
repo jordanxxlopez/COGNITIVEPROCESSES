@@ -1,0 +1,909 @@
+{
+  "revision": "ling285-modern-evidence-1",
+  "purpose": "Order study and generated practice using review coverage, explicit transcript cues, source-language similarity and source support.",
+  "limits": "Scores are editorial evidence rankings. The 500 sensitivity runs vary weights and measure ranking stability, not the probability of an exam question. No unseen Exam 2 outcomes are available for validation.",
+  "models": [
+    {
+      "name": "Review coverage",
+      "method": "Explicit concept-to-question mapping to the 21 supplied Exam 2 review prompts."
+    },
+    {
+      "name": "Source language similarity",
+      "method": "Sublinear word/bigram TF–IDF fitted only to the 66 observed Exam 1 key, Exam 1 review and Exam 2 review prompts. Cosine similarity compares authored concepts with the source prompts."
+    },
+    {
+      "name": "Transcript cue and sensitivity model",
+      "method": "Find the recorded explicit exam cues, combine four evidence components with weights .50/.30/.15/.05, and repeat ranking with 500 seeded weight perturbations of plus or minus twenty percent."
+    }
+  ],
+  "observedExam1Patterns": {
+    "interpretation": 6,
+    "distinction": 5,
+    "cause-effect": 4,
+    "procedure": 4,
+    "application": 3,
+    "prediction": 3
+  },
+  "sourcePrompts": 66,
+  "transcriptAvailable": true,
+  "sourceFiles": [
+    {
+      "file": "sources/modern/Exam2 Review (1).pdf",
+      "sha256": "607f99c5208cd2ed4e60532d701c6cfa1e44c59eb8c82ce30acce4d9d0b03914"
+    },
+    {
+      "file": "sources/exam1-key.pdf",
+      "sha256": "5c53fb6f375493432c6395aa481d2cf706bf098bcff544c57ac0775ec52f002a"
+    },
+    {
+      "file": "sources/exam-review.docx",
+      "sha256": "a2e49f69fda812a087317f3dc428a777eb2c0d926888ae1adcefa16f852f9a23"
+    }
+  ],
+  "transcriptSource": {
+    "title": "LING285-11-17 transcript",
+    "url": "https://docs.google.com/document/d/1Sn0smbBkTzC9E6e2dOHQA5PYTUHFi3kCacjJ8ZegEEE/edit",
+    "coverage": "Oct 6 through Nov 5; the source title understates its current date coverage. Raw transcript stays private and is not copied into the public repository.",
+    "sha256": "5f89ff905e718e5f95d70ab3d4082dfa2f972ba6d702d0bb362455d37f89c658"
+  },
+  "ranking": [
+    {
+      "concept": "sequential",
+      "score": 0.893483,
+      "components": [
+        1.0,
+        1.0,
+        0.5121109270085067,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        20,
+        21
+      ],
+      "transcriptCues": [
+        {
+          "line": 4089,
+          "quote": "That's a very good question for the exam."
+        }
+      ],
+      "closestReviewQuestion": 21,
+      "rank": 1,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "filter",
+      "score": 0.857039,
+      "components": [
+        1.0,
+        1.0,
+        0.2691519205299458,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        17,
+        18,
+        19
+      ],
+      "transcriptCues": [
+        {
+          "line": 1733,
+          "quote": "formants, and we're going to be repeating this term, and your homework 4 is going to be all about formants, so make sure you understand what a formant is. So a formant are the frequencies of vibration of a system that's like this, fixed on one side and completely free on the other."
+        }
+      ],
+      "closestReviewQuestion": 10,
+      "rank": 2,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "source",
+      "score": 0.61187,
+      "components": [
+        1.0,
+        0.0,
+        0.5235807454362092,
+        0.6666666666666666
+      ],
+      "reviewQuestions": [
+        10
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 10,
+      "rank": 3,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "fixed-fixed",
+      "score": 0.59727,
+      "components": [
+        1.0,
+        0.0,
+        0.5373572343779229,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        6,
+        7,
+        8,
+        9,
+        14
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 7,
+      "rank": 4,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "spectrogram",
+      "score": 0.579222,
+      "components": [
+        1.0,
+        0.0,
+        0.4170342960404176,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        18
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 18,
+      "rank": 5,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "three-modes",
+      "score": 0.564692,
+      "components": [
+        1.0,
+        0.0,
+        0.32017208370974126,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 2,
+      "rank": 6,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "fixed-free",
+      "score": 0.563657,
+      "components": [
+        1.0,
+        0.0,
+        0.3132658821276427,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        11,
+        12,
+        13,
+        15,
+        16,
+        17
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 16,
+      "rank": 7,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "local-change",
+      "score": 0.562613,
+      "components": [
+        1.0,
+        0.0,
+        0.3063110192065318,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        4,
+        6,
+        11,
+        14,
+        15,
+        19
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 15,
+      "rank": 8,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "forward",
+      "score": 0.562167,
+      "components": [
+        1.0,
+        0.0,
+        0.1922253903900639,
+        0.6666666666666666
+      ],
+      "reviewQuestions": [
+        20
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 21,
+      "rank": 9,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "air-modes",
+      "score": 0.559812,
+      "components": [
+        1.0,
+        0.0,
+        0.2876381060211988,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        12,
+        13,
+        16,
+        17,
+        19
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 19,
+      "rank": 10,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "a",
+      "score": 0.556908,
+      "components": [
+        1.0,
+        0.0,
+        0.2682784943955084,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        19
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 14,
+      "rank": 11,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "constriction",
+      "score": 0.556387,
+      "components": [
+        1.0,
+        0.0,
+        0.2648043868587591,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        14,
+        15,
+        19
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 19,
+      "rank": 12,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 500
+    },
+    {
+      "concept": "u",
+      "score": 0.55455,
+      "components": [
+        1.0,
+        0.0,
+        0.2525572828686798,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        15,
+        19
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 2,
+      "rank": 13,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "many-modes",
+      "score": 0.551654,
+      "components": [
+        1.0,
+        0.0,
+        0.23325138923276,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        1,
+        2,
+        5
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 2,
+      "rank": 14,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "network-shape",
+      "score": 0.549416,
+      "components": [
+        1.0,
+        0.0,
+        0.3294380817394276,
+        0.0
+      ],
+      "reviewQuestions": [
+        20,
+        21
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 20,
+      "rank": 15,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "two-modes",
+      "score": 0.54811,
+      "components": [
+        1.0,
+        0.0,
+        0.20962111096123456,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        1
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 3,
+      "rank": 16,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "vowel-network",
+      "score": 0.547303,
+      "components": [
+        1.0,
+        0.0,
+        0.20423940236008437,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        20,
+        21
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 20,
+      "rank": 17,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "i",
+      "score": 0.54292,
+      "components": [
+        1.0,
+        0.0,
+        0.17502205236929377,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [
+        19
+      ],
+      "transcriptCues": [],
+      "closestReviewQuestion": 19,
+      "rank": 18,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "weight-direction",
+      "score": 0.344169,
+      "components": [
+        0.0,
+        1.0,
+        0.18334742873532933,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [
+        {
+          "line": 3470,
+          "quote": "to be very clear, I'm not going to ask you to multiply 1.1 by 1.7, that's not the… I can ask you."
+        }
+      ],
+      "closestReviewQuestion": 20,
+      "rank": 19,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "backward",
+      "score": 0.343838,
+      "components": [
+        0.0,
+        1.0,
+        0.1811396750909744,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [
+        {
+          "line": 3366,
+          "quote": "change these, then these, then these, then these. So now let's start to talk about the logic of why we have to start at the end. And you're guaranteed that there's going to be questions in the exam about this, so make sure that you understand it. This is a course in which"
+        }
+      ],
+      "closestReviewQuestion": 21,
+      "rank": 20,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "training-code",
+      "score": 0.332057,
+      "components": [
+        0.0,
+        1.0,
+        0.10260510900111235,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [
+        {
+          "line": 4070,
+          "quote": "what do these lines do? And you should be able to say something like, well, they import into Python."
+        }
+      ],
+      "closestReviewQuestion": 21,
+      "rank": 21,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "accuracy",
+      "score": 0.33009,
+      "components": [
+        0.0,
+        1.0,
+        0.08949096619679783,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [
+        {
+          "line": 4148,
+          "quote": "So, at the very beginning, we got 20%… why do you think 20%? What's the significance of 20%?"
+        },
+        {
+          "line": 4150,
+          "quote": "Why does it start at 20%?"
+        }
+      ],
+      "closestReviewQuestion": 21,
+      "rank": 22,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "probabilities",
+      "score": 0.316667,
+      "components": [
+        0.0,
+        1.0,
+        0.0,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [
+        {
+          "line": 3460,
+          "quote": "So, absolutely yes. So, all this will depend… I'm not actually giving you the calculation for how you compute the probability. All you need to know about probability is that the number should add up to 1."
+        }
+      ],
+      "closestReviewQuestion": 1,
+      "rank": 23,
+      "tier": "first",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "mass-stiffness",
+      "score": 0.076053,
+      "components": [
+        0.0,
+        0.0,
+        0.28479476512102286,
+        0.6666666666666666
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 15,
+      "rank": 24,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "sigmoid-flow",
+      "score": 0.055357,
+      "components": [
+        0.0,
+        0.0,
+        0.2579362087656586,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 21,
+      "rank": 25,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "heads",
+      "score": 0.053191,
+      "components": [
+        0.0,
+        0.0,
+        0.2434979786900274,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 21,
+      "rank": 26,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "sigmoid",
+      "score": 0.052822,
+      "components": [
+        0.0,
+        0.0,
+        0.24103400009363585,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 20,
+      "rank": 27,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "vowel-shape",
+      "score": 0.049039,
+      "components": [
+        0.0,
+        0.0,
+        0.2158147150898196,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 19,
+      "rank": 28,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "dynamic-depth",
+      "score": 0.045954,
+      "components": [
+        0.0,
+        0.0,
+        0.19524908154671797,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 21,
+      "rank": 29,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "sparse-harmonics",
+      "score": 0.045721,
+      "components": [
+        0.0,
+        0.0,
+        0.19369446497107928,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 10,
+      "rank": 30,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "continuous-speech",
+      "score": 0.045201,
+      "components": [
+        0.0,
+        0.0,
+        0.1902296824635669,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 12,
+      "rank": 31,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "splice",
+      "score": 0.04455,
+      "components": [
+        0.0,
+        0.0,
+        0.1858866380621369,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 12,
+      "rank": 32,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "membrane",
+      "score": 0.044213,
+      "components": [
+        0.0,
+        0.0,
+        0.1836408391010792,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 4,
+      "rank": 33,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "levels",
+      "score": 0.038965,
+      "components": [
+        0.0,
+        0.0,
+        0.25976739558391937,
+        0.0
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 20,
+      "rank": 34,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "scientific-method",
+      "score": 0.038853,
+      "components": [
+        0.0,
+        0.0,
+        0.14790845805439418,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 10,
+      "rank": 35,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "phonotactics",
+      "score": 0.034406,
+      "components": [
+        0.0,
+        0.0,
+        0.11826007168252939,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 2,
+      "rank": 36,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "recurrent",
+      "score": 0.033738,
+      "components": [
+        0.0,
+        0.0,
+        0.11380718997109936,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 12,
+      "rank": 37,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "weights",
+      "score": 0.033333,
+      "components": [
+        0.0,
+        0.0,
+        0.0,
+        0.6666666666666666
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 1,
+      "rank": 38,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "directions",
+      "score": 0.033239,
+      "components": [
+        0.0,
+        0.0,
+        0.11048438915141012,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 1,
+      "rank": 39,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "overlap",
+      "score": 0.032454,
+      "components": [
+        0.0,
+        0.0,
+        0.1052469866026784,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 16,
+      "rank": 40,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "initialization",
+      "score": 0.030251,
+      "components": [
+        0.0,
+        0.0,
+        0.0905606587153938,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 8,
+      "rank": 41,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "training-data",
+      "score": 0.02931,
+      "components": [
+        0.0,
+        0.0,
+        0.08428709305057523,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 5,
+      "rank": 42,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "brain-model",
+      "score": 0.028256,
+      "components": [
+        0.0,
+        0.0,
+        0.18837567124554655,
+        0.0
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 17,
+      "rank": 43,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "letter-guess",
+      "score": 0.026619,
+      "components": [
+        0.0,
+        0.0,
+        0.06635001044573728,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 2,
+      "rank": 44,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "next-token",
+      "score": 0.016667,
+      "components": [
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333333
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 1,
+      "rank": 45,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "software",
+      "score": 0.008046,
+      "components": [
+        0.0,
+        0.0,
+        0.05363811204315391,
+        0.0
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 21,
+      "rank": 46,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    },
+    {
+      "concept": "economy",
+      "score": 0.0,
+      "components": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reviewQuestions": [],
+      "transcriptCues": [],
+      "closestReviewQuestion": 1,
+      "rank": 47,
+      "tier": "next",
+      "topTwelveSensitivityRuns": 0
+    }
+  ]
+}
