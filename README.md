@@ -348,3 +348,14 @@ Build with `python3 authoring/psyc301/version22/build.py` and verify with `pytho
 Notes are conceptual: what each study did, found and meant, with no axis, number or step-by-step method detail. The collection has its own Original, Version 20, Version 21 and Version 22 transcripts (`psyc301-c15.js` adds the choice, and Version 22 keeps the figure beside the notes). Each section shows a real figure with its credit. Lab figures come from open-access studies of the same kind of task and carry a "Related published study, not the CogLab task" badge. Article figures are cropped from the assigned articles. Videos appear only where a demonstration of the task itself was found, and they are labelled as related demonstrations. Provenance is in `media/collection15/sources.json`, `sources-labs.json` and `videos.json`.
 
 The 50 questions (34 on labs, 16 on articles) join the lecture quizzes, the cumulative test and the missed-question queue, each with Original, College-Level and Simplified wording through `authoring/psyc301/question-versions/`. Rebuild with `python3 authoring/psyc301/build_articles_labs.py`. The authored sources and reviewer notes are in `authoring/psyc301/articles-labs/`; `merge_fixed.py` there enforces the writing rules. Verify with `node --test tests/articles-labs.test.cjs`.
+
+## PSYC301 Module II Test Bank
+
+The separate **Test Bank** view contains 148 slide-matched multiple-choice
+questions, 18 related chapter extras, and 5 unscored source-key reviews from the
+supplied Goldstein bank. Enable **Modern workspace** for compact personal notes
+and slide-specific question cards with previous/next controls and explanations.
+Regular quizzes and their progress remain separate.
+
+Source scope, wording decisions, reproducible build, and validation are documented
+in `authoring/psyc301/testbank/README.md`.

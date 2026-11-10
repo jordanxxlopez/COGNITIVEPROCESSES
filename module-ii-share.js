@@ -5,7 +5,7 @@
  const ids = new Set(secondHalf.modules);
  M.splice(0, M.length, ...M.filter(m => ids.has(m.id)));
  Q.splice(0, Q.length, ...secondQuestions());
- const allowedViews = new Set(['home', 'module', 'quiz', ...secondTools.map(([id]) => id), 'm2coreExpanded', 'm2experimentsExpanded']);
+ const allowedViews = new Set(['home', 'module', 'quiz', 'm2testbank', ...secondTools.map(([id]) => id), 'm2coreExpanded', 'm2experimentsExpanded']);
  const fixedChoices = Object.fromEntries([...ids].map(id => [id, '18']));
  // Enforce the shared edition without changing the owner's saved choices.
  Object.defineProperty(state, 'explanationVersions', {get: () => fixedChoices, set() {}, configurable: true, enumerable: true});
