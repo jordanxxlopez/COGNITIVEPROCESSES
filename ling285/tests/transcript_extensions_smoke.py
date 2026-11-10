@@ -25,7 +25,7 @@ def run(base, browser):
             module = 'module1' if int(cid[7:9]) < 11 else 'module2'
             page.goto(f'{base}/ling285/modern/?view=collection&lecture={cid}&module={module}')
             page.wait_for_selector('.source-section')
-            page.wait_for_function('document.querySelectorAll("[data-transcript-version] option:not(:disabled)").length === 7')
+            page.wait_for_function('document.querySelectorAll("[data-transcript-version] option:not(:disabled)").length >= 9')
             for edition, payload in [('original-c', original), ('d', d)]:
                 page.locator('[data-transcript-version]').select_option(edition)
                 assert page.locator('[data-transcript-version]').input_value() == edition
