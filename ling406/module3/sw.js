@@ -1,5 +1,5 @@
-const CACHE = 'ling406-module3-2';
-const SHELL = ['../module-navigation.js?v=modules-2', './', 'index.html', 'data.js?v=module3-1', 'app.js?v=modules-2',
+const CACHE = 'ling406-module3-3';
+const SHELL = ['../module-navigation.js?v=modules-2', './', 'index.html', 'data.js?v=module3-1', 'app.js?v=module1-available-1',
   '../quiz-engine.js', '../style.css?v=ling406-transcripts-v3',
   '../transcripts-v5.css?v=ling406-transcripts-v5',
   '../../studio-gradients.css?v=studio-gradients-1',
