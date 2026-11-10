@@ -91,3 +91,10 @@ or turning it into a calculation exercise. Do not impose a glossary, repeated
 labels, fixed explanation order or bullet quota. Keep exact technical terms,
 natural complete sentences, explanatory sub-bullets and bold emphasis. Add a
 new edition when requested and keep every existing edition and the layout.
+
+Name the subject directly in authored teaching. Use system, motion, mode or
+pattern as the context requires instead of calling a physical process a picture
+or drawing. Use model, distribution or diagram when that is what the explanation
+concerns. For literal visual inputs to a model, use image and image patch.
+Apply this wording preference throughout new authored prose while preserving
+verbatim source documents, quoted material and retained earlier editions.

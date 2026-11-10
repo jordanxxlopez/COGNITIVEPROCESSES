@@ -211,9 +211,18 @@ test('Version 3 preserves all ten prior choices, course content and layout asset
   assert.equal(Object.keys(lock.editions).length, 10);
   for (const [id, label] of Object.entries(lock.editions)) assert.equal(pack.editions[id], label);
   for (const [file, expected] of Object.entries(lock.files)) {
-    const actual = file === 'modern/content.js'
+    let actual = file === 'modern/content.js'
       ? crypto.createHash('sha256').update(restoreEditionMetadata(file, Object.keys(lock.editions))).digest('hex')
       : hash(file);
+    if (file === 'index.html') {
+      // Shared module buttons were added in 657f93a after this snapshot. Keep
+      // those assets present while checking all earlier markup byte for byte.
+      const html = fs.readFileSync(path.join(root, file), 'utf8');
+      const css = '<link rel="stylesheet" href="../course-module-buttons.css?v=1">';
+      const script = '<script src="../course-module-buttons.js?v=1" data-course="ling285" defer></script>';
+      assert(html.includes(css) && html.includes(script), 'Retain shared module navigation.');
+      actual = crypto.createHash('sha256').update(html.replace(css, '').replace(script, '')).digest('hex');
+    }
     assert.equal(actual, expected, file);
   }
 });

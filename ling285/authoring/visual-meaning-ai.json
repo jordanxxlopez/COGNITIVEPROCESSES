@@ -2029,7 +2029,7 @@
             {
               "text": "A model can use known sequence items **x₁ through x₁₅** to predict **x₁₆**. The vectors can represent several kinds of material.",
               "children": [
-                "The subscript locates an item in the sequence. Each drawn column contains several numerical entries describing that one item."
+                "The subscript locates an item in the sequence. Each **vector column** contains several numerical entries describing that one item."
               ]
             },
             {
@@ -2039,14 +2039,14 @@
             {
               "text": "For **sound**, consecutive spectrogram frames become vectors, with the illustrated **0–5 kHz** scale identifying the frequencies represented in each frame.",
               "children": [
-                "For **pictures**, the image is divided into **sixteen ordered patches**, read row by row. Fifteen known patches supply the context for predicting the missing sixteenth."
+                "For **images**, the image is divided into **sixteen ordered patches**, read row by row. Fifteen known patches supply the context for predicting the missing sixteenth."
               ]
             },
             {
               "text": "For a **protein**, the sequence consists of amino acids. The insulin example leaves the next amino acid to be predicted.",
               "children": [
                 "The letters **F, V, N** and the other letters on the protein chain are **amino-acid codes**. They identify the sequence items; they are not the neural network’s weights or formant names.",
-                "Words, sound frames, picture patches and amino acids reach the model as lists of numbers. The material differs, but the next-item task remains the same."
+                "Words, sound frames, image patches and amino acids reach the model as lists of numbers. The material differs, but the next-item task remains the same."
               ]
             }
           ],
@@ -2360,7 +2360,7 @@
             {
               "text": "For **sound**, consecutive spectrogram frames become vectors. They follow time, with frequency recorded on the vertical spectrogram axis.",
               "children": [
-                "For **pictures**, the grid has **fifteen known patches and a missing sixteenth patch**, read in row-by-row order."
+                "For **images**, the grid has **fifteen known patches and a missing sixteenth patch**, read in row-by-row order."
               ]
             },
             {
@@ -2527,6 +2527,7 @@
     "mediaReview": "Three sampled frames at8%,45%and82%of each of8unique original L14videos inspected. Frame sampling supports the visible labels, positions and representative states; it is not full animation/audio inspection. Existing source transcript and inventories supply movement explanations.",
     "knownSourceIssue": "L14p23 subtitle calls negative weights orange, while the visible negative labels are green. V3 explains the signed values and actual connection positions without teaching that inconsistent color rule.",
     "teachingStyle": "Identifiers are defined inside their conceptual explanation; no detached glossary, repeated labels, fixed bullet count, outside theory, class narration, or worked arithmetic.",
-    "trainingCurveProvenance": "The L16p15–16 source figures show executed NumPy reference runs alongside requested PyTorch code. This construction distinction is retained here rather than inserted into spoken teaching. Teaching retains the actual graph conditions:525trainingexamples,full-batchupdates,randominitializations,seeds0–9,2,000updates,learningrate0.1and44.95%finaltrainingaccuracy."
+    "trainingCurveProvenance": "The L16p15–16 source figures show executed NumPy reference runs alongside requested PyTorch code. This construction distinction is retained here rather than inserted into spoken teaching. Teaching retains the actual graph conditions:525trainingexamples,full-batchupdates,randominitializations,seeds0–9,2,000updates,learningrate0.1and44.95%finaltrainingaccuracy.",
+    "terminologyPreference": "Name the system, motion, mode or pattern directly. Use model or distribution where appropriate, and image/image patch for literal visual inputs. Avoid picture as a substitute for the subject."
   }
 }
