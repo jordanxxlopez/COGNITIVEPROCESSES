@@ -99,6 +99,15 @@
  const canvas=document.createElement('canvas'),measure=canvas.getContext('2d');
  function fitSelect(select){
   if(select.closest('.fit-player-controls'))return;
+  // Timer controls and reader navigation have their own sizing. Native choices
+  // retain their full option text and title without duplicate caption rows.
+  if(select.closest('.timer,.reader-controls,[data-study-version]')){
+   select.title=select.selectedOptions[0]?.textContent || '';
+   const wrapper=select.parentElement;
+   if(wrapper?.classList.contains('fit-select-field'))wrapper.replaceWith(select);
+   else select.closest('label')?.querySelector(':scope>.fit-selection')?.remove();
+   return;
+  }
   let label=select.closest('label,.fit-select-field');
   if(!label){label=document.createElement('div');label.className='fit-select-field';select.before(label);label.append(select);}
   const text=select.selectedOptions[0]?.textContent || '',css=getComputedStyle(select);

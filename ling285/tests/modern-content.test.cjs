@@ -20,9 +20,16 @@ const checkRefs = refs => {
 };
 
 test('original content, editions and uploaded documents retain their frozen hashes', () => {
-  for (const [file, expected] of Object.entries(read('modern/preserved.json'))) assert.equal(hash(file), expected, file);
+  // app.js now intentionally changes the reader UI. All course payloads and
+  // teaching editions keep their original hashes; the generated UI is bound
+  // to the current source application by build-manifest.json below.
+  for (const [file, expected] of Object.entries(read('modern/preserved.json'))) if(file !== 'app.js') assert.equal(hash(file), expected, file);
   for (const source of pack.uploads) assert.equal(hash(source.file), source.sha256, source.file);
   assert.equal(hash('app.js'), read('modern/build-manifest.json').sourceAppSha256);
+});
+
+test('reader-mode corrections preserve all course writing and all seven current teaching editions', () => {
+  for (const [file, expected] of Object.entries(read('reader-modes-content-lock.json'))) assert.equal(hash(file), expected, file);
 });
 
 test('the two additional choices preserve all previous modern writing and editions', () => {

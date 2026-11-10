@@ -71,7 +71,7 @@ def run(base, browser):
     assert page.locator('.modern-qa').count() > 0
 
     route('collection', lecture='lecture11')
-    page.locator('.inline-reader [data-action="closeReader"]').click()
+    assert page.locator('.source-section').count() == 11
     styles = page.locator('[data-transcript-version]')
     assert styles.locator('option').count() == 7
     for edition in ['professor','b','c','follow','v20','original-c','d']:
@@ -160,6 +160,7 @@ def run(base, browser):
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 2'), view
     route('collection', lecture='lecture18')
     page.locator('[data-transcript-version]').select_option('v20')
+    page.locator('[data-reader="lecture"][data-expanded="false"]').click()
     assert page.locator('#readerSelect option').count() == 8
     assert not errors, errors
     assert not failed, failed

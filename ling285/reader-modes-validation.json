@@ -1,0 +1,57 @@
+{
+  "scope": "Original and modern LING285 studios, both modules, all numbered collections and shared readers.",
+  "reference": {
+    "source": "PSYC301 index.html",
+    "functions": [
+      "moduleScreen",
+      "teach",
+      "exitExpandedView"
+    ],
+    "structure": [
+      "Teaching notes is the default collection mode.",
+      "The collection title, version selector and view tabs stay above the inline reader.",
+      "Visual + transcript opens the inline reader.",
+      "Expand visual + transcript opens a full-screen reader.",
+      "Closing expanded view returns to the same page in inline mode."
+    ]
+  },
+  "timer": "The same running timer moves between the course header and expanded toolbar; its duration dropdown is excluded from generic source-selector fitting. All timer controls occupy one row without duplicate duration captions.",
+  "preservation": {
+    "courseFiles": "reader-modes-content-lock.json",
+    "lockedPayloads": 25,
+    "writingChanged": false,
+    "transcriptEditionsChanged": false,
+    "notesAndReadKeysChanged": false
+  },
+  "validation": {
+    "contentContracts": 10,
+    "fittingRouteThemeViewportCombinations": 496,
+    "transcriptExtensionThemeViewportCombinations": 136,
+    "collectionReaders": 34,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "widths": [
+      2000,
+      1600,
+      1024,
+      390
+    ],
+    "checks": [
+      "Complete collection title, metadata, source links, version selector and tabs preserved in inline mode.",
+      "Explicit mode transitions, page choices, reload into notes, expanded Close and Escape return paths.",
+      "Independent transcript/visual scrolling with top/bottom wheel containment.",
+      "Single timer identity, one-row timer geometry, running countdown maintained through expansion and return.",
+      "Transcript reveal, notes/read marks, seven transcript choices, quiz entry and progress backups.",
+      "Current 100-question test and all eight full 50-question lecture quizzes."
+    ]
+  },
+  "commands": [
+    "node --test ling285/tests/modern-content.test.cjs",
+    "python3 ling285/tests/reader_panels_smoke.py",
+    "python3 ling285/tests/modern_smoke.py",
+    "python3 ling285/tests/transcript_extensions_smoke.py",
+    "python3 ling285/tests/content_fitting_smoke.py"
+  ]
+}
