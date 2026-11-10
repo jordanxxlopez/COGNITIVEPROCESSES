@@ -18,6 +18,10 @@ const checkRefs = refs => {
   assert(refs.length > 0, 'authored item needs source references');
   for (const r of refs) assert(sourcePages.has(`${r.collection}:${r.page}`), JSON.stringify(r));
 };
+const retainedEditionIds = ['professor','b','c','follow','v20','original-c','d'];
+const restoreEditionMetadata = (file, ids) => fs.readFileSync(path.join(root, file), 'utf8').replace(
+  /("editions": )\{[\s\S]*?\n \}/,
+  (_, prefix) => prefix + JSON.stringify(Object.fromEntries(ids.map(id => [id, pack.editions[id]])), null, 1).replace(/\n/g, '\n '));
 
 test('original content, editions and uploaded documents retain their frozen hashes', () => {
   // app.js now intentionally changes the reader UI. All course payloads and
@@ -28,8 +32,13 @@ test('original content, editions and uploaded documents retain their frozen hash
   assert.equal(hash('app.js'), read('modern/build-manifest.json').sourceAppSha256);
 });
 
-test('reader-mode corrections preserve all course writing and all seven current teaching editions', () => {
-  for (const [file, expected] of Object.entries(read('reader-modes-content-lock.json'))) assert.equal(hash(file), expected, file);
+test('additional dropdown choices preserve all course writing and all seven retained teaching editions', () => {
+  for (const [file, expected] of Object.entries(read('reader-modes-content-lock.json'))) {
+    const actual = file === 'modern/content.js'
+      ? crypto.createHash('sha256').update(restoreEditionMetadata(file, retainedEditionIds)).digest('hex')
+      : hash(file);
+    assert.equal(actual, expected, file);
+  }
 });
 
 test('the two additional choices preserve all previous modern writing and editions', () => {
@@ -38,16 +47,13 @@ test('the two additional choices preserve all previous modern writing and editio
     if (file !== 'modern/content.js') { assert.equal(hash(file), expected, file); continue; }
     // Restore only the old selector metadata, leaving the rest of the file's
     // bytes untouched. Its pre-extension SHA must still match the frozen one.
-    const labels = Object.fromEntries(previous.map(id => [id, pack.editions[id]]));
-    const restored = fs.readFileSync(path.join(root, file), 'utf8').replace(
-      /("editions": )\{[\s\S]*?\n \}/,
-      (_, prefix) => prefix + JSON.stringify(labels, null, 1).replace(/\n/g, '\n '));
+    const restored = restoreEditionMetadata(file, previous);
     assert.equal(crypto.createHash('sha256').update(restored).digest('hex'), expected, file);
   }
 });
 
 test('the existing five modern editions preserve every source page and unpadded title page', () => {
-  assert.deepEqual(Object.keys(pack.editions), ['professor','b','c','follow','v20','original-c','d']);
+  assert.deepEqual(Object.keys(pack.editions), [...retainedEditionIds,'original-c-v2','d-v2','notes-v7']);
   assert.equal(lectures.reduce((n, c) => n + c.sections.length, 0), 286);
   for (const edition of ['professor','b','c','follow','v20']) {
     const payload = read(`modern/transcripts-${edition}.json`);
@@ -114,6 +120,89 @@ test('D keeps every Original C parent and child in order and integrates traceabl
     assert.deepEqual(d.collections[c.id].sections.map(s => [s.id,s.page]), c.sections.map(s => [s.id,s.page]));
     if (c.moduleId === 'module1') assert.deepEqual(d.collections[c.id], original.collections[c.id]);
     else assert(report.placements.some(p => p.collection === c.id));
+  }
+});
+
+test('C and D Version 2 retain source identities and use page-specific teaching without a fixed bullet count', () => {
+  const report = read('modern/clear-editions-provenance.json');
+  assert.equal(report.pages.length, 286);
+  for (const [file, expected] of Object.entries(report.authoringFiles)) assert.equal(hash(file), expected, file);
+  for (const [id, base] of [['original-c-v2','original-c'], ['d-v2','d']]) {
+    const payload = read(`modern/transcripts-${id}.json`);
+    const retained = read(`modern/transcripts-${base}.json`);
+    assert.equal(payload.origin.baseSha256, hash(`modern/transcripts-${base}.json`));
+    assert.deepEqual(payload.visualPresentation, retained.visualPresentation);
+    const counts = new Set();
+    let rewritten = 0, emphasized = 0, instructional = 0;
+    for (const lecture of lectures) {
+      const sections = payload.collections[lecture.id].sections;
+      assert.deepEqual(sections.map(({teaching, ...metadata}) => metadata),
+        retained.collections[lecture.id].sections.map(({teaching, ...metadata}) => metadata));
+      for (const section of sections) {
+        if (!section.teaching.length) continue;
+        instructional++;
+        counts.add(section.teaching.length);
+        const prose = section.teaching.flatMap(b => [b.text, ...b.children]).join(' ');
+        assert(!/\b(?:the lecture|the class|the professor|he says|she says|need not|as we saw|we will see|previous slides?|next slides?)\b/i.test(prose), section.id);
+        assert(section.teaching.every(b => b.text.trim() && Array.isArray(b.children)), section.id);
+        if (prose.includes('**')) emphasized++;
+        if (JSON.stringify(section.teaching) !== JSON.stringify(retained.collections[lecture.id].sections[section.page-1].teaching)) rewritten++;
+      }
+    }
+    assert(counts.size > 1, 'The source material determines the number of main bullets.');
+    assert.equal(rewritten, instructional, 'Every instructional explanation is newly authored.');
+    assert.equal(emphasized, instructional, 'Important concepts retain readable emphasis.');
+    assert.equal(payload.metrics.sourcePages, 286);
+  }
+  // These distinctions were specifically requested; inspect actual mechanisms,
+  // rather than accepting a page that merely lists the names of the concepts.
+  for (const id of ['original-c-v2','d-v2']) {
+    const p = read(`modern/transcripts-${id}.json`);
+    const text = (cid, page) => JSON.stringify(p.collections[cid].sections[page-1].teaching);
+    assert.match(text('lecture11',4), /mode 1/i);
+    assert.match(text('lecture11',4), /mode 2/i);
+    assert.match(text('lecture11',4), /together/i);
+    assert.match(text('lecture11',4), /oppos|against each other/i);
+    assert.match(text('lecture11',4), /middle spring/i);
+    assert.match(text('lecture11',6), /middle mass/i);
+    assert.match(text('lecture11',6), /still/i);
+    assert.match(text('lecture15',8), /dynamic programming/i);
+    assert.match(text('lecture15',8), /downstream|closer to the output|near the output|later layers/i);
+  }
+});
+
+test('Version 7 reproduces the supplied notes on their original slides without inventing Module I PDF notes', () => {
+  const source = read('authoring/notes-v7.json');
+  const extraction = read('authoring/notes-v7-extraction.json');
+  const payload = read('modern/transcripts-notes-v7.json');
+  assert.equal(payload.origin.sha256, hash('authoring/notes-v7.json'));
+  assert.deepEqual(payload.availableModules, ['module2']);
+  assert(source.sourceFiles.length > 0);
+  for (const file of source.sourceFiles) assert.equal(hash(file.file), file.sha256, file.file);
+  const paragraphs = new Map(extraction.noteSections.flatMap(section => section.bullets.flatMap(b =>
+    [b.main, ...b.children].map(unit => [unit.id, unit]))));
+  const assigned = [];
+  for (const collection of Object.values(source.collections)) for (const page of collection.pages) {
+    const text = page.teaching.flatMap(b => [b.text, ...b.children]);
+    assert.equal(text.length, page.evidence.paragraphIds.length);
+    page.evidence.paragraphIds.forEach((id, i) => {
+      const unit = paragraphs.get(id);
+      assert(unit, id);
+      assert.equal(text[i], unit.text, 'PDF wording and emphasis: ' + id);
+      assert.equal(crypto.createHash('sha256').update(unit.plain).digest('hex'), unit.normalizedTextSha256, id);
+      assigned.push(id);
+    });
+  }
+  assert.equal(new Set(assigned).size, paragraphs.size);
+  assert.equal(assigned.length, paragraphs.size, 'Every original PDF paragraph appears exactly once.');
+  assert.equal(extraction.displayEquationTranscriptions.length, 8);
+  assert.equal(extraction.preservation.allSourceBodyCharactersPreserved, true);
+  assert.equal(extraction.preservation.allParagraphBoldCharactersPreserved, true);
+  for (const lecture of lectures) {
+    const sections = payload.collections[lecture.id].sections;
+    assert.deepEqual(sections.map(s => [s.id,s.page]), lecture.sections.map(s => [s.id,s.page]));
+    if (lecture.moduleId === 'module1') assert(sections.every(s => s.teaching.length === 0));
+    else assert.deepEqual(sections.map(s => s.teaching), source.collections[lecture.id].pages.map(p => p.teaching));
   }
 });
 

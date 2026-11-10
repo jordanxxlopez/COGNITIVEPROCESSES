@@ -12666,7 +12666,10 @@ window.LING285_MODERN = {
   "follow": "Version 23 · C with following slides",
   "v20": "Version 20 · Natural teaching transcript",
   "original-c": "Original C · Version 23 Iskarous C with following slides",
-  "d": "D · Original C with teaching additions"
+  "d": "D · Original C with teaching additions",
+  "original-c-v2": "Original C · Version 2",
+  "d-v2": "D · Version 2",
+  "notes-v7": "Version 7 · Your PDF notes · Lectures 11–18"
  },
  "code": [
   {

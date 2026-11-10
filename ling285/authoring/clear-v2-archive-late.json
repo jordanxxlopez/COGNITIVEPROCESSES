@@ -1,0 +1,2228 @@
+{
+  "review": {
+    "basis": "Original C and D archive pages rewritten against supplied slides, source text, existing page inventory and source-reviewed data. No raw Module I verbal transcript is available, so these pages do not claim additional verbal emphasis.",
+    "visualReview": "All 77 source-page thumbnails reviewed in collection contact sheets; compression, cosine, combined-frequency and cycle-count media sampled at six time positions. Existing detailed page inventory retained for small labels/native animation overlays.",
+    "corrections": [
+      "Instructional media pages lecture05-06 p13 and lecture07 p11–12 receive explanations supported by the source-reviewed media, despite empty legacy C teaching.",
+      "lecture05-06 p20 is a Python demonstration instruction without supplied code and remains unpadded.",
+      "Backpropagation supplies error information for SGD updates rather than being merely a second name for SGD.",
+      "The erroneous 400 observation can distort learning; SGD is not described as automatically repairing data mistakes.",
+      "Atomic wave modes are distinguished from the historical shell drawing without claiming that magnesium is a classical harmonic-oscillator atom."
+    ]
+  },
+  "collections": {
+    "lecture05-06": {
+      "pages": [
+        {
+          "page": 1,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              1
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 2,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              2
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 3,
+          "c": [
+            {
+              "text": "A **harmonic oscillator** has two quantities that change together. **Position, x,** tells where something is relative to its resting position. **Velocity, v,** tells how its position is changing.",
+              "children": [
+                "A dot above a letter means its **rate of change**, or how much it increases or decreases as time passes."
+              ]
+            },
+            {
+              "text": "Velocity determines how position changes, while position determines how velocity changes in the opposite direction.",
+              "children": [
+                "Positive velocity makes position increase. Positive position makes velocity decrease. The two rules connect position and velocity in a continuing loop."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "A **harmonic oscillator** has two quantities that change together. **Position, x,** tells where something is relative to its resting position. **Velocity, v,** tells how its position is changing.",
+              "children": [
+                "A dot above a letter means its **rate of change**, or how much it increases or decreases as time passes."
+              ]
+            },
+            {
+              "text": "Velocity determines how position changes, while position determines how velocity changes in the opposite direction.",
+              "children": [
+                "Positive velocity makes position increase. Positive position makes velocity decrease. The two rules connect position and velocity in a continuing loop."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 4,
+          "c": [
+            {
+              "text": "A **negative velocity** makes position decrease. This describes the direction of motion, regardless of which side of the resting position the object is on.",
+              "children": []
+            },
+            {
+              "text": "A **negative position** makes velocity increase because the rule for changing velocity reverses the sign of position.",
+              "children": [
+                "Increasing velocity can mean becoming less negative before becoming positive. It does not always mean speeding up in the current direction."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "A **negative velocity** makes position decrease. This describes the direction of motion, regardless of which side of the resting position the object is on.",
+              "children": []
+            },
+            {
+              "text": "A **negative position** makes velocity increase because the rule for changing velocity reverses the sign of position.",
+              "children": [
+                "Increasing velocity can mean becoming less negative before becoming positive. It does not always mean speeding up in the current direction."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 5,
+          "c": [
+            {
+              "text": "The rule for **position** follows the sign of velocity. If velocity is positive, position rises. If velocity is negative, position falls.",
+              "children": []
+            },
+            {
+              "text": "The rule for **velocity** reverses the sign of position. If position is positive, velocity falls. If position is negative, velocity rises.",
+              "children": [
+                "Position and its rate of change are different quantities. An object can be on the positive side while moving toward smaller positions."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "The rule for **position** follows the sign of velocity. If velocity is positive, position rises. If velocity is negative, position falls.",
+              "children": []
+            },
+            {
+              "text": "The rule for **velocity** reverses the sign of position. If position is positive, velocity falls. If position is negative, velocity rises.",
+              "children": [
+                "Position and its rate of change are different quantities. An object can be on the positive side while moving toward smaller positions."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 6,
+          "c": [
+            {
+              "text": "Suppose **position is negative and velocity is zero**. Negative position makes velocity rise above zero, and that positive velocity moves the object toward the resting position.",
+              "children": [
+                "The object still has positive velocity when it reaches the resting position, so it continues into positive positions."
+              ]
+            },
+            {
+              "text": "Once position is positive, velocity begins to fall. It reaches zero and then becomes negative, turning the motion back toward the other side.",
+              "children": [
+                "This continuing change between position and velocity produces an **oscillation**, or repeated back-and-forth motion."
+              ]
+            },
+            {
+              "text": "The position and velocity curves do not reach their peaks together. **Velocity is zero at a turning point**, but it can be large when position passes through zero.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "Suppose **position is negative and velocity is zero**. Negative position makes velocity rise above zero, and that positive velocity moves the object toward the resting position.",
+              "children": [
+                "The object still has positive velocity when it reaches the resting position, so it continues into positive positions."
+              ]
+            },
+            {
+              "text": "Once position is positive, velocity begins to fall. It reaches zero and then becomes negative, turning the motion back toward the other side.",
+              "children": [
+                "This continuing change between position and velocity produces an **oscillation**, or repeated back-and-forth motion."
+              ]
+            },
+            {
+              "text": "The position and velocity curves do not reach their peaks together. **Velocity is zero at a turning point**, but it can be large when position passes through zero.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 7,
+          "c": [
+            {
+              "text": "The arrows between **position, x, and velocity, v,** form a **feedback loop**. Position changes velocity, and velocity changes position.",
+              "children": [
+                "The effect returns to the quantity that started it, so the interaction continues. This repeated interaction produces the back-and-forth change called **oscillation** or **vibration**."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "The arrows between **position, x, and velocity, v,** form a **feedback loop**. Position changes velocity, and velocity changes position.",
+              "children": [
+                "The effect returns to the quantity that started it, so the interaction continues. This repeated interaction produces the back-and-forth change called **oscillation** or **vibration**."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 8,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 9,
+          "c": [
+            {
+              "text": "A **harmonic oscillator** describes a repeating pattern of change. The same basic idea is useful for studying vibrations in different physical systems.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "A **harmonic oscillator** describes a repeating pattern of change. The same basic idea is useful for studying vibrations in different physical systems.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              9
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 10,
+          "c": [
+            {
+              "text": "During **compression**, air particles move closer together and pressure becomes higher. During **rarefaction**, the particles move farther apart and pressure becomes lower.",
+              "children": [
+                "The particles stay the same size. What changes is the space between them."
+              ]
+            },
+            {
+              "text": "The air slice repeatedly contracts and expands. Its **equilibrium spacing** is the spacing between the compressed and expanded states.",
+              "children": [
+                "The highlighted pair follows that changing distance. The particle motion represents changing spacing rather than particles appearing or disappearing."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "During **compression**, air particles move closer together and pressure becomes higher. During **rarefaction**, the particles move farther apart and pressure becomes lower.",
+              "children": [
+                "The particles stay the same size. What changes is the space between them."
+              ]
+            },
+            {
+              "text": "The air slice repeatedly contracts and expands. Its **equilibrium spacing** is the spacing between the compressed and expanded states.",
+              "children": [
+                "The highlighted pair follows that changing distance. The particle motion represents changing spacing rather than particles appearing or disappearing."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 11,
+          "c": [
+            {
+              "text": "A **cosine** describes the repeating expansion and compression of the air slice. The moving point on the curve shows the air spacing at that moment.",
+              "children": [
+                "A positive value means the particles are farther apart than at equilibrium. Zero means equilibrium spacing. A negative value means the particles are closer together."
+              ]
+            },
+            {
+              "text": "One **cycle** runs from maximum expansion through compression and back to maximum expansion.",
+              "children": [
+                "The curve shows how expansion changes over time. It does not mean that individual air particles travel along a wavy path."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "A **cosine** describes the repeating expansion and compression of the air slice. The moving point on the curve shows the air spacing at that moment.",
+              "children": [
+                "A positive value means the particles are farther apart than at equilibrium. Zero means equilibrium spacing. A negative value means the particles are closer together."
+              ]
+            },
+            {
+              "text": "One **cycle** runs from maximum expansion through compression and back to maximum expansion.",
+              "children": [
+                "The curve shows how expansion changes over time. It does not mean that individual air particles travel along a wavy path."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 12,
+          "c": [
+            {
+              "text": "**Tongue height** describes how high or low the tongue is. **Tongue backness** describes how far toward the front or back its raised region lies.",
+              "children": [
+                "The vowels in **dean** and **dune** are both high. Dean is front, while dune is back.",
+                "The vowels in **Dan** and **Don** are low in this comparison. Dan is front, Don is back, and **done** is central."
+              ]
+            },
+            {
+              "text": "These different tongue positions change the shape of the **vocal tract**, the air space above the vocal folds. The air has less room in some places and more room in others.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "**Tongue height** describes how high or low the tongue is. **Tongue backness** describes how far toward the front or back its raised region lies.",
+              "children": [
+                "The vowels in **dean** and **dune** are both high. Dean is front, while dune is back.",
+                "The vowels in **Dan** and **Don** are low in this comparison. Dan is front, Don is back, and **done** is central."
+              ]
+            },
+            {
+              "text": "These different tongue positions change the shape of the **vocal tract**, the air space above the vocal folds. The air has less room in some places and more room in others.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              12
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 13,
+          "c": [
+            {
+              "text": "A vowel can combine **more than one frequency**. Each component is a repeating vibration, and adding the components produces a more complex pattern.",
+              "children": [
+                "The two models combine different pairs of frequencies. Even though both air slices begin expanded, their spacing changes differently during the cycle."
+              ]
+            },
+            {
+              "text": "The moving point follows the **combined vibration**. Positive values show rarefaction, and negative values show compression.",
+              "children": [
+                "The deliberately slow frequencies make the motion visible. They illustrate how combining frequencies changes a pattern rather than giving measured frequencies of human vowels."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "A vowel can combine **more than one frequency**. Each component is a repeating vibration, and adding the components produces a more complex pattern.",
+              "children": [
+                "The two models combine different pairs of frequencies. Even though both air slices begin expanded, their spacing changes differently during the cycle."
+              ]
+            },
+            {
+              "text": "The moving point follows the **combined vibration**. Positive values show rarefaction, and negative values show compression.",
+              "children": [
+                "The deliberately slow frequencies make the motion visible. They illustrate how combining frequencies changes a pattern rather than giving measured frequencies of human vowels."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              13
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 14,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              14
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 15,
+          "c": [
+            {
+              "text": "Speech involves two physically different kinds of vibration. The **vocal folds** are tissue that opens and closes. The **air in the vocal tract** vibrates through changing compression and rarefaction.",
+              "children": [
+                "The vocal folds provide the sound source that sets the air into vibration. Explaining the moving folds and explaining the moving air are separate parts of understanding speech."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "Speech involves two physically different kinds of vibration. The **vocal folds** are tissue that opens and closes. The **air in the vocal tract** vibrates through changing compression and rarefaction.",
+              "children": [
+                "The vocal folds provide the sound source that sets the air into vibration. Explaining the moving folds and explaining the moving air are separate parts of understanding speech."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              15
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 16,
+          "c": [
+            {
+              "text": "The **business cycle** is a repeating rise and fall in economic output. Output rises during recovery, reaches a **peak**, falls during recession, and reaches a **trough** before rising again.",
+              "children": [
+                "Time runs horizontally, while the level of output runs vertically."
+              ]
+            },
+            {
+              "text": "The long-term **growth trend** rises even while the cycle moves above and below it. Repeated fluctuation can therefore occur around a baseline that is itself changing.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "The **business cycle** is a repeating rise and fall in economic output. Output rises during recovery, reaches a **peak**, falls during recession, and reaches a **trough** before rising again.",
+              "children": [
+                "Time runs horizontally, while the level of output runs vertically."
+              ]
+            },
+            {
+              "text": "The long-term **growth trend** rises even while the cycle moves above and below it. Repeated fluctuation can therefore occur around a baseline that is itself changing.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              16
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 17,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              17
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 18,
+          "c": [
+            {
+              "text": "**Musical sound depends on vibration.** A repeating physical motion produces the changing sound pressure that makes a musical tone.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "**Musical sound depends on vibration.** A repeating physical motion produces the changing sound pressure that makes a musical tone.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              18
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 19,
+          "c": [
+            {
+              "text": "Descriptions of atoms use **wave modes**, which are allowed patterns associated with electrons. A quantum **orbital** describes electron density rather than a tiny particle following a fixed circular path.",
+              "children": [
+                "The magnesium comparison places a shell picture beside electron-density patterns. Darker regions represent greater density."
+              ]
+            },
+            {
+              "text": "The total electron-density picture combines contributions from occupied orbitals. Those wave patterns differ from the historical drawing of electrons on paths.",
+              "children": [
+                "Using wave modes in an atomic description does not make magnesium a simple classical harmonic oscillator."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "Descriptions of atoms use **wave modes**, which are allowed patterns associated with electrons. A quantum **orbital** describes electron density rather than a tiny particle following a fixed circular path.",
+              "children": [
+                "The magnesium comparison places a shell picture beside electron-density patterns. Darker regions represent greater density."
+              ]
+            },
+            {
+              "text": "The total electron-density picture combines contributions from occupied orbitals. Those wave patterns differ from the historical drawing of electrons on paths.",
+              "children": [
+                "Using wave modes in an atomic description does not make magnesium a simple classical harmonic oscillator."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              19
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 20,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              20
+            ],
+            "transcriptLines": []
+          }
+        }
+      ]
+    },
+    "lecture07": {
+      "pages": [
+        {
+          "page": 1,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              1
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 2,
+          "c": [
+            {
+              "text": "**Position, x,** tells where something is relative to its resting position. **Velocity, v,** tells how position changes. A dot over a letter means its rate of change with time.",
+              "children": []
+            },
+            {
+              "text": "Velocity changes position, and position changes velocity with the sign reversed.",
+              "children": [
+                "Positive velocity makes position rise. Positive position makes velocity fall.",
+                "Negative velocity makes position fall. Negative position makes velocity rise. These linked changes allow the motion to turn around repeatedly."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Position, x,** tells where something is relative to its resting position. **Velocity, v,** tells how position changes. A dot over a letter means its rate of change with time.",
+              "children": []
+            },
+            {
+              "text": "Velocity changes position, and position changes velocity with the sign reversed.",
+              "children": [
+                "Positive velocity makes position rise. Positive position makes velocity fall.",
+                "Negative velocity makes position fall. Negative position makes velocity rise. These linked changes allow the motion to turn around repeatedly."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              2
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 3,
+          "c": [
+            {
+              "text": "**Oscillation**, or **vibration**, is repeated back-and-forth change. The arrows from position to velocity and back to position make a closed **feedback loop**.",
+              "children": [
+                "A change in either quantity affects the other, which returns to affect the first. The repetition comes from this continuing interaction."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Oscillation**, or **vibration**, is repeated back-and-forth change. The arrows from position to velocity and back to position make a closed **feedback loop**.",
+              "children": [
+                "A change in either quantity affects the other, which returns to affect the first. The repetition comes from this continuing interaction."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 4,
+          "c": [
+            {
+              "text": "A **spring** pulls a displaced system toward its resting position. **Stiffness** tells how strongly the spring pushes back for a given displacement.",
+              "children": []
+            },
+            {
+              "text": "**Mass** supplies the tendency to continue moving. The spring can bring a moving mass toward the resting position, but reaching that position does not automatically stop it.",
+              "children": [
+                "The mass passes through the resting position. The spring then acts from the other side and turns it back. **Spring action and continued motion together produce vibration.**"
+              ]
+            },
+            {
+              "text": "Both **vocal-fold tissue** and **air in the vocal tract** vibrate during speech. Understanding the returning action and the moving material helps explain those vibrations.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "A **spring** pulls a displaced system toward its resting position. **Stiffness** tells how strongly the spring pushes back for a given displacement.",
+              "children": []
+            },
+            {
+              "text": "**Mass** supplies the tendency to continue moving. The spring can bring a moving mass toward the resting position, but reaching that position does not automatically stop it.",
+              "children": [
+                "The mass passes through the resting position. The spring then acts from the other side and turns it back. **Spring action and continued motion together produce vibration.**"
+              ]
+            },
+            {
+              "text": "Both **vocal-fold tissue** and **air in the vocal tract** vibrate during speech. Understanding the returning action and the moving material helps explain those vibrations.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 5,
+          "c": [
+            {
+              "text": "**Compression** brings air particles closer together and raises pressure. **Rarefaction** spreads the particles farther apart and lowers pressure.",
+              "children": [
+                "The same particles remain present and keep the same size. Their spacing changes as the air slice contracts and expands."
+              ]
+            },
+            {
+              "text": "The dashed boundary marks **equilibrium spacing**. The highlighted pair moves closer together during compression and farther apart during rarefaction.",
+              "children": [
+                "Air has the returning action needed for vibration because compressed air pushes back. It also has mass, so moving air can continue moving."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Compression** brings air particles closer together and raises pressure. **Rarefaction** spreads the particles farther apart and lowers pressure.",
+              "children": [
+                "The same particles remain present and keep the same size. Their spacing changes as the air slice contracts and expands."
+              ]
+            },
+            {
+              "text": "The dashed boundary marks **equilibrium spacing**. The highlighted pair moves closer together during compression and farther apart during rarefaction.",
+              "children": [
+                "Air has the returning action needed for vibration because compressed air pushes back. It also has mass, so moving air can continue moving."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 6,
+          "c": [
+            {
+              "text": "**Negative feedback**, also called **balancing feedback**, reduces a difference from equilibrium. A positive displacement produces a change toward smaller values. A negative displacement produces a change toward larger values.",
+              "children": [
+                "Both directions bring the system toward the same **equilibrium**, its resting position at zero."
+              ]
+            },
+            {
+              "text": "The return is faster when the displacement is large. As the system approaches equilibrium, the displacement becomes smaller and so does the change it produces.",
+              "children": [
+                "The curve therefore falls steeply at first and then flattens. Increasing the strength of the returning effect makes the approach faster."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Negative feedback**, also called **balancing feedback**, reduces a difference from equilibrium. A positive displacement produces a change toward smaller values. A negative displacement produces a change toward larger values.",
+              "children": [
+                "Both directions bring the system toward the same **equilibrium**, its resting position at zero."
+              ]
+            },
+            {
+              "text": "The return is faster when the displacement is large. As the system approaches equilibrium, the displacement becomes smaller and so does the change it produces.",
+              "children": [
+                "The curve therefore falls steeply at first and then flattens. Increasing the strength of the returning effect makes the approach faster."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 7,
+          "c": [
+            {
+              "text": "**Inertia** is the tendency of a mass to continue its motion unless something changes that motion. With **constant velocity**, it travels the same distance during each equal interval.",
+              "children": [
+                "A moving mass does not stop simply because it reaches a particular place. This is why a mass moving toward equilibrium can pass through it."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Inertia** is the tendency of a mass to continue its motion unless something changes that motion. With **constant velocity**, it travels the same distance during each equal interval.",
+              "children": [
+                "A moving mass does not stop simply because it reaches a particular place. This is why a mass moving toward equilibrium can pass through it."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 8,
+          "c": [
+            {
+              "text": "**Displacement, x,** measures distance from the spring’s natural position. At **equilibrium**, x is zero.",
+              "children": [
+                "In the spring-only model, a stretched spring approaches zero from one side. A compressed spring approaches it from the other side. Both settle toward the same position."
+              ]
+            },
+            {
+              "text": "Attaching a **mass** changes the motion. The spring brings the mass toward equilibrium, but the mass is still moving when it arrives and carries on past it.",
+              "children": [
+                "The spring now acts from the opposite side, slowing the mass and turning it back. Passing through equilibrium and turning around produce the repeated motion of an **oscillation**."
+              ]
+            },
+            {
+              "text": "The oscillating trace crosses zero repeatedly, while its peaks become smaller. The resting position stays fixed even though the motion around it changes.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "**Displacement, x,** measures distance from the spring’s natural position. At **equilibrium**, x is zero.",
+              "children": [
+                "In the spring-only model, a stretched spring approaches zero from one side. A compressed spring approaches it from the other side. Both settle toward the same position."
+              ]
+            },
+            {
+              "text": "Attaching a **mass** changes the motion. The spring brings the mass toward equilibrium, but the mass is still moving when it arrives and carries on past it.",
+              "children": [
+                "The spring now acts from the opposite side, slowing the mass and turning it back. Passing through equilibrium and turning around produce the repeated motion of an **oscillation**."
+              ]
+            },
+            {
+              "text": "The oscillating trace crosses zero repeatedly, while its peaks become smaller. The resting position stays fixed even though the motion around it changes.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 9,
+          "c": [
+            {
+              "text": "The **cosine** curve follows the air slice as it expands and contracts. High points mean the particles are farthest apart, and low points mean they are closest together.",
+              "children": [
+                "Positive values represent **rarefaction**. Negative values represent **compression**. Zero marks equilibrium spacing."
+              ]
+            },
+            {
+              "text": "The curve describes the changing spacing over time. The air particles do not travel along the shape of the curve.",
+              "children": [
+                "A complete **cycle** returns to the same spacing and stage of motion, such as from maximum rarefaction through compression and back to maximum rarefaction."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "The **cosine** curve follows the air slice as it expands and contracts. High points mean the particles are farthest apart, and low points mean they are closest together.",
+              "children": [
+                "Positive values represent **rarefaction**. Negative values represent **compression**. Zero marks equilibrium spacing."
+              ]
+            },
+            {
+              "text": "The curve describes the changing spacing over time. The air particles do not travel along the shape of the curve.",
+              "children": [
+                "A complete **cycle** returns to the same spacing and stage of motion, such as from maximum rarefaction through compression and back to maximum rarefaction."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              9
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 10,
+          "c": [
+            {
+              "text": "**Vowel height** describes how high the tongue is, while **backness** describes how far forward or back its raised region lies.",
+              "children": [
+                "The vowels in dean and dune are both high. Dean is front, and dune is back.",
+                "Dan is low and front, Don is low and back in this comparison, and done is central."
+              ]
+            },
+            {
+              "text": "Moving the tongue changes where the **vocal tract** is narrow or wide. Changing that air space changes the way the air can vibrate.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "**Vowel height** describes how high the tongue is, while **backness** describes how far forward or back its raised region lies.",
+              "children": [
+                "The vowels in dean and dune are both high. Dean is front, and dune is back.",
+                "Dan is low and front, Don is low and back in this comparison, and done is central."
+              ]
+            },
+            {
+              "text": "Moving the tongue changes where the **vocal tract** is narrow or wide. Changing that air space changes the way the air can vibrate.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 11,
+          "c": [
+            {
+              "text": "**Frequency** tells how many complete cycles occur in a given time. Each air slice goes through compression and rarefaction, but the three slices complete different numbers of cycles.",
+              "children": [
+                "The low-frequency example completes fewer cycles in the shared interval. The middle example completes twice as many, and the high example completes three times as many."
+              ]
+            },
+            {
+              "text": "All three examples use the same range of particle spacing. **The amount of expansion and the frequency are different properties.** Air can expand by the same amount while repeating the motion faster or slower.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "**Frequency** tells how many complete cycles occur in a given time. Each air slice goes through compression and rarefaction, but the three slices complete different numbers of cycles.",
+              "children": [
+                "The low-frequency example completes fewer cycles in the shared interval. The middle example completes twice as many, and the high example completes three times as many."
+              ]
+            },
+            {
+              "text": "All three examples use the same range of particle spacing. **The amount of expansion and the frequency are different properties.** Air can expand by the same amount while repeating the motion faster or slower.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 12,
+          "c": [
+            {
+              "text": "A vowel pattern can combine **several vibrations at different frequencies**. The combined pattern depends on which frequencies are present.",
+              "children": [
+                "The two models begin at the same expanded state but change differently during the interval. Their component vibrations do not stay lined up in the same way."
+              ]
+            },
+            {
+              "text": "The graph follows the **combined air motion**. Positive values mean the particles are farther apart than at equilibrium, and negative values mean they are closer together.",
+              "children": [
+                "These slow, illustrative models make the different patterns visible. They are not recordings of human vowels at those frequencies."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "A vowel pattern can combine **several vibrations at different frequencies**. The combined pattern depends on which frequencies are present.",
+              "children": [
+                "The two models begin at the same expanded state but change differently during the interval. Their component vibrations do not stay lined up in the same way."
+              ]
+            },
+            {
+              "text": "The graph follows the **combined air motion**. Positive values mean the particles are farther apart than at equilibrium, and negative values mean they are closer together.",
+              "children": [
+                "These slow, illustrative models make the different patterns visible. They are not recordings of human vowels at those frequencies."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              12
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 13,
+          "c": [
+            {
+              "text": "**Perturbation theory** predicts how a system changes when one of its properties changes. In a mass–spring system, **m** means mass, **k** means stiffness, and **f** means frequency.",
+              "children": [
+                "Increasing mass lowers frequency when stiffness stays the same. A heavier mass is harder to slow and turn around, so each cycle takes longer.",
+                "Increasing stiffness raises frequency when mass stays the same. A stronger returning force turns the mass around sooner, so the cycle repeats faster."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Perturbation theory** predicts how a system changes when one of its properties changes. In a mass–spring system, **m** means mass, **k** means stiffness, and **f** means frequency.",
+              "children": [
+                "Increasing mass lowers frequency when stiffness stays the same. A heavier mass is harder to slow and turn around, so each cycle takes longer.",
+                "Increasing stiffness raises frequency when mass stays the same. A stronger returning force turns the mass around sooner, so the cycle repeats faster."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              13
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 14,
+          "c": [
+            {
+              "text": "The **basilar membrane** inside the ear has different mass and stiffness along its length. Its heavier, less stiff end responds to lower frequencies, while its lighter, stiffer end responds to higher frequencies.",
+              "children": [
+                "These responses follow the mass–stiffness relationship. Greater mass favors slower vibration, while greater stiffness favors faster vibration."
+              ]
+            },
+            {
+              "text": "Neurons carry signals from different places along the membrane to the brain. **Where the vibration occurs** therefore provides information about which frequencies are present in the sound.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "The **basilar membrane** inside the ear has different mass and stiffness along its length. Its heavier, less stiff end responds to lower frequencies, while its lighter, stiffer end responds to higher frequencies.",
+              "children": [
+                "These responses follow the mass–stiffness relationship. Greater mass favors slower vibration, while greater stiffness favors faster vibration."
+              ]
+            },
+            {
+              "text": "Neurons carry signals from different places along the membrane to the brain. **Where the vibration occurs** therefore provides information about which frequencies are present in the sound.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              14
+            ],
+            "transcriptLines": [],
+            "supplementalSources": [
+              {
+                "file": "sources/notes-lecture07.pdf",
+                "pages": [
+                  8,
+                  9,
+                  15
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "page": 15,
+          "c": [
+            {
+              "text": "The **learning rate**, written gamma, controls how much an estimate changes after each observation. A high learning rate moves the estimate quickly, but it can keep bouncing around the answer.",
+              "children": [
+                "A lower learning rate makes smaller changes. Learning is slower, but the estimate settles more steadily."
+              ]
+            },
+            {
+              "text": "This is the **speed–accuracy tradeoff**. Fast movement toward an answer and a steady estimate are different goals, so changing the learning rate can improve one while making the other harder.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "The **learning rate**, written gamma, controls how much an estimate changes after each observation. A high learning rate moves the estimate quickly, but it can keep bouncing around the answer.",
+              "children": [
+                "A lower learning rate makes smaller changes. Learning is slower, but the estimate settles more steadily."
+              ]
+            },
+            {
+              "text": "This is the **speed–accuracy tradeoff**. Fast movement toward an answer and a steady estimate are different goals, so changing the learning rate can improve one while making the other harder.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              15
+            ],
+            "transcriptLines": []
+          }
+        }
+      ]
+    },
+    "lecture08": {
+      "pages": [
+        {
+          "page": 1,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              1
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 2,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              2
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 3,
+          "c": [
+            {
+              "text": "The spring’s **equilibrium** is its natural resting position. In the spring-only model, displacement shrinks as the spring approaches that position.",
+              "children": [
+                "A stretched spring returns from one side, while a compressed spring returns from the other."
+              ]
+            },
+            {
+              "text": "A **mass–spring system** also has inertia. The spring moves the mass toward equilibrium, and the mass continues through it because it is already moving.",
+              "children": [
+                "The spring then acts from the other side and turns the mass back. This interaction gives repeated crossings and turns, which make an **oscillation**."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "The spring’s **equilibrium** is its natural resting position. In the spring-only model, displacement shrinks as the spring approaches that position.",
+              "children": [
+                "A stretched spring returns from one side, while a compressed spring returns from the other."
+              ]
+            },
+            {
+              "text": "A **mass–spring system** also has inertia. The spring moves the mass toward equilibrium, and the mass continues through it because it is already moving.",
+              "children": [
+                "The spring then acts from the other side and turns the mass back. This interaction gives repeated crossings and turns, which make an **oscillation**."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 4,
+          "c": [
+            {
+              "text": "**Perturbation theory** predicts the effect of changing mass or stiffness. Increasing **mass, m,** lowers **frequency, f,** while increasing **stiffness, k,** raises frequency when the other property stays fixed.",
+              "children": [
+                "More mass takes longer to turn around. A stiffer spring provides a stronger returning action."
+              ]
+            },
+            {
+              "text": "During speech, changing the shape of the **vocal tract** changes how different portions of air behave. The air can vibrate at several frequencies, and the pattern differs between speech sounds.",
+              "children": [
+                "The listener’s ear must separate the frequencies present in that pattern so that different speech sounds can be distinguished."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Perturbation theory** predicts the effect of changing mass or stiffness. Increasing **mass, m,** lowers **frequency, f,** while increasing **stiffness, k,** raises frequency when the other property stays fixed.",
+              "children": [
+                "More mass takes longer to turn around. A stiffer spring provides a stronger returning action."
+              ]
+            },
+            {
+              "text": "During speech, changing the shape of the **vocal tract** changes how different portions of air behave. The air can vibrate at several frequencies, and the pattern differs between speech sounds.",
+              "children": [
+                "The listener’s ear must separate the frequencies present in that pattern so that different speech sounds can be distinguished."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 5,
+          "c": [
+            {
+              "text": "The **cochlea** is the coiled part of the inner ear that sends the brain information about sound frequencies.",
+              "children": [
+                "Sound vibrations enter through the outer ear and travel inward to the cochlea. The important connection is between incoming vibration and the neural signals used for hearing."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "The **cochlea** is the coiled part of the inner ear that sends the brain information about sound frequencies.",
+              "children": [
+                "Sound vibrations enter through the outer ear and travel inward to the cochlea. The important connection is between incoming vibration and the neural signals used for hearing."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 6,
+          "c": [
+            {
+              "text": "The **basilar membrane** runs along the inside of the cochlea. The membrane is coiled with it, but it can be understood as a long strip.",
+              "children": [
+                "Sound vibration passes inward from the eardrum and the small connecting bones to the cochlea."
+              ]
+            },
+            {
+              "text": "The membrane’s physical properties change along its length. Different parts can therefore respond most strongly to different frequencies rather than responding in exactly the same way.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "The **basilar membrane** runs along the inside of the cochlea. The membrane is coiled with it, but it can be understood as a long strip.",
+              "children": [
+                "Sound vibration passes inward from the eardrum and the small connecting bones to the cochlea."
+              ]
+            },
+            {
+              "text": "The membrane’s physical properties change along its length. Different parts can therefore respond most strongly to different frequencies rather than responding in exactly the same way.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 7,
+          "c": [
+            {
+              "text": "Different locations on the **basilar membrane** respond to different frequencies. The heavier, less stiff end responds to low frequencies. The lighter, stiffer end responds to high frequencies.",
+              "children": [
+                "Greater mass favors slower motion, while greater stiffness favors faster motion."
+              ]
+            },
+            {
+              "text": "The membrane is connected to **neurons** that carry signals to the brain. Activity at different locations tells the brain which frequencies are present in the incoming sound.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "Different locations on the **basilar membrane** respond to different frequencies. The heavier, less stiff end responds to low frequencies. The lighter, stiffer end responds to high frequencies.",
+              "children": [
+                "Greater mass favors slower motion, while greater stiffness favors faster motion."
+              ]
+            },
+            {
+              "text": "The membrane is connected to **neurons** that carry signals to the brain. Activity at different locations tells the brain which frequencies are present in the incoming sound.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": [],
+            "supplementalSources": [
+              {
+                "file": "sources/notes-lecture07.pdf",
+                "pages": [
+                  8,
+                  9,
+                  15
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "page": 8,
+          "c": [
+            {
+              "text": "The **vocal folds** are small muscles with both mass and stiffness. Other muscles can stretch them to make them stiffer or bunch them to make them effectively heavier.",
+              "children": [
+                "Stiffer folds vibrate faster. Heavier folds vibrate more slowly. Their vibration rate is the **fundamental frequency, F0**, which is closely connected with pitch."
+              ]
+            },
+            {
+              "text": "Changing this vibration rate allows singing and conveys information in speech. In English, pitch changes can signal questions, surprise or emotion. In a **tone language**, pitch differences can distinguish word meanings.",
+              "children": []
+            },
+            {
+              "text": "Vibration begins when air pressure builds beneath closed folds and pushes them apart. Air flows through the opening, and the airflow draws the folds inward again.",
+              "children": [
+                "The source calls this inward effect the **Bernoulli force**. Pressure can then push the folds apart again, repeating the opening-and-closing cycle."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "The **vocal folds** are small muscles with both mass and stiffness. Other muscles can stretch them to make them stiffer or bunch them to make them effectively heavier.",
+              "children": [
+                "Stiffer folds vibrate faster. Heavier folds vibrate more slowly. Their vibration rate is the **fundamental frequency, F0**, which is closely connected with pitch."
+              ]
+            },
+            {
+              "text": "Changing this vibration rate allows singing and conveys information in speech. In English, pitch changes can signal questions, surprise or emotion. In a **tone language**, pitch differences can distinguish word meanings.",
+              "children": []
+            },
+            {
+              "text": "Vibration begins when air pressure builds beneath closed folds and pushes them apart. Air flows through the opening, and the airflow draws the folds inward again.",
+              "children": [
+                "The source calls this inward effect the **Bernoulli force**. Pressure can then push the folds apart again, repeating the opening-and-closing cycle."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 9,
+          "c": [
+            {
+              "text": "The oscillator uses **position, x,** and **velocity, v,** to compute a sequence of states. At each step, velocity is used to update position, and the **new position** is then used to update velocity.",
+              "children": [
+                "The update takes a small step through time rather than trying to compute the entire motion at once."
+              ]
+            },
+            {
+              "text": "The position curve moves through high and low values, while velocity reaches zero at the turning points. Position passes through zero while velocity is still nonzero.",
+              "children": [
+                "In this position-first procedure, the plotted swings stay near their original range. The order of the updates is part of the algorithm, not an interchangeable detail."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "The oscillator uses **position, x,** and **velocity, v,** to compute a sequence of states. At each step, velocity is used to update position, and the **new position** is then used to update velocity.",
+              "children": [
+                "The update takes a small step through time rather than trying to compute the entire motion at once."
+              ]
+            },
+            {
+              "text": "The position curve moves through high and low values, while velocity reaches zero at the turning points. Position passes through zero while velocity is still nonzero.",
+              "children": [
+                "In this position-first procedure, the plotted swings stay near their original range. The order of the updates is part of the algorithm, not an interchangeable detail."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              9
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 10,
+          "c": [
+            {
+              "text": "**Explicit Euler** updates both position and velocity from the **previous pair of values**. The velocity update therefore uses the old position, even if a new position has already been calculated.",
+              "children": []
+            },
+            {
+              "text": "With the displayed time step, the computed swings grow larger across cycles. That growth comes from the numerical approximation rather than from an extra physical force in the oscillator.",
+              "children": [
+                "The same intended system can produce a different numerical result when an update uses a different version of the state. The time step and update rule affect how well the simulation follows the intended motion."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Explicit Euler** updates both position and velocity from the **previous pair of values**. The velocity update therefore uses the old position, even if a new position has already been calculated.",
+              "children": []
+            },
+            {
+              "text": "With the displayed time step, the computed swings grow larger across cycles. That growth comes from the numerical approximation rather than from an extra physical force in the oscillator.",
+              "children": [
+                "The same intended system can produce a different numerical result when an update uses a different version of the state. The time step and update rule affect how well the simulation follows the intended motion."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 11,
+          "c": [
+            {
+              "text": "**Euler’s explicit method** turns a rule about change into repeated arithmetic. It takes the previous value and adds the estimated change over a small time step.",
+              "children": [
+                "Repeating this operation builds an approximate sequence of states. A computer can therefore follow a system’s changing behavior using a simple operation again and again."
+              ]
+            },
+            {
+              "text": "The result is an **approximation**. Its accuracy depends on the time step and the way the update is performed.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "**Euler’s explicit method** turns a rule about change into repeated arithmetic. It takes the previous value and adds the estimated change over a small time step.",
+              "children": [
+                "Repeating this operation builds an approximate sequence of states. A computer can therefore follow a system’s changing behavior using a simple operation again and again."
+              ]
+            },
+            {
+              "text": "The result is an **approximation**. Its accuracy depends on the time step and the way the update is performed.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 12,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              12
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 13,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              13
+            ],
+            "transcriptLines": []
+          }
+        }
+      ]
+    },
+    "lecture09": {
+      "pages": [
+        {
+          "page": 1,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              1
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 2,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              2
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 3,
+          "c": [
+            {
+              "text": "A **differential equation** describes a relationship involving a rate of change. It connects what a system is doing now with how its quantities change over time.",
+              "children": [
+                "This is the mathematical form of a **dynamical system**, a system whose state develops through time."
+              ]
+            },
+            {
+              "text": "Knowing a rule for change helps predict a system’s behavior from a starting state. The same broad perspective connects physical systems with learning and inference in language models.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "A **differential equation** describes a relationship involving a rate of change. It connects what a system is doing now with how its quantities change over time.",
+              "children": [
+                "This is the mathematical form of a **dynamical system**, a system whose state develops through time."
+              ]
+            },
+            {
+              "text": "Knowing a rule for change helps predict a system’s behavior from a starting state. The same broad perspective connects physical systems with learning and inference in language models.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 4,
+          "c": [
+            {
+              "text": "**Negative feedback**, or **balancing feedback**, makes the change oppose the current displacement. A value above zero decreases toward zero, while a value below zero increases toward zero.",
+              "children": [
+                "The farther the system is from **equilibrium**, the larger its return-driving change. As the displacement shrinks, the return slows."
+              ]
+            },
+            {
+              "text": "**Euler’s method** uses the current value to estimate the next value. Applying the same rule repeatedly gives a sequence that approaches equilibrium.",
+              "children": [
+                "The curve is steep at first and then flattens because the remaining difference becomes smaller. The repeated arithmetic approximates this changing process."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Negative feedback**, or **balancing feedback**, makes the change oppose the current displacement. A value above zero decreases toward zero, while a value below zero increases toward zero.",
+              "children": [
+                "The farther the system is from **equilibrium**, the larger its return-driving change. As the displacement shrinks, the return slows."
+              ]
+            },
+            {
+              "text": "**Euler’s method** uses the current value to estimate the next value. Applying the same rule repeatedly gives a sequence that approaches equilibrium.",
+              "children": [
+                "The curve is steep at first and then flattens because the remaining difference becomes smaller. The repeated arithmetic approximates this changing process."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 5,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 6,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 7,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 8,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 9,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              9
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 10,
+          "c": [
+            {
+              "text": "A **neural network** takes an input represented by numbers and produces an output about its identity. Image pixels can be used to identify a face, and speech-wave values can be used to identify a speech sound.",
+              "children": []
+            },
+            {
+              "text": "The output is a **probability distribution**, with one probability for each possible answer. Those probabilities add up to **one**, or 100%.",
+              "children": [
+                "For the five vowels ordered read, rad, rude, Rud and rod, the example assigns its largest probability to the third category. That makes **rude** the best-supported answer.",
+                "The agreed category order matters because each position in the list has a specific meaning."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "A **neural network** takes an input represented by numbers and produces an output about its identity. Image pixels can be used to identify a face, and speech-wave values can be used to identify a speech sound.",
+              "children": []
+            },
+            {
+              "text": "The output is a **probability distribution**, with one probability for each possible answer. Those probabilities add up to **one**, or 100%.",
+              "children": [
+                "For the five vowels ordered read, rad, rude, Rud and rod, the example assigns its largest probability to the third category. That makes **rude** the best-supported answer.",
+                "The agreed category order matters because each position in the list has a specific meaning."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 11,
+          "c": [
+            {
+              "text": "The input is a **vector**, a list of numbers representing the signal. The network combines that input with its **weights**, the numbers that hold its learned knowledge.",
+              "children": [
+                "The input values can be positive or negative. They are signal measurements, not output probabilities."
+              ]
+            },
+            {
+              "text": "**Forward propagation** computes an answer using the current weights. With initially random weights, the answer can be wrong.",
+              "children": [
+                "For the vowel in Rud, the correct target puts a one in Rud’s position and zeros in the other positions. Comparing the computed answer with that target gives an **error**, or **loss**."
+              ]
+            },
+            {
+              "text": "**Learning** changes the weights to reduce the loss. The process repeats with other signals whose correct identities are known.",
+              "children": [
+                "The network improves its knowledge by changing weights, rather than by changing which signal was presented."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "The input is a **vector**, a list of numbers representing the signal. The network combines that input with its **weights**, the numbers that hold its learned knowledge.",
+              "children": [
+                "The input values can be positive or negative. They are signal measurements, not output probabilities."
+              ]
+            },
+            {
+              "text": "**Forward propagation** computes an answer using the current weights. With initially random weights, the answer can be wrong.",
+              "children": [
+                "For the vowel in Rud, the correct target puts a one in Rud’s position and zeros in the other positions. Comparing the computed answer with that target gives an **error**, or **loss**."
+              ]
+            },
+            {
+              "text": "**Learning** changes the weights to reduce the loss. The process repeats with other signals whose correct identities are known.",
+              "children": [
+                "The network improves its knowledge by changing weights, rather than by changing which signal was presented."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 12,
+          "c": [
+            {
+              "text": "A recognizer receiving the speech sound **[z]** should identify it as [z], rather than [s] or [a]. Two ideas help explain how a neural network can turn a signal into that decision.",
+              "children": []
+            },
+            {
+              "text": "**Templatic perception** compares incoming information with stored patterns. **Hierarchical perception** processes information through several stages.",
+              "children": [
+                "A network can combine the two by comparing numerical patterns at successive stages before making its output decision."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "A recognizer receiving the speech sound **[z]** should identify it as [z], rather than [s] or [a]. Two ideas help explain how a neural network can turn a signal into that decision.",
+              "children": []
+            },
+            {
+              "text": "**Templatic perception** compares incoming information with stored patterns. **Hierarchical perception** processes information through several stages.",
+              "children": [
+                "A network can combine the two by comparing numerical patterns at successive stages before making its output decision."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              12
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 13,
+          "c": [
+            {
+              "text": "In **templatic perception**, an incoming pattern is compared with stored **templates**, the internal patterns for familiar objects.",
+              "children": [
+                "For face recognition, the incoming face is compared with familiar-face templates. The closest match determines the perceived identity and, when available, the associated name."
+              ]
+            },
+            {
+              "text": "A neural network’s **weights** provide numerical patterns for comparison. Learning makes those patterns more useful for identifying the input.",
+              "children": [
+                "Before learning, poor weights can give a poor match and an incorrect decision."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "In **templatic perception**, an incoming pattern is compared with stored **templates**, the internal patterns for familiar objects.",
+              "children": [
+                "For face recognition, the incoming face is compared with familiar-face templates. The closest match determines the perceived identity and, when available, the associated name."
+              ]
+            },
+            {
+              "text": "A neural network’s **weights** provide numerical patterns for comparison. Learning makes those patterns more useful for identifying the input.",
+              "children": [
+                "Before learning, poor weights can give a poor match and an incorrect decision."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              13
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 14,
+          "c": [
+            {
+              "text": "**Hierarchical perception** builds a decision through several stages. A **representation** is the form in which a stage holds or describes the information.",
+              "children": [
+                "One stage transforms the input into a new representation. That result becomes information that another stage can transform again."
+              ]
+            },
+            {
+              "text": "The connected brain areas show that perception involves interaction between stages. The arrows include several routes and returning connections, rather than a single isolated step from input to decision.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "**Hierarchical perception** builds a decision through several stages. A **representation** is the form in which a stage holds or describes the information.",
+              "children": [
+                "One stage transforms the input into a new representation. That result becomes information that another stage can transform again."
+              ]
+            },
+            {
+              "text": "The connected brain areas show that perception involves interaction between stages. The arrows include several routes and returning connections, rather than a single isolated step from input to decision.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              14
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 15,
+          "c": [
+            {
+              "text": "An **inner product** compares an input vector with a template vector. Each input value is multiplied by the template value in the matching position, and the products are added.",
+              "children": [
+                "The lists must have the same number of entries so their positions can be paired."
+              ]
+            },
+            {
+              "text": "In the example, the second template produces the stronger positive result and is the better match under this comparison rule.",
+              "children": [
+                "A large positive inner product indicates a stronger match, while a result near zero indicates little match. The result is a comparison score, not an output probability."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "An **inner product** compares an input vector with a template vector. Each input value is multiplied by the template value in the matching position, and the products are added.",
+              "children": [
+                "The lists must have the same number of entries so their positions can be paired."
+              ]
+            },
+            {
+              "text": "In the example, the second template produces the stronger positive result and is the better match under this comparison rule.",
+              "children": [
+                "A large positive inner product indicates a stronger match, while a result near zero indicates little match. The result is a comparison score, not an output probability."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              15
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 16,
+          "c": [
+            {
+              "text": "**Inference** uses the current weights to compute an answer for an input signal. Inner products compare numerical patterns, and several stages turn those comparisons into an output.",
+              "children": []
+            },
+            {
+              "text": "**Learning** uses an input with a known identity to improve the weights. The network first performs inference, compares its answer with the target, and then changes the weights to reduce the error.",
+              "children": [
+                "**Stochastic gradient descent, SGD,** supplies the weight updates. Computing an answer and improving the weights are different operations, even though a learning step includes both."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Inference** uses the current weights to compute an answer for an input signal. Inner products compare numerical patterns, and several stages turn those comparisons into an output.",
+              "children": []
+            },
+            {
+              "text": "**Learning** uses an input with a known identity to improve the weights. The network first performs inference, compares its answer with the target, and then changes the weights to reduce the error.",
+              "children": [
+                "**Stochastic gradient descent, SGD,** supplies the weight updates. Computing an answer and improving the weights are different operations, even though a learning step includes both."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              16
+            ],
+            "transcriptLines": []
+          }
+        }
+      ]
+    },
+    "lecture10": {
+      "pages": [
+        {
+          "page": 1,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              1
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 2,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              2
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 3,
+          "c": [
+            {
+              "text": "A **neural network** receives numbers representing a signal and returns a **probability distribution** over possible identities.",
+              "children": [
+                "For a face, the input contains pixel values. For speech, the input can contain pressure values from the waveform. The input measurements are different from the possible output categories."
+              ]
+            },
+            {
+              "text": "Each output position belongs to one category, and the probabilities add up to **one**, or 100%.",
+              "children": [
+                "With vowels ordered read, rad, rude, Rud and rod, the largest probability in the example belongs to **rude**, the third vowel. The list means something only when its category order is known."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "A **neural network** receives numbers representing a signal and returns a **probability distribution** over possible identities.",
+              "children": [
+                "For a face, the input contains pixel values. For speech, the input can contain pressure values from the waveform. The input measurements are different from the possible output categories."
+              ]
+            },
+            {
+              "text": "Each output position belongs to one category, and the probabilities add up to **one**, or 100%.",
+              "children": [
+                "With vowels ordered read, rad, rude, Rud and rod, the largest probability in the example belongs to **rude**, the third vowel. The list means something only when its category order is known."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 4,
+          "c": [
+            {
+              "text": "A network’s **weights** are the numbers that carry its learned knowledge. The network combines an input **vector**, a list of signal values, with those weights to compute an output.",
+              "children": []
+            },
+            {
+              "text": "**Forward propagation** is the computation from input to output using the current weights. Random starting weights can give the wrong answer.",
+              "children": [
+                "For an input whose correct identity is Rud, the target puts a one at Rud’s position and zeros elsewhere. The difference between this target and the computed output gives the **loss**, or error."
+              ]
+            },
+            {
+              "text": "During **learning**, the weights change to reduce that error. Repeating prediction, comparison and adjustment with many known examples improves the network’s decisions.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "A network’s **weights** are the numbers that carry its learned knowledge. The network combines an input **vector**, a list of signal values, with those weights to compute an output.",
+              "children": []
+            },
+            {
+              "text": "**Forward propagation** is the computation from input to output using the current weights. Random starting weights can give the wrong answer.",
+              "children": [
+                "For an input whose correct identity is Rud, the target puts a one at Rud’s position and zeros elsewhere. The difference between this target and the computed output gives the **loss**, or error."
+              ]
+            },
+            {
+              "text": "During **learning**, the weights change to reduce that error. Repeating prediction, comparison and adjustment with many known examples improves the network’s decisions.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 5,
+          "c": [
+            {
+              "text": "**Inference** combines the input with the current weights to compute an output. **Learning** determines how those weights should change.",
+              "children": [
+                "A learning step must compute the current answer before comparing it with the correct answer. Inference is therefore part of learning, but computing an output by itself does not improve the weights."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "**Inference** combines the input with the current weights to compute an output. **Learning** determines how those weights should change.",
+              "children": [
+                "A learning step must compute the current answer before comparing it with the correct answer. Inference is therefore part of learning, but computing an output by itself does not improve the weights."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 6,
+          "c": [
+            {
+              "text": "An **activation** is the numerical signal associated with a unit. A **weight** controls how an incoming activation contributes to the receiving unit.",
+              "children": [
+                "Each connection has its own weight. The receiving unit multiplies each incoming activation by its weight and adds the results."
+              ]
+            },
+            {
+              "text": "This **weighted sum** is also called an **inner product**, **scalar product**, or **dot product**.",
+              "children": [
+                "The sign of the contribution depends on both the input and the weight. A negative input multiplied by a negative weight gives a positive contribution, while a positive input multiplied by a negative weight gives a negative contribution."
+              ]
+            },
+            {
+              "text": "The retinal drawing shows connected biological neurons. The signed numbers form an arithmetic model of selected connections rather than a claim that biological neurons literally contain those numbers.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "An **activation** is the numerical signal associated with a unit. A **weight** controls how an incoming activation contributes to the receiving unit.",
+              "children": [
+                "Each connection has its own weight. The receiving unit multiplies each incoming activation by its weight and adds the results."
+              ]
+            },
+            {
+              "text": "This **weighted sum** is also called an **inner product**, **scalar product**, or **dot product**.",
+              "children": [
+                "The sign of the contribution depends on both the input and the weight. A negative input multiplied by a negative weight gives a positive contribution, while a positive input multiplied by a negative weight gives a negative contribution."
+              ]
+            },
+            {
+              "text": "The retinal drawing shows connected biological neurons. The signed numbers form an arithmetic model of selected connections rather than a claim that biological neurons literally contain those numbers.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 7,
+          "c": [
+            {
+              "text": "Mathematical **neural-network models** express selected ideas about neurons as numerical operations. The historical examples show continuing attempts to describe neural processing using arithmetic.",
+              "children": [
+                "The connection is a modelling idea. An arithmetic operation can represent an aspect of neural activity even though numbers and biological tissue are physically different."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "Mathematical **neural-network models** express selected ideas about neurons as numerical operations. The historical examples show continuing attempts to describe neural processing using arithmetic.",
+              "children": [
+                "The connection is a modelling idea. An arithmetic operation can represent an aspect of neural activity even though numbers and biological tissue are physically different."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 8,
+          "c": [
+            {
+              "text": "One view treats modern AI and human thinking as fundamentally different because numerical calculations differ from brain chemistry and electrical activity. Another view treats AI as a history of attempts to model aspects of brain activity with arithmetic.",
+              "children": [
+                "These are competing **beliefs about the models**, rather than a demonstrated count of how many people hold each view. This material is **outside the exam**."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "One view treats modern AI and human thinking as fundamentally different because numerical calculations differ from brain chemistry and electrical activity. Another view treats AI as a history of attempts to model aspects of brain activity with arithmetic.",
+              "children": [
+                "These are competing **beliefs about the models**, rather than a demonstrated count of how many people hold each view. This material is **outside the exam**."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 9,
+          "c": [
+            {
+              "text": "A **multilayer perceptron** has an input layer, **hidden layers**, and an output layer. Hidden layers are the processing stages between the input and the final answer.",
+              "children": [
+                "Every unit in one layer connects to every unit in the next. Each connection has a weight that affects the receiving unit’s calculation."
+              ]
+            },
+            {
+              "text": "A hidden unit combines the previous layer’s activations through an **inner product**. Its result becomes a new activation.",
+              "children": [
+                "The activations in one hidden layer become the inputs to the next. **Forward propagation** repeats this process from the input toward the output."
+              ]
+            },
+            {
+              "text": "The output uses **softmax** to turn the final values into probabilities that add up to one. The category with the largest probability is the best-supported decision.",
+              "children": [
+                "Hidden activations can be negative in this example. Output probabilities cannot, because they describe how the network distributes its answer among the categories."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "A **multilayer perceptron** has an input layer, **hidden layers**, and an output layer. Hidden layers are the processing stages between the input and the final answer.",
+              "children": [
+                "Every unit in one layer connects to every unit in the next. Each connection has a weight that affects the receiving unit’s calculation."
+              ]
+            },
+            {
+              "text": "A hidden unit combines the previous layer’s activations through an **inner product**. Its result becomes a new activation.",
+              "children": [
+                "The activations in one hidden layer become the inputs to the next. **Forward propagation** repeats this process from the input toward the output."
+              ]
+            },
+            {
+              "text": "The output uses **softmax** to turn the final values into probabilities that add up to one. The category with the largest probability is the best-supported decision.",
+              "children": [
+                "Hidden activations can be negative in this example. Output probabilities cannot, because they describe how the network distributes its answer among the categories."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              9
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 10,
+          "c": [
+            {
+              "text": "The requested **activation** belongs to the second neuron in Hidden 1. To obtain it, pair each input value with the weight on its connection to that neuron.",
+              "children": [
+                "Multiply each pair and add the contributions. The result is the neuron’s **inner product**."
+              ]
+            },
+            {
+              "text": "Both the inputs and the weights matter. A changed input or a changed weight can change the contribution, its sign, and the final activation.",
+              "children": [
+                "The displayed answer is negative because the negative contributions outweigh the positive ones. This is still the same weighted-sum operation."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "The requested **activation** belongs to the second neuron in Hidden 1. To obtain it, pair each input value with the weight on its connection to that neuron.",
+              "children": [
+                "Multiply each pair and add the contributions. The result is the neuron’s **inner product**."
+              ]
+            },
+            {
+              "text": "Both the inputs and the weights matter. A changed input or a changed weight can change the contribution, its sign, and the final activation.",
+              "children": [
+                "The displayed answer is negative because the negative contributions outweigh the positive ones. This is still the same weighted-sum operation."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 11,
+          "c": [],
+          "d": [],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 12,
+          "c": [
+            {
+              "text": "**Training** begins with an input whose correct output is known. The **target** identifies the correct category by putting a one in its position and zeros in the other positions.",
+              "children": [
+                "Here the target identifies the sixth category. The computed output favors the fourth category instead, so the current answer disagrees with the target."
+              ]
+            },
+            {
+              "text": "The disagreement gives an **error**, or **loss**. **Backpropagation** works backward through the layers to determine how the weights contributed to that error.",
+              "children": [
+                "**Stochastic gradient descent, SGD,** uses this information to adjust the weights in a direction that reduces the loss."
+              ]
+            },
+            {
+              "text": "Prediction, comparison and adjustment repeat across many input–output pairs. **Inference** uses the current weights, while **learning** changes them.",
+              "children": []
+            }
+          ],
+          "d": [
+            {
+              "text": "**Training** begins with an input whose correct output is known. The **target** identifies the correct category by putting a one in its position and zeros in the other positions.",
+              "children": [
+                "Here the target identifies the sixth category. The computed output favors the fourth category instead, so the current answer disagrees with the target."
+              ]
+            },
+            {
+              "text": "The disagreement gives an **error**, or **loss**. **Backpropagation** works backward through the layers to determine how the weights contributed to that error.",
+              "children": [
+                "**Stochastic gradient descent, SGD,** uses this information to adjust the weights in a direction that reduces the loss."
+              ]
+            },
+            {
+              "text": "Prediction, comparison and adjustment repeat across many input–output pairs. **Inference** uses the current weights, while **learning** changes them.",
+              "children": []
+            }
+          ],
+          "evidence": {
+            "slides": [
+              12
+            ],
+            "transcriptLines": []
+          }
+        },
+        {
+          "page": 13,
+          "c": [
+            {
+              "text": "The average-estimation data contain a mistake. Most observations are much lower than **400**, the value identified as erroneous.",
+              "children": [
+                "Including that mistake pulls the average to about **100**. Without it, the average is about **80**. The numbers show how one bad observation can distort the quantity being learned."
+              ]
+            },
+            {
+              "text": "An update based on the mistaken value pulls the estimate toward it. **Learning from supplied data does not automatically correct errors in those data.**",
+              "children": [
+                "A small update limits how much a single observation changes the estimate, but it does not establish that the observation is valid."
+              ]
+            }
+          ],
+          "d": [
+            {
+              "text": "The average-estimation data contain a mistake. Most observations are much lower than **400**, the value identified as erroneous.",
+              "children": [
+                "Including that mistake pulls the average to about **100**. Without it, the average is about **80**. The numbers show how one bad observation can distort the quantity being learned."
+              ]
+            },
+            {
+              "text": "An update based on the mistaken value pulls the estimate toward it. **Learning from supplied data does not automatically correct errors in those data.**",
+              "children": [
+                "A small update limits how much a single observation changes the estimate, but it does not establish that the observation is valid."
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              13
+            ],
+            "transcriptLines": []
+          }
+        }
+      ]
+    }
+  }
+}
