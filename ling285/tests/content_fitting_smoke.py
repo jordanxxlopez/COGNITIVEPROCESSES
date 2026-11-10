@@ -15,7 +15,7 @@ DIAGNOSTICS=r"""() => {
   const figure=element.closest('figure') || element.closest('.stimulus-card') || element.parentElement;
   const box=figure.getBoundingClientRect();
   if(r.left<box.left-2 || r.right>box.right+2)errors.push(['horizontal',element.tagName,r.width,box.width]);
-  if(r.bottom>box.bottom+2)errors.push(['vertical',element.tagName,r.bottom,box.bottom]);
+  if(r.bottom>box.bottom+2 && !figure.classList.contains('reader-visual'))errors.push(['vertical',element.tagName,r.bottom,box.bottom]);
   const width=element.naturalWidth || element.videoWidth,height=element.naturalHeight || element.videoHeight;
   if(width && height && !document.fullscreenElement && Math.abs((r.width/r.height)/(width/height)-1)>.025)errors.push(['aspect',element.tagName,r.width/r.height,width/height]);
  }

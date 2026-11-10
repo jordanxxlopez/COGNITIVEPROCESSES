@@ -12664,7 +12664,9 @@ window.LING285_MODERN = {
   "b": "B · Focused teaching",
   "c": "C · Natural teaching",
   "follow": "Version 23 · C with following slides",
-  "v20": "Version 20 · Natural teaching transcript"
+  "v20": "Version 20 · Natural teaching transcript",
+  "original-c": "Original C · Version 23 Iskarous C with following slides",
+  "d": "D · Original C with teaching additions"
  },
  "code": [
   {
