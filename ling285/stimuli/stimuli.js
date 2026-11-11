@@ -12,5 +12,7 @@
  };
  // Preserve native keyboard seeking inside the expanded slide reader.
  document.addEventListener('keydown',e=>{if(e.target.closest?.('.stimulus-card') && /^(VIDEO|AUDIO)$/.test(e.target.tagName))e.stopPropagation();},true);
- document.addEventListener('play',e=>{if(!/^(VIDEO|AUDIO)$/.test(e.target.tagName))return;document.querySelectorAll('video,audio').forEach(m=>{if(m!==e.target)m.pause();});},true);
+ // Silent modern-workspace loops can coexist. Listening demonstrations still play one at a time.
+ const silentLoop=media=>media.dataset.silentLoop==='true' && media.loop && media.muted;
+ document.addEventListener('play',e=>{if(!/^(VIDEO|AUDIO)$/.test(e.target.tagName) || silentLoop(e.target))return;document.querySelectorAll('video,audio').forEach(m=>{if(m!==e.target && !silentLoop(m))m.pause();});},true);
 })();

@@ -9,6 +9,108 @@ function installModern() {
  FOLLOWING_SLIDE_VERSIONS.d='d';
  for(const id of ['original-c-v2','d-v2','notes-v7','original-c-v3','notes-v7-v2','notes-v8','notes-v9','notes-v9-1','notes-v10'])FOLLOWING_SLIDE_VERSIONS[id]=id;
  const modernEditionAvailable=id=>!['notes-v7','notes-v7-v2','notes-v8','notes-v9','notes-v9-1','notes-v10'].includes(id) || state.activeModule==='module2';
+ // These original Module II clips have no audio streams (see the retained media probe).
+ // Keep full source files and the existing playback controls; only visible clips auto-play.
+ const loopSourceFiles=new Set([
+  "assets/original/3a173c997457e2f0c60b.mp4",
+  "assets/original/e7a1853082e98dd26757.mp4",
+  "assets/original/57ff4733438cce3597cb.mp4",
+  "assets/original/6fdaa70e0bfab83a6d83.mp4",
+  "assets/original/a6ce5f4f318fd7141922.mp4",
+  "assets/original/ac3e753564fa139e2612.mp4",
+  "assets/original/4378fb47c97c7f4785f9.mp4",
+  "assets/original/50927605857bbe7450a9.mp4",
+  "assets/original/de37514880e11a8d6b49.mp4",
+  "assets/original/ba7bea1a3c6655bda52d.mp4",
+  "assets/original/781434531c44b6e3d6b9.mp4",
+  "assets/original/4362277e503aae5dbb25.mp4",
+  "assets/original/7bb6548efdc6fd9795ce.mp4",
+  "assets/original/e41d5b4a73a0502f48a9.mp4",
+  "assets/original/dbe01fd62c62e1105a6e.mp4",
+  "assets/original/6508c5d6040ceabb87cd.mp4",
+  "assets/original/59d8ba48f100587bc865.mp4",
+  "assets/original/f5bca6569a1c0d635d70.mp4",
+  "assets/original/88801b232cfb0afdf879.mp4",
+  "assets/original/fe0e0efd4f2f4285a9c4.mp4",
+  "assets/original/2e5c6ce1f26a5d35f06b.mp4",
+  "assets/original/d550120a3b028e60d8b0.mp4",
+  "assets/original/59b40e2a2a1391b296ce.mp4"
+].map(file=>new URL(file,document.baseURI).href));
+ const loopRecords=new WeakMap(),activeLoops=new Set();
+ const inPictureInPicture=video=>document.pictureInPictureElement===video || video.webkitPresentationMode==='picture-in-picture';
+ const canAutoPlay=(video,record)=>state.activeModule==='module2' && video.isConnected && ((record.visible && !document.hidden) || inPictureInPicture(video)) && !record.userPaused;
+ function pauseLoop(video,record){
+  if(!video.paused){record.automaticPauses++;video.pause();}
+ }
+ function playLoop(video,record){
+  if(!canAutoPlay(video,record) || record.pending)return;
+  let changed=false;
+  for(const source of video.querySelectorAll('source[data-src]')){
+   if(!source.getAttribute('src')){source.src=source.dataset.src;changed=true;}
+   // The base lazy loader and the play bar must not load the same source twice.
+   delete source.dataset.src;
+  }
+  if(changed)video.load();
+  record.pending=true;
+  video.play().catch(error=>{
+   // A source/layout transition can interrupt play; retry once the media is ready.
+   if(error.name==='AbortError')requestAnimationFrame(()=>{
+    if(video.readyState>=2)playLoop(video,record);
+   });
+  }).finally(()=>{record.pending=false;});
+ }
+ const loopWatcher=new IntersectionObserver(entries=>{
+  for(const entry of entries){
+   const video=entry.target,record=loopRecords.get(video);if(!record)continue;
+   record.visible=entry.isIntersecting && entry.intersectionRatio>0;
+   if(canAutoPlay(video,record))playLoop(video,record);
+   else pauseLoop(video,record);
+  }
+ },{threshold:[0,.01]});
+ function loopModuleVideos(){
+  for(const video of activeLoops)if(!video.isConnected){
+   pauseLoop(video,loopRecords.get(video));loopWatcher.unobserve(video);activeLoops.delete(video);
+  }
+  if(state.activeModule!=='module2')return;
+  for(const video of document.querySelectorAll('#content video,#readerDialog video')){
+   const source=video.querySelector('source');
+   const file=source?.getAttribute('src') || source?.dataset.src || video.getAttribute('src');
+   if(!file || !loopSourceFiles.has(new URL(file,document.baseURI).href))continue;
+   if(!loopRecords.has(video)){
+    const record={visible:false,userPaused:false,automaticPauses:0,pending:false};
+    loopRecords.set(video,record);
+    video.dataset.silentLoop='true';
+    video.loop=true;video.muted=true;video.defaultMuted=true;video.playsInline=true;
+    // The visibility observer owns starting playback, so preloading never starts a hidden clip.
+    video.autoplay=false;
+    video.addEventListener('pause',()=>{
+     if(record.automaticPauses)record.automaticPauses--;
+     else record.userPaused=true;
+    });
+    video.addEventListener('play',()=>{
+     record.userPaused=false;
+     if(!canAutoPlay(video,record))pauseLoop(video,record);
+    });
+    video.addEventListener('canplay',()=>playLoop(video,record));
+    for(const event of ['enterpictureinpicture','leavepictureinpicture','webkitpresentationmodechanged'])video.addEventListener(event,()=>{
+     if(canAutoPlay(video,record))playLoop(video,record);else pauseLoop(video,record);
+    });
+   }
+   if(!activeLoops.has(video)){activeLoops.add(video);loopWatcher.observe(video);}
+  }
+ }
+ // Reader navigation pauses are automatic, not a request to disable future playback.
+ const pauseStudioMedia=pauseMedia;
+ pauseMedia=function(){for(const video of activeLoops)pauseLoop(video,loopRecords.get(video));pauseStudioMedia();};
+ let loopScheduled=false;
+ const scheduleLoops=()=>{if(!loopScheduled){loopScheduled=true;requestAnimationFrame(()=>{loopScheduled=false;loopModuleVideos();});}};
+ new MutationObserver(changes=>{
+  if(changes.some(change=>!change.target.closest?.('.fit-player-controls')))scheduleLoops();
+ }).observe(document.body,{childList:true,subtree:true});
+ document.addEventListener('visibilitychange',()=>{
+  for(const video of activeLoops){const record=loopRecords.get(video);if(canAutoPlay(video,record))playLoop(video,record);else pauseLoop(video,record);}
+ });
+ scheduleLoops();
  effectiveVersion=function(){return modernEditionAvailable(state.transcriptVersion)&&transcriptEditions.has(state.transcriptVersion)?state.transcriptVersion:transcriptEditions.has('v20')?'v20':[...transcriptEditions.keys()][0] || 'v1';};
  selectableTranscriptVersions=function(){return Object.keys(pack.editions).filter(modernEditionAvailable);};
  transcriptSelector=function(){return `<label class="transcript-version"><span>Teaching style</span><select data-transcript-version aria-label="Transcript version">${Object.entries(pack.editions).map(([id,label])=>`<option value="${id}" ${effectiveVersion()===id?'selected':''} ${transcriptEditions.has(id)&&modernEditionAvailable(id)?'':'disabled'}>${esc(label)}</option>`).join('')}</select></label>`;};

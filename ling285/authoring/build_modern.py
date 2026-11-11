@@ -133,9 +133,10 @@ def build():
     html=re.sub(r'\s*<a id="modernWorkspaceEntry".*?</a>','',html)
     html=html.replace('<a href="./" class="brand">','<a href="modern/" class="brand">')
     html=re.sub(r'<script src="app\.js[^\"]*" defer></script>', '<script src="modern/content.js?v=1" defer></script><script src="modern/app.js?v=1" defer></script>',html)
+    html=html.replace('stimuli/stimuli.js?v=1','stimuli/stimuli.js?v=silent-loops-1')
     assert 'src="modern/app.js' in html
-    html=html.replace('modern/app.js?v=1','modern/app.js?v=notes-v10-1')
-    html=html.replace('modern/content.js?v=1','modern/content.js?v=notes-v10-1')
+    html=html.replace('modern/app.js?v=1','modern/app.js?v=notes-v10-loop-6')
+    html=html.replace('modern/content.js?v=1','modern/content.js?v=notes-v10-loop-6')
     html=html.replace('<div class="nav-label" id="workspaceModuleLabel">','<a class="workspace-switch" href="./">Open original workspace</a><div class="nav-label" id="workspaceModuleLabel">')
     (OUT/'index.html').write_text(html)
     app=(ROOT/'app.js').read_text()
