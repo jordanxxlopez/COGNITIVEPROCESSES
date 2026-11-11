@@ -34,7 +34,8 @@ function installModern() {
   "assets/original/fe0e0efd4f2f4285a9c4.mp4",
   "assets/original/2e5c6ce1f26a5d35f06b.mp4",
   "assets/original/d550120a3b028e60d8b0.mp4",
-  "assets/original/59b40e2a2a1391b296ce.mp4"
+  "assets/original/59b40e2a2a1391b296ce.mp4",
+  "stimuli/clips/model-yearago.mp4"
 ].map(file=>new URL(file,document.baseURI).href));
  const loopRecords=new WeakMap(),activeLoops=new Set();
  const inPictureInPicture=video=>document.pictureInPictureElement===video || video.webkitPresentationMode==='picture-in-picture';

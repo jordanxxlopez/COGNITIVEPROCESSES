@@ -277,8 +277,8 @@ test('Version 7 Version 2 keeps all eleven existing choices and their course mat
   }
   const entry = fs.readFileSync(path.join(root, 'modern/index.html'), 'utf8')
     .replaceAll('?v=notes-v8-1', '?v=notes-v7-v2-1')
-    .replaceAll('?v=notes-v10-loop-10', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-9', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-8', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-7', '?v=notes-v7-v2-1')
-    .replaceAll('?v=silent-loops-1', '?v=1')
+    .replaceAll('?v=notes-v10-loop-11', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-10', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-9', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-8', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-7', '?v=notes-v7-v2-1')
+    .replaceAll('?v=silent-loops-1', '?v=1').replaceAll('?v=yearago-1', '?v=1')
     .replaceAll('?v=notes-v10-1', '?v=notes-v7-v2-1')
     .replaceAll('?v=notes-v9-1-1', '?v=notes-v7-v2-1')
     .replaceAll('?v=notes-v9-1', '?v=notes-v7-v2-1')
