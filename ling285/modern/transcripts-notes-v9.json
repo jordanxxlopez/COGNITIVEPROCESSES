@@ -1823,7 +1823,20 @@
           "page": 24,
           "title": "Reflection prompt",
           "kind": "logistics",
-          "teaching": []
+          "teaching": [
+            {
+              "text": "A short question like **Where were you a year ago?** puts all of the constriction reasoning to work at once. Each sound squeezes the air at a different place, so the formants move up and down continuously instead of sitting at fixed values.",
+              "children": [
+                "When the tongue makes an **/i/**-like squeeze near the front of the mouth, **F1 goes down and F2 goes up**, because that spot is massy in Mode 1 and springy in Mode 2.",
+                "When the lips round for **you**, **F1 and F2 both go down**, because the free end is massy in every mode.",
+                "When the tongue moves back and down, as in an **/a/**-like sound, **F1 rises and F2 falls**, because that spot is springy in Mode 1 and massy in Mode 2."
+              ]
+            },
+            {
+              "text": "**Speech is a continuous series of constrictions, not a list of separate vowels**, so the frequencies of the air in the vocal tract are always changing. The same principles of masses and springs predict which way each formant moves at every moment.",
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -2225,7 +2238,19 @@
           "page": 24,
           "title": "Reflection prompt",
           "kind": "logistics",
-          "teaching": []
+          "teaching": [
+            {
+              "text": "**Where were you a year ago?** is a good sentence for seeing source and filter working together over time. The vocal folds, as the source, keep producing harmonics, while the vocal tract, as the filter, keeps changing shape, so the envelope over the harmonics changes from moment to moment.",
+              "children": [
+                "On a spectrogram, these changes show up as **dark bands that rise and fall**, since the dark bands are the formants and darkness shows amplitude.",
+                "Where the vowel sounds like **/i/**, the two lowest bands spread far apart, and during **you**, all the bands drop because the lips are rounded."
+              ]
+            },
+            {
+              "text": "**A spectrum shows one frozen instant, but a spectrogram shows how the formants move**, and real speech is all movement. Reading a sentence like this one means following each band and asking what constriction moved it.",
+              "children": []
+            }
+          ]
         },
         {
           "id": "lecture13-p025",
@@ -2556,11 +2581,19 @@
           "kind": "logistics",
           "teaching": [
             {
-              "text": "In a recording of **Where were you a year ago?**, the formants never sit still.",
+              "text": "Saying **Where were you a year ago?** brings every idea about speech together in one short sentence. The vocal folds supply harmonics the whole time, and every new sound changes where the tongue and lips squeeze the air, so the formants keep moving from one moment to the next.",
               "children": [
-                "Where the vowel sounds like **/i/**, F2 rises high and F1 stays low, because the air is squeezed where Mode 2 is springy and Mode 1 is massy.",
-                "During **you**, the formants drop, since rounding the lips lowers all of them.",
-                "**All the formants are constantly changing during speech.**"
+                "On a spectrogram of the sentence, **time** runs along the bottom, **frequency** runs up, and the **dark bands are the formants**.",
+                "Where the vowel sounds like **/i/**, **F2 rises high and F1 stays low**, because the squeeze lands where Mode 2 is springy and Mode 1 is massy.",
+                "During **you**, the formants **drop**, because rounding the lips adds mass right where the air moves the most, and that lowers all of them.",
+                "Through **a year ago**, F2 goes up and then down again as the tongue moves from one vowel to the next."
+              ]
+            },
+            {
+              "text": "**All the formants are constantly changing during speech, so speech is not a string of frozen vowels.** Every rise and fall of a formant can be predicted with the same mass and spring reasoning, by asking where the constriction is and whether the air there is moving or compressing in each mode.",
+              "children": [
+                "This constant change is why a network that sees two formants from one frozen moment cannot understand real speech, and why speech recognition needs systems that take in whole stretches of sound over time.",
+                "In plain terms, a spectrogram of a real sentence is a moving record of the tongue and lips, and reading it means following the dark bands as they rise and fall."
               ]
             }
           ]
@@ -3280,6 +3313,8 @@
             {
               "text": "**The chief insight behind all of this is Gestalt completion.** People see a triangle in the Gestalt figure even though none is drawn, and training a system only to **predict the missing thing** turns out to emulate human cognition.",
               "children": [
+                "The same idea is behind the **cloze procedure**, a test introduced by **Wilson Taylor** in **1953**, in which words are deleted from a text and people fill them in. The name comes from **closure**, the Gestalt term for completing a familiar pattern that is not quite finished, such as seeing a broken circle as whole.",
+                "**Knowledge can be tested by asking someone to complete a sequence, and for AI, completion is all that knowledge is.** An LLM predicting the next word is playing a cloze game over and over.",
                 "Underneath everything, **inference is inner products**, and **learning is stochastic gradient descent plus dynamic programming**."
               ]
             }
@@ -3715,12 +3750,12 @@
   "origin": {
     "authoringFiles": {
       "authoring/notes-v9/11.md": "7b7229298dc41c7b35772160023355c72c2552c61383c234902c800b33de6c78",
-      "authoring/notes-v9/12.md": "3042ee4a5aca52d35f9db9353ec37ab90c84bceb79cf4627497d093e196c9006",
-      "authoring/notes-v9/13.md": "e443bfe6623c575fdb6659922bdf8657f6ae5c88c80ddaca2753a5ffde3235f4",
-      "authoring/notes-v9/14.md": "93babd03f8eca68df4c841df6a28149e1ecd75910c7c0809c8fd3a96539592bb",
+      "authoring/notes-v9/12.md": "364d657c26d44b17c474af7f89afb020b258098d83ec6e983a6b168317778794",
+      "authoring/notes-v9/13.md": "618d298548e0a0b1503a5de7500259eae9322bb996378979056bd9e15168db45",
+      "authoring/notes-v9/14.md": "cfc55af7dd36bf2c9d19e0f8fe80c03d14633cd71daa30f82f7ab82574e43022",
       "authoring/notes-v9/15.md": "64cd489a4885dc074bcbec0b96a133709a483465a06a5a763ea14c9eb951a414",
       "authoring/notes-v9/16.md": "f8c6de5bd600362e660032aa349fe3c45c8a5b970b39af4c3cb600d57ebca150",
-      "authoring/notes-v9/17.md": "2cbbd6602baba065f2b062cd04f9e576659235e0979658e6bbd518d3b53b8530",
+      "authoring/notes-v9/17.md": "f264d25514afc0fb37e04de840127a97b1a3c75187dc935a6f408e54e9ffce90",
       "authoring/notes-v9/18.md": "4f91f8474f80676a7399c8d32b26fbb5b7ad0cf4ffd71010c635328ff47badea"
     },
     "basedOn": "Version 8 notes, original slides, class transcripts Oct 6 to Nov 10, Exam 2 review and Homework 5",
@@ -3731,12 +3766,12 @@
   "guidance": "Your notes rewritten so every slide in Lectures 11–18 has its own explanation, in the Version 8 style.",
   "metrics": {
     "sourcePages": 286,
-    "instructionalPages": 117,
-    "words": 15618,
-    "medianWords": 120,
+    "instructionalPages": 119,
+    "words": 16206,
+    "medianWords": 123,
     "mainBulletCounts": {
-      "1": 41,
-      "2": 51,
+      "1": 40,
+      "2": 54,
       "3": 21,
       "4": 3,
       "5": 1

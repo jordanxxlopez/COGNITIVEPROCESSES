@@ -3,7 +3,7 @@ import re,sys,json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 BANNED=re.compile(r"\b(slides?|the lecture|in this lecture|the professor|he said|she said|this shows|shows that|illustrat\w*|demonstrat\w*|let.s|remember that|need not|lawful|the key (?:point|finding|comparison)|makes? this concrete|the (?:real )?question is|on this plot|defined below|connects back|in class|earlier|later in|next we|as you can see|turns to|we now|moving on|takeaway|note that|this means|pictured|pictures|picturing|(?:the|a|this|their|that)\s+(?:\w+\s+)?picture)\b",re.I)
-EMPTY_OK={11:{1},12:{1,17,24},13:{1,24,26},14:{1},15:{1,5},16:{1,6},17:{1},18:{1}}
+EMPTY_OK={11:{1},12:{1,17},13:{1,26},14:{1},15:{1,5},16:{1,6},17:{1},18:{1}}
 def parse(path):
   pages={};cur=None
   for ln in path.read_text().splitlines():
