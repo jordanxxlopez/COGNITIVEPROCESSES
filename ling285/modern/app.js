@@ -904,8 +904,8 @@ function installModern() {
  FOLLOWING_SLIDE_VERSIONS.follow='c';
  FOLLOWING_SLIDE_VERSIONS['original-c']='original-c';
  FOLLOWING_SLIDE_VERSIONS.d='d';
- for(const id of ['original-c-v2','d-v2','notes-v7','original-c-v3','notes-v7-v2','notes-v8','notes-v8-1','notes-v9','notes-v9-1','notes-v10'])FOLLOWING_SLIDE_VERSIONS[id]=id;
- const modernEditionAvailable=id=>!['notes-v7','notes-v7-v2','notes-v8','notes-v8-1','notes-v9','notes-v9-1','notes-v10'].includes(id) || state.activeModule==='module2';
+ for(const id of ['original-c-v2','d-v2','notes-v7','original-c-v3','notes-v7-v2','notes-v8','notes-v8-1','notes-v9','notes-v9-1','notes-v9-2','notes-v10'])FOLLOWING_SLIDE_VERSIONS[id]=id;
+ const modernEditionAvailable=id=>!['notes-v7','notes-v7-v2','notes-v8','notes-v8-1','notes-v9','notes-v9-1','notes-v9-2','notes-v10'].includes(id) || state.activeModule==='module2';
  // These original Module II clips have no audio streams (see the retained media probe).
  // Keep full source files and the existing playback controls; only visible clips auto-play.
  const loopSourceFiles=new Set([
