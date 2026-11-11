@@ -26,11 +26,14 @@ from visual_meaning import build_visual_meaning
 from notes_v7_v2 import build_notes_v7_v2
 from notes_v8 import build_notes_v8
 from notes_v8_1 import build_notes_v8_1
+from notes_v8_2 import build_notes_v8_2
 from notes_v9 import build_notes_v9
 from notes_v9_1 import build_notes_v9_1
 from notes_v9_2 import build_notes_v9_2
 from notes_v9_3 import build_notes_v9_3
+from notes_v9_4 import build_notes_v9_4
 from notes_v10 import build_notes_v10
+from notes_v10_1 import build_notes_v10_1
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'modern'
@@ -122,11 +125,14 @@ def build():
     editions.update(build_notes_v7_v2(ROOT,OUT))
     editions.update(build_notes_v8(ROOT,OUT))
     editions.update(build_notes_v8_1(ROOT,OUT))
+    editions.update(build_notes_v8_2(ROOT,OUT))
     editions.update(build_notes_v9(ROOT,OUT))
     editions.update(build_notes_v9_1(ROOT,OUT))
     editions.update(build_notes_v9_2(ROOT,OUT))
     editions.update(build_notes_v9_3(ROOT,OUT))
+    editions.update(build_notes_v9_4(ROOT,OUT))
     editions.update(build_notes_v10(ROOT,OUT))
+    editions.update(build_notes_v10_1(ROOT,OUT))
     pack=dict(revision='2026-11-modern-1',concepts=CONCEPTS,guides=GUIDES,model=model,asked=ASK,qa=qa,pageConcepts=MAP,cards=CARDS,contrasts=CONTRASTS,hard=HARD,review=REVIEW,core=CORE,connections=CONNECTIONS,editions=editions,code=CODE,figures=FIGURES,questions=questions,writing=writing,summaries=SUMMARIES,readings=READINGS,coverage=coverage,uploads=uploads)
     (OUT/'content.js').write_text('window.LING285_MODERN = '+json.dumps(pack,ensure_ascii=False,indent=1)+';\n')
     html=(ROOT/'index.html').read_text().replace('<head>','<head>\n  <base href="../">')
@@ -142,8 +148,8 @@ def build():
     html=html.replace('stimuli/stimuli.js?v=1','stimuli/stimuli.js?v=silent-loops-1')
     html=html.replace('stimuli/manifest.js?v=1','stimuli/manifest.js?v=yearago-1')
     assert 'src="modern/app.js' in html
-    html=html.replace('modern/app.js?v=1','modern/app.js?v=notes-v10-loop-11')
-    html=html.replace('modern/content.js?v=1','modern/content.js?v=notes-v10-loop-11')
+    html=html.replace('modern/app.js?v=1','modern/app.js?v=notes-v10-loop-12')
+    html=html.replace('modern/content.js?v=1','modern/content.js?v=notes-v10-loop-12')
     html=html.replace('<div class="nav-label" id="workspaceModuleLabel">','<a class="workspace-switch" href="./">Open original workspace</a><div class="nav-label" id="workspaceModuleLabel">')
     (OUT/'index.html').write_text(html)
     app=(ROOT/'app.js').read_text()

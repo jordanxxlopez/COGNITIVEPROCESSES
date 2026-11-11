@@ -97,7 +97,7 @@ def build_notes_v8(root, out):
                            revision='2026-11-user-pdf-notes-8', version='8')
 
 
-def build_pdf_notes(root, out, edition, label, pdf, src_dir, section_slides, revision, version):
+def build_pdf_notes(root, out, edition, label, pdf, src_dir, section_slides, revision, version, wording=None):
     base_path = out / 'transcripts-notes-v7.json'
     base = json.loads(base_path.read_text())
     payload = deepcopy(base)
@@ -134,14 +134,14 @@ def build_pdf_notes(root, out, edition, label, pdf, src_dir, section_slides, rev
             check_blocks(s['teaching'], f'{edition}:{s["id"]}')
     payload.update(id=edition, label=label, revision=revision,
                    availableModules=['module2'],
-                   origin=dict(authoringFiles=sources, pdf=pdf, pdfSha256=digest(root / pdf),
-                               wording=f'User-authored Version {version} notes retained word for word, with bold emphasis.',
+                   origin=dict(authoringFiles=sources, pdf=pdf, pdfSha256=digest(root / pdf) if pdf else None,
+                               wording=wording or f'User-authored Version {version} notes retained word for word, with bold emphasis.',
                                followingSlides=True, provenance=f'modern/{edition}-provenance.json'),
                    guidance=f'Your Version {version} notes, placed beside the original slides for Lectures 11–18.')
     payload['metrics'] = metrics(payload['collections'])
     dump(out / f'transcripts-{edition}.json', payload)
     dump(out / f'{edition}-provenance.json', dict(
-        edition=edition, label=label, authoringFiles=sources, pdf=pdf, pdfSha256=digest(root / pdf),
+        edition=edition, label=label, authoringFiles=sources, pdf=pdf, pdfSha256=digest(root / pdf) if pdf else None,
         baseLayout='modern/transcripts-notes-v7.json', baseLayoutSha256=digest(base_path),
         bullets=len(assignments), assignments=assignments,
         preservation=dict(wordsUnchanged=True, eachBulletPlacedOnce=True,

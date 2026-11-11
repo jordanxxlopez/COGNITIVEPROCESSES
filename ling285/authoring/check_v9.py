@@ -17,7 +17,9 @@ def parse(path):
   return pages
 if __name__=='__main__':
   data=json.load(open(ROOT/'data.json'))
-  for f in sys.argv[1:]:
+  LABELS='--labels' in sys.argv
+  LABEL=re.compile(r"^[A-Za-z0-9/' ().,-]{1,48}: (?=[A-Z0-9/\"])")
+  for f in [a for a in sys.argv[1:] if not a.startswith('--')]:
     n=int(Path(f).stem);pages=parse(Path(f));prob=[]
     slides=[s['page'] for s in next(c for c in data['collections'] if c['id']==f'lecture{n}')['sections']]
     missing=[p for p in slides if p not in pages and p not in EMPTY_OK[n]]
@@ -28,7 +30,9 @@ if __name__=='__main__':
       for b in blocks:
         for t in [b['text'],*b['children']]:
           plain=t.replace('**','');words+=len(plain.split())
-          if re.search(r'[:;→—–=×]',plain):prob.append(('punct',p,plain[:80]))
+          body=LABEL.sub('',plain,count=1) if LABELS else plain
+          if re.search(r'[:;→—–=×]',body):prob.append(('punct',p,plain[:80]))
+          if LABELS and re.search(r'squeez',plain,re.I):prob.append(('casual:squeeze',p,plain[:80]))
           m=BANNED.search(plain)
           if m:prob.append(('banned:'+m.group(),p,plain[:80]))
           for s in re.split(r'(?<=[.!?])\s+(?=[A-Z"(])',plain):

@@ -12674,11 +12674,14 @@ window.LING285_MODERN = {
   "notes-v7-v2": "Version 7 · Version 2",
   "notes-v8": "Version 8 · Your PDF notes · Lectures 11–18",
   "notes-v8-1": "Version 8.1 · Your PDF notes with cloze and year-ago · Lectures 11–18",
+  "notes-v8-2": "Version 8.2 · PDF notes, clear labeled wording · Lectures 11–18",
   "notes-v9": "Version 9 · Slide-by-slide notes · Lectures 11–18",
   "notes-v9-1": "Version 9.1 · Full slide-by-slide notes · Lectures 11–18",
   "notes-v9-2": "Version 9.2 · Full slide-by-slide notes in plain wording · Lectures 11–18",
   "notes-v9-3": "Version 9.3 · Full slide-by-slide notes, clearest wording · Lectures 11–18",
-  "notes-v10": "Version 10 · Neurodivergent-friendly notes · Lectures 11–18"
+  "notes-v9-4": "Version 9.4 · Slide-by-slide notes, clear labeled wording · Lectures 11–18",
+  "notes-v10": "Version 10 · Neurodivergent-friendly notes · Lectures 11–18",
+  "notes-v10-1": "Version 10.1 · Neurodivergent-friendly notes, clear labeled wording · Lectures 11–18"
  },
  "code": [
   {
