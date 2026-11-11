@@ -986,7 +986,8 @@ function installModern() {
     });
     video.addEventListener('play',()=>{
      record.userPaused=false;
-     if(!canAutoPlay(video,record))pauseLoop(video,record);
+     // An explicit Play click still works when only the controls are in view.
+     if(record.pending && !canAutoPlay(video,record))pauseLoop(video,record);
     });
     video.addEventListener('canplay',()=>playLoop(video,record));
     for(const event of ['enterpictureinpicture','leavepictureinpicture','webkitpresentationmodechanged'])video.addEventListener(event,()=>{

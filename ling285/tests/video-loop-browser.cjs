@@ -224,6 +224,30 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
       await checkControls(selector);
       mark(label+' remains unchanged');
     }
+    // At phone width, the controls can remain visible after the video is
+    // scrolled above its independently scrolling visual pane.
+    await page.setViewport({width:319,height:898});
+    await page.goto(base+'/ling285/modern/?view=collection&lecture=lecture12&module=module2',{waitUntil:'networkidle2'});
+    await page.waitForSelector('[data-reader="lecture"][data-expanded="false"]');
+    if(!await page.$eval('body',body=>body.classList.contains('side-closed')))
+      await page.click('#sidebar [data-action="sidebar"]');
+    await page.click('[data-reader="lecture"][data-expanded="false"]');
+    await page.select('.inline-reader #readerSelect','5');
+    const narrow=source('.inline-reader');
+    await scrollTo(narrow);await playing(narrow);
+    await page.$eval(narrow,video=>{
+      const pane=video.closest('.reader-visual');
+      pane.scrollTop+=video.getBoundingClientRect().bottom-pane.getBoundingClientRect().top+3;
+    });
+    await wait(s=>document.querySelector(s).paused,narrow);
+    assert(await page.$eval(narrow,video=>video.getBoundingClientRect().bottom<=video.closest('.reader-visual').getBoundingClientRect().top+1));
+    await page.click(control(narrow,'play'));
+    const narrowTime=(await playing(narrow)).time;
+    await wait((s,time)=>{const video=document.querySelector(s);return !video.paused && video.currentTime>time+0.5;},narrow,narrowTime);
+    await page.click(control(narrow,'play'));
+    await wait(s=>document.querySelector(s).paused,narrow);
+    await unchanged(narrow,(await state(narrow)).time);
+    mark('Narrow reader Play and Pause remain usable when the video scrolls above its controls');
     assert.deepEqual(errors,[], 'Unexpected browser exceptions');
     console.log(JSON.stringify({passed:true,browser:await browser.version(),checks,skipped},null,2));
   } catch (error) {
