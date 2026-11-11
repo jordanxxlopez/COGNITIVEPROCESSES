@@ -1,0 +1,2013 @@
+{
+  "collections": {
+    "lecture15": {
+      "pages": [
+        {
+          "page": 1,
+          "teaching": [],
+          "coverage": [],
+          "evidence": {
+            "slides": [
+              1
+            ],
+            "transcriptLines": [],
+            "pdfPages": []
+          }
+        },
+        {
+          "page": 2,
+          "teaching": [
+            {
+              "text": "A **neural network** processes numerical inputs to make a decision. This vowel recognizer receives **F1 and F2**, the first two vocal-tract resonances measured in **hertz**, and chooses among the vowels in **done, dune, dean, Don and Dan**.",
+              "children": [
+                "The two input neurons receive one recording’s measurements. Three **hidden layers** process them between the input and the five output neurons, one for each vowel alternative.",
+                "The diagram’s **2 → 3 → 2 → 4 → 5** sizes count neurons in successive layers. These counts describe the network’s structure, not the activation value inside a neuron."
+              ]
+            },
+            {
+              "text": "The network is **fully connected**, meaning every neuron connects to every neuron in the next layer. Each connection has a **weight**, often written **W**, that controls its contribution to the receiving neuron.",
+              "children": [
+                "The weights hold the network’s learned knowledge. Their signs and **magnitudes**, their sizes apart from the sign, determine how incoming values combine.",
+                "The weights leaving F1 and F2 are small because the formants are large values in hertz. Small weights can turn those measurements into more modest hidden-layer values. The illustrated weights stay fixed while the network produces an answer."
+              ]
+            },
+            {
+              "text": "The **architecture** is the arrangement of layers and neurons. Its useful size is not known just by naming the task.",
+              "children": [
+                "Different layer counts and widths can be tested by how well the network recognizes vowels. Adding processing units gives more adjustable connections; testing determines whether the change helps."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Two formants from one recording map to five vowel alternatives; hidden-layer roles and widths",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Fully connected architecture and signed connection weights",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Weights hold learned knowledge and stay fixed during inference",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Small initial-layer weights match the large scale of formant inputs",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Architecture is chosen by trying layer/neuron arrangements and checking decisions",
+              "source": "spoken",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              2
+            ],
+            "transcriptLines": [
+              [
+                2970,
+                2998
+              ],
+              [
+                3128,
+                3147
+              ]
+            ],
+            "pdfPages": [
+              33
+            ]
+          }
+        },
+        {
+          "page": 3,
+          "teaching": [
+            {
+              "text": "**Forward propagation** carries an input through the layers to an answer. Each neuron computes an **inner product**, multiplying incoming values by their connection weights and adding the products.",
+              "children": [
+                "The example input is **F1 = 320 Hz** and **F2 = 2,000 Hz**, a low-F1, high-F2 vowel. In **w₁F1 + w₂F2**, w₁ and w₂ name the two weights entering the top hidden neuron.",
+                "The F1 contribution is positive and the F2 contribution is negative. Together they produce the displayed **−0.4 activation**. An activation is the neuron’s current response, shown inside its circle.",
+                "The number **−0.4 also occurs on a connection**. There it is a weight. Position distinguishes a neuron’s response from a connection’s multiplying factor."
+              ]
+            },
+            {
+              "text": "This illustrated network has **no biases**, which would be extra constants added to the sums, and no hidden activation functions. Each hidden neuron passes its **linear activation**, its plain weighted sum, to the next layer.",
+              "children": [
+                "One layer’s activations become the next layer’s inputs. A change in an early response therefore affects the later calculations, even while their weights remain fixed.",
+                "Making an answer using the current weights is **inference**. The essential operation here is repeated multiplication and addition, rather than a different rule for each hidden neuron.",
+                "The arithmetic is a **model of brain processing**. Real neurons use **chemical and electrical activity**; the network represents their influence through numbers, addition and multiplication."
+              ]
+            },
+            {
+              "text": "The output layer first produces **scores**, also called **logits**. **Softmax** converts those scores together into a **probability distribution** over the five vowels.",
+              "children": [
+                "In the displayed notation, **zᵢ** is one vowel’s raw score and **pᵢ** is its probability. The index i selects a vowel, and **Σ** means to add across the alternatives.",
+                "The probabilities run from zero to one and add up to one. A percentage expresses the same value on a zero-to-100 scale. A higher score gives a higher probability; raising one alternative’s score reduces the others’ shares.",
+                "The largest probability is **55.7% for done**, so the network chooses done. A probability describes confidence in a vowel category, not a formant frequency."
+              ]
+            },
+            {
+              "text": "**Setting selected connection weights to zero** removes their contributions from the model. Comparing recognition before and after that change reveals how the removed processing affected the decision.",
+              "children": [
+                "Human observations of perception after loss of particular brain functions can help determine how the network model is built. The model can then test ideas about how remaining processing might compensate.",
+                "Human evidence can improve the model, while controlled changes to the model can help investigate the roles of different processing parts."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Forward propagation and inner products in the fixed illustrative network",
+              "source": "slide",
+              "blocks": [
+                0,
+                1
+              ]
+            },
+            {
+              "idea": "Weight labels versus activation values, including the repeated −0.4",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "No biases and linear hidden responses",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Inference uses learned numerical weights and arithmetic",
+              "source": "spoken",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Logits, softmax, probabilities, normalization and the done decision",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Connection removal and the two-way relation between human evidence and network modeling",
+              "source": "spoken",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "Simple numerical operations model chemical and electrical processing in the brain",
+              "source": "spoken",
+              "blocks": [
+                1
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": [
+              [
+                2980,
+                3035
+              ],
+              [
+                3095,
+                3133
+              ],
+              [
+                3240,
+                3248
+              ],
+              [
+                3020,
+                3055
+              ]
+            ],
+            "pdfPages": [
+              33,
+              34
+            ]
+          }
+        },
+        {
+          "page": 4,
+          "teaching": [
+            {
+              "text": "The top neuron in the last hidden layer has a **positive activation, 1.57**, and its connection into **done** has a **positive weight, 0.1**. Their product contributes positively to done’s output score.",
+              "children": [
+                "If that activation increases while the weight stays fixed, its positive contribution becomes larger. Done’s score rises, so its probability rises.",
+                "If the weight increases while the activation stays fixed, the contribution also becomes larger. The same probability therefore rises for either of these changes."
+              ]
+            },
+            {
+              "text": "The **activation** is the value passed onward, while the **weight** scales that value at the receiving neuron. The two changes affect the same positive contribution through these different roles.",
+              "children": []
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Positive final-hidden activation and positive weight both contribute to done",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Increasing the marked activation or weight raises done probability",
+              "source": "spoken",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Reason from inner-product signs and quantities rather than worked multiplication",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": [
+              [
+                3189,
+                3215
+              ]
+            ],
+            "pdfPages": [
+              35
+            ]
+          }
+        },
+        {
+          "page": 5,
+          "teaching": [],
+          "coverage": [],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": [],
+            "pdfPages": []
+          }
+        },
+        {
+          "page": 6,
+          "teaching": [
+            {
+              "text": "The **computed output** is the network’s prediction. The **desired output**, or **target**, records the vowel that produced the formants. Here the network favors done, but the recording is **/i/, as in dean**.",
+              "children": [
+                "A **one-hot encoding** puts one in the dean position and zero in each other vowel position. It identifies the correct answer for this recording.",
+                "Random initial weights do not yet capture the vowel patterns. Training supplies the known answer so that these weights can improve."
+              ]
+            },
+            {
+              "text": "The **loss** measures the mismatch between computed and desired output. The displayed **cross-entropy loss** is large when the correct vowel receives little probability.",
+              "children": [
+                "Learning should increase dean’s probability and reduce the probabilities assigned to the wrong vowels. Changing the weights changes the weighted sums, which changes those probabilities.",
+                "The target stays fixed. It is the network’s knowledge, stored in its weights, that is adjusted to better match the recording’s label."
+              ]
+            },
+            {
+              "text": "**Backpropagation** calculates how the loss depends on the weights, starting at the output and working toward the earlier layers. **Stochastic gradient descent**, or **SGD**, uses that calculation to make gradual weight adjustments.",
+              "children": [
+                "In **W ← W − η ∂L/∂W**, **W** is a weight, **L** is the loss and **η** is the learning rate, which sets the update size. The arrow means to replace W with its adjusted value.",
+                "The **gradient**, written **∂L/∂W**, says how a small increase in that weight would change the loss. The subtraction moves the weight in the direction that reduces the loss.",
+                "The forward-pass activations remain available for the backward calculation. A new forward pass uses the updated weights to calculate a new prediction."
+              ]
+            },
+            {
+              "text": "The useful direction can differ from connection to connection. A weight from a **positive activation into dean** can increase to support the correct answer, while a positive contribution into **done** should decrease.",
+              "children": [
+                "With a **negative incoming activation**, decreasing the weight into dean increases that input’s contribution to dean’s score. Supporting the correct answer therefore does not require every weight to increase.",
+                "The illustrated input-layer weights change only slightly. Their scale and updates reflect the large formant values in hertz, rather than requiring every layer’s weights to move by an equal amount."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Computed output versus desired one-hot output for dean",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Random weights and supervised correction from known recording labels",
+              "source": "pdf",
+              "blocks": [
+                0,
+                1
+              ]
+            },
+            {
+              "idea": "Cross-entropy error decreases as support for the true vowel increases",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Backward dependency calculation, SGD and the weight-update symbols",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Saved forward activations reused during backward pass",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Positive/negative incoming activations require different useful weight-change directions; input-weight updates are small",
+              "source": "pdf",
+              "blocks": [
+                3
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": [
+              [
+                3254,
+                3293
+              ],
+              [
+                3300,
+                3365
+              ]
+            ],
+            "pdfPages": [
+              35,
+              36
+            ]
+          }
+        },
+        {
+          "page": 7,
+          "teaching": [
+            {
+              "text": "For the **circled final weight, +0.1**, the incoming activation is **+1.57** and the destination is **done**. Increasing that weight increases done’s score and probability.",
+              "children": [
+                "Dean is the target, so making done more likely increases the error. Decreasing this marked weight reduces its positive contribution to the wrong answer.",
+                "This is a conclusion about this connection’s signs and destination, not a rule that all weights should decrease."
+              ]
+            },
+            {
+              "text": "The **circled early weight, +0.005 from F1**, has a less direct effect. Changing it alters a first-layer activation, which alters later activations before the output probabilities change.",
+              "children": [
+                "Along that route, the change combines with many other positive and negative weights. Its final effect cannot be determined from the early connection alone.",
+                "The backward calculation accounts for those intervening operations to determine which change reduces the final error. A small coefficient is not automatically an easy or unimportant influence to assess."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Marked last-layer weight, positive activation and wrong done target",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Decreasing the final marked weight lowers its contribution to the error",
+              "source": "spoken",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Early marked weight affects error through multiple later layers",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Weight-adjustment direction depends on the full downstream chain",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": [
+              [
+                3375,
+                3420
+              ],
+              [
+                3440,
+                3479
+              ]
+            ],
+            "pdfPages": [
+              36,
+              37
+            ]
+          }
+        },
+        {
+          "page": 8,
+          "teaching": [
+            {
+              "text": "**W5** labels the last set of processing weights and **W2** the first set. These are names for groups of connections at different positions in the network, not individual weights equal to five or two.",
+              "children": []
+            },
+            {
+              "text": "The last weights have the **most direct influence on the output error**. Their effect reaches the probabilities without passing through more hidden layers, so that part of the problem is easier to calculate.",
+              "children": [
+                "An early weight changes its own layer’s activation, then later layers’ activations, before reaching the probabilities. Its contribution to the error therefore **includes the effects of the later weights**."
+              ]
+            },
+            {
+              "text": "**Dynamic programming** solves dependent problems by solving the simpler parts and reusing their results in the larger calculation. Working backward makes the output-side error information available when earlier weights are considered.",
+              "children": [
+                "This is the Bellman–Viterbi principle applied to the learning calculation. The difficult early-weight problem contains the downstream parts already calculated near the output.",
+                "The combined procedure uses **SGD for gradual weight changes** and **dynamic programming for the backward organization and reuse of calculations**. Ordinary prediction still carries the input forward."
+              ]
+            },
+            {
+              "text": "The forward–backward arrangement also motivates comparisons with **biological neurons**. The numerical model makes the forward response and the backward learning influence explicit, so their relationship to nervous-system processing can be investigated.",
+              "children": []
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "First W2 versus last W5 identify processing-weight sets",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "End-weight influence is direct; early-weight influence includes downstream operations",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Dynamic programming reuses simpler dependent calculations",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "SGD supplies gradual adjustments while dynamic programming supplies backward order",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Biological processing comparison raised during the explanation of forward/backward computation",
+              "source": "spoken",
+              "blocks": [
+                3
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": [
+              [
+                3465,
+                3515
+              ],
+              [
+                3520,
+                3535
+              ]
+            ],
+            "pdfPages": [
+              37,
+              38
+            ]
+          }
+        },
+        {
+          "page": 9,
+          "teaching": [
+            {
+              "text": "Training requires an **input matrix** and a matching **target matrix**. A matrix is a table of numbers, with one row for each recording in this example.",
+              "children": [
+                "**Formant_Inputs, 110 × 2** has 110 rows and the two measurement columns **F1 and F2**. **TrueVowel_Outputs, 110 × 5** has the corresponding rows and five vowel-answer columns.",
+                "Only a few illustrative rows are visible. The printed 110 describes the full row count of these example tables, rather than the number of formants in one recording."
+              ]
+            },
+            {
+              "text": "Each target row is a **one-hot answer**, with one for the true vowel and zeros for the others in the order **done, dune, dean, Don, Dan**.",
+              "children": [
+                "The highlighted **320 and 2,000 Hz** measurements have their one in the **dean** column. The five target entries describe one recording’s answer, rather than five separate recordings."
+              ]
+            },
+            {
+              "text": "The rows must **stay aligned across the two tables**. A row of formants from done must be paired with the target for done, and the same pairing must hold for every row.",
+              "children": [
+                "Reordering only one table would train the network using incorrect answers. During learning, the target remains fixed while the weights change to bring the computed output closer to it."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Two matrices, their recording rows and input/target columns",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "110×2 and110×5 shape meanings and illustrative rows",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "One-hot vowel order and highlighted dean example",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Matched row identities, fixed targets and changing network weights",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              9
+            ],
+            "transcriptLines": [
+              [
+                3541,
+                3568
+              ]
+            ],
+            "pdfPages": [
+              38,
+              39
+            ]
+          }
+        },
+        {
+          "page": 10,
+          "teaching": [
+            {
+              "text": "The **import** commands make the **PyTorch** library available. A library supplies reusable code, so the program can request neural-network operations without writing their internal calculations.",
+              "children": [
+                "**import torch** provides PyTorch, and **from torch import nn** supplies its neural-network tools under the name **nn**.",
+                "**torch.load** reads the saved formant and target tables into **X** and **Y**. **float** puts their entries in a number format that supports decimal values. The shown shapes are **110 × 2** inputs and **110 × 5** targets."
+              ]
+            },
+            {
+              "text": "The variable **net** holds the network. **nn.Sequential** runs its processing layers in the stated order, and **nn.Linear** calculates weighted sums.",
+              "children": [
+                "**Linear(2, 3)** receives two values and produces three; the following processing sizes are **3 → 2**, **2 → 4** and **4 → 5**. Each layer’s output count fits the next layer’s input count.",
+                "There are **five layers in the diagram but four Linear instructions**. The input layer only receives F1 and F2; it does not perform a separate weighted-sum calculation."
+              ]
+            },
+            {
+              "text": "The learning commands compare the network’s answers with the targets and adjust its weights.",
+              "children": [
+                "**net(X)** processes the input table. **CrossEntropyLoss** compares those computed scores with **Y**, handling the probability-related loss calculation. The variable **loss** stores that mismatch.",
+                "**SGD** specifies stochastic gradient descent. **net.parameters()** supplies the trainable parameters, and **lr = 0.1** sets the learning rate, or step size.",
+                "**zero_grad()** clears old stored gradient information. **loss.backward()** calculates how the loss depends on the weights, and **sgd.step()** applies the weight update."
+              ]
+            },
+            {
+              "text": "This is **one training step using all 110 rows together**, not an entire repeated training run. The code’s default initialization gives it its own starting parameters, so its numerical outputs do not reproduce the hand-picked weights in the illustration.",
+              "children": []
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Library imports, file loading, decimal format and X/Y tables",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Sequential layer order, Linear processing and matching sizes",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Input layer receives information without a separate Linear processing line",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Computed scores, target Y and cross-entropy loss",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "SGD parameters, learning rate, clearing gradients, backward and step",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "One full-batch update and default initialization versus illustrative weights",
+              "source": "pdf",
+              "blocks": [
+                3
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": [
+              [
+                3570,
+                3632
+              ]
+            ],
+            "pdfPages": [
+              39,
+              40
+            ]
+          }
+        },
+        {
+          "page": 11,
+          "teaching": [
+            {
+              "text": "An **activation function** changes a neuron’s weighted sum into the response it passes on. The **sigmoid**, written **σ**, is an S-shaped function that maps the weighted sum **z** into a value between zero and one.",
+              "children": [
+                "The graph’s horizontal **Linear Activation** axis is z, the inner product. The vertical **Sigmoid Activation** axis is **σ(z)**, the resulting response.",
+                "The marked pairs **(−4, 0.018)** and **(4, 0.982)** show input followed by output. A strongly negative sum gives a response near zero, and a strongly positive sum gives one near one."
+              ]
+            },
+            {
+              "text": "The sigmoid’s **steep middle and flat ends** make its sensitivity depend on the input.",
+              "children": [
+                "Near the middle, an input change produces a relatively strong change in response. At either flat end, even quite different inputs can produce nearly the same response.",
+                "In **animal perception**, similar inputs can be perceived differently, while larger input differences can sometimes be perceived as the same. The curve illustrates how processing can emphasize some differences and reduce others."
+              ]
+            },
+            {
+              "text": "The biological motivation associated with **Adrian’s** work concerns neurons’ **near-digital behavior**, meaning responses close to **on or off**. Artificial neurons combine many incoming influences through their weighted sums; sigmoid adds a bounded response rather than allowing any sum to pass on unchanged.",
+              "children": [
+                "The model still allows intermediate activations. A value between zero and one is one neuron’s response, not automatically a probability distribution over the five vowels."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Sigmoid transforms a linear activation into a bounded response",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "σ,z,graph axes and the marked negative/positive input-output pairs",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Steep versus flat sensitivity and the explicit animal-perception connection",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Adrian, near-on/off biological motivation and input integration",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Intermediate activation values differ from category-probability normalization",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": [
+              [
+                4250,
+                4286
+              ]
+            ],
+            "pdfPages": [
+              40
+            ]
+          }
+        },
+        {
+          "page": 12,
+          "teaching": [
+            {
+              "text": "The demonstration changes hidden neurons from **linear** responses to **sigmoid** responses one at a time, while keeping **the input and every weight fixed**.",
+              "children": [
+                "The inputs stay **F1 = 320 Hz** and **F2 = 2,000 Hz**. **Purple** marks hidden neurons still passing their linear sums; **green** marks neurons with sigmoid applied.",
+                "The three hidden layers contain **3, 2 and 4 neurons**, so nine hidden neurons switch in layer order."
+              ]
+            },
+            {
+              "text": "For the first switch, a weighted sum just below zero becomes a sigmoid response just below one half. The neuron therefore sends a **positive value where its linear activation was negative**.",
+              "children": [
+                "That new value changes the inputs to later neurons. **Every downstream sum and activation must be recalculated** using the updated layer before it, rather than applying sigmoid to a list of old linear results.",
+                "The label **Hidden layer 3, neuron 4** locates a particular unit. In **σ(−0.076) = 0.481**, −0.076 is its current weighted sum and 0.481 the value passed on after sigmoid."
+              ]
+            },
+            {
+              "text": "The network’s preferred vowel changes as the processing rule changes. Done begins with the largest probability; its lead shrinks, Don briefly leads, and Dan eventually has the largest probability.",
+              "children": [
+                "With every hidden neuron using sigmoid, **Dan has 32%** and **dean has 23%**. These are final output probabilities, produced by **softmax**, and all five still sum to one.",
+                "The answer has changed, but dean is still not the top answer. **This is not learning**: no weight was adjusted using a target. Changing the activation rule affects behavior without automatically correcting the decision."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Sequential switching of the nine hidden neurons with fixed input and weights",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Purple linear versus green sigmoid activations",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "First switch changes a negative sum into a positive response",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Downstream values must be recalculated after each change",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Layer/neuron location versus activation-input/output values",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Changing decisions, final Dan/dean probabilities, and output softmax",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Activation-rule change without weight learning or guaranteed correctness",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              12
+            ],
+            "transcriptLines": [
+              [
+                4250,
+                4296
+              ]
+            ],
+            "pdfPages": [
+              41
+            ]
+          }
+        },
+        {
+          "page": 13,
+          "teaching": [
+            {
+              "text": "The program adds **nn.Sigmoid()** after each hidden **nn.Linear** layer. Linear calculates the weighted sum, and Sigmoid changes that result before it enters the next layer.",
+              "children": [
+                "Sigmoid follows **Linear(2, 3)**, **Linear(3, 2)** and **Linear(2, 4)**. It changes each value separately but keeps the same count, so the layer sizes remain **2 → 3 → 2 → 4 → 5**.",
+                "**X** contains the input formants, **Y** the correct-vowel targets, and **net** the network that processes X."
+              ]
+            },
+            {
+              "text": "The last **Linear(4, 5)** supplies five final scores to **CrossEntropyLoss** without a hidden sigmoid after it.",
+              "children": [
+                "**Sigmoid** bounds each hidden neuron separately. **Softmax** treats the final scores together to form probabilities that add up to one; the loss handles the related probability calculation when comparing scores with targets.",
+                "The training procedure still uses **SGD**, the learning rate, **backward** and **step**. Default starting parameters mean the program does not reproduce the illustration’s exact numerical outputs."
+              ]
+            },
+            {
+              "text": "**ReLU** is another activation function that can replace sigmoid in a network. Comparing recognition performance after such a change tests whether that processing rule helps or hurts this vowel task.",
+              "children": []
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Where sigmoid is inserted in the three hidden processing layers",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Sigmoid changes activation values without changing layer sizes",
+              "source": "pdf",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Final layer supplies scores to cross-entropy loss; sigmoid versus softmax roles",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Learning commands/default initialization and alternative ReLU function",
+              "source": "pdf",
+              "blocks": [
+                1,
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              13
+            ],
+            "transcriptLines": [
+              [
+                4287,
+                4304
+              ]
+            ],
+            "pdfPages": [
+              41
+            ]
+          }
+        }
+      ]
+    },
+    "lecture16": {
+      "pages": [
+        {
+          "page": 1,
+          "teaching": [],
+          "coverage": [],
+          "evidence": {
+            "slides": [
+              1
+            ],
+            "transcriptLines": [],
+            "pdfPages": []
+          }
+        },
+        {
+          "page": 2,
+          "teaching": [
+            {
+              "text": "This **neural network** recognizes an isolated vowel from **F1 and F2**, the first two vocal-tract resonances in **hertz**. Its five possible answers are **done, dune, dean, Don and Dan**.",
+              "children": [
+                "The two input neurons receive one recording’s formants. Three hidden layers process those numbers, and five output neurons represent the competing vowel answers.",
+                "The **2 → 3 → 2 → 4 → 5** widths count neurons. An **activation** is the numerical response produced by a particular neuron, not the number of neurons in its layer."
+              ]
+            },
+            {
+              "text": "Every neuron connects to every neuron in the next layer, making the network **fully connected**. The numbers on those connections are **weights**, its learned knowledge.",
+              "children": [
+                "Each weight scales an incoming value before the receiving neuron adds the contributions. With positive inputs, positive weights add and negative weights subtract; the **magnitude**, or size apart from the sign, controls the strength of that contribution.",
+                "The illustrated weights stay fixed during a prediction. Learning changes them, while a new recording supplies new formant inputs."
+              ]
+            },
+            {
+              "text": "Training starts from **random weights**, so the network’s initial answer can be wrong. A **one-hot target** identifies the true vowel with one in its position and zeros in the others.",
+              "children": [
+                "For a dean recording, only the dean target entry is one. Comparing that desired output with the computed output supplies the error used to improve the weights."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Two formant inputs, three hidden layers and five output categories",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Neuron counts versus activations, full connectivity and signed weights",
+              "source": "slide",
+              "blocks": [
+                0,
+                1
+              ]
+            },
+            {
+              "idea": "Weights hold knowledge and are fixed during prediction but adjusted during learning",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Random initialization and supervised one-hot target for the recording",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              2
+            ],
+            "transcriptLines": [
+              [
+                3650,
+                3685
+              ]
+            ],
+            "pdfPages": [
+              42
+            ]
+          }
+        },
+        {
+          "page": 3,
+          "teaching": [
+            {
+              "text": "**Forward propagation** processes the input layer by layer through **inner products**. Each receiving neuron multiplies incoming values by their weights and adds the products.",
+              "children": [
+                "The example supplies **320 Hz for F1** and **2,000 Hz for F2**. In **w₁F1 + w₂F2**, the two weights control how these measurements contribute to the top hidden neuron.",
+                "Its F1 contribution is positive and its F2 contribution is negative, producing the displayed **−0.4 activation**. Increasing F1 with the weights fixed raises this neuron’s sum; increasing F2 lowers it.",
+                "A number inside a hidden circle is an **activation**, while a number on a connection is a **weight**. The repeated −0.4 occurs in both roles, so its location matters."
+              ]
+            },
+            {
+              "text": "A layer’s activation values become the next layer’s inputs. The same kind of weighted-sum processing continues through the hidden layers until the output has one score for each vowel.",
+              "children": [
+                "For this **linear** illustration, the hidden neurons pass on their sums without an extra activation function."
+              ]
+            },
+            {
+              "text": "**Softmax** turns the final **scores, or logits zᵢ**, into **probabilities pᵢ**. The index i identifies a vowel, and **Σ** in the expression adds across the alternatives.",
+              "children": [
+                "The probabilities total one. A larger score gives a larger probability, and increasing one score reduces the probability shares of the other vowels.",
+                "Done receives the largest probability, about **55.7%**, so the network selects done. The input is /i/, as in dean, so this decision differs from the known answer. The confidence values describe vowel alternatives, not frequencies in hertz."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Forward inner products and signed formant effects on the top hidden neuron",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Activations versus weights, including repeated −0.4 values",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Linear hidden processing and layer-by-layer propagation",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Output logits, softmax symbols and normalized vowel probabilities",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Highest-probability done decision is wrong for the dean input",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": [
+              [
+                3660,
+                3698
+              ]
+            ],
+            "pdfPages": [
+              42,
+              43
+            ]
+          }
+        },
+        {
+          "page": 4,
+          "teaching": [
+            {
+              "text": "The diagram’s positive **1.57 hidden activation** feeds done through a positive **0.1 weight**. Increasing either one, while holding the other fixed, increases their positive contribution to done’s score.",
+              "children": [
+                "A higher done score gives a higher done probability. The activation is the value sent onward; the weight is the multiplier on that connection."
+              ]
+            },
+            {
+              "text": "The **activation** is the value passed onward, and the **weight** scales its contribution to the receiving neuron. The output changes because either adjustment makes this positive contribution larger.",
+              "children": []
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Positive final-hidden activation and positive weight shown in the forward-propagation quiz diagram",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Directional output effect follows from the displayed inner-product connection",
+              "source": "slide",
+              "blocks": [
+                0,
+                1
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": [],
+            "pdfPages": []
+          }
+        },
+        {
+          "page": 5,
+          "teaching": [
+            {
+              "text": "The scatterplot shows **525 recordings**, with **105 tokens**, or recorded examples, of each vowel. **F1 runs horizontally** and **F2 vertically**, both in **Hz**.",
+              "children": [
+                "Every point is one recording. Moving right means higher F1; moving up means higher F2. The legend uses red for dean, magenta for Dan, blue for dune, cyan for Don and green for schwa in done."
+              ]
+            },
+            {
+              "text": "Each vowel forms a **cloud of points** because speakers and recordings vary. Dean generally has **low F1 and high F2**, while Dan extends toward higher F1.",
+              "children": [
+                "Dune, Don and done have much more **overlap**. A new pair of formants in that shared region can be compatible with several vowel categories.",
+                "Some unusual points can be measurement errors, but the recorded data are retained. Real recognition must deal with imperfect observations as well as ordinary differences between speakers."
+              ]
+            },
+            {
+              "text": "Overlap limits what these **two input measurements** can identify. If two recordings have identical F1 and F2 but different vowel labels, the network receives the same input for both. It cannot tell them apart from those two numbers alone.",
+              "children": [
+                "The network has to learn useful patterns across the data instead of finding a single isolated position for each vowel. Repeated exposure improves the learned decision, but does not create information absent from F1 and F2."
+              ]
+            },
+            {
+              "text": "**Peterson and Barney** also found substantial overlap when measuring vowels across speakers. **Normalization** attempts to reduce differences between speakers, such as differences associated with vocal-tract length, but it does not make this recognition problem automatically simple.",
+              "children": [
+                "A static pair of formants omits the way speech changes over time. Models that process sequences can use broader temporal context, including information around a sound, rather than having to decide from that pair alone."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "525 observations,105 examples per vowel,Hz axes and category-color legend",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Vowel clouds, variation, errors and specific overlap among dune/Don/done",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Two-formant overlap limits uniquely recoverable vowel decisions",
+              "source": "spoken",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Peterson–Barney measurements and attempted speaker normalization",
+              "source": "spoken",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "Static formant pairs omit temporal context available in dynamic speech",
+              "source": "pdf",
+              "blocks": [
+                3
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": [
+              [
+                3790,
+                3859
+              ],
+              [
+                3870,
+                3945
+              ]
+            ],
+            "pdfPages": [
+              43
+            ]
+          }
+        },
+        {
+          "page": 6,
+          "teaching": [],
+          "coverage": [],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": [],
+            "pdfPages": []
+          }
+        },
+        {
+          "page": 7,
+          "teaching": [
+            {
+              "text": "The **Computed Output** gives the network’s current probabilities. The **Desired Output** is the known vowel in **one-hot form**: one for dean and zeros for done, dune, Don and Dan.",
+              "children": [
+                "The illustrated network puts most probability on done and little on dean. Its **loss**, the mismatch with the target, is therefore substantial. Increasing dean’s probability lowers the cross-entropy loss."
+              ]
+            },
+            {
+              "text": "The learning procedure combines **backpropagation**, **SGD** and **dynamic programming**. The backward calculation determines how the loss depends on the weights; SGD uses that information to make gradual updates.",
+              "children": [
+                "Calculation starts near the outputs and proceeds toward the input, reusing the saved forward activations. An earlier weight’s influence includes the intervening layers, so the later-layer effects are needed to calculate it.",
+                "In **W ← W − η ∂L/∂W**, W is a weight, L the loss and η the learning rate. The **gradient ∂L/∂W** tells how raising W would affect L; subtracting that gradient directs the adjustment toward lower loss."
+              ]
+            },
+            {
+              "text": "The useful weight change depends on the incoming activation and the destination.",
+              "children": [
+                "A weight carrying a **positive activation into dean** can increase to strengthen the correct answer. With a **negative incoming activation**, decreasing its weight instead increases that input’s contribution to dean’s score.",
+                "A positive contribution into **done**, the wrong answer, should decrease. These different directions are consistent with the same goal of reducing the error.",
+                "The small weights leaving the large formant values change only slightly in the illustration. An update’s size depends on the role and scale of the connection, rather than being identical at every layer."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Computed output,desired one-hot dean output and cross-entropy mismatch",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Backward dependence calculation with saved forward activations",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "SGD and dynamic-programming roles in the combined procedure",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Weight-update symbols and gradient-directed error reduction",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Positive/negative activation cases determine different useful output-weight changes",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Small input-weight updates accompany large hertz-scale formants",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": [
+              [
+                3690,
+                3715
+              ],
+              [
+                3718,
+                3788
+              ]
+            ],
+            "pdfPages": [
+              44
+            ]
+          }
+        },
+        {
+          "page": 8,
+          "teaching": [
+            {
+              "text": "The **circled +0.1 connection** carries the positive **1.57 activation** into done. Raising that weight raises done’s score and probability, directly increasing support for the wrong answer.",
+              "children": [
+                "Because dean is the target, the useful direction for this connection is **down**. A smaller positive weight contributes less to done."
+              ]
+            },
+            {
+              "text": "The **circled +0.005 connection from F1** acts much earlier. A change there alters first-layer activations, which alter the second and third layers before changing the probabilities.",
+              "children": [
+                "The later weights can combine that change in different directions. Its useful adjustment cannot be inferred from the early weight’s sign or size alone.",
+                "This is why a purely **greedy choice**, based only on an immediate local effect, can miss the consequence for the final answer. Backpropagation accounts for the dependent calculations through the network."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Marked final connection affects done directly and should decrease for the dean target",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Marked early connection changes probabilities through the hidden layers",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Local/greedy assessment can miss later effects in the full dependency chain",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": [
+              [
+                3718,
+                3788
+              ]
+            ],
+            "pdfPages": [
+              44,
+              45
+            ]
+          }
+        },
+        {
+          "page": 9,
+          "teaching": [
+            {
+              "text": "**W2** names the first set of processing weights and **W5** the last. The last weights have the **most direct effect on the output error**, while early weights act through the layers between them and the output.",
+              "children": []
+            },
+            {
+              "text": "The early-weight problem **contains the downstream calculations**. To find how an early connection affects the loss, the calculation needs to know how the changes it produces are transformed by the later layers.",
+              "children": [
+                "**Dynamic programming** solves and reuses those simpler dependent parts. Calculating the output-side error first makes its information available when an earlier layer is considered.",
+                "The backward order avoids repeatedly solving the same downstream problem for every early connection."
+              ]
+            },
+            {
+              "text": "In the combined learning procedure, **SGD** adjusts weights gradually and **dynamic programming** organizes the backward calculation. The Bellman–Viterbi principle explains the reuse of dependent results, rather than treating each connection’s influence as an unrelated problem.",
+              "children": []
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "FirstW2 versus lastW5 processing-weight positions",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Early-weight effects include later-weight effects on error",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Dynamic programming solves/reuses simpler dependent calculations backward",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "SGD gradual updates combined with Bellman–Viterbi dynamic programming",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              9
+            ],
+            "transcriptLines": [
+              [
+                3730,
+                3788
+              ]
+            ],
+            "pdfPages": [
+              45
+            ]
+          }
+        },
+        {
+          "page": 10,
+          "teaching": [
+            {
+              "text": "The two **training matrices** pair recordings with known answers. **Formant_Inputs, 110 × 2** has recording rows and the **F1/F2** columns; **TrueVowel_Outputs, 110 × 5** has matching rows and five vowel columns.",
+              "children": [
+                "The printed 110 is this example table’s row count. Only a few illustrative rows are visible. A target’s single one identifies the true vowel, and its four zeros exclude the other alternatives.",
+                "For the highlighted **320 and 2,000 Hz** input, the one is in **dean**. Each input row must remain aligned with its own target row."
+              ]
+            },
+            {
+              "text": "A matched row pair supplies one **labeled training example**. The network processes the formants with its current weights, compares its computed output with the fixed target and uses the mismatch to improve the weights.",
+              "children": [
+                "Choosing the correct vowel does not automatically mean the whole probability distribution matches its one-hot target. A confident correct output has little loss, while a less confident correct choice can still leave loss to reduce.",
+                "Getting some examples right therefore does not establish that the network has learned the general pattern. It can fit familiar examples without capturing a useful generalization."
+              ]
+            },
+            {
+              "text": "The language-learning example concerns **memorization, generalization and exceptions**. In Carol Chomsky’s example, children first produce **go/went** correctly, then apply the regular past-tense **-ed** pattern, as in **jump/jumped**, to produce **goed**. They later learn the irregular exception.",
+              "children": [
+                "The intermediate error can reflect learning a real pattern, rather than simply forgetting a correct answer. Correct familiar forms at one stage do not by themselves demonstrate complete knowledge of the rule and its exceptions."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Input/target matrix shapes,one-hot vowel order and recording-row alignment",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Process matched inputs and compare computed output with fixed targets",
+              "source": "spoken",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Correct categories versus loss of the full probability prediction",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Memorized correct examples do not guarantee a learned generalization",
+              "source": "spoken",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Carol Chomsky go/went→goed→irregular exception example",
+              "source": "spoken",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              10
+            ],
+            "transcriptLines": [
+              [
+                3957,
+                4020
+              ]
+            ],
+            "pdfPages": [
+              46
+            ]
+          }
+        },
+        {
+          "page": 11,
+          "teaching": [
+            {
+              "text": "The **PyTorch import** commands provide reusable tools for neural-network processing and learning. **torch.load** reads the input formants into **X** and the target answers into **Y**; **float** puts the entries in a decimal-capable number format.",
+              "children": [
+                "The code’s **110 × 2** and **110 × 5** comments count recording rows and measurement or target columns in these example tables."
+              ]
+            },
+            {
+              "text": "**nn.Sequential** places the processing layers in order, and each **nn.Linear** takes weighted sums of incoming values.",
+              "children": [
+                "The sizes **2 → 3 → 2 → 4 → 5** carry the two formants through three hidden layers to five vowel scores. Each output width matches the input width of the next layer.",
+                "The diagram has five layers but only four Linear instructions because the two input neurons receive information without a separate processing calculation. The variable **net** names this network, and **net(X)** processes X through it."
+              ]
+            },
+            {
+              "text": "The learning commands use the mismatch with **Y** to adjust the weights.",
+              "children": [
+                "**SGD** specifies the update method, and **net.parameters()** supplies its trainable parameters. **lr = 0.1** is the learning rate: larger steps can move learning faster but make fine adjustment less precise, while smaller steps move more gradually.",
+                "**zero_grad()** clears the previous stored gradients. **CrossEntropyLoss** compares the computed scores with Y, and **loss** stores the error measure.",
+                "**loss.backward()** calculates how that loss depends on the weights. **sgd.step()** applies the adjustment; the weights do not change merely because a prediction or a loss has been calculated."
+              ]
+            },
+            {
+              "text": "This program makes **one update using all rows together**. Its default starting parameters differ from the hand-selected weights in the accompanying diagram, so the code expresses the same processing structure without promising the same intermediate numbers.",
+              "children": []
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Imports,loading,X/Y shapes and floating-point entry format",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Sequential and Linear meanings,matching dimensions and input-layer counting",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Network variable and forward processing of the input table",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "SGD,parameters,learning-rate meaning and gradual update tradeoff",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Clearing gradients,computed loss,backward calculation and actual step update",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Single full-batch update and default parameters versus illustrative values",
+              "source": "pdf",
+              "blocks": [
+                3
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              11
+            ],
+            "transcriptLines": [
+              [
+                4020,
+                4137
+              ]
+            ],
+            "pdfPages": [
+              46,
+              47,
+              48
+            ]
+          }
+        },
+        {
+          "page": 12,
+          "teaching": [
+            {
+              "text": "The **sigmoid**, written **σ**, is an S-shaped **activation function**. It transforms a neuron’s weighted sum **z**, its linear activation, into a response between zero and one.",
+              "children": [
+                "The horizontal axis plots **Linear Activation**, and the vertical axis **Sigmoid Activation**. In **σ(z)**, z is the incoming sum and σ(z) the value passed on.",
+                "The marked points show **−4 → 0.018** and **4 → 0.982**. Strongly negative sums produce responses near zero; strongly positive sums produce responses near one."
+              ]
+            },
+            {
+              "text": "The steep middle and flat ends produce different kinds of sensitivity.",
+              "children": [
+                "Near the middle, an input change gives a relatively strong change in response. Near either end, even quite different inputs can give almost the same response.",
+                "In **animal perception**, similar inputs can be perceived differently, while quite different inputs can be perceived as alike. The S-shape illustrates how a processing rule can emphasize or reduce differences."
+              ]
+            },
+            {
+              "text": "The biological motivation associated with **Adrian’s** work concerns neurons’ **near-digital behavior**, meaning responses close to **on or off**. Sigmoid adds a bounded response to the artificial neuron’s integration of many inputs.",
+              "children": [
+                "The function still permits intermediate values. Its output is an individual neuron’s activation, separate from softmax probabilities over the five vowel categories."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Sigmoid definition,σ/z roles and bounded output",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Graph axes and marked negative/positive input-response pairs",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Steep/flat behavior and the explicit animal-perception connection",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Biological on/off motivation associated with Adrian",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Intermediate hidden activations differ from multiclass output probabilities",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              12
+            ],
+            "transcriptLines": [
+              [
+                4250,
+                4286
+              ]
+            ],
+            "pdfPages": [
+              48
+            ]
+          }
+        },
+        {
+          "page": 13,
+          "teaching": [
+            {
+              "text": "Applying **sigmoid** changes hidden neurons’ processing while keeping **F1 = 320 Hz, F2 = 2,000 Hz and every weight fixed**.",
+              "children": [
+                "**Purple** neurons still pass their plain linear sums. **Green** neurons have sigmoid applied after their weighted sums. The three hidden layers contain three, two and four neurons, which switch one at a time in that order."
+              ]
+            },
+            {
+              "text": "A changed activation becomes a changed input to the later layers. **All downstream weighted sums and activations must be recalculated** after each switch.",
+              "children": [
+                "The first neuron’s slightly negative sum becomes a response just below one half, changing the sign of what it sends onward. Later responses must use that new value, rather than the old all-linear activations.",
+                "**Hidden layer 3, neuron 4** identifies a location. **σ(−0.076) = 0.481** identifies the weighted sum at that neuron and its transformed response; these decimals have a different role from the layer and neuron counts."
+              ]
+            },
+            {
+              "text": "The network’s answer changes: done’s lead shrinks, Don briefly becomes most likely, and Dan eventually leads. With all hidden neurons on sigmoid, **Dan has 32% and dean 23%**.",
+              "children": [
+                "The final percentages still come from **softmax** and sum to one. They describe alternative vowel probabilities, not the individual hidden activations.",
+                "Dean is still not the preferred answer. **Changing an activation function is not learning by itself**, because the weights were not adjusted from a target, even though the behavior changed substantially."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Fixed input/weights and nine sequential hidden-neuron activation switches",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Purple linear versus green sigmoid legend",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Updated activations require full downstream recalculation",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "First activation sign change and specific layer/neuron versus value roles",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Changing probability leaders,final Dan/dean output and retained softmax",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "No weight learning or guarantee of correctness from changing sigmoid",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              13
+            ],
+            "transcriptLines": [
+              [
+                4250,
+                4296
+              ]
+            ],
+            "pdfPages": [
+              48,
+              49
+            ]
+          }
+        },
+        {
+          "page": 14,
+          "teaching": [
+            {
+              "text": "The program inserts **nn.Sigmoid()** after each of the three hidden **nn.Linear** layers. Linear calculates weighted sums; Sigmoid transforms the resulting values before the next layer receives them.",
+              "children": [
+                "**Linear(2, 3)** produces three values, and applying sigmoid still leaves three values. The same applies to the other hidden layers, so the complete widths stay **2 → 3 → 2 → 4 → 5**.",
+                "**X** contains formant inputs, **Y** contains correct vowel targets, and **net(X)** processes the inputs through the network."
+              ]
+            },
+            {
+              "text": "The final **Linear(4, 5)** produces five scores without a hidden sigmoid after it. **CrossEntropyLoss** compares those scores with the targets and handles the softmax-related loss calculation.",
+              "children": [
+                "Sigmoid acts on hidden neurons separately. The final probability calculation treats the five vowel alternatives together, so the two operations have different jobs."
+              ]
+            },
+            {
+              "text": "The learning instructions still clear gradients, compute the loss, run **backward** and apply **SGD step** using the learning rate. The default starting parameters do not reproduce the illustrative diagram’s hand-picked intermediate values.",
+              "children": []
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Sigmoid placement after hidden linear layers and unchanged dimensions",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "X/Y/network roles and input-to-output processing",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Final scores/cross-entropy,hidden sigmoid versus output softmax",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Same learning instructions and default initialization distinction",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              14
+            ],
+            "transcriptLines": [
+              [
+                4287,
+                4304
+              ]
+            ],
+            "pdfPages": [
+              49
+            ]
+          }
+        },
+        {
+          "page": 15,
+          "teaching": [
+            {
+              "text": "**Initialization** is the choice of starting weights. **Seed 0** identifies the random starting point for this run of the linear vowel network.",
+              "children": [
+                "The model has the **2 → 3 → 2 → 4 → 5** processing widths, with **bias=False** and no hidden activation functions. Its trainable weights are repeatedly adjusted using the same vowel data.",
+                "In the code, **X = Formant_Inputs / 1000** expresses the inputs in **kilohertz instead of hertz**. The recordings and their relative formant relationships stay the same."
+              ]
+            },
+            {
+              "text": "The graph plots **training accuracy**, the percentage of training recordings whose highest output score selects the correct vowel. The horizontal **Epoch** axis counts training passes, and the vertical axis gives percent correct.",
+              "children": [
+                "Here a pass uses all **525 training recordings** for a full-batch update, repeated **2,000 times** at learning rate **0.1**. The plotted accuracy is measured on these same recordings, rather than on a separate set of new examples.",
+                "With **five possible vowels**, random guessing is correct one time in five. This **chance level is 20%**. An untrained network can therefore get some answers right without useful vowel knowledge."
+              ]
+            },
+            {
+              "text": "The curve begins near chance, then rises clearly above it. It briefly dips toward chance, recovers and levels off at **44.95%**, a little below half.",
+              "children": [
+                "A flat period is a **plateau**: further updates make little visible difference to accuracy. The improvement above chance shows useful learning, while the plateau shows that the decisions remain far from perfect.",
+                "The loop can still adjust weights during a flat accuracy period. Accuracy counts the winning category, so unchanged category choices can leave the percentage flat despite numerical updates."
+              ]
+            },
+            {
+              "text": "The program’s variables separate training from measuring the result.",
+              "children": [
+                "**model** is the network, **loss_fn** measures cross-entropy error and **opt** applies SGD updates. **y** holds the correct category selected from each one-hot target by **argmax**, which finds the largest entry.",
+                "Each pass clears old gradients, computes the loss, runs **backward** and calls **step**. The **no_grad** section measures the result without calculating another learning update.",
+                "**pred** selects each recording’s largest output score, **correct** is the fraction matching y, and **accuracy** saves the percentages for plotting. The **plt** commands display those saved values against Epoch."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "One random initialization,seed0 and fixed linear bias-free architecture",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Input scaling fromHz to kHz without changing recordings",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Training accuracy,Epoch/percent axes,525examples,2000full-batch updates,learningrate0.1",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Five-category guessing explains20%chance",
+              "source": "spoken",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Rise,dip,recovery and plateau at44.95%training accuracy",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Flat accuracy does not imply the loop stopped updating weights",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Training-code variables,gradient update loop,argmax accuracy measurement and plotting",
+              "source": "slide",
+              "blocks": [
+                3
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              15
+            ],
+            "transcriptLines": [
+              [
+                4140,
+                4168
+              ]
+            ],
+            "pdfPages": [
+              49
+            ]
+          }
+        },
+        {
+          "page": 16,
+          "teaching": [
+            {
+              "text": "The training is repeated for **ten initializations**, keeping the data, network structure, learning rate and update count the same. Only the **starting weights** change.",
+              "children": [
+                "The legend’s **Seed 0–Seed 9** labels identify those random initializations. Each run starts with a fresh model and optimizer; the seeds are not vowel categories or additional recording measurements."
+              ]
+            },
+            {
+              "text": "The horizontal **Epoch** axis counts full-data training passes, and the vertical axis gives **training accuracy in percent** on the same 525 recordings.",
+              "children": [
+                "The curves begin near **20% chance**. Some leave that level quickly, others remain near it longer, and several temporarily drop back. Their routes through learning differ.",
+                "All ten displayed runs finish at **44.95%**. Their curves overlap after converging, so several runs can occupy the same visible line."
+              ]
+            },
+            {
+              "text": "The common plateau remains well below perfect accuracy. The formant clouds **overlap**, especially for dune, Don and done, so F1 and F2 often do not uniquely identify the vowel.",
+              "children": [
+                "Changing the starting point does not supply extra information about a recording. The repeated runs take different paths and improve at different speeds, yet reach a similar final limit under the same training conditions."
+              ]
+            },
+            {
+              "text": "A different **architecture or activation function** changes what processing is available. Layer counts, neuron counts and functions such as sigmoid can be varied and their measured recognition compared.",
+              "children": [
+                "This is a different experiment from changing only the starting weights. A changed design is evaluated by the decisions it produces, rather than assumed to be better merely because it contains more parts."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Ten seeds vary only random starting weights with fresh model and optimizer",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Epoch andtrainingaccuracy axes,same525recordings and20%chance reference",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Different paths and temporary dips converge to44.95%in all displayed runs",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Two-formant overlap limits category separation and explains low plateau",
+              "source": "spoken",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Distinguish initialization tests from tests of layers,widths or activation functions",
+              "source": "pdf",
+              "blocks": [
+                3
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              16
+            ],
+            "transcriptLines": [
+              [
+                4168,
+                4245
+              ]
+            ],
+            "pdfPages": [
+              50
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "review": {
+    "scope": "Original Version7 PDF, originalsource slides15–16 and relevant verbal teaching reviewed. All29sourcepages retained in order; title/logisticpages stay empty; both forward-propagationquiz pages receive reasoning. Only this new authoring file is written.",
+    "sourcePdf": "sources/notes-v7-all-lectures-11-18.pdf,combinedpages33–50. Evidence coordinates retain the authentic originalVersion7 paragraph-to-source-page mapping; newteaching is rewritten, not claimedverbatim.",
+    "visualReview": "All29original slidepreviews and existing page/media inventories reviewed; full-size network,weight/activation,backpropagation,matrix,code,sigmoid,scatterplot andtraining-curve labels checked in prior targeted inspection. Staticreveal stages/sourceText used for the sigmoid animation sequence; this is not a claim of playback of everyPowerPointreveal.",
+    "pdfReview": "Authentic PDFextraction/typography inventories and originalnotes page assignments consulted. Existing PDFwords were compared withslidecontent andrawspoken evidence; repeated PDFparagraphs are integrated once permeaning on theirmatching page.",
+    "coveragePrinciple": "Coverage maps name substantive slide/PDF/spoken ideas and point to zero-based teachingblocks. Fixed bullet counts and repeated headerlabels are not imposed. Numerical coefficients are included selectively to identify the visible quantities,not as calculation exercises.",
+    "accuracyCorrections": "Backpropagation is distinguished from theSGD weight update; a correct topcategory is distinguished fromzero cross-entropy loss; signedweight effects depend onincomingactivation; initialization differences are distinguished fromdata/architecturechanges. Diagram/model/patient comparisons do not claim clinicaltreatment success.",
+    "dataDistinctions": "The illustratedinput/targettables and minimalprogram show110rows; the scatterplot and executedtrainingcurve use525recordings,105pervowel. Their counts are not merged. Training accuracy is not represented asheld-out performance.",
+    "curveProvenance": "OriginalL16p15–16curves are executedNumPyreference runs beside requestedPyTorchcode. Construction provenance is retained here rather than interrupting spoken teaching. The displayedresults and conditions are retained in teaching.",
+    "exclusions": "Title/logistical padding,examcoaching,numericalrecitals,anecdotalmedicalsuccessclaims,authoringconstructionnoise andoutside information are excluded. Biologicalmotivation and actual taught language-learning/modeling examples remain as course content."
+  }
+}

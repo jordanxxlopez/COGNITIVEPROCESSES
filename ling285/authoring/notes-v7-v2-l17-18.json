@@ -1,0 +1,1702 @@
+{
+  "review": {
+    "edition": "Version 7 · Version 2, L17–18 authoring only",
+    "base": "modern/transcripts-notes-v7.json",
+    "pdf": "sources/notes-v7-all-lectures-11-18.pdf",
+    "pdfExtraction": "authoring/notes-v7-extraction.json",
+    "reviewedSourcePages": {
+      "lecture17": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "lecture18": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "method": "All sixteen primary source pages compared with original V7 and the extracted note assignments. Readable source images and native speaker notes checked for diagram labels, initial conditions, update order and repeated phonotactic cases. PDF pages51–65 rendered; original PDF text and bold emphasis used as the explanatory base. Raw spoken teaching for Nov3/Nov5 read in matching ranges.",
+    "preservation": "All existing editions remain unchanged. This new authoring file keeps V7 explanatory mechanisms and distinctions rather than substituting compressed C3. Main/sub-bullet count follows the material. Repeated source pages retain repeated complete explanations.",
+    "coverageDecisions": [
+      "All nine next-letter prefixes and their acceptable/excluded continuations are separate teaching blocks on both lecture17p7 and lecture18p7.",
+      "The repeated phonotactic page in lecture17 uses matching Nov5 spoken elaborations, identified in its evidence rather than claimed as a Nov3 discussion.",
+      "The fading state trace is supported by the repeated Jordan-system native notes and PDF61–62; its feedback is distinguished from backpropagation.",
+      "Lecture17p8 has a design prompt but no original V7 prose or completed Nov3 model-building teaching; it stays unpadded. The implementation, software versions and vibe-coding concepts taught Nov5 are included on lecture18p8.",
+      "Peripheral social commentary, classroom instructions, study coaching and human/body analogies are omitted from new prose; their instructional relationships are stated directly. Absolute historical/performance/hallucination claims are replaced by the actual course concepts rather than expanded using external sources."
+    ],
+    "limits": [
+      "Raw transcription includes recognition errors and conversational interruptions; wording is authored from matched slide/PDF/clear verbal evidence rather than copied as an exact quotation.",
+      "Static source pages, native animation notes and retained stage exports establish the diagrams; this pass does not claim exhaustive frame-by-frame video or audio review.",
+      "No external facts or new examples are added. The small character-model run and its proposed extensions are distinguished from a demonstrated successful result."
+    ]
+  },
+  "collections": {
+    "lecture17": {
+      "pages": [
+        {
+          "page": 1,
+          "teaching": [],
+          "coverage": [],
+          "evidence": {
+            "slides": [
+              1
+            ],
+            "transcriptLines": [],
+            "pdfPages": []
+          }
+        },
+        {
+          "page": 2,
+          "teaching": [
+            {
+              "text": "A **neural network** takes an input **vector**, a list of numbers, and uses its **weights** to compute a decision. The vowel example supplies **F1 and F2**, the first two formant frequencies, and chooses among **done, dune, dean, Don, and Dan**.",
+              "children": [
+                "The two input units supply the measurements. The hidden layers have **three, two, and four units**, and the five output units represent the five vowel alternatives.",
+                "Numbers on the connections are **weights**. Their positive or negative signs determine how incoming activations contribute; they are not output probabilities."
+              ]
+            },
+            {
+              "text": "**McCulloch and Pitts** proposed that simple mathematics could model aspects of nervous activity. Their **all-or-none** description distinguishes a neuron being active from being inactive.",
+              "children": [
+                "The **sigmoid** is an activation function connected with this idea. It changes a weighted result toward a low or high activation, rather than leaving the weighted sum as the whole response.",
+                "The historical dates **1943–1986** mark the development of these ideas, from the early artificial-neuron proposal to more developed neural-network models."
+              ]
+            },
+            {
+              "text": "**Parallel Distributed Processing** describes two important features of these networks. **Parallel** means that many neurons in one layer compute their activations at the same time.",
+              "children": [
+                "**Distributed** means that information about F1 and F2 is spread across the activations of several neurons, rather than being held by one special neuron.",
+                "The activations in one layer become inputs to another. **Forward propagation** computes the response, while **backpropagation** supplies error information used to learn better weights."
+              ]
+            },
+            {
+              "text": "A **static vector** is one fixed list representing one moment. A network making one decision from that list does not by itself account for how speech and language unfold through time.",
+              "children": [
+                "During speech, formants change from moment to moment as the articulators move. A sentence also contains a sequence of words whose relationships extend beyond one isolated word.",
+                "The information needed for a decision can therefore include a developing sequence, rather than only a single snapshot. Modeling that sequence requires keeping the relationships between successive moments available."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "A static formant vector is transformed into a vowel decision by learned weights",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "McCulloch and Pitts modeled the biological all-or-none distinction; sigmoid connects low and high activation",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Parallel computation within layers and information distributed across units",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "A fixed snapshot does not supply the temporal history needed for speech and sentences",
+              "source": "spoken",
+              "blocks": [
+                3
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              2
+            ],
+            "transcriptLines": [
+              [
+                4346,
+                4414
+              ]
+            ],
+            "pdfPages": [
+              51
+            ]
+          }
+        },
+        {
+          "page": 3,
+          "teaching": [
+            {
+              "text": "**Michael Jordan’s recurrent neural network** was developed to model **speech production**, the changing movements of articulators such as the tongue, velum, and lips.",
+              "children": [
+                "**Nasality** concerns the velum’s position, and **rounding** concerns the lips. Producing a sequence requires coordinating these properties across time, rather than selecting a category from one fixed measurement."
+              ]
+            },
+            {
+              "text": "The **plan units** supply information about the sequence to produce. The **hidden units** combine plan information with the current state, and the **output units** produce a response.",
+              "children": [
+                "The **state units** retain information from the output. The plan and state groups both feed the hidden layer, so processing uses the intended sequence together with information about what the network has recently produced.",
+                "A **Sequential** arrangement puts one layer after another. This network also includes a returning path, so its organization is more than a single forward chain."
+              ]
+            },
+            {
+              "text": "The network is **recurrent** because the output returns to the state units and becomes part of the information used at the next moment.",
+              "children": [
+                "The small self-connections on the state units retain a **fading trace** of their own earlier state. That retained influence weakens over time, rather than keeping every earlier value at full strength.",
+                "New output information combines with this trace of recent processing, so the state carries information across moments.",
+                "The next response depends on both the plan and this recent history. The returning path is part of producing a sequence; it is different from the backward error calculation used to learn weights."
+              ]
+            },
+            {
+              "text": "The performance traces follow articulatory features through **time**. Rows include voice, place, sonorant, sibilant, nasal, height, backness, and rounding.",
+              "children": [
+                "Each curve shows how its feature develops during the sequence. **Round** follows lip rounding: it rises early and stays high across several sounds. **Sibilant** peaks where the s sounds occur. The features therefore do not all change at the same moment.",
+                "The **0–32 time-step scale** locates stages of the response; it is not a list of speech frequencies. The curves show how coordinated properties change through the sequence."
+              ]
+            },
+            {
+              "text": "Generating text also requires a developing sequence. A prompt supplies words, and a model predicts the next word. That generated word is added to the context used to predict another word.",
+              "children": [
+                "Repeating this process produces a response one item at a time. The relevant connection is the use of information from the unfolding sequence, rather than treating every response as independent.",
+                "The historical connection links work on time-varying speech with later sequence-processing systems. It does not make every later language model identical to Jordan’s particular network."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Recurrent networks were motivated by articulatory movement unfolding in time",
+              "source": "pdf",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Plan, hidden, output, and state units have different roles",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Output feedback and state self-connections keep a fading trace of recent history",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Feature trajectories across32time steps include early sustained rounding and sibilant peaks at s sounds",
+              "source": "pdf",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "Repeated text generation uses the supplied sequence plus each generated item as context",
+              "source": "spoken",
+              "blocks": [
+                4
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": [
+              [
+                4415,
+                4485
+              ]
+            ],
+            "pdfPages": [
+              51,
+              52,
+              61,
+              62
+            ],
+            "relatedSlides": [
+              {
+                "collection": "lecture18",
+                "page": 4,
+                "reason": "Native notes and repeated recurrent-system diagram establish the decaying state self-connections."
+              }
+            ]
+          }
+        },
+        {
+          "page": 4,
+          "teaching": [
+            {
+              "text": "A **single neuron** takes a vector of inputs and returns one numerical response. Each input **x** is multiplied by its connection weight **w**, and the products are added.",
+              "children": [
+                "The **inner product** is this multiply-and-add operation. **Σ**, sigma, means to add the contributions, and **y** names the resulting response.",
+                "Many connected units can repeatedly use this simple operation to produce more complex behavior."
+              ]
+            },
+            {
+              "text": "A **neural network** connects many neurons. Each layer’s activations become the vector received by the next layer, through weight sets **W₁, W₂, and W₃**.",
+              "children": [
+                "The small network has **four, three, four, and five units** across its layers. These numbers count units; they do not give the units’ activations.",
+                "The final **decision vector** contains one value for each possible answer. The vowel recognizer is an example of using measurements to produce a category decision."
+              ]
+            },
+            {
+              "text": "A **large language model, LLM,** receives a sequence of vectors and produces a prediction about the following item. Here **vectors 1–15** are supplied, and **16** marks the item being predicted.",
+              "children": [
+                "Each input vector can represent one word. The **PDF** at the output is a **probability distribution** over possible next words, with one entry for each alternative.",
+                "The probabilities express which continuations the available sequence supports. They add up to one."
+              ]
+            },
+            {
+              "text": "The **context window** is the sequence available for prediction. The example uses fifteen items, while a larger model can accept a much longer context.",
+              "children": [
+                "The **number of vectors** tells how many items are present. The **length of each vector** tells how many numerical values describe one item. These are different dimensions of the input."
+              ]
+            },
+            {
+              "text": "The **W** groups identify learned weights used to transform the numerical **representations**, the information held in the vectors. The five-layer example supplies successive transformations.",
+              "children": [
+                "A layer receives the representations produced before it, changes them, and passes the results onward. A useful representation helps the final prediction; improvement does not simply mean making every number larger.",
+                "The model’s learned knowledge is carried by its weights. Organizing many neural computations into layers allows that knowledge to act on the sequence."
+              ]
+            },
+            {
+              "text": "A **dynamical system** develops from an **initial state** by applying a rule. The supplied vectors give the language model its initial information, and the layers develop that information through successive states.",
+              "children": [
+                "The connection concerns how a new state depends on an existing state. Different systems can have very different numbers of values and different rules while sharing that developing organization."
+              ]
+            },
+            {
+              "text": "During **learning**, an existing sentence supplies the correct continuation. For **“The cat sat on the”**, the training example can give **mat** as the target.",
+              "children": [
+                "With random starting weights, the model might give high probability to an unsuitable continuation such as **in**. The mismatch with the target gives a **loss**, or prediction error.",
+                "**Backpropagation** works backward through the computed stages to determine how weights affect the loss. **Stochastic gradient descent, SGD,** uses that information to adjust the weights and reduce the error across repeated examples."
+              ]
+            },
+            {
+              "text": "**Gestalt closure** is perceiving a complete form from incomplete information. Three broken circular forms can make a triangle perceptible even though its full boundary is absent.",
+              "children": [
+                "A **cloze task** removes an item from language and asks for a suitable completion. In **“chickens cackle and ___ quack”**, **ducks** fits the meanings and the sentence structure.",
+                "Correct completion requires relationships among the supplied pieces. Next-item prediction similarly uses the available sequence to supply what is missing."
+              ]
+            },
+            {
+              "text": "**Machine translation** uses learned relationships to connect an expression in one language with an expression in another, such as English and French.",
+              "children": [
+                "The sequence-processing approach can also be applied to speech and other kinds of information when they are represented as ordered vectors. The form of the numerical input is shared, while the relationships to be learned depend on the task."
+              ]
+            },
+            {
+              "text": "An **agentic system** connects whole LLMs in a **graph**, an arrangement of models and the communication paths between them. An **agent** in this arrangement is a whole model assigned a job.",
+              "children": [
+                "The **Outline LLM** plans the structure. The **Write LLM** turns that outline into a draft. The **Critic LLM** checks it, the **Revise LLM** changes it, and the **Final LLM** produces the final response.",
+                "The return path from revision to criticism forms a **loop**. A revised draft can be checked again instead of being accepted immediately."
+              ]
+            },
+            {
+              "text": "**Hallucination** means producing invented information. The critic checks the draft’s statements and whether its reasoning fits together, giving the reviser information about what should change.",
+              "children": [
+                "The loop can help reduce unsupported claims and inconsistencies. Improving a draft through exchanged messages is different from changing the models’ learned weights."
+              ]
+            },
+            {
+              "text": "The graph’s **connections** determine which models can exchange information. Designing a useful system therefore includes assigning jobs and deciding how their results should reach other models.",
+              "children": [
+                "Those paths can support behavior beyond the intended task if models exchange information in unplanned ways. Limiting and organizing connectivity is part of designing the system, not just choosing how many models it contains."
+              ]
+            },
+            {
+              "text": "**Neurons form neural networks, neural networks form LLMs, and whole LLMs form agentic systems.** These are different levels of organization. A component within one model is not the same thing as another complete model.",
+              "children": [
+                "**Inference** computes an answer with the current weights. Inner products provide the numerical combinations. **Learning** changes the weights using error information.",
+                "In **SGD + DP**, SGD means stochastic gradient descent, and **DP** means dynamic programming. Backpropagation uses already-computed effects from later stages to work out earlier effects, rather than recomputing every complete path independently."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "A neuron maps one vector to one weighted-sum response",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "A network maps one vector through several weight sets to a decision vector",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "An LLM accepts a sequence of vectors and predicts the next item",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Context length differs from the number of values describing each item",
+              "source": "pdf",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "Layers transform representations using learned weights",
+              "source": "pdf",
+              "blocks": [
+                4
+              ]
+            },
+            {
+              "idea": "Initial inputs develop through successive states in a dynamical description",
+              "source": "pdf",
+              "blocks": [
+                5
+              ]
+            },
+            {
+              "idea": "Known next-word targets train weights rather than being guessed without correction",
+              "source": "pdf",
+              "blocks": [
+                6
+              ]
+            },
+            {
+              "idea": "Completion and cloze connect missing information with knowledge of structure",
+              "source": "pdf",
+              "blocks": [
+                7
+              ]
+            },
+            {
+              "idea": "Sequence knowledge supports translation and other applications",
+              "source": "pdf",
+              "blocks": [
+                8
+              ]
+            },
+            {
+              "idea": "An agentic graph connects complete models assigned different jobs",
+              "source": "slide",
+              "blocks": [
+                9
+              ]
+            },
+            {
+              "idea": "Criticism and revision address hallucination without guaranteeing correctness",
+              "source": "pdf",
+              "blocks": [
+                10
+              ]
+            },
+            {
+              "idea": "Connections supply problem-solving abilities and can allow unplanned interactions",
+              "source": "spoken",
+              "blocks": [
+                11
+              ]
+            },
+            {
+              "idea": "The nested levels retain inference and learning as distinct operations",
+              "source": "slide",
+              "blocks": [
+                12
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": [
+              [
+                4498,
+                4780
+              ],
+              [
+                4790,
+                4897
+              ]
+            ],
+            "pdfPages": [
+              52,
+              53,
+              54,
+              55
+            ]
+          }
+        },
+        {
+          "page": 5,
+          "teaching": [
+            {
+              "text": "The model receives **x₁ through x₁₅** and predicts **x₁₆**. Each x is a **vector**, a list of numbers describing one item. The small subscript identifies that item’s position in the sequence.",
+              "children": [
+                "The same next-item question can be posed for words, sound frames, image patches, or amino acids. What the numbers represent changes with the material."
+              ]
+            },
+            {
+              "text": "In **“The cat that the dog chased ran up the old tree and sat on the ___”**, the missing item is a word. A possible continuation is **branch** or **mat**.",
+              "children": [
+                "The **cat** is the one that ran and sat. A useful prediction depends on the relationships across the sentence, not simply on the nearest noun.",
+                "Training compares the prediction with the continuation actually supplied in a training sequence and adjusts the weights when the answer is poor."
+              ]
+            },
+            {
+              "text": "A **spectrogram** represents a sound’s frequency content as it changes through time. It can be divided into fifteen successive frames, with one vector describing each short part.",
+              "children": [
+                "Time runs horizontally. The vertical range from **0 to 5 kHz** covers zero to five thousand hertz, and the sound information includes frequencies and their amplitudes. **x₁₆** is the following sound frame.",
+                "Learning relationships among sound frames supports speech technologies. **Speech recognition** connects sound with an interpretation or text, while **speech synthesis** produces speech from a representation."
+              ]
+            },
+            {
+              "text": "An **image** can be divided into a **four-by-four grid of sixteen patches**. Fifteen known patches are supplied, read row by row, and the missing **sixteenth patch** is at the bottom-right.",
+              "children": [
+                "Each patch is represented by pixel values. The ordering is a chosen path through space, while the missing patch is predicted from the other ordered patches.",
+                "Learning relationships among patches across many images can support **computer vision**, including identifying objects such as dogs, dolphins, or boats. The task uses visual structure rather than assuming that a patch is a word."
+              ]
+            },
+            {
+              "text": "A **protein** is a chain of **amino acids**. The twenty kinds are conventionally represented by letter symbols. The insulin B-chain example supplies **F V N Q H L C G S H L V E A L**.",
+              "children": [
+                "Those are fifteen ordered residues. **x₁₆** is the next residue, **Y**. The **N** beside the folded protein marks its amino end; it is not the missing answer.",
+                "The ordered chain and the folded structure describe different aspects of the same protein. The task here is continuing the chain, rather than directly outputting its entire folded shape."
+              ]
+            },
+            {
+              "text": "**Protein folding** concerns how a chain of amino acids takes on its three-dimensional structure. Relationships within the sequence matter for the resulting shape.",
+              "children": [
+                "Learning about protein sequences connects with work on folding, drug design, and vaccines. The common numerical form permits sequence-processing methods to address biological information as well as language."
+              ]
+            },
+            {
+              "text": "The model processes **vectors**, but words, sound frames, image patches, and amino acids represent different kinds of information. Each application requires suitable representations and learning.",
+              "children": [
+                "A model’s predictions depend on patterns supported by its training data. New situations outside those patterns can lead to an incorrect or invented continuation, which is one reason predictions can fail."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "A shared next-item task accepts vectors representing different kinds of sequence",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Sentence completion depends on long-distance relationships and supplies targets for learning",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Spectrogram frames represent frequency and amplitude information in time order",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "An image provides fifteen known patches with a missing sixteenth in row order",
+              "source": "slide",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "The insulin sequence predicts the next residue rather than the full folded structure",
+              "source": "slide",
+              "blocks": [
+                4
+              ]
+            },
+            {
+              "idea": "Protein folding links sequence relationships with structure and biological applications",
+              "source": "pdf",
+              "blocks": [
+                5
+              ]
+            },
+            {
+              "idea": "Shared numerical form does not make materials or learned representations interchangeable",
+              "source": "pdf",
+              "blocks": [
+                6
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": [
+              [
+                4898,
+                5005
+              ]
+            ],
+            "pdfPages": [
+              55,
+              56
+            ]
+          }
+        },
+        {
+          "page": 6,
+          "teaching": [
+            {
+              "text": "**Phonotactics** is knowledge of which sequences of sounds a language allows. A **syllable** is an organized group of sounds within a word.",
+              "children": [
+                "English speakers can judge that some unfamiliar combinations fit English and others do not, even without having been taught an explicit list of every permitted sequence."
+              ]
+            },
+            {
+              "text": "A simple English syllable can have a **consonant, vowel, and consonant**, written **CVC**. Examples include **Don, mat, sit, cup, dog, fish, ring, and van**.",
+              "children": [
+                "The pattern concerns sounds. The final **e** in **shave, kite, and rope** does not add a separately pronounced vowel.",
+                "Two letters can spell one consonant sound, as in **ship, chin, and bath**. Counting letters and identifying sound positions are therefore different tasks."
+              ]
+            },
+            {
+              "text": "Languages differ in what can occur at the end of a syllable. The **Mandarin** comparison permits nasal endings, while **Cantonese** also permits a final **p**, the ending relevant to **cup**.",
+              "children": [
+                "The broad CVC arrangement does not specify which consonants are permitted in every language. A combination fitting one language can be unavailable in another."
+              ]
+            },
+            {
+              "text": "A **consonant cluster** contains consonants together. The **onset** is the consonant or consonants before the vowel, and the **coda** is the consonant or consonants after it.",
+              "children": [
+                "The onset examples are **split, flat, black, glad, and stop**, contrasted with ***sblit, *lfat, *bnack, *dlad, and *tsop**. The **star** marks a form excluded in the English comparison.",
+                "The coda examples are **desk, box, help, milk, and lamp**, contrasted with ***desb, *bokp, *hepl, *mikl, and *lapm**. Familiar consonants can still form an impermissible sequence when their order changes."
+              ]
+            },
+            {
+              "text": "The order of consonants can **mirror around the vowel**. In **flat**, l is next to the vowel and f is farther out. In **help**, l is again next to the vowel, with p farther out on the other side.",
+              "children": [
+                "In **lamp**, m is next to the vowel, while ***lapm** reverses the coda order. Having the same letters does not make the two sequences equivalent.",
+                "Other languages allow different openings. Russian examples permit initial **zb** or **dl**. In the Spanish comparison, an initial vowel is added before an **s-plus-consonant** opening, as in the comparison with English **stadium**."
+              ]
+            },
+            {
+              "text": "A longer word is a **chain of syllables**. The dots in **ba·na·na, win·dow, pump·kin, nap·kin, At·lan·tic, ath·lete, ad·mit, and spa·ghet·ti** mark syllable breaks.",
+              "children": [
+                "In **At·lan·tic**, t and l lie across a break. The opening ***tlantic** instead puts tl together in one initial onset. The same distinction relates **athlete** to ***thlete**, and **admit** to ***dmit**.",
+                "The sound **ng** can end a syllable, as in **ring**, while ***ngapkin** puts it at the beginning in this English contrast. ***bnanana** and ***sbaghetti** likewise begin with excluded clusters. An acceptable continuation does not repair an opening that violates the pattern."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Phonotactics is language-specific knowledge of permitted sound sequences",
+              "source": "pdf",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "CVC concerns spoken sounds; silent letters and two-letter consonants differ from sound positions",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Languages differ in permitted syllable endings",
+              "source": "spoken",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Onsets, codas, real clusters, and all starred alternatives show order restrictions",
+              "source": "slide",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "The illustrated cluster ordering mirrors around the vowel and differs across languages",
+              "source": "pdf",
+              "blocks": [
+                4
+              ]
+            },
+            {
+              "idea": "Syllable boundaries permit sequences that cannot form a word-initial onset",
+              "source": "slide",
+              "blocks": [
+                5
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": [
+              [
+                5431,
+                5513
+              ]
+            ],
+            "pdfPages": [
+              56
+            ],
+            "relatedSlides": [
+              {
+                "collection": "lecture18",
+                "page": 6,
+                "reason": "Repeated source page; Nov5 spoken explanations elaborate the same phonotactic examples."
+              }
+            ]
+          }
+        },
+        {
+          "page": 7,
+          "teaching": [
+            {
+              "text": "**Predicting the next letter** reveals knowledge of possible English sound and spelling sequences. Each prefix is the start of a word, and the underscore marks the next position to fill.",
+              "children": [
+                "Some beginnings permit many suitable continuations, while others sharply restrict the choices. A **star** marks a continuation excluded in the English comparison."
+              ]
+            },
+            {
+              "text": "After **ra_**, possibilities include **t, n, r, and l**. Once the vowel has occurred, the continuation is much less restricted than in the initial consonant clusters.",
+              "children": [
+                "The possibilities spread across many letters rather than forcing one particular answer."
+              ]
+            },
+            {
+              "text": "After **sp_**, **l, r, or a vowel** can follow. The listed vowel examples include **a, e, i, and o**.",
+              "children": [
+                "The excluded continuation ***spn** shows that a familiar consonant cannot simply be added in any order at the start of an English word."
+              ]
+            },
+            {
+              "text": "After **k_**, a **vowel or n** can follow. The listed possibilities include **i, e, a, and n**.",
+              "children": [
+                "The **n** example gives **knee**, where the written k is silent. This is a spelling possibility, not a claim that knee begins with a pronounced k followed by n. The contrast excludes ***kt**."
+              ]
+            },
+            {
+              "text": "After **skr_**, a **vowel** follows in the illustrated pattern. The listed possibilities are **a, e, i, and u**.",
+              "children": [
+                "Adding l would give ***skrl**, which does not fit this English opening. The preceding consonants constrain the next position."
+              ]
+            },
+            {
+              "text": "After initial **m_**, the listed choices are the vowels **a, e, i, o, and u**.",
+              "children": [
+                "The excluded ***mb** places another consonant after m in this word-initial position. The appropriate continuation depends on where the sequence occurs within a word."
+              ]
+            },
+            {
+              "text": "After **bram_**, **b** is strongly expected, giving **bramble**.",
+              "children": [
+                "A **new syllable** could also begin there. The continuation therefore depends on the syllable organization rather than being a universal rule that m must always be followed by one letter."
+              ]
+            },
+            {
+              "text": "After **b_**, **r, l, or a vowel** can follow. The listed possibilities are **r, l, a, e, i, o, and u**.",
+              "children": [
+                "The excluded ***bn** contrasts with these permitted English openings."
+              ]
+            },
+            {
+              "text": "After **f_**, **r, l, or a vowel** can follow. The listed possibilities are **r, l, a, e, i, o, and u**.",
+              "children": [
+                "The excluded ***fn** shows a different consonant combination that does not fit the illustrated opening."
+              ]
+            },
+            {
+              "text": "After **sh_**, a **vowel or r** can follow. The listed possibilities are **a, e, i, o, u, and r**, with **shrimp** illustrating r.",
+              "children": [
+                "The excluded ***shb** contrasts with these continuations. The two letters sh represent one consonant sound in this example."
+              ]
+            },
+            {
+              "text": "Guessing the next letter is a **next-item prediction**, the same organizing question represented by **x₁₆**. The supplied letters form the context, and the output is a **probability distribution** over continuations.",
+              "children": [
+                "After an open prefix such as **ra_**, or **fa_** in the parallel example, probability can be spread across many letters. After **skr_**, suitable probability is concentrated on vowels. A **flat** distribution is more spread out, while a **peaked** distribution concentrates on fewer choices.",
+                "Repeated prediction and correction can teach these regularities. The weights must capture the permitted sequences to assign useful probabilities. Sound and spelling patterns form a smaller sequence-learning problem than organizing all the words of a language into sentences."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Next-letter predictions reveal phonotactic and spelling knowledge",
+              "source": "pdf",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "ra_ permits t,n,r,l and broad post-vowel choices",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "sp_ permits l,r,or a vowel and excludes spn",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "k_ permits a vowel or n as in knee and excludes kt",
+              "source": "slide",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "skr_ requires a vowel in the illustrated onset pattern and excludes skrl",
+              "source": "slide",
+              "blocks": [
+                4
+              ]
+            },
+            {
+              "idea": "Initial m_ requires a vowel in the illustrated pattern and excludes mb",
+              "source": "slide",
+              "blocks": [
+                5
+              ]
+            },
+            {
+              "idea": "bram_ strongly suggests b/bramble but can begin another syllable",
+              "source": "slide",
+              "blocks": [
+                6
+              ]
+            },
+            {
+              "idea": "b_ permits r,l,or a vowel and excludes bn",
+              "source": "slide",
+              "blocks": [
+                7
+              ]
+            },
+            {
+              "idea": "f_ permits r,l,or a vowel and excludes fn",
+              "source": "slide",
+              "blocks": [
+                8
+              ]
+            },
+            {
+              "idea": "sh_ permits a vowel or r/shrimp and excludes shb",
+              "source": "slide",
+              "blocks": [
+                9
+              ]
+            },
+            {
+              "idea": "Probability distribution shape encodes how tightly context restricts continuations",
+              "source": "pdf",
+              "blocks": [
+                10
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": [],
+            "pdfPages": [
+              57
+            ]
+          }
+        },
+        {
+          "page": 8,
+          "teaching": [],
+          "coverage": [],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": [],
+            "pdfPages": []
+          }
+        }
+      ]
+    },
+    "lecture18": {
+      "pages": [
+        {
+          "page": 1,
+          "teaching": [],
+          "coverage": [],
+          "evidence": {
+            "slides": [
+              1
+            ],
+            "transcriptLines": [],
+            "pdfPages": []
+          }
+        },
+        {
+          "page": 2,
+          "teaching": [
+            {
+              "text": "A **neuron** takes a vector of inputs and combines it into one response. Each incoming value **x** is multiplied by its connection **weight, w**, and the contributions are added.",
+              "children": [
+                "This **inner product** is the arithmetic model of inputs contributing to a unit’s activity. **Σ**, sigma, means add them, and **y** is the resulting response.",
+                "Changing a weight changes how strongly its input contributes. Organizing many such operations makes complex computation possible from simple parts."
+              ]
+            },
+            {
+              "text": "A **neural network** combines many neurons into a decision-making system. Activations from one layer become the inputs received by the following layer.",
+              "children": [
+                "The small network has **four, three, four, and five units**, linked by **W₁, W₂, and W₃**. These weight sets transform one vector into another.",
+                "The output is a **decision vector**, with one value per alternative. A vowel recognizer transforms a fixed list of formant measurements into support for possible vowel identities."
+              ]
+            },
+            {
+              "text": "An **LLM** processes many vectors and predicts the next item. Here **fifteen input vectors** pass through **five layers**, and the output concerns **item sixteen**.",
+              "children": [
+                "A **token** is an item the model processes or predicts. In the word example, one input vector represents one supplied word. The **context window** is the sequence available for the prediction.",
+                "The output **PDF** is a probability distribution. Each entry gives support for one possible continuation, and the probabilities sum to one. The number of context items differs from the number of values inside each vector."
+              ]
+            },
+            {
+              "text": "**Syntax** concerns how words are organized into sentences. A next-word prediction may depend on a relationship stretching across many intervening words.",
+              "children": [
+                "In a sentence beginning **“the dog that my parents…”**, the relevant continuation about the dog is **barks**. **Dog** is singular, even though **parents** is plural and further words can intervene.",
+                "With **dogs**, the corresponding verb is **bark**. The nearest noun does not determine the answer; the subject–verb relationship must remain available across the sequence."
+              ]
+            },
+            {
+              "text": "A training sequence supplies the actual next word, so the model can compare its prediction with a **target**. If it predicts an unsuitable word instead of **barks**, the mismatch supplies a **loss**.",
+              "children": [
+                "**Backpropagation** works backward through the computation to determine how weights affect that loss. **Dynamic programming, DP,** reuses already-calculated effects from later stages to work out earlier ones.",
+                "**Stochastic gradient descent, SGD,** uses the error information to adjust weights. **Inference** computes a response with current weights, while **learning** changes them."
+              ]
+            },
+            {
+              "text": "The **architecture** specifies how the model’s layers and components are arranged. **Representations** are the numerical forms in which it carries information.",
+              "children": [
+                "Each layer transforms the representations it receives so the final prediction can use the sequence more effectively. Useful improvement means better support for prediction, not simply larger numerical values.",
+                "Knowing the arrangement of a model does not by itself explain every language pattern carried by its learned weights."
+              ]
+            },
+            {
+              "text": "A **multilingual system** learns patterns from more than one language. English and Dutch share historical relationships, while languages such as Japanese and Navajo have very different structures.",
+              "children": [
+                "The common problem is learning how sequences are organized. A system can learn relationships between languages for **translation** and respond in different languages using its learned knowledge.",
+                "Programming and database languages also have structured sequences. A model can learn to produce programs or database expressions as well as ordinary language."
+              ]
+            },
+            {
+              "text": "A **modality** is a kind of information, such as text, speech, or images. A **multimodal system** learns relationships across more than one kind.",
+              "children": [
+                "Generating a caption for an image connects visual information with language. **Speech recognition** connects sound with text, while **speech synthesis** connects text with sound.",
+                "Vectors provide a common numerical form, but useful processing still depends on what the numbers represent and on the relationships learned between the modalities."
+              ]
+            },
+            {
+              "text": "An **agentic system** connects whole LLMs into a **graph**, assigning them different jobs. The **Outline LLM** plans the response, and the **Write LLM** develops that plan into a draft.",
+              "children": [
+                "The **Critic LLM** checks the draft, including whether its statements fit together. The **Revise LLM** changes it, and the response can return to the critic through a **loop**. The **Final LLM** produces the final response.",
+                "A **controller** can coordinate which model receives another model’s information. A whole agent with one of these roles is different from an attention head operating inside one LLM layer."
+              ]
+            },
+            {
+              "text": "The models communicate through language and can combine ordinary instructions with programming or database expressions. The graph organizes how their responses become useful information for one another.",
+              "children": [
+                "A language-teaching system can combine limited language records with instructions about selecting material and responding to a learner. This is useful when there is too little text to train a strong next-word predictor for that language alone.",
+                "Constructing a teacher includes choosing informative examples and responding patiently; it requires organizing the available knowledge around a learning task."
+              ]
+            },
+            {
+              "text": "**Revising a draft is different from retraining the model.** In the basic agent arrangement, the individual LLMs are already trained and keep their weights while exchanging instructions and responses.",
+              "children": [
+                "The critic can change the information the reviser receives without changing either model’s weights. The exchange affects the next response through its context.",
+                "An individual LLM retains the supplied sequence as context. An agentic system can also use **shared memory**, a place where models write and retrieve information across their interactions.",
+                "Shared memory and the communication paths affect coordination. They supply information at the whole-system level, while heads are components within the processing of one model."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "One neuron returns a weighted-sum response from a vector",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "A network produces a decision vector through linked layers",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "The LLM accepts a context sequence and predicts a next-token distribution",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Dog–barks agreement crosses intervening singular and plural material",
+              "source": "spoken",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "Learning uses known continuations and backpropagation/SGD; inference uses current weights",
+              "source": "pdf",
+              "blocks": [
+                4
+              ]
+            },
+            {
+              "idea": "Architecture determines organization; learned weights determine useful representations",
+              "source": "pdf",
+              "blocks": [
+                5
+              ]
+            },
+            {
+              "idea": "Multilingual models learn different language structures and translation relationships",
+              "source": "spoken",
+              "blocks": [
+                6
+              ]
+            },
+            {
+              "idea": "Multimodal models connect text,speech,and actual image inputs",
+              "source": "spoken",
+              "blocks": [
+                7
+              ]
+            },
+            {
+              "idea": "Whole-model agent roles and their critic–revision loop differ from internal heads",
+              "source": "slide",
+              "blocks": [
+                8
+              ]
+            },
+            {
+              "idea": "Agents communicate through human/programming/database languages and can support low-data teaching",
+              "source": "spoken",
+              "blocks": [
+                9
+              ]
+            },
+            {
+              "idea": "Revision without weight changes is inference; context and shared memory retain information",
+              "source": "spoken",
+              "blocks": [
+                10
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              2
+            ],
+            "transcriptLines": [
+              [
+                5018,
+                5188
+              ],
+              [
+                5189,
+                5256
+              ]
+            ],
+            "pdfPages": [
+              58,
+              59,
+              60,
+              61
+            ]
+          }
+        },
+        {
+          "page": 3,
+          "teaching": [
+            {
+              "text": "Predicting the next word requires information about relationships across the sequence. **Representations** are the numerical information carried in the vectors, and **layers** supply successive stages of processing.",
+              "children": [
+                "Each layer receives representations already changed by the stage before it. Improving them means making the relevant information more useful for the eventual prediction, not simply raising their numerical values.",
+                "The example has **five layers**. These count stages through the model; the **fifteen vectors** count supplied context items, and **sixteen** marks the item to predict."
+              ]
+            },
+            {
+              "text": "An **attention head** is a processing component within a layer. Each head has learned **weights, W**, that help it contribute information to the representations.",
+              "children": [
+                "Heads operate **in parallel within one layer**. Their contributions are brought together to produce improved representations, which are then passed to the next layer.",
+                "The heads supply width within a stage, while the sequence of layers supplies depth. A head is not a separate whole LLM assigned to outline, write, or criticize a response."
+              ]
+            },
+            {
+              "text": "**Attention** means consulting the sequence to work out which relationships matter. In **“the dog that my parents…”**, predicting **barks** requires connecting the verb to the singular **dog**.",
+              "children": [
+                "The words about parents intervene, but they do not replace dog as the subject of that verb. Useful processing must identify the relevant relationship rather than rely only on the nearest word.",
+                "Different heads contribute to processing the sequence, and their combined contributions help each layer construct a more useful representation."
+              ]
+            },
+            {
+              "text": "The **architecture** specifies the arrangement of heads and layers. **Learning** determines the weights that make those components useful.",
+              "children": [
+                "A training sentence supplies the correct next word. A poor prediction gives an error that backpropagation and SGD use to adjust weights across the heads and layers.",
+                "The word **expert** describes a head’s learned contribution to improving the numerical information. It does not mean that selecting a number of heads automatically supplies them with useful language knowledge."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Successive layers transform representations toward a useful prediction",
+              "source": "pdf",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Parallel heads contribute and combine within each layer; heads are learned components not whole agents",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Attention consults the sequence to identify relevant dependencies such as dog→barks",
+              "source": "spoken",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Training determines head weights and architecture alone does not reveal learned language patterns",
+              "source": "pdf",
+              "blocks": [
+                3
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              3
+            ],
+            "transcriptLines": [
+              [
+                5278,
+                5359
+              ],
+              [
+                5556,
+                5561
+              ]
+            ],
+            "pdfPages": [
+              59,
+              60
+            ]
+          }
+        },
+        {
+          "page": 4,
+          "teaching": [
+            {
+              "text": "A **dynamical system** uses a rule to turn its current **state** into a new state. The state is the set of values describing the system at that stage, and its starting values are the **initial conditions**.",
+              "children": [
+                "The loop returns the result as input to another application of the rule. Repetition develops a sequence of states rather than one isolated answer."
+              ]
+            },
+            {
+              "text": "The oscillator begins with **position x = 1 and velocity v = 0**. The first position update uses the old velocity, so position initially stays at one.",
+              "children": [
+                "The velocity update uses the newly calculated positive position. Its opposing effect makes velocity **negative**. The following position update then uses that negative velocity, so position begins to decrease.",
+                "The numbers **1.00, 0.00** are the initial position and velocity. **1.00, −0.39** shows the next pair in the displayed example. They describe changing states rather than new settings of the rule."
+              ]
+            },
+            {
+              "text": "**Position, x, and velocity, v,** are updated in an alternating, or **interleaved**, order. The new position uses old velocity, and new velocity uses new position.",
+              "children": [
+                "The subscript **n** identifies a step, **n+1** identifies the following step, and **h** is the step size. It controls how far each update advances.",
+                "Positive velocity raises position, while negative velocity lowers it. Positive position pushes velocity downward, and negative position pushes it upward, turning the motion back toward the center.",
+                "The sequence forms a **trajectory**, a developing path through states. Position is cosine-like and velocity follows a shifted, minus-sine-like pattern. The two quantities do not reach their turning points together."
+              ]
+            },
+            {
+              "text": "Jordan’s **recurrent neural network** combines network processing with feedback through time. **Plan units** and **state units** feed a hidden layer, which produces the output.",
+              "children": [
+                "The output is **copied back** to the state units. Their small self-connections also retain a **fading trace** of the earlier state. Its influence weakens over time, while new output information enters the state.",
+                "The next response therefore depends on recent history as well as the plan, rather than being computed from an isolated current input alone.",
+                "The same weights are reused at successive moments. The feedback carries information used to produce the next response; it is different from calculating error derivatives during backpropagation."
+              ]
+            },
+            {
+              "text": "In the LLM comparison, **depth plays the role of time**. Fifteen input vectors provide the initial representations, and **W₁ through W₅** identify the five successive layer transformations.",
+              "children": [
+                "Following one numerical value upward through the layers gives a changing path. Following many values produces several trajectories. These paths are not required to form cosines.",
+                "The oscillator and recurrent network reuse a rule across time, while each LLM layer has its own weights. What the examples share is that a new state depends on the state already produced.",
+                "The stock-return traces also develop through time without following one exact oscillation. At the agentic level, returning a revision to the critic likewise develops the information in a loop. A dynamical description concerns this changing state, not a requirement that every system move identically."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "A dynamical rule maps the current state to a new state and is applied repeatedly",
+              "source": "pdf",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "The oscillator starts at x=1/v=0 and its causal interleaved updates create motion",
+              "source": "spoken",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "x,v,n,h and update order describe oscillator trajectories without requiring worked arithmetic",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Jordan network copies outputs to state units and retains decaying state traces with reused weights",
+              "source": "slide",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "LLM depth develops trajectories across layers with different W sets; agent loops also develop states",
+              "source": "pdf",
+              "blocks": [
+                4
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              4
+            ],
+            "transcriptLines": [
+              [
+                5363,
+                5419
+              ]
+            ],
+            "pdfPages": [
+              61,
+              62
+            ]
+          }
+        },
+        {
+          "page": 5,
+          "teaching": [
+            {
+              "text": "**Fifteen vectors** represent fifteen supplied items, **x₁ through x₁₅**, and **x₁₆** is the next item to predict. A vector is a list of numbers describing one item.",
+              "children": [
+                "The numbers can represent words, sound frames, image patches, or amino acids. The next-item question stays the same while the represented material changes."
+              ]
+            },
+            {
+              "text": "The sentence **“The cat that the dog chased ran up the old tree and sat on the ___”** contains fifteen supplied words. The missing sixteenth item is another word.",
+              "children": [
+                "The **cat** is the one that ran and sat. A sensible completion depends on those relationships across the sentence, not only on the final few words."
+              ]
+            },
+            {
+              "text": "A **spectrogram** shows sound frequencies through time. Its fifteen frames give successive short portions of sound, and the following frame is the prediction.",
+              "children": [
+                "The horizontal direction is **time**, while the vertical scale runs from **0 to 5 kHz**, or zero to five thousand hertz. Each frame can represent information about frequencies and their amplitudes."
+              ]
+            },
+            {
+              "text": "An **image** is divided into a **four-by-four grid of sixteen patches**. **Fifteen known patches** are supplied in row-by-row order, and the missing **sixteenth patch** is at the bottom-right.",
+              "children": [
+                "The vectors describe pixel information. The order is chosen through space rather than supplied by sound unfolding through time. Predicting the missing patch uses relationships among parts of the image."
+              ]
+            },
+            {
+              "text": "The insulin B-chain supplies **F V N Q H L C G S H L V E A L**, fifteen **amino acids** in an ordered chain. The following residue is **Y**.",
+              "children": [
+                "The **N** beside the folded protein marks its amino end rather than an answer in the missing position. The next-residue task continues the sequence; it does not directly request the entire folded structure.",
+                "**Protein folding** concerns the chain’s three-dimensional form. Sequence relationships matter for that structure and connect this kind of modeling with biological applications such as drug design."
+              ]
+            },
+            {
+              "text": "The **numerical form is shared**, while the meaning of the numbers differs. Sound frames follow time, image patches follow a spatial reading order, and amino acids follow positions along a chain.",
+              "children": [
+                "Suitable representations and learning are required for each kind of information. Describing all items as vectors does not make their original materials interchangeable."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "x1–x15 are supplied vectors and x16 is the missing next item across kinds of data",
+              "source": "slide",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Sentence interpretation determines which entity supplies a plausible continuation",
+              "source": "pdf",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Spectrogram time frames encode frequency/amplitude with a0–5kHz axis",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "A four-by-four image supplies15knownpatches and predicts the missing bottom-right16th",
+              "source": "slide",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "The insulin B-chain15residues predict Y; protein sequence is distinct from whole-fold prediction",
+              "source": "slide",
+              "blocks": [
+                4
+              ]
+            },
+            {
+              "idea": "Shared numerical input form still requires appropriate representations and learning",
+              "source": "pdf",
+              "blocks": [
+                5
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              5
+            ],
+            "transcriptLines": [],
+            "pdfPages": [
+              62
+            ]
+          }
+        },
+        {
+          "page": 6,
+          "teaching": [
+            {
+              "text": "**Phonotactics** is knowledge of which sequences of sounds a language allows. A **syllable** is an organized group of sounds within a word.",
+              "children": [
+                "English speakers can judge that some unfamiliar combinations fit English and others do not, even without having been taught an explicit list of every permitted sequence."
+              ]
+            },
+            {
+              "text": "A simple English syllable can have a **consonant, vowel, and consonant**, written **CVC**. Examples include **Don, mat, sit, cup, dog, fish, ring, and van**.",
+              "children": [
+                "The pattern concerns sounds. The final **e** in **shave, kite, and rope** does not add a separately pronounced vowel.",
+                "Two letters can spell one consonant sound, as in **ship, chin, and bath**. Counting letters and identifying sound positions are therefore different tasks."
+              ]
+            },
+            {
+              "text": "Languages differ in what can occur at the end of a syllable. The **Mandarin** comparison permits nasal endings, while **Cantonese** also permits a final **p**, the ending relevant to **cup**.",
+              "children": [
+                "The broad CVC arrangement does not specify which consonants are permitted in every language. A combination fitting one language can be unavailable in another."
+              ]
+            },
+            {
+              "text": "A **consonant cluster** contains consonants together. The **onset** is the consonant or consonants before the vowel, and the **coda** is the consonant or consonants after it.",
+              "children": [
+                "The onset examples are **split, flat, black, glad, and stop**, contrasted with ***sblit, *lfat, *bnack, *dlad, and *tsop**. The **star** marks a form excluded in the English comparison.",
+                "The coda examples are **desk, box, help, milk, and lamp**, contrasted with ***desb, *bokp, *hepl, *mikl, and *lapm**. Familiar consonants can still form an impermissible sequence when their order changes."
+              ]
+            },
+            {
+              "text": "The order of consonants can **mirror around the vowel**. In **flat**, l is next to the vowel and f is farther out. In **help**, l is again next to the vowel, with p farther out on the other side.",
+              "children": [
+                "In **lamp**, m is next to the vowel, while ***lapm** reverses the coda order. Having the same letters does not make the two sequences equivalent.",
+                "Other languages allow different openings. Russian examples permit initial **zb** or **dl**. In the Spanish comparison, an initial vowel is added before an **s-plus-consonant** opening, as in the comparison with English **stadium**."
+              ]
+            },
+            {
+              "text": "A longer word is a **chain of syllables**. The dots in **ba·na·na, win·dow, pump·kin, nap·kin, At·lan·tic, ath·lete, ad·mit, and spa·ghet·ti** mark syllable breaks.",
+              "children": [
+                "In **At·lan·tic**, t and l lie across a break. The opening ***tlantic** instead puts tl together in one initial onset. The same distinction relates **athlete** to ***thlete**, and **admit** to ***dmit**.",
+                "The sound **ng** can end a syllable, as in **ring**, while ***ngapkin** puts it at the beginning in this English contrast. ***bnanana** and ***sbaghetti** likewise begin with excluded clusters. An acceptable continuation does not repair an opening that violates the pattern."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Phonotactics is language-specific knowledge of permitted sound sequences",
+              "source": "pdf",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "CVC concerns spoken sounds; silent letters and two-letter consonants differ from sound positions",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Languages differ in permitted syllable endings",
+              "source": "spoken",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Onsets, codas, real clusters, and all starred alternatives show order restrictions",
+              "source": "slide",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "The illustrated cluster ordering mirrors around the vowel and differs across languages",
+              "source": "pdf",
+              "blocks": [
+                4
+              ]
+            },
+            {
+              "idea": "Syllable boundaries permit sequences that cannot form a word-initial onset",
+              "source": "slide",
+              "blocks": [
+                5
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              6
+            ],
+            "transcriptLines": [
+              [
+                5431,
+                5513
+              ]
+            ],
+            "pdfPages": [
+              62,
+              63
+            ]
+          }
+        },
+        {
+          "page": 7,
+          "teaching": [
+            {
+              "text": "**Predicting the next letter** reveals knowledge of possible English sound and spelling sequences. Each prefix is the start of a word, and the underscore marks the next position to fill.",
+              "children": [
+                "Some beginnings permit many suitable continuations, while others sharply restrict the choices. A **star** marks a continuation excluded in the English comparison."
+              ]
+            },
+            {
+              "text": "After **ra_**, possibilities include **t, n, r, and l**. Once the vowel has occurred, the continuation is much less restricted than in the initial consonant clusters.",
+              "children": [
+                "The possibilities spread across many letters rather than forcing one particular answer."
+              ]
+            },
+            {
+              "text": "After **sp_**, **l, r, or a vowel** can follow. The listed vowel examples include **a, e, i, and o**.",
+              "children": [
+                "The excluded continuation ***spn** shows that a familiar consonant cannot simply be added in any order at the start of an English word."
+              ]
+            },
+            {
+              "text": "After **k_**, a **vowel or n** can follow. The listed possibilities include **i, e, a, and n**.",
+              "children": [
+                "The **n** example gives **knee**, where the written k is silent. This is a spelling possibility, not a claim that knee begins with a pronounced k followed by n. The contrast excludes ***kt**."
+              ]
+            },
+            {
+              "text": "After **skr_**, a **vowel** follows in the illustrated pattern. The listed possibilities are **a, e, i, and u**.",
+              "children": [
+                "Adding l would give ***skrl**, which does not fit this English opening. The preceding consonants constrain the next position."
+              ]
+            },
+            {
+              "text": "After initial **m_**, the listed choices are the vowels **a, e, i, o, and u**.",
+              "children": [
+                "The excluded ***mb** places another consonant after m in this word-initial position. The appropriate continuation depends on where the sequence occurs within a word."
+              ]
+            },
+            {
+              "text": "After **bram_**, **b** is strongly expected, giving **bramble**.",
+              "children": [
+                "A **new syllable** could also begin there. The continuation therefore depends on the syllable organization rather than being a universal rule that m must always be followed by one letter."
+              ]
+            },
+            {
+              "text": "After **b_**, **r, l, or a vowel** can follow. The listed possibilities are **r, l, a, e, i, o, and u**.",
+              "children": [
+                "The excluded ***bn** contrasts with these permitted English openings."
+              ]
+            },
+            {
+              "text": "After **f_**, **r, l, or a vowel** can follow. The listed possibilities are **r, l, a, e, i, o, and u**.",
+              "children": [
+                "The excluded ***fn** shows a different consonant combination that does not fit the illustrated opening."
+              ]
+            },
+            {
+              "text": "After **sh_**, a **vowel or r** can follow. The listed possibilities are **a, e, i, o, u, and r**, with **shrimp** illustrating r.",
+              "children": [
+                "The excluded ***shb** contrasts with these continuations. The two letters sh represent one consonant sound in this example."
+              ]
+            },
+            {
+              "text": "Guessing the next letter is a **next-item prediction**, the same organizing question represented by **x₁₆**. The supplied letters form the context, and the output is a **probability distribution** over continuations.",
+              "children": [
+                "After an open prefix such as **ra_**, or **fa_** in the parallel example, probability can be spread across many letters. After **skr_**, suitable probability is concentrated on vowels. A **flat** distribution is more spread out, while a **peaked** distribution concentrates on fewer choices.",
+                "Repeated prediction and correction can teach these regularities. The weights must capture the permitted sequences to assign useful probabilities. Sound and spelling patterns form a smaller sequence-learning problem than organizing all the words of a language into sentences."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "Next-letter predictions reveal phonotactic and spelling knowledge",
+              "source": "pdf",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "ra_ permits t,n,r,l and broad post-vowel choices",
+              "source": "slide",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "sp_ permits l,r,or a vowel and excludes spn",
+              "source": "slide",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "k_ permits a vowel or n as in knee and excludes kt",
+              "source": "slide",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "skr_ requires a vowel in the illustrated onset pattern and excludes skrl",
+              "source": "slide",
+              "blocks": [
+                4
+              ]
+            },
+            {
+              "idea": "Initial m_ requires a vowel in the illustrated pattern and excludes mb",
+              "source": "slide",
+              "blocks": [
+                5
+              ]
+            },
+            {
+              "idea": "bram_ strongly suggests b/bramble but can begin another syllable",
+              "source": "slide",
+              "blocks": [
+                6
+              ]
+            },
+            {
+              "idea": "b_ permits r,l,or a vowel and excludes bn",
+              "source": "slide",
+              "blocks": [
+                7
+              ]
+            },
+            {
+              "idea": "f_ permits r,l,or a vowel and excludes fn",
+              "source": "slide",
+              "blocks": [
+                8
+              ]
+            },
+            {
+              "idea": "sh_ permits a vowel or r/shrimp and excludes shb",
+              "source": "slide",
+              "blocks": [
+                9
+              ]
+            },
+            {
+              "idea": "Probability distribution shape encodes how tightly context restricts continuations",
+              "source": "pdf",
+              "blocks": [
+                10
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              7
+            ],
+            "transcriptLines": [],
+            "pdfPages": [
+              63,
+              64
+            ]
+          }
+        },
+        {
+          "page": 8,
+          "teaching": [
+            {
+              "text": "A small language model can be designed to learn **English syllable structure** through next-letter prediction. The specified architecture has **four attention heads in each of five layers**, with **sixty-four numbers in each token vector**.",
+              "children": [
+                "Four counts the heads contributing within one stage. Five counts the successive layers. Sixty-four is the vector’s **dimension**, the number of numerical values describing each token.",
+                "These choices specify the arrangement and size of the model. The weights still have to learn useful sequence patterns through training."
+              ]
+            },
+            {
+              "text": "The initial training design uses **one thousand randomly selected English words**. Within a word, the model receives letters already supplied and tries to predict the next letter.",
+              "children": [
+                "The actual following letter provides the **target**. A prediction error is used to improve the weights, and repeated corrections develop knowledge of possible continuations.",
+                "The design requests **ten generated examples after each training step**. Those examples show what the model currently produces; their purpose is to reveal the development of the output rather than to certify successful learning by themselves."
+              ]
+            },
+            {
+              "text": "A **pronunciation lexicon** supplies information about how words sound. It allows training to focus on pronunciation instead of assuming that every written letter is a separately spoken sound.",
+              "children": [
+                "For example, the final **e** in **shave** is not separately pronounced. A model learning sound structure must account for that difference between spelling and pronunciation.",
+                "The implementation uses **NumPy**, numerical Python, together with a pronunciation resource. The agentic system producing that implementation and the small model being trained are different systems."
+              ]
+            },
+            {
+              "text": "The initial run produces largely **gibberish**. A tentative appearance of vowels is not enough to show that the model has learned the permitted syllable patterns.",
+              "children": [
+                "Training on **ten thousand words instead of one thousand**, with more iterations, is a proposed extension that would give the model more learning opportunities. A completed successful result from those changes is not established.",
+                "Human speakers can make these judgments easily, while learning the same restrictions from data remains a substantial task. Architecture alone does not supply the knowledge."
+              ]
+            },
+            {
+              "text": "**Software 1.0** means writing a program in a programming language such as Python, C, or Pascal. The person directly specifies the operations.",
+              "children": [
+                "**Software 2.0** learns a mapping through a neural network’s weights. Input–output examples guide the weight changes, and the learned weights carry the knowledge needed to produce outputs from inputs.",
+                "**Software 3.0** uses language to instruct an agentic system to construct and run a program. The instruction can specify the architecture, training data, and desired outputs, while the agents produce and execute the implementation."
+              ]
+            },
+            {
+              "text": "**Vibe coding** is using natural language to direct an agentic system to construct a program, run it, and provide its outputs. A precise request uses concepts such as heads, layers, vectors, and learning to specify the intended behavior.",
+              "children": [
+                "The agentic system uses already learned language and programming abilities to build the small model. The new model then has to learn its own word-pattern weights. Constructing it does not transfer all the larger system’s knowledge into it."
+              ]
+            },
+            {
+              "text": "**Claude Shannon’s 1948 paper, A Mathematical Theory of Communication,** examines how sequences can approximate English. Unrestricted strings of letters look unlike English, while adding language-pattern information produces more familiar combinations.",
+              "children": [
+                "The examples progress from implausible consonant combinations toward sequences containing vowels, recognizable pieces, and more English-like organization. What can follow what is constrained by the language.",
+                "These are **statistical approximations** associated with **information theory**, not the same architecture as a modern head-and-layer network. The shared issue is learning or representing the structure of sequences."
+              ]
+            }
+          ],
+          "coverage": [
+            {
+              "idea": "A small word-pattern model specifies4heads5layers64numberspertokenvector",
+              "source": "spoken",
+              "blocks": [
+                0
+              ]
+            },
+            {
+              "idea": "Training uses1000randomwords,next-lettertargets,and10generatedsamplesperstep",
+              "source": "spoken",
+              "blocks": [
+                1
+              ]
+            },
+            {
+              "idea": "Pronunciation lexicon separates spoken syllables from irregular spelling; NumPy is implementation",
+              "source": "pdf",
+              "blocks": [
+                2
+              ]
+            },
+            {
+              "idea": "Initialgibberishdoesnotestablishsuccess;10000wordsandmoreiterationswereproposedextensions",
+              "source": "spoken",
+              "blocks": [
+                3
+              ]
+            },
+            {
+              "idea": "Software1.0writescode;Software2.0learnsweights;Software3.0instructsagentstobuildandrunprograms",
+              "source": "spoken",
+              "blocks": [
+                4
+              ]
+            },
+            {
+              "idea": "Vibecodingdirectsnatural-languageprogramconstruction;buildingmodeldiffersfromtrainingit",
+              "source": "spoken",
+              "blocks": [
+                5
+              ]
+            },
+            {
+              "idea": "Shannon statisticalapproximationsconnectinformationtheorywithstructuredsequencegeneration",
+              "source": "pdf",
+              "blocks": [
+                6
+              ]
+            }
+          ],
+          "evidence": {
+            "slides": [
+              8
+            ],
+            "transcriptLines": [
+              [
+                5514,
+                5582
+              ],
+              [
+                5583,
+                5655
+              ]
+            ],
+            "pdfPages": [
+              64,
+              65
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

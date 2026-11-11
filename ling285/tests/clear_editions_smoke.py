@@ -25,6 +25,8 @@ def run(base, browser, edition_ids=('original-c-v2', 'd-v2', 'notes-v7'), report
         page.set_viewport_size({'width': width, 'height': 1000 if width > 500 else 844})
         for cid, collection in editions[primary_edition]['collections'].items():
             module = 'module1' if int(cid[7:9]) < 11 else 'module2'
+            if module not in editions[primary_edition].get('availableModules', ['module1','module2']):
+                continue
             page.goto(f'{base}/ling285/modern/?view=collection&lecture={cid}&module={module}')
             page.wait_for_selector('.source-section')
             page.wait_for_function('document.querySelectorAll("[data-transcript-version] option:not(:disabled)").length >= 9')
@@ -33,7 +35,7 @@ def run(base, browser, edition_ids=('original-c-v2', 'd-v2', 'notes-v7'), report
             assert page.locator('[data-transcript-version] option[value="notes-v7"]').evaluate('(option)=>option.disabled') == (module == 'module1')
             assert page.locator('.source-section').count() == len(collection['sections'])
             for key, payload in editions.items():
-                if module == 'module1' and key == 'notes-v7':
+                if module not in payload.get('availableModules', ['module1','module2']):
                     continue
                 page.locator('[data-transcript-version]').select_option(key)
                 assert page.locator('[data-transcript-version]').input_value() == key

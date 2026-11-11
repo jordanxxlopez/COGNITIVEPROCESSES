@@ -53,7 +53,7 @@ test('the two additional choices preserve all previous modern writing and editio
 });
 
 test('the existing five modern editions preserve every source page and unpadded title page', () => {
-  assert.deepEqual(Object.keys(pack.editions), [...retainedEditionIds,'original-c-v2','d-v2','notes-v7','original-c-v3']);
+  assert.deepEqual(Object.keys(pack.editions), [...retainedEditionIds,'original-c-v2','d-v2','notes-v7','original-c-v3','notes-v7-v2']);
   assert.equal(lectures.reduce((n, c) => n + c.sections.length, 0), 286);
   for (const edition of ['professor','b','c','follow','v20']) {
     const payload = read(`modern/transcripts-${edition}.json`);
@@ -218,9 +218,11 @@ test('Version 3 preserves all ten prior choices, course content and layout asset
       // Shared module buttons were added in 657f93a after this snapshot. Keep
       // those assets present while checking all earlier markup byte for byte.
       const html = fs.readFileSync(path.join(root, file), 'utf8');
-      const css = '<link rel="stylesheet" href="../course-module-buttons.css?v=1">';
-      const script = '<script src="../course-module-buttons.js?v=1" data-course="ling285" defer></script>';
-      assert(html.includes(css) && html.includes(script), 'Retain shared module navigation.');
+      const cssMatch = html.match(/<link rel="stylesheet" href="\.\.\/course-module-buttons\.css\?v=(1|2)">/);
+      assert(cssMatch, 'Retain the versioned shared module navigation stylesheet.');
+      const css = cssMatch[0];
+      const script = `<script src="../course-module-buttons.js?v=${cssMatch[1]}" data-course="ling285" defer></script>`;
+      assert(html.includes(script), 'Retain the matching shared module navigation script.');
       actual = crypto.createHash('sha256').update(html.replace(css, '').replace(script, '')).digest('hex');
     }
     assert.equal(actual, expected, file);
@@ -261,6 +263,77 @@ test('Version 3 explains source visual meanings in place and keeps unaffected pa
   const text = JSON.stringify(payload.collections.lecture11.sections[2].teaching);
   for (const pattern of [/reference/i,/mass/i,/stiffness/i,/4m/,/4K/,/four times/i,/half/i,/twice/i,/cycles/i]) assert.match(text, pattern);
   assert.equal(report.rules.repeatedExplanationTemplate, false);
+});
+
+test('Version 7 Version 2 keeps all eleven existing choices and their course material unchanged', () => {
+  const lock = read('modern/notes-v7-v2-preserved.json');
+  assert.equal(Object.keys(lock.editions).length, 11);
+  for (const [id,label] of Object.entries(lock.editions)) assert.equal(pack.editions[id], label);
+  for (const [file,expected] of Object.entries(lock.files)) {
+    const actual = file === 'modern/content.js'
+      ? crypto.createHash('sha256').update(restoreEditionMetadata(file, Object.keys(lock.editions))).digest('hex')
+      : hash(file);
+    assert.equal(actual, expected, file);
+  }
+  const entry = fs.readFileSync(path.join(root, 'modern/index.html'), 'utf8')
+    .replaceAll('modern/app.js?v=notes-v7-v2-1', 'modern/app.js?v=' + lock.entryCacheVersion)
+    .replaceAll('modern/content.js?v=notes-v7-v2-1', 'modern/content.js?v=' + lock.entryCacheVersion);
+  assert.equal(crypto.createHash('sha256').update(entry).digest('hex'), lock.modernEntryHtmlSha256,
+    'Keep the existing modern shell and shared module controls unchanged.');
+});
+
+test('Version 7 Version 2 links source ideas to actual teaching and keeps page-based study identities', () => {
+  const base = read('modern/transcripts-notes-v7.json');
+  const payload = read('modern/transcripts-notes-v7-v2.json');
+  const report = read('modern/notes-v7-v2-provenance.json');
+  assert.deepEqual(payload.availableModules, ['module2']);
+  assert.equal(payload.origin.baseSha256, hash('modern/transcripts-notes-v7.json'));
+  assert.deepEqual(payload.visualPresentation, base.visualPresentation);
+  assert.equal(report.sourcePages, 131);
+  assert.equal(report.pages.length, 131);
+  for (const [file,expected] of Object.entries(report.authoringFiles)) assert.equal(hash(file), expected, file);
+  for (const lecture of lectures) {
+    const sections = payload.collections[lecture.id].sections;
+    assert.deepEqual(sections.map(({teaching,...metadata})=>metadata),
+      base.collections[lecture.id].sections.map(({teaching,...metadata})=>metadata));
+    for (const section of sections) {
+      if (lecture.moduleId === 'module1') {assert.deepEqual(section.teaching, []);continue;}
+      const audit = report.pages.find(p=>p.sectionId===section.id);
+      assert(audit, section.id);
+      assert.equal(Boolean(audit.coverage.length), Boolean(section.teaching.length), section.id);
+      assert(audit.evidence.slides.length, section.id);
+      for (const idea of audit.coverage) {
+        assert(idea.idea.trim() && ['slide','spoken','pdf'].includes(idea.source), section.id);
+        assert(idea.blocks.length && idea.blocks.every(i=>Number.isInteger(i) && i>=0 && i<section.teaching.length), section.id);
+      }
+      const prose = section.teaching.flatMap(b=>[b.text,...b.children]).join(' ').replaceAll('**','');
+      assert(!/\b(?:need not|the class|the lecture|the professor|he says|she says|as we saw|we will see|previous slides?|next slides?|picture|pictures|pictured)\b/i.test(prose), section.id);
+      for (const b of section.teaching) for (const t of [b.text,...b.children]) assert.equal(t.split('**').length%2, 1, section.id);
+      if (section.teaching.length) assert(JSON.stringify(section.teaching).includes('**'), section.id);
+    }
+  }
+});
+
+test('repeated principle slides each retain the fixed-end and free-end explanations', () => {
+  const payload = read('modern/transcripts-notes-v7-v2.json');
+  for (const [cid,page] of [['lecture12',9],['lecture12',22],['lecture13',2]]) {
+    const text = JSON.stringify(payload.collections[cid].sections[page-1].teaching).replaceAll('**','').replace(/[–—]/g,'-');
+    for (const pattern of [/mass/i,/stiffness/i,/modes?/i,/mov(?:e|ement|ing)/i,/stretch|compress/i,/fixed.fixed/i,/fixed.free/i,/base frequency/i,/odd/i,/quarter.wave/i]) assert.match(text, pattern, `${cid}:${page}`);
+    assert(/whole.number|integer/i.test(text), `${cid}:${page}: whole-number harmonic relationship`);
+  }
+  const correctArrow = JSON.stringify(payload.collections.lecture13.sections[1].teaching);
+  assert(!/\btypo\b/i.test(correctArrow), 'Do not repeat the L12 arrow warning on the correctly printed L13 slide.');
+});
+
+test('the taught activation exercise and all nine next-letter examples remain explained', () => {
+  const payload = read('modern/transcripts-notes-v7-v2.json');
+  const activation = JSON.stringify(payload.collections.lecture15.sections[3].teaching).replaceAll('**','');
+  for (const pattern of [/activation/i,/positive/i,/weight/i,/done/i,/probabilit/i]) assert.match(activation, pattern);
+  for (const cid of ['lecture17','lecture18']) {
+    const text = JSON.stringify(payload.collections[cid].sections[6].teaching).replaceAll('**','');
+    for (const prefix of ['ra','sp','k','skr','m','bram','b','f','sh']) assert(new RegExp('\\b'+prefix+'(?:_|\\b)','i').test(text), `${cid}: ${prefix}`);
+    for (const example of ['bramble','knee','shrimp']) assert(new RegExp(example,'i').test(text), `${cid}: ${example}`);
+  }
 });
 
 test('new section content and question answers resolve to original source pages', () => {
