@@ -93,6 +93,11 @@ def plain_words(text):
 
 
 def build_notes_v8(root, out):
+    return build_pdf_notes(root, out, EDITION, LABEL, PDF, 'notes-v8', SECTION_SLIDES,
+                           revision='2026-11-user-pdf-notes-8', version='8')
+
+
+def build_pdf_notes(root, out, edition, label, pdf, src_dir, section_slides, revision, version):
     base_path = out / 'transcripts-notes-v7.json'
     base = json.loads(base_path.read_text())
     payload = deepcopy(base)
@@ -101,15 +106,15 @@ def build_notes_v8(root, out):
             section['teaching'] = []
     sources, assignments = {}, []
     for n in range(11, 19):
-        path = root / f'authoring/notes-v8/{n}.md'
-        sources[f'authoring/notes-v8/{n}.md'] = digest(path)
+        path = root / f'authoring/{src_dir}/{n}.md'
+        sources[f'authoring/{src_dir}/{n}.md'] = digest(path)
         sections = parse(path)
         assert [s['number'] for s in sections] == list(range(1, len(sections) + 1)), n
-        assert set(SECTION_SLIDES[n]) == {s['number'] for s in sections}, n
+        assert set(section_slides[n]) == {s['number'] for s in sections}, n
         collection = payload['collections'][f'lecture{n}']
         by_page = {s['page']: s for s in collection['sections']}
         for sec in sections:
-            target = SECTION_SLIDES[n][sec['number']]
+            target = section_slides[n][sec['number']]
             pages = target if isinstance(target, tuple) else (target,) * len(sec['bullets'])
             assert len(pages) == len(sec['bullets']), (n, sec['number'], len(sec['bullets']))
             for index, (page, bullet) in enumerate(zip(pages, sec['bullets']), 1):
@@ -126,24 +131,24 @@ def build_notes_v8(root, out):
                          for t in [b['text'], *b['children']] for w in plain_words(t))
         assert placed == Counter(source_words), n
         for s in collection['sections']:
-            check_blocks(s['teaching'], f'{EDITION}:{s["id"]}')
-    payload.update(id=EDITION, label=LABEL, revision='2026-11-user-pdf-notes-8',
+            check_blocks(s['teaching'], f'{edition}:{s["id"]}')
+    payload.update(id=edition, label=label, revision=revision,
                    availableModules=['module2'],
-                   origin=dict(authoringFiles=sources, pdf=PDF, pdfSha256=digest(root / PDF),
-                               wording='User-authored Version 8 notes retained word for word, with bold emphasis.',
-                               followingSlides=True, provenance='modern/notes-v8-provenance.json'),
-                   guidance='Your Version 8 notes, placed beside the original slides for Lectures 11–18.')
+                   origin=dict(authoringFiles=sources, pdf=pdf, pdfSha256=digest(root / pdf),
+                               wording=f'User-authored Version {version} notes retained word for word, with bold emphasis.',
+                               followingSlides=True, provenance=f'modern/{edition}-provenance.json'),
+                   guidance=f'Your Version {version} notes, placed beside the original slides for Lectures 11–18.')
     payload['metrics'] = metrics(payload['collections'])
-    dump(out / f'transcripts-{EDITION}.json', payload)
-    dump(out / 'notes-v8-provenance.json', dict(
-        edition=EDITION, label=LABEL, authoringFiles=sources, pdf=PDF, pdfSha256=digest(root / PDF),
+    dump(out / f'transcripts-{edition}.json', payload)
+    dump(out / f'{edition}-provenance.json', dict(
+        edition=edition, label=label, authoringFiles=sources, pdf=pdf, pdfSha256=digest(root / pdf),
         baseLayout='modern/transcripts-notes-v7.json', baseLayoutSha256=digest(base_path),
         bullets=len(assignments), assignments=assignments,
         preservation=dict(wordsUnchanged=True, eachBulletPlacedOnce=True,
                           omitted='The four course header lines and the section headings, which the reader replaces with the original slide titles.',
                           code='Each fenced code block is shown as sub-bullets of the bullet that introduces it, one complete statement per sub-bullet.'),
         otherEditionsChanged=False))
-    return {EDITION: LABEL}
+    return {edition: label}
 
 
 if __name__ == '__main__':
