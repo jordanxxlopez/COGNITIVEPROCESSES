@@ -98,3 +98,13 @@ or drawing. Use model, distribution or diagram when that is what the explanation
 concerns. For literal visual inputs to a model, use image and image patch.
 Apply this wording preference throughout new authored prose while preserving
 verbatim source documents, quoted material and retained earlier editions.
+
+For revised transcript editions, compare each meaningful slide idea and relevant
+spoken explanation with the teaching on that same source page. Page presence
+and word counts do not establish content coverage. Repeated slides retain their
+relevant explanations again; do not move some principles exclusively to a later
+repeated slide. A new adapted edition may repeat source-note explanations where
+needed, while the original verbatim PDF edition remains unchanged. Explain
+conceptual exercises and their answers when the sources actually teach them.
+Keep an idea-to-teaching-block coverage record for review instead of relying
+only on preserved slide IDs.

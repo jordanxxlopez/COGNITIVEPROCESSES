@@ -12670,7 +12670,8 @@ window.LING285_MODERN = {
   "original-c-v2": "Original C · Version 2",
   "d-v2": "D · Version 2",
   "notes-v7": "Version 7 · Your PDF notes · Lectures 11–18",
-  "original-c-v3": "Original C · Version 3"
+  "original-c-v3": "Original C · Version 3",
+  "notes-v7-v2": "Version 7 · Version 2"
  },
  "code": [
   {

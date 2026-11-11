@@ -38,14 +38,15 @@ def run(base, browser):
         page.wait_for_function("document.querySelector('#content h1') && !document.querySelector('#content .loading')")
 
     page.goto(base + '/ling285/')
-    page.locator('#modernWorkspaceEntry').wait_for()
+    modern_entry = page.locator('#courseModuleButtons .workspace-entry, #modernWorkspaceEntry').first
+    modern_entry.wait_for()
     page.wait_for_function("document.querySelector('#content h1') && !document.querySelector('#content .loading')")
     old_question = json.loads((ROOT/'ling285/data.json').read_text())['questions'][0]['id']
     page.evaluate('([key,id]) => localStorage.setItem(key, JSON.stringify({notes:{"lecture11-p002":"Existing personal note"},read:{"lecture11-p002":true},drafts:{[id]:"Original response"}}))', [LEGACY,old_question])
-    page.locator('#modernWorkspaceEntry').click()
+    modern_entry.click()
     page.wait_for_selector('.modern-guide-point')
     assert page.title() == 'LING258 · Study Studio'
-    assert page.locator('h1').inner_text() == 'What to know by the end'
+    assert page.locator('#content h1').inner_text() == 'What to know by the end'
     ready = page.locator('[data-ready]').first
     ready.check()
     ready_id = ready.get_attribute('data-ready')
@@ -73,8 +74,8 @@ def run(base, browser):
     route('collection', lecture='lecture11')
     assert page.locator('.source-section').count() == 11
     styles = page.locator('[data-transcript-version]')
-    assert styles.locator('option').count() == 11
-    for edition in ['professor','b','c','follow','v20','original-c','d','original-c-v2','d-v2','notes-v7','original-c-v3']:
+    assert styles.locator('option').count() == 12
+    for edition in ['professor','b','c','follow','v20','original-c','d','original-c-v2','d-v2','notes-v7','original-c-v3','notes-v7-v2']:
         styles.select_option(edition)
         assert styles.input_value() == edition
         assert page.locator('.source-section').count() == 11
@@ -165,7 +166,7 @@ def run(base, browser):
     assert not errors, errors
     assert not failed, failed
     context.close()
-    print('PASS: original entry, section routes, 11 editions, shared notes, 100-question test, 8 quizzes, wording state, writing, backup and mobile layout')
+    print('PASS: original entry, section routes, 12 editions, shared notes, 100-question test, 8 quizzes, wording state, writing, backup and mobile layout')
 
 
 if __name__ == '__main__':

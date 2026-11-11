@@ -23,6 +23,7 @@ from modern_readings import READINGS
 from original_c_d import build_editions
 from clear_editions import build_clear_editions
 from visual_meaning import build_visual_meaning
+from notes_v7_v2 import build_notes_v7_v2
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'modern'
@@ -111,19 +112,22 @@ def build():
     editions.update(build_editions(ROOT,OUT))
     editions.update(build_clear_editions(ROOT,OUT))
     editions.update(build_visual_meaning(ROOT,OUT))
+    editions.update(build_notes_v7_v2(ROOT,OUT))
     pack=dict(revision='2026-11-modern-1',concepts=CONCEPTS,guides=GUIDES,model=model,asked=ASK,qa=qa,pageConcepts=MAP,cards=CARDS,contrasts=CONTRASTS,hard=HARD,review=REVIEW,core=CORE,connections=CONNECTIONS,editions=editions,code=CODE,figures=FIGURES,questions=questions,writing=writing,summaries=SUMMARIES,readings=READINGS,coverage=coverage,uploads=uploads)
     (OUT/'content.js').write_text('window.LING285_MODERN = '+json.dumps(pack,ensure_ascii=False,indent=1)+';\n')
     html=(ROOT/'index.html').read_text().replace('<head>','<head>\n  <base href="../">')
     html=re.sub(r'<link rel="stylesheet" href="(?:fitting|reader-panels)\.css\?v=[^\"]+">','',html)
-    html=html.replace('</head>','<link rel="stylesheet" href="modern/modern.css?v=1"><link rel="stylesheet" href="../workspace-modern.css?v=layout-switch-4"><link rel="stylesheet" href="modern/module2-layout.css?v=2"><link rel="stylesheet" href="fitting.css?v=3"><link rel="stylesheet" href="reader-panels.css?v=2"></head>')
+    module_styles=re.findall(r'<link rel="stylesheet" href="\.\./course-module-buttons\.css\?v=[^"]+">',html)
+    for tag in module_styles:html=html.replace(tag,'')
+    html=html.replace('</head>','<link rel="stylesheet" href="modern/modern.css?v=1"><link rel="stylesheet" href="../workspace-modern.css?v=layout-switch-4"><link rel="stylesheet" href="modern/module2-layout.css?v=2"><link rel="stylesheet" href="fitting.css?v=3"><link rel="stylesheet" href="reader-panels.css?v=2">'+''.join(module_styles)+'</head>')
     html=html.replace('<script src="app.js?v=ling285-source-fidelity-3" defer></script>','<script src="modern/content.js?v=1" defer></script><script src="modern/app.js?v=1" defer></script>')
     # Match the actual current asset tag while preserving the source shell otherwise.
     html=re.sub(r'\s*<a id="modernWorkspaceEntry".*?</a>','',html)
     html=html.replace('<a href="./" class="brand">','<a href="modern/" class="brand">')
     html=re.sub(r'<script src="app\.js[^\"]*" defer></script>', '<script src="modern/content.js?v=1" defer></script><script src="modern/app.js?v=1" defer></script>',html)
     assert 'src="modern/app.js' in html
-    html=html.replace('modern/app.js?v=1','modern/app.js?v=visual-meaning-3')
-    html=html.replace('modern/content.js?v=1','modern/content.js?v=visual-meaning-3')
+    html=html.replace('modern/app.js?v=1','modern/app.js?v=notes-v7-v2-1')
+    html=html.replace('modern/content.js?v=1','modern/content.js?v=notes-v7-v2-1')
     html=html.replace('<div class="nav-label" id="workspaceModuleLabel">','<a class="workspace-switch" href="./">Open original workspace</a><div class="nav-label" id="workspaceModuleLabel">')
     (OUT/'index.html').write_text(html)
     app=(ROOT/'app.js').read_text()
