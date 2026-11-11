@@ -53,7 +53,7 @@ test('the two additional choices preserve all previous modern writing and editio
 });
 
 test('the existing five modern editions preserve every source page and unpadded title page', () => {
-  assert.deepEqual(Object.keys(pack.editions), [...retainedEditionIds,'original-c-v2','d-v2','notes-v7','original-c-v3','notes-v7-v2','notes-v8','notes-v8-1','notes-v9','notes-v9-1','notes-v9-2','notes-v10']);
+  assert.deepEqual(Object.keys(pack.editions), [...retainedEditionIds,'original-c-v2','d-v2','notes-v7','original-c-v3','notes-v7-v2','notes-v8','notes-v8-1','notes-v9','notes-v9-1','notes-v9-2','notes-v9-3','notes-v10']);
   assert.equal(lectures.reduce((n, c) => n + c.sections.length, 0), 286);
   for (const edition of ['professor','b','c','follow','v20']) {
     const payload = read(`modern/transcripts-${edition}.json`);
@@ -277,7 +277,7 @@ test('Version 7 Version 2 keeps all eleven existing choices and their course mat
   }
   const entry = fs.readFileSync(path.join(root, 'modern/index.html'), 'utf8')
     .replaceAll('?v=notes-v8-1', '?v=notes-v7-v2-1')
-    .replaceAll('?v=notes-v10-loop-9', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-8', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-7', '?v=notes-v7-v2-1')
+    .replaceAll('?v=notes-v10-loop-10', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-9', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-8', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-7', '?v=notes-v7-v2-1')
     .replaceAll('?v=silent-loops-1', '?v=1')
     .replaceAll('?v=notes-v10-1', '?v=notes-v7-v2-1')
     .replaceAll('?v=notes-v9-1-1', '?v=notes-v7-v2-1')

@@ -12677,6 +12677,7 @@ window.LING285_MODERN = {
   "notes-v9": "Version 9 · Slide-by-slide notes · Lectures 11–18",
   "notes-v9-1": "Version 9.1 · Full slide-by-slide notes · Lectures 11–18",
   "notes-v9-2": "Version 9.2 · Full slide-by-slide notes in plain wording · Lectures 11–18",
+  "notes-v9-3": "Version 9.3 · Full slide-by-slide notes, clearest wording · Lectures 11–18",
   "notes-v10": "Version 10 · Neurodivergent-friendly notes · Lectures 11–18"
  },
  "code": [
