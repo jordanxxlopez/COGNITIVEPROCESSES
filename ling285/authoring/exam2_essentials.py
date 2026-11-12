@@ -10,6 +10,7 @@ five full sentences. "Predicted" questions change one thing in a real review, ho
 lab question (a different vowel, mode, mass, base frequency or layer size).
 """
 import json
+from guide_plain import build_plain_guide
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -575,6 +576,31 @@ LEADUP = {
  ],
 }
 
+PHONO_WORDS = [
+ "Simple syllable words: Don, mat, sit, cup, dog, fish and shave are all consonant, vowel, consonant. Ship, chin and bath also count, because sh, ch and th are each one sound spelled with two letters.",
+ "Allowed onsets (before the vowel): split, flat, black and glad.",
+ "Allowed codas (after the vowel): desk, help, milk and lamp.",
+ "Impossible twins: flat and *lfat, help and *hepl, lamp and *lapm. Each impossible twin puts the wrong consonant next to the vowel. *Sblit and *desb are impossible too, which is why a product called desb would sound un-English.",
+ "After ra_: Almost any letter can come next, such as t, n, r or l, so the distribution is flat.",
+ "After sp_: Only l, r or a vowel can come next, never n.",
+ "After k_: Only a vowel or n can come next, as in knee, never t.",
+ "After b_ and f_: Only r, l or a vowel can come next, never n.",
+ "After sh_: Only a vowel or r can come next, as in shrimp.",
+ "After skr_, or m_ at the start of a word: Only a vowel can come next.",
+ "After bram_: The letter b is almost certain, as in bramble, though a new syllable could also start there.",
+ "Lab 9 starts: After pl_ only a vowel can come, as in play. After st_ a vowel or r can come, as in star and street, but not l or k. After th_ r, w or a vowel can come, as in three, thwart and thin, but not l or n.",
+]
+
+PHONO_QUESTIONS = [
+ ["Predicted", "Which letter cannot come next after sp_ at the start of a word: l, r, n or a?", "N cannot. After sp only l, r or a vowel can come, as in split, spring and spa, because spn is not an allowed English onset."],
+ ["Predicted", "Which letter cannot come next after k_ at the start of a word: a, n or t?", "T cannot. After k only a vowel or n can come, as in knee, because kt cannot start an English syllable."],
+ ["Predicted", "What can come next after b_ or f_ at the start of a word, and what cannot?", "Only r, l or a vowel can come next, as in bring, black, frog and flat. N cannot, because bn and fn cannot start an English syllable."],
+ ["Predicted", "What can come next after sh_ at the start of a word?", "Only a vowel or r can come next, as in ship and shrimp. Shr is the only cluster English allows there."],
+ ["Predicted", "What can come next after skr_?", "Only a vowel can come next, as in scream and scrap. Skr already fills the onset, so no other consonant can be added."],
+ ["Predicted", "Why are lfat, hepl and lapm impossible when flat, help and lamp are words?", "The order of a cluster is a mirror image around the vowel. In flat and help the l sits right next to the vowel, and in lamp the m does, so each impossible twin puts the wrong consonant next to the vowel."],
+ ["Predicted", "Is ship a consonant, vowel, consonant word even though it has four letters?", "Yes. The pattern is about sounds, not letters, and sh is one sound. So ship is consonant sh, vowel i, consonant p."],
+]
+
 def _v3_topics():
     llm = {t["id"]: copy.deepcopy(t) for t in LLM_TOPICS}
     heads = llm["heads-layers"]
@@ -590,6 +616,9 @@ def _v3_topics():
         t = llm[key]
         t["tier"] = "Possible"
         t["note"] = LLM_NOTE + (" " + t["note"] if t["note"] else "")
+    ph = llm["phonotactics"]
+    ph["know"] = ph["know"] + PHONO_WORDS
+    ph["questions"] = ph["questions"] + PHONO_QUESTIONS
     base = [t for t in TOPICS if t["id"] != "possible-llm"]
     return base + [LEADUP, heads] + [llm[k] for k in ["llm-sequences", "gestalt-cloze", "recurrent-dynamical", "agentic", "phonotactics"]]
 
@@ -619,6 +648,7 @@ def build(out_path):
             },
         },
         "labs": labs,
+        "guidePlain": build_plain_guide(),
     }
     n_q = sum(len(t["questions"]) for t in topics_v3)
     out_path.write_text("window.LING285_ESSENTIALS = " + json.dumps(data, ensure_ascii=False, indent=1) + ";\n")
