@@ -11,6 +11,7 @@ lab question (a different vowel, mode, mass, base frequency or layer size).
 """
 import json
 from guide_plain import build_plain_guide
+from unlabel import bullet
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -628,7 +629,7 @@ TOPICS_V3 = _v3_topics()
 def build(out_path):
     conv = lambda ts: [dict(t, questions=[dict(source=s, q=q, a=a) for s, q, a in t["questions"]]) for t in ts]
     topics, topics_v2, topics_v3 = conv(TOPICS), conv(TOPICS_V2), conv(TOPICS_V3)
-    labs = [dict(l, questions=[dict(q=q, a=a) for q, a in l["questions"]]) for l in LABS]
+    labs = [dict(l, points=[bullet(m) for m in l["material"]], questions=[dict(q=q, a=a) for q, a in l["questions"]]) for l in LABS]
     data = {
         "versions": {
             "exam2-v1": {
@@ -641,6 +642,12 @@ def build(out_path):
                 "range": "Lectures 11 to 18",
                 "howToAnswer": HOW_TO_ANSWER, "scope": SCOPE_V2, "topics": topics_v2, "flags": FLAGS_V2,
             },
+            "exam2-v5": {
+                "label": "Exam 2 · Study this first (Lectures 11–18, plain sentences)",
+                "range": "Lectures 11 to 18",
+                "howToAnswer": [], "scope": SCOPE_V3, "flags": FLAGS_V2,
+                "topics": [dict(t, points=[bullet(k) for k in t["know"]]) for t in topics_v3],
+            },
             "exam2-v3": {
                 "label": "Exam 2 · Study this first (v3, Lectures 11–18, his questions first)",
                 "range": "Lectures 11 to 18",
@@ -650,6 +657,7 @@ def build(out_path):
         "labs": labs,
         "guidePlain": build_plain_guide(),
     }
+    data["versions"] = dict(sorted(data["versions"].items()))
     n_q = sum(len(t["questions"]) for t in topics_v3)
     out_path.write_text("window.LING285_ESSENTIALS = " + json.dumps(data, ensure_ascii=False, indent=1) + ";\n")
     return len(topics_v3), n_q, sum(len(l["questions"]) for l in labs)

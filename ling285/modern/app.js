@@ -1414,12 +1414,13 @@ function installModern() {
  const labelLine=text=>{const m=/^([^:]{1,60}): (.+)$/s.exec(text);return m?`<strong>${esc(m[1])}:</strong> ${rich(m[2])}`:rich(text);};
  const tierClass=t=>t==='Almost certain'?'ess-tier-certain':t==='Likely'?'ess-tier-likely':'ess-tier-possible';
  const qaList=qs=>`<div class="ess-questions">${qs.map(q=>`<details class="modern-answer"><summary>${q.source?`<span class="tag">${esc(q.source)}</span> `:''}${rich(q.q)}</summary>${paragraphs(q.a)}</details>`).join('')}</div>`;
+ const pointsList=t=>t.points?`<ul class="modern-teaching">${t.points.map(p=>`<li>${rich(p.main)}${p.sub?`<ul><li>${rich(p.sub)}</li></ul>`:''}</li>`).join('')}</ul>`:`<ul class="modern-teaching">${(t.know || []).map(k=>`<li>${labelLine(k)}</li>`).join('')}</ul>`;
  const essTopics=(opts)=>{
   const data=ESS.versions[essVersion()];if(!data)return '<p>Exam 2 study data is not loaded.</p>';
   return '<div class="ess-topics">'+data.topics.map(t=>{
    const qs=t.questions.filter(opts.filter || (()=>true));
    if(opts.questions && !opts.know && !qs.length)return '';
-   return `<details class="modern-topic ess-topic" data-modern-item ${opts.open===false?'':'open'}><summary>${esc(t.title)} <span class="tag ${tierClass(t.tier)}">${esc(t.tier)}</span></summary><div class="modern-topic-body"><p class="small muted">${esc(t.lectures)}</p>${t.note?`<p class="notice">${esc(t.note)}</p>`:''}${opts.know?`<h3>What to know</h3><ul class="modern-teaching">${t.know.map(k=>`<li>${labelLine(k)}</li>`).join('')}</ul>`:''}${opts.questions && qs.length?`<h3>Questions you can be asked</h3><p class="small muted">Open each question to see the answer. Write it the same way: the answer first, then the reason.</p>${qaList(qs)}`:''}</div></details>`;
+   return `<details class="modern-topic ess-topic" data-modern-item ${opts.open===false?'':'open'}><summary>${esc(t.title)} <span class="tag ${tierClass(t.tier)}">${esc(t.tier)}</span></summary><div class="modern-topic-body"><p class="small muted">${esc(t.lectures)}</p>${t.note?`<p class="notice">${esc(t.note)}</p>`:''}${opts.know?`<details class="modern-answer ess-know" open><summary>I can explain and apply these ideas</summary>${pointsList(t)}</details>`:''}${opts.questions && qs.length?`<h3>What you can be asked</h3>${qaList(qs)}`:''}</div></details>`;
   }).join('')+'</div>';
  };
  const howBox=()=>{const d=ESS.versions[essVersion()];if(!d)return '';return `<div class="ess-how"><details class="modern-topic" open><summary>How to write your answers</summary><div class="modern-topic-body"><ul class="modern-teaching">${d.howToAnswer.map(h=>`<li>${labelLine(h)}</li>`).join('')}</ul></div></details></div>`;};
@@ -1431,31 +1432,31 @@ function installModern() {
   const versionPick=`<label class="ess-focus">Version <select data-ess-version>${essKeys.map(k=>`<option value="${esc(k)}" ${k===essVersion()?'selected':''}>${esc(ESS.versions[k].label)}</option>`).join('')}</select></label>`;
   const d=ESS.versions[essVersion()];
   return intro('Study this first · Exam 2','If you study only one page, study this one. Material that repeated across '+essRange()+' is combined into one topic each, with what to know and the questions you can be asked, always with answers.')+
-   versionPick+scopeBox()+howBox()+essToolbar()+essTopics({know:true,questions:true})+
+   versionPick+scopeBox()+essToolbar()+essTopics({know:true,questions:true})+
    (d && d.flags.length?`<details class="modern-topic"><summary>Notes on the source materials</summary><div class="modern-topic-body"><ul class="modern-teaching">${d.flags.map(f=>`<li>${rich(f)}</li>`).join('')}</ul></div></details>`:'');
  }
  function labsView(){
   if(state.activeModule!=='module2')return module2OnlyNotice('Lab material · Labs 5–9');
   return intro('Lab material · Labs 5–9','The ideas each lab teaches, with its questions and answers. Praat is explained by what it shows, and click-by-click instructions are left out.')+
    `<p class="notice">Lab 9 is the TA's Exam 2 review, so it is the closest lab to the exam. Labs 5 to 8 repeat the lecture ideas with worked examples.</p>`+essToolbar()+
-   ESS.labs.map(l=>`<details class="modern-topic ess-lab" data-modern-item open><summary>${esc(l.title)}</summary><div class="modern-topic-body"><p class="small muted">${esc(l.date)} · ${esc(l.use)}</p><h3>Material</h3><ul class="modern-teaching">${l.material.map(m=>`<li>${labelLine(m)}</li>`).join('')}</ul><h3>Questions with answers</h3>${qaList(l.questions)}${(l.flags || []).length?`<h3>Corrections</h3><ul class="modern-teaching">${l.flags.map(f=>`<li>${rich(f)}</li>`).join('')}</ul>`:''}</div></details>`).join('');
+   ESS.labs.map(l=>`<details class="modern-topic ess-lab" data-modern-item open><summary>${esc(l.title)}</summary><div class="modern-topic-body"><p class="small muted">${esc(l.date)} · ${esc(l.use)}</p><details class="modern-answer ess-know" open><summary>I can explain and apply these ideas</summary>${pointsList({points:l.points,know:l.material})}</details><h3>What you can be asked</h3>${qaList(l.questions)}${(l.flags || []).length?`<h3>Corrections</h3><ul class="modern-teaching">${l.flags.map(f=>`<li>${rich(f)}</li>`).join('')}</ul>`:''}</div></details>`).join('');
  }
  const essMode=panel=>state.activeModule==='module2'?essPref('focus-'+panel,'original'):'original';
  const notesList=lines=>{let html='<ul class="modern-teaching">',open=false;for(const l of lines){const m=/^(\s*)- (.*)$/.exec(l);if(!m)continue;if(m[1].length){if(!open){html=html.replace(/<\/li>$/,'')+'<ul>';open=true;}html+=`<li>${rich(m[2])}</li>`;}else{if(open){html+='</ul></li>';open=false;}html+=`<li>${rich(m[2])}</li>`;}}if(open)html+='</ul></li>';return html+'</ul>';};
- const plainTopics=opts=>'<div class="ess-topics">'+(ESS.guidePlain || []).map(t=>`<details class="modern-topic ess-topic" data-modern-item open><summary>${esc(t.title)}</summary><div class="modern-topic-body">${opts.questions?`<h3>What you can be asked</h3>${qaList(t.questions)}`:''}${opts.know?`<h3>What to know</h3>${t.know.map(k=>`<p class="small muted">${esc(k.ref)}</p>${notesList(k.lines)}`).join('')}`:''}</div></details>`).join('')+'</div>';
+ const plainTopics=opts=>'<div class="ess-topics">'+(ESS.guidePlain || []).map(t=>`<details class="modern-topic ess-topic" data-modern-item open><summary>${esc(t.title)}</summary><div class="modern-topic-body">${opts.know?`<details class="modern-answer ess-know" open><summary>I can explain and apply these ideas</summary>${t.know.map(k=>`<p class="small muted">${esc(k.ref)}</p>${notesList(k.lines)}`).join('')}</details>`:''}${opts.questions?`<h3>What you can be asked</h3>${qaList(t.questions)}`:''}</div></details>`).join('')+'</div>';
  const essFocus=panel=>essPref('focus-'+panel,'original')==='exam2' && state.activeModule==='module2';
  const baseGuide=guide;
  guide=function(){
   if(state.activeModule!=='module2')return baseGuide();
-  if(essMode('guide')==='plain')return intro('What to know by the end · Plain wording','The same topics and questions as the original guide, written the way the transcript notes are: the answer first, then the reason, with the course terms kept.')+focusSelect('guide')+essToolbar()+plainTopics({know:true,questions:true});
+  if(essMode('guide')==='plain')return intro('What to know by the end · Plain wording','The same topics and questions as the original guide, written the way the transcript notes are, with the course terms kept.')+focusSelect('guide')+essToolbar()+plainTopics({know:true,questions:true});
   if(!essFocus('guide'))return baseGuide().replace('<div class="toolbar">',focusSelect('guide')+'<div class="toolbar">');
-  return intro('What to know by the end · Exam 2 focus','The material Exam 2 is most likely to test, combined by topic across '+essRange()+'.')+focusSelect('guide')+scopeBox()+howBox()+essToolbar()+essTopics({know:true,questions:true});
+  return intro('What to know by the end · Exam 2 focus','The material Exam 2 is most likely to test, combined by topic across '+essRange()+'.')+focusSelect('guide')+scopeBox()+essToolbar()+essTopics({know:true,questions:true});
  };
  const baseAsk=modernRoutes.ask,baseReview=modernRoutes.review;
  modernRoutes.ask=function(){
-  if(essMode('ask')==='plain')return intro('What you can be asked · Plain wording','Every question from the original guide, answered the way the transcript notes are written.')+focusSelect('ask')+howBox()+essToolbar()+plainTopics({know:false,questions:true});
+  if(essMode('ask')==='plain')return intro('What you can be asked · Plain wording','Every question from the original guide, answered the way the transcript notes are written.')+focusSelect('ask')+essToolbar()+plainTopics({know:false,questions:true});
   if(!essFocus('ask'))return state.activeModule==='module2'?baseAsk().replace('<p class="notice">',focusSelect('ask')+'<p class="notice">'):baseAsk();
-  return intro('What you can be asked · Exam 2 focus','Every review, homework and lab question in the way he asks it, plus predicted versions that change one thing, all with answers.')+focusSelect('ask')+scopeBox()+howBox()+essToolbar()+essTopics({know:false,questions:true});
+  return intro('What you can be asked · Exam 2 focus','Every review, homework and lab question in the way he asks it, plus predicted versions that change one thing, all with answers.')+focusSelect('ask')+scopeBox()+essToolbar()+essTopics({know:false,questions:true});
  };
  modernRoutes.review=function(){
   if(!essFocus('review'))return state.activeModule==='module2'?baseReview().replace('<p class="notice">',focusSelect('review')+'<p class="notice">'):baseReview();
