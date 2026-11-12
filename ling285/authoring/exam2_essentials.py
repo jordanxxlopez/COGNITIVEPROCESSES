@@ -538,10 +538,67 @@ TOPICS_V2 = [t for t in TOPICS if t["id"] != "possible-llm"] + LLM_TOPICS
 
 FLAGS_V2 = [f for f in FLAGS if not f.startswith("Lab 9 Part 4")]
 
+# ---- Version 3: Lectures 11 to 18 are fair game, emphasis on what he asked. Versions 1 and 2 are kept.
+import copy
+
+SCOPE_V3 = {
+    "covers": "Lectures 11 to 18 are all fair game here. Everything leading up to large language models is described in full, and the LLM part is kept.",
+    "final": "",
+    "evidence": "Emphasis goes to what he asked: the 21 review questions, HW5 and his cues in class, including heads (Nov 5: heads are a question on the exam). On Nov 10 he said the review and homework questions go \"up to right before we got to LLMs\" and that the LLM part is kept for the final, so the LLM topics are marked Possible. On Exam 1, about 15 of the 25 questions came almost word for word from the review sheet. Questions marked Predicted change one thing in a real question and are predictions, not confirmed exam questions.",
+}
+
+LLM_NOTE = "LLM part: On Nov 10 he said the LLM part is kept for the final, so study it after the topics marked Almost certain and Likely."
+
+LEADUP = {
+ "id": "lead-up", "tier": "Likely", "lectures": "Lecture 17 (start) and Lecture 18",
+ "title": "Leading up to LLMs: from one neuron to networks that unfold over time",
+ "note": "This is the part of Lecture 17 before LLMs, so it falls inside \"up to right before we got to LLMs.\" Lecture 18 opens by reviewing the same ideas.",
+ "know": [
+  "All-or-none: The first paper on artificial neural networks, by McCulloch and Pitts, started from the all-or-none behavior of real neurons. A neuron is either firing or not firing, which is the same idea as the **sigmoid**.",
+  "From biology: The earliest neural network work tried to model how the mind works, including mental illness, so the field began in biology rather than in technology.",
+  "Parallel Distributed Processing: **Parallel** means many neurons calculate their activations at the same time. **Distributed** means the information from the inputs is spread across all the neurons. By the time of these books, forward propagation and backpropagation were well worked out.",
+  "Neuron: A neuron takes in a vector and gives back one number. It multiplies each input by its weight and adds the results, which is the **inner product**.",
+  "Neural network: A neural network repeats the inner product layer after layer. It takes in one vector and gives back a vector of decisions.",
+  "The limit: The vowel network takes one **static** vector, a fixed list of numbers from one moment, and makes one decision. Speech changes all the time and a sentence is many words one after another, so one fixed list of numbers cannot model thinking that unfolds over time.",
+  "Recurrent network: Michael Jordan built the **recurrent** network to model speech production, because features such as nasality and lip rounding switch on and off at different moments. The network sends its own output back into part of its input, so what it produces at one moment helps predict the next.",
+  "Plan and state units: Plan units and state units feed the hidden layer, the hidden layer feeds the output, and the output is copied back into the state units. The same weights are used at every step.",
+  "The path to GPT: GPT works the same way, one word at a time. It predicts the next word, adds it to the prompt, and feeds everything back in to predict the word after that. Years like 1943, 1985 and 2017 give the history, but he said years are not asked.",
+ ],
+ "questions": [
+  ["Predicted", "How does the all-or-none behavior of neurons connect to the sigmoid?", "They are the same idea. A real neuron is either firing or not firing, and the sigmoid turns an inner product into a number near 0 (off) or near 1 (on), with a steep change in between."],
+  ["Predicted", "What do parallel and distributed mean in Parallel Distributed Processing?", "Parallel means many neurons calculate their activations at the same time. Distributed means the information from the inputs is spread across all the neurons rather than stored in one place."],
+  ["Predicted", "What does a single neuron take in and give back? What about a neural network?", "A neuron takes in a vector and gives back one number, the inner product of the inputs and their weights. A neural network repeats the inner product layer after layer, so it takes in one vector and gives back a vector of decisions."],
+  ["Predicted", "Why can't the vowel network model a sentence or speech over time?", "It takes one static vector, F1 and F2 from one moment, and makes one decision. Speech changes all the time and a sentence is many words one after another, so it needs a network that works through a sequence."],
+  ["Predicted", "What makes Jordan's network recurrent, and why did he build it?", "It sends its own output back into part of its input, copying the output into the state units, so what it produced at one moment helps predict the next. He built it because speech production changes over time, as features like nasality and lip rounding switch on and off."],
+  ["Predicted", "How is a recurrent network different from an nn.Sequential network?", "In a Sequential network, the input passes through the layers once, from the input to the output, and makes one decision. A recurrent network loops its output back into its input, so it works through a sequence step by step."],
+  ["Predicted", "How does GPT use the same idea as Jordan's network?", "GPT also feeds its own output back in. It predicts the next word, adds that word to the prompt, and predicts again, one word at a time."],
+ ],
+}
+
+def _v3_topics():
+    llm = {t["id"]: copy.deepcopy(t) for t in LLM_TOPICS}
+    heads = llm["heads-layers"]
+    heads["note"] = "On Nov 5 he said heads are a question on the exam, and the Lecture 18 slide says the same. This is the one LLM topic he named for the exam, so it stays Almost certain."
+    seq = llm["llm-sequences"]
+    seq["know"] = [k for k in seq["know"] if not k.startswith(("Levels:", "Static versus sequence:"))]
+    seq["questions"] = [q for q in seq["questions"] if not q[1].startswith(("What does a single neuron", "Why can't the vowel network"))]
+    dyn = llm["recurrent-dynamical"]
+    dyn["title"] = "The LLM as a dynamical system"
+    dyn["know"] = [k for k in dyn["know"] if not k.startswith(("Recurrent network:", "Plan and state units:", "GPT one word"))]
+    dyn["questions"] = [q for q in dyn["questions"] if not q[1].startswith(("What makes Jordan", "How is a recurrent"))]
+    for key in ["llm-sequences", "gestalt-cloze", "recurrent-dynamical", "agentic", "phonotactics"]:
+        t = llm[key]
+        t["tier"] = "Possible"
+        t["note"] = LLM_NOTE + (" " + t["note"] if t["note"] else "")
+    base = [t for t in TOPICS if t["id"] != "possible-llm"]
+    return base + [LEADUP, heads] + [llm[k] for k in ["llm-sequences", "gestalt-cloze", "recurrent-dynamical", "agentic", "phonotactics"]]
+
+TOPICS_V3 = _v3_topics()
+
 
 def build(out_path):
     conv = lambda ts: [dict(t, questions=[dict(source=s, q=q, a=a) for s, q, a in t["questions"]]) for t in ts]
-    topics, topics_v2 = conv(TOPICS), conv(TOPICS_V2)
+    topics, topics_v2, topics_v3 = conv(TOPICS), conv(TOPICS_V2), conv(TOPICS_V3)
     labs = [dict(l, questions=[dict(q=q, a=a) for q, a in l["questions"]]) for l in LABS]
     data = {
         "versions": {
@@ -555,12 +612,17 @@ def build(out_path):
                 "range": "Lectures 11 to 18",
                 "howToAnswer": HOW_TO_ANSWER, "scope": SCOPE_V2, "topics": topics_v2, "flags": FLAGS_V2,
             },
+            "exam2-v3": {
+                "label": "Exam 2 · Study this first (v3, Lectures 11–18, his questions first)",
+                "range": "Lectures 11 to 18",
+                "howToAnswer": HOW_TO_ANSWER, "scope": SCOPE_V3, "topics": topics_v3, "flags": FLAGS_V2,
+            },
         },
         "labs": labs,
     }
-    n_q = sum(len(t["questions"]) for t in topics_v2)
+    n_q = sum(len(t["questions"]) for t in topics_v3)
     out_path.write_text("window.LING285_ESSENTIALS = " + json.dumps(data, ensure_ascii=False, indent=1) + ";\n")
-    return len(topics_v2), n_q, sum(len(l["questions"]) for l in labs)
+    return len(topics_v3), n_q, sum(len(l["questions"]) for l in labs)
 
 
 if __name__ == "__main__":

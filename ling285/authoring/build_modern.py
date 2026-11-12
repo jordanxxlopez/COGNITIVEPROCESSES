@@ -151,7 +151,7 @@ def build():
     html=html.replace('stimuli/manifest.js?v=1','stimuli/manifest.js?v=yearago-1')
     assert 'src="modern/app.js' in html
     html=html.replace('modern/app.js?v=1','modern/app.js?v=notes-v10-loop-14')
-    html=html.replace('modern/content.js?v=1','modern/essentials.js?v=exam2-v2" defer></script><script src="modern/content.js?v=notes-v10-loop-14')
+    html=html.replace('modern/content.js?v=1','modern/essentials.js?v=exam2-v3" defer></script><script src="modern/content.js?v=notes-v10-loop-14')
     html=html.replace('<script src="modern/essentials.js','<link rel="stylesheet" href="modern/essentials.css?v=exam2-v1"><script src="modern/essentials.js',1)
     html=html.replace('<div class="nav-label" id="workspaceModuleLabel">','<a class="workspace-switch" href="./">Open original workspace</a><div class="nav-label" id="workspaceModuleLabel">')
     (OUT/'index.html').write_text(html)
