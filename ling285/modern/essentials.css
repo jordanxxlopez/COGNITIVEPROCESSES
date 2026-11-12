@@ -11,3 +11,11 @@
 .ess-questions summary .ess-figure{display:block;max-width:min(100%,640px);height:auto;margin:12px 0 4px;border-radius:8px;background:#fff}
 .ess-questions .modern-answer > .ess-figure{display:block;max-width:min(100%,640px);height:auto;margin:12px 0;border-radius:8px;background:#fff}
 .ess-qfig{margin:12px 0}.ess-qfig img{display:block;max-width:min(100%,640px);height:auto;border-radius:8px;background:#fff}.ess-qfig figcaption{margin-top:4px}
+#content .ess-split{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr)!important;gap:24px;align-items:start;width:100%}
+#content .ess-split>*{min-width:0;max-width:100%}
+#content .ess-media{margin:4px 0 0;position:sticky;top:84px;min-width:0;overflow:hidden}
+#content .ess-media *{max-width:100%;box-sizing:border-box}
+#content .ess-media :is(.row,.media-controls,[class*="control"]){flex-wrap:wrap}
+#content .ess-media img,#content .ess-media video{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+#content .ess-media figcaption{margin-top:6px}
+@media (max-width:900px){#content .ess-split{grid-template-columns:minmax(0,1fr)!important}#content .ess-media{position:static}}

@@ -90,3 +90,71 @@ def build_v9(topics_v7):
                 q.update(FIGURES[(t["id"], i)])
         out.append(t)
     return out
+
+
+# ---- v10: v9 with each lecture-page block showing its slide (or the professor's video) on the right.
+import json
+import re
+from pathlib import Path
+
+_ROOT = Path(__file__).resolve().parents[1]
+_REF = re.compile(r"Lecture (\d+) · p([\d, ]+)")
+
+
+def _slide_media():
+    """Map 'lectureNN-P' to a slide image, or to the source video when the slide image is blank."""
+    from PIL import Image, ImageStat
+    manifest = json.load(open(_ROOT / "stimuli" / "manifest.json"))
+    videos = {}
+    for e in manifest:
+        if e.get("type") == "video" and e["id"].startswith("source-"):
+            for s in e.get("slides") or []:
+                s = s["id"] if isinstance(s, dict) else s
+                m = re.match(r"(lecture\d+)-p0*(\d+)", s)
+                if m:
+                    videos.setdefault(f"{m.group(1)}-{m.group(2)}", e)
+
+    def media(lec, page):
+        img = _ROOT / "assets" / "slides" / lec / f"{page:03d}.webp"
+        if not img.exists():
+            return None
+        blank = ImageStat.Stat(Image.open(img).convert("L")).stddev[0] < 1
+        key = f"{lec}-{page}"
+        if blank and key in videos:
+            v = videos[key]
+            vid = Path(v["file"]).stem
+            poster = f"assets/exam2/frames/{vid}.jpg"
+            if not (_ROOT / poster).exists():
+                poster = ""
+            return {"video": v["file"], "poster": poster, "caption": f"Lecture {lec[7:]} · p{page} · {v.get('title', '')}"}
+        if blank:
+            return None
+        return {"image": f"assets/slides/{lec}/{page:03d}.webp", "caption": f"Lecture {lec[7:]} · p{page}"}
+    return media
+
+
+ALSO_KNOW_MEDIA = {
+    "springiness": {"image": FIG + "q06-string-mode5.png", "caption": "Mode 5 of a string fixed at both ends"},
+    "gestalt-cloze": {"image": FIG + "gen-kanizsa-triangle.svg", "caption": "The Gestalt triangle figure"},
+}
+
+
+def build_v10(topics_v9):
+    media = _slide_media()
+    out = []
+    for t in topics_v9:
+        t = copy.deepcopy(t)
+        for b in t["blocks"]:
+            for m in _REF.finditer(b.get("ref", "")):
+                lec = f"lecture{int(m.group(1))}"
+                for p in [int(x) for x in m.group(2).replace(" ", "").split(",") if x]:
+                    found = media(lec, p)
+                    if found:
+                        b["media"] = found
+                        break
+                if b.get("media"):
+                    break
+            if not b.get("media") and t["id"] in ALSO_KNOW_MEDIA and b.get("ref", "").startswith("Also know"):
+                b["media"] = ALSO_KNOW_MEDIA[t["id"]]
+        out.append(t)
+    return out

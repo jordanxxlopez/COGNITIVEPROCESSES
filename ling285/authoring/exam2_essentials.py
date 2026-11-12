@@ -14,7 +14,7 @@ from pathlib import Path
 from guide_plain import build_plain_guide
 from unlabel import bullet
 from module1_layout import build_v6, lab_blocks
-from exam2_versions import build_v8, build_v9
+from exam2_versions import build_v8, build_v9, build_v10
 
 _PLAIN = Path(__file__).resolve().parent / "plain"
 
@@ -700,6 +700,12 @@ def build(out_path):
                 "howToAnswer": [], "scope": SCOPE_V3, "flags": FLAGS_V2,
                 "topics": build_v9(build_v7(topics_v3)),
             },
+            "exam2-v10": {
+                "label": "Exam 2 · Study this first (Lectures 11–18, notes with slides and videos beside them)",
+                "range": "Lectures 11 to 18", "split": True,
+                "howToAnswer": [], "scope": SCOPE_V3, "flags": FLAGS_V2,
+                "topics": build_v10(build_v9(build_v7(topics_v3))),
+            },
             "exam2-v3": {
                 "label": "Exam 2 · Study this first (v3, Lectures 11–18, his questions first)",
                 "range": "Lectures 11 to 18",
@@ -709,7 +715,7 @@ def build(out_path):
         "labs": plain_labs(labs),
         "guidePlain": build_plain_guide(),
     }
-    data["versions"] = dict(sorted(data["versions"].items()))
+    data["versions"] = dict(sorted(data["versions"].items(), key=lambda kv: int(kv[0].split("-v")[1])))
     n_q = sum(len(t["questions"]) for t in topics_v3)
     out_path.write_text("window.LING285_ESSENTIALS = " + json.dumps(data, ensure_ascii=False, indent=1) + ";\n")
     return len(topics_v3), n_q, sum(len(l["questions"]) for l in labs)
