@@ -1398,6 +1398,68 @@ function installModern() {
   }
   nav();applyPreferences();$('#content').innerHTML=modernRoutes[view]();sizeNotes();
  };
+ // EXAM2_ESSENTIALS: "Study this first" sheet, Lab material, and the Exam 2 focus dropdowns.
+ // Data comes from modern/essentials.js (built by authoring/exam2_essentials.py). Originals stay the default.
+ const ESS=window.LING285_ESSENTIALS || {versions:{},labs:[]};
+ const essKeys=Object.keys(ESS.versions);
+ WORK.splice(0,0,['essentials','Study this first · Exam 2']);
+ { const at=WORK.findIndex(([id])=>id==='review'); WORK.splice(at+1,0,['labs','Lab material · Labs 5–9']); }
+ EXAM2_VIEWS.add('essentials');EXAM2_VIEWS.add('labs');
+ const essRead=readRoute;
+ readRoute=function(){essRead();const v=new URLSearchParams(location.search).get('view');if(v==='essentials' || v==='labs')view=v;};
+ const essPref=(key,fallback)=>{try{return localStorage.getItem('ling285-ess-'+key) || fallback;}catch{return fallback;}};
+ const essSet=(key,value)=>{try{localStorage.setItem('ling285-ess-'+key,value);}catch{}};
+ const essVersion=()=>{const v=essPref('version',essKeys[essKeys.length-1]);return ESS.versions[v]?v:essKeys[essKeys.length-1];};
+ const labelLine=text=>{const m=/^([^:]{1,60}): (.+)$/s.exec(text);return m?`<strong>${esc(m[1])}:</strong> ${rich(m[2])}`:rich(text);};
+ const tierClass=t=>t==='Almost certain'?'ess-tier-certain':t==='Likely'?'ess-tier-likely':'ess-tier-possible';
+ const qaList=qs=>`<div class="ess-questions">${qs.map(q=>`<details class="modern-answer"><summary>${q.source?`<span class="tag">${esc(q.source)}</span> `:''}${rich(q.q)}</summary>${paragraphs(q.a)}</details>`).join('')}</div>`;
+ const essTopics=(opts)=>{
+  const data=ESS.versions[essVersion()];if(!data)return '<p>Exam 2 study data is not loaded.</p>';
+  return data.topics.map(t=>{
+   const qs=t.questions.filter(opts.filter || (()=>true));
+   if(opts.questions && !opts.know && !qs.length)return '';
+   return `<details class="modern-topic ess-topic" data-modern-item ${opts.open===false?'':'open'}><summary>${esc(t.title)} <span class="tag ${tierClass(t.tier)}">${esc(t.tier)}</span></summary><div class="modern-topic-body"><p class="small muted">${esc(t.lectures)}</p>${t.note?`<p class="notice">${esc(t.note)}</p>`:''}${opts.know?`<h3>What to know</h3><ul class="modern-teaching">${t.know.map(k=>`<li>${labelLine(k)}</li>`).join('')}</ul>`:''}${opts.questions && qs.length?`<h3>Questions you can be asked</h3><p class="small muted">Open each question to see the answer. Write it the same way: the answer first, then the reason.</p>${qaList(qs)}`:''}</div></details>`;
+  }).join('');
+ };
+ const howBox=()=>{const d=ESS.versions[essVersion()];if(!d)return '';return `<details class="modern-topic" open><summary>How to write your answers</summary><div class="modern-topic-body"><ul class="modern-teaching">${d.howToAnswer.map(h=>`<li>${labelLine(h)}</li>`).join('')}</ul></div></details>`;};
+ const scopeBox=()=>{const d=ESS.versions[essVersion()];if(!d)return '';const s=d.scope;return `<div class="notice"><p><strong>On Exam 2:</strong> ${esc(s.covers)}</p><p><strong>Saved for the final:</strong> ${esc(s.final)}</p><p class="small">${esc(s.evidence)} Questions marked Predicted change one thing in a real review, homework or lab question. They are predictions, not confirmed exam questions.</p></div>`;};
+ const focusSelect=panel=>`<label class="ess-focus">Version <select data-ess-focus="${panel}"><option value="original" ${essPref('focus-'+panel,'original')==='original'?'selected':''}>Original</option><option value="exam2" ${essPref('focus-'+panel,'original')==='exam2'?'selected':''}>Exam 2 focus (predicted, with answers)</option></select></label>`;
+ const essToolbar=()=>`<div class="toolbar"><button data-modern-open="true">Expand topics</button><button data-modern-open="false">Collapse topics</button><button data-action="print">Print</button></div>`;
+ function essentialsView(){
+  if(state.activeModule!=='module2')return module2OnlyNotice('Study this first · Exam 2');
+  const versionPick=`<label class="ess-focus">Version <select data-ess-version>${essKeys.map(k=>`<option value="${esc(k)}" ${k===essVersion()?'selected':''}>${esc(ESS.versions[k].label)}</option>`).join('')}</select></label>`;
+  const d=ESS.versions[essVersion()];
+  return intro('Study this first · Exam 2','If you study only one page, study this one. Material that repeated across Lectures 11 to 16 is combined into one topic each, with what to know and the questions you can be asked, always with answers.')+
+   versionPick+scopeBox()+howBox()+essToolbar()+essTopics({know:true,questions:true})+
+   (d && d.flags.length?`<details class="modern-topic"><summary>Notes on the source materials</summary><div class="modern-topic-body"><ul class="modern-teaching">${d.flags.map(f=>`<li>${rich(f)}</li>`).join('')}</ul></div></details>`:'');
+ }
+ function labsView(){
+  if(state.activeModule!=='module2')return module2OnlyNotice('Lab material · Labs 5–9');
+  return intro('Lab material · Labs 5–9','The ideas each lab teaches, with its questions and answers. Praat is explained by what it shows, and click-by-click instructions are left out.')+
+   `<p class="notice">Lab 9 is the TA's Exam 2 review, so it is the closest lab to the exam. Labs 5 to 8 repeat the lecture ideas with worked examples.</p>`+essToolbar()+
+   ESS.labs.map(l=>`<details class="modern-topic ess-lab" data-modern-item open><summary>${esc(l.title)}</summary><div class="modern-topic-body"><p class="small muted">${esc(l.date)} · ${esc(l.use)}</p><h3>Material</h3><ul class="modern-teaching">${l.material.map(m=>`<li>${labelLine(m)}</li>`).join('')}</ul><h3>Questions with answers</h3>${qaList(l.questions)}${(l.flags || []).length?`<h3>Corrections</h3><ul class="modern-teaching">${l.flags.map(f=>`<li>${rich(f)}</li>`).join('')}</ul>`:''}</div></details>`).join('');
+ }
+ const essFocus=panel=>essPref('focus-'+panel,'original')==='exam2' && state.activeModule==='module2';
+ const baseGuide=guide;
+ guide=function(){
+  if(state.activeModule!=='module2')return baseGuide();
+  if(!essFocus('guide'))return baseGuide().replace('<div class="toolbar">',focusSelect('guide')+'<div class="toolbar">');
+  return intro('What to know by the end · Exam 2 focus','The material Exam 2 is most likely to test, combined by topic across Lectures 11 to 16.')+focusSelect('guide')+scopeBox()+essToolbar()+essTopics({know:true,questions:false});
+ };
+ const baseAsk=modernRoutes.ask,baseReview=modernRoutes.review;
+ modernRoutes.ask=function(){
+  if(!essFocus('ask'))return state.activeModule==='module2'?baseAsk().replace('<p class="notice">',focusSelect('ask')+'<p class="notice">'):baseAsk();
+  return intro('What you can be asked · Exam 2 focus','Every review, homework and lab question in the way he asks it, plus predicted versions that change one thing, all with answers.')+focusSelect('ask')+scopeBox()+howBox()+essToolbar()+essTopics({know:false,questions:true});
+ };
+ modernRoutes.review=function(){
+  if(!essFocus('review'))return state.activeModule==='module2'?baseReview().replace('<p class="notice">',focusSelect('review')+'<p class="notice">'):baseReview();
+  return intro('Exam 2 review guide · Exam 2 focus','The 21 review questions grouped by topic, each followed by the changed versions he is most likely to ask. Scope follows the Nov 10 review, so LLM material is left for the final.')+focusSelect('review')+scopeBox()+essToolbar()+essTopics({know:false,questions:true,filter:q=>/^Review|^Predicted/.test(q.source)});
+ };
+ modernRoutes.essentials=essentialsView;modernRoutes.labs=labsView;
+ document.addEventListener('change',event=>{
+  const f=event.target.closest('[data-ess-focus]');if(f){essSet('focus-'+f.dataset.essFocus,f.value);render();return;}
+  const v=event.target.closest('[data-ess-version]');if(v){essSet('version',v.value);render();}
+ });
  // Presentation only. Included inside installModern; authored content is read-only.
 // Uses the same guide / aid-inline / aid-qas / qa-item structure as PSYC301.
 const layoutKey='ling285-modern-module2-layout-v2';
