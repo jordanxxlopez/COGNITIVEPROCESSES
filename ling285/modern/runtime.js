@@ -411,7 +411,7 @@ function installModern() {
   const card=q=>{
    const ss=q.sources.map(r=>allSections.find(s=>s.collection===r.collection && s.page===r.page)).filter(Boolean);
    const source=ss[0];
-   return `<details class="modern-qa" data-modern-item><summary><span class="tag">${esc(refLabel(collections.get(q.lectureId)))} · ${q.sources.map(r=>'p'+r.page).join(', ')}</span><span>${rich(q.question)}</span></summary><div class="modern-qa-pair"><div>${q.answer.map(paragraphs).join('')}${sourceButtons(ss)}${evidence(q.concept)}</div>${source?`<figure><button class="slide-button" data-image-section="${esc(source.id)}"><img src="${esc(safeURL(source.image))}" loading="lazy" alt="Original ${esc(refLabel(collections.get(source.collection)))} page ${source.page}"></button><figcaption>Original source · page ${source.page}</figcaption></figure>`:''}</div></details>`;
+   return `<details class="modern-qa" data-modern-item data-qid="${esc(q.id)}"><summary><span class="tag">${esc(refLabel(collections.get(q.lectureId)))} · ${q.sources.map(r=>'p'+r.page).join(', ')}</span><span>${rich(q.question)}</span></summary><div class="modern-qa-pair"><div>${q.answer.map(paragraphs).join('')}${sourceButtons(ss)}${evidence(q.concept)}</div>${source?`<figure><button class="slide-button" data-image-section="${esc(source.id)}"><img src="${esc(safeURL(source.image))}" loading="lazy" alt="Original ${esc(refLabel(collections.get(source.collection)))} page ${source.page}"></button><figcaption>Original source · page ${source.page}</figcaption></figure>`:''}</div></details>`;
   };
   return intro('Q&A','Study each idea with its matching original source, then connect it to related ideas. Repeated demonstrations are grouped within their collection, with every covered page linked.')+
    `<div class="toolbar modern-filters"><label>View <select data-modern-qa="qaLayout"><option value="slides" ${layout==='slides'?'selected':''}>Slide by slide</option><option value="connections" ${layout==='connections'?'selected':''}>Putting it together</option></select></label><label>Collection <select data-modern-qa="qaLecture"><option value="all">All collections</option>${moduleLectures().map(c=>`<option value="${esc(c.id)}" ${chosen===c.id?'selected':''}>${esc(c.number)} · ${esc(collectionTitle(c))}</option>`).join('')}</select></label><label>Order <select data-modern-qa="qaOrder"><option value="slides" ${order==='slides'?'selected':''}>Source order</option><option value="priority" ${order==='priority'?'selected':''}>Study priority</option></select></label><button data-modern-open="true">Show all answers</button><button data-modern-open="false">Hide all answers</button></div><label class="search-wrap">Search questions and answers<input type="search" data-modern-find value="${esc(settings.qaQuery || '')}"></label><p class="small muted">${pool.length} questions in this view.</p>`+
@@ -605,6 +605,72 @@ function installModern() {
  };
  document.addEventListener('change',event=>{
   const p=event.target.closest('[data-plain-view]');if(p){essSet('plain-'+p.dataset.plainView,p.value);render();}
+ });
+ // QUESTION_FIGURES: show the figure a question refers to right under the question (Figures dropdown).
+ // Drawn figures where they exist; otherwise the exact lecture slide the question came from.
+ const FIG_RE=/\b(this picture|picture|diagram|figure|shown|below|above|the box|boxed|circle|point [A-Z]\b|draw|the plot|this plot|the graph|this graph|scatter|the curve|learning curve|this spectrum|this code|this network|the image|illustrat\w*|displayed)\b/i;
+ const FIG_DIR='assets/exam2/';
+ const FIG_MAP={
+  'modern-review-09':{ans:FIG_DIR+'gen-spectrum-fixed-fixed-200.svg',alt:'Spectrum with spikes at 200, 400, 600, 800, 1000 and 1200 Hz'},
+  'modern-writing-74901460829e8ddd':{ans:FIG_DIR+'gen-spectrum-fixed-fixed-200.svg',alt:'Spectrum with spikes at 200, 400, 600, 800, 1000 and 1200 Hz'},
+  'modern-review-10':{ans:FIG_DIR+'gen-spectrum-f0-150.svg',alt:'Spectrum with spikes at 150, 300, 450, 600 and 750 Hz'},
+  'modern-writing-32838f94662ce2d0':{ans:FIG_DIR+'gen-spectrum-f0-150.svg',alt:'Spectrum with spikes at 150, 300, 450, 600 and 750 Hz'},
+  'modern-writing-17dcd14a75951fe4':{q:FIG_DIR+'q14-string-modes-3-4.png',alt:'Modes 3 and 4 of a string with a box where Mode 3 crosses its middle line'},
+  'modern-lecture12-mcq-box-opposite-f11a228c42':{q:FIG_DIR+'q14-string-modes-3-4.png',alt:'Modes 3 and 4 of a string with a box where Mode 3 crosses its middle line'},
+  'v3-l14-written-009':false,'v3-l16-written-002':false,'v3-l18-written-005':false,
+ };
+ // Animation slides are blank as images, so use a frame from the professor's own video instead.
+ const FIG_FRAMES={'lecture11-6':'6fdaa70e0bfab83a6d83','lecture11-7':'a6ce5f4f318fd7141922','lecture11-11':'50927605857bbe7450a9','lecture12-7':'a6ce5f4f318fd7141922','lecture12-12':'4378fb47c97c7f4785f9','lecture12-15':'88801b232cfb0afdf879','lecture13-5':'ac3e753564fa139e2612','lecture13-6':'4378fb47c97c7f4785f9','lecture13-10':'de37514880e11a8d6b49','lecture14-5':'88801b232cfb0afdf879'};
+ const FIG_VIEWS=new Set(['qa','guide','ask','writing','review','practice']);
+ const figsOn=()=>essPref('figs','on')==='on';
+ const figFor=(id,text,sources)=>{
+  if(id in FIG_MAP)return FIG_MAP[id] || null;
+  if(!FIG_RE.test(text || ''))return null;
+  const s=(sources || []).map(r=>allSections.find(x=>x.collection===r.collection && x.page===r.page)).find(x=>x && x.image);
+  if(!s)return null;
+  const frame=FIG_FRAMES[s.collection+'-'+s.page];
+  return {q:frame?FIG_DIR+'frames/'+frame+'.jpg':s.image,alt:s.title,cap:refLabel(collections.get(s.collection))+' · p'+s.page+(frame?' · frame from the animation':'')};
+ };
+ const figHTML=(src,alt,cap)=>`<figure class="ess-qfig"><img class="review-image ess-figure" src="${esc(safeURL(src))}" alt="${esc(alt || 'Figure for this question')}" loading="lazy">${cap?`<figcaption class="small muted">${esc(cap)}</figcaption>`:''}</figure>`;
+ const addFigures=()=>{
+  if(['qa','guide','ask'].includes(view))for(const el of document.querySelectorAll('details[data-qid], details[data-layout-question]')){
+   const id=el.dataset.qid || el.dataset.layoutQuestion;const q=pack.qa.find(x=>x.id===id);const f=q && figFor(q.id,q.question,q.sources);
+   if(f && f.q && !el.querySelector('.ess-qfig'))el.querySelector('summary').insertAdjacentHTML('beforeend',figHTML(f.q,f.alt,f.cap));
+  }
+  if(view==='writing')for(const el of document.querySelectorAll('article.modern-writing[id]')){
+   const q=pack.writing.find(x=>x.id===el.id);const f=q && figFor(q.id,q.prompt,q.sources);if(!f || el.querySelector('.ess-qfig'))continue;
+   if(f.q && !q.image)el.querySelector('h2')?.insertAdjacentHTML('afterend',figHTML(f.q,f.alt,f.cap));
+   if(f.ans)el.querySelector('[data-writing-answer]')?.insertAdjacentHTML('beforeend',figHTML(f.ans,f.alt));
+  }
+  if(view==='review')for(const el of document.querySelectorAll('article.modern-review[id]')){
+   const r=pack.review.find(x=>x.id===el.id);if(!r || el.querySelector('.ess-qfig'))continue;
+   const f=figFor(r.id,r.question,(r.pages || []).map(page=>({collection:r.collection,page})));if(!f)continue;
+   if(f.q && !r.image)el.querySelector('h2')?.insertAdjacentHTML('afterend',figHTML(f.q,f.alt,f.cap));
+   if(f.ans)el.querySelector('details.modern-answer')?.insertAdjacentHTML('beforeend',figHTML(f.ans,f.alt));
+  }
+  if(view==='practice' && state.session && !state.session.finished){
+   const q=questionMap.get(state.session.ids[state.session.index]);const f=q && figFor(q.id,q.prompt,q.sources);
+   const prompt=document.querySelector('.question-prompt');
+   if(f && prompt && !document.querySelector('.ess-qfig')){
+    if(f.q && !q.image)prompt.insertAdjacentHTML('afterend',figHTML(f.q,f.alt,f.cap));
+    if(f.ans)document.querySelector('.feedback, .question-feedback')?.insertAdjacentHTML('beforeend',figHTML(f.ans,f.alt));
+   }
+  }
+ };
+ const figSelect=()=>`<label class="ess-focus">Figures <select data-fig-pref><option value="on" ${figsOn()?'selected':''}>Show the figure with each question</option><option value="off" ${figsOn()?'':'selected'}>Hide figures</option></select></label>`;
+ const figBaseRender=render;
+ render=function(...args){
+  const result=figBaseRender.apply(this,args);
+  if(state.activeModule!=='module2' || !FIG_VIEWS.has(view))return result;
+  if(!document.querySelector('[data-fig-pref]')){
+   const anchor=document.querySelector('#content [data-plain-view]')?.closest('label') || document.querySelector('#content .lead') || document.querySelector('#content h1');
+   anchor?.insertAdjacentHTML('afterend',figSelect());
+  }
+  if(figsOn())addFigures();
+  return result;
+ };
+ document.addEventListener('change',event=>{
+  const p=event.target.closest('[data-fig-pref]');if(p){essSet('figs',p.value);render();}
  });
  document.addEventListener('change',event=>{
   const f=event.target.closest('[data-ess-focus]');if(f){essSet('focus-'+f.dataset.essFocus,f.value);render();return;}
