@@ -10,8 +10,34 @@ five full sentences. "Predicted" questions change one thing in a real review, ho
 lab question (a different vowel, mode, mass, base frequency or layer size).
 """
 import json
+from pathlib import Path
 from guide_plain import build_plain_guide
 from unlabel import bullet
+from module1_layout import build_v6, lab_blocks
+
+_PLAIN = Path(__file__).resolve().parent / "plain"
+
+
+def build_v7(topics):
+    blocks = json.load(open(_PLAIN / "study_blocks.json"))
+    answers = json.load(open(_PLAIN / "study_answers.json"))
+    out = []
+    for t in topics:
+        qs = answers[t["id"]]
+        assert len(qs) == len(t["questions"]), t["id"]
+        out.append(dict(t, blocks=blocks[t["id"]],
+                        questions=[dict(source=o["source"], q=n["q"], a=n["a"]) for o, n in zip(t["questions"], qs)]))
+    return out
+
+
+def plain_labs(labs):
+    lp = json.load(open(_PLAIN / "labs_plain.json"))
+    out = []
+    for l in labs:
+        p = lp[l["id"]]
+        assert len(p["questions"]) == len(l["questions"]), l["id"]
+        out.append(dict(l, blocks=p["blocks"], questions=p["questions"]))
+    return out
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -465,7 +491,7 @@ LLM_TOPICS = [
   "title": "Gestalt completion and the cloze test",
   "note": "",
   "know": [
-   "Gestalt completion: People see a triangle in the Gestalt figure even though no triangle is drawn, because a large part of human knowledge is completing what is missing.",
+   "Gestalt completion: Gestalt psychology studies how people see whole patterns. People see a triangle in the Gestalt figure even though no triangle is drawn, because a large part of human knowledge is completing what is missing.",
    "Closure: Closure is the Gestalt word for completing a familiar pattern that is not quite finished, such as seeing a broken circle as whole.",
    "Cloze test: Words are removed from a text and people fill them in. The name comes from closure, and it tests knowledge by asking someone to complete a sequence.",
    "LLM learning: An LLM predicting the next word is playing a cloze game again and again. Training a system only to predict the missing piece turns out to copy human thinking.",
@@ -485,7 +511,7 @@ LLM_TOPICS = [
    "Plan and state units: Plan units and state units feed the hidden layer, the hidden layer feeds the output, and the output is copied back into the state units. The same weights are used at every step.",
    "GPT one word at a time: GPT predicts the next word, adds it to the prompt, and feeds everything back in to predict the word after that.",
    "Dynamical system: A dynamical system is a rule that is fed its own output again and again. In the harmonic oscillator, position and velocity take turns updating, and step by step the rule draws a cosine.",
-   "The LLM as a dynamical system: In the lecture's account, each layer is the rule and the depth of the layers plays the role of time. The input vectors are the initial conditions, and each layer turns them into better vectors until the last layer can predict the next word.",
+   "The LLM as a dynamical system: In an LLM, each layer is the rule and the depth of the layers plays the role of time. The input vectors are the initial conditions, and each layer turns them into better vectors until the last layer can predict the next word.",
   ],
   "questions": [
    ["Predicted", "What makes Jordan's network recurrent?", "It sends its own output back into part of its input. Its output is copied into the state units, so what it produced at one moment helps it predict the next moment."],
@@ -564,7 +590,7 @@ LEADUP = {
   "The limit: The vowel network takes one **static** vector, a fixed list of numbers from one moment, and makes one decision. Speech changes all the time and a sentence is many words one after another, so one fixed list of numbers cannot model thinking that unfolds over time.",
   "Recurrent network: Michael Jordan built the **recurrent** network to model speech production, because features such as nasality and lip rounding switch on and off at different moments. The network sends its own output back into part of its input, so what it produces at one moment helps predict the next.",
   "Plan and state units: Plan units and state units feed the hidden layer, the hidden layer feeds the output, and the output is copied back into the state units. The same weights are used at every step.",
-  "The path to GPT: GPT works the same way, one word at a time. It predicts the next word, adds it to the prompt, and feeds everything back in to predict the word after that. Years like 1943, 1985 and 2017 give the history, but he said years are not asked.",
+  "The path to GPT: GPT works the same way, one word at a time. It predicts the next word, adds it to the prompt, and feeds everything back in to predict the word after that. Years like 1943, 1985 and 2017 give the history, but years are not asked on the exam.",
  ],
  "questions": [
   ["Predicted", "How does the all-or-none behavior of neurons connect to the sigmoid?", "They are the same idea. A real neuron is either firing or not firing, and the sigmoid turns an inner product into a number near 0 (off) or near 1 (on), with a steep change in between."],
@@ -629,7 +655,7 @@ TOPICS_V3 = _v3_topics()
 def build(out_path):
     conv = lambda ts: [dict(t, questions=[dict(source=s, q=q, a=a) for s, q, a in t["questions"]]) for t in ts]
     topics, topics_v2, topics_v3 = conv(TOPICS), conv(TOPICS_V2), conv(TOPICS_V3)
-    labs = [dict(l, points=[bullet(m) for m in l["material"]], questions=[dict(q=q, a=a) for q, a in l["questions"]]) for l in LABS]
+    labs = [dict(l, blocks=lab_blocks(l), points=[bullet(m) for m in l["material"]], questions=[dict(q=q, a=a) for q, a in l["questions"]]) for l in LABS]
     data = {
         "versions": {
             "exam2-v1": {
@@ -648,13 +674,25 @@ def build(out_path):
                 "howToAnswer": [], "scope": SCOPE_V3, "flags": FLAGS_V2,
                 "topics": [dict(t, points=[bullet(k) for k in t["know"]]) for t in topics_v3],
             },
+            "exam2-v6": {
+                "label": "Exam 2 · Study this first (Lectures 11–18, Module I layout)",
+                "range": "Lectures 11 to 18",
+                "howToAnswer": [], "scope": SCOPE_V3, "flags": FLAGS_V2,
+                "topics": build_v6(topics_v3),
+            },
+            "exam2-v7": {
+                "label": "Exam 2 · Study this first (Lectures 11–18, rewritten in your notes style)",
+                "range": "Lectures 11 to 18",
+                "howToAnswer": [], "scope": SCOPE_V3, "flags": FLAGS_V2,
+                "topics": build_v7(topics_v3),
+            },
             "exam2-v3": {
                 "label": "Exam 2 · Study this first (v3, Lectures 11–18, his questions first)",
                 "range": "Lectures 11 to 18",
                 "howToAnswer": HOW_TO_ANSWER, "scope": SCOPE_V3, "topics": topics_v3, "flags": FLAGS_V2,
             },
         },
-        "labs": labs,
+        "labs": plain_labs(labs),
         "guidePlain": build_plain_guide(),
     }
     data["versions"] = dict(sorted(data["versions"].items()))

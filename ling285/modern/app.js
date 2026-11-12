@@ -1414,7 +1414,8 @@ function installModern() {
  const labelLine=text=>{const m=/^([^:]{1,60}): (.+)$/s.exec(text);return m?`<strong>${esc(m[1])}:</strong> ${rich(m[2])}`:rich(text);};
  const tierClass=t=>t==='Almost certain'?'ess-tier-certain':t==='Likely'?'ess-tier-likely':'ess-tier-possible';
  const qaList=qs=>`<div class="ess-questions">${qs.map(q=>`<details class="modern-answer"><summary>${q.source?`<span class="tag">${esc(q.source)}</span> `:''}${rich(q.q)}</summary>${paragraphs(q.a)}</details>`).join('')}</div>`;
- const pointsList=t=>t.points?`<ul class="modern-teaching">${t.points.map(p=>`<li>${rich(p.main)}${p.sub?`<ul><li>${rich(p.sub)}</li></ul>`:''}</li>`).join('')}</ul>`:`<ul class="modern-teaching">${(t.know || []).map(k=>`<li>${labelLine(k)}</li>`).join('')}</ul>`;
+ const blockHTML=b=>b.items?`<div class="ess-block"><p><span class="tag">${esc(b.ref)}</span></p><ul class="modern-teaching">${b.items.map(x=>`<li>${rich(x)}</li>`).join('')}</ul></div>`:`<div class="ess-block"><p><span class="tag">${esc(b.ref)}</span></p><ul class="modern-teaching"><li>${rich(b.main)}${b.sub && b.sub.length?`<ul>${[].concat(b.sub).map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}</li>${b.end?`<li>${rich(b.end)}</li>`:''}</ul></div>`;
+ const pointsList=t=>t.blocks?t.blocks.map(blockHTML).join(''):t.points?`<ul class="modern-teaching">${t.points.map(p=>`<li>${rich(p.main)}${p.sub?`<ul><li>${rich(p.sub)}</li></ul>`:''}</li>`).join('')}</ul>`:`<ul class="modern-teaching">${(t.know || []).map(k=>`<li>${labelLine(k)}</li>`).join('')}</ul>`;
  const essTopics=(opts)=>{
   const data=ESS.versions[essVersion()];if(!data)return '<p>Exam 2 study data is not loaded.</p>';
   return '<div class="ess-topics">'+data.topics.map(t=>{
@@ -1439,7 +1440,7 @@ function installModern() {
   if(state.activeModule!=='module2')return module2OnlyNotice('Lab material · Labs 5–9');
   return intro('Lab material · Labs 5–9','The ideas each lab teaches, with its questions and answers. Praat is explained by what it shows, and click-by-click instructions are left out.')+
    `<p class="notice">Lab 9 is the TA's Exam 2 review, so it is the closest lab to the exam. Labs 5 to 8 repeat the lecture ideas with worked examples.</p>`+essToolbar()+
-   ESS.labs.map(l=>`<details class="modern-topic ess-lab" data-modern-item open><summary>${esc(l.title)}</summary><div class="modern-topic-body"><p class="small muted">${esc(l.date)} · ${esc(l.use)}</p><details class="modern-answer ess-know" open><summary>I can explain and apply these ideas</summary>${pointsList({points:l.points,know:l.material})}</details><h3>What you can be asked</h3>${qaList(l.questions)}${(l.flags || []).length?`<h3>Corrections</h3><ul class="modern-teaching">${l.flags.map(f=>`<li>${rich(f)}</li>`).join('')}</ul>`:''}</div></details>`).join('');
+   ESS.labs.map(l=>`<details class="modern-topic ess-lab" data-modern-item open><summary>${esc(l.title)}</summary><div class="modern-topic-body"><p class="small muted">${esc(l.date)} · ${esc(l.use)}</p><details class="modern-answer ess-know" open><summary>I can explain and apply these ideas</summary>${pointsList({blocks:l.blocks,points:l.points,know:l.material})}</details><h3>What you can be asked</h3>${qaList(l.questions)}${(l.flags || []).length?`<h3>Corrections</h3><ul class="modern-teaching">${l.flags.map(f=>`<li>${rich(f)}</li>`).join('')}</ul>`:''}</div></details>`).join('');
  }
  const essMode=panel=>state.activeModule==='module2'?essPref('focus-'+panel,'original'):'original';
  const notesList=lines=>{let html='<ul class="modern-teaching">',open=false;for(const l of lines){const m=/^(\s*)- (.*)$/.exec(l);if(!m)continue;if(m[1].length){if(!open){html=html.replace(/<\/li>$/,'')+'<ul>';open=true;}html+=`<li>${rich(m[2])}</li>`;}else{if(open){html+='</ul></li>';open=false;}html+=`<li>${rich(m[2])}</li>`;}}if(open)html+='</ul></li>';return html+'</ul>';};
@@ -1463,6 +1464,44 @@ function installModern() {
   return intro('Exam 2 review guide · Exam 2 focus','The 21 review questions grouped by topic, each followed by the changed versions he is most likely to ask. Scope: '+essRange()+'.')+focusSelect('review')+scopeBox()+essToolbar()+essTopics({know:false,questions:true,filter:q=>/^Review|^Predicted/.test(q.source)});
  };
  modernRoutes.essentials=essentialsView;modernRoutes.labs=labsView;
+ // PLAIN_WORDING: a "Wording" dropdown (Original / Plain wording) on the Module II panels.
+ // Data comes from modern/plain.js (built by authoring/build_plain.py). Original stays the default.
+ const PL=window.LING285_PLAIN || null;
+ const PLAIN_VIEWS=new Set(['qa','cards','contrasts','hard','experiments','figures','core','review']);
+ const plainOn=v=>state.activeModule==='module2' && essPref('plain-'+v,'original')==='plain';
+ const applyPlain=()=>{
+  const undo=[],set=(obj,field,value)=>{if(!obj || value===undefined || value===null)return;undo.push([obj,field,obj[field]]);obj[field]=value;};
+  for(const [key,c] of Object.entries(PL.concepts || {}))for(const f of ['opening','mechanism','consequence','plain'])set(pack.concepts[key],f,c[f]);
+  for(const q of pack.qa.filter(q=>q.moduleId==='module2')){
+   if(q.kind==='slides'){const p=PL.concepts?.[q.concept]?.['q'+q.id.split('-').pop()];if(p){set(q,'question',p.question);set(q,'answer',[p.answer]);}}
+   else {const p=PL.connectionQs?.[q.id];if(p){set(q,'question',p.question);set(q,'answer',[p.answer]);}}
+  }
+  const byId=(list,plain,fields)=>{for(const item of list){const p=plain?.[item.id];if(p)for(const f of fields)set(item,f,p[f]);}};
+  byId(pack.cards,PL.cards,['title','explain','outcome','interpret']);
+  byId(pack.hard,PL.hard,['title','paragraphs','question','answer']);
+  byId(pack.connections,PL.connections,['title','paragraphs','question','answer']);
+  byId(pack.figures,PL.figures,['title','takeaway']);
+  for(const c of pack.contrasts){const p=PL.contrasts?.[c.id];if(!p)continue;set(c,'title',p.title);set(c,'paragraphs',p.paragraphs);if(p.left)set(c,'left',{...c.left,text:p.left.text});if(p.right)set(c,'right',{...c.right,text:p.right.text});}
+  for(const a of pack.asked){const p=PL.asked?.[a.concept];if(p && a.moduleId==='module2'){set(a,'title',p.title);set(a,'items',p.items);}}
+  for(const r of pack.review){const p=PL.review?.[r.number];if(p){set(r,'question',p.question);set(r,'answer',p.answer);set(r,'teaching',p.teaching);set(r,'change','How he could change it on the exam');set(r,'changedAnswer',p.change);}}
+  return ()=>{for(let i=undo.length-1;i>=0;i--){const [o,f,v]=undo[i];o[f]=v;}};
+ };
+ const plainSelect=v=>`<label class="ess-focus">Wording <select data-plain-view="${v}"><option value="original" ${plainOn(v)?'':'selected'}>Original</option><option value="plain" ${plainOn(v)?'selected':''}>Plain wording (easier to read, with answers)</option></select></label>`;
+ const plainBaseRender=render;
+ let plainUndo=null,plainFor=null;
+ render=function(...args){
+  const want=PL && state.activeModule==='module2' && PLAIN_VIEWS.has(view) && plainOn(view)?view:null;
+  if(plainUndo && plainFor!==want){plainUndo();plainUndo=null;plainFor=null;}
+  if(want && !plainUndo){plainUndo=applyPlain();plainFor=want;}
+  const result=plainBaseRender.apply(this,args);
+  if(!PL || state.activeModule!=='module2' || !PLAIN_VIEWS.has(view))return result;
+  const lead=document.querySelector('#content .lead');
+  if(lead && !document.querySelector('[data-plain-view]'))lead.insertAdjacentHTML('afterend',plainSelect(view));
+  return result;
+ };
+ document.addEventListener('change',event=>{
+  const p=event.target.closest('[data-plain-view]');if(p){essSet('plain-'+p.dataset.plainView,p.value);render();}
+ });
  document.addEventListener('change',event=>{
   const f=event.target.closest('[data-ess-focus]');if(f){essSet('focus-'+f.dataset.essFocus,f.value);render();return;}
   const v=event.target.closest('[data-ess-version]');if(v){essSet('version',v.value);render();}

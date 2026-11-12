@@ -1,0 +1,419 @@
+{
+ "lab5": {
+  "blocks": [
+   {
+    "ref": "Lab 5 · Mode 1 and Mode 2 in a chain",
+    "main": "**In a chain of masses joined by springs, Mode 1 is always the lowest-frequency mode because no spring stretches.** In **Mode 1**, all the masses move up and down together as if they were one mass.",
+    "sub": [
+     "In **Mode 2**, the masses split into two groups that move in opposite directions.",
+     "A mass that sits on the boundary between the two halves **does not move**. With an odd number of masses, the middle mass is on that boundary, so it stays still in Mode 2."
+    ],
+    "end": "So each mode has its own shape, and Mode 1 is the simplest and slowest one."
+   },
+   {
+    "ref": "Lab 5 · Mode N in a chain",
+    "main": "**A chain of N masses has N modes, and Mode N has N bumps.** Neighboring bumps always move in opposite directions.",
+    "sub": [
+     "The highest mode of N masses is **Mode N**, where every mass moves opposite to its neighbor.",
+     "More parts moving against each other means more springs stretch, so each higher mode has a higher frequency."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 5 · Modes of a string",
+    "main": "**A string is a mass-spring system with infinitely many masses, so its modes rise in equal steps.** If the first mode is 100 Hz, the next modes are 200 Hz and 300 Hz.",
+    "sub": [
+     "The steps are equal because **Mode N contains N copies of Mode 1**.",
+     "Each copy acts like a small Mode 1, so Mode N has N times the frequency of Mode 1."
+    ],
+    "end": "That is why a string with a first mode of 100 Hz has its fifth mode at 500 Hz."
+   },
+   {
+    "ref": "Lab 5 · Complex vibration and F0",
+    "main": "**A complex vibration is what you get when simple modes are added together.** Its shape is hard to read by eye. One point on the string still repeats its motion every **period**, which is the time of one full repetition.",
+    "sub": [
+     "**F0** (the fundamental frequency) is **one divided by that period**.",
+     "A period of 10 ms gives an F0 of 100 Hz."
+    ],
+    "end": "So F0 can be found from a complex wave by measuring how often it repeats."
+   },
+   {
+    "ref": "Lab 5 · Fourier transform and spectral slice",
+    "main": "**The Fourier transform recovers which simple sine waves make up a complex wave.** A **spectral slice** in Praat is the result of that calculation for one moment of the sound.",
+    "sub": [
+     "A spectral slice shows frequency in hertz along the horizontal axis.",
+     "It shows amplitude in decibels along the vertical axis, so each peak marks a sine wave in the sound and how strong it is."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 5 · Modes on a membrane",
+    "main": "**A membrane is a vibrating surface, and its modes follow the same idea as the modes of a string.** A membrane mode is named with two numbers, one for each direction of the surface.",
+    "sub": [
+     "A mode labeled **(2, 1)** has two bumps along the length and one bump across the width."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 5 · Testing the theory with a vowel",
+    "main": "**The theory is that the vocal folds are a membrane, so a vowel should be a complex vibration with equidistant peaks in its spectrum.** **Equidistant** means evenly spaced, with the same gap between each peak and the next.",
+    "sub": [
+     "The prediction is that a recorded vowel's spectral slice will show evenly spaced peaks.",
+     "In the recorded vowel, the peaks in the spectral slice **are evenly spaced**."
+    ],
+    "end": "So the prediction held, and the result supports the theory."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What do all mass-spring systems do in Mode 1?",
+    "a": "In Mode 1, all the masses move up and down together as if they were one mass. No spring stretches, so Mode 1 is always the lowest-frequency mode."
+   },
+   {
+    "q": "How does the frequency of a string change from Mode 1 to Mode 5?",
+    "a": "The frequency goes up by the same step each time, such as 100, 200, 300, 400 and 500 Hz. It rises this way because Mode N has N bumps, so Mode N is N times the frequency of Mode 1."
+   },
+   {
+    "q": "What two things does a recorded vowel need to show to support the theory that the vocal folds are a membrane?",
+    "a": "The vowel's waveform needs to be a complex vibration, not a simple sine wave. Its spectrum also needs to be a combination of simple vibrations at equidistant (evenly spaced) frequencies. A recorded vowel shows both, so the prediction holds."
+   }
+  ]
+ },
+ "lab6": {
+  "blocks": [
+   {
+    "ref": "Lab 6 · Reading formants in a spectrogram",
+    "main": "**A spectrogram shows formants as dark horizontal bands, and F1 is the lowest dark band.** **F2 is the next dark band up.**",
+    "sub": [
+     "Praat can report the frequency of any band, and its formant tracker marks the same values with red dots."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 6 · Typical vowel results",
+    "main": "**Different vowels put F1 and F2 at different heights.** Dean or dune has the **lowest F1**, and Don or Dan has the **highest F1**.",
+    "sub": [
+     "Dean has the **highest F2**.",
+     "Many Californians **front** their oo (say it farther forward in the mouth), so dune can have a high F2 too."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 6 · Three masses, moving and stretching",
+    "main": "**In a three-mass system, a mass can stay still while its springs stretch.** In **Mode 2**, the middle mass does not move. Its neighbors move in opposite directions, so the springs on both sides of it are stretched and compressed.",
+    "sub": [
+     "In **Mode 1**, the middle mass moves the most.",
+     "In Mode 1, the two springs next to the walls stretch the most."
+    ],
+    "end": "So the spot that moves the most and the spot that stretches the most are in different places."
+   },
+   {
+    "ref": "Lab 6 · Moving and stretching on a string",
+    "main": "**On a vibrating string, the spots that move the most are not the spots that stretch the most.** At the top of a hump, the string **moves the most** and **does not stretch**.",
+    "sub": [
+     "Where the string crosses the resting line, it **does not move** and **stretches the most**."
+    ],
+    "end": "That is why extra mass and extra stiffness matter at different spots."
+   },
+   {
+    "ref": "Lab 6 · Extra mass or stiffness in the middle",
+    "main": "**Adding mass or stiffness at the middle of a string changes only the modes that move or stretch there.** In Mode 2, the middle of the string is still. In Mode 3, the middle swings.",
+    "sub": [
+     "With extra mass in the middle, **Mode 2 stays the same** because the middle is still. **Mode 3 goes down** because the middle swings, so the extra mass counts.",
+     "With extra stiffness in the middle, **Mode 2 goes up** because the middle stretches the most. **Mode 3 stays the same** because the middle is at the peak of a hump, where there is no stretching."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 6 · Fixed-free string",
+    "main": "**A fixed-free string is held at one end and free at the other, so its modes are one, three and five quarter-waves.** With a first mode at 100 Hz, the modes are 100, 300 and 500 Hz, which are 200 Hz apart.",
+    "sub": [
+     "The free top **always moves the most**, in every mode.",
+     "The fixed bottom **always stretches the most**, in every mode."
+    ],
+    "end": "So extra mass at the free top lowers every mode, and extra stiffness at the fixed bottom raises every mode."
+   },
+   {
+    "ref": "Lab 6 · The vocal tract as a fixed-free tube",
+    "main": "**The vocal tract is a fixed-free tube, so a constriction changes each formant depending on what the air does there.** The tube is closed at the glottis and open at the lips.",
+    "sub": [
+     "For **Don**, the constriction is one-third of the way from the glottis. The air there is compressed in Mode 1 and moving in Mode 2, so **F1 goes up and F2 goes down**.",
+     "For **dean**, the constriction is two-thirds of the way from the glottis. The air there is moving in Mode 1 and compressed in Mode 2, so **F1 goes down and F2 goes up**.",
+     "For **dune**, the constriction is at the lips. The air there is moving in both modes, so **both F1 and F2 go down**."
+    ],
+    "end": ""
+   }
+  ],
+  "questions": [
+   {
+    "q": "In Mode 2 of a 3-mass system, is mass 2 moving, and are its springs stretching?",
+    "a": "Mass 2 is not moving, but the springs attached to it are stretching. Its neighbors move in opposite directions, so the springs on both sides of it are pulled and compressed."
+   },
+   {
+    "q": "You add extra mass at the free top of a fixed-free string. What happens to Mode 1 and Mode 2?",
+    "a": "Both Mode 1 and Mode 2 go down. The free end moves the most in every mode, so the extra mass counts in both modes and lowers both frequencies."
+   },
+   {
+    "q": "You stiffen a fixed-free string at its fixed bottom. What happens to Mode 1 and Mode 2?",
+    "a": "Both Mode 1 and Mode 2 go up. The fixed end stretches the most in every mode, so the extra stiffness counts in both modes and raises both frequencies."
+   },
+   {
+    "q": "Do the extra mass and stiffness of a constriction simply cancel out?",
+    "a": "No, the extra mass and stiffness do not simply cancel out. Where the air mostly moves, the extra mass wins, so the formant goes down. Where the air is mostly compressed, the extra stiffness wins, so the formant goes up. That is why the same constriction can affect F1 and F2 differently."
+   }
+  ]
+ },
+ "lab7": {
+  "blocks": [
+   {
+    "ref": "Lab 7 · Harmonics and formants",
+    "main": "**The name of a mode depends on how the system is held.** In a fixed-fixed system such as the vocal folds, each mode is a **harmonic**, and harmonics come at whole-number multiples of the first.",
+    "sub": [
+     "In a fixed-free system such as the air in the vocal tract, each mode is a **formant**, and formants come at **odd multiples** of the first.",
+     "With a first mode of 100 Hz, the 1st, 2nd and 3rd harmonics are 100, 200 and 300 Hz.",
+     "With the same first mode, the 1st, 2nd and 3rd formants are 100, 300 and 500 Hz."
+    ],
+    "end": "So the third fixed-free mode is the **3rd formant**, at 500 Hz."
+   },
+   {
+    "ref": "Lab 7 · How the first mode fits",
+    "main": "**Each higher mode is built from copies of the first mode.** The 1st harmonic fits into the 2nd harmonic **two times**.",
+    "sub": [
+     "The 1st formant fits into the 2nd formant **three times**, because a fixed-free system has only odd multiples."
+    ],
+    "end": "That is why the 2nd formant is three times the 1st, while the 2nd harmonic is only twice the 1st."
+   },
+   {
+    "ref": "Lab 7 · Why a constriction adds mass and stiffness",
+    "main": "**A constriction (narrowing) in the vocal tract adds both stiffness and mass to the air.** Compressing the air **raises its stiffness**.",
+    "sub": [
+     "Packing the air tighter also makes it harder to move, so its **mass rises** too.",
+     "Where the air mostly moves, the extra mass counts. Where the air is mostly compressed, the extra stiffness counts."
+    ],
+    "end": "So the same constriction can push one formant down and another formant up."
+   },
+   {
+    "ref": "Lab 7 · The three vowels",
+    "main": "**Where the constriction is sets which way F1 and F2 move.** For **dune**, the constriction at the lips moves **both F1 and F2 down**.",
+    "sub": [
+     "For **dean**, the constriction at two-thirds moves F1 down and F2 up, so the formants move **away** from each other.",
+     "For **Don**, the constriction at one-third moves F1 up and F2 down, so the formants move **together**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 7 · Formant transitions",
+    "main": "**A formant transition is the movement of the formant bands as the vocal tract changes from one sound to the next.** Going from schwa into each vowel without stopping, the bands move in exactly the directions of the three-vowel summary.",
+    "sub": [
+     "The vowel in **year** is the same /i/ as in dean, so it **lowers F1 and raises F2**."
+    ],
+    "end": "That is why a spectrogram can be read without hearing the sound."
+   },
+   {
+    "ref": "Lab 7 · Parts of a neural network",
+    "main": "**A neural network is made of three kinds of neurons, called input, hidden and output neurons.** A **weight** is the strength of the connection between two neurons.",
+    "sub": [
+     "A neuron's **activation** is the **inner product** of the previous neurons' activations and their weights.",
+     "The inner product means multiplying each activation by its weight and adding the results."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 7 · The output as a probability distribution",
+    "main": "**The output neurons together form a probability distribution over the possible answers.** The options lie along the horizontal axis, and their probabilities lie on the vertical axis.",
+    "sub": [
+     "The probabilities always **sum to 1**."
+    ],
+    "end": ""
+   }
+  ],
+  "questions": [
+   {
+    "q": "Assuming the first mode is 100 Hz, what are the first three modes of a fixed-fixed system and of a fixed-free system, and what are they called?",
+    "a": "The fixed-fixed system has its 1st, 2nd and 3rd harmonics at 100, 200 and 300 Hz. The fixed-free system has its 1st, 2nd and 3rd formants at 100, 300 and 500 Hz. The formants skip 200 and 400 Hz because a fixed-free system has only odd multiples of the first mode."
+   },
+   {
+    "q": "For dean, go through the four steps for F2.",
+    "a": "For dean, F2 goes up. The constriction is two-thirds of the way from the glottis. In Mode 2, the air there is compressed and stretched, so it behaves like a spring. The added stiffness is what counts, so F2 goes up."
+   },
+   {
+    "q": "A hidden neuron receives activations 5, minus 2 and 7 through weights minus 3, 4 and 10. How is its activation computed?",
+    "a": "Its activation is the inner product, so you multiply each activation by its weight and add the results. Here that is 5 times minus 3, plus minus 2 times 4, plus 7 times 10, which comes to 47. The exam asks about the direction of such changes rather than the arithmetic."
+   }
+  ]
+ },
+ "lab8": {
+  "blocks": [
+   {
+    "ref": "Lab 8 · The training cycle",
+    "main": "**A network learns by repeating one training cycle many times.** Training starts with random weights, and this happens only once.",
+    "sub": [
+     "The network makes a guess, which is the **forward pass**. The **loss** then measures the error of that guess.",
+     "The error is assigned backward as blame to each weight, and each weight is adjusted a little."
+    ],
+    "end": "So the cycle of guess, error, blame and adjustment repeats many times."
+   },
+   {
+    "ref": "Lab 8 · Why blame goes backward",
+    "main": "**Blame is assigned starting from the last layer because a last-layer weight affects the output directly.** So its effect is easy to judge.",
+    "sub": [
+     "A first-layer weight affects the output only through every later layer, so its blame is tangled with all the later weights.",
+     "Settling the last layer first and reusing that answer is **dynamic programming**, the same idea as the Viterbi algorithm."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 8 · When to stop training",
+    "main": "**Some data is kept aside so the network never trains on it, and this is the validation data.** When accuracy on the **validation data** stops improving, training stops.",
+    "sub": [
+     "The validation data is new to the network, so accuracy on it shows how well the network handles recordings it has not seen."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 8 · The vowel data",
+    "main": "**The vowel network learns from 525 recordings, each with its F1, its F2 and the vowel that was said.** Each vowel name is turned into a number from 0 to 4.",
+    "sub": [
+     "The names become numbers because the network works only with numbers."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 8 · The network's layers",
+    "main": "**The vowel network has 2 input neurons, three hidden layers and 5 output neurons.** The 2 inputs are F1 and F2, and the hidden layers have 3, 2 and 4 neurons.",
+    "sub": [
+     "The two ends are **set by the data**, because two measurements go in and five vowels come out.",
+     "The sizes of the hidden layers are a **design choice**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 8 · The sigmoid in the code",
+    "main": "**In the code, nn.Sigmoid applies the sigmoid to the layer before it.** The last layer has **no sigmoid**.",
+    "sub": [
+     "The last layer is left without a sigmoid because its five numbers are the scores for the five vowels."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 8 · The training pieces in the code",
+    "main": "**The code splits the training cycle into a few pieces, and each piece does one job.** The **optimizer**, SGD (stochastic gradient descent), is given the weights it is allowed to change.",
+    "sub": [
+     "The **loss** measures the error, and **backward** computes each weight's blame.",
+     "**Step** adjusts the weights.",
+     "Repeating the whole cycle 1000 times is **1000 epochs**."
+    ],
+    "end": ""
+   }
+  ],
+  "questions": [
+   {
+    "q": "Which steps of training belong to the forward pass, and which to the backward pass?",
+    "a": "The forward pass makes a guess and measures the error. It sends the input through the network to get the guess, and then the error of that guess is measured. The backward pass works back from the error to assign blame to each weight, and then it adjusts the weights."
+   },
+   {
+    "q": "Why is the optimizer created before backward runs?",
+    "a": "The optimizer is created first because it has to be given the list of weights it is allowed to change. Creating it does not change anything, because the optimizer adjusts the weights only when step runs."
+   }
+  ]
+ },
+ "lab9": {
+  "blocks": [
+   {
+    "ref": "Lab 9 · Modes, harmonics and formants",
+    "main": "**A system of N masses has N modes.** A mass on the boundary between two peaks **does not move**.",
+    "sub": [
+     "Fixed-fixed modes are **harmonics**, at 1, 2 and 3 times the first mode.",
+     "Fixed-free modes are **formants**, at 1, 3 and 5 times the first mode."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 9 · Reading F0 from a complex vibration",
+    "main": "**The F0 of a complex vibration comes from how often its shape repeats.** If the shape repeats every 10 ms, the period is 10 ms, so **F0 is 100 Hz**.",
+    "sub": [
+     "In a vowel, the **vocal folds** vibrate at that F0.",
+     "That F0 is heard as the **pitch** of the voice."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 9 · Four steps for the vocal tract",
+    "main": "**A plain tube with no constriction gives formants at about 500, 1500 and 2500 Hz.** A constriction moves each formant up or down from those values.",
+    "sub": [
+     "First find the **location** of the constriction. Then decide whether the air there is **moving or compressed** in that mode.",
+     "Next decide **which extra counts**, mass or stiffness. Last, decide whether the formant goes **up or down**."
+    ],
+    "end": "So extra mass where the air moves lowers the formant, and extra stiffness where the air is compressed raises it."
+   },
+   {
+    "ref": "Lab 9 · Neurons, sigmoid and loss",
+    "main": "**A neuron's linear activation is an inner product of its inputs and weights.** The **sigmoid** turns that number into a number between 0 and 1.",
+    "sub": [
+     "The **loss** measures how far the computed output is from the desired output.",
+     "**Backpropagation** is SGD plus dynamic programming."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 9 · Counting weights",
+    "main": "**Every neuron in one layer connects to every neuron in the next layer, so the number of weights is the two layer sizes multiplied.** Between a 4-neuron layer and a 2-neuron layer, there are 4 times 2, or **8 weights**.",
+    "sub": [
+     "Each of the 4 neurons sends one weight to each of the 2 neurons."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 9 · From the vowel network to LLMs",
+    "main": "**The vowel network and an LLM (large language model) differ in what goes in and what comes out.** The vowel network takes **one vector**, F1 and F2, and decides among a few categories.",
+    "sub": [
+     "An LLM takes a **sequence of many vectors**.",
+     "An LLM gives a **probability distribution over what the next item could be**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 9 · Agentic systems",
+    "main": "**An agentic system is a group of LLMs that all talk to each other.** Sometimes they pass work back and forth in **loops**.",
+    "sub": [
+     "One LLM's output can become another LLM's input, so the group can work through a task in stages."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lab 9 · Phonotactics",
+    "main": "**Which letter can come next in an English word is decided by syllable structure, called phonotactics.** **Phonotactics** is the set of patterns for which sounds can start or end a syllable.",
+    "sub": [
+     "A GPT trained **only to guess the next letter** ends up with that knowledge of syllable structure."
+    ],
+    "end": "So a model can learn phonotactics just from predicting letters."
+   }
+  ],
+  "questions": [
+   {
+    "q": "A vibration repeats every 10 ms. What is its F0, and which part of the speech system vibrates at that F0 in a vowel?",
+    "a": "F0 is 100 Hz, because F0 is one divided by the period, and one divided by 10 ms is 100 per second. In a vowel, the vocal folds vibrate at F0. So F0 is how often the vocal folds open and close, which is the pitch."
+   },
+   {
+    "q": "How many weights connect a 4-neuron layer to a 2-neuron layer?",
+    "a": "Eight weights connect the two layers. Each of the 2 neurons receives one weight from each of the 4 neurons that feed it, so there are 4 times 2 connections."
+   },
+   {
+    "q": "What is the difference between the input and output of the vowel network and those of an LLM?",
+    "a": "The vowel network takes one vector, F1 and F2, and decides among five categories. An LLM takes many vectors in sequence, such as the words so far. It then decides among a whole vocabulary for the next item."
+   },
+   {
+    "q": "Which could be English words: blick, bnick, sblat, splat, dlag, lisk, lisb, lapm, lamp?",
+    "a": "Blick, splat, lisk and lamp could be English words. Bnick, sblat and dlag are impossible because bn, sb and dl cannot start a syllable. Lisb and lapm are impossible because sb and pm cannot end one."
+   },
+   {
+    "q": "What could come next after pl_, st_ and th_, and what could not?",
+    "a": "After pl, only a vowel can come, as in play. After st, a vowel or r can come, as in star and street, but l or k cannot. After th, r, w or a vowel can come, as in three, thwart and thin, but l or n cannot."
+   },
+   {
+    "q": "What is an agentic system, and what does its critic loop prevent?",
+    "a": "An agentic system is a graph of LLMs, each with its own job, where one LLM's output becomes the next one's input. Together they outline, write, critique, revise and produce the final version. The loop between the critic and the reviser sends the draft back until the critic is satisfied, so it is meant to prevent hallucination."
+   }
+  ]
+ }
+}
