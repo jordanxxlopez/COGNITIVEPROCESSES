@@ -70,7 +70,7 @@ TOPICS = [
    ["Review 6", "This is Mode 5 of a string fixed at both ends. Circle the areas where there is the most springiness.", "Circle the two fixed ends and the four points where the string crosses its middle line, six places in all. At those points the string does not move, but the pieces on either side move in opposite directions, so the string there is stretched and compressed the most. The tops of the five bumps have the most motion and the least springiness."],
    ["Predicted", "This is Mode 3 of a string fixed at both ends. Where is the most springiness, and where is the most motion?", "The most springiness is at the two fixed ends and at the two points where the string crosses its middle line, four places in all, because the string does not move there. The most motion is at the tops of the three bumps, where the string swings the most and is hardly stretched."],
    ["Review 11", "This picture shows Mode 4 of a building. Circle the areas where there is the most springiness.", "Circle the fixed base and the three points where the building crosses its resting position, four places in all. Those points do not move, but the parts above and below them move in opposite directions, so the structure there stretches and compresses the most. The free top moves the most and is the least springy, so it is not circled."],
-   ["Predicted", "This picture shows Mode 2 of a building. Where is the most springiness?", "The most springiness is at the fixed base and at the one point above it where the building crosses its resting position. Those two points do not move, so the structure there is stretched and compressed the most. The free top moves the most and is the least springy."],
+   ["Predicted", "This diagram shows Mode 2 of a building. Where is the most springiness?", "The most springiness is at the fixed base and at the one point above it where the building crosses its resting position. Those two points do not move, so the structure there is stretched and compressed the most. The free top moves the most and is the least springy."],
    ["Review 14", "If we increase the stiffness and mass of the string at the boxed location (where Mode 3 crosses its middle line and Mode 4 is at the top of a bump), what happens to Mode 3 and Mode 4's frequencies, and why?", "Mode 3 goes up and Mode 4 goes down. In Mode 3 the boxed spot does not move but is stretched the most, so the added mass does nothing and the added stiffness raises the frequency. In Mode 4 the boxed spot moves the most and is not stretched, so the added mass lowers the frequency and the added stiffness does nothing."],
    ["Predicted", "The box is moved to a spot where Mode 3 is at the top of a bump and Mode 4 crosses its middle line. Mass and stiffness are added there. What happens?", "Now Mode 3 goes down and Mode 4 goes up. In Mode 3 the spot moves the most and is hardly stretched, so the added mass lowers the frequency. In Mode 4 the spot does not move but is stretched the most, so the added stiffness raises the frequency."],
    ["Review 15", "If we increase the mass and stiffness of the building at its very top, what happens to the frequency of Mode 4, and why?", "The frequency of Mode 4 goes down. The top of the building is the free end, so in every mode it moves the most and is hardly stretched. The added mass matters there and lowers the frequency, while the added stiffness does nothing because nothing is stretching at the top."],
@@ -374,18 +374,24 @@ LABS = [
  },
  {
   "id": "lab9", "title": "Lab 9: The TA's Exam 2 review", "date": "Nov 9",
-  "use": "This lab is an Exam 2 review written by the TA, so it is the closest lab to the exam. Its questions appear in the topics of Study this first, marked Lab 9.",
+  "use": "This lab is an Exam 2 review written by the TA, so it is the closest lab to the exam. It covers all four parts, from vibration to LLMs and agents. Its questions appear in the topics of Study this first, marked Lab 9.",
   "material": [
    "Part 1, vibration: N masses have N modes. A mass on the boundary between two peaks does not move. Fixed-fixed modes are harmonics at 1, 2, 3 times the first, and fixed-free modes are formants at 1, 3, 5 times the first.",
    "Reading a complex vibration: If the shape repeats every 10 ms, the period is 10 ms and F0 is 100 Hz. In a vowel, the vocal folds vibrate at that F0, which is the pitch.",
    "Part 2, vocal tract: A plain tube gives about 500, 1500 and 2500 Hz. The four steps are location, moving or compressed, which extra counts, and up or down.",
    "Part 3, networks: A neuron's linear activation is an inner product. The sigmoid turns it into a number between 0 and 1. The loss measures how far the computed output is from the desired output. Backpropagation is SGD plus dynamic programming.",
    "Weights between layers: Between a 4-neuron layer and a 2-neuron layer there are 4 times 2, which is 8 weights, one from each of the 4 neurons to each of the 2.",
-   "Part 4, LLMs and agents: The TA included these, but the professor said the LLM part is for the final.",
+   "Part 4, from the vowel network to LLMs: The vowel network takes one vector, F1 and F2, and decides among a few categories. An LLM takes a sequence of many vectors and gives a probability distribution over what the next item could be.",
+   "Part 4, agents: An agentic system is a group of LLMs all talking to each other, sometimes back and forth in loops.",
+   "Part 4, phonotactics: Which letter can come next in an English word is decided by syllable structure, called **phonotactics**. A GPT trained only to guess the next letter ends up with that knowledge.",
   ],
   "questions": [
    ["A vibration repeats every 10 ms. What is its F0, and which part of the speech system vibrates at that F0 in a vowel?", "F0 is 100 Hz, because F0 is one divided by the period, and one divided by 10 ms is 100 per second. In a vowel, the vocal folds vibrate at F0, so F0 is how often they open and close, which is the pitch."],
    ["How many weights connect a 4-neuron layer to a 2-neuron layer?", "Eight. Each of the 2 neurons receives one weight from each of the 4 neurons that feed it, so there are 4 times 2 connections."],
+   ["What is the difference between the input and output of the vowel network and those of an LLM?", "The vowel network takes one vector, F1 and F2, and decides among five categories. An LLM takes many vectors in sequence, such as the words so far, and decides among a whole vocabulary for the next item."],
+   ["Which could be English words: blick, bnick, sblat, splat, dlag, lisk, lisb, lapm, lamp?", "Blick, splat, lisk and lamp could be English words. Bnick, sblat and dlag are impossible because bn, sb and dl cannot start a syllable, and lisb and lapm are impossible because sb and pm cannot end one."],
+   ["What could come next after pl_, st_ and th_, and what could not?", "After pl only a vowel can come, as in play. After st a vowel or r can come, as in star and street, but not l or k. After th, r, w or a vowel can come, as in three, thwart and thin, but not l or n."],
+   ["What is an agentic system, and what does its critic loop prevent?", "It is a graph of LLMs, each with its own job, where one's output becomes the next one's input: outline, write, critique, revise and produce the final version. The loop between the critic and the reviser sends the draft back until the critic is satisfied, which prevents hallucination."],
   ],
  },
 ]
@@ -398,22 +404,163 @@ FLAGS = [
  "The studio's earlier answer to review question 4 said Mode 3 drops more than Mode 1 because the middle mass moves more in Mode 3. Lab 6 shows the middle mass moves the most in Mode 1, so that reason was wrong. The answer here gives only what is certain: Mode 1 and Mode 3 go down, and Mode 2 stays the same.",
 ]
 
+# ---- Version 2: Lectures 11 to 18 (Jordan's scope). Version 1 above is kept unchanged.
+SCOPE_V2 = {
+    "covers": "Lectures 11 to 18: vibration and formants, spectrograms, the vowel network and its code, and large language models, heads and layers, Gestalt completion, agentic systems and phonotactics.",
+    "final": "",
+    "evidence": "On Exam 1, about 15 of the 25 questions came almost word for word from the review sheet, with only the sounds, numbers or positions changed. On Nov 5 he said heads are a question on the exam. Questions marked Predicted change one thing in a real review, homework, lab or lecture question. They are predictions, not confirmed exam questions.",
+}
+
+LLM_TOPICS = [
+ {
+  "id": "heads-layers", "tier": "Almost certain", "lectures": "Lecture 18",
+  "title": "Heads and layers",
+  "note": "On Nov 5 he said heads are a question on the exam, and the Lecture 18 slide says the same.",
+  "know": [
+   "Layer: A layer is one round of improvement. Layers go one after another, from the input to the output.",
+   "Head: A head is one expert, and it is a set of weights. Heads sit side by side inside each layer.",
+   "What a layer does: Each head gives its own opinion on how to improve the vectors, and the layer combines all of the heads' opinions into improved vectors. The next layer then does the same thing again.",
+   "Classroom comparison: The classes you visit one after another are the layers, and the students in each class who each give you an opinion are the heads.",
+   "Depth and width: Layers give an LLM depth, one round of improvement after another. Heads give it width, many experts asked at the same time in each round.",
+   "Why so many: Predicting the next word is so hard that large systems have a hundred or more layers with about a hundred heads in each.",
+   "How heads learn: If the predicted next word is wrong, every head in every layer adjusts its weights with backpropagation, so the next prediction is closer to the right word.",
+  ],
+  "questions": [
+   ["Lecture 18", "What are heads, and how do they relate to layers?", "A head is one expert, a set of weights that gives its own opinion on how to improve the vectors. Heads sit side by side inside each layer, and the layer combines all of their opinions into improved vectors. Layers go one after another from the input to the output, so each layer improves the vectors again."],
+   ["Predicted", "In the classroom comparison, what are the classes and what are the students?", "The classes are the layers, because you visit them one after another. The students in each class are the heads, because each one gives you a separate opinion at the same time, and you combine those opinions before moving on to the next class."],
+   ["Predicted", "Which gives an LLM depth and which gives it width, heads or layers?", "Layers give it depth, because they are rounds of improvement that come one after another. Heads give it width, because many of them work side by side inside the same layer."],
+   ["Predicted", "An LLM has 5 layers with 4 heads in each layer. How many heads does it have, and which of them work at the same time?", "It has 20 heads, because each of the 5 layers has 4. The 4 heads inside one layer work side by side at the same time, and the layers come one after another, so layer 2 works on the vectors that layer 1 improved."],
+   ["Predicted", "The LLM predicts bark instead of barks after \"the dog that my parents ... \". Which weights change?", "The weights of every head in every layer change. Backpropagation assigns each weight its share of the blame for the wrong prediction, and each one is adjusted a little so that the next prediction is closer to barks."],
+   ["Predicted", "Where is the knowledge of an LLM stored?", "It is stored in its weights. Each head is a set of weights, so the knowledge is spread across all the heads in all the layers, the same way the vowel network's knowledge is in its weights."],
+  ],
+ },
+ {
+  "id": "llm-sequences", "tier": "Likely", "lectures": "Lectures 17 and 18",
+  "title": "From the vowel network to an LLM: many vectors in, the next item out",
+  "note": "Lab 9 Part 4 asks this comparison directly.",
+  "know": [
+   "Levels: A neuron takes in a vector and gives back one number, the inner product. A neural network takes in one vector and gives back a vector of decisions. An LLM takes in many vectors and predicts what comes next. An agentic system is a group of LLMs.",
+   "Static versus sequence: The vowel network takes one static vector, F1 and F2, from one moment. Speech and language change over time, so one fixed list of numbers cannot model them.",
+   "The prediction game: An LLM is given 15 vectors and predicts the sixteenth. The sixteenth is a probability distribution over what could come next, such as each of about 30,000 English words.",
+   "Vectors can be anything: The vectors can be words, frames of a spectrogram, patches of an image or the amino acids of a protein. The LLM only ever sees lists of numbers, so the same design works for all of them.",
+   "Long-distance connections: In \"the dog that my parents, who I love very much, ... \", the next word is barks, because it goes with the singular dog no matter how many words come in between. An LLM learns this from data, not from a taught rule.",
+   "How an LLM learns: It predicts the next word, such as mat after \"the cat sat on the\". When the prediction is wrong, backpropagation adjusts the weights, and this is repeated with a huge number of sentences.",
+   "Underneath everything: Inference is inner products, and learning is stochastic gradient descent plus dynamic programming.",
+   "Hallucination: An LLM predicts from past data, so something its data does not cover can make it make things up.",
+  ],
+  "questions": [
+   ["Lab 9", "What is the difference between the input and output of the vowel network and those of an LLM?", "The vowel network takes one vector, F1 and F2, and decides among five categories. An LLM takes many vectors in sequence, such as the words so far, and decides among a whole vocabulary for the next item."],
+   ["Predicted", "What does a single neuron take in and give back? What about a neural network, and an LLM?", "A neuron takes in a vector and gives back one number, the inner product of the inputs and their weights. A neural network takes in one vector and gives back a vector of decisions. An LLM takes in many vectors, one for each moment of a sequence, and gives back a prediction of what comes next."],
+   ["Predicted", "Why can't the vowel network model a sentence?", "It takes one static vector from one moment and makes one decision. A sentence is many words, one after another, and the right next word depends on the words before it, so it needs a system that takes a whole sequence of vectors."],
+   ["Predicted", "An LLM is given 15 vectors and predicts the sixteenth. Name three things the vectors can stand for.", "They can be the words of a sentence, the frames of a spectrogram or the patches of an image, and they can also be the amino acids of a protein. The LLM only sees lists of numbers, so the same prediction game works for all of them."],
+   ["Predicted", "What does the sixteenth vector look like, and does it add up to anything?", "It is a probability distribution over what could come next, with one number for each possible next item, such as each English word. Because it is a probability distribution, its numbers add up to one."],
+   ["Predicted", "Why is the next word barks and not bark in \"the dog that my parents, who I love very much, ... \"?", "Barks goes with the singular word dog, no matter how many words come in between, even the plural word parents. To predict it, an LLM has to use a word far back in the sequence, which it learns from data by doing inner products layer after layer."],
+   ["Predicted", "Why can an LLM hallucinate?", "It predicts from past data. When it meets something its data does not cover, its prediction can turn into a guess, so it can make things up."],
+  ],
+ },
+ {
+  "id": "gestalt-cloze", "tier": "Likely", "lectures": "Lecture 17",
+  "title": "Gestalt completion and the cloze test",
+  "note": "",
+  "know": [
+   "Gestalt completion: People see a triangle in the Gestalt figure even though no triangle is drawn, because a large part of human knowledge is completing what is missing.",
+   "Closure: Closure is the Gestalt word for completing a familiar pattern that is not quite finished, such as seeing a broken circle as whole.",
+   "Cloze test: Words are removed from a text and people fill them in. The name comes from closure, and it tests knowledge by asking someone to complete a sequence.",
+   "LLM learning: An LLM predicting the next word is playing a cloze game again and again. Training a system only to predict the missing piece turns out to copy human thinking.",
+  ],
+  "questions": [
+   ["Predicted", "Describe the Gestalt principle of closure, and how an LLM uses it to learn.", "Closure is completing a familiar pattern that is not quite finished, such as seeing a triangle where none is drawn or a broken circle as whole. An LLM learns the same way, by predicting the missing next piece of a sequence again and again and correcting its weights when it is wrong."],
+   ["Predicted", "What is a cloze test, and why is an LLM's training like one?", "In a cloze test, words are removed from a text and people fill them in, so knowledge is tested by completing a sequence. An LLM is trained by filling in the next word over and over, so for an LLM, completion is what knowledge is."],
+   ["Predicted", "Why do people see a triangle in the Gestalt figure?", "No triangle is drawn, but people complete the missing parts because the pattern is familiar. This completion is the Gestalt principle of closure."],
+  ],
+ },
+ {
+  "id": "recurrent-dynamical", "tier": "Possible", "lectures": "Lectures 17 and 18",
+  "title": "Recurrent networks and the LLM as a dynamical system",
+  "note": "",
+  "know": [
+   "Recurrent network: Michael Jordan's network sends its own output back into part of its input, so what it produces at one moment helps predict the next moment. He built it because speech production changes over time.",
+   "Plan and state units: Plan units and state units feed the hidden layer, the hidden layer feeds the output, and the output is copied back into the state units. The same weights are used at every step.",
+   "GPT one word at a time: GPT predicts the next word, adds it to the prompt, and feeds everything back in to predict the word after that.",
+   "Dynamical system: A dynamical system is a rule that is fed its own output again and again. In the harmonic oscillator, position and velocity take turns updating, and step by step the rule draws a cosine.",
+   "The LLM as a dynamical system: In the lecture's account, each layer is the rule and the depth of the layers plays the role of time. The input vectors are the initial conditions, and each layer turns them into better vectors until the last layer can predict the next word.",
+  ],
+  "questions": [
+   ["Predicted", "What makes Jordan's network recurrent?", "It sends its own output back into part of its input. Its output is copied into the state units, so what it produced at one moment helps it predict the next moment."],
+   ["Predicted", "How is a recurrent network different from an nn.Sequential network?", "In a Sequential network, the input passes through the layers once, from the input to the output, and makes one decision. A recurrent network loops its output back into its input, so it works through a sequence step by step."],
+   ["Predicted", "Why is an LLM called a dynamical system?", "A dynamical system is a rule fed its own output again and again, starting from initial conditions. In an LLM the input vectors are the initial conditions, and each layer applies its weights to turn them into better vectors, so the depth of the layers plays the role of time."],
+   ["Predicted", "In the harmonic oscillator, which two numbers update, and in what order?", "Position x and velocity v take turns. First the new x is calculated from the old v, then the new v is calculated from the new x, and step by step the rule draws a cosine for x."],
+  ],
+ },
+ {
+  "id": "agentic", "tier": "Possible", "lectures": "Lectures 17 and 18",
+  "title": "Agentic systems and Software 3.0",
+  "note": "Lab 9 Part 4 asks what an agentic system is and what its loop prevents.",
+  "know": [
+   "Agentic system: An agentic system is a group of LLMs connected so that one's output becomes the next one's input. An agent in AI today is just an LLM.",
+   "The lecture example: An outline LLM plans the answer, a writing LLM writes it, a critic LLM checks it, a revision LLM works back and forth with the critic, and a final LLM produces the answer the user sees.",
+   "The critic loop: The draft goes back and forth between the critic and the reviser until the critic is satisfied or a limit is reached. The loop greatly reduced hallucination.",
+   "Shared memory and fixed weights: Once each LLM is trained its weights usually do not change, and the agents share a common memory where they write and read information.",
+   "Software 1.0, 2.0 and 3.0: Software 1.0 is writing a program in a language such as Python. Software 2.0 is training a neural network on input and output data, so the program is its weights. Software 3.0 is having an agentic system build and run the program from plain English instructions, which is called vibe coding.",
+  ],
+  "questions": [
+   ["Lab 9", "What is an agentic system, in terms of LLMs? Describe the example from lecture.", "It is a graph of LLMs, each with its own job, connected so that one's output becomes the next one's input. One LLM outlines, one writes, one critiques, one revises and one produces the final version, with a loop between the critic and the reviser until the critic is satisfied or the limit is reached."],
+   ["Lab 9", "What does the critic loop do, and what does it prevent that was common in earlier LLMs?", "It sends the draft back until the critic is satisfied, so errors are caught and fixed instead of being presented. It prevents hallucination, which was a common problem for earlier LLMs."],
+   ["Predicted", "What would happen if the critic LLM were removed?", "The draft would go straight from writing to the final answer without being checked. More made-up statements would reach the user, because the critic loop is what greatly reduced hallucination."],
+   ["Predicted", "What is the difference between Software 2.0 and Software 3.0?", "In Software 2.0, a neural network is trained on input and output data, so the program is its weights. In Software 3.0, an agentic system builds and runs the program from plain English instructions, as in vibe coding."],
+  ],
+ },
+ {
+  "id": "phonotactics", "tier": "Possible", "lectures": "Lectures 17 and 18",
+  "title": "Phonotactics and guessing the next letter",
+  "note": "Lab 9 Part 4 asks these directly.",
+  "know": [
+   "Phonotactics: The rules for which sounds can follow which are **phonotactics**. Every speaker knows them without being taught.",
+   "Simple syllable: A simple English syllable is a consonant, a vowel and a consonant, as in Don or cup. The pattern is about sounds, not letters, so the silent e of shave does not count.",
+   "Onset and coda: A cluster before the vowel is an onset, as in split, and a cluster after the vowel is a coda, as in lamp. The order is a mirror image around the vowel, so flat is a word and lfat is impossible.",
+   "Syllable breaks: Atlantic is a word because t and l are on opposite sides of a syllable break, but tlantic is impossible because tl cannot start an English syllable. The sound ng can end a syllable but never start one.",
+   "Other languages: Mandarin allows only nasal sounds at the end of a syllable, Russian and Polish allow clusters like zb or dl at the start of a word, and Spanish speakers add an e before st, as in estadio.",
+   "Next-letter guessing: After a vowel, almost any letter can come next, so the probability distribution is flat. At the start of a word, the choices narrow to what an English onset allows, so after skr the distribution is sharply peaked on a few vowels.",
+   "The GPT link: Guessing the next letter is predicting the sixteenth item, so a GPT trained only on this game learns English syllable structure.",
+  ],
+  "questions": [
+   ["Lab 9", "Which could be English words: blick, bnick, sblat, splat, dlag, lisk, lisb, lapm, lamp? For each one that could not, name the problem.", "Blick, splat, lisk and lamp could be English words. Bnick, sblat and dlag are impossible because bn, sb and dl cannot start a syllable, and lisb and lapm are impossible because sb and pm cannot end one."],
+   ["Lab 9", "Each of these starts an English word: pl_, st_ and th_. What could come next, and what could not?", "After pl only a vowel can come, as in play, so a consonant such as n cannot. After st a vowel or r can come, as in star and street, but not l or k. After th, r, w or a vowel can come, as in three, thwart and thin, but not l or n."],
+   ["Predicted", "After which start is the next-letter distribution flatter, ra_ or skr_? Why?", "It is flatter after ra, because after a vowel almost any letter can come next, so the probability is spread over many letters. After skr only a vowel can come, so the probability piles onto a few vowels and the distribution is sharply peaked."],
+   ["Predicted", "Why is Atlantic an English word but tlantic impossible?", "In Atlantic, the t and the l are on opposite sides of a syllable break, so each syllable follows the rules. In tlantic, tl would have to start a syllable, and English does not allow tl at the start of a syllable."],
+   ["Predicted", "Could ngop be an English word? Could flim?", "Ngop could not, because the sound ng can end a syllable, as in ring, but can never start one. Flim could, because fl is an allowed onset, as in flat, and im is an allowed ending."],
+   ["Predicted", "Why does a GPT trained only to guess the next letter end up knowing English syllable structure?", "Its predictions can only improve by matching the patterns of English syllables, because those patterns decide which letters can come next. So the knowledge ends up in the shape of its probability distributions, flat after a vowel and peaked after a start like skr."],
+  ],
+ },
+]
+
+TOPICS_V2 = [t for t in TOPICS if t["id"] != "possible-llm"] + LLM_TOPICS
+
+FLAGS_V2 = [f for f in FLAGS if not f.startswith("Lab 9 Part 4")]
+
 
 def build(out_path):
-    topics = [dict(t, questions=[dict(source=s, q=q, a=a) for s, q, a in t["questions"]]) for t in TOPICS]
+    conv = lambda ts: [dict(t, questions=[dict(source=s, q=q, a=a) for s, q, a in t["questions"]]) for t in ts]
+    topics, topics_v2 = conv(TOPICS), conv(TOPICS_V2)
     labs = [dict(l, questions=[dict(q=q, a=a) for q, a in l["questions"]]) for l in LABS]
     data = {
         "versions": {
             "exam2-v1": {
-                "label": "Exam 2 · Study this first (v1)",
+                "label": "Exam 2 · Study this first (v1, Lectures 11–16)",
+                "range": "Lectures 11 to 16",
                 "howToAnswer": HOW_TO_ANSWER, "scope": SCOPE, "topics": topics, "flags": FLAGS,
+            },
+            "exam2-v2": {
+                "label": "Exam 2 · Study this first (v2, Lectures 11–18)",
+                "range": "Lectures 11 to 18",
+                "howToAnswer": HOW_TO_ANSWER, "scope": SCOPE_V2, "topics": topics_v2, "flags": FLAGS_V2,
             },
         },
         "labs": labs,
     }
-    n_q = sum(len(t["questions"]) for t in topics)
+    n_q = sum(len(t["questions"]) for t in topics_v2)
     out_path.write_text("window.LING285_ESSENTIALS = " + json.dumps(data, ensure_ascii=False, indent=1) + ";\n")
-    return len(topics), n_q, sum(len(l["questions"]) for l in labs)
+    return len(topics_v2), n_q, sum(len(l["questions"]) for l in labs)
 
 
 if __name__ == "__main__":
