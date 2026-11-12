@@ -32,3 +32,9 @@
 #content .ess-block-split.is-wide .ess-split{grid-template-columns:minmax(0,1fr)!important}
 #content .ess-block-split.is-wide .ess-media{position:static;order:-1}
 #content .ess-ov>img.ess-ov-top.is-always{opacity:1}
+
+/* My notes box under each block (Study this first, slides with videos version) */
+.ess-note{margin:.4rem 0 .9rem}
+.ess-note label{display:block;margin-bottom:.2rem}
+.ess-note textarea{width:100%;box-sizing:border-box;min-height:2.6rem;resize:vertical;font:inherit;font-size:.92rem;line-height:1.4;padding:.45rem .6rem;border-radius:8px;border:1px solid color-mix(in srgb,currentColor 25%,transparent);background:color-mix(in srgb,currentColor 5%,transparent);color:inherit}
+.ess-note textarea:focus{outline:2px solid color-mix(in srgb,currentColor 45%,transparent);outline-offset:1px}
