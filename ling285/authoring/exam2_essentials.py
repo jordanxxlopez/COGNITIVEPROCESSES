@@ -14,6 +14,7 @@ from pathlib import Path
 from guide_plain import build_plain_guide
 from unlabel import bullet
 from module1_layout import build_v6, lab_blocks
+from exam2_versions import build_v8, build_v9
 
 _PLAIN = Path(__file__).resolve().parent / "plain"
 
@@ -685,6 +686,19 @@ def build(out_path):
                 "range": "Lectures 11 to 18",
                 "howToAnswer": [], "scope": SCOPE_V3, "flags": FLAGS_V2,
                 "topics": build_v7(topics_v3),
+            },
+            "exam2-v8": {
+                "label": "Exam 2 · Study this first (Lectures 11–18, standalone questions, no figures needed)",
+                "range": "Lectures 11 to 18", "noTags": True,
+                "howToAnswer": [], "flags": FLAGS_V2,
+                "scope": {"covers": SCOPE_V3["covers"], "final": "", "evidence": "Topics marked Almost certain and Likely come first. The LLM topics are marked Possible. Every question here is written so it makes sense on its own, without a figure."},
+                "topics": build_v8(build_v7(topics_v3)),
+            },
+            "exam2-v9": {
+                "label": "Exam 2 · Study this first (Lectures 11–18, questions with figures)",
+                "range": "Lectures 11 to 18",
+                "howToAnswer": [], "scope": SCOPE_V3, "flags": FLAGS_V2,
+                "topics": build_v9(build_v7(topics_v3)),
             },
             "exam2-v3": {
                 "label": "Exam 2 · Study this first (v3, Lectures 11–18, his questions first)",
