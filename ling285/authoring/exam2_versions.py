@@ -193,3 +193,24 @@ def build_v11(topics_v9):
                 b["media"] = ALSO_KNOW_MEDIA[t["id"]]
         out.append(t)
     return out
+
+
+def build_v12(topics_v11):
+    """v11 with every note block and answer rewritten in simpler words (authoring/simple_v3/final.json)."""
+    path = Path(__file__).resolve().parent / "simple_v3" / "final.json"
+    rewrites = {t["id"]: t for t in json.load(open(path))["topics"]}
+    out = []
+    for t in topics_v11:
+        t = copy.deepcopy(t)
+        r = rewrites.get(t["id"])
+        if r:
+            for b, rb in zip(t["blocks"], r["blocks"]):
+                assert b["ref"] == rb["ref"], (t["id"], b["ref"], rb["ref"])
+                for k in ("main", "sub", "end", "items"):
+                    if k in rb:
+                        b[k] = rb[k]
+            for q, rq in zip(t["questions"], r["questions"]):
+                assert q["q"] == rq["q"], (t["id"], q["q"][:60])
+                q["a"] = rq["a"]
+        out.append(t)
+    return out

@@ -41,3 +41,35 @@ scratchpad style-feedback.md and style-notes-analysis.md.
 - "A single artificial neuron takes in a vector of numerical inputs and produces one numerical output. Each input is assigned a weight, and the neuron combines these weighted inputs before applying an activation function. The result is a single number."
 - v10.1: "**Two masses have two modes, and Mode 2 is faster because more springs are stretching.** In Mode 1, the masses move together…"
 - v9.3: "For Mode 4, the piece is moving, so the extra mass **lowers** the frequency. The piece is barely stretched, so the extra stiffness does nothing."
+
+## Simpler explanations (added Nov 12, 2026, from Jordan's own rewrites)
+Jordan said the v11 writing was still "making it so much harder". These are the rewrites Jordan
+liked, set beside what was rejected. Follow these over anything above that conflicts.
+
+1. **Say what is literally happening, never a borrowed idea.** Rejected: "the order of assigning blame",
+   "each layer's blame is reused". Liked: "calculating how much each weight contributed to the error.
+   It starts with the last layer and uses those calculations to work backward through the earlier layers."
+   No "blame", "credit", "pushes", "votes", "keeps the sign", "flips" unless spelled out.
+2. **Direct answer first, as a full plain sentence that repeats the question's words.** "All three modes
+   have lower frequencies when mass 1 becomes heavier."
+3. **Then "This is because…", one step per sentence, with no step skipped.** Rejected: "a heavier mass
+   that is moving lowers the frequency." Liked: "When a mass becomes heavier, it is harder to move, so
+   the system vibrates more slowly." Explain the middle step (harder to move) before the result.
+4. **Tie it back at the end.** "Since mass 1 moves in every mode, all three modes slow down, and their
+   frequencies decrease." ("Since" is fine in this everyday sense.)
+5. **Everyday verbs.** updating, figuring out, determines how big, makes it go up/down, harder to move.
+   Not "sets", "follows from", "yields", "carries".
+6. **Keep the key term, then explain it in parentheses right there.** "formant transitions (changes in
+   formant frequencies as your mouth moves from one sound to another)", "formants (frequency regions with
+   strong acoustic energy)", "amplitude (strength)".
+7. **Clear up the obvious confusion a reader would have.** "the vowel that comes after it (the vowel
+   sound immediately following the consonant within a word, not a vowel in the next word)". "/n/ is a
+   consonant".
+8. **Use a small worked number example when the idea is about signs or amounts.** "If the input is +3,
+   a weight of +2 gives +6, so it stays positive. A weight of −2 gives −6, so it becomes negative."
+9. **Separate paragraph for each part of a multi-part question**, each opening with the part's name
+   ("The SGD part is…", "The dynamic programming part is…", "The small problem is…").
+10. **Spell out the case that confuses.** "If the weight is negative, increasing the positive activation
+    makes that output's probability go down."
+11. Still never: "Label: sentence" lines, "Basically:", arrows, equals signs in prose, lecture/professor
+    mentions, analogies of my own, telegraphic fragments.

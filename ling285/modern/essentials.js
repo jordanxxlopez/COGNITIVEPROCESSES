@@ -14051,6 +14051,1991 @@ window.LING285_ESSENTIALS = {
      ]
     }
    ]
+  },
+  "exam2-v12": {
+   "label": "Exam 2 · Study this first (Simpler v3, Lectures 11–18, slides with the videos played on them)",
+   "range": "Lectures 11 to 18",
+   "split": true,
+   "howToAnswer": [],
+   "scope": {
+    "covers": "Lectures 11 to 18 are all fair game here. Everything leading up to large language models is described in full, and the LLM part is kept.",
+    "final": "",
+    "evidence": "Emphasis goes to what he asked: the 21 review questions, HW5 and his cues in class, including heads (Nov 5: heads are a question on the exam). On Nov 10 he said the review and homework questions go \"up to right before we got to LLMs\" and that the LLM part is kept for the final, so the LLM topics are marked Possible. On Exam 1, about 15 of the 25 questions came almost word for word from the review sheet. Questions marked Predicted change one thing in a real question and are predictions, not confirmed exam questions."
+   },
+   "flags": [
+    "HW5 questions are labeled Based on HW5, because only the HW5 answer key was available. The answers come from the key, and the question wording is reconstructed from them.",
+    "Lab 7 says the vowel in year decreases F1 and F2. The correct pattern is F1 down and F2 up, which Lab 7's own table, Lab 9 and the lectures all give.",
+    "Lab 7 labels the third fixed-free mode the 2nd formant. It is the 3rd formant.",
+    "The studio's earlier answer to review question 4 said Mode 3 drops more than Mode 1 because the middle mass moves more in Mode 3. Lab 6 shows the middle mass moves the most in Mode 1, so that reason was wrong. The answer here gives only what is certain: Mode 1 and Mode 3 go down, and Mode 2 stays the same."
+   ],
+   "topics": [
+    {
+     "id": "modes",
+     "tier": "Almost certain",
+     "lectures": "Lectures 11, 12 and 13",
+     "title": "Masses, springs and modes",
+     "know": [
+      "Why it vibrates: The spring tends to return to **equilibrium**, and a moving mass tends to **keep moving**, so the mass overshoots and the cycle repeats.",
+      "Mass and stiffness: **More mass lowers the frequency, and more stiffness raises the frequency.**",
+      "Directions: **Longitudinal** motion (back and forth along the spring) and **transverse** motion (up and down) behave the same way.",
+      "Mode: A **mode** is one way a system can vibrate. **N masses give N modes.**",
+      "Higher modes: The more the masses move **against each other**, the more the springs stretch and compress, so the mode has more stiffness and a **higher frequency**.",
+      "Local rule: **A mass changes the frequency only where it moves, and a spring changes the frequency only where it stretches.**",
+      "Infinitely many: An infinite number of masses and springs along a line is a **string**. Spread over a surface, it is a **membrane**, such as a drum or the vocal folds."
+     ],
+     "questions": [
+      {
+       "source": "Review 1",
+       "q": "Why do multiple mass systems have multiple frequencies?",
+       "a": "Multiple mass systems have multiple frequencies because they can vibrate in several different modes (ways of vibrating), and each mode has its own frequency. This is because the masses can move in different ways. In some modes the masses move together, and in others they move against each other. When the masses move against each other, the springs between them stretch and compress more. So more stiffness is working, and that mode vibrates faster. So a system with N masses has N modes and N frequencies."
+      },
+      {
+       "source": "Review 2",
+       "q": "How many modes does a 3-mass system have?",
+       "a": "A 3-mass system has three modes. This is because a system with N masses has N modes of vibration. So 3 masses give 3 modes."
+      },
+      {
+       "source": "Lab 9",
+       "q": "Four masses are joined by springs between two walls. How many modes does the system have, and what are the masses doing in the lowest and highest modes?",
+       "a": "The system has four modes. This is because there is one mode for each mass, and there are four masses.\n\nIn the lowest mode, Mode 1, all four masses move in the same direction at the same time.\n\nIn the highest mode, Mode 4, every mass moves in the opposite direction from its neighbors. Because of this, every spring is stretched and compressed. So the most stiffness is working, and the frequency is highest."
+      },
+      {
+       "source": "Review 3",
+       "q": "Which mode of the 3-mass system has the highest frequency? Why?",
+       "a": "Mode 3 has the highest frequency of the 3-mass system. This is because in Mode 3 the middle mass moves opposite to the two outer masses. So every spring is stretched and compressed as much as possible. That means the most stiffness is working, and more stiffness makes the system vibrate faster. So Mode 3 vibrates fastest and has the highest frequency."
+      },
+      {
+       "source": "Predicted",
+       "q": "Which mode of a 2-mass system has the lowest frequency, and why?",
+       "a": "Mode 1 has the lowest frequency of a 2-mass system. This is because in Mode 1 the two masses move together. So the middle spring moves along with them without stretching. Only the two outer springs are stretching and compressing. So Mode 1 has less stiffness working than Mode 2, and it vibrates more slowly."
+      },
+      {
+       "source": "Review 4",
+       "q": "If you increase mass 2, what happens to the frequencies of each of the modes?",
+       "a": "If you increase mass 2, the frequencies of Mode 1 and Mode 3 go down, and the frequency of Mode 2 stays the same. This is because mass 2 is the middle mass, and it moves in Mode 1 and in Mode 3. A heavier mass is harder to move, so those two modes vibrate more slowly, and their frequencies go down. In Mode 2, the middle mass does not move. A mass that does not move has no effect on the frequency, so Mode 2 stays the same."
+      },
+      {
+       "source": "Predicted",
+       "q": "In the 3-mass system, what happens to each mode if you make mass 1 (an outer mass) heavier?",
+       "a": "All three modes have lower frequencies when mass 1 becomes heavier. This is because mass 1 moves in all three modes. When a mass becomes heavier, it is harder to move, so the system vibrates more slowly. Since mass 1 moves in every mode, all three modes slow down, and their frequencies decrease."
+      },
+      {
+       "source": "Predicted",
+       "q": "In a 2-mass system, what happens to each mode if you make the middle spring stiffer?",
+       "a": "When the middle spring of a 2-mass system is made stiffer, Mode 1 stays the same and Mode 2 goes up. This is because in Mode 1 the masses move together, so the middle spring is never stretched. A spring that is not stretched does not affect the frequency, so its extra stiffness does nothing. In Mode 2 the masses move against each other, so the middle spring is stretched and compressed. A stiffer spring pulls back harder, so Mode 2 vibrates faster, and its frequency goes up."
+      },
+      {
+       "source": "Review 5",
+       "q": "What do you get when you have an infinite number of masses and springs?",
+       "a": "An infinite number of masses and springs gives you a string, such as a guitar or piano string. This is because every small piece of a string has mass, and every small piece stretches the way a spring does. So a string vibrates in modes the same way a chain of masses does, only with infinitely many masses and springs. When the masses and springs are spread over a surface instead of along a line, the result is a membrane, such as a drum or the vocal folds."
+      },
+      {
+       "source": "Predicted",
+       "q": "What happens to the frequency of a single mass on a spring if you make the spring stiffer? If you make the mass heavier?",
+       "a": "If you make the spring stiffer, the frequency of a single mass on a spring goes up. This is because a stiffer spring pulls the mass back toward equilibrium (its resting position) with more force. So the mass turns around sooner, and each cycle takes less time.\n\nIf you make the mass heavier, the frequency goes down. This is because a heavier mass is harder to start and stop. So each back-and-forth cycle takes longer, and the system vibrates more slowly."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 11 · p2 · Lecture 12 · p3",
+       "main": "**In a mass-spring system, a mass is attached to a spring, and together they vibrate around a resting position.** This resting position is called **equilibrium** (the position where the spring is neither stretched nor compressed). The spring always pulls the mass back toward equilibrium. The moving mass tends to **keep moving**, so it goes past equilibrium. Then the spring pulls it back again, and the cycle repeats.",
+       "sub": [
+        "The vibration can be **longitudinal** (back and forth along the length of the spring) or **transverse** (up and down, across the spring).",
+        "Both directions work the same way, because in each one the same spring pulls the same mass back."
+       ],
+       "end": "So the mass keeps vibrating because the spring keeps pulling it back and the mass keeps going past equilibrium.",
+       "media": {
+        "image": "assets/slides/lecture11/002.webp",
+        "video": "assets/original/3a173c997457e2f0c60b.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "",
+        "revealMode": "",
+        "poster": "assets/exam2/frames/3a173c997457e2f0c60b.jpg",
+        "caption": "Lecture 11 · p2 · with the video played on the slide"
+       }
+      },
+      {
+       "ref": "Lecture 11 · p3 · Lecture 12 · p4",
+       "main": "**In a mass-spring system, the frequency depends on the mass and on the stiffness of the spring.** **Frequency** is how many times the system goes back and forth each second. **Stiffness** is how hard the spring pulls back when it is stretched or compressed. **More mass lowers the frequency, and more stiffness raises the frequency.**",
+       "sub": [
+        "A heavier mass is harder to get moving and harder to turn around. So each cycle takes longer, and the frequency goes down.",
+        "A stiffer spring pulls back harder, so the mass returns faster. Each cycle takes less time, so the frequency goes up."
+       ],
+       "end": "So mass and stiffness change the frequency in opposite directions.",
+       "media": {
+        "image": "assets/slides/lecture11/003.webp",
+        "video": "assets/original/e7a1853082e98dd26757.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "",
+        "revealMode": "",
+        "poster": "assets/exam2/frames/e7a1853082e98dd26757.jpg",
+        "caption": "Lecture 11 · p3 · with the video played on the slide"
+       }
+      },
+      {
+       "ref": "Lecture 11 · p4 · Lecture 12 · p5",
+       "main": "**When two masses are joined by springs, the system can vibrate in two different ways, called modes.** A **mode** is one way a system can vibrate. In **Mode 1**, the two masses move together, in the same direction at the same time. In **Mode 2**, the two masses move against each other, in opposite directions.",
+       "sub": [
+        "In **Mode 1**, the middle spring hardly stretches, because both masses move together. So it adds little stiffness, and **the frequency is lower**.",
+        "In **Mode 2**, the middle spring stretches and compresses a lot, because the masses move in opposite directions. So it adds stiffness, and **the frequency is higher**.",
+        "The more the masses move **against each other**, the more the springs stretch and compress. So more stiffness is working in that mode, and it has a **higher frequency**."
+       ],
+       "end": "So a higher mode vibrates faster because more of the springs stretch and compress.",
+       "media": {
+        "image": "assets/slides/lecture11/004.webp",
+        "video": "assets/original/57ff4733438cce3597cb.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "",
+        "revealMode": "",
+        "poster": "assets/exam2/frames/57ff4733438cce3597cb.jpg",
+        "caption": "Lecture 11 · p4 · with the video played on the slide"
+       }
+      },
+      {
+       "ref": "Lecture 11 · p6 · Lecture 12 · p6",
+       "main": "**Three masses joined by springs have three modes.** In **Mode 1**, all three masses move together. In **Mode 2**, the middle mass stays still, and the two outer masses move against each other. In **Mode 3**, the middle mass moves in the opposite direction from both outer masses.",
+       "sub": [
+        "**A mass changes the frequency only if it moves in that mode, and a spring changes the frequency only if it stretches in that mode.**",
+        "If the middle mass is made heavier, **Mode 1 and Mode 3 have lower frequencies**. This is because the middle mass moves in both of those modes. A heavier mass is harder to move, so those modes vibrate more slowly.",
+        "The same heavier middle mass **does not change Mode 2**, because the middle mass does not move in Mode 2."
+       ],
+       "end": "So Mode 3 stretches the springs the most, because each mass moves against its neighbor. That is why Mode 3 has the highest frequency.",
+       "media": {
+        "image": "assets/slides/lecture11/006.webp",
+        "video": "assets/original/6fdaa70e0bfab83a6d83.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "",
+        "revealMode": "",
+        "poster": "assets/exam2/frames/6fdaa70e0bfab83a6d83.jpg",
+        "caption": "Lecture 11 · p6 · with the video played on the slide"
+       }
+      },
+      {
+       "ref": "Lecture 11 · p7 · Lecture 12 · p7 · Lecture 13 · p3",
+       "main": "**Each mass added to the chain creates one more mode, so N masses have N modes.** The same patterns repeat as the chain gets longer. Lower modes have broad movements, where large sections of the chain move in the same direction. In higher modes, the direction of movement changes more often along the chain.",
+       "sub": [
+        "An infinite number of masses and springs along a line is a **string**.",
+        "An infinite number of masses and springs spread over a surface is a **membrane**, such as a drum or the vocal folds.",
+        "A string or a membrane can vibrate in several modes at the same time."
+       ],
+       "end": "So a string and the vocal folds each have a whole series of modes.",
+       "media": {
+        "image": "assets/slides/lecture11/007.webp",
+        "video": "assets/original/a6ce5f4f318fd7141922.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "",
+        "revealMode": "",
+        "poster": "assets/exam2/frames/a6ce5f4f318fd7141922.jpg",
+        "caption": "Lecture 11 · p7 · with the video played on the slide"
+       }
+      }
+     ]
+    },
+    {
+     "id": "springiness",
+     "tier": "Almost certain",
+     "lectures": "Lectures 12, 13 and 14",
+     "title": "Where the springiness is, and what a local change does",
+     "know": [
+      "Alternation: **Where a vibrating system moves the most, it stretches the least, and where it does not move, it stretches the most.**",
+      "Shortcut: The springiest locations are the points of **no movement**, which are the fixed ends and the points where the mode crosses its resting line.",
+      "Ends: A **fixed end is always springy**, and a **free end is always moving**, in every mode.",
+      "Added mass: Extra mass lowers a mode's frequency **only where that mode is moving**.",
+      "Added stiffness: Extra stiffness raises a mode's frequency **only where that mode is stretching**.",
+      "Both at once: Adding mass and stiffness together does **not** cancel out, except for a single mass on a single spring, because at one spot in one mode only one of the two matters.",
+      "Perturbation theory: It predicts how a small change in one location affects vibration. In the late nineteenth century, wax placed where a drum vibrated a lot lowered its pitch, and wax placed where it did not vibrate had no effect."
+     ],
+     "questions": [
+      {
+       "source": "Review 6",
+       "q": "This is Mode 5 of a string fixed at both ends. Circle the areas where there is the most springiness.",
+       "a": "The areas with the most springiness in Mode 5 are the two fixed ends and the four points where the string crosses its middle line. So six places should be circled. This is because the string does not move at those points. The pieces of string on either side of each point move in opposite directions. So the string at that point is stretched and compressed the most. The tops of the five bumps have the most motion and the least springiness, so they are not circled.",
+       "img": "assets/exam2/q06-string-mode5.png",
+       "alt": "Mode 5 of a string fixed at both ends, with five bumps"
+      },
+      {
+       "source": "Predicted",
+       "q": "This is Mode 3 of a string fixed at both ends. Where is the most springiness, and where is the most motion?",
+       "a": "The most springiness in Mode 3 is at the two fixed ends and at the two points where the string crosses its middle line. That makes four places in all. This is because the string does not move at those points. So the string is stretched and compressed the most there.\n\nThe most motion in Mode 3 is at the tops of the three bumps. This is because the string swings the most there and is hardly stretched.",
+       "img": "assets/exam2/gen-string-mode3.svg",
+       "alt": "Mode 3 of a string fixed at both ends, with three bumps"
+      },
+      {
+       "source": "Review 11",
+       "q": "This picture shows Mode 4 of a building. Circle the areas where there is the most springiness.",
+       "a": "The areas with the most springiness in Mode 4 of the building are the fixed base and the three points where the building crosses its resting position. So four places should be circled. This is because those points do not move. The parts of the building above and below each point move in opposite directions. So the structure there stretches and compresses the most. The free top moves the most and is the least springy, so it is not circled.",
+       "img": "assets/exam2/q11-building-mode4.png",
+       "alt": "Mode 4 of a building with a fixed base and a free top"
+      },
+      {
+       "source": "Predicted",
+       "q": "This diagram shows Mode 2 of a building. Where is the most springiness?",
+       "a": "The most springiness in Mode 2 of the building is at the fixed base and at the one point above it where the building crosses its resting position. This is because those two points do not move. So the structure there is stretched and compressed the most. The free top moves the most, so it is the least springy.",
+       "img": "assets/exam2/gen-building-mode2.svg",
+       "alt": "Mode 2 of a building with a fixed base and a free top"
+      },
+      {
+       "source": "Review 14",
+       "q": "If we increase the stiffness and mass of the string at the boxed location (where Mode 3 crosses its middle line and Mode 4 is at the top of a bump), what happens to Mode 3 and Mode 4's frequencies, and why?",
+       "a": "Mode 3's frequency goes up and Mode 4's frequency goes down when stiffness and mass are increased at the boxed location.\n\nMode 3's frequency goes up. This is because the boxed spot does not move in Mode 3, but it is stretched the most. The added mass does nothing, because the spot does not move. The added stiffness makes the string pull back harder at that spot, so it vibrates faster.\n\nMode 4's frequency goes down. This is because the boxed spot moves the most in Mode 4 and is not stretched. The added mass makes the spot harder to move, so the string vibrates more slowly. The added stiffness does nothing, because the spot is not stretched.",
+       "img": "assets/exam2/q14-string-modes-3-4.png",
+       "alt": "Modes 3 and 4 of a string with a box where Mode 3 crosses its middle line"
+      },
+      {
+       "source": "Predicted",
+       "q": "The box is moved to a spot where Mode 3 moves the most and Mode 4 crosses its middle line. Mass and stiffness are added there. What happens?",
+       "a": "When the box is moved to that spot and mass and stiffness are added there, Mode 3's frequency goes down and Mode 4's frequency goes up.\n\nMode 3's frequency goes down. This is because the spot moves the most in Mode 3 and is hardly stretched. The added mass makes the spot harder to move, so the string vibrates more slowly.\n\nMode 4's frequency goes up. This is because the spot does not move in Mode 4, but it is stretched the most. The added stiffness makes the string pull back harder at that spot, so it vibrates faster.",
+       "img": "assets/exam2/gen-string-modes-3-4-box-middle.svg",
+       "alt": "Modes 3 and 4 of a string with a box in the middle, where Mode 3 moves the most and Mode 4 crosses its middle line"
+      },
+      {
+       "source": "Review 15",
+       "q": "If we increase the mass and stiffness of the building at its very top, what happens to the frequency of Mode 4, and why?",
+       "a": "Increasing the mass and stiffness at the very top of the building makes the frequency of Mode 4 go down. This is because the top of the building is the free end. A free end moves the most in every mode and is hardly stretched. So the added mass counts there. The heavier top is harder to move, so the building vibrates more slowly, and the frequency goes down. The added stiffness does nothing, because nothing is stretching at the top.",
+       "img": "assets/exam2/q15-building-mode4.png",
+       "alt": "Mode 4 of a building"
+      },
+      {
+       "source": "Predicted",
+       "q": "If we increase the mass and stiffness of the building at its very base, what happens to the frequency of Mode 4, and why?",
+       "a": "Increasing the mass and stiffness at the very base of the building makes the frequency of Mode 4 go up. This is because the base is the fixed end. The base never moves, but it is always stretched and compressed. The added mass does nothing there, because the base does not move. The added stiffness makes the structure pull back harder when it is stretched, so it vibrates faster, and the frequency goes up.",
+       "img": "assets/exam2/q15-building-mode4.png",
+       "alt": "Mode 4 of a building"
+      },
+      {
+       "source": "Lab 9",
+       "q": "In Mode 3 of a string fixed at both ends, point B does not move and point C is at the bottom of a bump. What happens to Mode 3 if you add a small weight at B? At C? If you stiffen the string at B?",
+       "a": "A weight at B leaves Mode 3's frequency the same. This is because B does not move in Mode 3, so the extra mass does not affect the vibration.\n\nA weight at C lowers Mode 3's frequency. This is because C swings the most in Mode 3. The extra mass makes that spot harder to move, so the string vibrates more slowly.\n\nStiffening the string at B raises Mode 3's frequency. This is because B is where the string stretches the most in Mode 3. A stiffer string pulls back harder when it is stretched, so it vibrates faster.",
+       "img": "assets/exam2/gen-string-mode1-mode3-points.svg",
+       "alt": "Modes 1 and 3 of a string, with point B a third of the way along and point C in the middle"
+      },
+      {
+       "source": "Lab 9",
+       "q": "The same spot B is moving in Mode 1. Does a weight at B change Mode 1's frequency?",
+       "a": "Yes, a weight at B changes Mode 1's frequency, and it makes it go down. This is because in Mode 1 the whole string is one bump, so the spot at B is moving. Extra mass at a moving spot makes it harder to move, so the string vibrates more slowly. So even though B does not move in Mode 3, a weight there lowers the frequency of Mode 1.",
+       "img": "assets/exam2/gen-string-mode1-mode3-points.svg",
+       "alt": "Modes 1 and 3 of a string, with point B a third of the way along and point C in the middle"
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 12 · p9, 11, 22 · Lecture 13 · p2",
+       "main": "**In a vibrating system such as a string or a chain of masses, each spot in a mode is either mostly moving or mostly stretching.** A **mode** is one of the patterns in which the system can vibrate. **Where the system moves the most, it stretches the least.** Where it does not move, it stretches the most. So the springiest spots are the points of **no movement**.",
+       "sub": [
+        "The points of no movement are the fixed ends and the points where the mode crosses its resting line. The resting line is the straight line where the system sits when it is not vibrating.",
+        "A **fixed end is always springy** in every mode. This is because the system is held in place there, so it cannot move.",
+        "A **free end is always moving** in every mode. This is because nothing holds it in place."
+       ],
+       "end": "So along the system, moving spots and springy spots alternate, one after the other.",
+       "media": {
+        "image": "assets/slides/lecture12/009.webp",
+        "caption": "Lecture 12 · p9"
+       }
+      },
+      {
+       "ref": "Lecture 12 · p9, 11, 22 · Lecture 13 · p2",
+       "main": "**A small change at one spot affects each mode depending on what that spot is doing in that mode.** Extra mass lowers a mode's frequency (how fast it vibrates) **only where that mode is moving**. Extra stiffness (how strongly the material resists being stretched) raises a mode's frequency **only where that mode is stretching**.",
+       "sub": [
+        "At a spot with lots of motion and little stretching, the extra mass matters. The heavier spot is harder to move, so the system vibrates more slowly, and **the frequency goes down**.",
+        "At a spot with no motion and lots of stretching, the extra stiffness matters. A stiffer spot pulls back harder when it is stretched, so the system vibrates faster, and **the frequency goes up**.",
+        "Adding mass and stiffness at the same spot does **not** cancel out. This is because at one spot in one mode, only one of the two matters. The only exception is a single mass on a single spring."
+       ],
+       "end": "So the same change can raise the frequency of one mode and lower the frequency of another.",
+       "media": {
+        "image": "assets/slides/lecture12/009.webp",
+        "caption": "Lecture 12 · p9"
+       }
+      },
+      {
+       "ref": "Also know · Lectures 12, 13 and 14",
+       "main": "**Perturbation theory predicts how a small change in one location affects how something vibrates.** In the late nineteenth century, researchers tested this by placing small amounts of wax on different parts of a drum.",
+       "sub": [
+        "When wax was placed where the drum vibrated a lot, the extra mass made that part harder to move. So the drum vibrated more slowly, and its frequency (pitch) went down.",
+        "When wax was placed where the drum did not vibrate, it had no effect on the drum's frequency or sound."
+       ],
+       "end": "So the wax changed the frequency only where the drum was moving.",
+       "media": {
+        "image": "assets/exam2/q06-string-mode5.png",
+        "caption": "Mode 5 of a string fixed at both ends"
+       }
+      }
+     ]
+    },
+    {
+     "id": "harmonics-formants",
+     "tier": "Almost certain",
+     "lectures": "Lectures 11, 12, 13 and 14",
+     "title": "Harmonics and formants: fixed-fixed and fixed-free systems",
+     "know": [
+      "Fixed-fixed: A system fixed at both ends, such as a string or the **vocal folds**, has modes at **1, 2, 3, 4 times** the first. These are **harmonics**.",
+      "Why whole numbers: The first mode is **half a wave**, and each higher mode must fit a whole number of those half-waves between the two fixed ends. Mode N contains N copies of Mode 1.",
+      "Fixed-free: A system fixed at one end and free at the other, such as a **building** or the **air in the vocal tract**, has modes at **1, 3, 5, 7 times** the first. These are **formants**.",
+      "Why odd numbers: The first mode is a **quarter-wave packet** from no motion to the most motion. The free end must always be moving, so packets are added two at a time, giving one, three, five and seven packets.",
+      "Spacing: Fixed-fixed modes are spaced by the first frequency. Fixed-free modes are spaced by **twice** the first frequency.",
+      "Building analogy: A building is fixed to the ground and free at the top, just as the air in the vocal tract is fixed at the closed vocal folds and free at the open lips.",
+      "Spectrum: A **spectrum** has frequency on the horizontal axis and amplitude on the vertical axis, with one spike for each mode that is present.",
+      "Scientific method: The theory that the vocal folds are a membrane predicts **equidistant harmonics** (evenly spaced harmonics). Recordings in Praat confirmed the prediction."
+     ],
+     "questions": [
+      {
+       "source": "Review 7",
+       "q": "A string is fixed on both sides. If Mode 1 has frequency 200 Hz, what frequency does Mode 5 have?",
+       "a": "Mode 5 has a frequency of 1000 Hz. This is because in a string fixed at both ends, each mode is a whole-number multiple of the first mode. Mode 5 contains five copies of Mode 1. So the frequency of Mode 5 is five times 200 Hz, which is 1000 Hz."
+      },
+      {
+       "source": "Lab 9",
+       "q": "A string fixed at both ends has Mode 1 at 150 Hz. What are Modes 2 and 3? If one end is freed and Mode 1 stays at 150 Hz, what are Modes 2 and 3 now?",
+       "a": "When the string is fixed at both ends, Mode 2 is 300 Hz and Mode 3 is 450 Hz. This is because a system fixed at both ends has modes at every whole-number multiple of the first. Mode 2 is two times 150 Hz, and Mode 3 is three times 150 Hz. So these modes are 150 Hz apart.\n\nWhen one end is freed, Mode 2 is 450 Hz and Mode 3 is 750 Hz. This is because a system fixed at one end and free at the other has only the odd multiples of the first frequency. Mode 2 is three times 150 Hz, and Mode 3 is five times 150 Hz. So these modes are 300 Hz apart."
+      },
+      {
+       "source": "Review 8",
+       "q": "Why are the frequencies of fixed-fixed vibratory systems spaced the way they are?",
+       "a": "The frequencies of fixed-fixed vibratory systems are spaced evenly, as whole-number multiples of the first frequency. This is because every mode has to fit a whole number of half-waves between the two ends that cannot move. The first mode is half a wave. It goes from no motion at one end, to the most motion in the middle, and back to no motion at the other end. Mode 2 fits two half-waves into the same length, so it vibrates twice as fast. Mode 3 fits three half-waves, so it vibrates three times as fast. Since each mode adds one more half-wave, the spacing between the frequencies stays even."
+      },
+      {
+       "source": "Review 16",
+       "q": "Why are the formants of a fixed-free system 1, 3, 5, etc. multiples of the base frequency?",
+       "a": "The formants of a fixed-free system are 1, 3, 5, etc. multiples of the base frequency because every mode must start with no motion at the fixed end and end with the most motion at the free end. The basic piece is a quarter-wave packet (one quarter of a wave). It goes from no motion at the fixed end to the most motion at the free end. Adding just one more packet would leave a point with no motion at the free end, and that cannot happen. So packets are added two at a time, which gives one, three, five and seven packets. That is why the formant frequencies are odd multiples of the base frequency."
+      },
+      {
+       "source": "Predicted",
+       "q": "If F1 is 500 Hz, what are F2 and F3?",
+       "a": "If F1 (the first formant) is 500 Hz, then F2 is 1500 Hz and F3 is 2500 Hz. This is because the air in the vocal tract is a fixed-free system. In a fixed-free system, the formants are odd multiples of the first formant. So F2 is three times 500 Hz, and F3 is five times 500 Hz. They are not two times and three times 500 Hz."
+      },
+      {
+       "source": "Review 17",
+       "q": "What aspect of speech has the properties in the fixed-free question?",
+       "a": "The formants of the air in the vocal tract have the properties in the fixed-free question. This is because the air in the vocal tract is fixed at the closed vocal folds and free at the open lips. A system like this vibrates only at odd multiples of its first frequency. So the formants (the frequencies at which the air in the vocal tract vibrates) are odd multiples of the first formant."
+      },
+      {
+       "source": "Predicted",
+       "q": "What aspect of speech has frequencies at whole-number multiples, and why?",
+       "a": "The harmonics of the vocal folds are at whole-number multiples of the first frequency. This is because the vocal folds are a membrane held in place along their edges. So they behave like a system fixed at both ends. In a system fixed at both ends, each mode is a whole number of copies of the first mode. That is why the harmonics are at whole-number multiples."
+      },
+      {
+       "source": "Review 12 and 13",
+       "q": "What in speech is a building analogous to, and why does the analogy hold?",
+       "a": "A building is analogous to the air in the vocal tract. This is because both are fixed at one end and free at the other end. The building is fixed to the ground and free at the top. The air in the vocal tract is fixed at the closed vocal folds and free at the open lips. Since the ends match, both are most springy at the fixed end, where they are stretched or compressed the most. Both also move the most at the free end, and both have frequencies at odd multiples of the first frequency. That is why the analogy holds."
+      },
+      {
+       "source": "Predicted",
+       "q": "How is a building different from the air in the vocal tract?",
+       "a": "A building is different from the air in the vocal tract because a building is designed to sway only in Mode 1. The air in the vocal tract vibrates in all of its modes at the same time. Engineers avoid the higher modes in a building. This is because higher modes would move floors in opposite directions, and that could break the structure. In speech, all the modes are used. Speaking changes the mass and stiffness of the air at different locations in the vocal tract, so the formants move."
+      },
+      {
+       "source": "Review 9",
+       "q": "Draw the spectrum for a string fixed at both ends with Mode 1 at 200 Hz, up to Mode 6.",
+       "a": "The spectrum for a string fixed at both ends with Mode 1 at 200 Hz has six evenly spaced spikes at 200, 400, 600, 800, 1000 and 1200 Hz. There is one spike for each mode. Frequency goes along the horizontal axis, and amplitude (strength) goes up the vertical axis. The spikes are evenly spaced because a string fixed at both ends has its modes at whole-number multiples of Mode 1. If the modes are equally strong, the spikes can be drawn at the same height.",
+       "ansImg": "assets/exam2/gen-spectrum-fixed-fixed-200.svg",
+       "alt": "Spectrum with spikes at 200, 400, 600, 800, 1000 and 1200 Hz"
+      },
+      {
+       "source": "Predicted",
+       "q": "Draw the spectrum for a fixed-free system with Mode 1 at 200 Hz, up to Mode 4.",
+       "a": "The spectrum for a fixed-free system with Mode 1 at 200 Hz has spikes only at the odd multiples, which are 200, 600, 1000 and 1400 Hz. This is because a fixed-free system has no even multiples. An even number of quarter-wave packets would leave a point with no motion at the free end. The free end must always be moving, so only odd numbers of packets are possible. That is why the four spikes are at 1, 3, 5 and 7 times 200 Hz.",
+       "ansImg": "assets/exam2/gen-spectrum-fixed-free-200.svg",
+       "alt": "Spectrum with spikes at 200, 600, 1000 and 1400 Hz"
+      },
+      {
+       "source": "Review 10",
+       "q": "If the vocal folds have their base frequency, F0, at 150 Hz, draw the spectrum for the first 5 harmonics.",
+       "a": "The spectrum for the first 5 harmonics has spikes at 150, 300, 450, 600 and 750 Hz. This is because the vocal folds are a membrane fixed along its edges. So their harmonics are whole-number multiples of F0 (the base frequency), and the spikes are evenly spaced, 150 Hz apart. Frequency goes along the horizontal axis, and amplitude (strength) goes up the vertical axis.",
+       "ansImg": "assets/exam2/gen-spectrum-f0-150.svg",
+       "alt": "Spectrum with spikes at 150, 300, 450, 600 and 750 Hz"
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 11 · p8 · Lecture 12 · p8, 10 · Lecture 13 · p4, 5",
+       "main": "**In a system fixed at both ends, such as a string or the vocal folds, neither end can move.** Its first mode (the simplest way the system can vibrate) is **half a wave** stretched between the two fixed ends. Each higher mode has to fit a whole number of these half-waves between the ends.",
+       "sub": [
+        "Mode N contains N copies of Mode 1, so its frequency (how many times per second it vibrates) is N times the first frequency.",
+        "These modes at **1, 2, 3, 4 times** the first frequency are called **harmonics**.",
+        "For example, if Mode 1 is 200 Hz, then Mode 5 is five times 200 Hz, which is 1,000 Hz."
+       ],
+       "end": "So in a fixed-fixed system, the modes are spaced apart by the first frequency.",
+       "media": {
+        "image": "assets/slides/lecture11/008.webp",
+        "video": "assets/original/ac3e753564fa139e2612.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "",
+        "revealMode": "",
+        "poster": "assets/exam2/frames/ac3e753564fa139e2612.jpg",
+        "caption": "Lecture 11 · p8 · with the video played on the slide"
+       }
+      },
+      {
+       "ref": "Lecture 11 · p9 · Lecture 12 · p12 · Lecture 13 · p6 · Lecture 14 · p2",
+       "main": "**A membrane such as the vocal folds vibrates across a surface, and it can vibrate in several modes at the same time.** A single point on the membrane moves in every mode that has motion at that point. A **spectrum** separates this combined vibration back into its separate modes.",
+       "sub": [
+        "A spectrum shows frequency on the horizontal axis and amplitude (strength) on the vertical axis.",
+        "It has one spike for each mode that is present. For example, if Mode 1 is 200 Hz, Modes 1 to 6 give spikes at 200, 400, 600, 800, 1,000 and 1,200 Hz."
+       ],
+       "end": "So a spectrum shows which modes are present and how strong each one is.",
+       "media": {
+        "image": "assets/slides/lecture11/009.webp",
+        "video": "assets/original/4378fb47c97c7f4785f9.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "",
+        "revealMode": "",
+        "poster": "assets/exam2/frames/4378fb47c97c7f4785f9.jpg",
+        "caption": "Lecture 11 · p9 · with the video played on the slide"
+       }
+      },
+      {
+       "ref": "Lecture 11 · p10 · Lecture 12 · p13",
+       "main": "**A scientific theory is tested by checking whether its prediction comes true.** The theory says the vocal folds are a membrane. This theory predicts **equidistant harmonics** (harmonics that are evenly spaced in frequency).",
+       "sub": [
+        "To test it, a vowel is recorded, and its spectrum is checked in **Praat** (a program for analyzing speech sounds) to see whether the peaks are evenly spaced.",
+        "The recordings showed evenly spaced harmonics, so the prediction was confirmed."
+       ],
+       "end": "So the theory that the vocal folds are a membrane passed its test.",
+       "media": {
+        "image": "assets/slides/lecture11/010.webp",
+        "caption": "Lecture 11 · p10"
+       }
+      },
+      {
+       "ref": "Lecture 11 · p11 · Lecture 12 · p14 · Lecture 13 · p7, 8, 9 · Lecture 14 · p3, 4",
+       "main": "**A fixed-free system is held still at one end and free to move at the other end.** A **building** is fixed to the ground and free at the top. The **air in the vocal tract** works the same way. It is fixed at the closed vocal folds and free at the open lips.",
+       "sub": [
+        "The first mode is a **quarter-wave packet** (one quarter of a wave). It goes from no motion at the fixed end to the most motion at the free end.",
+        "The free end must always be moving. Because of this, packets have to be added two at a time, which gives one, three, five and seven packets.",
+        "So the modes come at **1, 3, 5, 7 times** the first frequency, and these modes are called **formants**."
+       ],
+       "end": "So fixed-free modes are spaced apart by **twice** the first frequency, while fixed-fixed modes are spaced apart by the first frequency.",
+       "media": {
+        "image": "assets/slides/lecture11/011.webp",
+        "video": "assets/original/50927605857bbe7450a9.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "",
+        "revealMode": "",
+        "poster": "assets/exam2/frames/50927605857bbe7450a9.jpg",
+        "caption": "Lecture 11 · p11 · with the video played on the slide"
+       }
+      }
+     ]
+    },
+    {
+     "id": "constrictions",
+     "tier": "Almost certain",
+     "lectures": "Lectures 12, 13 and 14",
+     "title": "The vocal tract, constrictions and the vowels /i/, /a/ and /u/",
+     "know": [
+      "Fixed-free tube: The air in the vocal tract is **fixed at the glottis** (closed vocal folds, so the air can only be compressed) and **free at the lips** (the air moves in and out).",
+      "Schwa: With no constriction, as in **done**, the formants are about **500, 1500 and 2500 Hz**.",
+      "Constriction: A **constriction** (narrowing) packs the air into a smaller space, which makes it both **heavier** (denser) and **stiffer**.",
+      "Four steps: Find the location, decide whether the air there is mostly **moving** or mostly **compressed** in that mode, pick the extra that counts (mass if moving, stiffness if compressed), then say whether the formant goes **down** or **up**.",
+      "/u/ (dune): The constriction is at the lips, where the air is moving in both modes, so **F1 and F2 both go down**.",
+      "/i/ (dean): The constriction is two-thirds of the way from the glottis. The air there moves in Mode 1 and is compressed in Mode 2, so **F1 goes down and F2 goes up** (the formants move apart).",
+      "/a/ (Don): The constriction is one-third of the way from the glottis. The air there is compressed in Mode 1 and moves in Mode 2, so **F1 goes up and F2 goes down** (the formants move together).",
+      "Reasoning backward: A large rise means the air there was springy and hardly moving. A large fall means the air there was moving a lot."
+     ],
+     "questions": [
+      {
+       "source": "Review 19",
+       "q": "If I constrict the vocal tract somewhere and I raise the formant a great deal, what must be true of air motion versus springiness at this location?",
+       "a": "If a constriction raises the formant a great deal, the air at that location must be very springy and hardly moving in that mode. This is because a constriction adds both mass and stiffness. The formant went up, so the added stiffness is what mattered. Stiffness only matters where the air is being compressed and expanded. The added mass did nothing, because the air there was not moving. So a big rise in the formant tells you the air at that spot was springy, not moving."
+      },
+      {
+       "source": "Predicted",
+       "q": "If I constrict the vocal tract somewhere and I lower the formant a great deal, what must be true at this location?",
+       "a": "If a constriction lowers the formant a great deal, the air at that location must be moving a lot and hardly compressed in that mode. This is because the formant went down, so the added mass is what mattered. Mass only matters where the air is moving, because heavier air is harder to move and so it vibrates more slowly. This is what happens at the lips for /u/. So a big drop in the formant tells you the air at that spot was moving a lot."
+      },
+      {
+       "source": "Lab 9",
+       "q": "A classmate says more mass lowers the frequency and more stiffness raises it, so a constriction always cancels out. What is wrong with this argument?",
+       "a": "What is wrong with this argument is that, in any one mode, only one of the two changes matters at most locations. This is because the air at a spot is usually either mostly moving or mostly compressed. If the air at the constriction is mostly moving, it is not being compressed, so only the extra mass matters and the formant goes down. If the air there is mostly compressed, it is not moving, so only the extra stiffness matters and the formant goes up. So the two changes do not cancel out, and the same constriction can move F1 and F2 in opposite directions."
+      },
+      {
+       "source": "Lab 9",
+       "q": "Why is the air in the vocal tract a fixed-free system? Say which end is which.",
+       "a": "The air in the vocal tract is a fixed-free system because one end is closed and the other end is open. The glottis end is the fixed end, and the lip end is the free end. This is because the glottis end is closed off by the vocal folds. So the air there cannot move and can only be compressed and expanded. The lip end is open, so the air there moves freely in and out without being compressed against anything. So the closed glottis makes the fixed end and the open lips make the free end."
+      },
+      {
+       "source": "Predicted",
+       "q": "Compared with done, what happens to F1 and F2 in dune, and why?",
+       "a": "Compared with done, both F1 and F2 go down in dune. This is because lip rounding creates a constriction at the free end of the tube. At the free end, the air moves the most in every mode. So the added mass is what matters in both Mode 1 and Mode 2. Extra mass at a spot where the air is moving makes the air harder to move, so it vibrates more slowly. So both F1 and F2 have lower frequencies in dune."
+      },
+      {
+       "source": "Predicted",
+       "q": "Compared with done, what happens to F1 and F2 in dean, and why?",
+       "a": "Compared with done, F1 goes down and F2 goes up in dean. This is because the constriction is about two-thirds of the way from the glottis. In Mode 1, the air at that spot is moving, so the added mass makes it harder to move and lowers F1. In Mode 2, the air at that spot is compressed, so the added stiffness raises F2. So one constriction lowers F1 and raises F2, because the air at that spot does something different in each mode."
+      },
+      {
+       "source": "Predicted",
+       "q": "Compared with done, what happens to F1 and F2 in Don, and why?",
+       "a": "Compared with done, F1 goes up and F2 goes down in Don. This is because the constriction is about one-third of the way from the glottis. In Mode 1, the air at that spot is compressed, so the added stiffness raises F1. In Mode 2, the air at that spot is moving, so the added mass makes it harder to move and lowers F2. So one constriction raises F1 and lowers F2, because the air at that spot does something different in each mode."
+      },
+      {
+       "source": "Lab 9",
+       "q": "A new constriction is placed deep in the throat, one-fifth of the way from the glottis, where the air is compressed in both Mode 1 and Mode 2. What happens to F1 and F2?",
+       "a": "If the new constriction is one-fifth of the way from the glottis, both F1 and F2 go up. This is because that location is near the fixed end. At that location, the air is compressed in both modes. So the added stiffness is what matters in both Mode 1 and Mode 2. Stiffer air springs back faster, so it vibrates more quickly. So both formants go up."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why does rounding the lips lower every formant?",
+       "a": "Rounding the lips lowers every formant because the lips are the free end of the vocal tract. This is because the free end is a location of maximum motion (where the air moves the most) in every mode. So a constriction at the lips adds mass where the air is moving. The heavier air is harder to move, so it vibrates more slowly, and that lowers every formant. Adding mass at the top of a building lowers every mode for the same reason. Since the air at the lips moves in every mode, every formant goes down."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 12 · p15, 18, 23 · Lecture 13 · p10, 11, 14, 15, 19 · Lecture 14 · p5, 6, 7, 10, 14",
+       "main": "**The air in the vocal tract vibrates back and forth along the tube, and it is a fixed-free system.** This means it has one end where the air cannot move and one end where it can. The air is **fixed at the glottis** (the opening between the vocal folds). The closed vocal folds stop the air there from moving, so the air there can only be compressed. The air is **free at the lips**, where it moves in and out.",
+       "sub": [
+        "When the air on both sides of a spot moves toward that spot, the air at that spot gets compressed (packed together). When the air on both sides moves away from the spot, the air there spreads out.",
+        "This means the spot where the air moves the least is the spot where it gets compressed the most. The spot where the air moves the most is the spot where it gets compressed the least.",
+        "When there is no constriction, as in **done**, the vowel is **schwa** (the neutral vowel sound). Its formants (frequency regions with strong acoustic energy) are about **500, 1500 and 2500 Hz**."
+       ],
+       "end": "So a constriction does different things depending on where it is placed, because the air moves differently at different places in the tube.",
+       "media": {
+        "image": "assets/slides/lecture12/015.webp",
+        "video": "assets/original/de37514880e11a8d6b49.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "",
+        "revealMode": "",
+        "poster": "assets/exam2/frames/de37514880e11a8d6b49.jpg",
+        "caption": "Lecture 12 · p15 · with the video played on the slide"
+       }
+      },
+      {
+       "ref": "Lecture 12 · p16 · Lecture 13 · p12 · Lecture 14 · p8",
+       "main": "**In the vocal tract, vowels differ in the shape of the tube.** The shape depends on where the tongue makes a constriction and whether the lips are rounded. A **constriction** is a place where the tube becomes narrower. When the tongue is high and toward the front of the mouth, the result is the vowel in **dean**.",
+       "sub": [
+        "When the tongue is high and toward the back of the mouth and the lips are rounded, the result is the vowel in **dune**.",
+        "When the tongue is low, the result is an open vowel (a vowel with the mouth wide open), like the one in **Don**."
+       ],
+       "end": "So the same sound from the vocal folds can become different vowels, because each constriction changes the formants.",
+       "media": {
+        "image": "assets/slides/lecture12/016.webp",
+        "caption": "Lecture 12 · p16"
+       }
+      },
+      {
+       "ref": "Lecture 13 · p13 · Lecture 14 · p9",
+       "main": "**In the vocal tract, a constriction packs the air into a smaller space, so the air at that spot becomes both heavier (denser) and stiffer.** What the constriction does to a formant depends on what the air at that spot is doing in that mode (one particular pattern of vibration).",
+       "sub": [
+        "To figure out the effect, first find where the constriction is. Then decide whether the air at that spot is mostly **moving** or mostly **compressed** in that mode.",
+        "If the air there is mostly moving, the extra mass is what matters. Heavier air is harder to move, so it vibrates more slowly, and the formant goes **down**.",
+        "If the air there is mostly compressed, the extra stiffness is what matters. Stiffer air springs back faster, so it vibrates more quickly, and the formant goes **up**."
+       ],
+       "end": "So if a formant goes up a lot, the air at that spot was springy and hardly moving. If a formant goes down a lot, the air at that spot was moving a lot.",
+       "media": {
+        "image": "assets/slides/lecture13/013.webp",
+        "caption": "Lecture 13 · p13"
+       }
+      },
+      {
+       "ref": "Lecture 12 · p19 · Lecture 13 · p16 · Lecture 14 · p11",
+       "main": "**For /u/, as in dune, F1 and F2 both go down.** F1 is the first (lowest) formant and F2 is the second formant. **Lip rounding** makes a constriction at the lips, and the lips are the free end of the tube.",
+       "sub": [
+        "In **Mode 1**, the air at the lips is moving, so the extra mass matters. Heavier air is harder to move, so **F1 goes down**.",
+        "In **Mode 2**, the air at the lips is also moving, so the extra mass matters again. Heavier air is harder to move, so **F2 goes down**."
+       ],
+       "end": "So at the lips only the extra mass matters, because the air at the lips moves in every mode.",
+       "media": {
+        "image": "assets/slides/lecture12/019.webp",
+        "video": "assets/original/ba7bea1a3c6655bda52d.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "assets/exam2/overlays/lecture12-019.png?v=2",
+        "revealMode": "reveal",
+        "poster": "assets/exam2/frames/ba7bea1a3c6655bda52d.jpg",
+        "caption": "Lecture 12 · p19 · with the video played on the slide"
+       }
+      },
+      {
+       "ref": "Lecture 12 · p20 · Lecture 13 · p17, 21 · Lecture 14 · p12",
+       "main": "**For /i/, as in dean, F1 goes down and F2 goes up.** The constriction is about **two-thirds of the way from the glottis**, which is near the front of the vocal tract.",
+       "sub": [
+        "In **Mode 1**, the air at that spot is moving, so the extra mass matters. Heavier air is harder to move, so **F1 goes down**.",
+        "In **Mode 2**, the air at that spot is compressed, so the extra stiffness matters. Stiffer air springs back faster, so **F2 goes up**."
+       ],
+       "end": "So the formants of /i/ **move apart**, because at that one spot, the air is moving in Mode 1 but compressed in Mode 2.",
+       "media": {
+        "image": "assets/slides/lecture12/020.webp",
+        "video": "assets/original/781434531c44b6e3d6b9.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "assets/exam2/overlays/lecture12-020.png?v=2",
+        "revealMode": "reveal",
+        "poster": "assets/exam2/frames/781434531c44b6e3d6b9.jpg",
+        "caption": "Lecture 12 · p20 · with the video played on the slide"
+       }
+      },
+      {
+       "ref": "Lecture 12 · p21 · Lecture 13 · p18, 22 · Lecture 14 · p13",
+       "main": "**For /a/, as in Don, F1 goes up and F2 goes down.** The constriction is about **one-third of the way from the glottis**, which is toward the back of the throat.",
+       "sub": [
+        "In **Mode 1**, the air at that spot is compressed, so the extra stiffness matters. Stiffer air springs back faster, so **F1 goes up**.",
+        "In **Mode 2**, the air at that spot is moving, so the extra mass matters. Heavier air is harder to move, so **F2 goes down**."
+       ],
+       "end": "So the formants of /a/ **move toward each other**, which is the opposite of what happens for /i/.",
+       "media": {
+        "image": "assets/slides/lecture12/021.webp",
+        "video": "assets/original/4362277e503aae5dbb25.mp4",
+        "box": [
+         0.0,
+         0.0,
+         100.0,
+         100.0
+        ],
+        "reveal": "assets/exam2/overlays/lecture12-021.png?v=2",
+        "revealMode": "reveal",
+        "poster": "assets/exam2/frames/4362277e503aae5dbb25.jpg",
+        "caption": "Lecture 12 · p21 · with the video played on the slide"
+       }
+      }
+     ]
+    },
+    {
+     "id": "source-filter",
+     "tier": "Likely",
+     "lectures": "Lectures 13 and 14",
+     "title": "Source and filter, and F0",
+     "know": [
+      "Source: The **vocal folds** are the source. They produce **harmonics** at whole-number multiples of **F0**, the base frequency.",
+      "Filter: The **air in the vocal tract** is the filter. Its **formants** decide which harmonics are loud.",
+      "Core rule: **A formant makes the harmonics closest to it louder, and harmonics far from any formant come out weaker.** The outline of the harmonic heights is the **envelope**.",
+      "Vowels: The harmonics stay the same from vowel to vowel. Only their heights change, and the envelope is what makes each vowel distinct.",
+      "F0: Heavy, loose vocal folds give a low F0. Tight, light vocal folds give a high F0, so the harmonics are spaced farther apart.",
+      "High voices: With a high F0, few harmonics fall near each formant, so the formants are hard to see. This is why a toddler's or a soprano's vowels are hard to identify.",
+      "F0 carries meaning: F0 falls at the end of a statement and rises at the end of a question, and it signals sarcasm or pretending."
+     ],
+     "questions": [
+      {
+       "source": "Predicted",
+       "q": "What does the source supply and what does the filter do in speech?",
+       "a": "The source in speech is the vocal folds, and it supplies the harmonics. The harmonics are frequencies at whole-number multiples of F0 (1 times F0, 2 times F0, and so on).\n\nThe filter in speech is the air in the vocal tract, and it determines which harmonics come out loud. This is because its formants make the harmonics near them louder and the harmonics far from them weaker.\n\nSo the source determines which frequencies are present, and the filter determines which of them are loud."
+      },
+      {
+       "source": "Predicted",
+       "q": "Two vowels are said at the same pitch. What is the same and what is different in their spectra?",
+       "a": "When two vowels are said at the same pitch, the harmonics in their spectra are the same, but the heights of the harmonics are different. A spectrum is a graph of how strong each frequency in the sound is.\n\nThe harmonics are the same because the vocal folds vibrate at the same F0 for both vowels. The harmonics are multiples of F0, so the same F0 gives the same harmonics.\n\nThe heights are different because each vowel has its constriction (narrowing) in a different place in the vocal tract. So the formants move to different frequencies, and the envelope changes."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why are a toddler's vowels hard to identify?",
+       "a": "A toddler's vowels are hard to identify because a toddler has a very high F0, so the harmonics are spaced far apart. This means few harmonics fall near each formant. A formant can even fall between two harmonics. So the envelope is hard to see. The formants are still there, but there are too few harmonics to reveal them."
+      },
+      {
+       "source": "Predicted",
+       "q": "If the vocal folds become tighter, what happens to F0 and to the spacing of the harmonics?",
+       "a": "When the vocal folds become tighter, F0 goes up and the harmonics are spaced farther apart.\n\nF0 goes up because tighter vocal folds are stiffer. More stiffness raises the frequency, so the vocal folds vibrate faster.\n\nThe spacing of the harmonics gets wider because the harmonics are multiples of F0. For example, with an F0 of 100 Hz the harmonics are 100, 200 and 300 Hz. With an F0 of 200 Hz they are 200, 400 and 600 Hz. So when F0 goes up, the harmonics spread farther apart."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 14 · p15",
+       "main": "**Speech is made by a source and a filter, and the source is the vocal folds.** **F0** is the base frequency, the rate at which the vocal folds vibrate. The vocal folds produce **harmonics**, which are frequencies at whole-number multiples of F0 (1 times F0, 2 times F0, 3 times F0, and so on). With an F0 of 150 Hz, the first five harmonics are 150, 300, 450, 600 and 750 Hz.",
+       "sub": [
+        "Heavy, loose vocal folds vibrate slowly, so they give a **low F0**.",
+        "Tight, light vocal folds vibrate quickly, so they give a **high F0**. Because the harmonics are multiples of F0, they are then spaced farther apart."
+       ],
+       "end": "So F0 determines how far apart the harmonics are.",
+       "media": {
+        "image": "assets/slides/lecture14/015.webp",
+        "caption": "Lecture 14 · p15"
+       }
+      },
+      {
+       "ref": "Lecture 13 · p20 · Lecture 14 · p16",
+       "main": "**The filter is the air in the vocal tract, and its formants determine which harmonics come out loud.** **Formants** are frequency regions where the vocal tract makes the sound strongest. **A formant makes the harmonics closest to it louder, and harmonics far from any formant come out weaker.** The **envelope** is the outline traced over the heights of the harmonics, and its peaks show where the formants are.",
+       "sub": [
+        "When F0 stays the same, the harmonics stay the same from vowel to vowel, and only their heights change.",
+        "The envelope is what makes each vowel sound different from the others.",
+        "Changing F0 changes the spacing of the harmonics, but the vowel stays the same."
+       ],
+       "end": "So pitch and vowel are separate, because the source determines the harmonics and the filter determines the envelope.",
+       "media": {
+        "image": "assets/slides/lecture13/020.webp",
+        "caption": "Lecture 13 · p20"
+       }
+      },
+      {
+       "ref": "Lecture 13 · p25 · Lecture 14 · p17",
+       "main": "**A high F0 spreads the harmonics far apart, so few harmonics fall near each formant.** A low voice has many harmonics close together near each formant, so the envelope shows clearly. A high voice has only a few harmonics near each formant, so the formants are hard to see.",
+       "sub": [
+        "The vocal tract still has its formants. There are just not enough harmonics near them to show the envelope."
+       ],
+       "end": "So a toddler's or a soprano's vowels are hard to identify.",
+       "media": {
+        "image": "assets/slides/lecture13/025.webp",
+        "caption": "Lecture 13 · p25"
+       }
+      },
+      {
+       "ref": "Also know · Lectures 13 and 14",
+       "main": "**F0 also helps express meaning in speech.** F0 falls at the end of a statement and rises at the end of a question.",
+       "sub": [
+        "F0 also signals sarcasm or pretending."
+       ],
+       "end": ""
+      }
+     ]
+    },
+    {
+     "id": "spectrogram",
+     "tier": "Almost certain",
+     "lectures": "Lectures 13 and 14",
+     "title": "Spectra, spectrograms and speech over time",
+     "know": [
+      "Spectrum: A **spectrum** shows one instant, with frequency on the horizontal axis and amplitude on the vertical axis.",
+      "Spectrogram: A **spectrogram** lines up many spectra over time. Time is on the horizontal axis, frequency on the vertical axis, and **darkness** shows amplitude.",
+      "Dark bands: The **dark bands are the formants**. F1 is the lowest band and F2 is the next one up.",
+      "Transitions: From schwa to /i/, the bands move apart. From schwa to /u/, both drop. From schwa to /a/, they move together.",
+      "Where were you a year ago?: The formants never stay still, because every sound moves the constriction. Speech is a continuous series of constrictions, not a list of separate vowels.",
+      "ma and na: When the m of ma is joined to the a of na, listeners hear na. Listeners decide on the consonant during the vowel, after the consonant is over (Malécot, 1950s)."
+     ],
+     "questions": [
+      {
+       "source": "Review 18",
+       "q": "Describe a spectrogram.",
+       "a": "A spectrogram is a display that lines up many spectra side by side over time. Time runs along the horizontal axis, and frequency runs up the vertical axis. The darkness of each spot shows how much amplitude (strength) there is at that frequency and that time. The formants (frequency regions with strong acoustic energy) appear as dark bands. So you can follow the formants as they go up and down, for example F1 going up and F2 going down from /i/ to /a/."
+      },
+      {
+       "source": "Predicted",
+       "q": "How is a spectrum different from a spectrogram?",
+       "a": "A spectrum is different from a spectrogram because a spectrum shows one instant, while a spectrogram shows how the spectrum changes over time. A spectrum has frequency on the horizontal axis and amplitude on the vertical axis. A spectrogram has time on the horizontal axis and frequency on the vertical axis, and it shows amplitude as darkness. Real speech is always changing. So a spectrogram lets you see the formants moving over time."
+      },
+      {
+       "source": "Lab 9",
+       "q": "A speaker starts on schwa and switches to another vowel. F1 goes down and F2 goes up. Which vowel? What if both go down?",
+       "a": "When F1 goes down and F2 goes up, the vowel is /i/ as in dean. This is because the constriction for /i/ lowers F1 and raises F2, so the two bands move apart.\n\nWhen both F1 and F2 go down, the vowel is /u/ as in dune. This is because lip rounding makes a constriction at the lips, where the air moves in every mode. So lip rounding lowers every formant."
+      },
+      {
+       "source": "Predicted",
+       "q": "Describe the spectrogram of a speaker going from schwa to the vowel of Don.",
+       "a": "On the spectrogram of a speaker going from schwa to the vowel of Don, F1 goes up and F2 goes down. So the two lowest dark bands move toward each other. This is because the constriction for Don is one-third of the way from the glottis. In Mode 1, the air there is compressed, so the added stiffness raises F1. In Mode 2, the air there is moving, so the added mass makes it harder to move and lowers F2. So the F1 band rises and the F2 band falls until they are closer together."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why do listeners hear na when the m of ma is joined to the a of na?",
+       "a": "Listeners hear na when the m of ma is joined to the a of na because the information about the consonant is mostly in the vowel that follows it. This is because the consonant changes the formants at the start of the vowel. After n, one formant of the vowel goes down, and after m, that formant stays flat. The a from na still has the formant change that the n made. So listeners decide which consonant they heard during the vowel, after the consonant is over, and they hear n."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 13 · p23 · Lecture 14 · p18",
+       "main": "**A spectrum shows a sound at one instant, and a spectrogram lines up many spectra side by side over time.** In a spectrum, frequency is on the horizontal axis and amplitude (strength) is on the vertical axis. In a **spectrogram**, time is on the horizontal axis and frequency is on the vertical axis. The **darkness** of each spot shows the amplitude.",
+       "sub": [
+        "The **dark bands on a spectrogram are the formants**, because the harmonics (the separate frequencies that make up the voice) near each formant are the loudest.",
+        "F1 is the lowest dark band, and F2 is the next dark band above it."
+       ],
+       "end": "So the dark bands go up and down as the vocal tract changes shape.",
+       "media": {
+        "image": "assets/slides/lecture13/023.webp",
+        "caption": "Lecture 13 · p23"
+       }
+      },
+      {
+       "ref": "Also know · Lectures 13 and 14",
+       "main": "**On a spectrogram, each vowel moves the formant bands in its own direction, starting from where they are for schwa.** Going from schwa to /i/, the bands **move apart**. Going from schwa to /u/, **both bands go down**. Going from schwa to /a/, the bands **move toward each other**.",
+       "sub": [
+        "Going from /i/ to /a/, F1 goes up and F2 goes down."
+       ],
+       "end": ""
+      },
+      {
+       "ref": "Lecture 14 · p19",
+       "main": "**In connected speech (normal talking where sounds run into each other), the formants never stay still, because every sound changes the constriction.** In \"Where were you a year ago?\", F2 goes up when the tongue moves toward /i/. The formants go down when the lips round for the /u/ of you.",
+       "sub": [
+        "When the tongue moves back and down toward an /a/-like sound, F1 goes up and F2 goes down."
+       ],
+       "end": "So speech is a continuous series of constrictions, not a list of separate vowels.",
+       "media": {
+        "image": "assets/slides/lecture14/019.webp",
+        "caption": "Lecture 14 · p19"
+       }
+      },
+      {
+       "ref": "Lecture 14 · p20",
+       "main": "**Listeners identify a consonant partly from the vowel that comes after it** (the vowel sound right after the consonant in the same syllable, not a vowel in the next word). In **Malécot**'s work in the 1950s, the m of ma was joined to the a of na. Listeners heard na.",
+       "sub": [
+        "The a from na still contained the formant transition (the change in formant frequencies as the mouth moves from one sound to another) that was made by the n. Listeners used that formant transition to decide which consonant they heard."
+       ],
+       "end": "So listeners decide which consonant they heard during the vowel, after the consonant is already over.",
+       "media": {
+        "image": "assets/slides/lecture14/020.webp",
+        "caption": "Lecture 14 · p20"
+       }
+      }
+     ]
+    },
+    {
+     "id": "network-forward",
+     "tier": "Likely",
+     "lectures": "Lectures 14, 15 and 16",
+     "title": "Neural networks: inner products, weights and decisions",
+     "know": [
+      "Task: The vowel network takes **F1 and F2** and decides among five words, **done, dune, dean, Don and Dan**.",
+      "Knowledge: **The network's knowledge is stored in its weights**, which are positive or negative numbers.",
+      "Inner product: Each neuron multiplies each incoming activation by its weight and adds the results. This **inner product** is the core calculation of all AI.",
+      "Forward propagation: The inner products are carried layer by layer from the input to the output.",
+      "Output: The output is a **probability distribution**, numbers between 0 and 1 that **add up to 1**. The largest one is the decision.",
+      "Desired output: The right answer is a **one-hot** list, 1 for the correct word and 0 everywhere else, such as 0, 0, 1, 0, 0 for dean.",
+      "Direction questions: A positive activation times a positive weight is positive, so raising either one pushes that output's probability **up**. A negative weight would push it down."
+     ],
+     "questions": [
+      {
+       "source": "Predicted",
+       "q": "If an activation of 1.57 feeds the done output through a weight of positive 0.1, what happens to the probability of done if the weight goes up? If the activation goes up?",
+       "a": "If the weight goes up, the probability of done goes up. This is because the contribution to the done output is the activation times the weight. The activation, 1.57, and the weight, 0.1, are both positive. So a larger weight makes the product larger, and the probability of done goes up.\n\nIf the activation goes up, the probability of done also goes up. This is because the weight is still positive, so a larger positive activation also makes the product larger.\n\nOnly the signs matter here, so you do not need to do the multiplication."
+      },
+      {
+       "source": "Predicted",
+       "q": "What happens to the probability of done if that same weight were negative and the activation went up?",
+       "a": "If that same weight were negative and the activation went up, the probability of done would go down. This is because a positive activation times a negative weight gives a negative number. A larger activation makes that number more negative. For example, 1.57 times −0.1 gives −0.157, and 2 times −0.1 gives −0.2. So the contribution to the done output becomes more negative, and the probability of done goes down."
+      },
+      {
+       "source": "Predicted",
+       "q": "Is 0.2, 0.3, 0.1, 0.2, 0.3 a valid probability distribution?",
+       "a": "No, 0.2, 0.3, 0.1, 0.2, 0.3 is not a valid probability distribution. This is because these numbers add up to 1.1. A probability distribution must add up to exactly 1. So this list is not valid, because its total is 0.1 too high."
+      },
+      {
+       "source": "Based on HW5 5",
+       "q": "The first of five categories is correct. Write the desired output.",
+       "a": "The desired output (the correct answer the network should give) is 1, 0, 0, 0, 0. This is because the first category is correct, so it gets a 1. Every other category is wrong, so each one gets a 0. So all of the probability is on the correct category."
+      },
+      {
+       "source": "Lab 9",
+       "q": "The desired output over done, dune, dean, Don, Dan is 0, 0, 0, 1, 0, and the network outputs 0.10, 0.15, 0.60, 0.10, 0.05. Which vowel was said, which did the network guess, and what is the loss?",
+       "a": "Don was said. This is because the desired output, 0, 0, 0, 1, 0, has its 1 in the fourth position, and Don is the fourth word.\n\nThe network guessed dean. This is because dean has the largest probability in the network's output, 0.60.\n\nThe loss is a number that measures how far the computed output is from the desired output. For example, it measures how much probability the network put on dean, where the desired output has a 0."
+      },
+      {
+       "source": "Based on HW5 3",
+       "q": "What does Linear mean in the network code?",
+       "a": "In the network code, Linear means the layer computes inner products. Each neuron multiplies each incoming number by its weight and adds up the results. A Linear layer does nothing else after that. So its outputs are just those sums."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 14 · p21",
+       "main": "**The vowel network is a neural network that takes in a vowel as two numbers and picks a word.** The two input numbers are **F1 and F2** (the first and second formants, which are frequency regions with strong acoustic energy). The network chooses among five words, **done, dune, dean, Don and Dan**.",
+       "sub": [
+        "A low F1 and a high F2 is the vowel /i/, so the correct answer for that input is dean."
+       ],
+       "end": "So the whole network turns two formant values into one choice among five words.",
+       "media": {
+        "image": "assets/slides/lecture14/021.webp",
+        "caption": "Lecture 14 · p21"
+       }
+      },
+      {
+       "ref": "Lecture 14 · p23",
+       "main": "**Each neuron in the network multiplies each incoming activation by its weight and adds up the results.** An incoming **activation** is a number that comes into the neuron from the layer before it. This sum is called the **inner product**, and it is the core calculation of all AI. A **weight** is a positive or negative number that determines how much an input counts.",
+       "sub": [
+        "A positive weight leaves the sign of the input the same, so a positive input stays positive. A negative weight changes the sign to the opposite. For example, if the input is +3, a weight of +2 gives +6, so it stays positive. A weight of −2 gives −6, so it becomes negative.",
+        "**The network's knowledge is stored in its weights**, so learning means changing the weights."
+       ],
+       "end": "So the weights start out random and become useful through learning.",
+       "media": {
+        "image": "assets/slides/lecture14/023.webp",
+        "caption": "Lecture 14 · p23"
+       }
+      },
+      {
+       "ref": "Lecture 14 · p24 · Lecture 15 · p3 · Lecture 16 · p3",
+       "main": "**Forward propagation passes the inner products layer by layer, from the input to the output.** The input layer provides F1 and F2. Each later layer takes the activations from the layer before it, calculates its own results, and passes them on to the next layer.",
+       "sub": [
+        "The output layer gives one number for each of the five words."
+       ],
+       "end": "So a **forward pass** uses the network's current weights to make a guess. The network can make this guess even before it has learned good weights, but then the guess may be wrong.",
+       "media": {
+        "image": "assets/slides/lecture14/024.webp",
+        "caption": "Lecture 14 · p24"
+       }
+      },
+      {
+       "ref": "Lecture 15 · p6 · Lecture 16 · p7",
+       "main": "**The output of the vowel network is a probability distribution over the five words.** A **probability distribution** is a list of probabilities, one for each word. Each number is between 0 and 1, and the numbers **add up to 1**. The word with the largest number is the network's decision.",
+       "sub": [
+        "The correct answer is written as a **one-hot** list, which has a 1 for the correct word and a 0 for every other word.",
+        "For dean, the one-hot list is 0, 0, 1, 0, 0, because dean is the third of the five words."
+       ],
+       "end": "So the outputs can add up to 1 and still put the most probability on the wrong word.",
+       "media": {
+        "image": "assets/slides/lecture15/006.webp",
+        "caption": "Lecture 15 · p6"
+       }
+      },
+      {
+       "ref": "Lecture 15 · p7 · Lecture 16 · p8",
+       "main": "**Whether an output increases or decreases depends on whether the activation and weight are positive or negative.** When both are positive, increasing either one makes the output's probability go **up**. This is because a positive activation times a positive weight gives a positive number, so making either one larger makes that number larger.",
+       "sub": [
+        "If the weight is negative, increasing the positive activation makes that output's probability go **down**."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture15/007.webp",
+        "caption": "Lecture 15 · p7"
+       }
+      }
+     ]
+    },
+    {
+     "id": "backprop",
+     "tier": "Almost certain",
+     "lectures": "Lectures 15 and 16",
+     "title": "Backpropagation: why learning starts at the end",
+     "know": [
+      "Learning: Every network starts with **random weights** and learns by correcting its mistakes, one small step at a time.",
+      "Order: **The last set of weights is updated first, and the first set of weights is updated last.**",
+      "Why the end is easy: The last weights affect the output probabilities **directly**, so one inner product shows whether each should go up or down.",
+      "Why the start is hard: A first-layer weight affects the first hidden layer, which affects the next layer and the next, so its effect on the decision passes through every layer and depends on all the later weights.",
+      "Dynamic programming: Solve the easy problem first and reuse its answer for the bigger problem that contains it (Bellman and Viterbi).",
+      "Formula: **Backpropagation is stochastic gradient descent plus dynamic programming.** SGD changes each weight a little, and dynamic programming sets the order.",
+      "Credit: Backpropagation was worked out in the mid-1980s, and Geoffrey Hinton won the 2024 Nobel Prize in Physics for it."
+     ],
+     "questions": [
+      {
+       "source": "Based on HW5 6",
+       "q": "In what order are the weights updated?",
+       "a": "The last set of weights is updated first, and the first set of weights is updated last. This is because the update for each layer reuses the calculations already made for the layers after it. The last layer has no layers after it, so it can be worked out first. Each earlier layer then uses those calculations. So the updates go in order from the last weights back to the first."
+      },
+      {
+       "source": "Based on HW5 7",
+       "q": "Why does backpropagation start at the end?",
+       "a": "Backpropagation starts at the end because the last weights are the simplest problem. This is because the last weights affect the output probabilities (the network's decision) directly. So it is easy to tell whether raising or lowering each last weight makes the loss (the error) go up or down.\n\nA weight from the input to the first hidden layer is harder. It affects the first, second and third hidden layers before it reaches the output. So changing it is a very complex problem, and that problem contains the problem of changing the last weights.\n\nBackpropagation follows dynamic programming, so it solves the simplest problem first. That answer then makes each harder problem easier, until the most complex problem is solved. That is why backpropagation starts with the last weights."
+      },
+      {
+       "source": "Based on HW5 8",
+       "q": "What two methods together train the network's weights?",
+       "a": "The two methods that together train the network's weights are stochastic gradient descent and backpropagation. This is because each method does a different job. Backpropagation works backward from the error to figure out which direction each weight should change. Stochastic gradient descent then changes each weight by a small step in that direction. Together, these two steps update the weights."
+      },
+      {
+       "source": "Predicted",
+       "q": "Backpropagation is made of what two parts?",
+       "a": "Backpropagation is made of two parts, stochastic gradient descent and dynamic programming. Stochastic gradient descent changes each weight by a small step in the direction that reduces the error. Dynamic programming determines the order of the changes. The order goes from the last weights back to the first weights."
+      },
+      {
+       "source": "Lab 9",
+       "q": "Which part of training is the SGD part, and which is the dynamic programming part? What are the small problem and the big problem?",
+       "a": "The SGD part is updating the weights. Each weight takes a small step in the direction that reduces the error, and the learning rate determines how big that step is.\n\nThe dynamic programming part is calculating how much each weight contributed to the error. It starts with the last layer and uses those calculations to work backward through the earlier layers.\n\nThe small problem is figuring out how the weights in the last layer contributed to the error. The big problem is figuring out how the weights in the earlier layers contributed to the error."
+      },
+      {
+       "source": "Predicted",
+       "q": "The network said done but the answer was dean. Should a last weight that pushes done up go up or down? Why?",
+       "a": "A last weight that makes the probability of done go up should go down. This is because the correct answer was dean, so the desired output for done is zero. The network gave done a probability that is too high. Lowering this weight makes the amount it adds to done smaller. So the probability of done goes down toward zero."
+      },
+      {
+       "source": "Predicted",
+       "q": "If the network already makes the right decision on a recording, what does it learn from it?",
+       "a": "If the network already makes the right decision on a recording, it learns nothing from that recording. This is because there is no error to correct, so the weights do not change. This can be a problem, because a network can keep getting the right answers by memorizing its data, without learning the pattern underneath. Once it gets everything right, it has no errors left to learn from."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 15 · p8 · Lecture 16 · p9",
+       "main": "**Every neural network starts with random weights and learns by correcting its mistakes, one small step at a time.** **Backpropagation** is the method that figures out how each weight should change. **The last set of weights is updated first, and the first set of weights is updated last.**",
+       "sub": [
+        "The last weights affect the output probabilities **directly**. So one inner product (multiplying each input by its weight and adding the results) shows whether each last weight should go up or down.",
+        "A first-layer weight affects the first hidden layer. That layer affects the next layer, and that layer affects the one after it.",
+        "So the effect of a first-layer weight passes through every layer, and it depends on all the later weights."
+       ],
+       "end": "So learning starts at the end and works backward toward the input.",
+       "media": {
+        "image": "assets/slides/lecture15/008.webp",
+        "caption": "Lecture 15 · p8"
+       }
+      },
+      {
+       "ref": "Lecture 15 · p8 · Lecture 16 · p9",
+       "main": "**Dynamic programming solves the easy problem first and then reuses its answer to solve the bigger problem that contains it.** This idea comes from **Bellman** and **Viterbi**. In backpropagation, the easy problem is the last layer. The bigger problem includes every earlier layer.",
+       "sub": [
+        "**Backpropagation is stochastic gradient descent plus dynamic programming.**",
+        "Stochastic gradient descent (**SGD**) changes each weight by a small amount. Dynamic programming determines the order in which the weights are changed."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture15/008.webp",
+        "caption": "Lecture 15 · p8"
+       }
+      },
+      {
+       "ref": "Also know · Lectures 15 and 16",
+       "main": "**Backpropagation was worked out in the mid-1980s.** Geoffrey Hinton won the 2024 Nobel Prize in Physics for this work.",
+       "sub": [
+        "The idea of backpropagation is at the center of much of today's economy."
+       ],
+       "end": ""
+      }
+     ]
+    },
+    {
+     "id": "pytorch",
+     "tier": "Almost certain",
+     "lectures": "Lectures 14, 15 and 16",
+     "title": "Reading the PyTorch code",
+     "know": [
+      "Import lines: They bring in the **torch library**, which already contains the programs for inner products and backpropagation, so none of it has to be written by hand.",
+      "Sequential: The network is **a sequence of layers, one after another**.",
+      "nn.Linear(2, 3): A processing layer that **takes input from 2 neurons and has 3 neurons**. It computes inner products.",
+      "Counting layers: The **input layer gets no line**, because it does no processing. The **last line is always the output layer**. nn.Sigmoid lines are not layers.",
+      "Matching: The first number on each line must equal the second number on the line before it.",
+      "Training lines: **SGD** is stochastic gradient descent, **lr** is the learning rate, **loss** is the mistake, **backward** runs backpropagation and **step** updates the weights.",
+      "Learning rate: **A higher learning rate learns faster but less accurately. A lower one learns more accurately but more slowly.**"
+     ],
+     "questions": [
+      {
+       "source": "Review 20",
+       "q": "How many hidden layers does this network have: Linear(2, 3), Linear(3, 2), Linear(2, 4), Linear(4, 5)?",
+       "a": "This network has three hidden layers, with 3, 2 and 4 neurons. This is because it has five layers in all, the input layer, three hidden layers and the output layer, but only four Linear lines. The input layer does no processing, so it gets no line. The last line, Linear(4, 5), is the output layer. That leaves the first three lines as the three hidden layers.",
+       "img": "assets/exam2/q20-sequential-code.png",
+       "alt": "nn.Sequential with Linear(2, 3), Linear(3, 2), Linear(2, 4), Linear(4, 5)"
+      },
+      {
+       "source": "Review 21",
+       "q": "Write the code for the network with an additional hidden layer of 3 neurons right before the output layer, and adjust the other layers.",
+       "a": "The code for the network with an extra hidden layer of 3 neurons right before the output layer is Linear(2, 3), Linear(3, 2), Linear(2, 4), Linear(4, 3), Linear(3, 5). To get it, keep the first three lines the same. Change the old last line from Linear(4, 5) to Linear(4, 3), so it becomes the new hidden layer of 3 neurons. Then add a new last line, Linear(3, 5), as the output layer. This works because every layer still takes in exactly as many numbers as the layer before it produces.",
+       "img": "assets/exam2/q20-sequential-code.png",
+       "alt": "nn.Sequential with Linear(2, 3), Linear(3, 2), Linear(2, 4), Linear(4, 5)"
+      },
+      {
+       "source": "Predicted",
+       "q": "Add a hidden layer of 6 neurons right after the input instead. What changes?",
+       "a": "Adding a hidden layer of 6 neurons right after the input changes the first line to Linear(2, 6) and adds a new second line, Linear(6, 3). The new second line takes the 6 numbers from the new layer and feeds them into the old first hidden layer of 3 neurons. The rest stays the same. So the network is Linear(2, 6), Linear(6, 3), Linear(3, 2), Linear(2, 4), Linear(4, 5)."
+      },
+      {
+       "source": "Lab 9",
+       "q": "A network is written Linear(4, 3), Linear(3, 5), Linear(5, 2), Linear(2, 4). How many hidden layers, inputs and outputs does it have?",
+       "a": "This network has three hidden layers, with 3, 5 and 2 neurons. This is because the last line, Linear(2, 4), is the output layer, and the three lines before it are hidden layers.\n\nIt has 4 inputs. This is because the first number on the first line, Linear(4, 3), is 4, so the network takes in 4 numbers.\n\nIt has 4 outputs. This is because the second number on the last line, Linear(2, 4), is 4. So it has 4 output neurons, and it decides among 4 categories."
+      },
+      {
+       "source": "Predicted",
+       "q": "How many hidden layers does a network have if its code is Linear(2, 3), Sigmoid, Linear(3, 2), Sigmoid, Linear(2, 4), Sigmoid, Linear(4, 5)?",
+       "a": "A network with that code still has three hidden layers. This is because Sigmoid lines are not layers. They only apply the sigmoid to the numbers coming out of the layer before them. The sigmoid is a function that turns each number into a number between 0 and 1. So only the four Linear lines count, and the last one is the output layer. That leaves three hidden layers."
+      },
+      {
+       "source": "Predicted",
+       "q": "What do the import lines do, and what does Sequential mean?",
+       "a": "The import lines bring the torch library into Python. This means the programs for inner products and backpropagation do not have to be written by hand.\n\nSequential means the network is a sequence of layers, one after another. Each layer takes its input from the layer before it."
+      },
+      {
+       "source": "Based on HW5 9",
+       "q": "What happens if the learning rate is raised from 0.1 to 0.3?",
+       "a": "If the learning rate is raised from 0.1 to 0.3, the network learns faster, but its accuracy goes down. This is because the learning rate determines how big each step in the weights is. A larger learning rate takes bigger steps, so the network gets close to the answer quickly. But the steps are big enough that it keeps going past the answer. So learning is faster, but less accurate."
+      },
+      {
+       "source": "Lab 9",
+       "q": "Two learning curves differ only in learning rate. One rises fast and jumps around, and the other rises slowly and smoothly. Which used the larger learning rate?",
+       "a": "The curve that rises fast and jumps around used the larger learning rate. This is because a larger learning rate takes bigger steps. Bigger steps get near the answer quickly, but they keep going past it, so that curve jumps around. Smaller steps are slower, so the other curve rises slowly but smoothly."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 14 · p22 · Lecture 15 · p2 · Lecture 16 · p2",
+       "main": "**The vowel network is written in PyTorch (a Python library for building neural networks) as a short list of layers.** The network has 2 inputs, three hidden layers (layers between the input and the output) of 3, 2 and 4 neurons, and 5 outputs. The 2 inputs are F1 and F2 (the first two formant frequencies of the vowel), and the 5 outputs are the five words.",
+       "sub": [
+        "The import lines bring in the **torch library**, which already contains the programs for inner products and backpropagation. An inner product multiplies each input by its weight and adds up the results. Backpropagation figures out how much each weight contributed to the error.",
+        "So none of that math has to be written by hand."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture14/022.webp",
+        "caption": "Lecture 14 · p22"
+       }
+      },
+      {
+       "ref": "Lecture 14 · p25",
+       "main": "**In the code, nn.Sequential means the network is a sequence of layers, one after another.** Each nn.Linear line is a processing layer that computes inner products. **nn.Linear(2, 3)** is a layer that takes input from 2 neurons and has 3 neurons.",
+       "sub": [
+        "The first number on each line must be the same as the second number on the line before it. This is because each layer takes in as many numbers as the layer before it produces. The vowel network has Linear(2, 3), Linear(3, 2), Linear(2, 4) and Linear(4, 5).",
+        "The **input layer gets no line**, because it does no processing. The **last line is always the output layer**.",
+        "nn.Sigmoid lines are not layers, so they are not counted."
+       ],
+       "end": "So the four Linear lines are the three hidden layers and the output layer.",
+       "media": {
+        "image": "assets/slides/lecture14/025.webp",
+        "caption": "Lecture 14 · p25"
+       }
+      },
+      {
+       "ref": "Lecture 15 · p10 · Lecture 16 · p11",
+       "main": "**The training lines make a guess, measure how wrong it is and change the weights.** **SGD** is stochastic gradient descent, which updates each weight by a small step in the direction that reduces the error. **lr** is the learning rate, which determines how big each step is. The **loss** is the mistake, a number for how wrong the guess was.",
+       "sub": [
+        "**backward** runs backpropagation, and **step** updates the weights.",
+        "**A higher learning rate learns faster but less accurately. A lower learning rate learns more accurately but more slowly.**"
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture15/010.webp",
+        "caption": "Lecture 15 · p10"
+       }
+      }
+     ]
+    },
+    {
+     "id": "sigmoid",
+     "tier": "Likely",
+     "lectures": "Lectures 15 and 16",
+     "title": "The sigmoid and where the idea came from",
+     "know": [
+      "From the brain: **Lord Edgar Adrian** won the Nobel Prize in 1932 for showing that **neurons are nearly digital**, either firing or not firing.",
+      "What it does: The **sigmoid** takes an inner product and returns a number between 0 and 1.",
+      "Values: A large negative input gives about **0** (off), a large positive input gives about **1** (on), and an input of exactly 0 gives **0.5**.",
+      "Perception: Very different things can be perceived as the same (a friend with or without a hat), and very similar things as different (USC and UCLA), just like the flat parts and the steep middle of the sigmoid.",
+      "In code: nn.Sigmoid goes after each hidden layer. The last layer has no sigmoid, because its outputs go to the loss, which turns them into probabilities.",
+      "Bigger idea: Many basic ideas in AI, including neurons, inner products and near-digital firing, come from discoveries about real brains."
+     ],
+     "questions": [
+      {
+       "source": "Predicted",
+       "q": "Where does the idea of the sigmoid come from?",
+       "a": "The idea of the sigmoid comes from biology. This is because Lord Edgar Adrian discovered that real neurons are nearly digital, which means they are either firing or not firing. He won the Nobel Prize in 1932 for this. The sigmoid copies this by turning any inner product into a number between 0 and 1. So, like a real neuron, a sigmoid neuron is either nearly off or nearly on."
+      },
+      {
+       "source": "Lab 9",
+       "q": "A hidden neuron's inner product is minus 2. Is its sigmoid activation closer to 0 or 1, and what does that mean?",
+       "a": "If a hidden neuron's inner product is minus 2, its sigmoid activation is closer to 0 than to 1. This is because the inner product is negative, and the sigmoid gives a value below 0.5 for any negative input. For minus 2, the sigmoid gives about 0.12. A value close to 0 means the neuron is mostly off. So the neuron fires only rarely."
+      },
+      {
+       "source": "Lab 9",
+       "q": "If one input to that neuron goes up through a positive weight, what happens to its linear activation and its sigmoid activation?",
+       "a": "If one input goes up through a positive weight, both the linear activation and the sigmoid activation go up. This is because the input is multiplied by a positive weight, so a larger input makes a larger product. That makes the inner product (the linear activation) go up. For example, if the weight is +2 and the input goes from 1 to 3, the product goes from 2 to 6. The sigmoid always goes up when its input goes up. So the sigmoid activation goes up too, and the neuron fires more often."
+      },
+      {
+       "source": "Lab 9",
+       "q": "What is the sigmoid activation if the linear activation is exactly 0?",
+       "a": "If the linear activation is exactly 0, the sigmoid activation is 0.5. This is because the sigmoid curve is centered on an input of 0. Negative inputs give values below 0.5, and positive inputs give values above 0.5. So an input of exactly 0 lands in the middle, at 0.5. That value is halfway between 0 (off) and 1 (on), so the neuron is half active."
+      },
+      {
+       "source": "Predicted",
+       "q": "How does the sigmoid match human perception?",
+       "a": "The sigmoid matches human perception because some very different things are perceived as the same, and some very similar things are perceived as different. This is because the sigmoid has flat parts and a steep middle. The flat parts give the same output for very different inputs, such as minus 100 and minus 1000. The steep middle gives very different outputs for two nearly equal inputs on either side of zero. So the flat parts match treating different things as the same, and the steep middle matches treating similar things as different."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 15 · p11 · Lecture 16 · p12",
+       "main": "**In a neural network, the sigmoid is a function that takes a neuron's inner product and gives back a number between 0 and 1.** The inner product is the neuron's inputs multiplied by their weights and added up. A large negative input gives about **0**, which means the neuron is off. A large positive input gives about **1**, which means the neuron is on. An input of exactly 0 gives **0.5**.",
+       "sub": [
+        "The sigmoid curve is flat at both ends and steep in the middle. So the same change in the input makes the biggest difference to the output near the middle.",
+        "Very different things can be perceived as the same, such as a friend with or without a hat. This matches the flat parts of the sigmoid, where very different inputs give almost the same output.",
+        "Very similar things can be perceived as different, such as USC and UCLA. This matches the steep middle of the sigmoid, where very similar inputs can give very different outputs."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture15/011.webp",
+        "caption": "Lecture 15 · p11"
+       }
+      },
+      {
+       "ref": "Lecture 15 · p12, 13 · Lecture 16 · p13, 14",
+       "main": "**In the code, nn.Sigmoid goes after each hidden layer.** Each hidden neuron first computes its inner product and then applies the sigmoid to it. The sigmoid's output is what gets sent to the next layer.",
+       "sub": [
+        "The last layer has no sigmoid, because its outputs go to the loss, and the loss turns them into probabilities.",
+        "Each hidden sigmoid value is between 0 and 1, but the values do not have to add up to 1. So they are not a probability distribution (a set of probabilities that add up to 1)."
+       ],
+       "end": "So when a sigmoid changes a hidden value, every later layer changes too, because each layer uses the outputs of the layer before it.",
+       "media": {
+        "image": "assets/slides/lecture15/012.webp",
+        "caption": "Lecture 15 · p12"
+       }
+      },
+      {
+       "ref": "Also know · Lectures 15 and 16",
+       "main": "**The sigmoid comes from a discovery about real neurons.** **Lord Edgar Adrian** won the Nobel Prize in 1932 for showing that **neurons are nearly digital**, which means a neuron is either firing or not firing. The sigmoid behaves the same way, because its output is either nearly off or nearly on.",
+       "sub": [
+        "Many basic ideas in AI, including neurons, inner products and near-digital firing, come from discoveries about real brains."
+       ],
+       "end": ""
+      }
+     ]
+    },
+    {
+     "id": "training",
+     "tier": "Likely",
+     "lectures": "Lecture 16",
+     "title": "Training results: chance, overlap and repeated runs",
+     "know": [
+      "Chance: Accuracy starts at **20 percent**, because with random weights the network knows nothing, and a random guess among **five** vowels is right one time in five.",
+      "Other counts: With ten categories, chance would be 10 percent.",
+      "Epoch: Each pass of learning is an **epoch**, and a problem like this takes thousands of them.",
+      "Leveling off: The network jumps to about 40 percent and levels off near **45 percent**, because the real vowel data **overlap** so much.",
+      "Overlap: Peterson and Barney found this overlap in the early 1950s. Even a person would have to guess for a point in the middle of the overlap.",
+      "Repeated runs: Ten runs from different random starting weights take **different paths but end at the same accuracy**, like children who hear different input but learn the same language.",
+      "Memorizing: Children first say went correctly by memory, then say goed after learning the pattern, then learn the exception (Carol Chomsky)."
+     ],
+     "questions": [
+      {
+       "source": "Based on HW5 10",
+       "q": "Why does accuracy start at 20 percent?",
+       "a": "Accuracy starts at 20 percent because the network's first guesses are no better than chance. This is because the network starts with random weights, so it knows nothing. Guessing at random among five vowels is right one time in five. One in five is 20 percent, so that is where accuracy starts."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why does accuracy start at 10 percent for a network with ten output categories?",
+       "a": "Accuracy starts at 10 percent for a network with ten output categories because its first guesses are no better than chance. This is because a network with random weights knows nothing yet. A random guess among ten categories is right one time in ten. One in ten is 10 percent, so that is where accuracy starts."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why does the vowel network level off near 40 to 45 percent instead of 100 percent?",
+       "a": "The vowel network levels off near 40 to 45 percent instead of 100 percent because the real formant data for the five vowels overlap a great deal. This is because many recordings with nearly the same F1 and F2 belong to different vowels. For a point in the middle of the overlap, even a person would have to guess. So no network can classify those points reliably, and accuracy stays well below 100 percent."
+      },
+      {
+       "source": "Predicted",
+       "q": "Ten training runs start from different random weights. What happens?",
+       "a": "When ten training runs start from different random weights, all ten end at about the same accuracy, even though they take different paths. This is because stochastic gradient descent (SGD, the method that updates the weights in small steps) involves chance along the way. So some runs jump up early, and some stay at chance longer. The end point is still the same for all ten runs."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 15 · p9 · Lecture 16 · p10",
+       "main": "**The vowel network is trained on a table of real vowel recordings, and each row of formants is paired with its vowel.** The input table has two columns, F1 and F2 (the first and second formants). The target table (the table of correct answers) has five columns, one for each word.",
+       "sub": [
+        "For dean, the target row has a 1 in the dean column and a 0 in every other column.",
+        "If the rows got mixed up, each row of formants would be paired with the wrong vowel. So the network would learn the wrong word for those formants."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture15/009.webp",
+        "caption": "Lecture 15 · p9"
+       }
+      },
+      {
+       "ref": "Lecture 16 · p5",
+       "main": "**When the F1 and F2 values of real speakers are plotted, the vowels overlap a lot.** Each dot on the plot is one recording. Recordings with nearly the same F1 and F2 can be different vowels.",
+       "sub": [
+        "**Peterson and Barney** found this overlap in the early 1950s.",
+        "Even a person would have to guess for a point in the middle of the overlap."
+       ],
+       "end": "So one pair of formant values does not always belong to just one vowel.",
+       "media": {
+        "image": "assets/slides/lecture16/005.webp",
+        "caption": "Lecture 16 · p5"
+       }
+      },
+      {
+       "ref": "Lecture 16 · p15",
+       "main": "**Accuracy is how often the network picks the right word, and it starts at chance.** Chance is the accuracy you get by guessing at random. With random weights, the network knows nothing, so it can only guess. A random guess among **five** vowels is right one time in five, so accuracy starts at **20 percent**.",
+       "sub": [
+        "With ten categories, chance would be 10 percent, because a random guess would be right one time in ten.",
+        "Each pass of learning is called an **epoch**, and a problem like this takes thousands of epochs.",
+        "The network jumps to about 40 percent and levels off near **45 percent**. It stops there because the real vowel data **overlap** so much."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture16/015.webp",
+        "caption": "Lecture 16 · p15"
+       }
+      },
+      {
+       "ref": "Lecture 16 · p16",
+       "main": "**Ten training runs that start from different random weights take different paths but end at the same accuracy.** Each run begins with its own random weights, so each one learns along its own path.",
+       "sub": [
+        "Children are similar, because they hear different input but learn the same language."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture16/016.webp",
+        "caption": "Lecture 16 · p16"
+       }
+      },
+      {
+       "ref": "Also know · Lecture 16",
+       "main": "**Children learning English first use forms from memory and later learn the pattern behind them, as Carol Chomsky observed.** At first, children say went correctly because they have memorized it. Then they learn the pattern of adding -ed for the past tense, so they start saying goed.",
+       "sub": [
+        "Later they learn that went is an exception to the pattern."
+       ],
+       "end": ""
+      }
+     ]
+    },
+    {
+     "id": "lead-up",
+     "tier": "Likely",
+     "lectures": "Lecture 17 (start) and Lecture 18",
+     "title": "Leading up to LLMs: from one neuron to networks that unfold over time",
+     "note": "This is the part of Lecture 17 before LLMs, so it falls inside \"up to right before we got to LLMs.\" Lecture 18 opens by reviewing the same ideas.",
+     "know": [
+      "All-or-none: The first paper on artificial neural networks, by McCulloch and Pitts, started from the all-or-none behavior of real neurons. A neuron is either firing or not firing, which is the same idea as the **sigmoid**.",
+      "From biology: The earliest neural network work tried to model how the mind works, including mental illness, so the field began in biology rather than in technology.",
+      "Parallel Distributed Processing: **Parallel** means many neurons calculate their activations at the same time. **Distributed** means the information from the inputs is spread across all the neurons. By the time of these books, forward propagation and backpropagation were well worked out.",
+      "Neuron: A neuron takes in a vector and gives back one number. It multiplies each input by its weight and adds the results, which is the **inner product**.",
+      "Neural network: A neural network repeats the inner product layer after layer. It takes in one vector and gives back a vector of decisions.",
+      "The limit: The vowel network takes one **static** vector, a fixed list of numbers from one moment, and makes one decision. Speech changes all the time and a sentence is many words one after another, so one fixed list of numbers cannot model thinking that unfolds over time.",
+      "Recurrent network: Michael Jordan built the **recurrent** network to model speech production, because features such as nasality and lip rounding switch on and off at different moments. The network sends its own output back into part of its input, so what it produces at one moment helps predict the next.",
+      "Plan and state units: Plan units and state units feed the hidden layer, the hidden layer feeds the output, and the output is copied back into the state units. The same weights are used at every step.",
+      "The path to GPT: GPT works the same way, one word at a time. It predicts the next word, adds it to the prompt, and feeds everything back in to predict the word after that. Years like 1943, 1985 and 2017 give the history, but years are not asked on the exam."
+     ],
+     "questions": [
+      {
+       "source": "Predicted",
+       "q": "How does the all-or-none behavior of neurons connect to the sigmoid?",
+       "a": "The all-or-none behavior of neurons is the same idea as the sigmoid. This is because a real neuron is either firing or not firing. The sigmoid turns an inner product into a number near 0 (off) or near 1 (on), with a steep change in between. So an artificial neuron that uses the sigmoid behaves the same way as a real neuron."
+      },
+      {
+       "source": "Predicted",
+       "q": "What do parallel and distributed mean in Parallel Distributed Processing?",
+       "a": "Parallel means that many neurons calculate their activations at the same time.\n\nDistributed means that the information from the inputs is spread across all the neurons. So the information is not stored in one place."
+      },
+      {
+       "source": "Predicted",
+       "q": "What does a single neuron take in and give back? What about a neural network?",
+       "a": "A single neuron takes in a vector and gives back one number. That number is the inner product, which is each input multiplied by its weight, with the results added together.\n\nA neural network takes in one vector and gives back a vector of decisions. This is because a neural network repeats the inner product layer after layer. So the network ends with several outputs instead of just one number."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why can't the vowel network model a sentence or speech over time?",
+       "a": "The vowel network cannot model a sentence or speech over time because it takes one static vector and makes one decision. That vector is F1 and F2 (the first two formants) from one moment. But speech changes all the time, and a sentence is many words, one after another. So modeling speech needs a network that works through a sequence."
+      },
+      {
+       "source": "Predicted",
+       "q": "What makes Jordan's network recurrent, and why did he build it?",
+       "a": "Jordan's network is recurrent because it sends its own output back into part of its input. It copies the output into the state units. So what it produced at one moment helps predict the next moment.\n\nJordan built it because speech production changes over time. Features such as nasality and lip rounding switch on and off at different moments. So he needed a network that could follow these changes step by step."
+      },
+      {
+       "source": "Predicted",
+       "q": "How is a recurrent network different from an nn.Sequential network?",
+       "a": "A recurrent network is different from an nn.Sequential network because it loops its output back into its input. A Sequential network passes the input through the layers once, from the input to the output, and makes one decision. A recurrent network sends its output back in as part of its next input. So a recurrent network works through a sequence step by step."
+      },
+      {
+       "source": "Predicted",
+       "q": "How does GPT use the same idea as Jordan's network?",
+       "a": "GPT uses the same idea as Jordan's network because it also feeds its own output back into its input. It predicts the next word and adds that word to the prompt. Then it predicts again, using the longer prompt. So GPT produces text one word at a time."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 17 · p2",
+       "main": "**A neuron in an artificial neural network takes in a vector (a list of numbers) and gives back one number.** It multiplies each input by its weight and adds the results. This is called the **inner product**. A **neural network** repeats the inner product layer after layer.",
+       "sub": [
+        "A neural network takes in one vector and gives back a vector of decisions."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture17/002.webp",
+        "caption": "Lecture 17 · p2"
+       }
+      },
+      {
+       "ref": "Also know · Lecture 17 (start) and Lecture 18",
+       "main": "**Artificial neural networks began in biology, not in technology.** The first paper on artificial neural networks was by **McCulloch and Pitts**. It started from the all-or-none behavior of real neurons. A real neuron is either firing or not firing. This is the same idea as the **sigmoid** (a function that turns a number into a value between 0 and 1).",
+       "sub": [
+        "The earliest neural network work tried to model how the mind works, including mental illness.",
+        "In the **Parallel Distributed Processing** books, **parallel** means many neurons calculate their activations at the same time.",
+        "**Distributed** means the information from the inputs is spread across all the neurons. By the time these books were written, forward propagation and backpropagation were well worked out."
+       ],
+       "end": ""
+      },
+      {
+       "ref": "Lecture 17 · p2",
+       "main": "**The vowel network takes one static vector and makes one decision.** A **static** vector is a fixed list of numbers from one moment in time. But speech changes all the time, and a sentence is many words, one after another.",
+       "sub": [
+        "So one fixed list of numbers cannot model thinking that unfolds over time."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture17/002.webp",
+        "caption": "Lecture 17 · p2"
+       }
+      },
+      {
+       "ref": "Lecture 17 · p3",
+       "main": "**A recurrent network sends its own output back into part of its input, so what it produces at one moment helps predict the next moment.** **Michael Jordan** built the **recurrent** network to model speech production. He built it because features such as nasality and lip rounding switch on and off at different moments.",
+       "sub": [
+        "**Plan units** hold what the network is supposed to say, and **state units** hold a copy of the last output. Both send their values to the hidden layer, and the hidden layer sends its values to the output.",
+        "The output is copied back into the state units. The same weights are used at every step."
+       ],
+       "end": "So a recurrent network can work through a sequence, instead of handling only one static vector.",
+       "media": {
+        "image": "assets/slides/lecture17/003.webp",
+        "caption": "Lecture 17 · p3"
+       }
+      },
+      {
+       "ref": "Also know · Lecture 17 (start) and Lecture 18",
+       "main": "**GPT works the same way as the recurrent network, one word at a time.** It predicts the next word and adds that word to the prompt. Then it uses the whole prompt, including the new word, as input to predict the word after that.",
+       "sub": [
+        "The main steps in this history are 1943 (the McCulloch and Pitts paper), 1985 (backpropagation) and 2017 (the design behind GPT)."
+       ],
+       "end": ""
+      }
+     ]
+    },
+    {
+     "id": "heads-layers",
+     "tier": "Almost certain",
+     "lectures": "Lecture 18",
+     "title": "Heads and layers",
+     "note": "On Nov 5 he said heads are a question on the exam, and the Lecture 18 slide says the same. This is the one LLM topic he named for the exam, so it stays Almost certain.",
+     "know": [
+      "Layer: A layer is one round of improvement. Layers go one after another, from the input to the output.",
+      "Head: A head is one expert, and it is a set of weights. Heads sit side by side inside each layer.",
+      "What a layer does: Each head gives its own opinion on how to improve the vectors, and the layer combines all of the heads' opinions into improved vectors. The next layer then does the same thing again.",
+      "Classroom comparison: The classes you visit one after another are the layers, and the students in each class who each give you an opinion are the heads.",
+      "Depth and width: Layers give an LLM depth, one round of improvement after another. Heads give it width, many experts asked at the same time in each round.",
+      "Why so many: Predicting the next word is so hard that large systems have a hundred or more layers with about a hundred heads in each.",
+      "How heads learn: If the predicted next word is wrong, every head in every layer adjusts its weights with backpropagation, so the next prediction is closer to the right word."
+     ],
+     "questions": [
+      {
+       "source": "Lecture 18",
+       "q": "What are heads, and how do they relate to layers?",
+       "a": "A head is one expert, which is a set of weights that gives its own opinion on how to improve the vectors. Heads sit side by side inside each layer. The layer combines all of its heads' opinions into improved vectors. The layers come one after another from the input to the output. So each layer uses its heads to improve the vectors again."
+      },
+      {
+       "source": "Predicted",
+       "q": "In the classroom of experts, what are the classes and what are the students?",
+       "a": "In the classroom of experts, the classes are the layers and the students are the heads. This is because you visit the classes one after another, just as the layers come one after another. The students in each class each give a separate opinion at the same time, just as the heads in one layer work side by side. You combine those opinions before moving on to the next class. So each class is one layer, and each student in it is one head."
+      },
+      {
+       "source": "Predicted",
+       "q": "Which gives an LLM depth and which gives it width, heads or layers?",
+       "a": "Layers give an LLM depth, and heads give it width. This is because layers are rounds of improvement that come one after another, which adds depth. Heads work side by side inside the same layer, which adds width. So more layers means more rounds, and more heads means more experts in each round."
+      },
+      {
+       "source": "Predicted",
+       "q": "An LLM has 5 layers with 4 heads in each layer. How many heads does it have, and which of them work at the same time?",
+       "a": "The LLM has 20 heads, and the 4 heads inside the same layer work at the same time. This is because each of the 5 layers has 4 heads, and 5 times 4 is 20. The 4 heads inside one layer work side by side. The layers come one after another, so layer 2 works on the vectors that layer 1 improved. So heads in the same layer work at the same time, but heads in different layers do not."
+      },
+      {
+       "source": "Predicted",
+       "q": "The LLM predicts bark instead of barks after \"the dog that my parents ... \". Which weights change?",
+       "a": "When the LLM predicts bark instead of barks, the weights of every head in every layer change. This is because backpropagation calculates how much each weight contributed to the wrong prediction. Then each weight is adjusted a little in the direction that reduces the error. So the next prediction is closer to barks."
+      },
+      {
+       "source": "Predicted",
+       "q": "Where is the knowledge of an LLM stored?",
+       "a": "The knowledge of an LLM is stored in its weights. This is because each head is a set of weights, and those weights are what change when the model learns. So the knowledge is spread across all the heads in all the layers. The vowel network's knowledge is stored in its weights in the same way."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 18 · p3",
+       "main": "**An LLM (large language model) is built from layers, and each layer contains heads.** A **layer** is one round of improving the vectors (the lists of numbers that represent the words). The layers come one after another from the input to the output. A **head** is one expert, and it is a set of weights. The heads sit side by side inside each layer.",
+       "sub": [
+        "Each head gives its own opinion on how to improve the vectors.",
+        "The layer combines the opinions of all its heads into improved vectors. Then the next layer does the same thing again with those improved vectors."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture18/003.webp",
+        "caption": "Lecture 18 · p3"
+       }
+      },
+      {
+       "ref": "Lecture 18 · p3",
+       "main": "**Heads and layers work like visiting a series of classes to improve yourself.** The classes you visit one after another are the **layers**. The students in each class, who each give you an opinion, are the **heads**.",
+       "sub": [
+        "Layers give an LLM **depth**, which means one round of improvement after another.",
+        "Heads give an LLM **width**, which means many experts are asked at the same time in each round."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture18/003.webp",
+        "caption": "Lecture 18 · p3"
+       }
+      },
+      {
+       "ref": "Also know · Lecture 18",
+       "main": "**Predicting the next word is so hard that large systems have a hundred or more layers, with about a hundred heads in each layer.** Every one of those heads learns.",
+       "sub": [
+        "If the predicted next word is wrong, every head in every layer adjusts its weights using backpropagation (the method that calculates how much each weight contributed to the error). This makes the next prediction closer to the right word."
+       ],
+       "end": ""
+      }
+     ]
+    },
+    {
+     "id": "llm-sequences",
+     "tier": "Possible",
+     "lectures": "Lectures 17 and 18",
+     "title": "From the vowel network to an LLM: many vectors in, the next item out",
+     "note": "LLM part: On Nov 10 he said the LLM part is kept for the final, so study it after the topics marked Almost certain and Likely. Lab 9 Part 4 asks this comparison directly.",
+     "know": [
+      "The prediction game: An LLM is given 15 vectors and predicts the sixteenth. The sixteenth is a probability distribution over what could come next, such as each of about 30,000 English words.",
+      "Vectors can be anything: The vectors can be words, frames of a spectrogram, patches of an image or the amino acids of a protein. The LLM only ever sees lists of numbers, so the same design works for all of them.",
+      "Long-distance connections: In \"the dog that my parents, who I love very much, ... \", the next word is barks, because it goes with the singular dog no matter how many words come in between. An LLM learns this from data, not from a taught rule.",
+      "How an LLM learns: It predicts the next word, such as mat after \"the cat sat on the\". When the prediction is wrong, backpropagation adjusts the weights, and this is repeated with a huge number of sentences.",
+      "Underneath everything: Inference is inner products, and learning is stochastic gradient descent plus dynamic programming.",
+      "Hallucination: An LLM predicts from past data, so something its data does not cover can make it make things up."
+     ],
+     "questions": [
+      {
+       "source": "Lab 9",
+       "q": "What is the difference between the input and output of the vowel network and those of an LLM?",
+       "a": "The difference is that the vowel network takes in one vector and decides among five categories, while an LLM takes in many vectors and decides among a whole vocabulary.\n\nThe vowel network's input is one vector, F1 and F2. Its output decides among five categories.\n\nAn LLM's input is many vectors in sequence, such as the words so far. Its output decides among a whole vocabulary for the next item."
+      },
+      {
+       "source": "Predicted",
+       "q": "An LLM is given 15 vectors and predicts the sixteenth. Name three things the vectors can stand for.",
+       "a": "Three things the vectors can stand for are the words of a sentence, the frames of a spectrogram and the patches of an image. They can also stand for the amino acids of a protein. The same kind of prediction works for all of them. This is because the LLM only works with lists of numbers, whatever those numbers stand for."
+      },
+      {
+       "source": "Predicted",
+       "q": "What does the sixteenth vector look like, and does it add up to anything?",
+       "a": "The sixteenth vector is a probability distribution over what could come next, and its numbers add up to one.\n\nThe sixteenth vector has one number for each possible next item, such as each English word. Each number is how likely that item is to come next.\n\nIt adds up to one because it is a probability distribution. The probabilities of all the possible next items always add up to one."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why is the next word barks and not bark in \"the dog that my parents, who I love very much, ... \"?",
+       "a": "The next word is barks and not bark because barks goes with the singular word dog. This is true no matter how many words come in between. It holds even when the plural word parents comes in between. To predict barks, an LLM has to use a word far back in the sequence. It learns to do this from data, by computing inner products layer after layer."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why can an LLM hallucinate?",
+       "a": "An LLM can hallucinate because it predicts from past data. When it meets something its data does not cover, its prediction can turn into a guess. So it can make things up, and this is called hallucination."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 17 · p5 · Lecture 18 · p5",
+       "main": "**An LLM (large language model) is given a sequence of vectors (lists of numbers) and predicts the next one.** For example, it is given 15 vectors and predicts the sixteenth. The sixteenth is a probability distribution (a list of how likely each option is) over what could come next, such as each of about 30,000 English words.",
+       "sub": [
+        "The vectors can be words, frames of a spectrogram (short time slices of a display of a sound's frequencies), patches of an image or the amino acids of a protein.",
+        "The LLM only ever works with lists of numbers, so the same design works for all of them."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture17/005.webp",
+        "caption": "Lecture 17 · p5"
+       }
+      },
+      {
+       "ref": "Lecture 17 · p4 · Lecture 18 · p2",
+       "main": "**Language depends on connections between words that are far apart.** In \"the dog that my parents, who I love very much, ...\", the next word is **barks**. Barks goes with the singular word dog, no matter how many words come in between.",
+       "sub": [
+        "An LLM learns this from data, not from a rule someone teaches it."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture17/004.webp",
+        "caption": "Lecture 17 · p4"
+       }
+      },
+      {
+       "ref": "Also know · Lectures 17 and 18",
+       "main": "**An LLM learns by predicting the next word, such as mat after \"the cat sat on the\".** When the prediction is wrong, backpropagation adjusts the weights. This is repeated with a huge number of sentences.",
+       "sub": [
+        "Underneath everything, **inference** (using the network to make a prediction) is done with inner products. Learning is done with stochastic gradient descent plus **dynamic programming** (reusing calculations already done, which is how backpropagation works backward through the layers).",
+        "An LLM predicts from past data. So when something is not covered by its data, it can make things up, which is called **hallucination**."
+       ],
+       "end": ""
+      }
+     ]
+    },
+    {
+     "id": "gestalt-cloze",
+     "tier": "Possible",
+     "lectures": "Lecture 17",
+     "title": "Gestalt completion and the cloze test",
+     "note": "LLM part: On Nov 10 he said the LLM part is kept for the final, so study it after the topics marked Almost certain and Likely.",
+     "know": [
+      "Gestalt completion: Gestalt psychology studies how people see whole patterns. People see a triangle in the Gestalt figure even though no triangle is drawn, because a large part of human knowledge is completing what is missing.",
+      "Closure: Closure is the Gestalt word for completing a familiar pattern that is not quite finished, such as seeing a broken circle as whole.",
+      "Cloze test: Words are removed from a text and people fill them in. The name comes from closure, and it tests knowledge by asking someone to complete a sequence.",
+      "LLM learning: An LLM predicting the next word is playing a cloze game again and again. Training a system only to predict the missing piece turns out to copy human thinking."
+     ],
+     "questions": [
+      {
+       "source": "Predicted",
+       "q": "Describe the Gestalt principle of closure, and how an LLM uses it to learn.",
+       "a": "The Gestalt principle of closure is completing a familiar pattern that is not quite finished. For example, people see a triangle where none is drawn, and they see a broken circle as a whole circle.\n\nAn LLM (large language model) uses closure to learn by doing the same kind of completion. It predicts the missing next piece of a sequence again and again. When its prediction is wrong, it corrects its weights. So it learns by completing sequences over and over."
+      },
+      {
+       "source": "Predicted",
+       "q": "What is a cloze test, and why is an LLM's training like one?",
+       "a": "A cloze test is a test where words are removed from a text and people fill them in. So it tests knowledge by asking someone to complete a sequence.\n\nAn LLM's training is like a cloze test because the LLM (large language model) is trained by filling in the next word over and over. So for an LLM, knowing something means being able to complete the sequence."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why do people see a triangle in the Gestalt figure?",
+       "a": "People see a triangle in the Gestalt figure because they complete the missing parts of a familiar pattern. No triangle is actually drawn, but people fill in what is missing. This completion is the Gestalt principle of closure.",
+       "img": "assets/exam2/gen-kanizsa-triangle.svg",
+       "alt": "Three black circles with wedges cut out, facing each other"
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Also know · Lecture 17",
+       "main": "**Gestalt psychology studies how people see whole patterns.** In the Gestalt figure, people see a triangle even though no triangle is drawn. They see it because a large part of human knowledge is completing what is missing.",
+       "sub": [
+        "**Closure** is the Gestalt term for completing a familiar pattern that is not quite finished. For example, people see a broken circle as a whole circle."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/exam2/gen-kanizsa-triangle.svg",
+        "caption": "The Gestalt triangle figure"
+       }
+      },
+      {
+       "ref": "Also know · Lecture 17",
+       "main": "**In a cloze test, words are removed from a text, and people fill them in.** The name cloze comes from closure. The test measures knowledge by asking someone to complete a sequence.",
+       "sub": [
+        "An LLM (large language model) that predicts the next word is doing a cloze test again and again."
+       ],
+       "end": "So training a system only to predict the missing piece turns out to copy human thinking.",
+       "media": {
+        "image": "assets/exam2/gen-kanizsa-triangle.svg",
+        "caption": "The Gestalt triangle figure"
+       }
+      }
+     ]
+    },
+    {
+     "id": "recurrent-dynamical",
+     "tier": "Possible",
+     "lectures": "Lectures 17 and 18",
+     "title": "The LLM as a dynamical system",
+     "note": "LLM part: On Nov 10 he said the LLM part is kept for the final, so study it after the topics marked Almost certain and Likely.",
+     "know": [
+      "Dynamical system: A dynamical system is a rule that is fed its own output again and again. In the harmonic oscillator, position and velocity take turns updating, and step by step the rule draws a cosine.",
+      "The LLM as a dynamical system: In an LLM, each layer is the rule and the depth of the layers plays the role of time. The input vectors are the initial conditions, and each layer turns them into better vectors until the last layer can predict the next word."
+     ],
+     "questions": [
+      {
+       "source": "Predicted",
+       "q": "Why is an LLM called a dynamical system?",
+       "a": "An LLM is called a dynamical system because it works by giving a rule its own output again and again. A dynamical system is a rule that is repeatedly given its own output as input, starting from initial conditions (the starting numbers). In an LLM, the input vectors are the initial conditions. Each layer applies its weights to turn those vectors into better vectors, and the next layer takes those as its input. So the depth of the layers plays the role of time."
+      },
+      {
+       "source": "Predicted",
+       "q": "In the harmonic oscillator, which two numbers update, and in what order?",
+       "a": "In the harmonic oscillator, position x and velocity v update, and they take turns. First, the new x is calculated from the old v. Then, the new v is calculated from the new x. When these two steps are repeated over and over, x traces out a cosine shape."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 18 · p4",
+       "main": "**A dynamical system is a rule that is given its own output as input again and again.** Numbers go in, the rule changes them, and new numbers come out. The output then becomes the next input.",
+       "sub": [
+        "In the **harmonic oscillator** (a mass on a spring moving back and forth), the two numbers are position and velocity (speed and direction). They take turns updating.",
+        "When the rule is repeated step by step, the position traces out a **cosine** shape."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture18/004.webp",
+        "caption": "Lecture 18 · p4"
+       }
+      },
+      {
+       "ref": "Also know · Lectures 17 and 18",
+       "main": "**An LLM (large language model) can be treated as a dynamical system.** Each layer is the rule, and the depth of the layers plays the role of time. The input vectors are the **initial conditions** (the starting numbers).",
+       "sub": [
+        "Each layer turns the vectors into better vectors, until the last layer can predict the next word.",
+        "Each layer has its own learned weights. So each step passes its output to the next step, but each step uses different weights."
+       ],
+       "end": "So in both systems, the output of one step is the input to the next step."
+      }
+     ]
+    },
+    {
+     "id": "agentic",
+     "tier": "Possible",
+     "lectures": "Lectures 17 and 18",
+     "title": "Agentic systems and Software 3.0",
+     "note": "LLM part: On Nov 10 he said the LLM part is kept for the final, so study it after the topics marked Almost certain and Likely. Lab 9 Part 4 asks what an agentic system is and what its loop prevents.",
+     "know": [
+      "Agentic system: An agentic system is a group of LLMs connected so that one's output becomes the next one's input. An agent in AI today is just an LLM.",
+      "The lecture example: An outline LLM plans the answer, a writing LLM writes it, a critic LLM checks it, a revision LLM works back and forth with the critic, and a final LLM produces the answer the user sees.",
+      "The critic loop: The draft goes back and forth between the critic and the reviser until the critic is satisfied or a limit is reached. The loop greatly reduced hallucination.",
+      "Shared memory and fixed weights: Once each LLM is trained its weights usually do not change, and the agents share a common memory where they write and read information.",
+      "Software 1.0, 2.0 and 3.0: Software 1.0 is writing a program in a language such as Python. Software 2.0 is training a neural network on input and output data, so the program is its weights. Software 3.0 is having an agentic system build and run the program from plain English instructions, which is called vibe coding."
+     ],
+     "questions": [
+      {
+       "source": "Lab 9",
+       "q": "What is an agentic system, in terms of LLMs? Describe the example system.",
+       "a": "An agentic system is a graph (a set of connected parts) of LLMs (large language models), each with its own job. The LLMs are connected so that one LLM's output becomes the next LLM's input.\n\nIn the example system, one LLM outlines, one writes, one critiques, one revises and one produces the final version. The critic and the reviser form a loop. So the draft keeps going back until the critic is satisfied or the limit is reached."
+      },
+      {
+       "source": "Lab 9",
+       "q": "What does the critic loop do, and what does it prevent that was common in earlier LLMs?",
+       "a": "The critic loop sends the draft back and forth between the critic and the reviser until the critic is satisfied. The critic checks each draft, and the reviser fixes the errors the critic finds. So errors are caught and fixed before the answer is shown to the user.\n\nThe critic loop prevents hallucination (when an LLM makes up false statements), which was a common problem in earlier LLMs."
+      },
+      {
+       "source": "Predicted",
+       "q": "What would happen if the critic LLM were removed?",
+       "a": "If the critic LLM were removed, the draft would go straight from writing to the final answer without being checked. This is because the critic is the LLM that checks the draft. So more made-up statements would reach the user. The critic loop is what greatly reduced hallucination, so without it that reduction would be lost."
+      },
+      {
+       "source": "Predicted",
+       "q": "What is the difference between Software 2.0 and Software 3.0?",
+       "a": "The difference between Software 2.0 and Software 3.0 is how the program gets built.\n\nIn Software 2.0, a neural network is trained on input and output data, so the program is the network's weights.\n\nIn Software 3.0, an agentic system builds and runs the program from plain English instructions. Building a program this way is called vibe coding."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Also know · Lectures 17 and 18",
+       "main": "**An agentic system is a group of LLMs (large language models) connected so that one LLM's output becomes the next LLM's input.** In AI today, an **agent** is just an LLM. In one example, an outline LLM plans the answer, and a writing LLM writes it.",
+       "sub": [
+        "A critic LLM checks the draft, and a revision LLM works back and forth with the critic.",
+        "A final LLM produces the answer that the user sees."
+       ],
+       "end": ""
+      },
+      {
+       "ref": "Also know · Lectures 17 and 18",
+       "main": "**The critic loop sends the draft back and forth between the critic and the reviser.** The loop continues until the critic is satisfied or a limit is reached. This loop greatly reduced **hallucination** (when an LLM makes up false statements).",
+       "sub": [
+        "Once each LLM is trained, its weights usually do not change.",
+        "The agents share a common memory, where they write and read information."
+       ],
+       "end": ""
+      },
+      {
+       "ref": "Lecture 18 · p8",
+       "main": "**Software 1.0, 2.0 and 3.0 are three ways to build a program.** **Software 1.0** is writing a program in a programming language such as Python. **Software 2.0** is training a neural network on input and output data, so the program is the network's weights.",
+       "sub": [
+        "**Software 3.0** is having an agentic system build and run the program from instructions written in plain English.",
+        "Building a program this way is called **vibe coding**."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture18/008.webp",
+        "caption": "Lecture 18 · p8"
+       }
+      }
+     ]
+    },
+    {
+     "id": "phonotactics",
+     "tier": "Possible",
+     "lectures": "Lectures 17 and 18",
+     "title": "Phonotactics and guessing the next letter",
+     "note": "LLM part: On Nov 10 he said the LLM part is kept for the final, so study it after the topics marked Almost certain and Likely. Lab 9 Part 4 asks these directly.",
+     "know": [
+      "Phonotactics: The rules for which sounds can follow which are **phonotactics**. Every speaker knows them without being taught.",
+      "Simple syllable: A simple English syllable is a consonant, a vowel and a consonant, as in Don or cup. The pattern is about sounds, not letters, so the silent e of shave does not count.",
+      "Onset and coda: A cluster before the vowel is an onset, as in split, and a cluster after the vowel is a coda, as in lamp. The order is a mirror image around the vowel, so flat is a word and lfat is impossible.",
+      "Syllable breaks: Atlantic is a word because t and l are on opposite sides of a syllable break, but tlantic is impossible because tl cannot start an English syllable. The sound ng can end a syllable but never start one.",
+      "Other languages: Mandarin allows only nasal sounds at the end of a syllable, Russian and Polish allow clusters like zb or dl at the start of a word, and Spanish speakers add an e before st, as in estadio.",
+      "Next-letter guessing: After a vowel, almost any letter can come next, so the probability distribution is flat. At the start of a word, the choices narrow to what an English onset allows, so after skr the distribution is sharply peaked on a few vowels.",
+      "The GPT link: Guessing the next letter is predicting the sixteenth item, so a GPT trained only on this game learns English syllable structure.",
+      "Simple syllable words: Don, mat, sit, cup, dog, fish and shave are all consonant, vowel, consonant. Ship, chin and bath also count, because sh, ch and th are each one sound spelled with two letters.",
+      "Allowed onsets (before the vowel): split, flat, black and glad.",
+      "Allowed codas (after the vowel): desk, help, milk and lamp.",
+      "Impossible twins: flat and *lfat, help and *hepl, lamp and *lapm. Each impossible twin puts the wrong consonant next to the vowel. *Sblit and *desb are impossible too, which is why a product called desb would sound un-English.",
+      "After ra_: Almost any letter can come next, such as t, n, r or l, so the distribution is flat.",
+      "After sp_: Only l, r or a vowel can come next, never n.",
+      "After k_: Only a vowel or n can come next, as in knee, never t.",
+      "After b_ and f_: Only r, l or a vowel can come next, never n.",
+      "After sh_: Only a vowel or r can come next, as in shrimp.",
+      "After skr_, or m_ at the start of a word: Only a vowel can come next.",
+      "After bram_: The letter b is almost certain, as in bramble, though a new syllable could also start there.",
+      "Lab 9 starts: After pl_ only a vowel can come, as in play. After st_ a vowel or r can come, as in star and street, but not l or k. After th_ r, w or a vowel can come, as in three, thwart and thin, but not l or n."
+     ],
+     "questions": [
+      {
+       "source": "Lab 9",
+       "q": "Which could be English words: blick, bnick, sblat, splat, dlag, lisk, lisb, lapm, lamp? For each one that could not, name the problem.",
+       "a": "Blick, splat, lisk and lamp could be English words.\n\nBnick, sblat and dlag could not be English words. This is because bn, sb and dl cannot start a syllable in English.\n\nLisb and lapm could not be English words. This is because sb and pm cannot end a syllable in English."
+      },
+      {
+       "source": "Lab 9",
+       "q": "Each of these starts an English word: pl_, st_ and th_. What could come next, and what could not?",
+       "a": "After pl, only a vowel can come next, as in play. So a consonant such as n cannot come next.\n\nAfter st, a vowel or r can come next, as in star and street. But l and k cannot come next.\n\nAfter th, r, w or a vowel can come next, as in three, thwart and thin. But l and n cannot come next."
+      },
+      {
+       "source": "Predicted",
+       "q": "After which start is the next-letter distribution flatter, ra_ or skr_? Why?",
+       "a": "The next-letter distribution is flatter after ra than after skr. This is because ra ends in a vowel, and after a vowel almost any letter can come next. So the probability is spread out over many letters. After skr, only a vowel can come next. So most of the probability goes to a few vowels, and the distribution is sharply peaked."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why is Atlantic an English word but tlantic impossible?",
+       "a": "Atlantic is an English word, but tlantic is impossible. This is because in Atlantic, the t and l are on opposite sides of a syllable break (At-lan-tic), so each syllable follows the rules. In tlantic, tl would have to start a syllable. English does not allow tl at the start of a syllable, so tlantic is impossible."
+      },
+      {
+       "source": "Predicted",
+       "q": "Could ngop be an English word? Could flim?",
+       "a": "Ngop could not be an English word. This is because the sound ng can end a syllable, as in ring, but it can never start one.\n\nFlim could be an English word. This is because fl is an allowed onset (the consonants before the vowel), as in flat, and im is an allowed ending."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why does a GPT trained only to guess the next letter end up knowing English syllable structure?",
+       "a": "A GPT trained only to guess the next letter ends up knowing English syllable structure because the patterns of English syllables determine which letters can come next. This is because its guesses can only get better by matching those patterns. So as it learns, its probability distributions take on the shape of those patterns. They are flat after a vowel and sharply peaked after a start such as skr."
+      },
+      {
+       "source": "Predicted",
+       "q": "Which letter cannot come next after sp_ at the start of a word: l, r, n or a?",
+       "a": "N cannot come next after sp at the start of a word. This is because spn is not an allowed English onset (the consonants before the vowel). After sp, only l, r or a vowel can come next, as in split, spring and spa."
+      },
+      {
+       "source": "Predicted",
+       "q": "Which letter cannot come next after k_ at the start of a word: a, n or t?",
+       "a": "T cannot come next after k at the start of a word. This is because kt cannot start an English syllable. After k, a vowel or n can come next, as in knee."
+      },
+      {
+       "source": "Predicted",
+       "q": "What can come next after b_ or f_ at the start of a word, and what cannot?",
+       "a": "After b or f at the start of a word, only r, l or a vowel can come next, as in bring, black, frog and flat. N cannot come next. This is because bn and fn cannot start an English syllable."
+      },
+      {
+       "source": "Predicted",
+       "q": "What can come next after sh_ at the start of a word?",
+       "a": "After sh at the start of a word, only a vowel or r can come next, as in ship and shrimp. This is because shr is the only consonant cluster that English allows starting with sh."
+      },
+      {
+       "source": "Predicted",
+       "q": "What can come next after skr_?",
+       "a": "After skr, only a vowel can come next, as in scream and scrap (where the skr sound is spelled scr). This is because skr already fills the whole onset (the consonants before the vowel). So no other consonant can be added before the vowel."
+      },
+      {
+       "source": "Predicted",
+       "q": "Why are lfat, hepl and lapm impossible when flat, help and lamp are words?",
+       "a": "Lfat, hepl and lapm are impossible because the order of a cluster is a mirror image around the vowel. In flat and help, the l sits right next to the vowel. In lamp, the m sits right next to the vowel. Each impossible version puts the wrong consonant next to the vowel. So it breaks the mirror order, and it cannot be an English word."
+      },
+      {
+       "source": "Predicted",
+       "q": "Is ship a consonant, vowel, consonant word even though it has four letters?",
+       "a": "Yes, ship is a consonant, vowel, consonant word even though it has four letters. This is because the pattern is about sounds, not letters, and sh is one sound. So ship is the consonant sh, the vowel i and the consonant p."
+      }
+     ],
+     "blocks": [
+      {
+       "ref": "Lecture 17 · p6 · Lecture 18 · p6",
+       "main": "**Phonotactics are the rules for which sounds can follow which in a language.** Every speaker knows them without being taught. A simple English syllable is a consonant, a vowel and a consonant, as in **Don** or **cup**.",
+       "sub": [
+        "Mat, sit, dog, fish and shave are also consonant, vowel, consonant.",
+        "The pattern is about sounds, not letters. So the silent e at the end of shave does not count, because it makes no sound.",
+        "Ship, chin and bath also count. This is because sh, ch and th are each one sound, even though each is spelled with two letters."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture17/006.webp",
+        "caption": "Lecture 17 · p6"
+       }
+      },
+      {
+       "ref": "Lecture 17 · p6 · Lecture 18 · p6",
+       "main": "**Consonants can also form clusters (groups of consonants in a row) before or after the vowel.** A cluster before the vowel is an **onset**, as in split, flat, black and glad. A cluster after the vowel is a **coda**, as in desk, help, milk and lamp.",
+       "sub": [
+        "The order of the consonants is a mirror image around the vowel. For example, l sits right next to the vowel in both flat and help. So flat is a word, and lfat is impossible.",
+        "Each real word has an impossible version that puts the wrong consonant next to the vowel, such as help and hepl, or lamp and lapm.",
+        "Sblit and desb are impossible too. That is why a product called desb would sound un-English."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture17/006.webp",
+        "caption": "Lecture 17 · p6"
+       }
+      },
+      {
+       "ref": "Lecture 17 · p6 · Lecture 18 · p6",
+       "main": "**A pair of consonants can be fine across a syllable break but impossible at the start of a syllable.** Atlantic is a word because t and l are on opposite sides of a syllable break (At-lan-tic). Tlantic is impossible because tl cannot start an English syllable.",
+       "sub": [
+        "The sound ng can end a syllable, but it can never start one."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture17/006.webp",
+        "caption": "Lecture 17 · p6"
+       }
+      },
+      {
+       "ref": "Also know · Lectures 17 and 18",
+       "main": "**Each language has its own phonotactics.** Mandarin allows only nasal sounds (sounds made with air going out through the nose, like n and ng) at the end of a syllable. Russian and Polish allow clusters like zb or dl at the start of a word.",
+       "sub": [
+        "Spanish speakers add an e before st at the start of a word, as in estadio."
+       ],
+       "end": ""
+      },
+      {
+       "ref": "Lecture 17 · p7 · Lecture 18 · p7",
+       "main": "**Guessing the next letter of a word depends on phonotactics, and each guess is a probability distribution.** After a vowel, almost any letter can come next, so the distribution is **flat** (the probability is spread out over many letters). At the start of a word, the choices narrow down to what an English onset allows.",
+       "sub": [
+        "After ra, almost any letter can come next, such as t, n, r or l, so the distribution is flat.",
+        "After skr, the distribution is **sharply peaked** (most of the probability goes to a few vowels)."
+       ],
+       "end": "So a GPT trained only on this guessing game learns English syllable structure. This is because guessing the next letter is the same task as an LLM predicting the sixteenth item from the first fifteen.",
+       "media": {
+        "image": "assets/slides/lecture17/007.webp",
+        "caption": "Lecture 17 · p7"
+       }
+      },
+      {
+       "ref": "Lecture 17 · p7 · Lecture 18 · p7",
+       "main": "**At the start of a word, each first letter or cluster allows only a few next letters.** After sp, only l, r or a vowel can come next, never n. After k, a vowel or n can come next, as in knee, but never t.",
+       "sub": [
+        "After b or f, only r, l or a vowel can come next, never n.",
+        "After sh, only a vowel or r can come next, as in shrimp.",
+        "After skr, or after m at the start of a word, only a vowel can come next."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture17/007.webp",
+        "caption": "Lecture 17 · p7"
+       }
+      },
+      {
+       "ref": "Lecture 17 · p7 · Lecture 18 · p7",
+       "main": "**Inside a word, the letters so far can make one next letter almost certain.** After bram, the next letter is almost certainly b, as in bramble.",
+       "sub": [
+        "A new syllable could also start there, so b is not the only possible next letter."
+       ],
+       "end": "",
+       "media": {
+        "image": "assets/slides/lecture17/007.webp",
+        "caption": "Lecture 17 · p7"
+       }
+      },
+      {
+       "ref": "Also know · Lectures 17 and 18",
+       "main": "**After pl, st and th at the start of a word, the next letter is limited too.** After pl, only a vowel can come next, as in play. After st, a vowel or r can come next, as in star and street, but not l or k.",
+       "sub": [
+        "After th, r, w or a vowel can come next, as in three, thwart and thin, but not l or n."
+       ],
+       "end": ""
+      }
+     ]
+    }
+   ]
   }
  },
  "labs": [

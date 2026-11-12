@@ -1,0 +1,410 @@
+{
+ "topics": [
+  {
+   "id": "modes",
+   "title": "Masses, springs and modes",
+   "blocks": [
+    {
+     "i": 0,
+     "ref": "Lecture 11 · p2 · Lecture 12 · p3",
+     "main": "**In a mass-spring system, a mass is attached to a spring, and together they vibrate around a resting position.** This resting position is called **equilibrium** (the position where the spring is neither stretched nor compressed). The spring always pulls the mass back toward equilibrium. The moving mass tends to **keep moving**, so it goes past equilibrium. Then the spring pulls it back again, and the cycle repeats.",
+     "sub": [
+      "The vibration can be **longitudinal** (back and forth along the length of the spring) or **transverse** (up and down, across the spring).",
+      "Both directions work the same way, because in each one the same spring pulls the same mass back."
+     ],
+     "end": "So the mass keeps vibrating because the spring keeps pulling it back and the mass keeps going past equilibrium."
+    },
+    {
+     "i": 1,
+     "ref": "Lecture 11 · p3 · Lecture 12 · p4",
+     "main": "**In a mass-spring system, the frequency depends on the mass and on the stiffness of the spring.** **Frequency** is how many times the system goes back and forth each second. **Stiffness** is how hard the spring pulls back when it is stretched or compressed. **More mass lowers the frequency, and more stiffness raises the frequency.**",
+     "sub": [
+      "A heavier mass is harder to get moving and harder to turn around. So each cycle takes longer, and the frequency goes down.",
+      "A stiffer spring pulls back harder, so the mass returns faster. Each cycle takes less time, so the frequency goes up."
+     ],
+     "end": "So mass and stiffness change the frequency in opposite directions."
+    },
+    {
+     "i": 2,
+     "ref": "Lecture 11 · p4 · Lecture 12 · p5",
+     "main": "**When two masses are joined by springs, the system can vibrate in two different ways, called modes.** A **mode** is one way a system can vibrate. In **Mode 1**, the two masses move together, in the same direction at the same time. In **Mode 2**, the two masses move against each other, in opposite directions.",
+     "sub": [
+      "In **Mode 1**, the middle spring hardly stretches, because both masses move together. So it adds little stiffness, and **the frequency is lower**.",
+      "In **Mode 2**, the middle spring stretches and compresses a lot, because the masses move in opposite directions. So it adds stiffness, and **the frequency is higher**.",
+      "The more the masses move **against each other**, the more the springs stretch and compress. So more stiffness is working in that mode, and it has a **higher frequency**."
+     ],
+     "end": "So a higher mode vibrates faster because more of the springs stretch and compress."
+    },
+    {
+     "i": 3,
+     "ref": "Lecture 11 · p6 · Lecture 12 · p6",
+     "main": "**Three masses joined by springs have three modes.** In **Mode 1**, all three masses move together. In **Mode 2**, the middle mass stays still, and the two outer masses move against each other. In **Mode 3**, the middle mass moves in the opposite direction from both outer masses.",
+     "sub": [
+      "**A mass changes the frequency only if it moves in that mode, and a spring changes the frequency only if it stretches in that mode.**",
+      "If the middle mass is made heavier, **Mode 1 and Mode 3 have lower frequencies**. This is because the middle mass moves in both of those modes. A heavier mass is harder to move, so those modes vibrate more slowly.",
+      "The same heavier middle mass **does not change Mode 2**, because the middle mass does not move in Mode 2."
+     ],
+     "end": "So Mode 3 stretches the springs the most, because each mass moves against its neighbor. That is why Mode 3 has the highest frequency."
+    },
+    {
+     "i": 4,
+     "ref": "Lecture 11 · p7 · Lecture 12 · p7 · Lecture 13 · p3",
+     "main": "**Each mass added to the chain creates one more mode, so N masses have N modes.** The same patterns repeat as the chain gets longer. Lower modes have broad movements, where large sections of the chain move in the same direction. In higher modes, the direction of movement changes more often along the chain.",
+     "sub": [
+      "An infinite number of masses and springs along a line is a **string**.",
+      "An infinite number of masses and springs spread over a surface is a **membrane**, such as a drum or the vocal folds.",
+      "A string or a membrane can vibrate in several modes at the same time."
+     ],
+     "end": "So a string and the vocal folds each have a whole series of modes."
+    }
+   ],
+   "questions": [
+    {
+     "i": 0,
+     "source": "Review 1",
+     "q": "Why do multiple mass systems have multiple frequencies?",
+     "a": "Multiple mass systems have multiple frequencies because they can vibrate in several different modes (ways of vibrating), and each mode has its own frequency. This is because the masses can move in different ways. In some modes the masses move together, and in others they move against each other. When the masses move against each other, the springs between them stretch and compress more. So more stiffness is working, and that mode vibrates faster. So a system with N masses has N modes and N frequencies."
+    },
+    {
+     "i": 1,
+     "source": "Review 2",
+     "q": "How many modes does a 3-mass system have?",
+     "a": "A 3-mass system has three modes. This is because a system with N masses has N modes of vibration. So 3 masses give 3 modes."
+    },
+    {
+     "i": 2,
+     "source": "Lab 9",
+     "q": "Four masses are joined by springs between two walls. How many modes does the system have, and what are the masses doing in the lowest and highest modes?",
+     "a": "The system has four modes. This is because there is one mode for each mass, and there are four masses.\n\nIn the lowest mode, Mode 1, all four masses move in the same direction at the same time.\n\nIn the highest mode, Mode 4, every mass moves in the opposite direction from its neighbors. Because of this, every spring is stretched and compressed. So the most stiffness is working, and the frequency is highest."
+    },
+    {
+     "i": 3,
+     "source": "Review 3",
+     "q": "Which mode of the 3-mass system has the highest frequency? Why?",
+     "a": "Mode 3 has the highest frequency of the 3-mass system. This is because in Mode 3 the middle mass moves opposite to the two outer masses. So every spring is stretched and compressed as much as possible. That means the most stiffness is working, and more stiffness makes the system vibrate faster. So Mode 3 vibrates fastest and has the highest frequency."
+    },
+    {
+     "i": 4,
+     "source": "Predicted",
+     "q": "Which mode of a 2-mass system has the lowest frequency, and why?",
+     "a": "Mode 1 has the lowest frequency of a 2-mass system. This is because in Mode 1 the two masses move together. So the middle spring moves along with them without stretching. Only the two outer springs are stretching and compressing. So Mode 1 has less stiffness working than Mode 2, and it vibrates more slowly."
+    },
+    {
+     "i": 5,
+     "source": "Review 4",
+     "q": "If you increase mass 2, what happens to the frequencies of each of the modes?",
+     "a": "If you increase mass 2, the frequencies of Mode 1 and Mode 3 go down, and the frequency of Mode 2 stays the same. This is because mass 2 is the middle mass, and it moves in Mode 1 and in Mode 3. A heavier mass is harder to move, so those two modes vibrate more slowly, and their frequencies go down. In Mode 2, the middle mass does not move. A mass that does not move has no effect on the frequency, so Mode 2 stays the same."
+    },
+    {
+     "i": 6,
+     "source": "Predicted",
+     "q": "In the 3-mass system, what happens to each mode if you make mass 1 (an outer mass) heavier?",
+     "a": "All three modes have lower frequencies when mass 1 becomes heavier. This is because mass 1 moves in all three modes. When a mass becomes heavier, it is harder to move, so the system vibrates more slowly. Since mass 1 moves in every mode, all three modes slow down, and their frequencies decrease."
+    },
+    {
+     "i": 7,
+     "source": "Predicted",
+     "q": "In a 2-mass system, what happens to each mode if you make the middle spring stiffer?",
+     "a": "When the middle spring of a 2-mass system is made stiffer, Mode 1 stays the same and Mode 2 goes up. This is because in Mode 1 the masses move together, so the middle spring is never stretched. A spring that is not stretched does not affect the frequency, so its extra stiffness does nothing. In Mode 2 the masses move against each other, so the middle spring is stretched and compressed. A stiffer spring pulls back harder, so Mode 2 vibrates faster, and its frequency goes up."
+    },
+    {
+     "i": 8,
+     "source": "Review 5",
+     "q": "What do you get when you have an infinite number of masses and springs?",
+     "a": "An infinite number of masses and springs gives you a string, such as a guitar or piano string. This is because every small piece of a string has mass, and every small piece stretches the way a spring does. So a string vibrates in modes the same way a chain of masses does, only with infinitely many masses and springs. When the masses and springs are spread over a surface instead of along a line, the result is a membrane, such as a drum or the vocal folds."
+    },
+    {
+     "i": 9,
+     "source": "Predicted",
+     "q": "What happens to the frequency of a single mass on a spring if you make the spring stiffer? If you make the mass heavier?",
+     "a": "If you make the spring stiffer, the frequency of a single mass on a spring goes up. This is because a stiffer spring pulls the mass back toward equilibrium (its resting position) with more force. So the mass turns around sooner, and each cycle takes less time.\n\nIf you make the mass heavier, the frequency goes down. This is because a heavier mass is harder to start and stop. So each back-and-forth cycle takes longer, and the system vibrates more slowly."
+    }
+   ]
+  },
+  {
+   "id": "network-forward",
+   "title": "Neural networks: inner products, weights and decisions",
+   "blocks": [
+    {
+     "i": 0,
+     "ref": "Lecture 14 · p21",
+     "main": "**The vowel network is a neural network that takes in a vowel as two numbers and picks a word.** The two input numbers are **F1 and F2** (the first and second formants, which are frequency regions with strong acoustic energy). The network chooses among five words, **done, dune, dean, Don and Dan**.",
+     "sub": [
+      "A low F1 and a high F2 is the vowel /i/, so the correct answer for that input is dean."
+     ],
+     "end": "So the whole network turns two formant values into one choice among five words."
+    },
+    {
+     "i": 1,
+     "ref": "Lecture 14 · p23",
+     "main": "**Each neuron in the network multiplies each incoming activation by its weight and adds up the results.** An incoming **activation** is a number that comes into the neuron from the layer before it. This sum is called the **inner product**, and it is the core calculation of all AI. A **weight** is a positive or negative number that determines how much an input counts.",
+     "sub": [
+      "A positive weight leaves the sign of the input the same, so a positive input stays positive. A negative weight changes the sign to the opposite. For example, if the input is +3, a weight of +2 gives +6, so it stays positive. A weight of −2 gives −6, so it becomes negative.",
+      "**The network's knowledge is stored in its weights**, so learning means changing the weights."
+     ],
+     "end": "So the weights start out random and become useful through learning."
+    },
+    {
+     "i": 2,
+     "ref": "Lecture 14 · p24 · Lecture 15 · p3 · Lecture 16 · p3",
+     "main": "**Forward propagation passes the inner products layer by layer, from the input to the output.** The input layer provides F1 and F2. Each later layer takes the activations from the layer before it, calculates its own results, and passes them on to the next layer.",
+     "sub": [
+      "The output layer gives one number for each of the five words."
+     ],
+     "end": "So a **forward pass** uses the network's current weights to make a guess. The network can make this guess even before it has learned good weights, but then the guess may be wrong."
+    },
+    {
+     "i": 3,
+     "ref": "Lecture 15 · p6 · Lecture 16 · p7",
+     "main": "**The output of the vowel network is a probability distribution over the five words.** A **probability distribution** is a list of probabilities, one for each word. Each number is between 0 and 1, and the numbers **add up to 1**. The word with the largest number is the network's decision.",
+     "sub": [
+      "The correct answer is written as a **one-hot** list, which has a 1 for the correct word and a 0 for every other word.",
+      "For dean, the one-hot list is 0, 0, 1, 0, 0, because dean is the third of the five words."
+     ],
+     "end": "So the outputs can add up to 1 and still put the most probability on the wrong word."
+    },
+    {
+     "i": 4,
+     "ref": "Lecture 15 · p7 · Lecture 16 · p8",
+     "main": "**Whether an output increases or decreases depends on whether the activation and weight are positive or negative.** When both are positive, increasing either one makes the output's probability go **up**. This is because a positive activation times a positive weight gives a positive number, so making either one larger makes that number larger.",
+     "sub": [
+      "If the weight is negative, increasing the positive activation makes that output's probability go **down**."
+     ],
+     "end": ""
+    }
+   ],
+   "questions": [
+    {
+     "i": 0,
+     "source": "Predicted",
+     "q": "If an activation of 1.57 feeds the done output through a weight of positive 0.1, what happens to the probability of done if the weight goes up? If the activation goes up?",
+     "a": "If the weight goes up, the probability of done goes up. This is because the contribution to the done output is the activation times the weight. The activation, 1.57, and the weight, 0.1, are both positive. So a larger weight makes the product larger, and the probability of done goes up.\n\nIf the activation goes up, the probability of done also goes up. This is because the weight is still positive, so a larger positive activation also makes the product larger.\n\nOnly the signs matter here, so you do not need to do the multiplication."
+    },
+    {
+     "i": 1,
+     "source": "Predicted",
+     "q": "What happens to the probability of done if that same weight were negative and the activation went up?",
+     "a": "If that same weight were negative and the activation went up, the probability of done would go down. This is because a positive activation times a negative weight gives a negative number. A larger activation makes that number more negative. For example, 1.57 times −0.1 gives −0.157, and 2 times −0.1 gives −0.2. So the contribution to the done output becomes more negative, and the probability of done goes down."
+    },
+    {
+     "i": 2,
+     "source": "Predicted",
+     "q": "Is 0.2, 0.3, 0.1, 0.2, 0.3 a valid probability distribution?",
+     "a": "No, 0.2, 0.3, 0.1, 0.2, 0.3 is not a valid probability distribution. This is because these numbers add up to 1.1. A probability distribution must add up to exactly 1. So this list is not valid, because its total is 0.1 too high."
+    },
+    {
+     "i": 3,
+     "source": "Based on HW5 5",
+     "q": "The first of five categories is correct. Write the desired output.",
+     "a": "The desired output (the correct answer the network should give) is 1, 0, 0, 0, 0. This is because the first category is correct, so it gets a 1. Every other category is wrong, so each one gets a 0. So all of the probability is on the correct category."
+    },
+    {
+     "i": 4,
+     "source": "Lab 9",
+     "q": "The desired output over done, dune, dean, Don, Dan is 0, 0, 0, 1, 0, and the network outputs 0.10, 0.15, 0.60, 0.10, 0.05. Which vowel was said, which did the network guess, and what is the loss?",
+     "a": "Don was said. This is because the desired output, 0, 0, 0, 1, 0, has its 1 in the fourth position, and Don is the fourth word.\n\nThe network guessed dean. This is because dean has the largest probability in the network's output, 0.60.\n\nThe loss is a number that measures how far the computed output is from the desired output. For example, it measures how much probability the network put on dean, where the desired output has a 0."
+    },
+    {
+     "i": 5,
+     "source": "Based on HW5 3",
+     "q": "What does Linear mean in the network code?",
+     "a": "In the network code, Linear means the layer computes inner products. Each neuron multiplies each incoming number by its weight and adds up the results. A Linear layer does nothing else after that. So its outputs are just those sums."
+    }
+   ]
+  },
+  {
+   "id": "training",
+   "title": "Training results: chance, overlap and repeated runs",
+   "blocks": [
+    {
+     "i": 0,
+     "ref": "Lecture 15 · p9 · Lecture 16 · p10",
+     "main": "**The vowel network is trained on a table of real vowel recordings, and each row of formants is paired with its vowel.** The input table has two columns, F1 and F2 (the first and second formants). The target table (the table of correct answers) has five columns, one for each word.",
+     "sub": [
+      "For dean, the target row has a 1 in the dean column and a 0 in every other column.",
+      "If the rows got mixed up, each row of formants would be paired with the wrong vowel. So the network would learn the wrong word for those formants."
+     ],
+     "end": ""
+    },
+    {
+     "i": 1,
+     "ref": "Lecture 16 · p5",
+     "main": "**When the F1 and F2 values of real speakers are plotted, the vowels overlap a lot.** Each dot on the plot is one recording. Recordings with nearly the same F1 and F2 can be different vowels.",
+     "sub": [
+      "**Peterson and Barney** found this overlap in the early 1950s.",
+      "Even a person would have to guess for a point in the middle of the overlap."
+     ],
+     "end": "So one pair of formant values does not always belong to just one vowel."
+    },
+    {
+     "i": 2,
+     "ref": "Lecture 16 · p15",
+     "main": "**Accuracy is how often the network picks the right word, and it starts at chance.** Chance is the accuracy you get by guessing at random. With random weights, the network knows nothing, so it can only guess. A random guess among **five** vowels is right one time in five, so accuracy starts at **20 percent**.",
+     "sub": [
+      "With ten categories, chance would be 10 percent, because a random guess would be right one time in ten.",
+      "Each pass of learning is called an **epoch**, and a problem like this takes thousands of epochs.",
+      "The network jumps to about 40 percent and levels off near **45 percent**. It stops there because the real vowel data **overlap** so much."
+     ],
+     "end": ""
+    },
+    {
+     "i": 3,
+     "ref": "Lecture 16 · p16",
+     "main": "**Ten training runs that start from different random weights take different paths but end at the same accuracy.** Each run begins with its own random weights, so each one learns along its own path.",
+     "sub": [
+      "Children are similar, because they hear different input but learn the same language."
+     ],
+     "end": ""
+    },
+    {
+     "i": 4,
+     "ref": "Also know · Lecture 16",
+     "main": "**Children learning English first use forms from memory and later learn the pattern behind them, as Carol Chomsky observed.** At first, children say went correctly because they have memorized it. Then they learn the pattern of adding -ed for the past tense, so they start saying goed.",
+     "sub": [
+      "Later they learn that went is an exception to the pattern."
+     ],
+     "end": ""
+    }
+   ],
+   "questions": [
+    {
+     "i": 0,
+     "source": "Based on HW5 10",
+     "q": "Why does accuracy start at 20 percent?",
+     "a": "Accuracy starts at 20 percent because the network's first guesses are no better than chance. This is because the network starts with random weights, so it knows nothing. Guessing at random among five vowels is right one time in five. One in five is 20 percent, so that is where accuracy starts."
+    },
+    {
+     "i": 1,
+     "source": "Predicted",
+     "q": "Why does accuracy start at 10 percent for a network with ten output categories?",
+     "a": "Accuracy starts at 10 percent for a network with ten output categories because its first guesses are no better than chance. This is because a network with random weights knows nothing yet. A random guess among ten categories is right one time in ten. One in ten is 10 percent, so that is where accuracy starts."
+    },
+    {
+     "i": 2,
+     "source": "Predicted",
+     "q": "Why does the vowel network level off near 40 to 45 percent instead of 100 percent?",
+     "a": "The vowel network levels off near 40 to 45 percent instead of 100 percent because the real formant data for the five vowels overlap a great deal. This is because many recordings with nearly the same F1 and F2 belong to different vowels. For a point in the middle of the overlap, even a person would have to guess. So no network can classify those points reliably, and accuracy stays well below 100 percent."
+    },
+    {
+     "i": 3,
+     "source": "Predicted",
+     "q": "Ten training runs start from different random weights. What happens?",
+     "a": "When ten training runs start from different random weights, all ten end at about the same accuracy, even though they take different paths. This is because stochastic gradient descent (SGD, the method that updates the weights in small steps) involves chance along the way. So some runs jump up early, and some stay at chance longer. The end point is still the same for all ten runs."
+    }
+   ]
+  },
+  {
+   "id": "gestalt-cloze",
+   "title": "Gestalt completion and the cloze test",
+   "blocks": [
+    {
+     "i": 0,
+     "ref": "Also know · Lecture 17",
+     "main": "**Gestalt psychology studies how people see whole patterns.** In the Gestalt figure, people see a triangle even though no triangle is drawn. They see it because a large part of human knowledge is completing what is missing.",
+     "sub": [
+      "**Closure** is the Gestalt term for completing a familiar pattern that is not quite finished. For example, people see a broken circle as a whole circle."
+     ],
+     "end": ""
+    },
+    {
+     "i": 1,
+     "ref": "Also know · Lecture 17",
+     "main": "**In a cloze test, words are removed from a text, and people fill them in.** The name cloze comes from closure. The test measures knowledge by asking someone to complete a sequence.",
+     "sub": [
+      "An LLM (large language model) that predicts the next word is doing a cloze test again and again."
+     ],
+     "end": "So training a system only to predict the missing piece turns out to copy human thinking."
+    }
+   ],
+   "questions": [
+    {
+     "i": 0,
+     "source": "Predicted",
+     "q": "Describe the Gestalt principle of closure, and how an LLM uses it to learn.",
+     "a": "The Gestalt principle of closure is completing a familiar pattern that is not quite finished. For example, people see a triangle where none is drawn, and they see a broken circle as a whole circle.\n\nAn LLM (large language model) uses closure to learn by doing the same kind of completion. It predicts the missing next piece of a sequence again and again. When its prediction is wrong, it corrects its weights. So it learns by completing sequences over and over."
+    },
+    {
+     "i": 1,
+     "source": "Predicted",
+     "q": "What is a cloze test, and why is an LLM's training like one?",
+     "a": "A cloze test is a test where words are removed from a text and people fill them in. So it tests knowledge by asking someone to complete a sequence.\n\nAn LLM's training is like a cloze test because the LLM (large language model) is trained by filling in the next word over and over. So for an LLM, knowing something means being able to complete the sequence."
+    },
+    {
+     "i": 2,
+     "source": "Predicted",
+     "q": "Why do people see a triangle in the Gestalt figure?",
+     "a": "People see a triangle in the Gestalt figure because they complete the missing parts of a familiar pattern. No triangle is actually drawn, but people fill in what is missing. This completion is the Gestalt principle of closure."
+    }
+   ]
+  },
+  {
+   "id": "agentic",
+   "title": "Agentic systems and Software 3.0",
+   "blocks": [
+    {
+     "i": 0,
+     "ref": "Also know · Lectures 17 and 18",
+     "main": "**An agentic system is a group of LLMs (large language models) connected so that one LLM's output becomes the next LLM's input.** In AI today, an **agent** is just an LLM. In one example, an outline LLM plans the answer, and a writing LLM writes it.",
+     "sub": [
+      "A critic LLM checks the draft, and a revision LLM works back and forth with the critic.",
+      "A final LLM produces the answer that the user sees."
+     ],
+     "end": ""
+    },
+    {
+     "i": 1,
+     "ref": "Also know · Lectures 17 and 18",
+     "main": "**The critic loop sends the draft back and forth between the critic and the reviser.** The loop continues until the critic is satisfied or a limit is reached. This loop greatly reduced **hallucination** (when an LLM makes up false statements).",
+     "sub": [
+      "Once each LLM is trained, its weights usually do not change.",
+      "The agents share a common memory, where they write and read information."
+     ],
+     "end": ""
+    },
+    {
+     "i": 2,
+     "ref": "Lecture 18 · p8",
+     "main": "**Software 1.0, 2.0 and 3.0 are three ways to build a program.** **Software 1.0** is writing a program in a programming language such as Python. **Software 2.0** is training a neural network on input and output data, so the program is the network's weights.",
+     "sub": [
+      "**Software 3.0** is having an agentic system build and run the program from instructions written in plain English.",
+      "Building a program this way is called **vibe coding**."
+     ],
+     "end": ""
+    }
+   ],
+   "questions": [
+    {
+     "i": 0,
+     "source": "Lab 9",
+     "q": "What is an agentic system, in terms of LLMs? Describe the example system.",
+     "a": "An agentic system is a graph (a set of connected parts) of LLMs (large language models), each with its own job. The LLMs are connected so that one LLM's output becomes the next LLM's input.\n\nIn the example system, one LLM outlines, one writes, one critiques, one revises and one produces the final version. The critic and the reviser form a loop. So the draft keeps going back until the critic is satisfied or the limit is reached."
+    },
+    {
+     "i": 1,
+     "source": "Lab 9",
+     "q": "What does the critic loop do, and what does it prevent that was common in earlier LLMs?",
+     "a": "The critic loop sends the draft back and forth between the critic and the reviser until the critic is satisfied. The critic checks each draft, and the reviser fixes the errors the critic finds. So errors are caught and fixed before the answer is shown to the user.\n\nThe critic loop prevents hallucination (when an LLM makes up false statements), which was a common problem in earlier LLMs."
+    },
+    {
+     "i": 2,
+     "source": "Predicted",
+     "q": "What would happen if the critic LLM were removed?",
+     "a": "If the critic LLM were removed, the draft would go straight from writing to the final answer without being checked. This is because the critic is the LLM that checks the draft. So more made-up statements would reach the user. The critic loop is what greatly reduced hallucination, so without it that reduction would be lost."
+    },
+    {
+     "i": 3,
+     "source": "Predicted",
+     "q": "What is the difference between Software 2.0 and Software 3.0?",
+     "a": "The difference between Software 2.0 and Software 3.0 is how the program gets built.\n\nIn Software 2.0, a neural network is trained on input and output data, so the program is the network's weights.\n\nIn Software 3.0, an agentic system builds and runs the program from plain English instructions. Building a program this way is called vibe coding."
+    }
+   ]
+  }
+ ],
+ "flags": [
+  "training block 4: the went/goed/went pattern (overregularization) is usually credited to Roger Brown, Courtney Cazden and later Gary Marcus et al.; Carol Chomsky is better known for later syntax acquisition. Kept 'as Carol Chomsky observed' as given; check this matches what was taught.",
+  "agentic Q1 says the critic loop 'prevents' hallucination, while block 1 and Q2 say it 'greatly reduced' hallucination. Kept both as given; 'reduced' is the more accurate version.",
+  "training: block 3 says the ten runs end at 'the same accuracy', Q3 says 'about the same'. Kept both.",
+  "network-forward Q4: no numeric loss value is given; the answer only defines loss. Kept as given.",
+  "Added glosses not in the original: F1/F2 as formants, activation, stiffness, probability distribution, desired output, SGD, hallucination, graph. Also added connecting steps (e.g. adding -ed for the past tense, dean is the third word, Don is the fourth word, 1.57 times −0.1 example)."
+ ]
+}

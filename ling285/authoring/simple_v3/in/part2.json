@@ -1,0 +1,492 @@
+[
+ {
+  "id": "springiness",
+  "title": "Where the springiness is, and what a local change does",
+  "blocks": [
+   {
+    "i": 0,
+    "ref": "Lecture 12 · p9, 11, 22 · Lecture 13 · p2",
+    "main": "**In a vibrating system such as a string or a chain of masses, each spot in a mode is either mostly moving or mostly stretching.** **Where the system moves the most, it stretches the least, and where it does not move, it stretches the most.** So the springiest locations are the points of **no movement**.",
+    "sub": [
+     "The points of no movement are the fixed ends and the points where the mode crosses its resting line.",
+     "A **fixed end is always springy** in every mode, because the system cannot move there.",
+     "A **free end is always moving** in every mode, because nothing holds it in place."
+    ],
+    "end": "So moving spots and springy spots take turns along the system."
+   },
+   {
+    "i": 1,
+    "ref": "Lecture 12 · p9, 11, 22 · Lecture 13 · p2",
+    "main": "**A small change at one spot affects each mode according to what that spot is doing in that mode.** Extra mass lowers a mode's frequency **only where that mode is moving**. Extra stiffness raises a mode's frequency **only where that mode is stretching**.",
+    "sub": [
+     "At a spot with lots of motion and little stretching, the extra mass counts, so **the frequency goes down**.",
+     "At a spot with no motion and lots of stretching, the extra stiffness counts, so **the frequency goes up**.",
+     "Adding mass and stiffness together does **not** cancel out, because at one spot in one mode only one of the two matters. The only exception is a single mass on a single spring."
+    ],
+    "end": "That is why the same change can raise one mode and lower another."
+   },
+   {
+    "i": 2,
+    "ref": "Also know · Lectures 12, 13 and 14",
+    "main": "**Perturbation theory predicts how a small change in one location affects how something vibrates.** In the late nineteenth century, researchers tested this by placing small amounts of wax on different parts of a drum.",
+    "sub": [
+     "When wax was placed where the drum vibrated a lot, the extra mass made the drum vibrate more slowly, so its frequency (pitch) went down.",
+     "When wax was placed where the drum did not vibrate, it had no effect on the drum's frequency or sound."
+    ],
+    "end": "So the wax mattered only where the drum was moving."
+   }
+  ],
+  "questions": [
+   {
+    "i": 0,
+    "source": "Review 6",
+    "q": "This is Mode 5 of a string fixed at both ends. Circle the areas where there is the most springiness.",
+    "a": "The most springiness is at the two fixed ends and at the four points where the string crosses its middle line, so six places should be circled. The string does not move at those points, but the pieces on either side move in opposite directions. So the string there is stretched and compressed the most. The tops of the five bumps have the most motion and the least springiness, so they are not circled."
+   },
+   {
+    "i": 1,
+    "source": "Predicted",
+    "q": "This is Mode 3 of a string fixed at both ends. Where is the most springiness, and where is the most motion?",
+    "a": "The most springiness is at the two fixed ends and at the two points where the string crosses its middle line, four places in all. The string does not move at those points, so it is stretched and compressed the most there. The most motion is at the tops of the three bumps, where the string swings the most and is hardly stretched."
+   },
+   {
+    "i": 2,
+    "source": "Review 11",
+    "q": "This picture shows Mode 4 of a building. Circle the areas where there is the most springiness.",
+    "a": "The most springiness is at the fixed base and at the three points where the building crosses its resting position, so four places should be circled. Those points do not move, but the parts above and below them move in opposite directions. So the structure there stretches and compresses the most. The free top moves the most and is the least springy, so it is not circled."
+   },
+   {
+    "i": 3,
+    "source": "Predicted",
+    "q": "This diagram shows Mode 2 of a building. Where is the most springiness?",
+    "a": "The most springiness is at the fixed base and at the one point above it where the building crosses its resting position. Those two points do not move, so the structure there is stretched and compressed the most. The free top moves the most, so it is the least springy."
+   },
+   {
+    "i": 4,
+    "source": "Review 14",
+    "q": "If we increase the stiffness and mass of the string at the boxed location (where Mode 3 crosses its middle line and Mode 4 is at the top of a bump), what happens to Mode 3 and Mode 4's frequencies, and why?",
+    "a": "Mode 3's frequency goes up and Mode 4's frequency goes down. In Mode 3 the boxed spot does not move but is stretched the most, so the added mass does nothing and the added stiffness raises the frequency. In Mode 4 the boxed spot moves the most and is not stretched, so the added mass lowers the frequency and the added stiffness does nothing."
+   },
+   {
+    "i": 5,
+    "source": "Predicted",
+    "q": "The box is moved to a spot where Mode 3 moves the most and Mode 4 crosses its middle line. Mass and stiffness are added there. What happens?",
+    "a": "Now Mode 3 goes down and Mode 4 goes up. In Mode 3 the spot moves the most and is hardly stretched, so the added mass lowers the frequency. In Mode 4 the spot does not move but is stretched the most, so the added stiffness raises the frequency."
+   },
+   {
+    "i": 6,
+    "source": "Review 15",
+    "q": "If we increase the mass and stiffness of the building at its very top, what happens to the frequency of Mode 4, and why?",
+    "a": "The frequency of Mode 4 goes down. The top of the building is the free end, so in every mode it moves the most and is hardly stretched. The added mass counts there and lowers the frequency. The added stiffness does nothing, because nothing is stretching at the top."
+   },
+   {
+    "i": 7,
+    "source": "Predicted",
+    "q": "If we increase the mass and stiffness of the building at its very base, what happens to the frequency of Mode 4, and why?",
+    "a": "The frequency of Mode 4 goes up. The base is the fixed end, so it never moves but is always stretched and compressed. The added mass does nothing there because the base does not move, and the added stiffness raises the frequency."
+   },
+   {
+    "i": 8,
+    "source": "Lab 9",
+    "q": "In Mode 3 of a string fixed at both ends, point B does not move and point C is at the bottom of a bump. What happens to Mode 3 if you add a small weight at B? At C? If you stiffen the string at B?",
+    "a": "A weight at B leaves Mode 3 the same, because B does not move in Mode 3. A weight at C lowers Mode 3's frequency, because C swings the most and the extra mass counts there. Stiffening the string at B raises Mode 3's frequency, because B is where the string stretches the most."
+   },
+   {
+    "i": 9,
+    "source": "Lab 9",
+    "q": "The same spot B is moving in Mode 1. Does a weight at B change Mode 1's frequency?",
+    "a": "Yes, a weight at B lowers Mode 1's frequency. In Mode 1 the whole string is one bump, so the spot at B is moving. Extra mass at a moving spot slows the vibration, so the frequency goes down."
+   }
+  ]
+ },
+ {
+  "id": "source-filter",
+  "title": "Source and filter, and F0",
+  "blocks": [
+   {
+    "i": 0,
+    "ref": "Lecture 14 · p15",
+    "main": "**Speech is made by a source and a filter, and the source is the vocal folds.** The vocal folds produce **harmonics** at whole-number multiples of **F0**, the base frequency. With an F0 of 150 Hz, the first five harmonics are 150, 300, 450, 600 and 750 Hz.",
+    "sub": [
+     "Heavy, loose vocal folds vibrate slowly, so they give a **low F0**.",
+     "Tight, light vocal folds vibrate quickly, so they give a **high F0**, and the harmonics are spaced farther apart."
+    ],
+    "end": "So F0 sets the spacing of the harmonics."
+   },
+   {
+    "i": 1,
+    "ref": "Lecture 13 · p20 · Lecture 14 · p16",
+    "main": "**The filter is the air in the vocal tract, and its formants decide which harmonics come out loud.** **A formant makes the harmonics closest to it louder, and harmonics far from any formant come out weaker.** The outline of the harmonic heights is the **envelope**, and its peaks show the formants.",
+    "sub": [
+     "The harmonics stay the same from vowel to vowel, and only their heights change.",
+     "The envelope is what makes each vowel distinct.",
+     "Changing F0 changes the spacing of the harmonics while the vowel stays the same."
+    ],
+    "end": "So pitch and vowel are separate, because the source sets the harmonics and the filter sets the envelope."
+   },
+   {
+    "i": 2,
+    "ref": "Lecture 13 · p25 · Lecture 14 · p17",
+    "main": "**A high F0 spreads the harmonics far apart, so few harmonics fall near each formant.** A low voice has many harmonics close together near each formant, so the envelope shows clearly. A high voice has only a few, so the formants are hard to see.",
+    "sub": [
+     "The vocal tract still has its formants, but there are not enough harmonics near them to show the envelope."
+    ],
+    "end": "That is why a toddler's or a soprano's vowels are hard to identify."
+   },
+   {
+    "i": 3,
+    "ref": "Also know · Lectures 13 and 14",
+    "main": "**F0 also carries meaning in speech.** F0 falls at the end of a statement and rises at the end of a question.",
+    "sub": [
+     "F0 also signals sarcasm or pretending."
+    ],
+    "end": ""
+   }
+  ],
+  "questions": [
+   {
+    "i": 0,
+    "source": "Predicted",
+    "q": "What does the source supply and what does the filter do in speech?",
+    "a": "The vocal folds are the source, and they supply the harmonics, which are whole-number multiples of F0. The air in the vocal tract is the filter. Its formants make the harmonics near them louder and the ones far from them weaker. So the source decides which frequencies are present, and the filter decides which of them are loud."
+   },
+   {
+    "i": 1,
+    "source": "Predicted",
+    "q": "Two vowels are said at the same pitch. What is the same and what is different in their spectra?",
+    "a": "The harmonics are the same, but the heights of the harmonics are different. The harmonics match because the vocal folds vibrate at the same F0 for both vowels. The heights differ because each vowel has its constriction in a different place, so the formants move and the envelope changes."
+   },
+   {
+    "i": 2,
+    "source": "Predicted",
+    "q": "Why are a toddler's vowels hard to identify?",
+    "a": "A toddler's vowels are hard to identify because a toddler has a very high F0, so the harmonics are spaced far apart. Few harmonics fall near each formant, and a formant can fall between two harmonics, so the envelope is hard to see. The formants are still there, but there are too few harmonics to reveal them."
+   },
+   {
+    "i": 3,
+    "source": "Predicted",
+    "q": "If the vocal folds become tighter, what happens to F0 and to the spacing of the harmonics?",
+    "a": "F0 goes up, and the harmonics are spaced farther apart. Tighter vocal folds are stiffer, and more stiffness raises the frequency. The harmonics are multiples of F0, so when F0 goes up they spread farther apart."
+   }
+  ]
+ },
+ {
+  "id": "pytorch",
+  "title": "Reading the PyTorch code",
+  "blocks": [
+   {
+    "i": 0,
+    "ref": "Lecture 14 · p22 · Lecture 15 · p2 · Lecture 16 · p2",
+    "main": "**The vowel network is written in PyTorch as a short list of layers.** The network has 2 inputs, three hidden layers of 3, 2 and 4 neurons, and 5 outputs. The 2 inputs are F1 and F2, and the 5 outputs are the five words.",
+    "sub": [
+     "The import lines bring in the **torch library**, which already contains the programs for inner products and backpropagation.",
+     "So none of that math has to be written by hand."
+    ],
+    "end": ""
+   },
+   {
+    "i": 1,
+    "ref": "Lecture 14 · p25",
+    "main": "**In the code, nn.Sequential means the network is a sequence of layers, one after another.** Each nn.Linear line is a processing layer that computes inner products. **nn.Linear(2, 3)** takes input from 2 neurons and has 3 neurons.",
+    "sub": [
+     "The first number on each line must equal the second number on the line before it. The vowel network has Linear(2, 3), Linear(3, 2), Linear(2, 4) and Linear(4, 5).",
+     "The **input layer gets no line**, because it does no processing, and the **last line is always the output layer**.",
+     "nn.Sigmoid lines are not layers, so they are not counted."
+    ],
+    "end": "So the four Linear lines are the three hidden layers and the output layer."
+   },
+   {
+    "i": 2,
+    "ref": "Lecture 15 · p10 · Lecture 16 · p11",
+    "main": "**The training lines make a guess, measure the mistake and change the weights.** **SGD** is stochastic gradient descent, and **lr** is the learning rate. The **loss** is the mistake.",
+    "sub": [
+     "**backward** runs backpropagation, and **step** updates the weights.",
+     "**A higher learning rate learns faster but less accurately, and a lower one learns more accurately but more slowly.**"
+    ],
+    "end": ""
+   }
+  ],
+  "questions": [
+   {
+    "i": 0,
+    "source": "Review 20",
+    "q": "How many hidden layers does this network have: Linear(2, 3), Linear(3, 2), Linear(2, 4), Linear(4, 5)?",
+    "a": "The network has three hidden layers, with three, two and four neurons. It has five layers in all, the input layer, three hidden layers and the output layer, but only four Linear lines. That is because the input layer does no processing, so it gets no line, and the last line is the output layer."
+   },
+   {
+    "i": 1,
+    "source": "Review 21",
+    "q": "Write the code for the network with an additional hidden layer of 3 neurons right before the output layer, and adjust the other layers.",
+    "a": "Keep the first three lines, change the old last line from Linear(4, 5) to Linear(4, 3), and add a new last line, Linear(3, 5). The network becomes Linear(2, 3), Linear(3, 2), Linear(2, 4), Linear(4, 3), Linear(3, 5). This works because every layer still takes in exactly as many numbers as the layer before it produces."
+   },
+   {
+    "i": 2,
+    "source": "Predicted",
+    "q": "Add a hidden layer of 6 neurons right after the input instead. What changes?",
+    "a": "The first line becomes Linear(2, 6), and a new second line, Linear(6, 3), feeds the old first hidden layer. The rest stays the same, so the network is Linear(2, 6), Linear(6, 3), Linear(3, 2), Linear(2, 4), Linear(4, 5)."
+   },
+   {
+    "i": 3,
+    "source": "Lab 9",
+    "q": "A network is written Linear(4, 3), Linear(3, 5), Linear(5, 2), Linear(2, 4). How many hidden layers, inputs and outputs does it have?",
+    "a": "It has three hidden layers, with 3, 5 and 2 neurons. It takes 4 numbers as input and has 4 output neurons, so it decides among 4 categories."
+   },
+   {
+    "i": 4,
+    "source": "Predicted",
+    "q": "How many hidden layers does a network have if its code is Linear(2, 3), Sigmoid, Linear(3, 2), Sigmoid, Linear(2, 4), Sigmoid, Linear(4, 5)?",
+    "a": "It still has three hidden layers. Sigmoid lines are not layers, because they only apply the sigmoid to the layer before them. So only the four Linear lines count, and the last one is the output layer."
+   },
+   {
+    "i": 5,
+    "source": "Predicted",
+    "q": "What do the import lines do, and what does Sequential mean?",
+    "a": "The import lines bring the torch library into Python, so the programs for inner products and backpropagation do not have to be written by hand. Sequential means the network is a sequence of layers, one after another. Each layer takes its input from the layer before it."
+   },
+   {
+    "i": 6,
+    "source": "Based on HW5 9",
+    "q": "What happens if the learning rate is raised from 0.1 to 0.3?",
+    "a": "The network learns faster, but its accuracy goes down. A larger learning rate takes bigger steps, so the network approaches the answer quickly but keeps overshooting it."
+   },
+   {
+    "i": 7,
+    "source": "Lab 9",
+    "q": "Two learning curves differ only in learning rate. One rises fast and jumps around, and the other rises slowly and smoothly. Which used the larger learning rate?",
+    "a": "The one that rises fast and jumps around used the larger learning rate. Bigger steps get near the answer quickly but overshoot, so that curve jumps around. Smaller steps are slower, so the other curve rises slowly but smoothly."
+   }
+  ]
+ },
+ {
+  "id": "llm-sequences",
+  "title": "From the vowel network to an LLM: many vectors in, the next item out",
+  "blocks": [
+   {
+    "i": 0,
+    "ref": "Lecture 17 · p5 · Lecture 18 · p5",
+    "main": "**An LLM is given a sequence of vectors and predicts the next one.** It is given 15 vectors and predicts the sixteenth. The sixteenth is a probability distribution over what could come next, such as each of about 30,000 English words.",
+    "sub": [
+     "The vectors can be words, frames of a spectrogram, patches of an image or the amino acids of a protein.",
+     "The LLM only ever sees lists of numbers, so the same design works for all of them."
+    ],
+    "end": ""
+   },
+   {
+    "i": 1,
+    "ref": "Lecture 17 · p4 · Lecture 18 · p2",
+    "main": "**Language depends on connections between words that are far apart.** In \"the dog that my parents, who I love very much, ...\", the next word is **barks**. Barks goes with the singular dog, no matter how many words come in between.",
+    "sub": [
+     "An LLM learns this from data, not from a taught rule."
+    ],
+    "end": ""
+   },
+   {
+    "i": 2,
+    "ref": "Also know · Lectures 17 and 18",
+    "main": "**An LLM learns by predicting the next word, such as mat after \"the cat sat on the\".** When the prediction is wrong, backpropagation adjusts the weights. This is repeated with a huge number of sentences.",
+    "sub": [
+     "Underneath everything, inference is inner products, and learning is stochastic gradient descent plus dynamic programming.",
+     "An LLM predicts from past data, so something its data does not cover can make it make things up, which is called **hallucination**."
+    ],
+    "end": ""
+   }
+  ],
+  "questions": [
+   {
+    "i": 0,
+    "source": "Lab 9",
+    "q": "What is the difference between the input and output of the vowel network and those of an LLM?",
+    "a": "The vowel network takes one vector, F1 and F2, and decides among five categories. An LLM takes many vectors in sequence, such as the words so far, and decides among a whole vocabulary for the next item."
+   },
+   {
+    "i": 1,
+    "source": "Predicted",
+    "q": "An LLM is given 15 vectors and predicts the sixteenth. Name three things the vectors can stand for.",
+    "a": "The vectors can stand for the words of a sentence, the frames of a spectrogram or the patches of an image. They can also stand for the amino acids of a protein. The same kind of prediction works for all of them, because the LLM only sees lists of numbers."
+   },
+   {
+    "i": 2,
+    "source": "Predicted",
+    "q": "What does the sixteenth vector look like, and does it add up to anything?",
+    "a": "The sixteenth vector is a probability distribution over what could come next. It has one number for each possible next item, such as each English word. Because it is a probability distribution, its numbers add up to one."
+   },
+   {
+    "i": 3,
+    "source": "Predicted",
+    "q": "Why is the next word barks and not bark in \"the dog that my parents, who I love very much, ... \"?",
+    "a": "The next word is barks because it goes with the singular word dog, no matter how many words come in between. This holds even when the plural word parents comes in between. To predict barks, an LLM has to use a word far back in the sequence, and it learns to do this from data by computing inner products layer after layer."
+   },
+   {
+    "i": 4,
+    "source": "Predicted",
+    "q": "Why can an LLM hallucinate?",
+    "a": "An LLM can hallucinate because it predicts from past data. When it meets something its data does not cover, its prediction can turn into a guess, so it can make things up."
+   }
+  ]
+ },
+ {
+  "id": "phonotactics",
+  "title": "Phonotactics and guessing the next letter",
+  "blocks": [
+   {
+    "i": 0,
+    "ref": "Lecture 17 · p6 · Lecture 18 · p6",
+    "main": "**Phonotactics are the rules for which sounds can follow which in a language.** Every speaker knows them without being taught. A simple English syllable is a consonant, a vowel and a consonant, as in **Don** or **cup**.",
+    "sub": [
+     "Mat, sit, dog, fish and shave are also consonant, vowel, consonant.",
+     "The pattern is about sounds, not letters, so the silent e of shave does not count.",
+     "Ship, chin and bath also count, because sh, ch and th are each one sound spelled with two letters."
+    ],
+    "end": ""
+   },
+   {
+    "i": 1,
+    "ref": "Lecture 17 · p6 · Lecture 18 · p6",
+    "main": "**Consonants can also form clusters before or after the vowel.** A cluster before the vowel is an **onset**, as in split, flat, black and glad. A cluster after the vowel is a **coda**, as in desk, help, milk and lamp.",
+    "sub": [
+     "The order is a mirror image around the vowel, so flat is a word and lfat is impossible.",
+     "Each real word has an impossible twin that puts the wrong consonant next to the vowel, such as help and hepl, or lamp and lapm.",
+     "Sblit and desb are impossible too, which is why a product called desb would sound un-English."
+    ],
+    "end": ""
+   },
+   {
+    "i": 2,
+    "ref": "Lecture 17 · p6 · Lecture 18 · p6",
+    "main": "**A pair of consonants can be fine across a syllable break and impossible at the start of a syllable.** Atlantic is a word because t and l are on opposite sides of a syllable break. Tlantic is impossible because tl cannot start an English syllable.",
+    "sub": [
+     "The sound ng can end a syllable but never start one."
+    ],
+    "end": ""
+   },
+   {
+    "i": 3,
+    "ref": "Also know · Lectures 17 and 18",
+    "main": "**Each language has its own phonotactics.** Mandarin allows only nasal sounds at the end of a syllable. Russian and Polish allow clusters like zb or dl at the start of a word.",
+    "sub": [
+     "Spanish speakers add an e before st at the start of a word, as in estadio."
+    ],
+    "end": ""
+   },
+   {
+    "i": 4,
+    "ref": "Lecture 17 · p7 · Lecture 18 · p7",
+    "main": "**Guessing the next letter of a word depends on phonotactics, and each guess is a probability distribution.** After a vowel, almost any letter can come next, so the distribution is **flat**. At the start of a word, the choices narrow to what an English onset allows.",
+    "sub": [
+     "After ra, almost any letter can come next, such as t, n, r or l, so the distribution is flat.",
+     "After skr, the distribution is **sharply peaked** on a few vowels."
+    ],
+    "end": "So a GPT trained only on this game learns English syllable structure, because guessing the next letter is predicting the sixteenth item."
+   },
+   {
+    "i": 5,
+    "ref": "Lecture 17 · p7 · Lecture 18 · p7",
+    "main": "**At the start of a word, each first letter or cluster allows only a few next letters.** After sp, only l, r or a vowel can come next, never n. After k, a vowel or n can come next, as in knee, but never t.",
+    "sub": [
+     "After b or f, only r, l or a vowel can come next, never n.",
+     "After sh, only a vowel or r can come next, as in shrimp.",
+     "After skr, or after m at the start of a word, only a vowel can come next."
+    ],
+    "end": ""
+   },
+   {
+    "i": 6,
+    "ref": "Lecture 17 · p7 · Lecture 18 · p7",
+    "main": "**Inside a word, the letters so far can make one next letter almost certain.** After bram, the letter b is almost certain, as in bramble.",
+    "sub": [
+     "A new syllable could also start there, so b is not the only possible next letter."
+    ],
+    "end": ""
+   },
+   {
+    "i": 7,
+    "ref": "Also know · Lectures 17 and 18",
+    "main": "**After pl, st and th at the start of a word, the next letter is limited too.** After pl, only a vowel can come, as in play. After st, a vowel or r can come, as in star and street, but not l or k.",
+    "sub": [
+     "After th, r, w or a vowel can come, as in three, thwart and thin, but not l or n."
+    ],
+    "end": ""
+   }
+  ],
+  "questions": [
+   {
+    "i": 0,
+    "source": "Lab 9",
+    "q": "Which could be English words: blick, bnick, sblat, splat, dlag, lisk, lisb, lapm, lamp? For each one that could not, name the problem.",
+    "a": "Blick, splat, lisk and lamp could be English words. Bnick, sblat and dlag are impossible because bn, sb and dl cannot start a syllable. Lisb and lapm are impossible because sb and pm cannot end a syllable."
+   },
+   {
+    "i": 1,
+    "source": "Lab 9",
+    "q": "Each of these starts an English word: pl_, st_ and th_. What could come next, and what could not?",
+    "a": "After pl only a vowel can come, as in play, so a consonant such as n cannot. After st a vowel or r can come, as in star and street, but l and k cannot. After th, r, w or a vowel can come, as in three, thwart and thin, but l and n cannot."
+   },
+   {
+    "i": 2,
+    "source": "Predicted",
+    "q": "After which start is the next-letter distribution flatter, ra_ or skr_? Why?",
+    "a": "The distribution is flatter after ra. After a vowel almost any letter can come next, so the probability is spread over many letters. After skr only a vowel can come, so the probability piles onto a few vowels and the distribution is sharply peaked."
+   },
+   {
+    "i": 3,
+    "source": "Predicted",
+    "q": "Why is Atlantic an English word but tlantic impossible?",
+    "a": "Atlantic is a possible word because its t and l are on opposite sides of a syllable break, so each syllable follows the rules. In tlantic, tl would have to start a syllable, and English does not allow tl at the start of a syllable."
+   },
+   {
+    "i": 4,
+    "source": "Predicted",
+    "q": "Could ngop be an English word? Could flim?",
+    "a": "Ngop could not be an English word, but flim could. The sound ng can end a syllable, as in ring, but it can never start one. Flim is possible because fl is an allowed onset, as in flat, and im is an allowed ending."
+   },
+   {
+    "i": 5,
+    "source": "Predicted",
+    "q": "Why does a GPT trained only to guess the next letter end up knowing English syllable structure?",
+    "a": "A GPT ends up knowing syllable structure because the patterns of English syllables decide which letters can come next. Its predictions can only improve by matching those patterns. So the knowledge ends up in the shape of its probability distributions, which are flat after a vowel and peaked after a start such as skr."
+   },
+   {
+    "i": 6,
+    "source": "Predicted",
+    "q": "Which letter cannot come next after sp_ at the start of a word: l, r, n or a?",
+    "a": "N cannot come next. After sp only l, r or a vowel can come, as in split, spring and spa, because spn is not an allowed English onset."
+   },
+   {
+    "i": 7,
+    "source": "Predicted",
+    "q": "Which letter cannot come next after k_ at the start of a word: a, n or t?",
+    "a": "T cannot come next. After k a vowel or n can come, as in knee, but kt cannot start an English syllable."
+   },
+   {
+    "i": 8,
+    "source": "Predicted",
+    "q": "What can come next after b_ or f_ at the start of a word, and what cannot?",
+    "a": "After b or f, only r, l or a vowel can come next, as in bring, black, frog and flat. N cannot come next, because bn and fn cannot start an English syllable."
+   },
+   {
+    "i": 9,
+    "source": "Predicted",
+    "q": "What can come next after sh_ at the start of a word?",
+    "a": "After sh, only a vowel or r can come next, as in ship and shrimp. Shr is the only consonant cluster that English allows there."
+   },
+   {
+    "i": 10,
+    "source": "Predicted",
+    "q": "What can come next after skr_?",
+    "a": "After skr, only a vowel can come next, as in scream and scrap. Skr already fills the onset, so no other consonant can be added."
+   },
+   {
+    "i": 11,
+    "source": "Predicted",
+    "q": "Why are lfat, hepl and lapm impossible when flat, help and lamp are words?",
+    "a": "Lfat, hepl and lapm are impossible because the order of a cluster is a mirror image around the vowel. In flat and help the l sits right next to the vowel, and in lamp the m does. Each impossible twin puts the wrong consonant next to the vowel, so it breaks the mirror order."
+   },
+   {
+    "i": 12,
+    "source": "Predicted",
+    "q": "Is ship a consonant, vowel, consonant word even though it has four letters?",
+    "a": "Yes, ship is a consonant, vowel, consonant word. The pattern is about sounds, not letters, and sh is one sound. So ship is the consonant sh, the vowel i and the consonant p."
+   }
+  ]
+ }
+]

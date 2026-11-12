@@ -1,0 +1,352 @@
+{
+ "topics": [
+  {
+   "id": "harmonics-formants",
+   "title": "Harmonics and formants: fixed-fixed and fixed-free systems",
+   "blocks": [
+    {
+     "i": 0,
+     "ref": "Lecture 11 · p8 · Lecture 12 · p8, 10 · Lecture 13 · p4, 5",
+     "main": "**In a system fixed at both ends, such as a string or the vocal folds, neither end can move.** Its first mode (the simplest way the system can vibrate) is **half a wave** stretched between the two fixed ends. Each higher mode has to fit a whole number of these half-waves between the ends.",
+     "sub": [
+      "Mode N contains N copies of Mode 1, so its frequency (how many times per second it vibrates) is N times the first frequency.",
+      "These modes at **1, 2, 3, 4 times** the first frequency are called **harmonics**.",
+      "For example, if Mode 1 is 200 Hz, then Mode 5 is five times 200 Hz, which is 1,000 Hz."
+     ],
+     "end": "So in a fixed-fixed system, the modes are spaced apart by the first frequency."
+    },
+    {
+     "i": 1,
+     "ref": "Lecture 11 · p9 · Lecture 12 · p12 · Lecture 13 · p6 · Lecture 14 · p2",
+     "main": "**A membrane such as the vocal folds vibrates across a surface, and it can vibrate in several modes at the same time.** A single point on the membrane moves in every mode that has motion at that point. A **spectrum** separates this combined vibration back into its separate modes.",
+     "sub": [
+      "A spectrum shows frequency on the horizontal axis and amplitude (strength) on the vertical axis.",
+      "It has one spike for each mode that is present. For example, if Mode 1 is 200 Hz, Modes 1 to 6 give spikes at 200, 400, 600, 800, 1,000 and 1,200 Hz."
+     ],
+     "end": "So a spectrum shows which modes are present and how strong each one is."
+    },
+    {
+     "i": 2,
+     "ref": "Lecture 11 · p10 · Lecture 12 · p13",
+     "main": "**A scientific theory is tested by checking whether its prediction comes true.** The theory says the vocal folds are a membrane. This theory predicts **equidistant harmonics** (harmonics that are evenly spaced in frequency).",
+     "sub": [
+      "To test it, a vowel is recorded, and its spectrum is checked in **Praat** (a program for analyzing speech sounds) to see whether the peaks are evenly spaced.",
+      "The recordings showed evenly spaced harmonics, so the prediction was confirmed."
+     ],
+     "end": "So the theory that the vocal folds are a membrane passed its test."
+    },
+    {
+     "i": 3,
+     "ref": "Lecture 11 · p11 · Lecture 12 · p14 · Lecture 13 · p7, 8, 9 · Lecture 14 · p3, 4",
+     "main": "**A fixed-free system is held still at one end and free to move at the other end.** A **building** is fixed to the ground and free at the top. The **air in the vocal tract** works the same way. It is fixed at the closed vocal folds and free at the open lips.",
+     "sub": [
+      "The first mode is a **quarter-wave packet** (one quarter of a wave). It goes from no motion at the fixed end to the most motion at the free end.",
+      "The free end must always be moving. Because of this, packets have to be added two at a time, which gives one, three, five and seven packets.",
+      "So the modes come at **1, 3, 5, 7 times** the first frequency, and these modes are called **formants**."
+     ],
+     "end": "So fixed-free modes are spaced apart by **twice** the first frequency, while fixed-fixed modes are spaced apart by the first frequency."
+    }
+   ],
+   "questions": [
+    {
+     "i": 0,
+     "source": "Review 7",
+     "q": "A string is fixed on both sides. If Mode 1 has frequency 200 Hz, what frequency does Mode 5 have?",
+     "a": "Mode 5 has a frequency of 1000 Hz. This is because in a string fixed at both ends, each mode is a whole-number multiple of the first mode. Mode 5 contains five copies of Mode 1. So the frequency of Mode 5 is five times 200 Hz, which is 1000 Hz."
+    },
+    {
+     "i": 1,
+     "source": "Lab 9",
+     "q": "A string fixed at both ends has Mode 1 at 150 Hz. What are Modes 2 and 3? If one end is freed and Mode 1 stays at 150 Hz, what are Modes 2 and 3 now?",
+     "a": "When the string is fixed at both ends, Mode 2 is 300 Hz and Mode 3 is 450 Hz. This is because a system fixed at both ends has modes at every whole-number multiple of the first. Mode 2 is two times 150 Hz, and Mode 3 is three times 150 Hz. So these modes are 150 Hz apart.\n\nWhen one end is freed, Mode 2 is 450 Hz and Mode 3 is 750 Hz. This is because a system fixed at one end and free at the other has only the odd multiples of the first frequency. Mode 2 is three times 150 Hz, and Mode 3 is five times 150 Hz. So these modes are 300 Hz apart."
+    },
+    {
+     "i": 2,
+     "source": "Review 8",
+     "q": "Why are the frequencies of fixed-fixed vibratory systems spaced the way they are?",
+     "a": "The frequencies of fixed-fixed vibratory systems are spaced evenly, as whole-number multiples of the first frequency. This is because every mode has to fit a whole number of half-waves between the two ends that cannot move. The first mode is half a wave. It goes from no motion at one end, to the most motion in the middle, and back to no motion at the other end. Mode 2 fits two half-waves into the same length, so it vibrates twice as fast. Mode 3 fits three half-waves, so it vibrates three times as fast. Since each mode adds one more half-wave, the spacing between the frequencies stays even."
+    },
+    {
+     "i": 3,
+     "source": "Review 16",
+     "q": "Why are the formants of a fixed-free system 1, 3, 5, etc. multiples of the base frequency?",
+     "a": "The formants of a fixed-free system are 1, 3, 5, etc. multiples of the base frequency because every mode must start with no motion at the fixed end and end with the most motion at the free end. The basic piece is a quarter-wave packet (one quarter of a wave). It goes from no motion at the fixed end to the most motion at the free end. Adding just one more packet would leave a point with no motion at the free end, and that cannot happen. So packets are added two at a time, which gives one, three, five and seven packets. That is why the formant frequencies are odd multiples of the base frequency."
+    },
+    {
+     "i": 4,
+     "source": "Predicted",
+     "q": "If F1 is 500 Hz, what are F2 and F3?",
+     "a": "If F1 (the first formant) is 500 Hz, then F2 is 1500 Hz and F3 is 2500 Hz. This is because the air in the vocal tract is a fixed-free system. In a fixed-free system, the formants are odd multiples of the first formant. So F2 is three times 500 Hz, and F3 is five times 500 Hz. They are not two times and three times 500 Hz."
+    },
+    {
+     "i": 5,
+     "source": "Review 17",
+     "q": "What aspect of speech has the properties in the fixed-free question?",
+     "a": "The formants of the air in the vocal tract have the properties in the fixed-free question. This is because the air in the vocal tract is fixed at the closed vocal folds and free at the open lips. A system like this vibrates only at odd multiples of its first frequency. So the formants (the frequencies at which the air in the vocal tract vibrates) are odd multiples of the first formant."
+    },
+    {
+     "i": 6,
+     "source": "Predicted",
+     "q": "What aspect of speech has frequencies at whole-number multiples, and why?",
+     "a": "The harmonics of the vocal folds are at whole-number multiples of the first frequency. This is because the vocal folds are a membrane held in place along their edges. So they behave like a system fixed at both ends. In a system fixed at both ends, each mode is a whole number of copies of the first mode. That is why the harmonics are at whole-number multiples."
+    },
+    {
+     "i": 7,
+     "source": "Review 12 and 13",
+     "q": "What in speech is a building analogous to, and why does the analogy hold?",
+     "a": "A building is analogous to the air in the vocal tract. This is because both are fixed at one end and free at the other end. The building is fixed to the ground and free at the top. The air in the vocal tract is fixed at the closed vocal folds and free at the open lips. Since the ends match, both are most springy at the fixed end, where they are stretched or compressed the most. Both also move the most at the free end, and both have frequencies at odd multiples of the first frequency. That is why the analogy holds."
+    },
+    {
+     "i": 8,
+     "source": "Predicted",
+     "q": "How is a building different from the air in the vocal tract?",
+     "a": "A building is different from the air in the vocal tract because a building is designed to sway only in Mode 1. The air in the vocal tract vibrates in all of its modes at the same time. Engineers avoid the higher modes in a building. This is because higher modes would move floors in opposite directions, and that could break the structure. In speech, all the modes are used. Speaking changes the mass and stiffness of the air at different locations in the vocal tract, so the formants move."
+    },
+    {
+     "i": 9,
+     "source": "Review 9",
+     "q": "Draw the spectrum for a string fixed at both ends with Mode 1 at 200 Hz, up to Mode 6.",
+     "a": "The spectrum for a string fixed at both ends with Mode 1 at 200 Hz has six evenly spaced spikes at 200, 400, 600, 800, 1000 and 1200 Hz. There is one spike for each mode. Frequency goes along the horizontal axis, and amplitude (strength) goes up the vertical axis. The spikes are evenly spaced because a string fixed at both ends has its modes at whole-number multiples of Mode 1. If the modes are equally strong, the spikes can be drawn at the same height."
+    },
+    {
+     "i": 10,
+     "source": "Predicted",
+     "q": "Draw the spectrum for a fixed-free system with Mode 1 at 200 Hz, up to Mode 4.",
+     "a": "The spectrum for a fixed-free system with Mode 1 at 200 Hz has spikes only at the odd multiples, which are 200, 600, 1000 and 1400 Hz. This is because a fixed-free system has no even multiples. An even number of quarter-wave packets would leave a point with no motion at the free end. The free end must always be moving, so only odd numbers of packets are possible. That is why the four spikes are at 1, 3, 5 and 7 times 200 Hz."
+    },
+    {
+     "i": 11,
+     "source": "Review 10",
+     "q": "If the vocal folds have their base frequency, F0, at 150 Hz, draw the spectrum for the first 5 harmonics.",
+     "a": "The spectrum for the first 5 harmonics has spikes at 150, 300, 450, 600 and 750 Hz. This is because the vocal folds are a membrane fixed along its edges. So their harmonics are whole-number multiples of F0 (the base frequency), and the spikes are evenly spaced, 150 Hz apart. Frequency goes along the horizontal axis, and amplitude (strength) goes up the vertical axis."
+    }
+   ]
+  },
+  {
+   "id": "backprop",
+   "title": "Backpropagation: why learning starts at the end",
+   "blocks": [
+    {
+     "i": 0,
+     "ref": "Lecture 15 · p8 · Lecture 16 · p9",
+     "main": "**Every neural network starts with random weights and learns by correcting its mistakes, one small step at a time.** **Backpropagation** is the method that figures out how each weight should change. **The last set of weights is updated first, and the first set of weights is updated last.**",
+     "sub": [
+      "The last weights affect the output probabilities **directly**. So one inner product (multiplying each input by its weight and adding the results) shows whether each last weight should go up or down.",
+      "A first-layer weight affects the first hidden layer. That layer affects the next layer, and that layer affects the one after it.",
+      "So the effect of a first-layer weight passes through every layer, and it depends on all the later weights."
+     ],
+     "end": "So learning starts at the end and works backward toward the input."
+    },
+    {
+     "i": 1,
+     "ref": "Lecture 15 · p8 · Lecture 16 · p9",
+     "main": "**Dynamic programming solves the easy problem first and then reuses its answer to solve the bigger problem that contains it.** This idea comes from **Bellman** and **Viterbi**. In backpropagation, the easy problem is the last layer. The bigger problem includes every earlier layer.",
+     "sub": [
+      "**Backpropagation is stochastic gradient descent plus dynamic programming.**",
+      "Stochastic gradient descent (**SGD**) changes each weight by a small amount. Dynamic programming determines the order in which the weights are changed."
+     ],
+     "end": ""
+    },
+    {
+     "i": 2,
+     "ref": "Also know · Lectures 15 and 16",
+     "main": "**Backpropagation was worked out in the mid-1980s.** Geoffrey Hinton won the 2024 Nobel Prize in Physics for this work.",
+     "sub": [
+      "The idea of backpropagation is at the center of much of today's economy."
+     ],
+     "end": ""
+    }
+   ],
+   "questions": [
+    {
+     "i": 0,
+     "source": "Based on HW5 6",
+     "q": "In what order are the weights updated?",
+     "a": "The last set of weights is updated first, and the first set of weights is updated last. This is because the update for each layer reuses the calculations already made for the layers after it. The last layer has no layers after it, so it can be worked out first. Each earlier layer then uses those calculations. So the updates go in order from the last weights back to the first."
+    },
+    {
+     "i": 1,
+     "source": "Based on HW5 7",
+     "q": "Why does backpropagation start at the end?",
+     "a": "Backpropagation starts at the end because the last weights are the simplest problem. This is because the last weights affect the output probabilities (the network's decision) directly. So it is easy to tell whether raising or lowering each last weight makes the loss (the error) go up or down.\n\nA weight from the input to the first hidden layer is harder. It affects the first, second and third hidden layers before it reaches the output. So changing it is a very complex problem, and that problem contains the problem of changing the last weights.\n\nBackpropagation follows dynamic programming, so it solves the simplest problem first. That answer then makes each harder problem easier, until the most complex problem is solved. That is why backpropagation starts with the last weights."
+    },
+    {
+     "i": 2,
+     "source": "Based on HW5 8",
+     "q": "What two methods together train the network's weights?",
+     "a": "The two methods that together train the network's weights are stochastic gradient descent and backpropagation. This is because each method does a different job. Backpropagation works backward from the error to figure out which direction each weight should change. Stochastic gradient descent then changes each weight by a small step in that direction. Together, these two steps update the weights."
+    },
+    {
+     "i": 3,
+     "source": "Predicted",
+     "q": "Backpropagation is made of what two parts?",
+     "a": "Backpropagation is made of two parts, stochastic gradient descent and dynamic programming. Stochastic gradient descent changes each weight by a small step in the direction that reduces the error. Dynamic programming determines the order of the changes. The order goes from the last weights back to the first weights."
+    },
+    {
+     "i": 4,
+     "source": "Lab 9",
+     "q": "Which part of training is the SGD part, and which is the dynamic programming part? What are the small problem and the big problem?",
+     "a": "The SGD part is updating the weights. Each weight takes a small step in the direction that reduces the error, and the learning rate determines how big that step is.\n\nThe dynamic programming part is calculating how much each weight contributed to the error. It starts with the last layer and uses those calculations to work backward through the earlier layers.\n\nThe small problem is figuring out how the weights in the last layer contributed to the error. The big problem is figuring out how the weights in the earlier layers contributed to the error."
+    },
+    {
+     "i": 5,
+     "source": "Predicted",
+     "q": "The network said done but the answer was dean. Should a last weight that pushes done up go up or down? Why?",
+     "a": "A last weight that makes the probability of done go up should go down. This is because the correct answer was dean, so the desired output for done is zero. The network gave done a probability that is too high. Lowering this weight makes the amount it adds to done smaller. So the probability of done goes down toward zero."
+    },
+    {
+     "i": 6,
+     "source": "Predicted",
+     "q": "If the network already makes the right decision on a recording, what does it learn from it?",
+     "a": "If the network already makes the right decision on a recording, it learns nothing from that recording. This is because there is no error to correct, so the weights do not change. This can be a problem, because a network can keep getting the right answers by memorizing its data, without learning the pattern underneath. Once it gets everything right, it has no errors left to learn from."
+    }
+   ]
+  },
+  {
+   "id": "lead-up",
+   "title": "Leading up to LLMs: from one neuron to networks that unfold over time",
+   "blocks": [
+    {
+     "i": 0,
+     "ref": "Lecture 17 · p2",
+     "main": "**A neuron in an artificial neural network takes in a vector (a list of numbers) and gives back one number.** It multiplies each input by its weight and adds the results. This is called the **inner product**. A **neural network** repeats the inner product layer after layer.",
+     "sub": [
+      "A neural network takes in one vector and gives back a vector of decisions."
+     ],
+     "end": ""
+    },
+    {
+     "i": 1,
+     "ref": "Also know · Lecture 17 (start) and Lecture 18",
+     "main": "**Artificial neural networks began in biology, not in technology.** The first paper on artificial neural networks was by **McCulloch and Pitts**. It started from the all-or-none behavior of real neurons. A real neuron is either firing or not firing. This is the same idea as the **sigmoid** (a function that turns a number into a value between 0 and 1).",
+     "sub": [
+      "The earliest neural network work tried to model how the mind works, including mental illness.",
+      "In the **Parallel Distributed Processing** books, **parallel** means many neurons calculate their activations at the same time.",
+      "**Distributed** means the information from the inputs is spread across all the neurons. By the time these books were written, forward propagation and backpropagation were well worked out."
+     ],
+     "end": ""
+    },
+    {
+     "i": 2,
+     "ref": "Lecture 17 · p2",
+     "main": "**The vowel network takes one static vector and makes one decision.** A **static** vector is a fixed list of numbers from one moment in time. But speech changes all the time, and a sentence is many words, one after another.",
+     "sub": [
+      "So one fixed list of numbers cannot model thinking that unfolds over time."
+     ],
+     "end": ""
+    },
+    {
+     "i": 3,
+     "ref": "Lecture 17 · p3",
+     "main": "**A recurrent network sends its own output back into part of its input, so what it produces at one moment helps predict the next moment.** **Michael Jordan** built the **recurrent** network to model speech production. He built it because features such as nasality and lip rounding switch on and off at different moments.",
+     "sub": [
+      "**Plan units** hold what the network is supposed to say, and **state units** hold a copy of the last output. Both send their values to the hidden layer, and the hidden layer sends its values to the output.",
+      "The output is copied back into the state units. The same weights are used at every step."
+     ],
+     "end": "So a recurrent network can work through a sequence, instead of handling only one static vector."
+    },
+    {
+     "i": 4,
+     "ref": "Also know · Lecture 17 (start) and Lecture 18",
+     "main": "**GPT works the same way as the recurrent network, one word at a time.** It predicts the next word and adds that word to the prompt. Then it uses the whole prompt, including the new word, as input to predict the word after that.",
+     "sub": [
+      "The main steps in this history are 1943 (the McCulloch and Pitts paper), 1985 (backpropagation) and 2017 (the design behind GPT)."
+     ],
+     "end": ""
+    }
+   ],
+   "questions": [
+    {
+     "i": 0,
+     "source": "Predicted",
+     "q": "How does the all-or-none behavior of neurons connect to the sigmoid?",
+     "a": "The all-or-none behavior of neurons is the same idea as the sigmoid. This is because a real neuron is either firing or not firing. The sigmoid turns an inner product into a number near 0 (off) or near 1 (on), with a steep change in between. So an artificial neuron that uses the sigmoid behaves the same way as a real neuron."
+    },
+    {
+     "i": 1,
+     "source": "Predicted",
+     "q": "What do parallel and distributed mean in Parallel Distributed Processing?",
+     "a": "Parallel means that many neurons calculate their activations at the same time.\n\nDistributed means that the information from the inputs is spread across all the neurons. So the information is not stored in one place."
+    },
+    {
+     "i": 2,
+     "source": "Predicted",
+     "q": "What does a single neuron take in and give back? What about a neural network?",
+     "a": "A single neuron takes in a vector and gives back one number. That number is the inner product, which is each input multiplied by its weight, with the results added together.\n\nA neural network takes in one vector and gives back a vector of decisions. This is because a neural network repeats the inner product layer after layer. So the network ends with several outputs instead of just one number."
+    },
+    {
+     "i": 3,
+     "source": "Predicted",
+     "q": "Why can't the vowel network model a sentence or speech over time?",
+     "a": "The vowel network cannot model a sentence or speech over time because it takes one static vector and makes one decision. That vector is F1 and F2 (the first two formants) from one moment. But speech changes all the time, and a sentence is many words, one after another. So modeling speech needs a network that works through a sequence."
+    },
+    {
+     "i": 4,
+     "source": "Predicted",
+     "q": "What makes Jordan's network recurrent, and why did he build it?",
+     "a": "Jordan's network is recurrent because it sends its own output back into part of its input. It copies the output into the state units. So what it produced at one moment helps predict the next moment.\n\nJordan built it because speech production changes over time. Features such as nasality and lip rounding switch on and off at different moments. So he needed a network that could follow these changes step by step."
+    },
+    {
+     "i": 5,
+     "source": "Predicted",
+     "q": "How is a recurrent network different from an nn.Sequential network?",
+     "a": "A recurrent network is different from an nn.Sequential network because it loops its output back into its input. A Sequential network passes the input through the layers once, from the input to the output, and makes one decision. A recurrent network sends its output back in as part of its next input. So a recurrent network works through a sequence step by step."
+    },
+    {
+     "i": 6,
+     "source": "Predicted",
+     "q": "How does GPT use the same idea as Jordan's network?",
+     "a": "GPT uses the same idea as Jordan's network because it also feeds its own output back into its input. It predicts the next word and adds that word to the prompt. Then it predicts again, using the longer prompt. So GPT produces text one word at a time."
+    }
+   ]
+  },
+  {
+   "id": "recurrent-dynamical",
+   "title": "The LLM as a dynamical system",
+   "blocks": [
+    {
+     "i": 0,
+     "ref": "Lecture 18 · p4",
+     "main": "**A dynamical system is a rule that is given its own output as input again and again.** Numbers go in, the rule changes them, and new numbers come out. The output then becomes the next input.",
+     "sub": [
+      "In the **harmonic oscillator** (a mass on a spring moving back and forth), the two numbers are position and velocity (speed and direction). They take turns updating.",
+      "When the rule is repeated step by step, the position traces out a **cosine** shape."
+     ],
+     "end": ""
+    },
+    {
+     "i": 1,
+     "ref": "Also know · Lectures 17 and 18",
+     "main": "**An LLM (large language model) can be treated as a dynamical system.** Each layer is the rule, and the depth of the layers plays the role of time. The input vectors are the **initial conditions** (the starting numbers).",
+     "sub": [
+      "Each layer turns the vectors into better vectors, until the last layer can predict the next word.",
+      "Each layer has its own learned weights. So each step passes its output to the next step, but each step uses different weights."
+     ],
+     "end": "So in both systems, the output of one step is the input to the next step."
+    }
+   ],
+   "questions": [
+    {
+     "i": 0,
+     "source": "Predicted",
+     "q": "Why is an LLM called a dynamical system?",
+     "a": "An LLM is called a dynamical system because it works by giving a rule its own output again and again. A dynamical system is a rule that is repeatedly given its own output as input, starting from initial conditions (the starting numbers). In an LLM, the input vectors are the initial conditions. Each layer applies its weights to turn those vectors into better vectors, and the next layer takes those as its input. So the depth of the layers plays the role of time."
+    },
+    {
+     "i": 1,
+     "source": "Predicted",
+     "q": "In the harmonic oscillator, which two numbers update, and in what order?",
+     "a": "In the harmonic oscillator, position x and velocity v update, and they take turns. First, the new x is calculated from the old v. Then, the new v is calculated from the new x. When these two steps are repeated over and over, x traces out a cosine shape."
+    }
+   ]
+  }
+ ],
+ "flags": [
+  "lead-up block 4 and Q6: 'GPT works the same way as the recurrent network' is kept as written. Strictly, GPT is a transformer, not a recurrent network. It shares only the idea of feeding each predicted word back in as input (autoregression).",
+  "backprop Q2 says the two training methods are 'stochastic gradient descent and backpropagation', but block 1 and Q3 say backpropagation itself is SGD plus dynamic programming. Both meanings are kept as given. The two framings could confuse a reader.",
+  "lead-up block 0 and Q2 say a neuron gives back 'the inner product'. Usually a neuron also applies an activation function (such as the sigmoid) to the inner product. Kept as written.",
+  "harmonics Q7 says both the building and the vocal-tract air have 'springiness at the fixed end'. Kept as written. The meaning is vague (the fixed end is where stretching or compression is greatest), and no gloss was added.",
+  "backprop Q1 assumes a network with three hidden layers ('first, second and third hidden layers'). Kept as written.",
+  "recurrent-dynamical block 0 says 'the rule draws a cosine'. This was rewritten as 'the position traces out a cosine shape', which matches Q1 (x traces out a cosine). The glosses 'a mass on a spring moving back and forth' for harmonic oscillator and 'speed and direction' for velocity were added."
+ ]
+}
