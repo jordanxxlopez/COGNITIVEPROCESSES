@@ -14,7 +14,7 @@ from pathlib import Path
 from guide_plain import build_plain_guide
 from unlabel import bullet
 from module1_layout import build_v6, lab_blocks
-from exam2_versions import build_v8, build_v9, build_v10
+from exam2_versions import build_v8, build_v9, build_v10, build_v11
 
 _PLAIN = Path(__file__).resolve().parent / "plain"
 
@@ -705,6 +705,12 @@ def build(out_path):
                 "range": "Lectures 11 to 18", "split": True,
                 "howToAnswer": [], "scope": SCOPE_V3, "flags": FLAGS_V2,
                 "topics": build_v10(build_v9(build_v7(topics_v3))),
+            },
+            "exam2-v11": {
+                "label": "Exam 2 · Study this first (Lectures 11–18, slides with the videos played on them)",
+                "range": "Lectures 11 to 18", "split": True,
+                "howToAnswer": [], "scope": SCOPE_V3, "flags": FLAGS_V2,
+                "topics": build_v11(build_v9(build_v7(topics_v3))),
             },
             "exam2-v3": {
                 "label": "Exam 2 · Study this first (v3, Lectures 11–18, his questions first)",

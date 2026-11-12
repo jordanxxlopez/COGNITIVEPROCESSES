@@ -63,7 +63,7 @@ def build(out_path=ROOT / "modern" / "bytopic.js"):
     for f in sorted(BT.glob("notes_*.json")):
         notes.update(json.load(open(f)))
     concepts = json.load(open(ROOT / "authoring" / "plain" / "concepts_plain.json"))["concepts"]
-    media = _slide_media()
+    media = _slide_media(overlay=True)
 
     # Study this first questions, with figures (v9), sorted into topics.
     es = (ROOT / "modern" / "essentials.js").read_text()

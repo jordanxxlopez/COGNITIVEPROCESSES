@@ -101,7 +101,7 @@ _ROOT = Path(__file__).resolve().parents[1]
 _REF = re.compile(r"Lecture (\d+) · p([\d, ]+)")
 
 
-def _slide_media():
+def _slide_media(overlay=False):
     """Map 'lectureNN-P' to a slide image, or to the source video when the slide image is blank."""
     from PIL import Image, ImageStat
     manifest = json.load(open(_ROOT / "stimuli" / "manifest.json"))
@@ -114,10 +114,20 @@ def _slide_media():
                 if m:
                     videos.setdefault(f"{m.group(1)}-{m.group(2)}", e)
 
+    positions = json.load(open(_ROOT / "authoring" / "video-positions.json")) if overlay else {}
+
     def media(lec, page):
         img = _ROOT / "assets" / "slides" / lec / f"{page:03d}.webp"
         if not img.exists():
             return None
+        placed = positions.get(f"{lec}-{page}")
+        if placed:
+            v = placed[0]
+            stem = Path(v["video"]).stem
+            poster = f"assets/exam2/frames/{stem}.jpg"
+            return {"image": f"assets/slides/{lec}/{page:03d}.webp", "video": v["video"], "box": v["box"],
+                    "poster": poster if (_ROOT / poster).exists() else "",
+                    "caption": f"Lecture {lec[7:]} · p{page} · with the video played on the slide"}
         blank = ImageStat.Stat(Image.open(img).convert("L")).stddev[0] < 1
         key = f"{lec}-{page}"
         if blank and key in videos:
@@ -141,6 +151,28 @@ ALSO_KNOW_MEDIA = {
 
 def build_v10(topics_v9):
     media = _slide_media()
+    out = []
+    for t in topics_v9:
+        t = copy.deepcopy(t)
+        for b in t["blocks"]:
+            for m in _REF.finditer(b.get("ref", "")):
+                lec = f"lecture{int(m.group(1))}"
+                for p in [int(x) for x in m.group(2).replace(" ", "").split(",") if x]:
+                    found = media(lec, p)
+                    if found:
+                        b["media"] = found
+                        break
+                if b.get("media"):
+                    break
+            if not b.get("media") and t["id"] in ALSO_KNOW_MEDIA and b.get("ref", "").startswith("Also know"):
+                b["media"] = ALSO_KNOW_MEDIA[t["id"]]
+        out.append(t)
+    return out
+
+
+def build_v11(topics_v9):
+    """v10 with each video placed on its slide where the professor put it (from the .pptx)."""
+    media = _slide_media(overlay=True)
     out = []
     for t in topics_v9:
         t = copy.deepcopy(t)

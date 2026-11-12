@@ -20,3 +20,10 @@
 #content .ess-media figcaption{margin-top:6px}
 @media (max-width:900px){#content .ess-split{grid-template-columns:minmax(0,1fr)!important}#content .ess-media{position:static}}
 #content .ess-jump{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}#content .ess-jump a{text-decoration:none}
+#content .ess-ov{position:relative;width:100%;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+#content .ess-ov>img.ess-ov-base{display:block;width:100%;height:auto;max-height:none;border-radius:0;box-shadow:none}
+#content .ess-ov>.ess-ov-video{position:absolute;z-index:1;overflow:hidden}
+#content .ess-ov>.ess-ov-video :is(.fit-player,.fit-video-stage){width:100%!important;height:100%!important;max-width:none!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;aspect-ratio:auto!important}
+#content .ess-ov>.ess-ov-video .fit-player-controls{display:none!important}
+#content .ess-ov>.ess-ov-video video{display:block;width:100%!important;height:100%!important;max-height:none!important;object-fit:contain;border-radius:0!important;box-shadow:none!important;background:transparent!important}
+#content .ess-ov>img.ess-ov-top{position:absolute;inset:0;width:100%;height:100%;max-height:none;z-index:2;mix-blend-mode:multiply;pointer-events:none;border-radius:0;box-shadow:none;background:transparent}
