@@ -10287,7 +10287,7 @@ window.LING285_ESSENTIALS = {
        "end": "So the mass keeps vibrating because the spring keeps pulling it back and the mass keeps overshooting.",
        "media": {
         "video": "assets/original/3a173c997457e2f0c60b.mp4",
-        "poster": "",
+        "poster": "assets/exam2/frames/3a173c997457e2f0c60b.jpg",
         "caption": "Lecture 11 · p2 · One mass, two directions"
        }
       },
@@ -10301,7 +10301,7 @@ window.LING285_ESSENTIALS = {
        "end": "That is why mass and stiffness push the frequency in opposite directions.",
        "media": {
         "video": "assets/original/e7a1853082e98dd26757.mp4",
-        "poster": "",
+        "poster": "assets/exam2/frames/e7a1853082e98dd26757.jpg",
         "caption": "Lecture 11 · p3 · Mass and stiffness change the rate"
        }
       },
@@ -10316,7 +10316,7 @@ window.LING285_ESSENTIALS = {
        "end": "So a higher mode is a faster mode because more of the springs stretch and compress.",
        "media": {
         "video": "assets/original/57ff4733438cce3597cb.mp4",
-        "poster": "",
+        "poster": "assets/exam2/frames/57ff4733438cce3597cb.jpg",
         "caption": "Lecture 11 · p4 · Two masses have two normal modes"
        }
       },

@@ -1,0 +1,420 @@
+{
+ "neurons-to-sequences": {
+  "blocks": [
+   {
+    "ref": "Lecture 17 · p4 · Lecture 18 · p2",
+    "main": "**All of modern AI is built from one simple idea, the artificial neuron.** A **neuron** takes in a vector of inputs from other neurons and gives back one number. It multiplies each input by its weight and adds the results, which is the **inner product**. The symbol **sigma** means add them up.",
+    "sub": [
+     "This multiplying and adding stands in for the chemical and electrical signals that real neurons send each other.",
+     "A **neural network** repeats the inner product layer after layer, so it takes in one vector and gives back a whole vector of **decisions**.",
+     "Each set of weights turns one vector into the next vector through many inner products.",
+     "Even a decision as complex as a person's can be built from inner products and a function like the sigmoid, combined many times."
+    ],
+    "end": "So people who move science forward often start from a very simple idea and repeat it many times."
+   },
+   {
+    "ref": "Lecture 17 · p2",
+    "main": "**Artificial neural networks began in 1943 with a paper by McCulloch and Pitts, and that paper started from biology.** The paper proposed that simple math could model how the brain works. It started from the **all-or-none** behavior of real neurons, so a neuron is either firing or not firing.",
+    "sub": [
+     "All-or-none is the same idea as the **sigmoid**, so the very first neural network paper was built on how real neurons behave.",
+     "Warren McCulloch was a **psychiatrist**, so the earliest work tried to model how the mind works, including mental illness.",
+     "This early work was about understanding the mind and was not about making money."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p2",
+    "main": "**By 1986, these ideas had grown into the two Parallel Distributed Processing books, written by a group at UC San Diego.** **Parallel** means many neurons calculate their activations at the same time. **Distributed** means the information from the inputs is spread across all the neurons.",
+    "sub": [
+     "By 1986, forward propagation and backpropagation were well worked out.",
+     "One contributor, **Geoffrey Hinton**, later won the **2024 Nobel Prize in Physics** for this work."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p2 · Lecture 18 · p2",
+    "main": "**A network like the vowel network takes one static vector and makes one decision, so it cannot model thinking that unfolds over time.** A **vector** is a list of numbers. A **static** vector is one fixed list from one moment, such as two formants that the network sorts into one of a few vowel categories.",
+    "sub": [
+     "**Speech changes all the time**, because every small moment has new formants.",
+     "**Language also changes over time**, because a sentence is many words, one after another."
+    ],
+    "end": "So one fixed list of numbers can never capture thinking that happens over time."
+   },
+   {
+    "ref": "Lecture 17 · p3",
+    "main": "**Michael Jordan invented the recurrent neural network in 1985 to model how speech is produced over time.** **Speech production** is how the tongue, the velum and the lips move during speech. Features such as nasality, backness and lip rounding switch on and off at different moments across a sequence of sounds.",
+    "sub": [
+     "Jordan saw that a regular network could not handle something that complex, because it changes so much over time.",
+     "The network is called **recurrent** because it **sends its own output back into part of its input**.",
+     "So it produces something at one moment, uses that output to predict the next moment, and then the moment after that.",
+     "The network is **not only sequential**, because it also has **two layers working side by side**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p3",
+    "main": "**GPT works the same way as the recurrent network, one word at a time.** GPT takes the words of the prompt and predicts the next word, which becomes the first word of its answer. Then it feeds the prompt plus that new word back in and predicts the next word again.",
+    "sub": [
+     "GPT keeps repeating this, so the idea behind GPT began in 1985 with thinking about how speech unfolds over time.",
+     "People kept improving the recurrent network from 1985 until **2017**, when the **large language model** was invented.",
+     "Science and technology grow from other people's ideas over long periods. So the 1943 idea led to the 1986 networks, and Jordan's 1985 idea led to the 2017 LLMs.",
+     "The people who came up with these ideas were mostly not the people who made a lot of money from them."
+    ],
+    "end": "The years 1943, 1985 and 2017 give the history only."
+   },
+   {
+    "ref": "Lecture 17 · p4",
+    "main": "**A large language model takes in many vectors, one for each moment in a sequence, and gives back one decision about what comes next.** Picture 15 vectors, each one standing for one word of a sentence. The job of the model is to **predict the sixteenth**.",
+    "sub": [
+     "Real systems take hundreds of thousands to a million input vectors, and this set is the **context window**.",
+     "Each vector is also thousands of numbers long, so huge data centers are needed to run the calculations.",
+     "The sixteenth vector is a **probability distribution over the next word**. English has about 30,000 words, so each entry gives the chance that one of them comes next.",
+     "An LLM is made of neural networks, each set of weights is a **layer**, and real systems have about a hundred or more layers."
+    ],
+    "end": "So an LLM's knowledge, such as how to write an essay, is still stored in its **weights**."
+   },
+   {
+    "ref": "Lecture 17 · p4 · Lecture 18 · p2",
+    "main": "**An LLM learns by predicting the next word and correcting its mistakes.** In \"the cat sat on the,\" the real next word is **mat**. A new LLM with random weights might predict an impossible word like \"in.\"",
+    "sub": [
+     "**Backpropagation** then adjusts the trillions of weights, so the prediction moves toward mat.",
+     "After this is repeated with about a trillion sentences, the system can speak English.",
+     "No philosopher or cognitive scientist expected that human language could be copied with only inner products and functions like the sigmoid.",
+     "The first problem this design solved, in 2017, was **machine translation**, and the same design then worked for speech and many other problems."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 18 · p2",
+    "main": "**Language depends on connections between words that are far apart, and an LLM learns those connections from data.** In \"the dog that my parents, who I love very much, who live in a state far, far away,\" the next word is **barks**. It is not bark. **Barks** goes with the singular word **dog**, no matter how many words come in between.",
+    "sub": [
+     "The plural word parents sits in between, but the verb still has to match dog.",
+     "Nobody teaches this rule directly, because speakers pick it up from the language around them.",
+     "An LLM learns it the same way, by doing inner products layer after layer until it predicts barks.",
+     "English sentence structure, called **syntax**, is so complicated that many linguists study it for whole careers, so an LLM needs many layers."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 18 · p2",
+    "main": "**LLMs can work across many languages and many kinds of input.** **Translation** between languages was the first use of LLMs, and it is now nearly solved for hundreds of languages. A system trained on several languages, such as English, Dutch and Japanese, learns how words go together in general.",
+    "sub": [
+     "So that system also gets good at very different languages, such as Navajo.",
+     "A **multimodal** system connects different kinds of input, such as text, speech and images.",
+     "So a multimodal system can write a caption for a photo or create an image from a spoken description."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p5 · Lecture 18 · p5",
+    "main": "**An LLM is given 15 vectors and asked to predict the 16th, and the vectors can stand for almost anything.** A vector is just a list of numbers, so the machine plays the same prediction game whatever the numbers mean. The vectors can be **15 words** of a sentence, with the next word missing.",
+    "sub": [
+     "One example sentence is \"The cat that the dog chased ran up the old tree and sat on the.\" A speaker of English knows a likely next word, such as branch or mat.",
+     "Getting it right means using the whole sentence, because the cat sat, not the dog.",
+     "The vectors can be **15 frames of a spectrogram**, where each small frame is one vector of frequencies and amplitudes. The system then predicts the next slice of speech.",
+     "In 2019 this method gave the **best speech recognition in 75 years**. It is also the basis for computer voices that are very hard to tell apart from humans."
+    ],
+    "end": "The newest systems can hold a spoken conversation, and the only clue left is a short delay before each response. As that delay shrinks, phone scams become a real danger."
+   },
+   {
+    "ref": "Lecture 17 · p5 · Lecture 18 · p5",
+    "main": "**The same prediction game works for images and for proteins.** An image can be cut into **16 patches** and read row by row. The system is given 15 patches and predicts the missing bottom-right patch.",
+    "sub": [
+     "After training on huge numbers of images, the system learns what a dog, a dolphin or a boat is. This became the basis of modern **computer vision**.",
+     "A protein is a chain of amino acids, which come in **20 kinds**. The order of the chain decides how the protein folds into its shape.",
+     "In the B chain of insulin, the amino acid after the first fifteen is the one written Y.",
+     "Treating a protein as a sequence moved the **protein folding problem** many years ahead, which helps with designing drugs and vaccines. That work won the **2024 Nobel Prize in Chemistry**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p5 · Lecture 18 · p5",
+    "main": "**The LLM only ever sees vectors, so one design works for language, speech, images and proteins.** Words, sounds, images and molecules all reach the LLM as lists of numbers. So the same design asks the same question every time, which is what comes sixteenth.",
+    "sub": [
+     "These systems predict from past data, so something new that the past data does not cover can make them **hallucinate**.",
+     "A prediction far into an unfamiliar future can end up as a guess, or as an honest \"I don't know.\""
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 18 · p2",
+    "main": "**Nobody fully understands what all the weights in an LLM are doing.** The designs were not planned from the start. Over about 75 years, people changed something that worked a little so that it worked a little better, again and again.",
+    "sub": [
+     "Dogs were bred into today's breeds in a similar way over a few hundred years.",
+     "Researchers are now trying to figure out what the weights do, partly so that smaller and less wasteful systems can be built."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p4",
+    "main": "**The main idea behind all of this is Gestalt completion.** People see a triangle in the Gestalt figure even though no triangle is drawn. They see it because much of human knowledge is **completing** what is missing. So training a system only to **predict the missing piece** turns out to copy human thinking.",
+    "sub": [
+     "The **cloze procedure** is a test introduced by **Wilson Taylor** in **1953**, where words are removed from a text and people fill them in.",
+     "The name comes from **closure**, the Gestalt word for completing a familiar pattern that is not quite finished. Seeing a broken circle as whole is closure.",
+     "Knowledge can be tested by asking someone to complete a sequence, and for AI, **completion is all that knowledge is**.",
+     "Underneath everything, **inference is inner products**, and **learning is stochastic gradient descent plus dynamic programming**."
+    ],
+    "end": "So an LLM predicting the next word is playing a cloze game again and again."
+   }
+  ]
+ },
+ "heads-depth": {
+  "blocks": [
+   {
+    "ref": "Lecture 18 · p3",
+    "main": "**An LLM is built from layers, and each layer contains many heads working side by side.** Predicting the next word is so hard that the model needs both. A **head** is one expert, and the knowledge from all the heads in a layer is combined to make **improved vectors**.",
+    "sub": [
+     "**Layers go one after another from the input to the output.**",
+     "**Heads sit side by side inside each layer.**",
+     "The next layer then takes those improved vectors and does the same thing again."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 18 · p3",
+    "main": "**Heads and layers work like visiting a series of classes to improve yourself, one class after another.** In each class, every student gives you their own opinion on how to improve. Each student is a **head**.",
+    "sub": [
+     "You then **combine** all of those opinions into one improved version of yourself, and combining the heads' opinions is what a layer does.",
+     "Then you go to the next class and do the same thing again, so **the classes are the layers**.",
+     "Layers give an LLM **depth**, which is one round of improvement after another.",
+     "Heads give an LLM **width**, which is many experts asked at the same time within each round."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 18 · p3",
+    "main": "**Each head is a set of weights, and every head in every layer learns.** An expert's knowledge is in its weights. Every head learns how to improve the vectors so that the last layer can predict the next word.",
+    "sub": [
+     "Large systems have **a hundred or more layers** and about **a hundred heads** in each layer. They need that many because language, vision and the other tasks are very complicated.",
+     "Training takes a sentence such as \"the dog that ... barks\" from text, and the system predicts the next word.",
+     "If the prediction is wrong, **every head in every layer** adjusts its weights with backpropagation, so the next prediction is closer to barks.",
+     "Training at this size uses enormous resources, and in some states a large share of the water goes to the data centers that run it."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 18 · p4",
+    "main": "**A dynamical system is a rule that is fed its own output again and again.** Numbers go in, the rule acts on them, and numbers come out. The output is then fed back in as the next input.",
+    "sub": [
+     "In the **harmonic oscillator**, the two numbers are the position x and the velocity v.",
+     "If x starts at one and v starts at zero, the first step leaves x the same and makes v go down.",
+     "x and v **take turns**. The new x is calculated from the old v, and then the new v is calculated from the new x.",
+     "Step by step, the rule draws a **cosine** for x."
+    ],
+    "end": "Fields as different as finance use the same idea with other rules. Stock prices are modeled with equations that feed back on themselves, although the real market never follows them exactly."
+   },
+   {
+    "ref": "Lecture 18 · p4",
+    "main": "**Jordan's network combined neural networks with dynamical systems, because speech production changes over time.** The network's **output is copied back into its state units**. The state units also keep a fading copy of their own previous values.",
+    "sub": [
+     "**Plan units** and **state units** feed the hidden layer, and the hidden layer feeds the output.",
+     "The output then loops back into the state units, and the same weights are used at every step.",
+     "After more than **thirty years of improvements**, this idea became the **LLM**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p4 · Lecture 18 · p4",
+    "main": "**An LLM is a dynamical system, which is why the Nobel Prize for AI was given in physics.** A mass-spring system starts from **initial conditions**, which are its starting position and speed, and the rule decides what happens next. An LLM's initial condition is its set of input vectors.",
+    "sub": [
+     "In an LLM, **each layer is the rule**, because each layer applies its weights to every vector and the next layer works on the result.",
+     "So **the depth of the layers plays the role of time**. The vectors become **better vectors** step after step, until the last layer can predict the next word.",
+     "If you follow one number up through the layers, it traces a curve similar to the oscillator's curve, though not an exact cosine.",
+     "The calculation at every step is the **inner product**, repeated billions or trillions of times. Thousands of numbers are improved layer by layer, instead of two numbers changing over time."
+    ],
+    "end": "So an LLM is a recurrent network laid out layer by layer. The spring's motion was laid out step by step in the same way when it was calculated on a computer."
+   },
+   {
+    "ref": "Lecture 18 · p4",
+    "main": "**The rule in each layer of an LLM is the weights of its heads, and those weights are learned by predicting the next word.** Backpropagation sets those weights during training. Agentic systems also contain loops, such as the loop between the critic and the revision LLM.",
+    "sub": [
+     "So dynamical systems appear at every level of AI.",
+     "The math of inner products that LLMs rely on was first studied deeply in **quantum mechanics**, about a hundred years ago."
+    ],
+    "end": "So physics and AI are closely connected in more than one way."
+   }
+  ]
+ },
+ "agents-software": {
+  "blocks": [
+   {
+    "ref": "Lecture 17 · p4 · Lecture 18 · p2",
+    "main": "**An agentic system is a team of LLMs connected to each other, and an agent in AI today is just an LLM.** The LLMs talk to each other in English. So one LLM's output becomes another LLM's input.",
+    "sub": [
+     "**Neurons make neural networks, neural networks make LLMs, and LLMs make agentic systems**, the same way molecules make cells and cells make organs.",
+     "Designing a group of LLMs to solve a problem is a real job today, and it needs problem solving more than knowledge of programming languages."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p4 · Lecture 18 · p2",
+    "main": "**In one agentic system, each LLM has its own task, and the draft passes from one LLM to the next.** An **outline LLM** receives the prompt and only makes an outline of the answer. A **writing LLM** turns the outline into full sentences.",
+    "sub": [
+     "A **critic LLM** checks the draft for problems, such as whether each statement follows from the one before.",
+     "A **revision LLM** works back and forth with the critic. It decides whether the draft is good enough or sends it back, usually for only a few rounds.",
+     "A **final LLM** produces the answer the user sees.",
+     "Sometimes a **controller** agent passes the work from one LLM to the next."
+    ],
+    "end": "The critic greatly reduced **hallucination**, which is when the system makes things up. The conversation between the LLMs is why many systems take a while to respond."
+   },
+   {
+    "ref": "Lecture 18 · p2",
+    "main": "**The agents in an agentic system usually stop learning once they are trained, and they share a common memory.** Once each LLM is trained, its weights usually **do not change** while the agents work together. Some new systems are starting to learn their own connections, so they are partly self-designing.",
+    "sub": [
+     "The agents also know **computer languages**, such as Python and database languages, because they were trained to predict whole programs too.",
+     "Agents share a **common memory**, where they can write and read information.",
+     "The shared memory gives them a lot of their power, and it is also a danger, because it lets them coordinate in ways nobody planned."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p4 · Lecture 18 · p2",
+    "main": "**The connections between LLMs can form paths that nobody planned.** These paths let a system call other LLMs and do things that were not part of the design. Some of those things can be harmful.",
+    "sub": [
+     "Limiting those connections needs creative people from many fields.",
+     "The same tools can also do good work. One agentic system acts as a patient teacher for a Native American language that is nearly lost.",
+     "That teacher works even though there is far too little text in that language to train an ordinary LLM."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p8 · Lecture 18 · p8",
+    "main": "**An LLM that learns English syllables can be built by describing it in plain English to an agentic system.** Writing the program by hand would take months. The agentic system builds the LLM, trains it, and shows what it has learned along the way.",
+    "sub": [
+     "The request specified **five layers**, **four heads in each layer**, and **input vectors that are 64 numbers long**.",
+     "It asked the system to pick **1000 English words at random** and train on them. Training meant taking each letter, trying to **predict the next letter**, and improving the weights.",
+     "It also asked for **ten generated words after each step of training**, so each step reveals what the LLM knows about English at that point.",
+     "So its knowledge can be compared with the syllable knowledge that speakers already have."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 18 · p8",
+    "main": "**The agentic system translated the request into its own technical terms and built a small character-level transformer.** A **character-level transformer** is an LLM that works one letter at a time, with **attention heads**. **Attention** means a head looks over the sequence to decide which earlier items matter.",
+    "sub": [
+     "Predicting barks requires paying attention to dog in the same way.",
+     "The system chose to train on **pronunciations** instead of spellings, so the silent e in shave would not mislead it.",
+     "The system also wrote the program in Python on its own."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 18 · p8",
+    "main": "**The results show how hard the syllable problem is, even for an LLM.** After training on 1000 words, the generated words were **still mostly gibberish**. Perhaps a few vowels were starting to appear in the right places.",
+    "sub": [
+     "The suggested next step was to train on **10,000 words** for many more steps."
+    ],
+    "end": "So deciding which sounds can follow which seems easy for any speaker, but it is not easy even for an LLM."
+   },
+   {
+    "ref": "Lecture 18 · p8",
+    "main": "**Software 1.0, 2.0 and 3.0 are three ways to build a program.** **Software 1.0** is writing a program in a programming language such as Python or C. **Software 2.0** is giving a neural network input data and output data, so the program becomes the network's **weights**.",
+    "sub": [
+     "**Software 3.0** is using an agentic system, a set of LLMs talking to each other and to the user, to build and run a program.",
+     "Building a program this way with plain English instructions is called **vibe coding**.",
+     "So someone with a good idea no longer needs to hire a programmer to build it."
+    ],
+    "end": ""
+   }
+  ]
+ },
+ "phonotactics": {
+  "blocks": [
+   {
+    "ref": "Lecture 17 · p8 · Lecture 18 · p6",
+    "main": "**Speakers know a small system of sounds that decides how vowels and consonants can follow each other.** English has about 30,000 words, so training an LLM on whole words takes enormous data, money and energy. The sound system has about 26 letters, or **only a few dozen sounds**.",
+    "sub": [
+     "So a small LLM, with thousands of weights instead of trillions, can learn the syllable knowledge every speaker already has.",
+     "A model that small can be studied closely."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p6 · Lecture 18 · p6",
+    "main": "**English allows only certain sequences of sounds in its words, and every speaker knows which ones are allowed.** **A simple English syllable is a consonant, then a vowel, then a consonant**, as in Don, mat, sit, cup, dog, fish and shave. The pattern is about **sounds, not letters**.",
+    "sub": [
+     "The silent e in shave, kite and rope does not count, because it is not pronounced.",
+     "Two letters can spell one consonant sound, as in ship, chin and bath, so those words also fit the pattern."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p6 · Lecture 18 · p6",
+    "main": "**Syllables can also have clusters, and only some clusters are allowed.** A **cluster** is a group of consonants together. A cluster before the vowel is an **onset**, as in split, flat, black and glad. A cluster after the vowel is a **coda**, as in desk, help, milk and lamp.",
+    "sub": [
+     "Each real word has an impossible twin marked with a star, such as **flat** and **lfat**, **help** and **hepl**, and **lamp** and **lapm**.",
+     "Many twins use the same letters in a different order, so the order of the sounds matters.",
+     "**Sblit** and **desb** are impossible too, so a product called \"desb\" or \"lapm\" sounds un-English right away."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p6",
+    "main": "**The order of consonants on one side of the vowel is a mirror image of the order on the other side.** In flat, the l is right next to the vowel and the f is farther out. In help, the l is again right next to the vowel, now on the other side, and the p is farther out.",
+    "sub": [
+     "Each impossible twin puts the wrong consonant next to the vowel, so lfat and hepl break the mirror order."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p6 · Lecture 18 · p6",
+    "main": "**A long word is a chain of syllables, and each syllable follows the same rules.** Examples are ba-na-na, At-lan-tic and ath-lete. The sounds t and l are fine across a syllable break, but **tl cannot start an English syllable**.",
+    "sub": [
+     "That is why **Atlantic** is a word but **tlantic** is impossible.",
+     "The sound **ng** can end a syllable, as in ring, but it can never start one."
+    ],
+    "end": "So whether a sequence of sounds is allowed depends on where the syllable breaks are."
+   },
+   {
+    "ref": "Lecture 17 · p6 · Lecture 18 · p6",
+    "main": "**Every language has its own sequence rules, and speakers learn them without being taught.** **Mandarin** allows only nasal sounds at the end of a syllable. So words like mat, sit and shave are impossible in Mandarin.",
+    "sub": [
+     "**Cantonese** also allows a final p, as in cup.",
+     "**Russian and Polish** allow clusters like zb or dl at the start of a word, which English never allows.",
+     "**Spanish** does not allow a word to start with s and t together. So Spanish speakers add an e at the start of a word like stadium, which keeps each syllable simple."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p7 · Lecture 18 · p7",
+    "main": "**Guessing the next letter of an English word shows what a speaker knows about sounds.** Each item is the start of an English word, and the task is to guess the next letter. People agree on their guesses quickly, and how much they agree changes from item to item.",
+    "sub": [
+     "**After a vowel, almost any letter can come next.**",
+     "After \"ra,\" likely letters include t, n, r and l, and many other letters are possible too."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p7 · Lecture 18 · p7",
+    "main": "**At the start of a word, the choices narrow to exactly what an English onset allows.** Each beginning allows its own small set of next letters. Some letters can never come next.",
+    "sub": [
+     "After **sp**, the next letter is l, r or a vowel, and never n. After **k**, a vowel or n can come next, as in knee, and never t.",
+     "After **b** and after **f**, the next letter is r, l or a vowel, and never n. After **sh**, a vowel or r can come next, as in shrimp.",
+     "After **skr**, or after **m** at the start of a word, only a vowel can come.",
+     "After **bram**, the letter b is almost certain, as in bramble, though a new syllable could also start there."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 17 · p7 · Lecture 18 · p7",
+    "main": "**Guessing the next letter is predicting the 16th vector, which is the same game an LLM plays.** A GPT trained only on this game learns English sounds and spelling. It learns them because its predictions can only improve by matching the patterns of English syllables.",
+    "sub": [
+     "The GPT's prediction is a **probability distribution** over the next letter, and the shape of that distribution holds the knowledge.",
+     "After \"ra,\" the distribution is **flat**, spread over many letters, because English allows many choices after a vowel.",
+     "After \"skr,\" the distribution is **sharply peaked** on a few vowels, because English allows almost nothing else there."
+    ],
+    "end": "So the more the letters so far limit what can come next, the more the probability piles onto a few letters."
+   },
+   {
+    "ref": "Lecture 18 · p8",
+    "main": "**The first attempt at producing English letter sequences was a 1948 paper by Claude Shannon.** The paper is \"A Mathematical Theory of Communication.\" Shannon worked by hand and produced letter sequences that came closer and closer to English. His sequences went from random strings of consonants, to strings with vowels, to strings with real short words.",
+    "sub": [
+     "That paper started **information theory**, one of the most important fields in engineering, and information theory is still important for LLMs today.",
+     "**Viterbi**, one of the developers of dynamic programming, published his most famous work in an information theory journal.",
+     "So the ideas behind backpropagation and LLMs share the same roots."
+    ],
+    "end": ""
+   }
+  ]
+ }
+}

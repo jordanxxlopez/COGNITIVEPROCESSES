@@ -1,0 +1,372 @@
+{
+ "vowel-network": {
+  "blocks": [
+   {
+    "ref": "Lecture 14 · p21 · Lecture 15 · p2 · Lecture 16 · p2",
+    "main": "**A neural network can work as a simple speech recognizer that decides which vowel it heard.** It takes the **two formants**, **F1 and F2**, of a single vowel said on its own. The formants are measured from real recordings of five vowels. The network then decides which of **five words** it heard, **done, dune, dean, Don or Dan**.",
+    "sub": [
+     "This network copies a very simple piece of human perception, which is hearing one vowel and naming the word.",
+     "Networks like this one were the kind used for speech recognition fifteen or twenty years ago.",
+     "Modern **large language models** are built from many networks like this one, the way molecules are built from **atoms**."
+    ],
+    "end": "So the whole job of the network is to turn two numbers into one choice among five words."
+   },
+   {
+    "ref": "Lecture 14 · p22 · Lecture 15 · p2 · Lecture 16 · p2",
+    "main": "**The vowel network has an input layer, three hidden layers and an output layer.** There are **2 input neurons**, one for F1 and one for F2. The **three hidden layers** have **3, 2 and 4 neurons**, in that order. There are **5 output neurons**, one for each word.",
+    "sub": [
+     "The **input neurons** only take in numbers from the outside world. One speaker's vowel might have an F1 of 400 and an F2 of 1900.",
+     "Information enters at the input, a little like sound reaching the ear. Each hidden layer turns the numbers it receives into new numbers, a little like the stages of processing in the brain.",
+     "Every neuron connects to every neuron in the next layer, so the network is **fully connected**. The activations of the output layer become the network's decision.",
+     "This first version is **purely linear**, which means it has **no activation functions**. Each neuron just passes on the result of its inner product."
+    ],
+    "end": "So the numbers flow from 2 to 3 to 2 to 4 to 5, and the last 5 are the decision."
+   },
+   {
+    "ref": "Lecture 14 · p21, 23 · Lecture 15 · p2 · Lecture 16 · p2",
+    "main": "**The network's knowledge is stored in its weights, and the weights are learned from the data.** Each connection has a **weight**, which is a positive or negative number. The whole network is a machine that processes numbers using those weights.",
+    "sub": [
+     "A **positive** weight makes its input push the next neuron up. A **negative** weight makes its input push the next neuron down.",
+     "Before training, **every weight is a random number between minus one and one**.",
+     "Because **the weights start out random**, the network knows nothing at first. Its output is usually very different from the right answer."
+    ],
+    "end": "That is why the network has to learn before its decisions mean anything."
+   },
+   {
+    "ref": "Lecture 14 · p23, 24 · Lecture 15 · p3 · Lecture 16 · p3",
+    "main": "**Forward propagation carries one input through the network, one layer at a time, until it reaches a decision.** The example input is **F1 of 320 hertz and F2 of 2000 hertz**. A very low F1 with a very high F2 is the pattern of **/i/**, so the correct answer is **dean**.",
+    "sub": [
+     "Each neuron computes an **inner product**, which means it multiplies each incoming number by its weight and adds the results.",
+     "For the top neuron of the first hidden layer, the weight on F1 is multiplied by 320. The weight on F2 is multiplied by 2000, and the two results are added.",
+     "The result of that inner product, with nothing else done to it, is the neuron's **linear activation**. Here it comes out slightly below zero.",
+     "The first hidden layer produces three numbers. These go through the next weights to make two numbers, then four, and then five at the output."
+    ],
+    "end": "So the calculations never need to be done by hand, because every step is just an inner product."
+   },
+   {
+    "ref": "Lecture 14 · p24 · Lecture 15 · p3 · Lecture 16 · p3",
+    "main": "**At the end, the output numbers are turned into a probability distribution, which is the network's decision.** A **probability distribution** is a set of numbers between zero and one that **add up to one**. The step that makes this distribution is called **softmax**.",
+    "sub": [
+     "The only thing to know about softmax is that a bigger number gets a bigger probability.",
+     "Probabilities and percentages are the same idea. A probability of 0.55 is a 55 percent chance.",
+     "With random weights, the five outputs are about **.5, .1, .1, .1 and .2**, which add up to one. **Done gets about 56 percent**, which is more than half, and every other word gets much less.",
+     "So the network decides it heard **done**, even though the input was dean. **With random weights, the network is wrong.**"
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 15 · p3",
+    "main": "**All of the network's knowledge is positive and negative numbers, and all of its decision making is multiplying and adding.** Multiplying and adding are operations learned in second grade. **Inference** means working out a decision. The AI systems people chat with every day make their decisions using only these simple operations.",
+    "sub": [
+     "This is less surprising than it sounds, because brains are chemical machines.",
+     "Inside neurons, the chemistry of ions such as sodium, potassium and calcium does something close to adding and multiplying."
+    ],
+    "end": "So simple arithmetic, repeated across many weights, is enough to produce a decision."
+   },
+   {
+    "ref": "Lecture 14 · p24 · Lecture 15 · p6 · Lecture 16 · p2",
+    "main": "**The network only improves when it is told the right answer, which is given as a desired output.** For a recording of dean, the **desired output** (the target) is **0, 0, 1, 0, 0**. That says there is a 100 percent chance the word was dean and zero chance for every other word.",
+    "sub": [
+     "A list with a single 1 and zeros everywhere else is called a **one-hot encoding**.",
+     "The output the network actually produces is the **computed output**. The difference between the computed output and the desired output is the network's **error**, which is its **mistake**.",
+     "The desired outputs come from real data, such as a table of each student's formants and the vowel that student actually said."
+    ],
+    "end": "So the network learns by correcting its mistakes, and the error shows what each mistake was."
+   },
+   {
+    "ref": "Lecture 14 · p24 · Lecture 15 · p6 · Lecture 16 · p3, 7",
+    "main": "**Backpropagation is the method that changes all the weights so the network makes better decisions.** To fix a mistake, **all the weights have to change**, both those near the output and those near the input. Backpropagation does this by combining **stochastic gradient descent** and **dynamic programming**.",
+    "sub": [
+     "**Stochastic gradient descent** is the same method used to improve an average from data, and here it improves every weight. It has the same **learning rate**, with the same tradeoff between learning fast and learning accurately.",
+     "**Learning happens gradually, one small step at a time.** Each piece of data nudges every weight a little in whichever direction makes the error smaller, and the learning rate sets the size of each step.",
+     "**Dynamic programming** decides the order, so the weights are updated **starting from the end**. First the weights into the output change, then those into the third hidden layer, then the second, then the first. The activations from the forward pass stay the same during this backward pass.",
+     "The error says which way each output should move. Done, at about 56 percent, should go down, dean should go up, and the other words should go down. So after learning, giving 320 and 2000 again should make **done less likely and dean more likely**."
+    ],
+    "end": "That is why AI needs huge **data centers**, because a modern chatbot can have **trillions of weights** to nudge over and over for months."
+   }
+  ]
+ },
+ "learning": {
+  "blocks": [
+   {
+    "ref": "Lecture 15 · p7 · Lecture 16 · p8",
+    "main": "**For a last weight, one inner product connects the weight to the decision, so the direction of the change is easy to tell.** Take the last weight of 0.1, which connects the top neuron of the last hidden layer to **done**. That weight multiplies an activation of about 1.57, so raising the weight would raise the probability of done.",
+    "sub": [
+     "The desired probability of done is **zero**, so raising this weight would make the error **worse**.",
+     "So this weight should be **lowered**. Lowering it shrinks its contribution and pulls the probability of done down toward zero.",
+     "The same reasoning covers every last weight. The network said done when the answer was dean. So any last weight that pushes done up should be **lowered**, and any last weight that pushes dean up should be **raised**.",
+     "A good answer says which way the weight should move and then explains why. It names the activation the weight multiplies and the output that the weight feeds into."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 15 · p7, 8",
+    "main": "**For a first weight, it is very hard to tell which way to change it, because its effect passes through every layer in between.** Take the first weight of 0.005 near the input. Changing it changes one activation in the first hidden layer.",
+    "sub": [
+     "That activation changes the second hidden layer, which changes the third, which finally changes the output probabilities.",
+     "The effect of the first weight also **depends on all the later weights**, because the later weights come after it. So its effect on the error **includes the effect of the last weights**.",
+     "So looking at the first weight alone cannot show whether it should go up or down. It is hard to tell how much an early weight is to blame for a mistake at the very end."
+    ],
+    "end": "So backpropagation is needed to work out the right direction for the first weight."
+   },
+   {
+    "ref": "Lecture 15 · p8 · Lecture 16 · p9",
+    "main": "**Backpropagation starts at the end because the last weights are the easiest problem.** The last weights decide the output probabilities directly. So the difference between the computed and desired output can be used right away to improve them. Improving the first weights is a much bigger problem that already contains the easy one.",
+    "sub": [
+     "**Dynamic programming** solves the small problems first and then reuses their answers for the bigger problems that depend on them. It was developed by **Bellman** and **Viterbi**.",
+     "**Backpropagation is stochastic gradient descent plus dynamic programming.** Stochastic gradient descent changes the numbers gradually. Dynamic programming supplies the order, which is the **back** in backpropagation.",
+     "So the last weights change first, then the weights before them, and so on back to the first weights. Each problem is easier because something was already learned from the problems solved before it.",
+     "Blame for a mistake is easiest to assign to the weights closest to the mistake. That blame is then passed backward to the weights that came before them."
+    ],
+    "end": "So the easy problem of the last weights is solved first, and its answer is reused for the harder problems of the earlier weights."
+   },
+   {
+    "ref": "Lecture 15 · p8 · Lecture 16 · p9",
+    "main": "**Backpropagation is the method behind modern AI, and it was worked out in the mid-1980s.** **Geoffrey Hinton** won the **2024 Nobel Prize in Physics** for backpropagation, because there would be no AI without it. The idea is at the center of much of today's economy, and it has roots in physics through dynamical systems.",
+    "sub": [
+     "Modern systems use this same method on about **six trillion weights**, which is what the huge data centers are doing.",
+     "Research from the last ten years suggests that single neurons in the brain also work forward and then backward, using their chemistry. So this forward then backward process may not be so different from what brains do."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 15 · p9 · Lecture 16 · p10",
+    "main": "**Training needs two tables of numbers, called matrices, and each row pairs one recording with the vowel it really was.** The **input matrix** has one row per recording and **two columns**, F1 and F2, because the network takes in two numbers. With about 110 recordings, the input matrix is **110 by 2**.",
+    "sub": [
+     "The **output matrix** has one row per recording and **five columns**, one for each word. A **1 marks the true vowel**, and the other columns hold 0, so the output matrix is **110 by 5**.",
+     "Row by row, the network is told the right answer. Formants like 800 and 1700 go with one vowel, and formants like 700 and 1100 go with another.",
+     "Each input row must stay paired with its own target row. If a row moved without its target, the network would learn the wrong pairing.",
+     "During learning, the network picks a row, computes its decision and compares it with the true answer. If the decision is wrong, the weights change."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 16 · p10",
+    "main": "**If the network makes the right decision, there is no error, so it has nothing to learn.** This can be a real problem. A network can keep getting the right answer by **memorizing** its data without learning the real pattern underneath.",
+    "sub": [
+     "Stopping the learning at that point would be stopping too early, because memorized answers do not show that the pattern was learned."
+    ],
+    "end": "So a right answer is not always proof that the network has learned."
+   },
+   {
+    "ref": "Lecture 16 · p10",
+    "main": "**Children learning English show the same pattern, as Carol Chomsky observed in the early 1960s.** Their right answers come first from memory, and real learning shows up later as new mistakes.",
+    "sub": [
+     "At first, very young children say **go** and **went** correctly, because they are **memorizing** what they hear.",
+     "Then they notice the real pattern, that most English verbs form the past tense by adding a sound at the end, as in **jump** and **jumped**. So they start saying **goed**.",
+     "Later, they learn that some verbs are **exceptions**, so they get both the regular verbs and the exceptions right."
+    ],
+    "end": "So a right answer early on can come from memory, and real learning can show up as new mistakes."
+   }
+  ]
+ },
+ "code": {
+  "blocks": [
+   {
+    "ref": "Lecture 15 · p10 · Lecture 16 · p11",
+    "main": "**A short Python program that uses the PyTorch library builds the vowel network and trains it.** The **import** lines bring in the **torch library**, which has ready-made programs for inner products, backpropagation and related work. So none of that has to be written by hand, and the network can be described in a few lines.",
+    "sub": [
+     "This works because of **libraries**. A library is a collection of programs written by one group that other people can use without knowing how they work inside.",
+     "The idea of building software from parts like this goes back to **Margaret Hamilton's** software for **Apollo 11**.",
+     "Around 2015, **Facebook** released **PyTorch** and **Google** released **TensorFlow**, so researchers no longer had to write their own backpropagation code. Most people now use PyTorch, which is often just called torch.",
+     "The two **load** lines read the formant matrix and the matching vowel matrix from files. The formants become X, and the true vowels become Y."
+    ],
+    "end": "So what matters is knowing what each line means, and writing the program from scratch is never required."
+   },
+   {
+    "ref": "Lecture 14 · p25 · Lecture 15 · p10 · Lecture 16 · p11",
+    "main": "**PyTorch describes the network as a list of layers.** **Sequential** means the network is a **sequence of layers**, one after another, in order. **Linear** means the layer **does inner products** of its weights and the activations from the layer before, because a linear layer only multiplies and adds.",
+    "sub": [
+     "Each **Linear** line is one **processing layer**, which has weights and does inner products with the numbers coming in.",
+     "nn.Linear(2, 3) means \"this layer receives information from 2 neurons, and it has 3 neurons.\" The next lines take 3 and give 2, take 2 and give 4, and take 4 and give 5.",
+     "Setting the **bias** to False keeps every layer purely linear, which matches the diagram of the network. These lines only describe the network and do not train it.",
+     "Every network covered so far is a sequence of layers. A large language model is an example of a network that is not just a sequence of layers."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 14 · p25 · Lecture 15 · p10 · Lecture 16 · p11",
+    "main": "**Only layers that do calculations get a line of code, so the input layer never gets its own line.** The **input layer** has no weights coming into it and does no inner products. It only receives numbers, so its only trace in the code is the 2 in the first line.",
+    "sub": [
+     "So the first line, nn.Linear(2, 3), describes the **first hidden layer**, and the **last line is always the output layer**.",
+     "This network has **five layers in total** but only **four lines**, because the input layer does no processing.",
+     "It has **three hidden layers**. \"How many layers\" and \"how many hidden layers\" are different questions, so each question needs a careful reading."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 14 · p25",
+    "main": "**To add a hidden layer of 3 neurons right before the output, only the end of the list changes.** The first three lines stay the same. The old last line, nn.Linear(4, 5), becomes nn.Linear(4, 3). A new last line, nn.Linear(3, 5), then takes 3 in and gives 5 out.",
+    "sub": [
+     "The first number on each line must match the second number on the line before it. That is because each layer takes its input from the layer before it."
+    ],
+    "end": "So checking that the sizes match from line to line catches most mistakes."
+   },
+   {
+    "ref": "Lecture 14 · p25",
+    "main": "**The same reading works for any network written this way.** Suppose the lines are Linear(4, 3), Linear(3, 8), Linear(8, 4), Linear(4, 4) and Linear(4, 5). That network takes **4 numbers as input**, has **four hidden layers** with 3, 8, 4 and 4 neurons, and chooses among **5 categories**.",
+    "sub": [
+     "Drawn as a network, it has **4 input neurons** in the first column. Then come hidden columns of **3, 8, 4 and 4 neurons**, and a column of **5 output neurons**.",
+     "When the first category is correct, the target puts a **1 in the first slot and 0 in every other slot**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 15 · p10 · Lecture 16 · p11",
+    "main": "**The last few lines are all PyTorch needs for learning, and they run one training step using all 110 rows at once.** **SGD** is stochastic gradient descent, and **lr** is the **learning rate**, set here to 0.1. The learning rate sets the size of each step.",
+    "sub": [
+     "The **loss** is the measure of the **mistake**. It compares the network's outputs with the true vowels, so the program can learn from its mistakes.",
+     "**backward** runs **backpropagation** to work out how each weight should change, and **step** actually changes the weights.",
+     "The old gradients are cleared before each step, because otherwise they would pile up from one step to the next."
+    ],
+    "end": "So the program shows the network the data and measures how wrong it is. Then it works backward to find which weights caused the mistake and adjusts them a little."
+   },
+   {
+    "ref": "Lecture 16 · p11",
+    "main": "**The learning rate trades speed against accuracy.** **A higher learning rate learns much faster but less accurately.** **A lower learning rate learns more accurately but much more slowly.**",
+    "sub": [
+     "So changing the learning rate from 0.1 to 0.3 makes the network **learn faster**, but its **accuracy goes down**."
+    ],
+    "end": ""
+   }
+  ]
+ },
+ "sigmoid": {
+  "blocks": [
+   {
+    "ref": "Lecture 15 · p11 · Lecture 16 · p12",
+    "main": "**Artificial neural networks borrow their basic ideas from discoveries about real brains.** Real brains have **neurons**, and each neuron **gathers information from many other neurons**, which is what the inner product does. **Lord Edgar Adrian** discovered in the 1920s that **neurons are nearly digital**. He won the **Nobel Prize in Physiology or Medicine in 1932** for this discovery.",
+    "sub": [
+     "A real neuron is roughly **on or off**, either **firing** or **not firing**. It is not at some level in between like 2, 16 or 34.",
+     "The neurons in the network so far are not like that, because their activations can be any number. Examples are slightly below zero, 6.64, 2.72 and 1.57."
+    ],
+    "end": "That is why people added an activation function that makes artificial neurons nearly digital too."
+   },
+   {
+    "ref": "Lecture 15 · p11 · Lecture 16 · p12",
+    "main": "**The sigmoid is an activation function that turns an inner product into a number between zero and one.** A **large negative** inner product gives about **0**, so the neuron is **off**. A **large positive** inner product gives about **1**, so the neuron is **on**.",
+    "sub": [
+     "An inner product of minus 4 gives almost exactly zero, and minus 6, minus 10, minus 100 and minus 1000 also give about zero.",
+     "An inner product of **2** gives about 0.8 or 0.9. An inner product of 4 gives almost exactly one, and 6 or 100 also give about one.",
+     "Only inner products **near zero** give values in between, and an inner product of exactly 0 gives 0.5. So the curve is steep in the middle and flat near both ends.",
+     "The sigmoid makes the neuron **nearly digital**, like the chemistry that keeps real neurons from firing without limit. Without that limit, an activation of a thousand would be like lightning coming out of someone's head."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 15 · p11 · Lecture 16 · p12",
+    "main": "**The sigmoid also matches how perception works in animals and humans.** **Some things that are very different are perceived as the same, and some things that are very similar are perceived as different.**",
+    "sub": [
+     "A friend is recognized as the same person with a hat or without one, or in a different shirt on a different day. Perception ignores real differences, the same way the sigmoid gives minus 1000, minus 100 and minus 20 the same value.",
+     "USC and UCLA are close to each other, both large, and alike in their labs and their football. Yet people perceive them as completely different, the same way two inputs just below and just above zero land on opposite sides of the sigmoid's jump."
+    ],
+    "end": "So the flat parts of the curve treat very different inputs as the same, and the steep middle separates inputs that are almost the same."
+   },
+   {
+    "ref": "Lecture 15 · p12 · Lecture 16 · p13",
+    "main": "**Adding the sigmoid to each hidden neuron changes every number that comes after it.** The inputs are still the formants. But each hidden neuron now passes on its sigmoid value instead of its raw inner product.",
+    "sub": [
+     "The first hidden neuron's inner product is slightly below zero, and the sigmoid turns it into about **0.4**.",
+     "The second neuron's inner product is about 6.6, and the sigmoid turns it into about **1**, so that neuron is fully on.",
+     "Each time a neuron changes, the activations in the later layers are recalculated, so the output probabilities shift.",
+     "With the same random weights and the sigmoid on all nine hidden neurons, the choice moves from done to **Dan**. The network spreads its probability more evenly and gives Dan about one third, so it is **still wrong** about dean."
+    ],
+    "end": "So the sigmoid changes how the network calculates, but only training with backpropagation can give it good weights."
+   },
+   {
+    "ref": "Lecture 15 · p13 · Lecture 16 · p14",
+    "main": "**In the program, the only change is that nn.Sigmoid is added after each hidden linear layer.** nn.Sigmoid means \"apply the sigmoid,\" so it makes that layer nearly digital.",
+    "sub": [
+     "The **last layer has no sigmoid**, because its outputs go straight into the loss calculation. The loss calculation turns them into probabilities with softmax.",
+     "The rest of the training program, with SGD and a learning rate of 0.1, stays the same."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 15 · p13 · Lecture 16 · p14",
+    "main": "**Training both versions and comparing them shows whether the sigmoid makes the vowel recognizer better or worse.** Other activation functions that look somewhat like the sigmoid, such as **ReLU**, can also be swapped in. Trying them out shows whether they make recognition better or worse.",
+    "sub": [
+     "**Many of the most basic ideas in AI come from how real brains work.** These include neurons, inner products that gather input from many neurons, and the nearly digital firing that the sigmoid copies.",
+     "**AI copies abilities that animals have.** Its most basic ideas come from biologists' discoveries about brains, and computer scientists then add their own ideas on top."
+    ],
+    "end": ""
+   }
+  ]
+ },
+ "training-results": {
+  "blocks": [
+   {
+    "ref": "Lecture 16 · p5",
+    "main": "**The real formant data shows a pattern, but it also shows a lot of overlap between the vowels.** Each recording is a dot, with **F1** on the horizontal axis and **F2** on the vertical axis. There are 525 dots, 105 for each vowel.",
+    "sub": [
+     "The **/i/ dots sit high**, with a **high F2 and a low F1**, as the theory predicts. So /i/ is clearly different from /u/.",
+     "Many /æ/ dots sit among the /i/ dots, and many others overlap with schwa. The /u/, /a/ and schwa groups pile on top of each other.",
+     "Some dots are probably measurement mistakes. Real data always has errors, the same way speech to a phone on a noisy train has errors, so these dots were left in."
+    ],
+    "end": "So one pair of formants does not always point to just one vowel."
+   },
+   {
+    "ref": "Lecture 16 · p5",
+    "main": "**If each vowel formed its own separate group, AI would be easy.** Because the groups overlap, a network has to see the data many times to learn where each vowel is most likely. Even then, many points are unclear.",
+    "sub": [
+     "If a new speaker's formants land in the middle of the overlap, the best answer is the vowel whose dots are most common there.",
+     "Removing the differences between speakers is called **normalization**. People tried it for about seventy years without success.",
+     "Hearing a lot of speech from the same speaker does help, because it gives the system more information about that person."
+    ],
+    "end": "That is why the real formant data shows why AI is hard."
+   },
+   {
+    "ref": "Lecture 16 · p5",
+    "main": "**This overlap between vowels was first discovered in the early 1950s by Peterson and Barney.** During the Second World War, spectrograms were kept secret by the military. The overlap was found once spectrograms became available.",
+    "sub": [
+     "Good speech recognition only arrived around 2011 or 2012, using neural networks trained by backpropagation.",
+     "Surprisingly, speech that changes over time turned out to be easier for modern systems than this single-moment vowel problem. Large language models use information from before and after each moment."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 16 · p15",
+    "main": "**The full training program runs 2000 updates and records the accuracy after each one.** Each update uses all the recordings, with a learning rate of 0.1. The formants are first divided by a thousand, which turns hertz into kilohertz.",
+    "sub": [
+     "**Accuracy** is the percent of recordings the network classifies correctly.",
+     "The word with the largest score counts as the network's answer."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 16 · p15",
+    "main": "**The accuracy starts at 20 percent, which is called chance.** With random weights, the network knows nothing. But with **five vowels**, even a random guess is right **one time out of five**, which is 20 percent.",
+    "sub": [
+     "With **ten categories**, chance would be **10 percent**, because a random guess would be right one time in ten."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 16 · p15",
+    "main": "**After a while, the accuracy jumps up to about 40 percent and then levels off near 45 percent.** The jump shows that the network is learning something. Each pass of learning is called an **epoch**, and a problem like this takes thousands of epochs.",
+    "sub": [
+     "This result is the accuracy on the training data, so it does not by itself show how well the network does on new speakers."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 16 · p16",
+    "main": "**Ten training runs from ten different sets of random starting weights all end at the same accuracy.** Each run used the same data. A starting set of random numbers is called a **seed**, though the word itself will not be asked.",
+    "sub": [
+     "The runs take **different paths**. One run stays at chance for about 500 epochs before jumping up, another jumps up very early, and another climbs more slowly.",
+     "**All ten runs end at the same accuracy**, close to 45 percent. Stochastic gradient descent always involves chance along the way, but the end point is the same.",
+     "Children learning language are similar. One child's home might talk mostly about sports, and another child's home might talk mostly about politics. By about age four, both children speak the same language, because the basic patterns under their different input are the same."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 16 · p16",
+    "main": "**The network levels off near 40 percent, not 100 percent, because the vowel data overlap so much.** For a point in the middle of the overlap, even a person looking carefully at the data would have to guess. AI is not magic, so a problem that is very hard for people is also hard for machines.",
+    "sub": [
+     "The next experiment is to add or remove layers, or to change the number of neurons in each layer. That shows whether the 40 percent gets better or worse."
+    ],
+    "end": ""
+   }
+  ]
+ }
+}

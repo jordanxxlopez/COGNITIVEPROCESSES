@@ -1,0 +1,455 @@
+{
+ "mass-spring": {
+  "blocks": [
+   {
+    "ref": "Lecture 11 · p2 · Lecture 12 · p3",
+    "main": "**A mass-spring system is a mass attached to a spring, and it vibrates because the spring and the mass want different things.** The spring has a resting length, called its **equilibrium position**. The spring always pulls or pushes toward that position. A moving mass keeps moving until something stops it, so it does not stop by itself.",
+    "sub": [
+     "If the spring is stretched, it pulls back. If the spring is compressed, it pushes back.",
+     "The spring \"wants\" to rest, and the moving mass \"wants\" to keep going, so neither one ever wins."
+    ],
+    "end": "So the mass keeps going past the middle, and the spring keeps turning it around."
+   },
+   {
+    "ref": "Lecture 11 · p2",
+    "main": "**The vibration of a mass-spring system is a cycle of four events that repeats.** First, the mass is pulled out and let go, so the stretched spring pulls it back toward the middle. Second, the mass reaches the middle while still moving, so it keeps going and compresses the spring.",
+    "sub": [
+     "Third, the compressed spring pushes the mass back the other way.",
+     "Fourth, the mass passes the middle again and stretches the spring, so the cycle starts over. This repeating back and forth is called **vibration**.",
+     "**Friction is left out of the model.** On a real table, friction slowly stops the motion. In the model there is no friction, so the mass vibrates forever."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p2 · Lecture 12 · p3",
+    "main": "**The same mass-spring system can vibrate in two directions, and both directions follow exactly the same rules.** In **longitudinal** motion, the mass moves left and right along the line of the spring. In **transverse** motion, the mass sits between two walls with one spring on each side. It moves up and down, across the line of the springs.",
+    "sub": [
+     "In transverse motion, pulling the mass up stretches both springs, so the stretched springs pull the mass back down.",
+     "When the mass passes the middle, the springs are not stretched. The mass is still moving, so it keeps going and stretches the springs on the other side.",
+     "Both versions vibrate at the **same rate**, because they have the same mass and the same total stiffness in the direction the mass moves.",
+     "Some systems are easier to understand in one direction than the other. The vocal folds and the air in the vocal tract each vibrate most clearly in a different direction."
+    ],
+    "end": "That is why both directions matter for speech."
+   },
+   {
+    "ref": "Lecture 11 · p3 · Lecture 12 · p4",
+    "main": "**How fast a mass-spring system vibrates depends on two things, its mass and its stiffness.** **Frequency** is the number of back-and-forth cycles a system completes in one second. **Raising the mass lowers the frequency, and raising the stiffness raises the frequency.** Both rules work the same way for longitudinal and transverse motion.",
+    "sub": [
+     "**A heavier mass vibrates more slowly**, because a heavy mass is hard to start moving and hard to turn around. So each trip back and forth takes longer. Heavy tree branches sway slowly, and small branches sway quickly.",
+     "Making the mass **four times heavier cuts the rate in half**.",
+     "**A stiffer spring makes the system vibrate faster**, because it pulls back harder and turns the mass around sooner. Making the spring **four times stiffer doubles the rate**."
+    ],
+    "end": "That is why mass and stiffness push the frequency in opposite directions."
+   },
+   {
+    "ref": "Lecture 11 · p3",
+    "main": "**A mass changes the frequency only while it moves, and a spring changes the frequency only while it stretches or compresses.** A mass that never moves could be made a thousand pounds heavier. The frequency would not change at all.",
+    "sub": [
+     "A spring that never stretches or compresses adds no stiffness, so it cannot raise the frequency."
+    ],
+    "end": "So the mass and stiffness rules apply only where each part is doing its job."
+   },
+   {
+    "ref": "Lecture 12 · p2",
+    "main": "**The same math that describes a vibrating spring also describes the ups and downs of an economy.** The **2026 Nobel Prize in economics** went to **Robert Hall** and **Michael Woodford**. The prize was for the **microeconomic foundations of macroeconomic stabilization**.",
+    "sub": [
+     "**Stabilization** means bringing a system back to its equilibrium and keeping it there.",
+     "Stabilization is the same job that **balancing feedback** does. It is also the job a spring does when it pulls a mass back to rest."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 12 · p2",
+    "main": "**In the Hall and Woodford model, unemployment and inflation rise and fall in turns, like the two curves of an oscillator.** One curve acts like the position of a mass. It starts high, goes negative and comes back. The other curve acts like the velocity, which is the flipped version of the first curve.",
+    "sub": [
+     "The goal of stabilization policy is to **make these ups and downs smaller**.",
+     "Smaller ups and downs let the economy avoid high unemployment and runaway inflation."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 12 · p2",
+    "main": "**Woodford's theory is called Dynamic Stochastic General Equilibrium, or DSGE, and each word has a meaning.** **Dynamic** means the economy changes over time by following rules. **Equilibrium** means the goal is a steady state without wild jumps.",
+    "sub": [
+     "**Stochastic** means the model can handle **random shocks**, such as a war starting or a company leader being caught stealing money.",
+     "Stochastic gradient descent works the same way. One strange data point can push the estimate off, and later data pull it back toward the average.",
+     "**Macroeconomic** quantities describe a whole economy, such as inflation or the number of people without jobs. **Microeconomic** events are single choices, such as one person buying something.",
+     "**Large patterns can come from many tiny events.** In speech, many tiny vibrations in the mouth add up to a meaning that a listener understands without tracking each vibration."
+    ],
+    "end": "So speech and the economy share the same structure, with big patterns built from many small events."
+   }
+  ]
+ },
+ "modes": {
+  "blocks": [
+   {
+    "ref": "Lecture 11 · p4 · Lecture 12 · p5",
+    "main": "**A system of two masses joined by springs can vibrate in two different ways, and each way is called a mode.** The system has two walls, one spring from each wall to a mass, and **one spring between the two masses**. All the masses are equal, and all the springs have the same stiffness. A **mode** is a way of vibrating.",
+    "sub": [
+     "The two modes are told apart by one question, which is whether the masses move together or against each other.",
+     "In **Mode 1**, the masses move together. Both masses are pulled up and let go, so they rise and fall side by side. In longitudinal motion, both are pulled left, so they move left and right as a pair.",
+     "In **Mode 2**, the masses move against each other. One mass is pulled down and the other up, so one rises whenever the other falls. In longitudinal motion, the masses move toward each other and then apart."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p4 · Lecture 12 · p5",
+    "main": "**Two masses have two modes, and Mode 2 is faster because more springs are stretching.** Both modes use the same two masses and the same three springs. So the difference comes from what each spring does. In both modes, the **two outer springs** stretch and compress.",
+    "sub": [
+     "In **Mode 1**, the masses move together, so the **middle spring never stretches or compresses**. It moves with the masses as a solid bar, so **Mode 1 effectively has only two springs**.",
+     "In **Mode 2**, the masses move against each other, so the middle spring is stretched and compressed again and again. **All three springs are working**, so Mode 2 has three units of stiffness instead of two.",
+     "More working stiffness gives a stronger pull back to the middle, and a stronger pull gives **a higher frequency**."
+    ],
+    "end": "So the springs themselves did not change, and only the way each mode uses them changed."
+   },
+   {
+    "ref": "Lecture 11 · p4 · Lecture 13 · p3",
+    "main": "**The more the masses move against each other, the more the springs stretch, so the higher the frequency.** This rule holds for every system of masses and springs. **A higher mode does not have stiffer springs.** A higher mode makes the same springs do more stretching.",
+    "sub": [
+     "More parts moving against each other means more springs are stretching. So **higher modes are stiffer and faster**."
+    ],
+    "end": "That is why a system with several masses has several frequencies, each one higher than the last."
+   },
+   {
+    "ref": "Lecture 12 · p5",
+    "main": "**A spring only matters in a mode where that spring stretches.** Suppose the **middle spring is made stiffer** while the two-mass system vibrates.",
+    "sub": [
+     "**Mode 1 does not change**, because the middle spring never stretches in Mode 1.",
+     "**Mode 2 gets faster**, because the middle spring stretches and compresses all the time in Mode 2."
+    ],
+    "end": "So one change to a spring can raise one mode and leave another mode alone."
+   },
+   {
+    "ref": "Lecture 11 · p4 · Lecture 12 · p5",
+    "main": "**A system can also vibrate in both of its modes at the same time.** To start this mixed motion, both masses are pulled up, but one mass is pulled higher than the other. Real movement and real speech production do this all the time.",
+    "sub": [
+     "Both masses fall together, which is Mode 1.",
+     "The masses start at different heights, so the middle spring also pushes them against each other, which is Mode 2.",
+     "So the masses move together and against each other at once."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p6 · Lecture 12 · p6",
+    "main": "**Three masses joined by four springs have three modes, and each mode has its own frequency from lowest to highest.** In **Mode 1**, all three masses move together. In **Mode 2**, the middle mass stays still while the two outer masses move against each other. In **Mode 3**, the middle mass moves opposite to the two outer masses.",
+    "sub": [
+     "**Mode 1 has the lowest frequency**, because the masses move together. So the two middle springs do not stretch, and springs that do not stretch add no stiffness.",
+     "**Mode 2 has the middle frequency**, because the springs stretch and compress, but less than they could. To start Mode 2, the outer masses are pulled apart without touching the middle mass.",
+     "**Mode 3 has the highest frequency**, because every mass moves against its neighbor. So the springs stretch the most. In transverse motion, the middle mass goes down while both outer masses go up."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p6 · Lecture 12 · p6",
+    "main": "**Changing one mass only affects the modes where that mass moves.** The middle mass is called **Mass 2**. Suppose Mass 2 is made heavier.",
+    "sub": [
+     "**Mode 1 gets slower**, because Mass 2 moves in Mode 1.",
+     "**Mode 3 gets slower**, because Mass 2 moves in Mode 3.",
+     "**Mode 2 does not change**, because Mass 2 does not move in Mode 2.",
+     "**The amount a mass changes the frequency depends on how much that mass moves.** A mass that does not move has no effect. A mass that moves a little has a small effect, and a mass that moves a lot has a large effect."
+    ],
+    "end": "So a mass changes frequency only by moving."
+   },
+   {
+    "ref": "Lecture 11 · p6",
+    "main": "**All three modes can happen at the same time, so any motion of the system is a mix of its pure modes.** However the system is started, it vibrates as some mix of these **pure modes**.",
+    "sub": [
+     "Learning a musical instrument means learning to make its masses and springs vibrate in some modes and not others.",
+     "How a string is plucked or a violin is bowed decides which modes start. Those modes are heard as **notes**.",
+     "A **trained singer** does the same thing with the vocal folds. The singer controls their mass and stiffness to sing in tune."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p7 · Lecture 12 · p7 · Lecture 13 · p3",
+    "main": "**Every added mass adds one more mode, so N masses give N modes.** One mass has one mode, two masses have two modes, and six masses have six modes. Higher modes have more **reversals**. A reversal is a place where two neighboring masses move in opposite directions.",
+    "sub": [
+     "More reversals mean more stretching, so **higher modes have higher frequencies**.",
+     "In a chain of separate masses, the mode frequencies are usually **not whole-number multiples** of the lowest frequency."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p7 · Lecture 12 · p7 · Lecture 13 · p3",
+    "main": "**The same mode has the same pattern in every chain, no matter how many masses the chain has.** **Mode 1** always has everything moving up and down together. **Mode 2** always splits the system into **two parts**, so the left side moves against the right side. **Mode 3** always splits the system into **three parts**, so the middle moves against the two sides.",
+    "sub": [
+     "With an odd number of masses, such as three, five or seven, the middle mass stays still in Mode 2.",
+     "With **four masses**, Mode 1 moves all four together, and Mode 2 moves the left pair against the right pair. Mode 3 moves the middle pair against the outer pair, and Mode 4 moves every mass against its neighbors."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p7 · Lecture 12 · p7",
+    "main": "**A chain with an infinite number of masses and springs is a string**, such as a guitar string or a piano string. Every small piece of a string has weight, which is its **mass**. Every small piece resists being stretched or compressed, which is its **springiness**. So a string has an infinite number of modes.",
+    "sub": [
+     "The string has the same mode patterns. Everything moves together in Mode 1, and the two halves move against each other in Mode 2. In Mode 3, the middle moves against the sides.",
+     "In the **lowest mode**, the whole string moves together with almost no stretching, so this mode gives the **lowest note**. In each higher mode, more parts of the string move against each other.",
+     "A string plucked without skill vibrates in many modes at once.",
+     "The frequencies of a string are heard as **notes**. The ear can pick out the notes of many instruments at once, because the ear is also built from masses and springs."
+    ],
+    "end": "So the ear responds to the masses and springs vibrating in the world because it is made of masses and springs too."
+   }
+  ]
+ },
+ "membrane-method": {
+  "blocks": [
+   {
+    "ref": "Lecture 11 · p9 · Lecture 12 · p12 · Lecture 14 · p2",
+    "main": "**The vocal folds are a membrane, so their modes spread across a surface instead of along a line.** A **membrane** is a vibrating sheet, and the vocal folds are a sheet of muscle. The **larynx** holds the vocal folds. They are **fixed on all sides** and are made of many masses and springs, so the same rules of modes apply.",
+    "sub": [
+     "In **Mode 1**, the whole surface moves up and down together. In **Mode 2**, the left half moves against the right half, so half moves up while the other half moves down.",
+     "In **Mode 3**, the surface splits the other way. A middle line stays still, and the two halves on either side of it move against each other.",
+     "In **Mode 4**, four sections move against each other. Higher modes divide the surface into more and more parts, so the patterns get more complicated.",
+     "Each mode is labeled by two numbers. One counts the bumps along the length, and the other counts the bumps across the width."
+    ],
+    "end": "So a membrane has many modes of vibration, like a drum."
+   },
+   {
+    "ref": "Lecture 11 · p9 · Lecture 13 · p6 · Lecture 14 · p2",
+    "main": "**The vocal folds vibrate in all their modes at once, and the modes add together into one combined motion.** This combined motion is what actually happens in the throat while a person talks. So a voice has a spectrum full of spikes.",
+    "sub": [
+     "The vocal folds are held fixed along their edges, so they **behave like a string**. A string fixed at both ends has evenly spaced harmonics.",
+     "The same copy-counting works on a membrane. The first mode is one bump across the whole membrane. The second mode fits two bumps, so it has twice the frequency.",
+     "The fourth mode fits four ups and downs, so it has four times the frequency.",
+     "The evenly spaced frequencies attached to these membrane modes are teaching values."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 14 · p2",
+    "main": "**Because the vocal folds are fixed-fixed, their frequencies are harmonics.** **Harmonics** are whole-number multiples of the lowest frequency. The lowest harmonic is called **F0**.",
+    "sub": [
+     "Each person has a different F0, but the other harmonics are always multiples of that person's F0."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 12 · p12",
+    "main": "**Changing the mass or stiffness of the vocal folds changes the voice.** People who smoke heavily can develop **nodules** on their vocal folds. A nodule adds mass at one spot and changes the stiffness nearby.",
+    "sub": [
+     "The added mass and changed stiffness make the folds vibrate differently, so the voice sounds different."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p10 · Lecture 12 · p13",
+    "main": "**Science works by stating a clear theory, solving it to get a prediction, and then measuring to check the prediction.** Theories are often written as **differential equations**, which describe how quantities change over time.",
+    "sub": [
+     "The spring equations are one example. Solving them predicts that a pulled spring goes back and a pushed spring also goes back.",
+     "The equations for the vocal folds are the same type as the spring equations. There are many more of them, and they are slightly more complicated.",
+     "So the ideas from masses and springs are enough to reason about the vocal folds."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p10 · Lecture 12 · p13",
+    "main": "**The theory that the vocal folds are a membrane predicts that every voice has a spectrum with evenly spaced harmonics.** The vocal folds vibrate in many modes at once, so their spectrum should have **evenly spaced peaks**. These evenly spaced peaks are called **harmonics**. The **prediction** is that anyone's voice, when measured, will show them.",
+    "sub": [
+     "The prediction was tested in **Praat**, a program for analyzing speech. Each speaker made a sound with the **mouth wide open**, so no particular vowel was being made.",
+     "In one voice, the lowest spike was near **100 hertz**. The next spikes were close to two, three, four and five times that value, so they were **evenly spaced as predicted**.",
+     "In a second voice, the lowest spike was near **220 hertz**. The next spikes were near two and three times that value, so they were evenly spaced but farther apart.",
+     "In another recorded voice, the lowest harmonic was about **130 hertz**, and the next harmonics were close to two and three times that value."
+    ],
+    "end": "So **the prediction was correct**, and a theory built from simple masses and springs predicted real speech precisely."
+   },
+   {
+    "ref": "Lecture 11 · p10 · Lecture 12 · p13",
+    "main": "**Two voices have different harmonics because of the mass rule.** The 220 hertz voice has a **higher pitch**, so that speaker's vocal folds are probably **smaller and thinner**. Thinner folds have less mass, and less mass gives a higher frequency. So every harmonic is higher and farther apart.",
+    "sub": [
+     "Each person's lowest frequency is different, but the harmonics above it are always close to multiples of it.",
+     "Each person's vocal folds give their voice its own spectrum, which is part of how people recognize voices.",
+     "Twins share genetics and have similar vocal folds, so twins can be hard to tell apart on the phone.",
+     "How a person says vowels also matters. Vowels depend on the vibration of the **air** above the vocal folds, not on the folds themselves."
+    ],
+    "end": ""
+   }
+  ]
+ },
+ "fixed-ends": {
+  "blocks": [
+   {
+    "ref": "Lecture 11 · p8 · Lecture 12 · p8 · Lecture 13 · p5",
+    "main": "**A string fixed at both ends has modes at whole-number multiples of its lowest frequency.** If the lowest mode is at **100 hertz**, the next modes are at **200, 300, 400 and 500 hertz**. **Hertz** means times per second. Modes that line up as whole-number multiples are called **harmonics**.",
+    "sub": [
+     "Each harmonic is a whole number of times the lowest frequency, so the harmonics are evenly spaced."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p8 · Lecture 12 · p8 · Lecture 13 · p4",
+    "main": "**In a string fixed at both ends, each higher mode is made of more copies of the first mode.** The first mode is **one half-wave**. A half-wave is one bump. It goes from no motion at one end to the most motion in the middle, then back to no motion at the other end.",
+    "sub": [
+     "**Mode 2 holds two half-waves**, so one half goes up while the other half goes down. Each half acts as a copy of Mode 1, so Mode 2 has **twice the stiffness** and **twice the frequency**.",
+     "**Mode 3 holds three half-waves**, and **Mode 5 holds five**. So the frequency multiplies by the number of bumps that fit, and the frequencies climb in equal steps.",
+     "If the first mode is 100 hertz, the fifth mode is 500 hertz. If the lowest mode is 200 hertz, the fifth mode is five times 200.",
+     "The numbers do not have to start at 100. A voice with a base frequency of **250 hertz** has its next harmonics at 500, 750 and 1000 hertz."
+    ],
+    "end": "So **the fifth mode has the first mode fitted into it five times**, so it has five times the stiffness and the frequency."
+   },
+   {
+    "ref": "Lecture 11 · p8 · Lecture 12 · p8 · Lecture 13 · p5",
+    "main": "**A real string vibrates in all of its modes at the same time.** The separate motions add together into one complicated, irregular shape. That combined shape is what a plucked string actually does, and it looks a lot like the waveform of speech.",
+    "sub": [
+     "A single mode by itself makes a **pure tone**. A pure tone sounds so harsh that it is used for sirens.",
+     "Normal sounds contain many modes at once."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p8 · Lecture 12 · p8 · Lecture 13 · p5",
+    "main": "**A spectrum shows which frequencies are in a sound and how strong each one is.** **Frequency** runs along the horizontal axis. **Amplitude**, which is strength or how much vibration there is, runs up the vertical axis. Each spike is one harmonic.",
+    "sub": [
+     "For a string vibrating in all five modes, the spectrum has **five evenly spaced spikes** at 100, 200, 300, 400 and 500 hertz. The spikes have **equal height**, because nothing has filtered the sound.",
+     "If the string vibrated **only in Mode 3**, the spectrum would have **one spike at the frequency of Mode 3** and nothing else. A list with one active slot and every other slot at zero is a **one-hot encoding**.",
+     "The **vocal folds** are fixed on all sides, just behind the Adam's apple. So they behave as a fixed-fixed system and produce harmonics."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 12 · p10",
+    "main": "**Making one spot on a string heavier lowers some modes and leaves others the same.** Suppose the very middle of a string fixed at both ends is made thicker, which adds mass there.",
+    "sub": [
+     "In **Mode 1**, the middle moves up and down a lot, so the added mass **lowers** the frequency. In **Mode 2**, the middle does not move, so the added mass changes **nothing**.",
+     "In **Mode 3**, the middle moves again, so the frequency drops. In **Mode 4**, the middle is still again, so nothing changes."
+    ],
+    "end": "So going up through the modes, the effect **alternates** between lowering the frequency and having no effect."
+   },
+   {
+    "ref": "Lecture 12 · p10",
+    "main": "**Along a vibrating string, movement and stretching take turns.** Where a piece of string moves the most, it is carried up and down and is hardly stretched. Where the string is stretched the most, such as right next to a fixed end, there is **no movement**. So **the most springiness is at the points with no movement**.",
+    "sub": [
+     "In **Mode 5** of a string fixed at both ends, the string does not move at the **two fixed ends**. It also does not move at the **four points where it crosses its middle line**.",
+     "So those **six places** have the most springiness.",
+     "The **most movement**, and the **least springiness**, is at the tops of the **five bumps**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p11 · Lecture 13 · p7",
+    "main": "**A system can be fixed at one end and free at the other end, and a building is an example.** A building is fixed to the ground at the bottom. It is free to sway at the top in strong wind or an earthquake. A string can be set up the same way, fixed at the bottom and free at the top.",
+    "sub": [
+     "The **fixed bottom** cannot move. A point with **no motion** is called a **node**.",
+     "The **free top** moves the most. A point with the **most motion** is called an **antinode**.",
+     "The first mode of this string is not a full half-wave. It goes from **no motion at the fixed end** to **the most motion at the free end**. That is only **one quarter of a wave**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p11 · Lecture 12 · p14 · Lecture 13 · p8 · Lecture 14 · p4",
+    "main": "**A fixed-free system has only the odd harmonics, because each mode is built from an odd number of quarter-wave pieces.** Each piece goes from no motion at a still point to the most motion at a moving point. **Mode 1 holds one piece, Mode 2 holds three, Mode 3 holds five, and Mode 4 holds seven.** So with a base of 100 hertz, the modes come at **100, 300, 500 and 700 hertz**.",
+    "sub": [
+     "Mode 1 goes from no motion at the bottom to the most motion at the top, as when a whole building sways.",
+     "Two pieces stacked together give no motion, then the most motion, then no motion again. That puts a still point at both ends, which would make the system **fixed at both ends**.",
+     "So two pieces can never fit. The next possible mode adds one more piece, for **three** in total, and that ends with motion at the free top again.",
+     "When all four modes are equally strong, the spectrum measured at the free end has **four equal spikes**."
+    ],
+    "end": "So the free end must always be moving, and only an odd number of quarter-waves ends on a moving point."
+   },
+   {
+    "ref": "Lecture 11 · p11 · Lecture 12 · p14 · Lecture 13 · p7",
+    "main": "**Engineers design buildings to sway only in Mode 1, with the whole building moving together.** In Mode 1 every floor moves together. On a high floor, Mode 1 feels unpleasant, but it is safe.",
+    "sub": [
+     "A building is not designed to be completely stiff because buildings that cannot bend or move slightly are more likely to be damaged during an earthquake.",
+     "Engineers design buildings to never vibrate in a higher mode. In a higher mode, some floors would move one way and other floors the other way.",
+     "Floors moving in opposite directions are dangerous, so the building could break apart."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 11 · p11",
+    "main": "**The ends of a string decide which harmonics it has.** When **both ends are fixed**, the string has **every whole-number multiple** of the lowest frequency. When **one end is fixed and the other end is free**, the string has **only the odd multiples**.",
+    "sub": [
+     "Take a string with the **same length and the same wave speed**. Changing it from fixed at both ends to fixed at one end and free at the other **halves the lowest frequency**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 13 · p8, 9 · Lecture 14 · p4",
+    "main": "**The frequencies of a fixed-free system are called formants.** A **formant** is a frequency of vibration of a system that is fixed at one end and completely free at the other end. Formants are **odd multiples** of the lowest one, and they are written **F1**, **F2** and **F3**.",
+    "sub": [
+     "Counting quarter-wave pieces gives every formant from the first one. If **F1 is 500 hertz**, then **F2 is three times that, 1500 hertz**.",
+     "**F3 is five times F1, 2500 hertz.**",
+     "Each step between formants is twice F1, because each new mode adds two more quarter-wave pieces."
+    ],
+    "end": "That is why the formants are odd multiples of the first formant."
+   },
+   {
+    "ref": "Lecture 12 · p14 · Lecture 14 · p3",
+    "main": "**The air inside the vocal tract is also fixed at one end and free at the other end.** At the bottom, the **vocal folds are closed** at the **glottis**, so the air there cannot move back and forth. So that end is **fixed**. At the lips, the air can move in and out easily, so that end is **free**.",
+    "sub": [
+     "A fixed end and a free end allow only the **odd harmonics**. So the frequencies of the air are one, three, five and seven times the lowest frequency.",
+     "Unlike a building, the air in the vocal tract vibrates in **all of its modes**.",
+     "Speaking changes the masses and springs of different parts of the air. That is how listeners tell vowels, consonants and words apart."
+    ],
+    "end": "So speech uses two vibrating systems, the fixed-fixed vocal folds and the fixed-free air above them."
+   }
+  ]
+ },
+ "local-change": {
+  "blocks": [
+   {
+    "ref": "Lecture 12 · p9 · Lecture 13 · p2",
+    "main": "**Every vibrating system in speech follows the same short list of mass-spring principles.** The principles connect to each other, so they do not need to be memorized as separate facts. **Raising the mass lowers the frequency, and raising the stiffness raises the frequency.**",
+    "sub": [
+     "**A system with n masses has n modes of vibration**, and each higher mode has a higher frequency.",
+     "Each higher mode is faster because more parts move against each other, so more springs stretch."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 12 · p9 · Lecture 13 · p2",
+    "main": "**A change in mass or stiffness matters in proportion to what that spot does.** **Adding mass lowers the frequency in proportion to how much that mass moves.** **Adding stiffness raises the frequency in proportion to how much that spring stretches and compresses.** Both effects depend on where the change is made.",
+    "sub": [
+     "A mass that does not move has no effect. A mass that moves a little has a small effect, and a mass that moves a lot has a large effect.",
+     "**Where there is the most movement there is no stretching, and where there is the most stretching there is no movement.**"
+    ],
+    "end": "So the location of a change decides which of the two effects counts."
+   },
+   {
+    "ref": "Lecture 12 · p9 · Lecture 13 · p2",
+    "main": "**The way a system's ends are held decides how its frequencies are spaced.** In a **fixed-fixed system**, the frequencies are called **harmonics**. They are **whole-number multiples** of the base frequency, because the first mode fits a whole number of times into each mode.",
+    "sub": [
+     "In a **fixed-free system**, the frequencies are called **formants**. They are **odd multiples** of the base frequency, because the first mode fits an odd number of times into each mode."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 13 · p2",
+    "main": "**Raising mass and stiffness at the same time does not cancel out, except for a single mass on a single spring.** In a system with many masses and springs, a spot that moves a lot hardly stretches. A spot that stretches a lot hardly moves. So at any one spot, only one of the two changes matters.",
+    "sub": [
+     "At a spot on a string that never moves but is stretched hard, extra mass does nothing. Extra stiffness there raises the frequency, so **the frequency goes up**.",
+     "At a spot on a string that moves up and down the most, extra stiffness does nothing. Extra mass there slows it down, so **the frequency goes down**."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 12 · p11",
+    "main": "**One small change to a string can make one mode lower and another mode higher.** Choose a spot where **Mode 4 moves the most** and where **Mode 5 crosses its middle line**. Mode 5 does not move at that spot. Then raise both the **mass** and the **stiffness** of that spot.",
+    "sub": [
+     "For Mode 4, the piece is moving, so the extra mass **lowers** the frequency. The piece is barely stretched, so the extra stiffness does nothing.",
+     "For Mode 5, the piece does not move, so the extra mass does nothing. The piece is stretched the most, so the extra stiffness **raises** the frequency.",
+     "So the same change **lowers Mode 4 and raises Mode 5**.",
+     "Each mode is checked separately by asking whether the spot is moving or stretching in that mode. If it is moving, the mass matters. If it is stretching, the stiffness matters."
+    ],
+    "end": ""
+   },
+   {
+    "ref": "Lecture 12 · p11",
+    "main": "**Perturbation theory predicts how a small change in one location affects how something vibrates.** A drum is also made of countless masses and springs. In the late nineteenth century, researchers tested this by placing small amounts of **wax** on different parts of a drum. Cameras could not yet record fast motion.",
+    "sub": [
+     "When wax was placed where the drum vibrated a lot, the extra mass made the drum vibrate more slowly, causing its frequency (pitch) to **decrease**.",
+     "When wax was placed where the drum did not vibrate, it had **no effect** on the drum's frequency or sound."
+    ],
+    "end": "So the extra mass of the wax mattered only where the drum moved."
+   },
+   {
+    "ref": "Lecture 12 · p22",
+    "main": "**The mass-spring principles explain every vowel, because each change only matters where it can act.** **Extra mass matters where the air moves.** **Extra stiffness matters where the air compresses and expands.**",
+    "sub": [
+     "The vocal tract is fixed at the glottis and free at the lips, so its formants are **odd multiples** of the lowest one."
+    ],
+    "end": ""
+   }
+  ]
+ }
+}

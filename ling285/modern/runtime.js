@@ -518,7 +518,7 @@ function installModern() {
  const tierClass=t=>t==='Almost certain'?'ess-tier-certain':t==='Likely'?'ess-tier-likely':'ess-tier-possible';
  const essImg=(src,alt)=>`<img class="review-image ess-figure" src="${esc(safeURL(src))}" alt="${esc(alt || '')}" loading="lazy">`;
  const qaList=qs=>`<div class="ess-questions">${qs.map(q=>`<details class="modern-answer"><summary>${q.source?`<span class="tag">${esc(q.source)}</span> `:''}${rich(q.q)}${q.img?essImg(q.img,q.alt):''}</summary>${paragraphs(q.a)}${q.ansImg?essImg(q.ansImg,q.alt):''}</details>`).join('')}</div>`;
- const essMedia=m=>m.video?`<video controls autoplay muted loop playsinline preload="metadata"${m.poster?` poster="${esc(safeURL(m.poster))}"`:''} aria-label="${esc(m.caption || 'Original animation')}"><source src="${esc(safeURL(m.video))}" type="video/mp4"></video>`:`<img src="${esc(safeURL(m.image))}" alt="${esc(m.caption || 'Original slide')}" loading="lazy">`;
+ const essMedia=m=>m.video?`<video class="ess-loop" controls muted loop playsinline preload="none"${m.poster?` poster="${esc(safeURL(m.poster))}"`:''} aria-label="${esc(m.caption || 'Original animation')}"><source src="${esc(safeURL(m.video))}" type="video/mp4"></video>`:`<img src="${esc(safeURL(m.image))}" alt="${esc(m.caption || 'Original slide')}" loading="lazy">`;
  const blockSplit=(b,inner)=>b.media?`<div class="ess-block ess-block-split"><p><span class="tag">${esc(b.ref)}</span></p><div class="aid-split ess-split"><div>${inner}</div><figure class="ess-media">${essMedia(b.media)}<figcaption class="small muted">${esc(b.media.caption || '')}</figcaption></figure></div></div>`:null;
  const blockHTML0=b=>b.items?`<div class="ess-block"><p><span class="tag">${esc(b.ref)}</span></p><ul class="modern-teaching">${b.items.map(x=>`<li>${rich(x)}</li>`).join('')}</ul></div>`:`<div class="ess-block"><p><span class="tag">${esc(b.ref)}</span></p><ul class="modern-teaching"><li>${rich(b.main)}${b.sub && b.sub.length?`<ul>${[].concat(b.sub).map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}</li>${b.end?`<li>${rich(b.end)}</li>`:''}</ul></div>`;
  const blockHTML=b=>{const html=blockHTML0(b);if(!b.media)return html;const inner=html.replace(/^<div class="ess-block"><p><span class="tag">[\s\S]*?<\/span><\/p>/,'').replace(/<\/div>$/,'');return blockSplit(b,inner);};
@@ -571,6 +571,19 @@ function installModern() {
   return intro('Exam 2 review guide · Exam 2 focus','The 21 review questions grouped by topic, each followed by the changed versions he is most likely to ask. Scope: '+essRange()+'.')+focusSelect('review')+scopeBox()+essToolbar()+essTopics({know:false,questions:true,filter:q=>/^Review|^Predicted/.test(q.source)});
  };
  modernRoutes.essentials=essentialsView;modernRoutes.labs=labsView;
+ // NOTES_BY_TOPIC: Lectures 11 to 18 merged by subject (modern/bytopic.js, built by authoring/build_bytopic.py).
+ const BYT=window.LING285_BYTOPIC || {topics:[]};
+ { const at=WORK.findIndex(([id])=>id==='essentials'); WORK.splice(at+1,0,['bytopic','Notes by topic · Lectures 11–18']); }
+ EXAM2_VIEWS.add('bytopic');
+ const bytRead=readRoute;
+ readRoute=function(){bytRead();const v=new URLSearchParams(location.search).get('view');if(v==='bytopic')view=v;};
+ function bytopicView(){
+  if(state.activeModule!=='module2')return module2OnlyNotice('Notes by topic');
+  const jump=`<div class="row ess-jump">${BYT.topics.map((t,i)=>`<a class="tag" href="#byt-${esc(t.id)}">${i+1} · ${esc(t.title)}</a>`).join('')}</div>`;
+  return intro('Notes by topic · Lectures 11–18','Each topic brings together every slide that teaches it, from every lecture, said once. Read the notes with their slide or video beside them, then answer the questions.')+
+   jump+essToolbar()+'<div class="ess-topics">'+BYT.topics.map((t,i)=>`<details class="modern-topic ess-topic" id="byt-${esc(t.id)}" data-modern-item open><summary>${i+1} · ${esc(t.title)}</summary><div class="modern-topic-body"><p class="small muted">${esc(t.lectures)}</p><details class="modern-answer ess-know" open><summary>I can explain and apply these ideas</summary>${pointsList({blocks:t.blocks})}</details>${t.questions.length?`<h3>What you can be asked</h3>${qaList(t.questions)}`:''}</div></details>`).join('')+'</div>';
+ }
+ modernRoutes.bytopic=bytopicView;
  // PLAIN_WORDING: a "Wording" dropdown (Original / Plain wording) on the Module II panels.
  // Data comes from modern/plain.js (built by authoring/build_plain.py). Original stays the default.
  const PL=window.LING285_PLAIN || null;
@@ -672,6 +685,16 @@ function installModern() {
   if(figsOn())addFigures();
   return result;
  };
+ // Loop the beside-the-notes videos only while they are on screen, so long pages stay light.
+ // Checked on scroll (the studio swaps video elements after rendering, so observers would go stale).
+ let essVideoTick=0;
+ const essSyncVideos=()=>{for(const v of document.querySelectorAll('#content video.ess-loop')){const r=v.getBoundingClientRect(),on=r.bottom>60 && r.top<innerHeight-60 && r.height>0;if(on && v.paused && !v.dataset.userPaused)v.play?.().catch(()=>{});else if(!on && !v.paused)v.pause();}};
+ const essQueueSync=()=>{if(essVideoTick)return;essVideoTick=setTimeout(()=>{essVideoTick=0;essSyncVideos();},120);};
+ document.addEventListener('scroll',essQueueSync,true);window.addEventListener('resize',essQueueSync);setInterval(()=>{if(document.querySelector('#content video.ess-loop'))essSyncVideos();},1500);
+ document.addEventListener('pause',e=>{const v=e.target;if(v.matches?.('video.ess-loop')){const r=v.getBoundingClientRect();if(r.bottom>60 && r.top<innerHeight-60)v.dataset.userPaused='1';}},true);
+ document.addEventListener('play',e=>{const v=e.target;if(v.matches?.('video.ess-loop'))delete v.dataset.userPaused;},true);
+ const loopBaseRender=render;
+ render=function(...args){const result=loopBaseRender.apply(this,args);setTimeout(essSyncVideos,300);return result;};
  document.addEventListener('change',event=>{
   const p=event.target.closest('[data-fig-pref]');if(p){essSet('figs',p.value);render();}
  });
