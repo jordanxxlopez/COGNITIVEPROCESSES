@@ -12168,6 +12168,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "",
+        "revealMode": "",
         "poster": "assets/exam2/frames/3a173c997457e2f0c60b.jpg",
         "caption": "Lecture 11 · p2 · with the video played on the slide"
        }
@@ -12189,6 +12191,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "",
+        "revealMode": "",
         "poster": "assets/exam2/frames/e7a1853082e98dd26757.jpg",
         "caption": "Lecture 11 · p3 · with the video played on the slide"
        }
@@ -12211,6 +12215,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "",
+        "revealMode": "",
         "poster": "assets/exam2/frames/57ff4733438cce3597cb.jpg",
         "caption": "Lecture 11 · p4 · with the video played on the slide"
        }
@@ -12233,6 +12239,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "",
+        "revealMode": "",
         "poster": "assets/exam2/frames/6fdaa70e0bfab83a6d83.jpg",
         "caption": "Lecture 11 · p6 · with the video played on the slide"
        }
@@ -12255,6 +12263,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "",
+        "revealMode": "",
         "poster": "assets/exam2/frames/a6ce5f4f318fd7141922.jpg",
         "caption": "Lecture 11 · p7 · with the video played on the slide"
        }
@@ -12493,6 +12503,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "",
+        "revealMode": "",
         "poster": "assets/exam2/frames/ac3e753564fa139e2612.jpg",
         "caption": "Lecture 11 · p8 · with the video played on the slide"
        }
@@ -12514,6 +12526,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "",
+        "revealMode": "",
         "poster": "assets/exam2/frames/4378fb47c97c7f4785f9.jpg",
         "caption": "Lecture 11 · p9 · with the video played on the slide"
        }
@@ -12549,6 +12563,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "",
+        "revealMode": "",
         "poster": "assets/exam2/frames/50927605857bbe7450a9.jpg",
         "caption": "Lecture 11 · p11 · with the video played on the slide"
        }
@@ -12636,6 +12652,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "",
+        "revealMode": "",
         "poster": "assets/exam2/frames/de37514880e11a8d6b49.jpg",
         "caption": "Lecture 12 · p15 · with the video played on the slide"
        }
@@ -12684,6 +12702,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "assets/exam2/overlays/lecture12-019.png?v=2",
+        "revealMode": "reveal",
         "poster": "assets/exam2/frames/ba7bea1a3c6655bda52d.jpg",
         "caption": "Lecture 12 · p19 · with the video played on the slide"
        }
@@ -12705,6 +12725,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "assets/exam2/overlays/lecture12-020.png?v=2",
+        "revealMode": "reveal",
         "poster": "assets/exam2/frames/781434531c44b6e3d6b9.jpg",
         "caption": "Lecture 12 · p20 · with the video played on the slide"
        }
@@ -12726,6 +12748,8 @@ window.LING285_ESSENTIALS = {
          100.0,
          100.0
         ],
+        "reveal": "assets/exam2/overlays/lecture12-021.png?v=2",
+        "revealMode": "reveal",
         "poster": "assets/exam2/frames/4362277e503aae5dbb25.jpg",
         "caption": "Lecture 12 · p21 · with the video played on the slide"
        }

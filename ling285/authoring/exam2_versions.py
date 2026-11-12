@@ -115,6 +115,7 @@ def _slide_media(overlay=False):
                     videos.setdefault(f"{m.group(1)}-{m.group(2)}", e)
 
     positions = json.load(open(_ROOT / "authoring" / "video-positions.json")) if overlay else {}
+    reveals = json.load(open(_ROOT / "authoring" / "overlays.json")) if overlay else {}
 
     def media(lec, page):
         img = _ROOT / "assets" / "slides" / lec / f"{page:03d}.webp"
@@ -126,6 +127,8 @@ def _slide_media(overlay=False):
             stem = Path(v["video"]).stem
             poster = f"assets/exam2/frames/{stem}.jpg"
             return {"image": f"assets/slides/{lec}/{page:03d}.webp", "video": v["video"], "box": v["box"],
+                    "reveal": (reveals.get(f"{lec}-{page}") or {}).get("src", ""),
+                    "revealMode": (reveals.get(f"{lec}-{page}") or {}).get("mode", ""),
                     "poster": poster if (_ROOT / poster).exists() else "",
                     "caption": f"Lecture {lec[7:]} · p{page} · with the video played on the slide"}
         blank = ImageStat.Stat(Image.open(img).convert("L")).stddev[0] < 1
