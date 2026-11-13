@@ -171,14 +171,26 @@ test('C and D Version 2 retain source identities and use page-specific teaching 
   }
 });
 
-test('Version 7 reproduces the supplied notes on their original slides without inventing Module I PDF notes', () => {
+test('Version 7 reproduces the supplied notes on their original slides, the Module II PDF and the Module I lecture PDFs', () => {
   const source = read('authoring/notes-v7.json');
   const extraction = read('authoring/notes-v7-extraction.json');
   const payload = read('modern/transcripts-notes-v7.json');
+  const module1 = read('authoring/notes-v7-module1.json');
+  const module1Extraction = read('authoring/notes-v7-module1-extraction.json');
   assert.equal(payload.origin.sha256, hash('authoring/notes-v7.json'));
-  assert.deepEqual(payload.availableModules, ['module2']);
+  assert.equal(payload.origin.module1Sha256, hash('authoring/notes-v7-module1.json'));
+  assert.deepEqual(payload.availableModules, ['module1', 'module2']);
   assert(source.sourceFiles.length > 0);
   for (const file of source.sourceFiles) assert.equal(hash(file.file), file.sha256, file.file);
+  assert.equal(module1.sourceFiles.length, 9);
+  for (const file of module1.sourceFiles) assert.equal(hash(file.file), file.sha256, file.file);
+  // Every Module I paragraph the extractor read is placed exactly once, in its section order.
+  for (const [cid, info] of Object.entries(module1Extraction.lectures)) {
+    const ids = info.sections.flatMap(section => section.paragraphs.map(p => p.id));
+    const placed = module1.collections[cid].pages.flatMap(p => p.evidence.paragraphIds);
+    assert.deepEqual([...placed].sort(), [...ids].sort(), cid);
+    for (const page of module1.collections[cid].pages) assert.equal(page.evidence.pdfFile, info.file, cid);
+  }
   const paragraphs = new Map(extraction.noteSections.flatMap(section => section.bullets.flatMap(b =>
     [b.main, ...b.children].map(unit => [unit.id, unit]))));
   const assigned = [];
@@ -201,8 +213,9 @@ test('Version 7 reproduces the supplied notes on their original slides without i
   for (const lecture of lectures) {
     const sections = payload.collections[lecture.id].sections;
     assert.deepEqual(sections.map(s => [s.id,s.page]), lecture.sections.map(s => [s.id,s.page]));
-    if (lecture.moduleId === 'module1') assert(sections.every(s => s.teaching.length === 0));
-    else assert.deepEqual(sections.map(s => s.teaching), source.collections[lecture.id].pages.map(p => p.teaching));
+    const authored = lecture.moduleId === 'module1' ? module1 : source;
+    assert.deepEqual(sections.map(s => s.teaching), authored.collections[lecture.id].pages.map(p => p.teaching));
+    if (lecture.moduleId === 'module1') assert(sections.some(s => s.teaching.length > 0), lecture.id);
   }
 });
 
@@ -277,7 +290,7 @@ test('Version 7 Version 2 keeps all eleven existing choices and their course mat
   }
   const entry = fs.readFileSync(path.join(root, 'modern/index.html'), 'utf8')
     .replaceAll('?v=notes-v8-1', '?v=notes-v7-v2-1')
-    .replace('<link rel="stylesheet" href="modern/essentials.css?v=overlay-6"><script src="modern/essentials.js?v=exam2-v12a" defer></script><script src="modern/plain.js?v=plain-1" defer></script><script src="modern/bytopic.js?v=bytopic-6" defer></script><script src="modern/module1.js?v=module1-1" defer></script>', '').replaceAll('?v=notes-v10-loop-31', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-30', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-27', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-26', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-25', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-24', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-23', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-22', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-21', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-20', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-19', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-18', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-17', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-16', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-15', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-14', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-14', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-13', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-12', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-11', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-10', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-9', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-8', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-7', '?v=notes-v7-v2-1')
+    .replace('<link rel="stylesheet" href="modern/essentials.css?v=overlay-6"><script src="modern/essentials.js?v=exam2-v12a" defer></script><script src="modern/plain.js?v=plain-1" defer></script><script src="modern/bytopic.js?v=bytopic-6" defer></script><script src="modern/module1.js?v=module1-1" defer></script>', '').replaceAll('?v=module1-notes-2', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-30', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-27', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-26', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-25', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-24', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-23', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-22', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-21', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-20', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-19', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-18', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-17', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-16', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-15', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-14', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-14', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-13', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-12', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-11', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-10', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-9', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-8', '?v=notes-v7-v2-1').replaceAll('?v=notes-v10-loop-7', '?v=notes-v7-v2-1')
     .replaceAll('?v=silent-loops-1', '?v=1').replaceAll('?v=yearago-1', '?v=1')
     .replaceAll('?v=notes-v10-1', '?v=notes-v7-v2-1')
     .replaceAll('?v=notes-v9-1-1', '?v=notes-v7-v2-1')
@@ -292,18 +305,17 @@ test('Version 7 Version 2 links source ideas to actual teaching and keeps page-b
   const base = read('modern/transcripts-notes-v7.json');
   const payload = read('modern/transcripts-notes-v7-v2.json');
   const report = read('modern/notes-v7-v2-provenance.json');
-  assert.deepEqual(payload.availableModules, ['module2']);
+  assert.deepEqual(payload.availableModules, ['module1', 'module2']);
   assert.equal(payload.origin.baseSha256, hash('modern/transcripts-notes-v7.json'));
   assert.deepEqual(payload.visualPresentation, base.visualPresentation);
-  assert.equal(report.sourcePages, 131);
-  assert.equal(report.pages.length, 131);
+  assert.equal(report.sourcePages, 286);
+  assert.equal(report.pages.length, 286);
   for (const [file,expected] of Object.entries(report.authoringFiles)) assert.equal(hash(file), expected, file);
   for (const lecture of lectures) {
     const sections = payload.collections[lecture.id].sections;
     assert.deepEqual(sections.map(({teaching,...metadata})=>metadata),
       base.collections[lecture.id].sections.map(({teaching,...metadata})=>metadata));
     for (const section of sections) {
-      if (lecture.moduleId === 'module1') {assert.deepEqual(section.teaching, []);continue;}
       const audit = report.pages.find(p=>p.sectionId===section.id);
       assert(audit, section.id);
       assert.equal(Boolean(audit.coverage.length), Boolean(section.teaching.length), section.id);

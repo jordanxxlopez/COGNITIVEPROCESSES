@@ -100,3 +100,8 @@ questions to `exam.json`, rebuild, and run `node --test ling285/tests/modern-con
 The Module II layout script (`module2-layout.js`, inlined into `app.js`) now applies to
 whichever module is active, so the Q&A filters, guide questions and source galleries
 work the same way in Module I.
+
+## Module I notes editions
+
+The twelve notes editions (Version 7 to Version 10.1) cover Lectures 01–10 as well as 11–18. Their Module I authoring lives in `authoring/notes-v9.1`, `notes-v9`, `notes-v10`, `notes-v7-v2-module1`, the derived folders written by `authoring/module1_notes_derive.py`, and the user's own lecture-note PDFs read by `authoring/notes_v7_module1.py`. The dropdown reads each payload's `availableModules`, so a notes edition is offered in every module it covers. See the "Module I notes editions" section of `ling285/README.md` for the build steps.
+

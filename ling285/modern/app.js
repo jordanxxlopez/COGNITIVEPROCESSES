@@ -907,7 +907,8 @@ function installModern() {
  FOLLOWING_SLIDE_VERSIONS['original-c']='original-c';
  FOLLOWING_SLIDE_VERSIONS.d='d';
  for(const id of ['original-c-v2','d-v2','notes-v7','original-c-v3','notes-v7-v2','notes-v8','notes-v8-1','notes-v8-2','notes-v9','notes-v9-1','notes-v9-2','notes-v9-3','notes-v9-4','notes-v10','notes-v10-1'])FOLLOWING_SLIDE_VERSIONS[id]=id;
- const modernEditionAvailable=id=>!['notes-v7','notes-v7-v2','notes-v8','notes-v8-1','notes-v8-2','notes-v9','notes-v9-1','notes-v9-2','notes-v9-3','notes-v9-4','notes-v10','notes-v10-1'].includes(id) || state.activeModule==='module2';
+ const NOTES_EDITION_IDS=['notes-v7','notes-v7-v2','notes-v8','notes-v8-1','notes-v8-2','notes-v9','notes-v9-1','notes-v9-2','notes-v9-3','notes-v9-4','notes-v10','notes-v10-1'];
+ const modernEditionAvailable=id=>{if(!NOTES_EDITION_IDS.includes(id))return true;const loaded=transcriptEditions.get(id);const modules=loaded&&loaded.payload&&loaded.payload.availableModules;return modules?modules.includes(state.activeModule):state.activeModule==='module2';};
  // These original Module II clips have no audio streams (see the retained media probe).
  // Keep full source files and the existing playback controls; only visible clips auto-play.
  const loopSourceFiles=new Set([

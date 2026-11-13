@@ -13,7 +13,7 @@ from pathlib import Path
 from notes_v8 import SECTION_SLIDES as V8_SLIDES, build_pdf_notes
 
 EDITION = 'notes-v8-1'
-LABEL = 'Version 8.1 · Your PDF notes with cloze and year-ago · Lectures 11–18'
+LABEL = 'Version 8.1 · Your PDF notes with cloze and year-ago'
 PDF = 'sources/notes-v8-1-all-lectures-11-18.pdf'
 
 SECTION_SLIDES = deepcopy(V8_SLIDES)

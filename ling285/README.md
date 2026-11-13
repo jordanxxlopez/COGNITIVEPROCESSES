@@ -121,6 +121,27 @@ The Version 3 release audit remains historical. Its original interface hashes ar
 
 Module I has the same modern-workspace structure as Module II: Study this first · Module I (16 topics, every review and Exam 1 question answered, slides and the professor's videos beside the notes), Notes by topic · Lectures 01–10, an Exam 1 review guide, and the Module I focus choice on What to know by the end and What you can be asked. It is built from `authoring/module1/` by `authoring/module_template.py`; see `modern/README.md` for how to add a lecture or a module.
 
+## Module I notes editions (Versions 7 to 10.1 for Lectures 01–10)
+
+The twelve "notes" choices in the Teaching style dropdown (Version 7, 7 Version 2, 8, 8.1, 8.2, 9, 9.1, 9.2, 9.3, 9.4, 10 and 10.1) now cover Lectures 01–10 as well as 11–18, in the same styles as their Module II versions. `availableModules` on each payload lists both modules and `modern/runtime.js` reads it, so the dropdown no longer greys these choices out in Module I.
+
+- **Version 7 · Your PDF notes** places the user's own lecture-note PDFs beside the slides word for word. The PDFs are `sources/notes-v7-lecture01.pdf` to `notes-v7-lecture05-06.pdf`, `notes-lecture07.pdf`, `notes-lecture08.pdf`, `notes-v7-lecture09.pdf` and `notes-v7-lecture10.pdf` (each holds a full copy followed by a shorter copy; the full first copy is used). `authoring/notes_v7_module1.py` reads them character by character from the rendered page so inline math symbols and stacked fractions land in place, judges bold from each glyph's rendered ink weight, transcribes a few stacked sums by hand (`FIXES`, `PREFIX_FIXES`, `CLIPPED`, `INLINE_FIXES`), and maps each note section to its slide with `authoring/notes-module1-maps.json`. It writes `authoring/notes-v7-module1.json` and `authoring/notes-v7-module1-extraction.json`, which `clear_editions.py` merges into `modern/transcripts-notes-v7.json`.
+- **Version 7 · Version 2** is written per lecture in `authoring/notes-v7-v2-module1/NN.md`, slide by slide with `> idea | source | blocks` coverage lines, and built by `notes_v7_v2.py`.
+- **Versions 9.1, 9 and 10** are hand-written parents in `authoring/notes-v9.1/NN.md`, `notes-v9/NN.md` and `notes-v10/NN.md` (`## pN` pages, bullets and sub-bullets, checked with `python3 ling285/authoring/check_v9.py <file>`).
+- **Versions 9.2, 9.3, 9.4 and 10.1** are derived from those parents by `authoring/module1_notes_derive.py`, which lists every wording change per lecture and fails if a parent drifts. The labeled editions (9.4 and 10.1) also replace casual terms with technical ones throughout.
+- **Versions 8, 8.1 and 8.2** are the slide-by-slide notes regrouped into the Version 8 section format by `authoring/module1_notes.py` (8 and 8.1 from 9.1, 8.2 from 9.4; 8.1 adds nothing for Module I because the cloze and year-ago additions belong to Lectures 12–14 and 17). `notes_v8.py` places them with the section maps.
+
+Lecture keys are `01, 02, 03, 04, 05-06, 07, 08, 09, 10`, matching the collection ids. `check_v9.py` holds `LECTURES`, `MODULE` and `EMPTY_OK` (title, blank and reminder pages that may stay empty) for all eighteen lectures. To add a lecture to these editions, write the three parents and the Version 7 Version 2 file, add its maps and derive edits, then run the builders listed below.
+
+```sh
+python3 ling285/authoring/notes_v7_module1.py
+python3 ling285/authoring/module1_notes_derive.py
+python3 -c "import sys; sys.path.insert(0,'ling285/authoring'); from pathlib import Path; R=Path('ling285').resolve(); import clear_editions, notes_v7_v2, notes_v8, notes_v8_1, notes_v8_2, notes_v9, notes_v9_1, notes_v9_2, notes_v9_3, notes_v9_4, notes_v10, notes_v10_1; [m.__dict__[f](R, R/'modern') for m,f in [(clear_editions,'build_clear_editions'),(notes_v7_v2,'build_notes_v7_v2'),(notes_v8,'build_notes_v8'),(notes_v8_1,'build_notes_v8_1'),(notes_v8_2,'build_notes_v8_2'),(notes_v9,'build_notes_v9'),(notes_v9_1,'build_notes_v9_1'),(notes_v9_2,'build_notes_v9_2'),(notes_v9_3,'build_notes_v9_3'),(notes_v9_4,'build_notes_v9_4'),(notes_v10,'build_notes_v10'),(notes_v10_1,'build_notes_v10_1')]]"
+node --test ling285/tests/modern-content.test.cjs
+```
+
+The board report for this work is `authoring/module1/board-notes-editions.md`.
+
 ## Lecture 15 · Neural Networks
 
 The 13-page `Ling285_F26_L15.pptx` is preserved exactly and included in Module II.

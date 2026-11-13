@@ -25,10 +25,10 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from clear_editions import check_blocks, digest, dump, metrics
-from check_v9 import EMPTY_OK, parse
+from check_v9 import EMPTY_OK, LECTURES, MODULE, parse
 
 EDITION = 'notes-v9-3'
-LABEL = 'Version 9.3 · Full slide-by-slide notes, clearest wording · Lectures 11–18'
+LABEL = 'Version 9.3 · Full slide-by-slide notes, clearest wording'
 
 
 def build_notes_v9_3(root, out):
@@ -38,8 +38,12 @@ def build_notes_v9_3(root, out):
     for collection in payload['collections'].values():
         for section in collection['sections']:
             section['teaching'] = []
-    for n in range(11, 19):
+    modules = set()
+    for n in LECTURES:
         path = root / f'authoring/notes-v9.3/{n}.md'
+        if MODULE[n] == 'module1' and not path.exists():
+            continue  # Module I lectures join this edition as they are written
+        modules.add(MODULE[n])
         sources[f'authoring/notes-v9.3/{n}.md'] = digest(path)
         pages = parse(path)
         sections = payload['collections'][f'lecture{n}']['sections']
@@ -52,7 +56,7 @@ def build_notes_v9_3(root, out):
         assert set(empty) <= EMPTY_OK[n], (n, empty)
         coverage[f'lecture{n}'] = dict(slides=len(sections), withNotes=len(pages), emptyByDesign=empty)
     payload.update(id=EDITION, label=LABEL, revision='2026-11-notes-v9-3-clearest-wording',
-                   availableModules=['module2'],
+                   availableModules=sorted(modules),
                    origin=dict(authoringFiles=sources, basedOn='Version 8 notes, original slides, class transcripts Oct 6 to Nov 10, Exam 2 review and Homework 5',
                                wording='Version 9.2 rewritten sentence by sentence so each idea states what it does, the setup, then what happens and why. Key terms kept and explained. Content and slides unchanged.',
                                followingSlides=True, provenance='modern/notes-v9-3-provenance.json'),

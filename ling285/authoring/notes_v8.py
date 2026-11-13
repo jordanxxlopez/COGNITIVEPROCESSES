@@ -15,9 +15,10 @@ from pathlib import Path
 import re
 
 from clear_editions import check_blocks, digest, dump, metrics
+from module1_notes import regroup_all
 
 EDITION = 'notes-v8'
-LABEL = 'Version 8 · Your PDF notes · Lectures 11–18'
+LABEL = 'Version 8 · Your PDF notes'
 PDF = 'sources/notes-v8-all-lectures-11-18.pdf'
 
 # Note section -> source slide page. A tuple maps the section's main bullets in
@@ -105,7 +106,9 @@ def build_pdf_notes(root, out, edition, label, pdf, src_dir, section_slides, rev
         for section in collection['sections']:
             section['teaching'] = []
     sources, assignments = {}, []
-    for n in range(11, 19):
+    module1 = regroup_all()  # writes notes-v8, notes-v8.1 and notes-v8.2 for the Module I lectures written so far
+    section_slides = {**{k: {num: page for num, page in v.items()} for k, v in module1.items()}, **section_slides}
+    for n in list(module1) + list(range(11, 19)):
         path = root / f'authoring/{src_dir}/{n}.md'
         sources[f'authoring/{src_dir}/{n}.md'] = digest(path)
         sections = parse(path)
@@ -133,11 +136,12 @@ def build_pdf_notes(root, out, edition, label, pdf, src_dir, section_slides, rev
         for s in collection['sections']:
             check_blocks(s['teaching'], f'{edition}:{s["id"]}')
     payload.update(id=edition, label=label, revision=revision,
-                   availableModules=['module2'],
+                   availableModules=['module1', 'module2'] if module1 else ['module2'],
                    origin=dict(authoringFiles=sources, pdf=pdf, pdfSha256=digest(root / pdf) if pdf else None,
                                wording=wording or f'User-authored Version {version} notes retained word for word, with bold emphasis.',
                                followingSlides=True, provenance=f'modern/{edition}-provenance.json'),
-                   guidance=f'Your Version {version} notes, placed beside the original slides for Lectures 11–18.')
+                   guidance=f'Your Version {version} notes beside the original slides for Lectures 11–18, and the same section notes written for Lectures 01–10.',
+                   module1=dict(lectures=sorted(module1), source='Section notes regrouped from the Module I slide-by-slide notes (module1_notes.py); Version 8 and 8.1 are identical for Module I because the cloze and year-ago additions belong to Lectures 12–14 and 17.') if module1 else None)
     payload['metrics'] = metrics(payload['collections'])
     dump(out / f'transcripts-{edition}.json', payload)
     dump(out / f'{edition}-provenance.json', dict(

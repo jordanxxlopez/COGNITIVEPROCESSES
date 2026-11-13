@@ -12,7 +12,7 @@ from notes_v8 import build_pdf_notes
 from notes_v8_1 import SECTION_SLIDES
 
 EDITION = 'notes-v8-2'
-LABEL = 'Version 8.2 · PDF notes, clear labeled wording · Lectures 11–18'
+LABEL = 'Version 8.2 · PDF notes, clear labeled wording'
 
 
 def build_notes_v8_2(root, out):

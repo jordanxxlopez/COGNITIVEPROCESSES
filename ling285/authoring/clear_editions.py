@@ -14,7 +14,7 @@ import statistics
 LABELS = {
     'original-c-v2': 'Original C · Version 2',
     'd-v2': 'D · Version 2',
-    'notes-v7': 'Version 7 · Your PDF notes · Lectures 11–18',
+    'notes-v7': 'Version 7 · Your PDF notes',
 }
 AUTHORING_FILES = [
     'clear-v2-archive-early.json', 'clear-v2-archive-late.json',
@@ -96,20 +96,25 @@ def build_clear_editions(root, out):
     notes = json.loads(notes_file.read_text())
     current = {cid for cid in base_c['collections'] if int(cid[7:9]) >= 11}
     assert set(notes['collections']) == current, 'PDF notes must map all eight supplied lectures.'
+    module1_file = root / 'authoring/notes-v7-module1.json'
+    module1 = json.loads(module1_file.read_text()) if module1_file.exists() else {'collections': {}}
     payload = dict(id='notes-v7', label=LABELS['notes-v7'], revision='2026-11-user-pdf-notes-7',
                    collections=deepcopy(base_c['collections']),
                    visualPresentation=deepcopy(base_c['visualPresentation']),
-                   availableModules=['module2'],
+                   availableModules=['module1', 'module2'] if module1['collections'] else ['module2'],
                    origin=dict(authoringFile='authoring/notes-v7.json', sha256=digest(notes_file),
+                               module1AuthoringFile='authoring/notes-v7-module1.json',
+                               module1Sha256=digest(module1_file) if module1_file.exists() else None,
+                               module1SourceFiles=module1.get('sourceFiles', []),
                                wording='User-authored PDF text retained verbatim, with bold emphasis.',
                                sourceFiles=notes.get('sourceFiles', []), followingSlides=True),
-                   guidance='Your Version 7 notes, matched to the original slides for Lectures 11–18.')
+                   guidance='Your Version 7 notes, matched to the original slides. Lectures 01–10 use your own lecture note PDFs; Lectures 11–18 use the Version 7 PDF.')
     for cid, collection in payload['collections'].items():
         for section in collection['sections']:
             section['teaching'] = []
-        if cid not in current:
-            continue  # No invented PDF notes for Module I; this choice is scoped to Module II.
-        pages = notes['collections'][cid]['pages']
+        if cid not in current and cid not in module1['collections']:
+            continue  # A Module I lecture joins once its own PDF notes are mapped (notes_v7_module1.py).
+        pages = (notes if cid in current else module1)['collections'][cid]['pages']
         assert [p['page'] for p in pages] == [s['page'] for s in collection['sections']], cid
         for section, page in zip(collection['sections'], pages):
             check_blocks(page['teaching'], f'notes-v7:{section["id"]}')
