@@ -67,3 +67,36 @@ The same 18 failures were reproduced in an untouched detached worktree. This
 change adds six passing content contracts and no new failures to that suite.
 See `validation.json` for the comparison and `section-review.json` for the
 section-by-section review.
+
+## The per-module study template (Module I and any later module)
+
+Module II grew a structure that Jordan studies from: "Study this first" (topics with notes
+blocks, the slide or the professor's video beside each block, the videos played on their
+slides, a My notes box, and every question with its answer), "Notes by topic" (every slide
+merged once by subject) and the review guide. `authoring/module_template.py` makes that
+structure a template that any module follows. Module I is built from it.
+
+A module is a folder under `authoring/` (see `authoring/module1/`):
+
+- `meta.json`: moduleId, the Study this first title and lead, the scope box, the source
+  flags, the versions (beside versus played on the slide) and the Notes by topic title.
+- `topics*.json`: the topics in study order. Each block names its source pages in `ref`
+  ("Lecture 03 · p5 · Lecture 05–06 · p10"); that is the only link to the slides, so the
+  builder attaches the slide image, or the video placed where the professor put it, by
+  itself. `blocks` are the Study this first notes, `more` are the extra slides that only
+  Notes by topic shows, and `questions` list review and exam ids plus Predicted ones.
+- `exam.json`: the review sheet and the exam key with every answer.
+
+Build it with `python3 ling285/authoring/module_template.py ling285/authoring/module1`
+(also run by `build_modern.py`). It writes `modern/module1.js`, refuses to build if a
+ref names a page that is not in `data.json` or if the text breaks a writing rule, and
+`app.js` plugs the versions into the same dropdowns Module II uses. Video placement for
+every deck comes from `python3 ling285/authoring/video_positions.py`; poster frames come
+from `module_media.poster_for`.
+
+To add a lecture to a module: extract its deck as usual, run `video_positions.py`, add
+its pages to the module's `topics*.json` (new blocks, or new pages in a ref) and its
+questions to `exam.json`, rebuild, and run `node --test ling285/tests/modern-content.test.cjs`.
+The Module II layout script (`module2-layout.js`, inlined into `app.js`) now applies to
+whichever module is active, so the Q&A filters, guide questions and source galleries
+work the same way in Module I.

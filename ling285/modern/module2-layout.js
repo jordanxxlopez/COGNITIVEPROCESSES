@@ -3,7 +3,8 @@
 const layoutKey='ling285-modern-module2-layout-v2';
 let layoutSettings={};
 try{const saved=JSON.parse(localStorage.getItem(layoutKey) || '{}');if(saved && typeof saved==='object' && !Array.isArray(saved))layoutSettings=saved;}catch{}
-const inModule2Workspace=()=>state.activeModule==='module2' && view!=='collection' && view!=='meadows';
+// The Module II layout is the template for every module: it applies to whichever module is active.
+const inModule2Workspace=()=>view!=='collection' && view!=='meadows';
 const layoutSave=()=>{try{localStorage.setItem(layoutKey,JSON.stringify(layoutSettings));}catch{}};
 const layoutControl=(name,label,choices,value)=>`<label>${esc(label)} <select data-layout-field="${esc(name)}">${choices.map(([id,text])=>`<option value="${esc(id)}" ${id===value?'selected':''}>${esc(text)}</option>`).join('')}</select></label>`;
 const lectureChoices=()=>[['all','All collections'],...moduleLectures().map(c=>[c.id,`${c.number} · ${collectionTitle(c)}`])];
@@ -20,11 +21,10 @@ const qaDisclosure=(q,{media=true,list=false}={})=>{
 };
 const oldQaView=modernRoutes.qa;
 modernRoutes.qa=function(){
- if(state.activeModule!=='module2')return oldQaView();
  const settings=preferences(),mode=layoutSettings.qaMode || 'both',tier=layoutSettings.qaTier || 'all';
  const chosen=moduleLectures().some(c=>c.id===settings.qaLecture)?settings.qaLecture:'all';
  const query=(settings.qaQuery || '').toLocaleLowerCase(),order=settings.qaOrder || 'slides';
- const pool=pack.qa.filter(q=>q.moduleId==='module2' && (chosen==='all' || q.lectureId===chosen) &&
+ const pool=pack.qa.filter(q=>q.moduleId===state.activeModule && (chosen==='all' || q.lectureId===chosen) &&
   (mode==='both' || q.kind===(mode==='slides'?'slides':'connections')) && (tier==='all' || studyTier(q.concept)===tier) &&
   (!query || [q.question,...q.answer].join(' ').toLocaleLowerCase().includes(query)));
  const control=`<div class="row aid-bar modern-filters">${layoutControl('qaMode','View',[['both','Slide by slide + putting it together'],['slides','Slide by slide'],['connections','Putting it together']],mode)}<label>Collection <select data-modern-qa="qaLecture">${lectureChoices().map(([id,text])=>`<option value="${id}" ${chosen===id?'selected':''}>${esc(text)}</option>`).join('')}</select></label>${layoutControl('qaTier','Study priority',[['all','All questions'],['first','Study first'],['next','Study next']],tier)}<label>Order <select data-modern-qa="qaOrder"><option value="slides" ${order==='slides'?'selected':''}>Source order</option><option value="priority" ${order==='priority'?'selected':''}>Study priority</option></select></label>${layoutSettings.qaSpeak?'':'<button data-layout-answers="true">Show all answers</button>'}<button data-layout-answers="false">Hide all answers</button><label class="layout-speak"><input type="checkbox" data-layout-field="qaSpeak" ${layoutSettings.qaSpeak?'checked':''}> Speak first (answer out loud, then click to check)</label></div>`;
@@ -42,13 +42,13 @@ modernRoutes.qa=function(){
 };
 
 function addIntegratedGuideQuestions(root){
- const topics=pack.guides.filter(g=>g.moduleId==='module2');
+ const topics=pack.guides.filter(g=>g.moduleId===state.activeModule);
  for(const [index,topic] of topics.entries()){
   const card=root.querySelectorAll(':scope > .modern-topic')[index];if(!card)continue;
   const body=card.querySelector('.modern-topic-body'),existing=body.querySelector(':scope > .modern-answer');
   const used=new Set([topic.question]),questions=[];
   for(const point of topic.points){
-   const matching=pack.qa.filter(q=>q.moduleId==='module2' && q.kind==='slides' && q.concept===point.concept);
+   const matching=pack.qa.filter(q=>q.moduleId===state.activeModule && q.kind==='slides' && q.concept===point.concept);
    matching.sort((a,b)=>(b.lectureId===point.collection)-(a.lectureId===point.collection));
    for(const q of matching){if(used.has(q.question))continue;used.add(q.question);questions.push(q);}
   }
@@ -111,7 +111,7 @@ function pairedCard(node,item,{appendSource=false}={}){
 }
 
 function decorateAsk(root){
- const records=pack.asked.filter(g=>g.moduleId==='module2');
+ const records=pack.asked.filter(g=>g.moduleId===state.activeModule);
  for(const node of root.querySelectorAll(':scope > .modern-topic')){
   const record=records.find(g=>g.title===node.querySelector(':scope > summary')?.textContent);if(!record)continue;
   const body=node.querySelector('.modern-topic-body'),questions=document.createElement('div');questions.className='aid-qas';
@@ -189,13 +189,13 @@ function decorateModule2(root){
  if(view==='guide')addIntegratedGuideQuestions(root);
  if(view==='ask')decorateAsk(root);
  if(['cards','contrasts','hard','figures','codeblocks'].includes(view)){
-  const records=({cards:pack.cards,contrasts:pack.contrasts,hard:pack.hard,figures:pack.figures,codeblocks:pack.code})[view].filter(item=>!item.moduleId || item.moduleId==='module2');
+  const records=({cards:pack.cards,contrasts:pack.contrasts,hard:pack.hard,figures:pack.figures,codeblocks:pack.code})[view].filter(item=>!item.moduleId || item.moduleId===state.activeModule);
   const nodes=[...root.querySelectorAll(':scope > .modern-topic')];
   for(const [index,node] of nodes.entries())pairedCard(node,records[index],{appendSource:view==='contrasts'});
   addGroupFilters(root,records,'.modern-topic');
  }
  if(view==='experiments'){
-  const records=pack.connections.filter(item=>item.moduleId==='module2'),all=[];
+  const records=pack.connections.filter(item=>item.moduleId===state.activeModule),all=[];
   for(const [index,pair] of [...root.querySelectorAll('.modern-qa-pair')].entries()){
    pair.classList.add('aid-split');const ss=lookupSources(records[index].sources);all.push(...ss);
    const visual=pair.querySelector(':scope > figure');
@@ -237,7 +237,7 @@ render=function(){
  if(active){
   root.dataset.workspaceView=view;
   root.dataset.workspacePattern=['qa','quizzes','test','practice','writing','missed'].includes(view)?'list':'path';
-  document.body.dataset.workspaceScope='module2';decorateModule2(root);sizeNotes();
+  document.body.dataset.workspaceScope=state.activeModule;decorateModule2(root);sizeNotes();
  }else{delete root.dataset.workspacePattern;delete root.dataset.workspaceView;delete document.body.dataset.workspaceScope;}
  return result;
 };

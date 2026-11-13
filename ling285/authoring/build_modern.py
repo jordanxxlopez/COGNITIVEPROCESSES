@@ -37,6 +37,7 @@ from notes_v10_1 import build_notes_v10_1
 from exam2_essentials import build as build_exam2_essentials
 from build_plain import build as build_plain_data
 from build_bytopic import build as build_bytopic_data
+from module_template import build as build_module_template
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'modern'
@@ -139,6 +140,7 @@ def build():
     build_exam2_essentials(OUT/'essentials.js')
     build_plain_data(OUT/'plain.js')
     build_bytopic_data(OUT/'bytopic.js')
+    build_module_template(ROOT/'authoring'/'module1')
     pack=dict(revision='2026-11-modern-1',concepts=CONCEPTS,guides=GUIDES,model=model,asked=ASK,qa=qa,pageConcepts=MAP,cards=CARDS,contrasts=CONTRASTS,hard=HARD,review=REVIEW,core=CORE,connections=CONNECTIONS,editions=editions,code=CODE,figures=FIGURES,questions=questions,writing=writing,summaries=SUMMARIES,readings=READINGS,coverage=coverage,uploads=uploads)
     (OUT/'content.js').write_text('window.LING285_MODERN = '+json.dumps(pack,ensure_ascii=False,indent=1)+';\n')
     html=(ROOT/'index.html').read_text().replace('<head>','<head>\n  <base href="../">')
@@ -154,8 +156,8 @@ def build():
     html=html.replace('stimuli/stimuli.js?v=1','stimuli/stimuli.js?v=silent-loops-1')
     html=html.replace('stimuli/manifest.js?v=1','stimuli/manifest.js?v=yearago-1')
     assert 'src="modern/app.js' in html
-    html=html.replace('modern/app.js?v=1','modern/app.js?v=notes-v10-loop-30')
-    html=html.replace('modern/content.js?v=1','modern/essentials.js?v=exam2-v12a" defer></script><script src="modern/plain.js?v=plain-1" defer></script><script src="modern/bytopic.js?v=bytopic-6" defer></script><script src="modern/content.js?v=notes-v10-loop-30')
+    html=html.replace('modern/app.js?v=1','modern/app.js?v=notes-v10-loop-31')
+    html=html.replace('modern/content.js?v=1','modern/essentials.js?v=exam2-v12a" defer></script><script src="modern/plain.js?v=plain-1" defer></script><script src="modern/bytopic.js?v=bytopic-6" defer></script><script src="modern/module1.js?v=module1-1" defer></script><script src="modern/content.js?v=notes-v10-loop-31')
     html=html.replace('<script src="modern/essentials.js','<link rel="stylesheet" href="modern/essentials.css?v=overlay-6"><script src="modern/essentials.js',1)
     html=html.replace('<div class="nav-label" id="workspaceModuleLabel">','<a class="workspace-switch" href="./">Open original workspace</a><div class="nav-label" id="workspaceModuleLabel">')
     (OUT/'index.html').write_text(html)

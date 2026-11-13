@@ -117,6 +117,10 @@ The hand-authored paragraphs are in `authoring/version4/notes.py`. Explicit mapp
 
 The Version 3 release audit remains historical. Its original interface hashes are verified against commit `8334e0b`, while its unchanged teaching, sources, and practice files are checked in the current checkout. Version 4 has a separate review and release record.
 
+## Module I study template
+
+Module I has the same modern-workspace structure as Module II: Study this first · Module I (16 topics, every review and Exam 1 question answered, slides and the professor's videos beside the notes), Notes by topic · Lectures 01–10, an Exam 1 review guide, and the Module I focus choice on What to know by the end and What you can be asked. It is built from `authoring/module1/` by `authoring/module_template.py`; see `modern/README.md` for how to add a lecture or a module.
+
 ## Lecture 15 · Neural Networks
 
 The 13-page `Ling285_F26_L15.pptx` is preserved exactly and included in Module II.

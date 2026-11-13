@@ -58,11 +58,15 @@ def positions(pptx, lec):
 
 
 def main():
+    """Every lecture deck in data.json, so Module I and later modules get the same placement."""
     allpos = {}
-    for i in range(11, 19):
-        f = ROOT / "sources" / f"lecture{i}.pptx"
+    data = json.load(open(ROOT / "data.json"))
+    for c in data["collections"]:
+        if c.get("role") != "lecture":
+            continue
+        f = ROOT / "sources" / f"{c['id']}.pptx"
         if f.exists():
-            allpos.update(positions(f, f"lecture{i}"))
+            allpos.update(positions(f, c["id"]))
     (ROOT / "authoring" / "video-positions.json").write_text(json.dumps(allpos, indent=1))
     return allpos
 

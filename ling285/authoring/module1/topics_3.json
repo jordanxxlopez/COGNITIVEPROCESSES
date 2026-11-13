@@ -1,0 +1,138 @@
+[
+ {
+  "id": "m1-balancing", "tier": "On the review sheet", "lectures": "Lectures 04, 05–06, 07 and 09",
+  "title": "A spring alone, a cooling cup and balancing feedback",
+  "blocks": [
+   {"ref": "Lecture 07 · p6",
+    "main": "**A viscous spring with no mass obeys one rule, the change in x is minus one third of x, so it returns to equilibrium and stops.** If x is positive, its change is negative, so x falls. If x is negative, its change is positive, so x rises. Both lead to the same resting position at 0.",
+    "sub": ["Starting from 1, the first return is big, because one third of 1 is a big step. As x gets smaller, its rate of change gets smaller too, so the curve drops steeply at first and then flattens. From below zero it rises and flattens.", "This is **balancing feedback** (negative feedback), because the system acts against the discrepancy from equilibrium. The motion reduces the very displacement that causes it, and when x is 0 nothing drives it any more.", "A bigger number in the rule, such as minus 0.9 instead of minus 0.1, means a faster return. A smaller number means a slower return."],
+    "end": "So without a mass there is no overshoot, only a return that slows as it gets close."},
+   {"ref": "Lecture 09 · p3 · Lecture 09 · p4",
+    "main": "**A differential equation says how a system changes from the state it is in now, and together with a starting state it predicts the whole future.** The rule that the change in x is minus one third of x, with x starting at 100, gives a change of about minus 33, so the next value is about 67. The same rule on 67 gives a smaller step, and the value heads toward 0 while the curve flattens.",
+    "sub": ["The same rule describes a spring, a cup of coffee and a learning system, because all three correct a gap, and the correction shrinks as the gap shrinks.", "Repeating the arithmetic step by step is Euler's method."],
+    "end": "So knowing the rule of change and the starting point is enough to predict the time course."},
+   {"ref": "Lecture 04 · p18",
+    "main": "**Learning and a cooling cup of coffee share the same shape of approach to equilibrium.** Hot coffee at 60, 80 or 100 degrees cools toward room temperature at 18, and iced coffee at 0, 5 or 10 degrees warms toward it. The change is fast when the gap is large and slows as the gap shrinks, so every cup ends at the same temperature from either side.",
+    "sub": ["The SGD estimate behaves the same way from 130 above or 10 below, except that its path is noisy, because each observation is random."],
+    "end": "So a correction that opposes a discrepancy is the shared organization of both."}
+  ],
+  "more": [
+   {"ref": "Lecture 05–06 · p16",
+    "main": "**An economy oscillates too, with output rising to a peak, falling into a recession, reaching a trough and recovering.** The swings happen around a trend line that slopes upward, so repeated ups and downs can go together with overall growth.",
+    "sub": ["Oscillation does not need the long-term level to stay flat."],
+    "end": "So boom and bust is one more example of back and forth change."},
+   {"ref": "Lecture 05–06 · p18 · Lecture 05–06 · p19",
+    "main": "**Music and even atoms are described with the same vibration ideas.** A musical tone is a vibration. In the quantum description of a magnesium atom, the electrons occupy wave modes rather than tracing little orbits, and the filled modes add up to the electron density.",
+    "sub": ["An atom is not a harmonic oscillator, but it is described with wave modes, which is the same mathematics."],
+    "end": "So the same ideas reach from a spring to a musical note to an atom."}
+  ],
+  "questions": [
+   "review-17",
+   {"source": "Predicted", "q": "A system follows the rule that the change in x is minus 0.1 times x, and x starts positive. What happens? What if it starts at exactly 0?",
+    "a": "If x starts positive it falls toward 0 and stops there. This is because minus 0.1 times a positive x is negative, so x goes down, and the step gets smaller as x gets smaller, so it never crosses 0.\n\nIf x starts at exactly 0, nothing happens, because minus 0.1 times 0 is 0, so there is no change. The system is already at equilibrium."},
+   {"source": "Predicted", "q": "Why does a spring with no mass never overshoot its resting position?",
+    "a": "Because the only thing driving the motion is the discrepancy from equilibrium. As the spring gets close to its resting position the discrepancy shrinks, so the motion shrinks, and at the resting position the motion is zero. There is no mass to carry the motion past that point. With a mass, the mass arrives moving and keeps moving, and that is what makes the overshoot."}
+  ]
+ },
+ {
+  "id": "m1-mass-stiffness", "tier": "Asked on Exam 1", "lectures": "Lectures 07 and 08",
+  "title": "Mass, stiffness and frequency, from springs to vocal folds",
+  "blocks": [
+   {"ref": "Lecture 07 · p13 · Lecture 08 · p4",
+    "main": "**More mass lowers the frequency of a mass-spring system, and more stiffness raises it.** **Perturbation theory** asks how the behavior changes when one setting of the system is changed. When the mass gets heavier, the same spring has more to slow down and turn around, so each cycle takes longer and fewer cycles fit into a second, so the frequency goes down.",
+    "sub": ["When the spring gets stiffer, it pulls the mass back more strongly for the same displacement, so the turns happen sooner and more cycles fit into a second, so the frequency goes up.", "Mass and stiffness therefore have opposite effects on frequency."],
+    "end": "So to predict a frequency change, ask whether mass or stiffness changed, and in which direction."},
+   {"ref": "Lecture 08 · p8",
+    "main": "**The vocal folds are small muscles, about 1 centimeter long and 1 millimeter high, and their mass and stiffness set the pitch of the voice.** About ten other muscles act on them through the surrounding cartilages. Stretching the folds makes them stiffer, so they vibrate faster and the pitch goes up. Bunching them makes them effectively heavier, so they vibrate more slowly and the pitch goes down.",
+    "sub": ["The rate of vibration is called **F0**, the fundamental frequency. Changing it is how we sing, ask a question, show surprise or doubt, and in tone languages tell one word from another.", "The folds vibrate because air pressure from the lungs builds up below the closed folds and pushes them apart, the fast air between them sucks them back together (the Bernoulli force, like a shower curtain pulled inward), pressure builds again, and this repeats hundreds of times a second."],
+    "end": "So the vocal folds are a mass-spring system made of tissue, and the air above them is a separate vibrating system."}
+  ],
+  "questions": [
+   "exam-24",
+   {"source": "Predicted", "q": "A singer stretches the vocal folds tighter. What happens to the pitch, and why?",
+    "a": "The pitch goes up. This is because stretching the folds makes them stiffer, and a stiffer system springs back faster, so it vibrates more times per second. More vibrations per second is a higher fundamental frequency, which is heard as a higher pitch."},
+   {"source": "Predicted", "q": "If the mass of a mass-spring system is doubled and the stiffness is also doubled, what can you say about the frequency?",
+    "a": "The two changes work against each other. Doubling the mass lowers the frequency, because a heavier mass is harder to move and turn around. Doubling the stiffness raises it, because a stiffer spring pulls back harder. For a single mass on a single spring the two effects cancel, so the frequency stays the same."}
+  ]
+ },
+ {
+  "id": "m1-air", "tier": "On the review sheet", "lectures": "Lectures 01, 05–06 and 07",
+  "title": "Air vibration: compression, rarefaction and frequency",
+  "blocks": [
+   {"ref": "Lecture 01 · p4",
+    "main": "**The air between the tongue and the walls of the vocal tract can vibrate, and that vibration is the sound of speech.** The curved vocal tract can be straightened into a tube to understand the motion of its air. In the tube the rows of air particles move back and forth, so the air is more crowded in some places and less crowded in others.",
+    "sub": ["Moving the tongue changes the shape of the air space, which is **articulatory phonetics**. The sound the vibrating air makes is **acoustic phonetics**."],
+    "end": "So the visible space above the tongue and the physical vibration that carries sound are the same thing seen two ways."},
+   {"ref": "Lecture 05–06 · p10 · Lecture 07 · p5",
+    "main": "**A vibration in air is a repeated change between compression and rarefaction.** A slice of air keeps the same particles the whole time. In **compression** the particles move closer together and the pressure is high. In **rarefaction** they move farther apart and the pressure is low. The particles do not change size or number, only their spacing.",
+    "sub": ["At equilibrium the spacing is 100 percent. In the compressed phase it drops to about 60 percent, and in the spread-out phase it rises to about 140 percent, exaggerated so it can be seen.", "The slice contracts, expands back through equilibrium, reaches rarefaction, and contracts again, over and over."],
+    "end": "So sound in air is particles swinging closer and farther apart around their resting spacing, like a mass on a spring."},
+   {"ref": "Lecture 05–06 · p11 · Lecture 07 · p9",
+    "main": "**The expansion of the air slice follows a cosine, and one full cycle is one round trip from spread out to compressed and back.** At the start the value is plus 1 and the particles are farthest apart. The value falls through 0, the equilibrium spacing, to minus 1, the closest spacing, and rises back to plus 1. Three cycles fit in the graph.",
+    "sub": ["The moving point on the curve shows the spacing at that moment. The graph is a record of expansion over time, not a path that the particles travel along."],
+    "end": "So positive values mean rarefaction, negative values mean compression, and the curve repeats."},
+   {"ref": "Lecture 07 · p11",
+    "main": "**Frequency is how many complete cycles fit into a fixed amount of time, measured in cycles per second, or hertz.** Three air slices swing by the same amount. One completes 3 cycles in 12 seconds, one completes 6, and one completes 9. The one with 9 cycles has three times the frequency of the one with 3.",
+    "sub": ["Equal swings do not mean equal frequencies. The particles can spread and compress by the same amount at very different rates."],
+    "end": "So frequency is about how fast the cycle repeats, not how big the swing is."},
+   {"ref": "Lecture 05–06 · p15",
+    "main": "**Speaking involves two different vibrating things, the vocal folds and the air in the vocal tract.** The folds are moving tissue. The air is changing compression and rarefaction. An explanation of speech has to account for both.",
+    "end": "So the voice has a source, the folds, and a vibrating air column above it."}
+  ],
+  "questions": [
+   {"source": "Predicted", "q": "What is the difference between compression and rarefaction, and what stays the same during both?",
+    "a": "In compression the particles of air move closer together and the pressure goes up. In rarefaction they move farther apart and the pressure goes down. What stays the same is the particles themselves. The slice keeps the same particles, with the same size and number, and only their spacing changes."},
+   {"source": "Predicted", "q": "Two vibrations have the same amplitude, but one completes 4 cycles in 12 seconds and the other completes 8. Which has the higher frequency, and by how much?",
+    "a": "The one with 8 cycles has the higher frequency, twice as high. This is because frequency is the number of cycles in a fixed time, and 8 cycles in 12 seconds is twice 4 cycles in 12 seconds. The amplitude, how far the particles spread and compress, does not change the frequency."},
+   {"source": "Predicted", "q": "Why is the cosine graph of the air slice not a drawing of where the particles go?",
+    "a": "The graph shows how spread out the slice is over time. The height of the curve is the spacing at that moment, plus 1 for farthest apart and minus 1 for closest together. The particles themselves only move back and forth along the tube. They do not travel along a wavy path."}
+  ]
+ },
+ {
+  "id": "m1-hearing", "tier": "Asked on Exam 1", "lectures": "Lectures 07 and 08",
+  "title": "Hearing: the cochlea and the basilar membrane",
+  "blocks": [
+   {"ref": "Lecture 08 · p5 · Lecture 08 · p6",
+    "main": "**Sound travels from the air into the ear and reaches the cochlea, the coiled structure of the inner ear that sends frequency information to the brain.** The vibration moves the eardrum (the tympanic membrane), passes through three small bones, the malleus, incus and stapes, and enters the cochlea.",
+    "sub": ["Inside the cochlea runs the **basilar membrane**, a long strip from the entrance to the far end at the helicotrema. Thinking of it uncoiled makes it easier to see how different places along one strip can respond differently.", "The word to memorize is cochlea. The other labels on the diagram show where things are and do not need to be memorized."],
+    "end": "So the path is air, eardrum, three bones, cochlea, basilar membrane."},
+   {"ref": "Lecture 07 · p14 · Lecture 08 · p7",
+    "main": "**The basilar membrane sorts a sound into its frequencies because its mass and stiffness change along its length.** The wide end is heavy and loose, so it has a lot of mass and little stiffness, and both of those favor low frequencies. The narrow end is light and stiff, and both of those favor high frequencies. Places in between respond to frequencies in between.",
+    "sub": ["Extra mass makes a part harder to move, so it vibrates more slowly. Extra stiffness makes a part spring back faster, so it vibrates more quickly. That is the same rule as for a mass on a spring.", "Nerve fibers leave every place along the membrane, so which fibers are active tells the brain where the vibration is strongest, and that tells the brain which frequencies are present. Georg von Békésy won the 1961 Nobel Prize for this work."],
+    "end": "So a mixture of frequencies makes several places vibrate at once, and the brain reads the mixture off the pattern of active nerves."}
+  ],
+  "questions": [
+   "review-3", "exam-3",
+   {"source": "Predicted", "q": "Which end of the basilar membrane responds to a high-pitched sound, and why?",
+    "a": "The light, stiff end responds to a high-pitched sound. This is because a high pitch is a high frequency, and a part with little mass is easy to move while a stiff part springs back fast, so that part vibrates quickly. The heavy, loose end vibrates slowly, so it responds to low frequencies instead."},
+   {"source": "Predicted", "q": "How does the brain know which frequencies are in a sound, if all it gets is nerve signals?",
+    "a": "Each place along the basilar membrane is connected to its own nerve fibers, and each place vibrates most for one frequency. So the set of nerve fibers that is active tells the brain which places are vibrating, and that tells it which frequencies are present. The brain reads frequency from location."},
+   {"source": "Predicted", "q": "What do the basilar membrane and a mass-spring system have in common?",
+    "a": "Both follow the rule that frequency goes up with stiffness and down with mass. The membrane is like a row of mass-spring systems, heavy and loose at one end and light and stiff at the other, so each place has its own natural frequency. That is what lets it separate a sound into its frequencies."}
+  ]
+ },
+ {
+  "id": "m1-euler", "tier": "Possible", "lectures": "Lectures 08 and 09",
+  "title": "Euler's method: arithmetic that approximates continuous change",
+  "blocks": [
+   {"ref": "Lecture 08 · p11 · Lecture 09 · p4",
+    "main": "**Euler's method turns a rule about rates of change into a sequence of numbers by taking small time steps.** The new value is the old value plus the rate of change times the size of the time step. Repeating that arithmetic gives an approximate record of how the system moves through time.",
+    "sub": ["The result is approximate, so the size of the time step and the order of the updates both affect what comes out.", "For the rule that the change in x is minus one third of x, starting at 100 gives about 67, then a smaller step, and so on toward 0."],
+    "end": "So a computer simulates a dynamical system by adding up many small changes."},
+   {"ref": "Lecture 08 · p10",
+    "main": "**Explicit Euler updates position and velocity from the old pair, and with a big time step its swings grow.** With a time step of 0.5, starting at x equal to 1 and v equal to 0, the new position is the old velocity times 0.5 plus the old position, and the new velocity is minus the old position times 0.5 plus the old velocity. The first step gives x of 1 and v of minus 0.5. The second gives x of 0.75 and v of minus 1.",
+    "sub": ["The values keep changing sign, but each swing gets bigger, reaching past 2 and past 3 within twelve steps.", "That growth comes from the approximation with this time step, not from the real oscillator gaining energy."],
+    "end": "So the same physics simulated two ways can look different, and this way looks like it is blowing up."},
+   {"ref": "Lecture 08 · p9",
+    "main": "**Position-first Euler updates the position first and then uses the new position to update the velocity, and its swings stay the same size.** The first step again gives x of 1 and v of minus 0.5. The second step gives x of 0.75, and then the velocity uses that new 0.75, so v is minus 0.875 instead of minus 1.",
+    "sub": ["The sequence stays between about minus 1 and plus 1, crossing zero again and again, which is what the real oscillator does.", "The order matters because the second calculation receives information from the first."],
+    "end": "So the way the arithmetic is arranged changes the answer, and the position-first order keeps the oscillation bounded."}
+  ],
+  "questions": [
+   {"source": "Predicted", "q": "What does Euler's method do, and why is its answer only approximate?",
+    "a": "Euler's method takes a rule for how fast something changes and turns it into a list of values, by adding the rate of change times a small time step to the current value, over and over. It is only approximate because the rate is treated as constant during each step, when really it keeps changing. A smaller time step makes the approximation closer."},
+   {"source": "Predicted", "q": "Two simulations of the same mass-spring system use the same time step, but one keeps growing and the other stays bounded. What is the difference?",
+    "a": "The difference is the order of the updates. The simulation that grows is explicit Euler, which computes the new position and the new velocity both from the old pair. The one that stays bounded updates the position first and then uses that new position to update the velocity. The physics is the same, so the growth is a mistake of the arithmetic, not a property of the oscillator."}
+  ]
+ }
+]

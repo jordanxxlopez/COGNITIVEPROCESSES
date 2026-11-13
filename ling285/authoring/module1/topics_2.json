@@ -1,0 +1,177 @@
+[
+ {
+  "id": "m1-sgd", "tier": "Asked on Exam 1", "lectures": "Lectures 02, 03 and 10",
+  "title": "Stochastic gradient descent: guess, mistake, correct",
+  "blocks": [
+   {"ref": "Lecture 02 · p16 · Lecture 03 · p12",
+    "main": "**Stochastic gradient descent learns a quantity, such as the average of a list, by starting with a guess and correcting it from one observation at a time.** Adding up three numbers and dividing by three gives their average directly, but speech, language and scenes cannot be learned by adding a few numbers. So a different way of learning the average is used as a model of learning in general.",
+    "sub": ["Start with a guess. Compare it with one value from the list. Move the guess part of the way toward that value. Repeat with another value.", "Each correction happens because a new observation shows a discrepancy (a gap) between the guess and the data."],
+    "end": "So learning here means being corrected by observations, not being told the answer."},
+   {"ref": "Lecture 02 · p17 · Lecture 03 · p13 · Lecture 03 · p14 · Lecture 03 · p15",
+    "main": "**Each step subtracts a fraction of the mistake from the current estimate, and the fraction is the learning rate.** The data are [78, 67, 98, 85, 76, 68, 98, 72]. The estimate starts at 130, which is an arbitrary guess. A random observation, 98, is drawn. The mistake, or **loss**, is the estimate minus the observation, 130 minus 98, which is 32.",
+    "sub": ["With a learning rate of 10 percent, the estimate moves down by a tenth of 32, so it goes from 130 to 126.8. With a learning rate of 25 percent it moves down by a quarter of 32, to 122. Either way it moves toward 98 without jumping all the way to it.", "**Stochastic** means the observation is picked at random. **Gradient** means the direction that reduces the mistake. **Descent** means the mistake goes down, not that the estimate always goes down."],
+    "end": "So a partial correction lets each observation count without throwing away what the estimate already knows."},
+   {"ref": "Lecture 03 · p19 · Lecture 03 · p23 · Lecture 03 · p27",
+    "main": "**The first minus in the update makes the estimate move toward the data point whether the data point is above or below the estimate.** When the estimate is 94.672 and the observation is 98, the difference is minus 3.328. Subtracting a negative number raises the estimate, so it goes up to 95.504.",
+    "sub": ["When the estimate is above the observation, the difference is positive, so subtracting it lowers the estimate. When the estimate is below, the difference is negative, so subtracting it raises the estimate.", "That is why the path of the estimate jitters. It mostly falls from 130 toward 80, but it rises whenever a high observation such as 98 is drawn."],
+    "end": "So one step can move away from the true average, and learning is judged by the whole run, not by one step."},
+   {"ref": "Lecture 03 · p28 · Lecture 03 · p29",
+    "main": "**The loss goes down whenever the gap between the estimate and the target shrinks, whether the estimate itself is going up or going down.** The loss is half of the squared gap, so it is never negative and a big gap counts much more than a small one.",
+    "sub": ["Starting at 140 with a target of 80, the estimate falls and the loss falls. Starting at minus 100, the estimate rises and the loss still falls, because the gap is shrinking.", "Descent describes the loss, not the estimate."],
+    "end": "So the estimate can rise while the learning is still going downhill."},
+   {"ref": "Lecture 03 · p10 · Lecture 03 · p11",
+    "main": "**Fake it till you make it means the network starts with random weights, so it knows nothing, and gets its knowledge by being corrected.** For chickens cackle and ducks, random weights can give the highest probability to the wrong word. The target puts all the probability on quack, and the gap between them tells training which way to change the weights.",
+    "sub": ["The two principles are to start with a guess and to improve the guess by learning from mistakes.", "Random guessing on its own creates no knowledge. The repeated correction is what turns the guess into knowledge."],
+    "end": "So the system fakes it at the start, and after enough corrections it makes it."},
+   {"ref": "Lecture 10 · p12 · Lecture 10 · p13",
+    "main": "**Training a network is the same loop run with a labelled input. Compute the output, compare it with the target, and change the weights to shrink the error.** For an input whose correct category is the sixth of seven, the target is [0, 0, 0, 0, 0, 1, 0]. An output of [0.05, 0.10, 0.20, 0.30, 0.15, 0.12, 0.08] puts only 0.12 on the right category, and the gap is the error.",
+    "sub": ["**Backpropagation** carries the output error back through the layers so that every weight can be adjusted with SGD. Repeating this over billions of labelled pairs builds the network's knowledge.", "A mistake in the data gets learned too. In a list of grades with a typo of 400, the estimate is pulled toward 400 and the learned average comes out near 100 instead of near 80. Correct arithmetic does not fix a wrong observation."],
+    "end": "So the loop is guess, measure the mistake, correct a fraction, and repeat, and it learns whatever the data contains, errors included."}
+  ],
+  "more": [
+   {"ref": "Lecture 02 · p15",
+    "main": "**Learning from a mistake needs a way to compare the current response with an observation.** The gap between them says which way to change. Averaging is the simple case where that correction can be followed step by step.",
+    "end": "So feedback from data, not theory alone, is what moves the estimate."},
+   {"ref": "Lecture 03 · p16 · Lecture 03 · p17 · Lecture 03 · p18 · Lecture 03 · p20 · Lecture 03 · p21 · Lecture 03 · p22 · Lecture 03 · p24 · Lecture 03 · p25 · Lecture 03 · p26",
+    "main": "**Step after step, the estimate falls whenever the drawn observation is below it, and the size of the step is a quarter of the gap.** From 122 with an observation of 85 the gap is 37, so the estimate drops to 112.75. From there an observation of 76 drops it to about 103.6, then 68 drops it to about 94.7. Later, 72 drops it to about 89.6, 78 to about 86.7 and 67 to about 81.8.",
+    "sub": ["When the observation is close to the estimate, as 85 is to 85.8, the gap is tiny and the path is almost level.", "After twelve corrections the estimate ends near 79.4, just below the true average of 80.25, because the last observation drawn, 68, was below both."],
+    "end": "So each step is the same rule, and the path is the sum of many small corrections in both directions."}
+  ],
+  "questions": [
+   "review-18", "review-10", "exam-7", "exam-15", "exam-20",
+   {"source": "Predicted", "q": "The current estimate is 60 and the next data point is 90, with a learning rate of 10 percent. Which way does the estimate move, and by how much?",
+    "a": "The estimate moves up, to 63. This is because the difference, 60 minus 90, is minus 30. Subtracting 10 percent of minus 30, which is minus 3, raises the estimate by 3. The minus in the formula makes the estimate move toward the data point, which is above it."},
+   {"source": "Predicted", "q": "Can the SGD estimate move away from the true average on a single step? Why?",
+    "a": "Yes. This is because each step moves the estimate toward the one data point that was drawn, not toward the average. If the estimate is 94 and the data point drawn is 98, the estimate goes up even though the average is 80. Over many steps the moves average out and the estimate settles near 80."},
+   {"source": "Predicted", "q": "A list of exam grades has one typo, 400, in it. What happens when SGD learns the average from this list?",
+    "a": "The learned average comes out too high, near 100 instead of near 80. This is because the step that draws 400 pulls the estimate strongly toward 400, and SGD has no way to know that the observation is wrong. The arithmetic is correct, but it learns the mistake in the data along with everything else."},
+   {"source": "Predicted", "q": "What do the words stochastic, gradient and descent each mean in the name of the algorithm?",
+    "a": "Stochastic means the data point is picked at random each step. Gradient means the direction of change that reduces the mistake. Descent means the mistake goes down over the run. Descent does not mean the estimate itself always goes down, because the estimate rises whenever it is below the data point."}
+  ]
+ },
+ {
+  "id": "m1-rate", "tier": "Asked on Exam 1", "lectures": "Lectures 02, 03, 04 and 07",
+  "title": "Learning rate and stiffness: the speed and accuracy tradeoff",
+  "blocks": [
+   {"ref": "Lecture 02 · p18 · Lecture 03 · p30 · Lecture 07 · p15",
+    "main": "**A bigger learning rate makes the estimate reach the right region faster but keeps it jumping around once it is there.** Three runs start at 130, at 80 and at 10, and all head toward the average near 80. At 1 percent the runs are smooth but slow, and after 300 steps the run from 10 is still below 80. At 10 percent they arrive fairly fast and then wobble a little.",
+    "sub": ["At 50 percent the runs arrive quickly but make big jumps around 80. At 80 percent each observation throws the estimate a long way, so it keeps bouncing over a wide range.", "A big rate gives each observation a lot of influence, so an estimate near the average is easily pulled away by one data point. A small rate gives little jitter but needs many observations to travel far from a bad start."],
+    "end": "So the run that starts near the answer does fine with a small rate, and a run that starts far away needs a bigger rate to get there in time."},
+   {"ref": "Lecture 02 · p19 · Lecture 03 · p31",
+    "main": "**This is the speed and accuracy tradeoff.** Raising the learning rate raises the speed and lowers the accuracy, because the estimate reacts more to each observation and keeps fluctuating. Lowering the learning rate lowers the speed and raises the accuracy, because each correction is small and the fluctuations near the average are small.",
+    "sub": ["Optimization research looks for methods that get both speed and accuracy. The tradeoff describes the problem those methods try to solve."],
+    "end": "So no single learning rate is both the fastest and the most accurate, and the choice is a compromise."},
+   {"ref": "Lecture 04 · p18 · Lecture 07 · p6",
+    "main": "**Stiffness does for a spring what the learning rate does for SGD, because both set how strongly the system corrects a discrepancy.** A viscous spring with no mass follows the rule that the change in position is a negative number times the position, so a positive position falls toward zero and a negative one rises toward zero. A bigger number in that rule, which is more stiffness, means a faster return.",
+    "sub": ["Hot coffee cools toward room temperature and iced coffee warms toward it. The change is fast when the gap is big and slows as the gap shrinks, so different starts reach the same equilibrium from opposite sides.", "The SGD estimate does the same, except its path is noisy because each observation is random, while the coffee curve is smooth."],
+    "end": "So a high learning rate and a high stiffness both mean a fast correction, and a low learning rate and a low stiffness both mean a slow one."}
+  ],
+  "questions": [
+   "review-2", "review-9", "exam-10", "exam-14",
+   {"source": "Predicted", "q": "Two SGD runs use the same data. One has a learning rate of 1 percent and the other 80 percent. Describe how each estimate moves over time.",
+    "a": "The 1 percent run moves slowly and smoothly toward the average, and if it starts far away it may not have arrived after hundreds of steps. The 80 percent run reaches the region of the average very fast, but then each observation throws it a long way, so it keeps bouncing around instead of settling. The small rate is accurate but slow, and the big rate is fast but inaccurate."},
+   {"source": "Predicted", "q": "A spring with no mass is released from a stretched position. Compare a stiff spring with a loose one.",
+    "a": "Both return to equilibrium and stop there without crossing it. The stiff spring returns fast, because it pulls back hard, so the position drops toward zero quickly. The loose spring returns slowly, because it pulls back weakly. Neither one overshoots, because there is no mass to carry the motion past equilibrium."},
+   {"source": "Predicted", "q": "What do a cooling cup of coffee and an SGD estimate have in common?",
+    "a": "Both move toward a goal by correcting a discrepancy, and the correction is big when the gap is big and small when the gap is small. The coffee's temperature moves toward room temperature, and the estimate moves toward the data. The difference is that the coffee curve is smooth, while the estimate's path jitters because each observation is random."}
+  ]
+ },
+ {
+  "id": "m1-paths", "tier": "Asked on Exam 1", "lectures": "Lecture 04",
+  "title": "Shortest paths: greedy, exhaustive and dynamic programming",
+  "blocks": [
+   {"ref": "Lecture 04 · p3",
+    "main": "**A shortest path problem asks for the cheapest way from the start state to the goal state through a series of stages.** The circles are states, the arrows are the allowed moves, and the number on an arrow is the cost of that move. From A you can go to B for 12 or to C for 7, and the stages continue through D, E and F, then G, H and I, then J.",
+    "sub": ["A route's total is the sum of every arrow it follows. A cheap first arrow does not make a route cheap, because later arrows can undo its advantage."],
+    "end": "So the quantity that matters is the total cost of the whole route."},
+   {"ref": "Lecture 04 · p4",
+    "main": "**The greedy algorithm takes the cheapest arrow out of whatever state it is in, and it can lose.** From A it takes C, because 7 is less than 12. From C it takes E, because 10 is the smallest. From E it takes H, because 7 is the smallest. Then H to J costs 9, and the route totals 33.",
+    "sub": ["Greedy is fast, because it only looks at the next arrow. It is inaccurate, because it ignores the costs that are still ahead, and an expensive first step can lead to a cheaper whole route."],
+    "end": "So greedy is fast but can pick the wrong route."},
+   {"ref": "Lecture 04 · p6",
+    "main": "**The exhaustive algorithm works out the total of every complete route and picks the cheapest, so it is always right and very slow.** For this problem it finds the true minimum, because it compares every route.",
+    "sub": ["Every added state or stage multiplies the number of complete routes, so the work grows very fast. The routes overlap, so the same additions get done over and over."],
+    "end": "So exhaustive search is accurate but inefficient."},
+   {"ref": "Lecture 04 · p7 · Lecture 04 · p8",
+    "main": "**Dynamic programming breaks the big problem into smaller problems that it contains, solves the smallest first, and reuses their answers.** Call the best cost of finishing from B the value of B, and the same for C. If those two values are known, the decision at A is the smaller of 12 plus the value of B and 7 plus the value of C.",
+    "sub": ["A **value** is the cost of the whole remaining problem from a state, not the cost of one arrow. The values of B and C are unknown at first, so each one becomes a smaller problem, the cheapest way to finish from that state.", "Breaking problems into smaller problems is Bellman's idea, and it keeps going until the remaining problem is trivial."],
+    "end": "So a hard problem is solved by solving the easy problems inside it and building back up."},
+   {"ref": "Lecture 04 · p9 · Lecture 04 · p10 · Lecture 04 · p13 · Lecture 04 · p16",
+    "main": "**The values are worked out backward from the goal, and then the route is followed forward from the start.** The last states have values that are just their final arrow, so G is 5, H is 9 and I is 8. For D, compare 8 plus 5, 7 plus 9 and 10 plus 8, and the smallest, 13, is the value of D. The same rule gives E the value 14 and F the value 15.",
+    "sub": ["Then B is 18 through D and C is 24 through E. At A the choice is 12 plus 18 through B, which is 30, or 7 plus 24 through C, which is 31. So the best route is A to B to D to G to J, costing 30, even though its first arrow is the expensive one.", "The rule at every state is the same. For each possible next state, add the cost of getting there to that state's value, and keep the smallest sum. Remember which next state gave it, so the route can be read off forward afterward."],
+    "end": "So the calculation runs backward from the goal, and the route is lived forward from the start."},
+   {"ref": "Lecture 04 · p11 · Lecture 04 · p12",
+    "main": "**Dynamic programming is more efficient than exhaustive search because the routes overlap, and it solves each overlapping part only once.** Exhaustive search redoes the same additions for every route through a state. Dynamic programming finds the best way to finish from each state once and reuses it for every route that passes through.",
+    "sub": ["A costly arrow far ahead, like the 9 from H to J, is carried backward into the values, so the choice at A already knows about it.", "Greedy is fast but inaccurate, exhaustive is accurate but slow, and dynamic programming is the balance."],
+    "end": "So the value of a state summarizes the whole future, and that is what lets a local choice be a good one."}
+  ],
+  "questions": [
+   "review-5", "exam-4", "exam-5", "exam-12", "exam-13", "exam-14",
+   {"source": "Predicted", "q": "In a shortest path problem, what is the difference between the cost of an arrow and the value of a state?",
+    "a": "The cost of an arrow is the price of one move. The value of a state is the cheapest total cost of finishing from that state all the way to the goal, which adds up several arrows. Dynamic programming uses values, because a value already includes every cost that is still ahead."},
+   {"source": "Predicted", "q": "Why does dynamic programming work backward from the goal?",
+    "a": "It works backward because a state's value can only be computed once the values of the states after it are known. The last states are easy, because their value is just their final arrow. Each earlier state then adds one arrow to a known value and keeps the smallest sum. Once every value is known, the route is read off forward from the start."},
+   {"source": "Predicted", "q": "In the Exam 1 graph, the greedy path from A to H cost 12. What is the cheapest path, and why does greedy miss it?",
+    "img": "assets/module1/exam1-q12.png", "alt": "A five-stage shortest path graph from A to H with costs on every arrow",
+    "a": "The cheapest path is A to C to D to G to H, which costs 5 plus 2 plus 1 plus 3, which is 11. Greedy misses it because the first arrow to C costs 5, which is more than the 3 to B, so greedy never goes to C. The cheap arrows after C, 2 and 1, are what make the whole route cheaper, and greedy cannot see them from A."},
+   {"source": "Predicted", "q": "In the Exam 1 graph, we know the values V F H and V G H. How do we calculate V D H?",
+    "img": "assets/module1/exam1-q12.png", "alt": "A five-stage shortest path graph from A to H with costs on every arrow",
+    "a": "V D H is the smaller of 3 plus V F H and 1 plus V G H. This is because from D you can go to F for 3 or to G for 1, and each sum adds that first step to the best cost of finishing from where you land. The minimum of the two is the best cost from D."}
+  ]
+ },
+ {
+  "id": "m1-least-time", "tier": "Possible", "lectures": "Lecture 04",
+  "title": "Least distance is not least time",
+  "blocks": [
+   {"ref": "Lecture 04 · p14",
+    "main": "**The fastest route is not always the shortest route, because the cost of a stretch depends on the conditions on it.** On uniform sand, where speed is the same everywhere, the straight line is both shortest and fastest. A rescuer who runs faster on sand than they swim in water should run farther along the sand before entering the water, so the fastest route bends at the shore.",
+    "sub": ["The extra distance on the fast sand saves more time than it costs, because it shortens the slow swim.", "This is the same idea as paying the expensive 12 to B in the shortest path problem, because the cheaper continuation more than pays it back."],
+    "end": "So the thing to minimize is the total time or total cost of the whole route, not the length of its first stretch."},
+   {"ref": "Lecture 04 · p15",
+    "main": "**Light takes the least-time route too, and that is why it bends at the boundary between air and water.** Light moves faster in air than in water, so its path changes direction at the surface, the way the rescuer's path changes direction at the shore. A pencil in a glass of water looks bent because the light reaching the eye followed a bent path.",
+    "sub": ["The pencil itself is straight. The bend is in the path of the light."],
+    "end": "So a locally shorter stretch is not always best when the rest of the route runs under different conditions."}
+  ],
+  "questions": [
+   {"source": "Predicted", "q": "Why can the fastest route be longer than the shortest route?",
+    "a": "Because the route crosses regions where the speed is different. Spending extra distance in the fast region shortens the distance in the slow region, and the time saved there is bigger than the time added. So the route with the least total time bends toward the fast region and is longer than the straight line."},
+   {"source": "Predicted", "q": "What do a lifeguard running to a swimmer, a ray of light entering water, and the shortest path problem have in common?",
+    "a": "In all three, the best choice for the whole route is not the cheapest first step. The lifeguard runs farther on sand because swimming is slow. Light bends at the water because it travels slower in water. In the path problem the expensive first arrow leads to the cheaper total. What is minimized is the total time or total cost over the whole route."}
+  ]
+ },
+ {
+  "id": "m1-oscillator", "tier": "Asked on Exam 1", "lectures": "Lectures 05–06, 07 and 08",
+  "title": "Position and velocity: why a mass on a spring oscillates",
+  "blocks": [
+   {"ref": "Lecture 05–06 · p3 · Lecture 07 · p2",
+    "main": "**A harmonic oscillator has two quantities that change each other, position x and velocity v.** Position is where the mass is relative to its resting position. Velocity is how fast the position is changing. A dot over a quantity means its rate of change, so x dot is how position changes and v dot is how velocity changes.",
+    "sub": ["The first rule is that x dot equals v. Velocity determines how position changes, and the sign stays the same, so positive velocity makes position go up.", "The second rule is that v dot equals minus x. Position determines how velocity changes, with the sign reversed, so positive position makes velocity go down and negative position makes velocity go up."],
+    "end": "So position and velocity keep changing each other through a feedback loop."},
+   {"ref": "Lecture 05–06 · p4 · Lecture 05–06 · p5",
+    "main": "**The rules say which way a quantity is changing, not whether the quantity is positive right now.** When v is plus 5, position rises. When v is minus 5, position falls. When x is plus 5, velocity goes down. When x is minus 5, velocity goes up.",
+    "sub": ["Velocity going up can mean going from a big negative number toward zero, which is slowing down, not speeding up in the same direction.", "Keeping the quantity and its rate of change separate is what makes the back and forth motion understandable."],
+    "end": "So read each rule as a direction of change."},
+   {"ref": "Lecture 05–06 · p6 · Lecture 05–06 · p7 · Lecture 07 · p3",
+    "main": "**Following the two rules around the loop gives repeated motion, not a single return to the middle.** Start with a positive position and zero velocity. Positive x makes velocity become negative. Negative velocity makes x fall. As x nears zero the push on velocity weakens, but the velocity is still negative, so it carries x through zero to the negative side.",
+    "sub": ["Now negative x makes velocity rise. Velocity passes through zero and becomes positive, so x turns around and rises back through zero. Then positive x starts pushing velocity down again, and the cycle repeats.", "Position and velocity are coordinated but do not peak together. Position is at a turning point when velocity is zero, and velocity is biggest when position passes through zero.", "The two arrows, from x to v and from v to x, close the loop, so one change leads to another and back again. That is what oscillation is."],
+    "end": "So two simple rules, each the cause of the other, produce vibration."},
+   {"ref": "Lecture 07 · p4 · Lecture 07 · p7",
+    "main": "**A spring and a mass make vibration because the spring wants to return to equilibrium and the moving mass wants to keep moving.** The spring's goal is to get back to its resting position, and **stiffness** is how strongly it pulls back. A mass in motion stays in motion unless something changes it, which is **inertia**. The spring can pull the mass back to the middle, but the mass arrives moving, so it goes through, and the spring has to slow it and turn it around from the other side.",
+    "sub": ["The same back and forth shows up in a car after a bump, in music, in boom and bust, in the SGD estimate swinging around the average, in the air in the vocal tract and in the vocal folds."],
+    "end": "So the goal of the spring plus the inertia of the mass is the whole explanation of oscillation."},
+   {"ref": "Lecture 07 · p8 · Lecture 08 · p3",
+    "main": "**A spring on its own returns to equilibrium and stops, and a spring with a mass overshoots and keeps going.** Pull a spring alone to plus 1 and let go, and it comes back toward 0 and flattens out without crossing. Push it to minus 1 and it rises toward 0 without crossing. Attach a mass, release it from plus 1, and it moves to 0 and keeps going, because it is already moving. The spring is then compressed, pulls back, and turns the mass around, and the mass carries it through the next crossing too.",
+    "sub": ["The trace of the mass on the spring crosses zero again and again, with each swing a little smaller when there is light damping.", "The resting position is the same in both cases. What differs is whether the motion stops there or passes through."],
+    "end": "So the mass is the difference between settling and oscillating."}
+  ],
+  "questions": [
+   "review-16", "review-15", "review-4", "exam-17", "exam-18",
+   {"source": "Predicted", "q": "A mass on a spring starts with x positive and v equal to 0. Will it oscillate? Describe what happens.",
+    "a": "Yes, it oscillates. The position starts positive, so the spring is stretched and pulls the mass back toward equilibrium at 0. The mass speeds up and reaches 0, but a moving mass keeps moving, so it overshoots to the negative side and compresses the spring. The spring then pushes it back, it overshoots again, and this repeats. The position swings back and forth as a cosine-shaped wave, starting from its high point."},
+   {"source": "Predicted", "q": "In the oscillator rules, x dot equals v and v dot equals minus x. If x is plus 5 right now, is the mass moving up or down?",
+    "a": "You cannot tell from x alone. The rules only say that a positive x makes the velocity go down. Whether the mass is moving up or down right now depends on the current velocity. If v is still positive the mass is moving up while slowing, and if v is already negative it is moving down."},
+   {"source": "Predicted", "q": "Why does a mass on a spring keep passing through the middle instead of stopping there?",
+    "a": "Because at the middle the spring is at its resting position and pulls with no force, but the mass is moving as fast as it ever does. A moving mass keeps moving unless something changes its motion, so it goes through. Only after it is past the middle does the spring start pulling it back."}
+  ]
+ }
+]
