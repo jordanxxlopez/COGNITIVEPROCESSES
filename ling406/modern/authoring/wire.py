@@ -2,7 +2,7 @@
 Run it after any rebuild of module1/ or module3/ (their builders rewrite index.html)."""
 import re, pathlib
 L = pathlib.Path(__file__).resolve().parents[2]
-V = 'modern-1'
+V = 'modern-2'
 for page, prefix in (('index.html', ''), ('module1/index.html', '../'), ('module3/index.html', '../')):
     f = L / page
     html = re.sub(r'<link rel="stylesheet" href="[^"]*modern-versions\.css[^"]*">', '', f.read_text())

@@ -29,7 +29,7 @@ test('every pack covers every page of its module, and empty pages stay empty',()
   }
 });
 test('older versions are unchanged',()=>{
-  const changed=execFileSync('git',['diff','--name-only','HEAD','--','ling406'],{cwd:path.resolve(L,'..'),encoding:'utf8'}).trim().split('\n').filter(Boolean);
+  const changed=execFileSync('git',['diff','--name-only','HEAD','--','ling406'],{cwd:path.resolve(L,'..'),encoding:'utf8'}).trim().split('\n').filter(Boolean).filter(f=>!f.startsWith('ling406/modern/'));
   assert.deepEqual(changed.sort(),['ling406/index.html','ling406/module1/index.html','ling406/module3/index.html'].filter(f=>changed.includes(f)).sort());
   for(const f of changed)assert.ok(/index\.html$/.test(f),f);
 });

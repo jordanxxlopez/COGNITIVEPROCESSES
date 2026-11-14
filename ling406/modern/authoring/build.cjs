@@ -81,7 +81,7 @@ if(cmd==='check'){
     report[`${m}-${v}`]=stats;
     if(!ok){bad++;console.log(`skip ${m}-${v}: ${Object.entries(stats).filter(([,s])=>s.errors).map(([c,s])=>c+(s.missing?' (missing)':` (${s.errors} errors)`)).join(', ')}`);continue}
     if(m==='m2')for(const r of PAGES.m2review){if(r.id==='review-54')continue;scripts[r.id]=r.empty?[]:scripts[r.lectureSection];if(!scripts[r.id]&&PARTIAL)scripts[r.id]=[];if(!scripts[r.id])throw new Error('review map broken '+r.id)}
-    const revision=`ling406-modern-${m}-${v}-1`;
+    const revision=`ling406-modern-${m}-${v}-2`;
     fs.writeFileSync(path.join(OUT,`${m}-${v}.js`),`(window.LING406_MODERN_PACKS=window.LING406_MODERN_PACKS||{})[${JSON.stringify(m+'-'+v)}]=${JSON.stringify({id:v,label:V.label,revision,scripts})};\n`);
     (manifest[m]=manifest[m]||[]).push({id:v,value:V.value[m],label:V.label,family:V.family,file:`${m}-${v}.js`,revision});
     console.log(`built ${m}-${v}: ${Object.keys(scripts).length} pages`);
