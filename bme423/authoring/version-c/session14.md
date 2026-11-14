@@ -108,7 +108,7 @@ The horizontal axis expresses the true mean difference relative to population st
 
 The separate curves represent different group sizes. A larger sample reaches high power for a smaller standardized effect because its mean difference is estimated more precisely.
 
-The displayed ratio combines delta, sigma, and the equal group size into a standardized shift. Use the curve corresponding to the actual design rather than treating power as a function of effect size alone.
+The horizontal axis is phi, the true difference delta divided by the population standard deviation sigma. The group size is not part of phi. It selects which curve to read, so the same phi gives more power on a curve for a larger group.
 
 ## 17 | A nonsignificant cardiac-index comparison revisited
 The anesthetic table returns to the cardiac-index means from halothane and morphine groups. The earlier t test did not reject equal population means.

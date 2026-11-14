@@ -5,7 +5,7 @@ The sum-of-squares framework expresses the same within-versus-between comparison
 
 The R section shows how group and residual rows represent the two sources of variation. Reading those rows connects software output to the variance comparison already developed by hand.
 
-## 2 | The equal-means population picture
+## 2 | The equal-means population model
 The diet labels are mixed throughout one common cardiac-output distribution. The full hypothetical population therefore illustrates the null case in which diet does not shift the population mean.
 
 Individual measurements still vary. Equal population means do not mean every individual has the same cardiac output.
@@ -24,7 +24,7 @@ The bottom summary brings the group means together, while the upper rows retain 
 
 Averages based on several independent observations should fluctuate less than individual observations. The expected reduction depends on how many individuals contribute to each mean.
 
-The picture asks whether the observed scatter of means agrees with that expected sampling scatter. The F ratio will be large when the centers are separated beyond what the within-group variation predicts.
+The comparison asks whether the observed scatter of means agrees with that expected sampling scatter. The F ratio will be large when the centers are separated beyond what the within-group variation predicts.
 
 ## 5 | Begin with the hypotheses and group summaries
 The null hypothesis states that all population group means are equal. The alternative requires at least one pair of population means to differ, rather than requiring every group to differ from every other group.
@@ -52,7 +52,7 @@ The response must be numerical interval data, and observations must come from in
 
 The method assumes Normal populations with equal population variances. Equal variances provide the common background spread that both variance estimates are trying to measure.
 
-The upper-tail F picture applies under these conditions and the null hypothesis. Keep the assumptions attached to the method before interpreting its calculated ratio.
+The upper-tail F distribution applies under these conditions and the null hypothesis. Keep the assumptions attached to the method before interpreting its calculated ratio.
 
 ## 9 | Set up the cat-versus-dog heart-rate comparison
 Five students are sampled from each pet-preference group. The measured response is heart rate, and the null hypothesis says the two population mean heart rates are equal.

@@ -24,7 +24,7 @@ The dots show the cardiac-output measurements for the full hypothetical populati
 
 The Normal notation describes a shared center and shared variance. If diet has no effect, group membership does not move the population mean for cardiac output.
 
-This full-population picture provides the reference situation. In practice, only a few sampled people from each group are observed, so their sample means can separate even when this underlying equal-means picture is true.
+This full-population diagram provides the reference situation. In practice, only a few sampled people from each group are observed, so their sample means can separate even when the underlying population means really are equal.
 
 ## 5 | Sample mean differences versus individual variation
 Each group has a sample mean and a spread of individual cardiac-output values. The means are not identical, but that alone does not establish that the diets caused different population outcomes.
@@ -36,14 +36,14 @@ ANOVA formalizes this comparison. The numerator will reflect separation among gr
 ## 6 | Group measurements and the spread of their means
 The separate group rows show individual measurements around each group's center. The lower summary collects the group centers and shows how widely those centers vary.
 
-There are therefore two levels in the picture: variation among people and variation among sample means. A group mean summarizes several people, so its expected variability is smaller than individual variability.
+There are therefore two levels in the diagram: variation among people and variation among sample means. A group mean summarizes several people, so its expected variability is smaller than individual variability.
 
 The question asks whether the displayed spread among means is consistent with the spread within the groups. This is the visual comparison that the two variance estimates will express numerically.
 
 ## 7 | Reading the second group-variation illustration
 Follow the individual points in each group, then compare their centers. The bottom summary places those sample centers on a common scale so their separation can be judged together.
 
-Changing the positions of group centers changes the between-group picture. The individual scatter within a group continues to describe the variation among people receiving that same treatment.
+Changing the positions of group centers changes the between-group variation. The individual scatter within a group continues to describe the variation among people receiving that same treatment.
 
 A large-looking difference must be interpreted relative to that individual scatter and the group size. The comparison asks whether ordinary sampling from one population can plausibly produce the observed arrangement of centers.
 
@@ -68,7 +68,7 @@ Because the groups have equal sizes, average their variances to obtain the withi
 
 This calculation does not use the distances between group means. It deliberately measures background scatter inside the groups, providing the reference against which the between-group variation will be compared.
 
-## 11 | Returning to the cardiac-output picture
+## 11 | Returning to the cardiac-output diagram
 The four marked sample means show the observed centers of the diet groups. Their individual standard deviations describe the spread around those centers.
 
 The difference between centers supplies the between-group information. The spread within each group supplies the within-group information, so both parts can be read from the same set of measurements.

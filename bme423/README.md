@@ -235,3 +235,13 @@ port 8920 (or set `BME_STUDIO_URL`). The test compares the original renderer,
 Version 1 and Version 2 across all render paths with only hypothesis sentence
 nodes masked, and verifies both selectors, persistence, source wording,
 notation, numeric work, quiz state, notes and mobile themes.
+
+## Version E · plain concepts and Order to memorize
+
+`authoring/plain_study_content.py` holds plain-language teaching for Sessions 2–14 and 17: topics with idea blocks (each tied to its PDF pages), questions with answers, and the problem types with their steps in the order to write them. `python bme423/authoring/plain_study.py` checks the writing rules and the page references, then writes `plain-study-data.js`. `plain-study.js` adds Version E, bold sentences only and questions first to the Teaching version selector, plus the "Plain concepts" and "Order to memorize" workspaces in MODULE I and MODULE II (versions: words, words with formula, one line per step, recall drill). Progress is stored under `state.plain`.
+
+## Corrections layered over the locked app
+
+`app.js` stays identical to 279aa10 (checked by `tests/table-guidance.cjs`), so `studio-fixes.js` and `studio-fixes.css` wrap it instead. The four-page notes page now labels its inline preview as Version 3. The start page calls the midterm route archived. Versions A and B show a topic once when it spans several page ranges in one session, with a button for every range and any notes saved on the later ranges. Pages that Version E does not cover say that they are showing Version B. The shared Module III placeholder is hidden because BME423 has two halves.
+
+Version C wording was corrected in `authoring/version-c/session3, 4, 6, 7 and 14.md` and rebuilt: "picture" no longer stands in for distribution, diagram, graph or model, and the Session 14 page 16 script now says that phi is delta over sigma and that group size selects the curve, which matches the slide. The new `version-c-data.js` hash is recorded in `module2-preserved.json` and `studio-question-review.json`.

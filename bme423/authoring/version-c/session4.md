@@ -94,7 +94,7 @@ The cumulative function gives the probability at or below a cutoff. A right-tail
 
 For a probability between two cutoffs, subtract the cumulative probability at the lower cutoff from the cumulative probability at the upper cutoff. The subtraction removes the area lying too far to the left.
 
-The density picture shows the area selected, and the cumulative picture shows how much has accumulated at each boundary. They are two ways of describing the same probability.
+The density graph shows the area selected, and the cumulative graph shows how much has accumulated at each boundary. They are two ways of describing the same probability.
 
 ## 15 | Why a Uniform mean is the midpoint
 Expectation weights measurement values by their density across the allowed interval. A Uniform density gives equal weight to equal-length regions.

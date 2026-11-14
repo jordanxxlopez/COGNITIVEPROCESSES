@@ -17,7 +17,7 @@ The Martian heights provide a population whose center and spread can be calculat
 
 The mean is 40 cm and the standard deviation is 5 cm. These describe the full population, rather than estimates from a small selected sample.
 
-Before an individual is randomly selected, the height of that individual is uncertain. The same population picture can then describe which heights are more common and which are less common, linking descriptive statistics to probability.
+Before an individual is randomly selected, the height of that individual is uncertain. The same population distribution can then describe which heights are more common and which are less common, linking descriptive statistics to probability.
 
 ## 4 | Why probability was developed
 Questions about gambling helped motivate a mathematical treatment of uncertain outcomes. Pascal and Fermat considered such problems, followed by contributions from Bayes and Laplace.
@@ -145,7 +145,7 @@ Intermediate metabolism carries the largest probability mass. The other two cate
 
 These category probabilities support questions such as the chance of selecting a slow or intermediate metabolizer. Add the relevant category masses while keeping the biological meaning of the numerical labels attached.
 
-## 22 | The general discrete probability picture
+## 22 | The general discrete probability function
 A discrete variable can have several allowed values, each with its own probability. The values determine where the graph has masses, and the probabilities determine their heights.
 
 The masses need not be evenly spaced or equal in size. A value with a taller probability mass occurs more often over repeated experiments than a value with a shorter one.
