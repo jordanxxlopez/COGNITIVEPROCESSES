@@ -1,17 +1,24 @@
 'use strict';
 // Shared navigation only. Each course keeps its own app, URL and storage keys.
+// BME423 has its own site (jordanxxlopez/BME423). PSYC301, LING406 and LING285 stay on the Study Studio
+// site (jordanxxlopez/COGNITIVEPROCESSES). Courses on this site use relative links, so local previews work.
+// Courses on the other site use full URLs. HERE is the only line that differs between the two copies.
 (() => {
+ const HERE='studio';
+ const SITES={studio:'https://jordanxxlopez.github.io/COGNITIVEPROCESSES/',bme423:'https://jordanxxlopez.github.io/BME423/'};
  const script=document.currentScript;
  if(!script)return;
  const base=new URL('.',script.src);
  const revision=new URL(script.src).searchParams.get('v');
  const courses=[
-  {id:'PSYC301',path:''},
-  {id:'BME423',path:'bme423/'},
-  {id:'LING406',path:'ling406/'},
-  {id:'LING285',path:'ling285/'}
+  {id:'PSYC301',site:'studio',path:''},
+  {id:'BME423',site:'bme423',path:'bme423/'},
+  {id:'LING406',site:'studio',path:'ling406/'},
+  {id:'LING285',site:'studio',path:'ling285/'}
  ];
- const current=courses.find(c=>c.path&&(location.pathname.startsWith(new URL(c.path,base).pathname)||location.pathname===new URL(c.path,base).pathname.slice(0,-1)))||courses[0];
+ const href=c=>new URL(c.path,c.site===HERE?base:SITES[c.site]);
+ const local=courses.filter(c=>c.site===HERE);
+ const current=local.find(c=>c.path&&(location.pathname.startsWith(href(c).pathname)||location.pathname===href(c).pathname.slice(0,-1)))||local[0];
  function mount(){
   const sidebar=document.getElementById('sidebar');
   if(!sidebar||sidebar.querySelector('[data-course-switcher]'))return;
@@ -27,8 +34,8 @@
   select.addEventListener('change',()=>{
    const destination=courses.find(c=>c.id===select.value);
    if(destination&&destination.id!==current.id){
-    const target=new URL(destination.path,base);
-    if(revision)target.searchParams.set('v',revision);
+    const target=href(destination);
+    if(revision&&destination.site===HERE)target.searchParams.set('v',revision);
     location.assign(target.href);
    }
   });

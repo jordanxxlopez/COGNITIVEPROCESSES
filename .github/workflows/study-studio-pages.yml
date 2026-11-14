@@ -35,6 +35,9 @@ jobs:
                   continue
               if src.is_symlink():
                   raise RuntimeError(f'Unexpected symlink: {name}')
+              # BME423 has its own site (jordanxxlopez/BME423). Keep only the KaTeX files other pages load.
+              if src.parts[0] == 'bme423' and src.parts[1:2] != ('vendor',):
+                  continue
               dest = target / src
               dest.parent.mkdir(parents=True, exist_ok=True)
               shutil.copyfile(src, dest)
