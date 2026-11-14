@@ -1,0 +1,2915 @@
+{
+ "module": {
+  "id": 21,
+  "title": "Repeated measures ANOVA and McNemar's test",
+  "date": "2026-11-04",
+  "count": 17,
+  "pdf": "sources/session21.pdf",
+  "pptx": null,
+  "slides": [
+   {
+    "page": 1,
+    "title": "Session outline: repeated measures ANOVA and McNemar's test",
+    "topic": "s21rmAnova",
+    "paragraphs": [
+     "This session covers experiments in which the same subjects are observed more than once, called repeated measures. Each subject serves as its own control, so differences between subjects can be separated from differences caused by the treatments.",
+     "Section II develops repeated measures ANOVA for three or more treatments in the same subjects: the experimental framework, how the total variability is partitioned, the calculation procedure, and two worked examples. Section III shows how to find which treatments differ after the overall F test rejects.",
+     "Section IV moves to nominal data, where each subject is classified into one of two outcomes before and after a treatment. McNemar's test handles this paired design, which an ordinary contingency-table chi-square does not."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   },
+   {
+    "page": 2,
+    "title": "Partitioning variability in repeated measures ANOVA",
+    "topic": "s21rmAnova",
+    "paragraphs": [
+     "The plotted data show maximum percent platelet aggregation in the same people before and after smoking, with each person joined by a line. People differ greatly in their overall level, but almost every line rises. The question concerns the change within each person, not the spread between people.",
+     "Total variation splits into between-subjects variation, from the differences among the subjects' average levels, and within-subjects variation, from the scatter of each subject's values around that subject's own mean. Only the within-subjects part can show a treatment effect, because every subject receives every treatment.",
+     "Within-subjects variation splits again into between-treatments variation and residual variation. The F statistic is the treatment mean square divided by the residual mean square. Removing the between-subjects variation from the denominator makes the test more sensitive than a one-way ANOVA on the same numbers."
+    ],
+    "equations": [
+     "SS_{tot}=SS_{bet\\,subjs}+SS_{wit\\,subjs}",
+     "SS_{wit\\,subjs}=SS_{treat}+SS_{res}",
+     "F=\\frac{MS_{treat}}{MS_{res}}"
+    ],
+    "symbols": "\\(SS\\) (sum of squares), \\(MS\\) (mean square), \\(F\\) (F statistic), subscripts \\(tot\\) (total), \\(bet\\,subjs\\) (between subjects), \\(wit\\,subjs\\) (within subjects), \\(treat\\) (treatments), \\(res\\) (residual).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 3,
+    "title": "Notation table for repeated measures ANOVA",
+    "topic": "s21rmAnova",
+    "paragraphs": [
+     "The data form a table with one row per experimental subject and one column per treatment. In the general table there are \\(n=4\\) subjects and \\(m=3\\) treatments, and \\(X_{ts}\\) is the observation for treatment \\(t\\) on subject \\(s\\).",
+     "Averaging across a row gives the subject mean \\(\\bar S_s\\). The sum of squared deviations of that row from its own mean, \\(\\sum_t(X_{ts}-\\bar S_s)^2\\), is the subject sum of squares. Averaging down a column gives the treatment mean \\(\\bar T_t\\).",
+     "The grand mean \\(\\bar X\\) averages all \\(mn\\) observations. The total sum of squares measures every observation's squared deviation from the grand mean; it is shown in gray because it is not needed for the F test itself."
+    ],
+    "equations": [
+     "\\bar X=\\frac{\\sum_t\\sum_s X_{ts}}{mn}",
+     "SS_{tot}=\\sum_t\\sum_s(X_{ts}-\\bar X)^2"
+    ],
+    "symbols": "\\(x_{ts}\\) (observation, treatment \\(t\\), subject \\(s\\)), \\(m\\) (treatments), \\(n\\) (subjects), \\(\\bar S_s\\) (subject mean), \\(\\bar T_t\\) (treatment mean), \\(\\bar X\\) (grand mean), \\(SS_{tot}\\) (total sum of squares).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 4,
+    "title": "Subject means, treatment means and the grand mean",
+    "topic": "s21rmAnova",
+    "paragraphs": [
+     "The index \\(t\\) runs over the \\(m\\) treatment groups and \\(s\\) runs over the \\(n\\) subjects. Step 1 averages each subject across its \\(m\\) treatments to give \\(\\bar S_1,\\dots,\\bar S_n\\).",
+     "Step 2 averages each treatment across its \\(n\\) subjects to give \\(\\bar T_1,\\dots,\\bar T_m\\). Step 3 gives the grand mean, which can be computed three equivalent ways: from all observations, as the mean of the treatment means, or as the mean of the subject means. All three agree because every subject has every treatment.",
+     "Step 4, the total sum of squares with \\(DF_{tot}=mn-1\\), is shown in gray. It measures each individual measurement against the grand mean and is the starting point of the partition, but the test uses only its within-subjects part."
+    ],
+    "equations": [
+     "\\bar S_s=\\frac{1}{m}\\sum_{t=1}^{m}x_{ts}",
+     "\\bar T_t=\\frac{1}{n}\\sum_{s=1}^{n}x_{ts}",
+     "\\bar X=\\frac{1}{mn}\\sum_{t=1}^{m}\\sum_{s=1}^{n}x_{ts}=\\frac{1}{m}\\sum_{t=1}^{m}\\bar T_t=\\frac{1}{n}\\sum_{s=1}^{n}\\bar S_s",
+     "SS_{tot}=\\sum_{t=1}^{m}\\sum_{s=1}^{n}(x_{ts}-\\bar X)^2,\\quad DF_{tot}=mn-1"
+    ],
+    "symbols": "\\(x_{ts}\\) (observation, treatment \\(t\\), subject \\(s\\)), \\(m\\) (treatments), \\(n\\) (subjects), \\(\\bar S_s\\) (subject mean), \\(\\bar T_t\\) (treatment mean), \\(\\bar X\\) (grand mean), \\(DF_{tot}\\) (total degrees of freedom).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 5,
+    "title": "Within-subjects and between-subjects sums of squares",
+    "topic": "s21rmAnova",
+    "paragraphs": [
+     "Step 5 computes the sum of squares within subjects. For each subject, square the deviations of its \\(m\\) values from its own mean \\(\\bar S_s\\) and add them to get \\(SS_s\\); then add the \\(SS_s\\) over all \\(n\\) subjects. Each subject contributes \\(m-1\\) degrees of freedom, so \\(DF_{wit\\,subjs}=n(m-1)\\).",
+     "Step 6, in gray, is the sum of squares between subjects. It compares each subject mean with the grand mean and multiplies by \\(m\\) because each subject mean involves \\(m\\) treatments. It has \\(n-1\\) degrees of freedom.",
+     "The between-subjects sum of squares describes how much the subjects differ from one another. It is set aside and does not enter the F statistic, which is why the within-subjects sum of squares is the quantity carried forward."
+    ],
+    "equations": [
+     "SS_{wit\\,subjs}=\\sum_{s=1}^{n}\\left[\\sum_{t=1}^{m}(x_{ts}-\\bar S_s)^2\\right]=\\sum_{s=1}^{n}SS_s,\\quad DF_{wit\\,subjs}=n(m-1)",
+     "SS_{bet\\,subjs}=m\\sum_{s=1}^{n}(\\bar S_s-\\bar X)^2,\\quad DF_{bet\\,subjs}=n-1"
+    ],
+    "symbols": "\\(x_{ts}\\) (observation, treatment \\(t\\), subject \\(s\\)), \\(m\\) (treatments), \\(n\\) (subjects), \\(\\bar S_s\\) (subject mean), \\(\\bar T_t\\) (treatment mean), \\(\\bar X\\) (grand mean), \\(SS_s\\) (sum of squares for subject \\(s\\)).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 6,
+    "title": "Treatment and residual sums of squares and the F statistic",
+    "topic": "s21rmAnova",
+    "paragraphs": [
+     "Step 7 measures how far the treatment means are from the grand mean. The sum is multiplied by \\(n\\) because each treatment mean involves \\(n\\) subjects, and \\(DF_{treat}=m-1\\).",
+     "Step 8 takes the residual as what is left of the within-subjects sum of squares after the treatment part is removed: \\(SS_{res}=SS_{wit\\,subjs}-SS_{treat}\\), with \\(DF_{res}=(n-1)(m-1)\\). The residual degrees of freedom are also \\(n(m-1)-(m-1)\\).",
+     "Step 9 divides each sum of squares by its degrees of freedom and forms \\(F=MS_{treat}/MS_{res}\\). The critical value \\(F_\\alpha(\\nu_n,\\nu_d)\\) uses \\(\\nu_n=DF_{treat}\\) in the numerator column and \\(\\nu_d=DF_{res}\\) in the denominator row of the F table."
+    ],
+    "equations": [
+     "SS_{treat}=n\\sum_{t=1}^{m}(\\bar T_t-\\bar X)^2,\\quad DF_{treat}=m-1",
+     "SS_{wit\\,subjs}=SS_{treat}+SS_{res}",
+     "SS_{res}=SS_{wit\\,subjs}-SS_{treat},\\quad DF_{res}=(n-1)(m-1)",
+     "F=\\frac{SS_{treat}/DF_{treat}}{SS_{res}/DF_{res}}=\\frac{MS_{treat}}{MS_{res}}",
+     "F_{crit}=F_\\alpha(DF_{treat},DF_{res}),\\quad \\nu_n=m-1,\\ \\nu_d=(n-1)(m-1)"
+    ],
+    "symbols": "\\(x_{ts}\\) (observation, treatment \\(t\\), subject \\(s\\)), \\(m\\) (treatments), \\(n\\) (subjects), \\(\\bar S_s\\) (subject mean), \\(\\bar T_t\\) (treatment mean), \\(\\bar X\\) (grand mean), \\(SS_{treat}\\) (treatment sum of squares), \\(SS_{res}\\) (residual sum of squares), \\(MS\\) (mean square), \\(\\nu_n,\\nu_d\\) (numerator and denominator degrees of freedom).",
+    "case": null,
+    "subset": null,
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\mu_1=\\mu_2=\\dots=\\mu_m",
+     "alternative": "H_A:\\text{not all }\\mu_t\\text{ are equal}",
+     "nullWords": "The population mean response is the same under every treatment applied to the same subjects.",
+     "alternativeWords": "The population mean response differs for at least one treatment."
+    }
+   },
+   {
+    "page": 7,
+    "title": "Example 1: systolic blood pressure at 4, 8 and 12 weeks",
+    "topic": "s21rmAnova",
+    "paragraphs": [
+     "Five patients have systolic blood pressure measured at 4, 8 and 12 weeks after a vasodilator, so \\(n=5\\) and \\(m=3\\). The question is whether mean systolic pressure differs over time.",
+     "By hand, the treatment means are 125, 125 and 125.6 mmHg and the grand mean is 125.2 mmHg. The within-subjects sum of squares is 249.3333, of which only 1.2 belongs to treatments, leaving a residual of 248.1333. The output rounds these to 249.3, 1.2 and 248.1.",
+     "With 2 and 8 degrees of freedom, \\(MS_{treat}=0.6\\) and \\(MS_{res}=31.02\\), so \\(F=0.019\\). The between-subjects sum of squares (3149) is large but does not enter F. The output P = 0.981 means no detectable change over time."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": "s21-sbp-rmanova",
+    "subset": [
+     0,
+     7
+    ],
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\mu_{4}=\\mu_{8}=\\mu_{12}",
+     "alternative": "H_A:\\text{not all of }\\mu_{4},\\mu_{8},\\mu_{12}\\text{ are equal}",
+     "nullWords": "The mean systolic blood pressure of the patient population is the same at 4, 8 and 12 weeks after the vasodilator.",
+     "alternativeWords": "The mean systolic blood pressure differs for at least one of the three times."
+    }
+   },
+   {
+    "page": 8,
+    "title": "Example 1 output and the F ratio",
+    "topic": "s21rmAnova",
+    "paragraphs": [
+     "The output lists each group's mean, standard deviation and standard error, then the analysis-of-variance table. Between subjects (SS 3149, DF 4) and within subjects (SS 249.3, DF 10) add to the total (SS 3398, DF 14).",
+     "The within-subjects line splits into treatments (SS 1.2, DF 2, MS 0.6) and residual (SS 248.1, DF 8, MS 31.02). The F ratio uses only these two mean squares: \\(F=0.6/31.02=0.019\\).",
+     "The printed critical value is \\(F_{0.05}(2,8)=4.46\\). Since \\(0.019<4.46\\), the null hypothesis of equal mean systolic pressure at the three times is not rejected, matching P = 0.981."
+    ],
+    "equations": [
+     "F=\\frac{SS_{treat}/DF_{treat}}{SS_{res}/DF_{res}}=\\frac{MS_{treat}}{MS_{res}}"
+    ],
+    "symbols": "\\(SS\\) (sum of squares), \\(DF\\) (degrees of freedom), \\(MS\\) (mean square), \\(F\\) (F statistic).",
+    "case": "s21-sbp-rmanova",
+    "subset": [
+     7,
+     11
+    ],
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\mu_{4}=\\mu_{8}=\\mu_{12}",
+     "alternative": "H_A:\\text{not all of }\\mu_{4},\\mu_{8},\\mu_{12}\\text{ are equal}",
+     "nullWords": "The mean systolic blood pressure of the patient population is the same at 4, 8 and 12 weeks after the vasodilator.",
+     "alternativeWords": "The mean systolic blood pressure differs for at least one of the three times."
+    }
+   },
+   {
+    "page": 9,
+    "title": "Example 2: FEV1 after endotoxin and salbutamol",
+    "topic": "s21rmAnova",
+    "paragraphs": [
+     "Forced expiratory volume in one second is measured in the same 4 people at baseline, 1 hour after inhaling endotoxin, and 2 hours after endotoxin and salbutamol, so \\(m=3\\) and \\(n=4\\). The lines in the plot fall after endotoxin and rise above baseline after salbutamol for every person.",
+     "The table lists each person's three values, the subject mean and the subject sum of squares (0.1800, 0.2467, 0.0800, 0.1267). The treatment means are 3.48, 3.20 and 3.75 L, and the grand mean is 3.48 L.",
+     "The null hypothesis states that there is no difference in FEV1 under the 3 exposure conditions. The alternative states that mean FEV1 differs for at least one condition."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": "s21-fev1-rmanova",
+    "subset": [
+     0,
+     4
+    ],
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\mu_{base}=\\mu_{endo}=\\mu_{endo+salb}",
+     "alternative": "H_A:\\text{not all three population means are equal}",
+     "nullWords": "There is no difference in mean FEV1 under the 3 exposure conditions.",
+     "alternativeWords": "Mean FEV1 differs for at least one of the 3 exposure conditions."
+    }
+   },
+   {
+    "page": 10,
+    "title": "Example 2: partition, F statistic and ANOVA table",
+    "topic": "s21rmAnova",
+    "paragraphs": [
+     "Adding the four subject sums of squares gives \\(SS_{wit\\,subjs}=0.6333\\) with \\(n(m-1)=8\\) degrees of freedom. The treatment sum of squares is \\(4[(3.475-3.475)^2+(3.20-3.475)^2+(3.75-3.475)^2]=0.6050\\) with 2 degrees of freedom.",
+     "The residual is \\(0.6333-0.6050=0.0283\\) with \\((4-1)(3-1)=6\\) degrees of freedom, so \\(MS_{treat}=0.3025\\) and \\(MS_{res}=0.0047\\). The ANOVA table also lists between subjects (SS 2.0490, DF 3) and the total (SS 2.6830, DF 11).",
+     "The F statistic is \\(0.3025/0.004722=64.06\\); the slide prints 64.053. Either value is far above \\(F_{0.01}(2,6)=10.92\\) from the printed F table, so the null hypothesis is rejected with \\(P<0.01\\)."
+    ],
+    "equations": [
+     "SS_{wit\\,subjs}=\\sum_{s=1}^{4}\\left[\\sum_{t=1}^{3}(x_{ts}-\\bar S_s)^2\\right]=0.6333,\\quad DF_{wit\\,subjs}=n(m-1)=8",
+     "SS_{treat}=n\\sum_{t=1}^{m}(\\bar T_t-\\bar X)^2=0.6050,\\quad DF_{treat}=m-1=2",
+     "SS_{res}=SS_{wit\\,subjs}-SS_{treat}=0.0283,\\quad DF_{res}=(n-1)(m-1)=6",
+     "F=\\frac{MS_{treat}}{MS_{res}}=\\frac{0.6050/2}{0.0283/6}=\\frac{0.3025}{0.0047}"
+    ],
+    "symbols": "\\(x_{ts}\\) (observation, treatment \\(t\\), subject \\(s\\)), \\(m\\) (treatments), \\(n\\) (subjects), \\(\\bar S_s\\) (subject mean), \\(\\bar T_t\\) (treatment mean), \\(\\bar X\\) (grand mean), \\(SS\\) (sum of squares), \\(DF\\) (degrees of freedom), \\(MS\\) (mean square).",
+    "case": "s21-fev1-rmanova",
+    "subset": [
+     4,
+     11
+    ],
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\mu_{base}=\\mu_{endo}=\\mu_{endo+salb}",
+     "alternative": "H_A:\\text{not all three population means are equal}",
+     "nullWords": "There is no difference in mean FEV1 under the 3 exposure conditions.",
+     "alternativeWords": "Mean FEV1 differs for at least one of the 3 exposure conditions."
+    }
+   },
+   {
+    "page": 11,
+    "title": "Isolating differences: starting from the significant F",
+    "topic": "s21holm",
+    "paragraphs": [
+     "The repeated-measures ANOVA on FEV1 gives \\(F=64.053\\), \\(P<0.01\\), so there is a difference among the 3 treatments or observation scenarios. The F test does not say which conditions differ.",
+     "The pairwise comparisons reuse the residual from the ANOVA. \\(SS_{res}=0.0283\\) with \\(DF_{res}=6\\) gives \\(MS_{res}=0.0283/6=0.0047\\).",
+     "This residual mean square is the error variance once each person's own level is removed. It replaces the pooled within-group variance that a one-way ANOVA would use in its pairwise t tests."
+    ],
+    "equations": [
+     "SS_{res}=SS_{wit\\,subjs}-SS_{treat}=0.0283",
+     "DF_{res}=(n-1)(m-1)=6",
+     "MS_{res}=\\frac{SS_{res}}{DF_{res}}=\\frac{0.0283}{6}=0.0047"
+    ],
+    "symbols": "\\(SS_{res}\\) (residual sum of squares), \\(DF_{res}\\) (residual degrees of freedom), \\(MS_{res}\\) (residual mean square), \\(n\\) (subjects), \\(m\\) (treatments).",
+    "case": "s21-fev1-holm",
+    "subset": [
+     0,
+     2
+    ],
+    "core": true
+   },
+   {
+    "page": 12,
+    "title": "Holm-corrected multiple-comparison t tests",
+    "topic": "s21holm",
+    "paragraphs": [
+     "Each pair of treatment means is compared with \\(t=(\\bar T_i-\\bar T_j)/\\sqrt{2MS_{res}/n}\\), and the t table is read with \\(DF_{res}=(n-1)(m-1)\\) degrees of freedom. With \\(MS_{res}=0.0047\\) and \\(n=4\\), the standard error is 0.0485.",
+     "The three statistics, ordered by \\(|t|\\), are \\(-11.346\\) (endotoxin vs salbutamol and endotoxin), \\(5.776\\) (baseline vs endotoxin) and \\(-5.570\\) (baseline vs salbutamol and endotoxin). The Holm levels are \\(0.05/3=0.017\\), \\(0.05/2=0.025\\) and \\(0.05/1=0.05\\).",
+     "The \\(j\\)th comparison in this order is tested at \\(\\alpha_j=\\alpha_T/(k-j+1)\\), where \\(k\\) is the number of pairwise comparisons and \\(\\alpha_T\\) the overall level. With 6 df, all three \\(|t|\\) values exceed the printed cutoffs, so every pair of conditions differs."
+    ],
+    "equations": [
+     "t=\\frac{\\bar T_i-\\bar T_j}{\\sqrt{2MS_{res}/n}}\\quad\\text{for all }i,j,\\ i\\ne j",
+     "DF_{res}=(n-1)(m-1)",
+     "\\alpha_j=\\frac{\\alpha_T}{k-j+1},\\quad j=1,\\dots,k"
+    ],
+    "symbols": "\\(\\bar T_i\\) (treatment mean), \\(MS_{res}\\) (residual mean square), \\(n\\) (subjects), \\(DF_{res}\\) (residual degrees of freedom), \\(\\alpha_j\\) (level for the \\(j\\)th comparison), \\(\\alpha_T\\) (overall level), \\(k\\) (number of pairwise comparisons).",
+    "case": "s21-fev1-holm",
+    "subset": [
+     2,
+     8
+    ],
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\mu_i=\\mu_j\\ \\text{for the pair being compared}",
+     "alternative": "H_A:\\mu_i\\ne\\mu_j",
+     "nullWords": "For the pair being compared, mean FEV1 is the same under the two conditions.",
+     "alternativeWords": "For that pair, mean FEV1 differs between the two conditions."
+    }
+   },
+   {
+    "page": 13,
+    "title": "Choosing a test by scale of measurement and experiment type",
+    "topic": "s21mcnemar",
+    "paragraphs": [
+     "The summary table crosses the scale of measurement (interval from Normal populations, nominal, ordinal, survival time) with the type of experiment. Reading across a row shows how the same design question leads to different tests for different kinds of data.",
+     "For interval data from Normal populations: two groups of different individuals use the unpaired t test, three or more groups use ANOVA, before and after a single treatment in the same individuals uses the paired t test, and multiple treatments in the same individuals use repeated-measures ANOVA. Association between two variables uses regression or correlation.",
+     "For nominal data, two or more groups of different individuals use the chi-square contingency-table analysis (or a z test for two proportions), and before and after a single treatment in the same individuals uses McNemar's test. Ordinal data use the rank tests, including the Friedman statistic for multiple treatments in the same individuals."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 14,
+    "title": "p7 antigen: the wrong independent chi-square",
+    "topic": "s21mcnemar",
+    "paragraphs": [
+     "Tumor cells from 30 women are tested for the p7 antigen before and after chemotherapy. Of the 4 positive before, 4 stay positive and 0 become negative; of the 26 negative before, 12 become positive and 14 stay negative.",
+     "If the before and after classifications are treated as independent, the Yates-corrected contingency-table chi-square is 2.165 with \\(\\nu=(n_r-1)(n_c-1)=1\\). This is below the 0.05 cutoff, which would suggest no difference in p7 expression.",
+     "That conclusion comes from the wrong test. Each woman appears in both the row and the column classification, so the rows and columns are not independent samples. The expected counts from row and column totals do not describe what the null hypothesis predicts for paired data."
+    ],
+    "equations": [
+     "\\chi^2=\\sum_{i=1}^{n_r}\\sum_{j=1}^{n_c}\\frac{\\left(|O_{ij}-E_{ij}|-\\frac12\\right)^2}{E_{ij}}",
+     "\\nu=(n_r-1)(n_c-1)=1"
+    ],
+    "symbols": "\\(O_{ij}\\) (observed count), \\(E_{ij}\\) (expected count under independence), \\(n_r,n_c\\) (numbers of rows and columns), \\(\\nu\\) (degrees of freedom).",
+    "case": "s21-p7-mcnemar",
+    "subset": [
+     0,
+     3
+    ],
+    "core": true
+   },
+   {
+    "page": 15,
+    "title": "p7 antigen: McNemar's test on the women who change",
+    "topic": "s21mcnemar",
+    "paragraphs": [
+     "The design is analogous to the paired t test: the same women are measured twice. The solution is to focus on the women whose status changes, because women who stay positive or stay negative say nothing about the direction of change.",
+     "Twelve women changed status. If treatment has no effect, half of them (6) are expected to go from positive to negative and half (6) from negative to positive. The observed split is 0 and 12.",
+     "The Yates-corrected statistic is \\(((|0-6|-\\frac12)^2+(|12-6|-\\frac12)^2)/6=10.083\\) with \\(\\nu=1\\). It exceeds \\(\\chi^2_{0.005}(1)=7.879\\), so p7 expression differs before and after treatment, \\(P<0.005\\)."
+    ],
+    "equations": [
+     "\\chi^2=\\frac{(|0-6|-1/2)^2}{6}+\\frac{(|12-6|-1/2)^2}{6}=10.083,\\quad \\nu=1",
+     "\\chi^2=10.083>\\chi^2_{0.005}(1)=7.879"
+    ],
+    "symbols": "\\(\\chi^2\\) (McNemar chi-square), \\(\\nu\\) (degrees of freedom).",
+    "case": "s21-p7-mcnemar",
+    "subset": [
+     3,
+     8
+    ],
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:P(+\\to-)=P(-\\to+)",
+     "alternative": "H_A:P(+\\to-)\\ne P(-\\to+)",
+     "nullWords": "Chemotherapy has no effect on p7 antigen status: a woman whose status changes is equally likely to change from positive to negative as from negative to positive.",
+     "alternativeWords": "The two directions of change are not equally likely, so p7 antigen expression differs before and after treatment."
+    }
+   },
+   {
+    "page": 16,
+    "title": "McNemar's test in general",
+    "topic": "s21mcnemar",
+    "paragraphs": [
+     "In the general 2 x 2 layout, rows give the outcome before and columns the outcome after. Cells \\(a\\) and \\(d\\) hold subjects whose outcome does not change; cells \\(b\\) (Outcome 1 to Outcome 2) and \\(c\\) (Outcome 2 to Outcome 1) hold subjects who change.",
+     "The null hypothesis is no effect of treatment: the probability of changing from Outcome 1 to Outcome 2 equals the probability of changing from Outcome 2 to Outcome 1. Under it, the expected number in each change cell is \\(E=(b+c)/2\\).",
+     "The test statistic adds the Yates-corrected contributions of the two change cells and has \\(\\nu=1\\) degree of freedom. The Yates correction is used because the table is 2 x 2."
+    ],
+    "equations": [
+     "E=\\frac{b+c}{2}",
+     "\\chi^2=\\frac{(|b-E|-1/2)^2}{E}+\\frac{(|c-E|-1/2)^2}{E},\\quad \\nu=1"
+    ],
+    "symbols": "\\(a,d\\) (subjects whose outcome does not change), \\(b\\) (Outcome 1 before, Outcome 2 after), \\(c\\) (Outcome 2 before, Outcome 1 after), \\(E\\) (expected number to change in each direction under \\(H_0\\)), \\(\\nu\\) (degrees of freedom).",
+    "case": null,
+    "subset": null,
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:P(\\text{O1}\\to\\text{O2})=P(\\text{O2}\\to\\text{O1})",
+     "alternative": "H_A:P(\\text{O1}\\to\\text{O2})\\ne P(\\text{O2}\\to\\text{O1})",
+     "nullWords": "The treatment has no effect: a change from Outcome 1 to Outcome 2 is as likely as a change from Outcome 2 to Outcome 1.",
+     "alternativeWords": "Changes in one direction are more likely than changes in the other, so the treatment has an effect."
+    }
+   },
+   {
+    "page": 17,
+    "title": "McNemar's test for two diagnostic procedures",
+    "topic": "s21diagnostic",
+    "paragraphs": [
+     "McNemar's test applies when testing individual response to a treatment, as in the p7 example, and when comparing the results of two diagnostic procedures on the same subjects. Here an automated BP machine and an experienced person each judge the hypertension status of 20 subjects, none of whom has hypertension by the gold standard.",
+     "Because no subject is truly hypertensive, every positive call is a false positive, and the comparison concerns specificity, the ability of a test to correctly identify true negatives. The disagreements are 7 subjects called positive only by the machine and 1 called positive only by the person.",
+     "The expected number in each disagreement cell is \\(E=(1+7)/2=4\\), and \\(\\chi^2=((|7-4|-\\frac12)^2+(|1-4|-\\frac12)^2)/4=3.125\\) with \\(\\nu=1\\). Since \\(3.125<\\chi^2_{0.05}(1)=3.841\\), there is no significant difference in specificity between the two methods."
+    ],
+    "equations": [
+     "E=\\frac{1+7}{2}=4",
+     "\\chi^2=\\frac{(|7-4|-1/2)^2}{4}+\\frac{(|1-4|-1/2)^2}{4}=3.125,\\quad \\nu=1",
+     "\\chi^2=3.125<\\chi^2_{0.05}(1)=3.841"
+    ],
+    "symbols": "\\(E\\) (expected number in each disagreement cell), \\(\\chi^2\\) (McNemar chi-square), \\(\\nu\\) (degrees of freedom).",
+    "case": "s21-bp-machine",
+    "subset": null,
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:P(\\text{machine}+,\\ \\text{person}-)=P(\\text{machine}-,\\ \\text{person}+)",
+     "alternative": "H_A:P(\\text{machine}+,\\ \\text{person}-)\\ne P(\\text{machine}-,\\ \\text{person}+)",
+     "nullWords": "There is no difference in specificity between the BP machine and the experienced person; disagreements are equally likely in either direction.",
+     "alternativeWords": "The specificity of the two methods differs."
+    }
+   }
+  ]
+ },
+ "methods": [
+  {
+   "id": "s21rmAnova",
+   "title": "Multiple treatments in the same subjects → repeated measures ANOVA",
+   "trigger": "The same subjects are measured under three or more treatments or times on an interval scale, and the question is whether the treatment means differ.",
+   "pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "formula": [
+    "\\bar S_s=\\frac{1}{m}\\sum_t x_{ts},\\quad \\bar T_t=\\frac{1}{n}\\sum_s x_{ts},\\quad \\bar X=\\frac{1}{m}\\sum_t\\bar T_t",
+    "SS_{wit\\,subjs}=\\sum_s\\sum_t(x_{ts}-\\bar S_s)^2,\\quad SS_{treat}=n\\sum_t(\\bar T_t-\\bar X)^2",
+    "SS_{res}=SS_{wit\\,subjs}-SS_{treat}",
+    "F=\\frac{SS_{treat}/(m-1)}{SS_{res}/[(n-1)(m-1)]}=\\frac{MS_{treat}}{MS_{res}}"
+   ],
+   "example": "s21-fev1-rmanova",
+   "shortcut": "The four subject sums of squares are often printed in the data table; adding them gives \\(SS_{wit\\,subjs}\\) at once. When a subject's values are symmetric about its mean (for example 120, 125, 130), its \\(SS_s\\) is just twice the squared step.",
+   "paragraphs": [
+    "The null hypothesis \\(H_0:\\mu_1=\\dots=\\mu_m\\) states that the population mean response is the same under every treatment. The alternative states that at least one treatment mean differs. Each subject receives every treatment, so each subject acts as its own control.",
+    "Total variability splits into between-subjects and within-subjects parts, and the within-subjects part splits into treatment and residual parts. Only the treatment and residual mean squares enter F, so the often large differences between subjects do not inflate the error term.",
+    "The critical value is \\(F_\\alpha(\\nu_n,\\nu_d)\\) with \\(\\nu_n=m-1\\) in the numerator column and \\(\\nu_d=(n-1)(m-1)\\) in the denominator row of the printed F table, lightface for 0.05 and boldface for 0.01. Rejecting says only that some means differ; pairwise tests locate the differences."
+   ],
+   "symbols": "\\(x_{ts}\\) (observation, treatment \\(t\\), subject \\(s\\)), \\(m\\) (treatments), \\(n\\) (subjects), \\(\\bar S_s\\) (subject mean), \\(\\bar T_t\\) (treatment mean), \\(\\bar X\\) (grand mean), \\(SS\\) (sum of squares), \\(MS\\) (mean square), \\(F\\) (F statistic)."
+  },
+  {
+   "id": "s21holm",
+   "title": "Which treatments differ after repeated measures ANOVA → Holm-corrected t tests",
+   "trigger": "A repeated-measures ANOVA has rejected equal means and the question is which pairs of treatments differ.",
+   "pages": [
+    11,
+    12
+   ],
+   "formula": [
+    "t=\\frac{\\bar T_i-\\bar T_j}{\\sqrt{2MS_{res}/n}},\\quad \\nu=DF_{res}=(n-1)(m-1)",
+    "\\alpha_j=\\frac{\\alpha_T}{k-j+1},\\quad j=1,\\dots,k"
+   ],
+   "example": "s21-fev1-holm",
+   "shortcut": "Compute \\(SE=\\sqrt{2MS_{res}/n}\\) once; every t is a difference of two treatment means divided by that same number. With 3 treatments, \\(k=3\\) and the Holm levels are 0.0167, 0.025 and 0.05.",
+   "paragraphs": [
+    "Each pairwise null hypothesis \\(H_0:\\mu_i=\\mu_j\\) states that two treatments have the same population mean. The standard error uses the residual mean square from the repeated-measures ANOVA, and the t table is read with \\(DF_{res}\\) degrees of freedom.",
+    "Order the comparisons from the largest \\(|t|\\) to the smallest. The \\(j\\)th one is tested at \\(\\alpha_T/(k-j+1)\\), so the first is the strictest and the last uses the full \\(\\alpha_T\\). Testing stops at the first comparison that is not significant; all remaining pairs are then not declared different.",
+    "The printed t table has no 0.0167 or 0.025 column. The stricter neighboring printed column (0.01 or 0.02) gives a conservative cutoff: a statistic beyond it is certainly significant at the Holm level."
+   ],
+   "symbols": "\\(\\bar T_i\\) (treatment mean), \\(MS_{res}\\) (residual mean square), \\(n\\) (subjects), \\(DF_{res}\\) (residual degrees of freedom), \\(k\\) (number of comparisons), \\(\\alpha_j\\) (Holm level), \\(\\alpha_T\\) (overall level)."
+  },
+  {
+   "id": "s21mcnemar",
+   "title": "Nominal outcome before and after a treatment in the same subjects → McNemar's test",
+   "trigger": "Each subject is classified into one of two outcomes before and after a treatment, giving a paired 2 x 2 table, and the question is whether the treatment changes the outcome.",
+   "pages": [
+    13,
+    14,
+    15,
+    16
+   ],
+   "formula": [
+    "E=\\frac{b+c}{2}",
+    "\\chi^2=\\frac{(|b-E|-1/2)^2}{E}+\\frac{(|c-E|-1/2)^2}{E},\\quad \\nu=1"
+   ],
+   "example": "s21-p7-mcnemar",
+   "shortcut": "Because \\(|b-E|=|c-E|=|b-c|/2\\), the statistic equals \\((|b-c|-1)^2/(b+c)\\). For p7, \\((12-1)^2/12=10.083\\).",
+   "paragraphs": [
+    "The null hypothesis states that the treatment has no effect: a change from Outcome 1 to Outcome 2 is as likely as a change from Outcome 2 to Outcome 1. The alternative states that one direction of change is more likely.",
+    "Only the subjects who change status carry information about the treatment. The cells \\(a\\) and \\(d\\) are ignored; the change cells \\(b\\) and \\(c\\) are compared with their common expected count \\((b+c)/2\\).",
+    "An ordinary contingency-table chi-square is wrong for this design because the rows and columns describe the same subjects and are not independent. The McNemar statistic has 1 degree of freedom and uses the Yates correction because the table is 2 x 2; the cutoffs come from the df = 1 row of the chi-square table."
+   ],
+   "symbols": "\\(a,d\\) (unchanged subjects), \\(b,c\\) (subjects who change), \\(E\\) (expected number per change cell), \\(\\chi^2\\) (McNemar chi-square), \\(\\nu\\) (degrees of freedom)."
+  },
+  {
+   "id": "s21diagnostic",
+   "title": "Two diagnostic procedures on the same subjects → McNemar's test",
+   "trigger": "Two tests or raters classify the same subjects as positive or negative, and the question is whether the two procedures differ.",
+   "pages": [
+    17
+   ],
+   "formula": [
+    "E=\\frac{b+c}{2}",
+    "\\chi^2=\\frac{(|b-E|-1/2)^2}{E}+\\frac{(|c-E|-1/2)^2}{E},\\quad \\nu=1"
+   ],
+   "example": "s21-bp-machine",
+   "shortcut": "Only the disagreements matter. With 7 and 1 disagreements, \\((|7-1|-1)^2/(7+1)=3.125\\).",
+   "paragraphs": [
+    "When two procedures are applied to the same subjects, the results are paired. The cells where the two procedures agree carry no information about a difference between them; the two disagreement cells are compared with their common expected count.",
+    "In the BP example no subject has hypertension by the gold standard, so every positive call is a false positive. Comparing the disagreements therefore compares specificity, the ability of a test to correctly identify true negatives.",
+    "The null hypothesis states that the two procedures do not differ, so a disagreement is equally likely in either direction. The statistic, degrees of freedom, Yates correction and table lookup are the same as for a before-and-after McNemar test."
+   ],
+   "symbols": "\\(b,c\\) (the two kinds of disagreement), \\(E\\) (expected number per disagreement cell), \\(\\chi^2\\) (McNemar chi-square), \\(\\nu\\) (degrees of freedom)."
+  }
+ ],
+ "cases": [
+  {
+   "id": "s21-sbp-rmanova",
+   "title": "Systolic blood pressure at 4, 8 and 12 weeks after a vasodilator",
+   "topic": "s21rmAnova",
+   "context": "In a clinical trial, systolic blood pressure is measured in the same 5 patients at 4, 8 and 12 weeks after administration of a vasodilator. Is there a difference in systolic blood pressure over time? Assume Normal responses and the usual repeated-measures ANOVA conditions.",
+   "unit": "mmHg",
+   "table": {
+    "headers": [
+     "Subject",
+     "4 weeks",
+     "8 weeks",
+     "12 weeks"
+    ],
+    "rows": [
+     [
+      "1",
+      120,
+      125,
+      130
+     ],
+     [
+      "2",
+      110,
+      115,
+      118
+     ],
+     [
+      "3",
+      105,
+      110,
+      100
+     ],
+     [
+      "4",
+      140,
+      130,
+      140
+     ],
+     [
+      "5",
+      150,
+      145,
+      140
+     ]
+    ]
+   },
+   "tasks": [
+    "Calculate the subject means, treatment means and grand mean, then partition the within-subjects sum of squares into treatment and residual parts.",
+    "Test whether the population mean differs among the 3 conditions at the 0.05 level. State both hypotheses in symbols and words, use the printed F table, conclude in context and give a P range if rejecting."
+   ],
+   "hypotheses": {
+    "null": "H_0:\\mu_{4}=\\mu_{8}=\\mu_{12}",
+    "alternative": "H_A:\\text{not all of }\\mu_{4},\\mu_{8},\\mu_{12}\\text{ are equal}",
+    "nullWords": "The mean systolic blood pressure of the patient population is the same at 4, 8 and 12 weeks after the vasodilator.",
+    "alternativeWords": "The mean systolic blood pressure differs for at least one of the three times."
+   },
+   "symbols": "\\(x_{ts}\\) (observation for treatment \\(t\\), subject \\(s\\)), \\(m\\) (number of treatments), \\(n\\) (number of subjects), \\(\\bar S_s\\) (subject mean), \\(\\bar T_t\\) (treatment mean), \\(\\bar X\\) (grand mean), \\(SS\\) (sum of squares), \\(DF\\) (degrees of freedom), \\(MS\\) (mean square), \\(F\\) (F statistic).",
+   "steps": [
+    {
+     "title": "State the procedure and design",
+     "general": [
+      "x_{ts},\\quad t=1,\\dots,m,\\quad s=1,\\dots,n"
+     ],
+     "work": [
+      "m=3\\ \\text{treatments},\\quad n=5\\ \\text{subjects}"
+     ],
+     "words": "The same 5 patients are measured at all 3 times, so the observations are repeated measures on the same subjects. Repeated measures ANOVA removes the large differences between patients from the error term before comparing the times."
+    },
+    {
+     "title": "State the hypotheses",
+     "general": [
+      "H_0:\\mu_1=\\mu_2=\\dots=\\mu_m"
+     ],
+     "work": [
+      "H_0:\\mu_{4}=\\mu_{8}=\\mu_{12}"
+     ],
+     "words": "The mean systolic blood pressure of the patient population is the same at 4, 8 and 12 weeks after the vasodilator. The mean systolic blood pressure differs for at least one of the three times."
+    },
+    {
+     "title": "Calculate each subject mean",
+     "general": [
+      "\\bar S_s=\\frac{1}{m}\\sum_{t=1}^{m}x_{ts}"
+     ],
+     "work": [
+      "\\bar S_1=\\frac{120+125+130}{3}=125",
+      "\\bar S_2=\\frac{110+115+118}{3}=114.3333",
+      "\\bar S_3=\\frac{105+110+100}{3}=105",
+      "\\bar S_4=\\frac{140+130+140}{3}=136.6667",
+      "\\bar S_5=\\frac{150+145+140}{3}=145"
+     ],
+     "words": "Average each subject across all 3 treatments. Each row of the table gives one subject mean."
+    },
+    {
+     "title": "Calculate the treatment means and the grand mean",
+     "general": [
+      "\\bar T_t=\\frac{1}{n}\\sum_{s=1}^{n}x_{ts}",
+      "\\bar X=\\frac{1}{m}\\sum_{t=1}^{m}\\bar T_t"
+     ],
+     "work": [
+      "\\bar T_1=\\frac{120+110+105+140+150}{5}=125",
+      "\\bar T_2=\\frac{125+115+110+130+145}{5}=125",
+      "\\bar T_3=\\frac{130+118+100+140+140}{5}=125.6",
+      "\\bar X=\\frac{125+125+125.6}{3}=125.2"
+     ],
+     "words": "Average each column over the 5 subjects. The grand mean is the mean of all 15 observations, which equals the mean of the treatment means."
+    },
+    {
+     "title": "Calculate the within-subjects sum of squares",
+     "general": [
+      "SS_{wit\\,subjs}=\\sum_{s=1}^{n}\\sum_{t=1}^{m}(x_{ts}-\\bar S_s)^2=\\sum_{s=1}^{n}SS_s"
+     ],
+     "work": [
+      "SS_1=(120-125)^2+(125-125)^2+(130-125)^2=50",
+      "SS_2=(110-114.3333)^2+(115-114.3333)^2+(118-114.3333)^2=32.6667",
+      "SS_3=(105-105)^2+(110-105)^2+(100-105)^2=50",
+      "SS_4=(140-136.6667)^2+(130-136.6667)^2+(140-136.6667)^2=66.6667",
+      "SS_5=(150-145)^2+(145-145)^2+(140-145)^2=50",
+      "SS_{wit\\,subjs}=50+32.6667+50+66.6667+50=249.3333"
+     ],
+     "words": "Each subject is compared only with its own mean, so differences between subjects never enter this sum. It holds the treatment effect plus residual scatter."
+    },
+    {
+     "title": "Calculate the treatment sum of squares",
+     "general": [
+      "SS_{treat}=n\\sum_{t=1}^{m}(\\bar T_t-\\bar X)^2"
+     ],
+     "work": [
+      "SS_{treat}=5\\left[(125-125.2)^2+(125-125.2)^2+(125.6-125.2)^2\\right]=1.2"
+     ],
+     "words": "Multiply by n because each treatment mean involves n subjects."
+    },
+    {
+     "title": "Calculate the residual sum of squares",
+     "general": [
+      "SS_{res}=SS_{wit\\,subjs}-SS_{treat}"
+     ],
+     "work": [
+      "SS_{res}=249.3333-1.2=248.1333"
+     ],
+     "words": "The residual is the within-subject variation that the treatment means do not explain."
+    },
+    {
+     "title": "Find the degrees of freedom and mean squares",
+     "general": [
+      "DF_{treat}=m-1,\\quad DF_{res}=(n-1)(m-1)",
+      "MS_{treat}=\\frac{SS_{treat}}{DF_{treat}},\\quad MS_{res}=\\frac{SS_{res}}{DF_{res}}"
+     ],
+     "work": [
+      "DF_{treat}=3-1=2,\\quad DF_{res}=(5-1)(3-1)=8",
+      "MS_{treat}=\\frac{1.2}{2}=0.6,\\quad MS_{res}=\\frac{248.1333}{8}=31.016667"
+     ],
+     "words": "Each sum of squares is divided by its own degrees of freedom to give a variance estimate."
+    },
+    {
+     "title": "Calculate the F statistic",
+     "general": [
+      "F=\\frac{MS_{treat}}{MS_{res}}"
+     ],
+     "work": [
+      "F=\\frac{0.6}{31.016667}=0.01934"
+     ],
+     "words": "Treatment variance is compared with residual variance. Values near 1 or below are what equal treatment means produce."
+    },
+    {
+     "title": "Find the critical value",
+     "general": [
+      "F_{crit}=F_{\\alpha}(DF_{treat},DF_{res})=F_{\\alpha}(\\nu_n,\\nu_d)"
+     ],
+     "work": [
+      "F_{0.05}(2,8)=4.46",
+      "F_{0.01}(2,8)=8.65"
+     ],
+     "words": "Open F_table.pdf, PDF page 1. Use numerator column ν_n=2 and denominator row ν_d=8. The lightface entry 4.46 is the 0.05 cutoff and the boldface entry 8.65 is the 0.01 cutoff. Swapping the two df selects a different, wrong cell.",
+     "tableLookup": {
+      "path": "sources/tables/F_table.pdf",
+      "page": 1,
+      "row": "8",
+      "column": "2 (0.05 lightface)",
+      "value": 4.46,
+      "actualDf": [
+       2,
+       8
+      ],
+      "approximation": false
+     }
+    },
+    {
+     "title": "Make the decision",
+     "general": [
+      "F>F_{crit}\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "F=0.01934<4.46"
+     ],
+     "words": "The F statistic is far below the 0.05 cutoff, so do not reject the null hypothesis. The computer output gives P = 0.981, consistent with P > 0.05."
+    }
+   ],
+   "conclusion": "F = 0.01934 with 2 and 8 degrees of freedom, below F_0.05(2,8) = 4.46. Do not reject H0 (P > 0.05; the output shows P = 0.981). There is no evidence that mean systolic blood pressure differs among 4, 8 and 12 weeks after the vasodilator. The hand calculation reproduces the output: SS_wit subjs = 249.3, SS_treat = 1.2, SS_res = 248.1, MS_treat = 0.6, MS_res = 31.02.",
+   "source": "Session 21 pages 7-8",
+   "lookup": {
+    "path": "sources/tables/F_table.pdf",
+    "page": 1,
+    "row": "8",
+    "column": "2 (0.05 lightface)",
+    "value": 4.46,
+    "actualDf": [
+     2,
+     8
+    ],
+    "approximation": false
+   },
+   "values": {
+    "n": 5,
+    "m": 3,
+    "subjectMeans": [
+     125.0,
+     114.33333333333333,
+     105.0,
+     136.66666666666666,
+     145.0
+    ],
+    "treatmentMeans": [
+     125.0,
+     125.0,
+     125.6
+    ],
+    "grandMean": 125.2,
+    "subjectSS": [
+     50.0,
+     32.666666666666664,
+     50.0,
+     66.66666666666666,
+     50.0
+    ],
+    "ssWithin": 249.33333333333331,
+    "ssTreat": 1.199999999999977,
+    "ssRes": 248.13333333333333,
+    "ssBetween": 3149.0666666666666,
+    "ssTotal": 3398.4,
+    "dfTreat": 2,
+    "dfRes": 8,
+    "msTreat": 0.5999999999999885,
+    "msRes": 31.016666666666666,
+    "F": 0.019344438473938373,
+    "exactP": 0.9808871979518847,
+    "critical": 4.46,
+    "critical01": 8.65,
+    "reject": false,
+    "pRange": "P>0.05"
+   },
+   "module": 21,
+   "tolerance": 0.001,
+   "answerName": "F statistic",
+   "answer": 0.019344438473938373
+  },
+  {
+   "id": "s21-fev1-rmanova",
+   "title": "FEV1 at baseline, after endotoxin, and after endotoxin plus salbutamol",
+   "topic": "s21rmAnova",
+   "context": "Forced expiratory volume in one second (FEV1) is measured in the same 4 people at baseline (no drug), 1 hour after inhaling endotoxin, and 2 hours after endotoxin and salbutamol exposure. Assume Normal responses and the usual repeated-measures ANOVA conditions.",
+   "unit": "L",
+   "table": {
+    "headers": [
+     "Subject",
+     "No drug (baseline)",
+     "1 hour after endotoxin",
+     "2 hours after endotoxin and salbutamol"
+    ],
+    "rows": [
+     [
+      "1",
+      3.7,
+      3.4,
+      4
+     ],
+     [
+      "2",
+      4,
+      3.7,
+      4.4
+     ],
+     [
+      "3",
+      3,
+      2.8,
+      3.2
+     ],
+     [
+      "4",
+      3.2,
+      2.9,
+      3.4
+     ]
+    ]
+   },
+   "tasks": [
+    "Calculate the subject means, treatment means and grand mean, then partition the within-subjects sum of squares into treatment and residual parts.",
+    "Test whether the population mean differs among the 3 conditions at the 0.05 level. State both hypotheses in symbols and words, use the printed F table, conclude in context and give a P range if rejecting."
+   ],
+   "hypotheses": {
+    "null": "H_0:\\mu_{base}=\\mu_{endo}=\\mu_{endo+salb}",
+    "alternative": "H_A:\\text{not all three population means are equal}",
+    "nullWords": "There is no difference in mean FEV1 under the 3 exposure conditions.",
+    "alternativeWords": "Mean FEV1 differs for at least one of the 3 exposure conditions."
+   },
+   "symbols": "\\(x_{ts}\\) (observation for treatment \\(t\\), subject \\(s\\)), \\(m\\) (number of treatments), \\(n\\) (number of subjects), \\(\\bar S_s\\) (subject mean), \\(\\bar T_t\\) (treatment mean), \\(\\bar X\\) (grand mean), \\(SS\\) (sum of squares), \\(DF\\) (degrees of freedom), \\(MS\\) (mean square), \\(F\\) (F statistic).",
+   "steps": [
+    {
+     "title": "State the procedure and design",
+     "general": [
+      "x_{ts},\\quad t=1,\\dots,m,\\quad s=1,\\dots,n"
+     ],
+     "work": [
+      "m=3\\ \\text{treatments},\\quad n=4\\ \\text{subjects}"
+     ],
+     "words": "Each of the 4 people is measured under all 3 conditions (m = 3, n = 4), so the measurements are repeated within subjects. Repeated measures ANOVA compares the conditions after removing the person-to-person differences in lung size."
+    },
+    {
+     "title": "State the hypotheses",
+     "general": [
+      "H_0:\\mu_1=\\mu_2=\\dots=\\mu_m"
+     ],
+     "work": [
+      "H_0:\\mu_{base}=\\mu_{endo}=\\mu_{endo+salb}"
+     ],
+     "words": "There is no difference in mean FEV1 under the 3 exposure conditions. Mean FEV1 differs for at least one of the 3 exposure conditions."
+    },
+    {
+     "title": "Calculate each subject mean",
+     "general": [
+      "\\bar S_s=\\frac{1}{m}\\sum_{t=1}^{m}x_{ts}"
+     ],
+     "work": [
+      "\\bar S_1=\\frac{3.7+3.4+4}{3}=3.7",
+      "\\bar S_2=\\frac{4+3.7+4.4}{3}=4.0333",
+      "\\bar S_3=\\frac{3+2.8+3.2}{3}=3",
+      "\\bar S_4=\\frac{3.2+2.9+3.4}{3}=3.1667"
+     ],
+     "words": "Average each subject across all 3 treatments. Each row of the table gives one subject mean."
+    },
+    {
+     "title": "Calculate the treatment means and the grand mean",
+     "general": [
+      "\\bar T_t=\\frac{1}{n}\\sum_{s=1}^{n}x_{ts}",
+      "\\bar X=\\frac{1}{m}\\sum_{t=1}^{m}\\bar T_t"
+     ],
+     "work": [
+      "\\bar T_1=\\frac{3.7+4+3+3.2}{4}=3.475",
+      "\\bar T_2=\\frac{3.4+3.7+2.8+2.9}{4}=3.2",
+      "\\bar T_3=\\frac{4+4.4+3.2+3.4}{4}=3.75",
+      "\\bar X=\\frac{3.475+3.2+3.75}{3}=3.475"
+     ],
+     "words": "Average each column over the 4 subjects. The grand mean is the mean of all 12 observations, which equals the mean of the treatment means."
+    },
+    {
+     "title": "Calculate the within-subjects sum of squares",
+     "general": [
+      "SS_{wit\\,subjs}=\\sum_{s=1}^{n}\\sum_{t=1}^{m}(x_{ts}-\\bar S_s)^2=\\sum_{s=1}^{n}SS_s"
+     ],
+     "work": [
+      "SS_1=(3.7-3.7)^2+(3.4-3.7)^2+(4-3.7)^2=0.18",
+      "SS_2=(4-4.0333)^2+(3.7-4.0333)^2+(4.4-4.0333)^2=0.2467",
+      "SS_3=(3-3)^2+(2.8-3)^2+(3.2-3)^2=0.08",
+      "SS_4=(3.2-3.1667)^2+(2.9-3.1667)^2+(3.4-3.1667)^2=0.1267",
+      "SS_{wit\\,subjs}=0.18+0.2467+0.08+0.1267=0.6333"
+     ],
+     "words": "Each subject is compared only with its own mean, so differences between subjects never enter this sum. It holds the treatment effect plus residual scatter."
+    },
+    {
+     "title": "Calculate the treatment sum of squares",
+     "general": [
+      "SS_{treat}=n\\sum_{t=1}^{m}(\\bar T_t-\\bar X)^2"
+     ],
+     "work": [
+      "SS_{treat}=4\\left[(3.475-3.475)^2+(3.2-3.475)^2+(3.75-3.475)^2\\right]=0.605"
+     ],
+     "words": "Multiply by n because each treatment mean involves n subjects."
+    },
+    {
+     "title": "Calculate the residual sum of squares",
+     "general": [
+      "SS_{res}=SS_{wit\\,subjs}-SS_{treat}"
+     ],
+     "work": [
+      "SS_{res}=0.6333-0.605=0.0283"
+     ],
+     "words": "The residual is the within-subject variation that the treatment means do not explain."
+    },
+    {
+     "title": "Find the degrees of freedom and mean squares",
+     "general": [
+      "DF_{treat}=m-1,\\quad DF_{res}=(n-1)(m-1)",
+      "MS_{treat}=\\frac{SS_{treat}}{DF_{treat}},\\quad MS_{res}=\\frac{SS_{res}}{DF_{res}}"
+     ],
+     "work": [
+      "DF_{treat}=3-1=2,\\quad DF_{res}=(4-1)(3-1)=6",
+      "MS_{treat}=\\frac{0.605}{2}=0.3025,\\quad MS_{res}=\\frac{0.0283}{6}=0.004722"
+     ],
+     "words": "Each sum of squares is divided by its own degrees of freedom to give a variance estimate."
+    },
+    {
+     "title": "Calculate the F statistic",
+     "general": [
+      "F=\\frac{MS_{treat}}{MS_{res}}"
+     ],
+     "work": [
+      "F=\\frac{0.3025}{0.004722}=64.0588"
+     ],
+     "words": "Treatment variance is compared with residual variance. Values near 1 or below are what equal treatment means produce."
+    },
+    {
+     "title": "Find the critical value",
+     "general": [
+      "F_{crit}=F_{\\alpha}(DF_{treat},DF_{res})=F_{\\alpha}(\\nu_n,\\nu_d)"
+     ],
+     "work": [
+      "F_{0.05}(2,6)=5.14",
+      "F_{0.01}(2,6)=10.92"
+     ],
+     "words": "Open F_table.pdf, PDF page 1. Use numerator column ν_n=2 and denominator row ν_d=6. The lightface entry 5.14 is the 0.05 cutoff and the boldface entry 10.92 is the 0.01 cutoff. Swapping the two df selects a different, wrong cell.",
+     "tableLookup": {
+      "path": "sources/tables/F_table.pdf",
+      "page": 1,
+      "row": "6",
+      "column": "2 (0.05 lightface)",
+      "value": 5.14,
+      "actualDf": [
+       2,
+       6
+      ],
+      "approximation": false
+     }
+    },
+    {
+     "title": "Make the decision",
+     "general": [
+      "F>F_{crit}\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "F=64.0588>5.14,\\quad F>10.92\\Rightarrow P<0.01"
+     ],
+     "words": "F is well above both the 0.05 and the 0.01 cutoffs, so reject the null hypothesis with P < 0.01."
+    }
+   ],
+   "conclusion": "F = 64.059 with 2 and 6 degrees of freedom exceeds F_0.01(2,6) = 10.92. Reject H0, P < 0.01. Mean FEV1 differs among baseline, 1 hour after endotoxin, and 2 hours after endotoxin plus salbutamol. Pairwise Holm-corrected t tests are then needed to locate the differences.",
+   "source": "Session 21 pages 9-11",
+   "lookup": {
+    "path": "sources/tables/F_table.pdf",
+    "page": 1,
+    "row": "6",
+    "column": "2 (0.05 lightface)",
+    "value": 5.14,
+    "actualDf": [
+     2,
+     6
+    ],
+    "approximation": false
+   },
+   "values": {
+    "n": 4,
+    "m": 3,
+    "subjectMeans": [
+     3.6999999999999997,
+     4.033333333333334,
+     3.0,
+     3.1666666666666665
+    ],
+    "treatmentMeans": [
+     3.4749999999999996,
+     3.1999999999999997,
+     3.7500000000000004
+    ],
+    "grandMean": 3.475,
+    "subjectSS": [
+     0.18000000000000005,
+     0.2466666666666668,
+     0.08000000000000014,
+     0.12666666666666668
+    ],
+    "ssWithin": 0.6333333333333337,
+    "ssTreat": 0.6050000000000015,
+    "ssRes": 0.02833333333333221,
+    "ssBetween": 2.049166666666669,
+    "ssTotal": 2.6825000000000014,
+    "dfTreat": 2,
+    "dfRes": 6,
+    "msTreat": 0.30250000000000077,
+    "msRes": 0.004722222222222035,
+    "F": 64.05882352941447,
+    "exactP": 8.953564659570283e-05,
+    "critical": 5.14,
+    "critical01": 10.92,
+    "reject": true,
+    "pRange": "P<0.01"
+   },
+   "module": 21,
+   "tolerance": 0.320294,
+   "answerName": "F statistic",
+   "answer": 64.05882352941447
+  },
+  {
+   "id": "s21-fev1-holm",
+   "title": "Holm-corrected comparisons of FEV1 conditions",
+   "topic": "s21holm",
+   "context": "The repeated-measures ANOVA for FEV1 in 4 people (m = 3 conditions) rejects equal means with F = 64.053, P < 0.01. Use the rounded values printed on the slide: treatment means 3.48 L (baseline), 3.20 L (1 hour after endotoxin), 3.75 L (2 hours after endotoxin and salbutamol), MS_res = 0.0047 and DF_res = 6.",
+   "unit": "L",
+   "table": {
+    "headers": [
+     "Condition",
+     "Treatment mean"
+    ],
+    "rows": [
+     [
+      "Baseline",
+      3.48
+     ],
+     [
+      "Endotoxin",
+      3.2
+     ],
+     [
+      "Salbutamol & Endotoxin",
+      3.75
+     ]
+    ]
+   },
+   "tasks": [
+    "Calculate the pairwise t statistic for every pair of conditions using MS_res from the repeated-measures ANOVA.",
+    "Apply the Holm correction with an overall 0.05 level, using DF_res for the t table, and state which pairs differ."
+   ],
+   "hypotheses": {
+    "null": "H_0:\\mu_i=\\mu_j\\ \\text{for the pair being compared}",
+    "alternative": "H_A:\\mu_i\\ne\\mu_j",
+    "nullWords": "For the pair being compared, mean FEV1 is the same under the two conditions.",
+    "alternativeWords": "For that pair, mean FEV1 differs between the two conditions."
+   },
+   "symbols": "\\(\\bar T_i\\) (treatment mean), \\(MS_{res}\\) (residual mean square), \\(n\\) (number of subjects), \\(DF_{res}\\) (residual degrees of freedom), \\(k\\) (number of pairwise comparisons), \\(\\alpha_j\\) (Holm level for the \\(j\\)th comparison), \\(\\alpha_T\\) (overall level).",
+   "steps": [
+    {
+     "title": "State the procedure",
+     "general": [
+      "t=\\frac{\\bar T_i-\\bar T_j}{\\sqrt{2MS_{res}/n}},\\quad \\nu=DF_{res}=(n-1)(m-1)"
+     ],
+     "work": [
+      "MS_{res}=0.0047,\\quad n=4,\\quad \\nu=6"
+     ],
+     "words": "The overall F test rejected, so pairwise t tests locate the differences. The repeated-measures version uses MS_res in the standard error and DF_res for the t table."
+    },
+    {
+     "title": "State the hypotheses for each pair",
+     "general": [
+      "H_0:\\mu_i=\\mu_j"
+     ],
+     "work": [
+      "H_0:\\mu_i=\\mu_j\\ \\text{for the pair being compared}"
+     ],
+     "words": "For the pair being compared, mean FEV1 is the same under the two conditions. For that pair, mean FEV1 differs between the two conditions."
+    },
+    {
+     "title": "Calculate the standard error of a difference",
+     "general": [
+      "SE=\\sqrt{\\frac{2MS_{res}}{n}}"
+     ],
+     "work": [
+      "SE=\\sqrt{\\frac{2(0.0047)}{4}}=0.048477"
+     ],
+     "words": "The same standard error serves every pair because every treatment mean is based on the same n subjects."
+    },
+    {
+     "title": "Calculate every pairwise t statistic",
+     "general": [
+      "t=\\frac{\\bar T_i-\\bar T_j}{SE}"
+     ],
+     "work": [
+      "t_{\\text{Endotoxin vs Salbutamol \\& Endotoxin}}=\\frac{3.20-3.75}{0.048477}=-11.346",
+      "t_{\\text{Baseline vs Endotoxin}}=\\frac{3.48-3.20}{0.048477}=5.776",
+      "t_{\\text{Baseline vs Salbutamol \\& Endotoxin}}=\\frac{3.48-3.75}{0.048477}=-5.570"
+     ],
+     "words": "Keep the subtraction order; the sign only gives the direction, and the ranking uses |t|."
+    },
+    {
+     "title": "Order by |t| and set the Holm levels",
+     "general": [
+      "\\alpha_j=\\frac{\\alpha_T}{k-j+1},\\quad j=1,\\dots,k"
+     ],
+     "work": [
+      "k=3,\\quad \\alpha_1=\\frac{0.05}{3}=0.0167,\\quad \\alpha_2=\\frac{0.05}{2}=0.025,\\quad \\alpha_3=\\frac{0.05}{1}=0.05",
+      "|t|:\\ 11.346>5.776>5.570"
+     ],
+     "words": "The largest |t| is tested at the strictest level. Testing stops at the first comparison that is not significant."
+    },
+    {
+     "title": "Comparison 1: Endotoxin vs Salbutamol & Endotoxin",
+     "general": [
+      "|t|>t_{\\alpha_1}(\\nu)\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "\\alpha_1=0.0167,\\quad t_{0.01}(6)=3.707\\ \\text{(stricter printed column)}",
+      "|t|=11.346>3.707"
+     ],
+     "words": "The 0.0167 column is not printed. In t_table.pdf, PDF page 1, row 6, the printed neighbors are the 0.02 column (3.143) and the 0.01 column (3.707). Use the stricter 0.01 column, 3.707; a statistic beyond it is significant at 0.0167 as well. |t| = 11.346 > 3.707, so the Endotoxin and Salbutamol & Endotoxin means differ (P<0.001 before adjustment).",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 1,
+      "row": "6",
+      "column": "0.01",
+      "value": 3.707,
+      "actualDf": 6,
+      "approximation": true,
+      "bracket": [
+       "0.02",
+       "0.01"
+      ],
+      "bracketValues": [
+       3.143,
+       3.707
+      ]
+     }
+    },
+    {
+     "title": "Comparison 2: Baseline vs Endotoxin",
+     "general": [
+      "|t|>t_{\\alpha_2}(\\nu)\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "\\alpha_2=0.025,\\quad t_{0.02}(6)=3.143\\ \\text{(stricter printed column)}",
+      "|t|=5.776>3.143"
+     ],
+     "words": "The 0.025 column is not printed. In t_table.pdf, PDF page 1, row 6, the printed neighbors are the 0.05 column (2.447) and the 0.02 column (3.143). Use the stricter 0.02 column, 3.143; a statistic beyond it is significant at 0.025 as well. |t| = 5.776 > 3.143, so the Baseline and Endotoxin means differ (0.001<P<0.002 before adjustment).",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 1,
+      "row": "6",
+      "column": "0.02",
+      "value": 3.143,
+      "actualDf": 6,
+      "approximation": true,
+      "bracket": [
+       "0.05",
+       "0.02"
+      ],
+      "bracketValues": [
+       2.447,
+       3.143
+      ]
+     }
+    },
+    {
+     "title": "Comparison 3: Baseline vs Salbutamol & Endotoxin",
+     "general": [
+      "|t|>t_{\\alpha_3}(\\nu)\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "\\alpha_3=0.05,\\quad t_{0.05}(6)=2.447",
+      "|t|=5.570>2.447"
+     ],
+     "words": "Open t_table.pdf, PDF page 1, row 6, combined two-tail 0.05 column: 2.447. |t| = 5.570 > 2.447, so the Baseline and Salbutamol & Endotoxin means differ (0.001<P<0.002 before adjustment).",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 1,
+      "row": "6",
+      "column": "0.05",
+      "value": 2.447,
+      "actualDf": 6,
+      "approximation": false
+     }
+    }
+   ],
+   "conclusion": "All three pairs differ at the Holm-corrected levels. FEV1 falls from baseline 1 hour after endotoxin (t = 5.776), and 2 hours after endotoxin plus salbutamol it is higher than both after endotoxin alone (t = -11.346) and at baseline (t = -5.570).",
+   "source": "Session 21 pages 11-12",
+   "lookup": {
+    "path": "sources/tables/t_table.pdf",
+    "page": 1,
+    "row": "6",
+    "column": "0.01",
+    "value": 3.707,
+    "actualDf": 6,
+    "approximation": true,
+    "bracket": [
+     "0.02",
+     "0.01"
+    ],
+    "bracketValues": [
+     3.143,
+     3.707
+    ]
+   },
+   "values": {
+    "n": 4,
+    "dfRes": 6,
+    "msRes": 0.0047,
+    "means": {
+     "Baseline": 3.48,
+     "Endotoxin": 3.2,
+     "Salbutamol & Endotoxin": 3.75
+    },
+    "se": 0.04847679857416329,
+    "tValues": {
+     "Endotoxin vs Salbutamol & Endotoxin": -11.345633708846725,
+     "Baseline vs Endotoxin": 5.775958979049239,
+     "Baseline vs Salbutamol & Endotoxin": -5.569674729797485
+    },
+    "holmAlphas": [
+     0.016666666666666666,
+     0.025,
+     0.05
+    ],
+    "outcomes": {
+     "Endotoxin vs Salbutamol & Endotoxin": true,
+     "Baseline vs Endotoxin": true,
+     "Baseline vs Salbutamol & Endotoxin": true
+    }
+   },
+   "module": 21,
+   "tolerance": 0.056728,
+   "answerName": "t statistic (largest |t| comparison)",
+   "answer": -11.345633708846725
+  },
+  {
+   "id": "s21-p7-mcnemar",
+   "title": "p7 antigen before and after chemotherapy",
+   "topic": "s21mcnemar",
+   "context": "Breast cancer tumor cells from 30 women are tested for the p7 antigen before and after chemotherapy. Before positive: 4 stay positive and 0 become negative. Before negative: 12 become positive and 14 stay negative.",
+   "unit": "women",
+   "table": {
+    "headers": [
+     "Before (rows) by After (columns)",
+     "After: positive",
+     "After: negative"
+    ],
+    "rows": [
+     [
+      "Before: positive",
+      4,
+      0
+     ],
+     [
+      "Before: negative",
+      12,
+      14
+     ]
+    ]
+   },
+   "tasks": [
+    "Explain why the observations are paired and identify the cells that change.",
+    "Carry out McNemar's test at the 0.05 level with the Yates correction. State both hypotheses in symbols and words, use the printed chi-square table, conclude in context and give a P range if rejecting."
+   ],
+   "hypotheses": {
+    "null": "H_0:P(+\\to-)=P(-\\to+)",
+    "alternative": "H_A:P(+\\to-)\\ne P(-\\to+)",
+    "nullWords": "Chemotherapy has no effect on p7 antigen status: a woman whose status changes is equally likely to change from positive to negative as from negative to positive.",
+    "alternativeWords": "The two directions of change are not equally likely, so p7 antigen expression differs before and after treatment."
+   },
+   "symbols": "\\(a,d\\) (subjects with the same result both times), \\(b,c\\) (subjects whose result changes), \\(E\\) (expected number in each change cell), \\(\\chi^2\\) (McNemar chi-square), \\(\\nu\\) (degrees of freedom).",
+   "steps": [
+    {
+     "title": "State the procedure",
+     "general": [
+      "\\begin{array}{c|cc}&\\text{O1}&\\text{O2}\\\\\\hline \\text{O1}&a&b\\\\ \\text{O2}&c&d\\end{array}"
+     ],
+     "work": [
+      "a=4,\\ b=0,\\ c=12,\\ d=14"
+     ],
+     "words": "Each woman is classified twice, before and after treatment, so the two classifications are paired nominal data. This design is analogous to the paired t test, and McNemar's test is the procedure."
+    },
+    {
+     "title": "State the hypotheses",
+     "general": [
+      "H_0:P(\\text{O1}\\to\\text{O2})=P(\\text{O2}\\to\\text{O1})"
+     ],
+     "work": [
+      "H_0:P(+\\to-)=P(-\\to+)"
+     ],
+     "words": "Chemotherapy has no effect on p7 antigen status: a woman whose status changes is equally likely to change from positive to negative as from negative to positive. The two directions of change are not equally likely, so p7 antigen expression differs before and after treatment."
+    },
+    {
+     "title": "Show why the independent chi-square is wrong here",
+     "general": [
+      "E_{ij}=\\frac{R_iC_j}{N},\\quad \\chi^2=\\sum_i\\sum_j\\frac{(|O_{ij}-E_{ij}|-\\frac12)^2}{E_{ij}}"
+     ],
+     "work": [
+      "E_{11}=\\frac{4(16)}{30}=2.1333,\\ E_{12}=1.8667,\\ E_{21}=13.8667,\\ E_{22}=12.1333",
+      "\\chi^2=2.165<\\chi^2_{0.05}(1)=3.841"
+     ],
+     "words": "Treating the before and after results as independent samples gives chi-square = 2.165, which would wrongly suggest no change. The rows and columns describe the same people, so they are not independent, and this test is not valid for the design."
+    },
+    {
+     "title": "Identify the subjects who change",
+     "general": [
+      "b=\\text{O1}\\to\\text{O2},\\quad c=\\text{O2}\\to\\text{O1}"
+     ],
+     "work": [
+      "b=0,\\quad c=12,\\quad b+c=12"
+     ],
+     "words": "Only discordant subjects carry information about a change. Here b counts women positive before and negative after and c counts women negative before and positive after. The concordant cells a = 4 and d = 14 do not enter the statistic."
+    },
+    {
+     "title": "Calculate the expected number in each change cell",
+     "general": [
+      "E=\\frac{b+c}{2}"
+     ],
+     "work": [
+      "E=\\frac{0+12}{2}=6"
+     ],
+     "words": "If the null hypothesis is true, the changes split evenly in the two directions."
+    },
+    {
+     "title": "Calculate the McNemar chi-square with Yates correction",
+     "general": [
+      "\\chi^2=\\frac{(|b-E|-\\frac12)^2}{E}+\\frac{(|c-E|-\\frac12)^2}{E}"
+     ],
+     "work": [
+      "\\chi^2=\\frac{(|0-6|-\\frac12)^2}{6}+\\frac{(|12-6|-\\frac12)^2}{6}=10.0833"
+     ],
+     "words": "Subtract one half from each absolute difference before squaring because the table is 2 x 2 (Yates correction)."
+    },
+    {
+     "title": "Find the critical value",
+     "general": [
+      "\\nu=1,\\quad \\chi^2_{crit}=\\chi^2_{\\alpha}(1)"
+     ],
+     "work": [
+      "\\chi^2_{0.05}(1)=3.841"
+     ],
+     "words": "Open Chi_Squared_Table2.pdf, PDF page 1. Row df = 1, column χ².050 gives 3.841. The same row gives 6.635 in the .010 column and 7.879 in the .005 column for a P range.",
+     "tableLookup": {
+      "path": "sources/tables/Chi_Squared_Table2.pdf",
+      "page": 1,
+      "row": "1",
+      "column": "0.050",
+      "value": 3.841,
+      "actualDf": 1,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Make the decision",
+     "general": [
+      "\\chi^2>\\chi^2_{crit}\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "\\chi^2=10.0833>3.841,\\quad P<0.005"
+     ],
+     "words": "Reject the null hypothesis; P<0.005."
+    }
+   ],
+   "conclusion": "McNemar chi-square = 10.083 with 1 df exceeds chi-square_0.005(1) = 7.879. Reject H0, P < 0.005. p7 antigen expression differs before and after chemotherapy: all 12 women who changed went from negative to positive. The independent-samples chi-square (2.165) misses this because it ignores the pairing.",
+   "source": "Session 21 pages 14-15",
+   "lookup": {
+    "path": "sources/tables/Chi_Squared_Table2.pdf",
+    "page": 1,
+    "row": "1",
+    "column": "0.050",
+    "value": 3.841,
+    "actualDf": 1,
+    "approximation": false
+   },
+   "values": {
+    "a": 4,
+    "b": 0,
+    "c": 12,
+    "d": 14,
+    "N": 30,
+    "E": 6.0,
+    "chi2": 10.083333333333334,
+    "df": 1,
+    "critical": 3.841,
+    "reject": true,
+    "pRange": "P<0.005",
+    "exactP": 0.0014961642897455517,
+    "independentChi2": 2.164749313186813,
+    "independentExpected": [
+     [
+      2.1333333333333333,
+      1.8666666666666667
+     ],
+     [
+      13.866666666666667,
+      12.133333333333333
+     ]
+    ]
+   },
+   "module": 21,
+   "tolerance": 0.050417,
+   "answerName": "Chi-square",
+   "answer": 10.083333333333334
+  },
+  {
+   "id": "s21-bp-machine",
+   "title": "Hypertension status by an automated BP machine and an experienced person",
+   "topic": "s21diagnostic",
+   "context": "Twenty subjects have hypertension status judged by an automated BP machine and by an experienced person. According to the gold standard, none of the 20 subjects has hypertension. Machine positive: 3 person positive and 7 person negative. Machine negative: 1 person positive and 9 person negative.",
+   "unit": "subjects",
+   "table": {
+    "headers": [
+     "BP machine (rows) by Person (columns)",
+     "Person: positive",
+     "Person: negative"
+    ],
+    "rows": [
+     [
+      "BP machine: positive",
+      3,
+      7
+     ],
+     [
+      "BP machine: negative",
+      1,
+      9
+     ]
+    ]
+   },
+   "tasks": [
+    "Explain why the observations are paired and identify the cells that change.",
+    "Carry out McNemar's test at the 0.05 level with the Yates correction. State both hypotheses in symbols and words, use the printed chi-square table, conclude in context and give a P range if rejecting."
+   ],
+   "hypotheses": {
+    "null": "H_0:P(\\text{machine}+,\\ \\text{person}-)=P(\\text{machine}-,\\ \\text{person}+)",
+    "alternative": "H_A:P(\\text{machine}+,\\ \\text{person}-)\\ne P(\\text{machine}-,\\ \\text{person}+)",
+    "nullWords": "There is no difference in specificity between the BP machine and the experienced person; disagreements are equally likely in either direction.",
+    "alternativeWords": "The specificity of the two methods differs."
+   },
+   "symbols": "\\(a,d\\) (subjects with the same result both times), \\(b,c\\) (subjects whose result changes), \\(E\\) (expected number in each change cell), \\(\\chi^2\\) (McNemar chi-square), \\(\\nu\\) (degrees of freedom).",
+   "steps": [
+    {
+     "title": "State the procedure",
+     "general": [
+      "\\begin{array}{c|cc}&\\text{O1}&\\text{O2}\\\\\\hline \\text{O1}&a&b\\\\ \\text{O2}&c&d\\end{array}"
+     ],
+     "work": [
+      "a=3,\\ b=7,\\ c=1,\\ d=9"
+     ],
+     "words": "Both methods judge the same 20 subjects, so the results are paired nominal data. McNemar's test compares two diagnostic procedures applied to the same people."
+    },
+    {
+     "title": "State the hypotheses",
+     "general": [
+      "H_0:P(\\text{O1}\\to\\text{O2})=P(\\text{O2}\\to\\text{O1})"
+     ],
+     "work": [
+      "H_0:P(\\text{machine}+,\\ \\text{person}-)=P(\\text{machine}-,\\ \\text{person}+)"
+     ],
+     "words": "There is no difference in specificity between the BP machine and the experienced person; disagreements are equally likely in either direction. The specificity of the two methods differs."
+    },
+    {
+     "title": "Identify the subjects who change",
+     "general": [
+      "b=\\text{O1}\\to\\text{O2},\\quad c=\\text{O2}\\to\\text{O1}"
+     ],
+     "work": [
+      "b=7,\\quad c=1,\\quad b+c=8"
+     ],
+     "words": "Only discordant subjects carry information about a change. Here b counts subjects called hypertensive by the machine but not by the person and c counts subjects called hypertensive by the person but not by the machine. The concordant cells a = 3 and d = 9 do not enter the statistic."
+    },
+    {
+     "title": "Calculate the expected number in each change cell",
+     "general": [
+      "E=\\frac{b+c}{2}"
+     ],
+     "work": [
+      "E=\\frac{7+1}{2}=4"
+     ],
+     "words": "If the null hypothesis is true, the changes split evenly in the two directions."
+    },
+    {
+     "title": "Calculate the McNemar chi-square with Yates correction",
+     "general": [
+      "\\chi^2=\\frac{(|b-E|-\\frac12)^2}{E}+\\frac{(|c-E|-\\frac12)^2}{E}"
+     ],
+     "work": [
+      "\\chi^2=\\frac{(|7-4|-\\frac12)^2}{4}+\\frac{(|1-4|-\\frac12)^2}{4}=3.125"
+     ],
+     "words": "Subtract one half from each absolute difference before squaring because the table is 2 x 2 (Yates correction)."
+    },
+    {
+     "title": "Find the critical value",
+     "general": [
+      "\\nu=1,\\quad \\chi^2_{crit}=\\chi^2_{\\alpha}(1)"
+     ],
+     "work": [
+      "\\chi^2_{0.05}(1)=3.841"
+     ],
+     "words": "Open Chi_Squared_Table2.pdf, PDF page 1. Row df = 1, column χ².050 gives 3.841. The same row gives 6.635 in the .010 column and 7.879 in the .005 column for a P range.",
+     "tableLookup": {
+      "path": "sources/tables/Chi_Squared_Table2.pdf",
+      "page": 1,
+      "row": "1",
+      "column": "0.050",
+      "value": 3.841,
+      "actualDf": 1,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Make the decision",
+     "general": [
+      "\\chi^2>\\chi^2_{crit}\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "\\chi^2=3.125<3.841"
+     ],
+     "words": "Do not reject the null hypothesis; 0.05<P<0.10."
+    }
+   ],
+   "conclusion": "McNemar chi-square = 3.125 with 1 df is below chi-square_0.05(1) = 3.841. Do not reject H0 (P > 0.05). There is no significant difference in specificity between the automated BP machine and the experienced person, even though the machine gives 7 false positives where the person gives 1.",
+   "source": "Session 21 page 17",
+   "lookup": {
+    "path": "sources/tables/Chi_Squared_Table2.pdf",
+    "page": 1,
+    "row": "1",
+    "column": "0.050",
+    "value": 3.841,
+    "actualDf": 1,
+    "approximation": false
+   },
+   "values": {
+    "a": 3,
+    "b": 7,
+    "c": 1,
+    "d": 9,
+    "N": 20,
+    "E": 4.0,
+    "chi2": 3.125,
+    "df": 1,
+    "critical": 3.841,
+    "reject": false,
+    "pRange": "0.05<P<0.10",
+    "exactP": 0.07709987174354178
+   },
+   "module": 21,
+   "tolerance": 0.015625,
+   "answerName": "Chi-square",
+   "answer": 3.125
+  },
+  {
+   "id": "s21-orig-hr-rmanova",
+   "title": "Original practice: heart rate before and after a beta-blocker dose",
+   "topic": "s21rmAnova",
+   "context": "Original practice example (not from the slides). Resting heart rate is measured in the same 6 volunteers before a beta-blocker dose, 1 hour after it, and 3 hours after it. Assume Normal responses and the usual repeated-measures ANOVA conditions.",
+   "unit": "beats/min",
+   "table": {
+    "headers": [
+     "Subject",
+     "Before dose",
+     "1 hour after",
+     "3 hours after"
+    ],
+    "rows": [
+     [
+      "1",
+      78,
+      70,
+      71
+     ],
+     [
+      "2",
+      85,
+      76,
+      78
+     ],
+     [
+      "3",
+      72,
+      68,
+      69
+     ],
+     [
+      "4",
+      90,
+      79,
+      82
+     ],
+     [
+      "5",
+      80,
+      74,
+      74
+     ],
+     [
+      "6",
+      75,
+      71,
+      72
+     ]
+    ]
+   },
+   "tasks": [
+    "Calculate the subject means, treatment means and grand mean, then partition the within-subjects sum of squares into treatment and residual parts.",
+    "Test whether the population mean differs among the 3 conditions at the 0.05 level. State both hypotheses in symbols and words, use the printed F table, conclude in context and give a P range if rejecting."
+   ],
+   "hypotheses": {
+    "null": "H_0:\\mu_{before}=\\mu_{1h}=\\mu_{3h}",
+    "alternative": "H_A:\\text{not all three population means are equal}",
+    "nullWords": "Mean resting heart rate is the same before, 1 hour after and 3 hours after the dose.",
+    "alternativeWords": "Mean resting heart rate differs for at least one of the three times."
+   },
+   "symbols": "\\(x_{ts}\\) (observation for treatment \\(t\\), subject \\(s\\)), \\(m\\) (number of treatments), \\(n\\) (number of subjects), \\(\\bar S_s\\) (subject mean), \\(\\bar T_t\\) (treatment mean), \\(\\bar X\\) (grand mean), \\(SS\\) (sum of squares), \\(DF\\) (degrees of freedom), \\(MS\\) (mean square), \\(F\\) (F statistic).",
+   "steps": [
+    {
+     "title": "State the procedure and design",
+     "general": [
+      "x_{ts},\\quad t=1,\\dots,m,\\quad s=1,\\dots,n"
+     ],
+     "work": [
+      "m=3\\ \\text{treatments},\\quad n=6\\ \\text{subjects}"
+     ],
+     "words": "The same 6 volunteers are measured at all 3 times (m = 3, n = 6), so repeated measures ANOVA is the procedure."
+    },
+    {
+     "title": "State the hypotheses",
+     "general": [
+      "H_0:\\mu_1=\\mu_2=\\dots=\\mu_m"
+     ],
+     "work": [
+      "H_0:\\mu_{before}=\\mu_{1h}=\\mu_{3h}"
+     ],
+     "words": "Mean resting heart rate is the same before, 1 hour after and 3 hours after the dose. Mean resting heart rate differs for at least one of the three times."
+    },
+    {
+     "title": "Calculate each subject mean",
+     "general": [
+      "\\bar S_s=\\frac{1}{m}\\sum_{t=1}^{m}x_{ts}"
+     ],
+     "work": [
+      "\\bar S_1=\\frac{78+70+71}{3}=73",
+      "\\bar S_2=\\frac{85+76+78}{3}=79.6667",
+      "\\bar S_3=\\frac{72+68+69}{3}=69.6667",
+      "\\bar S_4=\\frac{90+79+82}{3}=83.6667",
+      "\\bar S_5=\\frac{80+74+74}{3}=76",
+      "\\bar S_6=\\frac{75+71+72}{3}=72.6667"
+     ],
+     "words": "Average each subject across all 3 treatments. Each row of the table gives one subject mean."
+    },
+    {
+     "title": "Calculate the treatment means and the grand mean",
+     "general": [
+      "\\bar T_t=\\frac{1}{n}\\sum_{s=1}^{n}x_{ts}",
+      "\\bar X=\\frac{1}{m}\\sum_{t=1}^{m}\\bar T_t"
+     ],
+     "work": [
+      "\\bar T_1=\\frac{78+85+72+90+80+75}{6}=80",
+      "\\bar T_2=\\frac{70+76+68+79+74+71}{6}=73",
+      "\\bar T_3=\\frac{71+78+69+82+74+72}{6}=74.3333",
+      "\\bar X=\\frac{80+73+74.3333}{3}=75.7778"
+     ],
+     "words": "Average each column over the 6 subjects. The grand mean is the mean of all 18 observations, which equals the mean of the treatment means."
+    },
+    {
+     "title": "Calculate the within-subjects sum of squares",
+     "general": [
+      "SS_{wit\\,subjs}=\\sum_{s=1}^{n}\\sum_{t=1}^{m}(x_{ts}-\\bar S_s)^2=\\sum_{s=1}^{n}SS_s"
+     ],
+     "work": [
+      "SS_1=(78-73)^2+(70-73)^2+(71-73)^2=38",
+      "SS_2=(85-79.6667)^2+(76-79.6667)^2+(78-79.6667)^2=44.6667",
+      "SS_3=(72-69.6667)^2+(68-69.6667)^2+(69-69.6667)^2=8.6667",
+      "SS_4=(90-83.6667)^2+(79-83.6667)^2+(82-83.6667)^2=64.6667",
+      "SS_5=(80-76)^2+(74-76)^2+(74-76)^2=24",
+      "SS_6=(75-72.6667)^2+(71-72.6667)^2+(72-72.6667)^2=8.6667",
+      "SS_{wit\\,subjs}=38+44.6667+8.6667+64.6667+24+8.6667=188.6667"
+     ],
+     "words": "Each subject is compared only with its own mean, so differences between subjects never enter this sum. It holds the treatment effect plus residual scatter."
+    },
+    {
+     "title": "Calculate the treatment sum of squares",
+     "general": [
+      "SS_{treat}=n\\sum_{t=1}^{m}(\\bar T_t-\\bar X)^2"
+     ],
+     "work": [
+      "SS_{treat}=6\\left[(80-75.7778)^2+(73-75.7778)^2+(74.3333-75.7778)^2\\right]=165.7778"
+     ],
+     "words": "Multiply by n because each treatment mean involves n subjects."
+    },
+    {
+     "title": "Calculate the residual sum of squares",
+     "general": [
+      "SS_{res}=SS_{wit\\,subjs}-SS_{treat}"
+     ],
+     "work": [
+      "SS_{res}=188.6667-165.7778=22.8889"
+     ],
+     "words": "The residual is the within-subject variation that the treatment means do not explain."
+    },
+    {
+     "title": "Find the degrees of freedom and mean squares",
+     "general": [
+      "DF_{treat}=m-1,\\quad DF_{res}=(n-1)(m-1)",
+      "MS_{treat}=\\frac{SS_{treat}}{DF_{treat}},\\quad MS_{res}=\\frac{SS_{res}}{DF_{res}}"
+     ],
+     "work": [
+      "DF_{treat}=3-1=2,\\quad DF_{res}=(6-1)(3-1)=10",
+      "MS_{treat}=\\frac{165.7778}{2}=82.88889,\\quad MS_{res}=\\frac{22.8889}{10}=2.288889"
+     ],
+     "words": "Each sum of squares is divided by its own degrees of freedom to give a variance estimate."
+    },
+    {
+     "title": "Calculate the F statistic",
+     "general": [
+      "F=\\frac{MS_{treat}}{MS_{res}}"
+     ],
+     "work": [
+      "F=\\frac{82.88889}{2.288889}=36.2136"
+     ],
+     "words": "Treatment variance is compared with residual variance. Values near 1 or below are what equal treatment means produce."
+    },
+    {
+     "title": "Find the critical value",
+     "general": [
+      "F_{crit}=F_{\\alpha}(DF_{treat},DF_{res})=F_{\\alpha}(\\nu_n,\\nu_d)"
+     ],
+     "work": [
+      "F_{0.05}(2,10)=4.10",
+      "F_{0.01}(2,10)=7.56"
+     ],
+     "words": "Open F_table.pdf, PDF page 1. Use numerator column ν_n=2 and denominator row ν_d=10. The lightface entry 4.10 is the 0.05 cutoff and the boldface entry 7.56 is the 0.01 cutoff. Swapping the two df selects a different, wrong cell.",
+     "tableLookup": {
+      "path": "sources/tables/F_table.pdf",
+      "page": 1,
+      "row": "10",
+      "column": "2 (0.05 lightface)",
+      "value": 4.1,
+      "actualDf": [
+       2,
+       10
+      ],
+      "approximation": false
+     }
+    },
+    {
+     "title": "Make the decision",
+     "general": [
+      "F>F_{crit}\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "F=36.2136>4.10,\\quad F>7.56\\Rightarrow P<0.01"
+     ],
+     "words": "F is well above both cutoffs, so reject the null hypothesis with P < 0.01."
+    }
+   ],
+   "conclusion": "F = 36.214 with 2 and 10 degrees of freedom exceeds F_0.01(2,10) = 7.56. Reject H0, P < 0.01. Mean resting heart rate differs among the three times; Holm-corrected pairwise t tests locate the differences.",
+   "source": "Original practice example",
+   "lookup": {
+    "path": "sources/tables/F_table.pdf",
+    "page": 1,
+    "row": "10",
+    "column": "2 (0.05 lightface)",
+    "value": 4.1,
+    "actualDf": [
+     2,
+     10
+    ],
+    "approximation": false
+   },
+   "values": {
+    "n": 6,
+    "m": 3,
+    "subjectMeans": [
+     73.0,
+     79.66666666666667,
+     69.66666666666667,
+     83.66666666666667,
+     76.0,
+     72.66666666666667
+    ],
+    "treatmentMeans": [
+     80.0,
+     73.0,
+     74.33333333333333
+    ],
+    "grandMean": 75.77777777777777,
+    "subjectSS": [
+     38.0,
+     44.666666666666664,
+     8.666666666666666,
+     64.66666666666667,
+     24.0,
+     8.666666666666666
+    ],
+    "ssWithin": 188.66666666666666,
+    "ssTreat": 165.77777777777786,
+    "ssRes": 22.8888888888888,
+    "ssBetween": 396.44444444444446,
+    "ssTotal": 585.1111111111112,
+    "dfTreat": 2,
+    "dfRes": 10,
+    "msTreat": 82.88888888888893,
+    "msRes": 2.28888888888888,
+    "F": 36.21359223300987,
+    "exactP": 2.6281350141805223e-05,
+    "critical": 4.1,
+    "critical01": 7.56,
+    "reject": true,
+    "pRange": "P<0.01"
+   },
+   "module": 21,
+   "tolerance": 0.181068,
+   "answerName": "F statistic",
+   "answer": 36.21359223300987
+  },
+  {
+   "id": "s21-orig-hr-holm",
+   "title": "Original practice: Holm-corrected comparisons of heart rate times",
+   "topic": "s21holm",
+   "context": "Original practice example (not from the slides). Continue the heart-rate repeated-measures ANOVA: treatment means 80, 73 and 74.3333 beats/min (before, 1 hour after, 3 hours after), MS_res = 2.288889 with DF_res = 10 and n = 6 volunteers.",
+   "unit": "beats/min",
+   "table": {
+    "headers": [
+     "Condition",
+     "Treatment mean"
+    ],
+    "rows": [
+     [
+      "Before dose",
+      80.0
+     ],
+     [
+      "1 hour after",
+      73.0
+     ],
+     [
+      "3 hours after",
+      74.3333
+     ]
+    ]
+   },
+   "tasks": [
+    "Calculate the pairwise t statistic for every pair of conditions using MS_res from the repeated-measures ANOVA.",
+    "Apply the Holm correction with an overall 0.05 level, using DF_res for the t table, and state which pairs differ."
+   ],
+   "hypotheses": {
+    "null": "H_0:\\mu_i=\\mu_j\\ \\text{for the pair being compared}",
+    "alternative": "H_A:\\mu_i\\ne\\mu_j",
+    "nullWords": "For the pair being compared, mean resting heart rate is the same at the two times.",
+    "alternativeWords": "For that pair, mean resting heart rate differs between the two times."
+   },
+   "symbols": "\\(\\bar T_i\\) (treatment mean), \\(MS_{res}\\) (residual mean square), \\(n\\) (number of subjects), \\(DF_{res}\\) (residual degrees of freedom), \\(k\\) (number of pairwise comparisons), \\(\\alpha_j\\) (Holm level for the \\(j\\)th comparison), \\(\\alpha_T\\) (overall level).",
+   "steps": [
+    {
+     "title": "State the procedure",
+     "general": [
+      "t=\\frac{\\bar T_i-\\bar T_j}{\\sqrt{2MS_{res}/n}},\\quad \\nu=DF_{res}=(n-1)(m-1)"
+     ],
+     "work": [
+      "MS_{res}=2.288889,\\quad n=6,\\quad \\nu=10"
+     ],
+     "words": "The overall F test rejected, so Holm-corrected pairwise t tests are used, with MS_res in the standard error and DF_res = 10 for the t table."
+    },
+    {
+     "title": "State the hypotheses for each pair",
+     "general": [
+      "H_0:\\mu_i=\\mu_j"
+     ],
+     "work": [
+      "H_0:\\mu_i=\\mu_j\\ \\text{for the pair being compared}"
+     ],
+     "words": "For the pair being compared, mean resting heart rate is the same at the two times. For that pair, mean resting heart rate differs between the two times."
+    },
+    {
+     "title": "Calculate the standard error of a difference",
+     "general": [
+      "SE=\\sqrt{\\frac{2MS_{res}}{n}}"
+     ],
+     "work": [
+      "SE=\\sqrt{\\frac{2(2.288889)}{6}}=0.873478"
+     ],
+     "words": "The same standard error serves every pair because every treatment mean is based on the same n subjects."
+    },
+    {
+     "title": "Calculate every pairwise t statistic",
+     "general": [
+      "t=\\frac{\\bar T_i-\\bar T_j}{SE}"
+     ],
+     "work": [
+      "t_{\\text{Before dose vs 1 hour after}}=\\frac{80-73}{0.873478}=8.014",
+      "t_{\\text{Before dose vs 3 hours after}}=\\frac{80-74.3333}{0.873478}=6.487",
+      "t_{\\text{1 hour after vs 3 hours after}}=\\frac{73-74.3333}{0.873478}=-1.526"
+     ],
+     "words": "Keep the subtraction order; the sign only gives the direction, and the ranking uses |t|."
+    },
+    {
+     "title": "Order by |t| and set the Holm levels",
+     "general": [
+      "\\alpha_j=\\frac{\\alpha_T}{k-j+1},\\quad j=1,\\dots,k"
+     ],
+     "work": [
+      "k=3,\\quad \\alpha_1=\\frac{0.05}{3}=0.0167,\\quad \\alpha_2=\\frac{0.05}{2}=0.025,\\quad \\alpha_3=\\frac{0.05}{1}=0.05",
+      "|t|:\\ 8.014>6.487>1.526"
+     ],
+     "words": "The largest |t| is tested at the strictest level. Testing stops at the first comparison that is not significant."
+    },
+    {
+     "title": "Comparison 1: Before dose vs 1 hour after",
+     "general": [
+      "|t|>t_{\\alpha_1}(\\nu)\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "\\alpha_1=0.0167,\\quad t_{0.01}(10)=3.169\\ \\text{(stricter printed column)}",
+      "|t|=8.014>3.169"
+     ],
+     "words": "The 0.0167 column is not printed. In t_table.pdf, PDF page 1, row 10, the printed neighbors are the 0.02 column (2.764) and the 0.01 column (3.169). Use the stricter 0.01 column, 3.169; a statistic beyond it is significant at 0.0167 as well. |t| = 8.014 > 3.169, so the Before dose and 1 hour after means differ (P<0.001 before adjustment).",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 1,
+      "row": "10",
+      "column": "0.01",
+      "value": 3.169,
+      "actualDf": 10,
+      "approximation": true,
+      "bracket": [
+       "0.02",
+       "0.01"
+      ],
+      "bracketValues": [
+       2.764,
+       3.169
+      ]
+     }
+    },
+    {
+     "title": "Comparison 2: Before dose vs 3 hours after",
+     "general": [
+      "|t|>t_{\\alpha_2}(\\nu)\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "\\alpha_2=0.025,\\quad t_{0.02}(10)=2.764\\ \\text{(stricter printed column)}",
+      "|t|=6.487>2.764"
+     ],
+     "words": "The 0.025 column is not printed. In t_table.pdf, PDF page 1, row 10, the printed neighbors are the 0.05 column (2.228) and the 0.02 column (2.764). Use the stricter 0.02 column, 2.764; a statistic beyond it is significant at 0.025 as well. |t| = 6.487 > 2.764, so the Before dose and 3 hours after means differ (P<0.001 before adjustment).",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 1,
+      "row": "10",
+      "column": "0.02",
+      "value": 2.764,
+      "actualDf": 10,
+      "approximation": true,
+      "bracket": [
+       "0.05",
+       "0.02"
+      ],
+      "bracketValues": [
+       2.228,
+       2.764
+      ]
+     }
+    },
+    {
+     "title": "Comparison 3: 1 hour after vs 3 hours after",
+     "general": [
+      "|t|>t_{\\alpha_3}(\\nu)\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "\\alpha_3=0.05,\\quad t_{0.05}(10)=2.228",
+      "|t|=1.526<2.228"
+     ],
+     "words": "Open t_table.pdf, PDF page 1, row 10, combined two-tail 0.05 column: 2.228. |t| = 1.526 < 2.228, so the 1 hour after and 3 hours after means are not shown to differ (P > 0.05), and Holm testing stops here.",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 1,
+      "row": "10",
+      "column": "0.05",
+      "value": 2.228,
+      "actualDf": 10,
+      "approximation": false
+     }
+    }
+   ],
+   "conclusion": "Heart rate before the dose is higher than at 1 hour and at 3 hours after it. The 1-hour and 3-hour means are not shown to differ (|t| = 1.526 < 2.228).",
+   "source": "Original practice example",
+   "lookup": {
+    "path": "sources/tables/t_table.pdf",
+    "page": 1,
+    "row": "10",
+    "column": "0.01",
+    "value": 3.169,
+    "actualDf": 10,
+    "approximation": true,
+    "bracket": [
+     "0.02",
+     "0.01"
+    ],
+    "bracketValues": [
+     2.764,
+     3.169
+    ]
+   },
+   "values": {
+    "n": 6,
+    "dfRes": 10,
+    "msRes": 2.28888888888888,
+    "means": {
+     "Before dose": 80.0,
+     "1 hour after": 73.0,
+     "3 hours after": 74.33333333333333
+    },
+    "se": 0.8734775114237114,
+    "tValues": {
+     "Before dose vs 1 hour after": 8.01394415820787,
+     "Before dose vs 3 hours after": 6.487478604263519,
+     "1 hour after vs 3 hours after": -1.5264655539443508
+    },
+    "holmAlphas": [
+     0.016666666666666666,
+     0.025,
+     0.05
+    ],
+    "outcomes": {
+     "Before dose vs 1 hour after": true,
+     "Before dose vs 3 hours after": true,
+     "1 hour after vs 3 hours after": false
+    }
+   },
+   "module": 21,
+   "tolerance": 0.04007,
+   "answerName": "t statistic (largest |t| comparison)",
+   "answer": 8.01394415820787
+  },
+  {
+   "id": "s21-orig-strep-mcnemar",
+   "title": "Original practice: two rapid strep tests on the same throat swabs",
+   "topic": "s21diagnostic",
+   "context": "Original practice example (not from the slides). Two rapid strep tests, A and B, are run on the same 40 throat swabs. Test A positive: 10 test B positive and 2 test B negative. Test A negative: 14 test B positive and 14 test B negative.",
+   "unit": "swabs",
+   "table": {
+    "headers": [
+     "Test A (rows) by Test B (columns)",
+     "Test B: positive",
+     "Test B: negative"
+    ],
+    "rows": [
+     [
+      "Test A: positive",
+      10,
+      2
+     ],
+     [
+      "Test A: negative",
+      14,
+      14
+     ]
+    ]
+   },
+   "tasks": [
+    "Explain why the observations are paired and identify the cells that change.",
+    "Carry out McNemar's test at the 0.05 level with the Yates correction. State both hypotheses in symbols and words, use the printed chi-square table, conclude in context and give a P range if rejecting."
+   ],
+   "hypotheses": {
+    "null": "H_0:P(A+,B-)=P(A-,B+)",
+    "alternative": "H_A:P(A+,B-)\\ne P(A-,B+)",
+    "nullWords": "The two rapid tests have the same probability of a positive result; swabs on which they disagree are equally likely to be positive on A only as on B only.",
+    "alternativeWords": "The two tests differ in how often they give a positive result."
+   },
+   "symbols": "\\(a,d\\) (subjects with the same result both times), \\(b,c\\) (subjects whose result changes), \\(E\\) (expected number in each change cell), \\(\\chi^2\\) (McNemar chi-square), \\(\\nu\\) (degrees of freedom).",
+   "steps": [
+    {
+     "title": "State the procedure",
+     "general": [
+      "\\begin{array}{c|cc}&\\text{O1}&\\text{O2}\\\\\\hline \\text{O1}&a&b\\\\ \\text{O2}&c&d\\end{array}"
+     ],
+     "work": [
+      "a=10,\\ b=2,\\ c=14,\\ d=14"
+     ],
+     "words": "Both tests are applied to the same 40 swabs, so the results are paired nominal data and McNemar's test is the procedure."
+    },
+    {
+     "title": "State the hypotheses",
+     "general": [
+      "H_0:P(\\text{O1}\\to\\text{O2})=P(\\text{O2}\\to\\text{O1})"
+     ],
+     "work": [
+      "H_0:P(A+,B-)=P(A-,B+)"
+     ],
+     "words": "The two rapid tests have the same probability of a positive result; swabs on which they disagree are equally likely to be positive on A only as on B only. The two tests differ in how often they give a positive result."
+    },
+    {
+     "title": "Identify the subjects who change",
+     "general": [
+      "b=\\text{O1}\\to\\text{O2},\\quad c=\\text{O2}\\to\\text{O1}"
+     ],
+     "work": [
+      "b=2,\\quad c=14,\\quad b+c=16"
+     ],
+     "words": "Only discordant subjects carry information about a change. Here b counts swabs positive on A only and c counts swabs positive on B only. The concordant cells a = 10 and d = 14 do not enter the statistic."
+    },
+    {
+     "title": "Calculate the expected number in each change cell",
+     "general": [
+      "E=\\frac{b+c}{2}"
+     ],
+     "work": [
+      "E=\\frac{2+14}{2}=8"
+     ],
+     "words": "If the null hypothesis is true, the changes split evenly in the two directions."
+    },
+    {
+     "title": "Calculate the McNemar chi-square with Yates correction",
+     "general": [
+      "\\chi^2=\\frac{(|b-E|-\\frac12)^2}{E}+\\frac{(|c-E|-\\frac12)^2}{E}"
+     ],
+     "work": [
+      "\\chi^2=\\frac{(|2-8|-\\frac12)^2}{8}+\\frac{(|14-8|-\\frac12)^2}{8}=7.5625"
+     ],
+     "words": "Subtract one half from each absolute difference before squaring because the table is 2 x 2 (Yates correction)."
+    },
+    {
+     "title": "Find the critical value",
+     "general": [
+      "\\nu=1,\\quad \\chi^2_{crit}=\\chi^2_{\\alpha}(1)"
+     ],
+     "work": [
+      "\\chi^2_{0.05}(1)=3.841"
+     ],
+     "words": "Open Chi_Squared_Table2.pdf, PDF page 1. Row df = 1, column χ².050 gives 3.841. The same row gives 6.635 in the .010 column and 7.879 in the .005 column for a P range.",
+     "tableLookup": {
+      "path": "sources/tables/Chi_Squared_Table2.pdf",
+      "page": 1,
+      "row": "1",
+      "column": "0.050",
+      "value": 3.841,
+      "actualDf": 1,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Make the decision",
+     "general": [
+      "\\chi^2>\\chi^2_{crit}\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "\\chi^2=7.5625>3.841,\\quad 0.005<P<0.01"
+     ],
+     "words": "Reject the null hypothesis; 0.005<P<0.01."
+    }
+   ],
+   "conclusion": "McNemar chi-square = 7.5625 with 1 df exceeds chi-square_0.05(1) = 3.841 and chi-square_0.01(1) = 6.635 but not chi-square_0.005(1) = 7.879. Reject H0, 0.005 < P < 0.01. Test B gives a positive result more often than test A on the same swabs.",
+   "source": "Original practice example",
+   "lookup": {
+    "path": "sources/tables/Chi_Squared_Table2.pdf",
+    "page": 1,
+    "row": "1",
+    "column": "0.050",
+    "value": 3.841,
+    "actualDf": 1,
+    "approximation": false
+   },
+   "values": {
+    "a": 10,
+    "b": 2,
+    "c": 14,
+    "d": 14,
+    "N": 40,
+    "E": 8.0,
+    "chi2": 7.5625,
+    "df": 1,
+    "critical": 3.841,
+    "reject": true,
+    "pRange": "0.005<P<0.01",
+    "exactP": 0.005959526470109118
+   },
+   "module": 21,
+   "tolerance": 0.037812,
+   "answerName": "Chi-square",
+   "answer": 7.5625
+  }
+ ],
+ "questions": [
+  {
+   "id": "m2-s21-q001",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "In the systolic blood pressure example (5 patients at 4, 8 and 12 weeks), what is the subject mean \\(\\bar S_2\\) for patient 2 (110, 115, 118 mmHg)?",
+   "options": [
+    "\\(115\\) mmHg",
+    "\\(114.3333\\) mmHg",
+    "\\(125\\) mmHg",
+    "\\(343\\) mmHg"
+   ],
+   "correct": 1,
+   "why": "Average the three values of patient 2: 343/3 = 114.3333 mmHg. 125 is a treatment mean and 343 is the unaveraged sum.",
+   "case": "s21-sbp-rmanova",
+   "equations": [
+    "\\bar S_s=\\frac{1}{m}\\sum_t x_{ts}",
+    "\\bar S_2=\\frac{110+115+118}{3}=114.3333"
+   ]
+  },
+  {
+   "id": "m2-s21-q002",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "For the systolic blood pressure example, what is the within-subjects sum of squares \\(SS_{wit\\,subjs}\\)?",
+   "options": [
+    "\\(3398.4\\)",
+    "\\(3149.0667\\)",
+    "\\(1.2\\)",
+    "\\(249.3333\\)"
+   ],
+   "correct": 3,
+   "why": "Add the five subject sums of squares: 50 + 32.6667 + 50 + 66.6667 + 50 = 249.3333. 3398.4 is the total and 3149.0667 the between-subjects sum of squares.",
+   "case": "s21-sbp-rmanova",
+   "equations": [
+    "SS_{wit\\,subjs}=\\sum_s SS_s",
+    "SS_{wit\\,subjs}=50+32.6667+50+66.6667+50=249.3333"
+   ]
+  },
+  {
+   "id": "m2-s21-q003",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "For the systolic blood pressure example (treatment means 125, 125, 125.6 mmHg; grand mean 125.2 mmHg; n = 5), what is \\(SS_{treat}\\)?",
+   "options": [
+    "\\(0.24\\)",
+    "\\(3.6\\)",
+    "\\(1.2\\)",
+    "\\(0.6\\)"
+   ],
+   "correct": 2,
+   "why": "Multiply the sum of squared deviations of the treatment means (0.24) by n = 5 because each treatment mean involves 5 subjects. 0.6 is the mean square, not the sum of squares.",
+   "case": "s21-sbp-rmanova",
+   "equations": [
+    "SS_{treat}=n\\sum_t(\\bar T_t-\\bar X)^2",
+    "SS_{treat}=5(0.04+0.04+0.16)=1.2"
+   ]
+  },
+  {
+   "id": "m2-s21-q004",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "For the systolic blood pressure example, \\(SS_{res}=248.1333\\). What is \\(MS_{res}\\)?",
+   "options": [
+    "\\(24.8133\\)",
+    "\\(31.0167\\)",
+    "\\(20.6778\\)",
+    "\\(248.1333\\)"
+   ],
+   "correct": 1,
+   "why": "DF_res = (n - 1)(m - 1) = (5 - 1)(3 - 1) = 8, so MS_res = 248.1333/8 = 31.0167. Dividing by 10 uses the within-subjects df instead.",
+   "case": "s21-sbp-rmanova",
+   "equations": [
+    "MS_{res}=\\frac{SS_{res}}{(n-1)(m-1)}",
+    "MS_{res}=\\frac{248.1333}{8}=31.0167"
+   ]
+  },
+  {
+   "id": "m2-s21-q005",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "For the systolic blood pressure example, what is the repeated-measures F statistic?",
+   "options": [
+    "\\(51.694\\)",
+    "\\(0.02418\\)",
+    "\\(0.00484\\)",
+    "\\(0.01934\\)"
+   ],
+   "correct": 3,
+   "why": "F = MS_treat/MS_res = 0.6/31.0167 = 0.01934. Inverting the ratio gives 51.69, and using DF = 10 in the denominator gives 0.02418.",
+   "case": "s21-sbp-rmanova",
+   "equations": [
+    "F=\\frac{MS_{treat}}{MS_{res}}",
+    "F=\\frac{0.6}{31.0167}=0.01934"
+   ]
+  },
+  {
+   "id": "m2-s21-q006",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "For the systolic blood pressure example, which printed critical value is used at \\(\\alpha=0.05\\)?",
+   "options": [
+    "\\(F_{0.05}(2,8)=4.46\\)",
+    "\\(F_{0.01}(2,8)=8.65\\)",
+    "\\(F_{0.05}(2,10)=4.10\\)",
+    "\\(F_{0.05}(8,2)=19.37\\)"
+   ],
+   "correct": 0,
+   "why": "The numerator df is m - 1 = 2 and the denominator df is (n - 1)(m - 1) = 8. The lightface entry in column 2, row 8 of the F table is 4.46.",
+   "case": "s21-sbp-rmanova",
+   "equations": [
+    "F_{crit}=F_{0.05}(m-1,(n-1)(m-1))",
+    "F_{0.05}(2,8)=4.46"
+   ]
+  },
+  {
+   "id": "m2-s21-q007",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "For the FEV1 example (treatment means 3.475, 3.20, 3.75 L; grand mean 3.475 L; n = 4), what is \\(SS_{treat}\\)?",
+   "options": [
+    "\\(0.1513\\)",
+    "\\(0.6333\\)",
+    "\\(0.6050\\)",
+    "\\(0.0283\\)"
+   ],
+   "correct": 2,
+   "why": "SS_treat = 4[(0)^2 + (-0.275)^2 + (0.275)^2] = 4(0.15125) = 0.6050. Omitting the factor n gives 0.1513; 0.6333 is SS_wit subjs.",
+   "case": "s21-fev1-rmanova",
+   "equations": [
+    "SS_{treat}=n\\sum_t(\\bar T_t-\\bar X)^2",
+    "SS_{treat}=4(0+0.075625+0.075625)=0.6050"
+   ]
+  },
+  {
+   "id": "m2-s21-q008",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "For the FEV1 example with n = 4 people and m = 3 conditions, what is \\(DF_{res}\\)?",
+   "options": [
+    "\\(8\\)",
+    "\\(2\\)",
+    "\\(11\\)",
+    "\\(6\\)"
+   ],
+   "correct": 3,
+   "why": "DF_res = (n - 1)(m - 1) = 3 x 2 = 6. 8 is DF_wit subjs = n(m - 1) and 11 is DF_tot = mn - 1.",
+   "case": "s21-fev1-rmanova",
+   "equations": [
+    "DF_{res}=(n-1)(m-1)",
+    "DF_{res}=(4-1)(3-1)=6"
+   ]
+  },
+  {
+   "id": "m2-s21-q009",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "For the FEV1 example, \\(SS_{res}=0.02833\\). What is \\(MS_{res}\\) from the raw data?",
+   "options": [
+    "\\(0.004722\\)",
+    "\\(0.003542\\)",
+    "\\(0.07917\\)",
+    "\\(0.01417\\)"
+   ],
+   "correct": 0,
+   "why": "MS_res = 0.02833/6 = 0.004722. Dividing by 8 gives 0.003542, and 0.6333/8 = 0.07917 is the within-subjects mean square.",
+   "case": "s21-fev1-rmanova",
+   "equations": [
+    "MS_{res}=\\frac{SS_{res}}{DF_{res}}",
+    "MS_{res}=\\frac{0.02833}{6}=0.004722"
+   ]
+  },
+  {
+   "id": "m2-s21-q010",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "For the FEV1 example, what is the F statistic computed from the raw data?",
+   "options": [
+    "\\(21.353\\)",
+    "\\(64.059\\)",
+    "\\(0.0156\\)",
+    "\\(3.821\\)"
+   ],
+   "correct": 1,
+   "why": "F = 0.3025/0.004722 = 64.059 (the slide prints 64.053). SS_treat/SS_res = 21.353 skips the division by df, and 3.821 wrongly uses the within-subjects mean square as the denominator.",
+   "case": "s21-fev1-rmanova",
+   "equations": [
+    "F=\\frac{MS_{treat}}{MS_{res}}",
+    "F=\\frac{0.3025}{0.004722}=64.059"
+   ]
+  },
+  {
+   "id": "m2-s21-q011",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "For the FEV1 example, which printed F value decides at \\(\\alpha=0.05\\)?",
+   "options": [
+    "\\(F_{0.01}(2,6)=10.92\\)",
+    "\\(F_{0.05}(6,2)=19.33\\)",
+    "\\(F_{0.05}(2,8)=4.46\\)",
+    "\\(F_{0.05}(2,6)=5.14\\)"
+   ],
+   "correct": 3,
+   "why": "Use numerator column 2 and denominator row 6, lightface entry 5.14. Row 8 would wrongly use DF_wit subjs.",
+   "case": "s21-fev1-rmanova",
+   "equations": [
+    "F_{crit}=F_{0.05}(DF_{treat},DF_{res})",
+    "F_{0.05}(2,6)=5.14"
+   ]
+  },
+  {
+   "id": "m2-s21-q012",
+   "module": 21,
+   "topic": "s21holm",
+   "stem": "For the FEV1 pairwise comparisons, \\(MS_{res}=0.0047\\) and n = 4. What is the standard error \\(\\sqrt{2MS_{res}/n}\\)?",
+   "options": [
+    "\\(0.04848\\)",
+    "\\(0.03428\\)",
+    "\\(0.00235\\)",
+    "\\(0.06856\\)"
+   ],
+   "correct": 0,
+   "why": "SE = sqrt(2 x 0.0047/4) = sqrt(0.00235) = 0.04848. Leaving out the 2 gives 0.03428, and forgetting the square root gives 0.00235.",
+   "case": "s21-fev1-holm",
+   "equations": [
+    "SE=\\sqrt{\\frac{2MS_{res}}{n}}",
+    "SE=\\sqrt{\\frac{2(0.0047)}{4}}=0.04848"
+   ]
+  },
+  {
+   "id": "m2-s21-q013",
+   "module": 21,
+   "topic": "s21holm",
+   "stem": "For the FEV1 example, what is t for endotoxin (3.20 L) versus salbutamol and endotoxin (3.75 L)?",
+   "options": [
+    "\\(-16.045\\)",
+    "\\(-8.022\\)",
+    "\\(-11.346\\)",
+    "\\(-5.570\\)"
+   ],
+   "correct": 2,
+   "why": "t = (3.20 - 3.75)/0.04848 = -11.346. Omitting the 2 under the root gives -16.045; -5.570 is the baseline versus salbutamol comparison.",
+   "case": "s21-fev1-holm",
+   "equations": [
+    "t=\\frac{\\bar T_i-\\bar T_j}{\\sqrt{2MS_{res}/n}}",
+    "t=\\frac{3.20-3.75}{\\sqrt{2(0.0047)/4}}=-11.346"
+   ]
+  },
+  {
+   "id": "m2-s21-q014",
+   "module": 21,
+   "topic": "s21holm",
+   "stem": "In the FEV1 Holm procedure with k = 3 comparisons, which significance level is used for the comparison with the second-largest \\(|t|\\) (baseline vs endotoxin)?",
+   "options": [
+    "\\(0.0167\\)",
+    "\\(0.05\\)",
+    "\\(0.0125\\)",
+    "\\(0.025\\)"
+   ],
+   "correct": 3,
+   "why": "Holm uses alpha_T/(k - j + 1). For j = 2, 0.05/(3 - 2 + 1) = 0.025.",
+   "case": "s21-fev1-holm",
+   "equations": [
+    "\\alpha_j=\\frac{\\alpha_T}{k-j+1}",
+    "\\alpha_2=\\frac{0.05}{2}=0.025"
+   ]
+  },
+  {
+   "id": "m2-s21-q015",
+   "module": 21,
+   "topic": "s21holm",
+   "stem": "For the first FEV1 Holm comparison (level 0.0167, DF_res = 6), the printed t table has no 0.0167 column. Which printed cutoff gives a conservative decision?",
+   "options": [
+    "\\(t_{0.01}(6)=3.707\\)",
+    "\\(t_{0.02}(6)=3.143\\)",
+    "\\(t_{0.05}(6)=2.447\\)",
+    "\\(t_{0.01}(8)=3.355\\)"
+   ],
+   "correct": 0,
+   "why": "0.0167 lies between the printed 0.02 and 0.01 columns. The stricter 0.01 column, 3.707, guarantees significance at 0.0167; row 6 is DF_res, not DF_wit subjs = 8.",
+   "case": "s21-fev1-holm",
+   "equations": [
+    "0.01<0.0167<0.02",
+    "t_{0.01}(6)=3.707"
+   ]
+  },
+  {
+   "id": "m2-s21-q016",
+   "module": 21,
+   "topic": "s21mcnemar",
+   "stem": "For the p7 antigen table (before +/after +: 4, before +/after -: 0, before -/after +: 12, before -/after -: 14), what is the Yates-corrected chi-square if the rows and columns are wrongly treated as independent?",
+   "options": [
+    "\\(10.083\\)",
+    "\\(3.841\\)",
+    "\\(2.165\\)",
+    "\\(12.000\\)"
+   ],
+   "correct": 2,
+   "why": "With expected counts from the row and column totals, the Yates-corrected contingency chi-square is 2.165. It ignores the pairing; McNemar's test gives 10.083.",
+   "case": "s21-p7-mcnemar",
+   "equations": [
+    "E_{ij}=\\frac{R_iC_j}{N}",
+    "\\chi^2=\\sum\\frac{(|O-E|-\\frac12)^2}{E}=2.165"
+   ]
+  },
+  {
+   "id": "m2-s21-q017",
+   "module": 21,
+   "topic": "s21mcnemar",
+   "stem": "In the p7 McNemar test, what is the expected number E in each change cell under the null hypothesis?",
+   "options": [
+    "\\(15\\)",
+    "\\(6\\)",
+    "\\(12\\)",
+    "\\(2.133\\)"
+   ],
+   "correct": 1,
+   "why": "Twelve women changed status (b + c = 0 + 12), so E = 12/2 = 6. 15 is half of all 30 women, and 2.133 is an independent-table expected count.",
+   "case": "s21-p7-mcnemar",
+   "equations": [
+    "E=\\frac{b+c}{2}",
+    "E=\\frac{0+12}{2}=6"
+   ]
+  },
+  {
+   "id": "m2-s21-q018",
+   "module": 21,
+   "topic": "s21mcnemar",
+   "stem": "What is the McNemar chi-square for the p7 antigen data?",
+   "options": [
+    "\\(10.083\\)",
+    "\\(12.000\\)",
+    "\\(5.042\\)",
+    "\\(2.165\\)"
+   ],
+   "correct": 0,
+   "why": "chi-square = ((6 - 0.5)^2 + (6 - 0.5)^2)/6 = 60.5/6 = 10.083. Omitting the Yates correction gives 12.000.",
+   "case": "s21-p7-mcnemar",
+   "equations": [
+    "\\chi^2=\\frac{(|b-E|-\\frac12)^2}{E}+\\frac{(|c-E|-\\frac12)^2}{E}",
+    "\\chi^2=\\frac{5.5^2+5.5^2}{6}=10.083"
+   ]
+  },
+  {
+   "id": "m2-s21-q019",
+   "module": 21,
+   "topic": "s21mcnemar",
+   "stem": "The p7 McNemar chi-square is 10.083 with 1 df. Which P range follows from the printed chi-square table?",
+   "options": [
+    "\\(0.005<P<0.01\\)",
+    "\\(0.01<P<0.05\\)",
+    "\\(P>0.05\\)",
+    "\\(P<0.005\\)"
+   ],
+   "correct": 3,
+   "why": "Row df = 1 gives 7.879 in the .005 column, and 10.083 exceeds it, so P < 0.005.",
+   "case": "s21-p7-mcnemar",
+   "equations": [
+    "\\chi^2>\\chi^2_{0.005}(1)",
+    "10.083>7.879"
+   ]
+  },
+  {
+   "id": "m2-s21-q020",
+   "module": 21,
+   "topic": "s21diagnostic",
+   "stem": "In the BP machine versus experienced person comparison (machine +/person -: 7, machine -/person +: 1), what is E?",
+   "options": [
+    "\\(10\\)",
+    "\\(4\\)",
+    "\\(5\\)",
+    "\\(8\\)"
+   ],
+   "correct": 1,
+   "why": "E = (b + c)/2 = (7 + 1)/2 = 4. 10 is half of all 20 subjects and 8 is b + c without halving.",
+   "case": "s21-bp-machine",
+   "equations": [
+    "E=\\frac{b+c}{2}",
+    "E=\\frac{7+1}{2}=4"
+   ]
+  },
+  {
+   "id": "m2-s21-q021",
+   "module": 21,
+   "topic": "s21diagnostic",
+   "stem": "What is the McNemar chi-square comparing the BP machine with the experienced person?",
+   "options": [
+    "\\(4.500\\)",
+    "\\(1.5625\\)",
+    "\\(3.125\\)",
+    "\\(6.250\\)"
+   ],
+   "correct": 2,
+   "why": "chi-square = ((3 - 0.5)^2 + (3 - 0.5)^2)/4 = 12.5/4 = 3.125. Without the Yates correction it would be 4.500, which would wrongly cross 3.841.",
+   "case": "s21-bp-machine",
+   "equations": [
+    "\\chi^2=\\frac{(|b-E|-\\frac12)^2}{E}+\\frac{(|c-E|-\\frac12)^2}{E}",
+    "\\chi^2=\\frac{2.5^2+2.5^2}{4}=3.125"
+   ]
+  },
+  {
+   "id": "m2-s21-q022",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "In the original heart-rate practice example (6 volunteers, 3 times), what is \\(SS_{res}\\)?",
+   "options": [
+    "\\(188.6667\\)",
+    "\\(165.7778\\)",
+    "\\(396.4444\\)",
+    "\\(22.8889\\)"
+   ],
+   "correct": 3,
+   "why": "SS_res = SS_wit subjs - SS_treat = 188.6667 - 165.7778 = 22.8889.",
+   "case": "s21-orig-hr-rmanova",
+   "equations": [
+    "SS_{res}=SS_{wit\\,subjs}-SS_{treat}",
+    "SS_{res}=188.6667-165.7778=22.8889"
+   ]
+  },
+  {
+   "id": "m2-s21-q023",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "In the original heart-rate practice example, what is the F statistic?",
+   "options": [
+    "\\(7.243\\)",
+    "\\(36.214\\)",
+    "\\(0.0276\\)",
+    "\\(5.272\\)"
+   ],
+   "correct": 1,
+   "why": "F = MS_treat/MS_res = 82.8889/2.2889 = 36.214, with 2 and 10 df.",
+   "case": "s21-orig-hr-rmanova",
+   "equations": [
+    "F=\\frac{MS_{treat}}{MS_{res}}",
+    "F=\\frac{82.8889}{2.2889}=36.214"
+   ]
+  },
+  {
+   "id": "m2-s21-q024",
+   "module": 21,
+   "topic": "s21holm",
+   "stem": "In the original heart-rate practice example, what is t for 1 hour after (73) versus 3 hours after (74.3333) with \\(MS_{res}=2.288889\\) and n = 6?",
+   "options": [
+    "\\(-1.526\\)",
+    "\\(-2.159\\)",
+    "\\(-1.333\\)",
+    "\\(-1.079\\)"
+   ],
+   "correct": 0,
+   "why": "SE = sqrt(2 x 2.288889/6) = 0.8735, so t = -1.3333/0.8735 = -1.526. |t| < 2.228, so this pair is not shown to differ.",
+   "case": "s21-orig-hr-holm",
+   "equations": [
+    "t=\\frac{\\bar T_i-\\bar T_j}{\\sqrt{2MS_{res}/n}}",
+    "t=\\frac{73-74.3333}{0.873478}=-1.526"
+   ]
+  },
+  {
+   "id": "m2-s21-q025",
+   "module": 21,
+   "topic": "s21diagnostic",
+   "stem": "In the original rapid strep practice example (A+/B-: 2, A-/B+: 14), what is the McNemar chi-square?",
+   "options": [
+    "\\(9.0000\\)",
+    "\\(3.7813\\)",
+    "\\(6.635\\)",
+    "\\(7.5625\\)"
+   ],
+   "correct": 3,
+   "why": "E = (2 + 14)/2 = 8 and chi-square = (5.5^2 + 5.5^2)/8 = 7.5625. Without the Yates correction it would be 9.0; 6.635 is the 0.01 cutoff.",
+   "case": "s21-orig-strep-mcnemar",
+   "equations": [
+    "\\chi^2=\\frac{(|b-E|-\\frac12)^2}{E}+\\frac{(|c-E|-\\frac12)^2}{E}",
+    "\\chi^2=\\frac{5.5^2+5.5^2}{8}=7.5625"
+   ]
+  },
+  {
+   "id": "m2-s21-q026",
+   "module": 21,
+   "topic": "s21diagnostic",
+   "stem": "The original rapid strep McNemar chi-square is 7.5625 with 1 df. Which P range follows from the printed chi-square table?",
+   "options": [
+    "\\(P<0.005\\)",
+    "\\(0.005<P<0.01\\)",
+    "\\(0.01<P<0.05\\)",
+    "\\(P>0.05\\)"
+   ],
+   "correct": 1,
+   "why": "Row df = 1 gives 6.635 in the .010 column and 7.879 in the .005 column; 7.5625 lies between them, so 0.005 < P < 0.01.",
+   "case": "s21-orig-strep-mcnemar",
+   "equations": [
+    "\\chi^2_{0.01}(1)<\\chi^2<\\chi^2_{0.005}(1)",
+    "6.635<7.5625<7.879"
+   ]
+  },
+  {
+   "id": "m2-s21-q027",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "Why is repeated measures ANOVA preferred over one-way ANOVA when the same subjects receive every treatment?",
+   "options": [
+    "It removes the between-subjects variability from the error term, so treatment effects are judged against the residual within-subject scatter.",
+    "It uses more degrees of freedom in the denominator than one-way ANOVA.",
+    "It avoids the assumption that responses are Normally distributed.",
+    "It compares each subject with the grand mean instead of with its own mean."
+   ],
+   "correct": 0,
+   "why": "Subjects often differ much more from one another than treatments do. Repeated measures ANOVA sets that between-subjects variation aside, giving a smaller, more appropriate error term.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s21-q028",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "Which partition holds in repeated measures ANOVA?",
+   "options": [
+    "\\(SS_{bet\\,subjs}=SS_{treat}+SS_{res}\\)",
+    "\\(SS_{tot}=SS_{treat}+SS_{res}\\)",
+    "\\(SS_{res}=SS_{tot}-SS_{treat}\\)",
+    "\\(SS_{wit\\,subjs}=SS_{treat}+SS_{res}\\)"
+   ],
+   "correct": 3,
+   "why": "Total variation splits into between and within subjects; the within-subjects part splits into treatment and residual parts.",
+   "case": null,
+   "equations": [
+    "SS_{wit\\,subjs}=SS_{treat}+SS_{res}"
+   ]
+  },
+  {
+   "id": "m2-s21-q029",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "Why is the treatment sum of squares multiplied by n?",
+   "options": [
+    "Each subject mean involves n treatments.",
+    "Each treatment mean involves n subjects.",
+    "There are n - 1 degrees of freedom for treatments.",
+    "It converts the sum of squares into a mean square."
+   ],
+   "correct": 1,
+   "why": "SS_treat = n sum (T_t - X)^2 because each treatment mean averages n observations; the between-subjects sum of squares uses m for the same reason.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s21-q030",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "What are the numerator and denominator degrees of freedom of the repeated-measures F statistic?",
+   "options": [
+    "\\(m-1\\) and \\(n(m-1)\\)",
+    "\\(n-1\\) and \\((n-1)(m-1)\\)",
+    "\\(m-1\\) and \\((n-1)(m-1)\\)",
+    "\\(m-1\\) and \\(mn-1\\)"
+   ],
+   "correct": 2,
+   "why": "DF_treat = m - 1 and DF_res = (n - 1)(m - 1). n(m - 1) is DF_wit subjs and mn - 1 is DF_tot.",
+   "case": null,
+   "equations": [
+    "\\nu_n=m-1,\\quad \\nu_d=(n-1)(m-1)"
+   ]
+  },
+  {
+   "id": "m2-s21-q031",
+   "module": 21,
+   "topic": "s21rmAnova",
+   "stem": "What does the between-subjects sum of squares measure, and how is it used in the F test?",
+   "options": [
+    "How much the treatment means differ; it is the F numerator.",
+    "The residual scatter; it is the F denominator.",
+    "The total variation; it is divided by mn - 1 to give F.",
+    "How much the subjects' average levels differ; it is set aside and does not enter F."
+   ],
+   "correct": 3,
+   "why": "SS between subjects compares subject means with the grand mean. It is removed from consideration, and F uses only MS_treat and MS_res.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s21-q032",
+   "module": 21,
+   "topic": "s21holm",
+   "stem": "In the Holm procedure, how are the pairwise comparisons ordered and tested?",
+   "options": [
+    "From the largest |t| to the smallest; the jth is tested at alpha_T/(k - j + 1), stopping at the first non-significant one.",
+    "From the smallest |t| to the largest, each at alpha_T/k.",
+    "In any order, each at alpha_T.",
+    "From the largest |t| to the smallest, each at alpha_T/k."
+   ],
+   "correct": 0,
+   "why": "Holm starts with the largest |t| at the strictest level alpha_T/k and relaxes the level for each later comparison, ending at alpha_T.",
+   "case": null,
+   "equations": [
+    "\\alpha_j=\\frac{\\alpha_T}{k-j+1}"
+   ]
+  },
+  {
+   "id": "m2-s21-q033",
+   "module": 21,
+   "topic": "s21holm",
+   "stem": "Which degrees of freedom are used for the t table in Holm-corrected comparisons after repeated measures ANOVA?",
+   "options": [
+    "\\(n-1\\)",
+    "\\(DF_{res}=(n-1)(m-1)\\)",
+    "\\(2(n-1)\\)",
+    "\\(n(m-1)\\)"
+   ],
+   "correct": 1,
+   "why": "The standard error uses MS_res, so the t statistic carries the residual degrees of freedom (n - 1)(m - 1).",
+   "case": null,
+   "equations": [
+    "\\nu=DF_{res}=(n-1)(m-1)"
+   ]
+  },
+  {
+   "id": "m2-s21-q034",
+   "module": 21,
+   "topic": "s21holm",
+   "stem": "When should the Holm-corrected pairwise t tests be carried out in a repeated-measures analysis?",
+   "options": [
+    "Instead of the F test whenever there are three treatments.",
+    "Only when the F test does not reject, to look for hidden differences.",
+    "Before computing any sums of squares, to choose the treatments to analyze.",
+    "After the repeated-measures F test rejects equal means, to find which treatments differ."
+   ],
+   "correct": 3,
+   "why": "The overall F test says only that some means differ; the pairwise tests then isolate which pairs differ.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s21-q035",
+   "module": 21,
+   "topic": "s21mcnemar",
+   "stem": "Why is the ordinary contingency-table chi-square wrong for before-and-after classifications of the same subjects?",
+   "options": [
+    "The rows and columns describe the same subjects, so they are not independent samples.",
+    "The table has fewer than 5 subjects in a cell, so chi-square cannot be used.",
+    "A 2 x 2 table needs 2 degrees of freedom.",
+    "The Yates correction cannot be applied to before-and-after data."
+   ],
+   "correct": 0,
+   "why": "The contingency-table chi-square assumes independent classifications. A before-and-after design is paired, like the paired t test design.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s21-q036",
+   "module": 21,
+   "topic": "s21mcnemar",
+   "stem": "Which cells of the before-and-after 2 x 2 table enter the McNemar statistic?",
+   "options": [
+    "Only the unchanged cells \\(a\\) and \\(d\\)",
+    "Only the change cells \\(b\\) and \\(c\\)",
+    "All four cells, with expected counts from row and column totals",
+    "Cells \\(a\\) and \\(b\\), the subjects with Outcome 1 before"
+   ],
+   "correct": 1,
+   "why": "Subjects who keep the same outcome carry no information about a change. McNemar's test compares b and c with their common expected value (b + c)/2.",
+   "case": null,
+   "equations": [
+    "E=\\frac{b+c}{2}"
+   ]
+  },
+  {
+   "id": "m2-s21-q037",
+   "module": 21,
+   "topic": "s21mcnemar",
+   "stem": "Which statement is the McNemar null hypothesis?",
+   "options": [
+    "The before and after outcomes are independent of each other.",
+    "Half of all subjects have Outcome 1 after treatment.",
+    "The treatment has no effect: the probability of changing from Outcome 1 to Outcome 2 equals the probability of changing from Outcome 2 to Outcome 1.",
+    "No subject changes outcome after treatment."
+   ],
+   "correct": 2,
+   "why": "Under no treatment effect, changes are equally likely in both directions, so each change cell expects (b + c)/2 subjects.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s21-q038",
+   "module": 21,
+   "topic": "s21mcnemar",
+   "stem": "Why does the McNemar statistic subtract 1/2 from each \\(|b-E|\\) and \\(|c-E|\\), and how many degrees of freedom does it have?",
+   "options": [
+    "Yates correction for a 2 x 2 table; \\(\\nu=1\\)",
+    "Yates correction for a 2 x 2 table; \\(\\nu=2\\)",
+    "To remove the unchanged subjects; \\(\\nu=1\\)",
+    "To average the two change cells; \\(\\nu=n-1\\)"
+   ],
+   "correct": 0,
+   "why": "A 2 x 2 table uses the Yates continuity correction, and the McNemar statistic has 1 degree of freedom.",
+   "case": null,
+   "equations": [
+    "\\chi^2=\\frac{(|b-E|-\\frac12)^2}{E}+\\frac{(|c-E|-\\frac12)^2}{E},\\quad \\nu=1"
+   ]
+  },
+  {
+   "id": "m2-s21-q039",
+   "module": 21,
+   "topic": "s21mcnemar",
+   "stem": "Ordinal data are collected from the same individuals under several treatments. Which test does the summary table give?",
+   "options": [
+    "Repeated-measures ANOVA",
+    "Friedman statistic",
+    "McNemar's test",
+    "Kruskal-Wallis statistic"
+   ],
+   "correct": 1,
+   "why": "For ordinal data with multiple treatments in the same individuals, the summary table lists the Friedman statistic; Kruskal-Wallis is for different individuals.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s21-q040",
+   "module": 21,
+   "topic": "s21diagnostic",
+   "stem": "In the BP machine comparison, no subject has hypertension by the gold standard. What property of the two methods does McNemar's test compare?",
+   "options": [
+    "Sensitivity, the ability to correctly identify true positives",
+    "The prevalence of hypertension in the population",
+    "Specificity, the ability to correctly identify true negatives",
+    "The correlation between machine and person readings"
+   ],
+   "correct": 2,
+   "why": "Every positive call is a false positive, so differences in positive calls are differences in specificity.",
+   "case": null,
+   "equations": []
+  }
+ ],
+ "sourceNotes": [
+  {
+   "page": 10,
+   "text": "The slide writes F = 0.6050/2 over 0.0283/6 = 0.3025/0.0047 = 64.053. With those rounded numbers 0.3025/0.0047 = 64.36, and from the raw table MS_res = 0.02833/6 = 0.004722, giving F = 64.059. The printed 64.053 matches neither value exactly. The decision is unchanged: F far exceeds F_0.01(2,6) = 10.92, so P < 0.01. The worked case uses the raw-data value."
+  },
+  {
+   "page": 9,
+   "text": "Table 9-5 prints SS_tot = 2.6830 and the ANOVA table (page 10) prints SS between subjects = 2.0490. Recomputing from the printed raw data gives SS_tot = 2.6825 and SS between subjects = 2.0492; the grand mean and first treatment mean are 3.475, printed as 3.48. SS_wit subjs, SS_treat and SS_res agree with the slide. These totals do not enter F."
+  },
+  {
+   "page": 12,
+   "text": "The pairwise t values (-11.346, 5.776, -5.570) are reproduced exactly with the rounded inputs printed on the slide (means 3.48, 3.20, 3.75 and MS_res = 0.0047), and the worked case uses those inputs. From the unrounded data (means 3.475, 3.200, 3.750 and MS_res = 0.004722) the values are -11.319, 5.659 and -5.659, so the second and third comparisons actually tie. Every comparison remains significant under the Holm levels."
+  },
+  {
+   "page": 12,
+   "text": "The printed t table has no column for the Holm levels 0.0167 and 0.025. The worked cases use the stricter neighboring printed column (0.01 for 0.0167, 0.02 for 0.025), which gives a conservative cutoff; at 6 df these are 3.707 and 3.143 (exact SciPy values 3.287 and 2.969)."
+  },
+  {
+   "page": 14,
+   "text": "The slide writes the 0.05 chi-square cutoff for 1 df as 3.842; the printed chi-square table (Chi_Squared_Table2.pdf, row 1, column .050) gives 3.841, which page 17 also uses. The conclusion (2.165 < cutoff) is unaffected."
+  },
+  {
+   "page": 7,
+   "text": "Example 1 was recomputed by hand from the raw table: SS_wit subjs = 249.3333, SS_treat = 1.2, SS_res = 248.1333, SS between subjects = 3149.0667, SS_tot = 3398.4, MS_res = 31.0167, F = 0.01934 and P = 0.981. These agree with the output after its rounding (249.3, 1.2, 248.1, 3149, 3398, 31.02, 0.019, 0.981), as do the group means and standard deviations."
+  }
+ ]
+}

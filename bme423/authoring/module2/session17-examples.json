@@ -1,0 +1,280 @@
+{
+ "slide_plain": {
+  "page": 4,
+  "title": "Rearranging the t statement into a mean-difference interval",
+  "topic": "twoMeans",
+  "paragraphs": [
+   "For a population difference that can be nonzero, the numerator compares the observed difference with the true difference. Write \\(d=\\bar x_1-\\bar x_2\\), \\(\\Delta=\\mu_1-\\mu_2\\), and \\(SE=s_{\\bar x_1-\\bar x_2}\\). Then the standardized quantity is \\((d-\\Delta)/SE\\).",
+   "Multiply the central t inequality by the positive standard error. Subtract the observed difference from all three parts. Multiplying by minus one reverses both inequality directions, and writing the smaller endpoint on the left puts the population difference between the two bounds.",
+   "The resulting interval is centered on the observed difference. The critical value multiplied by the standard error is the margin of error. Adding and subtracting the same margin gives the upper and lower endpoints."
+  ],
+  "equations": [
+   "-t_c<\\frac{d-\\Delta}{SE}<t_c",
+   "-t_cSE<d-\\Delta<t_cSE",
+   "-t_cSE-d<-\\Delta<t_cSE-d",
+   "d-t_cSE<\\Delta<d+t_cSE"
+  ],
+  "symbols": "\\(d\\) (sample difference), \\(\\Delta\\) (population difference), \\(SE\\) (standard error), \\(t_c\\) (positive two-sided t cutoff).",
+  "case": null,
+  "subset": null,
+  "core": true
+ },
+ "slide_with_case": {
+  "page": 6,
+  "title": "Urine production with a diuretic versus placebo",
+  "topic": "twoMeans",
+  "paragraphs": [
+   "The diuretic group has a mean urine production of 1,400 mL/day and an SD of 245 mL/day. The placebo group has a mean of 1,180 mL/day and an SD of 144 mL/day. Each group has ten observations, and the requested direction is diuretic minus placebo.",
+   "The observed mean difference is 220 mL/day. Pooling the sample variances gives a common variance estimate, and dividing its contribution across the two group sizes gives the standard error of the difference. The degrees of freedom are 18.",
+   "The 95% interval is approximately 31 to 409 mL/day. Both endpoints are positive, so the compatible population differences favor greater urine production with the diuretic. The interval estimates the difference between population means in mL/day."
+  ],
+  "equations": [],
+  "symbols": "",
+  "case": "ci-urine",
+  "subset": null,
+  "core": true
+ },
+ "method": {
+  "id": "twoMeans",
+  "title": "Two independent means → pooled t interval",
+  "trigger": "Two independent groups have means, SDs, and sample sizes; estimate their population mean difference.",
+  "pages": [
+   2,
+   4,
+   5,
+   6,
+   17
+  ],
+  "formula": [
+   "s^2=\\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}",
+   "s_d=\\sqrt{\\frac{s^2}{n_1}+\\frac{s^2}{n_2}},\\quad \\nu=n_1+n_2-2",
+   "(\\bar x_1-\\bar x_2)\\pm t_\\alpha(\\nu)s_d"
+  ],
+  "example": "ci-urine",
+  "shortcut": "For equal group sizes, \\(s^2=(s_1^2+s_2^2)/2\\) and \\(s_d=\\sqrt{(s_1^2+s_2^2)/n}\\). This shortens the same pooled calculation.",
+  "paragraphs": [
+   "The null hypothesis \\(H_0:\\mu_1=\\mu_2\\) states that the two population means are equal. The alternative \\(H_A:\\mu_1\\ne\\mu_2\\) states that they differ. The sample difference \\(\\bar x_1-\\bar x_2\\) estimates the population difference \\(\\mu_1-\\mu_2\\).",
+   "The pooled two-sample method assumes independent observations from Normal populations with a common variance. The pooled variance \\(s^2\\) combines the two sample variances, weighting each by its sample degrees of freedom. Squaring each SD produces the variance needed in that calculation.",
+   "The standard error describes the variability of the difference between sample means. Dividing the observed difference by this standard error gives the test statistic under a zero-difference null. The degrees of freedom are \\(\\nu=n_1+n_2-2\\), and a two-sided test compares the magnitude of the statistic with the positive course-table cutoff."
+  ],
+  "symbols": "\\(\\bar x_i\\) (group sample mean), \\(s_i\\) (group sample SD), \\(n_i\\) (group sample size), \\(s^2\\) (pooled variance), \\(\\nu\\) (degrees of freedom)."
+ },
+ "case": {
+  "id": "ci-urine",
+  "title": "Diuretic versus placebo urine production",
+  "topic": "twoMeans",
+  "context": "A study compares daily urine production with a diuretic and a placebo. Assume independent Normal responses with a common population variance.",
+  "unit": "mL/day",
+  "table": {
+   "headers": [
+    "Group",
+    "Sample size",
+    "Mean",
+    "SD"
+   ],
+   "rows": [
+    [
+     "diuretic",
+     10,
+     1400,
+     245
+    ],
+    [
+     "placebo",
+     10,
+     1180,
+     144
+    ]
+   ]
+  },
+  "tasks": [
+   "Construct the 95% confidence interval for the population difference, diuretic minus placebo. Show both variance contributions, the pooled variance, SE, df, critical value, margin, and both bounds.",
+   "Using the interval alone, decide whether the means differ at the matching two-sided 0.05 level. State both hypotheses in symbols and words, and conclude in context."
+  ],
+  "hypotheses": {
+   "null": "H_0:\\mu_1-\\mu_2=0",
+   "alternative": "H_A:\\mu_1-\\mu_2\\ne0",
+   "nullWords": "The diuretic and placebo populations have equal means.",
+   "alternativeWords": "The diuretic and placebo population means differ."
+  },
+  "symbols": "\\(\\bar x_i\\) (group sample mean), \\(s_i\\) (group sample SD), \\(n_i\\) (group sample size), \\(s^2\\) (pooled variance), \\(s_d\\) (SE of the difference), \\(d\\) (sample difference), \\(\\Delta\\) (population difference).",
+  "steps": [
+   {
+    "title": "Define the contrast and hypotheses",
+    "general": [
+     "\\Delta=\\mu_1-\\mu_2"
+    ],
+    "work": [
+     "\\Delta=\\mu_{\\mathrm{diuretic}}-\\mu_{\\mathrm{placebo}}"
+    ],
+    "words": "Keep the direction diuretic minus placebo throughout. The null means equal population means; the two-sided alternative means different population means."
+   },
+   {
+    "title": "Calculate the observed difference",
+    "general": [
+     "d=\\bar x_1-\\bar x_2"
+    ],
+    "work": [
+     "d=1400-1180=220"
+    ],
+    "words": "This is the sample estimate of the population difference in mL/day."
+   },
+   {
+    "title": "Square both group SDs",
+    "general": [
+     "v_1=s_1^2",
+     "v_2=s_2^2"
+    ],
+    "work": [
+     "v_1=245^2=60025",
+     "v_2=144^2=20736"
+    ],
+    "words": "Each SD is squared before pooling, giving variances in squared measurement units."
+   },
+   {
+    "title": "Pool both variance contributions",
+    "general": [
+     "s^2=\\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}"
+    ],
+    "work": [
+     "(n_1-1)s_1^2=(10-1)(60025)=540225",
+     "(n_2-1)s_2^2=(10-1)(20736)=186624",
+     "s^2=\\frac{540225+186624}{10+10-2}=\\frac{726849}{18}=40380.5"
+    ],
+    "words": "Weight each group variance by its own degrees of freedom, add the contributions, and divide by the combined degrees of freedom."
+   },
+   {
+    "title": "Calculate the SE of the difference",
+    "general": [
+     "s_d=\\sqrt{\\frac{s^2}{n_1}+\\frac{s^2}{n_2}}"
+    ],
+    "work": [
+     "s_d=\\sqrt{\\frac{40380.5}{10}+\\frac{40380.5}{10}}=\\sqrt{8076.1}=89.86712"
+    ],
+    "words": "Add the two mean-variance contributions inside the root, then take the root. This restores the original measurement units."
+   },
+   {
+    "title": "Find degrees of freedom and the t cutoff",
+    "general": [
+     "\\nu=n_1+n_2-2",
+     "t_c=t_\\alpha(\\nu)"
+    ],
+    "work": [
+     "\\nu=10+10-2=18",
+     "\\alpha=1-0.95=0.05",
+     "t_{0.05}(18)=2.101"
+    ],
+    "words": "Open t_table.pdf, PDF page 1. Use row 18 and the combined two-tail 0.05 column. The printed cutoff is 2.101. Do not halve the column probability again.",
+    "tableLookup": {
+     "path": "sources/tables/t_table.pdf",
+     "page": 1,
+     "row": "18",
+     "column": "0.05",
+     "value": 2.101,
+     "actualDf": 18,
+     "approximation": false
+    }
+   },
+   {
+    "title": "Calculate the margin",
+    "general": [
+     "M=t_c s_d"
+    ],
+    "work": [
+     "M=2.101(89.86712)=188.8108"
+    ],
+    "words": "Multiply the positive cutoff by the standard error of the difference."
+   },
+   {
+    "title": "Calculate both bounds",
+    "general": [
+     "L=d-M",
+     "U=d+M"
+    ],
+    "work": [
+     "L=220-188.8108=31.18917",
+     "U=220+188.8108=408.8108"
+    ],
+    "words": "The bounds retain the diuretic minus placebo subtraction order."
+   },
+   {
+    "title": "Make the decision using the interval",
+    "general": [
+     "0\\notin[L,U]\\Rightarrow\\text{reject }H_0"
+    ],
+    "work": [
+     "[31.18917,408.8108]"
+    ],
+    "words": "Zero is outside the interval. Reject the equal-means null at the matching two-sided 0.05 level; no separate t statistic is required."
+   }
+  ],
+  "conclusion": "The 95% CI for diuretic minus placebo is 31.18917 to 408.8108 mL/day. The population means differ, with diuretic higher.",
+  "source": 6,
+  "lookup": {
+   "path": "sources/tables/t_table.pdf",
+   "page": 1,
+   "row": "18",
+   "column": "0.05",
+   "value": 2.101,
+   "actualDf": 18,
+   "approximation": false
+  },
+  "values": {
+   "n1": 10,
+   "n2": 10,
+   "x1": 1400,
+   "x2": 1180,
+   "s1": 245,
+   "s2": 144,
+   "confidence": 0.95,
+   "df": 18,
+   "variance": 40380.5,
+   "se": 89.86712413335592,
+   "critical": 2.101,
+   "difference": 220,
+   "margin": 188.81082780418078,
+   "lower": 31.189172195819225,
+   "upper": 408.8108278041808,
+   "reject": true
+  },
+  "module": 17,
+  "tolerance": 0.04543356206667796,
+  "answerName": "Lower endpoint",
+  "answer": 31.189172195819225
+ },
+ "question_numeric": {
+  "id": "m2-s17-q001",
+  "module": 17,
+  "topic": "oneMean",
+  "stem": "For the bme423 student heart rate study, construct the requested 95% interval using the stated course method. What is its lower endpoint?",
+  "options": [
+   "\\(60.56224\\) beats/min",
+   "\\(64.42489\\) beats/min",
+   "\\(56.69958\\) beats/min",
+   "\\(68.28755\\) beats/min"
+  ],
+  "correct": 0,
+  "why": "The lower endpoint is 60.56224 beats/min. Subtract the margin from the sample mean.",
+  "case": "ci-heart",
+  "equations": [
+   "L=\\bar x-M",
+   "L=67-6.437765=60.56224"
+  ]
+ },
+ "question_concept": {
+  "id": "m2-s17-q067",
+  "module": 17,
+  "topic": "meaning",
+  "stem": "A procedure is used to construct a 95% interval from each of many new samples of the same populations. Which description gives its confidence meaning?",
+  "options": [
+   "About 95% of these intervals contain the same true population quantity.",
+   "About 95% of individual observations must lie in every calculated interval.",
+   "The true population mean changes to match the center of each new interval.",
+   "Every particular interval is guaranteed to contain the parameter."
+  ],
+  "correct": 0,
+  "why": "The population quantity is fixed, while random samples produce different intervals. Confidence describes repeated coverage of that procedure.",
+  "case": null,
+  "equations": []
+ }
+}

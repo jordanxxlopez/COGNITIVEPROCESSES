@@ -12,6 +12,7 @@ function psMd(t){return esc(t).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')}
 function psBold(t){const m=String(t).match(/\*\*(.+?)\*\*/);return m?m[1]:String(t).split(/(?<=\.)\s/)[0]}
 function psIsE(v=state.scriptVersion){return String(v).startsWith('E')}
 function psTypeId(lid,i){return lid+'-'+i}
+function psHasCollection(lid){return DATA.modules.some(m=>m.id===lid)||(typeof M2!=='undefined'&&M2.modules.some(m=>m.id===lid))}
 function psTier(l){return `<span class="ps-tier ps-tier-${esc(l.tier)}">${esc(PS.tiers[l.tier])}</span>`}
 function psRef(lid,pages){return `<span class="ps-ref">Session ${lid} · ${pages.map(p=>'p'+p).join(' · ')}</span>`}
 
@@ -19,18 +20,19 @@ function psRef(lid,pages){return `<span class="ps-ref">Session ${lid} · ${pages
 function psBlock(lid,b,mode){
  if(mode==='EB')return `<li>${psRef(lid,b.pages)} <strong>${esc(psBold(b.main))}</strong></li>`;
  const sub=(b.sub||[]).map(s=>`<li>${psMd(s)}</li>`).join('');
- return `<div class="ps-block"><div class="ps-text">${psRef(lid,b.pages)}<ul><li class="ps-main">${psMd(b.main)}${sub?`<ul>${sub}</ul>`:''}</li>${b.end?`<li>${psMd(b.end)}</li>`:''}</ul></div><figure class="ps-fig"><img class="sourcepic" loading="lazy" data-zoom src="${image(lid,b.pages[0])}" alt="Original Session ${lid}, PDF page ${b.pages[0]}"><figcaption class="caption">Session ${lid} · PDF page ${b.pages[0]} · click to enlarge</figcaption><div class="row ps-pages">${b.pages.map(p=>`<button class="tiny" data-open-slide="${lid}:${p}">Page ${p}</button>`).join('')}</div></figure></div>`}
+ return `<div class="ps-block"><div class="ps-text">${psRef(lid,b.pages)}<ul><li class="ps-main">${psMd(b.main)}${sub?`<ul>${sub}</ul>`:''}</li>${b.end?`<li>${psMd(b.end)}</li>`:''}</ul></div><figure class="ps-fig"><img class="sourcepic" loading="lazy" data-zoom src="${image(lid,b.pages[0])}" alt="Original Session ${lid}, PDF page ${b.pages[0]}"><figcaption class="caption">Session ${lid} · PDF page ${b.pages[0]} · click to enlarge</figcaption><div class="row ps-pages">${b.pages.map(p=>psHasCollection(lid)?`<button class="tiny" data-open-slide="${lid}:${p}">Page ${p}</button>`:`<button class="tiny" data-ps-zoom="${lid}:${p}">Page ${p}</button>`).join('')}</div></figure></div>`}
 function psQuestions(l,open=false){return `<section class="ps-ask"><h2>What you can be asked</h2>${l.questions.map(q=>`<details class="ps-q" ${open?'open':''}><summary>${esc(q.q)}</summary><p>${psMd(q.a)}</p></details>`).join('')}</section>`}
 function psLecture(lid,mode=state.scriptVersion,controls=''){
  const l=PS_LEC.get(lid);if(!psIsE(mode))mode='E';
  const topics=l.topics.map((t,i)=>`<details class="ps-topic" open><summary><span>${esc(t.title)}</span></summary><h3 class="ps-can">I can explain and apply these ideas</h3>${mode==='EB'?`<ul class="ps-fast">${t.blocks.map(b=>psBlock(lid,b,mode)).join('')}</ul>`:t.blocks.map(b=>psBlock(lid,b,mode)).join('')}</details>`).join('');
  const memoCount=l.memorize.length,known=l.memorize.filter((m,i)=>state.plain.known[psTypeId(lid,i)]).length;
- return `<span class="tag">VERSION E · SESSION ${lid}</span> ${psTier(l)}<h1>${esc(l.title)}</h1><p class="ps-lead">${psMd(l.lead)}</p>${controls}<div class="row no-print"><button data-ps-expand="1">Expand topics</button><button data-ps-expand="0">Collapse topics</button>${memoCount?`<button class="primary" data-ps-memo-go="${lid}">Order to memorize · ${known} of ${memoCount} learned</button>`:''}<button data-open-slide="${lid}:${l.topics[0].blocks[0].pages[0]}">Open the original slides</button></div>${mode==='EQ'?psQuestions(l)+topics:topics+psQuestions(l)}${note('plain:'+lid,'My notes for this session')}`}
+ return `<span class="tag">VERSION E · SESSION ${lid}</span> ${psTier(l)}<h1>${esc(l.title)}</h1><p class="ps-lead">${psMd(l.lead)}</p>${controls}<div class="row no-print"><button data-ps-expand="1">Expand topics</button><button data-ps-expand="0">Collapse topics</button>${memoCount?`<button class="primary" data-ps-memo-go="${lid}">Order to memorize · ${known} of ${memoCount} learned</button>`:''}${psHasCollection(lid)?`<button data-open-slide="${lid}:${l.topics[0].blocks[0].pages[0]}">Open the original slides</button>`:`<a class="button-link" href="sources/session${lid}.pdf" target="_blank" rel="noopener">Original PDF</a>`}</div>${mode==='EQ'?psQuestions(l)+topics:topics+psQuestions(l)}${note('plain:'+lid,'My notes for this session')}`}
 
 // ---------- Order to memorize ----------
 function psStep(st,mode,n){
- if(mode==='list')return `<li><strong>${psMd(st.do)}</strong></li>`;
- return `<li><strong>${psMd(st.do)}</strong> <span class="ps-why">${psMd(st.why)}</span>${mode==='formula'&&st.tex?displayMath(st.tex):''}</li>`}
+ const tab=st.table?`<span class="ps-table">${psMd(st.table)}${st.tablePath?` <a href="${st.tablePath.includes('#')?st.tablePath:st.tablePath+'#page=1'}" target="_blank" rel="noopener">Open the class table</a>`:''}</span>`:'';
+ if(mode==='list')return `<li><strong>${psMd(st.do)}</strong>${tab}</li>`;
+ return `<li><strong>${psMd(st.do)}</strong> <span class="ps-why">${psMd(st.why)}</span>${tab}${mode==='formula'&&st.tex?displayMath(st.tex):''}</li>`}
 function psType(lid,m,i,mode){
  const id=psTypeId(lid,i),shown=mode==='drill'?Math.min(state.plain.drill[id]||0,m.steps.length):m.steps.length;
  const steps=m.steps.slice(0,shown).map((s,k)=>psStep(s,mode==='drill'?'words':mode,k)).join('');
@@ -78,6 +80,7 @@ document.addEventListener('change',e=>{const x=e.target;
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const d=b.dataset;
  if(d.psLecture){const lid=Number(d.psLecture);state.plain[lid>=17?'m2lecture':'lecture']=lid;save();render();window.scrollTo(0,0)}
  if(d.psNext){state.plain.drill[d.psNext]=(state.plain.drill[d.psNext]||0)+1;save();render();document.querySelector(`[data-ps-next="${d.psNext}"],[data-ps-reset="${d.psNext}"]`)?.focus()}
+ if(d.psZoom){const[lid,p]=d.psZoom.split(':');modalImage({src:image(lid,p),alt:`Original Session ${lid}, PDF page ${p}`,focus:()=>b.focus()})}
  if(d.psReset){state.plain.drill[d.psReset]=0;save();render()}
  if(d.psExpand!==undefined)document.querySelectorAll('details.ps-topic').forEach(el=>el.open=d.psExpand==='1');
  if(d.psMemoGo){const lid=Number(d.psMemoGo);state.plain[lid>=17?'m2lecture':'lecture']=lid;save();go(lid>=17?'m2memorize':'memorize')}

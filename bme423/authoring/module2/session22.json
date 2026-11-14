@@ -1,0 +1,2821 @@
+{
+ "module": {
+  "id": 22,
+  "title": "Machine learning: clustering and classification",
+  "date": "2026-11-09",
+  "count": 42,
+  "pdf": "sources/session22.pdf",
+  "pptx": null,
+  "slides": [
+   {
+    "page": 1,
+    "title": "Session 22 outline: machine learning, clustering and k-means",
+    "topic": "s22idea",
+    "paragraphs": [
+     "Session 22 introduces machine learning (ML) and two of its basic problems: clustering and classification. The first part defines ML, lists applications, and sorts learning algorithms by task and by type of learning.",
+     "The second part states the clustering problem and the classification problem side by side. Each problem has a given data set, a question, an approach and a purpose, and each comes with an illustration.",
+     "The third part develops k-means clustering in order: notation, distance measures, a one-dimensional example with ages, and then the general algorithm. The worked examples are built so the algorithm can be done by hand on an exam."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   },
+   {
+    "page": 2,
+    "title": "Outline continued: k-means in R, number of clusters and K-NN",
+    "topic": "s22idea",
+    "paragraphs": [
+     "The outline continues k-means with a two-dimensional medicine example, the kmeans() function in R, how to choose the number of clusters, and the limitations of k-means.",
+     "Part IV covers K-nearest neighbors (K-NN) classification: the classification problem, illustrations, choosing the number \\(K\\), data scaling, and a surgical mesh quality-control example.",
+     "The references are Lantz, Machine Learning with R (4th edition, 2023) and James, Witten, Hastie and Tibshirani, An Introduction to Statistical Learning with Applications in R (2nd edition, 2023)."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   },
+   {
+    "page": 3,
+    "title": "Definition of machine learning and some applications",
+    "topic": "s22idea",
+    "paragraphs": [
+     "Machine learning is a set of methods for automatically detecting patterns in data. The uncovered patterns are then used in decision making, to predict future outcomes and to plan further data collection. The definition is quoted from K.P. Murphy, Machine Learning (2012).",
+     "The key word is automatically. The method finds the pattern from the data itself, rather than a person writing the rule by hand. The pattern is useful because it carries over to new data.",
+     "The listed applications are spam detection in email, segmenting customer behavior for targeted advertising, detecting fraudulent credit card transactions, optimizing energy use in buildings, finding genetic sequences linked to disease, and algorithms for self-driving cars and autopiloting drones."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 4,
+    "title": "Types of learning tasks and types of learning",
+    "topic": "s22idea",
+    "paragraphs": [
+     "ML tasks come in five types. Classification assigns an object to a predefined group or class. Numeric prediction determines an output value from input data. Pattern discovery identifies occurrences that appear repeatedly. Clustering identifies groups within a data set. Generation creates new data samples.",
+     "ML learning comes in three types. Supervised learning learns from past data with known results. Unsupervised learning learns from past data without results. Reinforcement learning learns from past data with feedback.",
+     "The difference between supervised and unsupervised is whether the answer is known for the training data. Classification has known class labels, so it is supervised. Clustering has no labels, so it is unsupervised."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 5,
+    "title": "ML methods sorted by algorithm type and learning task",
+    "topic": "s22idea",
+    "paragraphs": [
+     "The table from Lantz sorts ML methods into supervised, unsupervised and meta-learning algorithms. K-nearest neighbors, naive Bayes, decision trees and classification rule learners are supervised classification methods. Linear regression, regression trees and model trees are supervised numeric prediction methods.",
+     "Neural networks and support vector machines are marked dual use, so they can do classification or numeric prediction. Association rules (pattern detection) and k-means clustering are the unsupervised methods. Bagging, boosting and random forests are meta-learning methods.",
+     "The circled rows mark what the course uses: k-nearest neighbors and k-means clustering in this session, neural networks, and linear regression (circled in green). So k-means is unsupervised clustering, and K-NN is supervised classification."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 6,
+    "title": "The clustering problem",
+    "topic": "s22idea",
+    "paragraphs": [
+     "In the clustering problem, each element of the data set (the training data) has a vector of features, also called attributes. The question is how to group the training data into several cohesive clusters.",
+     "The approach groups data within a cluster by their similarity, and the clusters are defined by their dissimilarity from each other. The purpose is to uncover previously undetected relations in a set of data. No class labels are given, so this is unsupervised.",
+     "The examples are segmenting customers into groups with similar buying patterns, compressing images by grouping similar features into fewer homogeneous categories (the slide cites principal component analysis), and detecting anomalous network intrusions that fall outside known clusters."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 7,
+    "title": "Clustering illustration: SAT scores in feature space",
+    "topic": "s22idea",
+    "paragraphs": [
+     "Each applicant is one point in a feature space plot. The horizontal axis is the SAT math score and the vertical axis is the SAT reading/writing score, so each point is a two-feature vector.",
+     "No groups are marked. The slide asks whether clusters can be seen by eye. Points that sit close together have similar score pairs, and that closeness is what clustering uses.",
+     "Clustering asks the same question in a formal way. A clustering algorithm groups the points from the feature values alone, without being told any group names."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 8,
+    "title": "Three SAT clusters identified",
+    "topic": "s22idea",
+    "paragraphs": [
+     "Dashed boxes now mark three groups. One large group has lower math scores and a wide range of reading/writing scores. One small group has high math and high reading/writing scores. One group has high math and low reading/writing scores.",
+     "Inside each box the points are close to each other, so they are similar. Between boxes there are gaps, so the groups are dissimilar. This matches the clustering approach: similar within, dissimilar between.",
+     "The three groups come only from the two score features. Nothing about the applicants other than the scores has been used yet."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 9,
+    "title": "Naming the SAT clusters with other information",
+    "topic": "s22idea",
+    "paragraphs": [
+     "Each cluster is now given a class name, here the accepted major: Humanities for the low-math group, BME for the high-math and high-reading/writing group, and Math for the high-math and low-reading/writing group.",
+     "The names come from linking the clusters to other information collected about the applicants, such as country, US state, size of high school or accepted major. Clustering found the groups, and the outside information explains them.",
+     "Once each group has a class name, the data set has labels. Labeled data are exactly what the classification problem starts from."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 10,
+    "title": "The classification problem",
+    "topic": "s22idea",
+    "paragraphs": [
+     "In the classification problem, each element of the data set has a feature vector and a known group or class. The question is what rule can assign a new object to one of those groups.",
+     "The approach assigns the new object to the class of the object or objects it is most similar to. The purpose is to assign an object to one of a set of predefined groups. Because the classes are known in advance, classification is supervised.",
+     "The examples are detecting spam email (spam versus ham), optical character recognition such as reading zip codes, detecting faces in images, predicting music preferences, and assigning a phenotype given a genotype."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 11,
+    "title": "Four main types of classification algorithms",
+    "topic": "s22idea",
+    "paragraphs": [
+     "Classification algorithms fall into four groups. Frequency-table methods are ZeroR, OneR, naive Bayesian and decision trees. Covariance-matrix methods are discriminant analysis and logistic regression. Similarity-function methods include K-nearest neighbors. Other methods include neural networks and support vector machines.",
+     "The circles mark where each method is taught: decision trees and K-NN in BME 210, and logistic regression and neural networks in BME 423.",
+     "K-NN belongs to the similarity-function group. It classifies by measuring how similar a new object is to the labeled objects, and the similarity is measured with a distance."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   },
+   {
+    "page": 12,
+    "title": "Classification illustration: food features and food type",
+    "topic": "s22idea",
+    "paragraphs": [
+     "The table lists ingredients with two attributes, or features: sweetness and crunchiness. The last column is the class, food type. Apple is (10, 9) and a fruit, bacon is (1, 4) and a protein, banana is (10, 1) and a fruit, carrot is (7, 10) and a vegetable, celery is (3, 10) and a vegetable, and cheese is (1, 1) and a protein.",
+     "The plot places each food by sweetness (horizontal) and crunchiness (vertical). Vegetables sit at high crunchiness, fruits at high sweetness, and proteins at low sweetness and lower crunchiness.",
+     "The caption states the main idea: foods of the same class tend to have similar attributes. So foods with the same label sit near each other in feature space, and closeness can be used to guess a class."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 13,
+    "title": "How is a tomato classified?",
+    "topic": "s22idea",
+    "paragraphs": [
+     "A tomato is a new object with no label. It sits between the groups on the sweetness and crunchiness plot. Dotted lines join it to nearby foods: green bean, nuts, grape and orange.",
+     "The caption says the tomato's nearest neighbors give insight into whether it is a fruit or a vegetable. The classes of the closest labeled foods suggest the class of the tomato.",
+     "This is the classification approach from page 10: assign the new object to the class of the objects it is most similar to. The K-NN section later measures these distances and counts the classes."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 14,
+    "title": "k-means notation",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "The vector \\(x\\) holds the features of one entry and has dimension \\(D\\). The entries are \\(x_i\\) for \\(i=1,\\dots,n\\). Stacking all entries as rows gives the feature matrix \\(X\\) with dimension \\(n\\times D\\).",
+     "The number of clusters is \\(k\\). Each entry gets a cluster label \\(y_i\\), which is one of \\(1,\\dots,k\\).",
+     "Each cluster has a centroid \\(c_j\\), \\(j=1,\\dots,k\\), which also has dimension \\(D\\). Stacking the centroids as rows gives the centroid matrix \\(C\\) with dimension \\(k\\times D\\)."
+    ],
+    "equations": [
+     "x_i,\\ i=1,\\dots,n\\ (\\dim D)",
+     "X\\ (\\dim\\ n\\times D)",
+     "y_i\\in\\{1,\\dots,k\\},\\ i=1,\\dots,n",
+     "c_j,\\ j=1,\\dots,k\\ (\\dim D)",
+     "C\\ (\\dim\\ k\\times D)"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(n\\) (number of entries), \\(D\\) (number of features), \\(X\\) (feature matrix), \\(k\\) (number of clusters), \\(y_i\\) (cluster label), \\(c_j\\) (centroid of cluster \\(j\\)), \\(C\\) (centroid matrix).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 15,
+    "title": "Euclidean distance between two points",
+    "topic": "s22distance",
+    "paragraphs": [
+     "Similarity or dissimilarity is measured with a distance. For two points in two dimensions, \\(q=[q_1\\ q_2]\\) and \\(r=[r_1\\ r_2]\\), the Euclidean distance subtracts the matching coordinates, squares each difference, adds the squares and takes the square root.",
+     "The distance has the same units as \\(q\\) and \\(r\\). This is why features measured on very different scales can cause trouble, which the scaling page returns to.",
+     "A small \\(d(q,r)\\) means the points are close, or similar. A large \\(d(q,r)\\) means they are far apart, or dissimilar."
+    ],
+    "equations": [
+     "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}"
+    ],
+    "symbols": "\\(q,r\\) (two points), \\(q_1,q_2\\) and \\(r_1,r_2\\) (their coordinates), \\(d(q,r)\\) (Euclidean distance).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 16,
+    "title": "Euclidean, Manhattan and Minkowski distances in m dimensions",
+    "topic": "s22distance",
+    "paragraphs": [
+     "For two points with \\(m\\) coordinates, the Euclidean distance is the square root of the sum of squared coordinate differences. It is the \\(\\ell_2\\) norm of \\(q-r\\), written \\(\\lVert q-r\\rVert_2\\).",
+     "The Manhattan distance adds the absolute coordinate differences, so it is the \\(\\ell_1\\) norm \\(\\lVert q-r\\rVert_1\\). The Minkowski distance raises each absolute difference to the power \\(p\\), adds them and takes the \\(1/p\\) power, so it is the \\(\\ell_p\\) norm. Setting \\(p=1\\) gives Manhattan and \\(p=2\\) gives Euclidean.",
+     "A norm is a function that gives a length or size to each vector. A distance between two points is the norm of their difference vector. For the points (1, 1) and (5, 4), the differences are 4 and 3, so Euclidean gives 5 and Manhattan gives 7."
+    ],
+    "equations": [
+     "d(q,r)=\\sqrt{\\sum_{i=1}^{m}(q_i-r_i)^2}=\\lVert q-r\\rVert_2",
+     "d(q,r)=\\sum_{i=1}^{m}|q_i-r_i|=\\lVert q-r\\rVert_1",
+     "d(q,r)=\\left(\\sum_{i=1}^{m}|q_i-r_i|^p\\right)^{1/p}=\\lVert q-r\\rVert_p"
+    ],
+    "symbols": "\\(q,r\\) (two points or feature vectors), \\(q_i,r_i\\) (their \\(i\\)th coordinates), \\(m\\) (number of dimensions), \\(p\\) (Minkowski order), \\(d(q,r)\\) (distance).",
+    "case": "s22-medicine-distance",
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 17,
+    "title": "Ages example, iteration 1",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "Ten ages are 20, 21, 22, 28, 35, 40, 41, 42, 43 and 44, and \\(k=2\\). The initial centroids are \\(c_1=21\\) and \\(c_2=30\\). In one dimension the Euclidean distance is the absolute difference \\(|x_i-c_j|\\).",
+     "Each age goes to the nearer centroid. Ages 20, 21 and 22 are closer to 21, so they are cluster 1. Age 28 is 7 from 21 and 2 from 30, so it joins cluster 2, along with 35 through 44.",
+     "Each new centroid is the mean of its cluster. Cluster 1 has mean \\((20+21+22)/3=21\\). Cluster 2 has mean \\(273/7=39\\). So iteration 1 moves the centroids from 21 and 30 to 21 and 39."
+    ],
+    "equations": [
+     "d_{ij}=|x_i-c_j|",
+     "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+    "case": "s22-ages-kmeans",
+    "subset": [
+     0,
+     4
+    ],
+    "core": true
+   },
+   {
+    "page": 18,
+    "title": "Ages example, iteration 2",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "Iteration 2 starts from the iteration 1 centroids, \\(c_1=21\\) and \\(c_2=39\\). Every distance is recomputed with these new centroids.",
+     "Age 28 is now 7 from 21 and 11 from 39, so it moves to cluster 1. All other ages keep their labels. Cluster 1 is 20, 21, 22, 28 and cluster 2 is 35, 40, 41, 42, 43, 44.",
+     "The new centroids are \\(91/4=22.75\\) and \\(245/6=40.83333\\). The number line marks the two groups and their centroids."
+    ],
+    "equations": [
+     "d_{ij}=|x_i-c_j|",
+     "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+    "case": "s22-ages-kmeans",
+    "subset": [
+     4,
+     6
+    ],
+    "core": true
+   },
+   {
+    "page": 19,
+    "title": "Ages example, iteration 3 and convergence",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "Iteration 3 uses \\(c_1=22.75\\) and \\(c_2=40.83333\\). For example, age 28 is 5.25 from \\(c_1\\) and 12.83333 from \\(c_2\\), and age 35 is 12.25 from \\(c_1\\) and 5.83333 from \\(c_2\\).",
+     "No age changes cluster, so the centroids stay at 22.75 and 40.83333. The algorithm stops when the cluster assignments do not change.",
+     "The two clusters can then be given names, such as young (centroid 22.75) and old (centroid 40.83333). The names are chosen after clustering; the algorithm itself only produces the labels 1 and 2."
+    ],
+    "equations": [
+     "d_{ij}=|x_i-c_j|",
+     "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+    "case": "s22-ages-kmeans",
+    "subset": [
+     6,
+     8
+    ],
+    "core": true
+   },
+   {
+    "page": 20,
+    "title": "The k-means algorithm",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "k-means assigns each of the \\(n\\) entries to one of \\(k\\) clusters, and \\(k\\) is chosen in advance (a priori). The goal is small differences within each cluster and large differences between clusters.",
+     "Step 1 picks \\(k\\) initial centroids (the slide says \\(k\\) points chosen at random from the data). Step 2 assigns each entry to its nearest centroid using the Euclidean distance; \\(\\arg\\min_j\\) returns the index \\(j\\) of the smallest distance, not the distance itself.",
+     "Step 3 recomputes each centroid as the mean of the entries in that cluster, where \\(n_j\\) is the number of entries with label \\(j\\). Step 4 repeats steps 2 and 3 until no cluster assignment changes."
+    ],
+    "equations": [
+     "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k",
+     "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 21,
+    "title": "Linking the formula to the ages table",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "The page connects the assignment formula to the iteration 1 table. The red box \\(\\lVert x_i-c_j\\rVert_2\\) produces the two distance columns, distance to \\(c_1\\) and distance to \\(c_2\\).",
+     "The blue box \\(\\arg\\min_j\\) produces the nearest-cluster column. For each row it picks which centroid gives the smaller distance, and writes that centroid's number as the label \\(y_i\\).",
+     "For age 28, the distances are 7 and 2. The smaller one belongs to \\(c_2\\), so \\(y_i=2\\). Reading a k-means table means doing these two operations on every row."
+    ],
+    "equations": [
+     "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+    "case": "s22-ages-kmeans",
+    "subset": [
+     1,
+     3
+    ],
+    "core": true
+   },
+   {
+    "page": 22,
+    "title": "Two-dimensional example: medicine MW and pH",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "Drugs can sometimes be grouped by their physicochemical properties. Four medicines have two features, molecular weight (MW) and pH, on arbitrary scales.",
+     "Medicine 1 is (1, 1), medicine 2 is (2, 1), medicine 3 is (4, 3) and medicine 4 is (5, 4). The table is the feature matrix \\(X\\), with \\(n=4\\) rows and \\(D=2\\) columns.",
+     "The scatter plot shows two low points near (1, 1) and (2, 1) and two high points near (4, 3) and (5, 4). k-means with \\(k=2\\) should find these two groups."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": "s22-medicines-kmeans",
+    "subset": [
+     0,
+     1
+    ],
+    "core": true
+   },
+   {
+    "page": 23,
+    "title": "Medicines iteration 1: distances and assignments",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "The initial centroids are \\(c_1=(1,1)\\) and \\(c_2=(2,1)\\), which are medicines 1 and 2. Each distance \\(d_{ij}\\) is the two-dimensional Euclidean distance from medicine \\(i\\) to centroid \\(j\\).",
+     "For medicine 1, \\(d_{11}=\\sqrt{(1-1)^2+(1-1)^2}=0\\) and \\(d_{12}=\\sqrt{(1-2)^2+(1-1)^2}=1\\), so \\(y_1=1\\). Medicine 3 has distances 3.61 and 2.83, and medicine 4 has 5 and 4.24.",
+     "Only medicine 1 is closer to \\(c_1\\). Medicines 2, 3 and 4 are closer to \\(c_2\\), so the labels are 1, 2, 2, 2."
+    ],
+    "equations": [
+     "d_{ij}=\\lVert x_i-c_j\\rVert_2",
+     "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+    "case": "s22-medicines-kmeans",
+    "subset": [
+     1,
+     3
+    ],
+    "core": true
+   },
+   {
+    "page": 24,
+    "title": "Medicines iteration 1: new centroids",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "Each new centroid averages each feature over the members of that cluster. Cluster 1 holds only medicine 1, so \\(c_1\\) stays at (1, 1).",
+     "Cluster 2 holds medicines 2, 3 and 4. Its MW mean is \\((2+4+5)/3=3.67\\) and its pH mean is \\((1+3+4)/3=2.67\\), so \\(c_2=(3.67, 2.67)\\).",
+     "In the plot, the star for \\(c_2\\) moves from (2, 1) up toward the two high points, because two of its three members are there."
+    ],
+    "equations": [
+     "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+    "case": "s22-medicines-kmeans",
+    "subset": [
+     3,
+     4
+    ],
+    "core": true
+   },
+   {
+    "page": 25,
+    "title": "Medicines iteration 2: distances and assignments",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "Iteration 2 uses \\(c_1=(1,1)\\) and \\(c_2=(3.67,2.67)\\). For medicine 1, \\(d_{12}=\\sqrt{(1-3.67)^2+(1-2.67)^2}=3.14\\).",
+     "Medicine 2 is 1 from \\(c_1\\) and 2.36 from \\(c_2\\), so it moves to cluster 1. Medicine 3 is 3.61 and 0.47, and medicine 4 is 5 and 1.89, so both stay in cluster 2.",
+     "The labels change from 1, 2, 2, 2 to 1, 1, 2, 2. Because a label changed, the centroids must be recomputed and the algorithm continues."
+    ],
+    "equations": [
+     "d_{ij}=\\lVert x_i-c_j\\rVert_2",
+     "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+    "case": "s22-medicines-kmeans",
+    "subset": [
+     4,
+     5
+    ],
+    "core": true
+   },
+   {
+    "page": 26,
+    "title": "Medicines iteration 2: new centroids",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "Cluster 1 now holds medicines 1 and 2, so \\(c_1=((1+2)/2,(1+1)/2)=(1.5,1)\\).",
+     "Cluster 2 holds medicines 3 and 4, so \\(c_2=((4+5)/2,(3+4)/2)=(4.5,3.5)\\).",
+     "Each star now sits midway between its two members. Another pass with these centroids gives the same labels, so the clusters are final: a low MW/low pH group and a high MW/high pH group."
+    ],
+    "equations": [
+     "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+    "case": "s22-medicines-kmeans",
+    "subset": [
+     5,
+     7
+    ],
+    "core": true
+   },
+   {
+    "page": 27,
+    "title": "Session 22 lecture exercise: SBP and CRP",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "Systolic blood pressure (SBP) and C-reactive protein (CRP) are measured in 3 adults and then standardized, so the scaled values are unitless. The patients are (1, 3), (7, 2) and (8, 7), written as (SBP, CRP).",
+     "One iteration of k-means uses \\(k=2\\), the Euclidean distance, and initial centroids C1 = (2, 2) and C2 = (5, 5). Every patient needs a distance to both centroids, a label, and then the two new centroids.",
+     "Patient 1 is closer to C1 (1.41421 versus 4.47214). Patients 2 and 3 are closer to C2 (3.60555 each). So the labels are 1, 2, 2, the new C1 is (1, 3) and the new C2 is (7.5, 4.5)."
+    ],
+    "equations": [
+     "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}",
+     "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k",
+     "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+    "case": "s22-exercise-sbp-crp",
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 28,
+    "title": "The kmeans() function in R",
+    "topic": "s22withinss",
+    "paragraphs": [
+     "The call is kmeans(X, centers). X is the feature matrix with dimension \\(n\\times D\\). centers is either the number of clusters \\(k\\) or a matrix \\(C\\) of starting cluster centers.",
+     "The sample code enters the ten ages, sets initial = c(21, 30) and runs clusterresults <- kmeans(age, initial). fitted() returns the centers and the class of every entry.",
+     "The result object also stores size (entries per cluster), withinss (within-cluster sum of squares for each cluster), tot.withinss (their total) and betweenss (between-cluster sum of squares)."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 29,
+    "title": "R output for the ages with 2 clusters",
+    "topic": "s22withinss",
+    "paragraphs": [
+     "With initial centers 21 and 30, R returns the same final clusters as the hand calculation. The first four ages get label 1 and centroid 22.75, and the last six get label 2 and centroid 40.83333.",
+     "size is 4 and 6. withinss is 38.75 for cluster 1 and 50.83333 for cluster 2. tot.withinss is their sum, 89.58333.",
+     "betweenss is 784.8167. The total sum of squares of the ten ages about their mean of 33.6 is 874.4, and \\(89.58333+784.8167=874.4\\)."
+    ],
+    "equations": [
+     "SS_{\\text{within total}}=\\sum_{j=1}^{k}SS_j"
+    ],
+    "symbols": "\\(SS_j\\) (within-cluster sum of squares of cluster \\(j\\)), \\(x_i\\) (entry value), \\(c_j\\) (centroid of cluster \\(j\\)), \\(y_i\\) (cluster label), \\(k\\) (number of clusters).",
+    "case": "s22-ages-withinss",
+    "subset": [
+     0,
+     4
+    ],
+    "core": true
+   },
+   {
+    "page": 30,
+    "title": "R output for the ages with 3 clusters",
+    "topic": "s22withinss",
+    "paragraphs": [
+     "With initial centers 25, 35 and 45, R returns clusters 20, 21, 22 (centroid 21.0), then 28, 35 (centroid 31.5), then 40 to 44 (centroid 42.0).",
+     "size is 3, 2 and 5. withinss is 2.0, 24.5 and 10.0, so tot.withinss is 36.5. betweenss is 837.9.",
+     "Going from 2 to 3 clusters lowers tot.withinss from 89.58333 to 36.5. A third cluster lets 28 and 35 form their own group instead of stretching the other two."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 31,
+    "title": "R output for the ages with 4 clusters",
+    "topic": "s22withinss",
+    "paragraphs": [
+     "With initial centers 22, 30, 35 and 42, R returns clusters 20, 21, 22 (centroid 21), 28 alone, 35 alone, and 40 to 44 (centroid 42).",
+     "size is 3, 1, 1 and 5. withinss is 2, 0, 0 and 10, so tot.withinss is 12. betweenss is 862.4.",
+     "A one-member cluster has withinss 0 because its only entry is its centroid. Adding clusters keeps lowering tot.withinss, but with less gain each time."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 32,
+    "title": "Choosing the number of clusters with the within-cluster sum of squares",
+    "topic": "s22withinss",
+    "paragraphs": [
+     "There is a trade-off between too few clusters (\\(k\\to1\\)) and too many (\\(k\\to n\\)). Many formal methods exist, and they are based on how the heterogeneity within clusters changes with \\(k\\).",
+     "The heterogeneity is the within-cluster sum of squared deviations from the centroid, \\(SS_j\\). Adding \\(SS_j\\) over all clusters gives \\(SS_{\\text{within total}}\\), which R reports as tot.withinss.",
+     "For the ages, the total falls from 874.4 at \\(k=1\\) to 89.58333 at \\(k=2\\), then to 36.5 and 12. The big drop is at \\(k=2\\), and there is only modest improvement for \\(k>2\\), so \\(k=2\\) is chosen."
+    ],
+    "equations": [
+     "SS_j=\\sum_{i:y_i=j}(x_i-c_j)^2,\\quad j=1,\\dots,k",
+     "SS_{\\text{within total}}=\\sum_{j=1}^{k}SS_j"
+    ],
+    "symbols": "\\(SS_j\\) (within-cluster sum of squares of cluster \\(j\\)), \\(x_i\\) (entry value), \\(c_j\\) (centroid of cluster \\(j\\)), \\(y_i\\) (cluster label), \\(k\\) (number of clusters).",
+    "case": "s22-ages-withinss",
+    "subset": [
+     4,
+     6
+    ],
+    "core": true
+   },
+   {
+    "page": 33,
+    "title": "Limitations of k-means clustering",
+    "topic": "s22kmeans",
+    "paragraphs": [
+     "The listed limitations are that k-means is not computationally practicable for big data sets, the number of clusters must be fixed a priori, and the results may depend on the initial centroids.",
+     "Each feature has the same weight in the grouping, the Euclidean distance can be distorted by extreme points, and k-means does not work well when the groups are not hyperellipsoids (roughly round or oval clouds).",
+     "The two plots show rings and interlocking crescents that k-means splits wrongly. Many other clustering methods overcome these limitations."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 34,
+    "title": "K-NN: the classification problem with training and test sets",
+    "topic": "s22knn",
+    "paragraphs": [
+     "The training set gives a feature vector \\(x_i\\) (dimension \\(D\\)) for each of \\(n\\) objects, which is the input. It also gives a class label \\(y_i\\in\\{1,\\dots,L\\}\\) for each object, which is the output.",
+     "The test set is new objects without labels. The problem is the rule that assigns each new object to a class, and the approach assigns it to the class of the objects it is most similar to.",
+     "The model is built with the training set and then used to classify the test set. Classification is supervised learning, the most common type of ML in practice."
+    ],
+    "equations": [
+     "x_i,\\ i=1,\\dots,n\\ (\\dim D)",
+     "y_i\\in\\{1,\\dots,L\\}"
+    ],
+    "symbols": "\\(x_i\\) (feature vector of training entry \\(i\\)), \\(y_i\\) (its class label), \\(L\\) (number of classes), \\(K\\) (number of nearest neighbors), \\(d\\) (Euclidean distance).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 35,
+    "title": "K-NN illustration: the food training set",
+    "topic": "s22knn",
+    "paragraphs": [
+     "The food plot is the training set, with \\(n=15\\) foods. Each food has an attribute vector of \\(D=2\\) features, sweetness and crunchiness.",
+     "Each food has a class label, and there are \\(L=3\\) classes: fruit, protein and vegetable.",
+     "The table shows the first rows, such as apple (10, 9, fruit) and bacon (1, 4, protein). These labeled rows are what a new food is compared with."
+    ],
+    "equations": [
+     "n=15,\\quad D=2,\\quad L=3"
+    ],
+    "symbols": "\\(n\\) (training entries), \\(D\\) (features), \\(L\\) (classes).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 36,
+    "title": "K-NN illustration: classifying the tomato",
+    "topic": "s22knn",
+    "paragraphs": [
+     "The test set is one entry, the tomato. It is assigned to one of the 3 classes based on the class it is closest to under some distance measure.",
+     "For K-NN, \\(K\\) is the number of nearest neighbors used, chosen a priori. Capital \\(K\\) in K-NN is not the same as lowercase \\(k\\) in k-means, which is the number of clusters.",
+     "The distance from the tomato to every labeled entry is computed. The tomato gets the class held by the plurality (the most common class) of the \\(K\\) smallest distances."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 37,
+    "title": "Tomato with K = 3",
+    "topic": "s22knn",
+    "paragraphs": [
+     "The tomato has sweetness 6 and crunchiness 4. The Euclidean distances shown are grape (8, 5) 2.2, green bean (3, 7) 4.2, nuts (3, 6) 3.6 and orange (7, 3) 1.4.",
+     "Ranked from smallest, the three nearest neighbors are orange (1.4, fruit), grape (2.2, fruit) and nuts (3.6, protein). Two are fruits and one is a protein.",
+     "The plurality class is fruit, so the tomato is classified as a fruit. The class shares give \\(P(T=\\text{fruit})=2/3\\) and \\(P(T=\\text{protein})=1/3\\)."
+    ],
+    "equations": [
+     "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}",
+     "P(T=\\text{fruit})=\\frac{2}{3},\\quad P(T=\\text{protein})=\\frac{1}{3}"
+    ],
+    "symbols": "\\(q,r\\) (tomato and a training food), \\(d(q,r)\\) (distance), \\(T\\) (class of the tomato).",
+    "case": "s22-tomato-knn",
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 38,
+    "title": "Selecting the number K",
+    "topic": "s22knn",
+    "paragraphs": [
+     "The value of \\(K\\) can change the classification. If \\(K=n\\), every training entry is a neighbor, so a test value always gets the class with the most entries in the training set, whatever its nearest neighbors are.",
+     "If \\(K=1\\), a test value always gets the class of the single closest training entry. This lets noisy data and outliers strongly affect the result.",
+     "Guidelines exist, such as \\(K=\\sqrt{n}\\), or trying several values of \\(K\\). With large and balanced data sets, the choice of \\(K\\) matters less."
+    ],
+    "equations": [
+     "K=\\sqrt{n}"
+    ],
+    "symbols": "\\(K\\) (number of nearest neighbors), \\(n\\) (number of training entries).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 39,
+    "title": "Data scaling before K-NN",
+    "topic": "s22knn",
+    "paragraphs": [
+     "Features are usually scaled to a standard range before K-NN, so features with different ranges can be used together. Adding spiciness on the Scoville scale, which runs from 0 to over \\(10^6\\), would let spiciness dominate the distance.",
+     "Min-max scaling subtracts the smallest value and divides by the range, so each scaled feature runs from 0 to 1. Standard normal (z-score) scaling subtracts the feature mean and divides by its standard deviation.",
+     "Here \\(w\\) is the vector of one feature's values (dimension \\(n\\)), and the scaled vector has the same dimension. Categorical attributes, both nominal and ordinal, can also be used in K-NN."
+    ],
+    "equations": [
+     "w_{\\text{scaled}}=\\frac{w-\\min(w)}{\\max(w)-\\min(w)}",
+     "w_{\\text{scaled}}=\\frac{w-\\bar w}{s_w}"
+    ],
+    "symbols": "\\(w\\) (values of one feature), \\(\\min(w),\\max(w)\\) (smallest and largest value), \\(\\bar w\\) (mean), \\(s_w\\) (standard deviation), \\(w_{\\text{scaled}}\\) (scaled values).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 40,
+    "title": "Example: quality control of surgical mesh",
+    "topic": "s22knn",
+    "paragraphs": [
+     "Surgical mesh is tested for two attributes: strength (kg/m²) and flexibility on an integer scale from 1 (minimum) to 10 (maximum). Surgeons grade products Pass or Fail.",
+     "The training set has four vendors: A (7, 7) Pass, B (4, 7) Pass, C (4, 3) Fail and D (4, 1) Fail.",
+     "A new vendor's mesh has strength 7 and flexibility 3. The task is to classify it Pass or Fail without an expensive surgeon evaluation."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": "s22-mesh-knn",
+    "subset": [
+     0,
+     1
+    ],
+    "core": true
+   },
+   {
+    "page": 41,
+    "title": "Surgical mesh: distances and the K = 3 nearest neighbors",
+    "topic": "s22knn",
+    "paragraphs": [
+     "With \\(K=3\\), the distance from (7, 3) to each vendor is computed. A gives \\(\\sqrt{0^2+4^2}=4\\), B gives \\(\\sqrt{(-3)^2+4^2}=5\\), C gives \\(\\sqrt{(-3)^2+0^2}=3\\), and D gives \\(\\sqrt{(-3)^2+(-2)^2}=3.61\\).",
+     "Ranked from smallest, C is 1, D is 2, A is 3 and B is 4.",
+     "The three nearest neighbors are C, D and A. Vendor B is the farthest and is left out."
+    ],
+    "equations": [
+     "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}"
+    ],
+    "symbols": "\\(q\\) (new mesh), \\(r\\) (a training vendor), \\(d(q,r)\\) (distance).",
+    "case": "s22-mesh-knn",
+    "subset": [
+     1,
+     3
+    ],
+    "core": true
+   },
+   {
+    "page": 42,
+    "title": "Surgical mesh: classification",
+    "topic": "s22knn",
+    "paragraphs": [
+     "The classes of the three nearest neighbors are C Fail, D Fail and A Pass.",
+     "Fail is the plurality class (2 of 3), so the new mesh is classified as Fail.",
+     "The fraction of neighbors in each class gives the probability: 2/3 that the new mesh will fail the surgeons' assessment, and 1/3 that it will pass."
+    ],
+    "equations": [
+     "P(\\text{Fail})=\\frac{\\#\\text{Fail among the }K\\text{ neighbors}}{K}=\\frac{2}{3}"
+    ],
+    "symbols": "\\(K\\) (number of nearest neighbors).",
+    "case": "s22-mesh-knn",
+    "subset": [
+     3,
+     5
+    ],
+    "core": true
+   }
+  ]
+ },
+ "methods": [
+  {
+   "id": "s22idea",
+   "title": "Machine learning tasks → clustering versus classification",
+   "trigger": "A question asks what ML is, which task or learning type a method is, or whether a problem is clustering (no labels) or classification (known labels).",
+   "pages": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "formula": [
+    "\\text{clustering: given }x_i\\text{ only}",
+    "\\text{classification: given }x_i\\text{ and }y_i\\in\\{1,\\dots,L\\}"
+   ],
+   "example": "s22-tomato-nearest",
+   "shortcut": "Ask whether the training data have known labels. Known labels mean supervised classification; no labels mean unsupervised clustering.",
+   "paragraphs": [
+    "Machine learning is a set of methods that automatically detect patterns in data and use them to predict outcomes and plan more data collection. The tasks are classification, numeric prediction, pattern discovery, clustering and generation. The learning types are supervised (known results), unsupervised (no results) and reinforcement (feedback).",
+    "Clustering is given only feature vectors and groups them so that members of a cluster are similar and clusters are dissimilar. Classification is given feature vectors with known classes and needs a rule to assign a new object to a class, usually the class of the objects it is most similar to.",
+    "k-means is unsupervised clustering. K-nearest neighbors is supervised classification. Both use a distance to measure similarity."
+   ],
+   "symbols": "\\(x_i\\) (feature vector), \\(y_i\\) (class label), \\(L\\) (number of classes)."
+  },
+  {
+   "id": "s22distance",
+   "title": "Distance between two feature vectors → Euclidean, Manhattan, Minkowski",
+   "trigger": "Two points or feature vectors are given and a distance, similarity or dissimilarity between them is needed.",
+   "pages": [
+    15,
+    16
+   ],
+   "formula": [
+    "d(q,r)=\\sqrt{\\sum_{i=1}^{m}(q_i-r_i)^2}",
+    "d(q,r)=\\sum_{i=1}^{m}|q_i-r_i|",
+    "d(q,r)=\\left(\\sum_{i=1}^{m}|q_i-r_i|^p\\right)^{1/p}"
+   ],
+   "example": "s22-medicine-distance",
+   "shortcut": "Write the coordinate differences once, then reuse them: square-add-root for Euclidean, absolute-add for Manhattan. In one dimension every one of them is just \\(|q-r|\\).",
+   "paragraphs": [
+    "Subtract matching coordinates first. Euclidean squares the differences, adds them and takes the square root (\\(\\ell_2\\) norm). Manhattan adds the absolute differences (\\(\\ell_1\\) norm). Minkowski uses power \\(p\\) and root \\(1/p\\) (\\(\\ell_p\\) norm), so \\(p=1\\) is Manhattan and \\(p=2\\) is Euclidean.",
+    "A small distance means similar points and a large distance means dissimilar points. The distance has the same units as the features, so a feature with a large range can dominate unless the features are scaled."
+   ],
+   "symbols": "\\(q,r\\) (two points or feature vectors), \\(q_i,r_i\\) (their \\(i\\)th coordinates), \\(m\\) (number of dimensions), \\(p\\) (Minkowski order), \\(d(q,r)\\) (distance)."
+  },
+  {
+   "id": "s22kmeans",
+   "title": "k-means clustering → assign to nearest centroid, recompute centroids, repeat",
+   "trigger": "Unlabeled data, a number of clusters k and initial centroids are given; find labels and new centroids.",
+   "pages": [
+    14,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    33
+   ],
+   "formula": [
+    "d_{ij}=\\lVert x_i-c_j\\rVert_2",
+    "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k",
+    "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+   ],
+   "example": "s22-medicines-kmeans",
+   "shortcut": "Set up one table row per entry with columns: distance to each centroid, label, then new centroid. In one dimension each distance is \\(|x_i-c_j|\\), and in two dimensions it is \\(\\sqrt{\\Delta_1^2+\\Delta_2^2}\\).",
+   "paragraphs": [
+    "Choose \\(k\\) and the initial centroids. Compute the Euclidean distance from every entry to every centroid, and give each entry the label of its nearest centroid with \\(\\arg\\min_j\\).",
+    "Replace each centroid by the mean of the entries now in its cluster, one feature at a time. Repeat the assign and update steps until no label changes; then the centroids also stop changing.",
+    "k-means needs \\(k\\) in advance, can depend on the starting centroids, weights every feature equally, is sensitive to extreme points, and fails when clusters are not roughly hyperellipsoidal."
+   ],
+   "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters)."
+  },
+  {
+   "id": "s22withinss",
+   "title": "kmeans() output and the number of clusters → within-cluster sum of squares",
+   "trigger": "R kmeans() output (size, withinss, tot.withinss, betweenss) is given, or the number of clusters k must be chosen.",
+   "pages": [
+    28,
+    29,
+    30,
+    31,
+    32
+   ],
+   "formula": [
+    "SS_j=\\sum_{i:y_i=j}(x_i-c_j)^2",
+    "SS_{\\text{within total}}=\\sum_{j=1}^{k}SS_j"
+   ],
+   "example": "s22-ages-withinss",
+   "shortcut": "tot.withinss is the sum of the withinss vector, and tot.withinss plus betweenss equals the total sum of squares about the overall mean.",
+   "paragraphs": [
+    "kmeans(X, centers) takes the feature matrix and either \\(k\\) or a matrix of starting centers. Its output gives size (members per cluster), withinss (\\(SS_j\\) for each cluster), tot.withinss (their sum) and betweenss.",
+    "tot.withinss measures heterogeneity within clusters. It falls as \\(k\\) grows and reaches 0 at \\(k=n\\). Choose the \\(k\\) after which adding clusters gives only modest improvement; for the ages this is \\(k=2\\)."
+   ],
+   "symbols": "\\(SS_j\\) (within-cluster sum of squares of cluster \\(j\\)), \\(x_i\\) (entry value), \\(c_j\\) (centroid of cluster \\(j\\)), \\(y_i\\) (cluster label), \\(k\\) (number of clusters)."
+  },
+  {
+   "id": "s22knn",
+   "title": "K-nearest neighbors classification → K smallest distances, plurality class",
+   "trigger": "A labeled training set and a new object are given; classify the new object or give its class probability using K neighbors.",
+   "pages": [
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42
+   ],
+   "formula": [
+    "d(q,r)=\\sqrt{\\sum_{i=1}^{m}(q_i-r_i)^2}",
+    "P(\\text{class})=\\frac{\\#\\text{neighbors in class}}{K}",
+    "w_{\\text{scaled}}=\\frac{w-\\min(w)}{\\max(w)-\\min(w)}",
+    "w_{\\text{scaled}}=\\frac{w-\\bar w}{s_w}"
+   ],
+   "example": "s22-mesh-knn",
+   "shortcut": "Only the order of the distances matters, so squared distances rank the neighbors just as well; take square roots only when the distance values are asked for.",
+   "paragraphs": [
+    "Compute the distance from the new object to every training entry, rank the distances, and keep the \\(K\\) smallest. The new object gets the plurality class of those \\(K\\) neighbors, and the share of neighbors in a class gives its probability.",
+    "\\(K\\) is chosen a priori and is not the k of k-means. \\(K=1\\) follows single noisy points, and \\(K=n\\) always returns the most common training class; a guideline is \\(K=\\sqrt{n}\\).",
+    "Features are scaled first so that no feature dominates the distance. Min-max scaling maps each feature to 0 to 1, and z-score scaling subtracts the mean and divides by the standard deviation."
+   ],
+   "symbols": "\\(x_i\\) (feature vector of training entry \\(i\\)), \\(y_i\\) (its class label), \\(L\\) (number of classes), \\(K\\) (number of nearest neighbors), \\(d\\) (Euclidean distance)."
+  }
+ ],
+ "cases": [
+  {
+   "id": "s22-tomato-nearest",
+   "title": "Tomato and its single most similar food",
+   "topic": "s22idea",
+   "context": "A tomato has sweetness 6 and crunchiness 4. It is compared with four labeled foods from the Session 22 food example. Assign it to the class of the one labeled food it is most similar to, using the Euclidean distance.",
+   "unit": "feature units",
+   "table": {
+    "headers": [
+     "Food",
+     "Sweetness",
+     "Crunchiness",
+     "Food type"
+    ],
+    "rows": [
+     [
+      "Grape",
+      8,
+      5,
+      "Fruit"
+     ],
+     [
+      "Green bean",
+      3,
+      7,
+      "Vegetable"
+     ],
+     [
+      "Nuts",
+      3,
+      6,
+      "Protein"
+     ],
+     [
+      "Orange",
+      7,
+      3,
+      "Fruit"
+     ]
+    ]
+   },
+   "tasks": [
+    "Compute the Euclidean distance from the tomato (6, 4) to each of the four labeled foods.",
+    "Identify the most similar food and assign the tomato to its class. State whether this is a clustering or a classification problem."
+   ],
+   "hypotheses": null,
+   "symbols": "\\(q\\) (tomato features), \\(r\\) (a labeled food), \\(d(q,r)\\) (Euclidean distance).",
+   "steps": [
+    {
+     "title": "Identify the problem type",
+     "general": [
+      "\\text{given }(x_i,y_i)\\Rightarrow\\text{classification}"
+     ],
+     "work": [
+      "y_i\\in\\{\\text{Fruit},\\text{Vegetable},\\text{Protein}\\}"
+     ],
+     "words": "The foods have known classes, so assigning the tomato is a classification problem (supervised)."
+    },
+    {
+     "title": "Distance to grape and green bean",
+     "general": [
+      "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}"
+     ],
+     "work": [
+      "d_{\\text{grape}}=\\sqrt{(6-8)^2+(4-5)^2}=\\sqrt{5}=2.23607",
+      "d_{\\text{green bean}}=\\sqrt{(6-3)^2+(4-7)^2}=\\sqrt{18}=4.24264"
+     ],
+     "words": "Subtract matching features, square, add and take the root."
+    },
+    {
+     "title": "Distance to nuts and orange",
+     "general": [
+      "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}"
+     ],
+     "work": [
+      "d_{\\text{nuts}}=\\sqrt{(6-3)^2+(4-6)^2}=\\sqrt{13}=3.60555",
+      "d_{\\text{orange}}=\\sqrt{(6-7)^2+(4-3)^2}=\\sqrt{2}=1.41421"
+     ],
+     "words": "The same formula is applied to every labeled food."
+    },
+    {
+     "title": "Pick the most similar food",
+     "general": [
+      "\\min_r d(q,r)"
+     ],
+     "work": [
+      "\\min(2.23607,4.24264,3.60555,1.41421)=1.41421"
+     ],
+     "words": "Orange has the smallest distance, so it is the most similar food. Its class is Fruit, so the tomato is assigned to Fruit."
+    }
+   ],
+   "conclusion": "The nearest labeled food is orange at distance 1.41421, so the tomato is classified as a fruit. This uses only one neighbor (K = 1).",
+   "source": "Original practice example using the Session 22 page 37 food data",
+   "lookup": null,
+   "values": {
+    "tomato": [
+     6,
+     4
+    ],
+    "grape": 2.23606797749979,
+    "greenBean": 4.242640687119285,
+    "nuts": 3.605551275463989,
+    "orange": 1.4142135623730951,
+    "nearest": "Orange",
+    "assigned": "Fruit"
+   },
+   "module": 22,
+   "tolerance": 0.007071067811865476,
+   "answerName": "Distance",
+   "answer": 1.4142135623730951
+  },
+  {
+   "id": "s22-medicine-distance",
+   "title": "Three distances between medicines 1 and 4",
+   "topic": "s22distance",
+   "context": "Medicine 1 has features (MW, pH) = (1, 1) and medicine 4 has (5, 4), on the arbitrary scales of the Session 22 medicine example. Compare the Euclidean, Manhattan and Minkowski (p = 3) distances between them.",
+   "unit": "arbitrary units",
+   "table": {
+    "headers": [
+     "Medicine",
+     "MW",
+     "pH"
+    ],
+    "rows": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      4,
+      5,
+      4
+     ]
+    ]
+   },
+   "tasks": [
+    "Compute the Euclidean and Manhattan distances between medicine 1 and medicine 4.",
+    "Compute the Minkowski distance with p = 3 and compare all three values."
+   ],
+   "hypotheses": null,
+   "symbols": "\\(q,r\\) (two points or feature vectors), \\(q_i,r_i\\) (their \\(i\\)th coordinates), \\(m\\) (number of dimensions), \\(p\\) (Minkowski order), \\(d(q,r)\\) (distance).",
+   "steps": [
+    {
+     "title": "Coordinate differences",
+     "general": [
+      "\\Delta_i=|q_i-r_i|"
+     ],
+     "work": [
+      "\\Delta_1=|1-5|=4",
+      "\\Delta_2=|1-4|=3"
+     ],
+     "words": "Find the absolute difference for each feature first, then reuse them in every formula."
+    },
+    {
+     "title": "Euclidean distance",
+     "general": [
+      "d_2=\\sqrt{\\sum_i(q_i-r_i)^2}"
+     ],
+     "work": [
+      "d_2=\\sqrt{4^2+3^2}=\\sqrt{25}=5"
+     ],
+     "words": "Square, add and take the square root."
+    },
+    {
+     "title": "Manhattan distance",
+     "general": [
+      "d_1=\\sum_i|q_i-r_i|"
+     ],
+     "work": [
+      "d_1=4+3=7"
+     ],
+     "words": "Add the absolute differences."
+    },
+    {
+     "title": "Minkowski distance, p = 3",
+     "general": [
+      "d_p=\\left(\\sum_i|q_i-r_i|^p\\right)^{1/p}"
+     ],
+     "work": [
+      "d_3=(4^3+3^3)^{1/3}=91^{1/3}=4.49794"
+     ],
+     "words": "Cube, add and take the cube root."
+    },
+    {
+     "title": "Compare",
+     "general": [
+      "d_1\\ge d_2\\ge d_3"
+     ],
+     "work": [
+      "7\\ge 5\\ge 4.49794"
+     ],
+     "words": "Larger p puts more weight on the largest single difference, so the distance shrinks toward the largest difference, 4."
+    }
+   ],
+   "conclusion": "The Euclidean distance is 5, the Manhattan distance is 7, and the Minkowski distance with p = 3 is 4.49794.",
+   "source": "Original practice example using the Session 22 page 22 medicine data",
+   "lookup": null,
+   "values": {
+    "q": [
+     1,
+     1
+    ],
+    "r": [
+     5,
+     4
+    ],
+    "euclidean": 5.0,
+    "manhattan": 7.0,
+    "minkowski3": 4.497941445275415
+   },
+   "module": 22,
+   "tolerance": 0.022489707226377074,
+   "answerName": "Distance (Minkowski, p = 3)",
+   "answer": 4.497941445275415
+  },
+  {
+   "id": "s22-ages-kmeans",
+   "title": "k-means on ten ages",
+   "topic": "s22kmeans",
+   "context": "Ten ages are 20, 21, 22, 28, 35, 40, 41, 42, 43 and 44. Cluster them with k-means using k = 2 and initial centroids c1 = 21 and c2 = 30.",
+   "unit": "years",
+   "table": {
+    "headers": [
+     "Age x_i",
+     "c1",
+     "c2",
+     "Distance to c1",
+     "Distance to c2",
+     "Nearest cluster"
+    ],
+    "rows": [
+     [
+      20,
+      "21",
+      "30",
+      "1",
+      "10",
+      1
+     ],
+     [
+      21,
+      "21",
+      "30",
+      "0",
+      "9",
+      1
+     ],
+     [
+      22,
+      "21",
+      "30",
+      "1",
+      "8",
+      1
+     ],
+     [
+      28,
+      "21",
+      "30",
+      "7",
+      "2",
+      2
+     ],
+     [
+      35,
+      "21",
+      "30",
+      "14",
+      "5",
+      2
+     ],
+     [
+      40,
+      "21",
+      "30",
+      "19",
+      "10",
+      2
+     ],
+     [
+      41,
+      "21",
+      "30",
+      "20",
+      "11",
+      2
+     ],
+     [
+      42,
+      "21",
+      "30",
+      "21",
+      "12",
+      2
+     ],
+     [
+      43,
+      "21",
+      "30",
+      "22",
+      "13",
+      2
+     ],
+     [
+      44,
+      "21",
+      "30",
+      "23",
+      "14",
+      2
+     ]
+    ]
+   },
+   "tasks": [
+    "Perform iteration 1: compute both distances for every age, assign labels, and compute the new centroids.",
+    "Continue iterating until no label changes. Report the final clusters and centroids."
+   ],
+   "hypotheses": null,
+   "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+   "steps": [
+    {
+     "title": "Set up",
+     "general": [
+      "k=2,\\ c_1^{(0)}=21,\\ c_2^{(0)}=30"
+     ],
+     "work": [
+      "x=(20,21,22,28,35,40,41,42,43,44)"
+     ],
+     "words": "In one dimension the Euclidean distance is the absolute difference."
+    },
+    {
+     "title": "Iteration 1 distances",
+     "general": [
+      "d_{ij}=|x_i-c_j|"
+     ],
+     "work": [
+      "d(28,21)=|28-21|=7",
+      "d(28,30)=|28-30|=2",
+      "d(35,21)=14,\\ d(35,30)=5"
+     ],
+     "words": "Every age gets a distance to both centroids; the full table lists all ten rows."
+    },
+    {
+     "title": "Iteration 1 labels",
+     "general": [
+      "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k"
+     ],
+     "work": [
+      "y=(1,1,1,2,2,2,2,2,2,2)"
+     ],
+     "words": "Ages 20, 21 and 22 are closer to 21. Age 28 and above are closer to 30."
+    },
+    {
+     "title": "Iteration 1 centroids",
+     "general": [
+      "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+     ],
+     "work": [
+      "c_1=\\frac{20+21+22}{3}=\\frac{63}{3}=21",
+      "c_2=\\frac{28+35+40+41+42+43+44}{7}=\\frac{273}{7}=39"
+     ],
+     "words": "Each centroid is the mean of its members."
+    },
+    {
+     "title": "Iteration 2 distances and labels",
+     "general": [
+      "d_{ij}=|x_i-c_j|",
+      "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k"
+     ],
+     "work": [
+      "d(28,21)=7,\\ d(28,39)=11\\Rightarrow y=1",
+      "y=(1,1,1,1,2,2,2,2,2,2)"
+     ],
+     "words": "Age 28 is now closer to 21, so it moves to cluster 1. A label changed, so continue."
+    },
+    {
+     "title": "Iteration 2 centroids",
+     "general": [
+      "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+     ],
+     "work": [
+      "c_1=\\frac{20+21+22+28}{4}=\\frac{91}{4}=22.75",
+      "c_2=\\frac{35+40+41+42+43+44}{6}=\\frac{245}{6}=40.83333"
+     ],
+     "words": "Recompute both means with the new memberships."
+    },
+    {
+     "title": "Iteration 3 check",
+     "general": [
+      "d_{ij}=|x_i-c_j|",
+      "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k"
+     ],
+     "work": [
+      "d(28,22.75)=5.25,\\ d(28,40.83333)=12.83333",
+      "d(35,22.75)=12.25,\\ d(35,40.83333)=5.83333",
+      "y=(1,1,1,1,2,2,2,2,2,2)"
+     ],
+     "words": "No label changes, so the centroids stay the same and the algorithm stops."
+    },
+    {
+     "title": "Name the clusters",
+     "general": [
+      "\\text{stop when }y^{(t)}=y^{(t-1)}"
+     ],
+     "work": [
+      "c_1=22.75\\ (\\text{young}),\\ c_2=40.83333\\ (\\text{old})"
+     ],
+     "words": "The labels 1 and 2 can be named young and old after clustering."
+    }
+   ],
+   "conclusion": "Iteration 1 moves the centroids from 21 and 30 to 21 and 39. Iteration 2 moves age 28 into cluster 1 and gives 22.75 and 40.83333. Iteration 3 changes nothing, so the final clusters are 20–28 and 35–44.",
+   "source": "Session 22 pages 17–19 and 21",
+   "lookup": null,
+   "values": {
+    "ages": [
+     20,
+     21,
+     22,
+     28,
+     35,
+     40,
+     41,
+     42,
+     43,
+     44
+    ],
+    "k": 2,
+    "initial": [
+     21,
+     30
+    ],
+    "iter1Labels": [
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "iter1Centroids": [
+     21.0,
+     39.0
+    ],
+    "iter2Labels": [
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "iter2Centroids": [
+     22.75,
+     40.833333333333336
+    ],
+    "iterations": 3
+   },
+   "module": 22,
+   "tolerance": 0.195,
+   "answerName": "New centroid c2 after iteration 1",
+   "answer": 39.0
+  },
+  {
+   "id": "s22-medicines-kmeans",
+   "title": "k-means on four medicines (MW, pH)",
+   "topic": "s22kmeans",
+   "context": "Four medicines have features (MW, pH) on arbitrary scales: (1, 1), (2, 1), (4, 3) and (5, 4). Cluster them with k-means using k = 2 and initial centroids c1 = (1, 1) and c2 = (2, 1), with the Euclidean distance.",
+   "unit": "arbitrary units",
+   "table": {
+    "headers": [
+     "Medicine",
+     "MW",
+     "pH"
+    ],
+    "rows": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      2,
+      2,
+      1
+     ],
+     [
+      3,
+      4,
+      3
+     ],
+     [
+      4,
+      5,
+      4
+     ]
+    ]
+   },
+   "tasks": [
+    "Perform iteration 1: compute all eight distances, assign labels, and compute the new centroids.",
+    "Perform iteration 2 and report the final labels and centroids."
+   ],
+   "hypotheses": null,
+   "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+   "steps": [
+    {
+     "title": "Set up",
+     "general": [
+      "k=2,\\ c_1=(1,1),\\ c_2=(2,1)"
+     ],
+     "work": [
+      "x_1=(1,1),\\ x_2=(2,1),\\ x_3=(4,3),\\ x_4=(5,4)"
+     ],
+     "words": "The initial centroids are medicines 1 and 2."
+    },
+    {
+     "title": "Iteration 1 distances",
+     "general": [
+      "d_{ij}=\\sqrt{(x_{i1}-c_{j1})^2+(x_{i2}-c_{j2})^2}"
+     ],
+     "work": [
+      "d_{11}=0,\\ d_{12}=\\sqrt{(1-2)^2+0^2}=1",
+      "d_{21}=1,\\ d_{22}=0",
+      "d_{31}=\\sqrt{3^2+2^2}=3.60555,\\ d_{32}=\\sqrt{2^2+2^2}=2.82843",
+      "d_{41}=\\sqrt{4^2+3^2}=5,\\ d_{42}=\\sqrt{3^2+3^2}=4.24264"
+     ],
+     "words": "Compute the distance from each medicine to both centroids."
+    },
+    {
+     "title": "Iteration 1 labels",
+     "general": [
+      "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k"
+     ],
+     "work": [
+      "y=(1,2,2,2)"
+     ],
+     "words": "Only medicine 1 is closer to c1."
+    },
+    {
+     "title": "Iteration 1 centroids",
+     "general": [
+      "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+     ],
+     "work": [
+      "c_1=(1,1)",
+      "c_2=\\left(\\frac{2+4+5}{3},\\frac{1+3+4}{3}\\right)=(3.66667,2.66667)"
+     ],
+     "words": "Average each feature over the members of each cluster."
+    },
+    {
+     "title": "Iteration 2 distances and labels",
+     "general": [
+      "d_{ij}=\\lVert x_i-c_j\\rVert_2",
+      "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k"
+     ],
+     "work": [
+      "d_{12}=\\sqrt{(1-3.66667)^2+(1-2.66667)^2}=3.14466",
+      "d_{21}=1,\\ d_{22}=2.35702",
+      "d_{31}=3.60555,\\ d_{32}=0.4714",
+      "d_{41}=5,\\ d_{42}=1.88562",
+      "y=(1,1,2,2)"
+     ],
+     "words": "Medicine 2 is now closer to c1, so its label changes."
+    },
+    {
+     "title": "Iteration 2 centroids",
+     "general": [
+      "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+     ],
+     "work": [
+      "c_1=\\left(\\frac{1+2}{2},\\frac{1+1}{2}\\right)=(1.5,1)",
+      "c_2=\\left(\\frac{4+5}{2},\\frac{3+4}{2}\\right)=(4.5,3.5)"
+     ],
+     "words": "Recompute both centroids with the new memberships."
+    },
+    {
+     "title": "Check convergence",
+     "general": [
+      "y^{(3)}=y^{(2)}\\Rightarrow\\text{stop}"
+     ],
+     "work": [
+      "d_{21}=0.5,\\ d_{22}=3.53553\\Rightarrow y_2=1",
+      "y=(1,1,2,2)"
+     ],
+     "words": "A third pass gives the same labels, so the centroids are final."
+    }
+   ],
+   "conclusion": "After iteration 1 the centroids are (1, 1) and (3.66667, 2.66667). After iteration 2 the labels are 1, 1, 2, 2 and the centroids are (1.5, 1) and (4.5, 3.5), which do not change on the next pass.",
+   "source": "Session 22 pages 22–26",
+   "lookup": null,
+   "values": {
+    "points": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      5,
+      4
+     ]
+    ],
+    "k": 2,
+    "initial": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "iter1Labels": [
+     1,
+     2,
+     2,
+     2
+    ],
+    "iter1C2": [
+     3.6666666666666665,
+     2.6666666666666665
+    ],
+    "iter2Labels": [
+     1,
+     1,
+     2,
+     2
+    ],
+    "finalC1": [
+     1.5,
+     1
+    ],
+    "finalC2": [
+     4.5,
+     3.5
+    ]
+   },
+   "module": 22,
+   "tolerance": 0.0225,
+   "answerName": "New centroid c2 x-coordinate (iteration 2)",
+   "answer": 4.5
+  },
+  {
+   "id": "s22-exercise-sbp-crp",
+   "title": "Session 22 lecture exercise: SBP and CRP",
+   "topic": "s22kmeans",
+   "context": "Systolic blood pressure (SBP; mmHg) and C-reactive protein (CRP; mg/L) were measured in 3 adults and standardized, so the scaled values are unitless. Perform a single iteration of k-means with k = 2 and the Euclidean distance, using initial centroids C1 (SBP = 2, CRP = 2) and C2 (SBP = 5, CRP = 5).",
+   "unit": "unitless (scaled)",
+   "table": {
+    "headers": [
+     "Patient",
+     "SBP",
+     "CRP"
+    ],
+    "rows": [
+     [
+      1,
+      1,
+      3
+     ],
+     [
+      2,
+      7,
+      2
+     ],
+     [
+      3,
+      8,
+      7
+     ]
+    ]
+   },
+   "tasks": [
+    "Compute the distance from each patient to C1 and to C2, showing the intermediate calculations.",
+    "Give the cluster label of each patient and the new centroids of the two clusters after this single iteration."
+   ],
+   "hypotheses": null,
+   "symbols": "\\(x_i\\) (feature vector of entry \\(i\\)), \\(c_j\\) (centroid of cluster \\(j\\)), \\(d_{ij}\\) (distance from entry \\(i\\) to centroid \\(j\\)), \\(y_i\\) (cluster label of entry \\(i\\)), \\(n_j\\) (number of entries in cluster \\(j\\)), \\(k\\) (number of clusters).",
+   "steps": [
+    {
+     "title": "Distances for patient 1",
+     "general": [
+      "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}"
+     ],
+     "work": [
+      "d_{11}=\\sqrt{(1-2)^2+(3-2)^2}=\\sqrt{2}=1.41421",
+      "d_{12}=\\sqrt{(1-5)^2+(3-5)^2}=\\sqrt{20}=4.47214"
+     ],
+     "words": "Patient 1 is (1, 3)."
+    },
+    {
+     "title": "Distances for patient 2",
+     "general": [
+      "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}"
+     ],
+     "work": [
+      "d_{21}=\\sqrt{(7-2)^2+(2-2)^2}=\\sqrt{25}=5",
+      "d_{22}=\\sqrt{(7-5)^2+(2-5)^2}=\\sqrt{13}=3.60555"
+     ],
+     "words": "Patient 2 is (7, 2)."
+    },
+    {
+     "title": "Distances for patient 3",
+     "general": [
+      "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}"
+     ],
+     "work": [
+      "d_{31}=\\sqrt{(8-2)^2+(7-2)^2}=\\sqrt{61}=7.81025",
+      "d_{32}=\\sqrt{(8-5)^2+(7-5)^2}=\\sqrt{13}=3.60555"
+     ],
+     "words": "Patient 3 is (8, 7)."
+    },
+    {
+     "title": "Assign labels",
+     "general": [
+      "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k"
+     ],
+     "work": [
+      "y_1=1\\ (1.41421<4.47214)",
+      "y_2=2\\ (3.60555<5)",
+      "y_3=2\\ (3.60555<7.81025)"
+     ],
+     "words": "Each patient goes to the centroid with the smaller distance."
+    },
+    {
+     "title": "New centroids",
+     "general": [
+      "c_j=\\frac{1}{n_j}\\sum_{i:y_i=j}x_i,\\quad j=1,\\dots,k"
+     ],
+     "work": [
+      "C_1=(1,3)",
+      "C_2=\\left(\\frac{7+8}{2},\\frac{2+7}{2}\\right)=(7.5,4.5)"
+     ],
+     "words": "Cluster 1 has only patient 1, so its centroid is that patient. Cluster 2 averages patients 2 and 3."
+    }
+   ],
+   "conclusion": "The labels are patient 1 → cluster 1, patients 2 and 3 → cluster 2. After one iteration the new centroids are C1 = (1, 3) and C2 = (7.5, 4.5).",
+   "source": "Session 22 page 27",
+   "lookup": null,
+   "values": {
+    "points": [
+     [
+      1,
+      3
+     ],
+     [
+      7,
+      2
+     ],
+     [
+      8,
+      7
+     ]
+    ],
+    "initial": [
+     [
+      2,
+      2
+     ],
+     [
+      5,
+      5
+     ]
+    ],
+    "distC1": [
+     1.4142135623730951,
+     5.0,
+     7.810249675906654
+    ],
+    "distC2": [
+     4.47213595499958,
+     3.605551275463989,
+     3.605551275463989
+    ],
+    "labels": [
+     1,
+     2,
+     2
+    ],
+    "newC1": [
+     1.0,
+     3.0
+    ],
+    "newC2": [
+     7.5,
+     4.5
+    ]
+   },
+   "module": 22,
+   "tolerance": 0.0375,
+   "answerName": "New centroid C2 SBP coordinate",
+   "answer": 7.5
+  },
+  {
+   "id": "s22-ages-withinss",
+   "title": "Within-cluster sums of squares for the ages",
+   "topic": "s22withinss",
+   "context": "The ten ages 20, 21, 22, 28, 35, 40, 41, 42, 43, 44 are clustered by kmeans(age, c(21, 30)) in R. The final clusters are 20, 21, 22, 28 (centroid 22.75) and 35, 40, 41, 42, 43, 44 (centroid 40.83333). Reproduce withinss, tot.withinss and betweenss, and use the R results for k = 3 and k = 4 to choose k.",
+   "unit": "years²",
+   "table": {
+    "headers": [
+     "k",
+     "size",
+     "withinss",
+     "tot.withinss"
+    ],
+    "rows": [
+     [
+      1,
+      "10",
+      "874.4",
+      874.4
+     ],
+     [
+      2,
+      "4 6",
+      "38.75 50.83333",
+      89.58333
+     ],
+     [
+      3,
+      "3 2 5",
+      "2.0 24.5 10.0",
+      36.5
+     ],
+     [
+      4,
+      "3 1 1 5",
+      "2 0 0 10",
+      12
+     ]
+    ]
+   },
+   "tasks": [
+    "Compute SS for each of the two clusters and tot.withinss for k = 2. Find betweenss from the total sum of squares.",
+    "Using tot.withinss for k = 1 to 4, choose the number of clusters."
+   ],
+   "hypotheses": null,
+   "symbols": "\\(SS_j\\) (within-cluster sum of squares of cluster \\(j\\)), \\(x_i\\) (entry value), \\(c_j\\) (centroid of cluster \\(j\\)), \\(y_i\\) (cluster label), \\(k\\) (number of clusters).",
+   "steps": [
+    {
+     "title": "Cluster 1 sum of squares",
+     "general": [
+      "SS_1=\\sum_{i:y_i=1}(x_i-c_1)^2"
+     ],
+     "work": [
+      "SS_1=(20-22.75)^2+(21-22.75)^2+(22-22.75)^2+(28-22.75)^2",
+      "SS_1=7.5625+3.0625+0.5625+27.5625=38.75"
+     ],
+     "words": "Square each deviation from the cluster 1 centroid and add."
+    },
+    {
+     "title": "Cluster 2 sum of squares",
+     "general": [
+      "SS_2=\\sum_{i:y_i=2}(x_i-c_2)^2"
+     ],
+     "work": [
+      "c_2=245/6=40.83333",
+      "SS_2=34.02778+0.69444+0.02778+1.36111+4.69444+10.02778=50.83333"
+     ],
+     "words": "Use the unrounded centroid 245/6 to avoid rounding drift."
+    },
+    {
+     "title": "Total within-cluster sum of squares",
+     "general": [
+      "SS_{\\text{within total}}=\\sum_{j=1}^{k}SS_j"
+     ],
+     "work": [
+      "SS_{\\text{within total}}=38.75+50.83333=89.58333"
+     ],
+     "words": "This is tot.withinss in the R output."
+    },
+    {
+     "title": "Between-cluster sum of squares",
+     "general": [
+      "SS_{\\text{total}}=\\sum_i(x_i-\\bar x)^2",
+      "SS_{\\text{between}}=SS_{\\text{total}}-SS_{\\text{within total}}"
+     ],
+     "work": [
+      "\\bar x=336/10=33.6,\\ SS_{\\text{total}}=874.4",
+      "SS_{\\text{between}}=874.4-89.58333=784.81667"
+     ],
+     "words": "R reports this as betweenss, 784.8167. At k = 1 the whole total is within-cluster."
+    },
+    {
+     "title": "Compare k = 1 to 4",
+     "general": [
+      "SS_{\\text{within total}}(k)"
+     ],
+     "work": [
+      "874.4\\to89.58333\\to36.5\\to12"
+     ],
+     "words": "The drop from k = 1 to k = 2 is about 785; later drops are about 53 and 24.5."
+    },
+    {
+     "title": "Choose k",
+     "general": [
+      "\\text{choose }k\\text{ where further gains are modest}"
+     ],
+     "work": [
+      "k=2"
+     ],
+     "words": "Beyond k = 2 there is only modest improvement, so two clusters are chosen."
+    }
+   ],
+   "conclusion": "withinss is 38.75 and 50.83333, tot.withinss is 89.58333, and betweenss is 784.81667. Since tot.withinss improves only modestly for k > 2, k = 2 is chosen.",
+   "source": "Session 22 pages 28, 29 and 32",
+   "lookup": null,
+   "values": {
+    "ages": [
+     20,
+     21,
+     22,
+     28,
+     35,
+     40,
+     41,
+     42,
+     43,
+     44
+    ],
+    "ss1": 38.75,
+    "ss2": 50.83333333333334,
+    "totWithin": 89.58333333333334,
+    "totalSS": 874.4,
+    "between": 784.8166666666666,
+    "totWithinK3": 36.5,
+    "totWithinK4": 12.0,
+    "chosenK": 2
+   },
+   "module": 22,
+   "tolerance": 0.44791666666666674,
+   "answerName": "tot.withinss",
+   "answer": 89.58333333333334
+  },
+  {
+   "id": "s22-tomato-knn",
+   "title": "Classifying the tomato with K = 3",
+   "topic": "s22knn",
+   "context": "A tomato has sweetness 6 and crunchiness 4. Classify it with K-NN using K = 3 and the Euclidean distance to four labeled foods from the training set.",
+   "unit": "probability",
+   "table": {
+    "headers": [
+     "Food",
+     "Sweetness",
+     "Crunchiness",
+     "Food type"
+    ],
+    "rows": [
+     [
+      "Grape",
+      8,
+      5,
+      "Fruit"
+     ],
+     [
+      "Green bean",
+      3,
+      7,
+      "Vegetable"
+     ],
+     [
+      "Nuts",
+      3,
+      6,
+      "Protein"
+     ],
+     [
+      "Orange",
+      7,
+      3,
+      "Fruit"
+     ]
+    ]
+   },
+   "tasks": [
+    "Compute the distance from the tomato to each food and identify the K = 3 nearest neighbors.",
+    "Classify the tomato and give the probability that it is a fruit."
+   ],
+   "hypotheses": null,
+   "symbols": "\\(x_i\\) (feature vector of training entry \\(i\\)), \\(y_i\\) (its class label), \\(L\\) (number of classes), \\(K\\) (number of nearest neighbors), \\(d\\) (Euclidean distance).",
+   "steps": [
+    {
+     "title": "Distances",
+     "general": [
+      "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}"
+     ],
+     "work": [
+      "d_{\\text{grape}}=\\sqrt{(6-8)^2+(4-5)^2}=2.23607",
+      "d_{\\text{green bean}}=\\sqrt{(6-3)^2+(4-7)^2}=4.24264",
+      "d_{\\text{nuts}}=\\sqrt{(6-3)^2+(4-6)^2}=3.60555",
+      "d_{\\text{orange}}=\\sqrt{(6-7)^2+(4-3)^2}=1.41421"
+     ],
+     "words": "The slide rounds these to 2.2, 4.2, 3.6 and 1.4."
+    },
+    {
+     "title": "Rank and keep K = 3",
+     "general": [
+      "\\text{keep the }K\\text{ smallest }d"
+     ],
+     "work": [
+      "\\text{orange }(1.41421)<\\text{grape }(2.23607)<\\text{nuts }(3.60555)<\\text{green bean}"
+     ],
+     "words": "The three nearest neighbors are orange, grape and nuts."
+    },
+    {
+     "title": "Count classes",
+     "general": [
+      "P(\\text{class})=\\frac{\\#\\text{neighbors in class}}{K}"
+     ],
+     "work": [
+      "P(\\text{fruit})=\\frac{2}{3}=0.66667",
+      "P(\\text{protein})=\\frac{1}{3}"
+     ],
+     "words": "Two neighbors are fruits and one is a protein."
+    },
+    {
+     "title": "Classify",
+     "general": [
+      "\\hat y=\\text{plurality class}"
+     ],
+     "work": [
+      "\\hat y=\\text{fruit}"
+     ],
+     "words": "Fruit is the most common class among the three neighbors."
+    }
+   ],
+   "conclusion": "The three nearest neighbors are orange, grape (fruits) and nuts (protein), so the tomato is classified as a fruit with probability 2/3.",
+   "source": "Session 22 page 37",
+   "lookup": null,
+   "values": {
+    "tomato": [
+     6,
+     4
+    ],
+    "distances": {
+     "Grape": 2.23606797749979,
+     "Green bean": 4.242640687119285,
+     "Nuts": 3.605551275463989,
+     "Orange": 1.4142135623730951
+    },
+    "neighbors": [
+     "Orange",
+     "Grape",
+     "Nuts"
+    ],
+    "K": 3,
+    "pFruit": 0.6666666666666666,
+    "pProtein": 0.3333333333333333
+   },
+   "module": 22,
+   "tolerance": 0.003333333333333333,
+   "answerName": "Probability",
+   "answer": 0.6666666666666666
+  },
+  {
+   "id": "s22-mesh-knn",
+   "title": "Quality control of surgical mesh with K = 3",
+   "topic": "s22knn",
+   "context": "Surgical mesh from four vendors was tested for strength (x1, kg/m²) and flexibility (x2, integer scale 1–10) and graded Pass or Fail by surgeons. A new vendor's mesh has x1 = 7 and x2 = 3. Classify it with K-NN using K = 3 and the Euclidean distance.",
+   "unit": "probability",
+   "table": {
+    "headers": [
+     "Vendor",
+     "x1: strength (kg/m²)",
+     "x2: flexibility",
+     "y: surgeons"
+    ],
+    "rows": [
+     [
+      "A",
+      7,
+      7,
+      "Pass"
+     ],
+     [
+      "B",
+      4,
+      7,
+      "Pass"
+     ],
+     [
+      "C",
+      4,
+      3,
+      "Fail"
+     ],
+     [
+      "D",
+      4,
+      1,
+      "Fail"
+     ]
+    ]
+   },
+   "tasks": [
+    "Compute the distance from the new mesh (7, 3) to each vendor, rank them, and identify the K = 3 nearest neighbors.",
+    "Classify the new mesh as Pass or Fail and give the probability that it fails."
+   ],
+   "hypotheses": null,
+   "symbols": "\\(x_i\\) (feature vector of training entry \\(i\\)), \\(y_i\\) (its class label), \\(L\\) (number of classes), \\(K\\) (number of nearest neighbors), \\(d\\) (Euclidean distance).",
+   "steps": [
+    {
+     "title": "Set up",
+     "general": [
+      "q=(7,3),\\ K=3"
+     ],
+     "work": [
+      "A=(7,7),\\ B=(4,7),\\ C=(4,3),\\ D=(4,1)"
+     ],
+     "words": "The training set has four labeled vendors."
+    },
+    {
+     "title": "Distances",
+     "general": [
+      "d(q,r)=\\sqrt{(q_1-r_1)^2+(q_2-r_2)^2}"
+     ],
+     "work": [
+      "d_A=\\sqrt{(7-7)^2+(7-3)^2}=4",
+      "d_B=\\sqrt{(4-7)^2+(7-3)^2}=5",
+      "d_C=\\sqrt{(4-7)^2+(3-3)^2}=3",
+      "d_D=\\sqrt{(4-7)^2+(1-3)^2}=\\sqrt{13}=3.60555"
+     ],
+     "words": "Compute the distance to every vendor."
+    },
+    {
+     "title": "Rank the distances",
+     "general": [
+      "\\text{rank }d\\text{ from smallest}"
+     ],
+     "work": [
+      "C\\ (3)<D\\ (3.60555)<A\\ (4)<B\\ (5)"
+     ],
+     "words": "Ranks are C 1, D 2, A 3, B 4, so the K = 3 nearest neighbors are C, D and A."
+    },
+    {
+     "title": "Read the neighbor classes",
+     "general": [
+      "y_C,\\ y_D,\\ y_A"
+     ],
+     "work": [
+      "\\text{Fail},\\ \\text{Fail},\\ \\text{Pass}"
+     ],
+     "words": "Vendor B is not a neighbor, so its class is not used."
+    },
+    {
+     "title": "Classify and give the probability",
+     "general": [
+      "P(\\text{Fail})=\\frac{\\#\\text{Fail among neighbors}}{K}"
+     ],
+     "work": [
+      "P(\\text{Fail})=\\frac{2}{3}=0.66667"
+     ],
+     "words": "Fail is the plurality class, so the new mesh is classified as Fail."
+    }
+   ],
+   "conclusion": "The three nearest neighbors are C (Fail), D (Fail) and A (Pass). The new mesh is classified as Fail, with probability 2/3 of failing the surgeons' assessment.",
+   "source": "Session 22 pages 40–42",
+   "lookup": null,
+   "values": {
+    "newMesh": [
+     7,
+     3
+    ],
+    "distances": {
+     "A": 4.0,
+     "B": 5.0,
+     "C": 3.0,
+     "D": 3.605551275463989
+    },
+    "ranks": {
+     "C": 1,
+     "D": 2,
+     "A": 3,
+     "B": 4
+    },
+    "neighbors": [
+     "C",
+     "D",
+     "A"
+    ],
+    "K": 3,
+    "pFail": 0.6666666666666666
+   },
+   "module": 22,
+   "tolerance": 0.003333333333333333,
+   "answerName": "Probability",
+   "answer": 0.6666666666666666
+  }
+ ],
+ "questions": [
+  {
+   "id": "m2-s22-q001",
+   "module": 22,
+   "topic": "s22idea",
+   "stem": "For the tomato (6, 4) compared with grape, green bean, nuts and orange, what is the Euclidean distance to its single most similar food?",
+   "options": [
+    "\\(2\\)",
+    "\\(2.23607\\)",
+    "\\(1.41421\\)",
+    "\\(1\\)"
+   ],
+   "correct": 2,
+   "why": "Orange (7, 3) is closest: \\(\\sqrt{1^2+1^2}=\\sqrt2\\approx1.41421\\). Adding the differences without squaring gives 2, which is the Manhattan distance.",
+   "case": "s22-tomato-nearest",
+   "equations": [
+    "d=\\sqrt{(6-7)^2+(4-3)^2}=\\sqrt2"
+   ]
+  },
+  {
+   "id": "m2-s22-q002",
+   "module": 22,
+   "topic": "s22distance",
+   "stem": "What is the Euclidean distance between medicine 1 (1, 1) and medicine 4 (5, 4)?",
+   "options": [
+    "\\(5\\)",
+    "\\(7\\)",
+    "\\(25\\)",
+    "\\(2.64575\\)"
+   ],
+   "correct": 0,
+   "why": "The differences are 4 and 3, so \\(\\sqrt{16+9}=5\\). 25 forgets the square root, and 7 is the Manhattan distance.",
+   "case": "s22-medicine-distance",
+   "equations": [
+    "d_2=\\sqrt{4^2+3^2}=5"
+   ]
+  },
+  {
+   "id": "m2-s22-q003",
+   "module": 22,
+   "topic": "s22distance",
+   "stem": "What is the Manhattan distance between medicine 1 (1, 1) and medicine 4 (5, 4)?",
+   "options": [
+    "\\(5\\)",
+    "\\(1\\)",
+    "\\(12\\)",
+    "\\(7\\)"
+   ],
+   "correct": 3,
+   "why": "Manhattan adds absolute differences: \\(4+3=7\\). Subtracting them gives 1 and multiplying gives 12.",
+   "case": "s22-medicine-distance",
+   "equations": [
+    "d_1=|1-5|+|1-4|=7"
+   ]
+  },
+  {
+   "id": "m2-s22-q004",
+   "module": 22,
+   "topic": "s22distance",
+   "stem": "What is the Minkowski distance with \\(p=3\\) between medicine 1 (1, 1) and medicine 4 (5, 4)?",
+   "options": [
+    "\\(91\\)",
+    "\\(4.49794\\)",
+    "\\(30.33333\\)",
+    "\\(5\\)"
+   ],
+   "correct": 1,
+   "why": "Cube the differences, add, and take the cube root: \\(91^{1/3}\\approx4.49794\\). 91 skips the root and 30.33333 divides instead of taking a root.",
+   "case": "s22-medicine-distance",
+   "equations": [
+    "d_3=(4^3+3^3)^{1/3}=91^{1/3}"
+   ]
+  },
+  {
+   "id": "m2-s22-q005",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "In iteration 1 of the ages example (\\(c_1=21\\), \\(c_2=30\\)), what is the distance from age 28 to \\(c_2\\)?",
+   "options": [
+    "\\(7\\)",
+    "\\(2\\)",
+    "\\(4\\)",
+    "\\(58\\)"
+   ],
+   "correct": 1,
+   "why": "In one dimension the distance is \\(|28-30|=2\\). 7 is the distance to \\(c_1\\), and 4 squares the difference.",
+   "case": "s22-ages-kmeans",
+   "equations": [
+    "d=|28-30|=2"
+   ]
+  },
+  {
+   "id": "m2-s22-q006",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "After iteration 1 of the ages example, what is the new centroid of cluster 2?",
+   "options": [
+    "\\(30\\)",
+    "\\(40.83333\\)",
+    "\\(45.5\\)",
+    "\\(39\\)"
+   ],
+   "correct": 3,
+   "why": "Cluster 2 holds 28, 35, 40, 41, 42, 43, 44, so \\(273/7=39\\). 40.83333 is the iteration 2 centroid, and 45.5 divides by 6 instead of 7.",
+   "case": "s22-ages-kmeans",
+   "equations": [
+    "c_2=\\frac{273}{7}=39"
+   ]
+  },
+  {
+   "id": "m2-s22-q007",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "After iteration 2 of the ages example, what is the centroid of cluster 1?",
+   "options": [
+    "\\(22.75\\)",
+    "\\(21\\)",
+    "\\(30.33333\\)",
+    "\\(22\\)"
+   ],
+   "correct": 0,
+   "why": "Age 28 joins cluster 1 in iteration 2, so \\(c_1=(20+21+22+28)/4=22.75\\). 21 is the old centroid and 30.33333 divides by 3.",
+   "case": "s22-ages-kmeans",
+   "equations": [
+    "c_1=\\frac{91}{4}=22.75"
+   ]
+  },
+  {
+   "id": "m2-s22-q008",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "After iteration 2 of the ages example, what is the centroid of cluster 2?",
+   "options": [
+    "\\(39\\)",
+    "\\(41\\)",
+    "\\(40.83333\\)",
+    "\\(35\\)"
+   ],
+   "correct": 2,
+   "why": "Cluster 2 is 35, 40, 41, 42, 43, 44, so \\(245/6=40.83333\\). Dividing by 7 keeps the old count and gives 35, and 41 is one member value, not the mean.",
+   "case": "s22-ages-kmeans",
+   "equations": [
+    "c_2=\\frac{245}{6}"
+   ]
+  },
+  {
+   "id": "m2-s22-q009",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "In iteration 1 of the medicine example (\\(c_1=(1,1)\\), \\(c_2=(2,1)\\)), what is the distance from medicine 3 (4, 3) to \\(c_1\\)?",
+   "options": [
+    "\\(5\\)",
+    "\\(13\\)",
+    "\\(2.82843\\)",
+    "\\(3.60555\\)"
+   ],
+   "correct": 3,
+   "why": "The differences are 3 and 2, so \\(\\sqrt{13}\\approx3.60555\\). 5 adds the differences, 13 omits the root, and 2.82843 is the distance to \\(c_2\\).",
+   "case": "s22-medicines-kmeans",
+   "equations": [
+    "d_{31}=\\sqrt{3^2+2^2}=\\sqrt{13}"
+   ]
+  },
+  {
+   "id": "m2-s22-q010",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "After iteration 1 of the medicine example, what is the x-coordinate (MW) of the new centroid \\(c_2\\)?",
+   "options": [
+    "\\(3\\)",
+    "\\(3.66667\\)",
+    "\\(4.5\\)",
+    "\\(2\\)"
+   ],
+   "correct": 1,
+   "why": "Cluster 2 holds medicines 2, 3 and 4, so \\((2+4+5)/3=3.66667\\). 4.5 is the iteration 2 value.",
+   "case": "s22-medicines-kmeans",
+   "equations": [
+    "c_{2,\\text{MW}}=\\frac{2+4+5}{3}"
+   ]
+  },
+  {
+   "id": "m2-s22-q011",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "In iteration 2 of the medicine example, what is the distance from medicine 1 (1, 1) to \\(c_2=(11/3,8/3)\\)?",
+   "options": [
+    "\\(3.14466\\)",
+    "\\(9.88889\\)",
+    "\\(4.33333\\)",
+    "\\(2.35702\\)"
+   ],
+   "correct": 0,
+   "why": "The differences are 8/3 and 5/3, so the distance is \\(\\sqrt{89}/3\\approx3.14466\\). 9.88889 omits the root, 4.33333 adds the differences, and 2.35702 is medicine 2.",
+   "case": "s22-medicines-kmeans",
+   "equations": [
+    "d_{12}=\\sqrt{(8/3)^2+(5/3)^2}"
+   ]
+  },
+  {
+   "id": "m2-s22-q012",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "After iteration 2 of the medicine example, what is the pH (second) coordinate of \\(c_2\\)?",
+   "options": [
+    "\\(2.66667\\)",
+    "\\(4.5\\)",
+    "\\(3.5\\)",
+    "\\(7\\)"
+   ],
+   "correct": 2,
+   "why": "Cluster 2 holds medicines 3 and 4, so the pH mean is \\((3+4)/2=3.5\\). 4.5 is the MW coordinate and 7 is the sum.",
+   "case": "s22-medicines-kmeans",
+   "equations": [
+    "c_{2,\\text{pH}}=\\frac{3+4}{2}=3.5"
+   ]
+  },
+  {
+   "id": "m2-s22-q013",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "In the Session 22 lecture exercise, what is the distance from patient 1 (1, 3) to C1 (2, 2)?",
+   "options": [
+    "\\(2\\)",
+    "\\(4.47214\\)",
+    "\\(1.41421\\)",
+    "\\(1\\)"
+   ],
+   "correct": 2,
+   "why": "The differences are 1 and 1, so \\(\\sqrt2\\approx1.41421\\). 4.47214 is the distance to C2.",
+   "case": "s22-exercise-sbp-crp",
+   "equations": [
+    "d_{11}=\\sqrt{(1-2)^2+(3-2)^2}"
+   ]
+  },
+  {
+   "id": "m2-s22-q014",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "In the Session 22 lecture exercise, what is the distance from patient 3 (8, 7) to C1 (2, 2)?",
+   "options": [
+    "\\(7.81025\\)",
+    "\\(11\\)",
+    "\\(61\\)",
+    "\\(3.60555\\)"
+   ],
+   "correct": 0,
+   "why": "The differences are 6 and 5, so \\(\\sqrt{61}\\approx7.81025\\). 11 adds the differences, and 3.60555 is the distance to C2.",
+   "case": "s22-exercise-sbp-crp",
+   "equations": [
+    "d_{31}=\\sqrt{6^2+5^2}=\\sqrt{61}"
+   ]
+  },
+  {
+   "id": "m2-s22-q015",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "In the Session 22 lecture exercise, what is the SBP coordinate of the new centroid C2 after one iteration?",
+   "options": [
+    "\\(5.33333\\)",
+    "\\(7.5\\)",
+    "\\(5\\)",
+    "\\(15\\)"
+   ],
+   "correct": 1,
+   "why": "Patients 2 and 3 are in cluster 2, so \\((7+8)/2=7.5\\). 5.33333 wrongly includes patient 1, and 5 is the initial value.",
+   "case": "s22-exercise-sbp-crp",
+   "equations": [
+    "C_{2,\\text{SBP}}=\\frac{7+8}{2}"
+   ]
+  },
+  {
+   "id": "m2-s22-q016",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "In the Session 22 lecture exercise, what is the CRP coordinate of the new centroid C2 after one iteration?",
+   "options": [
+    "\\(4\\)",
+    "\\(5\\)",
+    "\\(9\\)",
+    "\\(4.5\\)"
+   ],
+   "correct": 3,
+   "why": "The CRP values of patients 2 and 3 are 2 and 7, so \\((2+7)/2=4.5\\). 4 includes patient 1.",
+   "case": "s22-exercise-sbp-crp",
+   "equations": [
+    "C_{2,\\text{CRP}}=\\frac{2+7}{2}"
+   ]
+  },
+  {
+   "id": "m2-s22-q017",
+   "module": 22,
+   "topic": "s22withinss",
+   "stem": "For the final k = 2 age clusters, what is withinss for cluster 1 (ages 20, 21, 22, 28; centroid 22.75)?",
+   "options": [
+    "\\(38.75\\)",
+    "\\(9.6875\\)",
+    "\\(4.25\\)",
+    "\\(50.83333\\)"
+   ],
+   "correct": 0,
+   "why": "Add the squared deviations: \\(7.5625+3.0625+0.5625+27.5625=38.75\\). 9.6875 divides by 4, and 50.83333 is cluster 2.",
+   "case": "s22-ages-withinss",
+   "equations": [
+    "SS_1=\\sum(x_i-22.75)^2"
+   ]
+  },
+  {
+   "id": "m2-s22-q018",
+   "module": 22,
+   "topic": "s22withinss",
+   "stem": "For the ages with k = 2, what is tot.withinss?",
+   "options": [
+    "\\(784.8167\\)",
+    "\\(874.4\\)",
+    "\\(50.83333\\)",
+    "\\(89.58333\\)"
+   ],
+   "correct": 3,
+   "why": "tot.withinss is \\(38.75+50.83333=89.58333\\). 784.8167 is betweenss and 874.4 is the total sum of squares.",
+   "case": "s22-ages-withinss",
+   "equations": [
+    "SS_{\\text{within total}}=38.75+50.83333"
+   ]
+  },
+  {
+   "id": "m2-s22-q019",
+   "module": 22,
+   "topic": "s22withinss",
+   "stem": "The ages have total sum of squares 874.4 about their mean. With k = 2 and tot.withinss = 89.58333, what is betweenss?",
+   "options": [
+    "\\(964\\)",
+    "\\(89.58333\\)",
+    "\\(784.8167\\)",
+    "\\(437.2\\)"
+   ],
+   "correct": 2,
+   "why": "betweenss is the total minus tot.withinss: \\(874.4-89.58333=784.81667\\).",
+   "case": "s22-ages-withinss",
+   "equations": [
+    "SS_{\\text{between}}=874.4-89.58333"
+   ]
+  },
+  {
+   "id": "m2-s22-q020",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "For the tomato (6, 4), what is the Euclidean distance to grape (8, 5)?",
+   "options": [
+    "\\(3\\)",
+    "\\(2.23607\\)",
+    "\\(5\\)",
+    "\\(1.41421\\)"
+   ],
+   "correct": 1,
+   "why": "The differences are 2 and 1, so \\(\\sqrt5\\approx2.23607\\). 3 adds them and 5 omits the root.",
+   "case": "s22-tomato-knn",
+   "equations": [
+    "d=\\sqrt{(6-8)^2+(4-5)^2}"
+   ]
+  },
+  {
+   "id": "m2-s22-q021",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "With K = 3 for the tomato, what is the probability that the tomato is a fruit?",
+   "options": [
+    "\\(0.33333\\)",
+    "\\(0.66667\\)",
+    "\\(0.5\\)",
+    "\\(1\\)"
+   ],
+   "correct": 1,
+   "why": "The three nearest neighbors are orange, grape (fruits) and nuts (protein), so \\(P=2/3\\).",
+   "case": "s22-tomato-knn",
+   "equations": [
+    "P(\\text{fruit})=2/3"
+   ]
+  },
+  {
+   "id": "m2-s22-q022",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "For the surgical mesh example, what is the distance from the new mesh (7, 3) to vendor D (4, 1)?",
+   "options": [
+    "\\(5\\)",
+    "\\(13\\)",
+    "\\(3.60555\\)",
+    "\\(3\\)"
+   ],
+   "correct": 2,
+   "why": "The differences are 3 and 2, so \\(\\sqrt{13}\\approx3.60555\\). 5 adds the differences and 3 is the distance to C.",
+   "case": "s22-mesh-knn",
+   "equations": [
+    "d_D=\\sqrt{(4-7)^2+(1-3)^2}"
+   ]
+  },
+  {
+   "id": "m2-s22-q023",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "For the surgical mesh example, what is the distance from the new mesh (7, 3) to vendor B (4, 7)?",
+   "options": [
+    "\\(7\\)",
+    "\\(25\\)",
+    "\\(4\\)",
+    "\\(5\\)"
+   ],
+   "correct": 3,
+   "why": "The differences are 3 and 4, so \\(\\sqrt{25}=5\\). 7 is the Manhattan distance and 4 is vendor A.",
+   "case": "s22-mesh-knn",
+   "equations": [
+    "d_B=\\sqrt{3^2+4^2}=5"
+   ]
+  },
+  {
+   "id": "m2-s22-q024",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "With K = 3, what is the probability that the new surgical mesh fails the surgeons' assessment?",
+   "options": [
+    "\\(0.66667\\)",
+    "\\(0.5\\)",
+    "\\(0.33333\\)",
+    "\\(0.75\\)"
+   ],
+   "correct": 0,
+   "why": "The neighbors are C (Fail), D (Fail) and A (Pass), so \\(P(\\text{Fail})=2/3\\). 0.5 uses all four vendors.",
+   "case": "s22-mesh-knn",
+   "equations": [
+    "P(\\text{Fail})=2/3"
+   ]
+  },
+  {
+   "id": "m2-s22-q025",
+   "module": 22,
+   "topic": "s22idea",
+   "stem": "Which statement matches the Session 22 definition of machine learning?",
+   "options": [
+    "A set of rules written by hand by an expert for each new data set.",
+    "Any statistical test that compares two population means.",
+    "A method that stores data without using it for decisions.",
+    "A set of methods that automatically detect patterns in data and use them to predict outcomes and plan data collection."
+   ],
+   "correct": 3,
+   "why": "The definition (Murphy, 2012) stresses automatic pattern detection used for prediction and planning further data collection.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q026",
+   "module": 22,
+   "topic": "s22idea",
+   "stem": "A data set has feature vectors but no known classes, and the goal is to group similar entries. Which task and learning type is this?",
+   "options": [
+    "Clustering, unsupervised learning",
+    "Classification, supervised learning",
+    "Numeric prediction, supervised learning",
+    "Clustering, reinforcement learning"
+   ],
+   "correct": 0,
+   "why": "With no known results, the learning is unsupervised, and grouping similar entries is clustering.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q027",
+   "module": 22,
+   "topic": "s22idea",
+   "stem": "What separates the classification problem from the clustering problem?",
+   "options": [
+    "Clustering is given a known class for each training element; classification is not.",
+    "Classification needs no features, only labels.",
+    "Classification is given a known class for each training element; clustering is not.",
+    "Clustering always uses Manhattan distance and classification always uses Euclidean distance."
+   ],
+   "correct": 2,
+   "why": "Classification starts from labeled data and assigns new objects to predefined classes. Clustering finds groups in unlabeled data.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q028",
+   "module": 22,
+   "topic": "s22idea",
+   "stem": "In the Lantz table on page 5, which pair gives the learning type of k-nearest neighbors and of k-means clustering?",
+   "options": [
+    "K-NN unsupervised; k-means supervised",
+    "K-NN supervised; k-means unsupervised",
+    "Both supervised",
+    "Both meta-learning"
+   ],
+   "correct": 1,
+   "why": "K-NN is a supervised classification method and k-means is an unsupervised clustering method.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q029",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "In the k-means assignment \\(y_i=\\arg\\min_j\\lVert x_i-c_j\\rVert_2\\), what does \\(y_i\\) hold?",
+   "options": [
+    "The smallest distance value itself",
+    "The new centroid of cluster j",
+    "The index j of the centroid nearest to entry i",
+    "The number of entries in cluster j"
+   ],
+   "correct": 2,
+   "why": "\\(\\arg\\min\\) returns the argument (the cluster number) that gives the smallest distance, not the minimum distance.",
+   "case": null,
+   "equations": [
+    "y_i=\\arg\\min_{j}\\lVert x_i-c_j\\rVert_2,\\quad i=1,\\dots,n,\\ j=1,\\dots,k"
+   ]
+  },
+  {
+   "id": "m2-s22-q030",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "When does the k-means algorithm stop?",
+   "options": [
+    "After exactly one iteration",
+    "When every cluster has the same number of entries",
+    "When tot.withinss reaches zero",
+    "When an iteration produces no change in the cluster assignments"
+   ],
+   "correct": 3,
+   "why": "Steps 2 and 3 repeat until no label changes; then the centroids also stay fixed.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q031",
+   "module": 22,
+   "topic": "s22kmeans",
+   "stem": "Which is listed on page 33 as a limitation of k-means?",
+   "options": [
+    "The results may depend on the selection of the initial centroids.",
+    "It can only be used with one feature.",
+    "It requires a known class label for every entry.",
+    "It always finds ring-shaped clusters correctly."
+   ],
+   "correct": 0,
+   "why": "Page 33 lists dependence on initial clusters, a priori k, equal feature weights, sensitivity to extreme points, and poor results for non-hyperellipsoidal groups.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q032",
+   "module": 22,
+   "topic": "s22withinss",
+   "stem": "In kmeans(X, centers) in R, what can the centers argument be?",
+   "options": [
+    "Only the number of rows of X",
+    "Either the number of clusters k or a matrix of starting cluster centers",
+    "The vector of class labels",
+    "The within-cluster sum of squares"
+   ],
+   "correct": 1,
+   "why": "Page 28 states that centers is the number of clusters or a coordinate matrix C of cluster centers.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q033",
+   "module": 22,
+   "topic": "s22withinss",
+   "stem": "As the number of clusters k increases toward n, what happens to tot.withinss?",
+   "options": [
+    "It decreases toward zero",
+    "It increases toward the total sum of squares",
+    "It stays constant",
+    "It becomes negative"
+   ],
+   "correct": 0,
+   "why": "More clusters keep each entry closer to its centroid. At k = n every entry is its own centroid, so the total is 0.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q034",
+   "module": 22,
+   "topic": "s22withinss",
+   "stem": "For the ages, tot.withinss is 874.4, 89.58333, 36.5 and 12 for k = 1 to 4. Which k is chosen and why?",
+   "options": [
+    "k = 4, because tot.withinss is smallest",
+    "k = 2, because improvement is only modest beyond k = 2",
+    "k = 1, because there is no within-cluster split",
+    "k = 3, because it is the middle value"
+   ],
+   "correct": 1,
+   "why": "The large drop occurs from k = 1 to 2; later drops are small, so k = 2 balances too few and too many clusters.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q035",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "How does K in K-NN differ from k in k-means?",
+   "options": [
+    "Both give the number of clusters.",
+    "K is the number of features; k is the number of entries.",
+    "K is the number of classes; k is the number of neighbors.",
+    "K is the number of nearest neighbors used; k is the number of clusters."
+   ],
+   "correct": 3,
+   "why": "Page 36 notes that K in K-NN has a different meaning than k in k-means.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q036",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "If K equals n, the number of training entries, which class does every test value get?",
+   "options": [
+    "The class of the single closest entry",
+    "A different class for each test value",
+    "The class with the most entries in the training set",
+    "No class, because K-NN fails"
+   ],
+   "correct": 2,
+   "why": "With every training entry as a neighbor, the plurality is always the most common training class.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q037",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "Why can K = 1 be a poor choice?",
+   "options": [
+    "It always picks the most common training class.",
+    "Noisy data and outliers can strongly affect the classification.",
+    "It cannot compute distances.",
+    "It requires scaled labels."
+   ],
+   "correct": 1,
+   "why": "With one neighbor, a single unusual training entry decides the class.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q038",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "Using min-max scaling on the ten ages (min 20, max 44), what is the scaled value of age 28?",
+   "options": [
+    "\\(0.63636\\)",
+    "\\(8\\)",
+    "\\(0.5\\)",
+    "\\(0.33333\\)"
+   ],
+   "correct": 3,
+   "why": "Min-max scaling gives \\((28-20)/(44-20)=8/24=0.33333\\). Dividing by the maximum alone gives 0.63636.",
+   "case": null,
+   "equations": [
+    "w_{\\text{scaled}}=\\frac{w-\\min(w)}{\\max(w)-\\min(w)}"
+   ]
+  },
+  {
+   "id": "m2-s22-q039",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "Why are features scaled before K-NN?",
+   "options": [
+    "So the class labels become numeric",
+    "So K can be chosen as the square root of n",
+    "So a feature with a much larger range, such as Scoville spiciness, does not dominate the distance",
+    "So the distance becomes a probability"
+   ],
+   "correct": 2,
+   "why": "Distances add squared feature differences, so a large-range feature would outweigh the others unless the features are put on a standard range.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s22-q040",
+   "module": 22,
+   "topic": "s22knn",
+   "stem": "Which formula is standard normal (z-score) scaling?",
+   "options": [
+    "\\(w_{\\text{scaled}}=(w-\\bar w)/s_w\\)",
+    "\\(w_{\\text{scaled}}=(w-\\min w)/(\\max w-\\min w)\\)",
+    "\\(w_{\\text{scaled}}=w/\\max w\\)",
+    "\\(w_{\\text{scaled}}=(w-\\bar w)/n\\)"
+   ],
+   "correct": 0,
+   "why": "z-score scaling subtracts the feature mean and divides by its standard deviation. The second option is min-max scaling.",
+   "case": null,
+   "equations": [
+    "w_{\\text{scaled}}=\\frac{w-\\bar w}{s_w}"
+   ]
+  }
+ ],
+ "sourceNotes": [
+  {
+   "page": 20,
+   "text": "Step 1 of the algorithm says to select k points at random from the data set as initial centroids, but the ages example (page 17) starts from c2 = 30, which is not one of the ages, and the R runs on pages 30–31 start from 25, 35, 45 and 22, 30, 35, 42, several of which are not data values. The cases use the slide-given starting values."
+  },
+  {
+   "page": 30,
+   "text": "The 3-cluster R output (clusters 20–22, 28–35, 40–44; tot.withinss 36.5) comes from R's default Hartigan-Wong algorithm and was reproduced in R. Applying the page 20 hand algorithm (Lloyd steps) from 25, 35, 45 instead gives clusters 20–28, 35–40, 41–44 with tot.withinss 56.25 (age 40 is equidistant from two centroids). The 2- and 4-cluster outputs match the hand algorithm."
+  },
+  {
+   "page": 25,
+   "text": "The distance from medicine 3 to c2 is printed as 0.4715. With the exact centroid (11/3, 8/3) it is 0.47140; with the rounded centroid (3.67, 2.67) it is 0.46669. The labels are unaffected."
+  },
+  {
+   "page": 37,
+   "text": "The tomato distances are printed to one decimal (2.2, 4.2, 3.6, 1.4). Exact values are 2.23607, 4.24264, 3.60555 and 1.41421; the ranking and the 2/3 result are unchanged."
+  },
+  {
+   "page": 6,
+   "text": "Principal component analysis is listed as an example under clustering (image compression). PCA is a dimension-reduction method rather than a clustering algorithm; it is recorded here as the slide states it."
+  },
+  {
+   "page": 16,
+   "text": "The footnote defines a norm as assigning a strictly positive length to each vector. A norm is zero for the zero vector and strictly positive for every nonzero vector."
+  },
+  {
+   "page": 33,
+   "text": "The limitation that k-means is not computationally practicable for big data sets is recorded as stated. Standard texts usually describe each k-means iteration as fast and scalable, with the main costs coming from repeated restarts and choosing k."
+  },
+  {
+   "page": 22,
+   "text": "Section lettering differs from the outline: page 21 repeats heading C after the Algorithm heading D, page 22 labels the two-dimensional example D (outline: E), and page 28 writes the R function as k-means (the call is kmeans()). Pages 15 and 27 spell Euclidean as Euclidian; page 22 reads physiochemical for physicochemical."
+  }
+ ]
+}

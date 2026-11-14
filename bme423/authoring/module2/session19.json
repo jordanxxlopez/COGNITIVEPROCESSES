@@ -1,0 +1,3005 @@
+{
+ "module": {
+  "id": 19,
+  "title": "Multiple linear regression and logistic regression",
+  "date": "2026-10-28",
+  "count": 39,
+  "pdf": "sources/session19.pdf",
+  "pptx": null,
+  "slides": [
+   {
+    "page": 1,
+    "title": "Session 19 outline: multiple linear regression and logistic regression",
+    "topic": "s19mlrfit",
+    "paragraphs": [
+     "Session 19 has two parts. The first extends simple linear regression to several independent variables: the multiple regression line, the variability about it, a test of the model as a whole, and tests of the individual coefficients.",
+     "The worked multiple-regression example asks whether the systolic blood pressure (SBP) of a first-born child can be predicted from the SBP of the mother and of the father, using 20 families.",
+     "The second part introduces logistic regression for an outcome that is either present or absent. It covers the problem, the method, and two examples: coronary heart disease (CHD) against age, and O-ring failure against launch temperature."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   },
+   {
+    "page": 2,
+    "title": "Old business: margin of error and a clinical-trial follow-up",
+    "topic": "s19margin",
+    "paragraphs": [
+     "The session opens with two follow-up items before the new material. The first asks what the \"margin of error\" in a survey result report means.",
+     "The second follows up a clinical-trial result presented in the Glantz textbook, hormone replacement therapy and mortality, and sets it beside later trial evidence and current medical practice.",
+     "Both items connect earlier course methods to how results are reported and used: a margin of error is part of a confidence interval, and a single study result is one piece of evidence that later studies can revise."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   },
+   {
+    "page": 3,
+    "title": "Margin of error is the cutoff times the standard error",
+    "topic": "s19margin",
+    "paragraphs": [
+     "A 95% confidence interval for a difference has the form estimate plus or minus a cutoff times a standard error. For two means the cutoff is \\(t_{0.05}(\\nu)\\) and the standard error is \\(s_{\\bar x_1-\\bar x_2}\\). For two proportions the cutoff is \\(z_{0.05}=1.960\\) and the standard error is \\(s_{\\hat p_1-\\hat p_2}\\).",
+     "The boxed product, cutoff times standard error, is the margin of error. A survey that reports a value \"plus or minus\" some number of percentage points is reporting this product, the half-width of the 95% interval around the observed value.",
+     "The margin shrinks when the standard error shrinks, so larger samples give smaller margins. Because the interval runs from the estimate minus the margin to the estimate plus the margin, an observed difference smaller than its margin of error gives an interval that contains zero."
+    ],
+    "equations": [
+     "(\\bar x_1-\\bar x_2)-t_{0.05}(\\nu)s_{\\bar x_1-\\bar x_2}<\\mu_1-\\mu_2<(\\bar x_1-\\bar x_2)+t_{0.05}(\\nu)s_{\\bar x_1-\\bar x_2}",
+     "(\\hat p_1-\\hat p_2)-z_{0.05}s_{\\hat p_1-\\hat p_2}<p_1-p_2<(\\hat p_1-\\hat p_2)+z_{0.05}s_{\\hat p_1-\\hat p_2}",
+     "M=t_{0.05}(\\nu)\\,s_{\\bar x_1-\\bar x_2}\\quad\\text{or}\\quad M=z_{0.05}\\,s_{\\hat p_1-\\hat p_2}"
+    ],
+    "symbols": "\\(\\bar x_i\\) (sample mean), \\(\\mu_i\\) (population mean), \\(\\hat p_i\\) (sample proportion), \\(p_i\\) (population proportion), \\(t_{0.05}(\\nu)\\) (two-sided t cutoff), \\(z_{0.05}\\) (two-sided Normal cutoff, 1.960), \\(s\\) (standard error of the difference), \\(M\\) (margin of error).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 4,
+    "title": "Hormone replacement therapy and mortality: the Glantz problem",
+    "topic": "s19design",
+    "paragraphs": [
+     "Glantz problem 5-13 describes the 1997 study by Grodstein and colleagues of postmenopausal hormone replacement therapy and overall mortality. The problem text lists reported benefits (decreased risk of cardiovascular disease and osteoporosis) and reported risks (breast and endometrial cancer).",
+     "The table counts 574 deaths and 8,483 survivors among women currently using hormone therapy, and 2,051 deaths and 17,520 survivors among women who never used it. The chi-square test of the null hypothesis of no difference in death rate rejects it with \\(P<0.001\\).",
+     "The relative risk divides the death proportion of the hormone group, 574/9,057, by that of the never-used group, 2,051/19,571, giving 0.6047. The risk of dying in the hormone group is about 60% of the risk in the never-used group. The two groups are defined by current use versus never use, not by random assignment."
+    ],
+    "equations": [
+     "RR=\\frac{n_{TD}/n_T}{n_{CD}/n_C}=\\frac{574/9057}{2051/19571}=0.6047"
+    ],
+    "symbols": "\\(n_{TD}\\) (deaths in the hormone group), \\(n_T\\) (hormone group total), \\(n_{CD}\\) (deaths in the never-used group), \\(n_C\\) (never-used group total), \\(RR\\) (relative risk).",
+    "case": "s19-hrt-relative-risk",
+    "subset": null,
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:p_{\\mathrm{HRT}}=p_{\\mathrm{never}}",
+     "alternative": "H_A:p_{\\mathrm{HRT}}\\ne p_{\\mathrm{never}}",
+     "nullWords": "The death rate is the same for current hormone users and never-users.",
+     "alternativeWords": "The death rate differs between current hormone users and never-users."
+    }
+   },
+   {
+    "page": 5,
+    "title": "Follow-up: the Women's Health Initiative randomized trial",
+    "topic": "s19design",
+    "paragraphs": [
+     "The highlighted problem text notes that hormone replacement therapy had also been associated with increased risk of breast and endometrial cancer. The page follows up this point, raised in class, with the Women's Health Initiative (WHI) randomized controlled trial of estrogen plus progestin, published in JAMA in 2002.",
+     "The WHI primary outcome was coronary heart disease (nonfatal myocardial infarction and CHD death), with invasive breast cancer as the primary adverse outcome. A global index summarized the balance of risks and benefits.",
+     "The WHI concluded that overall health risks exceeded benefits from combined estrogen plus progestin over an average 5.2-year follow-up among healthy postmenopausal US women. This randomized trial reached a less favorable overall conclusion than the earlier comparison of current users with never-users."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   },
+   {
+    "page": 6,
+    "title": "Effect of the 2002 result on practice",
+    "topic": "s19design",
+    "paragraphs": [
+     "The page quotes a US News commentary by The Conversation dated February 24, 2026. After the research was first published in 2002, use of hormone therapy fell by 46% within six months.",
+     "The commentary gives two reasons for the fall: clinicians were reluctant to prescribe hormone therapy and patients were fearful of taking it. In 2003 the FDA added black box warnings, its most serious warnings, indicating a risk of serious harm or death, to all estrogen-containing hormone products for menopause.",
+     "The page also cites an HHS fact sheet on the FDA initiating removal of those black box warnings. The sequence shows how quickly one large trial result changed prescribing, and that the reading of the evidence was later revisited."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   },
+   {
+    "page": 7,
+    "title": "FDA news release, February 12, 2026",
+    "topic": "s19design",
+    "paragraphs": [
+     "The FDA news release states that studies have provided evidence that starting HRT within ten years of the onset of menopause can have benefits that, for most women, outweigh potential risks. Listed benefits include a reduced risk of all-cause mortality and fractures.",
+     "The release also associates HRT with a 50% reduction in heart attack risk, a 64% reduction in cognitive decline, and a 35% lower risk of Alzheimer's disease. An analysis of 30 trials with 26,708 women found HRT was not associated with increased cancer mortality, and women who start HRT before age 60 appear to have a decreased mortality risk.",
+     "The release ties these benefits to when therapy starts: within ten years of menopause onset, or before age 60. The age of the women studied and the timing of therapy are therefore part of what each result describes when results from different studies are compared."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   },
+   {
+    "page": 8,
+    "title": "Cell phones and sperm motility",
+    "topic": "s19design",
+    "paragraphs": [
+     "Two published studies are listed. Fejes and colleagues (Arch Androl, 2005) studied two groups of cell phone users. Agarwal and colleagues (Fertil Steril, 2008) included a control group of non-users of cell phones.",
+     "The stated conclusion is that sperm cell motility is related to cell phone use. \"Related\" describes an association between the two variables.",
+     "A study with only users can compare amounts of use, while adding non-users gives a comparison with no use at all. The page ends with an open question about the current understanding of this relationship."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   },
+   {
+    "page": 9,
+    "title": "Simple linear regression summary: population and sample",
+    "topic": "s19slopes",
+    "paragraphs": [
+     "In the population, the mean of y at each x lies on the line of means \\(\\mu_{y|x}=\\alpha+\\beta x\\). The spread of y about this line, \\(\\sigma_{y|x}\\), is the same at every x (constant variability about the line).",
+     "A sample of n pairs \\((x_i,y_i)\\) gives the regression line \\(\\hat y=a+bx\\). The fitted value \\(\\hat y\\) estimates \\(\\mu_{y|x}\\), and \\(a\\) and \\(b\\) estimate \\(\\alpha\\) and \\(\\beta\\).",
+     "The residual variance \\(s_{y|x}^2\\) estimates \\(\\sigma_{y|x}^2\\). The standard errors \\(s_a\\) and \\(s_b\\) describe how much the intercept and slope would vary from sample to sample; they are the denominators of the regression t tests."
+    ],
+    "equations": [
+     "\\mu_{y|x}=\\alpha+\\beta x",
+     "\\hat y=a+bx"
+    ],
+    "symbols": "\\(\\mu_{y|x}\\) (population mean of y at x), \\(\\alpha,\\beta\\) (population intercept and slope), \\(\\sigma_{y|x}\\) (population SD about the line), \\(a,b\\) (sample intercept and slope), \\(s_{y|x}\\) (residual SD), \\(s_a,s_b\\) (standard errors of a and b).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 10,
+    "title": "Regression t tests: one slope, and two slopes compared",
+    "topic": "s19slopes",
+    "paragraphs": [
+     "The significance of a trend tests \\(H_0:\\beta=0\\) with \\(t=b/s_b\\) on \\(\\nu=n-2\\) degrees of freedom. A slope of zero means the mean of y does not change with x.",
+     "Two independent groups can be compared with \\(H_0:\\beta_1=\\beta_2\\) using \\(t=(b_1-b_2)/s_{b_1-b_2}\\) on \\(\\nu=n_1+n_2-4\\). Each line estimates an intercept and a slope, so four degrees of freedom are used. The standard error of the difference is \\(s_{b_1-b_2}=\\sqrt{s_{b_1}^2+s_{b_2}^2}\\), the root of the sum of the two slope variances.",
+     "The same approach compares intercepts, with \\(a_1-a_2\\) over its standard error. Rejecting equal slopes means y changes with x at different rates in the two groups."
+    ],
+    "equations": [
+     "t=\\frac{b}{s_b},\\quad \\nu=n-2",
+     "t=\\frac{b_1-b_2}{s_{b_1-b_2}},\\quad \\nu=n_1+n_2-4",
+     "s_{b_1-b_2}=\\sqrt{s_{b_1}^2+s_{b_2}^2}"
+    ],
+    "symbols": "\\(b\\) (sample slope), \\(s_b\\) (its standard error), \\(\\beta\\) (population slope), \\(b_1,b_2\\) (slopes of the two groups), \\(s_{b_1-b_2}\\) (SE of the slope difference), \\(n_i\\) (group sizes), \\(\\nu\\) (degrees of freedom).",
+    "case": null,
+    "subset": null,
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\beta_1=\\beta_2",
+     "alternative": "H_1:\\beta_1\\ne\\beta_2",
+     "nullWords": "The two groups have the same population slope.",
+     "alternativeWords": "The two groups have different population slopes."
+    }
+   },
+   {
+    "page": 11,
+    "title": "Lecture exercise: Plutonian heights and weights",
+    "topic": "s19slopes",
+    "paragraphs": [
+     "The exercise gives height (inches, x) and weight (lbs, y) for 18 male and 18 female Plutonians. Males range from 62 to 73 inches and 198 to 237 lbs; females range from 56 to 71 inches and 119 to 154 lbs.",
+     "The question is whether the relationship between weight and height for males is different from that for females. \"Relationship\" here means the regression line, and the slope is the part that describes how weight changes with height.",
+     "Each sex gets its own simple regression. The comparison then needs only each slope, its standard error, and the two sample sizes."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 12,
+    "title": "Separate regression lines for males and females",
+    "topic": "s19slopes",
+    "paragraphs": [
+     "The male regression line is \\(\\hat y=-4.2329+3.2833x\\) and the female line is \\(\\hat y=6.8349+2.0290x\\). The male points lie tightly around their line; the female points scatter more widely.",
+     "On the combined plot every male is heavier than every female, so the two groups sit at very different weight levels. The male cloud also rises more steeply with height.",
+     "A difference in level and a difference in slope are separate questions. The slope comparison asks whether weight increases with height at the same rate in both sexes."
+    ],
+    "equations": [
+     "\\hat y_M=-4.2329+3.2833x",
+     "\\hat y_F=6.8349+2.0290x"
+    ],
+    "symbols": "\\(\\hat y\\) (predicted weight, lbs), \\(x\\) (height, inches).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 13,
+    "title": "R output for the two regressions and the slope test",
+    "topic": "s19slopes",
+    "paragraphs": [
+     "For males the Height.in slope is 3.2833 with standard error 0.2041 (t = 16.088, P = 2.66e-11), residual standard error 2.711 on 16 df and R² = 0.9418. For females the slope is 2.0290 with standard error 0.4708 (t = 4.309, P = 0.00054), residual standard error 7.491 on 16 df and R² = 0.5372.",
+     "The slope difference is 3.2833 − 2.0290 = 1.2543 lbs per inch. Its standard error is \\(\\sqrt{0.2041^2+0.4708^2}=0.51314\\), so \\(t=2.444\\).",
+     "With \\(\\nu=18+18-4=32\\) the two-sided 0.05 cutoff is 2.037, so equal slopes are rejected. The statistic is below the 0.02 cutoff of 2.449, so 0.02 < P < 0.05: mean weight rises faster with height in males."
+    ],
+    "equations": [
+     "t=\\frac{b_M-b_F}{\\sqrt{s_{b_M}^2+s_{b_F}^2}}=\\frac{1.2543}{0.51314}=2.444"
+    ],
+    "symbols": "\\(b_M,b_F\\) (male and female slopes), \\(s_{b_M},s_{b_F}\\) (their standard errors).",
+    "case": "s19-plutonian-slopes",
+    "subset": null,
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\beta_M=\\beta_F",
+     "alternative": "H_A:\\beta_M\\ne\\beta_F",
+     "nullWords": "The mean weight of male and female Plutonians increases with height at the same rate.",
+     "alternativeWords": "The rate at which mean weight increases with height differs between male and female Plutonians."
+    }
+   },
+   {
+    "page": 14,
+    "title": "More than one independent variable: back to Mars",
+    "topic": "s19mlrfit",
+    "paragraphs": [
+     "Glantz's Martian data add water consumption (0, 10 or 20 cups/day) to height (cm) as a second variable that may explain weight (g). The question is whether weight can be related to both height and water consumed.",
+     "One route is three separate simple regressions of weight on height, one for each water level. The plot shows three roughly parallel lines, with heavier Martians at higher water intake for the same height.",
+     "Splitting the data uses only a few points per line and cannot use water as a continuous variable. Fitting both variables at once with these 12 Martians gives \\(\\hat W=-1.220+0.2834H+0.1112C\\), computed from the table."
+    ],
+    "equations": [
+     "\\hat y=a+bx",
+     "\\hat W=-1.220+0.2834H+0.1112C"
+    ],
+    "symbols": "\\(W\\) (weight, g), \\(H\\) (height, cm), \\(C\\) (water consumption, cups/day).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 15,
+    "title": "The best-fit plane",
+    "topic": "s19mlrfit",
+    "paragraphs": [
+     "With two independent variables the data are points in three dimensions: height, water consumption and weight. The fitted relationship is a plane rather than a line.",
+     "Each vertical line drops from a data point to the height-water floor. The vertical distance between a point and the plane is that observation's residual.",
+     "The white lines on the plane at 0, 10 and 20 cups are the three parallel lines from the previous page. The plane slopes upward along height and along water consumption at the same time."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 16,
+    "title": "Multiple regression with two independent variables",
+    "topic": "s19mlrfit",
+    "paragraphs": [
+     "The model of the data writes each observation as \\(y_i=\\beta_0+\\beta_1x_{i1}+\\beta_2x_{i2}+e_i\\). The betas are population coefficients, \\(x_{i1}\\) and \\(x_{i2}\\) are the two independent variables, and \\(e_i\\) is the random error.",
+     "The regression line (a plane here) is \\(\\hat y=b_0+b_1x_1+b_2x_2\\), with the b values estimating the betas. Each \\(b_j\\) is the change in mean y per unit change in \\(x_j\\) with the other variable held fixed.",
+     "The b values are chosen to minimize the sum of squared errors \\(SS=\\sum e_i^2=\\sum(y_i-\\hat y_i)^2\\) over \\(b_0, b_1, b_2\\), the same least-squares rule as in simple regression."
+    ],
+    "equations": [
+     "y_i=\\beta_0+\\beta_1x_{i1}+\\beta_2x_{i2}+e_i,\\quad i=1,\\dots,n",
+     "\\hat y=b_0+b_1x_1+b_2x_2",
+     "SS=\\sum_{i=1}^n e_i^2=\\sum_{i=1}^n(y_i-\\hat y_i)^2"
+    ],
+    "symbols": "\\(y_i\\) (observation), \\(\\beta_j\\) (population coefficients), \\(x_{ij}\\) (independent variable j for observation i), \\(e_i\\) (error), \\(b_j\\) (estimated coefficients), \\(\\hat y\\) (fitted value), \\(SS\\) (sum of squared errors).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 17,
+    "title": "General multiple regression in matrix form",
+    "topic": "s19mlrfit",
+    "paragraphs": [
+     "With k independent variables the model is \\(y_i=\\beta_0+\\beta_1x_{i1}+\\dots+\\beta_kx_{ik}+e_i\\). Stacking the n observations gives the vector form \\(y=X\\beta+e\\).",
+     "The design matrix X has n rows and k + 1 columns. Its first column is all ones, which carries the intercept; the other columns hold the values of each independent variable.",
+     "The fitted values are \\(\\hat y=Xb\\), with \\(b=[b_0\\dots b_k]^T\\). Least squares chooses b to minimize \\(SS=e^Te=(y-\\hat y)^T(y-\\hat y)\\)."
+    ],
+    "equations": [
+     "y_i=\\beta_0+\\beta_1x_{i1}+\\beta_2x_{i2}+\\dots+\\beta_kx_{ik}+e_i",
+     "y=X\\beta+e",
+     "\\hat y=Xb",
+     "SS=e^Te=(y-\\hat y)^T(y-\\hat y)"
+    ],
+    "symbols": "\\(y\\) (n × 1 response vector), \\(X\\) (n × (k+1) design matrix), \\(\\beta\\) (coefficient vector), \\(e\\) (error vector), \\(b\\) (estimated coefficient vector), \\(k\\) (number of independent variables).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 18,
+    "title": "Least-squares estimate and residual standard error",
+    "topic": "s19mlrfit",
+    "paragraphs": [
+     "Setting the derivative of \\((y-Xb)^T(y-Xb)\\) with respect to b equal to zero gives the least-squares estimate \\(b=(X^TX)^{-1}X^Ty\\). This one formula gives every coefficient at once.",
+     "The sum of squared residuals \\(SS_{res}=(y-Xb)^T(y-Xb)\\) is the sum of squared errors evaluated at that b. It measures the scatter of the data about the fitted plane.",
+     "Dividing by \\(n-k-1\\) gives the variance about the regression, \\(s_{y|x}^2=SS_{res}/(n-k-1)\\). Its root \\(s_{y|x}\\) is what R prints as Residual standard error. One degree of freedom is used for each of the k + 1 coefficients."
+    ],
+    "equations": [
+     "\\frac{\\partial SS}{\\partial b}=\\frac{\\partial}{\\partial b}\\left((y-Xb)^T(y-Xb)\\right)=0",
+     "b=(X^TX)^{-1}X^Ty",
+     "SS_{res}=e^Te=(y-Xb)^T(y-Xb)",
+     "s_{y|x}^2=\\frac{SS_{res}}{n-k-1}"
+    ],
+    "symbols": "\\(b\\) (least-squares coefficients), \\(X^T\\) (transpose of X), \\(SS_{res}\\) (sum of squared residuals), \\(n\\) (observations), \\(k\\) (independent variables), \\(s_{y|x}\\) (residual standard error).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 19,
+    "title": "F test of the model as a whole",
+    "topic": "s19mlrtest",
+    "paragraphs": [
+     "The total sum of squares \\(SS_{tot}=(y-\\bar Y)^T(y-\\bar Y)\\) measures the spread of y about its mean. The part explained by the model is \\(SS_{mod}=SS_{tot}-SS_{res}\\).",
+     "Each sum of squares is divided by its degrees of freedom: \\(MS_{mod}=SS_{mod}/k\\) and \\(MS_{res}=SS_{res}/(n-k-1)\\). The test statistic is \\(F=MS_{mod}/MS_{res}\\), compared with the F distribution on k and n − k − 1 degrees of freedom.",
+     "The null hypothesis is that all k slope coefficients are zero; the alternative is that at least one is not. A large F means the model explains much more variation than residual scatter alone would produce."
+    ],
+    "equations": [
+     "SS_{tot}=(y-\\bar Y)^T(y-\\bar Y),\\quad \\bar Y=\\frac1n\\sum_{i=1}^n y_i",
+     "SS_{mod}=SS_{tot}-SS_{res}",
+     "MS_{mod}=\\frac{SS_{mod}}{df_{mod}},\\ df_{mod}=k;\\quad MS_{res}=\\frac{SS_{res}}{df_{res}},\\ df_{res}=n-k-1",
+     "F=\\frac{MS_{mod}}{MS_{res}}\\sim F_\\alpha(df_{mod},df_{res})"
+    ],
+    "symbols": "\\(SS_{tot}\\) (total sum of squares), \\(SS_{mod}\\) (model sum of squares), \\(SS_{res}\\) (residual sum of squares), \\(MS\\) (mean square), \\(df\\) (degrees of freedom), \\(\\bar Y\\) (mean of y).",
+    "case": null,
+    "subset": null,
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\beta_1=\\cdots=\\beta_k=0",
+     "alternative": "H_1:\\text{at least one }\\beta_j\\ne0",
+     "nullWords": "None of the independent variables is related to the mean of the dependent variable.",
+     "alternativeWords": "At least one independent variable is related to the mean of the dependent variable."
+    }
+   },
+   {
+    "page": 20,
+    "title": "t tests of individual coefficients and R squared",
+    "topic": "s19mlrtest",
+    "paragraphs": [
+     "Each coefficient is tested with \\(H_0:\\beta_j=0\\) against \\(H_1:\\beta_j\\ne0\\) using \\(t=b_j/s_{b_j}\\) on \\(n-k-1\\) degrees of freedom. If \\(|t|\\) exceeds the two-tailed table value \\(t_\\alpha(\\nu)\\), reject with \\(P<\\alpha\\).",
+     "The coefficient variances are \\(s_{b_j}^2=s_{y|x}^2\\,\\mathrm{diag}\\{(X^TX)^{-1}\\}\\): the residual variance times the matching diagonal entry of the inverse cross-product matrix. These are the Std. Error values in R output.",
+     "The coefficient of determination is \\(R^2=1-SS_{res}/SS_{tot}\\), the fraction of the variation in y explained by the model. Its root R is the multiple correlation coefficient; with one independent variable, R equals the magnitude of Pearson's r."
+    ],
+    "equations": [
+     "t=\\frac{b_j}{s_{b_j}}\\sim t_\\alpha(n-k-1)",
+     "|t|>t_{crit}=t_\\alpha(\\nu)\\Rightarrow\\text{reject }H_0,\\ P<\\alpha",
+     "s_{b_j}^2=s_{y|x}^2\\,\\mathrm{diag}\\{(X^TX)^{-1}\\}",
+     "R^2=1-\\frac{SS_{res}}{SS_{tot}}"
+    ],
+    "symbols": "\\(b_j\\) (estimated coefficient), \\(s_{b_j}\\) (its standard error), \\(\\beta_j\\) (population coefficient), \\(t_\\alpha(\\nu)\\) (two-tailed cutoff), \\(R^2\\) (coefficient of determination).",
+    "case": null,
+    "subset": null,
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\beta_j=0",
+     "alternative": "H_1:\\beta_j\\ne0",
+     "nullWords": "Variable j has no relation to the mean of y once the other variables are in the model.",
+     "alternativeWords": "Variable j is related to the mean of y once the other variables are in the model."
+    }
+   },
+   {
+    "page": 21,
+    "title": "Hypertension in families: the data",
+    "topic": "s19mlrfit",
+    "paragraphs": [
+     "The example, from Rosner's Fundamentals of Biostatistics, asks to what extent hypertension is a genetic phenomenon. SBP is measured in the mother, the father and the first-born child of 20 families.",
+     "The excerpt shows families 1 to 7 and 18 to 20; the full table appears two pages later. Family 1, for example, has child 90, mother 130 and father 140 mm Hg.",
+     "Rosner's table labels the variables t (child), y (mother) and x (father). The regression on the following pages relabels them y (child), \\(x_1\\) (mother) and \\(x_2\\) (father)."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 22,
+    "title": "Exploratory scatter plots",
+    "topic": "s19mlrfit",
+    "paragraphs": [
+     "Child SBP is plotted against mother SBP and against father SBP, each with a fitted line. Both clouds slope upward, so each parent's SBP is positively associated with the child's.",
+     "Both relationships show considerable scatter about their lines; neither parent alone predicts the child closely.",
+     "The three-dimensional plot shows the child SBP against both parental SBPs together. Multiple regression fits a plane through this cloud, so that each parent's contribution is estimated with the other held fixed."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 23,
+    "title": "Setting up the regression in R",
+    "topic": "s19mlrfit",
+    "paragraphs": [
+     "The task is a multiple linear regression of the child's SBP (y) on the mother's SBP (\\(x_1\\)) and the father's SBP (\\(x_2\\)). The data for all 20 families are read from BPchildparent.csv.",
+     "The R formula SBPchild ~ SBPmother + SBPfather names the dependent variable on the left and the independent variables, joined by +, on the right. lm() fits the model by least squares and summary() prints the results.",
+     "The same fit can be done by the matrix formula \\(b=(X^TX)^{-1}X^Ty\\), with X holding a column of ones, the mother values and the father values. The worked case builds X^TX and X^Ty from these 20 rows."
+    ],
+    "equations": [
+     "b=(X^TX)^{-1}X^Ty"
+    ],
+    "symbols": "\\(X\\) (design matrix), \\(y\\) (child SBP vector), \\(b\\) (coefficient vector).",
+    "case": "s19-sbp-least-squares",
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 24,
+    "title": "Reading the summary() output",
+    "topic": "s19mlrtest",
+    "paragraphs": [
+     "The Coefficients table lists each estimate, its standard error, the t value (estimate divided by standard error) and the two-sided P value. The fitted plane is \\(\\hat y=-15.7+0.423x_1+0.415x_2\\).",
+     "SBPmother (t = 3.565, P = 0.00238) and SBPfather (t = 3.325, P = 0.00401) are both significant at 0.01; the intercept is not (P = 0.51598). Each parental coefficient means about 0.42 mm Hg higher mean child SBP per 1 mm Hg of that parent's SBP, with the other parent held fixed.",
+     "The residual standard error \\(s_{y|x}=10.67\\) is on 17 degrees of freedom (20 − 2 − 1). Multiple R² is 0.5973 and adjusted R² is 0.5499. The residuals run from −19.94 to 14.81 mm Hg."
+    ],
+    "equations": [
+     "\\hat y=b_0+b_1x_1+b_2x_2=-15.7+0.423x_1+0.415x_2",
+     "s_{y|x}=10.67"
+    ],
+    "symbols": "\\(b_0\\) (intercept), \\(b_1\\) (mother coefficient), \\(b_2\\) (father coefficient), \\(x_1,x_2\\) (mother and father SBP), \\(s_{y|x}\\) (residual standard error).",
+    "case": "s19-sbp-summary",
+    "subset": [
+     3,
+     7
+    ],
+    "core": true
+   },
+   {
+    "page": 25,
+    "title": "F test for the hypertension model",
+    "topic": "s19mlrtest",
+    "paragraphs": [
+     "The hypothesis tested is \\(H_0:\\beta_1=\\beta_2=0\\) against \\(H_1:\\beta_1\\ne0\\) and/or \\(\\beta_2\\ne0\\): whether the parental SBPs, taken together, predict the child's SBP.",
+     "R prints F = 12.61 on 2 and 17 degrees of freedom, with p-value 0.0004388. The printed F table gives 3.59 at 0.05 and 6.11 at 0.01 for 2 and 17 df, so F exceeds both.",
+     "The null hypothesis is rejected with P < 0.001: the mother's and father's SBPs, considered together, are significant predictors of the child's SBP."
+    ],
+    "equations": [
+     "F=\\frac{MS_{mod}}{MS_{res}}\\sim F_\\alpha(df_{mod},df_{res}),\\quad df_{mod}=k,\\ df_{res}=n-k-1"
+    ],
+    "symbols": "\\(MS_{mod}, MS_{res}\\) (mean squares), \\(k=2\\), \\(n=20\\).",
+    "case": "s19-sbp-summary",
+    "subset": [
+     0,
+     3
+    ],
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\beta_1=\\beta_2=0",
+     "alternative": "H_1:\\beta_1\\ne0\\ \\text{and/or}\\ \\beta_2\\ne0",
+     "nullWords": "Neither the mother's nor the father's SBP is related to the child's mean SBP.",
+     "alternativeWords": "At least one parent's SBP is related to the child's mean SBP."
+    }
+   },
+   {
+    "page": 26,
+    "title": "Model complexity: underfitting and overfitting",
+    "topic": "s19mlrfit",
+    "paragraphs": [
+     "Adding parameters to a model generally improves its fit to the observed data. A straight line through curved data underfits: it misses the shape.",
+     "Past some point, added complexity stops giving useful, generalizable information. The model starts to fit the noise in the data instead of the nature of the system, as the overfitted curve that passes through every point shows.",
+     "A good model is complex enough to handle the nature of the data without tracking the noise. This is one reason to drop non-significant variables and refit, and to report adjusted R², which penalizes extra parameters."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 27,
+    "title": "Logistic regression: the problem",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "The example asks how coronary heart disease is related to age. Presence of CHD is a categorical dependent variable: each patient either has CHD (1) or does not (0).",
+     "Plotted against age, the data form two horizontal rows at 0 and 1. A linear regression of CHD presence on age is not appropriate, because a line predicts values other than 0 and 1 and the errors cannot have constant variance about it.",
+     "The useful question is whether the data reveal a relationship between the probability of getting CHD and age."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 28,
+    "title": "Grouping by age to estimate probabilities",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "Hosmer and Lemeshow's Table 1.1 lists ID, age group, age and CHD status (0 or 1) for 100 subjects.",
+     "Table 1.2 groups the subjects into eight age groups and counts CHD absent and present in each. The proportion with CHD rises from 0.10 at ages 20 to 29 to 0.80 at ages 60 to 69; overall 43 of 100 have CHD.",
+     "Each group proportion is a sample estimate of the probability of CHD for that age range. This turns a yes-or-no outcome into probabilities that can be related to age."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 29,
+    "title": "Two approaches, and the logistic function",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "Each age group is represented by its midpoint (24.5, 32, 37, 42, 47, 52, 57 and 64.5), and the plotted proportions rise in an S-like pattern toward 1.",
+     "One approach is a linear regression of the probability of CHD on age. The other relates probability to age through the logistic function, which maps any x from \\(-\\infty\\) to \\(+\\infty\\) to a value between 0 and 1.",
+     "The logistic function is \\(p_i=e^{(\\beta_0+\\beta_1x_i)}/(1+e^{(\\beta_0+\\beta_1x_i)})=1/(1+e^{-(\\beta_0+\\beta_1x_i)})\\), where \\(p_i\\) is the probability associated with \\(x_i\\). Its shape is set by \\(\\beta_0\\) and \\(\\beta_1\\)."
+    ],
+    "equations": [
+     "p_i=\\frac{e^{(\\beta_0+\\beta_1x_i)}}{1+e^{(\\beta_0+\\beta_1x_i)}}=\\frac{1}{1+e^{-(\\beta_0+\\beta_1x_i)}}"
+    ],
+    "symbols": "\\(p_i\\) (probability at \\(x_i\\)), \\(x_i\\) (age), \\(\\beta_0,\\beta_1\\) (logistic parameters).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 30,
+    "title": "The logit transformation",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "Rearranging the logistic function gives \\(p/(1-p)=e^{(\\beta_0+\\beta_1x)}\\), and taking the natural log gives \\(\\ln(p/(1-p))=\\beta_0+\\beta_1x\\). This is the logit transformation, logit(p).",
+     "The logit is linear in x, so transforming each group proportion to its logit should give points on a straight line. The table lists age 24.5 with p = 0.1, age 32 with p = 0.13 and age 64.5 with p = 0.8.",
+     "The listed logit values (−0.9542, −0.8256, 0.6021) are base-10 logarithms of the odds. The natural-log logits defined on this page are −2.1972, −1.9010 and 1.3863. The third step is a linear regression of logit(p) on age to estimate \\(\\beta_0\\) and \\(\\beta_1\\)."
+    ],
+    "equations": [
+     "\\frac{p}{1-p}=e^{(\\beta_0+\\beta_1x)}",
+     "\\ln\\left(\\frac{p}{1-p}\\right)=\\beta_0+\\beta_1x=\\mathrm{logit}(p)"
+    ],
+    "symbols": "\\(p\\) (probability), \\(p/(1-p)\\) (odds), \\(\\ln\\) (natural log), \\(\\mathrm{logit}(p)\\) (log odds).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 31,
+    "title": "Regressing logit(p) on age with lm()",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "R fits lm(LogitP ~ AGE) to the eight group points. The estimates are \\(b_0=-2.095787\\) and \\(b_1=0.043550\\), both with P below 0.001.",
+     "The residual standard error is 0.09857 on 6 degrees of freedom (8 points − 2), multiple R² is 0.9758, and F = 241.6 on 1 and 6 df with p-value 4.49e-06. The logit points lie close to a straight line.",
+     "These coefficients belong to the logit values used as LogitP, which are base-10 logits. On the natural-log scale of the logistic function, the slope and intercept would each be about 2.303 times larger."
+    ],
+    "equations": [
+     "\\mathrm{logit}(p)=b_0+b_1\\cdot\\mathrm{AGE}"
+    ],
+    "symbols": "\\(b_0, b_1\\) (least-squares intercept and slope of the logit line).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 32,
+    "title": "Logit line and the two probability curves",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "The top plot shows the logit data and the fitted logit line \\(\\mathrm{logit}(p)=b_0+b_1\\cdot\\mathrm{Age}\\) with \\(b_0=-2.0958\\) and \\(b_1=0.04355\\).",
+     "The bottom plot compares a linear regression of p on age (a straight line) with the logistic curve. The straight line drops below 0 at young ages and rises above 1 at old ages, which is impossible for a probability.",
+     "The logistic curve stays between 0 and 1 for every age. The plotted curve uses the base-10 coefficients inside the natural exponential, so it is flatter than the group proportions; on the natural-log scale the curve would follow them more closely."
+    ],
+    "equations": [
+     "\\mathrm{logit}(p)\\equiv\\ln\\left(\\frac{p}{1-p}\\right)=\\beta_0+\\beta_1\\cdot\\mathrm{Age}"
+    ],
+    "symbols": "\\(\\beta_0,\\beta_1\\) (logit intercept and slope), Age (years).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 33,
+    "title": "The method of logistic regression",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "The framework extends to several independent variables: \\(p_i=1/(1+e^{-(\\beta_0+\\beta_1x_{1,i}+\\dots+\\beta_kx_{k,i})})\\), or \\(\\mathrm{logit}(p)=\\beta_0+\\beta_1x_1+\\dots+\\beta_kx_k\\). This has important application to the classification problem in machine learning.",
+     "The grouped logit method has problems: there may not be enough data to calculate probabilities in groups, the choice of intervals arbitrarily influences the results, and the logit transformation of the data can distort them.",
+     "Maximum likelihood estimation finds \\(\\beta_0, \\beta_1\\) and the others directly from the individual 0/1 outcomes, without calculating group probabilities. The details of the method are not presented; R's glm() with family = \"binomial\" performs it."
+    ],
+    "equations": [
+     "p_i=\\frac{1}{1+e^{-(\\beta_0+\\beta_1x_{1,i}+\\dots+\\beta_kx_{k,i})}}",
+     "\\mathrm{logit}(p)=\\beta_0+\\beta_1x_1+\\dots+\\beta_kx_k"
+    ],
+    "symbols": "\\(x_{j,i}\\) (variable j for subject i), \\(\\beta_j\\) (logistic coefficients), \\(k\\) (number of independent variables).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 34,
+    "title": "Example A: CHD and age by logistic regression",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "The CHD data are used again, now as 100 individual 0/1 outcomes rather than eight group proportions.",
+     "Logistic regression estimates \\(\\beta_0\\) and \\(\\beta_1\\) in \\(p_i=1/(1+e^{-(\\beta_0+\\beta_1x_i)})\\) directly from these outcomes by maximum likelihood.",
+     "No age groups have to be chosen, so the arbitrary choice of intervals no longer affects the estimates."
+    ],
+    "equations": [
+     "p_i=\\frac{1}{1+e^{-(\\beta_0+\\beta_1x_i)}}"
+    ],
+    "symbols": "\\(p_i\\) (probability of CHD), \\(x_i\\) (age), \\(\\beta_0,\\beta_1\\) (parameters).",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 35,
+    "title": "glm() output for CHD and the fitted curve",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "R's glm(CHD ~ AGE, family = \"binomial\") gives \\(b_0=-5.30945\\) (SE 1.13365) and \\(b_1=0.11092\\) (SE 0.02406). The z values are −4.683 and 4.610, with P = 2.82e-06 and 4.02e-06.",
+     "The z value is the estimate divided by its standard error, compared with the standard Normal distribution. The age coefficient is positive and highly significant, so the probability of CHD rises with age.",
+     "The fitted curve \\(p=1/(1+e^{-(b_0+b_1x)})\\) rises from about 0.04 at age 20 through 0.5 near age 48 to about 0.91 at age 69, lying between the rows of 0 and 1 outcomes."
+    ],
+    "equations": [
+     "p=\\frac{1}{1+e^{-(\\beta_0+\\beta_1x)}}"
+    ],
+    "symbols": "\\(b_0,b_1\\) (maximum-likelihood estimates), \\(x\\) (age).",
+    "case": "s19-chd-age",
+    "subset": [
+     0,
+     1
+    ],
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\beta_1=0",
+     "alternative": "H_1:\\beta_1\\ne0",
+     "nullWords": "The probability of CHD does not change with age.",
+     "alternativeWords": "The probability of CHD changes with age."
+    }
+   },
+   {
+    "page": 36,
+    "title": "Interpreting logistic regression with odds",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "The odds of an event are the probability it occurs divided by the probability it does not, \\(p/(1-p)\\). Substituting the logistic function gives \\(\\text{odds}=e^{(\\beta_0+\\beta_1x)}=e^{\\beta_0}e^{\\beta_1x}\\).",
+     "For a 60-year-old, \\(p=1/(1+e^{-(-5.30945+0.11092\\cdot60)})=0.79\\). The odds are \\(0.79/(1-0.79)=3.76\\), so the odds of having CHD for a 60-year-old are 3.76:1.",
+     "Carried without rounding, p = 0.7934 and the odds are \\(e^{1.34575}=3.84\\); the 3.76 comes from rounding p to 0.79 first. Each additional year multiplies the odds by \\(e^{0.11092}=1.117\\)."
+    ],
+    "equations": [
+     "\\text{odds}=\\frac{p}{1-p}",
+     "\\text{odds}=\\frac{1/(1+e^{-(\\beta_0+\\beta_1x)})}{1-1/(1+e^{-(\\beta_0+\\beta_1x)})}=e^{(\\beta_0+\\beta_1x)}=e^{\\beta_0}e^{\\beta_1x}",
+     "p_i=\\frac{1}{1+e^{-(-5.30945+0.11092\\cdot60)}}=0.79"
+    ],
+    "symbols": "\\(p\\) (probability of the event), \\(\\text{odds}\\) (probability ratio), \\(\\beta_0,\\beta_1\\) (logistic parameters), \\(x\\) (age).",
+    "case": "s19-chd-age",
+    "subset": [
+     1,
+     4
+    ],
+    "core": true
+   },
+   {
+    "page": 37,
+    "title": "Example B: O-ring failure and temperature",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "Data were collected on the incidence of O-ring failures in 24 shuttle launches leading up to the Challenger disaster in January 1986, together with the launch temperature for each.",
+     "Failures (Y) occur at 53, 56 and 57 °F, at three of the four 70 °F launches, and at one 75 °F launch; the other launches, from 63 to 81 °F, have no failure (N).",
+     "For R the outcome is coded 1 for failure and 0 for no failure, as in the spreadsheet excerpt. The question is how the probability of failure depends on temperature."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": true
+   },
+   {
+    "page": 38,
+    "title": "glm() output for O-ring failure",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "R gives \\(b_0=9.83198\\) (SE 5.39833, z = 1.821, P = 0.0686) and \\(b_1=-0.15500\\) (SE 0.07883, z = −1.966, P = 0.0493).",
+     "The temperature coefficient is negative and significant at the 0.05 level: the probability of failure falls as launch temperature rises. Each degree multiplies the odds of failure by \\(e^{-0.155}=0.856\\).",
+     "The fitted curve falls from about 0.83 at 53 °F, crosses 0.5 near 63 °F, and reaches about 0.06 at 81 °F."
+    ],
+    "equations": [
+     "p=\\frac{1}{1+e^{-(\\beta_0+\\beta_1x)}}"
+    ],
+    "symbols": "\\(b_0,b_1\\) (maximum-likelihood estimates), \\(x\\) (launch temperature, °F), \\(p\\) (probability of failure).",
+    "case": "s19-oring-temperature",
+    "subset": null,
+    "core": true,
+    "hypotheses": {
+     "null": "H_0:\\beta_1=0",
+     "alternative": "H_1:\\beta_1\\ne0",
+     "nullWords": "The probability of O-ring failure does not change with launch temperature.",
+     "alternativeWords": "The probability of O-ring failure changes with launch temperature."
+    }
+   },
+   {
+    "page": 39,
+    "title": "Summary of statistical methods to test hypotheses",
+    "topic": "s19logistic",
+    "paragraphs": [
+     "The Glantz summary table chooses a test by the scale of measurement (interval from Normal populations, nominal, ordinal, survival time) and the type of experiment.",
+     "For interval data from Normal populations the circled or boxed entries are the unpaired t test, analysis of variance, the paired t test, repeated-measures analysis of variance and, for association between two variables, linear regression and Pearson correlation. For nominal data they are the z test or chi-square for two groups and chi-square for three or more groups.",
+     "For association between two variables on the nominal scale, relative risk or odds ratio is listed, and logistic regression is added from these slides. Ordinal and survival-time methods, such as Mann-Whitney and the log-rank test, complete the table."
+    ],
+    "equations": [],
+    "symbols": "",
+    "case": null,
+    "subset": null,
+    "core": false
+   }
+  ]
+ },
+ "methods": [
+  {
+   "id": "s19margin",
+   "title": "Margin of error for a difference → cutoff × standard error",
+   "trigger": "A report gives a difference \"plus or minus\" some amount, or asks for the half-width of a 95% interval for two means or two proportions.",
+   "pages": [
+    2,
+    3
+   ],
+   "formula": [
+    "M=t_{0.05}(\\nu)\\,s_{\\bar x_1-\\bar x_2}",
+    "M=z_{0.05}\\,s_{\\hat p_1-\\hat p_2},\\quad z_{0.05}=1.960",
+    "\\text{CI}=\\text{difference}\\pm M"
+   ],
+   "example": "s19-survey-margin",
+   "shortcut": "If the observed difference is larger than its margin of error, the 95% interval excludes zero and the difference is significant at the two-sided 0.05 level.",
+   "paragraphs": [
+    "The margin of error is the part of a confidence interval that is added to and subtracted from the estimate. For two means it is the t cutoff on \\(\\nu\\) degrees of freedom times the standard error of the mean difference; for two proportions it is the Normal cutoff 1.960 times the standard error of the proportion difference.",
+    "A survey that reports a percentage \"plus or minus\" a number of points is reporting this half-width. The standard error falls as the sample sizes grow, so larger surveys report smaller margins.",
+    "The interval and the test agree: zero lies outside the interval exactly when the observed difference exceeds the margin of error."
+   ],
+   "symbols": "\\(M\\) (margin of error), \\(t_{0.05}(\\nu)\\) (two-sided t cutoff), \\(z_{0.05}\\) (two-sided Normal cutoff), \\(s_{\\bar x_1-\\bar x_2}\\), \\(s_{\\hat p_1-\\hat p_2}\\) (standard errors of the differences)."
+  },
+  {
+   "id": "s19design",
+   "title": "Hormone therapy and study design → relative risk and chi-square",
+   "trigger": "A 2×2 table compares deaths in a treated and an untreated group, and the question asks for the relative risk or whether the death rates differ, or what the study design allows.",
+   "pages": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "formula": [
+    "RR=\\frac{n_{TD}/n_T}{n_{CD}/n_C}",
+    "\\chi^2=\\sum\\frac{(|O-E|-\\tfrac12)^2}{E},\\quad\\nu=1"
+   ],
+   "example": "s19-hrt-relative-risk",
+   "shortcut": "A relative risk below 1 means a lower risk in the first (treated) group; 0.60 means about 60% of the comparison group's risk.",
+   "paragraphs": [
+    "The relative risk compares the proportion with the event in one group with the proportion in the other. The chi-square test (with the Yates correction for a 2×2 table) asks whether the two event rates differ.",
+    "When groups are formed by what people chose, such as current hormone users versus never-users, the result is an association. The later WHI randomized trial of estrogen plus progestin concluded that overall health risks exceeded benefits, and practice changed sharply after it.",
+    "Later statements, such as the 2026 FDA release, tie the benefits of hormone therapy to when it starts. Comparing studies therefore requires attention to who was studied, how the groups were formed, and what outcome was measured."
+   ],
+   "symbols": "\\(n_{TD}, n_{CD}\\) (deaths in treated and comparison groups), \\(n_T, n_C\\) (group sizes), \\(O, E\\) (observed and expected counts), \\(RR\\) (relative risk)."
+  },
+  {
+   "id": "s19slopes",
+   "title": "Simple regression review → comparing two slopes",
+   "trigger": "Two independent groups each have a regression line (slope and standard error), and the question asks whether the relationship differs between the groups.",
+   "pages": [
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "formula": [
+    "t=\\frac{b}{s_b},\\quad\\nu=n-2",
+    "t=\\frac{b_1-b_2}{s_{b_1-b_2}},\\quad\\nu=n_1+n_2-4",
+    "s_{b_1-b_2}=\\sqrt{s_{b_1}^2+s_{b_2}^2}"
+   ],
+   "example": "s19-plutonian-slopes",
+   "shortcut": "Read each slope and its Std. Error straight from the two R outputs; square, add, and take the root for the denominator.",
+   "paragraphs": [
+    "Simple regression estimates the line of means \\(\\mu_{y|x}=\\alpha+\\beta x\\) with \\(\\hat y=a+bx\\), and the scatter about it with \\(s_{y|x}\\). A slope is tested against zero with \\(t=b/s_b\\) on n − 2 degrees of freedom.",
+    "Two groups are compared with \\(H_0:\\beta_1=\\beta_2\\). The two slope variances add because the samples are independent, and n1 + n2 − 4 degrees of freedom remain after each line estimates two parameters.",
+    "Rejecting equal slopes means y changes with x at different rates in the two groups. Intercepts can be compared the same way."
+   ],
+   "symbols": "\\(b_i\\) (group slope), \\(s_{b_i}\\) (its standard error), \\(\\beta_i\\) (population slope), \\(n_i\\) (group size), \\(\\nu\\) (degrees of freedom)."
+  },
+  {
+   "id": "s19mlrfit",
+   "title": "Multiple regression fit → b = (XᵀX)⁻¹Xᵀy and s_y|x",
+   "trigger": "Several independent variables predict one continuous outcome, and the question asks for the coefficients, the fitted equation, or the variability about the fitted plane.",
+   "pages": [
+    1,
+    14,
+    15,
+    16,
+    17,
+    18,
+    21,
+    22,
+    23,
+    26
+   ],
+   "formula": [
+    "y=X\\beta+e",
+    "b=(X^TX)^{-1}X^Ty",
+    "SS_{res}=(y-Xb)^T(y-Xb)",
+    "s_{y|x}^2=\\frac{SS_{res}}{n-k-1}"
+   ],
+   "example": "s19-sbp-least-squares",
+   "shortcut": "R's summary() prints b in the Estimate column and \\(s_{y|x}\\) as Residual standard error on n − k − 1 degrees of freedom.",
+   "paragraphs": [
+    "The multiple regression model writes each observation as an intercept plus a coefficient times each independent variable plus random error. The design matrix X has a column of ones and one column per variable.",
+    "Least squares chooses the coefficients that minimize the sum of squared residuals, which gives \\(b=(X^TX)^{-1}X^Ty\\). Each \\(b_j\\) is the change in mean y per unit change in \\(x_j\\) with the other variables held fixed.",
+    "The residual variance divides \\(SS_{res}\\) by n − k − 1, one degree of freedom being used for each of the k + 1 coefficients. Adding variables always improves the fit to the sample, but too many parameters fit noise rather than the system (overfitting)."
+   ],
+   "symbols": "\\(X\\) (design matrix), \\(y\\) (response vector), \\(b\\) (coefficient vector), \\(k\\) (number of independent variables), \\(n\\) (observations), \\(SS_{res}\\) (residual sum of squares), \\(s_{y|x}\\) (residual standard error)."
+  },
+  {
+   "id": "s19mlrtest",
+   "title": "Multiple regression tests → F for the model, t for each coefficient",
+   "trigger": "An R summary() of a multiple regression is given and the question asks whether the model as a whole, or each variable, is significant, or asks for a prediction or a coefficient interval.",
+   "pages": [
+    19,
+    20,
+    24,
+    25
+   ],
+   "formula": [
+    "F=\\frac{MS_{mod}}{MS_{res}}=\\frac{SS_{mod}/k}{SS_{res}/(n-k-1)}",
+    "t=\\frac{b_j}{s_{b_j}},\\quad\\nu=n-k-1",
+    "b_j\\pm t_{0.05}(n-k-1)\\,s_{b_j}",
+    "R^2=1-\\frac{SS_{res}}{SS_{tot}}"
+   ],
+   "example": "s19-sbp-summary",
+   "shortcut": "F can be checked from the printed R²: \\(F=\\frac{R^2/k}{(1-R^2)/(n-k-1)}\\).",
+   "paragraphs": [
+    "The F test asks whether all slope coefficients are zero together. It compares the variation explained per model degree of freedom with the residual variation per residual degree of freedom, on k and n − k − 1 degrees of freedom.",
+    "Each coefficient is then tested on its own with \\(t=b_j/s_{b_j}\\) on n − k − 1 degrees of freedom. A coefficient whose 95% interval contains zero is not significant at the 0.05 level, matching its t test.",
+    "Non-significant variables can be dropped and the model refit; predictions substitute the variable values into the fitted equation. \\(R^2\\) gives the fraction of the variation in y explained by the model."
+   ],
+   "symbols": "\\(MS_{mod}, MS_{res}\\) (mean squares), \\(SS_{tot}\\) (total sum of squares), \\(b_j\\) (coefficient), \\(s_{b_j}\\) (its standard error), \\(R^2\\) (coefficient of determination)."
+  },
+  {
+   "id": "s19logistic",
+   "title": "Logistic regression → probability, logit and odds",
+   "trigger": "The outcome is yes or no (present or absent), and the question asks how its probability depends on one or more variables, or for a probability or odds at a given value.",
+   "pages": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39
+   ],
+   "formula": [
+    "p=\\frac{1}{1+e^{-(\\beta_0+\\beta_1x)}}",
+    "\\mathrm{logit}(p)=\\ln\\left(\\frac{p}{1-p}\\right)=\\beta_0+\\beta_1x",
+    "\\text{odds}=\\frac{p}{1-p}=e^{\\beta_0+\\beta_1x}",
+    "z=\\frac{b_j}{s_{b_j}}"
+   ],
+   "example": "s19-chd-age",
+   "shortcut": "The odds at x are simply \\(e^{b_0+b_1x}\\); each unit increase in x multiplies the odds by \\(e^{b_1}\\).",
+   "paragraphs": [
+    "A linear regression of a 0/1 outcome is not appropriate because a line leaves the range 0 to 1. The logistic function maps any value of \\(\\beta_0+\\beta_1x\\) to a probability between 0 and 1.",
+    "Taking the natural log of the odds gives the logit, which is linear in x. Grouping data and regressing group logits on x works only roughly; maximum likelihood estimation, done by R's glm(..., family = \"binomial\"), fits the individual outcomes directly.",
+    "Each glm coefficient is tested with z = estimate / SE against the Normal cutoff. A positive coefficient means the probability rises with x (CHD with age); a negative one means it falls (O-ring failure with temperature)."
+   ],
+   "symbols": "\\(p\\) (probability of the event), \\(\\beta_0,\\beta_1\\) (logistic parameters), \\(b_0,b_1\\) (estimates), \\(x\\) (independent variable), \\(z\\) (Wald statistic)."
+  }
+ ],
+ "cases": [
+  {
+   "id": "s19-survey-margin",
+   "title": "Margin of error for a two-group survey difference",
+   "topic": "s19margin",
+   "context": "Original practice example. A campus survey asks first-year and senior students whether they use a campus fitness facility at least weekly. A news summary reports the difference in percentage points \"plus or minus\" a margin of error. Use the Session 17 pooled-proportion standard error and the Normal cutoff.",
+   "unit": "proportion difference",
+   "table": {
+    "headers": [
+     "Group",
+     "Yes answers",
+     "Respondents"
+    ],
+    "rows": [
+     [
+      "first-year",
+      300,
+      500
+     ],
+     [
+      "senior",
+      240,
+      480
+     ]
+    ]
+   },
+   "tasks": [
+    "Find both sample proportions and their difference, first-year minus senior.",
+    "Calculate the pooled standard error and the 95% margin of error \\(z_{0.05}s_{\\hat p_1-\\hat p_2}\\).",
+    "Report the result in survey style (difference plus or minus the margin) and decide whether the difference is significant at the two-sided 0.05 level."
+   ],
+   "hypotheses": {
+    "null": "H_0:p_1-p_2=0",
+    "alternative": "H_A:p_1-p_2\\ne0",
+    "nullWords": "First-year and senior students use the facility weekly in equal proportions.",
+    "alternativeWords": "The weekly-use proportions of first-year and senior students differ."
+   },
+   "symbols": "\\(m_i\\) (yes answers), \\(n_i\\) (respondents), \\(\\hat p_i\\) (sample proportion), \\(\\hat p\\) (pooled proportion), \\(s_{\\hat p_1-\\hat p_2}\\) (SE of the difference), \\(z_{0.05}\\) (two-sided Normal cutoff), \\(M\\) (margin of error).",
+   "steps": [
+    {
+     "title": "Find both sample proportions",
+     "general": [
+      "\\hat p_i=\\frac{m_i}{n_i}"
+     ],
+     "work": [
+      "\\hat p_1=\\frac{300}{500}=0.6000",
+      "\\hat p_2=\\frac{240}{480}=0.5000"
+     ],
+     "words": "Each proportion is the number of yes answers divided by the number of respondents in that group."
+    },
+    {
+     "title": "Find the observed difference",
+     "general": [
+      "d=\\hat p_1-\\hat p_2"
+     ],
+     "work": [
+      "d=0.6000-0.5000=0.1000"
+     ],
+     "words": "Keep the direction first-year minus senior throughout."
+    },
+    {
+     "title": "Pool the two groups",
+     "general": [
+      "\\hat p=\\frac{m_1+m_2}{n_1+n_2}"
+     ],
+     "work": [
+      "\\hat p=\\frac{300+240}{500+480}=\\frac{540}{980}=0.55102"
+     ],
+     "words": "The Session 17 convention pools both groups to estimate one common proportion for the standard error."
+    },
+    {
+     "title": "Calculate the standard error of the difference",
+     "general": [
+      "s_{\\hat p_1-\\hat p_2}=\\sqrt{\\hat p(1-\\hat p)\\left(\\frac{1}{n_1}+\\frac{1}{n_2}\\right)}"
+     ],
+     "work": [
+      "s=\\sqrt{0.55102(0.44898)\\left(\\frac{1}{500}+\\frac{1}{480}\\right)}=0.03178"
+     ],
+     "words": "Multiply the pooled variance term by the sum of the reciprocal group sizes, then take the root."
+    },
+    {
+     "title": "Read the Normal cutoff",
+     "general": [
+      "z_c=z_{0.05}"
+     ],
+     "work": [
+      "z_{0.05}=1.960"
+     ],
+     "words": "Open t_table.pdf, PDF page 2, and use the infinity row in the 0.05 two-tail column. The infinity row is the standard Normal cutoff, 1.960.",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 2,
+      "row": "∞",
+      "column": "0.05",
+      "value": 1.96,
+      "actualDf": null,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Calculate the margin of error",
+     "general": [
+      "M=z_{0.05}\\,s_{\\hat p_1-\\hat p_2}"
+     ],
+     "work": [
+      "M=1.960(0.03178)=0.06230"
+     ],
+     "words": "This product is the number a survey report prints after \"plus or minus\"."
+    },
+    {
+     "title": "Form the interval and decide",
+     "general": [
+      "d\\pm M",
+      "0\\notin[d-M,d+M]\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "0.1000\\pm0.06230",
+      "[0.03770,\\ 0.16230]"
+     ],
+     "words": "Zero lies outside the interval because the observed difference is larger than its margin of error, so reject equal proportions at the two-sided 0.05 level."
+    }
+   ],
+   "conclusion": "The first-year minus senior difference is 10.0 percentage points plus or minus 6.23 points (95% CI 0.0377 to 0.1623). Zero is excluded, so first-year students use the facility weekly in a higher proportion (P < 0.05).",
+   "source": "Original practice example",
+   "lookup": {
+    "path": "sources/tables/t_table.pdf",
+    "page": 2,
+    "row": "∞",
+    "column": "0.05",
+    "value": 1.96,
+    "actualDf": null,
+    "approximation": false
+   },
+   "values": {
+    "m1": 300,
+    "n1": 500,
+    "m2": 240,
+    "n2": 480,
+    "p1": 0.6,
+    "p2": 0.5,
+    "pooled": 0.5510204081632653,
+    "se": 0.031783707801838555,
+    "critical": 1.96,
+    "difference": 0.09999999999999998,
+    "margin": 0.062296067291603564,
+    "lower": 0.037703932708396413,
+    "upper": 0.16229606729160354,
+    "reject": true
+   },
+   "module": 19,
+   "tolerance": 0.001,
+   "answerName": "Margin of error",
+   "answer": 0.062296067291603564
+  },
+  {
+   "id": "s19-hrt-relative-risk",
+   "title": "Hormone replacement therapy and mortality",
+   "topic": "s19design",
+   "context": "Glantz problem 5-13 (Grodstein and colleagues, 1997) compares deaths among postmenopausal women currently using hormone replacement therapy with deaths among women who never used it. The groups are defined by use, not by random assignment.",
+   "unit": "relative risk",
+   "table": {
+    "headers": [
+     "Group",
+     "Deceased",
+     "Alive",
+     "Total"
+    ],
+    "rows": [
+     [
+      "current hormone use",
+      574,
+      8483,
+      9057
+     ],
+     [
+      "never used hormone",
+      2051,
+      17520,
+      19571
+     ]
+    ]
+   },
+   "tasks": [
+    "Test whether the death rate differs between the two groups with a chi-square test (Yates correction for the 2×2 table). State the hypotheses in words.",
+    "Calculate the relative risk of dying, hormone group relative to never-used group, and interpret it.",
+    "State what this comparison can and cannot show, given how the groups were formed."
+   ],
+   "hypotheses": {
+    "null": "H_0:p_{\\mathrm{HRT}}=p_{\\mathrm{never}}",
+    "alternative": "H_A:p_{\\mathrm{HRT}}\\ne p_{\\mathrm{never}}",
+    "nullWords": "The death rate is the same for current hormone users and never-users.",
+    "alternativeWords": "The death rate differs between current hormone users and never-users."
+   },
+   "symbols": "\\(n_{TD}\\) (deaths in the hormone group), \\(n_T\\) (hormone group size), \\(n_{CD}\\) (deaths in the never-used group), \\(n_C\\) (never-used group size), \\(O\\) (observed count), \\(E\\) (expected count), \\(RR\\) (relative risk).",
+   "steps": [
+    {
+     "title": "Find the group totals",
+     "general": [
+      "n_T=n_{TD}+n_{TA}",
+      "n_C=n_{CD}+n_{CA}"
+     ],
+     "work": [
+      "n_T=574+8483=9057",
+      "n_C=2051+17520=19571"
+     ],
+     "words": "Add deaths and survivors in each row. The grand total is 28628."
+    },
+    {
+     "title": "Calculate expected counts",
+     "general": [
+      "E=\\frac{(\\text{row total})(\\text{column total})}{N}"
+     ],
+     "work": [
+      "E_{TD}=\\frac{9057(2625)}{28628}=830.47",
+      "E_{TA}=8226.53,\\ E_{CD}=1794.53,\\ E_{CA}=17776.47"
+     ],
+     "words": "Expected counts are what each cell would hold if the death rate were the same in both groups."
+    },
+    {
+     "title": "Calculate the Yates-corrected chi-square",
+     "general": [
+      "\\chi^2=\\sum\\frac{(|O-E|-\\tfrac12)^2}{E}"
+     ],
+     "work": [
+      "\\chi^2=78.895+7.964+36.511+3.686=127.06"
+     ],
+     "words": "Subtract one half from each absolute discrepancy before squaring, as the course does for 2×2 tables."
+    },
+    {
+     "title": "Compare with the chi-square cutoff",
+     "general": [
+      "\\nu=(r-1)(c-1)",
+      "\\chi^2>\\chi^2_{0.05}(1)"
+     ],
+     "work": [
+      "\\nu=(2-1)(2-1)=1",
+      "127.06>3.841;\\ 127.06>10.828"
+     ],
+     "words": "Open Chi_Squared_Table1.pdf, page 1, row 1. The 0.05 column gives 3.841 and the 0.001 column gives 10.828. The statistic exceeds both, so reject with P < 0.001.",
+     "tableLookup": {
+      "path": "sources/tables/Chi_Squared_Table1.pdf",
+      "page": 1,
+      "row": "1",
+      "column": ".05",
+      "value": 3.841,
+      "actualDf": 1,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Calculate both death proportions",
+     "general": [
+      "\\hat p_T=\\frac{n_{TD}}{n_T}",
+      "\\hat p_C=\\frac{n_{CD}}{n_C}"
+     ],
+     "work": [
+      "\\hat p_T=\\frac{574}{9057}=0.06338",
+      "\\hat p_C=\\frac{2051}{19571}=0.10480"
+     ],
+     "words": "Each proportion is the risk of dying within that group."
+    },
+    {
+     "title": "Calculate the relative risk",
+     "general": [
+      "RR=\\frac{n_{TD}/n_T}{n_{CD}/n_C}"
+     ],
+     "work": [
+      "RR=\\frac{0.06338}{0.10480}=0.6047"
+     ],
+     "words": "The risk of dying in the hormone group is about 60% of the risk in the never-used group."
+    },
+    {
+     "title": "State what the design allows",
+     "general": [
+      "\\text{groups formed by use}\\Rightarrow\\text{association}"
+     ],
+     "work": [
+      "RR=0.6047\\ \\text{(association)}"
+     ],
+     "words": "Women were grouped by whether they used hormones, not assigned at random, so the result is an association. The later randomized WHI trial on the next page reached a less favorable overall conclusion."
+    }
+   ],
+   "conclusion": "Reject the null hypothesis (chi-square = 127.06, 1 df, P < 0.001): the death rate differs between current hormone users and never-users. The relative risk is 0.6047, so the hormone group's risk of dying is about 60% of the never-used group's risk in this non-randomized comparison.",
+   "source": "Session 19 page 4",
+   "lookup": {
+    "path": "sources/tables/Chi_Squared_Table1.pdf",
+    "page": 1,
+    "row": "1",
+    "column": ".05",
+    "value": 3.841,
+    "actualDf": 1,
+    "approximation": false
+   },
+   "values": {
+    "nTD": 574,
+    "nTA": 8483,
+    "nCD": 2051,
+    "nCA": 17520,
+    "nT": 9057,
+    "nC": 19571,
+    "riskT": 0.06337639394943138,
+    "riskC": 0.10479791528281641,
+    "RR": 0.6047486133516926,
+    "chiSquare": 127.05527423008857,
+    "df": 1,
+    "critical": 3.841,
+    "reject": true
+   },
+   "module": 19,
+   "tolerance": 0.003024,
+   "answerName": "Relative risk",
+   "answer": 0.6047486133516926
+  },
+  {
+   "id": "s19-plutonian-slopes",
+   "title": "Plutonian weight on height: males versus females",
+   "topic": "s19slopes",
+   "context": "Lecture exercise. Separate R regressions of weight (lbs) on height (inches) are run for 18 male and 18 female Plutonians. Test whether the slopes of the two lines of means differ. The slope standard errors come from the R output.",
+   "unit": "lbs per inch",
+   "table": {
+    "headers": [
+     "Group",
+     "n",
+     "Slope b",
+     "SE of slope",
+     "Residual SE"
+    ],
+    "rows": [
+     [
+      "males",
+      18,
+      3.2833,
+      0.2041,
+      2.711
+     ],
+     [
+      "females",
+      18,
+      2.029,
+      0.4708,
+      7.491
+     ]
+    ]
+   },
+   "tasks": [
+    "State the null and alternative hypotheses for equal slopes in symbols and words.",
+    "Calculate the standard error of the slope difference and the t statistic.",
+    "Find the degrees of freedom and the critical value from the printed t table, decide, and give the P range."
+   ],
+   "hypotheses": {
+    "null": "H_0:\\beta_M=\\beta_F",
+    "alternative": "H_A:\\beta_M\\ne\\beta_F",
+    "nullWords": "The mean weight of male and female Plutonians increases with height at the same rate.",
+    "alternativeWords": "The rate at which mean weight increases with height differs between male and female Plutonians."
+   },
+   "symbols": "\\(b_M, b_F\\) (sample slopes), \\(s_{b_M}, s_{b_F}\\) (slope standard errors), \\(s_{b_M-b_F}\\) (SE of the slope difference), \\(\\nu\\) (degrees of freedom).",
+   "steps": [
+    {
+     "title": "Read both slopes and standard errors",
+     "general": [
+      "b_M,\\ s_{b_M},\\ b_F,\\ s_{b_F}"
+     ],
+     "work": [
+      "b_M=3.2833,\\ s_{b_M}=0.2041",
+      "b_F=2.029,\\ s_{b_F}=0.4708"
+     ],
+     "words": "Take the Height.in row of each R coefficient table: the Estimate column and the Std. Error column."
+    },
+    {
+     "title": "Calculate the slope difference",
+     "general": [
+      "b_M-b_F"
+     ],
+     "work": [
+      "b_M-b_F=3.2833-2.029=1.2543"
+     ],
+     "words": "Males gain about 1.25 lbs more per inch of height than females in these samples."
+    },
+    {
+     "title": "Calculate the SE of the difference",
+     "general": [
+      "s_{b_M-b_F}=\\sqrt{s_{b_M}^2+s_{b_F}^2}"
+     ],
+     "work": [
+      "s_{b_M-b_F}=\\sqrt{0.2041^2+0.4708^2}=\\sqrt{0.041657+0.221653}=0.51314"
+     ],
+     "words": "The two samples are independent, so the variances of the two slopes add."
+    },
+    {
+     "title": "Calculate the t statistic",
+     "general": [
+      "t=\\frac{b_M-b_F}{s_{b_M-b_F}}"
+     ],
+     "work": [
+      "t=\\frac{1.2543}{0.51314}=2.444"
+     ],
+     "words": "Divide the slope difference by its standard error."
+    },
+    {
+     "title": "Find df and the critical value",
+     "general": [
+      "\\nu=n_M+n_F-4",
+      "t_c=t_{0.05}(\\nu)"
+     ],
+     "work": [
+      "\\nu=18+18-4=32",
+      "t_{0.05}(32)=2.037"
+     ],
+     "words": "Open t_table.pdf, PDF page 1, row 32, two-tail 0.05 column: 2.037. Four degrees of freedom are lost because each line estimates an intercept and a slope.",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 1,
+      "row": "32",
+      "column": "0.05",
+      "value": 2.037,
+      "actualDf": 32,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Decide and bracket P",
+     "general": [
+      "|t|>t_c\\Rightarrow\\text{reject }H_0"
+     ],
+     "work": [
+      "2.444>2.037",
+      "2.444<t_{0.02}(32)=2.449"
+     ],
+     "words": "The statistic exceeds the 0.05 cutoff but not the 0.02 cutoff of 2.449, so 0.02 < P < 0.05."
+    }
+   ],
+   "conclusion": "Reject equal slopes (t = 2.444, 32 df, 0.02 < P < 0.05). Mean weight rises faster with height in male Plutonians (3.2833 lbs/in) than in female Plutonians (2.029 lbs/in).",
+   "source": "Session 19 pages 11-13",
+   "lookup": {
+    "path": "sources/tables/t_table.pdf",
+    "page": 1,
+    "row": "32",
+    "column": "0.05",
+    "value": 2.037,
+    "actualDf": 32,
+    "approximation": false
+   },
+   "values": {
+    "bM": 3.2833,
+    "sbM": 0.2041,
+    "bF": 2.029,
+    "sbF": 0.4708,
+    "nM": 18,
+    "nF": 18,
+    "difference": 1.2543000000000002,
+    "seDiff": 0.5131368725788471,
+    "t": 2.4443770600548067,
+    "df": 32,
+    "critical": 2.037,
+    "reject": true
+   },
+   "module": 19,
+   "tolerance": 0.012222,
+   "answerName": "t statistic",
+   "answer": 2.4443770600548067
+  },
+  {
+   "id": "s19-sbp-least-squares",
+   "title": "Child SBP on mother and father SBP: least squares by matrix",
+   "topic": "s19mlrfit",
+   "context": "Hypertension in families (Rosner). Twenty families give the systolic blood pressure (mm Hg) of the first-born child (y), the mother (x1) and the father (x2). Fit the multiple regression by the matrix least-squares formula and confirm the R estimates.",
+   "unit": "mm Hg per mm Hg",
+   "table": {
+    "headers": [
+     "Family",
+     "SBP child y",
+     "SBP mother x1",
+     "SBP father x2"
+    ],
+    "rows": [
+     [
+      1,
+      90,
+      130,
+      140
+     ],
+     [
+      2,
+      85,
+      125,
+      120
+     ],
+     [
+      3,
+      120,
+      140,
+      180
+     ],
+     [
+      4,
+      100,
+      110,
+      150
+     ],
+     [
+      5,
+      105,
+      145,
+      175
+     ],
+     [
+      6,
+      100,
+      160,
+      120
+     ],
+     [
+      7,
+      110,
+      120,
+      145
+     ],
+     [
+      8,
+      140,
+      180,
+      160
+     ],
+     [
+      9,
+      115,
+      120,
+      190
+     ],
+     [
+      10,
+      105,
+      130,
+      135
+     ],
+     [
+      11,
+      100,
+      125,
+      150
+     ],
+     [
+      12,
+      80,
+      110,
+      125
+     ],
+     [
+      13,
+      70,
+      90,
+      140
+     ],
+     [
+      14,
+      115,
+      120,
+      170
+     ],
+     [
+      15,
+      90,
+      150,
+      150
+     ],
+     [
+      16,
+      90,
+      145,
+      155
+     ],
+     [
+      17,
+      115,
+      130,
+      160
+     ],
+     [
+      18,
+      110,
+      155,
+      125
+     ],
+     [
+      19,
+      90,
+      110,
+      140
+     ],
+     [
+      20,
+      100,
+      125,
+      150
+     ]
+    ]
+   },
+   "tasks": [
+    "Build \\(X^TX\\) and \\(X^Ty\\) from the sums of the data.",
+    "Solve \\(b=(X^TX)^{-1}X^Ty\\) for \\(b_0, b_1, b_2\\).",
+    "Use \\(SS_{res}\\) to find \\(s_{y|x}\\) and \\(R^2\\)."
+   ],
+   "hypotheses": null,
+   "symbols": "\\(X\\) (design matrix: a column of ones, then x1 and x2), \\(y\\) (child SBP vector), \\(b\\) (coefficient vector), \\(SS_{res}\\) (sum of squared residuals), \\(SS_{tot}\\) (total sum of squares), \\(k\\) (number of independent variables), \\(s_{y|x}\\) (residual standard error).",
+   "steps": [
+    {
+     "title": "Build the cross-product matrix",
+     "general": [
+      "X^TX=\\begin{bmatrix}n&\\sum x_1&\\sum x_2\\\\\\sum x_1&\\sum x_1^2&\\sum x_1x_2\\\\\\sum x_2&\\sum x_1x_2&\\sum x_2^2\\end{bmatrix}"
+     ],
+     "work": [
+      "X^TX=\\begin{bmatrix}20&2620&2980\\\\2620&351350&390825\\\\2980&390825&451350\\end{bmatrix}"
+     ],
+     "words": "Each entry is a sum over the 20 families; the first row and column come from the column of ones."
+    },
+    {
+     "title": "Build the cross-product vector",
+     "general": [
+      "X^Ty=\\begin{bmatrix}\\sum y\\\\\\sum x_1y\\\\\\sum x_2y\\end{bmatrix}"
+     ],
+     "work": [
+      "X^Ty=\\begin{bmatrix}2030\\\\269550\\\\305700\\end{bmatrix}"
+     ],
+     "words": "Multiply each column of X by the child SBP values and add."
+    },
+    {
+     "title": "Invert the cross-product matrix",
+     "general": [
+      "(X^TX)^{-1}"
+     ],
+     "work": [
+      "(X^TX)^{-1}=\\begin{bmatrix}4.914264&-0.015051&-0.019414\\\\-0.015051&0.000123&-0.000007\\\\-0.019414&-0.000007&0.000137\\end{bmatrix}"
+     ],
+     "words": "The inverse is found with software; its diagonal entries are reused later for the coefficient standard errors."
+    },
+    {
+     "title": "Solve for the coefficients",
+     "general": [
+      "b=(X^TX)^{-1}X^Ty"
+     ],
+     "work": [
+      "b_0=-15.6892,\\ b_1=0.4225,\\ b_2=0.4150",
+      "\\hat y=-15.7+0.423x_1+0.415x_2"
+     ],
+     "words": "These match the R Estimate column: -15.6892, 0.4225 and 0.4150."
+    },
+    {
+     "title": "Calculate the residual variance",
+     "general": [
+      "s_{y|x}^2=\\frac{SS_{res}}{n-k-1}"
+     ],
+     "work": [
+      "SS_{res}=\\sum(y_i-\\hat y_i)^2=1934.92",
+      "s_{y|x}^2=\\frac{1934.92}{20-2-1}=113.819",
+      "s_{y|x}=\\sqrt{113.819}=10.669"
+     ],
+     "words": "Three parameters are estimated, so 17 degrees of freedom remain. The root is the Residual standard error that R prints as 10.67."
+    },
+    {
+     "title": "Calculate R squared",
+     "general": [
+      "R^2=1-\\frac{SS_{res}}{SS_{tot}}"
+     ],
+     "work": [
+      "SS_{tot}=\\sum(y_i-\\bar y)^2=4805.0",
+      "R^2=1-\\frac{1934.92}{4805.0}=0.5973"
+     ],
+     "words": "About 60% of the variation in child SBP is accounted for by the two parental SBPs together; R prints Multiple R-squared 0.5973."
+    }
+   ],
+   "conclusion": "The least-squares plane is ŷ = -15.69 + 0.4225x1 + 0.4150x2 (mm Hg), with s_y|x = 10.67 mm Hg on 17 df and R² = 0.5973, matching the R summary.",
+   "source": "Session 19 pages 21-24",
+   "lookup": null,
+   "values": {
+    "n": 20,
+    "k": 2,
+    "b0": -15.689248230591591,
+    "b1": 0.42254908356992227,
+    "b2": 0.4150021361270601,
+    "SSres": 1934.9154177864673,
+    "SStot": 4805.0,
+    "s2": 113.81855398743926,
+    "s": 10.668577880272482,
+    "R2": 0.5973120878696219
+   },
+   "module": 19,
+   "tolerance": 0.002113,
+   "answerName": "Mother coefficient b1",
+   "answer": 0.42254908356992227
+  },
+  {
+   "id": "s19-sbp-summary",
+   "title": "Reading the R summary for child SBP",
+   "topic": "s19mlrtest",
+   "context": "The R call lm(SBPchild ~ SBPmother + SBPfather) on the 20 families prints the summary below. Use it to test the model as a whole, test each parental coefficient, and predict by hand.",
+   "unit": "F statistic",
+   "table": {
+    "headers": [
+     "Term",
+     "Estimate",
+     "Std. Error",
+     "t value",
+     "Pr(>|t|)"
+    ],
+    "rows": [
+     [
+      "(Intercept)",
+      -15.6892,
+      23.6503,
+      -0.663,
+      0.51598
+     ],
+     [
+      "SBPmother",
+      0.4225,
+      0.1185,
+      3.565,
+      0.00238
+     ],
+     [
+      "SBPfather",
+      0.415,
+      0.1248,
+      3.325,
+      0.00401
+     ],
+     [
+      "Residual SE 10.67 on 17 df",
+      "Multiple R² 0.5973",
+      "Adjusted R² 0.5499",
+      "F 12.61 on 2 and 17 DF",
+      "p 0.0004388"
+     ]
+    ]
+   },
+   "tasks": [
+    "Test \\(H_0:\\beta_1=\\beta_2=0\\) with the F statistic. Recompute F from R², give the critical value from the printed F table, and conclude.",
+    "Test each parental coefficient with \\(t=b_j/s_{b_j}\\) and the printed t table; give 95% intervals for both slopes.",
+    "Predict the mean SBP of a first-born child whose mother has SBP 130 mm Hg and father 150 mm Hg."
+   ],
+   "hypotheses": {
+    "null": "H_0:\\beta_1=\\beta_2=0",
+    "alternative": "H_1:\\beta_1\\ne0\\ \\text{and/or}\\ \\beta_2\\ne0",
+    "nullWords": "Neither the mother's nor the father's SBP is related to the child's mean SBP.",
+    "alternativeWords": "At least one parent's SBP is related to the child's mean SBP."
+   },
+   "symbols": "\\(R^2\\) (multiple R-squared), \\(k\\) (number of independent variables), \\(n\\) (number of families), \\(MS_{mod}, MS_{res}\\) (model and residual mean squares), \\(b_j\\) (coefficient), \\(s_{b_j}\\) (its standard error).",
+   "steps": [
+    {
+     "title": "Find the F degrees of freedom",
+     "general": [
+      "df_{mod}=k",
+      "df_{res}=n-k-1"
+     ],
+     "work": [
+      "df_{mod}=2",
+      "df_{res}=20-2-1=17"
+     ],
+     "words": "Two independent variables are tested together; 17 degrees of freedom remain for the residuals."
+    },
+    {
+     "title": "Recompute F from R squared",
+     "general": [
+      "F=\\frac{MS_{mod}}{MS_{res}}=\\frac{R^2/k}{(1-R^2)/(n-k-1)}"
+     ],
+     "work": [
+      "F=\\frac{0.5973/2}{(1-0.5973)/17}=\\frac{0.29865}{0.023688}=12.608"
+     ],
+     "words": "Dividing SS_mod and SS_res by SS_tot turns them into R² and 1 − R², so F can be checked from the printed R². R prints 12.61."
+    },
+    {
+     "title": "Compare with the F cutoff",
+     "general": [
+      "F>F_{0.05}(df_{mod},df_{res})"
+     ],
+     "work": [
+      "12.61>F_{0.05}(2,17)=3.59",
+      "12.61>F_{0.01}(2,17)=6.11"
+     ],
+     "words": "Open F_table.pdf, page 1: numerator column 2, denominator row 17. The lightface value is 3.59 and the boldface value is 6.11. F exceeds both, so P < 0.01 from the table; R gives P = 0.0004388 (P < 0.001).",
+     "tableLookup": {
+      "path": "sources/tables/F_table.pdf",
+      "page": 1,
+      "row": "ν_d=17",
+      "column": "ν_n=2 (lightface, P<.05)",
+      "value": 3.59,
+      "actualDf": 17,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Test the mother coefficient",
+     "general": [
+      "t=\\frac{b_1}{s_{b_1}},\\ \\nu=n-k-1"
+     ],
+     "work": [
+      "t=\\frac{0.4225}{0.1185}=3.565",
+      "3.565>t_{0.05}(17)=2.110"
+     ],
+     "words": "Open t_table.pdf, PDF page 1, row 17: 2.110 at 0.05. The statistic also lies between 3.222 (0.005) and 3.646 (0.002), so 0.002 < P < 0.005, matching R's 0.00238.",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 1,
+      "row": "17",
+      "column": "0.05",
+      "value": 2.11,
+      "actualDf": 17,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Test the father coefficient",
+     "general": [
+      "t=\\frac{b_2}{s_{b_2}}"
+     ],
+     "work": [
+      "t=\\frac{0.4150}{0.1248}=3.325",
+      "3.325>2.110"
+     ],
+     "words": "The father coefficient is also significant; 3.325 lies between 3.222 and 3.646, so 0.002 < P < 0.005, matching R's 0.00401."
+    },
+    {
+     "title": "Build 95% intervals for both slopes",
+     "general": [
+      "b_j\\pm t_{0.05}(\\nu)s_{b_j}"
+     ],
+     "work": [
+      "0.4225\\pm2.110(0.1185)=[0.1725,\\ 0.6725]",
+      "0.4150\\pm2.110(0.1248)=[0.1517,\\ 0.6783]"
+     ],
+     "words": "Neither interval contains zero, which agrees with both t tests."
+    },
+    {
+     "title": "Predict by hand",
+     "general": [
+      "\\hat y=b_0+b_1x_1+b_2x_2"
+     ],
+     "work": [
+      "\\hat y=-15.6892+0.4225(130)+0.4150(150)=101.49"
+     ],
+     "words": "Substitute the parental SBPs into the fitted plane; the result is a mean child SBP in mm Hg."
+    }
+   ],
+   "conclusion": "Reject H0 (F = 12.61 on 2 and 17 df, P < 0.001 from R; P < 0.01 from the printed table). The mother's and father's SBPs together predict the child's SBP, and each is significant on its own (t = 3.565 and 3.325, 0.002 < P < 0.005). The predicted mean child SBP for parents at 130 and 150 mm Hg is 101.5 mm Hg.",
+   "source": "Session 19 pages 24-25",
+   "lookup": {
+    "path": "sources/tables/F_table.pdf",
+    "page": 1,
+    "row": "ν_d=17",
+    "column": "ν_n=2 (lightface, P<.05)",
+    "value": 3.59,
+    "actualDf": 17,
+    "approximation": false
+   },
+   "values": {
+    "n": 20,
+    "k": 2,
+    "R2": 0.5973,
+    "F": 12.607524211571892,
+    "dfMod": 2,
+    "dfRes": 17,
+    "Fcritical": 3.59,
+    "tMother": 3.5654008438818567,
+    "tFather": 3.3253205128205128,
+    "tcritical": 2.11,
+    "ciMother": [
+     0.17246500000000003,
+     0.6725349999999999
+    ],
+    "ciFather": [
+     0.15167200000000003,
+     0.6783279999999999
+    ],
+    "prediction": 101.4858,
+    "reject": true
+   },
+   "module": 19,
+   "tolerance": 0.06,
+   "answerName": "F statistic",
+   "answer": 12.607524211571892
+  },
+  {
+   "id": "s19-walk-refit",
+   "title": "Six-minute walk distance: summary, confint, refit and prediction",
+   "topic": "s19mlrtest",
+   "context": "Original practice example in the style of an R multiple-regression exercise. For 32 adults in a rehabilitation program, six-minute walk distance (m) is regressed on Age (years), BMI (kg/m²) and Exercise (hours per week). R prints the summary(), the confint() output, and a refit with only the significant variables.",
+   "unit": "m",
+   "table": {
+    "headers": [
+     "Output",
+     "Term",
+     "Estimate",
+     "Std. Error",
+     "t value",
+     "Pr(>|t|)"
+    ],
+    "rows": [
+     [
+      "summary (full)",
+      "(Intercept)",
+      570.8264,
+      70.7832,
+      8.064,
+      "8.82e-09"
+     ],
+     [
+      "summary (full)",
+      "Age",
+      -3.162,
+      0.6173,
+      -5.123,
+      "1.98e-05"
+     ],
+     [
+      "summary (full)",
+      "BMI",
+      0.9237,
+      1.5434,
+      0.598,
+      "0.554"
+     ],
+     [
+      "summary (full)",
+      "Exercise",
+      15.1957,
+      2.9442,
+      5.161,
+      "1.78e-05"
+     ],
+     [
+      "summary (full)",
+      "Residual SE 35.86 on 28 df",
+      "R² 0.6611",
+      "Adj R² 0.6248",
+      "F 18.21 on 3 and 28 DF",
+      "p 9.43e-07"
+     ],
+     [
+      "confint (full) 2.5% / 97.5%",
+      "(Intercept)",
+      425.8336,
+      715.8192,
+      "",
+      ""
+     ],
+     [
+      "confint (full) 2.5% / 97.5%",
+      "Age",
+      -4.4264,
+      -1.8976,
+      "",
+      ""
+     ],
+     [
+      "confint (full) 2.5% / 97.5%",
+      "BMI",
+      -2.2378,
+      4.0852,
+      "",
+      ""
+     ],
+     [
+      "confint (full) 2.5% / 97.5%",
+      "Exercise",
+      9.1648,
+      21.2267,
+      "",
+      ""
+     ],
+     [
+      "summary (refit)",
+      "(Intercept)",
+      606.1512,
+      38.6343,
+      15.689,
+      "1.05e-15"
+     ],
+     [
+      "summary (refit)",
+      "Age",
+      -3.2801,
+      0.5784,
+      -5.671,
+      "3.94e-06"
+     ],
+     [
+      "summary (refit)",
+      "Exercise",
+      14.58,
+      2.7279,
+      5.345,
+      "9.73e-06"
+     ],
+     [
+      "summary (refit)",
+      "Residual SE 35.46 on 29 df",
+      "R² 0.6568",
+      "Adj R² 0.6331",
+      "F 27.75 on 2 and 29 DF",
+      "p 1.84e-07"
+     ]
+    ]
+   },
+   "tasks": [
+    "Write the full regression equation and test \\(H_0:\\beta_1=\\beta_2=\\beta_3=0\\) with the F statistic.",
+    "Decide which variables are significant from the t tests, then confirm with the confint() intervals.",
+    "Refit with the significant variables only and predict the walk distance of a 68-year-old who exercises 4.5 hours per week, by hand."
+   ],
+   "hypotheses": {
+    "null": "H_0:\\beta_{\\mathrm{BMI}}=0",
+    "alternative": "H_1:\\beta_{\\mathrm{BMI}}\\ne0",
+    "nullWords": "BMI has no relation to mean walk distance once age and exercise are in the model.",
+    "alternativeWords": "BMI is related to mean walk distance once age and exercise are in the model."
+   },
+   "symbols": "\\(b_j\\) (coefficient estimate), \\(s_{b_j}\\) (standard error), \\(k\\) (number of independent variables), \\(\\nu=n-k-1\\) (residual degrees of freedom), \\(\\hat y\\) (predicted mean distance).",
+   "steps": [
+    {
+     "title": "Write the full equation",
+     "general": [
+      "\\hat y=b_0+b_1x_1+b_2x_2+b_3x_3"
+     ],
+     "work": [
+      "\\hat y=570.8264-3.1620\\,\\mathrm{Age}+0.9237\\,\\mathrm{BMI}+15.1957\\,\\mathrm{Exercise}"
+     ],
+     "words": "Read the Estimate column of the full summary."
+    },
+    {
+     "title": "Test the model as a whole",
+     "general": [
+      "F=\\frac{MS_{mod}}{MS_{res}},\\ (k,\\ n-k-1)"
+     ],
+     "work": [
+      "F=18.21\\ \\text{on}\\ (3,\\ 28)",
+      "18.21>F_{0.01}(3,28)=4.57>F_{0.05}(3,28)=2.95"
+     ],
+     "words": "F_table.pdf page 1, numerator column 3, denominator row 28: 2.95 (lightface) and 4.57 (boldface). Reject the null that all three coefficients are zero; R gives P = 9.43e-07.",
+     "tableLookup": {
+      "path": "sources/tables/F_table.pdf",
+      "page": 1,
+      "row": "ν_d=28",
+      "column": "ν_n=3 (lightface, P<.05)",
+      "value": 2.95,
+      "actualDf": 28,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Test each coefficient",
+     "general": [
+      "t=\\frac{b_j}{s_{b_j}},\\ \\nu=n-k-1=28"
+     ],
+     "work": [
+      "t_{\\mathrm{Age}}=\\frac{-3.1620}{0.6173}=-5.122",
+      "t_{\\mathrm{BMI}}=\\frac{0.9237}{1.5434}=0.598",
+      "t_{\\mathrm{Ex}}=\\frac{15.1957}{2.9442}=5.161"
+     ],
+     "words": "Compare each magnitude with t_0.05(28) = 2.048 (t_table.pdf page 1, row 28). Age and Exercise exceed it; BMI does not (P = 0.554), so BMI is not significant.",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 1,
+      "row": "28",
+      "column": "0.05",
+      "value": 2.048,
+      "actualDf": 28,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Confirm with the 95% intervals",
+     "general": [
+      "b_j\\pm t_{0.05}(28)s_{b_j}"
+     ],
+     "work": [
+      "\\mathrm{BMI}:\\ 0.9237\\pm2.048(1.5434)=[-2.2372,\\ 4.0846]",
+      "\\mathrm{Age}:[-4.4264,-1.8976],\\ \\mathrm{Exercise}:[9.1648,21.2267]"
+     ],
+     "words": "The by-hand BMI interval matches confint() to rounding. It contains zero, while the Age and Exercise intervals do not, which agrees with the t tests."
+    },
+    {
+     "title": "Refit without BMI",
+     "general": [
+      "\\hat y=b_0+b_1\\,\\mathrm{Age}+b_3\\,\\mathrm{Exercise}"
+     ],
+     "work": [
+      "\\hat y=606.1512-3.2801\\,\\mathrm{Age}+14.5800\\,\\mathrm{Exercise}"
+     ],
+     "words": "The refit coefficients change slightly because BMI no longer shares the explanation. Both remaining t values (-5.671 and 5.345 on 29 df) exceed 3.659, the 0.001 cutoff, so P < 0.001."
+    },
+    {
+     "title": "Predict by hand",
+     "general": [
+      "\\hat y=b_0+b_1x_1+b_3x_3"
+     ],
+     "work": [
+      "\\hat y=606.1512-3.2801(68)+14.5800(4.5)",
+      "\\hat y=606.1512-223.0468+65.6100=448.7144"
+     ],
+     "words": "Substitute age 68 and 4.5 hours of exercise into the refit equation."
+    }
+   ],
+   "conclusion": "The model as a whole is significant (F = 18.21 on 3 and 28 df, P < 0.01). Age and Exercise are significant (P < 0.001) but BMI is not (t = 0.598, CI includes 0). The refit gives ŷ = 606.1512 − 3.2801·Age + 14.5800·Exercise, and the predicted mean distance for a 68-year-old exercising 4.5 h/week is 448.71 m.",
+   "source": "Original practice example",
+   "lookup": {
+    "path": "sources/tables/t_table.pdf",
+    "page": 1,
+    "row": "28",
+    "column": "0.05",
+    "value": 2.048,
+    "actualDf": 28,
+    "approximation": false
+   },
+   "values": {
+    "n": 32,
+    "k": 3,
+    "F": 18.21,
+    "tBMI": 0.5984838667876117,
+    "ciBMI": [
+     -2.2371832000000005,
+     4.0845832
+    ],
+    "refitB0": 606.1512,
+    "refitAge": -3.2801,
+    "refitExercise": 14.58,
+    "age": 68,
+    "exercise": 4.5,
+    "prediction": 448.71440000000007
+   },
+   "module": 19,
+   "tolerance": 2.243572,
+   "answerName": "Predicted walk distance",
+   "answer": 448.71440000000007
+  },
+  {
+   "id": "s19-chd-age",
+   "title": "Probability and odds of CHD at age 60",
+   "topic": "s19logistic",
+   "context": "Hosmer and Lemeshow data: age and presence of coronary heart disease (CHD) for 100 subjects. R fits glm(CHD ~ AGE, family = \"binomial\") by maximum likelihood.",
+   "unit": "probability",
+   "table": {
+    "headers": [
+     "Term",
+     "Estimate",
+     "Std. Error",
+     "z value",
+     "Pr(>|z|)"
+    ],
+    "rows": [
+     [
+      "(Intercept)",
+      -5.30945,
+      1.13365,
+      -4.683,
+      "2.82e-06"
+     ],
+     [
+      "AGE",
+      0.11092,
+      0.02406,
+      4.61,
+      "4.02e-06"
+     ]
+    ]
+   },
+   "tasks": [
+    "Test whether age is related to the probability of CHD using the z value for AGE.",
+    "Calculate the probability of CHD for a 60-year-old.",
+    "Calculate the odds of CHD at age 60 and state them as odds to 1."
+   ],
+   "hypotheses": {
+    "null": "H_0:\\beta_1=0",
+    "alternative": "H_1:\\beta_1\\ne0",
+    "nullWords": "The probability of CHD does not change with age.",
+    "alternativeWords": "The probability of CHD changes with age."
+   },
+   "symbols": "\\(b_0, b_1\\) (maximum-likelihood estimates), \\(x\\) (age in years), \\(p\\) (probability of CHD), \\(z\\) (estimate divided by its standard error).",
+   "steps": [
+    {
+     "title": "Test the age coefficient",
+     "general": [
+      "z=\\frac{b_1}{s_{b_1}}"
+     ],
+     "work": [
+      "z=\\frac{0.11092}{0.02406}=4.610",
+      "4.610>z_{0.05}=1.960;\\ 4.610>3.2905"
+     ],
+     "words": "Use the infinity row of t_table.pdf, page 2, for the Normal cutoffs: 1.960 at 0.05 and 3.2905 at 0.001. Reject with P < 0.001; R prints 4.02e-06.",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 2,
+      "row": "∞",
+      "column": "0.05",
+      "value": 1.96,
+      "actualDf": null,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Form the linear predictor",
+     "general": [
+      "\\eta=b_0+b_1x"
+     ],
+     "work": [
+      "\\eta=-5.30945+0.11092(60)=1.34575"
+     ],
+     "words": "The linear predictor is the logit, the natural log of the odds."
+    },
+    {
+     "title": "Convert to a probability",
+     "general": [
+      "p=\\frac{1}{1+e^{-(b_0+b_1x)}}"
+     ],
+     "work": [
+      "p=\\frac{1}{1+e^{-1.34575}}=\\frac{1}{1+0.26034}=0.7934"
+     ],
+     "words": "The logistic function keeps the result between 0 and 1. Rounded to two places, p = 0.79 as on the slide."
+    },
+    {
+     "title": "Calculate the odds",
+     "general": [
+      "\\text{odds}=\\frac{p}{1-p}=e^{b_0+b_1x}"
+     ],
+     "work": [
+      "\\text{odds}=\\frac{0.79}{1-0.79}=3.76",
+      "\\text{odds}=e^{1.34575}=3.84"
+     ],
+     "words": "The slide divides the rounded probability 0.79 by 0.21 and gets 3.76. Carrying p unrounded gives 3.84; rounding p to two places causes the difference."
+    }
+   ],
+   "conclusion": "Age is a significant predictor of CHD (z = 4.610, P < 0.001). A 60-year-old has an estimated CHD probability of 0.7934 (0.79), and odds of about 3.76:1 from the rounded probability (3.84:1 unrounded).",
+   "source": "Session 19 pages 35-36",
+   "lookup": {
+    "path": "sources/tables/t_table.pdf",
+    "page": 2,
+    "row": "∞",
+    "column": "0.05",
+    "value": 1.96,
+    "actualDf": null,
+    "approximation": false
+   },
+   "values": {
+    "b0": -5.30945,
+    "b1": 0.11092,
+    "age": 60,
+    "eta": 1.3457500000000007,
+    "probability": 0.7934339366085849,
+    "oddsSlide": 3.7619047619047623,
+    "oddsExact": 3.841066260265285,
+    "z": 4.610141313383209
+   },
+   "module": 19,
+   "tolerance": 0.003967,
+   "answerName": "Probability",
+   "answer": 0.7934339366085849
+  },
+  {
+   "id": "s19-oring-temperature",
+   "title": "O-ring failure and launch temperature",
+   "topic": "s19logistic",
+   "context": "Devore data: O-ring failure (Y/N) and launch temperature (°F) for 24 shuttle launches before the Challenger accident in January 1986. R fits glm(Failure ~ Temp, family = \"binomial\").",
+   "unit": "probability",
+   "table": {
+    "headers": [
+     "Term",
+     "Estimate",
+     "Std. Error",
+     "z value",
+     "Pr(>|z|)"
+    ],
+    "rows": [
+     [
+      "(Intercept)",
+      9.83198,
+      5.39833,
+      1.821,
+      0.0686
+     ],
+     [
+      "Temp",
+      -0.155,
+      0.07883,
+      -1.966,
+      0.0493
+     ]
+    ]
+   },
+   "tasks": [
+    "Test whether launch temperature is related to the probability of O-ring failure.",
+    "Calculate the probability of failure at 53 °F and at 75 °F.",
+    "Calculate the factor by which the odds of failure change for each 1 °F increase."
+   ],
+   "hypotheses": {
+    "null": "H_0:\\beta_1=0",
+    "alternative": "H_1:\\beta_1\\ne0",
+    "nullWords": "The probability of O-ring failure does not change with launch temperature.",
+    "alternativeWords": "The probability of O-ring failure changes with launch temperature."
+   },
+   "symbols": "\\(b_0, b_1\\) (maximum-likelihood estimates), \\(x\\) (launch temperature, °F), \\(p\\) (probability of failure), \\(e^{b_1}\\) (odds multiplier per degree).",
+   "steps": [
+    {
+     "title": "Test the temperature coefficient",
+     "general": [
+      "z=\\frac{b_1}{s_{b_1}}"
+     ],
+     "work": [
+      "z=\\frac{-0.15500}{0.07883}=-1.966",
+      "|-1.966|>1.960;\\ |-1.966|<2.3263"
+     ],
+     "words": "The magnitude just exceeds the 0.05 Normal cutoff (t_table.pdf page 2, infinity row) but not the 0.02 cutoff, so 0.02 < P < 0.05; R prints 0.0493.",
+     "tableLookup": {
+      "path": "sources/tables/t_table.pdf",
+      "page": 2,
+      "row": "∞",
+      "column": "0.05",
+      "value": 1.96,
+      "actualDf": null,
+      "approximation": false
+     }
+    },
+    {
+     "title": "Probability at 53 °F",
+     "general": [
+      "p=\\frac{1}{1+e^{-(b_0+b_1x)}}"
+     ],
+     "work": [
+      "b_0+b_1(53)=9.83198-0.155(53)=1.61698",
+      "p=\\frac{1}{1+e^{-1.61698}}=0.8344"
+     ],
+     "words": "At the coldest launch in the data the estimated failure probability is about 0.83."
+    },
+    {
+     "title": "Probability at 75 °F",
+     "general": [
+      "p=\\frac{1}{1+e^{-(b_0+b_1x)}}"
+     ],
+     "work": [
+      "b_0+b_1(75)=-1.79302",
+      "p=\\frac{1}{1+e^{1.79302}}=0.1427"
+     ],
+     "words": "A warm launch has a much lower estimated failure probability, about 0.14."
+    },
+    {
+     "title": "Odds multiplier per degree",
+     "general": [
+      "\\frac{\\text{odds}(x+1)}{\\text{odds}(x)}=e^{b_1}"
+     ],
+     "work": [
+      "e^{-0.155}=0.8564"
+     ],
+     "words": "Each 1 °F increase multiplies the odds of failure by about 0.856, a 14% decrease in the odds."
+    }
+   ],
+   "conclusion": "Temperature is a significant predictor of O-ring failure (z = -1.966, 0.02 < P < 0.05). The estimated failure probability is 0.834 at 53 °F and 0.143 at 75 °F, and the odds of failure fall by a factor of 0.856 per degree.",
+   "source": "Session 19 pages 37-38",
+   "lookup": {
+    "path": "sources/tables/t_table.pdf",
+    "page": 2,
+    "row": "∞",
+    "column": "0.05",
+    "value": 1.96,
+    "actualDf": null,
+    "approximation": false
+   },
+   "values": {
+    "b0": 9.83198,
+    "b1": -0.155,
+    "p53": 0.8343782136825704,
+    "p75": 0.14270286162660217,
+    "oddsPerDegree": 0.8564151774836135,
+    "z": -1.9662565013319802,
+    "halfwayTemp": 63.43212903225806
+   },
+   "module": 19,
+   "tolerance": 0.004172,
+   "answerName": "Probability",
+   "answer": 0.8343782136825704
+  }
+ ],
+ "questions": [
+  {
+   "id": "m2-s19-q001",
+   "module": 19,
+   "topic": "s19margin",
+   "stem": "For the original campus survey (300 of 500 first-year and 240 of 480 senior students), what is the 95% margin of error for the difference in proportions using the pooled standard error?",
+   "options": [
+    "\\(0.0620\\)",
+    "\\(0.0523\\)",
+    "\\(0.0623\\)",
+    "\\(0.0318\\)"
+   ],
+   "correct": 2,
+   "why": "The margin is 1.960 times the pooled standard error 0.03178, which is 0.0623. Using the unpooled SE, the 0.10 cutoff 1.645, or the SE alone gives the other values.",
+   "case": "s19-survey-margin",
+   "equations": [
+    "M=z_{0.05}s_{\\hat p_1-\\hat p_2}",
+    "M=1.960(0.03178)=0.06230"
+   ]
+  },
+  {
+   "id": "m2-s19-q002",
+   "module": 19,
+   "topic": "s19margin",
+   "stem": "For the same campus survey, what is the pooled proportion used in the standard error?",
+   "options": [
+    "\\(0.5510\\)",
+    "\\(0.5500\\)",
+    "\\(0.6000\\)",
+    "\\(0.5000\\)"
+   ],
+   "correct": 0,
+   "why": "The pooled proportion adds the yes answers and the respondents across both groups: 540/980 = 0.5510. Averaging the two proportions gives 0.5500, which ignores the unequal group sizes.",
+   "case": "s19-survey-margin",
+   "equations": [
+    "\\hat p=\\frac{m_1+m_2}{n_1+n_2}",
+    "\\hat p=\\frac{540}{980}=0.55102"
+   ]
+  },
+  {
+   "id": "m2-s19-q003",
+   "module": 19,
+   "topic": "s19design",
+   "stem": "In the hormone replacement therapy table (574 of 9,057 hormone users and 2,051 of 19,571 never-users died), what is the relative risk of dying for the hormone group?",
+   "options": [
+    "\\(1.6536\\)",
+    "\\(0.2799\\)",
+    "\\(0.5780\\)",
+    "\\(0.6047\\)"
+   ],
+   "correct": 3,
+   "why": "RR divides the hormone-group death proportion 0.06338 by the never-used proportion 0.10480. Inverting, using raw counts, or using the odds ratio gives the other values.",
+   "case": "s19-hrt-relative-risk",
+   "equations": [
+    "RR=\\frac{574/9057}{2051/19571}=0.6047"
+   ]
+  },
+  {
+   "id": "m2-s19-q004",
+   "module": 19,
+   "topic": "s19design",
+   "stem": "For the hormone therapy 2×2 table, what is the Yates-corrected chi-square statistic?",
+   "options": [
+    "\\(127.55\\)",
+    "\\(127.06\\)",
+    "\\(3.84\\)",
+    "\\(10.83\\)"
+   ],
+   "correct": 1,
+   "why": "Subtracting one half from each |O − E| before squaring gives 127.06; without the correction it is 127.55. The values 3.841 and 10.828 are the table cutoffs, not the statistic.",
+   "case": "s19-hrt-relative-risk",
+   "equations": [
+    "\\chi^2=\\sum\\frac{(|O-E|-\\tfrac12)^2}{E}=127.06"
+   ]
+  },
+  {
+   "id": "m2-s19-q005",
+   "module": 19,
+   "topic": "s19design",
+   "stem": "For the hormone therapy table, what is the expected number of deaths in the hormone group if both groups had the same death rate?",
+   "options": [
+    "\\(830.47\\)",
+    "\\(574.00\\)",
+    "\\(1312.50\\)",
+    "\\(1794.53\\)"
+   ],
+   "correct": 0,
+   "why": "Expected count = (row total 9,057)(column total 2,625)/28,628 = 830.47 deaths, well above the 574 observed.",
+   "case": "s19-hrt-relative-risk",
+   "equations": [
+    "E=\\frac{(9057)(2625)}{28628}=830.47"
+   ]
+  },
+  {
+   "id": "m2-s19-q006",
+   "module": 19,
+   "topic": "s19slopes",
+   "stem": "For the Plutonian slope comparison (male slope 3.2833, SE 0.2041; female slope 2.0290, SE 0.4708), what is the standard error of the slope difference?",
+   "options": [
+    "\\(0.67490\\)",
+    "\\(0.26670\\)",
+    "\\(0.51314\\)",
+    "\\(0.26331\\)"
+   ],
+   "correct": 2,
+   "why": "Square both standard errors, add, and take the root: √(0.04166 + 0.22165) = 0.51314. Adding the SEs themselves, subtracting them, or forgetting the root gives the other values.",
+   "case": "s19-plutonian-slopes",
+   "equations": [
+    "s_{b_M-b_F}=\\sqrt{0.2041^2+0.4708^2}=0.51314"
+   ]
+  },
+  {
+   "id": "m2-s19-q007",
+   "module": 19,
+   "topic": "s19slopes",
+   "stem": "What is the t statistic for equal male and female Plutonian slopes?",
+   "options": [
+    "\\(1.858\\)",
+    "\\(2.444\\)",
+    "\\(2.664\\)",
+    "\\(16.087\\)"
+   ],
+   "correct": 1,
+   "why": "t = 1.2543/0.51314 = 2.444. The other values use the wrong denominator or test one slope against zero.",
+   "case": "s19-plutonian-slopes",
+   "equations": [
+    "t=\\frac{3.2833-2.0290}{0.51314}=2.444"
+   ]
+  },
+  {
+   "id": "m2-s19-q008",
+   "module": 19,
+   "topic": "s19slopes",
+   "stem": "How many degrees of freedom does the Plutonian slope comparison use, and what is the two-sided 0.05 cutoff?",
+   "options": [
+    "\\(\\nu=34\\), \\(t_c=2.032\\)",
+    "\\(\\nu=16\\), \\(t_c=2.120\\)",
+    "\\(\\nu=36\\), \\(t_c=2.028\\)",
+    "\\(\\nu=32\\), \\(t_c=2.037\\)"
+   ],
+   "correct": 3,
+   "why": "ν = 18 + 18 − 4 = 32, and row 32 of the printed t table gives 2.037 in the 0.05 column.",
+   "case": "s19-plutonian-slopes",
+   "equations": [
+    "\\nu=n_1+n_2-4=32",
+    "t_{0.05}(32)=2.037"
+   ]
+  },
+  {
+   "id": "m2-s19-q009",
+   "module": 19,
+   "topic": "s19mlrfit",
+   "stem": "Solving b = (XᵀX)⁻¹Xᵀy for the 20 families, what is the coefficient of the mother's SBP?",
+   "options": [
+    "\\(0.4150\\)",
+    "\\(0.1185\\)",
+    "\\(0.7672\\)",
+    "\\(0.4225\\)"
+   ],
+   "correct": 3,
+   "why": "The second entry of b is 0.4225 mm Hg per mm Hg, the SBPmother estimate. 0.4150 belongs to the father; 0.1185 is the standard error; Σx1y/Σx1² ignores the other terms.",
+   "case": "s19-sbp-least-squares",
+   "equations": [
+    "b=(X^TX)^{-1}X^Ty",
+    "b_1=0.4225"
+   ]
+  },
+  {
+   "id": "m2-s19-q010",
+   "module": 19,
+   "topic": "s19mlrfit",
+   "stem": "With SS_res = 1934.92 for the child SBP model (n = 20, k = 2), what is s_y|x?",
+   "options": [
+    "\\(10.368\\) mm Hg",
+    "\\(10.669\\) mm Hg",
+    "\\(9.836\\) mm Hg",
+    "\\(113.819\\) mm Hg"
+   ],
+   "correct": 1,
+   "why": "Divide by n − k − 1 = 17 and take the root: √(1934.92/17) = 10.669 mm Hg, the Residual standard error. Dividing by 18 or 20, or skipping the root, gives the others.",
+   "case": "s19-sbp-least-squares",
+   "equations": [
+    "s_{y|x}=\\sqrt{\\frac{SS_{res}}{n-k-1}}=\\sqrt{\\frac{1934.92}{17}}=10.669"
+   ]
+  },
+  {
+   "id": "m2-s19-q011",
+   "module": 19,
+   "topic": "s19mlrfit",
+   "stem": "With SS_res = 1934.92 and SS_tot = 4805.0 for the child SBP model, what is R²?",
+   "options": [
+    "\\(0.5973\\)",
+    "\\(0.4027\\)",
+    "\\(0.5499\\)",
+    "\\(0.7729\\)"
+   ],
+   "correct": 0,
+   "why": "R² = 1 − 1934.92/4805.0 = 0.5973. The ratio alone is the unexplained fraction, 0.5499 is the adjusted R², and 0.7729 is R.",
+   "case": "s19-sbp-least-squares",
+   "equations": [
+    "R^2=1-\\frac{1934.92}{4805.0}=0.5973"
+   ]
+  },
+  {
+   "id": "m2-s19-q012",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "From the child SBP summary (R² = 0.5973, n = 20, k = 2), what F statistic do you get when you recompute it from R²?",
+   "options": [
+    "\\(14.832\\)",
+    "\\(1.483\\)",
+    "\\(12.608\\)",
+    "\\(13.349\\)"
+   ],
+   "correct": 2,
+   "why": "F = (0.5973/2)/(0.4027/17) = 12.608, matching R's 12.61. Using 20 or 18 residual df, or dropping the df, gives the others.",
+   "case": "s19-sbp-summary",
+   "equations": [
+    "F=\\frac{R^2/k}{(1-R^2)/(n-k-1)}=12.608"
+   ]
+  },
+  {
+   "id": "m2-s19-q013",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "What printed F-table value is the 0.05 cutoff for the child SBP model F test?",
+   "options": [
+    "\\(F_{0.05}(2,16)=3.63\\)",
+    "\\(F_{0.05}(2,17)=3.59\\)",
+    "\\(F_{0.01}(2,17)=6.11\\)",
+    "\\(F_{0.05}(2,20)=3.49\\)"
+   ],
+   "correct": 1,
+   "why": "Use the numerator df k = 2 (column) and the denominator df n − k − 1 = 17 (row); the lightface value is 3.59. 6.11 is the 0.01 boldface value.",
+   "case": "s19-sbp-summary",
+   "equations": [
+    "df_{mod}=2,\\ df_{res}=17"
+   ]
+  },
+  {
+   "id": "m2-s19-q014",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "What is the t statistic for the SBPmother coefficient (estimate 0.4225, SE 0.1185)?",
+   "options": [
+    "\\(0.050\\)",
+    "\\(0.280\\)",
+    "\\(3.385\\)",
+    "\\(3.565\\)"
+   ],
+   "correct": 3,
+   "why": "t = 0.4225/0.1185 = 3.565, matching the R t value; it exceeds t_0.05(17) = 2.110.",
+   "case": "s19-sbp-summary",
+   "equations": [
+    "t=\\frac{b_1}{s_{b_1}}=\\frac{0.4225}{0.1185}=3.565"
+   ]
+  },
+  {
+   "id": "m2-s19-q015",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "What is the lower bound of the 95% interval for the SBPmother coefficient, using the printed t value for 17 df?",
+   "options": [
+    "\\(0.1902\\)",
+    "\\(0.1735\\)",
+    "\\(0.1725\\)",
+    "\\(0.0791\\)"
+   ],
+   "correct": 2,
+   "why": "0.4225 − 2.110(0.1185) = 0.1725. The others use z = 1.96, the df-18 value 2.101, or the 0.01 cutoff 2.898.",
+   "case": "s19-sbp-summary",
+   "equations": [
+    "b_1-t_{0.05}(17)s_{b_1}=0.4225-2.110(0.1185)=0.1725"
+   ]
+  },
+  {
+   "id": "m2-s19-q016",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "Using ŷ = −15.6892 + 0.4225x1 + 0.4150x2, what mean child SBP is predicted when the mother's SBP is 130 and the father's is 150 mm Hg?",
+   "options": [
+    "\\(101.49\\) mm Hg",
+    "\\(101.64\\) mm Hg",
+    "\\(117.17\\) mm Hg",
+    "\\(132.86\\) mm Hg"
+   ],
+   "correct": 0,
+   "why": "−15.6892 + 0.4225(130) + 0.4150(150) = 101.49 mm Hg. Swapping the parents, dropping the intercept, or flipping its sign gives the others.",
+   "case": "s19-sbp-summary",
+   "equations": [
+    "\\hat y=-15.6892+0.4225(130)+0.4150(150)=101.49"
+   ]
+  },
+  {
+   "id": "m2-s19-q017",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "In the original walk-distance example, the refit gives ŷ = 606.1512 − 3.2801·Age + 14.5800·Exercise. What distance is predicted for a 68-year-old who exercises 4.5 h/week?",
+   "options": [
+    "\\(448.71\\) m",
+    "\\(424.19\\) m",
+    "\\(894.81\\) m",
+    "\\(1582.83\\) m"
+   ],
+   "correct": 0,
+   "why": "606.1512 − 223.0468 + 65.6100 = 448.71 m. Using the full-model coefficients without BMI, losing the minus sign, or swapping the inputs gives the others.",
+   "case": "s19-walk-refit",
+   "equations": [
+    "\\hat y=606.1512-3.2801(68)+14.5800(4.5)=448.71"
+   ]
+  },
+  {
+   "id": "m2-s19-q018",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "In the full walk-distance model, BMI has estimate 0.9237 and SE 1.5434 on 28 df. What is its t value and decision at 0.05?",
+   "options": [
+    "\\(t=0.598\\), significant",
+    "\\(t=1.671\\), not significant",
+    "\\(t=1.426\\), significant",
+    "\\(t=0.598\\), not significant"
+   ],
+   "correct": 3,
+   "why": "t = 0.9237/1.5434 = 0.598, far below t_0.05(28) = 2.048, so BMI is not significant (R: P = 0.554).",
+   "case": "s19-walk-refit",
+   "equations": [
+    "t=\\frac{0.9237}{1.5434}=0.598"
+   ]
+  },
+  {
+   "id": "m2-s19-q019",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "What is the upper bound of the by-hand 95% interval for the BMI coefficient (0.9237, SE 1.5434, 28 df)?",
+   "options": [
+    "\\(3.9488\\)",
+    "\\(4.0846\\)",
+    "\\(3.5490\\)",
+    "\\(5.1881\\)"
+   ],
+   "correct": 1,
+   "why": "0.9237 + 2.048(1.5434) = 4.0846, matching confint() to rounding. The interval contains zero, agreeing with the t test.",
+   "case": "s19-walk-refit",
+   "equations": [
+    "0.9237+2.048(1.5434)=4.0846"
+   ]
+  },
+  {
+   "id": "m2-s19-q020",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "For the full walk-distance model (F = 18.21 on 3 and 28 DF), which printed table values bracket the decision?",
+   "options": [
+    "\\(F_{0.05}(3,28)=2.95\\): fail to reject",
+    "\\(F_{0.05}(3,30)=2.92\\): reject, \\(P<0.05\\) only",
+    "\\(F_{0.05}(3,28)=2.95\\), \\(F_{0.01}(3,28)=4.57\\): reject, \\(P<0.01\\)",
+    "\\(F_{0.01}(2,28)=5.45\\): fail to reject"
+   ],
+   "correct": 2,
+   "why": "Column 3 (numerator), row 28 (denominator) gives 2.95 and 4.57; 18.21 exceeds both, so P < 0.01.",
+   "case": "s19-walk-refit",
+   "equations": [
+    "F=18.21>4.57"
+   ]
+  },
+  {
+   "id": "m2-s19-q021",
+   "module": 19,
+   "topic": "s19logistic",
+   "stem": "Using b0 = −5.30945 and b1 = 0.11092 for CHD and age, what is the probability of CHD at age 60?",
+   "options": [
+    "\\(0.2066\\)",
+    "\\(0.5737\\)",
+    "\\(1.3458\\)",
+    "\\(0.7934\\)"
+   ],
+   "correct": 3,
+   "why": "p = 1/(1 + e^(−1.34575)) = 0.7934, which rounds to 0.79 as on the slide. The other values use 1 − p, skip the exponential, or stop at the logit.",
+   "case": "s19-chd-age",
+   "equations": [
+    "p=\\frac{1}{1+e^{-(-5.30945+0.11092\\cdot60)}}=0.7934"
+   ]
+  },
+  {
+   "id": "m2-s19-q022",
+   "module": 19,
+   "topic": "s19logistic",
+   "stem": "The slide rounds the age-60 CHD probability to 0.79 before computing the odds. What odds does that give?",
+   "options": [
+    "\\(3.76\\)",
+    "\\(3.84\\)",
+    "\\(0.79\\)",
+    "\\(0.27\\)"
+   ],
+   "correct": 0,
+   "why": "0.79/(1 − 0.79) = 3.76, so the odds are 3.76:1. Without rounding p, e^1.34575 = 3.84.",
+   "case": "s19-chd-age",
+   "equations": [
+    "\\text{odds}=\\frac{0.79}{1-0.79}=3.76"
+   ]
+  },
+  {
+   "id": "m2-s19-q023",
+   "module": 19,
+   "topic": "s19logistic",
+   "stem": "In the CHD glm output, what is the z value for AGE (estimate 0.11092, SE 0.02406)?",
+   "options": [
+    "\\(0.217\\)",
+    "\\(0.003\\)",
+    "\\(4.610\\)",
+    "\\(4.684\\)"
+   ],
+   "correct": 2,
+   "why": "z = 0.11092/0.02406 = 4.610; it exceeds 3.2905, the 0.001 Normal cutoff, so P < 0.001.",
+   "case": "s19-chd-age",
+   "equations": [
+    "z=\\frac{0.11092}{0.02406}=4.610"
+   ]
+  },
+  {
+   "id": "m2-s19-q024",
+   "module": 19,
+   "topic": "s19logistic",
+   "stem": "Using b0 = 9.83198 and b1 = −0.155, what is the estimated probability of O-ring failure at 53 °F?",
+   "options": [
+    "\\(0.1656\\)",
+    "\\(0.8344\\)",
+    "\\(1.0000\\)",
+    "\\(0.1427\\)"
+   ],
+   "correct": 1,
+   "why": "9.83198 − 0.155(53) = 1.61698, and p = 1/(1 + e^(−1.61698)) = 0.8344. The value 0.1427 is the 75 °F probability.",
+   "case": "s19-oring-temperature",
+   "equations": [
+    "p=\\frac{1}{1+e^{-1.61698}}=0.8344"
+   ]
+  },
+  {
+   "id": "m2-s19-q025",
+   "module": 19,
+   "topic": "s19logistic",
+   "stem": "By what factor do the odds of O-ring failure change for each 1 °F increase in launch temperature?",
+   "options": [
+    "\\(1.1677\\)",
+    "\\(0.8564\\)",
+    "\\(0.1550\\)",
+    "\\(0.8450\\)"
+   ],
+   "correct": 1,
+   "why": "The odds multiplier per unit is e^b1 = e^(−0.155) = 0.8564, so the odds fall about 14% per degree.",
+   "case": "s19-oring-temperature",
+   "equations": [
+    "e^{b_1}=e^{-0.155}=0.8564"
+   ]
+  },
+  {
+   "id": "m2-s19-q026",
+   "module": 19,
+   "topic": "s19logistic",
+   "stem": "What is the estimated probability of O-ring failure at 75 °F?",
+   "options": [
+    "\\(0.8344\\)",
+    "\\(0.8573\\)",
+    "\\(0.1427\\)",
+    "\\(0.1665\\)"
+   ],
+   "correct": 2,
+   "why": "9.83198 − 0.155(75) = −1.79302, so p = 1/(1 + e^1.79302) = 0.1427. 0.1665 is the odds, not the probability.",
+   "case": "s19-oring-temperature",
+   "equations": [
+    "p=\\frac{1}{1+e^{1.79302}}=0.1427"
+   ]
+  },
+  {
+   "id": "m2-s19-q027",
+   "module": 19,
+   "topic": "s19margin",
+   "stem": "A poll reports a difference of 6 percentage points with a margin of error of ±4 points (95%). What does this mean?",
+   "options": [
+    "About 95% of respondents differ by between 2 and 10 points.",
+    "The true difference is certainly between 2 and 10 points.",
+    "The difference is not significant because the margin is larger than zero.",
+    "The 95% interval for the population difference runs from 2 to 10 points, so zero is excluded."
+   ],
+   "correct": 3,
+   "why": "The margin is the half-width of the 95% interval: 6 ± 4 gives 2 to 10 points. Because 6 > 4, zero lies outside.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q028",
+   "module": 19,
+   "topic": "s19margin",
+   "stem": "With the same observed proportions, which change makes the margin of error of a two-group survey smaller?",
+   "options": [
+    "Larger sample sizes in both groups",
+    "A 99% level instead of 95%",
+    "Using the t cutoff for a small df instead of z",
+    "Rounding the proportions before computing the SE"
+   ],
+   "correct": 0,
+   "why": "The standard error shrinks as the group sizes grow, so the margin shrinks. A higher confidence level or a larger cutoff widens it.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q029",
+   "module": 19,
+   "topic": "s19design",
+   "stem": "The Glantz hormone table compares current users with never-users. What can the relative risk of 0.60 establish?",
+   "options": [
+    "That hormone therapy causes a 40% reduction in deaths in all women",
+    "That breast cancer risk is unchanged by hormone therapy",
+    "An association between hormone use and lower death risk in these groups, not that hormones caused it",
+    "Nothing, because the chi-square test was not significant"
+   ],
+   "correct": 2,
+   "why": "The groups were formed by use, not random assignment, so the comparison shows an association. The chi-square test was significant (P < 0.001).",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q030",
+   "module": 19,
+   "topic": "s19design",
+   "stem": "Agarwal and colleagues (2008) added a group of non-users to a study of cell phones and sperm motility. What does that group provide?",
+   "options": [
+    "Random assignment of cell phone use",
+    "A comparison with no exposure, rather than only between levels of use",
+    "Proof that cell phones cause low motility",
+    "A larger sample of heavy users"
+   ],
+   "correct": 1,
+   "why": "Fejes and colleagues (2005) compared two groups of users; including non-users gives a no-use control comparison.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q031",
+   "module": 19,
+   "topic": "s19slopes",
+   "stem": "Why does the test for equal slopes use n1 + n2 − 4 degrees of freedom?",
+   "options": [
+    "Each of the two regression lines estimates an intercept and a slope.",
+    "Two slopes and two standard errors are compared.",
+    "Four observations are removed as outliers.",
+    "The F test for each line uses 2 df."
+   ],
+   "correct": 0,
+   "why": "Each simple regression uses 2 degrees of freedom (n − 2); two lines together use 4.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q032",
+   "module": 19,
+   "topic": "s19mlrfit",
+   "stem": "In ŷ = −15.7 + 0.423x1 + 0.415x2 for child SBP, what does 0.423 mean?",
+   "options": [
+    "Child SBP is 42.3% of maternal SBP.",
+    "The correlation between child and mother SBP is 0.423.",
+    "0.423 of the variation in child SBP is explained by the mother.",
+    "Mean child SBP is 0.423 mm Hg higher per 1 mm Hg higher maternal SBP, with paternal SBP held fixed."
+   ],
+   "correct": 3,
+   "why": "A multiple-regression coefficient is the change in mean y per unit of its variable, holding the other variables constant.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q033",
+   "module": 19,
+   "topic": "s19mlrfit",
+   "stem": "Why is s²_y|x computed as SS_res/(n − k − 1)?",
+   "options": [
+    "k variables and one outcome are measured.",
+    "The sample mean of y is subtracted k + 1 times.",
+    "The F test has k − 1 numerator df.",
+    "One degree of freedom is used for each of the k + 1 estimated coefficients."
+   ],
+   "correct": 3,
+   "why": "The intercept and k slopes are estimated from the data, leaving n − k − 1 degrees of freedom for the residuals.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q034",
+   "module": 19,
+   "topic": "s19mlrfit",
+   "stem": "A model with many parameters passes through nearly every data point. What is the risk?",
+   "options": [
+    "It fits the noise in the data and gives little generalizable information (overfitting).",
+    "It underfits because it is too simple.",
+    "Its residual variance is too large to test.",
+    "Its coefficients become exactly zero."
+   ],
+   "correct": 0,
+   "why": "Added complexity always improves the fit to the sample, but past some point it tracks noise instead of the system being modeled.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q035",
+   "module": 19,
+   "topic": "s19mlrfit",
+   "stem": "Why does the first column of the design matrix X contain only ones?",
+   "options": [
+    "It marks which observations are complete.",
+    "It multiplies the intercept, so Xb includes b0 for every observation.",
+    "It standardizes each variable to unit variance.",
+    "It holds the residuals."
+   ],
+   "correct": 1,
+   "why": "Each row of X is [1, x_i1, ..., x_ik]; the 1 carries the intercept b0 into every fitted value.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q036",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "What null hypothesis does the F statistic in an R multiple-regression summary test?",
+   "options": [
+    "\\(H_0:\\beta_0=0\\)",
+    "\\(H_0:\\) at least one \\(\\beta_j\\ne0\\)",
+    "\\(H_0:\\beta_1=\\beta_2=\\cdots=\\beta_k=0\\)",
+    "\\(H_0:R^2=1\\)"
+   ],
+   "correct": 2,
+   "why": "The F test asks whether all slope coefficients are zero together; the alternative is that at least one is not.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q037",
+   "module": 19,
+   "topic": "s19mlrtest",
+   "stem": "Where do the Std. Error values of a multiple regression come from?",
+   "options": [
+    "\\(s_{b_j}^2=s_{y|x}^2\\) times the jth diagonal entry of \\((X^TX)^{-1}\\)",
+    "\\(s_{b_j}=s_{y|x}/\\sqrt n\\) for every coefficient",
+    "\\(s_{b_j}=b_j/t\\) with t from the printed table",
+    "\\(s_{b_j}^2=SS_{tot}/(n-1)\\)"
+   ],
+   "correct": 0,
+   "why": "The residual variance times the matching diagonal element of the inverse cross-product matrix gives each coefficient variance.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q038",
+   "module": 19,
+   "topic": "s19logistic",
+   "stem": "Why is a linear regression of CHD presence (0 or 1) on age not appropriate?",
+   "options": [
+    "Age is not Normally distributed.",
+    "There are too few subjects with CHD.",
+    "The fitted line can predict values below 0 or above 1, which cannot be probabilities.",
+    "Least squares cannot be computed for 0/1 data."
+   ],
+   "correct": 2,
+   "why": "The outcome is categorical. A straight line in age eventually leaves the 0-to-1 range, as the linear fit to the group proportions shows.",
+   "case": null,
+   "equations": []
+  },
+  {
+   "id": "m2-s19-q039",
+   "module": 19,
+   "topic": "s19logistic",
+   "stem": "The slide lists logit(p) = −0.9542 for p = 0.1. What is the natural-log logit, ln(p/(1 − p)), for p = 0.1?",
+   "options": [
+    "\\(-0.9542\\)",
+    "\\(-2.3026\\)",
+    "\\(-0.1111\\)",
+    "\\(-2.1972\\)"
+   ],
+   "correct": 3,
+   "why": "ln(0.1/0.9) = ln(0.1111) = −2.1972. The −0.9542 on the slide is log10(0.1111), the base-10 logit.",
+   "case": null,
+   "equations": [
+    "\\ln\\left(\\frac{0.1}{0.9}\\right)=-2.1972"
+   ]
+  },
+  {
+   "id": "m2-s19-q040",
+   "module": 19,
+   "topic": "s19logistic",
+   "stem": "What is the main advantage of maximum likelihood estimation over regressing grouped logits?",
+   "options": [
+    "It always gives a larger slope.",
+    "It uses the individual 0/1 outcomes, so no age groups or group probabilities have to be chosen.",
+    "It produces R² values closer to 1.",
+    "It does not need the logistic function."
+   ],
+   "correct": 1,
+   "why": "Grouping needs enough data per group, and the choice of intervals arbitrarily influences the result; maximum likelihood avoids both.",
+   "case": null,
+   "equations": []
+  }
+ ],
+ "sourceNotes": [
+  {
+   "page": 30,
+   "text": "The logit table lists -0.9542 for p = 0.1, -0.8256 for p = 0.13 and 0.6021 for p = 0.8. These are base-10 logarithms of the odds (log10(0.1/0.9) = -0.9542). The page defines logit(p) as the natural log, ln(p/(1-p)), which gives -2.1972, -1.9010 and 1.3863. The slide values are kept as printed. Any logit calculation in this pack uses ln."
+  },
+  {
+   "page": 31,
+   "text": "The lm() fit on page 31 (b0 = -2.095787, b1 = 0.043550, residual SE 0.09857, R-squared 0.9758) is reproduced exactly by base-10 logits of the Table 1.2 proportions, except that the 50-54 group enters as p = 0.65. Table 1.2 prints 0.63 for that group (5/8 = 0.625). With 0.63, the fit gives b0 = -2.0903 and b1 = 0.04332. With natural-log logits, the coefficients would be about 2.303 times larger (b0 about -4.81, b1 about 0.0998)."
+  },
+  {
+   "page": 32,
+   "text": "The blue logistic curve on page 32 uses b0 = -2.0958 and b1 = 0.04355 inside the natural exponential. Those coefficients were fitted to base-10 logits, so the curve is flatter than the group proportions: it gives about 0.26 at age 24.5, where the observed proportion is 0.10. This follows from the base mismatch noted for page 30."
+  },
+  {
+   "page": 36,
+   "text": "The slide computes the odds at age 60 as 0.79/(1 - 0.79) = 3.76. Here 0.79 is the rounded probability. The unrounded probability is 0.7934, and the odds are e^(1.34575) = 3.84. The case shows both values, with 3.76 marked as the slide's rounded route."
+  },
+  {
+   "page": 38,
+   "text": "Refitting a logistic regression to the 24 launches exactly as tabulated on page 37 gives b0 = 10.875 and b1 = -0.1713 (z = -2.05, P = 0.040). The printed glm output (9.83198, -0.15500) cannot be reproduced from the table as shown, so the R data set may differ from the printed table. The cases use the coefficients printed on page 38."
+  },
+  {
+   "page": 10,
+   "text": "The slide gives t = (b1 - b2)/s_{b1-b2} with n1 + n2 - 4 df but does not print the standard error. The pack uses the Glantz form s_{b1-b2} = sqrt(s_b1^2 + s_b2^2), with each slope SE read from the R output on page 13."
+  },
+  {
+   "page": 20,
+   "text": "The slide writes \"Correlation Coefficient (R = r)\". The multiple correlation coefficient R = sqrt(R^2) is never negative. With a single independent variable it equals the magnitude of Pearson's r, so it matches r only when r is positive."
+  },
+  {
+   "page": 25,
+   "text": "The conclusion P < 0.001 comes from R's p-value of 0.0004388. The printed F table goes only to the 0.01 level (F = 6.11 for 2 and 17 df), so a by-hand table lookup supports P < 0.01."
+  }
+ ]
+}

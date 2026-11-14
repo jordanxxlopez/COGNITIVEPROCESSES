@@ -18,6 +18,7 @@ TIERS = {
     "review": "On the review and homework",
     "out": "Not on the midterm",
     "m2": "Module II · Homework 3",
+    "m2b": "Module II · after Homework 3",
 }
 
 LECTURES = [
@@ -67,6 +68,7 @@ LECTURES = [
   "steps": [
    {"do": "Sort the data from smallest to largest.", "why": "This is because a percentile is a position in the ordered list."},
    {"do": "Find the position of the percentile.", "why": "This is because the position tells you which value, or which pair of values, to use.", "tex": "\\text{position}=1+\\frac{p(n-1)}{100}"},
+   {"do": "Split the position into its whole part k and its leftover fraction f.", "why": "This is because k tells you which two values to use and f tells you how far to go between them.", "tex": "k=\\lfloor\\text{position}\\rfloor,\\quad f=\\text{position}-k"},
    {"do": "If the position is a whole number, read that value directly.", "why": "This is because the percentile then sits exactly on one observation."},
    {"do": "If the position falls between two values, move from the lower value toward the higher one by the leftover fraction.", "why": "This is because the percentile sits partway between those two observations.", "tex": "x_{(k)}+f\\,\\big(x_{(k+1)}-x_{(k)}\\big)"},
    {"do": "Write the answer with its units.", "why": "This is because a percentile is a measurement, not a percent."}]},
@@ -131,7 +133,7 @@ LECTURES = [
   "steps": [
    {"do": "List each value next to its probability.", "why": "This is because every calculation pairs a value with its weight."},
    {"do": "Multiply each value by its probability and add.", "why": "This is because the expected value is a weighted average.", "tex": "E[X]=\\sum x\\,f(x)"},
-   {"do": "Square each distance from the mean, multiply by its probability, and add.", "why": "This is because variance is the weighted average squared distance.", "tex": "\\operatorname{Var}(X)=\\sum (x-\\mu)^2 f(x)"},
+   {"do": "Square each distance from the mean, multiply by its probability, and add.", "why": "This is because variance is the weighted average squared distance.", "tex": "\\operatorname{Var}(X)=\\sum (x-\\mu)^2 f(x)=E[X^2]-(E[X])^2"},
    {"do": "Take the square root if the SD is asked.", "why": "This is because the SD puts the spread back in the original units."}]}]},
 # ---------------------------------------------------------------- Session 4
 {
@@ -177,7 +179,7 @@ LECTURES = [
  {"title": "Expected value from a density", "when": "You are asked for E of X when X is continuous.",
   "steps": [
    {"do": "Write E of X as the integral of x times f of x.", "why": "This is because every value is weighted by its density.", "tex": "E[X]=\\int_{-\\infty}^{\\infty} x\\,f(x)\\,dx"},
-   {"do": "Keep only the range where f is not zero.", "why": "This is because the pieces with zero density add nothing."},
+   {"do": "Split the integral over every piece, write the zero pieces, then drop them.", "why": "This is because the solutions show every piece before keeping only the range where f is not zero."},
    {"do": "Integrate and plug in the upper bound minus the lower bound.", "why": "This is because a definite integral is the difference between the two ends."}]},
  {"title": "Find an unknown constant in a density", "when": "The density contains a letter like c that you must find.",
   "steps": [
@@ -221,18 +223,18 @@ LECTURES = [
    {"do": "Write the variable as Normal with its mean and SD.", "why": "This is because it names the numbers you will use."},
    {"do": "Standardize each cutoff.", "why": "This is because the table only works for Z.", "tex": "z=\\frac{x-\\mu}{\\sigma}"},
    {"do": "Sketch the area you want.", "why": "This is because the sketch tells you whether to use the left area, 1 minus it, or a difference."},
-   {"do": "Look up each left area in the table and combine them.", "why": "This is because the table gives only left areas.", "tex": "P(a<X<b)=\\Phi(z_b)-\\Phi(z_a)"},
+   {"do": "Look up each left area in the table and combine them, using symmetry for a negative z.", "why": "This is because the table only lists left areas for positive z.", "tex": "P(a<X<b)=F(z_b)-F(z_a),\\quad F(-z)=1-F(z)"},
    {"do": "State the probability in words about the original variable.", "why": "This is because the question is about the measurement, not about Z."}]},
  {"title": "Normal probability for a sample mean", "when": "The question asks about the average of a sample of n people.",
   "steps": [
-   {"do": "Name the sample mean as a new Normal variable with the same mean.", "why": "This is because averages center on the population mean."},
+   {"do": "Name the sample mean as a new Normal variable with the same mean, by the central limit theorem.", "why": "This is because averages center on the population mean and are Normal."},
    {"do": "Divide the SD by the square root of n.", "why": "This is because averages vary less than individuals.", "tex": "\\sigma_{\\bar X}=\\frac{\\sigma}{\\sqrt n}"},
    {"do": "Standardize using the SE, not the SD.", "why": "This is because the SE is the spread of the mean.", "tex": "z=\\frac{\\bar x-\\mu}{\\sigma/\\sqrt n}"},
    {"do": "Use the table and combine the areas as before.", "why": "This is because the rest of the method does not change."}]},
  {"title": "Normal percentile", "when": "You are given an area and asked for the value that cuts it off.",
   "steps": [
    {"do": "Turn the request into a left area.", "why": "This is because the table is organized by left area."},
-   {"do": "Find the z with that left area.", "why": "This is because z is the position on the standard scale."},
+   {"do": "Find the z with that left area, using symmetry when the area is below one half.", "why": "This is because the table only lists areas of one half and above."},
    {"do": "Convert back to the original units.", "why": "This is because the answer must be a measurement.", "tex": "x=\\mu+z\\,\\sigma"}]}]},
 # ---------------------------------------------------------------- Session 6
 {
@@ -248,7 +250,7 @@ LECTURES = [
   {"pages": [9, 10],
    "main": "**The within-groups variance estimates the population variance from the spread inside each group.** Treatment cannot change the spread inside a group, so this estimate stays honest whether or not the treatment works. With equal group sizes, it is the average of the group variances."},
   {"pages": [6, 8, 11, 12],
-   "main": "**The between-groups variance estimates the same population variance from how spread out the group means are.** The means vary less than individuals by a factor of n, so the variance of the means is multiplied by n to get back to the scale of individuals.",
+   "main": "**The between-groups variance estimates the same population variance from how spread out the group means are.** The variance of a group mean is the population variance divided by n. So multiplying the variance of the means by n puts it back on the scale of individuals.",
    "sub": ["If the treatment works, the means spread apart, so this estimate gets too big."],
    "end": "So under the null hypothesis both estimates should be about the same size."}]},
  {"title": "The F ratio", "blocks": [
@@ -279,9 +281,9 @@ LECTURES = [
   {"pages": [6, 7, 10, 11, 12, 13],
    "main": "**The within estimate comes from the group SDs, and the between estimate comes from the group means.** Average the squared SDs to get the within-groups variance. Find the grand mean, then the variance of the group means around it, and multiply by n.",
    "sub": ["The F ratio is the between estimate divided by the within estimate."]},
-  {"pages": [14, 15, 16, 17],
+  {"pages": [14, 16, 24, 25],
    "main": "**The decision compares F with the table cutoff at the stated significance level.** If the exact denominator degrees of freedom are not printed, you use the two printed rows on either side. If F is bigger than both, you reject the null hypothesis.",
-   "sub": ["When you reject at 0.05, you check a smaller level like 0.01, because you must report the smallest P range you can."],
+   "sub": ["When you reject at 0.05, the homework guidelines say to check a stricter level like 0.01 as well, so the P range is as tight as possible."],
    "end": "So the conclusion sentence repeats the null hypothesis wording and adds the P value."}]},
  {"title": "Reading ANOVA output", "blocks": [
   {"pages": [36, 38, 39],
@@ -299,14 +301,16 @@ LECTURES = [
 "memorize": [
  {"title": "Balanced ANOVA from means and SDs", "when": "The problem gives three or more independent groups of equal size, with a mean and SD for each.",
   "steps": [
-   {"do": "Name the test as analysis of variance.", "why": "This is because there are more than two groups of different subjects with interval data."},
+   {"do": "Name the test as analysis of variance and write the reason in parentheses.", "why": "This is because there are more than two groups of different subjects with interval, Normal data, and the solutions state that reason."},
    {"do": "Write the null hypothesis in words about the outcome and the groups.", "why": "This is because a generic equation loses points."},
+   {"do": "List m, the number of groups, and n, the number in each group.", "why": "This is because every later formula uses them."},
+   {"do": "Write each general equation before you put in the numbers.", "why": "This is because the grading rules give credit for the equation itself, not only the answer."},
    {"do": "Average the squared SDs to get the within-groups variance.", "why": "This is because the spread inside groups estimates the population variance.", "tex": "s^2_{wit}=\\frac{1}{m}\\sum s_i^2"},
    {"do": "Find the grand mean and the variance of the group means.", "why": "This is because the spread of the means is the other route to the variance.", "tex": "s^2_{\\bar X}=\\frac{\\sum(\\bar x_i-\\bar X)^2}{m-1}"},
-   {"do": "Multiply that variance by n to get the between-groups variance.", "why": "This is because means vary n times less than individuals.", "tex": "s^2_{bet}=n\\,s^2_{\\bar X}"},
+   {"do": "Multiply that variance by n to get the between-groups variance.", "why": "This is because the variance of a mean is the population variance divided by n.", "tex": "s^2_{bet}=n\\,s^2_{\\bar X}"},
    {"do": "Divide between by within to get F.", "why": "This is because F compares the two estimates.", "tex": "F=\\frac{s^2_{bet}}{s^2_{wit}}"},
    {"do": "Write both degrees of freedom.", "why": "This is because the F table needs both.", "tex": "\\nu_n=m-1,\\quad \\nu_d=m(n-1)"},
-   {"do": "Look up the cutoff at 0.05, bracketing with nearby rows if needed.", "why": "This is because you must report the critical value you compared against."},
+   {"do": "Write the critical value with its alpha and degrees of freedom, like F0.05(2, 33), bracketing with the printed rows on either side if that row is missing.", "why": "This is because you must report the critical value you compared against."},
    {"do": "Compare F with the cutoff and write the full conclusion with a P range.", "why": "This is because the conclusion must restate the null hypothesis and give P if you reject."},
    {"do": "Stop without naming which groups differ unless asked.", "why": "This is because the exam rules say not to isolate differences unless told to."}]},
  {"title": "Read an R aov table", "when": "The problem gives ANOVA output from R instead of raw data.",
@@ -348,14 +352,16 @@ LECTURES = [
   "steps": [
    {"do": "Name the test as the unpaired two-sample t test.", "why": "This is because there are two groups of different subjects."},
    {"do": "Write the null hypothesis in words.", "why": "This is because it must name the outcome and the two groups."},
+   {"do": "Write each general equation before you put in the numbers.", "why": "This is because the grading rules give credit for the equation itself, not only the answer."},
    {"do": "Pool the two variances.", "why": "This is because the groups are assumed to share one variance.", "tex": "s_p^2=\\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}"},
    {"do": "Divide the difference in means by its standard error.", "why": "This is because t measures the difference in units of uncertainty.", "tex": "t=\\frac{\\bar x_1-\\bar x_2}{\\sqrt{s_p^2\\left(\\frac{1}{n_1}+\\frac{1}{n_2}\\right)}}"},
    {"do": "Write the degrees of freedom.", "why": "This is because the cutoff depends on them.", "tex": "\\nu=n_1+n_2-2"},
-   {"do": "Look up the two-tailed cutoff at 0.05 and compare the size of t.", "why": "This is because a difference in either direction counts."},
-   {"do": "If you reject, check 0.01 and write the conclusion with the P range.", "why": "This is because you report the strongest level you can."}]},
+   {"do": "Write the two-tailed cutoff with its alpha and degrees of freedom, like t0.05(47), and compare the size of t.", "why": "This is because a difference in either direction counts and the cutoff must be reported."},
+   {"do": "If you reject, check 0.01 as well and write the conclusion with the P range.", "why": "This is because the homework guidelines ask for the tightest P range you can show."}]},
  {"title": "One-sample t test", "when": "The problem compares one group with a fixed number from outside the sample.",
   "steps": [
    {"do": "Name the test and write the null hypothesis about the group and the reference value.", "why": "This is because the question compares one group with an outside number."},
+   {"do": "Write each general equation before you put in the numbers.", "why": "This is because the grading rules give credit for the equation itself, not only the answer."},
    {"do": "Divide the difference from the reference by the SE.", "why": "This is because the SE is the uncertainty in the sample mean.", "tex": "t=\\frac{\\bar x-\\mu_0}{s/\\sqrt n}"},
    {"do": "Use n minus 1 degrees of freedom and the two-tailed table.", "why": "This is because one mean was estimated from the data."},
    {"do": "Compare, decide and write the full conclusion.", "why": "This is because the conclusion must answer the study question."}]}]},
@@ -367,7 +373,7 @@ LECTURES = [
 "topics": [
  {"title": "Why plain repeated t tests are a problem", "blocks": [
   {"pages": [3, 4],
-   "main": "**Each extra t test adds another chance of a false positive, so many tests together are too likely to find a fake difference.** With three comparisons at 0.05 each, the chance of at least one false positive is close to 0.15, not 0.05.",
+   "main": "**Each extra t test adds another chance of a false positive, so many tests together are too likely to find a fake difference.** With three comparisons at 0.05 each, the chance of at least one false positive is about 0.14, not 0.05.",
    "end": "So the significance level of each test has to be made stricter."},
   {"pages": [5],
    "main": "**The pairwise t tests reuse the within-groups variance from the ANOVA.** It is the best estimate of the shared variance because it uses every group. Its degrees of freedom are also used for the cutoff, so the test is stronger than a two-group t test."}]},
@@ -393,6 +399,7 @@ LECTURES = [
   "steps": [
    {"do": "Name the procedure as multiple pairwise t tests with the Holm correction.", "why": "This is because that is the test being performed."},
    {"do": "Write one null hypothesis joined by AND for every pair.", "why": "This is because each pair is its own comparison."},
+   {"do": "Write each general equation before you put in the numbers.", "why": "This is because the grading rules give credit for the equation itself, not only the answer."},
    {"do": "Take the within-groups variance and its degrees of freedom from the ANOVA.", "why": "This is because the pairwise tests share them.", "tex": "s^2_{wit}\\ \\text{(Residuals Mean Sq)},\\quad \\nu\\ \\text{(Residuals Df)}"},
    {"do": "Calculate t for every pair.", "why": "This is because each pair needs its own statistic.", "tex": "t_{AB}=\\frac{\\bar x_A-\\bar x_B}{\\sqrt{s^2_{wit}\\left(\\frac{1}{n_A}+\\frac{1}{n_B}\\right)}}"},
    {"do": "Order the pairs from the largest size of t to the smallest.", "why": "This is because Holm tests the strongest evidence first."},
@@ -402,10 +409,12 @@ LECTURES = [
    {"do": "Write one conclusion naming which pairs differ and which do not, made with P less than 0.05.", "why": "This is because the whole statement holds at the overall level."}]},
  {"title": "Bonferroni pairwise t tests", "when": "The question tells you to use the Bonferroni correction.",
   "steps": [
-   {"do": "Count the comparisons and divide the overall level by that count.", "why": "This is because every pair shares the same stricter level.", "tex": "\\alpha=\\frac{\\alpha_T}{k}"},
+   {"do": "Name the procedure as multiple t tests with the Bonferroni correction.", "why": "This is because that is the test being performed."},
+   {"do": "Write one null hypothesis joined by AND for every pair.", "why": "This is because each pair is its own comparison."},
+   {"do": "Count the comparisons and divide the overall level by that count.", "why": "This is because every pair shares the same stricter level.", "tex": "\\alpha=\\frac{\\alpha_T}{k},\\quad \\nu=m(n-1)=N-m"},
    {"do": "Calculate t for each pair with the within-groups variance.", "why": "This is because it is the shared variance estimate."},
-   {"do": "Compare every t with the one cutoff.", "why": "This is because Bonferroni does not change levels."},
-   {"do": "Write the combined conclusion.", "why": "This is because the answer names every pair."}]}]},
+   {"do": "Compare every t with the one cutoff, bracketing between printed columns or using a cutoff the question gives.", "why": "This is because Bonferroni uses one level for every pair, and levels like 0.0167 are not printed."},
+   {"do": "Write the combined conclusion and say the entire statement is made with P less than 0.05.", "why": "This is because the answer names every pair at the overall level."}]}]},
 # ---------------------------------------------------------------- Session 10
 {
 "id": 10, "tier": "review",
@@ -425,7 +434,7 @@ LECTURES = [
   {"pages": [18, 19],
    "main": "**The F statistic also has a family of sampling distributions, one for each pair of degrees of freedom.** The table cutoff depends on both."}]},
  {"title": "Designing a fair clinical trial", "blocks": [
-  {"pages": [23, 24, 25],
+  {"pages": [23, 24, 25, 32],
    "main": "**A trial states its main question before it starts and assigns treatments by randomization.** **Randomization** gives each person the same chance of each treatment, so the groups start out similar. Any difference at the end can then be put down to the treatment.",
    "sub": ["Who is enrolled, and where they are treated, decides which population the results apply to."]},
   {"pages": [26, 27, 28],
@@ -458,7 +467,7 @@ LECTURES = [
    "main": "**If each person is coded 1 for the event and 0 otherwise, the mean of those codes is the proportion with the event.** So the same mean-and-spread ideas apply. The variance of one yes-or-no outcome is p times 1 minus p, which is largest when the split is even."}]},
  {"title": "The standard error of a proportion", "blocks": [
   {"pages": [9, 10, 11],
-   "main": "**A sample proportion changes from sample to sample, and its standard error measures by how much.** The standard error is the square root of p times 1 minus p, divided by n. Bigger samples give a smaller standard error, so the proportion is more precise."}]},
+   "main": "**A sample proportion changes from sample to sample, and its standard error measures by how much.** The standard error is the square root of p times 1 minus p over n. Bigger samples give a smaller standard error, so the proportion is more precise."}]},
  {"title": "The z test with Yates correction", "blocks": [
   {"pages": [13, 14, 15],
    "main": "**The z test divides the difference in proportions by its standard error, using one pooled proportion.** Under the null hypothesis both groups share the same event rate, so the two groups are combined to estimate it. The **Yates correction** subtracts a small amount from the difference, because counts jump in whole steps while the Normal curve is smooth.",
@@ -476,6 +485,7 @@ LECTURES = [
  {"title": "z test for two proportions", "when": "The problem gives two groups and the number of people in each who had a yes-or-no event.",
   "steps": [
    {"do": "Name the z test and write the null hypothesis in words.", "why": "This is because the data are nominal and there are two groups."},
+   {"do": "Write each general equation before you put in the numbers.", "why": "This is because the grading rules give credit for the equation itself, not only the answer."},
    {"do": "Calculate each group's proportion and the pooled proportion.", "why": "This is because the null hypothesis assumes one shared rate.", "tex": "\\hat p=\\frac{\\text{total events}}{n_1+n_2}"},
    {"do": "Subtract the Yates correction from the size of the difference.", "why": "This is because counts change in whole steps.", "tex": "z=\\frac{|\\hat p_1-\\hat p_2|-\\frac12\\left(\\frac1{n_1}+\\frac1{n_2}\\right)}{\\sqrt{\\hat p(1-\\hat p)\\left(\\frac1{n_1}+\\frac1{n_2}\\right)}}"},
    {"do": "Use the infinity row of the t table for the cutoff.", "why": "This is because that row is the Normal distribution."},
@@ -493,9 +503,9 @@ LECTURES = [
   {"pages": [12, 13, 14],
    "main": "**The same rule works for a table of any size.** A table with three treatment groups and two outcomes needs six expected counts."}]},
  {"title": "The chi-square statistic", "blocks": [
-  {"pages": [9, 10],
+  {"pages": [9, 10, 11],
    "main": "**Chi-square adds up, over every cell, the squared gap between observed and expected, divided by expected.** A big total means the counts are far from what no effect predicts. The degrees of freedom are the number of rows minus 1 times the number of columns minus 1, and the table gives upper-tail cutoffs.",
-   "sub": ["For a two-by-two table, the Yates correction subtracts one half from each gap before squaring."]}]},
+   "sub": ["For a two-by-two table, the Yates correction subtracts one half from the size of each gap before squaring."]}]},
  {"title": "Which groups differ", "blocks": [
   {"pages": [16, 17, 18, 19, 20, 21],
    "main": "**To find which groups differ, you split the big table into two-by-two subtables and correct with Holm.** Each subtable has 1 degree of freedom and uses Yates. You order the chi-square values from largest to smallest and apply the Holm levels as with t tests."}]},
@@ -506,7 +516,7 @@ LECTURES = [
  {"q": "Why is each expected count the row total times the column total over the grand total?",
   "a": "It is because no effect means every group has the same outcome rate. The column total over the grand total is that shared rate, so multiplying by the group's row total gives the count that group would have."},
  {"q": "When do you use the Yates correction for chi-square?",
-  "a": "You use it for a two-by-two table. It subtracts one half from each observed-minus-expected gap before squaring, which makes the test a little more cautious."},
+  "a": "You use it for a two-by-two table. It subtracts one half from the size of each observed-minus-expected gap before squaring, which makes the test a little more cautious."},
  {"q": "How do you find which of three groups differ after a chi-square test?",
   "a": "You make a two-by-two subtable for each pair and run a Yates-corrected chi-square on each. Then you apply the Holm correction, starting with the largest chi-square value."}],
 "memorize": [
@@ -514,17 +524,20 @@ LECTURES = [
   "steps": [
    {"do": "Name the chi-square test and the table size.", "why": "This is because the data are nominal counts."},
    {"do": "Write the null hypothesis in words.", "why": "This is because it names the outcome and the groups."},
+   {"do": "Write each general equation before you put in the numbers.", "why": "This is because the grading rules give credit for the equation itself, not only the answer."},
    {"do": "Add row totals, column totals and the grand total.", "why": "This is because expected counts are built from them."},
    {"do": "Build the full expected table.", "why": "This is because it shows what no effect would look like.", "tex": "E_{ij}=\\frac{R_i\\,C_j}{n}"},
-   {"do": "Add up the cell contributions, using Yates if the table is two by two.", "why": "This is because chi-square totals the standardized gaps.", "tex": "\\chi^2=\\sum\\frac{(O-E)^2}{E}"},
+   {"do": "Add up the cell contributions, using Yates if the table is two by two.", "why": "This is because chi-square totals the standardized gaps.", "tex": "\\chi^2=\\sum\\frac{(O-E)^2}{E},\\quad \\chi^2_{Yates}=\\sum\\frac{\\left(|O-E|-\\tfrac12\\right)^2}{E}"},
    {"do": "Write the degrees of freedom.", "why": "This is because the cutoff depends on them.", "tex": "\\nu=(r-1)(c-1)"},
-   {"do": "Compare with the upper-tail cutoff at 0.05 and write the conclusion.", "why": "This is because a large chi-square means the counts do not fit no effect."}]},
+   {"do": "Start with alpha 0.05, and if you reject, check 0.01 and 0.001 and report the tightest P range.", "why": "This is because a large chi-square means the counts do not fit no effect, and the P range should be as tight as you can show."}]},
  {"title": "Pairwise chi-square with Holm from R output", "when": "You are given chisq.test results for each pair and asked which groups differ.",
   "steps": [
    {"do": "Name the procedure as multiple pairwise chi-square tests with Holm.", "why": "This is because each pair is a separate two-by-two test."},
    {"do": "Keep only the comparisons the question asks for.", "why": "This is because k counts only those comparisons."},
+   {"do": "Write one null hypothesis joined by AND for those comparisons.", "why": "This is because each comparison is its own test."},
    {"do": "Use 1 degree of freedom for every subtable.", "why": "This is because each one is two by two."},
    {"do": "Order the chi-square values from largest to smallest and set the Holm levels.", "why": "This is because Holm tests the strongest result first.", "tex": "\\alpha_j=\\frac{\\alpha_T}{k-j+1}"},
+   {"do": "For a level like 0.0167, bracket between the printed 0.01 and 0.025 columns.", "why": "This is because that level is not printed in the table."},
    {"do": "Go down the list and stop at the first failure.", "why": "This is because that is the Holm stopping rule."},
    {"do": "Write the combined conclusion with P less than 0.05.", "why": "This is because the statement covers all the comparisons together."}]},
  {"title": "Goodness of fit", "when": "The problem compares one set of category counts with stated proportions.",
@@ -564,7 +577,7 @@ LECTURES = [
  {"title": "Relative risk with a sentence", "when": "The study followed people forward, and the question asks how strong the association is.",
   "steps": [
    {"do": "Say the study is prospective, so relative risk can be used.", "why": "This is because risk needs real event rates."},
-   {"do": "Label the exposed or treated row and the event column.", "why": "This is because the ratio must go the right way round."},
+   {"do": "Label the exposed or treated row and the event column, taking the exposure from the question's wording even when it is an absence, like not taking folate.", "why": "This is because the ratio must go the right way round."},
    {"do": "Divide each group's event count by that group's total.", "why": "This is because risk is a rate within a group."},
    {"do": "Divide the exposed risk by the comparison risk.", "why": "This is because relative risk compares the two rates.", "tex": "RR=\\frac{n_{TD}/n_T}{n_{CD}/n_C}"},
    {"do": "Write one plain sentence with the number, the groups and the outcome.", "why": "This is because the answer is for a non-expert."}]},
@@ -650,14 +663,60 @@ LECTURES = [
  {"title": "Confidence interval for a difference of two proportions", "when": "The problem gives two groups with yes-or-no outcomes and asks for an interval for the difference.",
   "steps": [
    {"do": "Calculate each group's proportion and their difference.", "why": "This is because the difference is the center."},
-   {"do": "Calculate the pooled proportion and the standard error.", "why": "This is because the course method pools the two groups.", "tex": "s=\\sqrt{\\hat p(1-\\hat p)\\left(\\frac1{n_1}+\\frac1{n_2}\\right)}"},
+   {"do": "Calculate the pooled proportion and the standard error.", "why": "This is because the course method pools the two groups.", "tex": "s_{\\hat p_1-\\hat p_2}=\\sqrt{\\hat p(1-\\hat p)\\left(\\frac1{n_1}+\\frac1{n_2}\\right)}"},
    {"do": "Use the infinity row cutoff for the confidence level.", "why": "This is because proportions use the Normal distribution."},
-   {"do": "Add and subtract the margin.", "why": "This is because the interval is the estimate plus or minus the margin.", "tex": "(\\hat p_1-\\hat p_2)\\pm z_c\\, s"},
+   {"do": "Add and subtract the margin.", "why": "This is because the interval is the estimate plus or minus the margin.", "tex": "(\\hat p_1-\\hat p_2)\\pm z_c\\, s_{\\hat p_1-\\hat p_2}"},
    {"do": "Say the interval in percentage points.", "why": "This is because a difference of proportions is measured in points."}]},
  {"title": "Decide significance from intervals only", "when": "You are asked whether a difference is significant using only the intervals.",
   "steps": [
    {"do": "Look at whether the 95 percent interval contains zero.", "why": "This is because zero means no difference."},
    {"do": "If it leaves zero out, say the difference is significant with P less than 0.05.", "why": "This is because no difference is outside the believable range."},
    {"do": "Repeat with the 99 percent interval for P less than 0.01.", "why": "This is because the wider interval is the stricter test."},
+   {"do": "For one proportion, check whether the null value, like one half, lies inside the interval.", "why": "This is because the reference value is not always zero."},
    {"do": "Say how you reached each conclusion.", "why": "This is because the question asks you to explain the reasoning."}]}]},
 ]
+
+
+# Problem types added after the review against Exam 1 and HW1/HW2 (2026-11-13).
+def _add(lid, item, at=None):
+    lst = next(l for l in LECTURES if l['id'] == lid)['memorize']
+    lst.insert(len(lst) if at is None else at, item)
+
+_add(4, {"title": "Percentile or median of a continuous variable", "when": "The question gives a density or CDF and asks for a percentile, like the 75th percentile on Exam 1.",
+ "steps": [
+  {"do": "Write the full CDF first.", "why": "This is because a percentile is found by reading the CDF backward."},
+  {"do": "Find which piece of the CDF reaches the target value.", "why": "This is because only one piece can contain the percentile."},
+  {"do": "Set that piece equal to the percent as a decimal.", "why": "This is because the pth percentile c is where the accumulated area is p over 100.", "tex": "F(c)=\\frac{p}{100}"},
+  {"do": "Solve for c and keep the root inside that piece's range.", "why": "This is because a root outside the range does not belong to this variable."}]}, at=1)
+_add(3, {"title": "Check whether a function is a valid probability function", "when": "The question lists functions and asks which could be probability functions.",
+ "steps": [
+  {"do": "Check that every value of f is between 0 and 1.", "why": "This is because a probability can never be negative or above 1."},
+  {"do": "Add all the values and show the sum.", "why": "This is because the probabilities must total exactly 1.", "tex": "\\sum_y f(y)=1"},
+  {"do": "Name the rule that fails for any function that is not valid.", "why": "This is because the answer must say why it is not a probability function."}]}, at=0)
+_add(2, {"title": "Check whether data look Normal using percentiles", "when": "The question asks whether a sample looks Normally distributed.",
+ "steps": [
+  {"do": "Compare the mean with the median.", "why": "This is because a Normal distribution has them in the same place."},
+  {"do": "Compare the 16th percentile with the mean minus one SD, and the 84th percentile with the mean plus one SD.", "why": "This is because in a Normal distribution about 16 percent of values fall below one SD under the mean.", "tex": "x_{16}\\approx \\bar x-s,\\quad x_{84}\\approx \\bar x+s"},
+  {"do": "Find those percentiles with the course position rule.", "why": "This is because the course defines percentiles by position 1 plus p times (n minus 1) over 100."},
+  {"do": "State a cautious conclusion about whether the data look Normal.", "why": "This is because a small sample can only suggest the shape, not prove it."}]})
+_add(13, {"title": "Number needed to harm", "when": "A treatment raises the rate of a side effect and the question asks how many people must be treated for one extra harm.",
+ "steps": [
+  {"do": "Find the side-effect rate in each group.", "why": "This is because NNH uses the absolute increase."},
+  {"do": "Subtract the control rate from the treated rate.", "why": "This is because that is the absolute increase in harm."},
+  {"do": "Divide 1 by that increase and round up.", "why": "This is because you cannot treat part of a person.", "tex": "NNH=\\frac{1}{p_T-p_C}"}]})
+_add(17, {"title": "Confidence interval for one mean", "when": "One group has a mean, SD and n, and the question asks for an interval for the population mean.",
+ "steps": [
+  {"do": "Divide the SD by the square root of n to get the standard error.", "why": "This is because the margin is built from the uncertainty in the mean.", "tex": "s_{\\bar x}=\\frac{s}{\\sqrt n}"},
+  {"do": "Find the two-tailed t cutoff with n minus 1 degrees of freedom.", "why": "This is because the SD was estimated from the sample."},
+  {"do": "Add and subtract the margin from the sample mean.", "why": "This is because the interval is the estimate plus or minus the margin.", "tex": "\\bar x\\pm t_c\\,\\frac{s}{\\sqrt n}"},
+  {"do": "Interpret the interval in the measurement's units.", "why": "This is because the answer is about the population mean."}]}, at=0)
+_add(17, {"title": "Confidence interval for one proportion", "when": "A survey or sample gives a count with an event, and the question asks for an interval for the population proportion.",
+ "steps": [
+  {"do": "Calculate the sample proportion.", "why": "This is because it is the center of the interval."},
+  {"do": "Calculate the standard error from the proportion and n.", "why": "This is because the margin is built from it.", "tex": "s_{\\hat p}=\\sqrt{\\frac{\\hat p(1-\\hat p)}{n}}"},
+  {"do": "Use the infinity row cutoff and add and subtract the margin.", "why": "This is because proportions use the Normal distribution.", "tex": "\\hat p\\pm z_c\\,s_{\\hat p}"},
+  {"do": "Check whether the null value, like one half, lies inside the interval.", "why": "This is because that decides the matching two-sided test."}]}, at=2)
+
+
+from plain_study_content_m2 import LECTURES_M2  # Sessions 18 to 22
+LECTURES += LECTURES_M2
