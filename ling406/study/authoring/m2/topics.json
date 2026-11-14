@@ -1,0 +1,2019 @@
+[
+ {
+  "id": "m2-speech-signal",
+  "title": "From a messy signal to speech sounds",
+  "tier": "Possible",
+  "blocks": [
+   {
+    "refs": [
+     "speech1-02",
+     "speech1-03"
+    ],
+    "main": "**Listeners pull one stable message out of a speech signal that is continuous and varies from speaker to speaker.** **Speech perception** is the process of recovering a linguistic message from the sound of speech. In the spectrogram of “I can see you,” each sound runs into the next, so nothing marks where letters or words begin. The tongue and lips move without pause, so the movement for one sound overlaps the next.",
+    "sub": [
+     "Ten vowels from 76 speakers were plotted by their first and second **formants** (frequency regions with strong acoustic energy). Each vowel covered a broad oval, and many of the ovals overlapped.",
+     "So one pair of formant values can be one vowel for one speaker and a different vowel for another speaker."
+    ],
+    "end": "So the listener has to turn a highly variable **analog signal** (one that changes continuously) into something more abstract. **Categorical perception** is thought to be that translation from physical to symbolic."
+   },
+   {
+    "refs": [
+     "speech1-04",
+     "speech1-05",
+     "speech1-06",
+     "speech1-07"
+    ],
+    "main": "**Formants are the resonant frequencies the vocal tract amplifies, and their pattern tells vowels apart.** The shape of the **vocal tract** decides which frequencies get boosted. Moving the tongue, jaw and lips changes that shape, so it changes the formants. **F1** is the lowest formant and **F2** is the next one up.",
+    "sub": [
+     "In bead, F1 is very low and F2 is very high, so the two sit far apart. In booed, F1 and F2 are both low.",
+     "A recorded /u/ had F1 near 300 Hz and a very low F2 near 900 Hz. Praat found five formants, but only the first three usually matter for phonemes."
+    ],
+    "end": "So a vowel’s identity lies mostly in the relationship between its first two formants."
+   },
+   {
+    "refs": [
+     "speech1-08",
+     "speech1-09",
+     "speech1-10"
+    ],
+    "main": "**Source-filter synthesis separates the voice from the vocal tract, so a vowel can be changed by swapping only the filter.** The **source** is the sound energy the vocal folds make. The **filter** is how the vocal tract shapes that energy. Praat estimated the filter from the formants and removed it, and the leftover source sounded like a buzz.",
+    "sub": [
+     "Three filters were applied to that one source. The first kept the original formants, the second raised F1 a little, and the third raised F2 a lot.",
+     "Multiplying the source by each filter gave three different vowels with the same buzz and pitch."
+    ],
+    "end": "So vowel quality comes from the filter, and new vowels can be made without recording a new speaker."
+   },
+   {
+    "refs": [
+     "speech1-11",
+     "speech1-12"
+    ],
+    "main": "**Formant values change with the speaker, the speaking rate and the neighboring sounds, but they still describe vowel space well for one careful talker.** Vocal tracts differ in size and shape, so their resonances differ. Fast speech gives the articulators less time to reach their targets. Neighboring sounds pull the tongue and lips toward them.",
+    "sub": [
+     "**Vowel space** is the layout of a language’s vowels by their formant frequencies. Reasonable vowels can be made by setting the **steady-state formants** (the stable middle of a vowel).",
+     "The **pattern playback synthesizer** turned painted spectrogram patterns back into sound. Researchers could change one painted formant and keep everything else the same."
+    ],
+    "end": "So controlled synthetic speech made it possible to test exactly which acoustic change listeners respond to."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Why is speech perception a hard problem even though listeners do it easily?",
+    "a": "Speech perception is hard because the signal is continuous and highly variable. The sounds of “I can see you” run together with no gaps between words, because the articulators move without pause. The same vowel also has different formant values for different speakers, so the listener must find one stable message inside a lot of physical variation.",
+    "refs": [
+     "speech1-02",
+     "speech1-03"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Ten vowels from 76 speakers were plotted by their first and second formants. What did the plot reveal?",
+    "a": "Each vowel covered a broad region instead of a single point, and many regions overlapped. This is because speakers differ in anatomy, speaking rate and context, so the same vowel has different formant values from different people. So one pair of formant values can be one vowel for one speaker and another vowel for a different speaker.",
+    "refs": [
+     "speech1-02",
+     "speech1-11"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "In source-filter synthesis, what happened when only the filter was changed?",
+    "a": "Changing only the filter turned /u/ into different vowels while the buzz and pitch stayed the same. This is because the source supplies the sound energy and the filter decides which frequencies stay strong. So vowel identity lies in the filter, which is the formant pattern of the vocal tract.",
+    "refs": [
+     "speech1-08",
+     "speech1-09",
+     "speech1-10"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What was the pattern playback synthesizer, and why was it useful?",
+    "a": "The pattern playback synthesizer turned painted spectrogram patterns into sound. Researchers could change a single formant or transition and keep everything else the same. So any change in what listeners heard could be traced to that one painted change.",
+    "refs": [
+     "speech1-12",
+     "speech1-13"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ },
+ {
+  "id": "m2-categorical-perception",
+  "title": "Categorical perception on Liberman’s continuum",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "speech1-13",
+     "speech1-14",
+     "review-2"
+    ],
+    "main": "**Stop consonants such as /b/, /d/ and /g/ are told apart by their formant transitions.** A **formant transition** is a change in a formant’s frequency over time. The audible part of a stop happens while the jaw is opening, so the formants glide from the consonant toward the vowel. **Liberman and colleagues (1957)** used the pattern playback synthesizer to copy these transitions.",
+    "sub": [
+     "The **speech continuum** kept F1 constant and varied the **F2 onset frequency** (where the second formant starts) in equal steps from stimulus 1 to 13.",
+     "So adjacent stimuli differed by the same amount across the entire continuum. A rising F2 was heard as /b/, a flat one as /d/ and a falling one as /g/."
+    ],
+    "end": "So any difference in how pairs are heard cannot come from the size of the physical step, because every step is equal."
+   },
+   {
+    "refs": [
+     "speech1-15",
+     "speech1-16",
+     "review-3",
+     "review-4"
+    ],
+    "main": "**A non-categorical ideal observer predicts gradual labeling and flat discrimination.** An **ideal observer model** predicts how a listener would respond if perception worked a particular way. Here perception is assumed to track the acoustics linearly. Then labeling would get “blurry” as stimuli move away from each **prototype** (the clearest example of a category).",
+    "sub": [
+     "Stimulus 2 would be heard as 75 percent /b/ and 25 percent /d/, because it sits a quarter of the way from /b/ toward /d/.",
+     "**Labeling** has to be peaked because there are three categories. But **discrimination** only asks “same” or “different,” so it should be independent of labeling. If F2 differences were perceived equally everywhere, discrimination accuracy would be constant."
+    ],
+    "end": "So a flat discrimination line is what non-categorical perception predicts."
+   },
+   {
+    "refs": [
+     "speech1-17",
+     "review-5"
+    ],
+    "main": "**Real listeners labeled sharply and discriminated best at the category boundaries.** In **Liberman and colleagues (1957)**, labels switched from /b/ to /d/ and from /d/ to /g/ over just a step or two. Discrimination **peaked** at those two boundaries. Pairs inside one category were told apart barely above chance.",
+    "sub": [
+     "The **category boundary** is the narrow region where the label flips.",
+     "Discrimination predicted from the labels captured much of the real pattern. Real accuracy was a little higher, so listeners keep some detail within a category."
+    ],
+    "end": "So equal physical steps sound unequal, because similarity is defined by category rather than by acoustics. This pattern is **categorical perception**."
+   },
+   {
+    "refs": [
+     "speech1-19",
+     "speech1-20",
+     "speech1-21"
+    ],
+    "main": "**Class data on a beach to peach continuum gave the same pattern, with each listener’s best discrimination near that listener’s own boundary.** Identification stayed on one word and then switched near the middle. Not everyone had exactly the same boundary. But discrimination was best for stimuli heard as different categories.",
+    "sub": [
+     "The discrimination test used only “different” trials, so “different” was always the correct answer.",
+     "Some class data were noisy. With few trials and no “same” trials, a single response could move accuracy a lot."
+    ],
+    "end": "So the core finding held even in a short, imperfect class experiment."
+   },
+   {
+    "refs": [
+     "speech1-22"
+    ],
+    "main": "**Being worse at hearing differences inside a category helps, because it lets many physically different tokens count as one phoneme.** Every production of a phoneme differs because of speakers, speaking rates and neighboring sounds. If every small change were heard as a new sound, one word would sound like many unrelated sounds.",
+    "end": "So categorical perception keeps the differences that change words and ignores the ones that do not."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What is categorical perception?",
+    "a": "Categorical perception means that equal acoustic differences are hard to hear inside a category and easy to hear across a category boundary. Listeners label a continuum with sharp switches, and their discrimination peaks at those switches. So similarity between speech sounds is defined by categories rather than by physical distance.",
+    "refs": [
+     "speech1-17",
+     "speech1-03"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "Why did Liberman and colleagues vary F2 onset in equal steps while keeping F1 constant?",
+    "a": "They did it so that adjacent stimuli differ by the same physical amount everywhere on the continuum. Holding F1 constant removes any other difference between stimuli. So if some pairs are easier to tell apart, the advantage must come from the category boundary and not from the acoustics.",
+    "refs": [
+     "speech1-14",
+     "review-2"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What would discrimination look like if perception were not categorical, and what did Liberman and colleagues (1957) find instead?",
+    "a": "If perception were not categorical, discrimination would be flat, with every equally spaced pair equally easy. Liberman and colleagues found peaks instead. Pairs that crossed the /b/ to /d/ or /d/ to /g/ boundary were discriminated well, and pairs inside a category were near chance.",
+    "refs": [
+     "speech1-16",
+     "speech1-17",
+     "review-4",
+     "review-5"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What is the advantage of being worse at hearing some differences between sounds?",
+    "a": "The advantage is stable word recognition. Every token of a phoneme differs physically because of speakers, speaking rates and neighboring sounds. Being less sensitive inside a category lets all those tokens count as the same phoneme, while differences that change words stay easy to hear.",
+    "refs": [
+     "speech1-22"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "In the class beach and peach data, why did the discrimination peaks fall in different places for different listeners?",
+    "a": "The peaks fell in different places because not everyone has exactly the same category boundary. Each listener discriminated best near that listener’s own identification boundary. So in general discrimination is best for stimuli heard as different categories.",
+    "refs": [
+     "speech1-19",
+     "speech1-20"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ },
+ {
+  "id": "m2-infant-speech",
+  "title": "Infant categories, Eimas, and perceptual narrowing",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "development1-02",
+     "development1-03"
+    ],
+    "main": "**Nativist positions say children have innate knowledge of what language is like, and categorical perception seemed to support them.** **Chomsky** criticized **Skinner** because language is **generative** (it can produce endless new sentences). Acquiring a language means identifying the abstract grammar that produces its sentences. The learning mechanisms studied by behaviorists were not up to that task.",
+    "sub": [
+     "Grammatical and ungrammatical sentences are not similar in any straightforward way. Children are also not dependably rewarded or punished for grammar, so learning language does not look like **operant conditioning** (learning from rewards and punishments).",
+     "Nativists propose **Universal Grammar** (innate knowledge of what language is like) and acquisition processes specific to language."
+    ],
+    "end": "Early theories treated categorical perception as specific to language and to humans, so it seemed to fit this nativist view."
+   },
+   {
+    "refs": [
+     "speech1-24",
+     "development1-04",
+     "review-32"
+    ],
+    "main": "**Infant speech perception is measured with behaviors that change when an infant notices something new.** In the **conditioned head turn procedure**, the infant learns to turn toward a sound when it changes, and a correct turn earns a visual reward. In **high amplitude sucking**, strong sucks on a pacifier make a sound play.",
+    "sub": [
+     "As the same sound repeats, the infant gets used to it, which is **habituation**, and sucking drops.",
+     "If sucking rises again after the sound changes, the infant noticed the change."
+    ],
+    "end": "So researchers can test which sound differences infants hear long before infants can talk."
+   },
+   {
+    "refs": [
+     "speech1-25",
+     "development1-05",
+     "development1-06",
+     "review-33",
+     "review-34"
+    ],
+    "main": "**Eimas and colleagues (1971) found that four-month-olds hear voice onset time categorically.** **Voice onset time** (VOT) is the delay between releasing a stop consonant and the start of voicing. Infants heard one syllable until their sucking dropped. Then the sound changed or stayed the same.",
+    "sub": [
+     "In the 20D condition, VOT changed by 20 ms across an adult category boundary, from +20 to +40 ms. Sucking recovered sharply.",
+     "In the 20S condition, VOT also changed by 20 ms but stayed inside one category. Sucking kept falling, much like the no-change control."
+    ],
+    "end": "This was a big deal because four-month-olds are very young and are only starting to make vowel-like sounds. So an apparently language-specific ability this early seemed like evidence for innateness."
+   },
+   {
+    "refs": [
+     "speech1-26",
+     "development1-07",
+     "review-35"
+    ],
+    "main": "**Werker and Tees (1984) found that English-learning infants lose the ability to hear non-English contrasts by the end of the first year.** They tested a Hindi Ta/ta contrast and a Salish ki/qi contrast. Most English-learning infants discriminated both at 6 to 8 months. Fewer did at 8 to 10 months, and very few did at 10 to 12 months.",
+    "sub": [
+     "Hindi-learning and Salish-learning infants kept discriminating their own contrast.",
+     "So the decline depends on language experience. It is called **perceptual narrowing**."
+    ],
+    "end": "Perceptual narrowing relates to categorical perception because a non-native difference that falls inside one native category comes to be heard as a within-category difference."
+   },
+   {
+    "refs": [
+     "speech1-27",
+     "development1-08",
+     "review-36"
+    ],
+    "main": "**These findings built a compelling narrative in which infants start as “citizens of the world” and then narrow to their own language.** Speech perception was said to rest on categorical perception abilities special to the language system. These abilities are present very early. Infants were said to hear all contrasts because they have innate, language-general knowledge about speech.",
+    "end": "So in this narrative, learning only selects among innately specified contrasts and narrows the inventory to the ones meaningful in the native language."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Eimas and colleagues (1971) compared 20D and 20S changes in VOT. What did they find, and why does the comparison matter?",
+    "a": "Four-month-olds increased their sucking after a 20 ms change that crossed an adult category boundary, but not after a 20 ms change inside one category. The two changes were the same physical size. So the recovery came from crossing the boundary, which means infants perceive VOT categorically.",
+    "refs": [
+     "speech1-25",
+     "development1-05",
+     "review-33"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "Why was the Eimas result a big deal?",
+    "a": "It was a big deal because categorical perception was considered the first step in turning speech into a symbolic format. Four-month-olds are really little, with color vision still developing, and they are only starting to make vowel-like sounds. So an apparently language-specific ability this early seemed like evidence for innateness.",
+    "refs": [
+     "development1-06",
+     "review-34"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What is perceptual narrowing, and how is it related to categorical perception?",
+    "a": "Perceptual narrowing is the decline in the ability to hear speech contrasts that the native language does not use. Werker and Tees (1984) found English-learning infants discriminate Hindi and Salish contrasts at 6 to 8 months but rarely by 10 to 12 months. It relates to categorical perception because the non-native difference comes to fall inside one native category, where differences are hard to hear.",
+    "refs": [
+     "speech1-26",
+     "development1-07",
+     "review-35"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What is the citizens-of-the-world narrative about infant speech perception?",
+    "a": "The narrative says speech perception depends on categorical perception abilities that are special to the language system and present very early. Infants start as “citizens of the world,” able to hear all contrasts because of innate, language-general knowledge. Learning then only selects the contrasts that are meaningful in the native language and narrows the rest away.",
+    "refs": [
+     "development1-08",
+     "review-36"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "Why did Chomsky argue that behaviorist learning could not explain language acquisition?",
+    "a": "Chomsky argued this because language is generative, so learning it means finding the abstract grammar behind the sentences. Grammatical and ungrammatical sentences are not similar in any simple way. Children are also not reliably rewarded or punished for grammar, so the situation does not look like operant conditioning.",
+    "refs": [
+     "development1-02"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ },
+ {
+  "id": "m2-learning-categories",
+  "title": "Problems for the innate story and how categories are learned",
+  "tier": "Possible",
+  "blocks": [
+   {
+    "refs": [
+     "speech1-28",
+     "development1-09"
+    ],
+    "main": "**The citizens-of-the-world narrative runs into four problems.** Categorical perception is not limited to language. It is not limited to humans. It is **task-dependent**, so results look more or less categorical depending on the task. And infant speech perception is not actually universal.",
+    "end": "So a full account has to explain contrasts that improve with experience as well as contrasts that are lost."
+   },
+   {
+    "refs": [
+     "speech1-29",
+     "development1-10"
+    ],
+    "main": "**Cutting and Rosner (1974) found categorical perception for sounds that are not speech.** The sounds varied in **rise time** (how quickly a sound reaches full loudness). A short rise time sounds plucked, and a long rise time sounds bowed. Listeners switched from pluck to bow over a narrow range, and discrimination peaked right at that switch.",
+    "end": "So categorical perception can arise for sounds that have nothing to do with language."
+   },
+   {
+    "refs": [
+     "speech1-30",
+     "development1-11"
+    ],
+    "main": "**Jusczyk and colleagues (1977) found that infants also perceive non-speech sounds categorically.** Using high amplitude sucking, sucking recovered after a change between categories. It stayed low after a change within a category or after no change.",
+    "end": "So infants’ categorical responses may come from general auditory processing, because plucked and bowed sounds involve no knowledge of phonemes."
+   },
+   {
+    "refs": [
+     "speech1-31",
+     "development1-12"
+    ],
+    "main": "**Chinchillas sort a speech continuum into categories much like humans do.** In **Ohlemiller and colleagues (1999)**, following **Kuhl and Miller (1975)**, chinchillas were trained with operant conditioning. Either the 0 ms lag sound or the 80 ms lag sound was the **SD** (a discriminative stimulus, a signal that food is coming).",
+    "sub": [
+     "Tested along the /ga/ to /ka/ continuum, the chinchillas switched labels over a narrow range of VOTs. Their curves had the same steep shape as the human curves."
+    ],
+    "end": "So categorical perception of speech is not special to human language."
+   },
+   {
+    "refs": [
+     "speech1-32",
+     "development1-13",
+     "development1-14"
+    ],
+    "main": "**Narayan and colleagues (2010) found that some contrasts start out hard for infants and need exposure to become salient.** A **salient** contrast is one that is easy to notice. English-hearing four-month-olds noticed /ma/ versus /na/. They did not notice /na/ versus /ŋa/, a place contrast for nasals at the start of a syllable.",
+    "sub": [
+     "Filipino-learning infants did not notice /na/ versus /ŋa/ at 6 to 8 months, even though Filipino uses it. By 10 to 12 months they did."
+    ],
+    "end": "So not all speech contrasts are available innately, and exposure to a contrast is necessary for acquisition in some cases."
+   },
+   {
+    "refs": [
+     "development1-15",
+     "development1-16"
+    ],
+    "main": "**Emergentist approaches say associative learning picks up statistical regularities in the environment.** **Associative learning** means learning that two things go together because they keep occurring together. In conditioning, a bell paired with food strengthens the synapse from the bell neuron to the salivation neuron.",
+    "sub": [
+     "The same kind of strengthening could support **pattern recognition**, such as learning vowel categories.",
+     "When **Kuhl and others** talk about learning the statistics of distributions, they mean things like the American vowel plot. A prototypical /a/ would be the mean, or perhaps the mode, of all the /a/ sounds a listener hears."
+    ],
+    "end": "So categories could grow out of experience instead of being specified in advance."
+   },
+   {
+    "refs": [
+     "development1-17"
+    ],
+    "main": "**Maye and colleagues (2002) found that a few minutes of listening to a distribution changes how infants group sounds.** Infants listened passively to sounds from a [da] to [ta] VOT continuum. A **bimodal** group mostly heard sounds near each end, which is evidence for two categories. A **unimodal** group mostly heard middle sounds, which is evidence for one category.",
+    "sub": [
+     "At test, infants heard stimuli 3 and 6 in alternating or non-alternating trials.",
+     "Only the bimodal infants looked differently on the two kinds of trials."
+    ],
+    "end": "So the unimodal infants acted as if they had learned to treat stimuli 3 and 6 as one category."
+   },
+   {
+    "refs": [
+     "development1-18",
+     "development1-19"
+    ],
+    "main": "**Social interaction matters for learning speech sounds.** The same exposure to a Mandarin speaker taught nine-month-olds a Mandarin contrast when it happened live. It did not work when the same speaker was seen on video or heard as audio. Infants whose mothers responded right after their sounds also produced more syllable-like sounds.",
+    "sub": [
+     "One idea is that humans find social interaction innately **reinforcing** (rewarding). Another is that humans are innately good at using social cues to learn from other people."
+    ],
+    "end": "So statistical learning works within **constraints**, including which properties can be contrastive, what was learned earlier, and the social context of learning."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What problems face the view that infants start with innate categories for every speech contrast?",
+    "a": "Four problems face it. Categorical perception is not limited to language, it is not limited to humans, and it is task-dependent. Infant speech perception is also not universal, because some contrasts start out hard to hear and need exposure.",
+    "refs": [
+     "speech1-28",
+     "development1-09"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What did Cutting and Rosner (1974) find, and why does it matter for the claim that categorical perception is special to language?",
+    "a": "They found categorical perception for plucked and bowed sounds that differed in rise time. Labels switched over a narrow range, and discrimination peaked at that switch. Since these sounds are not speech, categorical perception cannot be a property of the language system alone.",
+    "refs": [
+     "speech1-29",
+     "development1-10"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Why do the chinchilla results matter?",
+    "a": "They matter because chinchillas have no human language, yet they sorted a /ga/ to /ka/ continuum with the same steep curve as humans. Ohlemiller and colleagues (1999), following Kuhl and Miller (1975), trained them with operant conditioning on the endpoints. So categorical perception of speech is not limited to humans.",
+    "refs": [
+     "speech1-31",
+     "development1-12"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What did Narayan and colleagues (2010) find for /na/ versus /ŋa/?",
+    "a": "They found that four-month-olds do not readily perceive /na/ versus /ŋa/, whatever language they hear. Filipino-learning infants, whose language uses the contrast, still missed it at 6 to 8 months but detected it by 10 to 12 months. So exposure is necessary to build some contrasts, and not all contrasts are available innately.",
+    "refs": [
+     "development1-13",
+     "development1-14",
+     "speech1-32"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What did Maye and colleagues (2002) do, and what does it suggest?",
+    "a": "They had infants listen passively to either a bimodal or a unimodal distribution of VOT sounds. Only the bimodal infants later treated stimuli 3 and 6 as different. This suggests infants learn speech categories by tracking the statistics of the sounds they hear.",
+    "refs": [
+     "development1-17"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What does it mean that statistical learning is constrained?",
+    "a": "It means learning from the input is guided and limited in several ways. Only some properties can be contrastive, so speaker voice and speech rate are not treated as categories. Earlier learning shapes what is easy to learn next, and social, interactive settings make learning work better.",
+    "refs": [
+     "development1-19",
+     "development1-18"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ },
+ {
+  "id": "m2-cascades",
+  "title": "Klatt’s model, thresholds and cascades",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "speech2-02"
+    ],
+    "main": "**Klatt (1979) describes a very old and very general model in which speech is recognized through a chain of stages.** The **speech waveform** (the sound signal itself) enters the **peripheral auditory system**, which does a **spectral analysis** (splitting sound into its frequencies). **Acoustic property detectors** then respond to that analysis, and their output is the detector outputs over time.",
+    "sub": [
+     "**Phonetic feature detectors** turn those outputs into **feature probabilities** over time, such as how likely the sound is voiced.",
+     "**Segmental analysis** combines the features into a **segmental feature matrix**, a sequence of phonemes.",
+     "**Lexical search** matches that sequence to stored words, and its output is a set of **lexical hypotheses** (candidate words).",
+     "Two problems challenge this simple view, **cascaded processing** and **feedback**."
+    ],
+    "end": "Information is lost between the analog signal and the activation of phonemes. This loss is helpful because it lets the system contact higher levels, so words are identified from their phonemes."
+   },
+   {
+    "refs": [
+     "speech2-03",
+     "speech2-04",
+     "speech2-06",
+     "speech2-07"
+    ],
+    "main": "**In a threshold model, activity passes to the next level only when a threshold is crossed, so categorical perception arises at phoneme identification.** Feature evidence for voicing can swing between +voiced and minus voiced. The phoneme level stays silent until the evidence crosses a threshold. Then /b/ or /p/ switches on all at once.",
+    "sub": [
+     "The beach to peach continuum is a familiar voicing continuum with a sharp boundary.",
+     "The **lumber mill** metaphor fits this model. A mill turns trees into lumber, a factory turns lumber into unassembled furniture, and an IKEA customer assembles it. Each layer can only take input that the layer before has completely transformed."
+    ],
+    "end": "So in a threshold model, two different sounds that both become /b/ are identical by the time they reach word recognition."
+   },
+   {
+    "refs": [
+     "speech2-05",
+     "speech2-08",
+     "speech2-09"
+    ],
+    "main": "**In a cascaded model, activity passes forward continuously, so partial evidence reaches the next level before any decision.** As +voiced evidence grows, /b/ activation grows with it. A sound near the boundary partly activates both /b/ and /p/. Categorical perception might happen later, or might even be an **artifact** of the task (a result created by how it is measured).",
+    "sub": [
+     "The **food web** metaphor fits this model. A drought that cuts the plants immediately affects the kangaroo rats, which affects the snakes.",
+     "The food web also has feedback loops, since adding hawks changes the numbers of snakes, lizards and rats."
+    ],
+    "end": "So the question is whether phoneme identification for word recognition works like the lumber mill or like the food web."
+   },
+   {
+    "refs": [
+     "speech2-10",
+     "speech2-11",
+     "speech2-12",
+     "speech2-13"
+    ],
+    "main": "**McMurray, Tanenhaus, Aslin and Spivey (2003) found that eye movements reveal gradient ambiguity even when clicks look categorical.** Listeners heard a word from a /b/ to /p/ continuum in a **visual world** display. They clicked the matching image, such as a bear or a pear. Eye tracking recorded where they looked while deciding.",
+    "sub": [
+     "The clicks gave a typical step-like identification function.",
+     "On trials that all ended with a bear click, sounds closer to the boundary drew more looks to the pear. The same held in reverse for pear clicks."
+    ],
+    "end": "So ambiguity is gradient, which means the system keeps track of how close a sound was to the boundary."
+   },
+   {
+    "refs": [
+     "speech2-14",
+     "speech2-16",
+     "review-6"
+    ],
+    "main": "**This result fits cascaded activation from features to phonemes, and it is hard to explain with thresholds.** Even stimuli labeled /b/ every time can vary in how strongly the voiced feature is activated. If a sound is clearly +bilabial and +stop, weak voicing creates momentary ambiguity between /b/ and /p/. That ambiguity appears in the eye movements.",
+    "sub": [
+     "In a threshold model, every /b/ sends the same finished phoneme to the word level. So looks to the pear should not rise gradually near the boundary.",
+     "The **TRACE** model passes activity in a cascade from a feature layer to a phoneme layer to a word layer."
+    ],
+    "end": "So looks to the other member of a **minimal pair** (two words that differ in one sound) count as evidence for cascaded processing."
+   },
+   {
+    "refs": [
+     "speech2-15"
+    ],
+    "main": "**Andruski and colleagues (1994) found that partial input can activate word meanings.** They used **semantic priming**, in which a word is recognized faster after a word related in meaning. The nonword “beace” primed “war,” and “ging” primed “queen.”",
+    "sub": [
+     "Priming was measured with a **lexical decision task**, deciding quickly whether a target is a real word.",
+     "In word to word items such as “bill” priming “drug,” the altered prime also activates a competing real word."
+    ],
+    "end": "So lexical representations can be activated even by incomplete or imperfect input."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Describe the stages of Klatt’s (1979) model of speech perception.",
+    "a": "The speech waveform first goes through the peripheral auditory system, which splits it into frequencies. Acoustic property detectors and then phonetic feature detectors pick out properties and features such as voicing. Segmental analysis turns the features into phonemes, and lexical search matches the phonemes to stored words.",
+    "refs": [
+     "speech2-02"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "How do threshold and cascaded models differ in where categorical perception arises?",
+    "a": "In a threshold model, categorical perception arises at phoneme identification, because nothing passes forward until a threshold is crossed. In a cascaded model, activity passes forward continuously, so phonemes and words receive graded evidence. Categorical perception might then happen later, or be an artifact of a task that forces one answer.",
+    "refs": [
+     "speech2-04",
+     "speech2-05"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What did McMurray and colleagues (2003) find with bear and pear, and why is it evidence for cascaded processing?",
+    "a": "They found that clicks were step-like, but looks to the competitor rose gradually as VOT approached the boundary. A threshold model would send the same finished /b/ to the word level for every /b/, so competitor looks would not change. The gradual increase means graded feature activation reaches the word level, which is cascaded processing.",
+    "refs": [
+     "speech2-12",
+     "speech2-16",
+     "review-6"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "Explain the lumber mill and food web metaphors.",
+    "a": "The lumber mill stands for thresholded processing, because each layer can only start once it receives a completely finished product from the layer before. The food web stands for cascaded processing, because a change in one level, such as fewer plants, immediately affects the levels that depend on it. The food web also has feedback loops, like hawks affecting snakes, lizards and rats.",
+    "refs": [
+     "speech2-06",
+     "speech2-07",
+     "speech2-08"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What did Andruski and colleagues (1994) find?",
+    "a": "They found semantic priming from nonwords, so “beace” primed “war” and “ging” primed “queen.” The nonwords were close enough to peace and king to partly activate those words and their meanings. So lexical representations can be activated even by incomplete input, which fits cascaded processing.",
+    "refs": [
+     "speech2-15"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ },
+ {
+  "id": "m2-feedback-trace",
+  "title": "Lexical feedback, the Ganong effect and TRACE",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "speech2-17",
+     "speech2-18",
+     "review-7"
+    ],
+    "main": "**TRACE also has feedback from the word layer to the phoneme layer, and the Ganong effect is the reason for it.** **Feedback** is influence traveling from a higher level back down to a lower one. **Ganong (1980)** asked how phoneme identification is affected by word knowledge. He built word and nonword pairs such as “corpse” and “gorpse,” with continua crossing the boundary in 5 ms steps.",
+    "end": "So the test is whether knowing which end makes a real word changes how an ambiguous first sound is heard."
+   },
+   {
+    "refs": [
+     "speech2-19",
+     "speech2-20",
+     "review-8",
+     "review-9"
+    ],
+    "main": "**Two accounts make different predictions about where the lexical effect should appear.** In a late **correction** account, categorical perception works as usual, but there is a bias to report having heard a word. That bias would push responses toward the word by the same amount at every step.",
+    "sub": [
+     "In a **boundary shift** account, word knowledge moves the category boundary itself.",
+     "The lexical effect would then be strongest near the boundary, because only there can lexical information resolve ambiguity about the first phoneme. At the endpoints, the acoustics already settle the answer."
+    ],
+    "end": "So a flat effect points to a reporting bias, and a peaked effect points to a shifted boundary."
+   },
+   {
+    "refs": [
+     "speech2-21",
+     "review-10"
+    ],
+    "main": "**Ganong’s results were strikingly consistent with the boundary shift account.** Word and nonword conditions gave nearly the same answers at the ends of the continuum. The lexical effect was largest near the boundary. Ganong considered guessing strategies, but later models stressed feedback.",
+    "end": "So word knowledge changes categorization most where the acoustic evidence is weakest."
+   },
+   {
+    "refs": [
+     "speech2-22",
+     "speech2-23",
+     "review-11",
+     "review-12"
+    ],
+    "main": "**A TRACE simulation explains the Ganong effect through top-down feedback from words to phonemes.** The input starts with a sound ambiguous between /b/ and /p/, followed by /l/, /ʌ/ and /g/. In the first frame, /b/ and /p/ are both weakly active. By the third frame, plug, blood and blush are all active because they fit the beginning.",
+    "sub": [
+     "The final /g/ is highly inconsistent with blood and blush, so activity accumulates for plug.",
+     "Plug then sends feedback to the phoneme level, which gives more activation to /p/, the phoneme consistent with the word."
+    ],
+    "end": "So TRACE explains word effects on phoneme category boundaries through **top-down processing** (higher-level knowledge influencing lower-level analysis)."
+   },
+   {
+    "refs": [
+     "speech2-24",
+     "speech2-25"
+    ],
+    "main": "**TRACE is a version of the Interactive Activation model of written word recognition, adapted for speech that unfolds over time.** In the written model, features connect to letters and letters connect to words. Words send support back down to their letters. Spoken sounds arrive one at a time, so TRACE repeats its units across time.",
+    "sub": [
+     "Categorical perception still holds, since equal physical differences are harder to hear within a category.",
+     "But phoneme ambiguity affects word recognition, and word information affects phoneme categorization."
+    ],
+    "end": "So the word recognition system does not sit waiting for the phoneme system to finish, like a lumber mill. Spoken word recognition is more interactive than that."
+   },
+   {
+    "refs": [
+     "speech2-27",
+     "speech2-28"
+    ],
+    "main": "**Allopenna and colleagues (1994) found that spoken word recognition is very fast and that words sharing a beginning compete early.** Listeners heard a target such as “beaker” while viewing a beaker, a beetle, a speaker and a carriage. Looks to the beaker and to the **cohort** competitor beetle rose together at first. Looks to the beetle then fell once the sounds stopped matching.",
+    "sub": [
+     "Looks to the **rhyme** competitor speaker rose later and stayed lower. Looks to the unrelated carriage stayed near zero.",
+     "A TRACE simulation closely matched these eye movements over time."
+    ],
+    "end": "So eye movements reveal processing before a final response, much like the graded effects of category goodness in categorical perception."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What did Ganong (1980) do, and what did he find?",
+    "a": "Ganong built continua between a word and a nonword, such as corpse and gorpse, in 5 ms VOT steps. Listeners heard ambiguous first sounds as the sound that made a real word. The lexical effect was largest near the category boundary and small at the endpoints, so word knowledge shifted the boundary itself.",
+    "refs": [
+     "speech2-18",
+     "speech2-21",
+     "review-10"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "How do the late correction and boundary shift accounts differ in their predictions for the Ganong effect?",
+    "a": "The late correction account predicts a flat lexical effect, the same size at every step, because it is a bias added after perception. The boundary shift account predicts an effect that peaks near the boundary. This is because only ambiguous sounds leave room for word knowledge to decide the first phoneme.",
+    "refs": [
+     "speech2-19",
+     "speech2-20",
+     "review-8",
+     "review-9"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "How does TRACE explain why an ambiguous /b/ or /p/ followed by /lʌg/ is heard as /p/?",
+    "a": "TRACE explains it through feedback from the word level. Early on, plug, blood and blush are all active, but the final /g/ fits only plug, so plug gains activation. Plug then feeds activation back to /p/, the phoneme consistent with the word, so the first sound is heard as /p/.",
+    "refs": [
+     "speech2-22",
+     "speech2-23",
+     "review-12"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "How is feedback different from cascading?",
+    "a": "Cascading sends incomplete evidence forward, from features to phonemes and from phonemes to words. Feedback sends influence backward, from words down to phonemes. TRACE has both, and the Ganong effect is the reason for including feedback.",
+    "refs": [
+     "speech2-17",
+     "speech2-25",
+     "review-7"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What is the cohort effect found by Allopenna and colleagues (1994)?",
+    "a": "The cohort effect is early competition from words that share their beginning with the spoken word. Hearing “beaker,” people looked at the beetle about as much as the beaker at first, and then looks to the beetle fell. The rhyme speaker drew later and smaller looks, so recognition starts while the word is still unfolding.",
+    "refs": [
+     "speech2-27",
+     "speech2-28"
+    ],
+    "tier": "On the review deck"
+   }
+  ]
+ },
+ {
+  "id": "m2-garden-path",
+  "title": "Garden paths, an autonomous parser, and early interaction",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "sentence-02",
+     "sentence-03"
+    ],
+    "main": "**“The horse raced past the barn fell” is grammatical but very hard to process, which is the garden path effect.** Readers take raced as the main verb. When fell arrives, that structure has no place for it. The sentence really describes two events, someone racing the horse and the horse falling.",
+    "sub": [
+     "It can be disambiguated as “The horse that was raced past the barn fell.”",
+     "A **garden path sentence** leads the reader into one reading that later words reveal to be wrong."
+    ],
+    "end": "So grammaticality and processing difficulty are different things."
+   },
+   {
+    "refs": [
+     "sentence-04",
+     "sentence-05",
+     "review-13",
+     "review-14"
+    ],
+    "main": "**A parser that builds syntactic trees must work with limited memory and time, so it may prefer smaller trees.** A **parser** is the mental process that builds a syntactic tree for each sentence. The grammatical tree for the horse sentence has many more **nodes** (points in the tree for groupings such as noun phrases) than the failed parse.",
+    "sub": [
+     "Preferring smaller trees at first, to save space, is called **minimal attachment**.",
+     "Minimal attachment favors raced as the main verb, so the reader must rebuild the tree when fell arrives."
+    ],
+    "end": "So the shortcut lightens the load most of the time but sends the reader down the garden path here."
+   },
+   {
+    "refs": [
+     "sentence-06",
+     "sentence-07",
+     "sentence-08",
+     "review-15",
+     "review-16",
+     "review-17"
+    ],
+    "main": "**Late closure is a bias to keep the current clause open as long as possible.** In “The burglar blew open the safe with the dynamite,” the phrase “with the dynamite” attaches to the big verb phrase starting with “blew open.” That makes the dynamite the tool.",
+    "sub": [
+     "In “The burglar blew open the safe with the jewels,” the sensible reading needs the unpreferred attachment to “the safe.”",
+     "Reading times and eye movements are slower for such sentences. Readers briefly treat the jewels as the tool and then retrace their steps."
+    ],
+    "end": "So this account rests on a parser that deals only with abstract syntax, like the lumber mill, and ignores ambiguity until it becomes a problem."
+   },
+   {
+    "refs": [
+     "sentence-09",
+     "sentence-10",
+     "sentence-11"
+    ],
+    "main": "**Syntactically “difficult” sentences are not always hard, which is a problem for a purely syntactic account.** Research papers are full of **reduced relative** clauses, relative clauses with “that was” left out, as in “Recent research reported by Ferreira and Clifton.” Many come from papers that used reduced relatives as evidence for an **autonomous parser**.",
+    "sub": [
+     "**MacDonald, Perlmutter and Seidenberg (1994)** argued that semantic factors and statistical regularities interact with parsing from very early on.",
+     "Research is inanimate, so it is unlikely to do the reporting. Reported also occurs often in reduced relatives, especially after research in scientific papers."
+    ],
+    "end": "So “The burglar arrested in the parking lot was charged today” is easy to read. “The policeman arrested in the parking lot was charged today” leads down a garden path, because policemen usually do the arresting."
+   },
+   {
+    "refs": [
+     "sentence-12",
+     "sentence-13",
+     "sentence-14",
+     "sentence-15",
+     "review-18",
+     "review-19",
+     "review-20"
+    ],
+    "main": "**Spivey and colleagues (1995) found that the visual scene changes the first parse of a spoken sentence.** People saw a pencil, a box, an empty towel and an apple on a towel. They heard “Put the apple on the towel in the box.” With minimal attachment, “on the towel” first seems like the destination, and people did look at the empty towel.",
+    "sub": [
+     "With two apples in the display, it is felicitous (natural) to say which apple is meant. So people took “on the towel” as describing the apple and looked at the empty towel much less.",
+     "Different parses of the same sentence were favored under different semantic and pragmatic conditions, and the effect happened very early."
+    ],
+    "end": "So the result is a big problem for purely syntactic accounts, because context shaped the parse while the sentence was still unfolding."
+   },
+   {
+    "refs": [
+     "sentence-16"
+    ],
+    "main": "**Farmer and colleagues (2007) found that mouse movements reveal the same competition in the action itself.** Participants carried out the apple and towel instructions with a computer mouse while its path was tracked. With one apple, the hand curved toward the empty towel on ambiguous instructions before reaching the box. With two apples, the paths for ambiguous and unambiguous instructions were nearly the same.",
+    "end": "So syntactic ambiguity and visual context influence the actual execution of arm movements, not only eye movements."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Why is “The horse raced past the barn fell” so hard, and what events does it describe?",
+    "a": "It is hard because readers first take raced as the main verb, and then fell has nowhere to attach. The sentence describes two events, someone racing the horse past the barn and the horse falling. Adding “that was” before raced disambiguates it.",
+    "refs": [
+     "sentence-02",
+     "sentence-03"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What is minimal attachment, and why would a parser use it?",
+    "a": "Minimal attachment is a strategy of initially preferring the smaller syntactic tree, the one with fewer nodes. A parser would use it because it works with limited memory and time constraints. In the horse sentence, the smaller tree makes raced the main verb, which leads down the garden path.",
+    "refs": [
+     "sentence-04",
+     "sentence-05",
+     "review-13",
+     "review-14"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "How does late closure explain the difference between the dynamite and jewels sentences?",
+    "a": "Late closure keeps the current clause open, so “with the …” attaches to the verb phrase “blew open.” For dynamite this preferred parse is sensible, so the sentence is easy. For jewels the sensible reading needs the unpreferred attachment to “the safe,” so readers slow down and retrace their steps.",
+    "refs": [
+     "sentence-06",
+     "sentence-07",
+     "review-15",
+     "review-16"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What did MacDonald, Perlmutter and Seidenberg (1994) argue, and how do the burglar and policeman sentences support it?",
+    "a": "They argued that meaning and statistical regularities interact with parsing from very early on. “The burglar arrested in the parking lot was charged today” is easy because burglars are usually the ones arrested. The policeman version is a garden path because policemen usually do the arresting, even though both sentences have the same syntax.",
+    "refs": [
+     "sentence-09",
+     "sentence-11"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "In Spivey and colleagues (1995), how did one apple versus two apples change where people looked?",
+    "a": "With one apple, people looked at the empty towel, because “on the towel” first seemed to be the destination. With two apples, it is felicitous to say which apple is meant, so “on the towel” was taken as describing the apple. People then looked at the empty towel much less.",
+    "refs": [
+     "sentence-12",
+     "sentence-14",
+     "review-18",
+     "review-20"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "Why are the Spivey results a big problem for purely syntactic accounts?",
+    "a": "They are a problem because the same sentence was parsed differently under different visual contexts. The difference appeared in eye movements while the sentence was being heard. A parser that always builds the same first structure from syntax alone cannot predict that.",
+    "refs": [
+     "sentence-15",
+     "sentence-13"
+    ],
+    "tier": "On the review deck"
+   }
+  ]
+ },
+ {
+  "id": "m2-elan",
+  "title": "Word category, the ELAN and form typicality",
+  "tier": "Possible",
+  "blocks": [
+   {
+    "refs": [
+     "sentence-18",
+     "sentence-19",
+     "sentence-20",
+     "sentence-21",
+     "sentence-22",
+     "sentence-23"
+    ],
+    "main": "**A parser predicts the grammatical category of the next word as a sentence unfolds.** After “The,” it expects a noun phrase. “Pizza” completes it, and “was” opens several new options. “In” starts a prepositional phrase, and the next “the” sets up a strong expectation for a noun.",
+    "sub": [
+     "“Eaten” is a past participle, a verb form, so “The pizza was in the eaten” is a **word category violation**.",
+     "It differs from an odd meaning such as “The pizza was in the ocean,” which is grammatical because ocean is a noun."
+    ],
+    "end": "So comparing category errors with meaning errors lets researchers ask whether grammar and meaning are handled differently in the brain."
+   },
+   {
+    "refs": [
+     "sentence-24"
+    ],
+    "main": "**The early left anterior negativity (ELAN) is an ERP response to word class violations.** An **ERP** (event-related potential) is electrical brain activity recorded at the scalp and timed to an event. Classic ELAN sentences are “The pizza was in the eaten” and “The scientist criticized Max’s of proof the theorem.”",
+    "sub": [
+     "The ELAN is early, at about 100 to 200 ms.",
+     "It is left and anterior, which raised the question of whether it is specific to language.",
+     "It appears specifically for word category violations, such as a noun where a verb is expected."
+    ],
+    "end": "So it was taken as evidence for a very fast syntactic check on word categories."
+   },
+   {
+    "refs": [
+     "sentence-25"
+    ],
+    "main": "**With visually presented words, the ELAN came from visual cortex.** **Dikker, Rabagliati, Farmer and Pylkkänen (2010)** tied it to **form typicality**. When a verb is expected, the prediction may feed back to the earliest parts of the visual system and predict how verbs are written.",
+    "end": "So the very early response may reflect a mismatch between that prediction and what finally appears on the screen."
+   },
+   {
+    "refs": [
+     "sentence-26",
+     "sentence-27",
+     "sentence-28"
+    ],
+    "main": "**Words like perches and needs can be nouns or verbs, and their form makes one reading easier.** **Perches** is noun-like and **needs** is verb-like in **phonological form typicality** (how much a word sounds like typical nouns or verbs). Reading slowed at disambiguation when the needed category clashed with the form.",
+    "sub": [
+     "“The bird perches seem easy to install” uses perches as a noun, which matches its form. “The bird perches comfortably in the cage” uses it as a verb, against its form.",
+     "“The student needs to be more focused” fits the verb-like form of needs. “The student needs were not being met” goes against it."
+    ],
+    "end": "So parsing uses learned statistics about how word forms sound, along with the structure the sentence requires."
+   },
+   {
+    "refs": [
+     "sentence-29",
+     "sentence-30"
+    ],
+    "main": "**The ELAN for a noun where a verb is expected appears only when the noun carries physical cues to its category.** The cue can be syntactic, such as a noun suffix, or statistical, such as a noun-like form. No effect appeared for neutral nouns like “infant” that lack strong cues.",
+    "sub": [
+     "Four sentences sum up sentence processing. “Colorless green ideas sleep furiously” says syntax is somewhat independent of semantics. “The horse raced past the barn fell” says parsing takes shortcuts to save memory.",
+     "“Put the apple on the towel in the box” says context interacts with syntax very early. “The bird perches were comfortable” says the earliest brain effects are driven partly by form typicality."
+    ],
+    "end": "So the earliest syntactic effects seem tied to predictions about the physical forms of words."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What is the ELAN, and what are its main features?",
+    "a": "The ELAN, the early left anterior negativity, is an ERP response to word class violations. It is early, at about 100 to 200 ms, and it is strongest over the left front of the head. It appears specifically when a word has the wrong category, such as “The pizza was in the eaten.”",
+    "refs": [
+     "sentence-24"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Why is “The pizza was in the eaten” a different kind of error from “The pizza was in the ocean”?",
+    "a": "“The pizza was in the eaten” is a word category violation, because eaten is a verb form where a noun is required. “The pizza was in the ocean” is only odd in meaning, since ocean is a noun and the grammar is fine. So the two can be compared to see whether grammar and meaning are handled differently.",
+    "refs": [
+     "sentence-23",
+     "sentence-22"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What is form typicality, and how did perches and needs reveal its effect?",
+    "a": "Form typicality is how much a word sounds like typical nouns or typical verbs. Perches is noun-like and needs is verb-like. Reading slowed when the sentence required the category that did not match the form, such as perches used as a verb.",
+    "refs": [
+     "sentence-27",
+     "sentence-28"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Why did neutral nouns like “infant” produce no early effect when a verb was expected?",
+    "a": "Infant has no noun suffix and no noun-like form, so it carries no physical cue to its category. The early effect appeared only when syntactic or form-based cues were physically available in the word. So the earliest response seems to reflect a mismatch with predicted word forms, not an abstract category check.",
+    "refs": [
+     "sentence-29",
+     "sentence-25"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Summarize sentence processing with the four example sentences.",
+    "a": "“Colorless green ideas sleep furiously” means syntax is somewhat independent of semantics. “The horse raced past the barn fell” means parsing takes shortcuts to save memory. “Put the apple on the towel in the box” means context interacts with syntax very early. “The bird perches were comfortable” means the earliest brain effects are driven partly by form typicality.",
+    "refs": [
+     "sentence-30"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ },
+ {
+  "id": "m2-aphasia-models",
+  "title": "Aphasia models and the Broca and Wernicke dichotomy",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "aphasias-02"
+    ],
+    "main": "**In the 1870s, Lichtheim and Wernicke explained aphasias as disconnections between centers.** **Aphasia** is a loss of language caused by brain damage. In Lichtheim’s model, **A** holds the sound images of words, **M** holds the movement images for saying them, and **B** holds concepts. A disconnection between A and B could cause a loss of understanding spoken words.",
+    "sub": [
+     "A disconnection between A and M could cause a loss of verbatim repetition.",
+     "This box and arrow approach is foundational for modeling typical language too, as in the interactive activation model."
+    ],
+    "end": "So each specific loss of function was tied to a specific broken pathway."
+   },
+   {
+    "refs": [
+     "aphasias-03"
+    ],
+    "main": "**Norman Geschwind revived this approach in the 1970s as the Geschwind-Wernicke model.** It ties language to **Broca’s area** in the left frontal lobe, **Wernicke’s area** in the temporal lobe, and the **arcuate fasciculus** connecting them. In the century between Wernicke and Geschwind, linguistics changed dramatically.",
+    "sub": [
+     "Syntax came to be seen as independent of other parts of language, with its own computational principles.",
+     "That opened the door to theorizing about **double dissociations**, where one patient loses one ability and keeps another, while another patient shows the reverse."
+    ],
+    "end": "So aphasias could now be described as damage to specific parts of language."
+   },
+   {
+    "refs": [
+     "aphasias-04",
+     "aphasias-05",
+     "review-21"
+    ],
+    "main": "**Broca’s aphasia gives halting telegraphic speech, and Wernicke’s aphasia gives fluent but empty speech.** Broca’s patients have word-finding pauses, lose **grammatical morphemes** (small grammar words and endings), and often disturb word order. Their important content words are relatively spared. Their everyday comprehension seems good, but controlled testing reveals impairments.",
+    "sub": [
+     "Wernicke’s patients speak fluently with good intonation but produce **word salad** or “Jabberwocky,” often with **neologisms** (invented words). Their syntax is roughly intact, but their comprehension is poor.",
+     "**Agrammatism** is almost a synonym for Broca’s aphasia, but some patients with lesions in Broca’s area are not agrammatic."
+    ],
+    "end": "So the two aphasias look like mirror images, which made an attractive dichotomy."
+   },
+   {
+    "refs": [
+     "aphasias-06",
+     "aphasias-07",
+     "aphasias-08",
+     "review-22",
+     "review-23"
+    ],
+    "main": "**The dichotomy says Wernicke’s aphasia is a problem with activation in the lexicon and Broca’s aphasia is a problem with grammar.** It fits the sharp distinction that late 20th century linguistics drew between the **grammar** and the **lexicon** (the store of words). That distinction starts with Chomsky’s view of language learning as a computational problem and his evidence that syntax is independent of semantics.",
+    "sub": [
+     "This is fairly distant from how Broca described his original cases. His patient Tan could produce only one syllable but seemed to understand speech.",
+     "Broca’s actual patients were arguably unable to speak at all because of motor control problems. Today they would be classified with **apraxia of speech**, not Broca’s aphasia.",
+     "The dichotomy also matches the speech production model. **Lemmas** at the functional level have an arbitrary link to their referents, while trees and affixes at the positional level come from abstract syntactic processes.",
+     "Words like HOUSEBOAT and DOGHOUSE are not arbitrary in meaning. But the speech error “easy enoughly” for “easily enough” places derivational morphology at the positional level."
+    ],
+    "end": "So the split between lexicon and grammar seemed to line up with brain damage, with linguistic theory and with speech production."
+   },
+   {
+    "refs": [
+     "aphasias-09",
+     "aphasias-10"
+    ],
+    "main": "**To show a grammar deficit, researchers had to test comprehension with carefully built sentences.** Popular sentence processing theories compute syntax independently of meaning. So Broca’s patients might generally understand what is said and still have a core grammatical deficit.",
+    "sub": [
+     "Broca, in the 1860s, only needed to separate articulate speech from comprehension.",
+     "A syntax deficit needs a test that patients can answer without speaking."
+    ],
+    "end": "So comprehension testing became the way to look for a deficit in grammar itself."
+   }
+  ],
+  "questions": [
+   {
+    "q": "How did Lichtheim and Wernicke explain different aphasias?",
+    "a": "They explained them as disconnections between centers. In Lichtheim’s model, A holds sound images, M holds movement images and B holds concepts. A break between A and B would impair understanding spoken words, and a break between A and M would impair verbatim repetition.",
+    "refs": [
+     "aphasias-02"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What changed between Wernicke and Geschwind that made new theories of aphasia possible?",
+    "a": "Linguistics changed dramatically. Syntax came to be treated as independent of other parts of language, with its own computational principles. That opened the door to describing double dissociations between specific language functions.",
+    "refs": [
+     "aphasias-03"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Contrast the speech of Broca’s aphasia and Wernicke’s aphasia.",
+    "a": "Broca’s aphasia produces telegraphic speech, with trouble in word order and grammatical particles but relative sparing of content words. Wernicke’s aphasia produces fluent word salad, often with neologisms, while syntax stays roughly intact. Wernicke’s patients also have poor comprehension.",
+    "refs": [
+     "aphasias-04",
+     "aphasias-05",
+     "review-21"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "Why is it confusing to call Broca’s aphasia a grammar problem, given Broca’s own patients?",
+    "a": "It is confusing because Broca’s actual patients would not necessarily count as Broca’s aphasics today. They were arguably unable to produce speech at all, apparently because of motor control problems. They would now be diagnosed with apraxia of speech.",
+    "refs": [
+     "aphasias-06",
+     "review-22"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "Why was the grammar versus lexicon dichotomy for aphasia attractive?",
+    "a": "It was attractive because it matched a sharp distinction in late 20th century formal linguistics between the grammar and the lexicon. That distinction began with Chomsky’s account of language learning as a computational problem. His examples, such as “Colorless green ideas sleep furiously,” supported the independence of syntax from semantics.",
+    "refs": [
+     "aphasias-07",
+     "review-23"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "How does the slip “easy enoughly” answer the objection about words like HOUSEBOAT and DOGHOUSE?",
+    "a": "It answers the objection because the suffix moved as a separate piece. The speaker meant “easily enough,” but -ly attached to the wrong word. So derivational morphology is done at the positional level by grammatical processes, even when a word’s meaning is not arbitrary.",
+    "refs": [
+     "aphasias-08"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ },
+ {
+  "id": "m2-broca-comprehension",
+  "title": "Testing Broca’s aphasia, syntax or performance",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "aphasias-11",
+     "aphasias-12",
+     "review-24"
+    ],
+    "main": "**It mattered whether Broca’s patients have comprehension deficits, because their speech problems could be purely motor.** Broca’s aphasia almost always comes with some motor dysfunction. Agrammatic speech might just be an attempt to communicate despite motor limits. **Hughlings Jackson** said we observe what a person can do despite the impairment.",
+    "sub": [
+     "Chomsky separated **competence** (underlying knowledge of language) from **performance** (using that knowledge). When motor problems disrupt performance, comprehension may give a clearer window into competence.",
+     "Everyday sentences like “The dog bit the man” have redundant cues. Listeners can build the likeliest event from DOG, BITE and MAN, or use **canonical word order** (agent, then verb, then undergoer)."
+    ],
+    "end": "So a real test needs sentences like “The dog that the man is biting is angry,” where only grammar gives the right answer."
+   },
+   {
+    "refs": [
+     "aphasias-13",
+     "aphasias-14",
+     "review-25",
+     "review-26"
+    ],
+    "main": "**Caramazza and Zurif (1976) found that Broca’s patients fail when syntax conflicts with common sense.** They used a sentence-picture matching task with four sentence types. Simple controls and semantically constrained center-embedded sentences can be solved from meaning. Reversible and improbable center-embedded sentences can only be solved from grammar.",
+    "sub": [
+     "Healthy controls were about equally good on all types. Wernicke’s patients were poor overall, probably because of their general comprehension deficits.",
+     "Broca’s patients did well when meaning gave the answer away. They did poorly on reversible and improbable sentences, such as “The bird that the worm is eating is blue.”"
+    ],
+    "end": "So this specific deficit was taken as evidence that Broca’s aphasia affects syntax specifically."
+   },
+   {
+    "refs": [
+     "aphasias-15"
+    ],
+    "main": "**A specific theory of the parts of language lets researchers isolate problems with the grammar versus the lexicon.** Instead of sorting aphasics by good or poor comprehension, or by fluency, tests can target particular aspects of language.",
+    "end": "So structure-function relationships can be explored with much more precision."
+   },
+   {
+    "refs": [
+     "aphasias-16",
+     "aphasias-17",
+     "review-27",
+     "review-28"
+    ],
+    "main": "**Dick and colleagues found the same pattern with four sentence types, but Broca’s patients were not good on simple sentences either.** Participants indicated which animal was doing the action. Active and subject cleft sentences put the doer first. Object cleft and passive sentences put the receiver first, as in “It’s the cat that the dog is biting.”",
+    "sub": [
+     "Elderly controls were near perfect on all four types.",
+     "Broca’s patients had particular difficulty with object clefts and passives, though their performance was overall not so great."
+    ],
+    "end": "So the pattern resembled Caramazza and Zurif’s, with a general drop plus an extra cost for complex sentences."
+   },
+   {
+    "refs": [
+     "aphasias-18",
+     "review-29"
+    ],
+    "main": "**Healthy undergraduates under processing stress showed the same aphasia-like pattern.** Stress conditions included speeding up the speech, filtering it, and remembering lists of numbers as a secondary task. Object cleft and passive sentences were particularly vulnerable to all of them.",
+    "end": "So the comprehension deficits in Broca’s aphasia may be a performance issue after all, because complex sentences need more processing resources."
+   },
+   {
+    "refs": [
+     "aphasias-19",
+     "aphasias-20",
+     "aphasias-21",
+     "aphasias-22",
+     "review-30",
+     "review-31"
+    ],
+    "main": "**Saygin and colleagues (2004) found that comprehension deficits in aphasia are not purely linguistic.** Broca’s aphasics had difficulty matching an action to an object whether the action was given in words or by pantomime. Performance on the nonverbal version was significantly correlated with damage to Broca’s area.",
+    "sub": [
+     "Wernicke’s patients were particularly bad at matching environmental sounds, such as a cow mooing, to pictures.",
+     "Their verbal and nonverbal versions did not differ significantly, and deficits in both were associated with Wernicke’s area."
+    ],
+    "end": "So damage to these areas affects meaning beyond language, which weakens the claim that the deficits are purely language-specific."
+   },
+   {
+    "refs": [
+     "aphasias-23",
+     "aphasias-25"
+    ],
+    "main": "**How language-specific aphasic deficits are is still a controversy, but the methods have come a long way since the 19th century.** Researchers now use relatively sophisticated tests of specific aspects of language. They also use quantitative analyses of behavior and of structure-function relationships.",
+    "sub": [
+     "**Voxel-based lesion-symptom mapping** relates damage at each **voxel** (a small 3D unit of an MRI image) to symptom scores across many patients.",
+     "Fluency deficits were linked to anterior regions and comprehension deficits to posterior regions."
+    ],
+    "end": "So data from many patients fit a rough double dissociation, with posterior regions tied to perception and anterior regions tied to production."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Why was it interesting to show that Broca’s patients have comprehension deficits?",
+    "a": "It was interesting because Broca’s aphasia almost always comes with motor problems, so agrammatic speech might only reflect effortful speaking. As Hughlings Jackson put it, we see what a person can do despite the impairment. Comprehension avoids the motor problem, so it gives a clearer window into competence.",
+    "refs": [
+     "aphasias-11"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Why do we need psycholinguistic tests to observe grammatical difficulties in comprehension?",
+    "a": "We need them because conversation is full of redundant cues to what a speaker means. In “The dog bit the man,” a listener can combine DOG, BITE and MAN into the likeliest event or rely on canonical word order. Only sentences like “The dog that the man is biting is angry” force grammatical analysis.",
+    "refs": [
+     "aphasias-12",
+     "review-24"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What did Caramazza and Zurif (1976) do and find?",
+    "a": "They gave a sentence-picture matching task with control, semantically constrained, reversible and improbable sentences. Controls did well on all of them, and Wernicke’s patients were poor overall. Broca’s patients failed mainly when syntax conflicted with common sense, which was taken as evidence that Broca’s aphasia affects syntax specifically.",
+    "refs": [
+     "aphasias-13",
+     "aphasias-14",
+     "review-25",
+     "review-26"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What sentence types did Dick and colleagues use, and how did aphasia patients do?",
+    "a": "They used active, subject cleft, object cleft and passive sentences, and participants indicated which animal did the action. Broca’s patients had particular difficulty with object clefts and passives, where the receiver comes first. Their performance was overall not so great, even on actives.",
+    "refs": [
+     "aphasias-16",
+     "aphasias-17",
+     "review-27",
+     "review-28"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What happened when healthy undergraduates did the Dick task under stress, and what does it suggest?",
+    "a": "Object cleft and passive sentences were particularly vulnerable to every stress condition, such as sped-up speech or remembering numbers. Healthy people with no brain damage then looked like Broca’s patients. So the deficit in Broca’s aphasia may be a performance issue rather than lost grammatical knowledge.",
+    "refs": [
+     "aphasias-18",
+     "review-29"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "Are the comprehension deficits in aphasia language-specific? Use Saygin and colleagues (2004).",
+    "a": "They do not seem to be purely language-specific. Broca’s aphasics had trouble matching actions to objects whether the stimuli were linguistic or not, and the nonverbal deficit correlated with damage to Broca’s area. Wernicke’s patients were equally poor at matching words and environmental sounds to pictures.",
+    "refs": [
+     "aphasias-19",
+     "aphasias-20",
+     "aphasias-21",
+     "review-30",
+     "review-31"
+    ],
+    "tier": "On the review deck"
+   }
+  ]
+ },
+ {
+  "id": "m2-words-and-meanings",
+  "title": "Finding words in speech and learning what they mean",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "development2-02",
+     "development2-03"
+    ],
+    "main": "**Speech has no physical boundaries between words, so infants must learn to find words in a sea of sounds.** Pauses come from **closures** (moments when the vocal tract is fully blocked). Closures are as likely within words as between them. Several other cues help.",
+    "sub": [
+     "Some words appear in isolation, such as “Hello” and “Stop,” but not all words do.",
+     "**Phonotactics** (which sound sequences a language allows) helps, because sequences like the one in “wordboundary” rarely occur inside words.",
+     "**Jusczyk and colleagues (1999)** found that 7.5-month-olds familiarized with “kingdom” preferred the kingdom passage, but those familiarized with “device” did not. Most English words are stressed on the first syllable, so stress may signal word beginnings."
+    ],
+    "end": "So each cue helps, but none works for every word or every language."
+   },
+   {
+    "refs": [
+     "development2-04",
+     "development2-05"
+    ],
+    "main": "**Transitional probabilities offer another cue, because syllables predict each other more strongly within words than across words.** A **transitional probability** is the likelihood that syllable B follows syllable A. In “pretty baby,” “pre” is very strongly followed by “ty.” But many syllables can follow “ty,” so “ba” is poorly predicted.",
+    "sub": [
+     "This is probabilistic. “What’s that in the road ahead” can be split as “a head,” and “I scream” sounds like “ice cream.”"
+    ],
+    "end": "So a drop in transitional probability is a good guess for a word boundary."
+   },
+   {
+    "refs": [
+     "development2-06",
+     "development2-07",
+     "development2-08",
+     "development2-09",
+     "development2-10"
+    ],
+    "main": "**Saffran and colleagues (1996) found that infants can find words using transitional probabilities alone.** The speech was monotone, made of simple CV syllables, and presented with no pauses. So stress, phonotactics and silence gave no cues. Three-syllable words such as tokibu, gikoba and gopila ran together in one stream.",
+    "sub": [
+     "Half of the words were repeated more often. The test compared words with **part-words** (sequences spanning a word boundary) matched for frequency.",
+     "In the example stream, GOPILA and BU-GIKO each occur twice. But GI follows BU only 2 out of 4 times, while each step inside GOPILA happens 2 out of 2 times."
+    ],
+    "end": "Infants looked longer at part-words, a **novelty effect**. So they had learned the statistical regularities of the stream, not just how often sequences occurred."
+   },
+   {
+    "refs": [
+     "development2-11",
+     "development2-12",
+     "review-37"
+    ],
+    "main": "**Once children can find words, they face an inductive problem about what each word means.** A child hearing “cat” could take it to mean cat, furry, pet, whiskers, walking, leg, Felix, animal or alive. This set of possible meanings is the **hypothesis space**.",
+    "end": "So children need ways to narrow the hypothesis space, which is the problem Quine described with “gavagai.”"
+   },
+   {
+    "refs": [
+     "development2-13",
+     "development2-14",
+     "development2-15",
+     "development2-16",
+     "review-38",
+     "review-39",
+     "review-40"
+    ],
+    "main": "**Joint attention and the speaker’s gaze help children narrow word meanings.** **Joint attention** is sharing an attentional focus with another person. **Gaze following** emerges around 9 months and signals an understanding of reference. **Baldwin and colleagues** found that 18-month-olds learned a new word when an adult interacting with them labeled their toy.",
+    "sub": [
+     "They did not learn it when a voice from behind a screen labeled the same toy.",
+     "**Baldwin** also taught new words to 16 to 17 and 18 to 19 month olds using **intentional cues** (signals of what the speaker means). In **follow-in labeling**, the adult looked at the toy the infant was focused on. In **discrepant labeling**, the adult looked at a toy in a bucket."
+    ],
+    "end": "So hearing a word while seeing an object is not enough, because infants look for evidence of what the speaker intends."
+   },
+   {
+    "refs": [
+     "development2-17",
+     "development2-18",
+     "review-41"
+    ],
+    "main": "**Akhtar and colleagues found that infants use adults’ facial expressions to identify the intended referent of a new word.** These are **affective** (emotional) and **behavioral** cues to the speaker’s intention.",
+    "end": "So intention is conveyed through more than gaze direction."
+   },
+   {
+    "refs": [
+     "development2-19",
+     "development2-20",
+     "development2-21",
+     "review-42",
+     "review-43"
+    ],
+    "main": "**Children also bring default word learning strategies that narrow the hypothesis space.** The **whole object assumption** expects a new word to name a whole object, not a part or a property. **Mutual exclusivity** (Markman, 1989) assumes, as a default, that an object can have only one name.",
+    "sub": [
+     "The implication is that new words map to nameless objects.",
+     "Mutual exclusivity emerges during the second half of the second year."
+    ],
+    "end": "So every word a child already knows helps narrow the meaning of the next one."
+   },
+   {
+    "refs": [
+     "development2-22",
+     "development2-23",
+     "development2-24"
+    ],
+    "main": "**Children understand more grammar than they produce.** **Menn** separates early utterances into a bunch of relevant words, formulas, word combinations and stable constructions. “Up!”, “Pick you up!” and “Mommy up!” could come from any of these, so full context is necessary but often not sufficient to tell.",
+    "sub": [
+     "Even children at the one-word stage can use basic transitive word order in comprehension.",
+     "**Gertner and colleagues (2006)** found that two-year-olds looked longer at the duck acting on the bunny after hearing “The duck is gorping the bunny.” Gorp is a made-up verb, so only word order could guide them."
+    ],
+    "end": "So two-year-olds have learned the transitive structure itself, even though their own utterances average about two morphemes, like “Duck gorp bunny.”"
+   }
+  ],
+  "questions": [
+   {
+    "q": "What cues help infants find word boundaries, and what did Jusczyk and colleagues (1999) find?",
+    "a": "Words heard in isolation, phonotactics, stress and transitional probabilities all help. Jusczyk and colleagues found that 7.5-month-olds who heard “kingdom” preferred a passage containing it, but those who heard “device” did not. Most English words are stressed on the first syllable, so stress may mark word beginnings.",
+    "refs": [
+     "development2-03"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "How did Saffran and colleagues (1996) isolate transitional probabilities from other cues?",
+    "a": "They made the speech monotone, used only simple CV syllables, and presented the syllables with no pauses. That removed stress, phonotactic and pause cues. So the only clue to where each made-up word began and ended was how predictable the syllables were.",
+    "refs": [
+     "development2-06",
+     "development2-07"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Why did Saffran’s test compare words with part-words matched for frequency?",
+    "a": "It did so because infants could prefer heard sequences just because they were familiar. Matching frequency makes words and part-words equally familiar, so only their transitional probabilities differ. Infants looked longer at part-words, so they had learned the statistics and not just frequency.",
+    "refs": [
+     "development2-09",
+     "development2-10"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What is the inductive problem of early word learning?",
+    "a": "The inductive problem is that one naming event fits many possible meanings. A child hearing “cat” could take it to mean cat, furry, pet, whiskers, walking, leg, Felix, animal or alive. This is Quine’s “gavagai” problem, so children need ways to narrow the hypothesis space.",
+    "refs": [
+     "development2-12",
+     "review-37"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What did Baldwin and colleagues find about joint attention?",
+    "a": "They found that joint attention optimizes word learning. Eighteen-month-olds learned a new word when an adult interacting with them labeled the toy they were playing with. They did not learn it when a voice from behind a screen gave the same label.",
+    "refs": [
+     "development2-14",
+     "review-39"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What is mutual exclusivity, and how does it help a child?",
+    "a": "Mutual exclusivity (Markman, 1989) is the default assumption that an object can have only one name. So a new word is taken to name an object that has no name yet. It emerges during the second half of the second year and narrows the hypothesis space for new words.",
+    "refs": [
+     "development2-20",
+     "review-43"
+    ],
+    "tier": "On the review deck"
+   }
+  ]
+ },
+ {
+  "id": "m2-l1-critical",
+  "title": "Critical and sensitive periods for a first language",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "l1-critical-02"
+    ],
+    "main": "**A critical period allows no learning outside a fixed window, while a sensitive period only makes learning best during a window.** A **critical period** has a discrete, programmed onset and offset. Change in response to the environment is strictly limited to that period. A **sensitive** or **optimal period** allows learning across the life span, but learning works best during particular windows.",
+    "sub": [
+     "Sensitive period windows can open and close gradually, and their timing can be affected by experience."
+    ],
+    "end": "So any learning after the window counts against a strict critical period but fits a sensitive period."
+   },
+   {
+    "refs": [
+     "l1-critical-03",
+     "l1-critical-04",
+     "l1-critical-05"
+    ],
+    "main": "**Amblyopia is poor vision in one eye despite a healthy eye, and it comes from competition between the eyes in cortex.** Strabismus, a cataract or anisometropia can deprive one eye of normal input early in life. Then the other eye **colonizes** the cortical representation of the deprived eye. Fixing the eye later does not restore normal vision, because that eye stays at a competitive disadvantage.",
+    "sub": [
+     "Patching the good eye restores the competitive balance and lets the brain’s own **plasticity** (ability to rewire) restore function.",
+     "Patching works best early in development and may be ineffective by about age 10."
+    ],
+    "end": "So when the problem happens matters as much as what the problem is."
+   },
+   {
+    "refs": [
+     "l1-critical-06",
+     "l1-critical-07",
+     "l1-critical-08"
+    ],
+    "main": "**Adults with amblyopia can still improve with the right training, so amblyopia is better called a sensitive period.** **Levi and Polat (1996)** found that long, intensive training on psychophysical tasks improved task performance and general vision in adults, some in their 50s. **Li, Ngo, Nguyen, Lam and Levi (2008)** found that playing video games improved visual acuity and attention in adult amblyopia.",
+    "end": "So early disturbance can cause lifelong loss and treatment works best early, yet the right experience can still reverse deficits late into adulthood."
+   },
+   {
+    "refs": [
+     "l1-critical-09",
+     "l1-critical-10",
+     "l1-critical-11",
+     "l1-critical-12",
+     "review-44"
+    ],
+    "main": "**Lenneberg (1967) proposed that brain maturation opens and closes the window for language.** In Biological Foundations of Language, he tied stage-like language milestones to motor milestones, which suggested a biological program. Brain data were sparse because they came from post-mortem tissue, with no neuron size data between ages 2 and 18.",
+    "sub": [
+     "Abrupt changes in neuron size and packing density before age two might be permissive for starting language. So the critical period seemed to open after that.",
+     "Aphasia is surprisingly rare in children with brain lesions. Children whose left hemisphere is removed in a **hemispherectomy** (surgery typically done to relieve epileptic seizures) seem to develop typical language abilities. Adults do not recover language after this surgery."
+    ],
+    "end": "So Lenneberg hypothesized that adult-like **cerebral dominance** (left hemisphere specialization for language) closes the critical period."
+   },
+   {
+    "refs": [
+     "l1-critical-13"
+    ],
+    "main": "**Children with perinatal strokes do much better than adults, but they do not fully catch up.** A **perinatal** stroke happens between before birth and 28 days after birth. Early language deficits appear after damage to either hemisphere, and some are worse after right hemisphere damage.",
+    "end": "So outcomes in the low-normal range point to a persistent delay rather than complete recovery."
+   },
+   {
+    "refs": [
+     "l1-critical-14",
+     "l1-critical-15",
+     "l1-critical-16",
+     "l1-critical-17"
+    ],
+    "main": "**Genie learned many words after puberty but very little grammar.** **Curtiss and colleagues (1974)** studied Genie, who was isolated and punished for making sounds from 20 months of age until she was found at 13. Over four years she came to understand hundreds of words, some morphology, especially plurals, and some prepositions.",
+    "sub": [
+     "Her production lagged severely behind her comprehension, partly because she had been punished for making sounds.",
+     "Her grammar developed much more slowly than her vocabulary. She never understood “either or.”"
+    ],
+    "end": "So the gap between her vocabulary and her grammar is widely read as evidence that first language grammar learning is impaired after a sensitive period. Questions remain about learning disability and abuse, and funding ended after four years."
+   },
+   {
+    "refs": [
+     "l1-critical-18",
+     "l1-critical-19"
+    ],
+    "main": "**Mayberry, Lock and Kazmi (2002) found that a first language learned late is learned poorly, even with a typical upbringing.** Deaf children aged 9 to 15 had difficulty learning **ASL** (American Sign Language) when it was their first language. Children who went deaf after learning a spoken language did much better. These differences persisted into adulthood.",
+    "end": "So deprivation of input does not extend the critical period. All of this evidence comes from unusual cases with no animal models, so firm conclusions are hard to reach."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What is the difference between a critical period and a sensitive period?",
+    "a": "A critical period has a discrete, programmed onset and offset, and learning is impossible before or after it. A sensitive period allows learning throughout life, but learning is optimal during a window. That window can open and close gradually and can itself be shaped by experience.",
+    "refs": [
+     "l1-critical-02"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Why does amblyopia happen, and why does patching the good eye work?",
+    "a": "Amblyopia happens because the eyes compete for cortical neurons, and an eye with poor early input loses its territory to the other eye. Patching the good eye removes its input for part of the day. So the weak eye can win back connections through the brain’s own plasticity, mostly early in development.",
+    "refs": [
+     "l1-critical-04",
+     "l1-critical-05"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What was Lenneberg’s (1967) theory, and what evidence motivated it?",
+    "a": "Lenneberg proposed that the sensitive period depends on the development of cerebral dominance, or language laterality. One motivation was a rough alignment of brain development with language milestones. The other was that children recover language after brain injury or hemispherectomy, while adults do not.",
+    "refs": [
+     "l1-critical-10",
+     "l1-critical-12",
+     "review-44"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What did Genie learn and not learn, and why is her case hard to interpret?",
+    "a": "Genie learned hundreds of words, some morphology such as plurals, and some prepositions. Her grammar developed much more slowly, and her speech lagged far behind her comprehension. Her case is hard to interpret because she may have had a learning disability, she suffered abuse, and funding ended after four years.",
+    "refs": [
+     "l1-critical-15",
+     "l1-critical-16",
+     "l1-critical-17"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What did Mayberry, Lock and Kazmi (2002) find?",
+    "a": "They found that deaf children learning ASL as their first language at 9 to 15 had great difficulty. Deaf children who had learned a spoken language before going deaf learned ASL much better. The difference lasted into adulthood, so having a language early matters more than which language it is.",
+    "refs": [
+     "l1-critical-18"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Is there a critical period or a sensitive period for L1?",
+    "a": "The evidence fits a sensitive period better, but firm conclusions are difficult. Recovery after stroke and hemispherectomy is very different in childhood and adulthood, and deprivation does not extend the period. But all the data come from highly unusual cases, and no animal models or gene knockout experiments are possible.",
+    "refs": [
+     "l1-critical-19",
+     "l1-critical-13"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ },
+ {
+  "id": "m2-transfer",
+  "title": "Transfer in second language learning",
+  "tier": "Possible",
+  "blocks": [
+   {
+    "refs": [
+     "l2-learning-02",
+     "l2-learning-03"
+    ],
+    "main": "**Adults learn a second language faster at first, but children reach higher ultimate attainment.** A typical child knows about 20 words at 18 months, which would be poor progress for an adult learner. Adults start faster because of **transfer** from L1 and better general cognitive skills.",
+    "sub": [
+     "Adults rarely become native-like, and transfer may be part of the reason.",
+     "Some toddler milestones, such as spatial relations and event representations, are general concepts that adults already have. So adults can focus on how the target language expresses them."
+    ],
+    "end": "So speed of learning and final success are separate measures."
+   },
+   {
+    "refs": [
+     "l2-learning-04",
+     "l2-learning-05"
+    ],
+    "main": "**Transfer is the use of L1 processes and representations for an L2, and it can help or hurt.** English speakers use their **alveolar** category for both Hindi dental and retroflex consonants. So Hindi minimal pairs sound the same to them.",
+    "sub": [
+     "This comes from **acquired similarity**, where sounds in one category come to sound more alike."
+    ],
+    "end": "So in this case transfer makes the L2 contrast harder to learn."
+   },
+   {
+    "refs": [
+     "l2-learning-06",
+     "l2-learning-07"
+    ],
+    "main": "**Transfer also makes some grammar hard, such as Chinese classifiers and French gender.** A **classifier** is a word that Chinese puts between a word like one or that and the noun, as in yī gè rén. Different nouns require different classifiers, depending on the kind of thing named. Examples are objects with handles, books, wheeled vehicles, flat objects and long thin objects. In English, a chair, that dog, the car and one book need no thought about noun meaning. So English speakers have learned to ignore the cues that classifiers depend on.",
+    "sub": [
+     "**Grammatical gender** is different from social gender. Nothing is male about a book or female about liberty.",
+     "Gender controls **agreement**, so pronouns, adjectives and some verb forms must match the noun. French even has synonyms with different genders, such as auto and voiture."
+    ],
+    "end": "So learners must attend to features their first language trained them to ignore."
+   },
+   {
+    "refs": [
+     "l2-learning-08",
+     "l2-learning-09"
+    ],
+    "main": "**Transfer is not all bad, because cognates and loan words make vocabulary easier.** **Cognates** share an etymology, and **loan words** are more recent borrowings, such as Japanese korokke and monoreru. But not all similar-sounding words are cognates.",
+    "sub": [
+     "“Arnold está embarazado” means Arnold is pregnant, not embarrassed. Such a word is a **false friend**."
+    ],
+    "end": "So the bias to link L2 words to similar L1 words is strong, and it helps only when the meanings match."
+   },
+   {
+    "refs": [
+     "l2-learning-10",
+     "l2-learning-11",
+     "l2-learning-12",
+     "l2-learning-13"
+    ],
+    "main": "**De Groot and Keijzer (2000) found that cognates are learned faster and remembered better.** Dutch speakers learned made-up words paired with Dutch words. The made-up words varied in similarity to their Dutch partners and in **concreteness**. Examples were gitaar and gettar, a concrete cognate, and herstel and groop, an abstract non-cognate.",
+    "sub": [
+     "Retention was tested after one week with no training. Cognates and concrete words were forgotten less.",
+     "A receptive test alone would not be impressive, because gitaar, tijger and domein could be guessed. The **productive** test required recalling the made-up form itself."
+    ],
+    "end": "So cognate status contributes to the very earliest stages of word learning in a second language."
+   }
+  ],
+  "questions": [
+   {
+    "q": "In what sense are babies overrated as language learners?",
+    "a": "Babies are overrated because adults actually learn faster at first. A child knows only about 20 words after 18 months, while adults benefit from transfer and better general cognitive skills. Adults do worse only in ultimate attainment, since they rarely become native-like.",
+    "refs": [
+     "l2-learning-02"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What is transfer, and how does it make the Hindi dental and retroflex contrast hard for English speakers?",
+    "a": "Transfer is the use of L1 processes and representations for an L2. English speakers hear both Hindi dental and retroflex consonants through their single alveolar category. So the two sounds seem the same, and transfer makes the L2 contrast harder to learn.",
+    "refs": [
+     "l2-learning-04",
+     "l2-learning-05"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Why are Chinese classifiers hard for native English speakers?",
+    "a": "They are hard because Chinese requires different classifiers for different kinds of nouns, such as objects with handles or flat objects. English determiners do not depend on what kind of thing a noun names. So English speakers have learned to ignore the cues that classifiers depend on.",
+    "refs": [
+     "l2-learning-06"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What did de Groot and Keijzer (2000) do and find?",
+    "a": "Dutch speakers learned made-up words paired with Dutch words that varied in cognate status and concreteness. Cognates were learned more rapidly and remembered more easily after a week without training. So cognate status helps the very earliest stages of second language word learning.",
+    "refs": [
+     "l2-learning-10",
+     "l2-learning-11"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Why did de Groot and Keijzer’s productive test make the study more convincing?",
+    "a": "A receptive test alone would not be impressive, because many cognate meanings, such as gitaar, could be guessed without training. The productive test asked for the made-up word itself, given the Dutch word. So a cognate advantage there reflects real learning of new forms.",
+    "refs": [
+     "l2-learning-12",
+     "l2-learning-13"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ },
+ {
+  "id": "m2-bilingual-competition",
+  "title": "Cross-language competition and the Revised Hierarchical Model",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "l2-learning-14",
+     "l2-learning-15",
+     "l2-learning-16",
+     "review-49"
+    ],
+    "main": "**Eye movements in a visual world task can reveal whether similar L1 words are active while bilinguals process L2.** In McMurray and colleagues’ study, competition between BEAR and PEAR depended on distance from the category boundary. **Allopenna and colleagues (1994)** found the **cohort effect**. Words that share a beginning with the target, such as beetle for beaker, draw early looks.",
+    "end": "So looks to an object measure how active its name is, even when the final choice is correct."
+   },
+   {
+    "refs": [
+     "l2-learning-17",
+     "l2-learning-18",
+     "l2-learning-19",
+     "review-50",
+     "review-51",
+     "review-52"
+    ],
+    "main": "**Marian and Spivey (2003) found that Russian words are active when Russian-English bilinguals listen in English, but not the reverse.** If L1 words are always activated, bilinguals hearing “speaker” in English should look at matches. The Russian word for matches, spichki, starts the same way. With one competitor present, they looked at within-language and between-language competitors to the same extent.",
+    "sub": [
+     "With both competitors present, they looked at the within-language competitor more. They still looked at the between-language competitor about twice as often as a control object.",
+     "In Russian, English words did not seem to be activated. The small difference from the control was not statistically significant."
+    ],
+    "end": "So competition between the languages is **asymmetric**, running from L1 into L2."
+   },
+   {
+    "refs": [
+     "l2-learning-20",
+     "l2-learning-21",
+     "review-53",
+     "review-54"
+    ],
+    "main": "**Kroll and Stewart’s Revised Hierarchical Model explains the asymmetry with spreading activation.** The model has an L1 lexicon, an L2 lexicon and shared concepts. The L1 lexicon is larger and more strongly connected to concepts. The L2 lexicon has strong forward connections to the L1 lexicon, because that direction is emphasized in learning.",
+    "sub": [
+     "Here Russian is the L1 and English is the L2.",
+     "In the English task, the concept for “speaker” partly activates the Russian word for matches, spichki.",
+     "Spichki is strongly linked to the concept for matches, so that activity feeds back to the concept. Conceptual activation for matches then leads to eye movements toward the matches."
+    ],
+    "end": "In the L1 task, the conceptual links from L2 words are too weak to create this interference reliably."
+   },
+   {
+    "refs": [
+     "l2-learning-22",
+     "review-55"
+    ],
+    "main": "**The model predicts that even balanced bilinguals are not two monolinguals in one.** For **balanced bilinguals**, conceptual links are similarly strong for both languages. So competitive dynamics and inhibition are engaged all the time.",
+    "end": "So this prediction led to much work on bilinguals’ advantages in non-linguistic **cognitive control** tasks."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What was Marian and Spivey’s hypothesis, and how did they test it?",
+    "a": "They hypothesized that if L1 words are always activated, Russian speakers should look at matches when hearing “speaker” in English. The Russian word for matches, spichki, begins like speaker. They tracked eye movements to such between-language competitors in a visual world display.",
+    "refs": [
+     "l2-learning-17",
+     "review-50"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What did Marian and Spivey find during L2 spoken word recognition?",
+    "a": "With one competitor present, bilinguals looked at within-language and between-language competitors to the same extent. With both present, they looked at the within-language competitor more. They still looked at the between-language competitor about twice as often as a control, so L1 words were active during L2 listening.",
+    "refs": [
+     "l2-learning-18",
+     "review-51"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What did Marian and Spivey find during L1 spoken word recognition?",
+    "a": "English words did not seem to be activated when native Russian speakers did the task in Russian. The small difference between the between-language and control conditions was not statistically significant. So the interference is asymmetric.",
+    "refs": [
+     "l2-learning-19",
+     "review-52"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What does the Revised Hierarchical Model assume about the two lexicons and their links?",
+    "a": "It assumes the L1 lexicon is larger and more strongly connected to relevant concepts. The L2 lexicon has strong forward connections to the L1 lexicon. So activation spreads more readily from an L2 word to an L1 word than the other way, because learners practice that direction.",
+    "refs": [
+     "l2-learning-20",
+     "review-53"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "How does the Revised Hierarchical Model explain the Marian and Spivey results?",
+    "a": "In the L2 task, Russian and English bilinguals hear “speaker” in English. The concept for speaker partly activates the Russian word for matches, spichki. Russian is the L1, so spichki has a strong conceptual link, and it activates the concept of matches. That conceptual activation draws the eyes to the matches. In the L1 task, English words have weak conceptual links, so they cannot create this interference reliably.",
+    "refs": [
+     "l2-learning-21",
+     "review-54"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What counter-intuitive prediction does the model make for balanced bilinguals?",
+    "a": "It predicts that balanced bilinguals are not two monolinguals in one. Their conceptual links are similarly strong for both languages, so both languages compete and inhibition is engaged all the time. This led to much work on bilinguals’ advantages in non-linguistic cognitive control tasks.",
+    "refs": [
+     "l2-learning-22",
+     "review-55"
+    ],
+    "tier": "On the review deck"
+   }
+  ]
+ },
+ {
+  "id": "m2-l1-replacement",
+  "title": "Can a second language replace the first?",
+  "tier": "Possible",
+  "blocks": [
+   {
+    "refs": [
+     "l2-learning-23",
+     "l2-learning-24",
+     "l2-learning-25",
+     "l2-learning-26",
+     "l2-learning-27",
+     "l2-learning-28"
+    ],
+    "main": "**Korean adoptees raised in French homes showed no trace of Korean on any test.** Korean has a **three-way stop contrast**, where stops at one place come in three kinds, **plain**, **tense** and **aspirated**. So pul (fire), Pul (horn) and phul (grass) are different words that differ only in the first stop. **Ventureyra and colleagues** found that adoptees were no better than monolingual French speakers at hearing these contrasts, while Korean speakers heard them nearly every time.",
+    "sub": [
+     "Pallier and colleagues also found adoptees no better at recognizing Korean, choosing Korean translations, or detecting repeated excerpts.",
+     "Listening to French activated the classical language network in both groups. Subtracting Korean from French revealed no difference between the groups."
+    ],
+    "end": "So when L1 is removed from the environment entirely, L2 can appear to replace it completely."
+   },
+   {
+    "refs": [
+     "l2-learning-29",
+     "l2-learning-30"
+    ],
+    "main": "**Competitive dynamics offer one account of replacement.** L1 can be treated as a set of connections within and between brain regions. If those connections are never activated again, L2 could take them over, much as one eye takes over the other eye’s cortex in amblyopia.",
+    "end": "So the open question is whether traces of L1 are left that can be salvaged by later learning."
+   },
+   {
+    "refs": [
+     "l2-learning-31",
+     "l2-learning-32",
+     "l2-learning-33"
+    ],
+    "main": "**Terry Au’s group found that childhood overhearers of Spanish kept an advantage in pronunciation but not in grammar.** The students had overheard Spanish often as children but never spoke it. They began Spanish classes at about 14 and were tested after second-year college Spanish. Their VOT and accents were more native-like than those of typical late learners.",
+    "sub": [
+     "The two groups differ in many ways. Korean is rarely heard in France, but Spanish is common in Los Angeles. Spanish may be a heritage language, and Spanish and English share cognates and a writing system."
+    ],
+    "end": "So replacement may not be complete, since residual knowledge can be unmasked by later learning. Languages and learning situations differ in ways that are hard to control in experiments."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What did Pallier and colleagues find about Korean adoptees raised in France?",
+    "a": "They found no remaining trace of Korean. Adoptees were no better than French speakers at recognizing Korean, picking Korean translations or detecting repeated excerpts. Brain imaging also treated Korean like any foreign language, so L2 appeared to replace L1 completely.",
+    "refs": [
+     "l2-learning-27",
+     "l2-learning-28"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What did Ventureyra and colleagues find with the Korean stop contrast?",
+    "a": "They found that Korean adoptees in France were no better than monolingual French speakers at the Korean stop contrasts. Korean speakers heard these differences nearly every time. Both adoptees and French speakers did well on a vowel contrast, so the problem was specific to the Korean stops.",
+    "refs": [
+     "l2-learning-25",
+     "l2-learning-26"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What did Terry Au’s group find with childhood overhearers of Spanish?",
+    "a": "They found that overhearers had more native-like pronunciation than typical late learners after two years of college Spanish. Their VOT nearly matched native speakers. They had little or no advantage in grammar, so early overhearing left traces mainly in the sound system.",
+    "refs": [
+     "l2-learning-31"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Why are the adoptee and overhearer results hard to compare directly?",
+    "a": "They are hard to compare because the groups differ in many ways besides early exposure. Korean is rarely heard in France, but Spanish is common in Los Angeles and may be a heritage language. Spanish and English also share cognates and a writing system, which Korean and French do not.",
+    "refs": [
+     "l2-learning-33",
+     "l2-learning-32"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ },
+ {
+  "id": "m2-l2-sensitive",
+  "title": "Sensitive periods for L2, Johnson and Newport and the critiques",
+  "tier": "On the review deck",
+  "blocks": [
+   {
+    "refs": [
+     "l2-sensitive-02",
+     "l2-sensitive-03",
+     "review-44",
+     "review-45"
+    ],
+    "main": "**Second language learning is a model system for sensitive period research.** **Lenneberg (1967)** tied the sensitive period to the development of **cerebral dominance**, or language **laterality**. He drew on a rough alignment of brain development with language milestones and on resilience after brain injury or surgery.",
+    "sub": [
+     "Much L1 evidence comes from idiosyncratic or rare cases.",
+     "Many people learn second languages at different ages with limited success. So those limits can be used to reason about the timing of the sensitive period."
+    ],
+    "end": "So L2 learners give large, ordinary samples where L1 research has only rare cases."
+   },
+   {
+    "refs": [
+     "l2-sensitive-04",
+     "l2-sensitive-05",
+     "l2-sensitive-06",
+     "l2-sensitive-07",
+     "review-46",
+     "review-47"
+    ],
+    "main": "**Johnson and Newport (1989) found that grammar scores fall with age of arrival up to puberty and become low and scattered after it.** They tested 46 native Korean or Chinese speakers who arrived in the United States between ages 3 and 39. An untimed **grammaticality judgment test** (GJT) asked whether recorded sentences were grammatical.",
+    "sub": [
+     "Items tested rules such as plurals, the progressive -ing, determiners and question word order.",
+     "Early learners, up to about age 8, were often near-perfect and native-like.",
+     "Late arrivals showed a nearly random distribution of accuracy, unrelated to age of arrival."
+    ],
+    "end": "The age effect was not explained by amount of experience, motivation, self-consciousness or American identification."
+   },
+   {
+    "refs": [
+     "l2-sensitive-08",
+     "l2-sensitive-09",
+     "review-48"
+    ],
+    "main": "**Johnson and Newport read their data as a critical period that extends to second languages, best fit by the maturational state hypothesis.** The dependence of attainment on age fits a loss of learning ability over development. After the period closes, attainment depends on idiosyncratic learning abilities, so late learners vary widely.",
+    "sub": [
+     "The **exercise hypothesis** says the early capacity declines only if it is not exercised. If it is exercised, language learning ability stays intact for life.",
+     "The **maturational state hypothesis** says the capacity declines with maturation whether or not it was exercised.",
+     "All the learners had exercised their capacity on an L1, yet later arrivals did worse. So the data fit the maturational state hypothesis."
+    ],
+    "end": "This changes how the L1 data are read, because in cases like Genie both hypotheses predict poor learning."
+   },
+   {
+    "refs": [
+     "l2-sensitive-10",
+     "l2-sensitive-11"
+    ],
+    "main": "**Ellis (2005) argued that an untimed GJT may measure explicit knowledge rather than grammar acquisition.** **Implicit knowledge** is intuitive and procedural. It is used automatically in fluent performance, cannot be put into words, and may be learnable only within the critical period. **Explicit knowledge** is conscious and declarative. It is used with controlled effort, can be put into words, and can be learned at any age.",
+    "sub": [
+     "Untimed GJT performance was correlated with years of formal L2 education.",
+     "Starting age was related to the timed GJT, which limits the use of explicit rules."
+    ],
+    "end": "So an age effect on an untimed GJT may partly reflect taught **metalinguistic** knowledge (conscious knowledge about language)."
+   },
+   {
+    "refs": [
+     "l2-sensitive-12",
+     "l2-sensitive-13",
+     "l2-sensitive-14"
+    ],
+    "main": "**Transfer and the language pairing change the age pattern.** Not all grammar is equally hard. The progressive -ing and word order are easiest, which matches children’s order of learning. Determiners are hard, and Chinese has no determiners. Questions come late for children but are among the easiest structures for late learners.",
+    "sub": [
+     "**Birdsong and Molis (2001)** tested Spanish speakers learning English. Early arrivals scored near the top regardless of age, while late arrivals declined steadily with age.",
+     "That pattern is almost the reverse of the Chinese and Korean learners."
+    ],
+    "end": "So age of arrival effects on the GJT may not reflect maturational constraints alone, because the first language matters."
+   },
+   {
+    "refs": [
+     "l2-sensitive-15"
+    ],
+    "main": "**Overall, L2 attainment is lower for older learners, but how much lower depends on many factors.** It depends on which constructions are tested, how they are tested and the language pairing. It is hard to separate age from the amount and quality of experience. It is also hard to separate transfer from L2 acquisition, and performance from competence.",
+    "end": "So these findings may not even deserve to be called conclusions."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Why is L2 learning a useful model system for sensitive period research?",
+    "a": "It is useful because much L1 evidence comes from idiosyncratic or rare cases such as Genie or hemispherectomy. Many people learn second languages at different ages, often with limited success. So researchers can study large groups and use the limits of L2 success to reason about timing.",
+    "refs": [
+     "l2-sensitive-03",
+     "review-45"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What did Johnson and Newport (1989) do, and what patterns did they find?",
+    "a": "They gave an untimed grammaticality judgment test to 46 Korean or Chinese speakers who arrived in the United States between ages 3 and 39. Scores fell steadily with age of arrival up to puberty, and the earliest learners were native-like. After puberty, scores were low and nearly random with respect to age of arrival.",
+    "refs": [
+     "l2-sensitive-04",
+     "l2-sensitive-07",
+     "review-46",
+     "review-47"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "Which version of the critical period hypothesis do Johnson and Newport’s data support, and why?",
+    "a": "Their data support the maturational state hypothesis. All of their learners had exercised their language capacity on an L1, yet later arrivals still learned English less well. The exercise hypothesis would predict that an exercised capacity stays intact, so it does not fit.",
+    "refs": [
+     "l2-sensitive-09",
+     "review-48"
+    ],
+    "tier": "On the review deck"
+   },
+   {
+    "q": "What is the difference between implicit and explicit knowledge, according to Ellis (2005)?",
+    "a": "Implicit knowledge is intuitive and procedural, used automatically in fluent speech, and cannot be put into words. Explicit knowledge is conscious and declarative, used with controlled effort, and can be put into words. Implicit knowledge may only be learnable within the critical period, while explicit knowledge can be learned at any age.",
+    "refs": [
+     "l2-sensitive-10"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "Why might an untimed GJT not measure grammar acquisition?",
+    "a": "An untimed GJT lets people take their time and apply conscious rules, so it allows explicit metalinguistic knowledge. Untimed GJT scores were correlated with years of formal L2 education. So an age effect on it may partly reflect taught knowledge rather than acquired grammar.",
+    "refs": [
+     "l2-sensitive-10",
+     "l2-sensitive-11"
+    ],
+    "tier": "Possible"
+   },
+   {
+    "q": "What did Birdsong and Molis (2001) find, and what does it mean for maturational accounts?",
+    "a": "They found that Spanish speakers who arrived early scored near the top regardless of age, while late arrivals declined steadily with age. This is almost the reverse of Johnson and Newport’s Chinese and Korean learners. So the age pattern depends on the language pairing, which weakens a purely maturational account.",
+    "refs": [
+     "l2-sensitive-14"
+    ],
+    "tier": "Possible"
+   }
+  ]
+ }
+]

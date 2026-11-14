@@ -4,6 +4,20 @@ Open: https://jordanxxlopez.github.io/COGNITIVEPROCESSES/ling406/
 
 A separate Midterm 2 workspace modeled on the PSYC301 interface. PSYC301, its notes/progress keys, and BME423 are unchanged.
 
+**Three modules.** This page is Module II (Midterm 2, the content described below). Module I (Midterm 1,
+Lectures 1–10) lives in `module1/` and Module III (the final) in `module3/`; see their READMEs. All three
+are reachable from the sidebar.
+
+**Modern versions.** A **Modernize** button beside every Transcript dropdown, in all three modules, switches
+to six newer versions (Version 20 in Module II only, Versions 21 and 22, Notes 9.3, Notes 10.1 and
+Simpler). They are built from `modern/authoring/text/` into `modern/packs/`; see `modern/README.md` for how
+to rebuild and test them, and `modern/authoring/board.md` for the review record. The older versions below
+are unchanged.
+
+**Study pages.** Each module's sidebar also has Study this first, a review guide, What you can be asked,
+Notes by topic, Experiment cards, Side-by-side contrasts and Hard topics, plus a Question wording dropdown
+(Original, College, Simple) on the practice tests. See `study/README.md`.
+
 - Nine lecture collections, with 229 individually authored slide explanations and their original source visuals.
 - A persistent **Transcript** dropdown offers **Version 1 · original** and **Version 2 · slide-aligned teaching**. The original scripts are unchanged. Version 2 is the default when no preference has been saved: all 229 scripts have five or six connected paragraphs, using slide terminology and examples with fuller explanations. Word-by-word sentence demonstrations have distinct explanations.
 - A 28-topic end-of-review guide, 131-slide core review, 37 experiment/demonstration groups, combined notes, and a 55-page supplied-review viewer.

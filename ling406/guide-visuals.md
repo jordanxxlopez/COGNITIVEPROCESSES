@@ -2,7 +2,7 @@
 
 On **What to know by the end**, the **Slides + audio** switch adds the specific original source slide beside each existing explanation. The explanation stays on the left and the corresponding slide, source link and any existing audio examples appear on the right. On narrow screens the matched slide/audio follows its explanation.
 
-The switch starts off for a new browser and remembers the selected view. It is independent of the existing Transcript selector and works with all twelve transcript versions. Switching it off removes the added source panels and restores the original text-only layout. It preserves the current topic open/closed states, readiness marks, focus, teaching text and existing controls. Switching off also stops any recording that is playing.
+The switch starts off for a new browser and remembers the selected view. It is independent of the existing Transcript selector and works with every transcript version, including the six modern versions. Switching it off removes the added source panels and restores the original text-only layout. It preserves the current topic open/closed states, readiness marks, focus, teaching text and existing controls. Switching off also stops any recording that is playing.
 
 Mappings come directly from the original `LING406.guide[].sections` list. There are 28 topics with 129 source-linked explanations. No slide was selected through keyword guesses, and no transcript, source, question or audio file was edited. Existing **Full explanation + visual**, **Expand this topic**, quiz and print controls are retained. The guide prints in its original text-only form.
 

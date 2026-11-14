@@ -1,0 +1,802 @@
+[
+  {
+    "id": "m3-orthography-decoding",
+    "title": "Orthographic depth and decoding",
+    "tier": "On the review deck",
+    "blocks": [
+      {
+        "refs": ["m3-reading1-p002", "m3-reading1-p003", "m3-review-p002"],
+        "main": "**Phonemes are not letters, and letters are not phonemes.** A **phoneme** is a category of speech sound, while a letter is a written symbol. In a **mispronouncing contest**, people mispronounced words like COLONEL and PARADIGM on purpose. Reading these words by their usual letter patterns gives the wrong sound.",
+        "sub": [
+          "How consistently a script's spelling matches pronunciation is called **orthographic depth**.",
+          "English is a relatively **deep** script because of its many irregular spellings.",
+          "Finnish and Korean are very **shallow** scripts. Pinyin for Mandarin and French are also relatively regular."
+        ],
+        "end": "So a script's depth decides how far a reader can trust the letters to give the sound."
+      },
+      {
+        "refs": ["m3-reading1-p004", "m3-reading1-p006", "m3-review-p003", "m3-review-p005"],
+        "main": "**Finnish and Korean spell sounds so regularly that children learn to decode very quickly.** **Decoding** means working out a pronunciation from a written form. In **Finnish**, each letter corresponds more or less unambiguously to one phoneme. Doubled letters stand for **geminated** consonants (consonants held longer) or long vowels.",
+        "sub": [
+          "Korean is even more regular than Finnish, because symbols for similar phonemes look similar.",
+          "The angular shape ㄱ goes with **velar** consonants. Doubling it gives ㄲ, and adding a stroke gives ㅋ."
+        ],
+        "end": "So in a shallow script, one learned letter and sound match works across many words."
+      },
+      {
+        "refs": ["m3-reading1-p005", "m3-review-p004"],
+        "main": "**Children learn to decode more slowly in English than in other languages that use the Roman alphabet.** **Aro and Wimmer** compared children reading **pseudowords**, which are made-up words that follow the spelling and sound patterns of their language. In Grade 1, children learning French, German, Dutch, Spanish, Swedish or Finnish read most pseudowords correctly. English learners read only about half of them correctly.",
+        "sub": [
+          "By Grade 4, English learners came close to most of the others."
+        ],
+        "end": "So English is an outlier, because its deep spelling makes decoding slower to learn."
+      },
+      {
+        "refs": ["m3-reading1-p007", "m3-reading1-p008"],
+        "main": "**Skilled readers decode pseudowords almost as fast and as accurately as real words.** You can read GLORP, SPLING, JONK, FEESH and QUISP aloud though you have never seen them. **Lupker, Brown and Colombo (1997)** found that naming pseudowords, here called **nonwords**, was only 5 to 12 percent slower than naming low-frequency words.",
+        "sub": [
+          "Decoding therefore happens fairly naturally, automatically and **implicitly** (without conscious effort).",
+          "The open question for the computational models is whether decoding is best captured by **categorical rules** or **probabilistic constraints**."
+        ],
+        "end": "So decoding is a normal, fast part of skilled reading."
+      },
+      {
+        "refs": ["m3-reading1-p009", "m3-reading1-p010"],
+        "main": "**Some pseudowords have more than one acceptable pronunciation, which is hard for a rule set to explain.** VONTH, PHANGE, STREAD and SOUGH contain spelling patterns that English pronounces in more than one way. **Generalization** (applying learned patterns to new items) is a good way to test what regularities people have learned, as in the **wug test**.",
+        "sub": [
+          "Readers accept both /strɛd/ and /strid/ for STREAD.",
+          "A categorical rule gives one output, so it is hard to imagine a rule set that allows both."
+        ],
+        "end": "So decoding looks graded, with competing patterns from the words a reader already knows."
+      },
+      {
+        "refs": ["m3-reading1-p011", "m3-reading1-p012"],
+        "main": "**Irregular or inconsistent words are harder to recognize than regular words, which is the regularity effect.** The effect is straightforward for PINT, ACHE and CHOIR, whose spellings point to the wrong sound. It is less clear-cut for **neighborhoods**, which are groups of words that share a spelling pattern. Examples are ROLL, POLL, TOLL and DOLL, or COOK, TOOK, BOOK and SPOOK.",
+        "sub": [
+          "Fast nonword reading and the regularity effect are strong evidence that readers use **sublexical information**, meaning units smaller than a whole word.",
+          "That leaves the question of **lexical processes**, which use knowledge of particular words."
+        ],
+        "end": "So readers clearly use spelling and sound patterns, and a full account must also explain knowledge of particular words."
+      }
+    ],
+    "questions": [
+      {"q": "What is orthographic depth, and where do English, Finnish and Korean fall?", "a": "Orthographic depth is how consistently a script's spelling matches its pronunciation. English is a relatively deep script because it has many irregular spellings, like COLONEL and PARADIGM. Finnish and Korean are very shallow scripts, because their letters match phonemes very regularly.", "refs": ["m3-reading1-p003", "m3-review-p002"], "tier": "On the review deck"},
+      {"q": "In Korean, what orthographic feature corresponds roughly to velar place of articulation?", "a": "The angular shape ㄱ corresponds roughly to velar place of articulation. Korean gives similar phonemes similar symbols, so the related velar letters ㄱ, ㄲ and ㅋ share that basic shape. Doubling the shape or adding a stroke tells the related consonants apart.", "refs": ["m3-reading1-p006", "m3-review-p005"], "tier": "On the review deck"},
+      {"q": "Why do children learning English decode more slowly than children learning Finnish?", "a": "English children decode more slowly because English is a deep script with many irregular spellings. In Finnish, each letter matches one phoneme more or less unambiguously, so one learned match works across many words. In Grade 1, children learning other alphabetic languages read pseudowords correctly at a much higher rate than English learners.", "refs": ["m3-reading1-p004", "m3-reading1-p005", "m3-review-p003", "m3-review-p004"], "tier": "On the review deck"},
+      {"q": "Why are pseudowords useful for studying decoding?", "a": "Pseudowords are useful because a reader has never stored their pronunciation. So reading GLORP or QUISP aloud must come from spelling and sound patterns learned from other words. Pseudowords are read nearly as fast and accurately as real words, so decoding is fast and automatic.", "refs": ["m3-reading1-p007", "m3-reading1-p008"], "tier": "Possible"},
+      {"q": "Why is STREAD a problem for a rule-based account of decoding?", "a": "STREAD is a problem because readers accept both /strɛd/ and /strid/. A categorical rule produces one pronunciation for a spelling, so it is hard to imagine a rule set that allows both. A statistical account can give each pronunciation its own amount of support from known words.", "refs": ["m3-reading1-p010"], "tier": "Possible"},
+      {"q": "What is the regularity effect?", "a": "The regularity effect is that irregular or inconsistent words are harder to recognize than regular words. Words like PINT, ACHE and CHOIR break the usual spelling and sound pattern, so decoding points to the wrong sound. It is less clear-cut for neighborhoods like ROLL, POLL, TOLL and DOLL, where similar spellings disagree.", "refs": ["m3-reading1-p011"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-frequency-regularity",
+    "title": "Lexical effects and the frequency by regularity interaction",
+    "tier": "On the review deck",
+    "blocks": [
+      {
+        "refs": ["m3-reading1-p013", "m3-reading1-p014"],
+        "main": "**In the Interactive Activation Model, known words feed activation back to their own letters.** In the model from **McClelland and Rumelhart (1981)**, visual features activate letters. Letters then activate candidate words such as WORK, WORD, WEAR and WEAK. Active words send **feedback** that raises the activation of the letters they contain.",
+        "sub": [
+          "In a word perception example, blots hide parts of WORK, and the last letter's visible features fit K and R.",
+          "Over time K rises close to the maximum. R rises a little and then falls back, while D stays low."
+        ],
+        "end": "So knowing a word helps a reader identify an unclear letter inside it."
+      },
+      {
+        "refs": ["m3-reading1-p015", "m3-reading1-p016"],
+        "main": "**Real words are named faster than nonwords, and frequent words are named faster than rare ones.** These are two **lexical effects**, the **lexicality effect** and the **word frequency effect**. As with picture naming, the more often you have met a word, the faster you can name it. **Balota and colleagues (2004)** found the frequency effect across a very large number of observations from the **English Lexicon Project**.",
+        "sub": [
+          "One worry was that frequency effects are a **confound** of length and other variables.",
+          "A **multiple regression analysis** measures each predictor's effect while the others are included. Run on about 3000 words read by 30 young and older adults, it still found frequency effects.",
+          "Higher frequency went with faster responses in both **lexical decision** (judging whether a letter string is a word) and naming."
+        ],
+        "end": "So frequency itself speeds reading, apart from the length of frequent words."
+      },
+      {
+        "refs": ["m3-reading1-p017", "m3-review-p006"],
+        "main": "**The frequency effect is much larger for exception words than for regular words.** This is the **frequency by regularity interaction**, a landmark finding in psycholinguistics. An **interaction** means the effect of one factor depends on the level of the other. High-frequency exception and regular words are named about equally fast. Low-frequency exception words are named much more slowly than low-frequency regular words.",
+        "sub": [
+          "**Naming latency** is the time it takes to start saying a word, so higher values mean slower responses.",
+          "The finding later shaped other areas, most immediately **inflectional morphology**."
+        ],
+        "end": "So regularity matters mainly for words a reader has rarely seen."
+      },
+      {
+        "refs": ["m3-reading1-p018", "m3-review-p007"],
+        "main": "**One interpretation is that word recognition uses two separate processes.** The **sublexical process** is decoding, and the **lexical process** is knowledge of a particular word. For high-frequency words, the lexical process is so fast and efficient that decoding has little influence.",
+        "sub": [
+          "The sublexical process only shows up when we read nonwords or low-frequency words.",
+          "For a low-frequency exception word, decoding produces a regularized pronunciation that competes with the correct one."
+        ],
+        "end": "So exception words are slowed only when the lexical process is too slow to win."
+      }
+    ],
+    "questions": [
+      {"q": "What does the frequency by regularity interaction mean?", "a": "It means the frequency effect is much larger for exception words than for regular words. High-frequency words are named quickly whether they are regular or not. Low-frequency exception words are much slower than low-frequency regular words, so regularity matters mostly for rare words.", "refs": ["m3-reading1-p017", "m3-review-p006"], "tier": "On the review deck"},
+      {"q": "How does the dual-route view explain the frequency by regularity interaction?", "a": "The dual-route view says reading uses a sublexical decoding process and a lexical process for particular words. For high-frequency words, the lexical process is so fast that decoding has little influence. For low-frequency exception words, the lexical process is slower, so decoding produces a competing regularized pronunciation and naming slows down.", "refs": ["m3-reading1-p018", "m3-review-p007"], "tier": "On the review deck"},
+      {"q": "How does feedback work in the Interactive Activation Model?", "a": "Feedback from active known words raises the activation of the letters in those words. When the last letter of WORK is partly hidden, WORK sends activation back to K. K then rises close to the maximum while R and D stay low.", "refs": ["m3-reading1-p013", "m3-reading1-p014"], "tier": "Possible"},
+      {"q": "Are frequency effects just a confound of word length?", "a": "No, frequency effects appear not to be a confound of length. A multiple regression analysis of about 3000 words, read by 30 young and older adults, still found frequency effects with length and other variables included. Higher frequency went with faster responses in both lexical decision and naming.", "refs": ["m3-reading1-p016"], "tier": "Possible"},
+      {"q": "What two lexical effects show that knowledge of particular words matters in reading?", "a": "The two lexical effects are the lexicality effect and the word frequency effect. Real words are named faster than nonwords. Words met more often in the past are named faster, just as in picture naming.", "refs": ["m3-reading1-p015", "m3-reading1-p012"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-acquired-dyslexia",
+    "title": "Acquired dyslexias and the double dissociation",
+    "tier": "Possible",
+    "blocks": [
+      {
+        "refs": ["m3-reading1-p019"],
+        "main": "**Patients with acquired phonological dyslexia have trouble specifically with reading pseudowords aloud.** Their reading difficulty comes from brain injury, so it is called **acquired** rather than **developmental** dyslexia. **Cacciopo van Vliet and colleagues (2003)** tested two patients, M.O. and I.B. Both read real words almost perfectly, across concreteness, word class and frequency.",
+        "sub": [
+          "On nonword lists, both gave far fewer plausible pronunciations, often under half.",
+          "Nonwords with low **grapheme-to-phoneme correspondence** (a weak match between written units and sounds) were hardest of all."
+        ],
+        "end": "So known words survived while decoding new forms broke down."
+      },
+      {
+        "refs": ["m3-reading1-p020"],
+        "main": "**Patients with acquired surface dyslexia have trouble specifically with irregular words.** Their mistakes tend to be **regularizations**, which means reading an exception word by the usual spelling pattern. DEAF becomes “deef”, SHOE becomes “show” and ONE becomes “own”.",
+        "sub": [
+          "Two patients, MP and KT, read regular words and nonwords well.",
+          "Their exception word reading dropped, most of all for low-frequency exceptions."
+        ],
+        "end": "So these patients fall back on decoding, which gets exception words wrong."
+      },
+      {
+        "refs": ["m3-reading1-p021", "m3-reading1-p022"],
+        "main": "**Surface and phonological dyslexia together form a classic double dissociation.** A **double dissociation** means one patient group is impaired on task A but not task B, and another group shows the reverse. Surface dyslexia impairs exception words, with relatively spared pseudoword reading. Phonological dyslexia impairs pseudowords, with relatively spared exception word reading.",
+        "sub": [
+          "If one task were simply harder, damage would hurt it more in every patient.",
+          "Because the pattern reverses, the two tasks must rely on **separable** processes."
+        ],
+        "end": "That is why double dissociations are such powerful evidence."
+      },
+      {
+        "refs": ["m3-reading1-p023"],
+        "main": "**In a dual-route model, each dyslexia comes from damage to a different part.** In **Morton's logogen model**, from **Morton and Patterson (1980)**, **logogens** are stored word units. Visual input logogens recognize written words, and output logogens hold their spoken forms. A separate **grapheme-phoneme conversion** module turns letters into sounds without a stored word.",
+        "sub": [
+          "Phonological dyslexia results from specific damage to the grapheme-phoneme conversion module.",
+          "Surface dyslexia results from damage to input or output logogens, or the connections between them."
+        ],
+        "end": "So the model turns the double dissociation into two separately damaged components."
+      },
+      {
+        "refs": ["m3-reading1-p024"],
+        "main": "**Patterson (1981) gave early signs that the two-route account is not so simple.** Surface dyslexia errors were thought to come from the non-lexical route, so they should show no word influences. Yet the errors showed several word influences, and made-up nonword errors were rarer than a purely letter-based process predicts. One patient read incense as “increase”, which is a real word.",
+        "sub": [
+          "This creates a dilemma.",
+          "Either surface dyslexia combines the two routes in a more complicated way, or non-lexical reading is itself a more complicated process."
+        ],
+        "end": "So the kinds of errors patients make, not just their accuracy, challenge a strict two-route split."
+      }
+    ],
+    "questions": [
+      {"q": "What is acquired phonological dyslexia?", "a": "Acquired phonological dyslexia is a reading difficulty caused by brain injury in which pseudoword naming is specifically impaired. Familiar words, including exception words, are read relatively well. Cacciopo van Vliet and colleagues (2003) found two patients who read real words almost perfectly but gave plausible nonword pronunciations far less often.", "refs": ["m3-reading1-p019"], "tier": "Possible"},
+      {"q": "What is acquired surface dyslexia, and what errors do the patients make?", "a": "Acquired surface dyslexia is a reading difficulty after brain injury that specifically affects irregular words. The patients make regularization errors, reading DEAF as “deef” and SHOE as “show”. Their pseudoword and regular word reading is relatively spared, so they are relying on decoding.", "refs": ["m3-reading1-p020", "m3-reading1-p021"], "tier": "Possible"},
+      {"q": "Why are double dissociations so powerful?", "a": "Double dissociations are powerful because the pattern of impairment reverses between patients. If one task were just harder, brain damage would hurt it more in everyone. Phonological dyslexia hurts pseudowords while surface dyslexia hurts exception words, so the two tasks must rely on separable processes.", "refs": ["m3-reading1-p022", "m3-reading1-p023"], "tier": "Possible"},
+      {"q": "Where would a dual-route model locate the damage in each dyslexia?", "a": "Phonological dyslexia results from specific damage to the grapheme-phoneme conversion module. Pseudowords have no stored word, so they cannot be read once conversion fails. Surface dyslexia results from damage to the input or output logogens or their connections, so exception words must go through conversion and come out regularized.", "refs": ["m3-reading1-p023"], "tier": "Possible"},
+      {"q": "How did Patterson (1981) complicate the two-route account?", "a": "Patterson (1981) noted that surface dyslexia errors, which should come from a purely non-lexical route, still showed word influences. One patient read incense as “increase”, a real word, instead of a letter-based nonword. So either the patients combine the routes in a complicated way, or non-lexical reading is itself more complicated.", "refs": ["m3-reading1-p024"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-drc-model",
+    "title": "The Dual Route Cascaded (DRC) model",
+    "tier": "Possible",
+    "blocks": [
+      {
+        "refs": ["m3-reading2-p002"],
+        "main": "**Dual-route models propose two reading routes to explain a set of reading findings.** Pseudoword reading is fast and automatic, and word reading is faster still. Reading is fastest for high-frequency words. Regularity affects accuracy and response time, and it interacts with frequency. Pseudoword and irregular word reading also dissociate in acquired dyslexia.",
+        "sub": [
+          "So the model has a **sublexical route** for **grapheme-to-phoneme conversion**, which is decoding.",
+          "It also has a **lexical route** for recognizing real words."
+        ],
+        "end": "So the two routes are meant to cover all of these findings together."
+      },
+      {
+        "refs": ["m3-reading2-p003", "m3-reading2-p004"],
+        "main": "**The DRC joins an interactive lexical route to a separate rule route.** **Coltheart and colleagues (2001)** built the **Dual Route Cascaded** model. Its lexical part is just the Interactive Activation model, with an **orthographic lexicon** (written word forms) and a **phonological lexicon** (spoken word forms). Both lexicons are independent of meaning, so semantics is not implemented.",
+        "sub": [
+          "The **Grapheme-Phoneme Rule System** applies its rules serially, letter by letter.",
+          "It is not affected by word frequency in any way, and it gets no feedback.",
+          "It meets the lexical route only in the **phoneme response buffer**, where both routes connect to the same output units and can compete."
+        ],
+        "end": "So the two routes work separately and only meet at the output."
+      },
+      {
+        "refs": ["m3-reading2-p005", "m3-reading2-p006"],
+        "main": "**GPC rules map written units onto phonemes, and they are fixed and categorical.** Some rules cover single letters, while others cover multiletter units or apply only in certain contexts. **Meta-rules** decide which rule applies, so larger-unit rules supersede smaller-unit rules. The rules are often based on the most frequent pronunciation of a letter or letter group.",
+        "sub": [
+          "The rule for -OUGH has weaker statistical support than the rule for -EIGH.",
+          "Even so, both are rules, and they behave the same way during processing."
+        ],
+        "end": "So the rules use statistics to pick a pronunciation but ignore how strong that support is."
+      },
+      {
+        "refs": ["m3-reading2-p007", "m3-reading2-p008"],
+        "main": "**The DRC's simple rules miss many cases, and this was seen as a feature, not a bug.** Better rules could take statistics into account more flexibly, and the rules were revised several times to improve nonword reading. But the argument is that people do not use finely tuned rules for the GPC route. If they did, surface dyslexia would not show regularization errors, and low-frequency exception words would not slow down.",
+        "sub": [
+          "The GPC route is designed to be **informationally encapsulated**, meaning it works without word knowledge or other information.",
+          "This mirrors parsing strategies like **late closure** and **minimal attachment**, which used syntactic complexity only and not world knowledge.",
+          "We can observe the GPC route in regularization errors and when people are forced to name pseudowords."
+        ],
+        "end": "So the rules are kept simple on purpose, to reproduce the errors people make."
+      },
+      {
+        "refs": ["m3-reading2-p009", "m3-reading2-p010"],
+        "main": "**The DRC simulates many reading phenomena, sometimes by going to extremes.** **Coltheart and colleagues (2001)** listed many effects in visual word recognition that the DRC can simulate. To model **lexical decision**, the model first reduced letter-word inhibition. That change makes the task harder, but without it the results make no sense.",
+        "sub": [
+          "The model answers yes if any single word's activity passes a threshold, or if total activity in the orthographic lexicon passes another threshold.",
+          "It answers no if neither criterion is met by a deadline, and the thresholds and deadline change during the trial."
+        ],
+        "end": "So fitting lexical decision added extra decision assumptions beyond the two routes."
+      },
+      {
+        "refs": ["m3-reading2-p011"],
+        "main": "**The key feature of the DRC is modularity.** The GPC route and the lexical route each have their own processing assumptions. They are informationally encapsulated from one another. They are also **domain-specific**, so the GPC rules take only letters as input and pass phoneme activations to the phoneme system.",
+        "end": "So the DRC claims more than two pathways, because it limits what each route uses and how they communicate."
+      }
+    ],
+    "questions": [
+      {"q": "What findings motivate dual-route models of reading?", "a": "Dual-route models are motivated by a set of reading findings. Pseudoword reading is fast and automatic, word reading is faster, and high-frequency words are fastest. Regularity matters and interacts with frequency, and pseudoword and irregular word reading dissociate in acquired dyslexia. So the model proposes a sublexical decoding route and a lexical route for real words.", "refs": ["m3-reading2-p002"], "tier": "Possible"},
+      {"q": "What are the key features of the DRC's Grapheme-Phoneme Rule System?", "a": "The rules are activated serially, letter by letter, and they are not affected by word frequency in any way. The rule system gets no feedback. It interacts with the lexical route only in the phoneme response buffer, where both routes share output units and can compete.", "refs": ["m3-reading2-p004"], "tier": "Possible"},
+      {"q": "Why were the DRC's simple, imperfect rules seen as a feature rather than a bug?", "a": "The simple rules were a feature because they reproduce the errors people make. If people used finely tuned rules, surface dyslexia would not show regularization errors. Low-frequency exception words would also not slow down. So the DRC argues that people's GPC route really is this simple.", "refs": ["m3-reading2-p007"], "tier": "Possible"},
+      {"q": "In what senses is the DRC modular?", "a": "The DRC is modular in three senses. Each route has its own processing assumptions. The routes are informationally encapsulated from one another. They are domain-specific, so the GPC rules take only letters as input and pass phoneme activations to the phoneme system.", "refs": ["m3-reading2-p011", "m3-reading2-p008"], "tier": "Possible"},
+      {"q": "How do the GPC rules use statistics, and how do they still differ from a probabilistic account?", "a": "The GPC rules are often based on the most frequent pronunciation of a letter or letter group. Once chosen, though, each rule is fixed and categorical. So -OUGH, with weak statistical support, and -EIGH, with strong support, behave the same way during processing. A probabilistic account would instead give each pronunciation its own strength.", "refs": ["m3-reading2-p006"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-triangle-model",
+    "title": "The triangle (PDP) model of reading",
+    "tier": "On the review deck",
+    "blocks": [
+      {
+        "refs": ["m3-reading2-p012", "m3-reading2-p013", "m3-review-p008"],
+        "main": "**Seidenberg and McClelland (1989) treated reading skill as emerging from learned mappings among spelling, sound and meaning.** Their **PDP model** (parallel distributed processing network) trained a simple associative network. It learned the mapping from **orthography** (spelling) to **phonology** (sound) in a single route. **Rules** are just generalizations from many words, not a separate process.",
+        "sub": [
+          "The **lexicon** is also distributed. Some whole-word information is stored in the orthography to phonology mappings, and some in other parts of the system.",
+          "The research strategy differs too. It explains reading with **domain-general learning mechanisms** instead of reverse-engineering the system from adult and patient data."
+        ],
+        "end": "So one learned system holds both general patterns and word-specific knowledge."
+      },
+      {
+        "refs": ["m3-reading2-p014", "m3-review-p009"],
+        "main": "**The model captured the frequency by regularity interaction without separate processes.** Regular words are consistent with statistical patterns from many other words. Exception words are inconsistent with those patterns. Frequency also affects how well each word is learned.",
+        "sub": [
+          "So highly frequent words are less affected by inconsistency with other words.",
+          "A low-frequency exception gets little training of its own and no support from other words, so it is hardest."
+        ],
+        "end": "So the interaction comes from learning, not from two routes."
+      },
+      {
+        "refs": ["m3-reading2-p015"],
+        "main": "**Regularity is redefined as consistency, which counts friends and enemies.** **Friends** are similar spellings with the same pronunciation, and **enemies** are similar spellings with a different one. A **regular consistent** word like LATE or DUST has many friends and no enemies. A **regular inconsistent** word like GAVE or MINT has many friends but at least one enemy, such as HAVE or PINT.",
+        "sub": [
+          "An **ambiguous** word has about equal numbers of friends and enemies, as in DOWN and KNOWN or POUR and SOUR.",
+          "An **exception** like HAVE or PINT has few if any friends and many enemies."
+        ],
+        "end": "So regularity becomes a matter of degree."
+      },
+      {
+        "refs": ["m3-reading2-p016", "m3-reading2-p017", "m3-review-p010", "m3-review-p011"],
+        "main": "**In principle, nonwords are named with the same weights used for words.** Generalization uses the same statistical patterns that produce regularity effects. In practice, though, the model's nonword accuracy was not very good. This is a classic case of ambiguity in model evaluation.",
+        "sub": [
+          "One possibility is that the theory was wrong, so one associative mechanism cannot read both nonwords and exceptions.",
+          "The other possibility is that the problem was specific to the way the model was made."
+        ],
+        "end": "So a failed simulation does not say by itself whether the theory or the implementation failed."
+      },
+      {
+        "refs": ["m3-reading2-p018", "m3-reading2-p019", "m3-review-p012", "m3-review-p013"],
+        "main": "**The poor nonword reading came from poor phonological representations.** Many studies link **decoding** (nonword reading) with **phonological processing**. Seidenberg and McClelland used odd phonological representations called **Wickelfeatures**. **Plaut and colleagues (1996)** improved the phonological representations and got better performance on nonwords.",
+        "sub": [
+          "Generalization depends on **similarity**, a principle inherited from behaviorism.",
+          "Poor representations like Wickelfeatures fail to capture the similarity space of words in the language.",
+          "Word-specific information is more robust to poor representations, because it does not depend entirely on generalization."
+        ],
+        "end": "So the failure was at least partly in the implementation, not the single-route theory."
+      },
+      {
+        "refs": ["m3-reading2-p020", "m3-review-p014"],
+        "main": "**Harm and Seidenberg (1999) added noise to the phonological representations and reproduced findings on developmental dyslexia.** Adding **noise** makes the sound representations less reliable. The model then replicated a link between the degree of phonological deficit and **phonological dyslexia**. It also replicated the relative sparing of word recognition.",
+        "end": "So nonword reading can fail without any separate nonword mechanism."
+      },
+      {
+        "refs": ["m3-reading2-p021", "m3-reading2-p022"],
+        "main": "**Damaging semantics in the triangle model produces surface dyslexia.** **Plaut and colleagues (1996)** added a simplified **semantic system** to the model. **Lesions** (controlled damage to the model) in semantics caused a specific impairment on exception words. A later model by **Harm and Seidenberg (2004)** implemented featural semantics and simulated the mapping of spelling to meaning.",
+        "sub": [
+          "This is not the dual-route model renamed, because semantics is directly involved instead of a lexicon independent of meaning.",
+          "The **OP** (orthography to phonology) and **SP** (semantics to phonology) mappings share the same processing assumptions and learning algorithm. Both are probabilistic.",
+          "The pathways interact over learning, so the OP pathway develops differently alongside the semantic pathway.",
+          "This lets the model capture that double dissociations are never entirely clean. Phonological dyslexics are not perfect on exception words, and surface dyslexics are not perfect on nonwords."
+        ],
+        "end": "So both sides of the double dissociation come from one interactive system."
+      }
+    ],
+    "questions": [
+      {"q": "How do PDP models differ from dual-route models in their assumptions and research strategy?", "a": "PDP models treat rules as generalizations learned from many words, not as a separate process. The lexicon is distributed, so word knowledge sits partly in the spelling to sound mappings and partly elsewhere. Their strategy is to explain reading with domain-general learning, instead of reverse-engineering the system from adult and patient data.", "refs": ["m3-reading2-p013", "m3-review-p008"], "tier": "On the review deck"},
+      {"q": "How did the PDP model capture the frequency by regularity interaction?", "a": "The model captured it through learning, without separate processes for frequency and regularity. Regular words get support from statistical patterns shared with many other words, while exception words conflict with those patterns. Frequency also affects how well a word is learned, so highly frequent words are less affected by being inconsistent.", "refs": ["m3-reading2-p014", "m3-review-p009"], "tier": "On the review deck"},
+      {"q": "Why was the early model's poor nonword accuracy ambiguous, and how was it resolved?", "a": "It was ambiguous because the failure could mean the theory was wrong or the model was badly made. The model used Wickelfeatures, which fail to capture the similarity space of words. Plaut and colleagues (1996) improved the phonological representations and got better nonword performance, so the problem was at least partly the implementation.", "refs": ["m3-reading2-p017", "m3-reading2-p018", "m3-review-p011", "m3-review-p012"], "tier": "On the review deck"},
+      {"q": "What did Harm and Seidenberg (1999) do, and what did they find?", "a": "Harm and Seidenberg (1999) manipulated the amount of noise in the model's phonological representations. The model then replicated key findings on developmental dyslexia. The degree of phonological deficit was linked to phonological dyslexia, and word recognition was relatively spared.", "refs": ["m3-reading2-p020", "m3-review-p014"], "tier": "On the review deck"},
+      {"q": "Why is the triangle model not just the dual-route model renamed?", "a": "The triangle model involves semantics directly, while the dual-route lexicon is independent of meaning. Its OP and SP mappings share the same processing assumptions and learning algorithm, and both are probabilistic. The pathways interact during learning, so the model captures that double dissociations are never entirely clean.", "refs": ["m3-reading2-p022"], "tier": "Possible"},
+      {"q": "What are friends and enemies, and how do they redefine regularity?", "a": "Friends are similar spellings with the same pronunciation, and enemies are similar spellings with a different one. A regular consistent word like LATE has many friends and no enemies. GAVE is regular but inconsistent because HAVE is an enemy. An exception like PINT has few friends and many enemies, so regularity becomes a matter of degree.", "refs": ["m3-reading2-p015"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-model-tests",
+    "title": "Testing the reading models against patients",
+    "tier": "Possible",
+    "blocks": [
+      {
+        "refs": ["m3-reading2-p023", "m3-reading2-p024", "m3-reading2-p025"],
+        "main": "**The triangle model predicts a strong association between semantic ability and exception word reading.** **Woollams and colleagues (2007)** tested patients with **semantic dementia**, a progressive condition. Patients with poorer semantic scores read low-frequency exception words less accurately, as the model predicted. A few patients sat far from the trend, so the model misses a few data points.",
+        "sub": [
+          "Woollams and colleagues treated these as **statistical outliers**, the way outliers are normally treated when judging a model's fit.",
+          "Because the condition is progressive, they could follow patients as semantic ability declined.",
+          "In most cases, when a patient's semantic ability declined, exception word reading declined too.",
+          "Repeated observations also showed **regression to the mean**, which is the pattern idiosyncratic outliers would show."
+        ],
+        "end": "So the association held, and the apparent dissociations looked like outliers."
+      },
+      {
+        "refs": ["m3-reading2-p026", "m3-reading2-p027"],
+        "main": "**Coltheart and colleagues (2009) fit the same patients with the DRC by searching many model patients.** They generated 40,000 model patients that varied in the integrity of the lexical route and the integrity of the GPC rules. For each real patient, they picked the model run that best fit that patient. This produced an excellent fit to the data.",
+        "sub": [
+          "A better fit can still be a bad thing in this case.",
+          "With so much freedom, the model can match the data after the fact without predicting the pattern from its assumptions."
+        ],
+        "end": "So goodness of fit means less when it comes from great flexibility."
+      },
+      {
+        "refs": ["m3-reading2-p028", "m3-reading2-p029", "m3-reading2-p030"],
+        "main": "**Both models cover the same basic reading facts but explain them differently.** Both cover fast decoding, the difficulty of words that break typical spelling patterns, the interaction with frequency, and dissociations in patients. For pseudowords and regularity, the triangle model uses statistical regularities learned over many words. The DRC uses a dedicated GPC rule system.",
+        "sub": [
+          "For frequency, the triangle model says more exposure to a word means better learning for that word. The DRC uses distinct input and output lexicons, separate from the GPC rules.",
+          "For phonological dyslexia, the triangle model points to damage in phonological processing generally. The DRC points to damage in the GPC route.",
+          "For surface dyslexia, the triangle model points to damage in semantic processes generally. The DRC points to damage in the lexical route.",
+          "Dual-route models are motivated by double dissociations, so independent impairments mean independent processes.",
+          "Statistical learning models instead reveal **associations**. Phonology supports spelling to sound generalization, and semantics supports words where that generalization is ambiguous."
+        ],
+        "end": "So the key contrast is dissociations against associations."
+      }
+    ],
+    "questions": [
+      {"q": "What did Woollams and colleagues (2007) find about semantics and exception word reading?", "a": "Woollams and colleagues (2007) found a strong association between semantic ability and exception word reading in semantic dementia, as the triangle model predicted. Patients with poorer semantic scores read low-frequency exception words less accurately. As each patient's semantic ability declined over time, exception word reading usually declined too.", "refs": ["m3-reading2-p023", "m3-reading2-p025"], "tier": "Possible"},
+      {"q": "How did Woollams and colleagues handle patients who did not fit the trend?", "a": "They treated those patients as statistical outliers, the way outliers are normally treated when judging a model's fit. Because semantic dementia is progressive, they retested patients over time. Unusual scores moved back toward the trend, which is the regression to the mean that idiosyncratic outliers would show.", "refs": ["m3-reading2-p024", "m3-reading2-p025"], "tier": "Possible"},
+      {"q": "Why would anyone argue that a better fit to the data is a bad thing in the Coltheart and colleagues (2009) simulation?", "a": "A better fit is a bad thing here because it came from great flexibility, not from prediction. Coltheart and colleagues generated 40,000 model patients and picked the best match for each real patient after seeing the data. So the fit says little about whether the model's assumptions explain why the pattern occurs.", "refs": ["m3-reading2-p026", "m3-reading2-p027"], "tier": "Possible"},
+      {"q": "How do the triangle and dual-route models explain phonological and surface dyslexia?", "a": "For phonological dyslexia, the DRC points to damage in the GPC route, while the triangle model points to damage in phonological processing generally. For surface dyslexia, the DRC points to damage in the lexical route, while the triangle model points to damage in semantic processes generally.", "refs": ["m3-reading2-p029", "m3-reading2-p030"], "tier": "Possible"},
+      {"q": "What is the key contrast between dual-route and statistical learning models?", "a": "Dual-route models are motivated by double dissociations. Pseudowords and exception words can be impaired independently, so they are modeled as independent processes. Statistical learning models instead reveal associations, because phonology supports spelling to sound generalization and semantics supports words where that generalization is ambiguous.", "refs": ["m3-reading2-p030"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-words-and-rules",
+    "title": "Inflectional morphology and the Words and Rules account",
+    "tier": "On the review deck",
+    "blocks": [
+      {
+        "refs": ["m3-morphology-p002", "m3-morphology-p003"],
+        "main": "**Morphology is generative, so speakers can form words they never memorized.** At some point English had no noun “generative”, only the verb “to generate”. English has a process for turning verbs into nouns, which is **derivational morphology**. **Inflectional morphology** adds grammatical information, and in English that mostly means the plural and the past tense.",
+        "sub": [
+          "**Jean Berko Gleason (1958)** used the **wug test** to measure how readily people extend inflections to new words, and children do this too.",
+          "A child shown one WUG and then two says “two WUGS”, a form the child has never heard."
+        ],
+        "end": "So people apply inflectional patterns to brand-new words."
+      },
+      {
+        "refs": ["m3-morphology-p004"],
+        "main": "**The English past tense has regular and irregular forms.** Regular verbs add -ed, as in show-showed, bake-baked and wade-waded. Made-up verbs follow the same pattern, as in blick-blicked, trog-trogged and wumble-wumbled. Irregular verbs do not, as in go-went, take-took, eat-ate and sleep-slept.",
+        "end": "So the past tense raises the same question as reading, about a general pattern and its exceptions."
+      },
+      {
+        "refs": ["m3-morphology-p005", "m3-morphology-p006", "m3-review-p015"],
+        "main": "**The Words and Rules account says regulars and irregulars use separate processes and formats.** **Pinker and colleagues** proposed that **regulars** come from a **symbolic rule** such as add -ed. **Irregulars** are **lexicalized** (stored with the word) within an **associative network**. **Pinker and Ullman (2002)** drew this as a dual-route model for the past tense.",
+        "sub": [
+          "The **lexicon** looks up a stored form, such as held for hold, using declarative memory.",
+          "The **grammar** combines walk with the suffix -ed, using the procedural system.",
+          "A **blocking** link lets a retrieved irregular stop the regular form."
+        ],
+        "end": "So, like dual-route reading, it separates word-specific knowledge from a productive operation."
+      },
+      {
+        "refs": ["m3-morphology-p007", "m3-morphology-p008", "m3-review-p016", "m3-review-p017"],
+        "main": "**The past-tense model looks like the reading model, but it has different origins.** The reading dual-route model came from neuropsychological double dissociations. Pinker and colleagues were motivated instead by generative linguistics, which was mostly about categorical, symbolic, rule-based grammars. Those rules often have exceptions, and linguists would often just leave the exceptions out of the grammar.",
+        "sub": [
+          "The dual-process model handles the exceptions in a second process, so the grammar stays elegant, symbolic and categorical.",
+          "This second process has all the properties the rule route lacks.",
+          "It is word-specific, sensitive to frequency of occurrence, and sensitive to **phonological similarity**, as in keep-kept, weep-wept and leap-leapt."
+        ],
+        "end": "So the architecture came from a theory of grammar, not from patient data."
+      }
+    ],
+    "questions": [
+      {"q": "What is the wug test, and what does it reveal?", "a": "The wug test, from Jean Berko Gleason (1958), asks people to inflect a made-up word. A child shown one WUG and then two says “two WUGS”, a form the child never heard. So people, including children, readily extend inflectional patterns to new words.", "refs": ["m3-morphology-p003"], "tier": "Possible"},
+      {"q": "What does the Words and Rules account claim about regular and irregular past tense?", "a": "The Words and Rules account claims that regulars and irregulars use separate processes and representational formats. Regulars come from a symbolic rule such as add -ed. Irregulars are stored as words within an associative network, and a stored irregular blocks the regular form.", "refs": ["m3-morphology-p005", "m3-morphology-p006"], "tier": "On the review deck"},
+      {"q": "How is Pinker and Ullman's (2002) past-tense model similar to the reading dual-route model, and how is it different?", "a": "Both models separate word-specific knowledge from a productive operation. In reading, stored words sit beside GPC rules, and in the past tense, stored irregulars sit beside an add -ed rule. They differ in origin, because the reading model came from neuropsychological double dissociations. The past-tense model came from generative linguistics, with its categorical, rule-based grammars.", "refs": ["m3-morphology-p006", "m3-morphology-p007", "m3-review-p015", "m3-review-p016"], "tier": "On the review deck"},
+      {"q": "What properties did the exception process have in the dual-process model?", "a": "The exception process had all the properties the rule route did not. It was word-specific, or lexical. It was sensitive to frequency of occurrence. It was sensitive to phonological similarity, as in keep-kept, weep-wept and leap-leapt.", "refs": ["m3-morphology-p008", "m3-review-p017"], "tier": "On the review deck"},
+      {"q": "Why did the dual-process model put exceptions in a separate process?", "a": "It put exceptions in a separate process to keep the grammar elegant, symbolic and categorical. Generative grammars were built from rules, and those rules often have exceptions. Rather than add messy machinery, linguists often left exceptions out of the grammar, so a second process handles them.", "refs": ["m3-morphology-p007", "m3-morphology-p008"], "tier": "On the review deck"}
+    ]
+  },
+  {
+    "id": "m3-past-tense-network",
+    "title": "Rumelhart and McClelland's past-tense network",
+    "tier": "On the review deck",
+    "blocks": [
+      {
+        "refs": ["m3-morphology-p009", "m3-review-p018"],
+        "main": "**Rumelhart and McClelland (1987) proposed that the past tense is all associative learning.** Their model has no add -ed rule. A fixed encoding network turns the sound of the root into **Wickelfeatures**, which are units that stand for sound patterns. A **pattern associator** with modifiable connections maps them onto past-tense Wickelfeatures. A decoding network then turns those features into the past-tense form.",
+        "end": "So regulars and irregulars are learned in one network."
+      },
+      {
+        "refs": ["m3-morphology-p010", "m3-review-p019"],
+        "main": "**Children's past-tense learning is U-shaped, because they get worse before they get better.** Some frequent irregular verbs are learned quite early, such as run-ran. Then, spontaneously, children begin producing **regularizations** such as runned. Eventually they start producing the correct forms again.",
+        "sub": [
+          "Because this was one of the first learning models of a language process, its focus was on capturing this kind of developmental pattern."
+        ],
+        "end": "So a theory has to explain the whole path, from right to wrong to right."
+      },
+      {
+        "refs": ["m3-morphology-p011", "m3-review-p020"],
+        "main": "**The Words and Rules account explains the U as a series of distinct stages and processes.** Early correct forms are just **imitations** and do not use the same mechanisms as adult processing. When the rule is first learned, it is applied to all cases as the child's **best hypothesis** for every verb. Over time, exceptions are learned associatively, one by one, and the **blocking process** develops.",
+        "end": "So overregularization is the new rule applied too widely before the stored exceptions can block it."
+      },
+      {
+        "refs": ["m3-morphology-p012", "m3-review-p021"],
+        "main": "**Rumelhart and McClelland's model produces the U through changes in its input.** The training set was based on data about input to children, which changes over time. Early on, irregular verbs predominate, because the highest-frequency verbs such as GIVE, TAKE, HAVE and GO tend to be irregular. As the vocabulary expands to include more regular forms, the model reorganizes to capture those regularities.",
+        "sub": [
+          "That reorganizing interferes with some of the early-learned irregular forms.",
+          "With more training, the correct irregular forms win again."
+        ],
+        "end": "So one network shows a U without ever learning a rule."
+      },
+      {
+        "refs": ["m3-morphology-p013", "m3-morphology-p014", "m3-review-p022", "m3-review-p023"],
+        "main": "**A wug test on the model generalized well at the level of features but produced some odd words.** The model was trained on a small number of verbs, so real verbs it had never seen could serve as a wug test. It got most Wickelfeatures right for these unfamiliar verbs. Many outputs were correct, such as shaped, sipped and typed.",
+        "sub": [
+          "A few outputs were unlike anything people say, such as membled for mail and toureder for tour.",
+          "The authors admitted that humans are unlikely to make these errors. They suggested a cleanup network that had not been built."
+        ],
+        "end": "So getting most features right is not the same as producing words people would say."
+      },
+      {
+        "refs": ["m3-morphology-p015"],
+        "main": "**Prince and Pinker (1988) argued that feature-only representations blend competing past tenses.** With features alone, it is hard to represent two things at once. In the model, the regular pattern and smaller subregularities all compete to activate past-tense Wickelfeatures. For sing, features for several possible forms can be active together, so the output can be a hybrid.",
+        "end": "So bizarre blends like membled come from the representation itself."
+      }
+    ],
+    "questions": [
+      {"q": "What is U-shaped learning?", "a": "U-shaped learning is when children get worse before they get better. They learn some frequent irregular verbs early, like run-ran. Then they spontaneously start producing regularizations like runned, and eventually they produce the correct forms again.", "refs": ["m3-morphology-p010", "m3-review-p019"], "tier": "On the review deck"},
+      {"q": "Why is U-shaped learning important to the Words and Rules approach?", "a": "U-shaped learning matters because the account reads each part of the U as a different stage and process. Early correct forms are just imitations. When the rule is learned, it is applied to every verb as the best hypothesis, which produces runned. Over time, exceptions are learned one by one and the blocking process develops, so ran returns.", "refs": ["m3-morphology-p011", "m3-review-p020"], "tier": "On the review deck"},
+      {"q": "How did Rumelhart and McClelland's model produce U-shaped learning without a rule?", "a": "The model produced the U because its training input changed over time, like the input to children. Early on, frequent irregular verbs predominated, so the model learned them. As more regular verbs were added, the model reorganized to capture the regular pattern, which interfered with some early irregulars.", "refs": ["m3-morphology-p012", "m3-review-p021"], "tier": "On the review deck"},
+      {"q": "How did Rumelhart and McClelland test their model's generalization, and what went wrong?", "a": "They gave the model real verbs it had never been trained on, which worked as a wug test. It got most Wickelfeatures right and produced many correct forms like shaped and typed. But a few outputs were bizarre, such as membled for mail and toureder for tour, which humans are unlikely to produce.", "refs": ["m3-morphology-p013", "m3-morphology-p014", "m3-review-p022", "m3-review-p023"], "tier": "On the review deck"},
+      {"q": "What was Prince and Pinker's (1988) criticism of the model?", "a": "Prince and Pinker (1988) argued that feature-only representations blend competing past tenses into hybrids. With features alone, the model cannot keep two candidate forms separate. So features from different forms of a verb can be active at once, and outputs like membled result.", "refs": ["m3-morphology-p015"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-past-tense-dissociation",
+    "title": "Phonology, semantics and past-tense dissociations",
+    "tier": "On the review deck",
+    "blocks": [
+      {
+        "refs": ["m3-morphology-p016", "m3-morphology-p017", "m3-review-p024", "m3-review-p025"],
+        "main": "**Joanisse and Seidenberg (1999) proposed that phonology supports rule-like forms and semantics supports irregular forms.** Their model links **speech input**, **semantics** and **speech output** in one system. **Rule-like generalization** is supported by phonological representations. **Irregular** forms require greater support from semantics.",
+        "sub": [
+          "The target phenomenon was the dissociation between irregular and nonword past tense in neuropsychological data."
+        ],
+        "end": "So one system, not two routes, should produce both patient patterns."
+      },
+      {
+        "refs": ["m3-morphology-p018", "m3-morphology-p019", "m3-review-p026"],
+        "main": "**Broca's aphasia patients have problems with regular morphology, especially nonwords.** These patients have injury to left anterior brain regions and poor speech production. They do worst on nonwords such as wug-wugged and blick-blicked, and regulars are a little worse than irregulars.",
+        "sub": [
+          "When phonology is impaired in the model, its ability to compute past tense forms drops.",
+          "Nonwords come out worse than regulars and irregulars, and regulars are numerically worse than irregulars."
+        ],
+        "end": "So a phonological problem can look like a loss of the past-tense rule."
+      },
+      {
+        "refs": ["m3-morphology-p020", "m3-morphology-p021", "m3-review-p027"],
+        "main": "**Another group of patients is poor on irregulars.** Wernicke's and Alzheimer's patients show this pattern. So do **anomic** patients (patients who have trouble finding words) with injury to inferior or middle temporal regions. Their irregular past tense is clearly worse than their regular and nonword past tense.",
+        "sub": [
+          "When semantics is impaired in the model, irregulars become worse than regulars and nonwords.",
+          "Nonwords are a bit worse than regulars."
+        ],
+        "end": "So damage to semantics reproduces the other side of the dissociation."
+      },
+      {
+        "refs": ["m3-morphology-p022"],
+        "main": "**Better-controlled patient studies weaken the double dissociation.** **Bird, Patterson, Lambon-Ralph, McClelland and Seidenberg (2003)** found that the regular and irregular difference in Broca's patients shrinks when items are adequately controlled for phonology. **Patterson, Lambon-Ralph, Hodges and McClelland (2001)** found that irregular impairment in semantic dementia correlates strongly with the severity of the semantic deficit.",
+        "end": "So the patient patterns track phonology and semantics, not rules and words."
+      },
+      {
+        "refs": ["m3-morphology-p023"],
+        "main": "**This account mirrors the triangle model of dyslexia.** Phonological representations support generalization, which comes from statistical learning about patterns in the mapping from present to past. Impaired phonological representations therefore hurt these generalizations. Semantic representations support idiosyncratic forms that deviate from the overwhelmingly regular add -ed pattern.",
+        "sub": [
+          "Some irregular forms can use sub-patterns shared with similar verbs, so they are likely to be spared."
+        ],
+        "end": "So in both reading and the past tense, phonology carries the general pattern and semantics carries the exceptions."
+      }
+    ],
+    "questions": [
+      {"q": "What is the theoretical premise of Joanisse and Seidenberg's (1999) model?", "a": "The premise is that rule-like generalization is supported by phonological representations, while irregular forms require greater support from semantics. The model links speech input, semantics and speech output in one system. So regular and irregular forms differ in how much they rely on sound and meaning, not in which route they use.", "refs": ["m3-morphology-p016", "m3-review-p024"], "tier": "On the review deck"},
+      {"q": "What patient dissociation was Joanisse and Seidenberg's model built to explain?", "a": "The model was built to explain the dissociation between irregular and nonword past tense in neuropsychological data. Broca's aphasia patients do worst on nonwords like wug-wugged. Wernicke's, Alzheimer's and anomic patients do worst on irregulars. One system has to produce both patterns.", "refs": ["m3-morphology-p017", "m3-review-p025"], "tier": "On the review deck"},
+      {"q": "What happens when phonology is damaged in the model, and which patients does it match?", "a": "When phonology is damaged, the model's ability to compute past tense forms drops, and nonwords come out worst. Regulars are numerically worse than irregulars. This matches Broca's aphasia patients, who have problems with regular morphology, especially nonwords.", "refs": ["m3-morphology-p018", "m3-morphology-p019", "m3-review-p026"], "tier": "On the review deck"},
+      {"q": "What happens when semantics is damaged in the model, and which patients does it match?", "a": "When semantics is damaged, irregulars become worse than regulars and nonwords, and nonwords are a bit worse than regulars. This matches Wernicke's and Alzheimer's patients and anomic patients with inferior or middle temporal injury. Those patients are poor on irregulars.", "refs": ["m3-morphology-p020", "m3-morphology-p021", "m3-review-p027"], "tier": "On the review deck"},
+      {"q": "What other evidence weakens the past-tense double dissociation?", "a": "Bird, Patterson, Lambon-Ralph, McClelland and Seidenberg (2003) found that the regular and irregular difference in Broca's patients shrinks when items are controlled for phonology. Patterson, Lambon-Ralph, Hodges and McClelland (2001) found that irregular impairment in semantic dementia correlates strongly with semantic deficit severity. So the patterns follow phonology and semantics.", "refs": ["m3-morphology-p022"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-sli",
+    "title": "Specific language impairment and the past tense",
+    "tier": "Possible",
+    "blocks": [
+      {
+        "refs": ["m3-morphology-p024"],
+        "main": "**Specific language impairment (SLI) is impaired language development with normal performance and nonverbal IQ.** SLI affects grammar, including morphology and syntax. It also affects phonology, reading, working memory and speech perception.",
+        "end": "So SLI reaches beyond grammar, and a theory has to explain those other problems too."
+      },
+      {
+        "refs": ["m3-morphology-p025"],
+        "main": "**Earlier claims said the SLI deficit was specific to rules.** Past tense deficits are a **sine qua non** (essential feature) of SLI. Gopnik, van der Lely, Pinker, Ullman and Clahsen argued that the deficit was specific to rules. If so, SLI could be evidence that language acquisition requires **domain-specific** mechanisms.",
+        "sub": [
+          "A deficit in learning rules predicts problems with regulars and nonwords.",
+          "It predicts no problem with irregulars, because they are stored words."
+        ],
+        "end": "So the critical test is whether irregulars are spared."
+      },
+      {
+        "refs": ["m3-morphology-p026"],
+        "main": "**People with SLI were poor on all three kinds of past tense.** **van der Lely and Ullman (2001)** compared an SLI group with same-age controls. The SLI group scored low on regulars, slightly lower on irregulars, and lowest on nonwords. The controls scored much higher on all three.",
+        "end": "So irregulars were not spared, which the rule-deficit account did not predict."
+      },
+      {
+        "refs": ["m3-morphology-p027", "m3-morphology-p028", "m3-morphology-p029"],
+        "main": "**A model with weakened phonology learns every past-tense form poorly, and nonwords worst.** With a severe or weaker phonological deficit, the model scored lowest on nonwords and highest on regulars. The intact model did much better on every type. Phonology affects the development of all forms, and it is especially important for nonwords.",
+        "sub": [
+          "There are no special rules for the past tense, only mappings between phonology and semantics.",
+          "There is no separate lexicon that stores the exceptions, so rule and exception only roughly describe the system.",
+          "Irregular forms are associated with semantic processing, and wug test performance is associated with phonological processing."
+        ],
+        "end": "So SLI past-tense problems can come from a phonological weakness, with no missing rule."
+      }
+    ],
+    "questions": [
+      {"q": "What is specific language impairment?", "a": "Specific language impairment is impaired language development with normal performance and nonverbal IQ. It affects grammar, meaning morphology and syntax. It also affects phonology, reading, working memory and speech perception.", "refs": ["m3-morphology-p024"], "tier": "Possible"},
+      {"q": "What does a rule-deficit account of SLI predict for regulars, irregulars and nonwords?", "a": "A rule-deficit account predicts problems with regulars and nonwords, because both need the rule. It predicts no problem with irregulars, because they are stored as words. If that held, SLI could be evidence that language acquisition requires domain-specific mechanisms.", "refs": ["m3-morphology-p025"], "tier": "Possible"},
+      {"q": "Did van der Lely and Ullman's (2001) data fit the rule-deficit prediction?", "a": "No, the data did not fit, because irregulars were not spared. The SLI group scored low on regulars, slightly lower on irregulars, and lowest on nonwords. Same-age controls scored much higher on all three types.", "refs": ["m3-morphology-p026"], "tier": "Possible"},
+      {"q": "Why does a phonological deficit hurt nonwords most?", "a": "A phonological deficit hurts nonwords most because nonwords depend on generalization, and phonology supports generalization. Every past tense uses phonology, so all forms suffer when it is weak. Real words can also get support from semantics, but a nonword has no meaning of its own, so it depends on the sound pattern alone.", "refs": ["m3-morphology-p027", "m3-morphology-p028"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-spatial-frames",
+    "title": "Linguistic relativity and spatial frames of reference",
+    "tier": "On the review deck",
+    "blocks": [
+      {
+        "refs": ["m3-thought-p002", "m3-thought-p003"],
+        "main": "**Linguistic relativity, also called the Sapir-Whorf Hypothesis, says that language shapes how people think.** **Sapir (1929)** wrote that different societies live in distinct worlds, not the same world with different labels. **Whorf (1956)** wrote that we dissect nature along lines laid down by our native language. Even Sapir and Whorf did not necessarily hold the strong position these quotations suggest.",
+        "sub": [
+          "In the first half of the 20th century, linguistics was part of anthropology, so treating language as part of culture seemed natural.",
+          "The tests here focus on space and on the relationship between space and time."
+        ],
+        "end": "So the broad claim becomes narrower questions about specific domains."
+      },
+      {
+        "refs": ["m3-thought-p004", "m3-thought-p005"],
+        "main": "**Saying where something is requires a frame of reference.** **Levinson and colleagues (2002)** describe three frames. An **intrinsic** frame uses the object's own orientation, as in the ball is at the chair's front. A **relative** frame uses the viewer, as in the ball is to the left of the chair from my viewpoint. An **absolute** frame uses fixed directions, as in the ball is north of the chair.",
+        "end": "So the same ball can be described in different ways without moving."
+      },
+      {
+        "refs": ["m3-thought-p006", "m3-thought-p007", "m3-thought-p008", "m3-review-p032", "m3-review-p033"],
+        "main": "**Most languages describe nearby space egocentrically, but Tzeltal uses absolute directions.** **Egocentric** descriptions use left, right, in front and behind relative to the speaker. **Tzeltal**, a Western Mayan language spoken in Chiapas, uses absolute directions instead. A small number of mostly unrelated languages, such as some in Bali and Queensland, do the same.",
+        "sub": [
+          "Tzeltal has a historically landmark-based system, where things are uphill or downhill from one another.",
+          "Uphill and downhill are used as cardinal directions, which makes this an absolute system.",
+          "New Yorkers use uptown and downtown like cardinal directions, but these do not work outside Manhattan, so that is literally a landmark-based system."
+        ],
+        "end": "So languages differ in which frame they habitually use for nearby space."
+      },
+      {
+        "refs": ["m3-thought-p009", "m3-thought-p010", "m3-review-p034", "m3-review-p035"],
+        "main": "**Dutch speakers solve a non-linguistic rotation task relatively, and Tzeltal speakers solve it absolutely.** **Majid and colleagues (2004)** used the **chips task**. A participant sees a card on one table, waits, and is rotated 180 degrees to a second table. A **relative** choice keeps the arrangement the same with respect to the person's body. An **absolute** choice keeps it the same with respect to the environment.",
+        "sub": [
+          "Dutch responses were overwhelmingly relative, and Tzeltal responses were mostly absolute.",
+          "A fancier version has people combine relations learned at two displays to make a spatial inference, and the groups differ in the same way."
+        ],
+        "end": "So each group's nonverbal choices match the frame its language prefers."
+      },
+      {
+        "refs": ["m3-thought-p011", "m3-thought-p012", "m3-thought-p014", "m3-review-p036", "m3-review-p037"],
+        "main": "**Li and Gleitman argued that the testing environment, not language, might drive the difference.** Tzeltal speakers were tested outside, with visible, familiar landmarks. Typical psychology lab studies are done in windowless rooms. With the blinds down, English speakers overwhelmingly used relative position, like the Dutch speakers.",
+        "sub": [
+          "With the blinds up and a view of the street, or outdoors, their relative preference was less pronounced.",
+          "If language groups are tested under different conditions, the language difference is **confounded** with the setting.",
+          "The relative bias might then be an **artifact** of the way psychology tests are typically run in universities."
+        ],
+        "end": "So a group difference may come from the setting rather than the language."
+      },
+      {
+        "refs": ["m3-thought-p015", "m3-thought-p016", "m3-review-p038"],
+        "main": "**Levinson and colleagues replied that Li and Gleitman made the rotation too obvious.** Li and Gleitman reduced memory load and the time and distance between stimulus and test. Their participants were also Ivy League students, who excel at figuring out what the experimenter wants. **Levinson and colleagues (2002)** re-ran the **animals in a row** experiment with Dutch college students under harder conditions. In this task, people remember a row of animals at one table and rebuild it at a second table after being turned around.",
+        "sub": [
+          "They added a fourth animal and a longer delay to increase memory load.",
+          "They moved the stimulus and response tables farther apart to make the rotation less salient.",
+          "Under these conditions, the bias toward relative framing remained."
+        ],
+        "end": "So the relative bias holds up across environments when memory matters and the purpose is not obvious."
+      },
+      {
+        "refs": ["m3-thought-p017", "m3-thought-p018"],
+        "main": "**The memory component muddies the interpretation.** For speakers of languages that use relative frames, the relative bias is robust to the environment under two conditions. There must be a significant memory component, and the experimenter's interest in rotation must not be obvious. Participants might recode the animals in working memory as a verbal list, such as “lion, tiger, bear”. They could then lay the list out from left to right.",
+        "end": "So a relative-looking answer might come from a remembered word sequence rather than from spatial thinking."
+      }
+    ],
+    "questions": [
+      {"q": "What are the intrinsic, relative and absolute frames of reference?", "a": "An intrinsic frame uses the object's own orientation, as in the ball is at the chair's front. A relative frame uses the viewer's position, as in the ball is to the left of the chair from my viewpoint. An absolute frame uses fixed directions, as in the ball is north of the chair.", "refs": ["m3-thought-p005"], "tier": "On the review deck"},
+      {"q": "How does Tzeltal describe space, and why is its system absolute?", "a": "Tzeltal describes nearby space with absolute directions instead of the speaker's left and right. Things are uphill or downhill from one another. The terms come from landmarks, but they are used as cardinal directions, so the system is absolute.", "refs": ["m3-thought-p006", "m3-thought-p007", "m3-review-p032", "m3-review-p033"], "tier": "On the review deck"},
+      {"q": "What is the chips task, and what did Dutch and Tzeltal speakers do?", "a": "The chips task is a non-linguistic test of relative and absolute coding of space, from Majid and colleagues (2004). A participant sees a card, waits, is rotated 180 degrees, and picks the matching card at a second table. Dutch speakers overwhelmingly chose the relative solution, and Tzeltal speakers mostly chose the absolute solution.", "refs": ["m3-thought-p009", "m3-review-p034"], "tier": "On the review deck"},
+      {"q": "What alternative explanation did Li and Gleitman propose, and what did they find?", "a": "Li and Gleitman proposed that testing conditions, not language, explained the difference. Tzeltal speakers were tested outside with familiar landmarks, while lab studies use windowless rooms. With the blinds down, English speakers overwhelmingly chose relative positions. With the blinds up or outdoors, their relative preference was less pronounced.", "refs": ["m3-thought-p011", "m3-thought-p012", "m3-review-p036", "m3-review-p037"], "tier": "On the review deck"},
+      {"q": "How did Levinson and colleagues respond to Li and Gleitman?", "a": "Levinson and colleagues argued that Li and Gleitman made the rotation too obvious. Li and Gleitman had reduced memory load and the time and distance between stimulus and test. They re-ran the task with Dutch students, adding a fourth animal, a longer delay and more distance between tables. Under these conditions, the relative bias remained.", "refs": ["m3-thought-p015", "m3-thought-p016", "m3-review-p038"], "tier": "On the review deck"},
+      {"q": "How does the importance of memory muddy the waters?", "a": "Memory muddies the waters because participants might store the animals as a verbal list, like “lion, tiger, bear”. They could then lay the list out from left to right, which looks like a relative response. So the relative bias could come from verbal recoding in working memory rather than from spatial thinking.", "refs": ["m3-thought-p017", "m3-thought-p018"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-time-space",
+    "title": "Thinking about time in terms of space",
+    "tier": "Possible",
+    "blocks": [
+      {
+        "refs": ["m3-thought-p019", "m3-thought-p020"],
+        "main": "**Spatial metaphors for time let researchers test whether language shapes how we think.** **Metaphorical language** describes abstract ideas in concrete terms, as in a song lyric where a weak argument is a dull knife that is not cutting. **Boroditsky and colleagues (2010)** noted that English and Mandarin both use horizontal spatial terms for time. Mandarin also often uses vertical terms, with earlier events up and later events down.",
+        "end": "So the two languages predict different ways of laying out time in space."
+      },
+      {
+        "refs": ["m3-thought-p021"],
+        "main": "**Spatial primes affected time judgments differently for English and Mandarin speakers.** **Boroditsky (2001)** gave people a horizontal prime, such as a black worm ahead of a white worm. Other trials used a vertical prime, such as a black ball above a white ball. Then people answered purely temporal earlier or later questions.",
+        "sub": [
+          "English speakers answered faster after horizontal primes, and Mandarin speakers answered faster after vertical primes.",
+          "After short-term training on vertical metaphors for time, such as “Cars were invented above fax machines”, English speakers answered faster after vertical primes."
+        ],
+        "end": "So the link between time and space follows language experience and can shift with training."
+      },
+      {
+        "refs": ["m3-thought-p022", "m3-thought-p023"],
+        "main": "**Reading direction offers an alternative explanation, so Boroditsky and colleagues controlled for it.** **Casasanto and Bottini (2005)** pointed out that Chinese and Taiwanese text can run vertically as well as horizontally. When people arranged items in order, English speakers always went left to right, while some Chinese and Taiwanese speakers went top to bottom. **Boroditsky and colleagues (2010)** then excluded Chinese readers who reported reading top to bottom.",
+        "sub": [
+          "English speakers still answered faster when left was earlier, with no difference for vertical mappings.",
+          "Mandarin speakers still answered faster when top was earlier than when bottom was earlier."
+        ],
+        "end": "So reported vertical reading cannot fully explain the Mandarin vertical effect."
+      },
+      {
+        "refs": ["m3-thought-p024", "m3-thought-p025"],
+        "main": "**A few minutes of mirror reading can reverse how people map time onto space.** **Casasanto and Bottini (2010)** had people push a blue button for past events and a red button for future events. Other blocks used the reverse. So half the time the past was on the left, and half the time it was on the right. With normal reading, people were faster when time flowed left to right.",
+        "sub": [
+          "People then did **mirror reading**, which is reading reversed text.",
+          "By the second block, they were faster when time flowed right to left."
+        ],
+        "end": "So recent reading experience, not only language, shapes the mapping of time onto space."
+      },
+      {
+        "refs": ["m3-thought-p026"],
+        "main": "**Pullum (1989) mocked exaggerated claims that vocabulary shapes thought.** His classic rant is titled “The Great Eskimo Vocabulary Hoax”. It targets the popular story about how many separate words for snow a language has. Languages can express such distinctions with separate roots, derived words or phrases, so simple word counts mislead.",
+        "end": "So Pullum comes down against strong linguistic relativism."
+      }
+    ],
+    "questions": [
+      {"q": "What did Boroditsky's (2001) priming experiment find?", "a": "Boroditsky (2001) found that spatial primes affect time judgments differently in English and Mandarin. English speakers answered earlier or later questions faster after horizontal primes. Mandarin speakers answered faster after vertical primes. After short training on vertical metaphors, English speakers also answered faster after vertical primes.", "refs": ["m3-thought-p021"], "tier": "Possible"},
+      {"q": "What alternative explanation did Casasanto and Bottini (2005) raise, and how was it controlled?", "a": "Casasanto and Bottini (2005) raised the direction of text as an alternative, because Chinese text can run top to bottom. Boroditsky and colleagues (2010) controlled for this by excluding Chinese readers who reported reading top to bottom. Mandarin speakers still answered faster when top was earlier, so reading direction does not fully explain the effect.", "refs": ["m3-thought-p022", "m3-thought-p023"], "tier": "Possible"},
+      {"q": "What did the mirror reading experiment of Casasanto and Bottini (2010) find?", "a": "Casasanto and Bottini (2010) found that a few minutes of mirror reading reversed the mapping of time onto space. People classified events as past or future with buttons on the left and right. With normal reading, and still in the first mirror-reading block, they were faster when time flowed left to right. By the second mirror-reading block, they were faster when time flowed right to left.", "refs": ["m3-thought-p024", "m3-thought-p025"], "tier": "Possible"},
+      {"q": "Where does Pullum (1989) come down on linguistic relativism?", "a": "Pullum (1989) comes down against strong linguistic relativism. In “The Great Eskimo Vocabulary Hoax”, he attacks exaggerated claims about how many words a language has for snow. Languages can express distinctions with roots, derived words or phrases, so counting words says little about thought.", "refs": ["m3-thought-p026"], "tier": "Possible"}
+    ]
+  },
+  {
+    "id": "m3-sign-language",
+    "title": "Signed language: structure, perception and the brain",
+    "tier": "On the review deck",
+    "blocks": [
+      {
+        "refs": ["m3-modalities-p002", "m3-modalities-p003", "m3-modalities-p004"],
+        "main": "**Sign languages are natural languages, while Braille is a way of reading a spoken language.** Sign languages have their own linguistic structure. They differ from spoken languages in **modality**, **articulators**, use of space and **iconicity** (form resembling meaning), as **Emmorey and colleagues (2004)** list. Iconicity is easy to exaggerate when you look at single signs with their glosses.",
+        "sub": [
+          "The two cases are grouped because both reveal the **plasticity** of sensory systems and how the brain organizes around different input modalities.",
+          "Fluent signing coordinates the hands, face and upper body, with eye contact.",
+          "It is fast and fluid, so it is hard to segment into words."
+        ],
+        "end": "So signing is a full language carried by a different modality."
+      },
+      {
+        "refs": ["m3-modalities-p005", "m3-modalities-p006", "m3-modalities-p007", "m3-review-p039", "m3-review-p040"],
+        "main": "**Sign languages have phonology, and signers show categorical perception for some features.** Signs can differ contrastively in **hand configuration**, gesture **location** and **movement**, as in please and sorry or onion and apple. **Emmorey and colleagues (2003)** asked whether there is **categorical perception** (sorting a gradual change into sharp categories) for these features. They tested a phonemic hand configuration continuum and an allophonic one.",
+        "sub": [
+          "For the **phonemic** continuum, identification had a fairly sharp boundary between stimuli 4 and 6, and discrimination peaked at that boundary.",
+          "For the **allophonic** continuum, identification was much shallower, with many more ambiguous stimuli and no discrimination peak."
+        ],
+        "end": "So signers perceive meaningful sign contrasts categorically, as listeners do for speech sounds."
+      },
+      {
+        "refs": ["m3-modalities-p008", "m3-modalities-p015"],
+        "main": "**Sign language uses space to indicate relationships between words in a sentence.** In a transparent example, the relative position of two objects is given by where a **classifier sign** is made. Understanding sentences of any complexity requires keeping track of where signs were made. **Emmorey (2002)** found that signers understood room descriptions better from the speaker's perspective, despite the mental transformation this requires.",
+        "end": "So spatial processing is part of understanding sign grammar."
+      },
+      {
+        "refs": ["m3-modalities-p009", "m3-review-p041"],
+        "main": "**Sign comprehension uses the same core language areas as speech, plus visual and spatial areas.** **Campbell, MacSweeney and Waters (2008)** compared deaf signers, hearing signers and hearing people watching audio-visual speech. Like speech, sign is **left-lateralized** and activates the classical language areas. These are Broca's area in inferior frontal cortex and Wernicke's area in posterior superior temporal cortex.",
+        "sub": [
+          "Unlike speech, sign shows more activity in visual areas and less in auditory areas.",
+          "Sign also activates superior parietal cortex, which holds classic spatial areas."
+        ],
+        "end": "So the language areas stay the same while the sensory areas change with the input."
+      },
+      {
+        "refs": ["m3-modalities-p010", "m3-modalities-p011"],
+        "main": "**Signing experience and deafness change vision in different ways.** **Bavelier and colleagues (2001)** compared hearing nonsigners, deaf signers and hearing signers. Participants watched for brief changes in the brightness or speed of dots, in the center of the screen or the periphery. Deaf participants had an advantage when attention was directed to the periphery.",
+        "sub": [
+          "Learning sign language shifts motion-perception areas from right to left lateralization, in both deaf and hearing signers.",
+          "One suggestion is that motion perception needs to talk to the left-lateralized language network in people who learn sign.",
+          "Enhanced peripheral attention appears only in deaf individuals, perhaps because hearing people rely more on sound for the far periphery."
+        ],
+        "end": "So signing changes laterality, while deafness itself enhances peripheral attention."
+      },
+      {
+        "refs": ["m3-modalities-p012", "m3-modalities-p013", "m3-modalities-p014", "m3-review-p042"],
+        "main": "**Sign activates Wernicke's area more than a non-language gesture system does.** **Tic-tac** is a sophisticated, outmoded gesture system once used for horse-racing odds in the UK. Comparing it with sign separates hand-movement processing from language processing. **Campbell, MacSweeney and Waters (2008)** found stronger activity around Wernicke's area for sign than for tic-tac.",
+        "sub": [
+          "The frontal activation for tic-tac lies above Broca's area, so it is not a Broca's area effect."
+        ],
+        "end": "So sign is processed as language, not just as organized hand movement."
+      }
+    ],
+    "questions": [
+      {"q": "How do sign languages differ from spoken languages?", "a": "Sign languages differ from spoken languages in modality, articulators, use of space and iconicity. They are still natural languages with their own linguistic structure. Iconicity is easy to exaggerate when single signs are viewed with their glosses.", "refs": ["m3-modalities-p002", "m3-modalities-p003"], "tier": "Possible"},
+      {"q": "Is there categorical perception for sign language features, and how do we know?", "a": "Yes, there is categorical perception for contrastive hand configuration. For the phonemic continuum, identification had a fairly sharp boundary between stimuli 4 and 6, and discrimination peaked at that boundary. For the allophonic continuum, identification was much shallower and discrimination had no peak.", "refs": ["m3-modalities-p006", "m3-modalities-p007", "m3-review-p039", "m3-review-p040"], "tier": "On the review deck"},
+      {"q": "How is brain activity during sign comprehension similar to and different from spoken language?", "a": "Sign comprehension is similar to speech because it is left-lateralized and activates the classical language areas, Broca's and Wernicke's areas. It differs because it shows more activity in visual areas and less in auditory areas. It also activates superior parietal cortex, which holds classic spatial areas.", "refs": ["m3-modalities-p009", "m3-review-p041"], "tier": "On the review deck"},
+      {"q": "How do deafness and signing experience affect visual processing differently?", "a": "Learning sign language shifts motion-perception areas from right to left lateralization, in both deaf and hearing signers. Enhanced peripheral visual attention, though, appears only in deaf individuals. So signing experience changes laterality, while deafness itself enhances attention to the periphery.", "refs": ["m3-modalities-p010", "m3-modalities-p011", "m3-review-p042"], "tier": "On the review deck"},
+      {"q": "Why compare sign language with tic-tac, and what was found?", "a": "Tic-tac is an organized system of sequenced hand movements, so comparing it with sign separates hand-movement processing from language. Sign produced stronger activity around Wernicke's area, the posterior superior temporal gyrus. So sign is processed as language, not just as hand movement.", "refs": ["m3-modalities-p012", "m3-modalities-p013", "m3-review-p042"], "tier": "On the review deck"}
+    ]
+  },
+  {
+    "id": "m3-braille-plasticity",
+    "title": "Braille and cross-modal plasticity",
+    "tier": "Possible",
+    "blocks": [
+      {
+        "refs": ["m3-modalities-p016", "m3-modalities-p017"],
+        "main": "**Braille reading is in many ways like reading print, but it comes through touch.** Braille symbols are optimized for **tactile discrimination**, so reading Braille by sight is really hard. Fingers also take in letters one at a time. Reading Braille activates visual cortex in blind individuals.",
+        "sub": [
+          "The earlier sight is lost, the more extensive the visual activity to touch.",
+          "The **visual word form area** is strongly activated in early blind readers, more so than in late blind readers."
+        ],
+        "end": "So visual cortex can be recruited for reading by touch."
+      },
+      {
+        "refs": ["m3-modalities-p018", "m3-modalities-p019"],
+        "main": "**Blindfolding sighted adults for five days sped up Braille learning and recruited visual cortex.** **Merabet and colleagues (2008)** had sighted people wear blindfolds for five days while training to read Braille. Compared with a control group, the blindfolded group learned more quickly. Over the experiment, blindfolded participants began to show activity in **primary visual cortex** when reading Braille.",
+        "sub": [
+          "When the blindfold was removed on Day 6, the effect was completely reversed.",
+          "The study asks whether **competition** from vision normally holds back other inputs, the same worry raised about peripheral attention in hearing people."
+        ],
+        "end": "So the recruitment of visual cortex was rapid and reversible."
+      },
+      {
+        "refs": ["m3-modalities-p020"],
+        "main": "**Disrupting visual cortex with TMS impaired Braille reading only in the blindfolded group.** **Transcranial magnetic stimulation** (TMS) briefly disrupts activity in a brain area. Applied to visual cortex, it raised Braille errors in the blindfolded group but not in the control group. So the blindfolded participants were somehow using visual cortex for tactile processing.",
+        "sub": [
+          "One way to think about this is that visual cortex gets tactile input all the time, even in sighted people.",
+          "That input is too weak to compete with the much stronger, more consistent visual input.",
+          "Even short-term removal of visual input can **unmask** tactile responses in visual cortex."
+        ],
+        "end": "So visual cortex seemed to help with reading by touch in the blindfolded group."
+      },
+      {
+        "refs": ["m3-modalities-p021"],
+        "main": "**Language circuitry is resilient across modalities, and brain organization is shaped by competition.** Classical language areas are activated by sign language, even though its surface form is very different. Braille reading seems to engage networks that are important for processing text. When auditory input is unavailable, putative auditory areas are used to process sign, and visual attention is enhanced at the periphery.",
+        "end": "So competing inputs shape the brain over development, much as competing processes shaped second language learning in the **Competition Model**."
+      }
+    ],
+    "questions": [
+      {"q": "How does the age at which sight is lost affect visual cortex activity during Braille reading?", "a": "The earlier sight is lost, the more extensive the visual cortex activity to touch. Early blind participants show strong activation of the visual word form area, more so than late blind participants. So early loss of vision lets touch recruit more of visual cortex.", "refs": ["m3-modalities-p017"], "tier": "Possible"},
+      {"q": "What did Merabet and colleagues (2008) find with blindfolded sighted adults?", "a": "Merabet and colleagues (2008) found that sighted adults blindfolded for five days learned Braille more quickly than a control group. The blindfolded group began to show primary visual cortex activity when reading Braille. When the blindfold was removed on Day 6, the effect was completely reversed.", "refs": ["m3-modalities-p018", "m3-modalities-p019"], "tier": "Possible"},
+      {"q": "Why does the TMS result matter beyond the brain activity?", "a": "The TMS result matters because disrupting visual cortex raised Braille reading errors in the blindfolded group only. The control group did not show the same disruption. This is evidence that the blindfolded participants were somehow using visual cortex for tactile processing.", "refs": ["m3-modalities-p020"], "tier": "Possible"},
+      {"q": "How does competition explain cross-modal plasticity?", "a": "Competition explains it because inputs compete for brain areas during development. Visual cortex may always get weak tactile input, but strong visual input outcompetes it. When vision or hearing is unavailable, the other inputs take over, so auditory areas process sign and visual cortex responds to touch.", "refs": ["m3-modalities-p020", "m3-modalities-p021"], "tier": "Possible"}
+    ]
+  }
+]

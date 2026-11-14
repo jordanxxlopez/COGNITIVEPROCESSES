@@ -42,6 +42,11 @@ notes while they scroll. Click again to see every version. The choice is saved p
     node ling406/modern/authoring/build.cjs check m2 n93 speech1 --warn
     node ling406/modern/authoring/build.cjs build
     python3 ling406/modern/authoring/wire.py
+    node --test ling406/modern/tests/
+
+**Before every commit:** the site reads only `packs/`, never `authoring/text/`. After any text change, run
+`build`, then `wire.py`, then the tests. The test "every pack covers every page" fails if a pack is empty.
+Commit 1ebc2bb shipped empty packs because this step was skipped.
 
 `build` refuses to write a pack while any of its collections is missing or fails the checker.
 In Module II the 55 review pages reuse the notes of the lecture page each one comes from, as every

@@ -37,7 +37,7 @@ matched pages reuse the appropriate lecture explanations while retaining their
 own original visuals and note IDs. Fifteen other review pages include its title
 and independently authored earlier-course explanations. The supplied review
 informs study emphasis, not a claim about the exact current final-exam blueprint.
-Module I has not been populated as part of this change.
+Module I was added later (commit 475d6ff); see `../module1/README.md`.
 
 ## Authoring and rebuilding
 

@@ -1,0 +1,711 @@
+{
+ "title": "Midterm 2 review guide",
+ "lead": "Every question and prompt on the Midterm II review deck, in deck order, answered in a few sentences. Predicted questions at the end change one thing in a review question.",
+ "items": [
+  {
+   "n": 1,
+   "source": "Midterm II review p2 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "A speech continuum was built by keeping F1 constant and varying F2 onset frequency linearly from stimulus 1 to 13. Why build it this way?",
+   "a": "It was built this way so that adjacent stimuli differ by the same physical amount across the entire continuum. Holding F1 constant leaves F2 onset as the only thing that changes. So if some pairs are easier to tell apart than others, the difference must come from perception and not from the acoustics.",
+   "refs": [
+    "review-2",
+    "speech1-14"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 2,
+   "source": "Midterm II review p3 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "A simple ideal observer model assumes perception is non-categorical. What does it predict for labeling, and why would stimulus 2 be 75 percent /b/ and 25 percent /d/?",
+   "a": "It predicts that labeling gets blurry as stimuli move away from the category prototypes. Ambiguity scales with distance from the prototype, so labels change gradually between /b/, /d/ and /g/. Stimulus 2 sits a quarter of the way from the /b/ prototype toward /d/, so it would be labeled /b/ 75 percent of the time.",
+   "refs": [
+    "review-3",
+    "speech1-15"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 3,
+   "source": "Midterm II review p4 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Under the same linear model, what should discrimination look like, and why is labeling still peaked?",
+   "a": "Discrimination should be flat and independent of labeling. Labeling has to be peaked because there are three categories and listeners must choose one label. But discrimination only asks “same” or “different,” so if F2 onset differences were perceived equally everywhere, accuracy would be the same for every pair.",
+   "refs": [
+    "review-4",
+    "speech1-16"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 4,
+   "source": "Midterm II review p5 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What did Liberman and colleagues (1957) actually find for labeling and discrimination?",
+   "a": "They found categorical perception. Labels switched sharply from /b/ to /d/ and from /d/ to /g/ over a step or two. Discrimination peaked at those boundaries and was near chance within categories. So equal physical steps were heard very differently depending on whether they crossed a boundary.",
+   "refs": [
+    "review-5",
+    "speech1-17"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 5,
+   "source": "Midterm II review p6 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Looks to the other member of a minimal pair rise gradually near the boundary. Why is that hard for a thresholded model to explain?",
+   "a": "In a thresholded model, nothing passes to the phoneme level until a threshold is crossed. Every sound labeled /b/ would then send the same finished /b/ to the word level. So looks to the pear should be the same for every /b/. Looks instead rose gradually as VOT neared the boundary, which fits a cascaded model where graded feature activation passes forward.",
+   "refs": [
+    "review-6",
+    "speech2-16"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 6,
+   "source": "Midterm II review p7 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "TRACE also includes feedback from the lexical layer to the phoneme layer. What does that mean, and what motivates it?",
+   "a": "It means that active words send activation back down to their own phonemes. So an ambiguous sound can be pushed toward the phoneme that completes a word. Experiments like Ganong’s, where word knowledge shifts phoneme category boundaries, motivate adding this feedback.",
+   "refs": [
+    "review-7",
+    "speech2-17"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 7,
+   "source": "Midterm II review p8 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Ganong (1980) built word and nonword continua such as corpse and gorpse in 5 ms steps. What does a late correction account predict?",
+   "a": "A late correction account predicts the same lexical effect at every step of the continuum. Categorical perception works as usual, and then there is a bias to report having heard a word. So even clear endpoint sounds would be pushed toward the word by the same amount.",
+   "refs": [
+    "review-8",
+    "speech2-19"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 8,
+   "source": "Midterm II review p9 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What does a boundary shift account predict, and why is the lexical effect strongest near the boundary?",
+   "a": "A boundary shift account predicts that the lexical effect is strongest for items closest to the category boundary. Those stimuli are ambiguous, so word knowledge can help resolve which first phoneme was heard. At the endpoints the acoustics already decide the sound, so the effect there is near zero.",
+   "refs": [
+    "review-9",
+    "speech2-20"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 9,
+   "source": "Midterm II review p10 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Which account did Ganong’s results support, and how did later models explain the effect?",
+   "a": "The results were strikingly consistent with the boundary shift account. The lexical effect was small at the endpoints and largest near the boundary. Ganong focused on guessing strategies, but later models emphasized feedback from words to phonemes.",
+   "refs": [
+    "review-10",
+    "speech2-21"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 10,
+   "source": "Midterm II review p11 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "How does a TRACE simulation track the Ganong effect over time for an input that becomes plug?",
+   "a": "TRACE tracks phoneme and word activations frame by frame as the input unfolds. The first sound is ambiguous between /b/ and /p/, so both are weakly active. After /l/ and the vowel, plug, blood and blush are all active, and /p/ starts to pull ahead of /b/.",
+   "refs": [
+    "review-11",
+    "speech2-22"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 11,
+   "source": "Midterm II review p12 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Why does the final /g/ favor plug, and how does that explain word effects on phoneme boundaries?",
+   "a": "The final /g/ fits plug and is highly inconsistent with blood and blush, so activity accumulates for plug. Plug then sends feedback down to the phoneme level, giving more activation to /p/, the phoneme consistent with the word. So TRACE explains word effects on category boundaries through top-down processing.",
+   "refs": [
+    "review-12",
+    "speech2-23"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 12,
+   "source": "Midterm II review p13 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Why must a parser that builds syntactic trees deal with limited memory and time constraints?",
+   "a": "It must because the parser runs inside a cognitive system with limited memory and limited time. Words arrive quickly, so the parser cannot wait for the end of the sentence before building structure. It also cannot keep every possible tree in play at once, so it needs strategies for choosing a structure early.",
+   "refs": [
+    "review-13",
+    "sentence-04"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 13,
+   "source": "Midterm II review p14 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What is minimal attachment, and how does it explain “The horse raced past the barn fell”?",
+   "a": "Minimal attachment is a strategy of initially preferring the smaller tree, the one with fewer nodes, to save space. The grammatical reading of the horse sentence has many more nodes than the failed parse. So the parser first treats raced as the main verb, and it must rebuild the tree when fell arrives.",
+   "refs": [
+    "review-14",
+    "sentence-05"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 14,
+   "source": "Midterm II review p15 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What is late closure, and how does it apply to “The burglar blew open the safe with the dynamite”?",
+   "a": "Late closure is a bias to keep the current clause open as long as possible. So “with the dynamite” attaches to the big verb phrase starting with “blew open.” That makes the dynamite the tool used to open the safe.",
+   "refs": [
+    "review-15",
+    "sentence-06"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 15,
+   "source": "Midterm II review p16 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Why is “The burglar blew open the safe with the jewels” slower to read?",
+   "a": "It is slower because the sensible reading needs the unpreferred parse. Late closure first attaches “with the jewels” to the verb phrase, so the reader briefly treats the jewels as the tool. Then the reader retraces and attaches the phrase to “the safe,” which appears as longer reading times and extra eye movements.",
+   "refs": [
+    "review-16",
+    "sentence-07"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 16,
+   "source": "Midterm II review p17 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What kind of parser does this syntactic explanation of the garden path rest on?",
+   "a": "It rests on a parser that deals only with the abstract syntactic structure of the sentence, like the lumber mill in speech perception. The parser wants the simplest tree, through minimal attachment, and gets it partly by leaving clauses open, through late closure. So it handles ambiguity efficiently by ignoring it until it becomes a problem.",
+   "refs": [
+    "review-17",
+    "sentence-08"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 17,
+   "source": "Midterm II review p18 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "In Spivey and colleagues (1995), why did people look at the empty towel when told “Put the apple on the towel in the box”?",
+   "a": "They looked at it because minimal attachment makes “the towel” seem like the end of the clause “put the apple on the towel.” So the empty towel briefly seemed to be the destination. People looked at it while planning their movements, before moving the apple to the box.",
+   "refs": [
+    "review-18",
+    "sentence-12"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 18,
+   "source": "Midterm II review p19 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What happens to looks in the apple task when the display has two possible referents?",
+   "a": "With two apples, one on a towel, people mostly look at the apple on the towel and then at the box. Looks to the empty towel become much less common. Their eye movements for the ambiguous instruction then look like those for the unambiguous one, so “on the towel” is taken as saying which apple.",
+   "refs": [
+    "review-19",
+    "sentence-13"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 19,
+   "source": "Midterm II review p20 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Why do people look at the empty towel less when there are two apples in the display?",
+   "a": "With two apples, it becomes felicitous, or natural, for the speaker to say which apple is meant. So listeners take “on the towel” as picking out one apple rather than naming a destination. Only the display changed, so context shaped the parse very early.",
+   "refs": [
+    "review-20",
+    "sentence-14"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 20,
+   "source": "Midterm II review p21 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Describe the attractive dichotomy between the speech of Wernicke’s aphasia and Broca’s aphasia.",
+   "a": "Wernicke’s aphasia produces fluent “word salad” or “Jabberwocky,” often with neologisms, while syntax stays roughly intact. Broca’s aphasia produces telegraphic speech, with trouble in word order and grammatical particles. Important content words are relatively spared in Broca’s aphasia, so the two look like mirror images.",
+   "refs": [
+    "review-21",
+    "aphasias-05"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 21,
+   "source": "Midterm II review p22 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Why is it confusing that Broca’s aphasia is described as a problem with grammar?",
+   "a": "It is confusing because Broca’s own patients would not necessarily be classified as Broca’s aphasics today. They were arguably unable to produce speech at all, apparently because of motor control problems. Today they would be diagnosed with apraxia of speech, so the grammar label is far from how Broca described them.",
+   "refs": [
+    "review-22",
+    "aphasias-06"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 22,
+   "source": "Midterm II review p23 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Why was the dichotomy of Wernicke’s aphasia as a lexicon problem and Broca’s aphasia as a grammar problem so attractive?",
+   "a": "It was attractive because it lined up with a sharp distinction in late 20th century formal linguistics between the grammar and the lexicon. That distinction began with Chomsky’s account of language learning as a computational problem. It was supported by his evidence that syntax is independent of semantics, as in “Colorless green ideas sleep furiously.”",
+   "refs": [
+    "review-23",
+    "aphasias-07"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 23,
+   "source": "Midterm II review p24 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Why do we need psycholinguistic tests to observe grammatical difficulties in comprehension?",
+   "a": "We need them because conversation is full of redundant cues to what a speaker means. In “The dog bit the man,” a listener can combine DOG, BITE and MAN into the likeliest event. A listener can also rely on canonical order, with the agent first, then the verb, then the undergoer. So only sentences like “The dog that the man is biting is angry” force grammatical analysis.",
+   "refs": [
+    "review-24",
+    "aphasias-12"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 24,
+   "source": "Midterm II review p25 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What kind of sentences did Caramazza and Zurif build, and why?",
+   "a": "They built center-embedded sentences that defeat meaning-based shortcuts, along with control sentences. Reversible sentences, such as “The girl that the boy is tickling is happy,” need grammar to assign the roles. Improbable sentences, such as “The bird that the worm is eating is blue,” push common sense toward the wrong answer.",
+   "refs": [
+    "review-25",
+    "aphasias-13"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 25,
+   "source": "Midterm II review p26 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What did the sentence-picture matching results reveal for controls, Wernicke’s patients and Broca’s patients?",
+   "a": "Healthy controls were about equally good at all sentence types. Wernicke’s patients were poor overall, probably because of their general comprehension deficits. Broca’s patients had particular trouble with who did what to whom when syntax conflicted with common sense. This specific deficit was taken as evidence that Broca’s aphasia affects syntax specifically.",
+   "refs": [
+    "review-26",
+    "aphasias-14"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 26,
+   "source": "Midterm II review p27 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Dick and colleagues had participants hear four sentence types and indicate which animal was doing the action. What were the four types?",
+   "a": "The four types were active, subject cleft, object cleft and passive. In the active “The dog is biting the cat” and the subject cleft “It’s the dog that is biting the cat,” the doer comes first. The receiver comes first in the object cleft “It’s the cat that the dog is biting.” It also comes first in the passive “The cat is bitten by the dog.”",
+   "refs": [
+    "review-27",
+    "aphasias-16"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 27,
+   "source": "Midterm II review p28 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "How did aphasia patients and healthy aging controls do on Dick and colleagues’ task?",
+   "a": "The pattern looked much like what Caramazza and Zurif observed. Broca’s patients had particular difficulty with the syntactically complex object clefts and passives. Their performance was overall not so great, though, since they were well below the controls even on simple actives.",
+   "refs": [
+    "review-28",
+    "aphasias-17"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 28,
+   "source": "Midterm II review p29 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What happened when healthy undergraduates did the task under stress, and what does it suggest?",
+   "a": "Object cleft and passive sentences were particularly vulnerable to every stress condition. The stress conditions included speeding up the speech and remembering lists of numbers as a secondary task. Since healthy people showed the same pattern, the comprehension deficits in Broca’s aphasia may be a performance issue after all.",
+   "refs": [
+    "review-29",
+    "aphasias-18"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 29,
+   "source": "Midterm II review p30 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Are Broca’s aphasics’ comprehension deficits language-specific? What did Saygin and colleagues (2004) find?",
+   "a": "They do not seem to be purely language-specific. Saygin and colleagues (2004) asked patients to match an action to an object. Broca’s aphasics had difficulty whether the action was given in words or shown by pantomime.",
+   "refs": [
+    "review-30",
+    "aphasias-19"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 30,
+   "source": "Midterm II review p31 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "How did performance on the nonverbal action task relate to brain damage?",
+   "a": "Performance on the nonverbal version was significantly correlated with damage to Broca’s area. That task needed no sentence to be produced or parsed. So damage to Broca’s area affects understanding actions, not only syntax.",
+   "refs": [
+    "review-31",
+    "aphasias-20"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 31,
+   "source": "Midterm II review p32 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "How is categorical perception tested in infants?",
+   "a": "It is tested with behaviors that change when infants notice something new. In the conditioned head turn procedure, infants learn to turn toward a sound when it changes. In high amplitude sucking, sucking drops as a repeated sound becomes familiar and rises again if the infant notices a change.",
+   "refs": [
+    "review-32",
+    "development1-04"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 32,
+   "source": "Midterm II review p33 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What did Eimas and colleagues (1971) find?",
+   "a": "They found that four-month-olds perceive voice onset time categorically. After getting used to one syllable, infants sucked more when VOT changed by 20 ms across an adult category boundary. They did not recover when VOT changed by the same 20 ms within one category, which looked like the no-change control.",
+   "refs": [
+    "review-33",
+    "development1-05"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 33,
+   "source": "Midterm II review p34 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Why was the Eimas result a big deal?",
+   "a": "It was a big deal because categorical perception was considered the first step in turning speech into a symbolic format. Four-month-olds are really little, with color vision still developing, and they are only starting to make vowel-like sounds. So an apparently language-specific ability this early seemed like evidence for innateness.",
+   "refs": [
+    "review-34",
+    "development1-06"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 34,
+   "source": "Midterm II review p35 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What is perceptual narrowing, and how is it related to categorical perception?",
+   "a": "Perceptual narrowing is the decline in the ability to hear speech contrasts the native language does not use. At around six months, English-learning infants discriminate Hindi and Salish contrasts they have never heard. By 10 to 12 months, very few do, while Hindi-learning and Salish-learning infants keep these contrasts. It relates to categorical perception because a non-native difference comes to fall inside one native category, where differences are hard to hear.",
+   "refs": [
+    "review-35",
+    "development1-07"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 35,
+   "source": "Midterm II review p36 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What is the very compelling narrative about early speech perception?",
+   "a": "The narrative says speech perception depends on categorical perception abilities that are special to the language system and present very early. Children start off as “citizens of the world,” able to hear all contrasts because of innate, language-general knowledge. Learning then selects among these innate contrasts and narrows the inventory to the ones meaningful in the native language.",
+   "refs": [
+    "review-36",
+    "development1-08"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 36,
+   "source": "Midterm II review p37 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What is the inductive problem of early word learning?",
+   "a": "The inductive problem is that one naming event fits many possible meanings. A child hearing “cat” could take it to mean cat, furry, pet, whiskers, walking, leg, Felix, animal or alive. This is Quine’s “gavagai” problem, so children need ways to narrow the hypothesis space.",
+   "refs": [
+    "review-37",
+    "development2-12"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 37,
+   "source": "Midterm II review p38 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What is joint attention, and why does gaze following matter for word learning?",
+   "a": "Joint attention is sharing an attentional focus with another person. Gaze following emerges around 9 months of age. It signals an understanding of reference, so the child can tie a word to what the speaker is attending to.",
+   "refs": [
+    "review-38",
+    "development2-13"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 38,
+   "source": "Midterm II review p39 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What did Baldwin and colleagues find about joint attention and word learning?",
+   "a": "They found that joint attention optimizes word learning. Eighteen-month-olds learned a novel word when an adult interacting with them labeled the object they were playing with. They did not learn it when a voice from behind a screen labeled the same object.",
+   "refs": [
+    "review-39",
+    "development2-14"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 39,
+   "source": "Midterm II review p40 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "How did Baldwin use follow-in and discrepant labeling to study intentional cues?",
+   "a": "Baldwin taught new words to 16 to 17 and 18 to 19 month olds in two conditions. In follow-in labeling, the adult looked at the toy the infant was focused on. In discrepant labeling, the adult looked at a toy in a bucket. So the design asks whether infants use the speaker’s eye gaze to narrow the hypothesis space.",
+   "refs": [
+    "review-40",
+    "development2-15"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 40,
+   "source": "Midterm II review p41 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What did Akhtar and colleagues find?",
+   "a": "They found that infants used adults’ facial expressions to identify the intended referent of a new word. Facial expressions are affective cues to the speaker’s intention. So intention is conveyed through more than eye gaze.",
+   "refs": [
+    "review-41",
+    "development2-17"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 41,
+   "source": "Midterm II review p42 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What are word learning strategies, and what is the whole object assumption?",
+   "a": "Word learning strategies are default strategies that children bring to word learning, and they narrow the hypothesis space for new words. The whole object assumption is one of them. A child expects a new word to name a whole object rather than one of its parts or properties.",
+   "refs": [
+    "review-42",
+    "development2-19"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 42,
+   "source": "Midterm II review p43 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What is mutual exclusivity (Markman, 1989)?",
+   "a": "Mutual exclusivity is the default assumption that an object can have only one name. The implication is that new words map to nameless objects. This strategy emerges during the second half of the second year.",
+   "refs": [
+    "review-43",
+    "development2-20"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 43,
+   "source": "Midterm II review p44 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What was Lenneberg’s (1967) theory of the sensitive period, and what motivated it?",
+   "a": "Lenneberg proposed that the sensitive period depended on the development of cerebral dominance, or changes in language laterality. One motivation was a rough alignment between brain development and language milestones. The other was a review of resilience after brain injury or surgery, where children recover language and adults do not.",
+   "refs": [
+    "review-44",
+    "l2-sensitive-02"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 44,
+   "source": "Midterm II review p45 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Why is L2 learning used as a model system for sensitive period research?",
+   "a": "It is used because much of what is known about L1 sensitive periods comes from idiosyncratic or rare cases. Many people learn second languages at different times in their lives, often with limited success. So the limits of L2 learning can be used to reason about the timing of the sensitive or critical period.",
+   "refs": [
+    "review-45",
+    "l2-sensitive-03"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 45,
+   "source": "Midterm II review p46 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What did Johnson and Newport (1989) test, and what did they conclude?",
+   "a": "They tested whether a critical period extends to second language learning. They gave a grammaticality judgment test to 46 native Korean or Chinese speakers who arrived in the United States between ages 3 and 39. Earlier arrivals had a clear advantage, so they concluded that the critical period extends its effects to second languages.",
+   "refs": [
+    "review-46",
+    "l2-sensitive-04"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 46,
+   "source": "Midterm II review p47 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What patterns appear in Johnson and Newport’s data?",
+   "a": "There is a strong relationship between age of arrival and accuracy. Early learners, up to about age 8, are often near-perfect and native-like. Late arrivals show a nearly random distribution of accuracy, so age of arrival barely predicts their scores.",
+   "refs": [
+    "review-47",
+    "l2-sensitive-07"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 47,
+   "source": "Midterm II review p48 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "Which version of the critical period hypothesis do Johnson and Newport see as more consistent with their data? Does this change how the L1 critical period data are read?",
+   "a": "They see the maturational state hypothesis as more consistent. Their learners had all exercised the capacity on a first language, yet later arrivals still learned English less well. It does change the L1 data, because in deprivation cases like Genie the capacity was never exercised, so both hypotheses predict the same poor outcome.",
+   "refs": [
+    "review-48",
+    "l2-sensitive-09"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 48,
+   "source": "Midterm II review p49 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What is the cohort effect found by Allopenna and colleagues (1994)?",
+   "a": "The cohort effect is early competition from words that share their beginning with the spoken word. When people heard “beaker,” they looked at the beetle about as much as the beaker at first. Looks to the beetle fell once the sounds stopped matching, while the rhyme competitor speaker drew later and smaller looks.",
+   "refs": [
+    "review-49",
+    "l2-learning-16"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 49,
+   "source": "Midterm II review p50 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What did Marian and Spivey hypothesize about cross-language competitors?",
+   "a": "They hypothesized that if L1 words are always activated, Russian speakers should look at a book of matches when the English target is “speaker.” The Russian word for matches, spichki, begins like speaker. So looks to the matches would mean the Russian word was active during an English task.",
+   "refs": [
+    "review-50",
+    "l2-learning-17"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 50,
+   "source": "Midterm II review p51 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What happened during L2 spoken word recognition in Marian and Spivey’s study?",
+   "a": "When only one competitor was present, participants looked at within-language and between-language competitors to the same extent. When both were present, they looked at the within-language competitor more. They still looked at the between-language competitor about twice as often as a control, so L1 words were active during L2 listening.",
+   "refs": [
+    "review-51",
+    "l2-learning-18"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 51,
+   "source": "Midterm II review p52 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What happened during L1 spoken word recognition?",
+   "a": "English words did not seem to be activated when native Russian speakers did the task in Russian. The small difference between the between-language and control conditions was not statistically significant. So the interference runs from L1 into L2 but not the other way.",
+   "refs": [
+    "review-52",
+    "l2-learning-19"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 52,
+   "source": "Midterm II review p53 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What does the Revised Hierarchical Model of Kroll and Stewart assume about the L1 and L2 lexicons?",
+   "a": "It assumes the L1 lexicon is larger and more strongly connected to relevant concepts. The L2 lexicon has strong forward connections to the L1 lexicon. So activation spreads more readily from an L2 word to an L1 word than the reverse, because that direction is emphasized in learning.",
+   "refs": [
+    "review-53",
+    "l2-learning-20"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 53,
+   "source": "Midterm II review p54 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "How does the Revised Hierarchical Model explain the Marian and Spivey results in L2 and in L1?",
+   "a": "In the L2 task, Russian and English bilinguals hear “speaker” in English. The concept for speaker partly activates the Russian word for matches, spichki. Russian is the L1, so spichki has a strong conceptual link, and it activates the concept of matches. That conceptual activation draws the eyes to the matches. In the L1 task, English words have weak conceptual links, so they cannot create this interference reliably.",
+   "refs": [
+    "review-54",
+    "l2-learning-21"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 54,
+   "source": "Midterm II review p55 (Fall 2025 deck and identical 2026 Lecture 20 deck)",
+   "q": "What counter-intuitive prediction does the model make for balanced bilinguals?",
+   "a": "It predicts that balanced bilinguals do not look like “two monolinguals in one.” Their conceptual links are similarly strong for both languages, so competitive dynamics and inhibition are engaged all the time. This led to much work on bilinguals’ advantages in non-linguistic cognitive control tasks.",
+   "refs": [
+    "review-55",
+    "l2-learning-22"
+   ],
+   "kind": "Review"
+  },
+  {
+   "n": 55,
+   "source": "Predicted. Changes review deck p33",
+   "q": "In the Eimas design, suppose a new group heard a VOT change from +60 to +80 ms. What would their sucking do?",
+   "a": "Their sucking would keep falling, with little recovery. This is because +60 and +80 ms fall in the same adult category, which is the 20S condition. A 20 ms change only produced recovery when it crossed the boundary, as in the change from +20 to +40 ms.",
+   "refs": [
+    "speech1-25",
+    "review-33"
+   ],
+   "kind": "Predicted"
+  },
+  {
+   "n": 56,
+   "source": "Predicted. Changes review deck p35",
+   "q": "How would Hindi-learning infants at 10 to 12 months do on the Hindi Ta/ta contrast?",
+   "a": "They would still discriminate it at the highest level. This is because they hear the contrast in their own language. The decline by 10 to 12 months appears only in infants who do not hear the contrast.",
+   "refs": [
+    "speech1-26",
+    "review-35"
+   ],
+   "kind": "Predicted"
+  },
+  {
+   "n": 57,
+   "source": "Predicted. Changes review deck p9",
+   "q": "On a Ganong continuum, where would the lexical effect be smallest under the boundary shift account, and why?",
+   "a": "It would be smallest at the two endpoints of the continuum. Those sounds are acoustically clear, so the first phoneme is already decided. Word knowledge only has room to act near the boundary, where the sound is ambiguous.",
+   "refs": [
+    "speech2-20",
+    "review-9"
+   ],
+   "kind": "Predicted"
+  },
+  {
+   "n": 58,
+   "source": "Predicted. Changes review deck p12",
+   "q": "In the TRACE simulation, what would happen if the final sound were /d/ instead of /g/?",
+   "a": "TRACE would favor blood instead of plug. The /d/ fits blood and is inconsistent with plug, so activity would accumulate for blood. Blood would then feed activation back to /b/, so the ambiguous first sound would be heard as /b/.",
+   "refs": [
+    "speech2-23",
+    "review-12"
+   ],
+   "kind": "Predicted"
+  },
+  {
+   "n": 59,
+   "source": "Predicted. Changes review deck p18",
+   "q": "With one apple, what would happen to looks if the instruction were “Put the apple that’s on the towel in the box”?",
+   "a": "People would look from the apple straight to the box. The words “that’s on the towel” make the phrase describe the apple, so it cannot be read as a destination. So looks to the empty towel would drop, as in the two-apple display.",
+   "refs": [
+    "sentence-12",
+    "review-18"
+   ],
+   "kind": "Predicted"
+  },
+  {
+   "n": 60,
+   "source": "Predicted. Changes review deck p26",
+   "q": "A Broca’s patient hears “The horse that the bear is kicking is brown.” How would that compare with “The apple that the boy is eating is red”?",
+   "a": "The patient would do much worse on the horse sentence. Both animals could sensibly kick, so only grammar reveals who does what. In the apple sentence, apples cannot eat boys, so meaning gives the answer without syntax.",
+   "refs": [
+    "aphasias-13",
+    "aphasias-14",
+    "review-26"
+   ],
+   "kind": "Predicted"
+  },
+  {
+   "n": 61,
+   "source": "Predicted. Changes review deck p29",
+   "q": "If undergraduates heard sped-up, filtered speech, which sentence types would they still get right?",
+   "a": "They would still be accurate on active and subject cleft sentences. Those types put the doer first, so they need fewer processing resources. Object clefts and passives would drop, because they are the most vulnerable to any stress.",
+   "refs": [
+    "aphasias-18",
+    "review-29"
+   ],
+   "kind": "Predicted"
+  },
+  {
+   "n": 62,
+   "source": "Predicted. Changes review deck p47",
+   "q": "If Johnson and Newport had tested Spanish speakers learning English, would the same age pattern appear?",
+   "a": "Birdsong and Molis (2001) found that it would not. Spanish speakers who arrived early scored near the top regardless of age, and late arrivals declined steadily with age. Spanish is closer to English, so transfer changes the age pattern.",
+   "refs": [
+    "l2-sensitive-14",
+    "review-47"
+   ],
+   "kind": "Predicted"
+  },
+  {
+   "n": 63,
+   "source": "Predicted. Changes review deck p52 and p55",
+   "q": "Under the Revised Hierarchical Model, would a balanced Russian and English bilingual look at an English competitor during a Russian task?",
+   "a": "The model predicts that they would. A balanced bilingual has similarly strong conceptual links for both languages. So an English word could activate its concept strongly enough to draw looks, and competition would run in both directions.",
+   "refs": [
+    "l2-learning-22",
+    "review-55"
+   ],
+   "kind": "Predicted"
+  },
+  {
+   "n": 64,
+   "source": "Predicted. Changes review deck p43",
+   "q": "Would a 12-month-old be expected to use mutual exclusivity when hearing a new word?",
+   "a": "A 12-month-old would not be expected to use it yet. Mutual exclusivity emerges during the second half of the second year. So the assumption that new words map to nameless objects appears only later in the second year.",
+   "refs": [
+    "development2-20",
+    "review-43"
+   ],
+   "kind": "Predicted"
+  }
+ ]
+}
