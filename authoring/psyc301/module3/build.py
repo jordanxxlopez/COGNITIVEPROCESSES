@@ -7,20 +7,21 @@ it to COLLECTIONS with the next source id and collection number.
 import json, re, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
-import ltm_content, ltm_aids, ltm_testbank, ltm_question_versions
+import ltm_content, ltm_aids, ltm_testbank, ltm_question_versions, ltm_versions
 
 ROOT = Path(__file__).resolve().parents[3]
 COLLECTIONS = [dict(id=15, number='16', title='Long-Term Memory: Structure', file='Chapter-6-psyc301.pdf',
                     sourcePdf='sources/CogPsych_Ch06_LTM_F26.pdf', media='media/long-term-memory',
-                    content=ltm_content, aids=ltm_aids, testbank=ltm_testbank, questionVersions=ltm_question_versions,
+                    content=ltm_content, versions=ltm_versions, aids=ltm_aids, testbank=ltm_testbank, questionVersions=ltm_question_versions,
                     testbankSource='testbank-source-ch06.json', chapter=6, firstQuestion=9001, firstQa=9000)]
 BANNED = ['coworkers', 'need not', 'the lecture says', 'the lecture gives', 'the lecture describes', 'the slide', 'pictured', 'thus', 'hence']
 
-VERSIONS = {'A': 'Original', '20': 'Version 20 · natural teaching transcript', '21': 'Version 21 · natural teaching notes with following slides',
+VERSIONS = {'A': 'Original', '6': 'Version 6 · natural teaching', '10': 'Version 10 · teaching notes', '12': 'Version 12 · detailed teaching notes',
+            '14': 'Version 14 · balanced teaching notes', '16': 'Version 16 · natural teaching notes', '18': 'Version 18 · teaching scripts', '20': 'Version 20 · natural teaching transcript', '21': 'Version 21 · natural teaching notes with following slides',
             '22': 'Version 22 · natural teaching notes with researchers and years'}
-bank = dict(revision='module3-6', modules=[], lectureNumbers={}, lectureQuizSize=50, practiceTestSize=0,
+bank = dict(revision='module3-8', modules=[], lectureNumbers={}, lectureQuizSize=50, practiceTestSize=0,
             collections=[], questions=[], topics=[], coreReview=[], experiments=[], versions=VERSIONS,
-            scripts={'20': {}, '21': {}, '22': {}}, questionVersions={}, likely=[])
+            scripts={k: {} for k in ('6', '10', '12', '14', '16', '18', '20', '21', '22')}, questionVersions={}, likely=[])
 aids = dict(ask=[], cards=[], cardsV4=[], contrasts=[], contrastsV2=[], contrastsV3=[], contrastsV21=[], explainers=[], topicsV4=[],
             qaBank=[], qaV3=[], qaV4=[], qaV5=[], testbank=dict(modules=[], questions=[]))
 
@@ -38,6 +39,36 @@ def as_points(paragraphs):
         cuts = [m.end() for m in re.finditer(r'(?<=[a-z”\)\*]\.)\s+(?=[A-Z“\*])', text)]
         out.append(dict(text=text[:cuts[-1]].strip(), children=[text[cuts[-1]:].strip()]) if cuts else dict(text=text, children=[]))
     return out
+
+
+def sentence_points(paragraphs):
+    """Each Original paragraph as one main point (its first sentence) with the remaining sentences as sub-points."""
+    out = []
+    for para in paragraphs:
+        parts = [p.strip() for p in re.split(r'(?<=[a-z”\)\*]\.)\s+(?=[A-Z“\*])', stars(para)) if p.strip()]
+        out.append(dict(text=parts[0], children=parts[1:]))
+    return out
+
+
+def older_versions(section, extra):
+    """Versions 6 to 18, assembled the way Module II layers them. Two wordings exist for every slide: the Original
+    (slide wording kept in bold) and Version 22 (plain wording). Versions 12 to 18 end with one closing point, and
+    Versions 16 and 18 add a sentence of reasoning on slides that report a study.
+      6  · Version 22 wording as flat paragraphs, no sub-points
+      10 · Original wording as main points with sub-points
+      12 · Version 10 plus the closing point
+      14 · Version 22 wording plus the closing point
+      16 · Version 14 plus the reasoning sentence
+      18 · Version 12 plus the reasoning sentence"""
+    page = section['page']
+    if not section['original']:
+        return {k: [] for k in ('6', '10', '12', '14', '16', '18')}
+    slide_wording, plain = sentence_points(section['original']), section['v22']
+    text, subs = extra.CLOSING[page]
+    closing = [dict(text=text, children=list(subs))]
+    reason = [dict(text=extra.REASONING[page], children=[])] if page in extra.REASONING else []
+    return {'6': [dict(text=' '.join([b['text']] + b['children']), children=[]) for b in plain], '10': slide_wording,
+            '12': slide_wording + closing, '14': plain + closing, '16': plain + reason + closing, '18': slide_wording + reason + closing}
 
 
 def tier(score, high=8.5, mid=6.5):
@@ -65,6 +96,8 @@ for c in COLLECTIONS:
         bank['scripts']['22'][key] = s['v22']
         bank['scripts']['21'][key] = s['v22']  # same wording; Version 21 differs in layout only
         bank['scripts']['20'][key] = as_points(s['original'])
+        for version, script in older_versions(s, c['versions']).items():
+            bank['scripts'][version][key] = script
     bank['collections'].append(dict(id=cid, title=c['title'], file=c['file'], sourcePdf=c['sourcePdf'], sections=sections,
                                     original=[f"{c['media']}/{p}" for p in pages], optional=False))
     bank['modules'].append(cid); bank['lectureNumbers'][str(cid)] = c['number']
@@ -143,13 +176,13 @@ for c in COLLECTIONS:
     aids['testbank']['modules'].append(cid)
     for q in source:
         page, why = T.CURATION[q['number']]
-        row = dict(q, module=cid, page=None if page == 'extra' else page, scope='extra' if page == 'extra' else 'slides', why=why)
+        row = dict(q, module=cid, page=page if isinstance(page, int) else None, scope='slides' if isinstance(page, int) else page, why=why)
         row['stem'] = T.STEMS.get(q['number'], q['stem'])
         row['options'] = [T.OPTIONS.get(q['number'], {}).get(i, o) for i, o in enumerate(q['options'])]
-        row['refs'] = [] if page == 'extra' else [[cid, page]]
+        row['refs'] = [[cid, page]] if isinstance(page, int) else []
         row['source'] = dict(chapter=q['chapter'], question=q['number'], originalAnswer='ABCD'[q['correct']])
         row['edited'] = row['stem'] != q['stem'] or row['options'] != q['options']
-        assert page == 'extra' or page in valid, q['id']
+        assert page in ('extra', 'review') or page in valid, q['id']
         assert len(set(row['options'])) == 4 and len(why) > 100, q['id']
         assert not re.search(r'your text|your book|the text[’\']s|in the textbook', row['stem'], re.I), q['id']
         aids['testbank']['questions'].append(row)

@@ -41,7 +41,7 @@
  const FOLLOW={'21':'<span class="psyc-v21-follow" hidden></span>','22':'<span class="psyc-v22-follow" hidden></span>'};
  function control(m){
   const now=choice(m.id);
-  return `<label class="explanation-version">Explanation version <select data-explanation-version="${m.id}" aria-label="Explanation version for ${esc(m.title)}">${['A','20','21','22'].filter(k=>third.versions[k]).map(k=>[k,third.versions[k]]).map(([k,label])=>`<option value="${k}"${k===now?' selected':''}>${esc(label)}</option>`).join('')}</select></label>`;
+  return `<label class="explanation-version">Explanation version <select data-explanation-version="${m.id}" aria-label="Explanation version for ${esc(m.title)}">${['A','6','10','12','14','16','18','20','21','22'].filter(k=>third.versions[k]).map(k=>[k,third.versions[k]]).map(([k,label])=>`<option value="${k}"${k===now?' selected':''}>${esc(label)}</option>`).join('')}</select></label>`;
  }
  versionControl=function(m){
   if(ids.has(m.id))return control(m);

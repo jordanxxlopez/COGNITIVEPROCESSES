@@ -196,14 +196,14 @@ slide(17, 'Episodic and Semantic Memory · divider')
 
 slide(18, 'Episodic and semantic memory',
  original=[
-  '<strong>Endel Tulving (1985)</strong> distinguished two kinds of long-term memory by the experience that goes with each one. <strong>Episodic memory involves mental time travel</strong>. It is <strong>tied to personal experience</strong>, and <strong>remembering is reliving</strong>. Tulving described this experience as <strong>“self-knowing.”</strong>',
-  '<strong>Semantic memory does not involve mental time travel</strong>. It holds <strong>general knowledge and facts</strong>. Tulving described this experience as <strong>“knowing.”</strong> A person can know a fact without returning to the moment when the fact was learned.',
+  '<strong>Endel Tulving (1985)</strong> distinguished two kinds of long-term memory by the experience that goes with each one. <strong>Episodic memory involves mental time travel</strong>. It is <strong>tied to personal experience</strong>, and <strong>remembering is reliving</strong>. Tulving (1985) described this experience as <strong>“self-knowing.”</strong>',
+  '<strong>Semantic memory does not involve mental time travel</strong>. It holds <strong>general knowledge and facts</strong>. Tulving (1985) described this experience as <strong>“knowing.”</strong> A person can know a fact without returning to the moment when the fact was learned.',
   'The two kinds of memory therefore differ in the experience of retrieving them. Retrieving an episodic memory means traveling back in the mind to a specific event in one’s own past. Retrieving a semantic memory means accessing knowledge that is not tied to any particular personal event.'],
  v22=[
   ('**Endel Tulving (1985)** separated two kinds of long-term memory by the experience that goes with each one.', []),
-  ('**Episodic memory** is memory for **personal experiences**. It involves **mental time travel**, which means going back in the mind to relive the event. Tulving called this **“self-knowing.”**',
+  ('**Episodic memory** is memory for **personal experiences**. It involves **mental time travel**, which means going back in the mind to relive the event. Tulving (1985) called this **“self-knowing.”**',
    ['Remembering an episodic memory is reliving it.']),
-  ('**Semantic memory** is memory for **general knowledge and facts**. It does **not** involve mental time travel. Tulving called this **“knowing.”**',
+  ('**Semantic memory** is memory for **general knowledge and facts**. It does **not** involve mental time travel. Tulving (1985) called this **“knowing.”**',
    ['A person can know a fact without going back to the moment the fact was learned.'])],
  core='Episodic and semantic memory')
 

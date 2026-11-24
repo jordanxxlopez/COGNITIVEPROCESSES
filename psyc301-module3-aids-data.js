@@ -638,11 +638,11 @@ window.THIRD_AIDS = {
      "children": []
     },
     {
-     "text": "**Episodic memory** involves **mental time travel**. It is tied to personal experience, and remembering is reliving. Tulving called this **“self-knowing.”**",
+     "text": "**Episodic memory** involves **mental time travel**. It is tied to personal experience, and remembering is reliving. Tulving (1985) called this **“self-knowing.”**",
      "children": []
     },
     {
-     "text": "**Semantic memory** does **not** involve mental time travel. It holds general knowledge and facts. Tulving called this **“knowing.”**",
+     "text": "**Semantic memory** does **not** involve mental time travel. It holds general knowledge and facts. Tulving (1985) called this **“knowing.”**",
      "children": []
     }
    ]
@@ -3783,8 +3783,8 @@ window.THIRD_AIDS = {
    "id": 9022,
    "a": [
     "**Endel Tulving (1985)** separated the two by the experience that goes with each one.",
-    "- **Episodic memory** **involves mental time travel**. It is tied to personal experience, and remembering is reliving. Tulving called this **“self-knowing.”**",
-    "- **Semantic memory** **does not involve mental time travel**. It holds general knowledge and facts. Tulving called this **“knowing.”**"
+    "- **Episodic memory** **involves mental time travel**. It is tied to personal experience, and remembering is reliving. Tulving (1985) called this **“self-knowing.”**",
+    "- **Semantic memory** **does not involve mental time travel**. It holds general knowledge and facts. Tulving (1985) called this **“knowing.”**"
    ]
   },
   {
@@ -4226,7 +4226,7 @@ window.THIRD_AIDS = {
   {
    "id": 9022,
    "a": [
-    "**Endel Tulving (1985)** separated the two by the experience that goes with each one. **Episodic memory** **involves mental time travel**. It is tied to personal experience, and remembering is reliving. Tulving called this **“self-knowing.”** **Semantic memory** **does not involve mental time travel**. It holds general knowledge and facts. Tulving called this **“knowing.”**"
+    "**Endel Tulving (1985)** separated the two by the experience that goes with each one. **Episodic memory** **involves mental time travel**. It is tied to personal experience, and remembering is reliving. Tulving (1985) called this **“self-knowing.”** **Semantic memory** **does not involve mental time travel**. It holds general knowledge and facts. Tulving (1985) called this **“knowing.”**"
    ]
   },
   {
@@ -5604,8 +5604,8 @@ window.THIRD_AIDS = {
     "correct": 1,
     "module": 15,
     "page": null,
-    "scope": "extra",
-    "why": "This ordering of visual, semantic and episodic memory from least to most complex is the answer keyed in the supplied question bank. It is not stated on the slides, so treat it as extra material.",
+    "scope": "review",
+    "why": "This ordering of visual, semantic and episodic memory from least to most complex is the answer keyed in the supplied question bank. It is not stated on the slides and could not be confirmed against a second source, so it is shown for review and is not scored.",
     "refs": [],
     "source": {
      "chapter": 6,

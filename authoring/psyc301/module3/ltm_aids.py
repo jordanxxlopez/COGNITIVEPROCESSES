@@ -189,8 +189,8 @@ qa([15, 16], 4, 6, 'What is neuropsychology, and why are patients like H.M. and 
 qa([18], 5, 9, 'How did Endel Tulving (1985) distinguish episodic memory from semantic memory?',
    'Tulving (1985) said episodic memory involves mental time travel, so remembering is reliving a personal experience. Semantic memory does not involve mental time travel, and it holds general knowledge and facts.',
    ['**Endel Tulving (1985)** separated the two by the experience that goes with each one.',
-    '- **Episodic memory** **involves mental time travel**. It is tied to personal experience, and remembering is reliving. Tulving called this **“self-knowing.”**',
-    '- **Semantic memory** **does not involve mental time travel**. It holds general knowledge and facts. Tulving called this **“knowing.”**'], who='Endel Tulving (1985)', bank=True)
+    '- **Episodic memory** **involves mental time travel**. It is tied to personal experience, and remembering is reliving. Tulving (1985) called this **“self-knowing.”**',
+    '- **Semantic memory** **does not involve mental time travel**. It holds general knowledge and facts. Tulving (1985) called this **“knowing.”**'], who='Endel Tulving (1985)', bank=True)
 qa([19], 5, 9, 'What do the patients K.C. and L.P. show about episodic and semantic memory?',
    'K.C. lost his episodic memory and kept his semantic memory. The Italian woman L.P. had impaired semantic memory and intact episodic memory. The two patients show that the two kinds of memory can be damaged separately.',
    ['**K.C.** had a **damaged hippocampus**. He has **no episodic memory** and cannot relive past events, but his **semantic memory is intact**.',
@@ -484,8 +484,8 @@ card('Endel Tulving · episodic and semantic memory', 'Endel Tulving (1985)', [1
      'Episodic memory involves mental time travel. Semantic memory does not.',
      'Remembering an episode is reliving it (“self-knowing”). Semantic memory is knowing a fact (“knowing”).',
      [('**Endel Tulving (1985)** separated two kinds of long-term memory by the experience that goes with each.', []),
-      ('**Episodic memory** involves **mental time travel**. It is tied to personal experience, and remembering is reliving. Tulving called this **“self-knowing.”**', []),
-      ('**Semantic memory** does **not** involve mental time travel. It holds general knowledge and facts. Tulving called this **“knowing.”**', [])])
+      ('**Episodic memory** involves **mental time travel**. It is tied to personal experience, and remembering is reliving. Tulving (1985) called this **“self-knowing.”**', []),
+      ('**Semantic memory** does **not** involve mental time travel. It holds general knowledge and facts. Tulving (1985) called this **“knowing.”**', [])])
 card('K.C. and L.P. · semantic and episodic memory', 'K.C. and the Italian woman L.P.', [19, 20],
      'Can episodic memory and semantic memory be damaged separately?',
      'These are patients, so nothing was manipulated.',
