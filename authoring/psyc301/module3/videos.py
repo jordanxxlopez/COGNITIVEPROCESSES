@@ -386,17 +386,28 @@ def encode(clip_id, frames, poster_index):
 
 
 def main():
+    """Render clips. With no argument, only clips whose .mp4 is missing are encoded, so earlier lectures' files stay
+    byte-identical. Pass a clip-id prefix (for example L17) to re-encode those clips."""
+    import sys
+    import videos_enc
+    force = sys.argv[1] if len(sys.argv) > 1 else None
+    sets = [(CLIPS, 'Long-term memory', 'Stimulus video (long-term memory)', 'authoring/psyc301/module3/videos.py'),
+            (videos_enc.CLIPS, videos_enc.GROUP, 'Stimulus video (encoding and retrieval)', 'authoring/psyc301/module3/videos_enc.py')]
     manifest = []
-    for clip_id, title, build, refs, method in CLIPS:
-        frames, poster = build()
-        seconds = encode(clip_id, frames, poster)
-        manifest.append(dict(id=clip_id, title=title, group='Long-term memory', refs=refs, kind='Stimulus video (long-term memory)', duration=seconds,
-                             method=method, source='authoring/psyc301/module3/videos.py', params={}, file=f'psyc301-videos/clips/{clip_id}.mp4',
-                             poster=f'psyc301-videos/posters/{clip_id}.jpg', fps=60))
-        print(clip_id, seconds, 's', (OUT / 'clips' / f'{clip_id}.mp4').stat().st_size // 1024, 'KB')
-    (OUT / 'module3-clips.js').write_text('// Long-term memory (Collection 16, slides 15:x) stimulus videos. Built by authoring/psyc301/module3/videos.py.\n'
+    for clips, group, kind, source in sets:
+        for clip_id, title, build, refs, method in clips:
+            frames, poster = build()
+            out = OUT / 'clips' / f'{clip_id}.mp4'
+            if not out.exists() or (force and clip_id.startswith(force)):
+                encode(clip_id, frames, poster)
+                print('encoded', clip_id, out.stat().st_size // 1024, 'KB')
+            manifest.append(dict(id=clip_id, title=title, group=group, refs=refs, kind=kind, duration=round(sum(s for _, s in frames)),
+                                 method=method, source=source, params={}, file=f'psyc301-videos/clips/{clip_id}.mp4',
+                                 poster=f'psyc301-videos/posters/{clip_id}.jpg', fps=60))
+    (OUT / 'module3-clips.js').write_text('// Module III stimulus videos (Collections 16 and 17, slides 15:x and 16:x). Built by authoring/psyc301/module3/videos.py.\n'
                                           '(function(){ if(!window.PsycVideos) return; const extra = ' + json.dumps(manifest, ensure_ascii=False, indent=1)
                                           + ';\n window.PsycVideos.clips.push(...extra); })();\n', encoding='utf8')
+    print(len(manifest), 'clips in module3-clips.js')
 
 
 if __name__ == '__main__':

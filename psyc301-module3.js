@@ -65,7 +65,10 @@
   event.stopImmediatePropagation();
   const scroll=window.scrollY;
   if('speechSynthesis'in window)window.speechSynthesis.cancel();
-  state.explanationVersions[id]=el.value;save();render();window.scrollTo(0,scroll);
+  // On a collection page the choice is for that lecture. On a workspace page it is for every Module III lecture,
+  // because those pages show several lectures under one control.
+  for(const target of (view==='module'?[id]:[...ids]))state.explanationVersions[target]=el.value;
+  save();render();window.scrollTo(0,scroll);
   document.querySelector('[data-explanation-version="'+id+'"]')?.focus({preventScroll:true});
  },true);
 
@@ -85,7 +88,7 @@
 
  function home(){
   const lectures=thirdModules(),latest=lectures.at(-1),count=third.questions.length;
-  return `<div class="hero"><span class="tag">MODULE III</span><h1>Long-term memory.<br>What is stored, and how.</h1><p>Module III begins with the structure of long-term memory. Original slides sit beside teaching explanations, personal notes, and practice. More lectures are added here as they arrive.</p><div class="row"><button class="primary" data-module="${latest.id}">Study ${esc(latest.title.replace(/^\d+ · /,''))}</button><button data-view="m2test">Take the current practice test</button><button data-view="m2guide">Open the study guide</button></div></div><div class="grid">${lectures.map(m=>{const read=m.sections.filter(s=>state.read.includes(m.id+':'+s.page)).length;return `<div class="card"><span class="tag">COLLECTION ${esc(m.lectureNumber)}</span><h2>${esc(m.title.replace(/^\d+ · /,''))}</h2><p>${m.sections.length} sections with teaching notes, original visuals, and personal notes.</p><p>${read} of ${m.sections.length} sections marked read</p><button class="primary" data-module="${m.id}">Open collection ${esc(m.lectureNumber)}</button></div>`}).join('')}<div class="card"><span class="tag">EXPERIMENTS & PATIENTS</span><h2>Explain what the evidence means</h2><div class="row"><button data-view="m2cards">Experiment cards</button><button data-view="m2contrasts">Side-by-side contrasts</button><button data-view="m2qabank">Q&amp;A</button></div></div></div><div class="notice" style="margin-top:18px">${count} practice questions in the current pool, each linked to its source slide. New lectures are added to the test as they arrive.</div>`;
+  return `<div class="hero"><span class="tag">MODULE III</span><h1>${third.hero.title.map(esc).join('<br>')}</h1><p>${esc(third.hero.text)}</p><div class="row"><button class="primary" data-module="${latest.id}">Study ${esc(latest.title.replace(/^\d+ · /,''))}</button><button data-view="m2test">Take the current practice test</button><button data-view="m2guide">Open the study guide</button></div></div><div class="grid">${lectures.map(m=>{const read=m.sections.filter(s=>state.read.includes(m.id+':'+s.page)).length;return `<div class="card"><span class="tag">COLLECTION ${esc(m.lectureNumber)}</span><h2>${esc(m.title.replace(/^\d+ · /,''))}</h2><p>${m.sections.length} sections with teaching notes, original visuals, and personal notes.</p><p>${read} of ${m.sections.length} sections marked read</p><button class="primary" data-module="${m.id}">Open collection ${esc(m.lectureNumber)}</button></div>`}).join('')}<div class="card"><span class="tag">EXPERIMENTS & PATIENTS</span><h2>Explain what the evidence means</h2><div class="row"><button data-view="m2cards">Experiment cards</button><button data-view="m2contrasts">Side-by-side contrasts</button><button data-view="m2qabank">Q&amp;A</button></div></div></div><div class="notice" style="margin-top:18px">${count} practice questions in the current pool, each linked to its source slide. New lectures are added to the test as they arrive.</div>`;
  }
 
  // Missed questions from the module that is not open never count toward the open module or the archive.

@@ -1,4 +1,4 @@
-// Long-term memory (Collection 16, slides 15:x) stimulus videos. Built by authoring/psyc301/module3/videos.py.
+// Module III stimulus videos (Collections 16 and 17, slides 15:x and 16:x). Built by authoring/psyc301/module3/videos.py.
 (function(){ if(!window.PsycVideos) return; const extra = [
  {
   "id": "L16-serial-position",
@@ -171,6 +171,195 @@
   "params": {},
   "file": "psyc301-videos/clips/L16-ltm-types.mp4",
   "poster": "psyc301-videos/posters/L16-ltm-types.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-craik-tulving",
+  "title": "Craik and Tulving (1975) · Three kinds of questions",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:5",
+   "16:6"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 21,
+  "method": "The three questions and example words are the ones on the slide. The final chart redraws the approximate values from the slide figure.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-craik-tulving.mp4",
+  "poster": "psyc301-videos/posters/L17-craik-tulving.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-imagery-pairs",
+  "title": "Visual imagery · Repetition group and imagery group",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:7"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 15,
+  "method": "The repetition display and a simple drawn image of a boat in a tree, then bars that redraw the approximate values from the slide figure. The drawing is illustrative.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-imagery-pairs.mp4",
+  "poster": "psyc301-videos/posters/L17-imagery-pairs.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-bransford-johnson",
+  "title": "Bransford and Johnson (1972) · Picture before or after",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:9",
+   "16:11"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 14,
+  "method": "The order of picture and passage for the three groups, followed by the result stated on the slide. The passage and picture themselves are not shown.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-bransford-johnson.mp4",
+  "poster": "psyc301-videos/posters/L17-bransford-johnson.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-karpicke-roediger",
+  "title": "Karpicke and Roediger (2008) · Less studying and less testing",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:12",
+   "16:13"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 16,
+  "method": "The design table and the one-week scores from the slide, built one group at a time.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-karpicke-roediger.mp4",
+  "poster": "psyc301-videos/posters/L17-karpicke-roediger.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-retrieval-cues",
+  "title": "Retrieval cues · Self-generated and other-person-generated",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:18"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 15,
+  "method": "Bars redraw the three percentages shown in the slide figure.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-retrieval-cues.mp4",
+  "poster": "psyc301-videos/posters/L17-retrieval-cues.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-diving-context",
+  "title": "Diving experiment · Matching locations",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:19",
+   "16:20",
+   "16:21"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 16,
+  "method": "The four combinations of learning and recall location with the percentages from the slide table.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-diving-context.mp4",
+  "poster": "psyc301-videos/posters/L17-diving-context.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-matching-conditions",
+  "title": "Studying and mood experiments · Matching conditions",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:21",
+   "16:22"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 18,
+  "method": "The study and test conditions of Grant and colleagues (1998) and Eich and Metcalfe (1989) with the scores shown in the slide figure.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-matching-conditions.mp4",
+  "poster": "psyc301-videos/posters/L17-matching-conditions.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-morris-transfer",
+  "title": "Morris and colleagues (1977) · Transfer-appropriate processing",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:23",
+   "16:24",
+   "16:25"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 27,
+  "method": "The two encoding questions, the two memory tests and the four percentages are the ones given on the slides.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-morris-transfer.mp4",
+  "poster": "psyc301-videos/posters/L17-morris-transfer.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-muller-pilzecker",
+  "title": "Müller and Pilzecker (1900) · Immediate and delayed groups",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:29",
+   "16:30"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 20,
+  "method": "Two timelines for the immediate group and the delayed group with the recall percentages from the slide figure.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-muller-pilzecker.mp4",
+  "poster": "psyc301-videos/posters/L17-muller-pilzecker.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-consolidation-models",
+  "title": "Systems consolidation · Standard model and multiple trace model",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:33",
+   "16:36",
+   "16:37"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 22,
+  "method": "A schematic of the hippocampus and three cortical areas. Line thickness stands for connection strength and is illustrative; the slide figures show the same sequence on brain drawings.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-consolidation-models.mp4",
+  "poster": "psyc301-videos/posters/L17-consolidation-models.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L17-reconsolidation",
+  "title": "Reconsolidation · Nader, Hupbach and Brunet",
+  "group": "Encoding, retrieval and consolidation",
+  "refs": [
+   "16:41",
+   "16:42",
+   "16:44"
+  ],
+  "kind": "Stimulus video (encoding and retrieval)",
+  "duration": 33,
+  "method": "A timeline for each of the three studies with the outcome stated on its slide. The no-reminder and placebo rows give the comparison group; no data points are drawn.",
+  "source": "authoring/psyc301/module3/videos_enc.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L17-reconsolidation.mp4",
+  "poster": "psyc301-videos/posters/L17-reconsolidation.jpg",
   "fps": 60
  }
 ];

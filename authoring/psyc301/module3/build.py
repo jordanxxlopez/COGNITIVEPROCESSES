@@ -8,18 +8,26 @@ import json, re, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import ltm_content, ltm_aids, ltm_testbank, ltm_question_versions, ltm_versions
+import enc_content, enc_aids, enc_testbank, enc_question_versions, enc_versions
 
 ROOT = Path(__file__).resolve().parents[3]
 COLLECTIONS = [dict(id=15, number='16', title='Long-Term Memory: Structure', file='Chapter-6-psyc301.pdf',
                     sourcePdf='sources/CogPsych_Ch06_LTM_F26.pdf', media='media/long-term-memory',
                     content=ltm_content, versions=ltm_versions, aids=ltm_aids, testbank=ltm_testbank, questionVersions=ltm_question_versions,
-                    testbankSource='testbank-source-ch06.json', chapter=6, firstQuestion=9001, firstQa=9000)]
+                    testbankSource='testbank-source-ch06.json', chapter=6, firstQuestion=9001, firstQa=9000),
+               dict(id=16, number='17', title='Long-Term Memory: Encoding, Retrieval, and Consolidation', file='Chapter-7-psyc301.pdf',
+                    sourcePdf='sources/CogPsych_Ch07_LTM_Encoding_F26.pdf', media='media/ltm-encoding',
+                    content=enc_content, versions=enc_versions, aids=enc_aids, testbank=enc_testbank, questionVersions=enc_question_versions,
+                    testbankSource='testbank-source-ch07.json', chapter=7, firstQuestion=9101, firstQa=9100)]
 BANNED = ['coworkers', 'need not', 'the lecture says', 'the lecture gives', 'the lecture describes', 'the slide', 'pictured', 'thus', 'hence']
 
 VERSIONS = {'A': 'Original', '6': 'Version 6 · natural teaching', '10': 'Version 10 · teaching notes', '12': 'Version 12 · detailed teaching notes',
             '14': 'Version 14 · balanced teaching notes', '16': 'Version 16 · natural teaching notes', '18': 'Version 18 · teaching scripts', '20': 'Version 20 · natural teaching transcript', '21': 'Version 21 · natural teaching notes with following slides',
             '22': 'Version 22 · natural teaching notes with researchers and years'}
-bank = dict(revision='module3-8', modules=[], lectureNumbers={}, lectureQuizSize=50, practiceTestSize=0,
+# Home page headline for Module III. Rewrite it when a lecture is added so it covers every lecture.
+HERO = dict(title=['Long-term memory.', 'Stored, encoded, retrieved, consolidated.'],
+            text='Module III covers the structure of long-term memory, and how memories are encoded, retrieved, consolidated and reconsolidated. Original slides sit beside teaching explanations, personal notes, and practice. More lectures are added here as they arrive.')
+bank = dict(hero=HERO, revision='module3-11', modules=[], lectureNumbers={}, lectureQuizSize=50, practiceTestSize=0,
             collections=[], questions=[], topics=[], coreReview=[], experiments=[], versions=VERSIONS,
             scripts={k: {} for k in ('6', '10', '12', '14', '16', '18', '20', '21', '22')}, questionVersions={}, likely=[])
 aids = dict(ask=[], cards=[], cardsV4=[], contrasts=[], contrastsV2=[], contrastsV3=[], contrastsV21=[], explainers=[], topicsV4=[],
@@ -187,7 +195,10 @@ for c in COLLECTIONS:
         assert not re.search(r'your text|your book|the text[’\']s|in the textbook', row['stem'], re.I), q['id']
         aids['testbank']['questions'].append(row)
 
-bank['practiceTestSize'] = min(100, len(bank['questions']))
+# The practice test takes the same number of questions from every lecture, so its size cannot exceed
+# the smallest lecture pool times the number of lectures.
+pools = [sum(q['module'] == m for q in bank['questions']) for m in bank['modules']]
+bank['practiceTestSize'] = min(100, min(pools) * len(pools))
 LATER = '''
 // Collections that belong to Module II or Module III. The page uses this to keep them out of the Module I lists.
 (()=>{const later=new Set([...(window.SECOND_HALF?.modules||[]),...window.THIRD_PART.modules]);window.PsycLater=id=>later.has(id)})();

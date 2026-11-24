@@ -289,6 +289,300 @@ window.THIRD_AIDS = {
     "An adult bitten by a dog as a toddler feels a spike in heart rate around large dogs with no memory of the bite. An old song from a stressful period causes a tight feeling in the chest before the person remembers why."
    ],
    "remember": "Conditioning is implicit memory when the response remains but the original pairing is forgotten."
+  },
+  {
+   "module": 16,
+   "topic": "Encoding, retrieval and rehearsal",
+   "pages": [
+    3
+   ],
+   "questions": [
+    "What are encoding and retrieval?",
+    "How do maintenance rehearsal and elaborative rehearsal differ?"
+   ],
+   "answers": [
+    "Encoding is acquiring information and transforming it into memory. Retrieval is transferring information from long-term memory to working memory.",
+    "Maintenance rehearsal is repetition that maintains information but does not transfer it to long-term memory. Elaborative rehearsal uses meanings and connections, and it helps transfer information to long-term memory."
+   ],
+   "remember": "Maintenance rehearsal only repeats. Elaborative rehearsal uses meaning and connections, and it is what transfers information to long-term memory."
+  },
+  {
+   "module": 16,
+   "topic": "Levels of processing and Craik and Tulving (1975)",
+   "pages": [
+    4,
+    5,
+    6
+   ],
+   "questions": [
+    "What does levels of processing theory state?",
+    "What were the three kinds of questions in Craik and Tulving (1975)?",
+    "What did Craik and Tulving (1975) find?"
+   ],
+   "answers": [
+    "Levels of processing theory states that memory depends on how information is encoded. Shallow processing focuses on physical features and gives poor memory. Deep processing pays close attention to meaning and gives better memory.",
+    "The shallow question asked about physical appearance, such as whether the word was in capital letters. The intermediate question asked about sound, such as whether the word rhymed with weight. The deep question asked whether the word fit in a sentence.",
+    "Memory was lowest after the capital letters question, higher after the rhyme question and highest after the fill-in-the-blank question. Deeper processing produced better memory."
+   ],
+   "remember": "Deeper processing gives better memory. Capital letters is shallow, rhyme is intermediate and fill in the blank is deep."
+  },
+  {
+   "module": 16,
+   "topic": "Other factors that aid encoding",
+   "pages": [
+    7
+   ],
+   "questions": [
+    "Which factors aid encoding?",
+    "How did the imagery group compare with the repetition group?",
+    "What are the self-reference effect and the generation effect?"
+   ],
+   "answers": [
+    "Visual imagery, the self-reference effect, the generation effect, organizing to-be-remembered information, relating words to survival value and retrieval practice all aid encoding.",
+    "The imagery group formed an image of the two items together, such as a boat in a tree, and the repetition group repeated the pair. The imagery group recalled more than twice as many pairs.",
+    "The self-reference effect is better memory for information that is related to oneself. The generation effect is better memory for material a person generates than for material the person only reads."
+   ],
+   "remember": "Imagery, self-reference, generation, organization, survival value and retrieval practice all aid encoding."
+  },
+  {
+   "module": 16,
+   "topic": "Organization and Bransford and Johnson (1972)",
+   "pages": [
+    9,
+    11
+   ],
+   "questions": [
+    "What did Bransford and Johnson (1972) do, and what did they find?",
+    "Why did the picture help only when it came before the passage?"
+   ],
+   "answers": [
+    "Bransford and Johnson (1972) presented a passage that was difficult to comprehend. Group 1 saw a picture that explained it before reading, Group 2 saw the picture after reading, and the control group did not see it. Group 1 outperformed the others.",
+    "Having a mental framework of comprehension aided memory encoding and retrieval. The picture gave people one organized scene to fit each sentence into as they read, which it could not do after the reading was finished."
+   ],
+   "remember": "The picture helped only when it came before the passage, because a framework has to be there while reading."
+  },
+  {
+   "module": 16,
+   "topic": "The retrieval practice effect and Karpicke and Roediger (2008)",
+   "pages": [
+    12,
+    13
+   ],
+   "questions": [
+    "What were the three groups in Karpicke and Roediger (2008)?",
+    "What did Karpicke and Roediger (2008) find, and what is the retrieval practice effect?"
+   ],
+   "answers": [
+    "Group 1 studied and was tested on all word pairs in all sessions. Group 2 studied only the pairs it had missed but was tested on all pairs. Group 3 studied all pairs but was tested only on the pairs it had missed.",
+    "After one week, Group 1 scored 81 percent, Group 2 scored 81 percent and Group 3 scored 36 percent. The group with less testing did much worse. The retrieval practice effect is that testing memory retrieval can improve memory."
+   ],
+   "remember": "Less studying did not hurt (81 percent). Less testing did (36 percent)."
+  },
+  {
+   "module": 16,
+   "topic": "Effective studying",
+   "pages": [
+    15
+   ],
+   "questions": [
+    "What are the principles of effective studying?",
+    "What are the spacing effect and the illusion of learning?"
+   ],
+   "answers": [
+    "Elaborate by associating what you are learning to what you already know. Generate questions and self-test. Take breaks, because of the spacing effect and because sleep enhances consolidation. Avoid the illusion of learning.",
+    "The spacing effect is that memory is better for multiple short study sessions. The illusion of learning is mistaking familiarity for comprehension, and familiarity does not mean comprehension."
+   ],
+   "remember": "Elaborate, self-test, space out study, sleep, and do not mistake familiarity for comprehension."
+  },
+  {
+   "module": 16,
+   "topic": "Retrieval and retrieval cues",
+   "pages": [
+    17,
+    18
+   ],
+   "questions": [
+    "What is retrieval, and what are most failures of memory?",
+    "What is cued recall, and which retrieval cues are most effective?"
+   ],
+   "answers": [
+    "Retrieval is the process of transferring information from long-term memory back into working memory, which is consciousness. Most failures of memory are failures to retrieve.",
+    "In cued recall, a cue is presented to aid recall, and performance is better than in free recall. Retrieval cues are most effective when created by the person who uses them. People remembered 91 percent of nouns with their own cues and 55 percent with another person’s cues."
+   ],
+   "remember": "Most memory failures are failures to retrieve, and cues a person creates work best (91 percent against 55 percent)."
+  },
+  {
+   "module": 16,
+   "topic": "Encoding specificity and state-dependent learning",
+   "pages": [
+    19,
+    20,
+    21,
+    22
+   ],
+   "questions": [
+    "What is encoding specificity?",
+    "What were the results of the diving experiment?",
+    "What did Grant and colleagues (1998) and Eich and Metcalfe (1989) show?",
+    "What is state-dependent learning?"
+   ],
+   "answers": [
+    "Encoding specificity is the principle that we learn information together with its context. Recall is best when encoding and retrieval occur in the same context.",
+    "In Godden and Baddeley’s (1975) diving experiment, words learned and recalled underwater gave 32 percent, and words learned and recalled on land gave 38 percent. When the locations did not match, recall was 23 percent and 24 percent. Recall was best when the learning location and the recall location were the same.",
+    "In Grant and colleagues’ (1998) studying experiment, scores were highest when the noise condition at test matched the one at study. In Eich and Metcalfe’s (1989) mood experiment, scores were highest when the mood at test matched the mood at study.",
+    "State-dependent learning is learning that is associated with a particular internal state. Memory is better if a person’s mood at encoding matches the mood during retrieval."
+   ],
+   "remember": "Memory is best when the place, the noise or the mood at retrieval matches the one at encoding."
+  },
+  {
+   "module": 16,
+   "topic": "Transfer-appropriate processing and Morris and colleagues (1977)",
+   "pages": [
+    23,
+    24,
+    25
+   ],
+   "questions": [
+    "What is transfer-appropriate processing?",
+    "What were the encoding conditions and the tests in Morris and colleagues (1977)?",
+    "What did Morris and colleagues (1977) find?"
+   ],
+   "answers": [
+    "Transfer-appropriate processing is the principle that memory task results improve if the type of processing used during encoding is the same as the type used during retrieval.",
+    "At encoding, people answered either a semantic question, about whether a word fit in a sentence, or a rhyme question. At retrieval, they took either a standard recognition test of the studied words or a rhyming recognition test of words that rhymed with the studied words.",
+    "On the standard recognition test, semantic processing beat rhyme processing, 84 percent to 63 percent. On the rhyming recognition test, rhyme processing beat semantic processing, 49 percent to 33 percent."
+   ],
+   "remember": "Rhyme encoding won on the rhyming test (49 to 33), and meaning encoding won on the standard test (84 to 63)."
+  },
+  {
+   "module": 16,
+   "topic": "Consolidation and Müller and Pilzecker (1900)",
+   "pages": [
+    27,
+    28,
+    29,
+    30
+   ],
+   "questions": [
+    "What is consolidation, and what are its two types?",
+    "What did Müller and Pilzecker (1900) do, and what did they find?",
+    "What is the perseveration-consolidation hypothesis?"
+   ],
+   "answers": [
+    "Consolidation transforms new memories from a fragile state to a more permanent state. Synaptic consolidation is rapid and occurs at synapses. Systems consolidation is gradual and is the reorganization of neural circuits.",
+    "Participants memorized a list of nonsense syllables and then learned a second list. The immediate group learned the second list right away, and the delayed group rested for 6 minutes first. Recall of the first list was 28 percent for the immediate group and 48 percent for the delayed group.",
+    "Müller and Pilzecker proposed that neural activity continues for a short period after an experience ends. This period is required for the fragile memory trace to consolidate into a stable long-term memory. If a new task interrupts it, consolidation is disrupted and the memory is lost."
+   ],
+   "remember": "A second list right away hurt the first list (28 percent). A 6-minute rest protected it (48 percent)."
+  },
+  {
+   "module": 16,
+   "topic": "Synaptic consolidation and long-term potentiation",
+   "pages": [
+    31,
+    32
+   ],
+   "questions": [
+    "What did Hebb (1948) propose about memory and the synapse?",
+    "What is long-term potentiation (LTP)?"
+   ],
+   "answers": [
+    "Hebb (1948) proposed that learning and memory are represented in the brain by physiological changes at the synapse. These changes are a neural record of experience.",
+    "Long-term potentiation is the enhanced firing of neurons after repeated stimulation. It involves structural changes at the synapse and enhanced responding."
+   ],
+   "remember": "Repeated stimulation changes the synapse and increases firing, which is long-term potentiation."
+  },
+  {
+   "module": 16,
+   "topic": "The standard model and memory loss",
+   "pages": [
+    33,
+    34,
+    35
+   ],
+   "questions": [
+    "What does the standard model of consolidation state?",
+    "What are retrograde amnesia and graded amnesia?",
+    "Why does graded amnesia support the standard model?"
+   ],
+   "answers": [
+    "The standard model of consolidation states that after encoding, the activity of the hippocampus fades with time. The connections among cortical areas grow stronger, and in the end the hippocampus is no longer needed for the memory.",
+    "Retrograde amnesia is the loss of memory for events prior to the trauma. Graded amnesia means that memory for recent events is more fragile than memory for remote events, so the loss is worst just before the injury.",
+    "The standard model is based partly on memory loss after injury. Recent memories have had less time to be consolidated, so they are more fragile. That is the pattern graded amnesia shows."
+   ],
+   "remember": "In the standard model the hippocampus fades out, and graded amnesia fits because recent memories are less consolidated."
+  },
+  {
+   "module": 16,
+   "topic": "The multiple trace model",
+   "pages": [
+    36,
+    37
+   ],
+   "questions": [
+    "What does the multiple trace model state, and what evidence supports it?"
+   ],
+   "answers": [
+    "In the multiple trace model, the hippocampus stays involved in memories over time. Gilboa and colleagues (2004) found that the hippocampus is activated during retrieval of both recent and remote memories. Viskontas and colleagues (2009) found that the response of the hippocampus can change over time."
+   ],
+   "remember": "In the multiple trace model the hippocampus stays active for remote memories too."
+  },
+  {
+   "module": 16,
+   "topic": "Consolidation and sleep",
+   "pages": [
+    38
+   ],
+   "questions": [
+    "How does sleep affect consolidation?",
+    "What did Wilhelm and colleagues (2011) find?"
+   ],
+   "answers": [
+    "Memory consolidation appears to be enhanced during sleep (Gais and colleagues, 2006). One reason is that sleeping stops interference from environmental stimuli.",
+    "Wilhelm and colleagues (2011) found that some memories are consolidated more than others. Memory for a task was stronger when participants expected to be tested after awaking."
+   ],
+   "remember": "Sleep helps consolidation, and memories expected to be tested are consolidated more."
+  },
+  {
+   "module": 16,
+   "topic": "Reconsolidation in rats and in humans",
+   "pages": [
+    40,
+    41,
+    42
+   ],
+   "questions": [
+    "What is reconsolidation?",
+    "What did Nader and colleagues (2000) do, and what did they find?",
+    "What is the conclusion of Nader and colleagues (2000)?",
+    "What did Hupbach and colleagues (2007) do, and what did they find?",
+    "Why is the result of Hupbach and colleagues (2007) important?"
+   ],
+   "answers": [
+    "Reconsolidation is the process in which retrieved memories become fragile and are consolidated again. It makes memory a work in progress that is constantly constructed and remodeled.",
+    "Rats learned to associate a tone with a mild shock, so the tone alone caused freezing. After the memory had consolidated, the tone was played again, and some rats then received anisomycin in the amygdala. Those rats showed much less freezing later, and control rats kept the fear response.",
+    "Even established memories may require protein synthesis to become stable again after retrieval. A retrieved memory can be weakened while it is fragile.",
+    "Participants learned List 1. Two days later, some were reminded of the first session before learning List 2, and others learned List 2 without the reminder. When tested on List 1, the reminded group was more likely to mistakenly recall List 2 objects as belonging to List 1.",
+    "It shows that reactivating an existing memory can allow new information to become integrated into that memory. Reconsolidation can involve updating memories, not simply strengthening them."
+   ],
+   "remember": "A retrieved memory is fragile again. Anisomycin weakened it in rats, and a reminder let new items join it in humans."
+  },
+  {
+   "module": 16,
+   "topic": "Reconsolidation and PTSD",
+   "pages": [
+    43,
+    44
+   ],
+   "questions": [
+    "What did Brunet and colleagues (2008) do?",
+    "What did Brunet and colleagues (2008) find?"
+   ],
+   "answers": [
+    "People with chronic PTSD wrote a detailed script of their traumatic event, which reactivated the memory. Immediately after recall, they received either propranolol or a placebo. One week later, their heart rate and skin conductance were measured while they listened to the script.",
+    "The propranolol group showed significantly lower physiological fear responses than the placebo group. Factual memory remained intact, and only the intense emotional charge was blunted."
+   ],
+   "remember": "Propranolol after recall lowered the stress response and left the factual memory intact."
   }
  ],
  "cards": [
@@ -483,6 +777,223 @@ window.THIRD_AIDS = {
    "found": "The incidental group recognized only about 11 percent of the ads, but rated the ads they had seen as significantly more appealing than new ads.",
    "means": "Earlier exposure changes later judgments without conscious memory of the exposure, which is the propaganda effect.",
    "trap": "Poor recognition and high liking occurred together. Liking did not depend on remembering."
+  },
+  {
+   "module": 16,
+   "title": "Craik and Tulving · levels of processing",
+   "pages": [
+    5,
+    6
+   ],
+   "researcher": "Craik and Tulving (1975)",
+   "aim": "Does memory depend on how deeply a word is processed?",
+   "manipulated": "The kind of question asked about each word. Capital letters (shallow), rhyme (intermediate) or fill in the blank (deep).",
+   "measured": "The percent of words remembered correctly afterward.",
+   "found": "About 15 percent for capital letters, about 48 percent for rhyme and about 80 percent for fill in the blanks.",
+   "means": "Deeper processing leads to better memory, as levels of processing theory states.",
+   "trap": "In Craik and Tulving (1975), rhyme is the intermediate level. In Morris and colleagues (1977), rhyme processing is labelled shallow."
+  },
+  {
+   "module": 16,
+   "title": "Bransford and Johnson · picture before or after the passage",
+   "pages": [
+    9,
+    11
+   ],
+   "researcher": "Bransford and Johnson (1972)",
+   "aim": "Does a framework for comprehension help memory?",
+   "manipulated": "When the explaining picture was shown. Before the passage (Group 1), after the passage (Group 2) or not at all (control).",
+   "measured": "Memory for the difficult passage.",
+   "found": "Group 1 outperformed the others.",
+   "means": "Having a mental framework of comprehension aids memory encoding and retrieval.",
+   "trap": "Group 1, which saw the picture first, is the group that outperformed the others."
+  },
+  {
+   "module": 16,
+   "title": "Karpicke and Roediger · retrieval practice",
+   "pages": [
+    12,
+    13
+   ],
+   "researcher": "Karpicke and Roediger (2008)",
+   "aim": "Which matters more for later memory, repeated studying or repeated testing?",
+   "manipulated": "What each group kept doing after the first session. Group 2 dropped recalled pairs from studying, and Group 3 dropped recalled pairs from testing.",
+   "measured": "Percent correct on a test of the word pairs after one week.",
+   "found": "Group 1 scored 81 percent, Group 2 (less studying) scored 81 percent and Group 3 (less testing) scored 36 percent.",
+   "means": "Testing memory retrieval can improve memory, which is the retrieval practice effect.",
+   "trap": "The group that lost points was the one with less testing, not the one with less studying."
+  },
+  {
+   "module": 16,
+   "title": "Godden and Baddeley · the diving experiment",
+   "pages": [
+    19,
+    20,
+    21
+   ],
+   "researcher": "Godden and Baddeley (1975)",
+   "aim": "Is memory better when retrieval happens in the same place as encoding?",
+   "manipulated": "Where the words were learned (underwater or on land) and where they were recalled (underwater or on land).",
+   "measured": "The average percent of words recalled.",
+   "found": "Matching locations gave 32 percent (underwater) and 38 percent (on land). Different locations gave 23 and 24 percent.",
+   "means": "We learn information together with its context, which is encoding specificity.",
+   "trap": "Neither location was better on its own. The match is what mattered."
+  },
+  {
+   "module": 16,
+   "title": "Grant and colleagues, Eich and Metcalfe · studying and mood",
+   "pages": [
+    21,
+    22
+   ],
+   "researcher": "Grant and colleagues (1998) and Eich and Metcalfe (1989)",
+   "aim": "Does the match between study and test conditions matter for noise and for mood?",
+   "manipulated": "Grant and colleagues varied noise or quiet at study and at test. Eich and Metcalfe varied sad or happy mood at study and at test.",
+   "measured": "Scores on the memory test in each combination.",
+   "found": "In both experiments, scores were highest when the condition at test matched the condition at study.",
+   "means": "Memory is best when retrieval conditions match encoding conditions. The mood result is state-dependent learning."
+  },
+  {
+   "module": 16,
+   "title": "Morris and colleagues · transfer-appropriate processing",
+   "pages": [
+    23,
+    24,
+    25
+   ],
+   "researcher": "Morris and colleagues (1977)",
+   "aim": "Is deep processing always best, or does the test matter?",
+   "manipulated": "The type of encoding question (semantic or rhyme) and the type of test (standard recognition or rhyming recognition).",
+   "measured": "Percent correct on each test.",
+   "found": "On the standard test, semantic processing scored 84 percent and rhyme processing scored 63 percent. On the rhyming test, rhyme processing scored 49 percent and semantic processing scored 33 percent.",
+   "means": "Memory is better when the type of processing at encoding matches the type at retrieval.",
+   "trap": "On the rhyming test the shallow condition won."
+  },
+  {
+   "module": 16,
+   "title": "Müller and Pilzecker · consolidation",
+   "pages": [
+    29,
+    30
+   ],
+   "researcher": "Müller and Pilzecker (1900)",
+   "aim": "Does a memory need time after learning to become stable?",
+   "manipulated": "The delay between the first list and the second list. No delay or a 6-minute rest.",
+   "measured": "Recall of the first list of nonsense syllables.",
+   "found": "28 percent for the immediate group and 48 percent for the delayed group.",
+   "means": "Neural activity continues after learning, and this period is needed for the memory to consolidate.",
+   "trap": "The test was on the first list, not the second list."
+  },
+  {
+   "module": 16,
+   "title": "Hebb · the synapse and long-term potentiation",
+   "pages": [
+    31,
+    32
+   ],
+   "researcher": "Hebb (1948)",
+   "aim": "How is a memory recorded in the brain?",
+   "manipulated": "Hebb made a proposal and did not run an experiment here. Long-term potentiation is the process observed at the synapse.",
+   "measured": "Not reported.",
+   "found": "Repeated stimulation leads to structural changes at the synapse and to increased firing.",
+   "means": "Learning and memory are represented by physiological changes at the synapse."
+  },
+  {
+   "module": 16,
+   "title": "Gilboa and colleagues, Viskontas and colleagues · multiple trace model",
+   "pages": [
+    36,
+    37
+   ],
+   "researcher": "Gilboa and colleagues (2004) and Viskontas and colleagues (2009)",
+   "aim": "Does the hippocampus stay involved in old memories?",
+   "manipulated": "Not reported.",
+   "measured": "Activity of the hippocampus during retrieval.",
+   "found": "The hippocampus is activated during retrieval of both recent and remote memories, and its response can change over time.",
+   "means": "This supports the multiple trace model and does not fit the standard model."
+  },
+  {
+   "module": 16,
+   "title": "Gais and colleagues, Wilhelm and colleagues · sleep",
+   "pages": [
+    38
+   ],
+   "researcher": "Gais and colleagues (2006) and Wilhelm and colleagues (2011)",
+   "aim": "Does sleep help consolidation, and for which memories?",
+   "manipulated": "In Wilhelm and colleagues (2011), the manipulation was whether participants expected to be tested after waking.",
+   "measured": "Memory after sleep.",
+   "found": "Consolidation appears to be enhanced during sleep. Memory was stronger when participants expected to be tested.",
+   "means": "Sleep stops interference, and memories that are expected to be needed are consolidated more."
+  },
+  {
+   "module": 16,
+   "title": "Nader and colleagues · reconsolidation in rats",
+   "pages": [
+    41
+   ],
+   "researcher": "Nader and colleagues (2000)",
+   "aim": "Does a consolidated memory become fragile again when it is retrieved?",
+   "manipulated": "Whether rats received anisomycin or a control infusion in the amygdala after the fear memory was reactivated.",
+   "measured": "Freezing to the tone when tested later.",
+   "found": "Rats that received anisomycin showed substantially reduced freezing. Control rats kept the fear response.",
+   "means": "Even established memories may require protein synthesis to become stable again after retrieval.",
+   "trap": "The drug was given after the memory was reactivated, not during the original training."
+  },
+  {
+   "module": 16,
+   "title": "Hupbach and colleagues · reconsolidation in humans",
+   "pages": [
+    42
+   ],
+   "researcher": "Hupbach and colleagues (2007)",
+   "aim": "Can new information become part of an old memory when the old memory is reactivated?",
+   "manipulated": "Whether participants were reminded of the first session before learning List 2.",
+   "measured": "Recall of List 1, and how many List 2 objects were mistakenly recalled as List 1.",
+   "found": "Reminded participants were more likely to mistakenly recall List 2 objects as belonging to List 1.",
+   "means": "Reactivating a memory can allow new information to become integrated into it. Reconsolidation can update a memory.",
+   "trap": "The errors went into List 1. After the reminder, new items could become part of the old memory."
+  },
+  {
+   "module": 16,
+   "title": "Brunet and colleagues · reconsolidation and PTSD",
+   "pages": [
+    43,
+    44
+   ],
+   "researcher": "Brunet and colleagues (2008)",
+   "aim": "Does blocking reconsolidation after memory retrieval reduce physiological PTSD symptoms?",
+   "manipulated": "Whether participants received propranolol or a placebo immediately after recalling their traumatic event.",
+   "measured": "Heart rate and skin conductance one week later while listening to the trauma script.",
+   "found": "The propranolol group showed significantly lower physiological fear responses than the placebo group.",
+   "means": "Blocking reconsolidation lowered the emotional response to the memory, and factual memory remained intact.",
+   "trap": "The memory of what happened was not erased."
+  },
+  {
+   "module": 16,
+   "title": "Visual imagery · repetition group and imagery group",
+   "pages": [
+    7
+   ],
+   "researcher": "Visual imagery (no researcher named)",
+   "aim": "Does forming an image help memory for word pairs more than repeating them?",
+   "manipulated": "Whether the group repeated the pair or formed an image of the two items together.",
+   "measured": "Percent correct recall of the pairs.",
+   "found": "The imagery group recalled more than twice as many pairs as the repetition group.",
+   "means": "Visual imagery aids encoding because the image connects the two items."
+  },
+  {
+   "module": 16,
+   "title": "Retrieval cues · self-generated and other-person-generated",
+   "pages": [
+    18
+   ],
+   "researcher": "Retrieval cues (no researcher named)",
+   "aim": "Which retrieval cues work best?",
+   "manipulated": "Who created the retrieval cues, and whether the person had seen the nouns.",
+   "measured": "The percent of nouns remembered.",
+   "found": "91 percent with self-generated cues, 55 percent with other-person-generated cues, and 17 percent for people who never saw the nouns.",
+   "means": "Retrieval cues are most effective when created by the person who uses them.",
+   "trap": "The 17 percent group never saw the nouns, so it shows what the cues alone give."
   }
  ],
  "cardsV4": [
@@ -819,6 +1330,348 @@ window.THIRD_AIDS = {
      ]
     }
    ]
+  },
+  {
+   "module": 16,
+   "title": "Craik and Tulving · levels of processing",
+   "researcher": "Craik and Tulving (1975)",
+   "pages": [
+    5,
+    6
+   ],
+   "blocks": [
+    {
+     "text": "**Craik and Tulving (1975)** asked whether memory depends on the **depth of processing**. People answered a question about each word.",
+     "children": []
+    },
+    {
+     "text": "The question was about **capital letters** (shallow), about **rhyme** (intermediate) or about whether the word **fit in a sentence** (deep).",
+     "children": []
+    },
+    {
+     "text": "Memory was lowest for capital letters, higher for rhyme and highest for the sentence question.",
+     "children": [
+      "**Craik and Tulving (1975)** showed that deeper processing leads to better memory."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Bransford and Johnson · picture before or after the passage",
+   "researcher": "Bransford and Johnson (1972)",
+   "pages": [
+    9,
+    11
+   ],
+   "blocks": [
+    {
+     "text": "**Bransford and Johnson (1972)** presented a passage that was **difficult to comprehend**.",
+     "children": []
+    },
+    {
+     "text": "**Group 1** saw a picture that explained the passage **before** reading. **Group 2** saw it **after** reading. The **control group** did not see it.",
+     "children": []
+    },
+    {
+     "text": "**Group 1 outperformed the others**, because a **mental framework for comprehension** aided encoding and retrieval.",
+     "children": [
+      "The picture helped only when it came first."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Karpicke and Roediger · retrieval practice",
+   "researcher": "Karpicke and Roediger (2008)",
+   "pages": [
+    12,
+    13
+   ],
+   "blocks": [
+    {
+     "text": "**Karpicke and Roediger (2008)** had people study and take tests on **word pairs**. All groups began by studying and being tested on all pairs.",
+     "children": []
+    },
+    {
+     "text": "**Group 2** then studied only the pairs it had missed, which is **less studying**. **Group 3** was tested only on the pairs it had missed, which is **less testing**.",
+     "children": []
+    },
+    {
+     "text": "After one week, Groups 1 and 2 scored **81 percent**, and Group 3 scored **36 percent**.",
+     "children": [
+      "**Karpicke and Roediger (2008)** showed the **retrieval practice effect**."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Godden and Baddeley · the diving experiment",
+   "researcher": "Godden and Baddeley (1975)",
+   "pages": [
+    19,
+    20,
+    21
+   ],
+   "blocks": [
+    {
+     "text": "In **Godden and Baddeley’s (1975) “diving” experiment**, people learned words **underwater** or **on land** and recalled them underwater or on land.",
+     "children": []
+    },
+    {
+     "text": "Recall was **32 percent** and **38 percent** when the locations matched, and **23 percent** and **24 percent** when they did not.",
+     "children": []
+    },
+    {
+     "text": "**Godden and Baddeley (1975)** showed **encoding specificity**. Recall was best when encoding and retrieval occurred in the same location.",
+     "children": []
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Grant and colleagues, Eich and Metcalfe · studying and mood",
+   "researcher": "Grant and colleagues (1998) and Eich and Metcalfe (1989)",
+   "pages": [
+    21,
+    22
+   ],
+   "blocks": [
+    {
+     "text": "In **Grant and colleagues’ (1998) “studying” experiment**, people studied in noise or in quiet. Scores were highest when the test had the same condition.",
+     "children": []
+    },
+    {
+     "text": "In **Eich and Metcalfe’s (1989) “mood” experiment**, people studied while sad or happy. Scores were highest when the mood at test matched.",
+     "children": [
+      "The mood result is **state-dependent learning**."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Morris and colleagues · transfer-appropriate processing",
+   "researcher": "Morris and colleagues (1977)",
+   "pages": [
+    23,
+    24,
+    25
+   ],
+   "blocks": [
+    {
+     "text": "**Morris and colleagues (1977)** had people encode words with a **semantic** question or a **rhyme** question.",
+     "children": []
+    },
+    {
+     "text": "People then took a **standard recognition test** or a **rhyming recognition test**.",
+     "children": []
+    },
+    {
+     "text": "Semantic processing won on the standard test, 84 percent to 63 percent. Rhyme processing won on the rhyming test, 49 percent to 33 percent.",
+     "children": [
+      "**Morris and colleagues (1977)** showed **transfer-appropriate processing**."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Müller and Pilzecker · consolidation",
+   "researcher": "Müller and Pilzecker (1900)",
+   "pages": [
+    29,
+    30
+   ],
+   "blocks": [
+    {
+     "text": "In **Müller and Pilzecker (1900)**, people memorized **nonsense syllables** and then learned a second list.",
+     "children": []
+    },
+    {
+     "text": "The **immediate group** learned the second list right away, and the **delayed group** rested for **6 minutes** first.",
+     "children": []
+    },
+    {
+     "text": "Recall of the first list was **28 percent** for the immediate group and **48 percent** for the delayed group.",
+     "children": [
+      "This supports the **perseveration-consolidation hypothesis**."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Hebb · the synapse and long-term potentiation",
+   "researcher": "Hebb (1948)",
+   "pages": [
+    31,
+    32
+   ],
+   "blocks": [
+    {
+     "text": "**Hebb (1948)** proposed that learning and memory are represented by **physiological changes at the synapse**.",
+     "children": []
+    },
+    {
+     "text": "**Long-term potentiation (LTP)** is the **enhanced firing of neurons after repeated stimulation**.",
+     "children": [
+      "It involves structural changes and enhanced responding."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Gilboa and colleagues, Viskontas and colleagues · multiple trace model",
+   "researcher": "Gilboa and colleagues (2004) and Viskontas and colleagues (2009)",
+   "pages": [
+    36,
+    37
+   ],
+   "blocks": [
+    {
+     "text": "**Gilboa and colleagues (2004)** found that the **hippocampus is activated during retrieval of both recent and remote memories**.",
+     "children": []
+    },
+    {
+     "text": "**Viskontas and colleagues (2009)** found that the **response of the hippocampus can change over time**.",
+     "children": [
+      "Both findings support the **multiple trace model**."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Gais and colleagues, Wilhelm and colleagues · sleep",
+   "researcher": "Gais and colleagues (2006) and Wilhelm and colleagues (2011)",
+   "pages": [
+    38
+   ],
+   "blocks": [
+    {
+     "text": "**Gais and colleagues (2006)** found that **memory consolidation appears to be enhanced during sleep**.",
+     "children": [
+      "One reason is that sleeping stops interference from environmental stimuli."
+     ]
+    },
+    {
+     "text": "**Wilhelm and colleagues (2011)** found that memory for a task was **stronger when participants expected to be tested after awaking**.",
+     "children": []
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Nader and colleagues · reconsolidation in rats",
+   "researcher": "Nader and colleagues (2000)",
+   "pages": [
+    41
+   ],
+   "blocks": [
+    {
+     "text": "In **Nader and colleagues (2000)**, rats learned to associate a **tone** with a **mild shock**, so the tone caused **freezing**.",
+     "children": []
+    },
+    {
+     "text": "After the memory had consolidated, the tone was played to **reactivate** it. Some rats then received **anisomycin**, which inhibits protein synthesis.",
+     "children": []
+    },
+    {
+     "text": "Those rats froze much less later, and control rats kept the fear response.",
+     "children": [
+      "**Nader and colleagues (2000)** showed reconsolidation."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Hupbach and colleagues · reconsolidation in humans",
+   "researcher": "Hupbach and colleagues (2007)",
+   "pages": [
+    42
+   ],
+   "blocks": [
+    {
+     "text": "In **Hupbach and colleagues (2007)**, people learned **List 1**. Two days later, some were **reminded** of that session before learning **List 2**.",
+     "children": []
+    },
+    {
+     "text": "The reminded group later **mistakenly recalled List 2 objects as part of List 1** more often.",
+     "children": []
+    },
+    {
+     "text": "**Hupbach and colleagues (2007)** showed that reconsolidation can **update** a memory and does not only strengthen it.",
+     "children": []
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Brunet and colleagues · reconsolidation and PTSD",
+   "researcher": "Brunet and colleagues (2008)",
+   "pages": [
+    43,
+    44
+   ],
+   "blocks": [
+    {
+     "text": "**Brunet and colleagues (2008)** tested people with **chronic PTSD**. They wrote a detailed script of their traumatic event, which reactivated the memory.",
+     "children": []
+    },
+    {
+     "text": "Right after recall, they received **propranolol** or a **placebo**. One week later, their stress responses were measured while they listened to the script.",
+     "children": []
+    },
+    {
+     "text": "The **propranolol group showed lower physiological fear responses**. Factual memory stayed intact.",
+     "children": []
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Visual imagery · repetition group and imagery group",
+   "researcher": "Visual imagery (no researcher named)",
+   "pages": [
+    7
+   ],
+   "blocks": [
+    {
+     "text": "Two groups learned word pairs such as boat and tree. The **repetition group** repeated the pair, and the **imagery group** formed an image of the two items together.",
+     "children": []
+    },
+    {
+     "text": "Recall was **more than twice as high** for the imagery group.",
+     "children": [
+      "**Visual imagery** is one of the factors that aid encoding."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Retrieval cues · self-generated and other-person-generated",
+   "researcher": "Retrieval cues (no researcher named)",
+   "pages": [
+    18
+   ],
+   "blocks": [
+    {
+     "text": "People remembered **91 percent** of nouns using **self-generated retrieval cues** and **55 percent** using **other-person-generated cues**.",
+     "children": []
+    },
+    {
+     "text": "People who had never seen the nouns produced **17 percent** from another person’s cues.",
+     "children": [
+      "So retrieval cues are most effective when created by the person who uses them."
+     ]
+    }
+   ]
   }
  ],
  "contrasts": [
@@ -1093,6 +1946,327 @@ window.THIRD_AIDS = {
    },
    "tell": "All three are implicit. Procedural memory is about skills, priming is about an earlier stimulus changing a later response, and conditioning is about a learned pairing.",
    "example": "H.M.’s mirror tracing is procedural. Completing MOT with MOTEL is priming. A racing heart around dogs after a forgotten bite is conditioning."
+  },
+  {
+   "module": 16,
+   "title": "Maintenance rehearsal vs elaborative rehearsal",
+   "pages": [
+    3
+   ],
+   "a": {
+    "term": "Maintenance rehearsal",
+    "definition": "Maintenance rehearsal is repetition that maintains information but does not transfer it to long-term memory."
+   },
+   "b": {
+    "term": "Elaborative rehearsal",
+    "definition": "Elaborative rehearsal uses meanings and connections to help transfer information to long-term memory."
+   },
+   "tell": "Maintenance rehearsal only repeats. Elaborative rehearsal thinks about meaning, which is what stores the information.",
+   "example": "Repeating a phone number is maintenance rehearsal. Linking the number to dates a person already knows is elaborative rehearsal."
+  },
+  {
+   "module": 16,
+   "title": "Shallow processing vs deep processing",
+   "pages": [
+    4,
+    5,
+    6
+   ],
+   "a": {
+    "term": "Shallow processing",
+    "definition": "Shallow processing pays little attention to meaning and focuses on physical features. It gives poor memory."
+   },
+   "b": {
+    "term": "Deep processing",
+    "definition": "Deep processing pays close attention to meaning. It gives better memory."
+   },
+   "tell": "The two differ in how much attention is paid to meaning.",
+   "example": "In Craik and Tulving (1975), the capital letters question was shallow and the fill-in-the-blank sentence was deep."
+  },
+  {
+   "module": 16,
+   "title": "Less studying vs less testing",
+   "pages": [
+    12,
+    13
+   ],
+   "a": {
+    "term": "Group 2 (less studying)",
+    "definition": "Group 2 studied only the pairs it had missed and was tested on all pairs."
+   },
+   "b": {
+    "term": "Group 3 (less testing)",
+    "definition": "Group 3 studied all pairs and was tested only on the pairs it had missed."
+   },
+   "tell": "Dropping pairs from studying did not hurt later memory. Dropping pairs from testing did.",
+   "example": "In Karpicke and Roediger (2008), Group 2 scored 81 percent after one week and Group 3 scored 36 percent."
+  },
+  {
+   "module": 16,
+   "title": "Free recall vs cued recall",
+   "pages": [
+    18
+   ],
+   "a": {
+    "term": "Free recall",
+    "definition": "In free recall, the person recalls the items without any cues."
+   },
+   "b": {
+    "term": "Cued recall",
+    "definition": "In cued recall, a cue is presented to aid recall."
+   },
+   "tell": "Cued recall gives better performance than free recall, because the cue helps retrieval.",
+   "example": "People remembered 91 percent of nouns with cues they had created themselves."
+  },
+  {
+   "module": 16,
+   "title": "Self-generated cues vs other-person-generated cues",
+   "pages": [
+    18
+   ],
+   "a": {
+    "term": "Self-generated cues",
+    "definition": "Self-generated cues are retrieval cues created by the person who uses them. They gave 91 percent of nouns remembered."
+   },
+   "b": {
+    "term": "Other-person-generated cues",
+    "definition": "Other-person-generated cues are retrieval cues created by someone else. They gave 55 percent of nouns remembered."
+   },
+   "tell": "A cue a person creates is tied to that person’s own encoding, so it works better.",
+   "example": "People who had never seen the nouns produced 17 percent of them from another person’s cues."
+  },
+  {
+   "module": 16,
+   "title": "Encoding specificity vs state-dependent learning",
+   "pages": [
+    19,
+    22
+   ],
+   "a": {
+    "term": "Encoding specificity",
+    "definition": "Encoding specificity is the principle that we learn information together with its context."
+   },
+   "b": {
+    "term": "State-dependent learning",
+    "definition": "State-dependent learning is learning that is associated with a particular internal state."
+   },
+   "tell": "Encoding specificity is usually shown with an outside context, such as a location. State-dependent learning is the same kind of match for the internal state, such as a mood.",
+   "example": "Godden and Baddeley’s (1975) diving experiment is encoding specificity. Better memory when mood at encoding matches mood at retrieval is state-dependent learning."
+  },
+  {
+   "module": 16,
+   "title": "Encoding specificity vs transfer-appropriate processing",
+   "pages": [
+    19,
+    23
+   ],
+   "a": {
+    "term": "Encoding specificity",
+    "definition": "Encoding specificity is a match of the context at encoding and at retrieval."
+   },
+   "b": {
+    "term": "Transfer-appropriate processing",
+    "definition": "Transfer-appropriate processing is a match of the type of processing at encoding and at retrieval."
+   },
+   "tell": "One matches where or in what conditions learning happened. The other matches the kind of thinking that was done.",
+   "example": "Learning and recalling underwater is a context match. Encoding by rhyme and taking a rhyming test is a processing match."
+  },
+  {
+   "module": 16,
+   "title": "Levels of processing vs transfer-appropriate processing",
+   "pages": [
+    6,
+    25
+   ],
+   "a": {
+    "term": "Levels of processing",
+    "definition": "Levels of processing theory states that deeper processing gives better memory."
+   },
+   "b": {
+    "term": "Transfer-appropriate processing",
+    "definition": "Transfer-appropriate processing states that memory is better when processing at encoding matches processing at retrieval."
+   },
+   "tell": "Levels of processing predicts that deep always wins. Transfer-appropriate processing predicts that the matching kind wins.",
+   "example": "In Morris and colleagues (1977), rhyme processing beat semantic processing on the rhyming test, 49 percent to 33 percent."
+  },
+  {
+   "module": 16,
+   "title": "Synaptic consolidation vs systems consolidation",
+   "pages": [
+    27,
+    28
+   ],
+   "a": {
+    "term": "Synaptic consolidation",
+    "definition": "Synaptic consolidation is rapid and occurs at synapses. It is a structural change at the synapse."
+   },
+   "b": {
+    "term": "Systems consolidation",
+    "definition": "Systems consolidation is gradual. It is the reorganization of neural circuits."
+   },
+   "tell": "They differ in speed and in scale. One is fast and at a single connection, and the other is slow and across a circuit.",
+   "example": "Long-term potentiation is synaptic. The fading role of the hippocampus in the standard model is systems consolidation."
+  },
+  {
+   "module": 16,
+   "title": "Immediate group vs delayed group",
+   "pages": [
+    29,
+    30
+   ],
+   "a": {
+    "term": "Immediate group",
+    "definition": "The immediate group learned the second list within seconds of the first list and recalled 28 percent of the first list."
+   },
+   "b": {
+    "term": "Delayed group",
+    "definition": "The delayed group rested for 6 minutes before the second list and recalled 48 percent of the first list."
+   },
+   "tell": "The only difference was the delay before the second list. The delay gave the first list time to consolidate.",
+   "example": "In Müller and Pilzecker (1900), recall of the first list was 28 percent against 48 percent."
+  },
+  {
+   "module": 16,
+   "title": "Standard model vs multiple trace model",
+   "pages": [
+    33,
+    36,
+    37
+   ],
+   "a": {
+    "term": "Standard model",
+    "definition": "In the standard model, the activity of the hippocampus fades with time after encoding."
+   },
+   "b": {
+    "term": "Multiple trace model",
+    "definition": "In the multiple trace model, the hippocampus is activated during retrieval of both recent and remote memories."
+   },
+   "tell": "The models disagree about whether the hippocampus is needed for old memories.",
+   "example": "Graded amnesia fits the standard model. Gilboa and colleagues (2004) found the hippocampus active for remote memories, which supports the multiple trace model, so the two findings point in opposite directions."
+  },
+  {
+   "module": 16,
+   "title": "Retrograde amnesia vs anterograde amnesia",
+   "pages": [
+    34,
+    35
+   ],
+   "a": {
+    "term": "Retrograde amnesia",
+    "definition": "Retrograde amnesia is the loss of memory for events prior to the trauma."
+   },
+   "b": {
+    "term": "Anterograde amnesia",
+    "definition": "Anterograde amnesia concerns the period after the injury."
+   },
+   "tell": "Retrograde is about events in the past, before the injury. Anterograde is about events in the future, after the injury.",
+   "example": "Forgetting the hour before an accident is retrograde. Memory loss for the period after the accident is anterograde."
+  },
+  {
+   "module": 16,
+   "title": "Consolidation vs reconsolidation",
+   "pages": [
+    27,
+    40
+   ],
+   "a": {
+    "term": "Consolidation",
+    "definition": "Consolidation transforms new memories from a fragile state to a more permanent state."
+   },
+   "b": {
+    "term": "Reconsolidation",
+    "definition": "Reconsolidation is when a retrieved memory becomes fragile and is consolidated again."
+   },
+   "tell": "Consolidation acts on a new memory. Reconsolidation acts on an old memory that has just been retrieved.",
+   "example": "A rest after learning a list supports consolidation. Giving anisomycin after a fear memory is reactivated disrupts reconsolidation."
+  },
+  {
+   "module": 16,
+   "title": "Nader and colleagues (2000) vs Hupbach and colleagues (2007)",
+   "pages": [
+    41,
+    42
+   ],
+   "a": {
+    "term": "Nader and colleagues (2000)",
+    "definition": "Nader and colleagues (2000) studied rats. Anisomycin after reactivation reduced freezing to the tone."
+   },
+   "b": {
+    "term": "Hupbach and colleagues (2007)",
+    "definition": "Hupbach and colleagues (2007) studied humans. A reminder before List 2 caused List 2 objects to be recalled as List 1."
+   },
+   "tell": "The rat study shows that a reactivated memory can be weakened. The human study shows that a reactivated memory can be updated.",
+   "example": "Rats given anisomycin froze less. People given the reminder mixed List 2 objects into List 1."
+  },
+  {
+   "module": 16,
+   "title": "Anisomycin vs propranolol",
+   "pages": [
+    41,
+    44
+   ],
+   "a": {
+    "term": "Anisomycin",
+    "definition": "Anisomycin is a drug that inhibits protein synthesis. It was given to rats in Nader and colleagues (2000)."
+   },
+   "b": {
+    "term": "Propranolol",
+    "definition": "Propranolol is a beta-blocker, a drug that blocks stress hormones in the amygdala. It was given to people in Brunet and colleagues (2008)."
+   },
+   "tell": "Both were given right after a memory was reactivated. They are different drugs in different studies.",
+   "example": "Anisomycin reduced freezing in rats. Propranolol lowered physiological fear responses in people with PTSD."
+  },
+  {
+   "module": 16,
+   "title": "Gais and colleagues (2006) vs Wilhelm and colleagues (2011)",
+   "pages": [
+    38
+   ],
+   "a": {
+    "term": "Gais and colleagues (2006)",
+    "definition": "Gais and colleagues (2006) found that memory consolidation appears to be enhanced during sleep."
+   },
+   "b": {
+    "term": "Wilhelm and colleagues (2011)",
+    "definition": "Wilhelm and colleagues (2011) found that some memories are consolidated more than others."
+   },
+   "tell": "Both are about sleep. The first is that sleep helps consolidation, and the second is about which memories are helped most.",
+   "example": "In Wilhelm and colleagues (2011), memory for a task was stronger when participants expected to be tested after awaking."
+  },
+  {
+   "module": 16,
+   "title": "Gilboa and colleagues (2004) vs Viskontas and colleagues (2009)",
+   "pages": [
+    36
+   ],
+   "a": {
+    "term": "Gilboa and colleagues (2004)",
+    "definition": "Gilboa and colleagues (2004) found that the hippocampus is activated during retrieval of both recent and remote memories."
+   },
+   "b": {
+    "term": "Viskontas and colleagues (2009)",
+    "definition": "Viskontas and colleagues (2009) found that the response of the hippocampus can change over time."
+   },
+   "tell": "Both support the multiple trace model. One is about recent and remote memories, and the other is about change over time.",
+   "example": "The finding about recent and remote memories goes with 2004, and the finding about change over time goes with 2009."
+  },
+  {
+   "module": 16,
+   "title": "Grant and colleagues (1998) vs Eich and Metcalfe (1989)",
+   "pages": [
+    21,
+    22
+   ],
+   "a": {
+    "term": "Grant and colleagues (1998)",
+    "definition": "Grant and colleagues (1998) ran the “studying” experiment, with noise or quiet at study and at test."
+   },
+   "b": {
+    "term": "Eich and Metcalfe (1989)",
+    "definition": "Eich and Metcalfe (1989) ran the “mood” experiment, with sad or happy mood at study and at test."
+   },
+   "tell": "Both found the highest scores when the test condition matched the study condition. They differ in what was matched.",
+   "example": "Noise at study and noise at test gave 6.2, against 5.4 for a quiet test. Sad at study and sad at test gave 27, against 17 for a happy test."
   }
  ],
  "contrastsV2": [
@@ -1425,6 +2599,399 @@ window.THIRD_AIDS = {
    "example": "H.M.’s mirror tracing is procedural. Completing MOT with MOTEL is priming. A racing heart around dogs after a forgotten bite is conditioning.",
    "watch": "None of the three requires conscious remembering.",
    "score": 7.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Maintenance rehearsal vs elaborative rehearsal",
+   "pages": [
+    3
+   ],
+   "a": {
+    "term": "Maintenance rehearsal",
+    "definition": "Maintenance rehearsal is repetition that maintains information but does not transfer it to long-term memory."
+   },
+   "b": {
+    "term": "Elaborative rehearsal",
+    "definition": "Elaborative rehearsal uses meanings and connections to help transfer information to long-term memory."
+   },
+   "diff": "Maintenance rehearsal only repeats. Elaborative rehearsal thinks about meaning, which is what stores the information.",
+   "example": "Repeating a phone number is maintenance rehearsal. Linking the number to dates a person already knows is elaborative rehearsal.",
+   "watch": "Repetition alone does not transfer information to long-term memory.",
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Shallow processing vs deep processing",
+   "pages": [
+    4,
+    5,
+    6
+   ],
+   "a": {
+    "term": "Shallow processing",
+    "definition": "Shallow processing pays little attention to meaning and focuses on physical features. It gives poor memory."
+   },
+   "b": {
+    "term": "Deep processing",
+    "definition": "Deep processing pays close attention to meaning. It gives better memory."
+   },
+   "diff": "The two differ in how much attention is paid to meaning.",
+   "example": "In Craik and Tulving (1975), the capital letters question was shallow and the fill-in-the-blank sentence was deep.",
+   "watch": "The rhyme question is intermediate, between the two.",
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Less studying vs less testing",
+   "pages": [
+    12,
+    13
+   ],
+   "a": {
+    "term": "Group 2 (less studying)",
+    "definition": "Group 2 studied only the pairs it had missed and was tested on all pairs."
+   },
+   "b": {
+    "term": "Group 3 (less testing)",
+    "definition": "Group 3 studied all pairs and was tested only on the pairs it had missed."
+   },
+   "diff": "Dropping pairs from studying did not hurt later memory. Dropping pairs from testing did.",
+   "example": "In Karpicke and Roediger (2008), Group 2 scored 81 percent after one week and Group 3 scored 36 percent.",
+   "watch": "Group 2 matched Group 1, which did everything.",
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Free recall vs cued recall",
+   "pages": [
+    18
+   ],
+   "a": {
+    "term": "Free recall",
+    "definition": "In free recall, the person recalls the items without any cues."
+   },
+   "b": {
+    "term": "Cued recall",
+    "definition": "In cued recall, a cue is presented to aid recall."
+   },
+   "diff": "Cued recall gives better performance than free recall, because the cue helps retrieval.",
+   "example": "People remembered 91 percent of nouns with cues they had created themselves.",
+   "watch": "Cues work best when the person who uses them created them.",
+   "score": 7.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Self-generated cues vs other-person-generated cues",
+   "pages": [
+    18
+   ],
+   "a": {
+    "term": "Self-generated cues",
+    "definition": "Self-generated cues are retrieval cues created by the person who uses them. They gave 91 percent of nouns remembered."
+   },
+   "b": {
+    "term": "Other-person-generated cues",
+    "definition": "Other-person-generated cues are retrieval cues created by someone else. They gave 55 percent of nouns remembered."
+   },
+   "diff": "A cue a person creates is tied to that person’s own encoding, so it works better.",
+   "example": "People who had never seen the nouns produced 17 percent of them from another person’s cues.",
+   "watch": "The 17 percent condition shows how much can be guessed from the cues alone.",
+   "score": 8,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Encoding specificity vs state-dependent learning",
+   "pages": [
+    19,
+    22
+   ],
+   "a": {
+    "term": "Encoding specificity",
+    "definition": "Encoding specificity is the principle that we learn information together with its context."
+   },
+   "b": {
+    "term": "State-dependent learning",
+    "definition": "State-dependent learning is learning that is associated with a particular internal state."
+   },
+   "diff": "Encoding specificity is usually shown with an outside context, such as a location. State-dependent learning is the same kind of match for the internal state, such as a mood.",
+   "example": "Godden and Baddeley’s (1975) diving experiment is encoding specificity. Better memory when mood at encoding matches mood at retrieval is state-dependent learning.",
+   "watch": "Both are about a match between encoding and retrieval. The mood experiment of Eich and Metcalfe (1989) is also an encoding specificity experiment, so it fits both terms.",
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Encoding specificity vs transfer-appropriate processing",
+   "pages": [
+    19,
+    23
+   ],
+   "a": {
+    "term": "Encoding specificity",
+    "definition": "Encoding specificity is a match of the context at encoding and at retrieval."
+   },
+   "b": {
+    "term": "Transfer-appropriate processing",
+    "definition": "Transfer-appropriate processing is a match of the type of processing at encoding and at retrieval."
+   },
+   "diff": "One matches where or in what conditions learning happened. The other matches the kind of thinking that was done.",
+   "example": "Learning and recalling underwater is a context match. Encoding by rhyme and taking a rhyming test is a processing match.",
+   "watch": "Morris and colleagues (1977) is transfer-appropriate processing, not encoding specificity.",
+   "score": 8.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Levels of processing vs transfer-appropriate processing",
+   "pages": [
+    6,
+    25
+   ],
+   "a": {
+    "term": "Levels of processing",
+    "definition": "Levels of processing theory states that deeper processing gives better memory."
+   },
+   "b": {
+    "term": "Transfer-appropriate processing",
+    "definition": "Transfer-appropriate processing states that memory is better when processing at encoding matches processing at retrieval."
+   },
+   "diff": "Levels of processing predicts that deep always wins. Transfer-appropriate processing predicts that the matching kind wins.",
+   "example": "In Morris and colleagues (1977), rhyme processing beat semantic processing on the rhyming test, 49 percent to 33 percent.",
+   "watch": "On the standard test, semantic processing still won, 84 percent to 63 percent.",
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Synaptic consolidation vs systems consolidation",
+   "pages": [
+    27,
+    28
+   ],
+   "a": {
+    "term": "Synaptic consolidation",
+    "definition": "Synaptic consolidation is rapid and occurs at synapses. It is a structural change at the synapse."
+   },
+   "b": {
+    "term": "Systems consolidation",
+    "definition": "Systems consolidation is gradual. It is the reorganization of neural circuits."
+   },
+   "diff": "They differ in speed and in scale. One is fast and at a single connection, and the other is slow and across a circuit.",
+   "example": "Long-term potentiation is synaptic. The fading role of the hippocampus in the standard model is systems consolidation.",
+   "watch": "Synaptic is the faster one.",
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Immediate group vs delayed group",
+   "pages": [
+    29,
+    30
+   ],
+   "a": {
+    "term": "Immediate group",
+    "definition": "The immediate group learned the second list within seconds of the first list and recalled 28 percent of the first list."
+   },
+   "b": {
+    "term": "Delayed group",
+    "definition": "The delayed group rested for 6 minutes before the second list and recalled 48 percent of the first list."
+   },
+   "diff": "The only difference was the delay before the second list. The delay gave the first list time to consolidate.",
+   "example": "In Müller and Pilzecker (1900), recall of the first list was 28 percent against 48 percent.",
+   "watch": "Both groups were tested on the first list.",
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Standard model vs multiple trace model",
+   "pages": [
+    33,
+    36,
+    37
+   ],
+   "a": {
+    "term": "Standard model",
+    "definition": "In the standard model, the activity of the hippocampus fades with time after encoding."
+   },
+   "b": {
+    "term": "Multiple trace model",
+    "definition": "In the multiple trace model, the hippocampus is activated during retrieval of both recent and remote memories."
+   },
+   "diff": "The models disagree about whether the hippocampus is needed for old memories.",
+   "example": "Graded amnesia fits the standard model. Gilboa and colleagues (2004) found the hippocampus active for remote memories, which supports the multiple trace model, so the two findings point in opposite directions.",
+   "watch": "Both models agree that the hippocampus is involved when a memory is new.",
+   "score": 10,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Retrograde amnesia vs anterograde amnesia",
+   "pages": [
+    34,
+    35
+   ],
+   "a": {
+    "term": "Retrograde amnesia",
+    "definition": "Retrograde amnesia is the loss of memory for events prior to the trauma."
+   },
+   "b": {
+    "term": "Anterograde amnesia",
+    "definition": "Anterograde amnesia concerns the period after the injury."
+   },
+   "diff": "Retrograde is about events in the past, before the injury. Anterograde is about events in the future, after the injury.",
+   "example": "Forgetting the hour before an accident is retrograde. Memory loss for the period after the accident is anterograde.",
+   "watch": "Graded amnesia is a feature of retrograde amnesia.",
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Consolidation vs reconsolidation",
+   "pages": [
+    27,
+    40
+   ],
+   "a": {
+    "term": "Consolidation",
+    "definition": "Consolidation transforms new memories from a fragile state to a more permanent state."
+   },
+   "b": {
+    "term": "Reconsolidation",
+    "definition": "Reconsolidation is when a retrieved memory becomes fragile and is consolidated again."
+   },
+   "diff": "Consolidation acts on a new memory. Reconsolidation acts on an old memory that has just been retrieved.",
+   "example": "A rest after learning a list supports consolidation. Giving anisomycin after a fear memory is reactivated disrupts reconsolidation.",
+   "watch": "A consolidated memory is not fixed forever.",
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Nader and colleagues (2000) vs Hupbach and colleagues (2007)",
+   "pages": [
+    41,
+    42
+   ],
+   "a": {
+    "term": "Nader and colleagues (2000)",
+    "definition": "Nader and colleagues (2000) studied rats. Anisomycin after reactivation reduced freezing to the tone."
+   },
+   "b": {
+    "term": "Hupbach and colleagues (2007)",
+    "definition": "Hupbach and colleagues (2007) studied humans. A reminder before List 2 caused List 2 objects to be recalled as List 1."
+   },
+   "diff": "The rat study shows that a reactivated memory can be weakened. The human study shows that a reactivated memory can be updated.",
+   "example": "Rats given anisomycin froze less. People given the reminder mixed List 2 objects into List 1.",
+   "watch": "Do not swap them. The drug study is the rat study.",
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Anisomycin vs propranolol",
+   "pages": [
+    41,
+    44
+   ],
+   "a": {
+    "term": "Anisomycin",
+    "definition": "Anisomycin is a drug that inhibits protein synthesis. It was given to rats in Nader and colleagues (2000)."
+   },
+   "b": {
+    "term": "Propranolol",
+    "definition": "Propranolol is a beta-blocker, a drug that blocks stress hormones in the amygdala. It was given to people in Brunet and colleagues (2008)."
+   },
+   "diff": "Both were given right after a memory was reactivated. They are different drugs in different studies.",
+   "example": "Anisomycin reduced freezing in rats. Propranolol lowered physiological fear responses in people with PTSD.",
+   "watch": "Propranolol left factual memory intact.",
+   "score": 8.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Gais and colleagues (2006) vs Wilhelm and colleagues (2011)",
+   "pages": [
+    38
+   ],
+   "a": {
+    "term": "Gais and colleagues (2006)",
+    "definition": "Gais and colleagues (2006) found that memory consolidation appears to be enhanced during sleep."
+   },
+   "b": {
+    "term": "Wilhelm and colleagues (2011)",
+    "definition": "Wilhelm and colleagues (2011) found that some memories are consolidated more than others."
+   },
+   "diff": "Both are about sleep. The first is that sleep helps consolidation, and the second is about which memories are helped most.",
+   "example": "In Wilhelm and colleagues (2011), memory for a task was stronger when participants expected to be tested after awaking.",
+   "watch": "The expectation of a test belongs to Wilhelm and colleagues (2011).",
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Gilboa and colleagues (2004) vs Viskontas and colleagues (2009)",
+   "pages": [
+    36
+   ],
+   "a": {
+    "term": "Gilboa and colleagues (2004)",
+    "definition": "Gilboa and colleagues (2004) found that the hippocampus is activated during retrieval of both recent and remote memories."
+   },
+   "b": {
+    "term": "Viskontas and colleagues (2009)",
+    "definition": "Viskontas and colleagues (2009) found that the response of the hippocampus can change over time."
+   },
+   "diff": "Both support the multiple trace model. One is about recent and remote memories, and the other is about change over time.",
+   "example": "The finding about recent and remote memories goes with 2004, and the finding about change over time goes with 2009.",
+   "watch": "Both studies are about the hippocampus, so the year and the finding have to be learned together.",
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Grant and colleagues (1998) vs Eich and Metcalfe (1989)",
+   "pages": [
+    21,
+    22
+   ],
+   "a": {
+    "term": "Grant and colleagues (1998)",
+    "definition": "Grant and colleagues (1998) ran the “studying” experiment, with noise or quiet at study and at test."
+   },
+   "b": {
+    "term": "Eich and Metcalfe (1989)",
+    "definition": "Eich and Metcalfe (1989) ran the “mood” experiment, with sad or happy mood at study and at test."
+   },
+   "diff": "Both found the highest scores when the test condition matched the study condition. They differ in what was matched.",
+   "example": "Noise at study and noise at test gave 6.2, against 5.4 for a quiet test. Sad at study and sad at test gave 27, against 17 for a happy test.",
+   "watch": "The mood experiment is also an example of state-dependent learning.",
+   "score": 8.5,
    "tier": "mid",
    "basis": "named study, stated result and must-know slides"
   }
@@ -1876,6 +3443,521 @@ window.THIRD_AIDS = {
    "score": 7.5,
    "tier": "mid",
    "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Maintenance rehearsal vs elaborative rehearsal",
+   "pages": [
+    3
+   ],
+   "a": {
+    "term": "Maintenance rehearsal",
+    "definition": "Maintenance rehearsal is repetition that maintains information but does not transfer it to long-term memory."
+   },
+   "b": {
+    "term": "Elaborative rehearsal",
+    "definition": "Elaborative rehearsal uses meanings and connections to help transfer information to long-term memory."
+   },
+   "blocks": [
+    {
+     "text": "**Maintenance rehearsal** is repetition. It maintains information but does not transfer it to long-term memory.",
+     "children": []
+    },
+    {
+     "text": "**Elaborative rehearsal** uses meanings and connections, and it helps transfer information to long-term memory.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Shallow processing vs deep processing",
+   "pages": [
+    4,
+    5,
+    6
+   ],
+   "a": {
+    "term": "Shallow processing",
+    "definition": "Shallow processing pays little attention to meaning and focuses on physical features. It gives poor memory."
+   },
+   "b": {
+    "term": "Deep processing",
+    "definition": "Deep processing pays close attention to meaning. It gives better memory."
+   },
+   "blocks": [
+    {
+     "text": "**Shallow processing** focuses on physical features and gives poor memory. **Deep processing** pays close attention to meaning and gives better memory.",
+     "children": []
+    },
+    {
+     "text": "**Craik and Tulving (1975)** found the lowest memory for the capital letters question and the highest for the sentence question.",
+     "children": []
+    }
+   ],
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Less studying vs less testing",
+   "pages": [
+    12,
+    13
+   ],
+   "a": {
+    "term": "Group 2 (less studying)",
+    "definition": "Group 2 studied only the pairs it had missed and was tested on all pairs."
+   },
+   "b": {
+    "term": "Group 3 (less testing)",
+    "definition": "Group 3 studied all pairs and was tested only on the pairs it had missed."
+   },
+   "blocks": [
+    {
+     "text": "In **Karpicke and Roediger (2008)**, **Group 2** had less studying and **Group 3** had less testing.",
+     "children": []
+    },
+    {
+     "text": "After one week, Group 2 scored **81 percent** and Group 3 scored **36 percent**.",
+     "children": [
+      "Testing memory retrieval improves memory."
+     ]
+    }
+   ],
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Free recall vs cued recall",
+   "pages": [
+    18
+   ],
+   "a": {
+    "term": "Free recall",
+    "definition": "In free recall, the person recalls the items without any cues."
+   },
+   "b": {
+    "term": "Cued recall",
+    "definition": "In cued recall, a cue is presented to aid recall."
+   },
+   "blocks": [
+    {
+     "text": "In **free recall**, no cues are given. In **cued recall**, a cue is presented to aid recall, and performance is better.",
+     "children": []
+    },
+    {
+     "text": "Retrieval cues are most effective when created by the person who uses them.",
+     "children": []
+    }
+   ],
+   "score": 7.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Self-generated cues vs other-person-generated cues",
+   "pages": [
+    18
+   ],
+   "a": {
+    "term": "Self-generated cues",
+    "definition": "Self-generated cues are retrieval cues created by the person who uses them. They gave 91 percent of nouns remembered."
+   },
+   "b": {
+    "term": "Other-person-generated cues",
+    "definition": "Other-person-generated cues are retrieval cues created by someone else. They gave 55 percent of nouns remembered."
+   },
+   "blocks": [
+    {
+     "text": "People remembered **91 percent** of nouns using **self-generated cues** and **55 percent** using **other-person-generated cues**.",
+     "children": []
+    },
+    {
+     "text": "Retrieval cues are most effective when created by the person who uses them.",
+     "children": []
+    }
+   ],
+   "score": 8,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Encoding specificity vs state-dependent learning",
+   "pages": [
+    19,
+    22
+   ],
+   "a": {
+    "term": "Encoding specificity",
+    "definition": "Encoding specificity is the principle that we learn information together with its context."
+   },
+   "b": {
+    "term": "State-dependent learning",
+    "definition": "State-dependent learning is learning that is associated with a particular internal state."
+   },
+   "blocks": [
+    {
+     "text": "**Encoding specificity** is a match of **context**, such as the place of learning. **State-dependent learning** is a match of **internal state**, such as mood.",
+     "children": []
+    },
+    {
+     "text": "In both, memory is better when the condition at retrieval matches the condition at encoding.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Encoding specificity vs transfer-appropriate processing",
+   "pages": [
+    19,
+    23
+   ],
+   "a": {
+    "term": "Encoding specificity",
+    "definition": "Encoding specificity is a match of the context at encoding and at retrieval."
+   },
+   "b": {
+    "term": "Transfer-appropriate processing",
+    "definition": "Transfer-appropriate processing is a match of the type of processing at encoding and at retrieval."
+   },
+   "blocks": [
+    {
+     "text": "**Encoding specificity** matches the **context**. **Transfer-appropriate processing** matches the **type of processing**.",
+     "children": []
+    },
+    {
+     "text": "**Morris and colleagues (1977)** showed transfer-appropriate processing with rhyme and meaning tasks.",
+     "children": []
+    }
+   ],
+   "score": 8.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Levels of processing vs transfer-appropriate processing",
+   "pages": [
+    6,
+    25
+   ],
+   "a": {
+    "term": "Levels of processing",
+    "definition": "Levels of processing theory states that deeper processing gives better memory."
+   },
+   "b": {
+    "term": "Transfer-appropriate processing",
+    "definition": "Transfer-appropriate processing states that memory is better when processing at encoding matches processing at retrieval."
+   },
+   "blocks": [
+    {
+     "text": "**Levels of processing** states that deep processing gives better memory. **Transfer-appropriate processing** states that the best processing is the kind the test requires.",
+     "children": []
+    },
+    {
+     "text": "In **Morris and colleagues (1977)**, shallow rhyme processing won on the rhyming test.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Synaptic consolidation vs systems consolidation",
+   "pages": [
+    27,
+    28
+   ],
+   "a": {
+    "term": "Synaptic consolidation",
+    "definition": "Synaptic consolidation is rapid and occurs at synapses. It is a structural change at the synapse."
+   },
+   "b": {
+    "term": "Systems consolidation",
+    "definition": "Systems consolidation is gradual. It is the reorganization of neural circuits."
+   },
+   "blocks": [
+    {
+     "text": "**Synaptic consolidation** is **rapid** and occurs at synapses. **Systems consolidation** is **gradual** and reorganizes neural circuits.",
+     "children": []
+    }
+   ],
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Immediate group vs delayed group",
+   "pages": [
+    29,
+    30
+   ],
+   "a": {
+    "term": "Immediate group",
+    "definition": "The immediate group learned the second list within seconds of the first list and recalled 28 percent of the first list."
+   },
+   "b": {
+    "term": "Delayed group",
+    "definition": "The delayed group rested for 6 minutes before the second list and recalled 48 percent of the first list."
+   },
+   "blocks": [
+    {
+     "text": "In **Müller and Pilzecker (1900)**, the **immediate group** learned the second list right away, and the **delayed group** rested for 6 minutes.",
+     "children": []
+    },
+    {
+     "text": "The delayed group recalled more of the first list, 48 percent against 28 percent.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Standard model vs multiple trace model",
+   "pages": [
+    33,
+    36,
+    37
+   ],
+   "a": {
+    "term": "Standard model",
+    "definition": "In the standard model, the activity of the hippocampus fades with time after encoding."
+   },
+   "b": {
+    "term": "Multiple trace model",
+    "definition": "In the multiple trace model, the hippocampus is activated during retrieval of both recent and remote memories."
+   },
+   "blocks": [
+    {
+     "text": "In the **standard model**, hippocampal activity **fades with time**. In the **multiple trace model**, the hippocampus **stays involved**.",
+     "children": []
+    },
+    {
+     "text": "**Gilboa and colleagues (2004)** found the hippocampus active for both recent and remote memories.",
+     "children": []
+    }
+   ],
+   "score": 10,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Retrograde amnesia vs anterograde amnesia",
+   "pages": [
+    34,
+    35
+   ],
+   "a": {
+    "term": "Retrograde amnesia",
+    "definition": "Retrograde amnesia is the loss of memory for events prior to the trauma."
+   },
+   "b": {
+    "term": "Anterograde amnesia",
+    "definition": "Anterograde amnesia concerns the period after the injury."
+   },
+   "blocks": [
+    {
+     "text": "**Retrograde amnesia** is loss of memory for events **before** the trauma. **Anterograde** amnesia concerns the period **after** the injury.",
+     "children": []
+    },
+    {
+     "text": "**Graded amnesia** means recent memories are more fragile than remote ones.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Consolidation vs reconsolidation",
+   "pages": [
+    27,
+    40
+   ],
+   "a": {
+    "term": "Consolidation",
+    "definition": "Consolidation transforms new memories from a fragile state to a more permanent state."
+   },
+   "b": {
+    "term": "Reconsolidation",
+    "definition": "Reconsolidation is when a retrieved memory becomes fragile and is consolidated again."
+   },
+   "blocks": [
+    {
+     "text": "**Consolidation** makes a **new** memory more permanent. **Reconsolidation** makes a **retrieved** memory stable again after it has become fragile.",
+     "children": []
+    }
+   ],
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Nader and colleagues (2000) vs Hupbach and colleagues (2007)",
+   "pages": [
+    41,
+    42
+   ],
+   "a": {
+    "term": "Nader and colleagues (2000)",
+    "definition": "Nader and colleagues (2000) studied rats. Anisomycin after reactivation reduced freezing to the tone."
+   },
+   "b": {
+    "term": "Hupbach and colleagues (2007)",
+    "definition": "Hupbach and colleagues (2007) studied humans. A reminder before List 2 caused List 2 objects to be recalled as List 1."
+   },
+   "blocks": [
+    {
+     "text": "**Nader and colleagues (2000)** showed in **rats** that a reactivated memory can be **weakened**.",
+     "children": []
+    },
+    {
+     "text": "**Hupbach and colleagues (2007)** showed in **humans** that a reactivated memory can be **updated** with new information.",
+     "children": []
+    }
+   ],
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Anisomycin vs propranolol",
+   "pages": [
+    41,
+    44
+   ],
+   "a": {
+    "term": "Anisomycin",
+    "definition": "Anisomycin is a drug that inhibits protein synthesis. It was given to rats in Nader and colleagues (2000)."
+   },
+   "b": {
+    "term": "Propranolol",
+    "definition": "Propranolol is a beta-blocker, a drug that blocks stress hormones in the amygdala. It was given to people in Brunet and colleagues (2008)."
+   },
+   "blocks": [
+    {
+     "text": "**Anisomycin** inhibits protein synthesis and was used in **Nader and colleagues (2000)**.",
+     "children": []
+    },
+    {
+     "text": "**Propranolol** blocks stress hormones in the amygdala and was used in **Brunet and colleagues (2008)**.",
+     "children": []
+    }
+   ],
+   "score": 8.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Gais and colleagues (2006) vs Wilhelm and colleagues (2011)",
+   "pages": [
+    38
+   ],
+   "a": {
+    "term": "Gais and colleagues (2006)",
+    "definition": "Gais and colleagues (2006) found that memory consolidation appears to be enhanced during sleep."
+   },
+   "b": {
+    "term": "Wilhelm and colleagues (2011)",
+    "definition": "Wilhelm and colleagues (2011) found that some memories are consolidated more than others."
+   },
+   "blocks": [
+    {
+     "text": "**Gais and colleagues (2006)** found that consolidation appears to be **enhanced during sleep**. One reason is that sleeping stops interference.",
+     "children": []
+    },
+    {
+     "text": "**Wilhelm and colleagues (2011)** found that memory was **stronger when participants expected to be tested** after awaking.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Gilboa and colleagues (2004) vs Viskontas and colleagues (2009)",
+   "pages": [
+    36
+   ],
+   "a": {
+    "term": "Gilboa and colleagues (2004)",
+    "definition": "Gilboa and colleagues (2004) found that the hippocampus is activated during retrieval of both recent and remote memories."
+   },
+   "b": {
+    "term": "Viskontas and colleagues (2009)",
+    "definition": "Viskontas and colleagues (2009) found that the response of the hippocampus can change over time."
+   },
+   "blocks": [
+    {
+     "text": "**Gilboa and colleagues (2004)** found the hippocampus **activated during retrieval of both recent and remote memories**.",
+     "children": []
+    },
+    {
+     "text": "**Viskontas and colleagues (2009)** found that the **response of the hippocampus can change over time**.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Grant and colleagues (1998) vs Eich and Metcalfe (1989)",
+   "pages": [
+    21,
+    22
+   ],
+   "a": {
+    "term": "Grant and colleagues (1998)",
+    "definition": "Grant and colleagues (1998) ran the “studying” experiment, with noise or quiet at study and at test."
+   },
+   "b": {
+    "term": "Eich and Metcalfe (1989)",
+    "definition": "Eich and Metcalfe (1989) ran the “mood” experiment, with sad or happy mood at study and at test."
+   },
+   "blocks": [
+    {
+     "text": "**Grant and colleagues (1998)** matched **noise or quiet** at study and test.",
+     "children": []
+    },
+    {
+     "text": "**Eich and Metcalfe (1989)** matched **sad or happy mood** at study and test.",
+     "children": [
+      "In both, scores were highest when the conditions matched."
+     ]
+    }
+   ],
+   "score": 8.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
   }
  ],
  "contrastsV21": [
@@ -2325,6 +4407,521 @@ window.THIRD_AIDS = {
    "score": 7.5,
    "tier": "mid",
    "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Maintenance rehearsal vs elaborative rehearsal",
+   "pages": [
+    3
+   ],
+   "a": {
+    "term": "Maintenance rehearsal",
+    "definition": "Maintenance rehearsal is repetition that maintains information but does not transfer it to long-term memory."
+   },
+   "b": {
+    "term": "Elaborative rehearsal",
+    "definition": "Elaborative rehearsal uses meanings and connections to help transfer information to long-term memory."
+   },
+   "blocks": [
+    {
+     "text": "**Maintenance rehearsal** is repetition. It maintains information but does not transfer it to long-term memory.",
+     "children": []
+    },
+    {
+     "text": "**Elaborative rehearsal** uses meanings and connections, and it helps transfer information to long-term memory.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Shallow processing vs deep processing",
+   "pages": [
+    4,
+    5,
+    6
+   ],
+   "a": {
+    "term": "Shallow processing",
+    "definition": "Shallow processing pays little attention to meaning and focuses on physical features. It gives poor memory."
+   },
+   "b": {
+    "term": "Deep processing",
+    "definition": "Deep processing pays close attention to meaning. It gives better memory."
+   },
+   "blocks": [
+    {
+     "text": "**Shallow processing** focuses on physical features and gives poor memory. **Deep processing** pays close attention to meaning and gives better memory.",
+     "children": []
+    },
+    {
+     "text": "**Craik and Tulving (1975)** found the lowest memory for the capital letters question and the highest for the sentence question.",
+     "children": []
+    }
+   ],
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Less studying vs less testing",
+   "pages": [
+    12,
+    13
+   ],
+   "a": {
+    "term": "Group 2 (less studying)",
+    "definition": "Group 2 studied only the pairs it had missed and was tested on all pairs."
+   },
+   "b": {
+    "term": "Group 3 (less testing)",
+    "definition": "Group 3 studied all pairs and was tested only on the pairs it had missed."
+   },
+   "blocks": [
+    {
+     "text": "In **Karpicke and Roediger (2008)**, **Group 2** had less studying and **Group 3** had less testing.",
+     "children": []
+    },
+    {
+     "text": "After one week, Group 2 scored **81 percent** and Group 3 scored **36 percent**.",
+     "children": [
+      "Testing memory retrieval improves memory."
+     ]
+    }
+   ],
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Free recall vs cued recall",
+   "pages": [
+    18
+   ],
+   "a": {
+    "term": "Free recall",
+    "definition": "In free recall, the person recalls the items without any cues."
+   },
+   "b": {
+    "term": "Cued recall",
+    "definition": "In cued recall, a cue is presented to aid recall."
+   },
+   "blocks": [
+    {
+     "text": "In **free recall**, no cues are given. In **cued recall**, a cue is presented to aid recall, and performance is better.",
+     "children": []
+    },
+    {
+     "text": "Retrieval cues are most effective when created by the person who uses them.",
+     "children": []
+    }
+   ],
+   "score": 7.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Self-generated cues vs other-person-generated cues",
+   "pages": [
+    18
+   ],
+   "a": {
+    "term": "Self-generated cues",
+    "definition": "Self-generated cues are retrieval cues created by the person who uses them. They gave 91 percent of nouns remembered."
+   },
+   "b": {
+    "term": "Other-person-generated cues",
+    "definition": "Other-person-generated cues are retrieval cues created by someone else. They gave 55 percent of nouns remembered."
+   },
+   "blocks": [
+    {
+     "text": "People remembered **91 percent** of nouns using **self-generated cues** and **55 percent** using **other-person-generated cues**.",
+     "children": []
+    },
+    {
+     "text": "Retrieval cues are most effective when created by the person who uses them.",
+     "children": []
+    }
+   ],
+   "score": 8,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Encoding specificity vs state-dependent learning",
+   "pages": [
+    19,
+    22
+   ],
+   "a": {
+    "term": "Encoding specificity",
+    "definition": "Encoding specificity is the principle that we learn information together with its context."
+   },
+   "b": {
+    "term": "State-dependent learning",
+    "definition": "State-dependent learning is learning that is associated with a particular internal state."
+   },
+   "blocks": [
+    {
+     "text": "**Encoding specificity** is a match of **context**, such as the place of learning. **State-dependent learning** is a match of **internal state**, such as mood.",
+     "children": []
+    },
+    {
+     "text": "In both, memory is better when the condition at retrieval matches the condition at encoding.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Encoding specificity vs transfer-appropriate processing",
+   "pages": [
+    19,
+    23
+   ],
+   "a": {
+    "term": "Encoding specificity",
+    "definition": "Encoding specificity is a match of the context at encoding and at retrieval."
+   },
+   "b": {
+    "term": "Transfer-appropriate processing",
+    "definition": "Transfer-appropriate processing is a match of the type of processing at encoding and at retrieval."
+   },
+   "blocks": [
+    {
+     "text": "**Encoding specificity** matches the **context**. **Transfer-appropriate processing** matches the **type of processing**.",
+     "children": []
+    },
+    {
+     "text": "**Morris and colleagues (1977)** showed transfer-appropriate processing with rhyme and meaning tasks.",
+     "children": []
+    }
+   ],
+   "score": 8.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Levels of processing vs transfer-appropriate processing",
+   "pages": [
+    6,
+    25
+   ],
+   "a": {
+    "term": "Levels of processing",
+    "definition": "Levels of processing theory states that deeper processing gives better memory."
+   },
+   "b": {
+    "term": "Transfer-appropriate processing",
+    "definition": "Transfer-appropriate processing states that memory is better when processing at encoding matches processing at retrieval."
+   },
+   "blocks": [
+    {
+     "text": "**Levels of processing** states that deep processing gives better memory. **Transfer-appropriate processing** states that the best processing is the kind the test requires.",
+     "children": []
+    },
+    {
+     "text": "In **Morris and colleagues (1977)**, shallow rhyme processing won on the rhyming test.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Synaptic consolidation vs systems consolidation",
+   "pages": [
+    27,
+    28
+   ],
+   "a": {
+    "term": "Synaptic consolidation",
+    "definition": "Synaptic consolidation is rapid and occurs at synapses. It is a structural change at the synapse."
+   },
+   "b": {
+    "term": "Systems consolidation",
+    "definition": "Systems consolidation is gradual. It is the reorganization of neural circuits."
+   },
+   "blocks": [
+    {
+     "text": "**Synaptic consolidation** is **rapid** and occurs at synapses. **Systems consolidation** is **gradual** and reorganizes neural circuits.",
+     "children": []
+    }
+   ],
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Immediate group vs delayed group",
+   "pages": [
+    29,
+    30
+   ],
+   "a": {
+    "term": "Immediate group",
+    "definition": "The immediate group learned the second list within seconds of the first list and recalled 28 percent of the first list."
+   },
+   "b": {
+    "term": "Delayed group",
+    "definition": "The delayed group rested for 6 minutes before the second list and recalled 48 percent of the first list."
+   },
+   "blocks": [
+    {
+     "text": "In **Müller and Pilzecker (1900)**, the **immediate group** learned the second list right away, and the **delayed group** rested for 6 minutes.",
+     "children": []
+    },
+    {
+     "text": "The delayed group recalled more of the first list, 48 percent against 28 percent.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Standard model vs multiple trace model",
+   "pages": [
+    33,
+    36,
+    37
+   ],
+   "a": {
+    "term": "Standard model",
+    "definition": "In the standard model, the activity of the hippocampus fades with time after encoding."
+   },
+   "b": {
+    "term": "Multiple trace model",
+    "definition": "In the multiple trace model, the hippocampus is activated during retrieval of both recent and remote memories."
+   },
+   "blocks": [
+    {
+     "text": "In the **standard model**, hippocampal activity **fades with time**. In the **multiple trace model**, the hippocampus **stays involved**.",
+     "children": []
+    },
+    {
+     "text": "**Gilboa and colleagues (2004)** found the hippocampus active for both recent and remote memories.",
+     "children": []
+    }
+   ],
+   "score": 10,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Retrograde amnesia vs anterograde amnesia",
+   "pages": [
+    34,
+    35
+   ],
+   "a": {
+    "term": "Retrograde amnesia",
+    "definition": "Retrograde amnesia is the loss of memory for events prior to the trauma."
+   },
+   "b": {
+    "term": "Anterograde amnesia",
+    "definition": "Anterograde amnesia concerns the period after the injury."
+   },
+   "blocks": [
+    {
+     "text": "**Retrograde amnesia** is loss of memory for events **before** the trauma. **Anterograde** amnesia concerns the period **after** the injury.",
+     "children": []
+    },
+    {
+     "text": "**Graded amnesia** means recent memories are more fragile than remote ones.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Consolidation vs reconsolidation",
+   "pages": [
+    27,
+    40
+   ],
+   "a": {
+    "term": "Consolidation",
+    "definition": "Consolidation transforms new memories from a fragile state to a more permanent state."
+   },
+   "b": {
+    "term": "Reconsolidation",
+    "definition": "Reconsolidation is when a retrieved memory becomes fragile and is consolidated again."
+   },
+   "blocks": [
+    {
+     "text": "**Consolidation** makes a **new** memory more permanent. **Reconsolidation** makes a **retrieved** memory stable again after it has become fragile.",
+     "children": []
+    }
+   ],
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Nader and colleagues (2000) vs Hupbach and colleagues (2007)",
+   "pages": [
+    41,
+    42
+   ],
+   "a": {
+    "term": "Nader and colleagues (2000)",
+    "definition": "Nader and colleagues (2000) studied rats. Anisomycin after reactivation reduced freezing to the tone."
+   },
+   "b": {
+    "term": "Hupbach and colleagues (2007)",
+    "definition": "Hupbach and colleagues (2007) studied humans. A reminder before List 2 caused List 2 objects to be recalled as List 1."
+   },
+   "blocks": [
+    {
+     "text": "**Nader and colleagues (2000)** showed in **rats** that a reactivated memory can be **weakened**.",
+     "children": []
+    },
+    {
+     "text": "**Hupbach and colleagues (2007)** showed in **humans** that a reactivated memory can be **updated** with new information.",
+     "children": []
+    }
+   ],
+   "score": 9.5,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Anisomycin vs propranolol",
+   "pages": [
+    41,
+    44
+   ],
+   "a": {
+    "term": "Anisomycin",
+    "definition": "Anisomycin is a drug that inhibits protein synthesis. It was given to rats in Nader and colleagues (2000)."
+   },
+   "b": {
+    "term": "Propranolol",
+    "definition": "Propranolol is a beta-blocker, a drug that blocks stress hormones in the amygdala. It was given to people in Brunet and colleagues (2008)."
+   },
+   "blocks": [
+    {
+     "text": "**Anisomycin** inhibits protein synthesis and was used in **Nader and colleagues (2000)**.",
+     "children": []
+    },
+    {
+     "text": "**Propranolol** blocks stress hormones in the amygdala and was used in **Brunet and colleagues (2008)**.",
+     "children": []
+    }
+   ],
+   "score": 8.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Gais and colleagues (2006) vs Wilhelm and colleagues (2011)",
+   "pages": [
+    38
+   ],
+   "a": {
+    "term": "Gais and colleagues (2006)",
+    "definition": "Gais and colleagues (2006) found that memory consolidation appears to be enhanced during sleep."
+   },
+   "b": {
+    "term": "Wilhelm and colleagues (2011)",
+    "definition": "Wilhelm and colleagues (2011) found that some memories are consolidated more than others."
+   },
+   "blocks": [
+    {
+     "text": "**Gais and colleagues (2006)** found that consolidation appears to be **enhanced during sleep**. One reason is that sleeping stops interference.",
+     "children": []
+    },
+    {
+     "text": "**Wilhelm and colleagues (2011)** found that memory was **stronger when participants expected to be tested** after awaking.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Gilboa and colleagues (2004) vs Viskontas and colleagues (2009)",
+   "pages": [
+    36
+   ],
+   "a": {
+    "term": "Gilboa and colleagues (2004)",
+    "definition": "Gilboa and colleagues (2004) found that the hippocampus is activated during retrieval of both recent and remote memories."
+   },
+   "b": {
+    "term": "Viskontas and colleagues (2009)",
+    "definition": "Viskontas and colleagues (2009) found that the response of the hippocampus can change over time."
+   },
+   "blocks": [
+    {
+     "text": "**Gilboa and colleagues (2004)** found the hippocampus **activated during retrieval of both recent and remote memories**.",
+     "children": []
+    },
+    {
+     "text": "**Viskontas and colleagues (2009)** found that the **response of the hippocampus can change over time**.",
+     "children": []
+    }
+   ],
+   "score": 9,
+   "tier": "high",
+   "basis": "named study, stated result and must-know slides"
+  },
+  {
+   "module": 16,
+   "title": "Grant and colleagues (1998) vs Eich and Metcalfe (1989)",
+   "pages": [
+    21,
+    22
+   ],
+   "a": {
+    "term": "Grant and colleagues (1998)",
+    "definition": "Grant and colleagues (1998) ran the “studying” experiment, with noise or quiet at study and at test."
+   },
+   "b": {
+    "term": "Eich and Metcalfe (1989)",
+    "definition": "Eich and Metcalfe (1989) ran the “mood” experiment, with sad or happy mood at study and at test."
+   },
+   "blocks": [
+    {
+     "text": "**Grant and colleagues (1998)** matched **noise or quiet** at study and test.",
+     "children": []
+    },
+    {
+     "text": "**Eich and Metcalfe (1989)** matched **sad or happy mood** at study and test.",
+     "children": [
+      "In both, scores were highest when the conditions matched."
+     ]
+    }
+   ],
+   "score": 8.5,
+   "tier": "mid",
+   "basis": "named study, stated result and must-know slides"
   }
  ],
  "explainers": [
@@ -2402,6 +4999,98 @@ window.THIRD_AIDS = {
     "In Brenda Milner (1962), H.M. improved at mirror tracing over three days while saying each day that he had never seen the task.",
     "In Graf and colleagues (1985), amnesic patients completed word stems with studied words as often as controls, even though they often did not remember the list.",
     "In Perfect and Askew (1994), readers recognized about 11 percent of the ads and still rated the ads they had seen as more appealing. In each case, the earlier experience changed behavior without an explicit memory of it."
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Why testing beats restudying",
+   "pages": [
+    12,
+    13
+   ],
+   "another": [],
+   "explain": [
+    "In Karpicke and Roediger (2008), every group studied and was tested on all the word pairs at first.",
+    "Group 2 stopped studying the pairs it already knew. Group 3 stopped being tested on the pairs it already knew.",
+    "After one week, Group 2 scored 81 percent, the same as the group that did everything. Group 3 scored 36 percent. So retrieving a pair from memory is what keeps it there. This is the retrieval practice effect."
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Three kinds of matching between encoding and retrieval",
+   "pages": [
+    19,
+    22,
+    23
+   ],
+   "another": [],
+   "explain": [
+    "Three principles state that memory is better when retrieval matches encoding. They differ in what is matched.",
+    "Encoding specificity matches the context, such as the location in the diving experiment.",
+    "State-dependent learning matches the internal state, such as mood.",
+    "Transfer-appropriate processing matches the type of processing, such as rhyme encoding with a rhyming test."
+   ]
+  },
+  {
+   "module": 16,
+   "title": "How Morris and colleagues (1977) fits with levels of processing",
+   "pages": [
+    6,
+    24,
+    25
+   ],
+   "another": [],
+   "explain": [
+    "Levels of processing theory states that deep processing gives better memory. Craik and Tulving (1975) found exactly that on a standard test.",
+    "Morris and colleagues (1977) added a second test, a rhyming recognition test.",
+    "On the standard test, semantic processing won, 84 percent to 63 percent. On the rhyming test, rhyme processing won, 49 percent to 33 percent. So the best encoding is the kind the test requires, which is transfer-appropriate processing."
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Why a rest after learning protects a memory",
+   "pages": [
+    29,
+    30
+   ],
+   "another": [],
+   "explain": [
+    "Müller and Pilzecker (1900) proposed that neural activity continues for a short period after an experience ends.",
+    "That period is needed for the fragile memory trace to consolidate. A new task during the period disrupts it.",
+    "The immediate group started a second list during that period and recalled 28 percent of the first list. The delayed group rested for 6 minutes and recalled 48 percent."
+   ]
+  },
+  {
+   "module": 16,
+   "title": "The standard model and the multiple trace model",
+   "pages": [
+    33,
+    34,
+    36,
+    37
+   ],
+   "another": [],
+   "explain": [
+    "Both models describe systems consolidation, and both start with the hippocampus linking the cortical areas that hold a memory.",
+    "In the standard model, the activity of the hippocampus fades with time. Graded amnesia fits this, because recent memories are more fragile than remote ones.",
+    "In the multiple trace model, the hippocampus stays involved. Gilboa and colleagues (2004) found it active during retrieval of both recent and remote memories."
+   ]
+  },
+  {
+   "module": 16,
+   "title": "What reconsolidation means",
+   "pages": [
+    40,
+    41,
+    42,
+    44
+   ],
+   "another": [],
+   "explain": [
+    "Reconsolidation is when a retrieved memory becomes fragile and is consolidated again.",
+    "While the memory is fragile, it can be weakened. In Nader and colleagues (2000), anisomycin after reactivation reduced freezing in rats.",
+    "It can also be updated. In Hupbach and colleagues (2007), a reminder let List 2 objects become part of List 1.",
+    "Brunet and colleagues (2008) used this for PTSD. Propranolol after recall lowered the fear response and left factual memory intact."
    ]
   }
  ],
@@ -2534,6 +5223,156 @@ window.THIRD_AIDS = {
      "children": [
       "In each case, the earlier experience changed behavior without an explicit memory of it."
      ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Why testing beats restudying",
+   "pages": [
+    12,
+    13
+   ],
+   "blocks": [
+    {
+     "text": "In **Karpicke and Roediger (2008)**, every group studied and was tested on all the word pairs at first.",
+     "children": []
+    },
+    {
+     "text": "**Group 2** stopped **studying** the pairs it already knew. **Group 3** stopped being **tested** on the pairs it already knew.",
+     "children": []
+    },
+    {
+     "text": "After one week, Group 2 scored **81 percent**, the same as the group that did everything. Group 3 scored **36 percent**.",
+     "children": [
+      "So retrieving a pair from memory is what keeps it there. This is the **retrieval practice effect**."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Three kinds of matching between encoding and retrieval",
+   "pages": [
+    19,
+    22,
+    23
+   ],
+   "blocks": [
+    {
+     "text": "Three principles state that memory is better when retrieval matches encoding. They differ in what is matched.",
+     "children": []
+    },
+    {
+     "text": "**Encoding specificity** matches the **context**, such as the location in the diving experiment.",
+     "children": []
+    },
+    {
+     "text": "**State-dependent learning** matches the **internal state**, such as mood.",
+     "children": []
+    },
+    {
+     "text": "**Transfer-appropriate processing** matches the **type of processing**, such as rhyme encoding with a rhyming test.",
+     "children": []
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "How Morris and colleagues (1977) fits with levels of processing",
+   "pages": [
+    6,
+    24,
+    25
+   ],
+   "blocks": [
+    {
+     "text": "**Levels of processing theory** states that deep processing gives better memory. **Craik and Tulving (1975)** found exactly that on a standard test.",
+     "children": []
+    },
+    {
+     "text": "**Morris and colleagues (1977)** added a second test, a **rhyming recognition test**.",
+     "children": []
+    },
+    {
+     "text": "On the standard test, semantic processing won, 84 percent to 63 percent. On the rhyming test, **rhyme processing won**, 49 percent to 33 percent.",
+     "children": [
+      "So the best encoding is the kind the test requires, which is **transfer-appropriate processing**."
+     ]
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "Why a rest after learning protects a memory",
+   "pages": [
+    29,
+    30
+   ],
+   "blocks": [
+    {
+     "text": "**Müller and Pilzecker (1900)** proposed that neural activity **continues for a short period after an experience ends**.",
+     "children": []
+    },
+    {
+     "text": "That period is needed for the fragile memory trace to **consolidate**. A new task during the period disrupts it.",
+     "children": []
+    },
+    {
+     "text": "The immediate group started a second list during that period and recalled **28 percent** of the first list. The delayed group rested for 6 minutes and recalled **48 percent**.",
+     "children": []
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "The standard model and the multiple trace model",
+   "pages": [
+    33,
+    34,
+    36,
+    37
+   ],
+   "blocks": [
+    {
+     "text": "Both models describe **systems consolidation**, and both start with the hippocampus linking the cortical areas that hold a memory.",
+     "children": []
+    },
+    {
+     "text": "In the **standard model**, the activity of the hippocampus **fades with time**. **Graded amnesia** fits this, because recent memories are more fragile than remote ones.",
+     "children": []
+    },
+    {
+     "text": "In the **multiple trace model**, the hippocampus **stays involved**. **Gilboa and colleagues (2004)** found it active during retrieval of both recent and remote memories.",
+     "children": []
+    }
+   ]
+  },
+  {
+   "module": 16,
+   "title": "What reconsolidation means",
+   "pages": [
+    40,
+    41,
+    42,
+    44
+   ],
+   "blocks": [
+    {
+     "text": "**Reconsolidation** is when a **retrieved memory becomes fragile and is consolidated again**.",
+     "children": []
+    },
+    {
+     "text": "While the memory is fragile, it can be **weakened**. In **Nader and colleagues (2000)**, anisomycin after reactivation reduced freezing in rats.",
+     "children": []
+    },
+    {
+     "text": "It can also be **updated**. In **Hupbach and colleagues (2007)**, a reminder let List 2 objects become part of List 1.",
+     "children": []
+    },
+    {
+     "text": "**Brunet and colleagues (2008)** used this for PTSD. Propranolol after recall lowered the fear response and left factual memory intact.",
+     "children": []
     }
    ]
   }
@@ -2855,6 +5694,365 @@ window.THIRD_AIDS = {
    "a": "Classical conditioning is pairing a neutral stimulus with a reflexive response. It involves implicit memory when the person has forgotten about the original pairing of the stimulus and the response.",
    "score": 7,
    "tier": "mid"
+  },
+  {
+   "module": 16,
+   "slides": [
+    3
+   ],
+   "q": "How do maintenance rehearsal and elaborative rehearsal differ?",
+   "a": "Maintenance rehearsal is repetition that maintains information but does not transfer it to long-term memory. Elaborative rehearsal uses meanings and connections, and it helps transfer information to long-term memory.",
+   "score": 8.5,
+   "tier": "high"
+  },
+  {
+   "module": 16,
+   "slides": [
+    4
+   ],
+   "q": "What does levels of processing theory state?",
+   "a": "Levels of processing theory states that memory depends on how information is encoded. Shallow processing focuses on physical features and gives poor memory. Deep processing pays close attention to meaning and gives better memory.",
+   "score": 8,
+   "tier": "mid"
+  },
+  {
+   "module": 16,
+   "slides": [
+    5
+   ],
+   "q": "What were the three kinds of questions in Craik and Tulving (1975)?",
+   "a": "The shallow question asked about physical appearance, such as whether the word was in capital letters. The intermediate question asked about sound, such as whether the word rhymed with weight. The deep question asked whether the word fit in a sentence.",
+   "score": 8.5,
+   "tier": "high",
+   "who": "Craik and Tulving (1975)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    6
+   ],
+   "q": "What did Craik and Tulving (1975) find?",
+   "a": "Memory was lowest after the capital letters question, higher after the rhyme question and highest after the fill-in-the-blank question. Deeper processing produced better memory.",
+   "score": 9.5,
+   "tier": "high",
+   "who": "Craik and Tulving (1975)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    7
+   ],
+   "q": "Which factors aid encoding?",
+   "a": "Visual imagery, the self-reference effect, the generation effect, organizing to-be-remembered information, relating words to survival value and retrieval practice all aid encoding.",
+   "score": 7,
+   "tier": "mid"
+  },
+  {
+   "module": 16,
+   "slides": [
+    9
+   ],
+   "q": "What did Bransford and Johnson (1972) do, and what did they find?",
+   "a": "Bransford and Johnson (1972) presented a passage that was difficult to comprehend. Group 1 saw a picture that explained it before reading, Group 2 saw the picture after reading, and the control group did not see it. Group 1 outperformed the others.",
+   "score": 9.5,
+   "tier": "high",
+   "who": "Bransford and Johnson (1972)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    9,
+    11
+   ],
+   "q": "Why did the picture help only when it came before the passage?",
+   "a": "Having a mental framework of comprehension aided memory encoding and retrieval. The picture gave people one organized scene to fit each sentence into as they read, which it could not do after the reading was finished.",
+   "score": 8.5,
+   "tier": "high"
+  },
+  {
+   "module": 16,
+   "slides": [
+    12
+   ],
+   "q": "What were the three groups in Karpicke and Roediger (2008)?",
+   "a": "Group 1 studied and was tested on all word pairs in all sessions. Group 2 studied only the pairs it had missed but was tested on all pairs. Group 3 studied all pairs but was tested only on the pairs it had missed.",
+   "score": 9,
+   "tier": "high",
+   "who": "Karpicke and Roediger (2008)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    12,
+    13
+   ],
+   "q": "What did Karpicke and Roediger (2008) find, and what is the retrieval practice effect?",
+   "a": "After one week, Group 1 scored 81 percent, Group 2 scored 81 percent and Group 3 scored 36 percent. The group with less testing did much worse. The retrieval practice effect is that testing memory retrieval can improve memory.",
+   "score": 10,
+   "tier": "high",
+   "who": "Karpicke and Roediger (2008)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    15
+   ],
+   "q": "What are the principles of effective studying?",
+   "a": "Elaborate by associating what you are learning to what you already know. Generate questions and self-test. Take breaks, because of the spacing effect and because sleep enhances consolidation. Avoid the illusion of learning.",
+   "score": 7.5,
+   "tier": "mid"
+  },
+  {
+   "module": 16,
+   "slides": [
+    18
+   ],
+   "q": "What is cued recall, and which retrieval cues are most effective?",
+   "a": "In cued recall, a cue is presented to aid recall, and performance is better than in free recall. Retrieval cues are most effective when created by the person who uses them. People remembered 91 percent of nouns with their own cues and 55 percent with another person’s cues.",
+   "score": 9,
+   "tier": "high",
+   "note": "The slide names no researcher for this figure. In the textbook it is from Mantyla (1986)."
+  },
+  {
+   "module": 16,
+   "slides": [
+    19
+   ],
+   "q": "What is encoding specificity?",
+   "a": "Encoding specificity is the principle that we learn information together with its context. Recall is best when encoding and retrieval occur in the same context.",
+   "score": 9,
+   "tier": "high",
+   "note": "One slide credits the diving experiment to Baddeley (1975), and a later slide credits it to Godden and Baddeley (1975). The published study is Godden and Baddeley (1975)."
+  },
+  {
+   "module": 16,
+   "slides": [
+    20,
+    21
+   ],
+   "q": "What were the results of the diving experiment?",
+   "a": "In Godden and Baddeley’s (1975) diving experiment, words learned and recalled underwater gave 32 percent, and words learned and recalled on land gave 38 percent. When the locations did not match, recall was 23 percent and 24 percent. Recall was best when the learning location and the recall location were the same.",
+   "score": 9.5,
+   "tier": "high",
+   "who": "Godden and Baddeley (1975)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    21
+   ],
+   "q": "What did Grant and colleagues (1998) and Eich and Metcalfe (1989) show?",
+   "a": "In Grant and colleagues’ (1998) studying experiment, scores were highest when the noise condition at test matched the one at study. In Eich and Metcalfe’s (1989) mood experiment, scores were highest when the mood at test matched the mood at study.",
+   "score": 9,
+   "tier": "high",
+   "who": "Grant and colleagues (1998)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    22
+   ],
+   "q": "What is state-dependent learning?",
+   "a": "State-dependent learning is learning that is associated with a particular internal state. Memory is better if a person’s mood at encoding matches the mood during retrieval.",
+   "score": 8,
+   "tier": "mid"
+  },
+  {
+   "module": 16,
+   "slides": [
+    23
+   ],
+   "q": "What is transfer-appropriate processing?",
+   "a": "Transfer-appropriate processing is the principle that memory task results improve if the type of processing used during encoding is the same as the type used during retrieval.",
+   "score": 9,
+   "tier": "high"
+  },
+  {
+   "module": 16,
+   "slides": [
+    24
+   ],
+   "q": "What were the encoding conditions and the tests in Morris and colleagues (1977)?",
+   "a": "At encoding, people answered either a semantic question, about whether a word fit in a sentence, or a rhyme question. At retrieval, they took either a standard recognition test of the studied words or a rhyming recognition test of words that rhymed with the studied words.",
+   "score": 8.5,
+   "tier": "high",
+   "who": "Morris and colleagues (1977)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    25
+   ],
+   "q": "What did Morris and colleagues (1977) find?",
+   "a": "On the standard recognition test, semantic processing beat rhyme processing, 84 percent to 63 percent. On the rhyming recognition test, rhyme processing beat semantic processing, 49 percent to 33 percent.",
+   "score": 10,
+   "tier": "high",
+   "who": "Morris and colleagues (1977)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    27,
+    28
+   ],
+   "q": "What is consolidation, and what are its two types?",
+   "a": "Consolidation transforms new memories from a fragile state to a more permanent state. Synaptic consolidation is rapid and occurs at synapses. Systems consolidation is gradual and is the reorganization of neural circuits.",
+   "score": 9,
+   "tier": "high"
+  },
+  {
+   "module": 16,
+   "slides": [
+    29
+   ],
+   "q": "What did Müller and Pilzecker (1900) do, and what did they find?",
+   "a": "Participants memorized a list of nonsense syllables and then learned a second list. The immediate group learned the second list right away, and the delayed group rested for 6 minutes first. Recall of the first list was 28 percent for the immediate group and 48 percent for the delayed group.",
+   "score": 9.5,
+   "tier": "high",
+   "who": "Müller and Pilzecker (1900)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    30
+   ],
+   "q": "What is the perseveration-consolidation hypothesis?",
+   "a": "Müller and Pilzecker proposed that neural activity continues for a short period after an experience ends. This period is required for the fragile memory trace to consolidate into a stable long-term memory. If a new task interrupts it, consolidation is disrupted and the memory is lost.",
+   "score": 9,
+   "tier": "high",
+   "who": "Müller and Pilzecker (1900)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    31
+   ],
+   "q": "What did Hebb (1948) propose about memory and the synapse?",
+   "a": "Hebb (1948) proposed that learning and memory are represented in the brain by physiological changes at the synapse. These changes are a neural record of experience.",
+   "score": 8.5,
+   "tier": "high",
+   "note": "The slide gives Hebb (1948). Hebb’s idea is usually cited from his 1949 book, The Organization of Behavior.",
+   "who": "Hebb (1948)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    31,
+    32
+   ],
+   "q": "What is long-term potentiation (LTP)?",
+   "a": "Long-term potentiation is the enhanced firing of neurons after repeated stimulation. It involves structural changes at the synapse and enhanced responding.",
+   "score": 9,
+   "tier": "high"
+  },
+  {
+   "module": 16,
+   "slides": [
+    33
+   ],
+   "q": "What does the standard model of consolidation state?",
+   "a": "The standard model of consolidation states that after encoding, the activity of the hippocampus fades with time. The connections among cortical areas grow stronger, and in the end the hippocampus is no longer needed for the memory.",
+   "score": 9,
+   "tier": "high"
+  },
+  {
+   "module": 16,
+   "slides": [
+    34,
+    35
+   ],
+   "q": "What are retrograde amnesia and graded amnesia?",
+   "a": "Retrograde amnesia is the loss of memory for events prior to the trauma. Graded amnesia means that memory for recent events is more fragile than memory for remote events, so the loss is worst just before the injury.",
+   "score": 9,
+   "tier": "high"
+  },
+  {
+   "module": 16,
+   "slides": [
+    36
+   ],
+   "q": "What does the multiple trace model state, and what evidence supports it?",
+   "a": "In the multiple trace model, the hippocampus stays involved in memories over time. Gilboa and colleagues (2004) found that the hippocampus is activated during retrieval of both recent and remote memories. Viskontas and colleagues (2009) found that the response of the hippocampus can change over time.",
+   "score": 9,
+   "tier": "high",
+   "who": "Gilboa and colleagues (2004)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    38
+   ],
+   "q": "How does sleep affect consolidation?",
+   "a": "Memory consolidation appears to be enhanced during sleep (Gais and colleagues, 2006). One reason is that sleeping stops interference from environmental stimuli.",
+   "score": 8.5,
+   "tier": "high",
+   "who": "Gais and colleagues (2006)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    38
+   ],
+   "q": "What did Wilhelm and colleagues (2011) find?",
+   "a": "Wilhelm and colleagues (2011) found that some memories are consolidated more than others. Memory for a task was stronger when participants expected to be tested after awaking.",
+   "score": 8.5,
+   "tier": "high",
+   "who": "Wilhelm and colleagues (2011)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    40
+   ],
+   "q": "What is reconsolidation?",
+   "a": "Reconsolidation is the process in which retrieved memories become fragile and are consolidated again. It makes memory a work in progress that is constantly constructed and remodeled.",
+   "score": 9,
+   "tier": "high"
+  },
+  {
+   "module": 16,
+   "slides": [
+    41
+   ],
+   "q": "What did Nader and colleagues (2000) do, and what did they find?",
+   "a": "Rats learned to associate a tone with a mild shock, so the tone alone caused freezing. After the memory had consolidated, the tone was played again, and some rats then received anisomycin in the amygdala. Those rats showed much less freezing later, and control rats kept the fear response.",
+   "score": 10,
+   "tier": "high",
+   "who": "Nader and colleagues (2000)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    42
+   ],
+   "q": "What did Hupbach and colleagues (2007) do, and what did they find?",
+   "a": "Participants learned List 1. Two days later, some were reminded of the first session before learning List 2, and others learned List 2 without the reminder. When tested on List 1, the reminded group was more likely to mistakenly recall List 2 objects as belonging to List 1.",
+   "score": 10,
+   "tier": "high",
+   "who": "Hupbach and colleagues (2007)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    43,
+    44
+   ],
+   "q": "What did Brunet and colleagues (2008) do?",
+   "a": "People with chronic PTSD wrote a detailed script of their traumatic event, which reactivated the memory. Immediately after recall, they received either propranolol or a placebo. One week later, their heart rate and skin conductance were measured while they listened to the script.",
+   "score": 9.5,
+   "tier": "high",
+   "who": "Brunet and colleagues (2008)"
+  },
+  {
+   "module": 16,
+   "slides": [
+    44
+   ],
+   "q": "What did Brunet and colleagues (2008) find?",
+   "a": "The propranolol group showed significantly lower physiological fear responses than the placebo group. Factual memory remained intact, and only the intense emotional charge was blunted.",
+   "score": 10,
+   "tier": "high",
+   "who": "Brunet and colleagues (2008)"
   }
  ],
  "qaV3": [
@@ -3587,6 +6785,603 @@ window.THIRD_AIDS = {
    "tier": "mid",
    "kind": "relate",
    "id": 9057
+  },
+  {
+   "module": 16,
+   "slides": [
+    3
+   ],
+   "q": "What are encoding and retrieval?",
+   "a": "Encoding is acquiring information and transforming it into memory. Retrieval is transferring information from long-term memory to working memory.",
+   "score": 6,
+   "tier": "low",
+   "kind": "slide",
+   "id": 9100
+  },
+  {
+   "module": 16,
+   "slides": [
+    3
+   ],
+   "q": "How do maintenance rehearsal and elaborative rehearsal differ?",
+   "a": "Maintenance rehearsal is repetition that maintains information but does not transfer it to long-term memory. Elaborative rehearsal uses meanings and connections, and it helps transfer information to long-term memory.",
+   "score": 8.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9101
+  },
+  {
+   "module": 16,
+   "slides": [
+    4
+   ],
+   "q": "What does levels of processing theory state?",
+   "a": "Levels of processing theory states that memory depends on how information is encoded. Shallow processing focuses on physical features and gives poor memory. Deep processing pays close attention to meaning and gives better memory.",
+   "score": 8,
+   "tier": "mid",
+   "kind": "slide",
+   "id": 9102
+  },
+  {
+   "module": 16,
+   "slides": [
+    5
+   ],
+   "q": "What were the three kinds of questions in Craik and Tulving (1975)?",
+   "a": "The shallow question asked about physical appearance, such as whether the word was in capital letters. The intermediate question asked about sound, such as whether the word rhymed with weight. The deep question asked whether the word fit in a sentence.",
+   "score": 8.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9103
+  },
+  {
+   "module": 16,
+   "slides": [
+    6
+   ],
+   "q": "What did Craik and Tulving (1975) find?",
+   "a": "Memory was lowest after the capital letters question, higher after the rhyme question and highest after the fill-in-the-blank question. Deeper processing produced better memory.",
+   "score": 9.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9104
+  },
+  {
+   "module": 16,
+   "slides": [
+    7
+   ],
+   "q": "Which factors aid encoding?",
+   "a": "Visual imagery, the self-reference effect, the generation effect, organizing to-be-remembered information, relating words to survival value and retrieval practice all aid encoding.",
+   "score": 7,
+   "tier": "mid",
+   "kind": "slide",
+   "id": 9105
+  },
+  {
+   "module": 16,
+   "slides": [
+    7
+   ],
+   "q": "How did the imagery group compare with the repetition group?",
+   "a": "The imagery group formed an image of the two items together, such as a boat in a tree, and the repetition group repeated the pair. The imagery group recalled more than twice as many pairs.",
+   "score": 7,
+   "tier": "mid",
+   "note": "The slide names no researcher for this figure. In the textbook it is from Bower and Winzenz (1970).",
+   "kind": "slide",
+   "id": 9106
+  },
+  {
+   "module": 16,
+   "slides": [
+    7
+   ],
+   "q": "What are the self-reference effect and the generation effect?",
+   "a": "The self-reference effect is better memory for information that is related to oneself. The generation effect is better memory for material a person generates than for material the person only reads.",
+   "score": 5.5,
+   "tier": "low",
+   "note": "The slide lists these two effects by name only. The definitions given here are the standard ones.",
+   "kind": "slide",
+   "id": 9107
+  },
+  {
+   "module": 16,
+   "slides": [
+    9
+   ],
+   "q": "What did Bransford and Johnson (1972) do, and what did they find?",
+   "a": "Bransford and Johnson (1972) presented a passage that was difficult to comprehend. Group 1 saw a picture that explained it before reading, Group 2 saw the picture after reading, and the control group did not see it. Group 1 outperformed the others.",
+   "score": 9.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9108
+  },
+  {
+   "module": 16,
+   "slides": [
+    9,
+    11
+   ],
+   "q": "Why did the picture help only when it came before the passage?",
+   "a": "Having a mental framework of comprehension aided memory encoding and retrieval. The picture gave people one organized scene to fit each sentence into as they read, which it could not do after the reading was finished.",
+   "score": 8.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9109
+  },
+  {
+   "module": 16,
+   "slides": [
+    12
+   ],
+   "q": "What were the three groups in Karpicke and Roediger (2008)?",
+   "a": "Group 1 studied and was tested on all word pairs in all sessions. Group 2 studied only the pairs it had missed but was tested on all pairs. Group 3 studied all pairs but was tested only on the pairs it had missed.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9110
+  },
+  {
+   "module": 16,
+   "slides": [
+    12,
+    13
+   ],
+   "q": "What did Karpicke and Roediger (2008) find, and what is the retrieval practice effect?",
+   "a": "After one week, Group 1 scored 81 percent, Group 2 scored 81 percent and Group 3 scored 36 percent. The group with less testing did much worse. The retrieval practice effect is that testing memory retrieval can improve memory.",
+   "score": 10,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9111
+  },
+  {
+   "module": 16,
+   "slides": [
+    15
+   ],
+   "q": "What are the principles of effective studying?",
+   "a": "Elaborate by associating what you are learning to what you already know. Generate questions and self-test. Take breaks, because of the spacing effect and because sleep enhances consolidation. Avoid the illusion of learning.",
+   "score": 7.5,
+   "tier": "mid",
+   "kind": "slide",
+   "id": 9112
+  },
+  {
+   "module": 16,
+   "slides": [
+    15
+   ],
+   "q": "What are the spacing effect and the illusion of learning?",
+   "a": "The spacing effect is that memory is better for multiple short study sessions. The illusion of learning is mistaking familiarity for comprehension, and familiarity does not mean comprehension.",
+   "score": 7,
+   "tier": "mid",
+   "kind": "slide",
+   "id": 9113
+  },
+  {
+   "module": 16,
+   "slides": [
+    17
+   ],
+   "q": "What is retrieval, and what are most failures of memory?",
+   "a": "Retrieval is the process of transferring information from long-term memory back into working memory, which is consciousness. Most failures of memory are failures to retrieve.",
+   "score": 7,
+   "tier": "mid",
+   "kind": "slide",
+   "id": 9114
+  },
+  {
+   "module": 16,
+   "slides": [
+    18
+   ],
+   "q": "What is cued recall, and which retrieval cues are most effective?",
+   "a": "In cued recall, a cue is presented to aid recall, and performance is better than in free recall. Retrieval cues are most effective when created by the person who uses them. People remembered 91 percent of nouns with their own cues and 55 percent with another person’s cues.",
+   "score": 9,
+   "tier": "high",
+   "note": "The slide names no researcher for this figure. In the textbook it is from Mantyla (1986).",
+   "kind": "slide",
+   "id": 9115
+  },
+  {
+   "module": 16,
+   "slides": [
+    19
+   ],
+   "q": "What is encoding specificity?",
+   "a": "Encoding specificity is the principle that we learn information together with its context. Recall is best when encoding and retrieval occur in the same context.",
+   "score": 9,
+   "tier": "high",
+   "note": "One slide credits the diving experiment to Baddeley (1975), and a later slide credits it to Godden and Baddeley (1975). The published study is Godden and Baddeley (1975).",
+   "kind": "slide",
+   "id": 9116
+  },
+  {
+   "module": 16,
+   "slides": [
+    20,
+    21
+   ],
+   "q": "What were the results of the diving experiment?",
+   "a": "In Godden and Baddeley’s (1975) diving experiment, words learned and recalled underwater gave 32 percent, and words learned and recalled on land gave 38 percent. When the locations did not match, recall was 23 percent and 24 percent. Recall was best when the learning location and the recall location were the same.",
+   "score": 9.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9117
+  },
+  {
+   "module": 16,
+   "slides": [
+    21
+   ],
+   "q": "What did Grant and colleagues (1998) and Eich and Metcalfe (1989) show?",
+   "a": "In Grant and colleagues’ (1998) studying experiment, scores were highest when the noise condition at test matched the one at study. In Eich and Metcalfe’s (1989) mood experiment, scores were highest when the mood at test matched the mood at study.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9118
+  },
+  {
+   "module": 16,
+   "slides": [
+    22
+   ],
+   "q": "What is state-dependent learning?",
+   "a": "State-dependent learning is learning that is associated with a particular internal state. Memory is better if a person’s mood at encoding matches the mood during retrieval.",
+   "score": 8,
+   "tier": "mid",
+   "kind": "slide",
+   "id": 9119
+  },
+  {
+   "module": 16,
+   "slides": [
+    23
+   ],
+   "q": "What is transfer-appropriate processing?",
+   "a": "Transfer-appropriate processing is the principle that memory task results improve if the type of processing used during encoding is the same as the type used during retrieval.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9120
+  },
+  {
+   "module": 16,
+   "slides": [
+    24
+   ],
+   "q": "What were the encoding conditions and the tests in Morris and colleagues (1977)?",
+   "a": "At encoding, people answered either a semantic question, about whether a word fit in a sentence, or a rhyme question. At retrieval, they took either a standard recognition test of the studied words or a rhyming recognition test of words that rhymed with the studied words.",
+   "score": 8.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9121
+  },
+  {
+   "module": 16,
+   "slides": [
+    25
+   ],
+   "q": "What did Morris and colleagues (1977) find?",
+   "a": "On the standard recognition test, semantic processing beat rhyme processing, 84 percent to 63 percent. On the rhyming recognition test, rhyme processing beat semantic processing, 49 percent to 33 percent.",
+   "score": 10,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9122
+  },
+  {
+   "module": 16,
+   "slides": [
+    27,
+    28
+   ],
+   "q": "What is consolidation, and what are its two types?",
+   "a": "Consolidation transforms new memories from a fragile state to a more permanent state. Synaptic consolidation is rapid and occurs at synapses. Systems consolidation is gradual and is the reorganization of neural circuits.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9123
+  },
+  {
+   "module": 16,
+   "slides": [
+    29
+   ],
+   "q": "What did Müller and Pilzecker (1900) do, and what did they find?",
+   "a": "Participants memorized a list of nonsense syllables and then learned a second list. The immediate group learned the second list right away, and the delayed group rested for 6 minutes first. Recall of the first list was 28 percent for the immediate group and 48 percent for the delayed group.",
+   "score": 9.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9124
+  },
+  {
+   "module": 16,
+   "slides": [
+    30
+   ],
+   "q": "What is the perseveration-consolidation hypothesis?",
+   "a": "Müller and Pilzecker proposed that neural activity continues for a short period after an experience ends. This period is required for the fragile memory trace to consolidate into a stable long-term memory. If a new task interrupts it, consolidation is disrupted and the memory is lost.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9125
+  },
+  {
+   "module": 16,
+   "slides": [
+    31
+   ],
+   "q": "What did Hebb (1948) propose about memory and the synapse?",
+   "a": "Hebb (1948) proposed that learning and memory are represented in the brain by physiological changes at the synapse. These changes are a neural record of experience.",
+   "score": 8.5,
+   "tier": "high",
+   "note": "The slide gives Hebb (1948). Hebb’s idea is usually cited from his 1949 book, The Organization of Behavior.",
+   "kind": "slide",
+   "id": 9126
+  },
+  {
+   "module": 16,
+   "slides": [
+    31,
+    32
+   ],
+   "q": "What is long-term potentiation (LTP)?",
+   "a": "Long-term potentiation is the enhanced firing of neurons after repeated stimulation. It involves structural changes at the synapse and enhanced responding.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9127
+  },
+  {
+   "module": 16,
+   "slides": [
+    33
+   ],
+   "q": "What does the standard model of consolidation state?",
+   "a": "The standard model of consolidation states that after encoding, the activity of the hippocampus fades with time. The connections among cortical areas grow stronger, and in the end the hippocampus is no longer needed for the memory.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9128
+  },
+  {
+   "module": 16,
+   "slides": [
+    34
+   ],
+   "q": "Why does graded amnesia support the standard model?",
+   "a": "The standard model is based partly on memory loss after injury. Recent memories have had less time to be consolidated, so they are more fragile. That is the pattern graded amnesia shows.",
+   "score": 8,
+   "tier": "mid",
+   "kind": "slide",
+   "id": 9129
+  },
+  {
+   "module": 16,
+   "slides": [
+    34,
+    35
+   ],
+   "q": "What are retrograde amnesia and graded amnesia?",
+   "a": "Retrograde amnesia is the loss of memory for events prior to the trauma. Graded amnesia means that memory for recent events is more fragile than memory for remote events, so the loss is worst just before the injury.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9130
+  },
+  {
+   "module": 16,
+   "slides": [
+    36
+   ],
+   "q": "What does the multiple trace model state, and what evidence supports it?",
+   "a": "In the multiple trace model, the hippocampus stays involved in memories over time. Gilboa and colleagues (2004) found that the hippocampus is activated during retrieval of both recent and remote memories. Viskontas and colleagues (2009) found that the response of the hippocampus can change over time.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9131
+  },
+  {
+   "module": 16,
+   "slides": [
+    38
+   ],
+   "q": "How does sleep affect consolidation?",
+   "a": "Memory consolidation appears to be enhanced during sleep (Gais and colleagues, 2006). One reason is that sleeping stops interference from environmental stimuli.",
+   "score": 8.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9132
+  },
+  {
+   "module": 16,
+   "slides": [
+    38
+   ],
+   "q": "What did Wilhelm and colleagues (2011) find?",
+   "a": "Wilhelm and colleagues (2011) found that some memories are consolidated more than others. Memory for a task was stronger when participants expected to be tested after awaking.",
+   "score": 8.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9133
+  },
+  {
+   "module": 16,
+   "slides": [
+    40
+   ],
+   "q": "What is reconsolidation?",
+   "a": "Reconsolidation is the process in which retrieved memories become fragile and are consolidated again. It makes memory a work in progress that is constantly constructed and remodeled.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9134
+  },
+  {
+   "module": 16,
+   "slides": [
+    41
+   ],
+   "q": "What did Nader and colleagues (2000) do, and what did they find?",
+   "a": "Rats learned to associate a tone with a mild shock, so the tone alone caused freezing. After the memory had consolidated, the tone was played again, and some rats then received anisomycin in the amygdala. Those rats showed much less freezing later, and control rats kept the fear response.",
+   "score": 10,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9135
+  },
+  {
+   "module": 16,
+   "slides": [
+    41
+   ],
+   "q": "What is the conclusion of Nader and colleagues (2000)?",
+   "a": "Even established memories may require protein synthesis to become stable again after retrieval. A retrieved memory can be weakened while it is fragile.",
+   "score": 8.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9136
+  },
+  {
+   "module": 16,
+   "slides": [
+    42
+   ],
+   "q": "What did Hupbach and colleagues (2007) do, and what did they find?",
+   "a": "Participants learned List 1. Two days later, some were reminded of the first session before learning List 2, and others learned List 2 without the reminder. When tested on List 1, the reminded group was more likely to mistakenly recall List 2 objects as belonging to List 1.",
+   "score": 10,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9137
+  },
+  {
+   "module": 16,
+   "slides": [
+    42
+   ],
+   "q": "Why is the result of Hupbach and colleagues (2007) important?",
+   "a": "It shows that reactivating an existing memory can allow new information to become integrated into that memory. Reconsolidation can involve updating memories, not simply strengthening them.",
+   "score": 9,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9138
+  },
+  {
+   "module": 16,
+   "slides": [
+    43,
+    44
+   ],
+   "q": "What did Brunet and colleagues (2008) do?",
+   "a": "People with chronic PTSD wrote a detailed script of their traumatic event, which reactivated the memory. Immediately after recall, they received either propranolol or a placebo. One week later, their heart rate and skin conductance were measured while they listened to the script.",
+   "score": 9.5,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9139
+  },
+  {
+   "module": 16,
+   "slides": [
+    44
+   ],
+   "q": "What did Brunet and colleagues (2008) find?",
+   "a": "The propranolol group showed significantly lower physiological fear responses than the placebo group. Factual memory remained intact, and only the intense emotional charge was blunted.",
+   "score": 10,
+   "tier": "high",
+   "kind": "slide",
+   "id": 9140
+  },
+  {
+   "module": 16,
+   "slides": [
+    33,
+    36,
+    37
+   ],
+   "q": "How do the standard model and the multiple trace model differ?",
+   "a": "In the standard model, the activity of the hippocampus fades with time, so remote memories do not need it. In the multiple trace model, the hippocampus stays connected and is active for both recent and remote memories.",
+   "score": 8.5,
+   "tier": "high",
+   "kind": "relate",
+   "id": 9141
+  },
+  {
+   "module": 16,
+   "slides": [
+    6,
+    25
+   ],
+   "q": "Craik and Tulving (1975) found that deep processing is best. Morris and colleagues (1977) found that rhyme processing can win. How do both hold?",
+   "a": "Both hold because the tests were different. On a standard test of the words, deep processing gave better memory in both studies. On a rhyming test, rhyme processing gave better memory, because the processing at encoding matched the processing at the test.",
+   "score": 9,
+   "tier": "high",
+   "kind": "relate",
+   "id": 9142
+  },
+  {
+   "module": 16,
+   "slides": [
+    19,
+    22,
+    23
+   ],
+   "q": "How do encoding specificity, state-dependent learning and transfer-appropriate processing differ?",
+   "a": "All three are about a match between encoding and retrieval. Encoding specificity is a match of context, such as location. State-dependent learning is a match of internal state, such as mood. Transfer-appropriate processing is a match of the type of processing.",
+   "score": 9,
+   "tier": "high",
+   "kind": "relate",
+   "id": 9143
+  },
+  {
+   "module": 16,
+   "slides": [
+    29,
+    30,
+    38
+   ],
+   "q": "How do Müller and Pilzecker (1900) and the sleep findings fit together?",
+   "a": "Both show that a memory is protected when nothing interferes with it after learning. In Müller and Pilzecker (1900), a 6-minute rest protected the first list. During sleep, interference from environmental stimuli stops, which is one reason consolidation is enhanced.",
+   "score": 8.5,
+   "tier": "high",
+   "kind": "relate",
+   "id": 9144
+  },
+  {
+   "module": 16,
+   "slides": [
+    27,
+    40,
+    41,
+    42
+   ],
+   "q": "How does reconsolidation change the idea of consolidation?",
+   "a": "Consolidation makes a new memory more permanent. Reconsolidation shows that a consolidated memory becomes fragile again when it is retrieved, so it can be weakened, as in Nader and colleagues (2000), or updated, as in Hupbach and colleagues (2007).",
+   "score": 9,
+   "tier": "high",
+   "kind": "relate",
+   "id": 9145
+  },
+  {
+   "module": 16,
+   "slides": [
+    5,
+    9,
+    12,
+    21,
+    24,
+    29,
+    31,
+    36,
+    38,
+    41,
+    42,
+    44
+   ],
+   "q": "Which year goes with each named study?",
+   "a": "Müller and Pilzecker is 1900, and Hebb is 1948. Bransford and Johnson is 1972. Craik and Tulving and Godden and Baddeley are both 1975. Morris and colleagues is 1977. Eich and Metcalfe is 1989, and Grant and colleagues is 1998. Nader and colleagues is 2000, Gilboa and colleagues is 2004, Gais and colleagues is 2006, Hupbach and colleagues is 2007, Karpicke and Roediger and Brunet and colleagues are both 2008, Viskontas and colleagues is 2009, and Wilhelm and colleagues is 2011.",
+   "score": 9,
+   "tier": "high",
+   "kind": "relate",
+   "id": 9146
   }
  ],
  "qaV4": [
@@ -4088,6 +7883,407 @@ window.THIRD_AIDS = {
     "- **“Know”** is familiarity, which is **semantic** memory.",
     "- Over 40 to 50 years, “remember” answers drop and “know” answers stay, so old memories become more semantic."
    ]
+  },
+  {
+   "id": 9100,
+   "a": [
+    "**Encoding** is **acquiring information and transforming it into memory**.",
+    "- **Retrieval** is **transferring information from long-term memory to working memory**.",
+    "- Encoding puts information in, and retrieval brings it back out."
+   ]
+  },
+  {
+   "id": 9101,
+   "a": [
+    "**Maintenance rehearsal** is the **repetition of stimuli**. It maintains information but **does not transfer it to long-term memory**.",
+    "- **Elaborative rehearsal** uses **meanings and connections**.",
+    "- Elaborative rehearsal **helps transfer information to long-term memory**."
+   ]
+  },
+  {
+   "id": 9102,
+   "a": [
+    "**Levels of processing theory** states that **memory depends on how information is encoded**, which is the **depth of processing**.",
+    "- **Shallow processing** pays little attention to meaning and focuses on physical features. It gives **poor memory**.",
+    "- **Deep processing** pays close attention to meaning. It gives **better memory**."
+   ]
+  },
+  {
+   "id": 9103,
+   "a": [
+    "In **Craik and Tulving (1975)**, a question about each word set the depth of processing.",
+    "- **Shallow (structural or visual)** was “Is the word in capital letters?”",
+    "- **Intermediate (phonemic or acoustic)** was “Does the word rhyme with weight?”",
+    "- **Deep (semantic or meaning)** was “Does the word fit in the sentence: ‘He met a ______ in the street’?”"
+   ]
+  },
+  {
+   "id": 9104,
+   "a": [
+    "Each trial had three steps. A question was asked, a word was presented, and the question was answered.",
+    "- The percent correct was about **15** for capital letters, about **48** for rhyme and about **80** for fill in the blanks.",
+    "- **Deeper processing produced better memory**, which is what levels of processing theory predicts."
+   ]
+  },
+  {
+   "id": 9105,
+   "a": [
+    "Six factors aid encoding.",
+    "- **Visual imagery** and the **self-reference effect** aid encoding.",
+    "- The **generation effect** and **organizing** to-be-remembered information aid encoding.",
+    "- **Relating words to survival value** and **retrieval practice** aid encoding."
+   ]
+  },
+  {
+   "id": 9106,
+   "a": [
+    "Two groups learned word pairs such as boat and tree.",
+    "- The **repetition group** repeated the pair.",
+    "- The **imagery group** formed an image of the two items together.",
+    "- Percent correct recall was **more than twice as high** for the imagery group."
+   ]
+  },
+  {
+   "id": 9107,
+   "a": [
+    "Both effects add meaning or connections at encoding, as visual imagery does.",
+    "- The **self-reference effect** is better memory for information related to oneself.",
+    "- The **generation effect** is better memory for material a person generates than for material the person only reads."
+   ]
+  },
+  {
+   "id": 9108,
+   "a": [
+    "**Bransford and Johnson (1972)** **presented difficult-to-comprehend information**.",
+    "- **Group 1** saw a picture that helped explain the information **before** reading it.",
+    "- **Group 2** saw the picture **after** reading the passage, and the **control group** did not see it.",
+    "- **Group 1 outperformed the others.**"
+   ]
+  },
+  {
+   "id": 9109,
+   "a": [
+    "**Having a mental framework of comprehension aided memory encoding and retrieval.**",
+    "- The picture shows a man playing a guitar below a tall building, with a loudspeaker held up by balloons near a woman’s window.",
+    "- Seeing it first let people place each sentence into one organized scene as they read.",
+    "- Seeing it afterward was too late to organize the sentences during encoding."
+   ]
+  },
+  {
+   "id": 9110,
+   "a": [
+    "**Karpicke and Roediger (2008)** ran a **study-and-test experiment with word pairs**.",
+    "- **Group 1** studied and was tested on all words in all sessions.",
+    "- **Group 2** (less studying) studied only words missed in previous tests and was tested on all words.",
+    "- **Group 3** (less testing) studied all words and was tested only on words missed in previous tests."
+   ]
+  },
+  {
+   "id": 9111,
+   "a": [
+    "On the **test after one week**, Group 1 scored **81 percent** and Group 2 scored **81 percent**.",
+    "- Group 3, which had **less testing**, scored **36 percent**.",
+    "- Cutting back on studying did not hurt memory, and cutting back on testing did.",
+    "- This is the **retrieval practice effect**. **Testing memory retrieval can improve memory.**"
+   ]
+  },
+  {
+   "id": 9112,
+   "a": [
+    "Four principles of effective studying follow from memory research.",
+    "- **Elaborate**, which is associating what you are learning to what you already know.",
+    "- **Generate questions and self-test.**",
+    "- **Take breaks.** Memory is better for multiple short study sessions, and consolidation is enhanced by sleep.",
+    "- **Avoid the illusion of learning.**"
+   ]
+  },
+  {
+   "id": 9113,
+   "a": [
+    "The **spacing effect** is that **memory is better for multiple short study sessions**.",
+    "- The **illusion of learning** is believing material is learned because it feels familiar.",
+    "- **Familiarity does not mean comprehension.**"
+   ]
+  },
+  {
+   "id": 9114,
+   "a": [
+    "**Retrieval** is the **process of transferring information from long-term memory back into working memory**.",
+    "- **Most of our failures of memory are failures to retrieve.**",
+    "- The information is often still stored, but it cannot be brought back at that moment."
+   ]
+  },
+  {
+   "id": 9115,
+   "a": [
+    "In **cued recall**, a **cue is presented to aid recall**. It gives **increased performance over free recall**.",
+    "- **Retrieval cues are most effective when created by the person who uses them.**",
+    "- People remembered **91 percent** of nouns using self-generated cues and **55 percent** using other-person-generated cues.",
+    "- People who never saw the nouns produced **17 percent** from another person’s cues."
+   ]
+  },
+  {
+   "id": 9116,
+   "a": [
+    "**Encoding specificity** is the principle that **we learn information together with its context**.",
+    "- The context is stored with the information and can act as a retrieval cue.",
+    "- In **Baddeley’s (1975) “diving experiment,”** the best recall occurred when encoding and retrieval occurred in the same location."
+   ]
+  },
+  {
+   "id": 9117,
+   "a": [
+    "In **Godden and Baddeley’s (1975) “diving” experiment**, words were learned underwater or on land and recalled underwater or on land.",
+    "- Matching locations gave **32 percent** (underwater both times) and **38 percent** (on land both times).",
+    "- Different locations gave **23 percent** and **24 percent**.",
+    "- **Best recall occurred when encoding and retrieval occurred in the same location.**",
+    "- **Baddeley’s (1975) “diving experiment”** and **Godden and Baddeley’s (1975) “diving” experiment** are the same experiment."
+   ]
+  },
+  {
+   "id": 9118,
+   "a": [
+    "Two more experiments show the same matching pattern.",
+    "- In **Grant and colleagues’ (1998) “studying” experiment**, people studied in noise or in quiet. Scores were highest when the test condition matched.",
+    "- In **Eich and Metcalfe’s (1989) “mood” experiment**, people studied while sad or happy. Scores were highest when the mood at test matched."
+   ]
+  },
+  {
+   "id": 9119,
+   "a": [
+    "**State-dependent learning** is **learning associated with a particular internal state**.",
+    "- There is **better memory if a person’s mood at encoding matches the mood during retrieval**.",
+    "- Encoding specificity is usually shown with an outside context, and state-dependent learning is the same kind of match for the internal state.",
+    "- The mood experiment of **Eich and Metcalfe (1989)** is also an encoding specificity experiment, so it fits both terms."
+   ]
+  },
+  {
+   "id": 9120,
+   "a": [
+    "**Transfer-appropriate processing** means **memory task results improve if the type of processing used during encoding is the same as the type during retrieval**.",
+    "- **Morris and colleagues (1977)** tested it with rhyme and meaning tasks."
+   ]
+  },
+  {
+   "id": 9121,
+   "a": [
+    "In **Morris and colleagues (1977)**, there were two encoding conditions and two tests, and each participant got one encoding question type and one test.",
+    "- **Semantic (deep) processing** asked whether a word fit in a sentence. **Rhyme (shallow) processing** asked whether a word rhymed with another word.",
+    "- The **standard recognition test** asked for the exact studied words.",
+    "- The **rhyming recognition test** asked for words that rhymed with the studied words, such as regal for eagle."
+   ]
+  },
+  {
+   "id": 9122,
+   "a": [
+    "**On the standard recognition test**, **semantic processing beat rhyme processing**, 84 percent to 63 percent.",
+    "- **On the rhyming recognition test**, **rhyme processing beat semantic processing**, 49 percent to 33 percent.",
+    "- Each kind of encoding did best on the test that required the same kind of processing.",
+    "- So deep processing is not always best."
+   ]
+  },
+  {
+   "id": 9123,
+   "a": [
+    "**Consolidation** **transforms new memories from a fragile state to a more permanent state**.",
+    "- **Synaptic consolidation** is **rapid** and **occurs at synapses**. It is a structural change at the synapse.",
+    "- **Systems consolidation** is **gradual**. It is the **reorganization of neural circuits**."
+   ]
+  },
+  {
+   "id": 9124,
+   "a": [
+    "In **Müller and Pilzecker (1900)**, participants memorized **nonsense syllables** (List A) and then learned a second list (List B).",
+    "- The **immediate group** learned List B within seconds.",
+    "- The **delayed group** had a **6-minute break** before List B.",
+    "- Recall of the first list was **28 percent** for the immediate group and **48 percent** for the delayed group."
+   ]
+  },
+  {
+   "id": 9125,
+   "a": [
+    "**Müller and Pilzecker** proposed that **neural activity continues (“perseverates”) for a short period after an experience ends**.",
+    "- This period is **required for the fragile memory trace to consolidate** into a stable long-term memory.",
+    "- **If a new cognitive task interrupts this window, consolidation is disrupted and the memory is lost.**"
+   ]
+  },
+  {
+   "id": 9126,
+   "a": [
+    "**Hebb (1948)** proposed that **learning and memory are represented in the brain by physiological changes at the synapse**.",
+    "- These changes provide a **neural record of experience**."
+   ]
+  },
+  {
+   "id": 9127,
+   "a": [
+    "**Long-term potentiation (LTP)** is the **enhanced firing of neurons after repeated stimulation**.",
+    "- At the first presentation of a stimulus, the second neuron fires at a low rate.",
+    "- Continued presentation leads to **structural changes** at the synapse.",
+    "- When the same stimulus is presented later, there is **increased firing**."
+   ]
+  },
+  {
+   "id": 9128,
+   "a": [
+    "In the **standard model of consolidation**, **after encoding, the activity of the hippocampus fades with time**.",
+    "- At first, the hippocampus links the cortical areas that hold the memory.",
+    "- Over time, the connections among the cortical areas strengthen and the hippocampal connections weaken.",
+    "- In the end, the cortical areas are connected directly."
+   ]
+  },
+  {
+   "id": 9129,
+   "a": [
+    "The **standard model** is **based partly on observation of injury or trauma-related memory loss**.",
+    "- Recent memories have had less time to consolidate, so they still depend on the hippocampus.",
+    "- Remote memories are already consolidated, so they survive the injury better."
+   ]
+  },
+  {
+   "id": 9130,
+   "a": [
+    "**Retrograde amnesia** is the **loss of memory for events prior to the trauma**.",
+    "- **Graded amnesia** means **memory for recent events is more fragile than for remote events**.",
+    "- The amnesia is strongest for the period just before the injury and weaker for remote memories.",
+    "- **Anterograde** amnesia concerns the period after the injury."
+   ]
+  },
+  {
+   "id": 9131,
+   "a": [
+    "In the **multiple trace model of consolidation**, the hippocampus stays involved in remote memories.",
+    "- **Gilboa and colleagues (2004)** found that the **hippocampus is activated during retrieval of both recent and remote memories**.",
+    "- **Viskontas and colleagues (2009)** found that the **response of the hippocampus can change over time**."
+   ]
+  },
+  {
+   "id": 9132,
+   "a": [
+    "**Gais and colleagues (2006)** found that **memory consolidation appears to be enhanced during sleep**.",
+    "- **One reason** is that **sleeping stops interference from environmental stimuli**."
+   ]
+  },
+  {
+   "id": 9133,
+   "a": [
+    "**Wilhelm and colleagues (2011)** found that **some memories are consolidated more than others**.",
+    "- **Memory for a task was stronger when participants expected to be tested after awaking.**"
+   ]
+  },
+  {
+   "id": 9134,
+   "a": [
+    "**Retrieved memories become fragile and are consolidated again.** This is **reconsolidation**.",
+    "- Memory is a **“work in progress.”**",
+    "- It is **constantly constructed and remodeled in response to learning and conditions**."
+   ]
+  },
+  {
+   "id": 9135,
+   "a": [
+    "In **Nader and colleagues (2000)**, rats were trained to **associate a tone with a mild electric shock**, so the tone triggered **freezing**.",
+    "- After the fear memory had consolidated, the tone was played again to **reactivate the memory**.",
+    "- Some rats then received **anisomycin**, a drug that **inhibits protein synthesis**, in the amygdala.",
+    "- Those rats showed **substantially reduced freezing** later. Rats with a control infusion **retained the fear response**."
+   ]
+  },
+  {
+   "id": 9136,
+   "a": [
+    "**Even established memories may require protein synthesis to become stable again after retrieval.**",
+    "- The drug was given after the memory was reactivated, and the fear response was reduced.",
+    "- So a retrieved memory is in a fragile state."
+   ]
+  },
+  {
+   "id": 9137,
+   "a": [
+    "In **Hupbach and colleagues (2007)**, participants **learned a list of objects (List 1)**.",
+    "- Two days later, some **returned to the same context and were reminded of the first session** before learning **List 2**.",
+    "- Others learned List 2 **without the reminder**.",
+    "- The reminded group was **more likely to mistakenly recall objects from List 2 as belonging to List 1**."
+   ]
+  },
+  {
+   "id": 9138,
+   "a": [
+    "**Reactivating an existing memory can allow new information to become integrated into that memory.**",
+    "- **Reconsolidation can involve updating memories, not simply strengthening them.**"
+   ]
+  },
+  {
+   "id": 9139,
+   "a": [
+    "**Brunet and colleagues (2008)** tested whether **blocking reconsolidation after memory retrieval reduces physiological PTSD symptoms**.",
+    "- For **reactivation**, participants wrote a detailed script of their traumatic event.",
+    "- For the **intervention**, they received **propranolol** or a **placebo** immediately after recall.",
+    "- For the **test** one week later, heart rate and skin conductance were measured while they listened to the script."
+   ]
+  },
+  {
+   "id": 9140,
+   "a": [
+    "**The propranolol group showed significantly lower physiological fear responses than the placebo group.**",
+    "- **Factual memory remained intact.**",
+    "- Only the **intense emotional charge was blunted**."
+   ]
+  },
+  {
+   "id": 9141,
+   "a": [
+    "The two models differ in the role of the hippocampus for old memories.",
+    "- In the **standard model**, hippocampal activity **fades with time**.",
+    "- In the **multiple trace model**, the hippocampus **stays connected** to the cortical areas."
+   ]
+  },
+  {
+   "id": 9142,
+   "a": [
+    "The two findings come from different tests.",
+    "- On a **standard recognition test**, semantic processing won in both studies.",
+    "- On the **rhyming recognition test** of **Morris and colleagues (1977)**, rhyme processing won.",
+    "- So depth helps most when the test is about meaning, and matching helps when the test is about something else."
+   ]
+  },
+  {
+   "id": 9143,
+   "a": [
+    "All three state that memory is better when retrieval matches encoding.",
+    "- **Encoding specificity** is a match of **context**, as in the diving experiment.",
+    "- **State-dependent learning** is a match of **internal state**, such as mood.",
+    "- **Transfer-appropriate processing** is a match of the **type of processing**, as in Morris and colleagues (1977)."
+   ]
+  },
+  {
+   "id": 9144,
+   "a": [
+    "Both findings are about interference after learning.",
+    "- In **Müller and Pilzecker (1900)**, a rest after learning protected the first list.",
+    "- **Gais and colleagues (2006)** found that consolidation is enhanced during sleep, and sleeping stops interference."
+   ]
+  },
+  {
+   "id": 9145,
+   "a": [
+    "Consolidation is not a single step that finishes forever.",
+    "- **Consolidation** makes a new memory more permanent.",
+    "- **Reconsolidation** makes a retrieved memory fragile and then stable again.",
+    "- The memory can be weakened, as in **Nader and colleagues (2000)**, or updated, as in **Hupbach and colleagues (2007)**."
+   ]
+  },
+  {
+   "id": 9146,
+   "a": [
+    "The years are the ones given with each study.",
+    "- **Müller and Pilzecker (1900)** is consolidation, and **Hebb (1948)** is the synapse.",
+    "- **Bransford and Johnson (1972)** is the picture and passage. **Craik and Tulving (1975)** is levels of processing, and **Godden and Baddeley (1975)** is the diving experiment.",
+    "- **Morris and colleagues (1977)** is transfer-appropriate processing. **Eich and Metcalfe (1989)** is mood, and **Grant and colleagues (1998)** is studying in noise or quiet.",
+    "- **Nader and colleagues (2000)** is reconsolidation in rats, and **Hupbach and colleagues (2007)** is reconsolidation in humans.",
+    "- **Gilboa and colleagues (2004)** and **Viskontas and colleagues (2009)** are the multiple trace model.",
+    "- **Gais and colleagues (2006)** and **Wilhelm and colleagues (2011)** are sleep.",
+    "- **Karpicke and Roediger (2008)** is retrieval practice, and **Brunet and colleagues (2008)** is PTSD."
+   ]
   }
  ],
  "qaV5": [
@@ -4438,11 +8634,294 @@ window.THIRD_AIDS = {
    "a": [
     "The two answers map onto the two kinds of explicit memory. **“Remember”** is recollection, which is **episodic** memory and involves reliving. **“Know”** is familiarity, which is **semantic** memory. Over 40 to 50 years, “remember” answers drop and “know” answers stay, so old memories become more semantic."
    ]
+  },
+  {
+   "id": 9100,
+   "a": [
+    "**Encoding** is **acquiring information and transforming it into memory**. **Retrieval** is **transferring information from long-term memory to working memory**. Encoding puts information in, and retrieval brings it back out."
+   ]
+  },
+  {
+   "id": 9101,
+   "a": [
+    "**Maintenance rehearsal** is the **repetition of stimuli**. It maintains information but **does not transfer it to long-term memory**. **Elaborative rehearsal** uses **meanings and connections**. Elaborative rehearsal **helps transfer information to long-term memory**."
+   ]
+  },
+  {
+   "id": 9102,
+   "a": [
+    "**Levels of processing theory** states that **memory depends on how information is encoded**, which is the **depth of processing**. **Shallow processing** pays little attention to meaning and focuses on physical features. It gives **poor memory**. **Deep processing** pays close attention to meaning. It gives **better memory**."
+   ]
+  },
+  {
+   "id": 9103,
+   "a": [
+    "In **Craik and Tulving (1975)**, a question about each word set the depth of processing. **Shallow (structural or visual)** was “Is the word in capital letters?” **Intermediate (phonemic or acoustic)** was “Does the word rhyme with weight?” **Deep (semantic or meaning)** was “Does the word fit in the sentence: ‘He met a ______ in the street’?”"
+   ]
+  },
+  {
+   "id": 9104,
+   "a": [
+    "Each trial had three steps. A question was asked, a word was presented, and the question was answered. The percent correct was about **15** for capital letters, about **48** for rhyme and about **80** for fill in the blanks. **Deeper processing produced better memory**, which is what levels of processing theory predicts."
+   ]
+  },
+  {
+   "id": 9105,
+   "a": [
+    "Six factors aid encoding. **Visual imagery** and the **self-reference effect** aid encoding. The **generation effect** and **organizing** to-be-remembered information aid encoding. **Relating words to survival value** and **retrieval practice** aid encoding."
+   ]
+  },
+  {
+   "id": 9106,
+   "a": [
+    "Two groups learned word pairs such as boat and tree. The **repetition group** repeated the pair. The **imagery group** formed an image of the two items together. Percent correct recall was **more than twice as high** for the imagery group."
+   ]
+  },
+  {
+   "id": 9107,
+   "a": [
+    "Both effects add meaning or connections at encoding, as visual imagery does. The **self-reference effect** is better memory for information related to oneself. The **generation effect** is better memory for material a person generates than for material the person only reads."
+   ]
+  },
+  {
+   "id": 9108,
+   "a": [
+    "**Bransford and Johnson (1972)** **presented difficult-to-comprehend information**. **Group 1** saw a picture that helped explain the information **before** reading it. **Group 2** saw the picture **after** reading the passage, and the **control group** did not see it. **Group 1 outperformed the others.**"
+   ]
+  },
+  {
+   "id": 9109,
+   "a": [
+    "**Having a mental framework of comprehension aided memory encoding and retrieval.** The picture shows a man playing a guitar below a tall building, with a loudspeaker held up by balloons near a woman’s window. Seeing it first let people place each sentence into one organized scene as they read. Seeing it afterward was too late to organize the sentences during encoding."
+   ]
+  },
+  {
+   "id": 9110,
+   "a": [
+    "**Karpicke and Roediger (2008)** ran a **study-and-test experiment with word pairs**. **Group 1** studied and was tested on all words in all sessions. **Group 2** (less studying) studied only words missed in previous tests and was tested on all words. **Group 3** (less testing) studied all words and was tested only on words missed in previous tests."
+   ]
+  },
+  {
+   "id": 9111,
+   "a": [
+    "On the **test after one week**, Group 1 scored **81 percent** and Group 2 scored **81 percent**. Group 3, which had **less testing**, scored **36 percent**. Cutting back on studying did not hurt memory, and cutting back on testing did. This is the **retrieval practice effect**. **Testing memory retrieval can improve memory.**"
+   ]
+  },
+  {
+   "id": 9112,
+   "a": [
+    "Four principles of effective studying follow from memory research. **Elaborate**, which is associating what you are learning to what you already know. **Generate questions and self-test.** **Take breaks.** Memory is better for multiple short study sessions, and consolidation is enhanced by sleep. **Avoid the illusion of learning.**"
+   ]
+  },
+  {
+   "id": 9113,
+   "a": [
+    "The **spacing effect** is that **memory is better for multiple short study sessions**. The **illusion of learning** is believing material is learned because it feels familiar. **Familiarity does not mean comprehension.**"
+   ]
+  },
+  {
+   "id": 9114,
+   "a": [
+    "**Retrieval** is the **process of transferring information from long-term memory back into working memory**. **Most of our failures of memory are failures to retrieve.** The information is often still stored, but it cannot be brought back at that moment."
+   ]
+  },
+  {
+   "id": 9115,
+   "a": [
+    "In **cued recall**, a **cue is presented to aid recall**. It gives **increased performance over free recall**. **Retrieval cues are most effective when created by the person who uses them.** People remembered **91 percent** of nouns using self-generated cues and **55 percent** using other-person-generated cues. People who never saw the nouns produced **17 percent** from another person’s cues."
+   ]
+  },
+  {
+   "id": 9116,
+   "a": [
+    "**Encoding specificity** is the principle that **we learn information together with its context**. The context is stored with the information and can act as a retrieval cue. In **Baddeley’s (1975) “diving experiment,”** the best recall occurred when encoding and retrieval occurred in the same location."
+   ]
+  },
+  {
+   "id": 9117,
+   "a": [
+    "In **Godden and Baddeley’s (1975) “diving” experiment**, words were learned underwater or on land and recalled underwater or on land. Matching locations gave **32 percent** (underwater both times) and **38 percent** (on land both times). Different locations gave **23 percent** and **24 percent**. **Best recall occurred when encoding and retrieval occurred in the same location.** **Baddeley’s (1975) “diving experiment”** and **Godden and Baddeley’s (1975) “diving” experiment** are the same experiment."
+   ]
+  },
+  {
+   "id": 9118,
+   "a": [
+    "Two more experiments show the same matching pattern. In **Grant and colleagues’ (1998) “studying” experiment**, people studied in noise or in quiet. Scores were highest when the test condition matched. In **Eich and Metcalfe’s (1989) “mood” experiment**, people studied while sad or happy. Scores were highest when the mood at test matched."
+   ]
+  },
+  {
+   "id": 9119,
+   "a": [
+    "**State-dependent learning** is **learning associated with a particular internal state**. There is **better memory if a person’s mood at encoding matches the mood during retrieval**. Encoding specificity is usually shown with an outside context, and state-dependent learning is the same kind of match for the internal state. The mood experiment of **Eich and Metcalfe (1989)** is also an encoding specificity experiment, so it fits both terms."
+   ]
+  },
+  {
+   "id": 9120,
+   "a": [
+    "**Transfer-appropriate processing** means **memory task results improve if the type of processing used during encoding is the same as the type during retrieval**. **Morris and colleagues (1977)** tested it with rhyme and meaning tasks."
+   ]
+  },
+  {
+   "id": 9121,
+   "a": [
+    "In **Morris and colleagues (1977)**, there were two encoding conditions and two tests, and each participant got one encoding question type and one test. **Semantic (deep) processing** asked whether a word fit in a sentence. **Rhyme (shallow) processing** asked whether a word rhymed with another word. The **standard recognition test** asked for the exact studied words. The **rhyming recognition test** asked for words that rhymed with the studied words, such as regal for eagle."
+   ]
+  },
+  {
+   "id": 9122,
+   "a": [
+    "**On the standard recognition test**, **semantic processing beat rhyme processing**, 84 percent to 63 percent. **On the rhyming recognition test**, **rhyme processing beat semantic processing**, 49 percent to 33 percent. Each kind of encoding did best on the test that required the same kind of processing. So deep processing is not always best."
+   ]
+  },
+  {
+   "id": 9123,
+   "a": [
+    "**Consolidation** **transforms new memories from a fragile state to a more permanent state**. **Synaptic consolidation** is **rapid** and **occurs at synapses**. It is a structural change at the synapse. **Systems consolidation** is **gradual**. It is the **reorganization of neural circuits**."
+   ]
+  },
+  {
+   "id": 9124,
+   "a": [
+    "In **Müller and Pilzecker (1900)**, participants memorized **nonsense syllables** (List A) and then learned a second list (List B). The **immediate group** learned List B within seconds. The **delayed group** had a **6-minute break** before List B. Recall of the first list was **28 percent** for the immediate group and **48 percent** for the delayed group."
+   ]
+  },
+  {
+   "id": 9125,
+   "a": [
+    "**Müller and Pilzecker** proposed that **neural activity continues (“perseverates”) for a short period after an experience ends**. This period is **required for the fragile memory trace to consolidate** into a stable long-term memory. **If a new cognitive task interrupts this window, consolidation is disrupted and the memory is lost.**"
+   ]
+  },
+  {
+   "id": 9126,
+   "a": [
+    "**Hebb (1948)** proposed that **learning and memory are represented in the brain by physiological changes at the synapse**. These changes provide a **neural record of experience**."
+   ]
+  },
+  {
+   "id": 9127,
+   "a": [
+    "**Long-term potentiation (LTP)** is the **enhanced firing of neurons after repeated stimulation**. At the first presentation of a stimulus, the second neuron fires at a low rate. Continued presentation leads to **structural changes** at the synapse. When the same stimulus is presented later, there is **increased firing**."
+   ]
+  },
+  {
+   "id": 9128,
+   "a": [
+    "In the **standard model of consolidation**, **after encoding, the activity of the hippocampus fades with time**. At first, the hippocampus links the cortical areas that hold the memory. Over time, the connections among the cortical areas strengthen and the hippocampal connections weaken. In the end, the cortical areas are connected directly."
+   ]
+  },
+  {
+   "id": 9129,
+   "a": [
+    "The **standard model** is **based partly on observation of injury or trauma-related memory loss**. Recent memories have had less time to consolidate, so they still depend on the hippocampus. Remote memories are already consolidated, so they survive the injury better."
+   ]
+  },
+  {
+   "id": 9130,
+   "a": [
+    "**Retrograde amnesia** is the **loss of memory for events prior to the trauma**. **Graded amnesia** means **memory for recent events is more fragile than for remote events**. The amnesia is strongest for the period just before the injury and weaker for remote memories. **Anterograde** amnesia concerns the period after the injury."
+   ]
+  },
+  {
+   "id": 9131,
+   "a": [
+    "In the **multiple trace model of consolidation**, the hippocampus stays involved in remote memories. **Gilboa and colleagues (2004)** found that the **hippocampus is activated during retrieval of both recent and remote memories**. **Viskontas and colleagues (2009)** found that the **response of the hippocampus can change over time**."
+   ]
+  },
+  {
+   "id": 9132,
+   "a": [
+    "**Gais and colleagues (2006)** found that **memory consolidation appears to be enhanced during sleep**. **One reason** is that **sleeping stops interference from environmental stimuli**."
+   ]
+  },
+  {
+   "id": 9133,
+   "a": [
+    "**Wilhelm and colleagues (2011)** found that **some memories are consolidated more than others**. **Memory for a task was stronger when participants expected to be tested after awaking.**"
+   ]
+  },
+  {
+   "id": 9134,
+   "a": [
+    "**Retrieved memories become fragile and are consolidated again.** This is **reconsolidation**. Memory is a **“work in progress.”** It is **constantly constructed and remodeled in response to learning and conditions**."
+   ]
+  },
+  {
+   "id": 9135,
+   "a": [
+    "In **Nader and colleagues (2000)**, rats were trained to **associate a tone with a mild electric shock**, so the tone triggered **freezing**. After the fear memory had consolidated, the tone was played again to **reactivate the memory**. Some rats then received **anisomycin**, a drug that **inhibits protein synthesis**, in the amygdala. Those rats showed **substantially reduced freezing** later. Rats with a control infusion **retained the fear response**."
+   ]
+  },
+  {
+   "id": 9136,
+   "a": [
+    "**Even established memories may require protein synthesis to become stable again after retrieval.** The drug was given after the memory was reactivated, and the fear response was reduced. So a retrieved memory is in a fragile state."
+   ]
+  },
+  {
+   "id": 9137,
+   "a": [
+    "In **Hupbach and colleagues (2007)**, participants **learned a list of objects (List 1)**. Two days later, some **returned to the same context and were reminded of the first session** before learning **List 2**. Others learned List 2 **without the reminder**. The reminded group was **more likely to mistakenly recall objects from List 2 as belonging to List 1**."
+   ]
+  },
+  {
+   "id": 9138,
+   "a": [
+    "**Reactivating an existing memory can allow new information to become integrated into that memory.** **Reconsolidation can involve updating memories, not simply strengthening them.**"
+   ]
+  },
+  {
+   "id": 9139,
+   "a": [
+    "**Brunet and colleagues (2008)** tested whether **blocking reconsolidation after memory retrieval reduces physiological PTSD symptoms**. For **reactivation**, participants wrote a detailed script of their traumatic event. For the **intervention**, they received **propranolol** or a **placebo** immediately after recall. For the **test** one week later, heart rate and skin conductance were measured while they listened to the script."
+   ]
+  },
+  {
+   "id": 9140,
+   "a": [
+    "**The propranolol group showed significantly lower physiological fear responses than the placebo group.** **Factual memory remained intact.** Only the **intense emotional charge was blunted**."
+   ]
+  },
+  {
+   "id": 9141,
+   "a": [
+    "The two models differ in the role of the hippocampus for old memories. In the **standard model**, hippocampal activity **fades with time**. In the **multiple trace model**, the hippocampus **stays connected** to the cortical areas."
+   ]
+  },
+  {
+   "id": 9142,
+   "a": [
+    "The two findings come from different tests. On a **standard recognition test**, semantic processing won in both studies. On the **rhyming recognition test** of **Morris and colleagues (1977)**, rhyme processing won. So depth helps most when the test is about meaning, and matching helps when the test is about something else."
+   ]
+  },
+  {
+   "id": 9143,
+   "a": [
+    "All three state that memory is better when retrieval matches encoding. **Encoding specificity** is a match of **context**, as in the diving experiment. **State-dependent learning** is a match of **internal state**, such as mood. **Transfer-appropriate processing** is a match of the **type of processing**, as in Morris and colleagues (1977)."
+   ]
+  },
+  {
+   "id": 9144,
+   "a": [
+    "Both findings are about interference after learning. In **Müller and Pilzecker (1900)**, a rest after learning protected the first list. **Gais and colleagues (2006)** found that consolidation is enhanced during sleep, and sleeping stops interference."
+   ]
+  },
+  {
+   "id": 9145,
+   "a": [
+    "Consolidation is not a single step that finishes forever. **Consolidation** makes a new memory more permanent. **Reconsolidation** makes a retrieved memory fragile and then stable again. The memory can be weakened, as in **Nader and colleagues (2000)**, or updated, as in **Hupbach and colleagues (2007)**."
+   ]
+  },
+  {
+   "id": 9146,
+   "a": [
+    "The years are the ones given with each study. **Müller and Pilzecker (1900)** is consolidation, and **Hebb (1948)** is the synapse. **Bransford and Johnson (1972)** is the picture and passage. **Craik and Tulving (1975)** is levels of processing, and **Godden and Baddeley (1975)** is the diving experiment. **Morris and colleagues (1977)** is transfer-appropriate processing. **Eich and Metcalfe (1989)** is mood, and **Grant and colleagues (1998)** is studying in noise or quiet. **Nader and colleagues (2000)** is reconsolidation in rats, and **Hupbach and colleagues (2007)** is reconsolidation in humans. **Gilboa and colleagues (2004)** and **Viskontas and colleagues (2009)** are the multiple trace model. **Gais and colleagues (2006)** and **Wilhelm and colleagues (2011)** are sleep. **Karpicke and Roediger (2008)** is retrieval practice, and **Brunet and colleagues (2008)** is PTSD."
+   ]
   }
  ],
  "testbank": {
   "modules": [
-   15
+   15,
+   16
   ],
   "questions": [
    {
@@ -5857,6 +10336,1416 @@ window.THIRD_AIDS = {
      "chapter": 6,
      "question": 50,
      "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-001",
+    "chapter": 7,
+    "number": 1,
+    "stem": "Acquiring information and transforming it into long-term memory is",
+    "options": [
+     "state-dependent learning.",
+     "encoding.",
+     "memory consolidation.",
+     "transfer-appropriate processing."
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 3,
+    "scope": "slides",
+    "why": "Encoding is acquiring information and transforming it into memory. Consolidation makes a new memory more permanent, and the other two options are about matching conditions at retrieval.",
+    "refs": [
+     [
+      16,
+      3
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 1,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-002",
+    "chapter": 7,
+    "number": 2,
+    "stem": "Elaborative rehearsal of a word will LEAST likely be accomplished by",
+    "options": [
+     "repeating it over and over.",
+     "linking the new word to a previously learned concept.",
+     "using it in a sentence.",
+     "thinking of its synonyms and antonyms."
+    ],
+    "correct": 0,
+    "module": 16,
+    "page": 3,
+    "scope": "slides",
+    "why": "Elaborative rehearsal uses meanings and connections. Repeating a word over and over is maintenance rehearsal, which maintains the word without connecting it to anything.",
+    "refs": [
+     [
+      16,
+      3
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 2,
+     "originalAnswer": "A"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-003",
+    "chapter": 7,
+    "number": 3,
+    "stem": "How would you describe the relationship between elaborative rehearsal and maintenance rehearsal in terms of establishing long-term memories?",
+    "options": [
+     "Elaborative is more effective than maintenance.",
+     "Maintenance is more effective than elaborative.",
+     "Both are equally effective in all learning circumstances.",
+     "Each one is sometimes more effective, depending on the learning circumstances."
+    ],
+    "correct": 0,
+    "module": 16,
+    "page": 3,
+    "scope": "slides",
+    "why": "Maintenance rehearsal maintains information but does not transfer it to long-term memory. Elaborative rehearsal uses meanings and connections, and it helps transfer information to long-term memory.",
+    "refs": [
+     [
+      16,
+      3
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 3,
+     "originalAnswer": "A"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-004",
+    "chapter": 7,
+    "number": 4,
+    "stem": "Elementary school students in the United States are often taught to use the very familiar word “HOMES” as a cue for remembering the names of the Great Lakes (each letter in “HOMES” provides a first-letter cue for one of the lakes: Huron, Ontario, Michigan, Erie, Superior). This memory procedure usually works better than repeating the names over and over. The use of this familiar word provides an example of",
+    "options": [
+     "a self-reference effect.",
+     "repetition priming.",
+     "implicit memory.",
+     "elaborative rehearsal."
+    ],
+    "correct": 3,
+    "module": 16,
+    "page": 3,
+    "scope": "slides",
+    "why": "Using the familiar word HOMES connects the names of the lakes to something already known. Using meanings and connections in this way is elaborative rehearsal, which works better than repeating the names.",
+    "refs": [
+     [
+      16,
+      3
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 4,
+     "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-005",
+    "chapter": 7,
+    "number": 5,
+    "stem": "Which of the following scenarios best illustrates how effective or ineffective maintenance rehearsal is in transferring information into long-term memory?",
+    "options": [
+     "Sanjay recalls his grandmother’s house where he grew up, even though he hasn’t been there for 22 years.",
+     "Ben learned his martial arts moves by making up “short stories” and mental images to describe each movement.",
+     "Renee starred in the lead role of her high school play a few years ago. Although she helped write the play and based her character on her own life, she cannot remember many of the actual lines of dialogue anymore.",
+     "Serena’s keys were stolen from her purse. She cannot give a detailed description of her keychain to the police, even though she used it every day for three years."
+    ],
+    "correct": 3,
+    "module": 16,
+    "page": 3,
+    "scope": "slides",
+    "why": "Maintenance rehearsal is repetition that does not transfer information to long-term memory. Seeing and using the keychain every day for three years is repetition without elaboration, and it left no detailed memory.",
+    "refs": [
+     [
+      16,
+      3
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 5,
+     "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-006",
+    "chapter": 7,
+    "number": 6,
+    "stem": "The maintenance rehearsal task of learning a word by repeating it over and over again is most likely to",
+    "options": [
+     "lead to immediate decay due to retroactive interference.",
+     "produce some short-term remembering, but fail to produce longer-term memories.",
+     "cause sensory memories to interfere with consolidation in working memory.",
+     "lead to effective autobiographical memories."
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 3,
+    "scope": "slides",
+    "why": "Maintenance rehearsal maintains information for the moment but does not transfer it to long-term memory. It can produce some short-term remembering without producing longer-term memories.",
+    "refs": [
+     [
+      16,
+      3
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 6,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-007",
+    "chapter": 7,
+    "number": 7,
+    "stem": "According to the levels of processing theory, memory durability depends on the depth at which information is",
+    "options": [
+     "encoded.",
+     "stored.",
+     "retrieved.",
+     "consolidated."
+    ],
+    "correct": 0,
+    "module": 16,
+    "page": 4,
+    "scope": "slides",
+    "why": "Levels of processing theory states that memory depends on how information is encoded. The depth of processing at encoding is what determines how well the information is remembered.",
+    "refs": [
+     [
+      16,
+      4
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 7,
+     "originalAnswer": "A"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-008",
+    "chapter": 7,
+    "number": 8,
+    "stem": "According to the levels of processing theory, which of the following tasks will produce the best long-term memory for a set of words?",
+    "options": [
+     "Making a connection between each word and something you’ve previously learned",
+     "Deciding how many vowels each word has",
+     "Generating a rhyming word for each word to be remembered",
+     "Repeating the words over and over in your mind"
+    ],
+    "correct": 0,
+    "module": 16,
+    "page": 4,
+    "scope": "slides",
+    "why": "Deep processing pays close attention to meaning and gives better memory. Connecting each word to something already learned is deep, while counting vowels, rhyming and repeating are shallower.",
+    "refs": [
+     [
+      16,
+      4
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 8,
+     "originalAnswer": "A"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-009",
+    "chapter": 7,
+    "number": 9,
+    "stem": "Which statement below is most closely associated with levels of processing theory?",
+    "options": [
+     "Information enters memory by passing through a number of levels, beginning with sensory memory, then short-term memory, then long-term memory.",
+     "Events that are repeated enough can influence our behavior, even after we have forgotten the original events.",
+     "Deep processing involves paying closer attention to a stimulus than shallow processing and results in better processing.",
+     "People who were sad when they studied did better when they were sad during testing."
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 4,
+    "scope": "slides",
+    "why": "Levels of processing theory separates shallow processing, which pays little attention to meaning, from deep processing, which pays close attention to meaning and gives better memory.",
+    "refs": [
+     [
+      16,
+      4
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 9,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-010",
+    "chapter": 7,
+    "number": 10,
+    "stem": "Which of the following learning techniques is LEAST likely to lead to deep processing of the information?",
+    "options": [
+     "Terrell is trying to understand how to use statistics by drawing associations between a set of data describing how adolescents respond to peer pressure and the theories he learned last semester in developmental psychology.",
+     "Maggie is trying to learn new vocabulary words because she is taking the SAT next month. Each day, she selects one word. Throughout the day, she repeats the definition over and over to herself and generates sentences using it in her conversations that day.",
+     "Thuy has just bought a new car and is trying to learn her new license plate sequence. Every morning, for three weeks, she repeats the sequence out loud when she wakes up.",
+     "For his history course, Jorge is trying to learn the order of the U.S. presidents by creating a silly sentence where each consecutive word starts with the same letter of the next president to be remembered."
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 4,
+    "scope": "slides",
+    "why": "Repeating a license plate sequence out loud focuses on its form and involves no attention to meaning, so it is shallow processing. The other three learners connect the material to meaning or to things they already know.",
+    "refs": [
+     [
+      16,
+      4
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 10,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-011",
+    "chapter": 7,
+    "number": 11,
+    "stem": "Imagery enhances memory because",
+    "options": [
+     "research shows people like pictures better than words, so there is an enhanced emotional response.",
+     "the brain processes images more easily than the meanings of words.",
+     "imagery can be used to create connections between items to be remembered.",
+     "pictures fit better with our basic instincts because children learn pictures before reading words."
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 7,
+    "scope": "slides",
+    "why": "Visual imagery aids encoding because an image can connect the items to be remembered. In the boat and tree example, forming an image of the two together gave more than twice the recall of repeating the pair.",
+    "refs": [
+     [
+      16,
+      7
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 11,
+     "originalAnswer": "C"
+    },
+    "edited": true
+   },
+   {
+    "id": "G07-012",
+    "chapter": 7,
+    "number": 12,
+    "stem": "Jeannie loves to dance, having taken ballet for many years. She is now learning salsa dancing. Although the movements are very different from the dances she is familiar with, she has found a successful memory strategy of linking the new dance information to her previous experiences as a dancer and to her own affection for dance. This strategy suggests reliance on",
+    "options": [
+     "the self-reference effect.",
+     "a mass practice effect.",
+     "the integrative experience effect.",
+     "semantic memory."
+    ],
+    "correct": 0,
+    "module": 16,
+    "page": 7,
+    "scope": "slides",
+    "why": "The self-reference effect is better memory for information that is related to oneself. Linking the new dance to her own experience and her own affection for dance uses that effect.",
+    "refs": [
+     [
+      16,
+      7
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 12,
+     "originalAnswer": "A"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-013",
+    "chapter": 7,
+    "number": 13,
+    "stem": "In Slameka and Graf’s (1978) study, some participants read word pairs, while other participants had to fill in the blank letters of the second word in a pair with a word related to the first word. The latter group performed better on a later memory task, illustrating the",
+    "options": [
+     "spacing effect.",
+     "generation effect.",
+     "cued recall effect.",
+     "multiple trace hypothesis."
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 7,
+    "scope": "slides",
+    "why": "The generation effect is better memory for material a person generates than for material the person only reads. Filling in the second word of a pair is generating it. The slides list the generation effect without naming Slameka and Graf (1978).",
+    "refs": [
+     [
+      16,
+      7
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 13,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-014",
+    "chapter": 7,
+    "number": 14,
+    "stem": "___________ cues help us remember information that has been stored in memory.",
+    "options": [
+     "Retrograde",
+     "Encoding",
+     "Retrieval",
+     "Processing"
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 18,
+    "scope": "slides",
+    "why": "In cued recall, a cue is presented to aid recall. Cues that help bring back information stored in memory are retrieval cues.",
+    "refs": [
+     [
+      16,
+      18
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 14,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-015",
+    "chapter": 7,
+    "number": 15,
+    "stem": "Free recall of the stimulus list “apple, desk, shoe, sofa, plum, chair, cherry, coat, lamp, pants” will most likely yield which of these response patterns?",
+    "options": [
+     "“apple, desk, shoe, coat, lamp, pants”",
+     "“apple, desk, shoe, sofa, plum, chair, cherry, coat, lamp, pants”",
+     "“apple, cherry, plum, shoe, coat, pants, lamp, chair”",
+     "“apple, chair, cherry, coat, desk, lamp, plum, shoe, sofa”"
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": null,
+    "scope": "extra",
+    "why": "Organizing to-be-remembered information aids encoding, which is on the slides. That people recall items from the same category in clusters, so that fruits, clothing and furniture come out together, is extra material from the chapter.",
+    "refs": [],
+    "source": {
+     "chapter": 7,
+     "question": 15,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-016",
+    "chapter": 7,
+    "number": 16,
+    "stem": "Jenkins and Russell (1952) presented a list of words like “chair, apple, dish, shoe, cherry, sofa” to participants. In a test, participants recalled the words in a different order than the order in which they were originally presented. This result occurred because of the",
+    "options": [
+     "tendency of objects in the same category to become organized.",
+     "effect of proactive interference.",
+     "way objects like dishes and shoes are encoded visually.",
+     "way the phonological loop reorganizes information based on sound during rehearsal."
+    ],
+    "correct": 0,
+    "module": 16,
+    "page": null,
+    "scope": "extra",
+    "why": "Jenkins and Russell (1952) is not on the slides. The result shows the tendency of items from the same category to become organized in recall, which matches the slide point that organizing to-be-remembered information aids encoding.",
+    "refs": [],
+    "source": {
+     "chapter": 7,
+     "question": 16,
+     "originalAnswer": "A"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-017",
+    "chapter": 7,
+    "number": 17,
+    "stem": "Bransford and Johnson’s study had participants hear a passage, which turned out to be about a man on the street serenading his girlfriend in a tall building. The wording of the passage made it difficult to understand, but looking at a picture made it easier to understand. The results of this study illustrated the importance of ___________ in forming reliable long-term memories.",
+    "options": [
+     "implicit memory",
+     "organizational context",
+     "reconsolidation",
+     "imagery"
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 9,
+    "scope": "slides",
+    "why": "In Bransford and Johnson (1972), the picture gave an organizing context for a passage that was difficult to comprehend. Having a mental framework of comprehension aided memory encoding and retrieval. The question says participants heard the passage, and the slides say they read it.",
+    "refs": [
+     [
+      16,
+      9
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 17,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-018",
+    "chapter": 7,
+    "number": 18,
+    "stem": "The passage about the balloons that were used to suspend a speaker in mid-air illustrates the role of ___________ in memory.",
+    "options": [
+     "rehearsal",
+     "organization",
+     "depth of processing",
+     "forming connections with other information"
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 11,
+    "scope": "slides",
+    "why": "The balloon picture organized the sentences of the passage into one scene. It illustrates the role of organization in memory, as part of organization, comprehension and memory.",
+    "refs": [
+     [
+      16,
+      11
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 18,
+     "originalAnswer": "B"
+    },
+    "edited": true
+   },
+   {
+    "id": "G07-019",
+    "chapter": 7,
+    "number": 19,
+    "stem": "Real experiences of how memories, even ones from a long time ago, can be stimulated by locations, songs, and smells highlight the importance of ___________ in long-term memory.",
+    "options": [
+     "long-term potentiation",
+     "retrieval cues",
+     "elaborative rehearsal",
+     "mass practice"
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 18,
+    "scope": "slides",
+    "why": "A location, a song or a smell that brings back an old memory is acting as a retrieval cue. In cued recall, a cue is presented to aid recall.",
+    "refs": [
+     [
+      16,
+      18
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 19,
+     "originalAnswer": "B"
+    },
+    "edited": true
+   },
+   {
+    "id": "G07-020",
+    "chapter": 7,
+    "number": 20,
+    "stem": "Mantyla’s “banana/yellow, bunches, edible” experiment demonstrates that for best memory performance, retrieval cues should be created",
+    "options": [
+     "by agreement among many people, thus providing proof they are effective.",
+     "by a memory expert who understands what makes cues effective.",
+     "using visual images.",
+     "by the person whose memory will be tested."
+    ],
+    "correct": 3,
+    "module": 16,
+    "page": 18,
+    "scope": "slides",
+    "why": "Retrieval cues are most effective when created by the person who uses them. People remembered 91 percent of nouns with self-generated cues and 55 percent with cues another person generated. The slides show this result without naming Mantyla.",
+    "refs": [
+     [
+      16,
+      18
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 20,
+     "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-021",
+    "chapter": 7,
+    "number": 21,
+    "stem": "People often report an annoying memory failure when they walk from one end of the house to the other for something and then forget what they wanted when they reach their destination. As soon as they return to the first room, they are reminded of what they wanted in the first place. This common experience best illustrates the principle of",
+    "options": [
+     "the self-reference effect.",
+     "maintenance rehearsal.",
+     "levels of processing theory.",
+     "encoding specificity."
+    ],
+    "correct": 3,
+    "module": 16,
+    "page": 19,
+    "scope": "slides",
+    "why": "Encoding specificity is the principle that we learn information together with its context. Returning to the first room restores the context in which the intention was formed, so the memory comes back.",
+    "refs": [
+     [
+      16,
+      19
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 21,
+     "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-022",
+    "chapter": 7,
+    "number": 22,
+    "stem": "The principle that we encode information together with its context is known as encoding",
+    "options": [
+     "consolidation.",
+     "priming.",
+     "specificity.",
+     "transcription."
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 19,
+    "scope": "slides",
+    "why": "Encoding specificity is the principle that we learn information together with its context. Recall is best when encoding and retrieval occur in the same context.",
+    "refs": [
+     [
+      16,
+      19
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 22,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-023",
+    "chapter": 7,
+    "number": 23,
+    "stem": "Which example below best demonstrates state-dependent learning?",
+    "options": [
+     "Last night, at the grocery store, DeShaun ran into a psychology professor he took a class with three semesters ago. He recognized her right away.",
+     "Even though Walt hasn’t been to the beach cottage his parents owned since he was a child, he still has many fond memories of time spent there as a family.",
+     "Although Emily doesn’t very often think about her first love, Steve, she can’t help getting caught up in happy memories when “their song” (the first song they danced to) plays on the radio.",
+     "Carmen always suffers test anxiety in her classes. To combat this, she tries to relax when she studies. She thinks it’s best to study while lying in bed, reading by candlelight with soft music playing."
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": null,
+    "scope": "review",
+    "why": "State-dependent learning is learning associated with a particular internal state, with better memory when the mood at encoding matches the mood at retrieval. The question bank keys the song example, but a song is an outside cue and not an internal state, so this item is shown for review and is not scored.",
+    "refs": [],
+    "source": {
+     "chapter": 7,
+     "question": 23,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-024",
+    "chapter": 7,
+    "number": 24,
+    "stem": "You have been studying for weeks for a nursing school entrance exam. You love the idea of becoming a nurse, and you have been enjoying learning about the material for your exam. Each night, you put on comfortable clothes and study in the quiet of your lovely home. Memory research suggests you should take your test with a(n) ________ mindset.",
+    "options": [
+     "excited",
+     "relaxed",
+     "nervous",
+     "neutral"
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 22,
+    "scope": "slides",
+    "why": "State-dependent learning means memory is better when the internal state at retrieval matches the state at encoding. The studying was done in a relaxed state, so a relaxed mindset at the test gives the best match.",
+    "refs": [
+     [
+      16,
+      22
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 24,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-025",
+    "chapter": 7,
+    "number": 25,
+    "stem": "Memory performance is enhanced if the type of task at encoding matches the type of task at retrieval. This is called",
+    "options": [
+     "transfer-appropriate processing.",
+     "episodic-based processing.",
+     "elaborative rehearsal.",
+     "personal semantic memory."
+    ],
+    "correct": 0,
+    "module": 16,
+    "page": 23,
+    "scope": "slides",
+    "why": "Transfer-appropriate processing means memory task results improve if the type of processing used during encoding is the same as the type used during retrieval.",
+    "refs": [
+     [
+      16,
+      23
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 25,
+     "originalAnswer": "A"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-026",
+    "chapter": 7,
+    "number": 26,
+    "stem": "Transfer-appropriate processing is likely to occur if",
+    "options": [
+     "the person remembering generates their own retrieval cues.",
+     "the type of encoding task matches the type of retrieval task.",
+     "there is deep processing during acquisition of the new material.",
+     "imagery is used to create connections among items to be transferred into long-term memory."
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 23,
+    "scope": "slides",
+    "why": "Transfer-appropriate processing occurs when the type of processing at encoding matches the type at retrieval. In Morris and colleagues (1977), rhyme encoding did best on the rhyming test.",
+    "refs": [
+     [
+      16,
+      23
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 26,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-027",
+    "chapter": 7,
+    "number": 27,
+    "stem": "___________ transforms new memories from a fragile state, in which they can be disrupted, to a more permanent state, in which they are resistant to disruption.",
+    "options": [
+     "Amnesia",
+     "Encoding specificity",
+     "Cued-recall",
+     "Consolidation"
+    ],
+    "correct": 3,
+    "module": 16,
+    "page": 27,
+    "scope": "slides",
+    "why": "Consolidation transforms new memories from a fragile state to a more permanent state. A consolidated memory is more resistant to disruption.",
+    "refs": [
+     [
+      16,
+      27
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 27,
+     "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-028",
+    "chapter": 7,
+    "number": 28,
+    "stem": "___________ consolidation involves the gradual reorganization of circuits within brain regions and takes place on a fairly long time scale.",
+    "options": [
+     "Remote",
+     "Standard",
+     "Systems",
+     "Synaptic"
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 27,
+    "scope": "slides",
+    "why": "Systems consolidation is gradual and involves the reorganization of neural circuits. Synaptic consolidation is the rapid kind and occurs at synapses.",
+    "refs": [
+     [
+      16,
+      27
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 28,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-029",
+    "chapter": 7,
+    "number": 29,
+    "stem": "The standard model of consolidation proposes that the hippocampus is",
+    "options": [
+     "strongly active for both new memories as they are being consolidated and memories for events that occurred long ago and are already consolidated.",
+     "strongly active for long-ago memories that are already consolidated but becomes less active when memories are first formed and being consolidated.",
+     "strongly active when memories are first formed and being consolidated but becomes less active when retrieving older memories that are already consolidated.",
+     "uninvolved in memory consolidation."
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 33,
+    "scope": "slides",
+    "why": "In the standard model of consolidation, the activity of the hippocampus fades with time after encoding. It is active when a memory is new and less active for older memories that are already consolidated.",
+    "refs": [
+     [
+      16,
+      33
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 29,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-030",
+    "chapter": 7,
+    "number": 30,
+    "stem": "Hebb’s idea of long-term potentiation, which provides a physiological mechanism for the long-term storage of memories, includes the idea of",
+    "options": [
+     "an increase in the size of cell bodies of neurons.",
+     "increased firing in the neurons.",
+     "larger electrical impulses in the synapse.",
+     "the growth of new dendrites in neurons."
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 31,
+    "scope": "slides",
+    "why": "Long-term potentiation is the enhanced firing of neurons after repeated stimulation. It involves structural changes at the synapse and enhanced responding.",
+    "refs": [
+     [
+      16,
+      31
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 30,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-031",
+    "chapter": 7,
+    "number": 31,
+    "stem": "Brief episodes of retrograde amnesia (e.g., the traumatic disruption of newly formed memories when a football player takes a hit to the head and can’t recall the last play before the hit) reflect",
+    "options": [
+     "a failure of memory consolidation.",
+     "disrupted long-term potentiation.",
+     "temporary post-traumatic stress disorder.",
+     "Korsakoff’s syndrome."
+    ],
+    "correct": 0,
+    "module": 16,
+    "page": 34,
+    "scope": "slides",
+    "why": "Retrograde amnesia is loss of memory for events prior to the trauma, and recent memories are the most fragile. A memory formed just before a blow to the head has not had time to consolidate, so it is lost.",
+    "refs": [
+     [
+      16,
+      34
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 31,
+     "originalAnswer": "A"
+    },
+    "edited": true
+   },
+   {
+    "id": "G07-032",
+    "chapter": 7,
+    "number": 32,
+    "stem": "Retrograde amnesia is usually less severe for ______ memories.",
+    "options": [
+     "remote",
+     "recent",
+     "anterograde",
+     "emotional"
+    ],
+    "correct": 0,
+    "module": 16,
+    "page": 34,
+    "scope": "slides",
+    "why": "Graded amnesia means memory for recent events is more fragile than memory for remote events. Retrograde amnesia is therefore less severe for remote memories.",
+    "refs": [
+     [
+      16,
+      34
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 32,
+     "originalAnswer": "A"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-033",
+    "chapter": 7,
+    "number": 33,
+    "stem": "Lakeisha and Kim have been studying for two hours for their chemistry exam. Both girls are tired of studying. Lakeisha decides to watch a two-hour movie on DVD, while Kim decides to go to bed. What would you predict about their performance on the chemistry exam?",
+    "options": [
+     "Lakeisha performs better because of consolidation.",
+     "Kim performs better because of consolidation.",
+     "Lakeisha performs better because of encoding specificity.",
+     "Kim performs better because of encoding specificity."
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 38,
+    "scope": "slides",
+    "why": "Memory consolidation appears to be enhanced during sleep, and one reason is that sleeping stops interference from environmental stimuli. Kim sleeps after studying, while the movie adds new stimuli for Lakeisha.",
+    "refs": [
+     [
+      16,
+      38
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 33,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-034",
+    "chapter": 7,
+    "number": 34,
+    "stem": "Experimental evidence suggesting that the standard model of consolidation needs to be revised are data that show that the hippocampus was activated during retrieval of ___________ memories.",
+    "options": [
+     "recent and remote episodic",
+     "recent and remote semantic",
+     "recent episodic",
+     "remote semantic"
+    ],
+    "correct": 0,
+    "module": 16,
+    "page": 36,
+    "scope": "slides",
+    "why": "The multiple trace model is supported by the finding that the hippocampus is activated during retrieval of both recent and remote memories (Gilboa and colleagues, 2004). The standard model does not predict activity for remote memories. The question bank specifies episodic memories, a detail the slides do not give.",
+    "refs": [
+     [
+      16,
+      36
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 34,
+     "originalAnswer": "A"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-035",
+    "chapter": 7,
+    "number": 35,
+    "stem": "Recent research on memory, based largely on fear conditioning in rats, indicates that",
+    "options": [
+     "fear conditioning is the most effective kind of conditioning for forming durable memories.",
+     "memories are not susceptible to disruption once consolidation has occurred.",
+     "when a memory is reactivated, it becomes capable of being changed or altered, just as it was immediately after it was formed.",
+     "memory consolidation does not occur when animals are afraid of a stimulus."
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 41,
+    "scope": "slides",
+    "why": "In Nader and colleagues (2000), a fear memory that had already consolidated could be weakened after it was reactivated. A retrieved memory becomes fragile and has to be consolidated again, which is reconsolidation.",
+    "refs": [
+     [
+      16,
+      41
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 35,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-036",
+    "chapter": 7,
+    "number": 36,
+    "stem": "Treatment of PTSD has benefitted from recent research on",
+    "options": [
+     "levels of processing.",
+     "depth of processing.",
+     "transfer-appropriate processing.",
+     "reconsolidation."
+    ],
+    "correct": 3,
+    "module": 16,
+    "page": 43,
+    "scope": "slides",
+    "why": "Brunet and colleagues (2008) tested whether blocking reconsolidation after memory retrieval reduces physiological PTSD symptoms. The treatment idea comes from research on reconsolidation.",
+    "refs": [
+     [
+      16,
+      43
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 36,
+     "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-037",
+    "chapter": 7,
+    "number": 37,
+    "stem": "According to memory research, studying is most effective if study sessions are",
+    "options": [
+     "short but all on a single day.",
+     "long and all on a single day.",
+     "short and across several days.",
+     "long and across several days."
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 15,
+    "scope": "slides",
+    "why": "The spacing effect is that memory is better for multiple short study sessions. Short sessions spread across several days use this effect.",
+    "refs": [
+     [
+      16,
+      15
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 37,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-038",
+    "chapter": 7,
+    "number": 38,
+    "stem": "Katie and Alana are roommates taking the same psychology class. They have a test in four days during a 10:00–11:00 AM class period. Both women intend to study for three hours, but because of different work schedules, Katie will study one hour for each of the next three days, while Alana will study three hours the day before the exam. What could you predict about their performances?",
+    "options": [
+     "Katie and Alana should perform equally well, because each studied the same time overall (supporting the equal-time hypothesis).",
+     "Alana will perform better because of a long-term memory recency effect.",
+     "Katie should perform better because of the spacing effect.",
+     "State-dependent learning predicts that Katie should perform better, because the exam takes place during a one- hour class period."
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 15,
+    "scope": "slides",
+    "why": "The spacing effect is that memory is better for multiple short study sessions. Katie studies in three short sessions on three days, so she should do better than Alana, who studies once for three hours.",
+    "refs": [
+     [
+      16,
+      15
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 38,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-039",
+    "chapter": 7,
+    "number": 39,
+    "stem": "Research shows that ___________ does not improve reading comprehension because it does not encourage elaborative processing of the material.",
+    "options": [
+     "organization",
+     "highlighting",
+     "making up questions about the material",
+     "feedback"
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": null,
+    "scope": "extra",
+    "why": "Highlighting is not on the slides. In the chapter, highlighting is a study habit that feels productive but does not make the reader connect the material to meaning, so it does not encourage elaborative processing.",
+    "refs": [],
+    "source": {
+     "chapter": 7,
+     "question": 39,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-040",
+    "chapter": 7,
+    "number": 40,
+    "stem": "Research into reconsolidation of memories in people who have PTSD has focused on the ________ aspects of memory.",
+    "options": [
+     "episodic",
+     "visual",
+     "emotional",
+     "systemic"
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 44,
+    "scope": "slides",
+    "why": "In Brunet and colleagues (2008), propranolol lowered the physiological fear response while factual memory remained intact. The work focuses on the emotional charge of the traumatic memory.",
+    "refs": [
+     [
+      16,
+      44
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 40,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-041",
+    "chapter": 7,
+    "number": 41,
+    "stem": "James Nairne would say that effective encoding of memory is based on which of the following?",
+    "options": [
+     "Rehearsal",
+     "Survival",
+     "Specificity",
+     "Mood"
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 7,
+    "scope": "slides",
+    "why": "Relating words to survival value is one of the factors that aid encoding. The slides list the factor without naming a researcher, and the question bank attributes the idea to James Nairne.",
+    "refs": [
+     [
+      16,
+      7
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 41,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-042",
+    "chapter": 7,
+    "number": 42,
+    "stem": "Dr. Leung is leading a research team to explore the retrieval practice effect. Which of the following will likely be a key component of her team’s research protocol?",
+    "options": [
+     "Sleeping",
+     "Elaborating",
+     "Organizing",
+     "Testing"
+    ],
+    "correct": 3,
+    "module": 16,
+    "page": 12,
+    "scope": "slides",
+    "why": "The retrieval practice effect is that testing memory retrieval can improve memory. In Karpicke and Roediger (2008), the group with less testing did worst, so testing is the key part of such research.",
+    "refs": [
+     [
+      16,
+      12
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 42,
+     "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-043",
+    "chapter": 7,
+    "number": 43,
+    "stem": "Within the context of studying, which of the following would be related to an illusion?",
+    "options": [
+     "Encoding",
+     "Highlighting",
+     "Spacing",
+     "Sleeping"
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": null,
+    "scope": "extra",
+    "why": "Highlighting is not on the slides. The related slide point is the illusion of learning, in which familiarity is mistaken for comprehension. The question bank treats highlighting as a habit that creates that illusion.",
+    "refs": [],
+    "source": {
+     "chapter": 7,
+     "question": 43,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-044",
+    "chapter": 7,
+    "number": 44,
+    "stem": "Which of the following provides the key benefit to the generate-and-test study strategy?",
+    "options": [
+     "Classification",
+     "Elaboration",
+     "Rehearsal",
+     "Engagement"
+    ],
+    "correct": 3,
+    "module": 16,
+    "page": null,
+    "scope": "extra",
+    "why": "The slides list generating questions and self-testing as a principle of effective studying. The question bank keys engagement as the benefit, a word the slides do not use, so this item is extra material.",
+    "refs": [],
+    "source": {
+     "chapter": 7,
+     "question": 44,
+     "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-045",
+    "chapter": 7,
+    "number": 45,
+    "stem": "The concept of encoding specificity is grounded in which of the following?",
+    "options": [
+     "Task",
+     "Structure",
+     "Mood",
+     "Location"
+    ],
+    "correct": 3,
+    "module": 16,
+    "page": 19,
+    "scope": "slides",
+    "why": "In Godden and Baddeley’s (1975) diving experiment, the best recall occurred when encoding and retrieval occurred in the same location. Encoding specificity is about learning information together with its context, such as a location.",
+    "refs": [
+     [
+      16,
+      19
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 45,
+     "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-046",
+    "chapter": 7,
+    "number": 46,
+    "stem": "Which of the following is a key factor in the memory-enhancing capacity of sleep?",
+    "options": [
+     "Classification",
+     "Elaboration",
+     "Distraction",
+     "Reconsolidation"
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": null,
+    "scope": "review",
+    "why": "Sleeping stops interference from environmental stimuli, which helps consolidation. The question bank keys distraction, which fits only if it is read as the absence of distraction during sleep, so this item is shown for review and is not scored.",
+    "refs": [],
+    "source": {
+     "chapter": 7,
+     "question": 46,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-047",
+    "chapter": 7,
+    "number": 47,
+    "stem": "The concept of reconsolidation is based on the ________ of retrieved memories.",
+    "options": [
+     "classification",
+     "emotionality",
+     "potentiation",
+     "fragility"
+    ],
+    "correct": 3,
+    "module": 16,
+    "page": 40,
+    "scope": "slides",
+    "why": "Retrieved memories become fragile and are consolidated again, which is reconsolidation. The idea rests on the fragility of a memory after it is retrieved.",
+    "refs": [
+     [
+      16,
+      40
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 47,
+     "originalAnswer": "D"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-048",
+    "chapter": 7,
+    "number": 48,
+    "stem": "In the experiment conducted by Viskontas and coworkers using picture pairs, a participant’s later experience of familiarity with a particular pair was coded as ________.",
+    "options": [
+     "“sense.”",
+     "“know.”",
+     "“think.”",
+     "“remember.”"
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": null,
+    "scope": "extra",
+    "why": "The slides cite Viskontas and colleagues (2009) only for the point that the response of the hippocampus can change over time. The remember and know coding of picture pairs in that study is extra material from the chapter.",
+    "refs": [],
+    "source": {
+     "chapter": 7,
+     "question": 48,
+     "originalAnswer": "B"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-049",
+    "chapter": 7,
+    "number": 49,
+    "stem": "When the methods used to encode and retrieve information are the same, this is called ________ processing.",
+    "options": [
+     "state-dependent",
+     "stimulus-fluency",
+     "transfer-appropriate",
+     "recall-potentiation"
+    ],
+    "correct": 2,
+    "module": 16,
+    "page": 23,
+    "scope": "slides",
+    "why": "Transfer-appropriate processing is the principle that memory is better when the type of processing used during encoding is the same as the type used during retrieval.",
+    "refs": [
+     [
+      16,
+      23
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 49,
+     "originalAnswer": "C"
+    },
+    "edited": false
+   },
+   {
+    "id": "G07-050",
+    "chapter": 7,
+    "number": 50,
+    "stem": "What is the key difference between synaptic consolidation and systems consolidation?",
+    "options": [
+     "Content",
+     "Scale",
+     "State",
+     "Consciousness"
+    ],
+    "correct": 1,
+    "module": 16,
+    "page": 28,
+    "scope": "slides",
+    "why": "Synaptic consolidation is a structural change at the synapse, and systems consolidation is the reorganization of a neural circuit. The key difference is the scale at which each one works, along with speed.",
+    "refs": [
+     [
+      16,
+      28
+     ]
+    ],
+    "source": {
+     "chapter": 7,
+     "question": 50,
+     "originalAnswer": "B"
     },
     "edited": false
    }
