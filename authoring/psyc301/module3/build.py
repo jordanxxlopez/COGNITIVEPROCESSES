@@ -27,7 +27,7 @@ VERSIONS = {'A': 'Original', '6': 'Version 6 · natural teaching', '10': 'Versio
 # Home page headline for Module III. Rewrite it when a lecture is added so it covers every lecture.
 HERO = dict(title=['Long-term memory.', 'Stored, encoded, retrieved, consolidated.'],
             text='Module III covers the structure of long-term memory, and how memories are encoded, retrieved, consolidated and reconsolidated. Original slides sit beside teaching explanations, personal notes, and practice. More lectures are added here as they arrive.')
-bank = dict(hero=HERO, revision='module3-11', modules=[], lectureNumbers={}, lectureQuizSize=50, practiceTestSize=0,
+bank = dict(hero=HERO, revision='module3-12', modules=[], lectureNumbers={}, lectureQuizSize=50, practiceTestSize=0,
             collections=[], questions=[], topics=[], coreReview=[], experiments=[], versions=VERSIONS,
             scripts={k: {} for k in ('6', '10', '12', '14', '16', '18', '20', '21', '22')}, questionVersions={}, likely=[])
 aids = dict(ask=[], cards=[], cardsV4=[], contrasts=[], contrastsV2=[], contrastsV3=[], contrastsV21=[], explainers=[], topicsV4=[],

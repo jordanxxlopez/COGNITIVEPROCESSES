@@ -214,7 +214,8 @@ slide(23, 'Transfer-appropriate processing',
  v22=[
   ('**Transfer-appropriate processing** means memory is **better when the type of processing at encoding is the same as the type at retrieval**.', []),
   ('**Morris and colleagues (1977)** gave a **rhyming test** to two groups. The group that had encoded by **rhyme** scored **49 percent**, and the group that had encoded by **meaning** scored **33 percent**.',
-   ['Meaning-based encoding is deeper, but it did not match the rhyming test.'])])
+   ['Meaning-based encoding is deeper, but it did not match the rhyming test.'])],
+ core='Transfer-appropriate processing')
 
 slide(24, 'Morris and colleagues (1977): the task',
  original=[
@@ -251,7 +252,8 @@ slide(27, 'Consolidation',
  v22=[
   ('**Consolidation** **transforms new memories from a fragile state to a more permanent state**.', []),
   ('**Synaptic consolidation** is **rapid** and **occurs at synapses**, the gaps where one neuron signals the next.', []),
-  ('**Systems consolidation** is **gradual** and is the **reorganization of neural circuits**.', [])])
+  ('**Systems consolidation** is **gradual** and is the **reorganization of neural circuits**.', [])],
+ core='Consolidation')
 
 slide(28, 'Synaptic consolidation and systems consolidation',
  original=[

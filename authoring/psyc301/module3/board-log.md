@@ -93,3 +93,5 @@ Vera: all eight new questions and their rewordings keyed correctly. Applied: sli
 Gideon: "is listed with" reworded; comma splice fixed. Correction to this log: "for the future" was reworded to "about events in the future", and the closing point for slide 35 keeps "for the future after it" because the figure is labelled FUTURE.
 Cato: MINOR CONCERNS, no halt. Corrections: Flint's cuts are DECIDED by the Chair as not adopted (reason: Module II asks the same idea from several angles and every workspace tool needs content for each lecture); the year answer stays one list so all years can be compared in one place; Simplified 2, 31 and 36 are kept because the Simplified version is meant to ask the idea directly.
 Chair (Margaret): signed off for publishing on 2026-11-23. Unresolved: the second-round fixes above were not re-reviewed a third time; the test-bank keys for rows 23 and 46 are shown unscored.
+
+2026-11-23, Jordan's decision: Must-know restored on slides 23 and 27 of Collection 17 (they hold the definitions of transfer-appropriate processing and consolidation). 25 must-know slides.

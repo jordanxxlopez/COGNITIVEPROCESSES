@@ -7,7 +7,7 @@ window.THIRD_PART = {
   ],
   "text": "Module III covers the structure of long-term memory, and how memories are encoded, retrieved, consolidated and reconsolidated. Original slides sit beside teaching explanations, personal notes, and practice. More lectures are added here as they arrive."
  },
- "revision": "module3-11",
+ "revision": "module3-12",
  "modules": [
   15,
   16
@@ -687,7 +687,8 @@ window.THIRD_PART = {
       "<strong>Morris and colleagues (1977)</strong> tested this principle. With <strong>rhyming-based encoding</strong>, participants did a <strong>rhyming task</strong> and then took a <strong>rhyming test</strong>, and they scored <strong>49 percent</strong>. With <strong>meaning-based encoding</strong>, participants did a <strong>meaning task</strong> and then took the same rhyming test, and they scored <strong>33 percent</strong>.",
       "The rhyming test was passed more often by the group that had encoded by rhyme. Meaning-based encoding is deeper, but it did not match the rhyming test. Matching the type of processing mattered more than depth for that test."
      ],
-     "image": 22
+     "image": 22,
+     "core": "Transfer-appropriate processing"
     },
     {
      "page": 24,
@@ -725,7 +726,8 @@ window.THIRD_PART = {
       "<strong>Synaptic consolidation</strong> is <strong>rapid</strong> and <strong>occurs at synapses</strong>. A synapse is the small gap where one neuron passes a signal to the next.",
       "<strong>Systems consolidation</strong> is <strong>gradual</strong> and involves the <strong>reorganization of neural circuits</strong>. It concerns how groups of neurons in different brain areas come to be connected over a long period."
      ],
-     "image": 26
+     "image": 26,
+     "core": "Consolidation"
     },
     {
      "page": 28,
@@ -2929,6 +2931,7 @@ window.THIRD_PART = {
    "module": 16,
    "title": "Transfer-appropriate processing",
    "pages": [
+    23,
     25
    ]
   },
@@ -2936,6 +2939,7 @@ window.THIRD_PART = {
    "module": 16,
    "title": "Consolidation",
    "pages": [
+    27,
     29,
     30
    ]
