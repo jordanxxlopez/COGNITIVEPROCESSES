@@ -4,15 +4,18 @@
 // question objects (same id, same correct index), so lecture quizzes, the practice
 // test, quick sets and missed retries all follow the selected version.
 (()=>{
- const V=window.M2_QUESTION_VERSIONS;
+ // Module III questions and their versions (window.THIRD_PART) follow the same choice.
+ const third=window.THIRD_PART;
+ const V=window.M2_QUESTION_VERSIONS&&{...window.M2_QUESTION_VERSIONS,...(third?.questionVersions||{})};
  if(!V||!window.SECOND_HALF)return;
+ const ALL=window.SECOND_HALF.questions.concat(third?.questions||[]);
  const KEY='psyc301-m2-question-version';
  const LABELS={original:'Original',college:'College-Level',simple:'Simplified'};
  const NOTES={original:'The original question bank, unchanged.',
   college:'Same difficulty as the original, rewritten so every question stands on its own.',
   simple:'Same ideas, asked more directly, with fewer application scenarios.'};
  const fields=['stem','options','correct','why'];
- const originals=new Map(window.SECOND_HALF.questions.map(q=>[q.id,Object.fromEntries(fields.map(f=>[f,Array.isArray(q[f])?[...q[f]]:q[f]]))]));
+ const originals=new Map(ALL.map(q=>[q.id,Object.fromEntries(fields.map(f=>[f,Array.isArray(q[f])?[...q[f]]:q[f]]))]));
  let current='original';
  try{const saved=localStorage.getItem(KEY);if(saved&&LABELS[saved])current=saved}catch(e){}
  function textFor(id,version){
@@ -22,7 +25,7 @@
  }
  function apply(version){
   current=version;
-  for(const q of window.SECOND_HALF.questions){const t=textFor(q.id,version);for(const f of fields)q[f]=Array.isArray(t[f])?[...t[f]]:t[f]}
+  for(const q of ALL){const t=textFor(q.id,version);for(const f of fields)q[f]=Array.isArray(t[f])?[...t[f]]:t[f]}
   // A set in progress keeps its order and answers; only the wording changes.
   if(typeof quiz!=='undefined'&&quiz&&quiz.items&&String(quiz.kind||'').startsWith('m2')){
    for(const item of quiz.items){if(!originals.has(item.id))continue;const t=textFor(item.id,version);item.stem=t.stem;item.options=[...t.options];item.why=t.why}
@@ -34,14 +37,17 @@
    +' <span class="quiet">'+NOTES[current]+'</span></div>';
  }
  const P=window.M2_QUESTION_PRIORITY;
+ // The ranked set for whichever module's questions are open.
+ const likelyIds=()=>{const open=new Set(window.SECOND_HALF.questions.map(q=>q.id));return new Set([...(P?.likely50||[]),...(third?.likely||[])].filter(id=>open.has(id)))};
  function likelyCard(){
-  return '<div class="card m2-likely"><h2>Most likely 50</h2><p>The 50 questions ranked highest by the study-priority model: must-know pages, named experiments with researcher and year, slides that state a result or conclusion, reported numbers, and how many slides a topic gets. Equal share per lecture. It ranks study priority within this bank; it is not a validated forecast of exam questions.</p><button class="primary" data-start="m2likely">Start most likely 50</button></div>';
+  const n=likelyIds().size;
+  return '<div class="card m2-likely"><h2>Most likely '+n+'</h2><p>The '+n+' questions ranked highest by the study-priority model: must-know pages, named experiments with researcher and year, slides that state a result or conclusion, reported numbers, and how many slides a topic gets. Equal share per lecture. It ranks study priority within this bank; it is not a validated forecast of exam questions.</p><button class="primary" data-start="m2likely">Start most likely '+n+'</button></div>';
  }
  if(P&&typeof startQuiz==='function'){
   const priorStart=startQuiz;
   startQuiz=function(kind){
    if(kind!=='m2likely')return priorStart.apply(this,arguments);
-   const ids=new Set(P.likely50);
+   const ids=likelyIds();
    const pool=shuffle(window.SECOND_HALF.questions.filter(q=>ids.has(q.id)));
    if(!pool.length)return;
    quiz={items:prepareQuizItems(pool),index:0,answers:[],kind:'m2likely',finished:false};

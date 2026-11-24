@@ -10,10 +10,12 @@
  if(![1,2,3].includes(active))active=2;
  const third=()=>window.PsycModule3;
  const isThird=id=>Boolean(third()?.ids.has(id));
- const moduleOf=id=>isThird(id)?3:secondHalf.modules.includes(id)?2:1;
+ const moduleOf=id=>third()?third().moduleOf(id):secondHalf.modules.includes(id)?2:1;
+ const scope=()=>third()?.setScope(active);
  const firstModules=()=>M.filter(m=>moduleOf(m.id)===1);
  const previousHome=home,previousNav=nav,previousRender=render;
  function moduleHome(){
+  scope();
   if(active===2)return previousHome();
   if(active===3)return third()?third().home():'<div class="hero"><span class="tag">MODULE III</span><h1>Module III</h1><p>Module III materials have not been added yet.</p></div>';
   const lectures=firstModules(),total=lectures.reduce((n,m)=>n+m.sections.length,0),read=lectures.reduce((n,m)=>n+m.sections.filter(s=>state.read.includes(m.id+':'+s.page)).length,0);
@@ -21,14 +23,16 @@
  }
  home=moduleHome;
  nav=function(){
-  previousNav();
+  scope();previousNav();
   if(active===1){
    $('#workspaceNav').innerHTML='<div class="label">Your workspace · Midterm 1</div>'+workspace.filter(([id])=>id!=='home').map(([id,title])=>`<button data-view="${id}" class="${view===id?'active':''}">${esc(title)}</button>`).join('');
    $('#moduleNav').innerHTML='<div class="label">Individual collections</div>'+firstModules().map((m,i)=>`<button data-module="${m.id}" class="${view==='module'&&selected===m.id?'active':''}"><span class="navnum">${String(i+1).padStart(2,'0')}</span>${esc(m.title)}</button>`).join('');
-  }else if(active===2){
+  }else if(active===2||third()){
+   // Module III uses the Module II workspace list, drawn for the Module III lectures.
    $('#moduleNav').innerHTML='';
+   if(active===3){const label=$('#workspaceNav .label');if(label)label.textContent='Module III'}
   }else{
-   if(third())third().nav();else{$('#workspaceNav').innerHTML='';$('#moduleNav').innerHTML=''}
+   $('#workspaceNav').innerHTML='';$('#moduleNav').innerHTML='';
   }
  };
  function sync(){
@@ -45,13 +49,14 @@
   if(view!=='home'){
    if(view==='module')active=moduleOf(selected);
    else if(view==='quiz'&&quiz?.items?.length)active=moduleOf(quiz.items[0].module);
-   else active=view.startsWith('m3')?3:view.startsWith('m2')?2:1;
+   else if(view!=='quiz')active=view.startsWith('m2')?(active===3?3:2):1; // a quiz view with no set loaded keeps the open module
   }
+  scope();
   const result=previousRender.apply(this,arguments);sync();return result;
  };
  function open(id){
   if(![1,2,3].includes(id))return;
-  active=id;view='home';mode='notes';backLink=null;
+  active=id;scope();view='home';mode='notes';backLink=null;
   if('speechSynthesis' in window)speechSynthesis.cancel();
   document.querySelectorAll('audio,video').forEach(media=>media.pause());
   render();window.scrollTo(0,0);$('#sidebar').scrollTop=0;$('#content').setAttribute('tabindex','-1');$('#content').focus({preventScroll:true});

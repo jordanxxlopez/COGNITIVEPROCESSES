@@ -3,7 +3,10 @@
 (() => {
  const pack=window.PSYC301_TESTBANK;
  if(!pack||typeof secondScreen!=='function')return;
- const KEY='psyc301-testbank-v1', scope=new Set([6,9,10,11,12,13,14]);
+ // Module III lectures (window.THIRD_AIDS.testbank) join the same bank; the Test Bank page lists only the open module's lectures.
+ const T=window.THIRD_AIDS?.testbank;
+ const KEY='psyc301-testbank-v1', scope=new Set([6,9,10,11,12,13,14,...(T?.modules||[])]);
+ const open=()=>[...scope].filter(id=>window.SECOND_HALF.modules.includes(id));
  let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch{}
  if(typeof saved!=='object'||Array.isArray(saved))saved={};
  if(!saved.decks||typeof saved.decks!=='object'||Array.isArray(saved.decks))saved.decks={};
@@ -11,7 +14,7 @@
  const write=()=>{try{localStorage.setItem(KEY,JSON.stringify(saved));storageOK=true}catch{storageOK=false}};
  const modern=()=>{try{return localStorage.getItem('psyc301-workspace-layout')==='modern'}catch{return false}};
  const e=t=>esc(String(t??''));
- const questions=pack.questions, decks=new Map();
+ const questions=pack.questions.concat(T?.questions||[]), decks=new Map();
  const title=id=>moduleBy(id)?.title||'Collection';
  const references=(q,id)=>q.refs.filter(r=>r[0]===id).map(r=>r[1]);
  const slidePool=id=>questions.filter(q=>q.scope==='slides'&&references(q,id).length).slice().sort((a,b)=>references(a,id)[0]-references(b,id)[0]||a.id.localeCompare(b.id));
@@ -50,9 +53,10 @@
   return `<div class="tb-supplement">${extras.length?`<details class="tb-extra"><summary>Beyond the slides · ${extras.length} related chapter questions</summary><p>Additional material from the same chapter. Learn it here separately; these questions are not attached to individual slides.</p>${allCard('extra-'+id,extras,'Beyond the slides')}</details>`:''}${review.length?`<details class="tb-extra tb-review"><summary>Source-key review · ${review.length} ambiguous questions · not scored</summary><p>These original questions have an ambiguous or overly broad keyed answer. Choose an option to see the source key and why it needs care.</p>${allCard('review-'+id,review,'Source-key review')}</details>`:''}</div>`;
  }
  function screen(){
-  const filter=scope.has(Number(saved.filter))?Number(saved.filter):'all';
-  const ids=[...scope].filter(id=>filter==='all'||id===filter);
-  return `<span class="tag">MODULE 2 · TEST BANK</span><h1>Test Bank</h1><p class="tb-intro">Practice the questions that match your slides, one lecture at a time. Each answer includes an explanation. Related chapter material stays below each lecture in <b>Beyond the slides</b>.</p><div class="row tb-toolbar"><label>Lecture <select data-tb-filter><option value="all">All lectures</option>${[...scope].map(id=>`<option value="${id}" ${filter===id?'selected':''}>${e(title(id))}</option>`).join('')}</select></label><span class="quiet">${questions.filter(q=>q.scope==='slides').length} unique slide questions · ${questions.filter(q=>q.scope==='extra').length} chapter extras · ${questions.filter(q=>q.scope==='review').length} source-key reviews</span></div>${ids.map(id=>{
+  const filter=open().includes(Number(saved.filter))?Number(saved.filter):'all';
+  const ids=open().filter(id=>filter==='all'||id===filter);
+  const shown=questions.filter(q=>open().includes(q.module));
+  return `<span class="tag">MODULE 2 · TEST BANK</span><h1>Test Bank</h1><p class="tb-intro">Practice the questions that match your slides, one lecture at a time. Each answer includes an explanation. Related chapter material stays below each lecture in <b>Beyond the slides</b>.</p><div class="row tb-toolbar"><label>Lecture <select data-tb-filter><option value="all">All lectures</option>${open().map(id=>`<option value="${id}" ${filter===id?'selected':''}>${e(title(id))}</option>`).join('')}</select></label><span class="quiet">${shown.filter(q=>q.scope==='slides').length} unique slide questions · ${shown.filter(q=>q.scope==='extra').length} chapter extras · ${shown.filter(q=>q.scope==='review').length} source-key reviews</span></div>${ids.map(id=>{
    const pool=slidePool(id),d=deck('bank-'+id,pool),answered=pool.filter(q=>Number.isInteger(d.record.answers[q.id])).length;
    return `<section class="tb-lecture"><header><h2>${e(title(id))}</h2><p>${pool.length} slide-matched questions · <span data-tb-count="${id}">${answered}</span> answered</p></header>${allCard('bank-'+id,pool,'Slide-by-slide practice')}${supplement(id)}</section>`;
   }).join('')}<p class="quiet">Adapted from your supplied Goldstein Cognero PDF. Questions retain their source IDs; textbook-dependent wording has been made self-contained. The lab collection reuses matching concepts, so its questions are not additional unique items. No questions are added to your regular quizzes.</p>`;

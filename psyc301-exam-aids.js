@@ -5,7 +5,10 @@
 (() => {
  const pack=window.EXAM_AIDS;
  if(!pack||typeof secondTools==='undefined'||typeof secondScreen!=='function'||typeof secondGuide!=='function')return;
- const cards=pack.cards||[],contrasts=pack.contrasts||[],contrastsV2=window.CONTRASTS_V2||[],contrastsV3=window.CONTRASTS_V3||[],contrastsV21=window.CONTRASTS_V21||[],cardsV4=window.CARDS_V4||[],topicsV4=window.TOPICS_V4||[],ask=pack.ask||[],explainers=pack.explainers||[];
+ // Module III items (psyc301-module3-aids-data.js) join the same lists; each view shows only the open module's lectures.
+ const T=window.THIRD_AIDS||{},plus=(a,b)=>(a||[]).concat(b||[]);
+ const cards=plus(pack.cards,T.cards),contrasts=plus(pack.contrasts,T.contrasts),contrastsV2=plus(window.CONTRASTS_V2,T.contrastsV2),contrastsV3=plus(window.CONTRASTS_V3,T.contrastsV3),contrastsV21=plus(window.CONTRASTS_V21,T.contrastsV21),cardsV4=plus(window.CARDS_V4,T.cardsV4),topicsV4=plus(window.TOPICS_V4,T.topicsV4),ask=plus(pack.ask,T.ask),explainers=plus(pack.explainers,T.explainers);
+ const inScope=id=>window.SECOND_HALF.modules.includes(Number(id));
  const LK=window.AID_LINKS||{contrasts:{},asks:{},topics:{}};
  for(const x of [...contrastsV2,...contrastsV3,...contrastsV21,...(pack.contrasts||[])]){if(!x.pages)x.pages=LK.contrasts[x.module+'|'+x.a.term+' / '+x.b.term]||[]}
  for(const a of ask){if(!a.pages)a.pages=LK.asks[a.module+'|'+a.topic]||[]}
@@ -17,10 +20,11 @@
  if(!state.aids||typeof state.aids!=='object')state.aids={};
  const aid=()=>{const a=state.aids;if(!a.filter)a.filter='all';if(!['talk','new','old','v21'].includes(a.cv))a.cv='talk';if(!a.ctier)a.ctier='all';if(a.csort!=='likely')a.csort='lecture';if(a.cardv!=='old')a.cardv='talk';if(a.topv!=='old')a.topv='talk';if(typeof a.test!=='boolean')a.test=false;return a};
  const modTitle=id=>{try{return secondModules().find(m=>m.id===Number(id))?.title||('Lecture '+id)}catch{return 'Lecture '+id}};
- const ids=()=>[...new Set([...cards,...contrasts,...contrastsV2,...contrastsV3,...cardsV4,...topicsV4,...ask,...explainers].map(x=>x.module))].sort((a,b)=>a-b);
- const keep=x=>aid().filter==='all'||String(x.module)===String(aid().filter);
+ const ids=()=>[...new Set([...cards,...contrasts,...contrastsV2,...contrastsV3,...cardsV4,...topicsV4,...ask,...explainers].map(x=>x.module))].filter(inScope).sort((a,b)=>a-b);
+ const lecture=()=>ids().map(String).includes(String(aid().filter))?aid().filter:'all';
+ const keep=x=>inScope(x.module)&&(lecture()==='all'||String(x.module)===String(lecture()));
  const e=s=>esc(String(s==null?'':s));
- const filterBar=(withTest)=>`<div class="row aid-bar"><label>Lecture <select data-aid-filter>${['all',...ids()].map(v=>`<option value="${v}"${String(aid().filter)===String(v)?' selected':''}>${v==='all'?'All lectures':e(modTitle(v))}</option>`).join('')}</select></label>${withTest?`<label class="aid-test"><input type="checkbox" data-aid-test ${aid().test?'checked':''}> Test myself (hide results until I click)</label>`:''}</div>`;
+ const filterBar=(withTest)=>`<div class="row aid-bar"><label>Lecture <select data-aid-filter>${['all',...ids()].map(v=>`<option value="${v}"${String(lecture())===String(v)?' selected':''}>${v==='all'?'All lectures':e(modTitle(v))}</option>`).join('')}</select></label>${withTest?`<label class="aid-test"><input type="checkbox" data-aid-test ${aid().test?'checked':''}> Test myself (hide results until I click)</label>`:''}</div>`;
  const src=(m,pages)=>pages&&pages.length?`<button class="tiny" data-source="${m}:${pages[0]}">Open slide + notes</button>`:'';
  const row=(label,text,hide)=>text?(hide?`<details class="aid-row"><summary>${label}</summary><p>${e(text)}</p></details>`:`<p class="aid-row"><b>${label}</b> ${e(text)}</p>`):'';
  function cardHTML(c){
@@ -53,7 +57,7 @@
 
  const verBar=(attr,key,talkLabel,withTest)=>{
   const a=aid(),old=a[key]==='old';
-  return `<div class="row aid-bar"><label>Version <select ${attr}><option value="talk"${old?'':' selected'}>${talkLabel}</option><option value="old"${old?' selected':''}>Original</option></select></label><label>Lecture <select data-aid-filter>${['all',...ids()].map(v=>`<option value="${v}"${String(a.filter)===String(v)?' selected':''}>${v==='all'?'All lectures':e(modTitle(v))}</option>`).join('')}</select></label>${withTest&&old?`<label class="aid-test"><input type="checkbox" data-aid-test ${a.test?'checked':''}> Test myself (hide results until I click)</label>`:''}</div>`;
+  return `<div class="row aid-bar"><label>Version <select ${attr}><option value="talk"${old?'':' selected'}>${talkLabel}</option><option value="old"${old?' selected':''}>Original</option></select></label><label>Lecture <select data-aid-filter>${['all',...ids()].map(v=>`<option value="${v}"${String(lecture())===String(v)?' selected':''}>${v==='all'?'All lectures':e(modTitle(v))}</option>`).join('')}</select></label>${withTest&&old?`<label class="aid-test"><input type="checkbox" data-aid-test ${a.test?'checked':''}> Test myself (hide results until I click)</label>`:''}</div>`;
  };
  const blocksHTML=bl=>(bl||[]).map(b=>`<p class="aid-long">${bold(b.text)}</p>${(b.children||[]).length?`<ul class="aid-kids">${b.children.map(k=>`<li>${bold(k)}</li>`).join('')}</ul>`:''}`).join('');
  function cardV4HTML(c){
@@ -67,7 +71,7 @@
  const contrastBar=()=>{
   const a=aid(),old=a.cv==='old';
   const ver=`<label>Version <select data-aid-cv><option value="talk"${a.cv==='talk'?' selected':''}>Written like the Version 20 transcripts · explained in sentences</option><option value="new"${a.cv==='new'?' selected':''}>Labeled · definition, how they differ, example, watch out</option><option value="v21"${a.cv==='v21'?' selected':''}>Version 21 · clearer sentences, slide terms kept</option><option value="old"${old?' selected':''}>Original · short version</option></select></label>`;
-  const lec=`<label>Lecture <select data-aid-filter>${['all',...ids()].map(v=>`<option value="${v}"${String(a.filter)===String(v)?' selected':''}>${v==='all'?'All lectures':e(modTitle(v))}</option>`).join('')}</select></label>`;
+  const lec=`<label>Lecture <select data-aid-filter>${['all',...ids()].map(v=>`<option value="${v}"${String(lecture())===String(v)?' selected':''}>${v==='all'?'All lectures':e(modTitle(v))}</option>`).join('')}</select></label>`;
   const extra=old?'':`<label>Likelihood <select data-aid-ctier>${[['all','All contrasts'],['high','Know first (most likely)'],['mid','Know next'],['low','Know last (least likely)']].map(([v,l])=>`<option value="${v}"${a.ctier===v?' selected':''}>${l}</option>`).join('')}</select></label><label>Order <select data-aid-csort><option value="lecture"${a.csort==='lecture'?' selected':''}>By lecture, most likely first</option><option value="likely"${a.csort==='likely'?' selected':''}>Most likely first, all lectures</option></select></label>`;
   return `<div class="row aid-bar">${ver}${lec}${extra}</div>`;
  };
@@ -75,7 +79,7 @@
   if(aid().cv==='old')return `<h1>Side-by-side contrasts · original</h1><p>Pairs of ideas that are easy to mix up, with how to tell them apart.</p>${contrastBar()}${sectioned(contrasts,contrastHTML,'No contrasts for this lecture.')}`;
   const v21=aid().cv==='v21',talk=aid().cv==='talk'||v21,pool=v21?contrastsV21:talk?contrastsV3:contrastsV2,draw=talk?contrastV3HTML:contrastV2HTML;
   const list=pool.filter(x=>keep(x)&&(aid().ctier==='all'||x.tier===aid().ctier));
-  const intro=`<h1>Side-by-side contrasts</h1><p>${pool.length} pairs of ideas that are easy to mix up. ${v21?'Version 21 keeps the terms exactly as the slides give them, then explains each one in connected sentences, with the same pairs, researchers, findings and evidence as Version 20.':talk?'Each pair gives the two sides in a box, then explains in sentences how they differ and why, with the studies and examples worked in, written the way the Version 20 transcripts are.':'Each says what the two sides are, how they differ and why, gives an example tied to the researcher and year, and flags the usual slip.'} A tag shows how high each pair ranks for study: a heuristic ranking built from how many and how highly ranked the Q&amp;A questions are that depend on the pair. It orders what to learn first and is not a validated prediction of the exam, so the last tier is still worth knowing. Lecture 15 items are placed by the slide topic each article or lab extends.</p>${contrastBar()}`;
+  const intro=`<h1>Side-by-side contrasts</h1><p>${pool.filter(x=>inScope(x.module)).length} pairs of ideas that are easy to mix up. ${v21?'Version 21 keeps the terms exactly as the slides give them, then explains each one in connected sentences, with the same pairs, researchers, findings and evidence as Version 20.':talk?'Each pair gives the two sides in a box, then explains in sentences how they differ and why, with the studies and examples worked in, written the way the Version 20 transcripts are.':'Each says what the two sides are, how they differ and why, gives an example tied to the researcher and year, and flags the usual slip.'} A tag shows how high each pair ranks for study: a heuristic ranking built from how many and how highly ranked the Q&amp;A questions are that depend on the pair. It orders what to learn first and is not a validated prediction of the exam, so the last tier is still worth knowing. Lecture 15 items are placed by the slide topic each article or lab extends.</p>${contrastBar()}`;
   if(!list.length)return intro+'<p>No contrasts match these filters.</p>';
   if(aid().csort==='likely')return intro+`<div class="grid aid-grid aid-grid2">${list.slice().sort((a,b)=>b.score-a.score).map(x=>draw(x,true)).join('')}</div>`;
   const g=groupBy(list);
@@ -115,6 +119,7 @@
  secondGuide=function(){
   let html=priorGuide();
   for(const a of ask){
+   if(!inScope(a.module))continue;
    const marker='<summary>'+esc(a.topic)+'</summary>';
    if(!html.includes(marker))continue;
    const block=`<div class="aid-inline"><b>What you can be asked</b><div class="aid-qas">${qa(a)}</div></div>`;

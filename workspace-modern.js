@@ -5,10 +5,10 @@
  function update(){
   const root=document.getElementById('content');if(!root)return;
   // Module II and Module III workspaces and their opt-in slide practice.
-  const workspace=typeof view!=='undefined'&&(view.startsWith('m2')||view.startsWith('m3'))&&!view.endsWith('Expanded');
+  const workspace=typeof view!=='undefined'&&view.startsWith('m2')&&!view.endsWith('Expanded');
   root.classList.toggle('workspace-containers',workspace);
   root.classList.toggle('workspace-modern',workspace&&enabled);
-  if(workspace&&enabled)root.dataset.workspacePattern=['m2qabank','m2lectures','m2test','m2testbank','m2missed','m3lectures','m3test','m3missed'].includes(view)?'list':'path';else delete root.dataset.workspacePattern;
+  if(workspace&&enabled)root.dataset.workspacePattern=['m2qabank','m2lectures','m2test','m2testbank','m2missed'].includes(view)?'list':'path';else delete root.dataset.workspacePattern;
   let control=document.getElementById('workspace-layout-switch');
   const nav=document.getElementById('workspaceNav');if(!nav)return;
   if(!control){

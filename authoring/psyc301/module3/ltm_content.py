@@ -51,7 +51,8 @@ slide(5, 'Murdoch (1962) and the serial position curve',
    ['They could write the words in any order.']),
   ('The **serial position curve** shows the percent recalled for each word, based on the word’s **serial position**. Serial position is the place the word had in the list.', []),
   ('In **Murdoch (1962)**, recall depended on where the word was in the list. Words at the **beginning** were recalled well, which is the **primacy effect**. Words at the **end** were recalled best, which is the **recency effect**.',
-   ['Words in the middle of the list were recalled the least.'])])
+   ['Words in the middle of the list were recalled the least.'])],
+ core='Serial position curve')
 
 slide(6, 'The primacy effect',
  original=[
@@ -137,7 +138,8 @@ slide(12, 'Sachs (1967): the task',
   ('The recording stopped **right after** the target sentence, **80 syllables later** (about 27 seconds) or **160 syllables later** (about 46 seconds). People then got a **surprise recognition test**.',
    ['They judged whether a test sentence was identical to the one they heard or had been changed.']),
   ('The test sentence could be changed in three ways. A **semantic change** altered the **meaning**, so that Galileo sent the letter. A **syntactic change** made the sentence passive but kept the meaning. A **formal change** moved the words around but kept the meaning.',
-   ['Only the semantic change altered what the sentence meant.'])])
+   ['Only the semantic change altered what the sentence meant.'])],
+ core='Sachs (1967)')
 
 slide(13, 'Sachs (1967): results',
  original=[
@@ -283,7 +285,8 @@ slide(25, 'Remember/know results for recent and remote events',
   ('The remember/know procedure was used for events from **10 years ago or less** and for events from **40 to 50 years ago**.', []),
   ('**“Remember” answers dropped sharply** for the older events. **“Know” answers stayed about the same.** “Don’t know” answers went up.', []),
   ('This is because **episodic details are lost over time while semantic memory remains**. Old events are still known, but they are relived much less often, and more of them are forgotten completely.',
-   ['This result shows the **semanticization of remote memories**.'])])
+   ['This result shows the **semanticization of remote memories**.'])],
+ core='How time affects memories')
 
 slide(26, 'Addis and colleagues (2007): memory and the future',
  original=[
@@ -363,7 +366,8 @@ slide(33, 'Graf and colleagues (1985): the two memory tests',
   ('The **explicit memory test** was **cued recall**. People saw a three-letter stem, such as MOT, and were asked to use it to **recall a word from the list**.', []),
   ('The **implicit memory test** was **word-stem completion**. People saw the same stem and were told to complete it with the **first word that came to mind**.',
    ['The study list was not mentioned in the implicit test.',
-    'Both tests used the same stems, so the only difference was whether people were asked to remember.'])])
+    'Both tests used the same stems, so the only difference was whether people were asked to remember.'])],
+ core='Graf and colleagues (1985)')
 
 slide(34, 'Graf and colleagues (1985): results',
  original=[
@@ -410,7 +414,8 @@ slide(37, 'Perfect and Askew (1994): the task',
   ('In **Perfect and Askew (1994)**, people flipped through a magazine and read articles. The pages also held **25 real advertisements** for unfamiliar products.', []),
   ('The **incidental group** was told **only to read the articles**. The **intentional group** was told to **pay attention to the advertisements**.',
    ['The incidental group matches how people normally glance past ads while reading.']),
-  ('Afterward, people saw **50 ads**, the 25 old ads mixed with 25 new ads. The **explicit test** was **recognition**, which asked which ads they had seen. The **implicit test** was a **liking rating** of each ad.', [])])
+  ('Afterward, people saw **50 ads**, the 25 old ads mixed with 25 new ads. The **explicit test** was **recognition**, which asked which ads they had seen. The **implicit test** was a **liking rating** of each ad.', [])],
+ core='Perfect and Askew (1994)')
 
 slide(38, 'Perfect and Askew (1994): results',
  original=[

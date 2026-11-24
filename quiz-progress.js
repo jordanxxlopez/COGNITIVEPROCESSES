@@ -7,7 +7,10 @@
  const valid=q=>q&&typeof q.kind==='string'&&Array.isArray(q.items)&&q.items.length&&Number.isInteger(q.index)&&q.index>=0&&q.index<q.items.length&&Array.isArray(q.answers)&&q.items.every(x=>x&&Array.isArray(x.options)&&Array.isArray(x.order)&&x.order.length===x.options.length&&new Set(x.order).size===x.order.length&&x.order.every(n=>Number.isInteger(n)&&n>=0&&n<x.options.length)&&Number.isInteger(x.correct)&&x.correct>=0&&x.correct<x.options.length);
  let data={schema:1,sessions:{},updated:0},lastSerialized='',warning=false,db=null;
  function version(){return window.PsycQuestionVersions?.current||'original'}
- function key(kind,v=version()){return (kind.startsWith('m2')?v:'archive')+'|'+kind}
+ // Module III shares the Module II set names (m2all, m2quick, ...), so its saved sets get their own slot.
+ const thirdIds=new Set(window.THIRD_PART?.modules||[]);
+ const isThird=q=>q?thirdIds.has(q.items?.[0]?.module):window.PsycModule3?.scope()===3;
+ function key(kind,v=version(),q=null){return (kind.startsWith('m2')?v:'archive')+'|'+kind+(kind.startsWith('m2')&&isThird(q)?'|module3':'')}
  function load(){for(const k of [KEY,BACKUP])try{const x=JSON.parse(localStorage.getItem(k)||'null');if(x?.schema===1&&x.sessions&&x.updated>=data.updated)data=x}catch{}}
  load();
  function store(){
@@ -20,7 +23,7 @@
  }
  function checkpoint(){
   if(valid(quiz)){
-   const k=key(quiz.kind,quiz.questionVersion||version()),snapshot=copy(quiz);
+   const k=key(quiz.kind,quiz.questionVersion||version(),quiz),snapshot=copy(quiz);
    snapshot.questionVersion=quiz.questionVersion||version();
    if(JSON.stringify(data.sessions[k])!==JSON.stringify(snapshot)){data.sessions[k]=snapshot;data.updated=Date.now()}
   }
@@ -34,7 +37,7 @@
  }
  if(!Object.keys(data.sessions).length&&state.quizSessions?.schema===1)data=state.quizSessions;
  if(valid(quiz)){
-  const k=key(quiz.kind);if(!data.sessions[k]){quiz.questionVersion=version();checkpoint()}
+  const k=key(quiz.kind,version(),quiz);if(!data.sessions[k]){quiz.questionVersion=version();checkpoint()}
   else quiz=copy(data.sessions[k]);
  }
  // Resume last active set after reload, including independently saved versions.
@@ -57,7 +60,7 @@
     const fresh=document.createElement('button');fresh.type='button';fresh.textContent='Start a new attempt';
     fresh.onclick=()=>{
      // Keep the previous attempt before starting another, including completed results.
-     checkpoint();data.history=data.history||{};const k=key(quiz.kind);(data.history[k]??=[]).push(copy(quiz));
+     checkpoint();data.history=data.history||{};const k=key(quiz.kind,version(),quiz);(data.history[k]??=[]).push(copy(quiz));
      const kind=quiz.kind;quiz=null;oldStart(kind);if(valid(quiz))quiz.questionVersion=version();checkpoint();render();
     };
     const exportButton=document.createElement('button');exportButton.type='button';exportButton.textContent='Export quiz backup';
