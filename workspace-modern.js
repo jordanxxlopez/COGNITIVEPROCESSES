@@ -4,11 +4,12 @@
  let enabled=false;try{enabled=localStorage.getItem(KEY)==='modern'}catch{}
  function update(){
   const root=document.getElementById('content');if(!root)return;
-  // Module II and Module III workspaces and their opt-in slide practice.
-  const workspace=typeof view!=='undefined'&&view.startsWith('m2')&&!view.endsWith('Expanded');
+  // Module I, II and III workspaces and their opt-in slide practice.
+  const firstPage=typeof view!=='undefined'&&window.PsycCourseFocus?.active()===1&&['essentials','coreReview','experiments','combined','test','lectureQuizzes','missed','sources'].includes(view);
+  const workspace=typeof view!=='undefined'&&(view.startsWith('m2')&&!view.endsWith('Expanded')||firstPage);
   root.classList.toggle('workspace-containers',workspace);
   root.classList.toggle('workspace-modern',workspace&&enabled);
-  if(workspace&&enabled)root.dataset.workspacePattern=['m2qabank','m2lectures','m2test','m2testbank','m2missed'].includes(view)?'list':'path';else delete root.dataset.workspacePattern;
+  if(workspace&&enabled)root.dataset.workspacePattern=['m2qabank','m2lectures','m2test','m2testbank','m2missed','test','lectureQuizzes','missed'].includes(view)?'list':'path';else delete root.dataset.workspacePattern;
   let control=document.getElementById('workspace-layout-switch');
   const nav=document.getElementById('workspaceNav');if(!nav)return;
   if(!control){
