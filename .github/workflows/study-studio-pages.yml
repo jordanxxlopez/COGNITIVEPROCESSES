@@ -31,7 +31,7 @@ jobs:
               if not name:
                   continue
               src = pathlib.Path(name)
-              if src.parts[0] in ('authoring', '.github') or 'node_modules' in src.parts or src.name in ('.gitignore', '_config.yml'):
+              if src.parts[0] in ('authoring', '.github') or (len(src.parts) > 2 and src.parts[1] == 'authoring') or 'node_modules' in src.parts or src.name in ('.gitignore', '_config.yml'):
                   continue
               if src.is_symlink():
                   raise RuntimeError(f'Unexpected symlink: {name}')
@@ -55,6 +55,10 @@ jobs:
         with:
           path: _site
           name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+      # The deploy step lists this run's artifacts right away. On 2026-11-24 the fresh upload was not listed yet
+      # and every deploy failed with "Found 0 artifact(s)", so give the listing a moment to catch up.
+      - name: Wait for the uploaded site to be listed
+        run: sleep 45
       - name: Publish to existing Study Studio URL
         id: deployment
         uses: actions/deploy-pages@v5
