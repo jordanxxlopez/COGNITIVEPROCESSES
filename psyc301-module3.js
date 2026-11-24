@@ -13,10 +13,14 @@
  const ids=new Set(third.modules);
  const KEYS=['modules','questions','topics','coreReview','experiments','practiceTestSize','lectureQuizSize','revision'];
  const bundle={2:Object.fromEntries(KEYS.map(k=>[k,second[k]])),3:Object.fromEntries(KEYS.map(k=>[k,third[k]]))};
+ // Module I opens the same workspace tools (What you can be asked, Q&A, cards, contrasts, hard topics, videos,
+ // Test Bank) for its own collections. Its notes, quizzes and guide stay on the Module I screens.
+ const firstIds=M.filter(m=>!ids.has(m.id)&&!bundle[2].modules.includes(m.id)&&!m.optional).map(m=>m.id);
+ bundle[1]={...bundle[2],modules:firstIds,questions:Q.filter(q=>firstIds.includes(q.module)),topics:[],coreReview:[],experiments:[]};
  const secondIds=new Set(bundle[2].modules);
  Object.assign(second.lectureNumbers,third.lectureNumbers);
  let scope=2;
- function setScope(n){n=n===3?3:2;if(n===scope)return;scope=n;Object.assign(second,bundle[n])}
+ function setScope(n){n=n===3?3:n===1?1:2;if(n===scope)return;scope=n;Object.assign(second,bundle[n])}
  const moduleOf=id=>ids.has(id)?3:secondIds.has(id)?2:1;
  const thirdModules=()=>M.filter(m=>ids.has(m.id));
  const first=()=>thirdModules()[0];
@@ -73,7 +77,7 @@
  },true);
 
  // The shared screens name Module 2 in a few labels. In Module III those labels name Module III.
- const relabel=html=>scope!==3||typeof html!=='string'?html:html
+ const relabel=html=>typeof html!=='string'||scope===2?html:scope===1?html.replaceAll('MODULE 2 · SECOND HALF','MODULE I · MIDTERM 1').replaceAll('MODULE 2 · TEST BANK','MODULE I · TEST BANK').replaceAll('MODULE III','MODULE I'):html
   .replaceAll('MODULE 2 · SECOND HALF','MODULE III').replaceAll('MODULE 2 · TEST BANK','MODULE III · TEST BANK')
   .replaceAll('Module 2 · Must know','Module III · Must know').replaceAll('Module 2 · Experiments','Module III · Experiments')
   .replaceAll('all current Module 2 lectures','all current Module III lectures').replace('. 1 lectures · ','. 1 lecture · ').replaceAll('Module 2 questions queued. Exam 1 retries remain in the archive.','Module III questions queued.');

@@ -13,6 +13,9 @@
  const moduleOf=id=>third()?third().moduleOf(id):secondHalf.modules.includes(id)?2:1;
  const scope=()=>third()?.setScope(active);
  const firstModules=()=>M.filter(m=>moduleOf(m.id)===1);
+ // Module I opens these shared workspace tools for its own collections (PsycModule3.setScope(1)).
+ const FIRST_TOOLS=[['m2ask','What you can be asked'],['m2qabank','Q&A'],['m2cards','Experiment cards'],['m2contrasts','Side-by-side contrasts'],['m2explain','Hard topics, explained'],['m2videos','Experiment videos'],['m2testbank','Test Bank']];
+ const firstTool=v=>FIRST_TOOLS.some(([id])=>id===v);
  const previousHome=home,previousNav=nav,previousRender=render;
  function moduleHome(){
   scope();
@@ -25,7 +28,7 @@
  nav=function(){
   scope();previousNav();
   if(active===1){
-   $('#workspaceNav').innerHTML='<div class="label">Your workspace</div>'+workspace.filter(([id])=>id!=='home').map(([id,title])=>`<button data-view="${id}" class="${view===id?'active':''}">${esc(title)}</button>`).join('');
+   $('#workspaceNav').innerHTML='<div class="label">Your workspace</div>'+workspace.filter(([id])=>id!=='home').map(([id,title])=>`<button data-view="${id}" class="${view===id?'active':''}">${esc(title)}</button>`).join('')+'<div class="label">Study tools</div>'+FIRST_TOOLS.map(([id,title])=>`<button data-view="${id}" class="${view===id?'active':''}">${esc(title)}</button>`).join('');
    $('#moduleNav').innerHTML='<div class="label">Individual collections</div>'+firstModules().map((m,i)=>`<button data-module="${m.id}" class="${view==='module'&&selected===m.id?'active':''}"><span class="navnum">${String(i+1).padStart(2,'0')}</span>${esc(m.title)}</button>`).join('');
   }else if(active===2||third()){
    // Module III uses the Module II workspace list, drawn for the Module III lectures.
@@ -51,7 +54,7 @@
   if(view!=='home'){
    if(view==='module')active=moduleOf(selected);
    else if(view==='quiz'&&quiz?.items?.length)active=moduleOf(quiz.items[0].module);
-   else if(view!=='quiz')active=view.startsWith('m2')?(active===3?3:2):1; // a quiz view with no set loaded keeps the open module
+   else if(view!=='quiz')active=view.startsWith('m2')?(active===3?3:active===1&&firstTool(view)?1:2):1; // a quiz view with no set loaded keeps the open module
   }
   scope();
   const result=previousRender.apply(this,arguments);sync();return result;

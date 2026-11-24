@@ -15,7 +15,7 @@
  const qb=()=>{const a=state.qabank;if(!a.filter)a.filter='all';if(a.layout!=='slides'&&a.layout!=='v3'&&a.layout!=='v4'&&a.layout!=='v5')a.layout='priority';if(!a.tier)a.tier='all';if(!a.sort)a.sort='slides';if(!a.tier)a.tier='all';if(!a.sort)a.sort='slides';if(typeof a.test!=='boolean')a.test=false;return a};
  const modTitle=id=>{try{return secondModules().find(m=>m.id===Number(id))?.title||('Lecture '+id)}catch{return 'Lecture '+id}};
  const allIds=[...new Set(bank.map(x=>x.module))].sort((a,b)=>a-b);
- const scoped=()=>allIds.filter(inScope);
+ const scoped=()=>allIds.filter(inScope).sort((a,b)=>{const o=window.SECOND_HALF.modules;return o.indexOf(Number(a))-o.indexOf(Number(b))});
  const topicFilter=()=>window.SECOND_HALF.modules.map(String).includes(String(qb().filter))?qb().filter:'all';
  const e=s=>esc(String(s==null?'':s));
  const TIER={high:'Know first',mid:'Know next',low:'Know last'};

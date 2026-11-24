@@ -20,7 +20,7 @@
  if(!state.aids||typeof state.aids!=='object')state.aids={};
  const aid=()=>{const a=state.aids;if(!a.filter)a.filter='all';if(!['talk','new','old','v21'].includes(a.cv))a.cv='talk';if(!a.ctier)a.ctier='all';if(a.csort!=='likely')a.csort='lecture';if(a.cardv!=='old')a.cardv='talk';if(a.topv!=='old')a.topv='talk';if(typeof a.test!=='boolean')a.test=false;return a};
  const modTitle=id=>{try{return secondModules().find(m=>m.id===Number(id))?.title||('Lecture '+id)}catch{return 'Lecture '+id}};
- const ids=()=>[...new Set([...cards,...contrasts,...contrastsV2,...contrastsV3,...cardsV4,...topicsV4,...ask,...explainers].map(x=>x.module))].filter(inScope).sort((a,b)=>a-b);
+ const ids=()=>[...new Set([...cards,...contrasts,...contrastsV2,...contrastsV3,...cardsV4,...topicsV4,...ask,...explainers].map(x=>x.module))].filter(inScope).sort((a,b)=>{const o=window.SECOND_HALF.modules;return o.indexOf(Number(a))-o.indexOf(Number(b))});
  const lecture=()=>ids().map(String).includes(String(aid().filter))?aid().filter:'all';
  const keep=x=>inScope(x.module)&&(lecture()==='all'||String(x.module)===String(lecture()));
  const e=s=>esc(String(s==null?'':s));
