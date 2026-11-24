@@ -2,22 +2,24 @@
 window.THIRD_PART = {
  "hero": {
   "title": [
-   "Long-term memory.",
-   "Stored, encoded, retrieved, consolidated."
+   "Long-term memory",
+   "and knowledge."
   ],
-  "text": "Module III covers the structure of long-term memory, and how memories are encoded, retrieved, consolidated and reconsolidated. Original slides sit beside teaching explanations, personal notes, and practice. More lectures are added here as they arrive."
+  "text": "Module III covers the structure of long-term memory, how memories are encoded, retrieved and consolidated, and how knowledge is organized into concepts and categories. Original slides sit beside teaching explanations, personal notes, and practice."
  },
- "revision": "module3-12",
+ "revision": "module3-16",
  "modules": [
   15,
-  16
+  16,
+  17
  ],
  "lectureNumbers": {
   "15": "16",
-  "16": "17"
+  "16": "17",
+  "17": "18"
  },
  "lectureQuizSize": 50,
- "practiceTestSize": 92,
+ "practiceTestSize": 100,
  "collections": [
   {
    "id": 15,
@@ -956,6 +958,516 @@ window.THIRD_PART = {
     "media/ltm-encoding/slide-43.webp",
     "media/ltm-encoding/slide-44.webp",
     "media/ltm-encoding/slide-45.webp"
+   ],
+   "optional": false
+  },
+  {
+   "id": 17,
+   "title": "Knowledge",
+   "file": "CogPsych_Ch09 F26.pdf",
+   "sourcePdf": "sources/CogPsych_Ch09_Knowledge_F26.pdf",
+   "sections": [
+    {
+     "page": 1,
+     "title": "Knowledge · title",
+     "bullets": [],
+     "image": 0,
+     "sourceOnly": true
+    },
+    {
+     "page": 2,
+     "title": "Conceptual knowledge, concepts and categorization",
+     "bullets": [
+      "<strong>Conceptual knowledge</strong> is <strong>knowledge that enables us to recognize objects and events and to make inferences about their properties</strong>. An inference is a conclusion about something that has not been observed directly.",
+      "A <strong>concept</strong> is a <strong>mental representation used for a variety of cognitive functions</strong>. It can be the <strong>meaning of objects, events, and abstract ideas</strong>, and it can be the <strong>mental representation of a class or individual</strong>.",
+      "<strong>Categorization</strong> is <strong>the process by which things are placed into groups called categories</strong>. <strong>Categories are all possible examples of a particular concept</strong>, and <strong>our knowledge of the world is organized in categories</strong>."
+     ],
+     "image": 1,
+     "core": "Concepts and categories"
+    },
+    {
+     "page": 3,
+     "title": "Why categories are useful: the category “cat”",
+     "bullets": [
+      "The <strong>category “cat” includes tabbies, Siamese cats, Persian cats, wild cats</strong> and more. <strong>Identifying something as a “cat” allows you to assume a number of things about its anatomy, behavior</strong> and other properties.",
+      "Knowing that an animal is a cat tells a person that it probably has whiskers, catches mice, meows and purrs, and sleeps a lot. <strong>That is good because we do not have to treat each new cat we encounter as sui generis</strong>, which means as one of a kind. The category supplies the knowledge."
+     ],
+     "image": 2
+    },
+    {
+     "page": 4,
+     "title": "Why categories are useful: pointers to knowledge",
+     "bullets": [
+      "Categories <strong>help to understand individual cases not previously encountered</strong>. A person who meets a new animal and recognizes it as a cat already knows a great deal about it.",
+      "Categories are <strong>“pointers to knowledge.”</strong> They <strong>provide a wealth of general information about an item</strong>, and they <strong>allow us to identify the special characteristics of a particular item</strong>. Knowing what cats are usually like makes it easy to notice what is unusual about one cat.",
+      "<strong>If there were no such things as categories, we would have a very hard time dealing with the world</strong>. Every object would have to be learned about separately."
+     ],
+     "image": 3
+    },
+    {
+     "page": 5,
+     "title": "Why categories are complicated",
+     "bullets": [
+      "Two questions show why categories are complicated. <strong>If I cut a cat’s whiskers off, or show that it can easily be trained, does it cease to be a cat?</strong> It does not. The animal is still a cat without one or two of the usual properties.",
+      "<strong>If I start meowing and purring, does that make me a cat?</strong> It does not. A person who has several properties of cats is still not a cat.",
+      "<strong>These seem like absurd propositions, but explaining why turns out to be very hard</strong>. No single property decides whether something is a cat, so a list of required properties does not work as a rule for membership."
+     ],
+     "image": 4
+    },
+    {
+     "page": 6,
+     "title": "The definitional approach to categorization",
+     "bullets": [
+      "In the <strong>definitional approach to categorization</strong>, we <strong>determine category membership based on whether the object meets the definition of the category</strong>.",
+      "This approach <strong>does not work well</strong>. It <strong>works well for some things, such as geometric objects</strong>. A square can be defined as a figure with four equal sides and four right angles. It does <strong>not</strong> work <strong>for natural objects and human-made objects</strong>.",
+      "The reason is that <strong>not all members of everyday categories have the same defining features</strong>. An armchair, a straight wooden chair, a round cushioned chair and a rock that someone sits on can all be called chairs, and no one definition covers all of them."
+     ],
+     "image": 5,
+     "core": "Definitional approach and family resemblance"
+    },
+    {
+     "page": 7,
+     "title": "Family resemblance",
+     "bullets": [
+      "<strong>Wittgenstein proposed the idea of family resemblance to deal with the problem that definitions often do not include all members of a category</strong>. In <strong>family resemblance</strong>, <strong>things in a category resemble one another in a number of ways</strong>.",
+      "Family resemblance <strong>allows for some variation within a category</strong>. Members do not all have to share one defining feature. They only have to overlap with other members in several features.",
+      "This leads to a different view of categorization. <strong>Categorization may be based on determining how similar an object is to some standard representation of a category</strong>."
+     ],
+     "image": 6,
+     "core": "Definitional approach and family resemblance"
+    },
+    {
+     "page": 8,
+     "title": "The prototype approach",
+     "bullets": [
+      "A <strong>prototype</strong> is <strong>a representation of the “typical” member of a category</strong>. It has the <strong>characteristic features that describe what members of that concept are like</strong>. It is <strong>an average of category members encountered in the past</strong>.",
+      "In the <strong>prototype approach to categorization</strong>, <strong>membership in a category is determined by comparing the object to a prototype that represents the category</strong>. The prototype for “bird” is not a sparrow, a robin or a blue jay. It is an average of the birds a person has seen."
+     ],
+     "image": 7,
+     "core": "Prototype approach"
+    },
+    {
+     "page": 9,
+     "title": "Rosch (1975): typicality ratings",
+     "bullets": [
+      "<strong>Not all birds are like robins, blue jays, or sparrows</strong>. <strong>Owls and penguins are also birds</strong>. <strong>These variations represent differences in typicality</strong>.",
+      "In <strong>Rosch (1975)</strong>, participants <strong>saw a category title (e.g. birds), and a list of about 50 members of the category</strong>. They <strong>were asked to rate the extent to which each member represented the category title</strong>. A rating of 1 meant a very good example, and a rating of 7 meant a poor example.",
+      "For the category <strong>birds</strong>, sparrow was rated 1.18, owl 2.96, penguin 4.53 and bat 6.15. For the category <strong>furniture</strong>, chair and sofa were rated 1.04, china closet 2.59, mirror 4.39 and telephone 6.68. People agree that some members are better examples of a category than others."
+     ],
+     "image": 8,
+     "core": "Prototype approach"
+    },
+    {
+     "page": 10,
+     "title": "High and low prototypicality",
+     "bullets": [
+      "<strong>High prototypicality</strong> means that a <strong>category member closely resembles the category prototype</strong>. It is a <strong>“typical” member</strong>. <strong>For the category “bird,”</strong> a high-prototypicality member is a <strong>robin</strong>.",
+      "<strong>Low prototypicality</strong> means that a <strong>category member does not closely resemble the category prototype</strong>. <strong>For the category “bird,”</strong> a low-prototypicality member is an <strong>ostrich</strong>. Both are birds, but the robin is much closer to the average bird."
+     ],
+     "image": 9,
+     "core": "Prototype approach"
+    },
+    {
+     "page": 11,
+     "title": "Prototypicality and family resemblance",
+     "bullets": [
+      "<strong>Prototypicality is related to family resemblance</strong>. In <strong>Rosch and Mervis’s (1975)</strong> study, the instructions asked participants to list as many characteristics and attributes as they could for each of several common objects, such as chair, sofa, mirror and telephone.",
+      "<strong>Chairs, sofas, tables, and other “more prototypical” items of furniture share many characteristics with one another, whereas a mirror or a telephone share relatively few</strong>. Items with high prototypicality are the ones with high family resemblance.",
+      "<strong>This will become important when we consider arguments about how to model categorical knowledge (e.g., connectionist networks)</strong>."
+     ],
+     "image": 10
+    },
+    {
+     "page": 12,
+     "title": "The typicality effect",
+     "bullets": [
+      "The <strong>typicality effect</strong> is that <strong>prototypical objects are processed preferentially</strong>. In a <strong>sentence verification task</strong>, participants answer yes or no to sentences such as <strong>“An apple is a fruit”</strong> and <strong>“A pomegranate is a fruit.”</strong>",
+      "<strong>Faster responses were made to prototypical items</strong>. Reaction time was about 520 milliseconds for a high-prototypicality item such as apple and about 650 milliseconds for a low-prototypicality item such as pomegranate.",
+      "<strong>Further, when asked to list as many objects in a category as possible, participants tend to list the most prototypical members first</strong>."
+     ],
+     "image": 11,
+     "core": "Typicality effects"
+    },
+    {
+     "page": 13,
+     "title": "Prototypical members and priming",
+     "bullets": [
+      "<strong>Prototypical category members are more affected by a priming stimulus</strong>. Participants <strong>heard the prime (e.g. “green”)</strong>. <strong>Two seconds later, they saw a pair of colors side by side</strong>. They <strong>were asked to press a key as quickly as possible if the two were the same</strong>.",
+      "When the two colors were the same and were <strong>good examples</strong> of green, the reaction time for “same” was <strong>610 milliseconds</strong>. When the two colors were the same and were <strong>poor examples</strong> of green, the reaction time was <strong>780 milliseconds</strong>. After the prime, the good examples were judged faster than the poor examples."
+     ],
+     "image": 12,
+     "core": "Typicality effects"
+    },
+    {
+     "page": 14,
+     "title": "Why the prime helps good examples",
+     "bullets": [
+      "Hearing the word “green” leads a person to form a <strong>prototype for green</strong>. This prototype is a good, typical green.",
+      "A pair of good green examples is a <strong>good match</strong> to that prototype, so the person responds quickly. A pair of light green examples is a <strong>poor match</strong> to the prototype, so the person responds more slowly. The priming result therefore fits the prototype approach."
+     ],
+     "image": 13
+    },
+    {
+     "page": 15,
+     "title": "The exemplar approach",
+     "bullets": [
+      "In the <strong>exemplar approach</strong>, a <strong>concept is represented by multiple examples rather than a single averaged prototype</strong>. The <strong>examples are actual category members, not abstract averages</strong>. <strong>To categorize, compare the new item to stored examples</strong>.",
+      "<strong>This approach can explain Rosch’s results</strong>. <strong>Objects that are like more of the exemplars are classified faster</strong>. A sparrow is like many stored birds, so it is classified quickly.",
+      "The exemplar approach is <strong>similar to the prototype view</strong> in that <strong>representing a category is not defining it</strong>. It is <strong>different</strong> in that the <strong>representation is not abstract</strong>. It consists of <strong>descriptions of specific examples</strong>."
+     ],
+     "image": 14,
+     "core": "Exemplar approach"
+    },
+    {
+     "page": 16,
+     "title": "What the exemplar approach explains",
+     "bullets": [
+      "The exemplar approach <strong>explains the typicality effect</strong>. It also <strong>takes into account atypical cases</strong>. <strong>Rather than comparing a penguin to an “average” bird, we remember that there are some birds that don’t fly</strong>.",
+      "It <strong>deals with variable categories</strong>, in which the members differ a great deal from one another.",
+      "<strong>Which approach do we use? We may use both</strong>. <strong>Exemplars may work best for small categories</strong>, and <strong>prototypes may work best for larger categories</strong>."
+     ],
+     "image": 15,
+     "core": "Exemplar approach"
+    },
+    {
+     "page": 17,
+     "title": "A hierarchical organization of categories",
+     "bullets": [
+      "<strong>Rosch’s research indicates that there are different levels of categories</strong>. The <strong>superordinate level (or global level)</strong> is a general category such as <strong>“furniture.”</strong> The <strong>basic level</strong> is a category such as <strong>“table.”</strong> The <strong>subordinate level (or specific level)</strong> is a category such as <strong>“kitchen table.”</strong>",
+      "Two questions follow. <strong>Is this just an intuitive description of different levels of categories, or is this how concepts are organized in the mind?</strong> <strong>Also, what is “basic” about the “basic level”?</strong> The evidence shows that the basic level is special in the mind. Going above it loses a lot of information, going below it gains only a little, and people name objects at the basic level."
+     ],
+     "image": 16,
+     "core": "Basic level"
+    },
+    {
+     "page": 18,
+     "title": "Rosch and colleagues (1976): the basic level is special",
+     "bullets": [
+      "In <strong>Rosch and colleagues (1976)</strong>, participants <strong>were asked to list as many features as they could that would be common to all or most of the objects in the category</strong>. They listed about 3 common features for the global category furniture, about 9 for the basic category table and about 10.3 for the specific category kitchen table.",
+      "<strong>Going above basic level results in a large loss of information</strong>. <strong>Many fewer features are shared by members of the category “furniture” than by members of the category “table.”</strong>",
+      "<strong>Going below basic level results in little gain of information</strong>. <strong>“Kitchen tables” do not have a ton more in common with one another than “tables.”</strong> The basic level is the level at which a category name carries a lot of information without becoming overly specific."
+     ],
+     "image": 17,
+     "core": "Basic level"
+    },
+    {
+     "page": 19,
+     "title": "Naming objects: guitar and fish",
+     "bullets": [
+      "Two objects are shown, an electric guitar and a fish, with the instruction <strong>“Quick, name these objects.”</strong> Most people say “guitar” and “fish.”",
+      "These names are basic-level names. A person could have said “instrument” or “Stratocaster” for the first object and “animal” or “trout” for the second, but those are not the names that come to mind first."
+     ],
+     "image": 18
+    },
+    {
+     "page": 20,
+     "title": "People name objects at the basic level",
+     "bullets": [
+      "<strong>When participants are asked to name these objects, they named them by their basic level name</strong>. They said <strong>guitar, rather than Stratocaster (specific) or instrument (global)</strong>. They said <strong>fish, rather than trout or animal</strong>.",
+      "This is further evidence that the basic level is special. It is the level people use first when they name an object."
+     ],
+     "image": 19,
+     "core": "Basic level"
+    },
+    {
+     "page": 21,
+     "title": "Culture and categorization",
+     "bullets": [
+      "<strong>Rosch’s experiments were carried out on college undergraduates</strong>. The result was that <strong>there is a category level, which they called “basic,” that reflects college undergraduates’ everyday experience</strong>.",
+      "<strong>Coley, Medin & Atran (1997)</strong> <strong>asked both undergraduates and horticulturalists to walk around campus and name as specifically as possible 44 different plants</strong>. <strong>75% of the undergraduates used “trees.”</strong> <strong>Horticulturalists used “specific” categories instead, such as “oak.”</strong>",
+      "People of the <strong>Guatemalan Itzaj culture call an oak tree an “oak” and not a tree</strong>. <strong>For people who speak their language, “oak” behaves like a basic-level category</strong>. The level that is basic therefore depends on a person’s experience and culture."
+     ],
+     "image": 20,
+     "core": "Knowledge and the basic level"
+    },
+    {
+     "page": 22,
+     "title": "Tanaka and Taylor (1991): experts and the basic level",
+     "bullets": [
+      "<strong>Tanaka and Taylor (1991)</strong> <strong>asked bird experts and non-experts to name pictures of objects</strong>. <strong>Experts responded by specifying the birds’ species</strong>, with names such as “sparrow” and “robin.” Non-experts mostly responded with the basic-level name “bird.”",
+      "<strong>Experts had learned to pay attention to features of birds that non-experts were unaware of</strong>. Their knowledge changed the level at which they named the birds.",
+      "<strong>People’s knowledge and properties of objects are both important factors in categorization</strong>."
+     ],
+     "image": 21,
+     "core": "Knowledge and the basic level"
+    },
+    {
+     "page": 23,
+     "title": "Semantic networks: Collins and Quillian (1969)",
+     "bullets": [
+      "In the semantic network approach, <strong>concepts are arranged in networks that represent the way concepts are organized in the mind</strong>.",
+      "In the model of <strong>Collins and Quillian (1969)</strong>, a <strong>node</strong> is a <strong>category or concept</strong>. <strong>Concepts are linked by structured pointers</strong> such as <strong>“is a”</strong> and <strong>“has.”</strong> For example, a canary “is a” bird, and a bird “has” feathers.",
+      "The network is a <strong>model for how concepts and properties are associated in the mind</strong>. It is a <strong>hierarchical model, more specific to more general</strong>. Canary is below bird, bird is below animal, and animal is below living thing."
+     ],
+     "image": 22,
+     "core": "Semantic networks"
+    },
+    {
+     "page": 24,
+     "title": "Inheritance and cognitive economy",
+     "bullets": [
+      "<strong>Inheritance</strong> means that <strong>lower-level items share properties of higher-level items</strong>. A canary is a bird, so a canary has the properties of birds.",
+      "<strong>Cognitive economy</strong> means that <strong>shared properties are only stored at higher-level nodes</strong>. <strong>Including “can fly” for every node would be inefficient</strong>, so “can fly” is stored once at the node for bird.",
+      "<strong>Exceptions are stored at lower nodes</strong>. For example, <strong>“ostrich” would have the property “can’t fly.”</strong>"
+     ],
+     "image": 23,
+     "core": "Semantic networks"
+    },
+    {
+     "page": 25,
+     "title": "Testing the network: distance and response time",
+     "bullets": [
+      "<strong>Given the network’s hierarchical organization, general concepts are at the top, and specific ones at the bottom</strong>.",
+      "This gives a <strong>testable prediction</strong>. <strong>The time it takes for a person to retrieve information about a concept should be determined by the distance that must be traveled through the network</strong>.",
+      "The prediction was supported. <strong>It takes longer to answer “yes” to “A canary is an animal” compared to “A canary is a bird.”</strong> Response time rose with the number of levels to be traversed, both for category statements and for property statements such as “A canary can sing,” “A canary can fly” and “A canary has skin.”"
+     ],
+     "image": 24,
+     "core": "Semantic networks"
+    },
+    {
+     "page": 26,
+     "title": "Spreading activation",
+     "bullets": [
+      "<strong>Spreading activation</strong> is a property of semantic networks. <strong>Activation is the arousal level of a node</strong>. <strong>When a node is activated, activity spreads out along all connected links</strong>.",
+      "<strong>Concepts that receive activation are primed and more easily accessed from memory</strong>. For example, activating “robin” sends activation to “bird,” and from there it spreads to “canary,” “ostrich” and “animal,” which are then primed."
+     ],
+     "image": 25,
+     "core": "Spreading activation and criticism"
+    },
+    {
+     "page": 27,
+     "title": "Meyer and Schvaneveldt: the lexical decision task",
+     "bullets": [
+      "<strong>Meyer & Schvaneveldt tested for “spreading activation” with a lexical decision task using pairs of words</strong>. In a lexical decision task, a person decides as quickly as possible whether the letter strings are real words. Some pairs were two nonwords, some had one nonword, some were two unrelated words such as chair and money, and some were two related words such as bread and wheat.",
+      "<strong>People were faster to respond to related pairs than unrelated pairs</strong>. Reaction time was about 855 milliseconds for words that were associated and about 940 milliseconds for words that were not associated. Reading the first word spread activation to related words, so the second word was easier to access.",
+      "<strong>Many studies involving semantic priming have produced similar results</strong>."
+     ],
+     "image": 26,
+     "core": "Spreading activation and criticism"
+    },
+    {
+     "page": 28,
+     "title": "Criticism of Collins and Quillian",
+     "bullets": [
+      "The model of Collins and Quillian <strong>cannot explain typicality effects</strong>. The <strong>typicality effect</strong> is that <strong>reaction times for statements about an object are faster for more typical members of a category</strong>. <strong>The model instead predicts equal fast reaction times to both “canary” and “ostrich,” as they are one node away from “bird.”</strong>",
+      "The idea of <strong>cognitive economy</strong> is also questioned. There is <strong>some evidence that people store specific properties of concepts right at the node for the concept</strong>.",
+      "<strong>Some sentence-verification results are problematic for the model</strong>. <strong>“A pig is a mammal” is slower than “A pig is an animal.”</strong> In the network, mammal is closer to pig than animal is, so the model predicts the opposite."
+     ],
+     "image": 27,
+     "core": "Spreading activation and criticism"
+    },
+    {
+     "page": 29,
+     "title": "The connectionist approach",
+     "bullets": [
+      "The <strong>connectionist approach</strong> is a <strong>“new” (late 80’s) approach to networks</strong>. It is based on <strong>criticism of structured networks</strong> and on <strong>advances in understanding how information is represented in the brain</strong>.",
+      "<strong>Connectionism</strong> is <strong>an approach to creating computer models for representing cognitive processes</strong>. It is <strong>also called parallel distributed processing</strong>, because <strong>knowledge is represented in the distributed activity of many units</strong>.",
+      "<strong>Weights determine at each connection how strongly an incoming signal will activate the next unit</strong>."
+     ],
+     "image": 28,
+     "core": "Connectionist networks"
+    },
+    {
+     "page": 30,
+     "title": "Units, connections and weights",
+     "bullets": [
+      "<strong>Units</strong> are <strong>inspired by the neurons in the brain</strong>. <strong>Patterns of activity in these units represent concepts and their properties</strong>. The <strong>lines</strong> are <strong>connections that transfer activation between the units</strong>, and they are <strong>inspired by axons</strong>.",
+      "<strong>Input units</strong> are <strong>units activated by stimuli from the environment</strong>. Hidden units lie between the input units and the output units. <strong>Output units receive input from hidden units</strong>.",
+      "A <strong>connection weight</strong> determines <strong>how signals sent from one unit either increase or decrease the activity in the next unit</strong>."
+     ],
+     "image": 29,
+     "core": "Connectionist networks"
+    },
+    {
+     "page": 31,
+     "title": "Connection weights and patterns of activity",
+     "bullets": [
+      "<strong>High connection weights result in a strong tendency to excite the next unit</strong>. <strong>Negative connection weights can decrease excitation or inhibit activation of the receiving unit</strong>.",
+      "<strong>Activation of units in a network depends on two things</strong>. One is <strong>the signal that originates in the input units</strong>. The other is <strong>the connection weights throughout the network</strong>.",
+      "<strong>A stimulus is represented by the pattern of activity that is distributed across the other units</strong>. The pattern across the units is what stands for the stimulus."
+     ],
+     "image": 30,
+     "core": "Connectionist networks"
+    },
+    {
+     "page": 32,
+     "title": "How a connectionist network learns",
+     "bullets": [
+      "<strong>For the network to operate properly, the connection weights have to be adjusted via a learning process</strong>.",
+      "Learning occurs in steps. The <strong>network responds to a stimulus</strong>. It <strong>produces a “guess.”</strong> It is <strong>provided with the correct response</strong>. It then <strong>modifies weights to increase the match between its response and the correct response</strong>."
+     ],
+     "image": 31
+    },
+    {
+     "page": 33,
+     "title": "The error signal and back-propagation",
+     "bullets": [
+      "The <strong>error signal</strong> is the <strong>difference between the actual activity of each output unit and the correct activity</strong>. In <strong>back-propagation</strong>, the <strong>error signal is transmitted back through the circuit</strong>. This <strong>indicates how weights should be changed to allow the output signal to match the correct signal</strong>.",
+      "<strong>The process repeats until the error signal is zero</strong>. There is <strong>initially weak and undifferentiated activation of property units, with many errors</strong>. <strong>Error signals are then sent back</strong>, and <strong>changes are made in connection weights</strong>.",
+      "<strong>Each learning experience causes only a small change in the connection weights</strong>, so learning is gradual."
+     ],
+     "image": 32,
+     "core": "Learning in connectionist networks"
+    },
+    {
+     "page": 34,
+     "title": "Learning in the hidden units",
+     "bullets": [
+      "The activity of the hidden units changes as the network learns. Activity in the hidden units is shown for three concepts, rose, daisy and canary, after <strong>0, 250, 750 and 2,500 learning trials</strong>.",
+      "At 0 trials, the patterns of activity for the three concepts look alike. As learning continues, the patterns become different. By 2,500 trials, rose and daisy have similar patterns, and canary has a different pattern. The network has learned to represent similar concepts with similar patterns of activity."
+     ],
+     "image": 33
+    },
+    {
+     "page": 35,
+     "title": "Properties of connectionist networks",
+     "bullets": [
+      "<strong>In connectionist networks, information about each concept is contained in the distributed pattern of activity across a number of units</strong>.",
+      "<strong>The operation of connectionist networks is not totally disrupted by damage</strong>. <strong>Graceful degradation</strong> means that <strong>disruption of performance occurs gradually as parts of the system are damaged</strong>.",
+      "<strong>Connectionist networks can explain generalization of learning</strong>. The <strong>slow learning process creates a network capable of handling a wide range of inputs</strong>."
+     ],
+     "image": 34,
+     "core": "Learning in connectionist networks"
+    },
+    {
+     "page": 36,
+     "title": "Google and Connectionism · video link",
+     "bullets": [],
+     "image": 35,
+     "sourceOnly": true
+    },
+    {
+     "page": 37,
+     "title": "Categories in the brain",
+     "bullets": [
+      "<strong>Different areas of the brain may be specialized to process information about different categories</strong>. There is a <strong>double dissociation for the categories “living things” and “nonliving things.”</strong> Some patients have trouble with living things and not with nonliving things, and other patients show the reverse.",
+      "Each side of the dissociation is a <strong>category-specific memory impairment</strong>, which is an impairment in which a person loses the ability to identify one type of object and keeps the ability to identify other types.",
+      "<strong>Do different semantic categories “live” in different parts of the brain?</strong> The areas involved are <strong>mostly in the temporal lobe</strong>, and the approaches that follow give different answers about how category knowledge is laid out."
+     ],
+     "image": 36,
+     "core": "Categories in the brain"
+    },
+    {
+     "page": 38,
+     "title": "The sensory-functional hypothesis",
+     "bullets": [
+      "The <strong>sensory-functional hypothesis</strong> states that <strong>our ability to differentiate living things and artifacts depends on a semantic memory system that distinguishes sensory attributes and a system that distinguishes function</strong>. An artifact is a human-made object.",
+      "It <strong>predicts</strong> that <strong>a patient who can’t identify living things should have a more general impairment processing sensory attributes</strong>.",
+      "The reason is that <strong>animals and other natural kinds are more strongly associated with their sensory attributes, whereas artifacts are more strongly associated with their uses</strong>. Ratings fit this. Animals were rated higher than artifacts on color and motion, and artifacts were rated higher than animals on performed action."
+     ],
+     "image": 37,
+     "core": "Sensory-functional hypothesis"
+    },
+    {
+     "page": 39,
+     "title": "Evidence for the sensory-functional hypothesis",
+     "bullets": [
+      "The <strong>sensory-functional hypothesis predicts an association between deficits in processing of sensory attributes and deficits in recognizing animals (but not artifacts)</strong>.",
+      "<strong>Warrington and Shallice found evidence for this (Patients K.C. and E.W.)</strong>. Both patients performed at about 90 percent correct for nonanimals, which were nonliving things, fruits and vegetables, and much lower for living animals. <strong>Other studies confirmed this, and further found an association between functional attributes and artifacts</strong>.",
+      "<strong>But there are a number of exceptions to this overall pattern</strong>, so the hypothesis does not explain every patient."
+     ],
+     "image": 38,
+     "core": "Sensory-functional hypothesis"
+    },
+    {
+     "page": 40,
+     "title": "The semantic category approach",
+     "bullets": [
+      "The <strong>semantic category approach</strong> proposes that there are <strong>specific neural circuits in the brain for specific categories</strong>. These circuits are <strong>distributed over a number of different cortical areas</strong>.",
+      "<strong>There may be a limited number of categories that are innately determined because of their importance for survival</strong>.",
+      "A different possibility is that the unusual impairments are haphazard results of strokes that people have late in life. One reported case, for example, was a category-specific naming deficit for medical terms after a hemorrhage."
+     ],
+     "image": 39,
+     "core": "Semantic category and multiple factors approaches"
+    },
+    {
+     "page": 41,
+     "title": "The multiple factors approach",
+     "bullets": [
+      "The <strong>multiple factors approach</strong> <strong>looks at how concepts are divided up within a category rather than identifying specific brain areas or networks for different concepts</strong>.",
+      "<strong>Mechanical devices (e.g. musical instruments) overlap with artifacts</strong>, because they <strong>involve performing actions</strong>, and with <strong>animals</strong>, because they <strong>involve sound and motion</strong>. As a result, <strong>mechanical devices have a widely distributed semantic representation</strong>, in <strong>regions important for the representation of both living things and artifacts</strong>.",
+      "For this reason, <strong>patients may be able to identify mechanical devices even if they perform poorly for other types of artifacts</strong>."
+     ],
+     "image": 40,
+     "core": "Semantic category and multiple factors approaches"
+    },
+    {
+     "page": 42,
+     "title": "Crowding",
+     "bullets": [
+      "<strong>Another differentiating factor between animals and artifacts is crowding</strong>. <strong>Crowding</strong> occurs <strong>when different concepts within a category share many properties</strong>. For example, <strong>“animals” all share “eyes,” “legs,” and “the ability to move.”</strong> <strong>In contrast, artifacts share fewer properties</strong>.",
+      "<strong>Patients with category-specific impairments may not have a category impairment at all</strong>. <strong>Patients may have difficulty recognizing living things because they have difficulty distinguishing between items that share similar features</strong>."
+     ],
+     "image": 41,
+     "core": "Multiple factors and embodied approaches"
+    },
+    {
+     "page": 43,
+     "title": "The embodied approach",
+     "bullets": [
+      "In the <strong>embodied approach</strong>, <strong>our knowledge of concepts is based on reactivation of sensory and motor processes that occur when we interact with the object</strong>.",
+      "When we use a hammer, <strong>different sensory areas are activated due to the hammer’s size and shape</strong>, and <strong>motor areas are activated that are involved in carrying out actions involved in using a hammer</strong>. <strong>When we see a hammer, or see the word “hammer,” the same areas get activated</strong>.",
+      "This shows an <strong>interaction between action and perception</strong>. In brain imaging, different motor areas are active for leg and foot actions, for arm and hand actions, and for face and mouth actions."
+     ],
+     "image": 42,
+     "core": "Multiple factors and embodied approaches"
+    },
+    {
+     "page": 44,
+     "title": "Summary: three approaches to categories in the brain",
+     "bullets": [
+      "<strong>The three approaches agree: information about concepts is distributed across many structures in the brain</strong>.",
+      "<strong>The approaches differ in their emphasis on the type of information that is most important</strong>. The <strong>category-specific approach</strong>, which is the semantic category approach, emphasizes <strong>specialized areas of the brain and networks connecting them</strong>. The <strong>multiple-factor approach</strong> emphasizes <strong>the role of many different features and properties</strong>. The <strong>embodied approach</strong> emphasizes <strong>activity caused by the sensory and motor properties of objects</strong>."
+     ],
+     "image": 43,
+     "core": "Multiple factors and embodied approaches"
+    }
+   ],
+   "original": [
+    "media/knowledge/slide-01.webp",
+    "media/knowledge/slide-02.webp",
+    "media/knowledge/slide-03.webp",
+    "media/knowledge/slide-04.webp",
+    "media/knowledge/slide-05.webp",
+    "media/knowledge/slide-06.webp",
+    "media/knowledge/slide-07.webp",
+    "media/knowledge/slide-08.webp",
+    "media/knowledge/slide-09.webp",
+    "media/knowledge/slide-10.webp",
+    "media/knowledge/slide-11.webp",
+    "media/knowledge/slide-12.webp",
+    "media/knowledge/slide-13.webp",
+    "media/knowledge/slide-14.webp",
+    "media/knowledge/slide-15.webp",
+    "media/knowledge/slide-16.webp",
+    "media/knowledge/slide-17.webp",
+    "media/knowledge/slide-18.webp",
+    "media/knowledge/slide-19.webp",
+    "media/knowledge/slide-20.webp",
+    "media/knowledge/slide-21.webp",
+    "media/knowledge/slide-22.webp",
+    "media/knowledge/slide-23.webp",
+    "media/knowledge/slide-24.webp",
+    "media/knowledge/slide-25.webp",
+    "media/knowledge/slide-26.webp",
+    "media/knowledge/slide-27.webp",
+    "media/knowledge/slide-28.webp",
+    "media/knowledge/slide-29.webp",
+    "media/knowledge/slide-30.webp",
+    "media/knowledge/slide-31.webp",
+    "media/knowledge/slide-32.webp",
+    "media/knowledge/slide-33.webp",
+    "media/knowledge/slide-34.webp",
+    "media/knowledge/slide-35.webp",
+    "media/knowledge/slide-36.webp",
+    "media/knowledge/slide-37.webp",
+    "media/knowledge/slide-38.webp",
+    "media/knowledge/slide-39.webp",
+    "media/knowledge/slide-40.webp",
+    "media/knowledge/slide-41.webp",
+    "media/knowledge/slide-42.webp",
+    "media/knowledge/slide-43.webp",
+    "media/knowledge/slide-44.webp"
    ],
    "optional": false
   }
@@ -2490,6 +3002,981 @@ window.THIRD_PART = {
    ],
    "correct": 0,
    "why": "Hebb (1948) proposed that learning and memory are represented in the brain by physiological changes at the synapse, which provide a neural record of experience."
+  },
+  {
+   "id": 9201,
+   "module": 17,
+   "page": 2,
+   "kind": "definition",
+   "stem": "What is categorization?",
+   "options": [
+    "The process by which things are placed into groups called categories.",
+    "The process by which a mental representation is used to make inferences.",
+    "The process by which the typical member of a group is averaged.",
+    "The process by which an object is compared with a definition only."
+   ],
+   "correct": 0,
+   "why": "Categorization is the process by which things are placed into groups called categories. Categories are all possible examples of a particular concept."
+  },
+  {
+   "id": 9202,
+   "module": 17,
+   "page": 2,
+   "kind": "definition",
+   "stem": "What is a concept?",
+   "options": [
+    "A mental representation used for a variety of cognitive functions.",
+    "All possible examples that belong to one particular category.",
+    "A list of features that every member of a category must have.",
+    "A typical member formed by averaging the examples met so far."
+   ],
+   "correct": 0,
+   "why": "A concept is a mental representation used for a variety of cognitive functions, such as the meaning of objects, events and abstract ideas."
+  },
+  {
+   "id": 9203,
+   "module": 17,
+   "page": 4,
+   "kind": "definition",
+   "stem": "Why are categories called “pointers to knowledge”?",
+   "options": [
+    "They provide a wealth of general information about an item.",
+    "They store every property separately for every item a person has seen.",
+    "They work only for geometric objects with definitions.",
+    "They prevent people from noticing unusual items."
+   ],
+   "correct": 0,
+   "why": "Categories are pointers to knowledge because they provide a wealth of general information about an item and allow us to identify the special characteristics of a particular item."
+  },
+  {
+   "id": 9204,
+   "module": 17,
+   "page": 6,
+   "kind": "definition",
+   "stem": "Why does the definitional approach not work well for everyday categories?",
+   "options": [
+    "Not all members of everyday categories have the same defining features.",
+    "All members of everyday categories have exactly the same defining features.",
+    "Everyday categories have only one member each.",
+    "Definitions can be written only for natural objects."
+   ],
+   "correct": 0,
+   "why": "The definitional approach works for some things, such as geometric objects, but not for natural and human-made objects, because not all members of everyday categories have the same defining features."
+  },
+  {
+   "id": 9205,
+   "module": 17,
+   "page": 7,
+   "kind": "researcher",
+   "stem": "Who proposed the idea of family resemblance?",
+   "options": [
+    "Wittgenstein.",
+    "Rosch.",
+    "Collins and Quillian.",
+    "Tanaka and Taylor."
+   ],
+   "correct": 0,
+   "why": "Wittgenstein proposed family resemblance to deal with the problem that definitions often do not include all members of a category."
+  },
+  {
+   "id": 9206,
+   "module": 17,
+   "page": 7,
+   "kind": "definition",
+   "stem": "What does family resemblance mean?",
+   "options": [
+    "Things in a category resemble one another in a number of ways.",
+    "Things in a category all share one defining feature that sets them apart.",
+    "Things in a category are stored at one node in a network.",
+    "Things in a category are named at the specific level."
+   ],
+   "correct": 0,
+   "why": "In family resemblance, things in a category resemble one another in a number of ways, which allows for some variation within a category."
+  },
+  {
+   "id": 9207,
+   "module": 17,
+   "page": 8,
+   "kind": "definition",
+   "stem": "What is a prototype?",
+   "options": [
+    "A representation of the typical member of a category, based on an average.",
+    "An actual member of a category that was encountered in the past and stored as it was.",
+    "A definition that every member of a category must meet.",
+    "A property that is stored at the highest node in a network."
+   ],
+   "correct": 0,
+   "why": "A prototype is a representation of the “typical” member of a category. It is an average of category members encountered in the past."
+  },
+  {
+   "id": 9208,
+   "module": 17,
+   "page": 9,
+   "kind": "researcher",
+   "stem": "What did participants do in Rosch (1975)?",
+   "options": [
+    "They rated how well each member represented the category title.",
+    "They listed features common to all or most objects in a category.",
+    "They named pictures of birds as specifically as they could.",
+    "They decided whether pairs of letter strings were words."
+   ],
+   "correct": 0,
+   "why": "In Rosch (1975), participants saw a category title and a list of about 50 members, and rated the extent to which each member represented the category title."
+  },
+  {
+   "id": 9209,
+   "module": 17,
+   "page": 9,
+   "kind": "researcher",
+   "stem": "In Rosch (1975), which item was rated as the best example of the category “birds”?",
+   "options": [
+    "Sparrow, at 1.18.",
+    "Owl, at 2.96.",
+    "Penguin, at 4.53.",
+    "Bat, at 6.15."
+   ],
+   "correct": 0,
+   "why": "On the scale, 1 was a very good example and 7 was a poor example. Sparrow was rated 1.18, owl 2.96, penguin 4.53 and bat 6.15."
+  },
+  {
+   "id": 9210,
+   "module": 17,
+   "page": 10,
+   "kind": "application",
+   "stem": "For the category “bird,” which pair gives a high-prototypicality member and a low-prototypicality member?",
+   "options": [
+    "Robin is high, and ostrich is low.",
+    "Ostrich is high, and robin is low.",
+    "Robin is high, and sparrow is low.",
+    "Penguin is high, and robin is low."
+   ],
+   "correct": 0,
+   "why": "High prototypicality means the member closely resembles the category prototype. For “bird,” a robin is a high-prototypicality member and an ostrich is a low-prototypicality member."
+  },
+  {
+   "id": 9211,
+   "module": 17,
+   "page": 11,
+   "kind": "researcher",
+   "stem": "What does the work of Rosch and Mervis (1975) show about prototypical items?",
+   "options": [
+    "Prototypical items share many characteristics with other members of the category.",
+    "Prototypical items share few characteristics with other members of the category.",
+    "Prototypical items are named at the superordinate level.",
+    "Prototypical items are stored as exceptions at lower nodes."
+   ],
+   "correct": 0,
+   "why": "Prototypicality is related to family resemblance. Chairs, sofas and tables share many characteristics with one another, whereas a mirror or a telephone share relatively few."
+  },
+  {
+   "id": 9212,
+   "module": 17,
+   "page": 12,
+   "kind": "definition",
+   "stem": "What is the typicality effect?",
+   "options": [
+    "Prototypical objects are processed preferentially.",
+    "Prototypical objects are processed more slowly.",
+    "Atypical objects are listed first in a category.",
+    "Atypical objects are named at the basic level."
+   ],
+   "correct": 0,
+   "why": "The typicality effect is that prototypical objects are processed preferentially. In sentence verification, responses are faster to prototypical items."
+  },
+  {
+   "id": 9213,
+   "module": 17,
+   "page": 12,
+   "kind": "application",
+   "stem": "In a sentence verification task, which sentence is verified faster?",
+   "options": [
+    "“An apple is a fruit,” because apple is a prototypical fruit.",
+    "“A pomegranate is a fruit,” because pomegranate is less common.",
+    "Neither, because both sentences are true.",
+    "“A pomegranate is a fruit,” because it has more letters to read."
+   ],
+   "correct": 0,
+   "why": "Faster responses were made to prototypical items. An apple is a high-prototypicality fruit, and a pomegranate is a low-prototypicality fruit."
+  },
+  {
+   "id": 9214,
+   "module": 17,
+   "page": 13,
+   "kind": "design",
+   "stem": "After hearing the prime “green,” which pair of colors was judged “same” faster?",
+   "options": [
+    "Two good examples of green, at 610 milliseconds.",
+    "Two poor examples of green, at 610 milliseconds.",
+    "Two poor examples of green, at 780 milliseconds.",
+    "Two different colors, at 610 milliseconds."
+   ],
+   "correct": 0,
+   "why": "Prototypical category members are more affected by a priming stimulus. The “same” response took 610 milliseconds for good examples and 780 milliseconds for poor examples."
+  },
+  {
+   "id": 9215,
+   "module": 17,
+   "page": 15,
+   "kind": "definition",
+   "stem": "How does the exemplar approach represent a concept?",
+   "options": [
+    "By multiple examples that are actual category members.",
+    "By a single averaged prototype that stands for the whole category.",
+    "By a definition that every member must meet.",
+    "By one node at the top of a hierarchy."
+   ],
+   "correct": 0,
+   "why": "In the exemplar approach, a concept is represented by multiple examples rather than a single averaged prototype. The examples are actual category members, not abstract averages."
+  },
+  {
+   "id": 9216,
+   "module": 17,
+   "page": 15,
+   "kind": "definition",
+   "stem": "How do the prototype approach and the exemplar approach differ?",
+   "options": [
+    "The prototype is an abstract average, and exemplars are specific examples.",
+    "The prototype is a specific example, and exemplars are abstract averages.",
+    "The prototype approach defines the category, and the exemplar approach does not.",
+    "The prototype approach uses networks, and the exemplar approach uses weights."
+   ],
+   "correct": 0,
+   "why": "Both approaches represent a category without defining it. They differ because the exemplar representation is not abstract. It is made of descriptions of specific examples."
+  },
+  {
+   "id": 9217,
+   "module": 17,
+   "page": 16,
+   "kind": "application",
+   "stem": "According to the exemplar approach, how do we handle a penguin?",
+   "options": [
+    "We remember that there are some birds that do not fly.",
+    "We compare the penguin with an average bird and reject it.",
+    "We store the penguin at the superordinate level.",
+    "We decide that a penguin does not meet the definition of bird."
+   ],
+   "correct": 0,
+   "why": "The exemplar approach takes atypical cases into account. Rather than comparing a penguin to an “average” bird, we remember that there are some birds that do not fly."
+  },
+  {
+   "id": 9218,
+   "module": 17,
+   "page": 16,
+   "kind": "definition",
+   "stem": "When might exemplars and prototypes each work best?",
+   "options": [
+    "Exemplars for small categories, and prototypes for larger categories.",
+    "Exemplars for larger categories, and prototypes for small categories.",
+    "Exemplars for artifacts, and prototypes for living things.",
+    "Exemplars for experts, and prototypes for children only."
+   ],
+   "correct": 0,
+   "why": "People may use both approaches. Exemplars may work best for small categories, and prototypes may work best for larger categories."
+  },
+  {
+   "id": 9219,
+   "module": 17,
+   "page": 17,
+   "kind": "application",
+   "stem": "Which list gives the superordinate, basic and subordinate levels in order?",
+   "options": [
+    "Furniture, table, kitchen table.",
+    "Kitchen table, table, furniture.",
+    "Table, furniture, kitchen table.",
+    "Furniture, kitchen table, table."
+   ],
+   "correct": 0,
+   "why": "The superordinate or global level is “furniture,” the basic level is “table,” and the subordinate or specific level is “kitchen table.”"
+  },
+  {
+   "id": 9220,
+   "module": 17,
+   "page": 18,
+   "kind": "researcher",
+   "stem": "What did Rosch and colleagues (1976) find about the number of common features?",
+   "options": [
+    "About 3 for furniture, about 9 for table and about 10.3 for kitchen table.",
+    "About 9 for furniture, about 3 for table and about 10.3 for kitchen table.",
+    "About 10.3 for furniture, about 9 for table and about 3 for kitchen table.",
+    "About 3 for furniture, about 10.3 for table and about 9 for kitchen table."
+   ],
+   "correct": 0,
+   "why": "Participants listed about 3 common features at the global level, about 9 at the basic level and about 10.3 at the specific level."
+  },
+  {
+   "id": 9221,
+   "module": 17,
+   "page": 18,
+   "kind": "design",
+   "stem": "Why is the basic level special, according to Rosch and colleagues (1976)?",
+   "options": [
+    "Going above it loses a lot of information, and going below it gains little.",
+    "Going above it gains a lot of information, and going below it loses little.",
+    "It has the fewest common features of the three levels.",
+    "It is the only level that experts ever use."
+   ],
+   "correct": 0,
+   "why": "Going above the basic level results in a large loss of information. Going below the basic level results in little gain of information."
+  },
+  {
+   "id": 9222,
+   "module": 17,
+   "page": 20,
+   "kind": "application",
+   "stem": "Shown an electric guitar, what do most people call it?",
+   "options": [
+    "A guitar, which is the basic-level name.",
+    "A Stratocaster, which is the specific name.",
+    "An instrument, which is the global name.",
+    "An artifact, which is the category name."
+   ],
+   "correct": 0,
+   "why": "When participants named the objects, they used the basic-level name. They said guitar, rather than Stratocaster (specific) or instrument (global)."
+  },
+  {
+   "id": 9223,
+   "module": 17,
+   "page": 21,
+   "kind": "researcher",
+   "stem": "What did Coley, Medin and Atran (1997) find when people named 44 plants?",
+   "options": [
+    "75 percent of undergraduates said “trees,” and horticulturalists used specific names such as “oak.”",
+    "75 percent of horticulturalists said “trees,” and undergraduates used specific names such as “oak.”",
+    "Undergraduates and horticulturalists both used specific names such as “oak.”",
+    "Undergraduates and horticulturalists both used the global name “plant.”"
+   ],
+   "correct": 0,
+   "why": "Coley, Medin and Atran (1997) asked undergraduates and horticulturalists to name plants as specifically as possible. 75 percent of the undergraduates used “trees,” and horticulturalists used specific categories such as “oak.”"
+  },
+  {
+   "id": 9224,
+   "module": 17,
+   "page": 21,
+   "kind": "application",
+   "stem": "For people of the Guatemalan Itzaj culture, which word behaves like a basic-level category?",
+   "options": [
+    "“Oak.”",
+    "“Tree.”",
+    "“Plant.”",
+    "“Living thing.”"
+   ],
+   "correct": 0,
+   "why": "People of the Guatemalan Itzaj culture call an oak tree an “oak” and not a tree. For people who speak their language, “oak” behaves like a basic-level category."
+  },
+  {
+   "id": 9225,
+   "module": 17,
+   "page": 22,
+   "kind": "researcher",
+   "stem": "What did Tanaka and Taylor (1991) find?",
+   "options": [
+    "Bird experts named the species, and non-experts mostly said “bird.”",
+    "Bird experts mostly said “bird,” and non-experts named the species.",
+    "Experts and non-experts both named the species.",
+    "Experts and non-experts both said “animal.”"
+   ],
+   "correct": 0,
+   "why": "Tanaka and Taylor (1991) asked bird experts and non-experts to name pictures. Experts responded by specifying the birds’ species, because they had learned to attend to features non-experts were unaware of."
+  },
+  {
+   "id": 9226,
+   "module": 17,
+   "page": 23,
+   "kind": "researcher",
+   "stem": "In the model of Collins and Quillian (1969), what is a node?",
+   "options": [
+    "A category or concept.",
+    "A connection weight.",
+    "An error signal.",
+    "A priming stimulus."
+   ],
+   "correct": 0,
+   "why": "In Collins and Quillian (1969), a node is a category or concept. Concepts are linked by structured pointers such as “is a” and “has.”"
+  },
+  {
+   "id": 9227,
+   "module": 17,
+   "page": 24,
+   "kind": "definition",
+   "stem": "What is cognitive economy?",
+   "options": [
+    "Shared properties are stored only at higher-level nodes.",
+    "Shared properties are stored at every node in the network.",
+    "Exceptions are stored only at the highest node.",
+    "Lower-level items share the properties of higher-level items."
+   ],
+   "correct": 0,
+   "why": "Cognitive economy means shared properties are only stored at higher-level nodes. Including “can fly” for every node would be inefficient."
+  },
+  {
+   "id": 9228,
+   "module": 17,
+   "page": 24,
+   "kind": "application",
+   "stem": "In the semantic network, where is the property “can’t fly” stored for ostrich?",
+   "options": [
+    "At the lower node for ostrich, as an exception.",
+    "At the node for bird, together with the property “can fly.”",
+    "At the node for animal, with “can move.”",
+    "At the top node for living thing."
+   ],
+   "correct": 0,
+   "why": "Exceptions are stored at lower nodes. “Ostrich” would have the property “can’t fly.”"
+  },
+  {
+   "id": 9229,
+   "module": 17,
+   "page": 25,
+   "kind": "design",
+   "stem": "What does the Collins and Quillian (1969) model predict about retrieval time?",
+   "options": [
+    "It depends on the distance that must be traveled through the network.",
+    "It depends on how typical the member is, with typical members retrieved faster.",
+    "It depends on how many letters the words have.",
+    "It is the same for every statement about a concept."
+   ],
+   "correct": 0,
+   "why": "The testable prediction is that the time to retrieve information about a concept is determined by the distance that must be traveled through the network."
+  },
+  {
+   "id": 9230,
+   "module": 17,
+   "page": 25,
+   "kind": "application",
+   "stem": "Which statement takes longer to verify, according to the semantic network results?",
+   "options": [
+    "“A canary is an animal,” because it is two levels away.",
+    "“A canary is a bird,” because it is one level away.",
+    "“A canary is a canary,” because it is at the same node.",
+    "All three take the same time."
+   ],
+   "correct": 0,
+   "why": "It takes longer to answer “yes” to “A canary is an animal” than to “A canary is a bird,” because more levels must be traversed."
+  },
+  {
+   "id": 9231,
+   "module": 17,
+   "page": 26,
+   "kind": "definition",
+   "stem": "What is spreading activation?",
+   "options": [
+    "When a node is activated, activity spreads along all connected links.",
+    "When a weight is changed, the error signal for that unit becomes zero at once.",
+    "When a category is damaged, performance falls gradually.",
+    "When an object is named, the basic-level name is used."
+   ],
+   "correct": 0,
+   "why": "In spreading activation, when a node is activated, activity spreads out along all connected links. Concepts that receive activation are primed and more easily accessed from memory."
+  },
+  {
+   "id": 9232,
+   "module": 17,
+   "page": 27,
+   "kind": "researcher",
+   "stem": "What did Meyer and Schvaneveldt find in the lexical decision task?",
+   "options": [
+    "People were faster to respond to related pairs than to unrelated pairs.",
+    "People were faster to respond to unrelated pairs than to related pairs.",
+    "People were equally fast for related and unrelated pairs.",
+    "People were fastest when both items were nonwords."
+   ],
+   "correct": 0,
+   "why": "Meyer and Schvaneveldt tested spreading activation with a lexical decision task using pairs of words. People were faster to respond to related pairs than unrelated pairs."
+  },
+  {
+   "id": 9233,
+   "module": 17,
+   "page": 28,
+   "kind": "design",
+   "stem": "Why can the Collins and Quillian model not explain the typicality effect?",
+   "options": [
+    "It predicts equal times for “canary” and “ostrich,” which are both one node from “bird.”",
+    "It predicts faster times for “ostrich” than for “canary,” because ostrich is stored higher in the network.",
+    "It predicts that typical members are stored at higher nodes.",
+    "It predicts that atypical members are not in the network."
+   ],
+   "correct": 0,
+   "why": "The model predicts equally fast reaction times to “canary” and “ostrich,” because both are one node away from “bird.” In fact, reaction times are faster for more typical members."
+  },
+  {
+   "id": 9234,
+   "module": 17,
+   "page": 28,
+   "kind": "application",
+   "stem": "Which sentence-verification result is a problem for the Collins and Quillian model?",
+   "options": [
+    "“A pig is a mammal” is slower than “A pig is an animal.”",
+    "“A canary is an animal” is slower than “A canary is a bird.”",
+    "“A canary has skin” is slower than “A canary can sing.”",
+    "“A canary is a bird” is slower than “A canary is a canary.”"
+   ],
+   "correct": 0,
+   "why": "“A pig is a mammal” is slower than “A pig is an animal.” Mammal is closer to pig in the network, so the model predicts the opposite."
+  },
+  {
+   "id": 9235,
+   "module": 17,
+   "page": 29,
+   "kind": "definition",
+   "stem": "What is connectionism?",
+   "options": [
+    "An approach to creating computer models for representing cognitive processes.",
+    "An approach that defines each category by listing the features every member must have.",
+    "An approach that stores each concept at one node in a hierarchy.",
+    "An approach that explains concepts by motor actions only."
+   ],
+   "correct": 0,
+   "why": "Connectionism is an approach to creating computer models for representing cognitive processes. It is also called parallel distributed processing."
+  },
+  {
+   "id": 9236,
+   "module": 17,
+   "page": 31,
+   "kind": "definition",
+   "stem": "In a connectionist network, how is a stimulus represented?",
+   "options": [
+    "By the pattern of activity distributed across the units.",
+    "By a single unit that stands for the stimulus and for nothing else.",
+    "By the definition of the category it belongs to.",
+    "By the distance between two nodes."
+   ],
+   "correct": 0,
+   "why": "A stimulus is represented by the pattern of activity that is distributed across the other units."
+  },
+  {
+   "id": 9237,
+   "module": 17,
+   "page": 31,
+   "kind": "definition",
+   "stem": "What do negative connection weights do?",
+   "options": [
+    "They can decrease excitation or inhibit activation of the receiving unit.",
+    "They result in a strong tendency to excite the next unit in the network.",
+    "They send the error signal back through the circuit.",
+    "They store exceptions at lower nodes."
+   ],
+   "correct": 0,
+   "why": "High connection weights result in a strong tendency to excite the next unit. Negative connection weights can decrease excitation or inhibit activation of the receiving unit."
+  },
+  {
+   "id": 9238,
+   "module": 17,
+   "page": 33,
+   "kind": "definition",
+   "stem": "What is the error signal?",
+   "options": [
+    "The difference between the actual activity of each output unit and the correct activity.",
+    "The difference between the activity of the input units and the activity of the hidden units.",
+    "The number of levels traveled through a network.",
+    "The time taken to verify a sentence."
+   ],
+   "correct": 0,
+   "why": "The error signal is the difference between the actual activity of each output unit and the correct activity."
+  },
+  {
+   "id": 9239,
+   "module": 17,
+   "page": 33,
+   "kind": "definition",
+   "stem": "What is back-propagation?",
+   "options": [
+    "The error signal is transmitted back through the circuit to show how weights should change.",
+    "The network responds to a stimulus and produces a first guess about its properties.",
+    "The weights are set so that the input units excite the hidden units strongly.",
+    "Performance falls gradually as units in the network are damaged."
+   ],
+   "correct": 0,
+   "why": "In back-propagation, the error signal is transmitted back through the circuit. It indicates how weights should be changed to allow the output signal to match the correct signal."
+  },
+  {
+   "id": 9240,
+   "module": 17,
+   "page": 33,
+   "kind": "design",
+   "stem": "How quickly does a connectionist network learn?",
+   "options": [
+    "Slowly, because each learning experience changes the weights only a little.",
+    "Quickly, because one learning experience sets all the weights to their final values.",
+    "Not at all, because the weights are fixed.",
+    "Quickly, because the error signal starts at zero."
+   ],
+   "correct": 0,
+   "why": "Each learning experience causes only a small change in the connection weights, and the process repeats until the error signal is zero."
+  },
+  {
+   "id": 9241,
+   "module": 17,
+   "page": 35,
+   "kind": "definition",
+   "stem": "What is graceful degradation?",
+   "options": [
+    "Performance is disrupted gradually as parts of the system are damaged.",
+    "Performance stops completely as soon as a single unit in the system is damaged.",
+    "Performance improves as parts of the system are damaged.",
+    "Performance depends on the distance between nodes."
+   ],
+   "correct": 0,
+   "why": "The operation of connectionist networks is not totally disrupted by damage. Graceful degradation means disruption of performance occurs gradually as parts of the system are damaged."
+  },
+  {
+   "id": 9242,
+   "module": 17,
+   "page": 37,
+   "kind": "definition",
+   "stem": "Which categories show a double dissociation in patients?",
+   "options": [
+    "Living things and nonliving things.",
+    "Sensory attributes and functional attributes.",
+    "Mechanical devices and musical instruments.",
+    "Animals and fruits and vegetables."
+   ],
+   "correct": 0,
+   "why": "There is a double dissociation for the categories “living things” and “nonliving things.” Each side of the dissociation is a category-specific memory impairment."
+  },
+  {
+   "id": 9243,
+   "module": 17,
+   "page": 38,
+   "kind": "definition",
+   "stem": "What does the sensory-functional hypothesis state?",
+   "options": [
+    "Telling living things from artifacts depends on a system for sensory attributes and a system for function.",
+    "Telling living things from artifacts depends on one definition for living things and one definition for artifacts.",
+    "Telling living things from artifacts depends on the number of nodes between them.",
+    "Telling living things from artifacts depends on motor areas only."
+   ],
+   "correct": 0,
+   "why": "The sensory-functional hypothesis states that our ability to differentiate living things and artifacts depends on a semantic memory system that distinguishes sensory attributes and a system that distinguishes function."
+  },
+  {
+   "id": 9244,
+   "module": 17,
+   "page": 38,
+   "kind": "application",
+   "stem": "According to the sensory-functional hypothesis, what are artifacts more strongly associated with?",
+   "options": [
+    "Their uses.",
+    "Their colors.",
+    "Their motion.",
+    "Their sounds."
+   ],
+   "correct": 0,
+   "why": "Animals and other natural kinds are more strongly associated with their sensory attributes, whereas artifacts are more strongly associated with their uses."
+  },
+  {
+   "id": 9245,
+   "module": 17,
+   "page": 39,
+   "kind": "researcher",
+   "stem": "Who found evidence for the sensory-functional hypothesis in patients K.C. and E.W.?",
+   "options": [
+    "Warrington and Shallice.",
+    "Collins and Quillian.",
+    "Meyer and Schvaneveldt.",
+    "Tanaka and Taylor."
+   ],
+   "correct": 0,
+   "why": "Warrington and Shallice found evidence for the sensory-functional hypothesis in patients K.C. and E.W. There are also a number of exceptions to the overall pattern."
+  },
+  {
+   "id": 9246,
+   "module": 17,
+   "page": 42,
+   "kind": "definition",
+   "stem": "What is crowding?",
+   "options": [
+    "Different concepts within a category share many properties.",
+    "Different categories are stored together in the same area of the brain.",
+    "Different units in a network have the same weight.",
+    "Different levels of a hierarchy have the same name."
+   ],
+   "correct": 0,
+   "why": "Crowding occurs when different concepts within a category share many properties. Animals all share eyes, legs and the ability to move, and artifacts share fewer properties."
+  },
+  {
+   "id": 9247,
+   "module": 17,
+   "page": 42,
+   "kind": "application",
+   "stem": "According to the idea of crowding, why might a patient have difficulty recognizing living things?",
+   "options": [
+    "The patient has difficulty distinguishing between items that share similar features.",
+    "The patient has lost the one brain area that stores knowledge about every living thing.",
+    "The patient cannot process any functional attributes.",
+    "The patient names living things only at the basic level."
+   ],
+   "correct": 0,
+   "why": "Patients with category-specific impairments may not have a category impairment at all. They may have difficulty recognizing living things because they have difficulty distinguishing between items that share similar features."
+  },
+  {
+   "id": 9248,
+   "module": 17,
+   "page": 41,
+   "kind": "application",
+   "stem": "Why might a patient identify mechanical devices while doing poorly with other artifacts?",
+   "options": [
+    "Mechanical devices have a widely distributed semantic representation.",
+    "Mechanical devices are stored in a single small brain area that is rarely damaged.",
+    "Mechanical devices are named only at the specific level.",
+    "Mechanical devices share no properties with animals."
+   ],
+   "correct": 0,
+   "why": "Mechanical devices overlap with artifacts and with animals, so they have a widely distributed semantic representation. Patients may identify them even if they perform poorly for other types of artifacts."
+  },
+  {
+   "id": 9249,
+   "module": 17,
+   "page": 43,
+   "kind": "definition",
+   "stem": "What does the embodied approach state?",
+   "options": [
+    "Knowledge of concepts is based on reactivating sensory and motor processes from interacting with the object.",
+    "Knowledge of concepts is based on the definition of each category, which lists the features every member must have.",
+    "Knowledge of concepts is stored at one node per concept.",
+    "Knowledge of concepts is innately determined for a few categories."
+   ],
+   "correct": 0,
+   "why": "In the embodied approach, our knowledge of concepts is based on reactivation of sensory and motor processes that occur when we interact with the object."
+  },
+  {
+   "id": 9250,
+   "module": 17,
+   "page": 43,
+   "kind": "application",
+   "stem": "According to the embodied approach, what happens when we see the word “hammer”?",
+   "options": [
+    "The same sensory and motor areas are activated as when we use a hammer.",
+    "Only the areas for reading are activated, and no sensory or motor areas respond.",
+    "A single node for “hammer” is activated and nothing else.",
+    "No motor areas are activated unless we pick up a hammer."
+   ],
+   "correct": 0,
+   "why": "When we use a hammer, sensory and motor areas are activated. When we see a hammer, or see “hammer,” the same areas get activated."
+  },
+  {
+   "id": 9251,
+   "module": 17,
+   "page": 44,
+   "kind": "definition",
+   "stem": "On what do the category-specific, multiple-factor and embodied approaches agree?",
+   "options": [
+    "Information about concepts is distributed across many structures in the brain.",
+    "Information about concepts is stored in one small area of the temporal lobe and nowhere else.",
+    "Information about concepts is stored as definitions.",
+    "Information about concepts cannot be studied in patients."
+   ],
+   "correct": 0,
+   "why": "The three approaches agree that information about concepts is distributed across many structures in the brain. They differ in the type of information they emphasize."
+  },
+  {
+   "id": 9252,
+   "module": 17,
+   "page": 40,
+   "kind": "definition",
+   "stem": "What does the semantic category approach propose?",
+   "options": [
+    "Specific neural circuits in the brain for specific categories.",
+    "One neural circuit in the brain that handles every category in the same way.",
+    "No role for the brain in category knowledge.",
+    "Specific connection weights for each letter of a word."
+   ],
+   "correct": 0,
+   "why": "The semantic category approach proposes specific neural circuits in the brain for specific categories, distributed over a number of different cortical areas."
+  },
+  {
+   "id": 9253,
+   "module": 17,
+   "page": 22,
+   "kind": "researcher",
+   "stem": "Which study compared how bird experts and non-experts named pictures of birds?",
+   "options": [
+    "Tanaka and Taylor (1991).",
+    "Coley, Medin and Atran (1997).",
+    "Rosch and colleagues (1976).",
+    "Rosch and Mervis (1975)."
+   ],
+   "correct": 0,
+   "why": "Tanaka and Taylor (1991) asked bird experts and non-experts to name pictures of objects. Coley, Medin and Atran (1997) had people name plants."
+  },
+  {
+   "id": 9254,
+   "module": 17,
+   "page": 18,
+   "kind": "researcher",
+   "stem": "Which study asked people to list features common to all or most objects in a category?",
+   "options": [
+    "Rosch and colleagues (1976).",
+    "Rosch (1975).",
+    "Tanaka and Taylor (1991).",
+    "Collins and Quillian (1969)."
+   ],
+   "correct": 0,
+   "why": "Rosch and colleagues (1976) asked participants to list common features. Rosch (1975) asked participants to rate how well members represented a category title."
+  },
+  {
+   "id": 9255,
+   "module": 17,
+   "page": 11,
+   "kind": "researcher",
+   "stem": "Which study had people list the characteristics of single objects such as chair, sofa, mirror and telephone?",
+   "options": [
+    "Rosch and Mervis (1975).",
+    "Rosch (1975).",
+    "Rosch and colleagues (1976).",
+    "Tanaka and Taylor (1991)."
+   ],
+   "correct": 0,
+   "why": "In Rosch and Mervis (1975), participants listed characteristics of common objects, and prototypical items shared many characteristics. In Rosch (1975), participants rated members. In Rosch and colleagues (1976), participants listed features common to a whole category."
+  },
+  {
+   "id": 9256,
+   "module": 17,
+   "page": 23,
+   "kind": "researcher",
+   "stem": "Which year goes with the semantic network model of Collins and Quillian?",
+   "options": [
+    "1969.",
+    "1975.",
+    "1976.",
+    "1991."
+   ],
+   "correct": 0,
+   "why": "The semantic network model is Collins and Quillian (1969). Rosch and Rosch and Mervis are 1975, Rosch and colleagues is 1976, and Tanaka and Taylor is 1991."
+  },
+  {
+   "id": 9257,
+   "module": 17,
+   "page": 44,
+   "kind": "definition",
+   "stem": "Which approach emphasizes activity caused by the sensory and motor properties of objects?",
+   "options": [
+    "The embodied approach.",
+    "The category-specific approach.",
+    "The multiple-factor approach.",
+    "The definitional approach."
+   ],
+   "correct": 0,
+   "why": "The category-specific approach emphasizes specialized brain areas and networks. The multiple-factor approach emphasizes many features and properties. The embodied approach emphasizes activity caused by the sensory and motor properties of objects."
+  },
+  {
+   "id": 9258,
+   "module": 17,
+   "page": 30,
+   "kind": "definition",
+   "stem": "In a connectionist network, which units are activated by stimuli from the environment?",
+   "options": [
+    "Input units.",
+    "Hidden units.",
+    "Output units.",
+    "Connection weights."
+   ],
+   "correct": 0,
+   "why": "Input units are activated by stimuli from the environment. Output units receive input from hidden units."
+  },
+  {
+   "id": 9259,
+   "module": 17,
+   "page": 32,
+   "kind": "design",
+   "stem": "What does a connectionist network do after it is given the correct response?",
+   "options": [
+    "It modifies its weights to increase the match between its response and the correct response.",
+    "It stores the correct response at one node and stops responding to the stimulus.",
+    "It removes the hidden units that took part in producing the wrong guess.",
+    "It repeats the same guess until the stimulus is taken away from the input units."
+   ],
+   "correct": 0,
+   "why": "The network responds to a stimulus, produces a guess, is provided with the correct response, and modifies its weights to increase the match between its response and the correct response."
+  },
+  {
+   "id": 9260,
+   "module": 17,
+   "page": 34,
+   "kind": "application",
+   "stem": "After 2,500 learning trials, how do the hidden-unit patterns for rose, daisy and canary compare?",
+   "options": [
+    "Rose and daisy have similar patterns, and canary has a different pattern.",
+    "Rose and canary have similar patterns, and daisy has a different pattern.",
+    "All three have the same pattern, as they did before learning began.",
+    "All three have completely different patterns from one another."
+   ],
+   "correct": 0,
+   "why": "At 0 trials the three patterns look alike. By 2,500 trials, rose and daisy have similar patterns and canary has a different pattern."
+  },
+  {
+   "id": 9261,
+   "module": 17,
+   "page": 35,
+   "kind": "definition",
+   "stem": "Why can connectionist networks explain generalization of learning?",
+   "options": [
+    "The slow learning process creates a network that can handle a wide range of inputs.",
+    "The fast learning process stores each input at its own separate node.",
+    "The network keeps a definition for every category it has learned.",
+    "The network stops changing its weights after the first learning trial."
+   ],
+   "correct": 0,
+   "why": "Connectionist networks can explain generalization of learning, because the slow learning process creates a network capable of handling a wide range of inputs."
+  },
+  {
+   "id": 9262,
+   "module": 17,
+   "page": 28,
+   "kind": "design",
+   "stem": "What evidence goes against cognitive economy in the Collins and Quillian model?",
+   "options": [
+    "People seem to store specific properties right at the node for the concept.",
+    "People seem to store every property only at the highest node in the network.",
+    "People take longer to verify statements that require more levels.",
+    "People respond faster to related word pairs than to unrelated pairs."
+   ],
+   "correct": 0,
+   "why": "There is some evidence that people store specific properties of concepts right at the node for the concept, which goes against storing shared properties only at higher-level nodes."
+  },
+  {
+   "id": 9263,
+   "module": 17,
+   "page": 15,
+   "kind": "design",
+   "stem": "How does the exemplar approach explain Rosch’s results?",
+   "options": [
+    "Objects that are like more of the stored exemplars are classified faster.",
+    "Objects that are like fewer of the stored exemplars are classified faster.",
+    "Objects are compared with a definition, and typical ones match it sooner.",
+    "Objects are stored at higher nodes when they are more typical."
+   ],
+   "correct": 0,
+   "why": "The exemplar approach can explain Rosch’s results, because objects that are like more of the exemplars are classified faster."
+  },
+  {
+   "id": 9264,
+   "module": 17,
+   "page": 12,
+   "kind": "application",
+   "stem": "When people list as many members of a category as they can, which members do they list first?",
+   "options": [
+    "The most prototypical members of the category.",
+    "The least prototypical members of the category.",
+    "The members they learned most recently.",
+    "The members with the longest names."
+   ],
+   "correct": 0,
+   "why": "When asked to list as many objects in a category as possible, participants tend to list the most prototypical members first. This is part of the typicality effect."
+  },
+  {
+   "id": 9265,
+   "module": 17,
+   "page": 39,
+   "kind": "design",
+   "stem": "How well does the sensory-functional hypothesis fit the patient evidence?",
+   "options": [
+    "Some evidence supports it, but there are a number of exceptions to the pattern.",
+    "All of the evidence supports it, and no exceptions have been found.",
+    "None of the evidence supports it, so it was replaced by the exemplar approach.",
+    "It has not been compared with any patients."
+   ],
+   "correct": 0,
+   "why": "Warrington and Shallice found evidence for the hypothesis, and other studies confirmed it. But there are a number of exceptions to this overall pattern."
   }
  ],
  "topics": [
@@ -2773,6 +4260,139 @@ window.THIRD_PART = {
     44
    ],
    "progressKey": "m3-topic-16-43"
+  },
+  {
+   "module": 17,
+   "title": "Concepts, categories and why categories are useful",
+   "pages": [
+    2,
+    3,
+    4
+   ],
+   "progressKey": "m3-topic-17-2"
+  },
+  {
+   "module": 17,
+   "title": "The definitional approach and family resemblance",
+   "pages": [
+    5,
+    6,
+    7
+   ],
+   "progressKey": "m3-topic-17-5"
+  },
+  {
+   "module": 17,
+   "title": "The prototype approach and typicality",
+   "pages": [
+    8,
+    9,
+    10,
+    11
+   ],
+   "progressKey": "m3-topic-17-8"
+  },
+  {
+   "module": 17,
+   "title": "The typicality effect and priming",
+   "pages": [
+    12,
+    13,
+    14
+   ],
+   "progressKey": "m3-topic-17-12"
+  },
+  {
+   "module": 17,
+   "title": "The exemplar approach",
+   "pages": [
+    15,
+    16
+   ],
+   "progressKey": "m3-topic-17-15"
+  },
+  {
+   "module": 17,
+   "title": "Levels of categories and the basic level",
+   "pages": [
+    17,
+    18,
+    19,
+    20
+   ],
+   "progressKey": "m3-topic-17-17"
+  },
+  {
+   "module": 17,
+   "title": "Knowledge, culture and the basic level",
+   "pages": [
+    21,
+    22
+   ],
+   "progressKey": "m3-topic-17-21"
+  },
+  {
+   "module": 17,
+   "title": "Semantic networks and Collins and Quillian (1969)",
+   "pages": [
+    23,
+    24,
+    25
+   ],
+   "progressKey": "m3-topic-17-23"
+  },
+  {
+   "module": 17,
+   "title": "Spreading activation and criticism of the model",
+   "pages": [
+    26,
+    27,
+    28
+   ],
+   "progressKey": "m3-topic-17-26"
+  },
+  {
+   "module": 17,
+   "title": "The connectionist approach: units and weights",
+   "pages": [
+    29,
+    30,
+    31
+   ],
+   "progressKey": "m3-topic-17-29"
+  },
+  {
+   "module": 17,
+   "title": "How connectionist networks learn",
+   "pages": [
+    32,
+    33,
+    34,
+    35
+   ],
+   "progressKey": "m3-topic-17-32"
+  },
+  {
+   "module": 17,
+   "title": "Categories in the brain and the sensory-functional hypothesis",
+   "pages": [
+    37,
+    38,
+    39
+   ],
+   "progressKey": "m3-topic-17-37"
+  },
+  {
+   "module": 17,
+   "title": "Semantic category, multiple factors and embodied approaches",
+   "pages": [
+    40,
+    41,
+    42,
+    43,
+    44
+   ],
+   "progressKey": "m3-topic-17-40"
   }
  ],
  "coreReview": [
@@ -2986,6 +4606,130 @@ window.THIRD_PART = {
    "module": 16,
    "title": "Reconsolidation and PTSD",
    "pages": [
+    44
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Concepts and categories",
+   "pages": [
+    2
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Definitional approach and family resemblance",
+   "pages": [
+    6,
+    7
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Prototype approach",
+   "pages": [
+    8,
+    9,
+    10
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Typicality effects",
+   "pages": [
+    12,
+    13
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Exemplar approach",
+   "pages": [
+    15,
+    16
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Basic level",
+   "pages": [
+    17,
+    18,
+    20
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Knowledge and the basic level",
+   "pages": [
+    21,
+    22
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Semantic networks",
+   "pages": [
+    23,
+    24,
+    25
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Spreading activation and criticism",
+   "pages": [
+    26,
+    27,
+    28
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Connectionist networks",
+   "pages": [
+    29,
+    30,
+    31
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Learning in connectionist networks",
+   "pages": [
+    33,
+    35
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Categories in the brain",
+   "pages": [
+    37
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Sensory-functional hypothesis",
+   "pages": [
+    38,
+    39
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Semantic category and multiple factors approaches",
+   "pages": [
+    40,
+    41
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Multiple factors and embodied approaches",
+   "pages": [
+    42,
+    43,
     44
    ]
   }
@@ -3218,6 +4962,99 @@ window.THIRD_PART = {
    "pages": [
     43,
     44
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Rosch (1975) · Typicality ratings",
+   "pages": [
+    9,
+    10
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Rosch and Mervis (1975) · Family resemblance and prototypicality",
+   "pages": [
+    11
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Sentence verification · The typicality effect",
+   "pages": [
+    12
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Priming with a color name · Good and poor examples",
+   "pages": [
+    13,
+    14
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Rosch and colleagues (1976) · Common features at three levels",
+   "pages": [
+    17,
+    18
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Naming objects · Basic-level names",
+   "pages": [
+    19,
+    20
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Coley, Medin and Atran (1997) · Naming plants",
+   "pages": [
+    21
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Tanaka and Taylor (1991) · Bird experts and non-experts",
+   "pages": [
+    22
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Collins and Quillian (1969) · Semantic network and response time",
+   "pages": [
+    23,
+    24,
+    25
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Meyer and Schvaneveldt · Lexical decision task",
+   "pages": [
+    26,
+    27
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Connectionist network · Learning in the hidden units",
+   "pages": [
+    33,
+    34
+   ]
+  },
+  {
+   "module": 17,
+   "title": "Warrington and Shallice · Patients K.C. and E.W.",
+   "pages": [
+    38,
+    39
    ]
   }
  ],
@@ -4181,7 +6018,533 @@ window.THIRD_PART = {
      "children": []
     }
    ],
-   "16:45": []
+   "16:45": [],
+   "17:1": [],
+   "17:2": [
+    {
+     "text": "**Conceptual knowledge** is knowledge that lets us **recognize objects and events** and **make inferences about their properties**.",
+     "children": []
+    },
+    {
+     "text": "A **concept** is a **mental representation** that is used for many cognitive functions. It can be the meaning of an object, an event or an abstract idea.",
+     "children": []
+    },
+    {
+     "text": "**Categorization** is the process of **placing things into groups called categories**. A **category** is all the possible examples of a concept. Our knowledge of the world is organized in categories.",
+     "children": []
+    }
+   ],
+   "17:3": [
+    {
+     "text": "The category **“cat”** includes tabbies, Siamese cats, Persian cats and wild cats.",
+     "children": []
+    },
+    {
+     "text": "**Identifying something as a cat lets a person assume many things about it**, such as its anatomy and behavior. So each new cat does not have to be treated as one of a kind.",
+     "children": []
+    }
+   ],
+   "17:4": [
+    {
+     "text": "Categories **help us understand individual cases we have not met before**.",
+     "children": []
+    },
+    {
+     "text": "Categories are **“pointers to knowledge.”** They **give general information about an item**, and they let us **notice the special characteristics of a particular item**.",
+     "children": []
+    },
+    {
+     "text": "**Without categories, we would have a very hard time dealing with the world.** Every object would have to be learned about separately.",
+     "children": []
+    }
+   ],
+   "17:5": [
+    {
+     "text": "A cat with its whiskers cut off is **still a cat**. A person who meows, purrs and sleeps a lot is **still not a cat**.",
+     "children": []
+    },
+    {
+     "text": "These answers seem obvious, but **explaining why is very hard**. No single property decides whether something belongs to the category.",
+     "children": []
+    }
+   ],
+   "17:6": [
+    {
+     "text": "The **definitional approach** decides category membership by **whether the object meets the definition of the category**.",
+     "children": []
+    },
+    {
+     "text": "It **works for some things, such as geometric objects**. It **does not work well for natural objects and human-made objects**.",
+     "children": []
+    },
+    {
+     "text": "This is because **not all members of everyday categories have the same defining features**. Chairs come in very different forms, and no one definition covers all of them.",
+     "children": []
+    }
+   ],
+   "17:7": [
+    {
+     "text": "**Wittgenstein** proposed **family resemblance** because **definitions often do not include all members of a category**.",
+     "children": []
+    },
+    {
+     "text": "In family resemblance, **things in a category resemble one another in a number of ways**. This **allows some variation within a category**.",
+     "children": []
+    },
+    {
+     "text": "So categorization may be based on **how similar an object is to a standard representation of the category**.",
+     "children": []
+    }
+   ],
+   "17:8": [
+    {
+     "text": "A **prototype** is a representation of the **“typical” member of a category**. It is an **average of the category members a person has encountered**.",
+     "children": []
+    },
+    {
+     "text": "In the **prototype approach**, **membership in a category is decided by comparing the object to the prototype**. The prototype for “bird” is an average bird and not any one real bird.",
+     "children": []
+    }
+   ],
+   "17:9": [
+    {
+     "text": "Robins and sparrows are birds, and so are owls and penguins. These differences are **differences in typicality**.",
+     "children": []
+    },
+    {
+     "text": "In **Rosch (1975)**, people saw a category title, such as birds, and a list of about 50 members. They **rated how well each member represented the category**. A rating of 1 meant a very good example, and 7 meant a poor example.",
+     "children": []
+    },
+    {
+     "text": "For **birds**, sparrow was rated 1.18 and bat 6.15. For **furniture**, chair and sofa were rated 1.04 and telephone 6.68. So some members are better examples of a category than others.",
+     "children": []
+    }
+   ],
+   "17:10": [
+    {
+     "text": "**High prototypicality** means a member **closely resembles the category prototype**. For “bird,” a **robin** is a high-prototypicality member.",
+     "children": []
+    },
+    {
+     "text": "**Low prototypicality** means a member **does not closely resemble the prototype**. For “bird,” an **ostrich** is a low-prototypicality member.",
+     "children": []
+    }
+   ],
+   "17:11": [
+    {
+     "text": "**Prototypicality is related to family resemblance.** In **Rosch and Mervis (1975)**, people listed the characteristics of common objects such as chair, sofa, mirror and telephone.",
+     "children": []
+    },
+    {
+     "text": "**More prototypical items of furniture, such as chairs and sofas, share many characteristics with one another.** A mirror or a telephone shares relatively few. So the items with high prototypicality are the ones with high family resemblance.",
+     "children": []
+    }
+   ],
+   "17:12": [
+    {
+     "text": "The **typicality effect** is that **prototypical objects are processed preferentially**, which means faster and before other objects.",
+     "children": []
+    },
+    {
+     "text": "In a **sentence verification task**, people answer yes or no to sentences such as “An apple is a fruit.” **Responses are faster for prototypical items**, such as apple, than for items such as pomegranate.",
+     "children": []
+    },
+    {
+     "text": "When people list as many members of a category as they can, they **list the most prototypical members first**.",
+     "children": []
+    }
+   ],
+   "17:13": [
+    {
+     "text": "**Prototypical category members are more affected by a priming stimulus.** People heard a prime, such as “green,” and two seconds later saw two colors side by side. They pressed a key as quickly as possible if the two colors were the same.",
+     "children": []
+    },
+    {
+     "text": "For two **good examples** of green, the “same” response took **610 milliseconds**. For two **poor examples** of green, it took **780 milliseconds**. So after the prime, the good examples were judged faster than the poor examples.",
+     "children": []
+    }
+   ],
+   "17:14": [
+    {
+     "text": "Hearing “green” leads a person to form a **prototype for green**, which is a typical green.",
+     "children": []
+    },
+    {
+     "text": "Two good green examples are a **good match** to the prototype, so the response is fast. Two light green examples are a **poor match**, so the response is slower.",
+     "children": []
+    }
+   ],
+   "17:15": [
+    {
+     "text": "In the **exemplar approach**, a concept is represented by **multiple examples** and not by a single averaged prototype. The **examples are actual category members**.",
+     "children": []
+    },
+    {
+     "text": "To categorize, a person **compares the new item to the stored examples**. Objects that are like more of the exemplars are classified faster, which **explains Rosch’s results**.",
+     "children": []
+    },
+    {
+     "text": "The exemplar approach is like the prototype approach because neither defines the category. It is different because its representation is **not abstract**. It is made of descriptions of specific examples.",
+     "children": []
+    }
+   ],
+   "17:16": [
+    {
+     "text": "The exemplar approach **explains the typicality effect** and **takes atypical cases into account**. We do not compare a penguin to an average bird. We remember that some birds do not fly.",
+     "children": []
+    },
+    {
+     "text": "It also **deals with variable categories**, which are categories whose members differ a lot from one another.",
+     "children": []
+    },
+    {
+     "text": "People **may use both approaches**. **Exemplars may work best for small categories**, and **prototypes may work best for larger categories**.",
+     "children": []
+    }
+   ],
+   "17:17": [
+    {
+     "text": "**Rosch’s research** indicates that categories have **different levels**.",
+     "children": []
+    },
+    {
+     "text": "The **superordinate level**, or global level, is a category such as “furniture.” The **basic level** is a category such as “table.” The **subordinate level**, or specific level, is a category such as “kitchen table.”",
+     "children": []
+    },
+    {
+     "text": "The levels are **how concepts are organized in the mind**, and not only a description. The basic level is the level where a name **carries a lot of information without being overly specific**. Going above it loses a lot of information, and going below it gains only a little.",
+     "children": []
+    }
+   ],
+   "17:18": [
+    {
+     "text": "In **Rosch and colleagues (1976)**, people **listed the features that were common to all or most objects in a category**. They listed about 3 features for furniture, about 9 for table and about 10.3 for kitchen table.",
+     "children": []
+    },
+    {
+     "text": "**Going above the basic level loses a lot of information.** Members of “furniture” share many fewer features than members of “table.”",
+     "children": []
+    },
+    {
+     "text": "**Going below the basic level gains little information.** Kitchen tables do not have much more in common than tables do.",
+     "children": []
+    }
+   ],
+   "17:19": [
+    {
+     "text": "When people are asked to quickly name an electric guitar and a fish, most say **“guitar”** and **“fish.”** These are basic-level names.",
+     "children": []
+    }
+   ],
+   "17:20": [
+    {
+     "text": "When people name objects, they **use the basic-level name**. They say **guitar**, not Stratocaster (specific) or instrument (global). They say **fish**, not trout or animal.",
+     "children": []
+    }
+   ],
+   "17:21": [
+    {
+     "text": "**Rosch’s experiments used college undergraduates.** The level they called “basic” **reflects undergraduates’ everyday experience**.",
+     "children": []
+    },
+    {
+     "text": "**Coley, Medin and Atran (1997)** asked undergraduates and horticulturalists to **name 44 plants as specifically as possible**. **75 percent of the undergraduates said “trees.”** The horticulturalists used specific names such as “oak.”",
+     "children": []
+    },
+    {
+     "text": "In the **Guatemalan Itzaj culture**, an oak tree is called an “oak” and not a tree. For them, **“oak” behaves like a basic-level category**. So which level is basic depends on experience and culture.",
+     "children": []
+    }
+   ],
+   "17:22": [
+    {
+     "text": "**Tanaka and Taylor (1991)** asked **bird experts and non-experts** to name pictures of objects.",
+     "children": []
+    },
+    {
+     "text": "**Experts named the species of the birds**, such as “sparrow” or “robin.” Non-experts mostly said “bird.” Experts had learned to pay attention to features of birds that non-experts were unaware of.",
+     "children": []
+    },
+    {
+     "text": "So **both a person’s knowledge and the properties of objects are important in categorization**.",
+     "children": []
+    }
+   ],
+   "17:23": [
+    {
+     "text": "In a **semantic network**, **concepts are arranged in networks that represent how concepts are organized in the mind**.",
+     "children": []
+    },
+    {
+     "text": "In the model of **Collins and Quillian (1969)**, a **node** is a category or concept. Nodes are **linked by pointers such as “is a” and “has.”**",
+     "children": []
+    },
+    {
+     "text": "The model is **hierarchical**. It goes from **more specific concepts to more general ones**, such as canary, bird, animal.",
+     "children": []
+    }
+   ],
+   "17:24": [
+    {
+     "text": "**Inheritance** means that **lower-level items share the properties of higher-level items**.",
+     "children": []
+    },
+    {
+     "text": "**Cognitive economy** means that **shared properties are stored only at higher-level nodes**. Storing “can fly” at every bird would be inefficient, so it is stored once at “bird.”",
+     "children": []
+    },
+    {
+     "text": "**Exceptions are stored at lower nodes.** For example, “ostrich” has the property “can’t fly.”",
+     "children": []
+    }
+   ],
+   "17:25": [
+    {
+     "text": "In the network, **general concepts are at the top and specific ones are at the bottom**.",
+     "children": []
+    },
+    {
+     "text": "The model predicts that the **time to retrieve information depends on the distance traveled through the network**.",
+     "children": []
+    },
+    {
+     "text": "This was found. **“A canary is an animal” takes longer to verify than “A canary is a bird.”** Response time rose with the number of levels that had to be traversed.",
+     "children": []
+    }
+   ],
+   "17:26": [
+    {
+     "text": "**Activation** is the **arousal level of a node**. In **spreading activation**, when a node is activated, **activity spreads out along all connected links**.",
+     "children": []
+    },
+    {
+     "text": "**Concepts that receive activation are primed**, so they are **more easily accessed from memory**. Activating “robin” spreads activation to “bird” and then primes “canary,” “ostrich” and “animal.”",
+     "children": []
+    }
+   ],
+   "17:27": [
+    {
+     "text": "**Meyer and Schvaneveldt** tested spreading activation with a **lexical decision task** using **pairs of words**. In a lexical decision task, a person decides as quickly as possible whether the letter strings are real words.",
+     "children": []
+    },
+    {
+     "text": "**People responded faster to related pairs**, such as bread and wheat, **than to unrelated pairs**, such as chair and money. This is because the first word spread activation to related words.",
+     "children": []
+    },
+    {
+     "text": "Many studies of **semantic priming** have found similar results.",
+     "children": []
+    }
+   ],
+   "17:28": [
+    {
+     "text": "The model of **Collins and Quillian** **cannot explain typicality effects**. It predicts equally fast responses for “canary” and “ostrich,” because both are one node away from “bird.”",
+     "children": []
+    },
+    {
+     "text": "**Cognitive economy** is doubted. There is evidence that people **store specific properties right at the node for the concept**.",
+     "children": []
+    },
+    {
+     "text": "**Some sentence-verification results do not fit.** “A pig is a mammal” is verified more slowly than “A pig is an animal.” The model predicts the opposite, because mammal is closer to pig in the network.",
+     "children": []
+    }
+   ],
+   "17:29": [
+    {
+     "text": "The **connectionist approach** came in the late 1980s. It grew from **criticism of structured networks** and from **advances in understanding how the brain represents information**.",
+     "children": []
+    },
+    {
+     "text": "**Connectionism** is an approach to **creating computer models of cognitive processes**. It is also called **parallel distributed processing**. Knowledge is represented in the **distributed activity of many units**.",
+     "children": []
+    },
+    {
+     "text": "**Weights** determine, at each connection, **how strongly an incoming signal will activate the next unit**.",
+     "children": []
+    }
+   ],
+   "17:30": [
+    {
+     "text": "**Units** are inspired by **neurons**. **Patterns of activity in the units represent concepts and their properties.**",
+     "children": []
+    },
+    {
+     "text": "The **lines** are **connections that transfer activation between units**. They are inspired by axons.",
+     "children": []
+    },
+    {
+     "text": "**Input units** are activated by stimuli from the environment. **Output units** receive input from the **hidden units**, which lie in between.",
+     "children": []
+    },
+    {
+     "text": "A **connection weight** determines how a signal from one unit **increases or decreases the activity of the next unit**.",
+     "children": []
+    }
+   ],
+   "17:31": [
+    {
+     "text": "**High connection weights** give a **strong tendency to excite the next unit**. **Negative connection weights** can **decrease excitation or inhibit** the receiving unit.",
+     "children": []
+    },
+    {
+     "text": "The activation of units depends on two things. They are **the signal from the input units** and **the connection weights throughout the network**.",
+     "children": []
+    },
+    {
+     "text": "**A stimulus is represented by the pattern of activity distributed across the other units.**",
+     "children": []
+    }
+   ],
+   "17:32": [
+    {
+     "text": "For the network to work, **the connection weights have to be adjusted through a learning process**.",
+     "children": []
+    },
+    {
+     "text": "The network **responds to a stimulus** and **produces a guess**. It is then **given the correct response**. It **modifies its weights** so that its response matches the correct response more closely.",
+     "children": []
+    }
+   ],
+   "17:33": [
+    {
+     "text": "The **error signal** is the **difference between the actual activity of each output unit and the correct activity**.",
+     "children": []
+    },
+    {
+     "text": "In **back-propagation**, the **error signal is sent back through the circuit**. It shows **how the weights should be changed** so the output matches the correct signal.",
+     "children": []
+    },
+    {
+     "text": "The process **repeats until the error signal is zero**. **Each learning experience changes the weights only a little.** At first the property units are weakly activated and there are many errors.",
+     "children": []
+    }
+   ],
+   "17:34": [
+    {
+     "text": "The activity of the **hidden units** changes as the network learns. It is shown for rose, daisy and canary after **0, 250, 750 and 2,500 learning trials**.",
+     "children": []
+    },
+    {
+     "text": "At the start, the three patterns look alike. After many trials, **rose and daisy have similar patterns, and canary has a different pattern**. So the network comes to represent similar concepts with similar patterns of activity.",
+     "children": []
+    }
+   ],
+   "17:35": [
+    {
+     "text": "In a connectionist network, **information about each concept is in the distributed pattern of activity across many units**.",
+     "children": []
+    },
+    {
+     "text": "**Damage does not totally disrupt the network.** **Graceful degradation** means that **performance is disrupted gradually as parts of the system are damaged**.",
+     "children": []
+    },
+    {
+     "text": "Connectionist networks can explain **generalization of learning**. The slow learning process creates a network that can **handle a wide range of inputs**.",
+     "children": []
+    }
+   ],
+   "17:36": [],
+   "17:37": [
+    {
+     "text": "**Different areas of the brain may be specialized for different categories.** There is a **double dissociation for “living things” and “nonliving things.”** Some patients have trouble with living things only, and others have trouble with nonliving things only.",
+     "children": []
+    },
+    {
+     "text": "Each side of the dissociation is a **category-specific memory impairment**, in which a person cannot identify one type of object but can identify other types.",
+     "children": []
+    },
+    {
+     "text": "So different areas may be specialized for different categories, **mostly in the temporal lobe**. The approaches disagree about how category knowledge is arranged.",
+     "children": []
+    }
+   ],
+   "17:38": [
+    {
+     "text": "The **sensory-functional hypothesis** states that we tell **living things** from **artifacts** using one system for **sensory attributes** and one system for **function**. An artifact is a human-made object.",
+     "children": []
+    },
+    {
+     "text": "It predicts that **a patient who cannot identify living things should have a more general impairment in processing sensory attributes**.",
+     "children": []
+    },
+    {
+     "text": "This is because **animals are more strongly associated with their sensory attributes**, and **artifacts are more strongly associated with their uses**.",
+     "children": []
+    }
+   ],
+   "17:39": [
+    {
+     "text": "The hypothesis predicts that **deficits in processing sensory attributes go with deficits in recognizing animals**, but not artifacts.",
+     "children": []
+    },
+    {
+     "text": "**Warrington and Shallice** found evidence for this in **patients K.C. and E.W.** Both patients did much worse with living animals than with nonanimals. Other studies confirmed this and also linked functional attributes with artifacts.",
+     "children": []
+    },
+    {
+     "text": "But there are **a number of exceptions** to this pattern.",
+     "children": []
+    }
+   ],
+   "17:40": [
+    {
+     "text": "The **semantic category approach** proposes **specific neural circuits in the brain for specific categories**. The circuits are **distributed over a number of cortical areas**.",
+     "children": []
+    },
+    {
+     "text": "**A limited number of categories may be innately determined**, because they are important for survival. Another possibility is that unusual impairments are haphazard results of strokes late in life.",
+     "children": []
+    }
+   ],
+   "17:41": [
+    {
+     "text": "The **multiple factors approach** looks at **how concepts are divided up within a category**. It does not look for specific brain areas for different concepts.",
+     "children": []
+    },
+    {
+     "text": "**Mechanical devices**, such as musical instruments, **overlap with artifacts** because they involve performing actions. They **overlap with animals** because they involve sound and motion.",
+     "children": []
+    },
+    {
+     "text": "So mechanical devices have a **widely distributed semantic representation**, which means the knowledge about them is spread over many brain regions. **Patients may identify mechanical devices even if they do poorly with other artifacts.**",
+     "children": []
+    }
+   ],
+   "17:42": [
+    {
+     "text": "**Crowding** occurs **when different concepts within a category share many properties**. Animals all share eyes, legs and the ability to move. **Artifacts share fewer properties.**",
+     "children": []
+    },
+    {
+     "text": "So **patients with category-specific impairments may not have a category impairment at all**. They may have difficulty with living things because they have difficulty **telling apart items that share similar features**.",
+     "children": []
+    }
+   ],
+   "17:43": [
+    {
+     "text": "In the **embodied approach**, our knowledge of a concept is based on **reactivating the sensory and motor processes** that occur when we interact with the object.",
+     "children": []
+    },
+    {
+     "text": "When we use a hammer, **sensory areas** respond to its size and shape, and **motor areas** carry out the actions of using it. **When we see a hammer or the word “hammer,” the same areas are activated.**",
+     "children": []
+    },
+    {
+     "text": "So there is an **interaction between action and perception**.",
+     "children": []
+    }
+   ],
+   "17:44": [
+    {
+     "text": "The three approaches agree that **information about concepts is distributed across many structures in the brain**.",
+     "children": []
+    },
+    {
+     "text": "They differ in which kind of information they treat as most important. The **category-specific approach**, which is the semantic category approach, emphasizes **specialized areas of the brain and the networks connecting them**. The **multiple-factor approach** emphasizes **many different features and properties**. The **embodied approach** emphasizes **activity caused by the sensory and motor properties of objects**.",
+     "children": []
+    }
+   ]
   },
   "10": {
    "15:1": [],
@@ -5663,7 +8026,763 @@ window.THIRD_PART = {
      ]
     }
    ],
-   "16:45": []
+   "16:45": [],
+   "17:1": [],
+   "17:2": [
+    {
+     "text": "**Conceptual knowledge** is **knowledge that enables us to recognize objects and events and to make inferences about their properties**.",
+     "children": [
+      "An inference is a conclusion about something that has not been observed directly."
+     ]
+    },
+    {
+     "text": "A **concept** is a **mental representation used for a variety of cognitive functions**.",
+     "children": [
+      "It can be the **meaning of objects, events, and abstract ideas**, and it can be the **mental representation of a class or individual**."
+     ]
+    },
+    {
+     "text": "**Categorization** is **the process by which things are placed into groups called categories**.",
+     "children": [
+      "**Categories are all possible examples of a particular concept**, and **our knowledge of the world is organized in categories**."
+     ]
+    }
+   ],
+   "17:3": [
+    {
+     "text": "The **category “cat” includes tabbies, Siamese cats, Persian cats, wild cats** and more.",
+     "children": [
+      "**Identifying something as a “cat” allows you to assume a number of things about its anatomy, behavior** and other properties."
+     ]
+    },
+    {
+     "text": "Knowing that an animal is a cat tells a person that it probably has whiskers, catches mice, meows and purrs, and sleeps a lot.",
+     "children": [
+      "**That is good because we do not have to treat each new cat we encounter as sui generis**, which means as one of a kind.",
+      "The category supplies the knowledge."
+     ]
+    }
+   ],
+   "17:4": [
+    {
+     "text": "Categories **help to understand individual cases not previously encountered**.",
+     "children": [
+      "A person who meets a new animal and recognizes it as a cat already knows a great deal about it."
+     ]
+    },
+    {
+     "text": "Categories are **“pointers to knowledge.”** They **provide a wealth of general information about an item**, and they **allow us to identify the special characteristics of a particular item**.",
+     "children": [
+      "Knowing what cats are usually like makes it easy to notice what is unusual about one cat."
+     ]
+    },
+    {
+     "text": "**If there were no such things as categories, we would have a very hard time dealing with the world**.",
+     "children": [
+      "Every object would have to be learned about separately."
+     ]
+    }
+   ],
+   "17:5": [
+    {
+     "text": "Two questions show why categories are complicated.",
+     "children": [
+      "**If I cut a cat’s whiskers off, or show that it can easily be trained, does it cease to be a cat?** It does not.",
+      "The animal is still a cat without one or two of the usual properties."
+     ]
+    },
+    {
+     "text": "**If I start meowing and purring, does that make me a cat?** It does not.",
+     "children": [
+      "A person who has several properties of cats is still not a cat."
+     ]
+    },
+    {
+     "text": "**These seem like absurd propositions, but explaining why turns out to be very hard**.",
+     "children": [
+      "No single property decides whether something is a cat, so a list of required properties does not work as a rule for membership."
+     ]
+    }
+   ],
+   "17:6": [
+    {
+     "text": "In the **definitional approach to categorization**, we **determine category membership based on whether the object meets the definition of the category**.",
+     "children": []
+    },
+    {
+     "text": "This approach **does not work well**.",
+     "children": [
+      "It **works well for some things, such as geometric objects**.",
+      "A square can be defined as a figure with four equal sides and four right angles.",
+      "It does **not** work **for natural objects and human-made objects**."
+     ]
+    },
+    {
+     "text": "The reason is that **not all members of everyday categories have the same defining features**.",
+     "children": [
+      "An armchair, a straight wooden chair, a round cushioned chair and a rock that someone sits on can all be called chairs, and no one definition covers all of them."
+     ]
+    }
+   ],
+   "17:7": [
+    {
+     "text": "**Wittgenstein proposed the idea of family resemblance to deal with the problem that definitions often do not include all members of a category**.",
+     "children": [
+      "In **family resemblance**, **things in a category resemble one another in a number of ways**."
+     ]
+    },
+    {
+     "text": "Family resemblance **allows for some variation within a category**.",
+     "children": [
+      "Members do not all have to share one defining feature.",
+      "They only have to overlap with other members in several features."
+     ]
+    },
+    {
+     "text": "This leads to a different view of categorization.",
+     "children": [
+      "**Categorization may be based on determining how similar an object is to some standard representation of a category**."
+     ]
+    }
+   ],
+   "17:8": [
+    {
+     "text": "A **prototype** is **a representation of the “typical” member of a category**.",
+     "children": [
+      "It has the **characteristic features that describe what members of that concept are like**.",
+      "It is **an average of category members encountered in the past**."
+     ]
+    },
+    {
+     "text": "In the **prototype approach to categorization**, **membership in a category is determined by comparing the object to a prototype that represents the category**.",
+     "children": [
+      "The prototype for “bird” is not a sparrow, a robin or a blue jay.",
+      "It is an average of the birds a person has seen."
+     ]
+    }
+   ],
+   "17:9": [
+    {
+     "text": "**Not all birds are like robins, blue jays, or sparrows**.",
+     "children": [
+      "**Owls and penguins are also birds**.",
+      "**These variations represent differences in typicality**."
+     ]
+    },
+    {
+     "text": "In **Rosch (1975)**, participants **saw a category title (e.g. birds), and a list of about 50 members of the category**.",
+     "children": [
+      "They **were asked to rate the extent to which each member represented the category title**.",
+      "A rating of 1 meant a very good example, and a rating of 7 meant a poor example."
+     ]
+    },
+    {
+     "text": "For the category **birds**, sparrow was rated 1.18, owl 2.96, penguin 4.53 and bat 6.15. For the category **furniture**, chair and sofa were rated 1.04, china closet 2.59, mirror 4.39 and telephone 6.68. People agree that some members are better examples of a category than others.",
+     "children": []
+    }
+   ],
+   "17:10": [
+    {
+     "text": "**High prototypicality** means that a **category member closely resembles the category prototype**.",
+     "children": [
+      "It is a **“typical” member**.",
+      "**For the category “bird,”** a high-prototypicality member is a **robin**."
+     ]
+    },
+    {
+     "text": "**Low prototypicality** means that a **category member does not closely resemble the category prototype**.",
+     "children": [
+      "**For the category “bird,”** a low-prototypicality member is an **ostrich**.",
+      "Both are birds, but the robin is much closer to the average bird."
+     ]
+    }
+   ],
+   "17:11": [
+    {
+     "text": "**Prototypicality is related to family resemblance**.",
+     "children": [
+      "In **Rosch and Mervis’s (1975)** study, the instructions asked participants to list as many characteristics and attributes as they could for each of several common objects, such as chair, sofa, mirror and telephone."
+     ]
+    },
+    {
+     "text": "**Chairs, sofas, tables, and other “more prototypical” items of furniture share many characteristics with one another, whereas a mirror or a telephone share relatively few**.",
+     "children": [
+      "Items with high prototypicality are the ones with high family resemblance."
+     ]
+    },
+    {
+     "text": "**This will become important when we consider arguments about how to model categorical knowledge (e.g., connectionist networks)**.",
+     "children": []
+    }
+   ],
+   "17:12": [
+    {
+     "text": "The **typicality effect** is that **prototypical objects are processed preferentially**.",
+     "children": [
+      "In a **sentence verification task**, participants answer yes or no to sentences such as **“An apple is a fruit”** and **“A pomegranate is a fruit.”**"
+     ]
+    },
+    {
+     "text": "**Faster responses were made to prototypical items**.",
+     "children": [
+      "Reaction time was about 520 milliseconds for a high-prototypicality item such as apple and about 650 milliseconds for a low-prototypicality item such as pomegranate."
+     ]
+    },
+    {
+     "text": "**Further, when asked to list as many objects in a category as possible, participants tend to list the most prototypical members first**.",
+     "children": []
+    }
+   ],
+   "17:13": [
+    {
+     "text": "**Prototypical category members are more affected by a priming stimulus**.",
+     "children": [
+      "Participants **heard the prime (e.g.",
+      "“green”)**.",
+      "**Two seconds later, they saw a pair of colors side by side**.",
+      "They **were asked to press a key as quickly as possible if the two were the same**."
+     ]
+    },
+    {
+     "text": "When the two colors were the same and were **good examples** of green, the reaction time for “same” was **610 milliseconds**.",
+     "children": [
+      "When the two colors were the same and were **poor examples** of green, the reaction time was **780 milliseconds**.",
+      "After the prime, the good examples were judged faster than the poor examples."
+     ]
+    }
+   ],
+   "17:14": [
+    {
+     "text": "Hearing the word “green” leads a person to form a **prototype for green**.",
+     "children": [
+      "This prototype is a good, typical green."
+     ]
+    },
+    {
+     "text": "A pair of good green examples is a **good match** to that prototype, so the person responds quickly.",
+     "children": [
+      "A pair of light green examples is a **poor match** to the prototype, so the person responds more slowly.",
+      "The priming result therefore fits the prototype approach."
+     ]
+    }
+   ],
+   "17:15": [
+    {
+     "text": "In the **exemplar approach**, a **concept is represented by multiple examples rather than a single averaged prototype**.",
+     "children": [
+      "The **examples are actual category members, not abstract averages**.",
+      "**To categorize, compare the new item to stored examples**."
+     ]
+    },
+    {
+     "text": "**This approach can explain Rosch’s results**.",
+     "children": [
+      "**Objects that are like more of the exemplars are classified faster**.",
+      "A sparrow is like many stored birds, so it is classified quickly."
+     ]
+    },
+    {
+     "text": "The exemplar approach is **similar to the prototype view** in that **representing a category is not defining it**.",
+     "children": [
+      "It is **different** in that the **representation is not abstract**.",
+      "It consists of **descriptions of specific examples**."
+     ]
+    }
+   ],
+   "17:16": [
+    {
+     "text": "The exemplar approach **explains the typicality effect**.",
+     "children": [
+      "It also **takes into account atypical cases**.",
+      "**Rather than comparing a penguin to an “average” bird, we remember that there are some birds that don’t fly**."
+     ]
+    },
+    {
+     "text": "It **deals with variable categories**, in which the members differ a great deal from one another.",
+     "children": []
+    },
+    {
+     "text": "**Which approach do we use? We may use both**.",
+     "children": [
+      "**Exemplars may work best for small categories**, and **prototypes may work best for larger categories**."
+     ]
+    }
+   ],
+   "17:17": [
+    {
+     "text": "**Rosch’s research indicates that there are different levels of categories**.",
+     "children": [
+      "The **superordinate level (or global level)** is a general category such as **“furniture.”** The **basic level** is a category such as **“table.”** The **subordinate level (or specific level)** is a category such as **“kitchen table.”**"
+     ]
+    },
+    {
+     "text": "Two questions follow.",
+     "children": [
+      "**Is this just an intuitive description of different levels of categories, or is this how concepts are organized in the mind?** **Also, what is “basic” about the “basic level”?** The evidence shows that the basic level is special in the mind.",
+      "Going above it loses a lot of information, going below it gains only a little, and people name objects at the basic level."
+     ]
+    }
+   ],
+   "17:18": [
+    {
+     "text": "In **Rosch and colleagues (1976)**, participants **were asked to list as many features as they could that would be common to all or most of the objects in the category**.",
+     "children": [
+      "They listed about 3 common features for the global category furniture, about 9 for the basic category table and about 10.3 for the specific category kitchen table."
+     ]
+    },
+    {
+     "text": "**Going above basic level results in a large loss of information**.",
+     "children": [
+      "**Many fewer features are shared by members of the category “furniture” than by members of the category “table.”**"
+     ]
+    },
+    {
+     "text": "**Going below basic level results in little gain of information**.",
+     "children": [
+      "**“Kitchen tables” do not have a ton more in common with one another than “tables.”** The basic level is the level at which a category name carries a lot of information without becoming overly specific."
+     ]
+    }
+   ],
+   "17:19": [
+    {
+     "text": "Two objects are shown, an electric guitar and a fish, with the instruction **“Quick, name these objects.”** Most people say “guitar” and “fish.”",
+     "children": []
+    },
+    {
+     "text": "These names are basic-level names.",
+     "children": [
+      "A person could have said “instrument” or “Stratocaster” for the first object and “animal” or “trout” for the second, but those are not the names that come to mind first."
+     ]
+    }
+   ],
+   "17:20": [
+    {
+     "text": "**When participants are asked to name these objects, they named them by their basic level name**.",
+     "children": [
+      "They said **guitar, rather than Stratocaster (specific) or instrument (global)**.",
+      "They said **fish, rather than trout or animal**."
+     ]
+    },
+    {
+     "text": "This is further evidence that the basic level is special.",
+     "children": [
+      "It is the level people use first when they name an object."
+     ]
+    }
+   ],
+   "17:21": [
+    {
+     "text": "**Rosch’s experiments were carried out on college undergraduates**.",
+     "children": [
+      "The result was that **there is a category level, which they called “basic,” that reflects college undergraduates’ everyday experience**."
+     ]
+    },
+    {
+     "text": "**Coley, Medin & Atran (1997)** **asked both undergraduates and horticulturalists to walk around campus and name as specifically as possible 44 different plants**.",
+     "children": [
+      "**75% of the undergraduates used “trees.”** **Horticulturalists used “specific” categories instead, such as “oak.”**"
+     ]
+    },
+    {
+     "text": "People of the **Guatemalan Itzaj culture call an oak tree an “oak” and not a tree**.",
+     "children": [
+      "**For people who speak their language, “oak” behaves like a basic-level category**.",
+      "The level that is basic therefore depends on a person’s experience and culture."
+     ]
+    }
+   ],
+   "17:22": [
+    {
+     "text": "**Tanaka and Taylor (1991)** **asked bird experts and non-experts to name pictures of objects**.",
+     "children": [
+      "**Experts responded by specifying the birds’ species**, with names such as “sparrow” and “robin.” Non-experts mostly responded with the basic-level name “bird.”"
+     ]
+    },
+    {
+     "text": "**Experts had learned to pay attention to features of birds that non-experts were unaware of**.",
+     "children": [
+      "Their knowledge changed the level at which they named the birds."
+     ]
+    },
+    {
+     "text": "**People’s knowledge and properties of objects are both important factors in categorization**.",
+     "children": []
+    }
+   ],
+   "17:23": [
+    {
+     "text": "In the semantic network approach, **concepts are arranged in networks that represent the way concepts are organized in the mind**.",
+     "children": []
+    },
+    {
+     "text": "In the model of **Collins and Quillian (1969)**, a **node** is a **category or concept**.",
+     "children": [
+      "**Concepts are linked by structured pointers** such as **“is a”** and **“has.”** For example, a canary “is a” bird, and a bird “has” feathers."
+     ]
+    },
+    {
+     "text": "The network is a **model for how concepts and properties are associated in the mind**.",
+     "children": [
+      "It is a **hierarchical model, more specific to more general**.",
+      "Canary is below bird, bird is below animal, and animal is below living thing."
+     ]
+    }
+   ],
+   "17:24": [
+    {
+     "text": "**Inheritance** means that **lower-level items share properties of higher-level items**.",
+     "children": [
+      "A canary is a bird, so a canary has the properties of birds."
+     ]
+    },
+    {
+     "text": "**Cognitive economy** means that **shared properties are only stored at higher-level nodes**.",
+     "children": [
+      "**Including “can fly” for every node would be inefficient**, so “can fly” is stored once at the node for bird."
+     ]
+    },
+    {
+     "text": "**Exceptions are stored at lower nodes**.",
+     "children": [
+      "For example, **“ostrich” would have the property “can’t fly.”**"
+     ]
+    }
+   ],
+   "17:25": [
+    {
+     "text": "**Given the network’s hierarchical organization, general concepts are at the top, and specific ones at the bottom**.",
+     "children": []
+    },
+    {
+     "text": "This gives a **testable prediction**.",
+     "children": [
+      "**The time it takes for a person to retrieve information about a concept should be determined by the distance that must be traveled through the network**."
+     ]
+    },
+    {
+     "text": "The prediction was supported.",
+     "children": [
+      "**It takes longer to answer “yes” to “A canary is an animal” compared to “A canary is a bird.”** Response time rose with the number of levels to be traversed, both for category statements and for property statements such as “A canary can sing,” “A canary can fly” and “A canary has skin.”"
+     ]
+    }
+   ],
+   "17:26": [
+    {
+     "text": "**Spreading activation** is a property of semantic networks.",
+     "children": [
+      "**Activation is the arousal level of a node**.",
+      "**When a node is activated, activity spreads out along all connected links**."
+     ]
+    },
+    {
+     "text": "**Concepts that receive activation are primed and more easily accessed from memory**.",
+     "children": [
+      "For example, activating “robin” sends activation to “bird,” and from there it spreads to “canary,” “ostrich” and “animal,” which are then primed."
+     ]
+    }
+   ],
+   "17:27": [
+    {
+     "text": "**Meyer & Schvaneveldt tested for “spreading activation” with a lexical decision task using pairs of words**.",
+     "children": [
+      "In a lexical decision task, a person decides as quickly as possible whether the letter strings are real words.",
+      "Some pairs were two nonwords, some had one nonword, some were two unrelated words such as chair and money, and some were two related words such as bread and wheat."
+     ]
+    },
+    {
+     "text": "**People were faster to respond to related pairs than unrelated pairs**.",
+     "children": [
+      "Reaction time was about 855 milliseconds for words that were associated and about 940 milliseconds for words that were not associated.",
+      "Reading the first word spread activation to related words, so the second word was easier to access."
+     ]
+    },
+    {
+     "text": "**Many studies involving semantic priming have produced similar results**.",
+     "children": []
+    }
+   ],
+   "17:28": [
+    {
+     "text": "The model of Collins and Quillian **cannot explain typicality effects**.",
+     "children": [
+      "The **typicality effect** is that **reaction times for statements about an object are faster for more typical members of a category**.",
+      "**The model instead predicts equal fast reaction times to both “canary” and “ostrich,” as they are one node away from “bird.”**"
+     ]
+    },
+    {
+     "text": "The idea of **cognitive economy** is also questioned.",
+     "children": [
+      "There is **some evidence that people store specific properties of concepts right at the node for the concept**."
+     ]
+    },
+    {
+     "text": "**Some sentence-verification results are problematic for the model**.",
+     "children": [
+      "**“A pig is a mammal” is slower than “A pig is an animal.”** In the network, mammal is closer to pig than animal is, so the model predicts the opposite."
+     ]
+    }
+   ],
+   "17:29": [
+    {
+     "text": "The **connectionist approach** is a **“new” (late 80’s) approach to networks**.",
+     "children": [
+      "It is based on **criticism of structured networks** and on **advances in understanding how information is represented in the brain**."
+     ]
+    },
+    {
+     "text": "**Connectionism** is **an approach to creating computer models for representing cognitive processes**.",
+     "children": [
+      "It is **also called parallel distributed processing**, because **knowledge is represented in the distributed activity of many units**."
+     ]
+    },
+    {
+     "text": "**Weights determine at each connection how strongly an incoming signal will activate the next unit**.",
+     "children": []
+    }
+   ],
+   "17:30": [
+    {
+     "text": "**Units** are **inspired by the neurons in the brain**.",
+     "children": [
+      "**Patterns of activity in these units represent concepts and their properties**.",
+      "The **lines** are **connections that transfer activation between the units**, and they are **inspired by axons**."
+     ]
+    },
+    {
+     "text": "**Input units** are **units activated by stimuli from the environment**.",
+     "children": [
+      "Hidden units lie between the input units and the output units.",
+      "**Output units receive input from hidden units**."
+     ]
+    },
+    {
+     "text": "A **connection weight** determines **how signals sent from one unit either increase or decrease the activity in the next unit**.",
+     "children": []
+    }
+   ],
+   "17:31": [
+    {
+     "text": "**High connection weights result in a strong tendency to excite the next unit**.",
+     "children": [
+      "**Negative connection weights can decrease excitation or inhibit activation of the receiving unit**."
+     ]
+    },
+    {
+     "text": "**Activation of units in a network depends on two things**.",
+     "children": [
+      "One is **the signal that originates in the input units**.",
+      "The other is **the connection weights throughout the network**."
+     ]
+    },
+    {
+     "text": "**A stimulus is represented by the pattern of activity that is distributed across the other units**.",
+     "children": [
+      "The pattern across the units is what stands for the stimulus."
+     ]
+    }
+   ],
+   "17:32": [
+    {
+     "text": "**For the network to operate properly, the connection weights have to be adjusted via a learning process**.",
+     "children": []
+    },
+    {
+     "text": "Learning occurs in steps.",
+     "children": [
+      "The **network responds to a stimulus**.",
+      "It **produces a “guess.”** It is **provided with the correct response**.",
+      "It then **modifies weights to increase the match between its response and the correct response**."
+     ]
+    }
+   ],
+   "17:33": [
+    {
+     "text": "The **error signal** is the **difference between the actual activity of each output unit and the correct activity**.",
+     "children": [
+      "In **back-propagation**, the **error signal is transmitted back through the circuit**.",
+      "This **indicates how weights should be changed to allow the output signal to match the correct signal**."
+     ]
+    },
+    {
+     "text": "**The process repeats until the error signal is zero**.",
+     "children": [
+      "There is **initially weak and undifferentiated activation of property units, with many errors**.",
+      "**Error signals are then sent back**, and **changes are made in connection weights**."
+     ]
+    },
+    {
+     "text": "**Each learning experience causes only a small change in the connection weights**, so learning is gradual.",
+     "children": []
+    }
+   ],
+   "17:34": [
+    {
+     "text": "The activity of the hidden units changes as the network learns.",
+     "children": [
+      "Activity in the hidden units is shown for three concepts, rose, daisy and canary, after **0, 250, 750 and 2,500 learning trials**."
+     ]
+    },
+    {
+     "text": "At 0 trials, the patterns of activity for the three concepts look alike.",
+     "children": [
+      "As learning continues, the patterns become different.",
+      "By 2,500 trials, rose and daisy have similar patterns, and canary has a different pattern.",
+      "The network has learned to represent similar concepts with similar patterns of activity."
+     ]
+    }
+   ],
+   "17:35": [
+    {
+     "text": "**In connectionist networks, information about each concept is contained in the distributed pattern of activity across a number of units**.",
+     "children": []
+    },
+    {
+     "text": "**The operation of connectionist networks is not totally disrupted by damage**.",
+     "children": [
+      "**Graceful degradation** means that **disruption of performance occurs gradually as parts of the system are damaged**."
+     ]
+    },
+    {
+     "text": "**Connectionist networks can explain generalization of learning**.",
+     "children": [
+      "The **slow learning process creates a network capable of handling a wide range of inputs**."
+     ]
+    }
+   ],
+   "17:36": [],
+   "17:37": [
+    {
+     "text": "**Different areas of the brain may be specialized to process information about different categories**.",
+     "children": [
+      "There is a **double dissociation for the categories “living things” and “nonliving things.”** Some patients have trouble with living things and not with nonliving things, and other patients show the reverse."
+     ]
+    },
+    {
+     "text": "Each side of the dissociation is a **category-specific memory impairment**, which is an impairment in which a person loses the ability to identify one type of object and keeps the ability to identify other types.",
+     "children": []
+    },
+    {
+     "text": "**Do different semantic categories “live” in different parts of the brain?** The areas involved are **mostly in the temporal lobe**, and the approaches that follow give different answers about how category knowledge is laid out.",
+     "children": []
+    }
+   ],
+   "17:38": [
+    {
+     "text": "The **sensory-functional hypothesis** states that **our ability to differentiate living things and artifacts depends on a semantic memory system that distinguishes sensory attributes and a system that distinguishes function**.",
+     "children": [
+      "An artifact is a human-made object."
+     ]
+    },
+    {
+     "text": "It **predicts** that **a patient who can’t identify living things should have a more general impairment processing sensory attributes**.",
+     "children": []
+    },
+    {
+     "text": "The reason is that **animals and other natural kinds are more strongly associated with their sensory attributes, whereas artifacts are more strongly associated with their uses**.",
+     "children": [
+      "Ratings fit this.",
+      "Animals were rated higher than artifacts on color and motion, and artifacts were rated higher than animals on performed action."
+     ]
+    }
+   ],
+   "17:39": [
+    {
+     "text": "The **sensory-functional hypothesis predicts an association between deficits in processing of sensory attributes and deficits in recognizing animals (but not artifacts)**.",
+     "children": []
+    },
+    {
+     "text": "**Warrington and Shallice found evidence for this (Patients K.C. and E.W.)**.",
+     "children": [
+      "Both patients performed at about 90 percent correct for nonanimals, which were nonliving things, fruits and vegetables, and much lower for living animals.",
+      "**Other studies confirmed this, and further found an association between functional attributes and artifacts**."
+     ]
+    },
+    {
+     "text": "**But there are a number of exceptions to this overall pattern**, so the hypothesis does not explain every patient.",
+     "children": []
+    }
+   ],
+   "17:40": [
+    {
+     "text": "The **semantic category approach** proposes that there are **specific neural circuits in the brain for specific categories**.",
+     "children": [
+      "These circuits are **distributed over a number of different cortical areas**."
+     ]
+    },
+    {
+     "text": "**There may be a limited number of categories that are innately determined because of their importance for survival**.",
+     "children": []
+    },
+    {
+     "text": "A different possibility is that the unusual impairments are haphazard results of strokes that people have late in life.",
+     "children": [
+      "One reported case, for example, was a category-specific naming deficit for medical terms after a hemorrhage."
+     ]
+    }
+   ],
+   "17:41": [
+    {
+     "text": "The **multiple factors approach** **looks at how concepts are divided up within a category rather than identifying specific brain areas or networks for different concepts**.",
+     "children": []
+    },
+    {
+     "text": "**Mechanical devices (e.g. musical instruments) overlap with artifacts**, because they **involve performing actions**, and with **animals**, because they **involve sound and motion**.",
+     "children": [
+      "As a result, **mechanical devices have a widely distributed semantic representation**, in **regions important for the representation of both living things and artifacts**."
+     ]
+    },
+    {
+     "text": "For this reason, **patients may be able to identify mechanical devices even if they perform poorly for other types of artifacts**.",
+     "children": []
+    }
+   ],
+   "17:42": [
+    {
+     "text": "**Another differentiating factor between animals and artifacts is crowding**.",
+     "children": [
+      "**Crowding** occurs **when different concepts within a category share many properties**.",
+      "For example, **“animals” all share “eyes,” “legs,” and “the ability to move.”** **In contrast, artifacts share fewer properties**."
+     ]
+    },
+    {
+     "text": "**Patients with category-specific impairments may not have a category impairment at all**.",
+     "children": [
+      "**Patients may have difficulty recognizing living things because they have difficulty distinguishing between items that share similar features**."
+     ]
+    }
+   ],
+   "17:43": [
+    {
+     "text": "In the **embodied approach**, **our knowledge of concepts is based on reactivation of sensory and motor processes that occur when we interact with the object**.",
+     "children": []
+    },
+    {
+     "text": "When we use a hammer, **different sensory areas are activated due to the hammer’s size and shape**, and **motor areas are activated that are involved in carrying out actions involved in using a hammer**.",
+     "children": [
+      "**When we see a hammer, or see the word “hammer,” the same areas get activated**."
+     ]
+    },
+    {
+     "text": "This shows an **interaction between action and perception**.",
+     "children": [
+      "In brain imaging, different motor areas are active for leg and foot actions, for arm and hand actions, and for face and mouth actions."
+     ]
+    }
+   ],
+   "17:44": [
+    {
+     "text": "**The three approaches agree: information about concepts is distributed across many structures in the brain**.",
+     "children": []
+    },
+    {
+     "text": "**The approaches differ in their emphasis on the type of information that is most important**.",
+     "children": [
+      "The **category-specific approach**, which is the semantic category approach, emphasizes **specialized areas of the brain and networks connecting them**.",
+      "The **multiple-factor approach** emphasizes **the role of many different features and properties**.",
+      "The **embodied approach** emphasizes **activity caused by the sensory and motor properties of objects**."
+     ]
+    }
+   ]
   },
   "12": {
    "15:1": [],
@@ -7571,7 +10690,1015 @@ window.THIRD_PART = {
      ]
     }
    ],
-   "16:45": []
+   "16:45": [],
+   "17:1": [],
+   "17:2": [
+    {
+     "text": "**Conceptual knowledge** is **knowledge that enables us to recognize objects and events and to make inferences about their properties**.",
+     "children": [
+      "An inference is a conclusion about something that has not been observed directly."
+     ]
+    },
+    {
+     "text": "A **concept** is a **mental representation used for a variety of cognitive functions**.",
+     "children": [
+      "It can be the **meaning of objects, events, and abstract ideas**, and it can be the **mental representation of a class or individual**."
+     ]
+    },
+    {
+     "text": "**Categorization** is **the process by which things are placed into groups called categories**.",
+     "children": [
+      "**Categories are all possible examples of a particular concept**, and **our knowledge of the world is organized in categories**."
+     ]
+    },
+    {
+     "text": "These definitions matter because every later approach is an answer to one question, which is how things are placed into categories.",
+     "children": [
+      "A concept is the mental representation, and a category is all the examples of that concept."
+     ]
+    }
+   ],
+   "17:3": [
+    {
+     "text": "The **category “cat” includes tabbies, Siamese cats, Persian cats, wild cats** and more.",
+     "children": [
+      "**Identifying something as a “cat” allows you to assume a number of things about its anatomy, behavior** and other properties."
+     ]
+    },
+    {
+     "text": "Knowing that an animal is a cat tells a person that it probably has whiskers, catches mice, meows and purrs, and sleeps a lot.",
+     "children": [
+      "**That is good because we do not have to treat each new cat we encounter as sui generis**, which means as one of a kind.",
+      "The category supplies the knowledge."
+     ]
+    },
+    {
+     "text": "The example matters because one word carries a great deal of knowledge. Calling an animal a cat lets a person assume many of its properties.",
+     "children": [
+      "Each new cat does not have to be learned about separately."
+     ]
+    }
+   ],
+   "17:4": [
+    {
+     "text": "Categories **help to understand individual cases not previously encountered**.",
+     "children": [
+      "A person who meets a new animal and recognizes it as a cat already knows a great deal about it."
+     ]
+    },
+    {
+     "text": "Categories are **“pointers to knowledge.”** They **provide a wealth of general information about an item**, and they **allow us to identify the special characteristics of a particular item**.",
+     "children": [
+      "Knowing what cats are usually like makes it easy to notice what is unusual about one cat."
+     ]
+    },
+    {
+     "text": "**If there were no such things as categories, we would have a very hard time dealing with the world**.",
+     "children": [
+      "Every object would have to be learned about separately."
+     ]
+    },
+    {
+     "text": "Categories matter because they give knowledge about things a person has never met before. They are pointers to knowledge.",
+     "children": [
+      "Without categories, dealing with the world would be very hard."
+     ]
+    }
+   ],
+   "17:5": [
+    {
+     "text": "Two questions show why categories are complicated.",
+     "children": [
+      "**If I cut a cat’s whiskers off, or show that it can easily be trained, does it cease to be a cat?** It does not.",
+      "The animal is still a cat without one or two of the usual properties."
+     ]
+    },
+    {
+     "text": "**If I start meowing and purring, does that make me a cat?** It does not.",
+     "children": [
+      "A person who has several properties of cats is still not a cat."
+     ]
+    },
+    {
+     "text": "**These seem like absurd propositions, but explaining why turns out to be very hard**.",
+     "children": [
+      "No single property decides whether something is a cat, so a list of required properties does not work as a rule for membership."
+     ]
+    },
+    {
+     "text": "The two questions matter because they show that no single property decides membership. A cat without whiskers is still a cat.",
+     "children": [
+      "Explaining why is very hard, which is the problem the approaches try to solve."
+     ]
+    }
+   ],
+   "17:6": [
+    {
+     "text": "In the **definitional approach to categorization**, we **determine category membership based on whether the object meets the definition of the category**.",
+     "children": []
+    },
+    {
+     "text": "This approach **does not work well**.",
+     "children": [
+      "It **works well for some things, such as geometric objects**.",
+      "A square can be defined as a figure with four equal sides and four right angles.",
+      "It does **not** work **for natural objects and human-made objects**."
+     ]
+    },
+    {
+     "text": "The reason is that **not all members of everyday categories have the same defining features**.",
+     "children": [
+      "An armchair, a straight wooden chair, a round cushioned chair and a rock that someone sits on can all be called chairs, and no one definition covers all of them."
+     ]
+    },
+    {
+     "text": "The definitional approach matters because the other approaches try to solve the problem it leaves. Not all members of everyday categories have the same defining features.",
+     "children": [
+      "It works for geometric objects and not for natural or human-made objects."
+     ]
+    }
+   ],
+   "17:7": [
+    {
+     "text": "**Wittgenstein proposed the idea of family resemblance to deal with the problem that definitions often do not include all members of a category**.",
+     "children": [
+      "In **family resemblance**, **things in a category resemble one another in a number of ways**."
+     ]
+    },
+    {
+     "text": "Family resemblance **allows for some variation within a category**.",
+     "children": [
+      "Members do not all have to share one defining feature.",
+      "They only have to overlap with other members in several features."
+     ]
+    },
+    {
+     "text": "This leads to a different view of categorization.",
+     "children": [
+      "**Categorization may be based on determining how similar an object is to some standard representation of a category**."
+     ]
+    },
+    {
+     "text": "Family resemblance matters because it allows variation within a category. Members resemble one another in a number of ways without sharing one definition.",
+     "children": [
+      "Categorization may then be based on similarity to a standard representation."
+     ]
+    }
+   ],
+   "17:8": [
+    {
+     "text": "A **prototype** is **a representation of the “typical” member of a category**.",
+     "children": [
+      "It has the **characteristic features that describe what members of that concept are like**.",
+      "It is **an average of category members encountered in the past**."
+     ]
+    },
+    {
+     "text": "In the **prototype approach to categorization**, **membership in a category is determined by comparing the object to a prototype that represents the category**.",
+     "children": [
+      "The prototype for “bird” is not a sparrow, a robin or a blue jay.",
+      "It is an average of the birds a person has seen."
+     ]
+    },
+    {
+     "text": "The prototype matters because it is the standard an object is compared with. It is an average of the members a person has met.",
+     "children": [
+      "Membership is decided by comparing the object to the prototype."
+     ]
+    }
+   ],
+   "17:9": [
+    {
+     "text": "**Not all birds are like robins, blue jays, or sparrows**.",
+     "children": [
+      "**Owls and penguins are also birds**.",
+      "**These variations represent differences in typicality**."
+     ]
+    },
+    {
+     "text": "In **Rosch (1975)**, participants **saw a category title (e.g. birds), and a list of about 50 members of the category**.",
+     "children": [
+      "They **were asked to rate the extent to which each member represented the category title**.",
+      "A rating of 1 meant a very good example, and a rating of 7 meant a poor example."
+     ]
+    },
+    {
+     "text": "For the category **birds**, sparrow was rated 1.18, owl 2.96, penguin 4.53 and bat 6.15. For the category **furniture**, chair and sofa were rated 1.04, china closet 2.59, mirror 4.39 and telephone 6.68. People agree that some members are better examples of a category than others.",
+     "children": []
+    },
+    {
+     "text": "The ratings matter because people agreed that members differ in typicality. Sparrow was rated a very good bird, and bat was rated a poor one.",
+     "children": [
+      "A category has better and worse examples."
+     ]
+    }
+   ],
+   "17:10": [
+    {
+     "text": "**High prototypicality** means that a **category member closely resembles the category prototype**.",
+     "children": [
+      "It is a **“typical” member**.",
+      "**For the category “bird,”** a high-prototypicality member is a **robin**."
+     ]
+    },
+    {
+     "text": "**Low prototypicality** means that a **category member does not closely resemble the category prototype**.",
+     "children": [
+      "**For the category “bird,”** a low-prototypicality member is an **ostrich**.",
+      "Both are birds, but the robin is much closer to the average bird."
+     ]
+    },
+    {
+     "text": "The two terms matter because they describe how close a member is to the prototype. A robin is close to the prototype for bird, and an ostrich is not.",
+     "children": [
+      "Both are still birds."
+     ]
+    }
+   ],
+   "17:11": [
+    {
+     "text": "**Prototypicality is related to family resemblance**.",
+     "children": [
+      "In **Rosch and Mervis’s (1975)** study, the instructions asked participants to list as many characteristics and attributes as they could for each of several common objects, such as chair, sofa, mirror and telephone."
+     ]
+    },
+    {
+     "text": "**Chairs, sofas, tables, and other “more prototypical” items of furniture share many characteristics with one another, whereas a mirror or a telephone share relatively few**.",
+     "children": [
+      "Items with high prototypicality are the ones with high family resemblance."
+     ]
+    },
+    {
+     "text": "**This will become important when we consider arguments about how to model categorical knowledge (e.g., connectionist networks)**.",
+     "children": []
+    },
+    {
+     "text": "The link matters because it ties typicality to shared characteristics. The more prototypical items of furniture share many characteristics with one another.",
+     "children": [
+      "A mirror or a telephone shares relatively few."
+     ]
+    }
+   ],
+   "17:12": [
+    {
+     "text": "The **typicality effect** is that **prototypical objects are processed preferentially**.",
+     "children": [
+      "In a **sentence verification task**, participants answer yes or no to sentences such as **“An apple is a fruit”** and **“A pomegranate is a fruit.”**"
+     ]
+    },
+    {
+     "text": "**Faster responses were made to prototypical items**.",
+     "children": [
+      "Reaction time was about 520 milliseconds for a high-prototypicality item such as apple and about 650 milliseconds for a low-prototypicality item such as pomegranate."
+     ]
+    },
+    {
+     "text": "**Further, when asked to list as many objects in a category as possible, participants tend to list the most prototypical members first**.",
+     "children": []
+    },
+    {
+     "text": "The typicality effect matters because typicality changes behavior. Prototypical items are verified faster and listed first.",
+     "children": [
+      "“An apple is a fruit” is verified faster than “A pomegranate is a fruit.”"
+     ]
+    }
+   ],
+   "17:13": [
+    {
+     "text": "**Prototypical category members are more affected by a priming stimulus**.",
+     "children": [
+      "Participants **heard the prime (e.g.",
+      "“green”)**.",
+      "**Two seconds later, they saw a pair of colors side by side**.",
+      "They **were asked to press a key as quickly as possible if the two were the same**."
+     ]
+    },
+    {
+     "text": "When the two colors were the same and were **good examples** of green, the reaction time for “same” was **610 milliseconds**.",
+     "children": [
+      "When the two colors were the same and were **poor examples** of green, the reaction time was **780 milliseconds**.",
+      "After the prime, the good examples were judged faster than the poor examples."
+     ]
+    },
+    {
+     "text": "The result matters because the same prime helped good examples more than poor examples. The times were 610 and 780 milliseconds.",
+     "children": [
+      "Prototypical category members are more affected by a priming stimulus."
+     ]
+    }
+   ],
+   "17:14": [
+    {
+     "text": "Hearing the word “green” leads a person to form a **prototype for green**.",
+     "children": [
+      "This prototype is a good, typical green."
+     ]
+    },
+    {
+     "text": "A pair of good green examples is a **good match** to that prototype, so the person responds quickly.",
+     "children": [
+      "A pair of light green examples is a **poor match** to the prototype, so the person responds more slowly.",
+      "The priming result therefore fits the prototype approach."
+     ]
+    },
+    {
+     "text": "The explanation matters because it connects priming to the prototype. Hearing “green” creates a prototype for green.",
+     "children": [
+      "Good examples match that prototype, and poor examples match it less well."
+     ]
+    }
+   ],
+   "17:15": [
+    {
+     "text": "In the **exemplar approach**, a **concept is represented by multiple examples rather than a single averaged prototype**.",
+     "children": [
+      "The **examples are actual category members, not abstract averages**.",
+      "**To categorize, compare the new item to stored examples**."
+     ]
+    },
+    {
+     "text": "**This approach can explain Rosch’s results**.",
+     "children": [
+      "**Objects that are like more of the exemplars are classified faster**.",
+      "A sparrow is like many stored birds, so it is classified quickly."
+     ]
+    },
+    {
+     "text": "The exemplar approach is **similar to the prototype view** in that **representing a category is not defining it**.",
+     "children": [
+      "It is **different** in that the **representation is not abstract**.",
+      "It consists of **descriptions of specific examples**."
+     ]
+    },
+    {
+     "text": "The exemplar approach matters because it replaces one average with many real examples. A new item is compared with the stored examples.",
+     "children": [
+      "Like the prototype approach, it does not define the category."
+     ]
+    }
+   ],
+   "17:16": [
+    {
+     "text": "The exemplar approach **explains the typicality effect**.",
+     "children": [
+      "It also **takes into account atypical cases**.",
+      "**Rather than comparing a penguin to an “average” bird, we remember that there are some birds that don’t fly**."
+     ]
+    },
+    {
+     "text": "It **deals with variable categories**, in which the members differ a great deal from one another.",
+     "children": []
+    },
+    {
+     "text": "**Which approach do we use? We may use both**.",
+     "children": [
+      "**Exemplars may work best for small categories**, and **prototypes may work best for larger categories**."
+     ]
+    },
+    {
+     "text": "The exemplar approach matters because it handles members that an average does not fit. We remember that some birds do not fly.",
+     "children": [
+      "People may use both approaches, with exemplars for small categories and prototypes for larger ones."
+     ]
+    }
+   ],
+   "17:17": [
+    {
+     "text": "**Rosch’s research indicates that there are different levels of categories**.",
+     "children": [
+      "The **superordinate level (or global level)** is a general category such as **“furniture.”** The **basic level** is a category such as **“table.”** The **subordinate level (or specific level)** is a category such as **“kitchen table.”**"
+     ]
+    },
+    {
+     "text": "Two questions follow.",
+     "children": [
+      "**Is this just an intuitive description of different levels of categories, or is this how concepts are organized in the mind?** **Also, what is “basic” about the “basic level”?** The evidence shows that the basic level is special in the mind.",
+      "Going above it loses a lot of information, going below it gains only a little, and people name objects at the basic level."
+     ]
+    },
+    {
+     "text": "The three levels matter because a single object can be named at each of them. The same object is furniture, a table and a kitchen table.",
+     "children": [
+      "The basic level turns out to be special."
+     ]
+    }
+   ],
+   "17:18": [
+    {
+     "text": "In **Rosch and colleagues (1976)**, participants **were asked to list as many features as they could that would be common to all or most of the objects in the category**.",
+     "children": [
+      "They listed about 3 common features for the global category furniture, about 9 for the basic category table and about 10.3 for the specific category kitchen table."
+     ]
+    },
+    {
+     "text": "**Going above basic level results in a large loss of information**.",
+     "children": [
+      "**Many fewer features are shared by members of the category “furniture” than by members of the category “table.”**"
+     ]
+    },
+    {
+     "text": "**Going below basic level results in little gain of information**.",
+     "children": [
+      "**“Kitchen tables” do not have a ton more in common with one another than “tables.”** The basic level is the level at which a category name carries a lot of information without becoming overly specific."
+     ]
+    },
+    {
+     "text": "The result matters because the gain in common features is uneven. From furniture to table the number rises from about 3 to about 9, and from table to kitchen table it rises only to about 10.3.",
+     "children": [
+      "Going above the basic level loses a lot of information, and going below it gains little."
+     ]
+    }
+   ],
+   "17:19": [
+    {
+     "text": "Two objects are shown, an electric guitar and a fish, with the instruction **“Quick, name these objects.”** Most people say “guitar” and “fish.”",
+     "children": []
+    },
+    {
+     "text": "These names are basic-level names.",
+     "children": [
+      "A person could have said “instrument” or “Stratocaster” for the first object and “animal” or “trout” for the second, but those are not the names that come to mind first."
+     ]
+    },
+    {
+     "text": "The naming demonstration matters because the first name that comes to mind is at the basic level. Most people say “guitar” and “fish.”",
+     "children": [
+      "More general and more specific names were available."
+     ]
+    }
+   ],
+   "17:20": [
+    {
+     "text": "**When participants are asked to name these objects, they named them by their basic level name**.",
+     "children": [
+      "They said **guitar, rather than Stratocaster (specific) or instrument (global)**.",
+      "They said **fish, rather than trout or animal**."
+     ]
+    },
+    {
+     "text": "This is further evidence that the basic level is special.",
+     "children": [
+      "It is the level people use first when they name an object."
+     ]
+    },
+    {
+     "text": "The naming result matters because it shows the basic level in everyday behavior. People said guitar, not Stratocaster or instrument.",
+     "children": [
+      "They said fish, not trout or animal."
+     ]
+    }
+   ],
+   "17:21": [
+    {
+     "text": "**Rosch’s experiments were carried out on college undergraduates**.",
+     "children": [
+      "The result was that **there is a category level, which they called “basic,” that reflects college undergraduates’ everyday experience**."
+     ]
+    },
+    {
+     "text": "**Coley, Medin & Atran (1997)** **asked both undergraduates and horticulturalists to walk around campus and name as specifically as possible 44 different plants**.",
+     "children": [
+      "**75% of the undergraduates used “trees.”** **Horticulturalists used “specific” categories instead, such as “oak.”**"
+     ]
+    },
+    {
+     "text": "People of the **Guatemalan Itzaj culture call an oak tree an “oak” and not a tree**.",
+     "children": [
+      "**For people who speak their language, “oak” behaves like a basic-level category**.",
+      "The level that is basic therefore depends on a person’s experience and culture."
+     ]
+    },
+    {
+     "text": "The plant-naming result matters because the basic level changed with experience. Undergraduates said “trees,” and horticulturalists said “oak.”",
+     "children": [
+      "For people of the Guatemalan Itzaj culture, “oak” behaves like a basic-level category."
+     ]
+    }
+   ],
+   "17:22": [
+    {
+     "text": "**Tanaka and Taylor (1991)** **asked bird experts and non-experts to name pictures of objects**.",
+     "children": [
+      "**Experts responded by specifying the birds’ species**, with names such as “sparrow” and “robin.” Non-experts mostly responded with the basic-level name “bird.”"
+     ]
+    },
+    {
+     "text": "**Experts had learned to pay attention to features of birds that non-experts were unaware of**.",
+     "children": [
+      "Their knowledge changed the level at which they named the birds."
+     ]
+    },
+    {
+     "text": "**People’s knowledge and properties of objects are both important factors in categorization**.",
+     "children": []
+    },
+    {
+     "text": "The result matters because knowledge changed the level at which people named birds. Bird experts named the species, and non-experts said “bird.”",
+     "children": [
+      "People’s knowledge and the properties of objects are both important in categorization."
+     ]
+    }
+   ],
+   "17:23": [
+    {
+     "text": "In the semantic network approach, **concepts are arranged in networks that represent the way concepts are organized in the mind**.",
+     "children": []
+    },
+    {
+     "text": "In the model of **Collins and Quillian (1969)**, a **node** is a **category or concept**.",
+     "children": [
+      "**Concepts are linked by structured pointers** such as **“is a”** and **“has.”** For example, a canary “is a” bird, and a bird “has” feathers."
+     ]
+    },
+    {
+     "text": "The network is a **model for how concepts and properties are associated in the mind**.",
+     "children": [
+      "It is a **hierarchical model, more specific to more general**.",
+      "Canary is below bird, bird is below animal, and animal is below living thing."
+     ]
+    },
+    {
+     "text": "The semantic network matters because it is a model of how concepts are linked in the mind. Each concept is a node, joined to others by pointers such as “is a” and “has.”",
+     "children": [
+      "The model is hierarchical, from more specific to more general."
+     ]
+    }
+   ],
+   "17:24": [
+    {
+     "text": "**Inheritance** means that **lower-level items share properties of higher-level items**.",
+     "children": [
+      "A canary is a bird, so a canary has the properties of birds."
+     ]
+    },
+    {
+     "text": "**Cognitive economy** means that **shared properties are only stored at higher-level nodes**.",
+     "children": [
+      "**Including “can fly” for every node would be inefficient**, so “can fly” is stored once at the node for bird."
+     ]
+    },
+    {
+     "text": "**Exceptions are stored at lower nodes**.",
+     "children": [
+      "For example, **“ostrich” would have the property “can’t fly.”**"
+     ]
+    },
+    {
+     "text": "Cognitive economy matters because it says where properties are stored. A shared property is stored once at a higher node.",
+     "children": [
+      "Exceptions are stored at lower nodes."
+     ]
+    }
+   ],
+   "17:25": [
+    {
+     "text": "**Given the network’s hierarchical organization, general concepts are at the top, and specific ones at the bottom**.",
+     "children": []
+    },
+    {
+     "text": "This gives a **testable prediction**.",
+     "children": [
+      "**The time it takes for a person to retrieve information about a concept should be determined by the distance that must be traveled through the network**."
+     ]
+    },
+    {
+     "text": "The prediction was supported.",
+     "children": [
+      "**It takes longer to answer “yes” to “A canary is an animal” compared to “A canary is a bird.”** Response time rose with the number of levels to be traversed, both for category statements and for property statements such as “A canary can sing,” “A canary can fly” and “A canary has skin.”"
+     ]
+    },
+    {
+     "text": "The prediction matters because it can be tested with response times. Statements that require more levels took longer to verify.",
+     "children": [
+      "“A canary is an animal” took longer than “A canary is a bird.”"
+     ]
+    }
+   ],
+   "17:26": [
+    {
+     "text": "**Spreading activation** is a property of semantic networks.",
+     "children": [
+      "**Activation is the arousal level of a node**.",
+      "**When a node is activated, activity spreads out along all connected links**."
+     ]
+    },
+    {
+     "text": "**Concepts that receive activation are primed and more easily accessed from memory**.",
+     "children": [
+      "For example, activating “robin” sends activation to “bird,” and from there it spreads to “canary,” “ostrich” and “animal,” which are then primed."
+     ]
+    },
+    {
+     "text": "Spreading activation matters because it explains priming. Activity spreads from an activated node to the nodes linked to it.",
+     "children": [
+      "Those concepts are primed and are accessed more easily."
+     ]
+    }
+   ],
+   "17:27": [
+    {
+     "text": "**Meyer & Schvaneveldt tested for “spreading activation” with a lexical decision task using pairs of words**.",
+     "children": [
+      "In a lexical decision task, a person decides as quickly as possible whether the letter strings are real words.",
+      "Some pairs were two nonwords, some had one nonword, some were two unrelated words such as chair and money, and some were two related words such as bread and wheat."
+     ]
+    },
+    {
+     "text": "**People were faster to respond to related pairs than unrelated pairs**.",
+     "children": [
+      "Reaction time was about 855 milliseconds for words that were associated and about 940 milliseconds for words that were not associated.",
+      "Reading the first word spread activation to related words, so the second word was easier to access."
+     ]
+    },
+    {
+     "text": "**Many studies involving semantic priming have produced similar results**.",
+     "children": []
+    },
+    {
+     "text": "The result matters because related words were recognized faster. People responded faster to related pairs than to unrelated pairs.",
+     "children": [
+      "Many studies of semantic priming have found similar results."
+     ]
+    }
+   ],
+   "17:28": [
+    {
+     "text": "The model of Collins and Quillian **cannot explain typicality effects**.",
+     "children": [
+      "The **typicality effect** is that **reaction times for statements about an object are faster for more typical members of a category**.",
+      "**The model instead predicts equal fast reaction times to both “canary” and “ostrich,” as they are one node away from “bird.”**"
+     ]
+    },
+    {
+     "text": "The idea of **cognitive economy** is also questioned.",
+     "children": [
+      "There is **some evidence that people store specific properties of concepts right at the node for the concept**."
+     ]
+    },
+    {
+     "text": "**Some sentence-verification results are problematic for the model**.",
+     "children": [
+      "**“A pig is a mammal” is slower than “A pig is an animal.”** In the network, mammal is closer to pig than animal is, so the model predicts the opposite."
+     ]
+    },
+    {
+     "text": "The criticisms matter because they led to a new kind of network. The model cannot explain typicality effects.",
+     "children": [
+      "It also predicts the wrong order for “A pig is a mammal” and “A pig is an animal.”"
+     ]
+    }
+   ],
+   "17:29": [
+    {
+     "text": "The **connectionist approach** is a **“new” (late 80’s) approach to networks**.",
+     "children": [
+      "It is based on **criticism of structured networks** and on **advances in understanding how information is represented in the brain**."
+     ]
+    },
+    {
+     "text": "**Connectionism** is **an approach to creating computer models for representing cognitive processes**.",
+     "children": [
+      "It is **also called parallel distributed processing**, because **knowledge is represented in the distributed activity of many units**."
+     ]
+    },
+    {
+     "text": "**Weights determine at each connection how strongly an incoming signal will activate the next unit**.",
+     "children": []
+    },
+    {
+     "text": "Connectionism matters because knowledge is no longer stored at single nodes. It is represented in the distributed activity of many units.",
+     "children": [
+      "Weights set how strongly a signal activates the next unit."
+     ]
+    }
+   ],
+   "17:30": [
+    {
+     "text": "**Units** are **inspired by the neurons in the brain**.",
+     "children": [
+      "**Patterns of activity in these units represent concepts and their properties**.",
+      "The **lines** are **connections that transfer activation between the units**, and they are **inspired by axons**."
+     ]
+    },
+    {
+     "text": "**Input units** are **units activated by stimuli from the environment**.",
+     "children": [
+      "Hidden units lie between the input units and the output units.",
+      "**Output units receive input from hidden units**."
+     ]
+    },
+    {
+     "text": "A **connection weight** determines **how signals sent from one unit either increase or decrease the activity in the next unit**.",
+     "children": []
+    },
+    {
+     "text": "The parts matter because each has a job. Input units receive stimuli from the environment, and output units receive input from hidden units.",
+     "children": [
+      "Connection weights decide how a signal changes the activity of the next unit."
+     ]
+    }
+   ],
+   "17:31": [
+    {
+     "text": "**High connection weights result in a strong tendency to excite the next unit**.",
+     "children": [
+      "**Negative connection weights can decrease excitation or inhibit activation of the receiving unit**."
+     ]
+    },
+    {
+     "text": "**Activation of units in a network depends on two things**.",
+     "children": [
+      "One is **the signal that originates in the input units**.",
+      "The other is **the connection weights throughout the network**."
+     ]
+    },
+    {
+     "text": "**A stimulus is represented by the pattern of activity that is distributed across the other units**.",
+     "children": [
+      "The pattern across the units is what stands for the stimulus."
+     ]
+    },
+    {
+     "text": "Weights matter because activation depends on them. Activation depends on the signal from the input units and on the weights throughout the network.",
+     "children": [
+      "A stimulus is represented by a pattern of activity across units."
+     ]
+    }
+   ],
+   "17:32": [
+    {
+     "text": "**For the network to operate properly, the connection weights have to be adjusted via a learning process**.",
+     "children": []
+    },
+    {
+     "text": "Learning occurs in steps.",
+     "children": [
+      "The **network responds to a stimulus**.",
+      "It **produces a “guess.”** It is **provided with the correct response**.",
+      "It then **modifies weights to increase the match between its response and the correct response**."
+     ]
+    },
+    {
+     "text": "Learning matters because the weights do not start out correct. The network guesses, is given the correct response and adjusts its weights.",
+     "children": [
+      "The adjustment increases the match between its response and the correct response."
+     ]
+    }
+   ],
+   "17:33": [
+    {
+     "text": "The **error signal** is the **difference between the actual activity of each output unit and the correct activity**.",
+     "children": [
+      "In **back-propagation**, the **error signal is transmitted back through the circuit**.",
+      "This **indicates how weights should be changed to allow the output signal to match the correct signal**."
+     ]
+    },
+    {
+     "text": "**The process repeats until the error signal is zero**.",
+     "children": [
+      "There is **initially weak and undifferentiated activation of property units, with many errors**.",
+      "**Error signals are then sent back**, and **changes are made in connection weights**."
+     ]
+    },
+    {
+     "text": "**Each learning experience causes only a small change in the connection weights**, so learning is gradual.",
+     "children": []
+    },
+    {
+     "text": "Back-propagation matters because it tells the network how to change. The error signal is sent back through the circuit.",
+     "children": [
+      "Each learning experience changes the weights only a little, and the process repeats until the error signal is zero."
+     ]
+    }
+   ],
+   "17:34": [
+    {
+     "text": "The activity of the hidden units changes as the network learns.",
+     "children": [
+      "Activity in the hidden units is shown for three concepts, rose, daisy and canary, after **0, 250, 750 and 2,500 learning trials**."
+     ]
+    },
+    {
+     "text": "At 0 trials, the patterns of activity for the three concepts look alike.",
+     "children": [
+      "As learning continues, the patterns become different.",
+      "By 2,500 trials, rose and daisy have similar patterns, and canary has a different pattern.",
+      "The network has learned to represent similar concepts with similar patterns of activity."
+     ]
+    },
+    {
+     "text": "The hidden-unit patterns matter because they show what learning produces. Rose and daisy end with similar patterns, and canary ends with a different one.",
+     "children": [
+      "At the start, the three patterns looked alike."
+     ]
+    }
+   ],
+   "17:35": [
+    {
+     "text": "**In connectionist networks, information about each concept is contained in the distributed pattern of activity across a number of units**.",
+     "children": []
+    },
+    {
+     "text": "**The operation of connectionist networks is not totally disrupted by damage**.",
+     "children": [
+      "**Graceful degradation** means that **disruption of performance occurs gradually as parts of the system are damaged**."
+     ]
+    },
+    {
+     "text": "**Connectionist networks can explain generalization of learning**.",
+     "children": [
+      "The **slow learning process creates a network capable of handling a wide range of inputs**."
+     ]
+    },
+    {
+     "text": "These properties matter because the network keeps working when part of it fails. Damage disrupts performance gradually, which is graceful degradation.",
+     "children": [
+      "The network can also generalize to a wide range of inputs."
+     ]
+    }
+   ],
+   "17:36": [],
+   "17:37": [
+    {
+     "text": "**Different areas of the brain may be specialized to process information about different categories**.",
+     "children": [
+      "There is a **double dissociation for the categories “living things” and “nonliving things.”** Some patients have trouble with living things and not with nonliving things, and other patients show the reverse."
+     ]
+    },
+    {
+     "text": "Each side of the dissociation is a **category-specific memory impairment**, which is an impairment in which a person loses the ability to identify one type of object and keeps the ability to identify other types.",
+     "children": []
+    },
+    {
+     "text": "**Do different semantic categories “live” in different parts of the brain?** The areas involved are **mostly in the temporal lobe**, and the approaches that follow give different answers about how category knowledge is laid out.",
+     "children": []
+    },
+    {
+     "text": "The double dissociation matters because it suggests categories are handled separately in the brain. Living things and nonliving things can each be impaired alone.",
+     "children": [
+      "The areas involved are mostly in the temporal lobe."
+     ]
+    }
+   ],
+   "17:38": [
+    {
+     "text": "The **sensory-functional hypothesis** states that **our ability to differentiate living things and artifacts depends on a semantic memory system that distinguishes sensory attributes and a system that distinguishes function**.",
+     "children": [
+      "An artifact is a human-made object."
+     ]
+    },
+    {
+     "text": "It **predicts** that **a patient who can’t identify living things should have a more general impairment processing sensory attributes**.",
+     "children": []
+    },
+    {
+     "text": "The reason is that **animals and other natural kinds are more strongly associated with their sensory attributes, whereas artifacts are more strongly associated with their uses**.",
+     "children": [
+      "Ratings fit this.",
+      "Animals were rated higher than artifacts on color and motion, and artifacts were rated higher than animals on performed action."
+     ]
+    },
+    {
+     "text": "The hypothesis matters because it explains a category impairment through two kinds of attribute. Animals are tied to sensory attributes, and artifacts are tied to uses.",
+     "children": [
+      "A patient who cannot identify living things should have a general impairment with sensory attributes."
+     ]
+    }
+   ],
+   "17:39": [
+    {
+     "text": "The **sensory-functional hypothesis predicts an association between deficits in processing of sensory attributes and deficits in recognizing animals (but not artifacts)**.",
+     "children": []
+    },
+    {
+     "text": "**Warrington and Shallice found evidence for this (Patients K.C. and E.W.)**.",
+     "children": [
+      "Both patients performed at about 90 percent correct for nonanimals, which were nonliving things, fruits and vegetables, and much lower for living animals.",
+      "**Other studies confirmed this, and further found an association between functional attributes and artifacts**."
+     ]
+    },
+    {
+     "text": "**But there are a number of exceptions to this overall pattern**, so the hypothesis does not explain every patient.",
+     "children": []
+    },
+    {
+     "text": "The patient evidence matters because it supports the hypothesis, and the exceptions show it does not fit every patient. Patients K.C. and E.W. did much worse with living animals.",
+     "children": [
+      "There are a number of exceptions to the overall pattern."
+     ]
+    }
+   ],
+   "17:40": [
+    {
+     "text": "The **semantic category approach** proposes that there are **specific neural circuits in the brain for specific categories**.",
+     "children": [
+      "These circuits are **distributed over a number of different cortical areas**."
+     ]
+    },
+    {
+     "text": "**There may be a limited number of categories that are innately determined because of their importance for survival**.",
+     "children": []
+    },
+    {
+     "text": "A different possibility is that the unusual impairments are haphazard results of strokes that people have late in life.",
+     "children": [
+      "One reported case, for example, was a category-specific naming deficit for medical terms after a hemorrhage."
+     ]
+    },
+    {
+     "text": "The semantic category approach matters because it gives a different answer, and it is called the category-specific approach in the summary. It proposes specific neural circuits for specific categories.",
+     "children": [
+      "Some categories may be innately determined because of their importance for survival."
+     ]
+    }
+   ],
+   "17:41": [
+    {
+     "text": "The **multiple factors approach** **looks at how concepts are divided up within a category rather than identifying specific brain areas or networks for different concepts**.",
+     "children": []
+    },
+    {
+     "text": "**Mechanical devices (e.g. musical instruments) overlap with artifacts**, because they **involve performing actions**, and with **animals**, because they **involve sound and motion**.",
+     "children": [
+      "As a result, **mechanical devices have a widely distributed semantic representation**, in **regions important for the representation of both living things and artifacts**."
+     ]
+    },
+    {
+     "text": "For this reason, **patients may be able to identify mechanical devices even if they perform poorly for other types of artifacts**.",
+     "children": []
+    },
+    {
+     "text": "The multiple factors approach matters because it looks inside a category. Mechanical devices overlap with both artifacts and animals.",
+     "children": [
+      "So they have a widely distributed semantic representation."
+     ]
+    }
+   ],
+   "17:42": [
+    {
+     "text": "**Another differentiating factor between animals and artifacts is crowding**.",
+     "children": [
+      "**Crowding** occurs **when different concepts within a category share many properties**.",
+      "For example, **“animals” all share “eyes,” “legs,” and “the ability to move.”** **In contrast, artifacts share fewer properties**."
+     ]
+    },
+    {
+     "text": "**Patients with category-specific impairments may not have a category impairment at all**.",
+     "children": [
+      "**Patients may have difficulty recognizing living things because they have difficulty distinguishing between items that share similar features**."
+     ]
+    },
+    {
+     "text": "Crowding matters because it offers another reason for trouble with living things. Animals share many properties, so they are hard to tell apart.",
+     "children": [
+      "A patient may not have a category impairment at all."
+     ]
+    }
+   ],
+   "17:43": [
+    {
+     "text": "In the **embodied approach**, **our knowledge of concepts is based on reactivation of sensory and motor processes that occur when we interact with the object**.",
+     "children": []
+    },
+    {
+     "text": "When we use a hammer, **different sensory areas are activated due to the hammer’s size and shape**, and **motor areas are activated that are involved in carrying out actions involved in using a hammer**.",
+     "children": [
+      "**When we see a hammer, or see the word “hammer,” the same areas get activated**."
+     ]
+    },
+    {
+     "text": "This shows an **interaction between action and perception**.",
+     "children": [
+      "In brain imaging, different motor areas are active for leg and foot actions, for arm and hand actions, and for face and mouth actions."
+     ]
+    },
+    {
+     "text": "The embodied approach matters because it ties concepts to action and perception. Seeing a hammer activates the areas used when handling one.",
+     "children": [
+      "Knowledge of concepts is based on reactivating sensory and motor processes."
+     ]
+    }
+   ],
+   "17:44": [
+    {
+     "text": "**The three approaches agree: information about concepts is distributed across many structures in the brain**.",
+     "children": []
+    },
+    {
+     "text": "**The approaches differ in their emphasis on the type of information that is most important**.",
+     "children": [
+      "The **category-specific approach**, which is the semantic category approach, emphasizes **specialized areas of the brain and networks connecting them**.",
+      "The **multiple-factor approach** emphasizes **the role of many different features and properties**.",
+      "The **embodied approach** emphasizes **activity caused by the sensory and motor properties of objects**."
+     ]
+    },
+    {
+     "text": "The comparison matters because the three approaches agree on one point. Information about concepts is distributed across many structures in the brain.",
+     "children": [
+      "They differ in which kind of information they emphasize."
+     ]
+    }
+   ]
   },
   "14": {
    "15:1": [],
@@ -9121,7 +13248,855 @@ window.THIRD_PART = {
      ]
     }
    ],
-   "16:45": []
+   "16:45": [],
+   "17:1": [],
+   "17:2": [
+    {
+     "text": "**Conceptual knowledge** is knowledge that lets us **recognize objects and events** and **make inferences about their properties**.",
+     "children": []
+    },
+    {
+     "text": "A **concept** is a **mental representation** that is used for many cognitive functions. It can be the meaning of an object, an event or an abstract idea.",
+     "children": []
+    },
+    {
+     "text": "**Categorization** is the process of **placing things into groups called categories**. A **category** is all the possible examples of a concept.",
+     "children": [
+      "Our knowledge of the world is organized in categories."
+     ]
+    },
+    {
+     "text": "These definitions matter because every later approach is an answer to one question, which is how things are placed into categories.",
+     "children": [
+      "A concept is the mental representation, and a category is all the examples of that concept."
+     ]
+    }
+   ],
+   "17:3": [
+    {
+     "text": "The category **“cat”** includes tabbies, Siamese cats, Persian cats and wild cats.",
+     "children": []
+    },
+    {
+     "text": "**Identifying something as a cat lets a person assume many things about it**, such as its anatomy and behavior.",
+     "children": [
+      "So each new cat does not have to be treated as one of a kind."
+     ]
+    },
+    {
+     "text": "The example matters because one word carries a great deal of knowledge. Calling an animal a cat lets a person assume many of its properties.",
+     "children": [
+      "Each new cat does not have to be learned about separately."
+     ]
+    }
+   ],
+   "17:4": [
+    {
+     "text": "Categories **help us understand individual cases we have not met before**.",
+     "children": []
+    },
+    {
+     "text": "Categories are **“pointers to knowledge.”** They **give general information about an item**, and they let us **notice the special characteristics of a particular item**.",
+     "children": []
+    },
+    {
+     "text": "**Without categories, we would have a very hard time dealing with the world.**",
+     "children": [
+      "Every object would have to be learned about separately."
+     ]
+    },
+    {
+     "text": "Categories matter because they give knowledge about things a person has never met before. They are pointers to knowledge.",
+     "children": [
+      "Without categories, dealing with the world would be very hard."
+     ]
+    }
+   ],
+   "17:5": [
+    {
+     "text": "A cat with its whiskers cut off is **still a cat**. A person who meows, purrs and sleeps a lot is **still not a cat**.",
+     "children": []
+    },
+    {
+     "text": "These answers seem obvious, but **explaining why is very hard**.",
+     "children": [
+      "No single property decides whether something belongs to the category."
+     ]
+    },
+    {
+     "text": "The two questions matter because they show that no single property decides membership. A cat without whiskers is still a cat.",
+     "children": [
+      "Explaining why is very hard, which is the problem the approaches try to solve."
+     ]
+    }
+   ],
+   "17:6": [
+    {
+     "text": "The **definitional approach** decides category membership by **whether the object meets the definition of the category**.",
+     "children": []
+    },
+    {
+     "text": "It **works for some things, such as geometric objects**. It **does not work well for natural objects and human-made objects**.",
+     "children": []
+    },
+    {
+     "text": "This is because **not all members of everyday categories have the same defining features**.",
+     "children": [
+      "Chairs come in very different forms, and no one definition covers all of them."
+     ]
+    },
+    {
+     "text": "The definitional approach matters because the other approaches try to solve the problem it leaves. Not all members of everyday categories have the same defining features.",
+     "children": [
+      "It works for geometric objects and not for natural or human-made objects."
+     ]
+    }
+   ],
+   "17:7": [
+    {
+     "text": "**Wittgenstein** proposed **family resemblance** because **definitions often do not include all members of a category**.",
+     "children": []
+    },
+    {
+     "text": "In family resemblance, **things in a category resemble one another in a number of ways**. This **allows some variation within a category**.",
+     "children": []
+    },
+    {
+     "text": "So categorization may be based on **how similar an object is to a standard representation of the category**.",
+     "children": []
+    },
+    {
+     "text": "Family resemblance matters because it allows variation within a category. Members resemble one another in a number of ways without sharing one definition.",
+     "children": [
+      "Categorization may then be based on similarity to a standard representation."
+     ]
+    }
+   ],
+   "17:8": [
+    {
+     "text": "A **prototype** is a representation of the **“typical” member of a category**. It is an **average of the category members a person has encountered**.",
+     "children": []
+    },
+    {
+     "text": "In the **prototype approach**, **membership in a category is decided by comparing the object to the prototype**.",
+     "children": [
+      "The prototype for “bird” is an average bird and not any one real bird."
+     ]
+    },
+    {
+     "text": "The prototype matters because it is the standard an object is compared with. It is an average of the members a person has met.",
+     "children": [
+      "Membership is decided by comparing the object to the prototype."
+     ]
+    }
+   ],
+   "17:9": [
+    {
+     "text": "Robins and sparrows are birds, and so are owls and penguins. These differences are **differences in typicality**.",
+     "children": []
+    },
+    {
+     "text": "In **Rosch (1975)**, people saw a category title, such as birds, and a list of about 50 members. They **rated how well each member represented the category**.",
+     "children": [
+      "A rating of 1 meant a very good example, and 7 meant a poor example."
+     ]
+    },
+    {
+     "text": "For **birds**, sparrow was rated 1.18 and bat 6.15. For **furniture**, chair and sofa were rated 1.04 and telephone 6.68.",
+     "children": [
+      "So some members are better examples of a category than others."
+     ]
+    },
+    {
+     "text": "The ratings matter because people agreed that members differ in typicality. Sparrow was rated a very good bird, and bat was rated a poor one.",
+     "children": [
+      "A category has better and worse examples."
+     ]
+    }
+   ],
+   "17:10": [
+    {
+     "text": "**High prototypicality** means a member **closely resembles the category prototype**. For “bird,” a **robin** is a high-prototypicality member.",
+     "children": []
+    },
+    {
+     "text": "**Low prototypicality** means a member **does not closely resemble the prototype**. For “bird,” an **ostrich** is a low-prototypicality member.",
+     "children": []
+    },
+    {
+     "text": "The two terms matter because they describe how close a member is to the prototype. A robin is close to the prototype for bird, and an ostrich is not.",
+     "children": [
+      "Both are still birds."
+     ]
+    }
+   ],
+   "17:11": [
+    {
+     "text": "**Prototypicality is related to family resemblance.** In **Rosch and Mervis (1975)**, people listed the characteristics of common objects such as chair, sofa, mirror and telephone.",
+     "children": []
+    },
+    {
+     "text": "**More prototypical items of furniture, such as chairs and sofas, share many characteristics with one another.** A mirror or a telephone shares relatively few.",
+     "children": [
+      "So the items with high prototypicality are the ones with high family resemblance."
+     ]
+    },
+    {
+     "text": "The link matters because it ties typicality to shared characteristics. The more prototypical items of furniture share many characteristics with one another.",
+     "children": [
+      "A mirror or a telephone shares relatively few."
+     ]
+    }
+   ],
+   "17:12": [
+    {
+     "text": "The **typicality effect** is that **prototypical objects are processed preferentially**, which means faster and before other objects.",
+     "children": []
+    },
+    {
+     "text": "In a **sentence verification task**, people answer yes or no to sentences such as “An apple is a fruit.” **Responses are faster for prototypical items**, such as apple, than for items such as pomegranate.",
+     "children": []
+    },
+    {
+     "text": "When people list as many members of a category as they can, they **list the most prototypical members first**.",
+     "children": []
+    },
+    {
+     "text": "The typicality effect matters because typicality changes behavior. Prototypical items are verified faster and listed first.",
+     "children": [
+      "“An apple is a fruit” is verified faster than “A pomegranate is a fruit.”"
+     ]
+    }
+   ],
+   "17:13": [
+    {
+     "text": "**Prototypical category members are more affected by a priming stimulus.** People heard a prime, such as “green,” and two seconds later saw two colors side by side.",
+     "children": [
+      "They pressed a key as quickly as possible if the two colors were the same."
+     ]
+    },
+    {
+     "text": "For two **good examples** of green, the “same” response took **610 milliseconds**. For two **poor examples** of green, it took **780 milliseconds**.",
+     "children": [
+      "So after the prime, the good examples were judged faster than the poor examples."
+     ]
+    },
+    {
+     "text": "The result matters because the same prime helped good examples more than poor examples. The times were 610 and 780 milliseconds.",
+     "children": [
+      "Prototypical category members are more affected by a priming stimulus."
+     ]
+    }
+   ],
+   "17:14": [
+    {
+     "text": "Hearing “green” leads a person to form a **prototype for green**, which is a typical green.",
+     "children": []
+    },
+    {
+     "text": "Two good green examples are a **good match** to the prototype, so the response is fast. Two light green examples are a **poor match**, so the response is slower.",
+     "children": []
+    },
+    {
+     "text": "The explanation matters because it connects priming to the prototype. Hearing “green” creates a prototype for green.",
+     "children": [
+      "Good examples match that prototype, and poor examples match it less well."
+     ]
+    }
+   ],
+   "17:15": [
+    {
+     "text": "In the **exemplar approach**, a concept is represented by **multiple examples** and not by a single averaged prototype. The **examples are actual category members**.",
+     "children": []
+    },
+    {
+     "text": "To categorize, a person **compares the new item to the stored examples**. Objects that are like more of the exemplars are classified faster, which **explains Rosch’s results**.",
+     "children": []
+    },
+    {
+     "text": "The exemplar approach is like the prototype approach because neither defines the category. It is different because its representation is **not abstract**.",
+     "children": [
+      "It is made of descriptions of specific examples."
+     ]
+    },
+    {
+     "text": "The exemplar approach matters because it replaces one average with many real examples. A new item is compared with the stored examples.",
+     "children": [
+      "Like the prototype approach, it does not define the category."
+     ]
+    }
+   ],
+   "17:16": [
+    {
+     "text": "The exemplar approach **explains the typicality effect** and **takes atypical cases into account**. We do not compare a penguin to an average bird. We remember that some birds do not fly.",
+     "children": []
+    },
+    {
+     "text": "It also **deals with variable categories**, which are categories whose members differ a lot from one another.",
+     "children": []
+    },
+    {
+     "text": "People **may use both approaches**. **Exemplars may work best for small categories**, and **prototypes may work best for larger categories**.",
+     "children": []
+    },
+    {
+     "text": "The exemplar approach matters because it handles members that an average does not fit. We remember that some birds do not fly.",
+     "children": [
+      "People may use both approaches, with exemplars for small categories and prototypes for larger ones."
+     ]
+    }
+   ],
+   "17:17": [
+    {
+     "text": "**Rosch’s research** indicates that categories have **different levels**.",
+     "children": []
+    },
+    {
+     "text": "The **superordinate level**, or global level, is a category such as “furniture.” The **basic level** is a category such as “table.” The **subordinate level**, or specific level, is a category such as “kitchen table.”",
+     "children": []
+    },
+    {
+     "text": "The levels are **how concepts are organized in the mind**, and not only a description. The basic level is the level where a name **carries a lot of information without being overly specific**.",
+     "children": [
+      "Going above it loses a lot of information, and going below it gains only a little."
+     ]
+    },
+    {
+     "text": "The three levels matter because a single object can be named at each of them. The same object is furniture, a table and a kitchen table.",
+     "children": [
+      "The basic level turns out to be special."
+     ]
+    }
+   ],
+   "17:18": [
+    {
+     "text": "In **Rosch and colleagues (1976)**, people **listed the features that were common to all or most objects in a category**.",
+     "children": [
+      "They listed about 3 features for furniture, about 9 for table and about 10.3 for kitchen table."
+     ]
+    },
+    {
+     "text": "**Going above the basic level loses a lot of information.** Members of “furniture” share many fewer features than members of “table.”",
+     "children": []
+    },
+    {
+     "text": "**Going below the basic level gains little information.** Kitchen tables do not have much more in common than tables do.",
+     "children": []
+    },
+    {
+     "text": "The result matters because the gain in common features is uneven. From furniture to table the number rises from about 3 to about 9, and from table to kitchen table it rises only to about 10.3.",
+     "children": [
+      "Going above the basic level loses a lot of information, and going below it gains little."
+     ]
+    }
+   ],
+   "17:19": [
+    {
+     "text": "When people are asked to quickly name an electric guitar and a fish, most say **“guitar”** and **“fish.”**",
+     "children": [
+      "These are basic-level names."
+     ]
+    },
+    {
+     "text": "The naming demonstration matters because the first name that comes to mind is at the basic level. Most people say “guitar” and “fish.”",
+     "children": [
+      "More general and more specific names were available."
+     ]
+    }
+   ],
+   "17:20": [
+    {
+     "text": "When people name objects, they **use the basic-level name**. They say **guitar**, not Stratocaster (specific) or instrument (global).",
+     "children": [
+      "They say **fish**, not trout or animal."
+     ]
+    },
+    {
+     "text": "The naming result matters because it shows the basic level in everyday behavior. People said guitar, not Stratocaster or instrument.",
+     "children": [
+      "They said fish, not trout or animal."
+     ]
+    }
+   ],
+   "17:21": [
+    {
+     "text": "**Rosch’s experiments used college undergraduates.** The level they called “basic” **reflects undergraduates’ everyday experience**.",
+     "children": []
+    },
+    {
+     "text": "**Coley, Medin and Atran (1997)** asked undergraduates and horticulturalists to **name 44 plants as specifically as possible**. **75 percent of the undergraduates said “trees.”** The horticulturalists used specific names such as “oak.”",
+     "children": []
+    },
+    {
+     "text": "In the **Guatemalan Itzaj culture**, an oak tree is called an “oak” and not a tree. For them, **“oak” behaves like a basic-level category**.",
+     "children": [
+      "So which level is basic depends on experience and culture."
+     ]
+    },
+    {
+     "text": "The plant-naming result matters because the basic level changed with experience. Undergraduates said “trees,” and horticulturalists said “oak.”",
+     "children": [
+      "For people of the Guatemalan Itzaj culture, “oak” behaves like a basic-level category."
+     ]
+    }
+   ],
+   "17:22": [
+    {
+     "text": "**Tanaka and Taylor (1991)** asked **bird experts and non-experts** to name pictures of objects.",
+     "children": []
+    },
+    {
+     "text": "**Experts named the species of the birds**, such as “sparrow” or “robin.” Non-experts mostly said “bird.”",
+     "children": [
+      "Experts had learned to pay attention to features of birds that non-experts were unaware of."
+     ]
+    },
+    {
+     "text": "So **both a person’s knowledge and the properties of objects are important in categorization**.",
+     "children": []
+    },
+    {
+     "text": "The result matters because knowledge changed the level at which people named birds. Bird experts named the species, and non-experts said “bird.”",
+     "children": [
+      "People’s knowledge and the properties of objects are both important in categorization."
+     ]
+    }
+   ],
+   "17:23": [
+    {
+     "text": "In a **semantic network**, **concepts are arranged in networks that represent how concepts are organized in the mind**.",
+     "children": []
+    },
+    {
+     "text": "In the model of **Collins and Quillian (1969)**, a **node** is a category or concept. Nodes are **linked by pointers such as “is a” and “has.”**",
+     "children": []
+    },
+    {
+     "text": "The model is **hierarchical**. It goes from **more specific concepts to more general ones**, such as canary, bird, animal.",
+     "children": []
+    },
+    {
+     "text": "The semantic network matters because it is a model of how concepts are linked in the mind. Each concept is a node, joined to others by pointers such as “is a” and “has.”",
+     "children": [
+      "The model is hierarchical, from more specific to more general."
+     ]
+    }
+   ],
+   "17:24": [
+    {
+     "text": "**Inheritance** means that **lower-level items share the properties of higher-level items**.",
+     "children": []
+    },
+    {
+     "text": "**Cognitive economy** means that **shared properties are stored only at higher-level nodes**. Storing “can fly” at every bird would be inefficient, so it is stored once at “bird.”",
+     "children": []
+    },
+    {
+     "text": "**Exceptions are stored at lower nodes.** For example, “ostrich” has the property “can’t fly.”",
+     "children": []
+    },
+    {
+     "text": "Cognitive economy matters because it says where properties are stored. A shared property is stored once at a higher node.",
+     "children": [
+      "Exceptions are stored at lower nodes."
+     ]
+    }
+   ],
+   "17:25": [
+    {
+     "text": "In the network, **general concepts are at the top and specific ones are at the bottom**.",
+     "children": []
+    },
+    {
+     "text": "The model predicts that the **time to retrieve information depends on the distance traveled through the network**.",
+     "children": []
+    },
+    {
+     "text": "This was found. **“A canary is an animal” takes longer to verify than “A canary is a bird.”**",
+     "children": [
+      "Response time rose with the number of levels that had to be traversed."
+     ]
+    },
+    {
+     "text": "The prediction matters because it can be tested with response times. Statements that require more levels took longer to verify.",
+     "children": [
+      "“A canary is an animal” took longer than “A canary is a bird.”"
+     ]
+    }
+   ],
+   "17:26": [
+    {
+     "text": "**Activation** is the **arousal level of a node**. In **spreading activation**, when a node is activated, **activity spreads out along all connected links**.",
+     "children": []
+    },
+    {
+     "text": "**Concepts that receive activation are primed**, so they are **more easily accessed from memory**.",
+     "children": [
+      "Activating “robin” spreads activation to “bird” and then primes “canary,” “ostrich” and “animal.”"
+     ]
+    },
+    {
+     "text": "Spreading activation matters because it explains priming. Activity spreads from an activated node to the nodes linked to it.",
+     "children": [
+      "Those concepts are primed and are accessed more easily."
+     ]
+    }
+   ],
+   "17:27": [
+    {
+     "text": "**Meyer and Schvaneveldt** tested spreading activation with a **lexical decision task** using **pairs of words**.",
+     "children": [
+      "In a lexical decision task, a person decides as quickly as possible whether the letter strings are real words."
+     ]
+    },
+    {
+     "text": "**People responded faster to related pairs**, such as bread and wheat, **than to unrelated pairs**, such as chair and money.",
+     "children": [
+      "This is because the first word spread activation to related words."
+     ]
+    },
+    {
+     "text": "Many studies of **semantic priming** have found similar results.",
+     "children": []
+    },
+    {
+     "text": "The result matters because related words were recognized faster. People responded faster to related pairs than to unrelated pairs.",
+     "children": [
+      "Many studies of semantic priming have found similar results."
+     ]
+    }
+   ],
+   "17:28": [
+    {
+     "text": "The model of **Collins and Quillian** **cannot explain typicality effects**. It predicts equally fast responses for “canary” and “ostrich,” because both are one node away from “bird.”",
+     "children": []
+    },
+    {
+     "text": "**Cognitive economy** is doubted. There is evidence that people **store specific properties right at the node for the concept**.",
+     "children": []
+    },
+    {
+     "text": "**Some sentence-verification results do not fit.** “A pig is a mammal” is verified more slowly than “A pig is an animal.”",
+     "children": [
+      "The model predicts the opposite, because mammal is closer to pig in the network."
+     ]
+    },
+    {
+     "text": "The criticisms matter because they led to a new kind of network. The model cannot explain typicality effects.",
+     "children": [
+      "It also predicts the wrong order for “A pig is a mammal” and “A pig is an animal.”"
+     ]
+    }
+   ],
+   "17:29": [
+    {
+     "text": "The **connectionist approach** came in the late 1980s. It grew from **criticism of structured networks** and from **advances in understanding how the brain represents information**.",
+     "children": []
+    },
+    {
+     "text": "**Connectionism** is an approach to **creating computer models of cognitive processes**. It is also called **parallel distributed processing**.",
+     "children": [
+      "Knowledge is represented in the **distributed activity of many units**."
+     ]
+    },
+    {
+     "text": "**Weights** determine, at each connection, **how strongly an incoming signal will activate the next unit**.",
+     "children": []
+    },
+    {
+     "text": "Connectionism matters because knowledge is no longer stored at single nodes. It is represented in the distributed activity of many units.",
+     "children": [
+      "Weights set how strongly a signal activates the next unit."
+     ]
+    }
+   ],
+   "17:30": [
+    {
+     "text": "**Units** are inspired by **neurons**. **Patterns of activity in the units represent concepts and their properties.**",
+     "children": []
+    },
+    {
+     "text": "The **lines** are **connections that transfer activation between units**. They are inspired by axons.",
+     "children": []
+    },
+    {
+     "text": "**Input units** are activated by stimuli from the environment. **Output units** receive input from the **hidden units**, which lie in between.",
+     "children": []
+    },
+    {
+     "text": "A **connection weight** determines how a signal from one unit **increases or decreases the activity of the next unit**.",
+     "children": []
+    },
+    {
+     "text": "The parts matter because each has a job. Input units receive stimuli from the environment, and output units receive input from hidden units.",
+     "children": [
+      "Connection weights decide how a signal changes the activity of the next unit."
+     ]
+    }
+   ],
+   "17:31": [
+    {
+     "text": "**High connection weights** give a **strong tendency to excite the next unit**. **Negative connection weights** can **decrease excitation or inhibit** the receiving unit.",
+     "children": []
+    },
+    {
+     "text": "The activation of units depends on two things. They are **the signal from the input units** and **the connection weights throughout the network**.",
+     "children": []
+    },
+    {
+     "text": "**A stimulus is represented by the pattern of activity distributed across the other units.**",
+     "children": []
+    },
+    {
+     "text": "Weights matter because activation depends on them. Activation depends on the signal from the input units and on the weights throughout the network.",
+     "children": [
+      "A stimulus is represented by a pattern of activity across units."
+     ]
+    }
+   ],
+   "17:32": [
+    {
+     "text": "For the network to work, **the connection weights have to be adjusted through a learning process**.",
+     "children": []
+    },
+    {
+     "text": "The network **responds to a stimulus** and **produces a guess**. It is then **given the correct response**.",
+     "children": [
+      "It **modifies its weights** so that its response matches the correct response more closely."
+     ]
+    },
+    {
+     "text": "Learning matters because the weights do not start out correct. The network guesses, is given the correct response and adjusts its weights.",
+     "children": [
+      "The adjustment increases the match between its response and the correct response."
+     ]
+    }
+   ],
+   "17:33": [
+    {
+     "text": "The **error signal** is the **difference between the actual activity of each output unit and the correct activity**.",
+     "children": []
+    },
+    {
+     "text": "In **back-propagation**, the **error signal is sent back through the circuit**. It shows **how the weights should be changed** so the output matches the correct signal.",
+     "children": []
+    },
+    {
+     "text": "The process **repeats until the error signal is zero**. **Each learning experience changes the weights only a little.**",
+     "children": [
+      "At first the property units are weakly activated and there are many errors."
+     ]
+    },
+    {
+     "text": "Back-propagation matters because it tells the network how to change. The error signal is sent back through the circuit.",
+     "children": [
+      "Each learning experience changes the weights only a little, and the process repeats until the error signal is zero."
+     ]
+    }
+   ],
+   "17:34": [
+    {
+     "text": "The activity of the **hidden units** changes as the network learns. It is shown for rose, daisy and canary after **0, 250, 750 and 2,500 learning trials**.",
+     "children": []
+    },
+    {
+     "text": "At the start, the three patterns look alike. After many trials, **rose and daisy have similar patterns, and canary has a different pattern**.",
+     "children": [
+      "So the network comes to represent similar concepts with similar patterns of activity."
+     ]
+    },
+    {
+     "text": "The hidden-unit patterns matter because they show what learning produces. Rose and daisy end with similar patterns, and canary ends with a different one.",
+     "children": [
+      "At the start, the three patterns looked alike."
+     ]
+    }
+   ],
+   "17:35": [
+    {
+     "text": "In a connectionist network, **information about each concept is in the distributed pattern of activity across many units**.",
+     "children": []
+    },
+    {
+     "text": "**Damage does not totally disrupt the network.** **Graceful degradation** means that **performance is disrupted gradually as parts of the system are damaged**.",
+     "children": []
+    },
+    {
+     "text": "Connectionist networks can explain **generalization of learning**. The slow learning process creates a network that can **handle a wide range of inputs**.",
+     "children": []
+    },
+    {
+     "text": "These properties matter because the network keeps working when part of it fails. Damage disrupts performance gradually, which is graceful degradation.",
+     "children": [
+      "The network can also generalize to a wide range of inputs."
+     ]
+    }
+   ],
+   "17:36": [],
+   "17:37": [
+    {
+     "text": "**Different areas of the brain may be specialized for different categories.** There is a **double dissociation for “living things” and “nonliving things.”**",
+     "children": [
+      "Some patients have trouble with living things only, and others have trouble with nonliving things only."
+     ]
+    },
+    {
+     "text": "Each side of the dissociation is a **category-specific memory impairment**, in which a person cannot identify one type of object but can identify other types.",
+     "children": []
+    },
+    {
+     "text": "So different areas may be specialized for different categories, **mostly in the temporal lobe**. The approaches disagree about how category knowledge is arranged.",
+     "children": []
+    },
+    {
+     "text": "The double dissociation matters because it suggests categories are handled separately in the brain. Living things and nonliving things can each be impaired alone.",
+     "children": [
+      "The areas involved are mostly in the temporal lobe."
+     ]
+    }
+   ],
+   "17:38": [
+    {
+     "text": "The **sensory-functional hypothesis** states that we tell **living things** from **artifacts** using one system for **sensory attributes** and one system for **function**.",
+     "children": [
+      "An artifact is a human-made object."
+     ]
+    },
+    {
+     "text": "It predicts that **a patient who cannot identify living things should have a more general impairment in processing sensory attributes**.",
+     "children": []
+    },
+    {
+     "text": "This is because **animals are more strongly associated with their sensory attributes**, and **artifacts are more strongly associated with their uses**.",
+     "children": []
+    },
+    {
+     "text": "The hypothesis matters because it explains a category impairment through two kinds of attribute. Animals are tied to sensory attributes, and artifacts are tied to uses.",
+     "children": [
+      "A patient who cannot identify living things should have a general impairment with sensory attributes."
+     ]
+    }
+   ],
+   "17:39": [
+    {
+     "text": "The hypothesis predicts that **deficits in processing sensory attributes go with deficits in recognizing animals**, but not artifacts.",
+     "children": []
+    },
+    {
+     "text": "**Warrington and Shallice** found evidence for this in **patients K.C. and E.W.** Both patients did much worse with living animals than with nonanimals.",
+     "children": [
+      "Other studies confirmed this and also linked functional attributes with artifacts."
+     ]
+    },
+    {
+     "text": "But there are **a number of exceptions** to this pattern.",
+     "children": []
+    },
+    {
+     "text": "The patient evidence matters because it supports the hypothesis, and the exceptions show it does not fit every patient. Patients K.C. and E.W. did much worse with living animals.",
+     "children": [
+      "There are a number of exceptions to the overall pattern."
+     ]
+    }
+   ],
+   "17:40": [
+    {
+     "text": "The **semantic category approach** proposes **specific neural circuits in the brain for specific categories**. The circuits are **distributed over a number of cortical areas**.",
+     "children": []
+    },
+    {
+     "text": "**A limited number of categories may be innately determined**, because they are important for survival.",
+     "children": [
+      "Another possibility is that unusual impairments are haphazard results of strokes late in life."
+     ]
+    },
+    {
+     "text": "The semantic category approach matters because it gives a different answer, and it is called the category-specific approach in the summary. It proposes specific neural circuits for specific categories.",
+     "children": [
+      "Some categories may be innately determined because of their importance for survival."
+     ]
+    }
+   ],
+   "17:41": [
+    {
+     "text": "The **multiple factors approach** looks at **how concepts are divided up within a category**. It does not look for specific brain areas for different concepts.",
+     "children": []
+    },
+    {
+     "text": "**Mechanical devices**, such as musical instruments, **overlap with artifacts** because they involve performing actions. They **overlap with animals** because they involve sound and motion.",
+     "children": []
+    },
+    {
+     "text": "So mechanical devices have a **widely distributed semantic representation**, which means the knowledge about them is spread over many brain regions. **Patients may identify mechanical devices even if they do poorly with other artifacts.**",
+     "children": []
+    },
+    {
+     "text": "The multiple factors approach matters because it looks inside a category. Mechanical devices overlap with both artifacts and animals.",
+     "children": [
+      "So they have a widely distributed semantic representation."
+     ]
+    }
+   ],
+   "17:42": [
+    {
+     "text": "**Crowding** occurs **when different concepts within a category share many properties**. Animals all share eyes, legs and the ability to move. **Artifacts share fewer properties.**",
+     "children": []
+    },
+    {
+     "text": "So **patients with category-specific impairments may not have a category impairment at all**.",
+     "children": [
+      "They may have difficulty with living things because they have difficulty **telling apart items that share similar features**."
+     ]
+    },
+    {
+     "text": "Crowding matters because it offers another reason for trouble with living things. Animals share many properties, so they are hard to tell apart.",
+     "children": [
+      "A patient may not have a category impairment at all."
+     ]
+    }
+   ],
+   "17:43": [
+    {
+     "text": "In the **embodied approach**, our knowledge of a concept is based on **reactivating the sensory and motor processes** that occur when we interact with the object.",
+     "children": []
+    },
+    {
+     "text": "When we use a hammer, **sensory areas** respond to its size and shape, and **motor areas** carry out the actions of using it.",
+     "children": [
+      "**When we see a hammer or the word “hammer,” the same areas are activated.**"
+     ]
+    },
+    {
+     "text": "So there is an **interaction between action and perception**.",
+     "children": []
+    },
+    {
+     "text": "The embodied approach matters because it ties concepts to action and perception. Seeing a hammer activates the areas used when handling one.",
+     "children": [
+      "Knowledge of concepts is based on reactivating sensory and motor processes."
+     ]
+    }
+   ],
+   "17:44": [
+    {
+     "text": "The three approaches agree that **information about concepts is distributed across many structures in the brain**.",
+     "children": []
+    },
+    {
+     "text": "They differ in which kind of information they treat as most important.",
+     "children": [
+      "The **category-specific approach**, which is the semantic category approach, emphasizes **specialized areas of the brain and the networks connecting them**.",
+      "The **multiple-factor approach** emphasizes **many different features and properties**.",
+      "The **embodied approach** emphasizes **activity caused by the sensory and motor properties of objects**."
+     ]
+    },
+    {
+     "text": "The comparison matters because the three approaches agree on one point. Information about concepts is distributed across many structures in the brain.",
+     "children": [
+      "They differ in which kind of information they emphasize."
+     ]
+    }
+   ]
   },
   "16": {
    "15:1": [],
@@ -10823,7 +15798,907 @@ window.THIRD_PART = {
      ]
     }
    ],
-   "16:45": []
+   "16:45": [],
+   "17:1": [],
+   "17:2": [
+    {
+     "text": "**Conceptual knowledge** is knowledge that lets us **recognize objects and events** and **make inferences about their properties**.",
+     "children": []
+    },
+    {
+     "text": "A **concept** is a **mental representation** that is used for many cognitive functions. It can be the meaning of an object, an event or an abstract idea.",
+     "children": []
+    },
+    {
+     "text": "**Categorization** is the process of **placing things into groups called categories**. A **category** is all the possible examples of a concept.",
+     "children": [
+      "Our knowledge of the world is organized in categories."
+     ]
+    },
+    {
+     "text": "These definitions matter because every later approach is an answer to one question, which is how things are placed into categories.",
+     "children": [
+      "A concept is the mental representation, and a category is all the examples of that concept."
+     ]
+    }
+   ],
+   "17:3": [
+    {
+     "text": "The category **“cat”** includes tabbies, Siamese cats, Persian cats and wild cats.",
+     "children": []
+    },
+    {
+     "text": "**Identifying something as a cat lets a person assume many things about it**, such as its anatomy and behavior.",
+     "children": [
+      "So each new cat does not have to be treated as one of a kind."
+     ]
+    },
+    {
+     "text": "The example matters because one word carries a great deal of knowledge. Calling an animal a cat lets a person assume many of its properties.",
+     "children": [
+      "Each new cat does not have to be learned about separately."
+     ]
+    }
+   ],
+   "17:4": [
+    {
+     "text": "Categories **help us understand individual cases we have not met before**.",
+     "children": []
+    },
+    {
+     "text": "Categories are **“pointers to knowledge.”** They **give general information about an item**, and they let us **notice the special characteristics of a particular item**.",
+     "children": []
+    },
+    {
+     "text": "**Without categories, we would have a very hard time dealing with the world.**",
+     "children": [
+      "Every object would have to be learned about separately."
+     ]
+    },
+    {
+     "text": "Categories matter because they give knowledge about things a person has never met before. They are pointers to knowledge.",
+     "children": [
+      "Without categories, dealing with the world would be very hard."
+     ]
+    }
+   ],
+   "17:5": [
+    {
+     "text": "A cat with its whiskers cut off is **still a cat**. A person who meows, purrs and sleeps a lot is **still not a cat**.",
+     "children": []
+    },
+    {
+     "text": "These answers seem obvious, but **explaining why is very hard**.",
+     "children": [
+      "No single property decides whether something belongs to the category."
+     ]
+    },
+    {
+     "text": "The two questions matter because they show that no single property decides membership. A cat without whiskers is still a cat.",
+     "children": [
+      "Explaining why is very hard, which is the problem the approaches try to solve."
+     ]
+    }
+   ],
+   "17:6": [
+    {
+     "text": "The **definitional approach** decides category membership by **whether the object meets the definition of the category**.",
+     "children": []
+    },
+    {
+     "text": "It **works for some things, such as geometric objects**. It **does not work well for natural objects and human-made objects**.",
+     "children": []
+    },
+    {
+     "text": "This is because **not all members of everyday categories have the same defining features**.",
+     "children": [
+      "Chairs come in very different forms, and no one definition covers all of them."
+     ]
+    },
+    {
+     "text": "The definitional approach matters because the other approaches try to solve the problem it leaves. Not all members of everyday categories have the same defining features.",
+     "children": [
+      "It works for geometric objects and not for natural or human-made objects."
+     ]
+    }
+   ],
+   "17:7": [
+    {
+     "text": "**Wittgenstein** proposed **family resemblance** because **definitions often do not include all members of a category**.",
+     "children": []
+    },
+    {
+     "text": "In family resemblance, **things in a category resemble one another in a number of ways**. This **allows some variation within a category**.",
+     "children": []
+    },
+    {
+     "text": "So categorization may be based on **how similar an object is to a standard representation of the category**.",
+     "children": []
+    },
+    {
+     "text": "Family resemblance matters because it allows variation within a category. Members resemble one another in a number of ways without sharing one definition.",
+     "children": [
+      "Categorization may then be based on similarity to a standard representation."
+     ]
+    }
+   ],
+   "17:8": [
+    {
+     "text": "A **prototype** is a representation of the **“typical” member of a category**. It is an **average of the category members a person has encountered**.",
+     "children": []
+    },
+    {
+     "text": "In the **prototype approach**, **membership in a category is decided by comparing the object to the prototype**.",
+     "children": [
+      "The prototype for “bird” is an average bird and not any one real bird."
+     ]
+    },
+    {
+     "text": "The prototype matters because it is the standard an object is compared with. It is an average of the members a person has met.",
+     "children": [
+      "Membership is decided by comparing the object to the prototype."
+     ]
+    }
+   ],
+   "17:9": [
+    {
+     "text": "Robins and sparrows are birds, and so are owls and penguins. These differences are **differences in typicality**.",
+     "children": []
+    },
+    {
+     "text": "In **Rosch (1975)**, people saw a category title, such as birds, and a list of about 50 members. They **rated how well each member represented the category**.",
+     "children": [
+      "A rating of 1 meant a very good example, and 7 meant a poor example."
+     ]
+    },
+    {
+     "text": "For **birds**, sparrow was rated 1.18 and bat 6.15. For **furniture**, chair and sofa were rated 1.04 and telephone 6.68.",
+     "children": [
+      "So some members are better examples of a category than others."
+     ]
+    },
+    {
+     "text": "In Rosch (1975), every item was rated under the same category title, so the different ratings reflect how well each one represents the category.",
+     "children": []
+    },
+    {
+     "text": "The ratings matter because people agreed that members differ in typicality. Sparrow was rated a very good bird, and bat was rated a poor one.",
+     "children": [
+      "A category has better and worse examples."
+     ]
+    }
+   ],
+   "17:10": [
+    {
+     "text": "**High prototypicality** means a member **closely resembles the category prototype**. For “bird,” a **robin** is a high-prototypicality member.",
+     "children": []
+    },
+    {
+     "text": "**Low prototypicality** means a member **does not closely resemble the prototype**. For “bird,” an **ostrich** is a low-prototypicality member.",
+     "children": []
+    },
+    {
+     "text": "The two terms matter because they describe how close a member is to the prototype. A robin is close to the prototype for bird, and an ostrich is not.",
+     "children": [
+      "Both are still birds."
+     ]
+    }
+   ],
+   "17:11": [
+    {
+     "text": "**Prototypicality is related to family resemblance.** In **Rosch and Mervis (1975)**, people listed the characteristics of common objects such as chair, sofa, mirror and telephone.",
+     "children": []
+    },
+    {
+     "text": "**More prototypical items of furniture, such as chairs and sofas, share many characteristics with one another.** A mirror or a telephone shares relatively few.",
+     "children": [
+      "So the items with high prototypicality are the ones with high family resemblance."
+     ]
+    },
+    {
+     "text": "In Rosch and Mervis (1975), the items were all furniture, so the difference in shared characteristics goes with how prototypical each item is.",
+     "children": []
+    },
+    {
+     "text": "The link matters because it ties typicality to shared characteristics. The more prototypical items of furniture share many characteristics with one another.",
+     "children": [
+      "A mirror or a telephone shares relatively few."
+     ]
+    }
+   ],
+   "17:12": [
+    {
+     "text": "The **typicality effect** is that **prototypical objects are processed preferentially**, which means faster and before other objects.",
+     "children": []
+    },
+    {
+     "text": "In a **sentence verification task**, people answer yes or no to sentences such as “An apple is a fruit.” **Responses are faster for prototypical items**, such as apple, than for items such as pomegranate.",
+     "children": []
+    },
+    {
+     "text": "When people list as many members of a category as they can, they **list the most prototypical members first**.",
+     "children": []
+    },
+    {
+     "text": "Both sentences are true, so the faster response for apple goes with its higher prototypicality.",
+     "children": []
+    },
+    {
+     "text": "The typicality effect matters because typicality changes behavior. Prototypical items are verified faster and listed first.",
+     "children": [
+      "“An apple is a fruit” is verified faster than “A pomegranate is a fruit.”"
+     ]
+    }
+   ],
+   "17:13": [
+    {
+     "text": "**Prototypical category members are more affected by a priming stimulus.** People heard a prime, such as “green,” and two seconds later saw two colors side by side.",
+     "children": [
+      "They pressed a key as quickly as possible if the two colors were the same."
+     ]
+    },
+    {
+     "text": "For two **good examples** of green, the “same” response took **610 milliseconds**. For two **poor examples** of green, it took **780 milliseconds**.",
+     "children": [
+      "So after the prime, the good examples were judged faster than the poor examples."
+     ]
+    },
+    {
+     "text": "Both pairs were the same color, so the difference between 610 and 780 milliseconds goes with how good an example of green the colors were.",
+     "children": []
+    },
+    {
+     "text": "The result matters because the same prime helped good examples more than poor examples. The times were 610 and 780 milliseconds.",
+     "children": [
+      "Prototypical category members are more affected by a priming stimulus."
+     ]
+    }
+   ],
+   "17:14": [
+    {
+     "text": "Hearing “green” leads a person to form a **prototype for green**, which is a typical green.",
+     "children": []
+    },
+    {
+     "text": "Two good green examples are a **good match** to the prototype, so the response is fast. Two light green examples are a **poor match**, so the response is slower.",
+     "children": []
+    },
+    {
+     "text": "The explanation matters because it connects priming to the prototype. Hearing “green” creates a prototype for green.",
+     "children": [
+      "Good examples match that prototype, and poor examples match it less well."
+     ]
+    }
+   ],
+   "17:15": [
+    {
+     "text": "In the **exemplar approach**, a concept is represented by **multiple examples** and not by a single averaged prototype. The **examples are actual category members**.",
+     "children": []
+    },
+    {
+     "text": "To categorize, a person **compares the new item to the stored examples**. Objects that are like more of the exemplars are classified faster, which **explains Rosch’s results**.",
+     "children": []
+    },
+    {
+     "text": "The exemplar approach is like the prototype approach because neither defines the category. It is different because its representation is **not abstract**.",
+     "children": [
+      "It is made of descriptions of specific examples."
+     ]
+    },
+    {
+     "text": "The exemplar approach matters because it replaces one average with many real examples. A new item is compared with the stored examples.",
+     "children": [
+      "Like the prototype approach, it does not define the category."
+     ]
+    }
+   ],
+   "17:16": [
+    {
+     "text": "The exemplar approach **explains the typicality effect** and **takes atypical cases into account**. We do not compare a penguin to an average bird. We remember that some birds do not fly.",
+     "children": []
+    },
+    {
+     "text": "It also **deals with variable categories**, which are categories whose members differ a lot from one another.",
+     "children": []
+    },
+    {
+     "text": "People **may use both approaches**. **Exemplars may work best for small categories**, and **prototypes may work best for larger categories**.",
+     "children": []
+    },
+    {
+     "text": "The exemplar approach matters because it handles members that an average does not fit. We remember that some birds do not fly.",
+     "children": [
+      "People may use both approaches, with exemplars for small categories and prototypes for larger ones."
+     ]
+    }
+   ],
+   "17:17": [
+    {
+     "text": "**Rosch’s research** indicates that categories have **different levels**.",
+     "children": []
+    },
+    {
+     "text": "The **superordinate level**, or global level, is a category such as “furniture.” The **basic level** is a category such as “table.” The **subordinate level**, or specific level, is a category such as “kitchen table.”",
+     "children": []
+    },
+    {
+     "text": "The levels are **how concepts are organized in the mind**, and not only a description. The basic level is the level where a name **carries a lot of information without being overly specific**.",
+     "children": [
+      "Going above it loses a lot of information, and going below it gains only a little."
+     ]
+    },
+    {
+     "text": "The three levels matter because a single object can be named at each of them. The same object is furniture, a table and a kitchen table.",
+     "children": [
+      "The basic level turns out to be special."
+     ]
+    }
+   ],
+   "17:18": [
+    {
+     "text": "In **Rosch and colleagues (1976)**, people **listed the features that were common to all or most objects in a category**.",
+     "children": [
+      "They listed about 3 features for furniture, about 9 for table and about 10.3 for kitchen table."
+     ]
+    },
+    {
+     "text": "**Going above the basic level loses a lot of information.** Members of “furniture” share many fewer features than members of “table.”",
+     "children": []
+    },
+    {
+     "text": "**Going below the basic level gains little information.** Kitchen tables do not have much more in common than tables do.",
+     "children": []
+    },
+    {
+     "text": "In Rosch and colleagues (1976), the same task was used at all three levels, so the change in the number of features goes with the level.",
+     "children": []
+    },
+    {
+     "text": "The result matters because the gain in common features is uneven. From furniture to table the number rises from about 3 to about 9, and from table to kitchen table it rises only to about 10.3.",
+     "children": [
+      "Going above the basic level loses a lot of information, and going below it gains little."
+     ]
+    }
+   ],
+   "17:19": [
+    {
+     "text": "When people are asked to quickly name an electric guitar and a fish, most say **“guitar”** and **“fish.”**",
+     "children": [
+      "These are basic-level names."
+     ]
+    },
+    {
+     "text": "The naming demonstration matters because the first name that comes to mind is at the basic level. Most people say “guitar” and “fish.”",
+     "children": [
+      "More general and more specific names were available."
+     ]
+    }
+   ],
+   "17:20": [
+    {
+     "text": "When people name objects, they **use the basic-level name**. They say **guitar**, not Stratocaster (specific) or instrument (global).",
+     "children": [
+      "They say **fish**, not trout or animal."
+     ]
+    },
+    {
+     "text": "Each object could have been given a more general or a more specific name, and people gave the basic-level name.",
+     "children": []
+    },
+    {
+     "text": "The naming result matters because it shows the basic level in everyday behavior. People said guitar, not Stratocaster or instrument.",
+     "children": [
+      "They said fish, not trout or animal."
+     ]
+    }
+   ],
+   "17:21": [
+    {
+     "text": "**Rosch’s experiments used college undergraduates.** The level they called “basic” **reflects undergraduates’ everyday experience**.",
+     "children": []
+    },
+    {
+     "text": "**Coley, Medin and Atran (1997)** asked undergraduates and horticulturalists to **name 44 plants as specifically as possible**. **75 percent of the undergraduates said “trees.”** The horticulturalists used specific names such as “oak.”",
+     "children": []
+    },
+    {
+     "text": "In the **Guatemalan Itzaj culture**, an oak tree is called an “oak” and not a tree. For them, **“oak” behaves like a basic-level category**.",
+     "children": [
+      "So which level is basic depends on experience and culture."
+     ]
+    },
+    {
+     "text": "In Coley, Medin and Atran (1997), both groups named the same plants, so the difference in names goes with the people and not with the plants.",
+     "children": []
+    },
+    {
+     "text": "The plant-naming result matters because the basic level changed with experience. Undergraduates said “trees,” and horticulturalists said “oak.”",
+     "children": [
+      "For people of the Guatemalan Itzaj culture, “oak” behaves like a basic-level category."
+     ]
+    }
+   ],
+   "17:22": [
+    {
+     "text": "**Tanaka and Taylor (1991)** asked **bird experts and non-experts** to name pictures of objects.",
+     "children": []
+    },
+    {
+     "text": "**Experts named the species of the birds**, such as “sparrow” or “robin.” Non-experts mostly said “bird.”",
+     "children": [
+      "Experts had learned to pay attention to features of birds that non-experts were unaware of."
+     ]
+    },
+    {
+     "text": "So **both a person’s knowledge and the properties of objects are important in categorization**.",
+     "children": []
+    },
+    {
+     "text": "In Tanaka and Taylor (1991), experts and non-experts named the same pictures, so the difference goes with their knowledge of birds.",
+     "children": []
+    },
+    {
+     "text": "The result matters because knowledge changed the level at which people named birds. Bird experts named the species, and non-experts said “bird.”",
+     "children": [
+      "People’s knowledge and the properties of objects are both important in categorization."
+     ]
+    }
+   ],
+   "17:23": [
+    {
+     "text": "In a **semantic network**, **concepts are arranged in networks that represent how concepts are organized in the mind**.",
+     "children": []
+    },
+    {
+     "text": "In the model of **Collins and Quillian (1969)**, a **node** is a category or concept. Nodes are **linked by pointers such as “is a” and “has.”**",
+     "children": []
+    },
+    {
+     "text": "The model is **hierarchical**. It goes from **more specific concepts to more general ones**, such as canary, bird, animal.",
+     "children": []
+    },
+    {
+     "text": "The semantic network matters because it is a model of how concepts are linked in the mind. Each concept is a node, joined to others by pointers such as “is a” and “has.”",
+     "children": [
+      "The model is hierarchical, from more specific to more general."
+     ]
+    }
+   ],
+   "17:24": [
+    {
+     "text": "**Inheritance** means that **lower-level items share the properties of higher-level items**.",
+     "children": []
+    },
+    {
+     "text": "**Cognitive economy** means that **shared properties are stored only at higher-level nodes**. Storing “can fly” at every bird would be inefficient, so it is stored once at “bird.”",
+     "children": []
+    },
+    {
+     "text": "**Exceptions are stored at lower nodes.** For example, “ostrich” has the property “can’t fly.”",
+     "children": []
+    },
+    {
+     "text": "Cognitive economy matters because it says where properties are stored. A shared property is stored once at a higher node.",
+     "children": [
+      "Exceptions are stored at lower nodes."
+     ]
+    }
+   ],
+   "17:25": [
+    {
+     "text": "In the network, **general concepts are at the top and specific ones are at the bottom**.",
+     "children": []
+    },
+    {
+     "text": "The model predicts that the **time to retrieve information depends on the distance traveled through the network**.",
+     "children": []
+    },
+    {
+     "text": "This was found. **“A canary is an animal” takes longer to verify than “A canary is a bird.”**",
+     "children": [
+      "Response time rose with the number of levels that had to be traversed."
+     ]
+    },
+    {
+     "text": "The statements were all about a canary, so the differences in response time go with the number of levels to be traversed.",
+     "children": []
+    },
+    {
+     "text": "The prediction matters because it can be tested with response times. Statements that require more levels took longer to verify.",
+     "children": [
+      "“A canary is an animal” took longer than “A canary is a bird.”"
+     ]
+    }
+   ],
+   "17:26": [
+    {
+     "text": "**Activation** is the **arousal level of a node**. In **spreading activation**, when a node is activated, **activity spreads out along all connected links**.",
+     "children": []
+    },
+    {
+     "text": "**Concepts that receive activation are primed**, so they are **more easily accessed from memory**.",
+     "children": [
+      "Activating “robin” spreads activation to “bird” and then primes “canary,” “ostrich” and “animal.”"
+     ]
+    },
+    {
+     "text": "Spreading activation matters because it explains priming. Activity spreads from an activated node to the nodes linked to it.",
+     "children": [
+      "Those concepts are primed and are accessed more easily."
+     ]
+    }
+   ],
+   "17:27": [
+    {
+     "text": "**Meyer and Schvaneveldt** tested spreading activation with a **lexical decision task** using **pairs of words**.",
+     "children": [
+      "In a lexical decision task, a person decides as quickly as possible whether the letter strings are real words."
+     ]
+    },
+    {
+     "text": "**People responded faster to related pairs**, such as bread and wheat, **than to unrelated pairs**, such as chair and money.",
+     "children": [
+      "This is because the first word spread activation to related words."
+     ]
+    },
+    {
+     "text": "Many studies of **semantic priming** have found similar results.",
+     "children": []
+    },
+    {
+     "text": "In the task of Meyer and Schvaneveldt, related and unrelated pairs were both made of real words, so the faster response goes with the relation between the words.",
+     "children": []
+    },
+    {
+     "text": "The result matters because related words were recognized faster. People responded faster to related pairs than to unrelated pairs.",
+     "children": [
+      "Many studies of semantic priming have found similar results."
+     ]
+    }
+   ],
+   "17:28": [
+    {
+     "text": "The model of **Collins and Quillian** **cannot explain typicality effects**. It predicts equally fast responses for “canary” and “ostrich,” because both are one node away from “bird.”",
+     "children": []
+    },
+    {
+     "text": "**Cognitive economy** is doubted. There is evidence that people **store specific properties right at the node for the concept**.",
+     "children": []
+    },
+    {
+     "text": "**Some sentence-verification results do not fit.** “A pig is a mammal” is verified more slowly than “A pig is an animal.”",
+     "children": [
+      "The model predicts the opposite, because mammal is closer to pig in the network."
+     ]
+    },
+    {
+     "text": "Canary and ostrich are the same distance from bird in the network, so distance cannot explain why responses to typical members are faster.",
+     "children": []
+    },
+    {
+     "text": "The criticisms matter because they led to a new kind of network. The model cannot explain typicality effects.",
+     "children": [
+      "It also predicts the wrong order for “A pig is a mammal” and “A pig is an animal.”"
+     ]
+    }
+   ],
+   "17:29": [
+    {
+     "text": "The **connectionist approach** came in the late 1980s. It grew from **criticism of structured networks** and from **advances in understanding how the brain represents information**.",
+     "children": []
+    },
+    {
+     "text": "**Connectionism** is an approach to **creating computer models of cognitive processes**. It is also called **parallel distributed processing**.",
+     "children": [
+      "Knowledge is represented in the **distributed activity of many units**."
+     ]
+    },
+    {
+     "text": "**Weights** determine, at each connection, **how strongly an incoming signal will activate the next unit**.",
+     "children": []
+    },
+    {
+     "text": "Connectionism matters because knowledge is no longer stored at single nodes. It is represented in the distributed activity of many units.",
+     "children": [
+      "Weights set how strongly a signal activates the next unit."
+     ]
+    }
+   ],
+   "17:30": [
+    {
+     "text": "**Units** are inspired by **neurons**. **Patterns of activity in the units represent concepts and their properties.**",
+     "children": []
+    },
+    {
+     "text": "The **lines** are **connections that transfer activation between units**. They are inspired by axons.",
+     "children": []
+    },
+    {
+     "text": "**Input units** are activated by stimuli from the environment. **Output units** receive input from the **hidden units**, which lie in between.",
+     "children": []
+    },
+    {
+     "text": "A **connection weight** determines how a signal from one unit **increases or decreases the activity of the next unit**.",
+     "children": []
+    },
+    {
+     "text": "The parts matter because each has a job. Input units receive stimuli from the environment, and output units receive input from hidden units.",
+     "children": [
+      "Connection weights decide how a signal changes the activity of the next unit."
+     ]
+    }
+   ],
+   "17:31": [
+    {
+     "text": "**High connection weights** give a **strong tendency to excite the next unit**. **Negative connection weights** can **decrease excitation or inhibit** the receiving unit.",
+     "children": []
+    },
+    {
+     "text": "The activation of units depends on two things. They are **the signal from the input units** and **the connection weights throughout the network**.",
+     "children": []
+    },
+    {
+     "text": "**A stimulus is represented by the pattern of activity distributed across the other units.**",
+     "children": []
+    },
+    {
+     "text": "Weights matter because activation depends on them. Activation depends on the signal from the input units and on the weights throughout the network.",
+     "children": [
+      "A stimulus is represented by a pattern of activity across units."
+     ]
+    }
+   ],
+   "17:32": [
+    {
+     "text": "For the network to work, **the connection weights have to be adjusted through a learning process**.",
+     "children": []
+    },
+    {
+     "text": "The network **responds to a stimulus** and **produces a guess**. It is then **given the correct response**.",
+     "children": [
+      "It **modifies its weights** so that its response matches the correct response more closely."
+     ]
+    },
+    {
+     "text": "Learning matters because the weights do not start out correct. The network guesses, is given the correct response and adjusts its weights.",
+     "children": [
+      "The adjustment increases the match between its response and the correct response."
+     ]
+    }
+   ],
+   "17:33": [
+    {
+     "text": "The **error signal** is the **difference between the actual activity of each output unit and the correct activity**.",
+     "children": []
+    },
+    {
+     "text": "In **back-propagation**, the **error signal is sent back through the circuit**. It shows **how the weights should be changed** so the output matches the correct signal.",
+     "children": []
+    },
+    {
+     "text": "The process **repeats until the error signal is zero**. **Each learning experience changes the weights only a little.**",
+     "children": [
+      "At first the property units are weakly activated and there are many errors."
+     ]
+    },
+    {
+     "text": "Back-propagation matters because it tells the network how to change. The error signal is sent back through the circuit.",
+     "children": [
+      "Each learning experience changes the weights only a little, and the process repeats until the error signal is zero."
+     ]
+    }
+   ],
+   "17:34": [
+    {
+     "text": "The activity of the **hidden units** changes as the network learns. It is shown for rose, daisy and canary after **0, 250, 750 and 2,500 learning trials**.",
+     "children": []
+    },
+    {
+     "text": "At the start, the three patterns look alike. After many trials, **rose and daisy have similar patterns, and canary has a different pattern**.",
+     "children": [
+      "So the network comes to represent similar concepts with similar patterns of activity."
+     ]
+    },
+    {
+     "text": "The network was the same throughout, so the changing patterns in the hidden units come from the learning trials.",
+     "children": []
+    },
+    {
+     "text": "The hidden-unit patterns matter because they show what learning produces. Rose and daisy end with similar patterns, and canary ends with a different one.",
+     "children": [
+      "At the start, the three patterns looked alike."
+     ]
+    }
+   ],
+   "17:35": [
+    {
+     "text": "In a connectionist network, **information about each concept is in the distributed pattern of activity across many units**.",
+     "children": []
+    },
+    {
+     "text": "**Damage does not totally disrupt the network.** **Graceful degradation** means that **performance is disrupted gradually as parts of the system are damaged**.",
+     "children": []
+    },
+    {
+     "text": "Connectionist networks can explain **generalization of learning**. The slow learning process creates a network that can **handle a wide range of inputs**.",
+     "children": []
+    },
+    {
+     "text": "These properties matter because the network keeps working when part of it fails. Damage disrupts performance gradually, which is graceful degradation.",
+     "children": [
+      "The network can also generalize to a wide range of inputs."
+     ]
+    }
+   ],
+   "17:36": [],
+   "17:37": [
+    {
+     "text": "**Different areas of the brain may be specialized for different categories.** There is a **double dissociation for “living things” and “nonliving things.”**",
+     "children": [
+      "Some patients have trouble with living things only, and others have trouble with nonliving things only."
+     ]
+    },
+    {
+     "text": "Each side of the dissociation is a **category-specific memory impairment**, in which a person cannot identify one type of object but can identify other types.",
+     "children": []
+    },
+    {
+     "text": "So different areas may be specialized for different categories, **mostly in the temporal lobe**. The approaches disagree about how category knowledge is arranged.",
+     "children": []
+    },
+    {
+     "text": "The double dissociation matters because it suggests categories are handled separately in the brain. Living things and nonliving things can each be impaired alone.",
+     "children": [
+      "The areas involved are mostly in the temporal lobe."
+     ]
+    }
+   ],
+   "17:38": [
+    {
+     "text": "The **sensory-functional hypothesis** states that we tell **living things** from **artifacts** using one system for **sensory attributes** and one system for **function**.",
+     "children": [
+      "An artifact is a human-made object."
+     ]
+    },
+    {
+     "text": "It predicts that **a patient who cannot identify living things should have a more general impairment in processing sensory attributes**.",
+     "children": []
+    },
+    {
+     "text": "This is because **animals are more strongly associated with their sensory attributes**, and **artifacts are more strongly associated with their uses**.",
+     "children": []
+    },
+    {
+     "text": "The hypothesis matters because it explains a category impairment through two kinds of attribute. Animals are tied to sensory attributes, and artifacts are tied to uses.",
+     "children": [
+      "A patient who cannot identify living things should have a general impairment with sensory attributes."
+     ]
+    }
+   ],
+   "17:39": [
+    {
+     "text": "The hypothesis predicts that **deficits in processing sensory attributes go with deficits in recognizing animals**, but not artifacts.",
+     "children": []
+    },
+    {
+     "text": "**Warrington and Shallice** found evidence for this in **patients K.C. and E.W.** Both patients did much worse with living animals than with nonanimals.",
+     "children": [
+      "Other studies confirmed this and also linked functional attributes with artifacts."
+     ]
+    },
+    {
+     "text": "But there are **a number of exceptions** to this pattern.",
+     "children": []
+    },
+    {
+     "text": "Patients K.C. and E.W. did well with nonanimals, so their low scores with living animals were not a general loss of knowledge.",
+     "children": []
+    },
+    {
+     "text": "The patient evidence matters because it supports the hypothesis, and the exceptions show it does not fit every patient. Patients K.C. and E.W. did much worse with living animals.",
+     "children": [
+      "There are a number of exceptions to the overall pattern."
+     ]
+    }
+   ],
+   "17:40": [
+    {
+     "text": "The **semantic category approach** proposes **specific neural circuits in the brain for specific categories**. The circuits are **distributed over a number of cortical areas**.",
+     "children": []
+    },
+    {
+     "text": "**A limited number of categories may be innately determined**, because they are important for survival.",
+     "children": [
+      "Another possibility is that unusual impairments are haphazard results of strokes late in life."
+     ]
+    },
+    {
+     "text": "The semantic category approach matters because it gives a different answer, and it is called the category-specific approach in the summary. It proposes specific neural circuits for specific categories.",
+     "children": [
+      "Some categories may be innately determined because of their importance for survival."
+     ]
+    }
+   ],
+   "17:41": [
+    {
+     "text": "The **multiple factors approach** looks at **how concepts are divided up within a category**. It does not look for specific brain areas for different concepts.",
+     "children": []
+    },
+    {
+     "text": "**Mechanical devices**, such as musical instruments, **overlap with artifacts** because they involve performing actions. They **overlap with animals** because they involve sound and motion.",
+     "children": []
+    },
+    {
+     "text": "So mechanical devices have a **widely distributed semantic representation**, which means the knowledge about them is spread over many brain regions. **Patients may identify mechanical devices even if they do poorly with other artifacts.**",
+     "children": []
+    },
+    {
+     "text": "The multiple factors approach matters because it looks inside a category. Mechanical devices overlap with both artifacts and animals.",
+     "children": [
+      "So they have a widely distributed semantic representation."
+     ]
+    }
+   ],
+   "17:42": [
+    {
+     "text": "**Crowding** occurs **when different concepts within a category share many properties**. Animals all share eyes, legs and the ability to move. **Artifacts share fewer properties.**",
+     "children": []
+    },
+    {
+     "text": "So **patients with category-specific impairments may not have a category impairment at all**.",
+     "children": [
+      "They may have difficulty with living things because they have difficulty **telling apart items that share similar features**."
+     ]
+    },
+    {
+     "text": "Crowding matters because it offers another reason for trouble with living things. Animals share many properties, so they are hard to tell apart.",
+     "children": [
+      "A patient may not have a category impairment at all."
+     ]
+    }
+   ],
+   "17:43": [
+    {
+     "text": "In the **embodied approach**, our knowledge of a concept is based on **reactivating the sensory and motor processes** that occur when we interact with the object.",
+     "children": []
+    },
+    {
+     "text": "When we use a hammer, **sensory areas** respond to its size and shape, and **motor areas** carry out the actions of using it.",
+     "children": [
+      "**When we see a hammer or the word “hammer,” the same areas are activated.**"
+     ]
+    },
+    {
+     "text": "So there is an **interaction between action and perception**.",
+     "children": []
+    },
+    {
+     "text": "The embodied approach matters because it ties concepts to action and perception. Seeing a hammer activates the areas used when handling one.",
+     "children": [
+      "Knowledge of concepts is based on reactivating sensory and motor processes."
+     ]
+    }
+   ],
+   "17:44": [
+    {
+     "text": "The three approaches agree that **information about concepts is distributed across many structures in the brain**.",
+     "children": []
+    },
+    {
+     "text": "They differ in which kind of information they treat as most important.",
+     "children": [
+      "The **category-specific approach**, which is the semantic category approach, emphasizes **specialized areas of the brain and the networks connecting them**.",
+      "The **multiple-factor approach** emphasizes **many different features and properties**.",
+      "The **embodied approach** emphasizes **activity caused by the sensory and motor properties of objects**."
+     ]
+    },
+    {
+     "text": "The comparison matters because the three approaches agree on one point. Information about concepts is distributed across many structures in the brain.",
+     "children": [
+      "They differ in which kind of information they emphasize."
+     ]
+    }
+   ]
   },
   "18": {
    "15:1": [],
@@ -12883,7 +18758,1067 @@ window.THIRD_PART = {
      ]
     }
    ],
-   "16:45": []
+   "16:45": [],
+   "17:1": [],
+   "17:2": [
+    {
+     "text": "**Conceptual knowledge** is **knowledge that enables us to recognize objects and events and to make inferences about their properties**.",
+     "children": [
+      "An inference is a conclusion about something that has not been observed directly."
+     ]
+    },
+    {
+     "text": "A **concept** is a **mental representation used for a variety of cognitive functions**.",
+     "children": [
+      "It can be the **meaning of objects, events, and abstract ideas**, and it can be the **mental representation of a class or individual**."
+     ]
+    },
+    {
+     "text": "**Categorization** is **the process by which things are placed into groups called categories**.",
+     "children": [
+      "**Categories are all possible examples of a particular concept**, and **our knowledge of the world is organized in categories**."
+     ]
+    },
+    {
+     "text": "These definitions matter because every later approach is an answer to one question, which is how things are placed into categories.",
+     "children": [
+      "A concept is the mental representation, and a category is all the examples of that concept."
+     ]
+    }
+   ],
+   "17:3": [
+    {
+     "text": "The **category “cat” includes tabbies, Siamese cats, Persian cats, wild cats** and more.",
+     "children": [
+      "**Identifying something as a “cat” allows you to assume a number of things about its anatomy, behavior** and other properties."
+     ]
+    },
+    {
+     "text": "Knowing that an animal is a cat tells a person that it probably has whiskers, catches mice, meows and purrs, and sleeps a lot.",
+     "children": [
+      "**That is good because we do not have to treat each new cat we encounter as sui generis**, which means as one of a kind.",
+      "The category supplies the knowledge."
+     ]
+    },
+    {
+     "text": "The example matters because one word carries a great deal of knowledge. Calling an animal a cat lets a person assume many of its properties.",
+     "children": [
+      "Each new cat does not have to be learned about separately."
+     ]
+    }
+   ],
+   "17:4": [
+    {
+     "text": "Categories **help to understand individual cases not previously encountered**.",
+     "children": [
+      "A person who meets a new animal and recognizes it as a cat already knows a great deal about it."
+     ]
+    },
+    {
+     "text": "Categories are **“pointers to knowledge.”** They **provide a wealth of general information about an item**, and they **allow us to identify the special characteristics of a particular item**.",
+     "children": [
+      "Knowing what cats are usually like makes it easy to notice what is unusual about one cat."
+     ]
+    },
+    {
+     "text": "**If there were no such things as categories, we would have a very hard time dealing with the world**.",
+     "children": [
+      "Every object would have to be learned about separately."
+     ]
+    },
+    {
+     "text": "Categories matter because they give knowledge about things a person has never met before. They are pointers to knowledge.",
+     "children": [
+      "Without categories, dealing with the world would be very hard."
+     ]
+    }
+   ],
+   "17:5": [
+    {
+     "text": "Two questions show why categories are complicated.",
+     "children": [
+      "**If I cut a cat’s whiskers off, or show that it can easily be trained, does it cease to be a cat?** It does not.",
+      "The animal is still a cat without one or two of the usual properties."
+     ]
+    },
+    {
+     "text": "**If I start meowing and purring, does that make me a cat?** It does not.",
+     "children": [
+      "A person who has several properties of cats is still not a cat."
+     ]
+    },
+    {
+     "text": "**These seem like absurd propositions, but explaining why turns out to be very hard**.",
+     "children": [
+      "No single property decides whether something is a cat, so a list of required properties does not work as a rule for membership."
+     ]
+    },
+    {
+     "text": "The two questions matter because they show that no single property decides membership. A cat without whiskers is still a cat.",
+     "children": [
+      "Explaining why is very hard, which is the problem the approaches try to solve."
+     ]
+    }
+   ],
+   "17:6": [
+    {
+     "text": "In the **definitional approach to categorization**, we **determine category membership based on whether the object meets the definition of the category**.",
+     "children": []
+    },
+    {
+     "text": "This approach **does not work well**.",
+     "children": [
+      "It **works well for some things, such as geometric objects**.",
+      "A square can be defined as a figure with four equal sides and four right angles.",
+      "It does **not** work **for natural objects and human-made objects**."
+     ]
+    },
+    {
+     "text": "The reason is that **not all members of everyday categories have the same defining features**.",
+     "children": [
+      "An armchair, a straight wooden chair, a round cushioned chair and a rock that someone sits on can all be called chairs, and no one definition covers all of them."
+     ]
+    },
+    {
+     "text": "The definitional approach matters because the other approaches try to solve the problem it leaves. Not all members of everyday categories have the same defining features.",
+     "children": [
+      "It works for geometric objects and not for natural or human-made objects."
+     ]
+    }
+   ],
+   "17:7": [
+    {
+     "text": "**Wittgenstein proposed the idea of family resemblance to deal with the problem that definitions often do not include all members of a category**.",
+     "children": [
+      "In **family resemblance**, **things in a category resemble one another in a number of ways**."
+     ]
+    },
+    {
+     "text": "Family resemblance **allows for some variation within a category**.",
+     "children": [
+      "Members do not all have to share one defining feature.",
+      "They only have to overlap with other members in several features."
+     ]
+    },
+    {
+     "text": "This leads to a different view of categorization.",
+     "children": [
+      "**Categorization may be based on determining how similar an object is to some standard representation of a category**."
+     ]
+    },
+    {
+     "text": "Family resemblance matters because it allows variation within a category. Members resemble one another in a number of ways without sharing one definition.",
+     "children": [
+      "Categorization may then be based on similarity to a standard representation."
+     ]
+    }
+   ],
+   "17:8": [
+    {
+     "text": "A **prototype** is **a representation of the “typical” member of a category**.",
+     "children": [
+      "It has the **characteristic features that describe what members of that concept are like**.",
+      "It is **an average of category members encountered in the past**."
+     ]
+    },
+    {
+     "text": "In the **prototype approach to categorization**, **membership in a category is determined by comparing the object to a prototype that represents the category**.",
+     "children": [
+      "The prototype for “bird” is not a sparrow, a robin or a blue jay.",
+      "It is an average of the birds a person has seen."
+     ]
+    },
+    {
+     "text": "The prototype matters because it is the standard an object is compared with. It is an average of the members a person has met.",
+     "children": [
+      "Membership is decided by comparing the object to the prototype."
+     ]
+    }
+   ],
+   "17:9": [
+    {
+     "text": "**Not all birds are like robins, blue jays, or sparrows**.",
+     "children": [
+      "**Owls and penguins are also birds**.",
+      "**These variations represent differences in typicality**."
+     ]
+    },
+    {
+     "text": "In **Rosch (1975)**, participants **saw a category title (e.g. birds), and a list of about 50 members of the category**.",
+     "children": [
+      "They **were asked to rate the extent to which each member represented the category title**.",
+      "A rating of 1 meant a very good example, and a rating of 7 meant a poor example."
+     ]
+    },
+    {
+     "text": "For the category **birds**, sparrow was rated 1.18, owl 2.96, penguin 4.53 and bat 6.15. For the category **furniture**, chair and sofa were rated 1.04, china closet 2.59, mirror 4.39 and telephone 6.68. People agree that some members are better examples of a category than others.",
+     "children": []
+    },
+    {
+     "text": "In Rosch (1975), every item was rated under the same category title, so the different ratings reflect how well each one represents the category.",
+     "children": []
+    },
+    {
+     "text": "The ratings matter because people agreed that members differ in typicality. Sparrow was rated a very good bird, and bat was rated a poor one.",
+     "children": [
+      "A category has better and worse examples."
+     ]
+    }
+   ],
+   "17:10": [
+    {
+     "text": "**High prototypicality** means that a **category member closely resembles the category prototype**.",
+     "children": [
+      "It is a **“typical” member**.",
+      "**For the category “bird,”** a high-prototypicality member is a **robin**."
+     ]
+    },
+    {
+     "text": "**Low prototypicality** means that a **category member does not closely resemble the category prototype**.",
+     "children": [
+      "**For the category “bird,”** a low-prototypicality member is an **ostrich**.",
+      "Both are birds, but the robin is much closer to the average bird."
+     ]
+    },
+    {
+     "text": "The two terms matter because they describe how close a member is to the prototype. A robin is close to the prototype for bird, and an ostrich is not.",
+     "children": [
+      "Both are still birds."
+     ]
+    }
+   ],
+   "17:11": [
+    {
+     "text": "**Prototypicality is related to family resemblance**.",
+     "children": [
+      "In **Rosch and Mervis’s (1975)** study, the instructions asked participants to list as many characteristics and attributes as they could for each of several common objects, such as chair, sofa, mirror and telephone."
+     ]
+    },
+    {
+     "text": "**Chairs, sofas, tables, and other “more prototypical” items of furniture share many characteristics with one another, whereas a mirror or a telephone share relatively few**.",
+     "children": [
+      "Items with high prototypicality are the ones with high family resemblance."
+     ]
+    },
+    {
+     "text": "**This will become important when we consider arguments about how to model categorical knowledge (e.g., connectionist networks)**.",
+     "children": []
+    },
+    {
+     "text": "In Rosch and Mervis (1975), the items were all furniture, so the difference in shared characteristics goes with how prototypical each item is.",
+     "children": []
+    },
+    {
+     "text": "The link matters because it ties typicality to shared characteristics. The more prototypical items of furniture share many characteristics with one another.",
+     "children": [
+      "A mirror or a telephone shares relatively few."
+     ]
+    }
+   ],
+   "17:12": [
+    {
+     "text": "The **typicality effect** is that **prototypical objects are processed preferentially**.",
+     "children": [
+      "In a **sentence verification task**, participants answer yes or no to sentences such as **“An apple is a fruit”** and **“A pomegranate is a fruit.”**"
+     ]
+    },
+    {
+     "text": "**Faster responses were made to prototypical items**.",
+     "children": [
+      "Reaction time was about 520 milliseconds for a high-prototypicality item such as apple and about 650 milliseconds for a low-prototypicality item such as pomegranate."
+     ]
+    },
+    {
+     "text": "**Further, when asked to list as many objects in a category as possible, participants tend to list the most prototypical members first**.",
+     "children": []
+    },
+    {
+     "text": "Both sentences are true, so the faster response for apple goes with its higher prototypicality.",
+     "children": []
+    },
+    {
+     "text": "The typicality effect matters because typicality changes behavior. Prototypical items are verified faster and listed first.",
+     "children": [
+      "“An apple is a fruit” is verified faster than “A pomegranate is a fruit.”"
+     ]
+    }
+   ],
+   "17:13": [
+    {
+     "text": "**Prototypical category members are more affected by a priming stimulus**.",
+     "children": [
+      "Participants **heard the prime (e.g.",
+      "“green”)**.",
+      "**Two seconds later, they saw a pair of colors side by side**.",
+      "They **were asked to press a key as quickly as possible if the two were the same**."
+     ]
+    },
+    {
+     "text": "When the two colors were the same and were **good examples** of green, the reaction time for “same” was **610 milliseconds**.",
+     "children": [
+      "When the two colors were the same and were **poor examples** of green, the reaction time was **780 milliseconds**.",
+      "After the prime, the good examples were judged faster than the poor examples."
+     ]
+    },
+    {
+     "text": "Both pairs were the same color, so the difference between 610 and 780 milliseconds goes with how good an example of green the colors were.",
+     "children": []
+    },
+    {
+     "text": "The result matters because the same prime helped good examples more than poor examples. The times were 610 and 780 milliseconds.",
+     "children": [
+      "Prototypical category members are more affected by a priming stimulus."
+     ]
+    }
+   ],
+   "17:14": [
+    {
+     "text": "Hearing the word “green” leads a person to form a **prototype for green**.",
+     "children": [
+      "This prototype is a good, typical green."
+     ]
+    },
+    {
+     "text": "A pair of good green examples is a **good match** to that prototype, so the person responds quickly.",
+     "children": [
+      "A pair of light green examples is a **poor match** to the prototype, so the person responds more slowly.",
+      "The priming result therefore fits the prototype approach."
+     ]
+    },
+    {
+     "text": "The explanation matters because it connects priming to the prototype. Hearing “green” creates a prototype for green.",
+     "children": [
+      "Good examples match that prototype, and poor examples match it less well."
+     ]
+    }
+   ],
+   "17:15": [
+    {
+     "text": "In the **exemplar approach**, a **concept is represented by multiple examples rather than a single averaged prototype**.",
+     "children": [
+      "The **examples are actual category members, not abstract averages**.",
+      "**To categorize, compare the new item to stored examples**."
+     ]
+    },
+    {
+     "text": "**This approach can explain Rosch’s results**.",
+     "children": [
+      "**Objects that are like more of the exemplars are classified faster**.",
+      "A sparrow is like many stored birds, so it is classified quickly."
+     ]
+    },
+    {
+     "text": "The exemplar approach is **similar to the prototype view** in that **representing a category is not defining it**.",
+     "children": [
+      "It is **different** in that the **representation is not abstract**.",
+      "It consists of **descriptions of specific examples**."
+     ]
+    },
+    {
+     "text": "The exemplar approach matters because it replaces one average with many real examples. A new item is compared with the stored examples.",
+     "children": [
+      "Like the prototype approach, it does not define the category."
+     ]
+    }
+   ],
+   "17:16": [
+    {
+     "text": "The exemplar approach **explains the typicality effect**.",
+     "children": [
+      "It also **takes into account atypical cases**.",
+      "**Rather than comparing a penguin to an “average” bird, we remember that there are some birds that don’t fly**."
+     ]
+    },
+    {
+     "text": "It **deals with variable categories**, in which the members differ a great deal from one another.",
+     "children": []
+    },
+    {
+     "text": "**Which approach do we use? We may use both**.",
+     "children": [
+      "**Exemplars may work best for small categories**, and **prototypes may work best for larger categories**."
+     ]
+    },
+    {
+     "text": "The exemplar approach matters because it handles members that an average does not fit. We remember that some birds do not fly.",
+     "children": [
+      "People may use both approaches, with exemplars for small categories and prototypes for larger ones."
+     ]
+    }
+   ],
+   "17:17": [
+    {
+     "text": "**Rosch’s research indicates that there are different levels of categories**.",
+     "children": [
+      "The **superordinate level (or global level)** is a general category such as **“furniture.”** The **basic level** is a category such as **“table.”** The **subordinate level (or specific level)** is a category such as **“kitchen table.”**"
+     ]
+    },
+    {
+     "text": "Two questions follow.",
+     "children": [
+      "**Is this just an intuitive description of different levels of categories, or is this how concepts are organized in the mind?** **Also, what is “basic” about the “basic level”?** The evidence shows that the basic level is special in the mind.",
+      "Going above it loses a lot of information, going below it gains only a little, and people name objects at the basic level."
+     ]
+    },
+    {
+     "text": "The three levels matter because a single object can be named at each of them. The same object is furniture, a table and a kitchen table.",
+     "children": [
+      "The basic level turns out to be special."
+     ]
+    }
+   ],
+   "17:18": [
+    {
+     "text": "In **Rosch and colleagues (1976)**, participants **were asked to list as many features as they could that would be common to all or most of the objects in the category**.",
+     "children": [
+      "They listed about 3 common features for the global category furniture, about 9 for the basic category table and about 10.3 for the specific category kitchen table."
+     ]
+    },
+    {
+     "text": "**Going above basic level results in a large loss of information**.",
+     "children": [
+      "**Many fewer features are shared by members of the category “furniture” than by members of the category “table.”**"
+     ]
+    },
+    {
+     "text": "**Going below basic level results in little gain of information**.",
+     "children": [
+      "**“Kitchen tables” do not have a ton more in common with one another than “tables.”** The basic level is the level at which a category name carries a lot of information without becoming overly specific."
+     ]
+    },
+    {
+     "text": "In Rosch and colleagues (1976), the same task was used at all three levels, so the change in the number of features goes with the level.",
+     "children": []
+    },
+    {
+     "text": "The result matters because the gain in common features is uneven. From furniture to table the number rises from about 3 to about 9, and from table to kitchen table it rises only to about 10.3.",
+     "children": [
+      "Going above the basic level loses a lot of information, and going below it gains little."
+     ]
+    }
+   ],
+   "17:19": [
+    {
+     "text": "Two objects are shown, an electric guitar and a fish, with the instruction **“Quick, name these objects.”** Most people say “guitar” and “fish.”",
+     "children": []
+    },
+    {
+     "text": "These names are basic-level names.",
+     "children": [
+      "A person could have said “instrument” or “Stratocaster” for the first object and “animal” or “trout” for the second, but those are not the names that come to mind first."
+     ]
+    },
+    {
+     "text": "The naming demonstration matters because the first name that comes to mind is at the basic level. Most people say “guitar” and “fish.”",
+     "children": [
+      "More general and more specific names were available."
+     ]
+    }
+   ],
+   "17:20": [
+    {
+     "text": "**When participants are asked to name these objects, they named them by their basic level name**.",
+     "children": [
+      "They said **guitar, rather than Stratocaster (specific) or instrument (global)**.",
+      "They said **fish, rather than trout or animal**."
+     ]
+    },
+    {
+     "text": "This is further evidence that the basic level is special.",
+     "children": [
+      "It is the level people use first when they name an object."
+     ]
+    },
+    {
+     "text": "Each object could have been given a more general or a more specific name, and people gave the basic-level name.",
+     "children": []
+    },
+    {
+     "text": "The naming result matters because it shows the basic level in everyday behavior. People said guitar, not Stratocaster or instrument.",
+     "children": [
+      "They said fish, not trout or animal."
+     ]
+    }
+   ],
+   "17:21": [
+    {
+     "text": "**Rosch’s experiments were carried out on college undergraduates**.",
+     "children": [
+      "The result was that **there is a category level, which they called “basic,” that reflects college undergraduates’ everyday experience**."
+     ]
+    },
+    {
+     "text": "**Coley, Medin & Atran (1997)** **asked both undergraduates and horticulturalists to walk around campus and name as specifically as possible 44 different plants**.",
+     "children": [
+      "**75% of the undergraduates used “trees.”** **Horticulturalists used “specific” categories instead, such as “oak.”**"
+     ]
+    },
+    {
+     "text": "People of the **Guatemalan Itzaj culture call an oak tree an “oak” and not a tree**.",
+     "children": [
+      "**For people who speak their language, “oak” behaves like a basic-level category**.",
+      "The level that is basic therefore depends on a person’s experience and culture."
+     ]
+    },
+    {
+     "text": "In Coley, Medin and Atran (1997), both groups named the same plants, so the difference in names goes with the people and not with the plants.",
+     "children": []
+    },
+    {
+     "text": "The plant-naming result matters because the basic level changed with experience. Undergraduates said “trees,” and horticulturalists said “oak.”",
+     "children": [
+      "For people of the Guatemalan Itzaj culture, “oak” behaves like a basic-level category."
+     ]
+    }
+   ],
+   "17:22": [
+    {
+     "text": "**Tanaka and Taylor (1991)** **asked bird experts and non-experts to name pictures of objects**.",
+     "children": [
+      "**Experts responded by specifying the birds’ species**, with names such as “sparrow” and “robin.” Non-experts mostly responded with the basic-level name “bird.”"
+     ]
+    },
+    {
+     "text": "**Experts had learned to pay attention to features of birds that non-experts were unaware of**.",
+     "children": [
+      "Their knowledge changed the level at which they named the birds."
+     ]
+    },
+    {
+     "text": "**People’s knowledge and properties of objects are both important factors in categorization**.",
+     "children": []
+    },
+    {
+     "text": "In Tanaka and Taylor (1991), experts and non-experts named the same pictures, so the difference goes with their knowledge of birds.",
+     "children": []
+    },
+    {
+     "text": "The result matters because knowledge changed the level at which people named birds. Bird experts named the species, and non-experts said “bird.”",
+     "children": [
+      "People’s knowledge and the properties of objects are both important in categorization."
+     ]
+    }
+   ],
+   "17:23": [
+    {
+     "text": "In the semantic network approach, **concepts are arranged in networks that represent the way concepts are organized in the mind**.",
+     "children": []
+    },
+    {
+     "text": "In the model of **Collins and Quillian (1969)**, a **node** is a **category or concept**.",
+     "children": [
+      "**Concepts are linked by structured pointers** such as **“is a”** and **“has.”** For example, a canary “is a” bird, and a bird “has” feathers."
+     ]
+    },
+    {
+     "text": "The network is a **model for how concepts and properties are associated in the mind**.",
+     "children": [
+      "It is a **hierarchical model, more specific to more general**.",
+      "Canary is below bird, bird is below animal, and animal is below living thing."
+     ]
+    },
+    {
+     "text": "The semantic network matters because it is a model of how concepts are linked in the mind. Each concept is a node, joined to others by pointers such as “is a” and “has.”",
+     "children": [
+      "The model is hierarchical, from more specific to more general."
+     ]
+    }
+   ],
+   "17:24": [
+    {
+     "text": "**Inheritance** means that **lower-level items share properties of higher-level items**.",
+     "children": [
+      "A canary is a bird, so a canary has the properties of birds."
+     ]
+    },
+    {
+     "text": "**Cognitive economy** means that **shared properties are only stored at higher-level nodes**.",
+     "children": [
+      "**Including “can fly” for every node would be inefficient**, so “can fly” is stored once at the node for bird."
+     ]
+    },
+    {
+     "text": "**Exceptions are stored at lower nodes**.",
+     "children": [
+      "For example, **“ostrich” would have the property “can’t fly.”**"
+     ]
+    },
+    {
+     "text": "Cognitive economy matters because it says where properties are stored. A shared property is stored once at a higher node.",
+     "children": [
+      "Exceptions are stored at lower nodes."
+     ]
+    }
+   ],
+   "17:25": [
+    {
+     "text": "**Given the network’s hierarchical organization, general concepts are at the top, and specific ones at the bottom**.",
+     "children": []
+    },
+    {
+     "text": "This gives a **testable prediction**.",
+     "children": [
+      "**The time it takes for a person to retrieve information about a concept should be determined by the distance that must be traveled through the network**."
+     ]
+    },
+    {
+     "text": "The prediction was supported.",
+     "children": [
+      "**It takes longer to answer “yes” to “A canary is an animal” compared to “A canary is a bird.”** Response time rose with the number of levels to be traversed, both for category statements and for property statements such as “A canary can sing,” “A canary can fly” and “A canary has skin.”"
+     ]
+    },
+    {
+     "text": "The statements were all about a canary, so the differences in response time go with the number of levels to be traversed.",
+     "children": []
+    },
+    {
+     "text": "The prediction matters because it can be tested with response times. Statements that require more levels took longer to verify.",
+     "children": [
+      "“A canary is an animal” took longer than “A canary is a bird.”"
+     ]
+    }
+   ],
+   "17:26": [
+    {
+     "text": "**Spreading activation** is a property of semantic networks.",
+     "children": [
+      "**Activation is the arousal level of a node**.",
+      "**When a node is activated, activity spreads out along all connected links**."
+     ]
+    },
+    {
+     "text": "**Concepts that receive activation are primed and more easily accessed from memory**.",
+     "children": [
+      "For example, activating “robin” sends activation to “bird,” and from there it spreads to “canary,” “ostrich” and “animal,” which are then primed."
+     ]
+    },
+    {
+     "text": "Spreading activation matters because it explains priming. Activity spreads from an activated node to the nodes linked to it.",
+     "children": [
+      "Those concepts are primed and are accessed more easily."
+     ]
+    }
+   ],
+   "17:27": [
+    {
+     "text": "**Meyer & Schvaneveldt tested for “spreading activation” with a lexical decision task using pairs of words**.",
+     "children": [
+      "In a lexical decision task, a person decides as quickly as possible whether the letter strings are real words.",
+      "Some pairs were two nonwords, some had one nonword, some were two unrelated words such as chair and money, and some were two related words such as bread and wheat."
+     ]
+    },
+    {
+     "text": "**People were faster to respond to related pairs than unrelated pairs**.",
+     "children": [
+      "Reaction time was about 855 milliseconds for words that were associated and about 940 milliseconds for words that were not associated.",
+      "Reading the first word spread activation to related words, so the second word was easier to access."
+     ]
+    },
+    {
+     "text": "**Many studies involving semantic priming have produced similar results**.",
+     "children": []
+    },
+    {
+     "text": "In the task of Meyer and Schvaneveldt, related and unrelated pairs were both made of real words, so the faster response goes with the relation between the words.",
+     "children": []
+    },
+    {
+     "text": "The result matters because related words were recognized faster. People responded faster to related pairs than to unrelated pairs.",
+     "children": [
+      "Many studies of semantic priming have found similar results."
+     ]
+    }
+   ],
+   "17:28": [
+    {
+     "text": "The model of Collins and Quillian **cannot explain typicality effects**.",
+     "children": [
+      "The **typicality effect** is that **reaction times for statements about an object are faster for more typical members of a category**.",
+      "**The model instead predicts equal fast reaction times to both “canary” and “ostrich,” as they are one node away from “bird.”**"
+     ]
+    },
+    {
+     "text": "The idea of **cognitive economy** is also questioned.",
+     "children": [
+      "There is **some evidence that people store specific properties of concepts right at the node for the concept**."
+     ]
+    },
+    {
+     "text": "**Some sentence-verification results are problematic for the model**.",
+     "children": [
+      "**“A pig is a mammal” is slower than “A pig is an animal.”** In the network, mammal is closer to pig than animal is, so the model predicts the opposite."
+     ]
+    },
+    {
+     "text": "Canary and ostrich are the same distance from bird in the network, so distance cannot explain why responses to typical members are faster.",
+     "children": []
+    },
+    {
+     "text": "The criticisms matter because they led to a new kind of network. The model cannot explain typicality effects.",
+     "children": [
+      "It also predicts the wrong order for “A pig is a mammal” and “A pig is an animal.”"
+     ]
+    }
+   ],
+   "17:29": [
+    {
+     "text": "The **connectionist approach** is a **“new” (late 80’s) approach to networks**.",
+     "children": [
+      "It is based on **criticism of structured networks** and on **advances in understanding how information is represented in the brain**."
+     ]
+    },
+    {
+     "text": "**Connectionism** is **an approach to creating computer models for representing cognitive processes**.",
+     "children": [
+      "It is **also called parallel distributed processing**, because **knowledge is represented in the distributed activity of many units**."
+     ]
+    },
+    {
+     "text": "**Weights determine at each connection how strongly an incoming signal will activate the next unit**.",
+     "children": []
+    },
+    {
+     "text": "Connectionism matters because knowledge is no longer stored at single nodes. It is represented in the distributed activity of many units.",
+     "children": [
+      "Weights set how strongly a signal activates the next unit."
+     ]
+    }
+   ],
+   "17:30": [
+    {
+     "text": "**Units** are **inspired by the neurons in the brain**.",
+     "children": [
+      "**Patterns of activity in these units represent concepts and their properties**.",
+      "The **lines** are **connections that transfer activation between the units**, and they are **inspired by axons**."
+     ]
+    },
+    {
+     "text": "**Input units** are **units activated by stimuli from the environment**.",
+     "children": [
+      "Hidden units lie between the input units and the output units.",
+      "**Output units receive input from hidden units**."
+     ]
+    },
+    {
+     "text": "A **connection weight** determines **how signals sent from one unit either increase or decrease the activity in the next unit**.",
+     "children": []
+    },
+    {
+     "text": "The parts matter because each has a job. Input units receive stimuli from the environment, and output units receive input from hidden units.",
+     "children": [
+      "Connection weights decide how a signal changes the activity of the next unit."
+     ]
+    }
+   ],
+   "17:31": [
+    {
+     "text": "**High connection weights result in a strong tendency to excite the next unit**.",
+     "children": [
+      "**Negative connection weights can decrease excitation or inhibit activation of the receiving unit**."
+     ]
+    },
+    {
+     "text": "**Activation of units in a network depends on two things**.",
+     "children": [
+      "One is **the signal that originates in the input units**.",
+      "The other is **the connection weights throughout the network**."
+     ]
+    },
+    {
+     "text": "**A stimulus is represented by the pattern of activity that is distributed across the other units**.",
+     "children": [
+      "The pattern across the units is what stands for the stimulus."
+     ]
+    },
+    {
+     "text": "Weights matter because activation depends on them. Activation depends on the signal from the input units and on the weights throughout the network.",
+     "children": [
+      "A stimulus is represented by a pattern of activity across units."
+     ]
+    }
+   ],
+   "17:32": [
+    {
+     "text": "**For the network to operate properly, the connection weights have to be adjusted via a learning process**.",
+     "children": []
+    },
+    {
+     "text": "Learning occurs in steps.",
+     "children": [
+      "The **network responds to a stimulus**.",
+      "It **produces a “guess.”** It is **provided with the correct response**.",
+      "It then **modifies weights to increase the match between its response and the correct response**."
+     ]
+    },
+    {
+     "text": "Learning matters because the weights do not start out correct. The network guesses, is given the correct response and adjusts its weights.",
+     "children": [
+      "The adjustment increases the match between its response and the correct response."
+     ]
+    }
+   ],
+   "17:33": [
+    {
+     "text": "The **error signal** is the **difference between the actual activity of each output unit and the correct activity**.",
+     "children": [
+      "In **back-propagation**, the **error signal is transmitted back through the circuit**.",
+      "This **indicates how weights should be changed to allow the output signal to match the correct signal**."
+     ]
+    },
+    {
+     "text": "**The process repeats until the error signal is zero**.",
+     "children": [
+      "There is **initially weak and undifferentiated activation of property units, with many errors**.",
+      "**Error signals are then sent back**, and **changes are made in connection weights**."
+     ]
+    },
+    {
+     "text": "**Each learning experience causes only a small change in the connection weights**, so learning is gradual.",
+     "children": []
+    },
+    {
+     "text": "Back-propagation matters because it tells the network how to change. The error signal is sent back through the circuit.",
+     "children": [
+      "Each learning experience changes the weights only a little, and the process repeats until the error signal is zero."
+     ]
+    }
+   ],
+   "17:34": [
+    {
+     "text": "The activity of the hidden units changes as the network learns.",
+     "children": [
+      "Activity in the hidden units is shown for three concepts, rose, daisy and canary, after **0, 250, 750 and 2,500 learning trials**."
+     ]
+    },
+    {
+     "text": "At 0 trials, the patterns of activity for the three concepts look alike.",
+     "children": [
+      "As learning continues, the patterns become different.",
+      "By 2,500 trials, rose and daisy have similar patterns, and canary has a different pattern.",
+      "The network has learned to represent similar concepts with similar patterns of activity."
+     ]
+    },
+    {
+     "text": "The network was the same throughout, so the changing patterns in the hidden units come from the learning trials.",
+     "children": []
+    },
+    {
+     "text": "The hidden-unit patterns matter because they show what learning produces. Rose and daisy end with similar patterns, and canary ends with a different one.",
+     "children": [
+      "At the start, the three patterns looked alike."
+     ]
+    }
+   ],
+   "17:35": [
+    {
+     "text": "**In connectionist networks, information about each concept is contained in the distributed pattern of activity across a number of units**.",
+     "children": []
+    },
+    {
+     "text": "**The operation of connectionist networks is not totally disrupted by damage**.",
+     "children": [
+      "**Graceful degradation** means that **disruption of performance occurs gradually as parts of the system are damaged**."
+     ]
+    },
+    {
+     "text": "**Connectionist networks can explain generalization of learning**.",
+     "children": [
+      "The **slow learning process creates a network capable of handling a wide range of inputs**."
+     ]
+    },
+    {
+     "text": "These properties matter because the network keeps working when part of it fails. Damage disrupts performance gradually, which is graceful degradation.",
+     "children": [
+      "The network can also generalize to a wide range of inputs."
+     ]
+    }
+   ],
+   "17:36": [],
+   "17:37": [
+    {
+     "text": "**Different areas of the brain may be specialized to process information about different categories**.",
+     "children": [
+      "There is a **double dissociation for the categories “living things” and “nonliving things.”** Some patients have trouble with living things and not with nonliving things, and other patients show the reverse."
+     ]
+    },
+    {
+     "text": "Each side of the dissociation is a **category-specific memory impairment**, which is an impairment in which a person loses the ability to identify one type of object and keeps the ability to identify other types.",
+     "children": []
+    },
+    {
+     "text": "**Do different semantic categories “live” in different parts of the brain?** The areas involved are **mostly in the temporal lobe**, and the approaches that follow give different answers about how category knowledge is laid out.",
+     "children": []
+    },
+    {
+     "text": "The double dissociation matters because it suggests categories are handled separately in the brain. Living things and nonliving things can each be impaired alone.",
+     "children": [
+      "The areas involved are mostly in the temporal lobe."
+     ]
+    }
+   ],
+   "17:38": [
+    {
+     "text": "The **sensory-functional hypothesis** states that **our ability to differentiate living things and artifacts depends on a semantic memory system that distinguishes sensory attributes and a system that distinguishes function**.",
+     "children": [
+      "An artifact is a human-made object."
+     ]
+    },
+    {
+     "text": "It **predicts** that **a patient who can’t identify living things should have a more general impairment processing sensory attributes**.",
+     "children": []
+    },
+    {
+     "text": "The reason is that **animals and other natural kinds are more strongly associated with their sensory attributes, whereas artifacts are more strongly associated with their uses**.",
+     "children": [
+      "Ratings fit this.",
+      "Animals were rated higher than artifacts on color and motion, and artifacts were rated higher than animals on performed action."
+     ]
+    },
+    {
+     "text": "The hypothesis matters because it explains a category impairment through two kinds of attribute. Animals are tied to sensory attributes, and artifacts are tied to uses.",
+     "children": [
+      "A patient who cannot identify living things should have a general impairment with sensory attributes."
+     ]
+    }
+   ],
+   "17:39": [
+    {
+     "text": "The **sensory-functional hypothesis predicts an association between deficits in processing of sensory attributes and deficits in recognizing animals (but not artifacts)**.",
+     "children": []
+    },
+    {
+     "text": "**Warrington and Shallice found evidence for this (Patients K.C. and E.W.)**.",
+     "children": [
+      "Both patients performed at about 90 percent correct for nonanimals, which were nonliving things, fruits and vegetables, and much lower for living animals.",
+      "**Other studies confirmed this, and further found an association between functional attributes and artifacts**."
+     ]
+    },
+    {
+     "text": "**But there are a number of exceptions to this overall pattern**, so the hypothesis does not explain every patient.",
+     "children": []
+    },
+    {
+     "text": "Patients K.C. and E.W. did well with nonanimals, so their low scores with living animals were not a general loss of knowledge.",
+     "children": []
+    },
+    {
+     "text": "The patient evidence matters because it supports the hypothesis, and the exceptions show it does not fit every patient. Patients K.C. and E.W. did much worse with living animals.",
+     "children": [
+      "There are a number of exceptions to the overall pattern."
+     ]
+    }
+   ],
+   "17:40": [
+    {
+     "text": "The **semantic category approach** proposes that there are **specific neural circuits in the brain for specific categories**.",
+     "children": [
+      "These circuits are **distributed over a number of different cortical areas**."
+     ]
+    },
+    {
+     "text": "**There may be a limited number of categories that are innately determined because of their importance for survival**.",
+     "children": []
+    },
+    {
+     "text": "A different possibility is that the unusual impairments are haphazard results of strokes that people have late in life.",
+     "children": [
+      "One reported case, for example, was a category-specific naming deficit for medical terms after a hemorrhage."
+     ]
+    },
+    {
+     "text": "The semantic category approach matters because it gives a different answer, and it is called the category-specific approach in the summary. It proposes specific neural circuits for specific categories.",
+     "children": [
+      "Some categories may be innately determined because of their importance for survival."
+     ]
+    }
+   ],
+   "17:41": [
+    {
+     "text": "The **multiple factors approach** **looks at how concepts are divided up within a category rather than identifying specific brain areas or networks for different concepts**.",
+     "children": []
+    },
+    {
+     "text": "**Mechanical devices (e.g. musical instruments) overlap with artifacts**, because they **involve performing actions**, and with **animals**, because they **involve sound and motion**.",
+     "children": [
+      "As a result, **mechanical devices have a widely distributed semantic representation**, in **regions important for the representation of both living things and artifacts**."
+     ]
+    },
+    {
+     "text": "For this reason, **patients may be able to identify mechanical devices even if they perform poorly for other types of artifacts**.",
+     "children": []
+    },
+    {
+     "text": "The multiple factors approach matters because it looks inside a category. Mechanical devices overlap with both artifacts and animals.",
+     "children": [
+      "So they have a widely distributed semantic representation."
+     ]
+    }
+   ],
+   "17:42": [
+    {
+     "text": "**Another differentiating factor between animals and artifacts is crowding**.",
+     "children": [
+      "**Crowding** occurs **when different concepts within a category share many properties**.",
+      "For example, **“animals” all share “eyes,” “legs,” and “the ability to move.”** **In contrast, artifacts share fewer properties**."
+     ]
+    },
+    {
+     "text": "**Patients with category-specific impairments may not have a category impairment at all**.",
+     "children": [
+      "**Patients may have difficulty recognizing living things because they have difficulty distinguishing between items that share similar features**."
+     ]
+    },
+    {
+     "text": "Crowding matters because it offers another reason for trouble with living things. Animals share many properties, so they are hard to tell apart.",
+     "children": [
+      "A patient may not have a category impairment at all."
+     ]
+    }
+   ],
+   "17:43": [
+    {
+     "text": "In the **embodied approach**, **our knowledge of concepts is based on reactivation of sensory and motor processes that occur when we interact with the object**.",
+     "children": []
+    },
+    {
+     "text": "When we use a hammer, **different sensory areas are activated due to the hammer’s size and shape**, and **motor areas are activated that are involved in carrying out actions involved in using a hammer**.",
+     "children": [
+      "**When we see a hammer, or see the word “hammer,” the same areas get activated**."
+     ]
+    },
+    {
+     "text": "This shows an **interaction between action and perception**.",
+     "children": [
+      "In brain imaging, different motor areas are active for leg and foot actions, for arm and hand actions, and for face and mouth actions."
+     ]
+    },
+    {
+     "text": "The embodied approach matters because it ties concepts to action and perception. Seeing a hammer activates the areas used when handling one.",
+     "children": [
+      "Knowledge of concepts is based on reactivating sensory and motor processes."
+     ]
+    }
+   ],
+   "17:44": [
+    {
+     "text": "**The three approaches agree: information about concepts is distributed across many structures in the brain**.",
+     "children": []
+    },
+    {
+     "text": "**The approaches differ in their emphasis on the type of information that is most important**.",
+     "children": [
+      "The **category-specific approach**, which is the semantic category approach, emphasizes **specialized areas of the brain and networks connecting them**.",
+      "The **multiple-factor approach** emphasizes **the role of many different features and properties**.",
+      "The **embodied approach** emphasizes **activity caused by the sensory and motor properties of objects**."
+     ]
+    },
+    {
+     "text": "The comparison matters because the three approaches agree on one point. Information about concepts is distributed across many structures in the brain.",
+     "children": [
+      "They differ in which kind of information they emphasize."
+     ]
+    }
+   ]
   },
   "20": {
    "15:1": [],
@@ -14232,7 +21167,721 @@ window.THIRD_PART = {
      ]
     }
    ],
-   "16:45": []
+   "16:45": [],
+   "17:1": [],
+   "17:2": [
+    {
+     "text": "**Conceptual knowledge** is **knowledge that enables us to recognize objects and events and to make inferences about their properties**.",
+     "children": [
+      "An inference is a conclusion about something that has not been observed directly."
+     ]
+    },
+    {
+     "text": "A **concept** is a **mental representation used for a variety of cognitive functions**.",
+     "children": [
+      "It can be the **meaning of objects, events, and abstract ideas**, and it can be the **mental representation of a class or individual**."
+     ]
+    },
+    {
+     "text": "**Categorization** is **the process by which things are placed into groups called categories**.",
+     "children": [
+      "**Categories are all possible examples of a particular concept**, and **our knowledge of the world is organized in categories**."
+     ]
+    }
+   ],
+   "17:3": [
+    {
+     "text": "The **category “cat” includes tabbies, Siamese cats, Persian cats, wild cats** and more.",
+     "children": [
+      "**Identifying something as a “cat” allows you to assume a number of things about its anatomy, behavior** and other properties."
+     ]
+    },
+    {
+     "text": "Knowing that an animal is a cat tells a person that it probably has whiskers, catches mice, meows and purrs, and sleeps a lot. **That is good because we do not have to treat each new cat we encounter as sui generis**, which means as one of a kind.",
+     "children": [
+      "The category supplies the knowledge."
+     ]
+    }
+   ],
+   "17:4": [
+    {
+     "text": "Categories **help to understand individual cases not previously encountered**.",
+     "children": [
+      "A person who meets a new animal and recognizes it as a cat already knows a great deal about it."
+     ]
+    },
+    {
+     "text": "Categories are **“pointers to knowledge.”** They **provide a wealth of general information about an item**, and they **allow us to identify the special characteristics of a particular item**.",
+     "children": [
+      "Knowing what cats are usually like makes it easy to notice what is unusual about one cat."
+     ]
+    },
+    {
+     "text": "**If there were no such things as categories, we would have a very hard time dealing with the world**.",
+     "children": [
+      "Every object would have to be learned about separately."
+     ]
+    }
+   ],
+   "17:5": [
+    {
+     "text": "Two questions show why categories are complicated. **If I cut a cat’s whiskers off, or show that it can easily be trained, does it cease to be a cat?** It does not.",
+     "children": [
+      "The animal is still a cat without one or two of the usual properties."
+     ]
+    },
+    {
+     "text": "**If I start meowing and purring, does that make me a cat?** It does not.",
+     "children": [
+      "A person who has several properties of cats is still not a cat."
+     ]
+    },
+    {
+     "text": "**These seem like absurd propositions, but explaining why turns out to be very hard**.",
+     "children": [
+      "No single property decides whether something is a cat, so a list of required properties does not work as a rule for membership."
+     ]
+    }
+   ],
+   "17:6": [
+    {
+     "text": "In the **definitional approach to categorization**, we **determine category membership based on whether the object meets the definition of the category**.",
+     "children": []
+    },
+    {
+     "text": "This approach **does not work well**. It **works well for some things, such as geometric objects**. A square can be defined as a figure with four equal sides and four right angles.",
+     "children": [
+      "It does **not** work **for natural objects and human-made objects**."
+     ]
+    },
+    {
+     "text": "The reason is that **not all members of everyday categories have the same defining features**.",
+     "children": [
+      "An armchair, a straight wooden chair, a round cushioned chair and a rock that someone sits on can all be called chairs, and no one definition covers all of them."
+     ]
+    }
+   ],
+   "17:7": [
+    {
+     "text": "**Wittgenstein proposed the idea of family resemblance to deal with the problem that definitions often do not include all members of a category**.",
+     "children": [
+      "In **family resemblance**, **things in a category resemble one another in a number of ways**."
+     ]
+    },
+    {
+     "text": "Family resemblance **allows for some variation within a category**. Members do not all have to share one defining feature.",
+     "children": [
+      "They only have to overlap with other members in several features."
+     ]
+    },
+    {
+     "text": "This leads to a different view of categorization.",
+     "children": [
+      "**Categorization may be based on determining how similar an object is to some standard representation of a category**."
+     ]
+    }
+   ],
+   "17:8": [
+    {
+     "text": "A **prototype** is **a representation of the “typical” member of a category**. It has the **characteristic features that describe what members of that concept are like**.",
+     "children": [
+      "It is **an average of category members encountered in the past**."
+     ]
+    },
+    {
+     "text": "In the **prototype approach to categorization**, **membership in a category is determined by comparing the object to a prototype that represents the category**. The prototype for “bird” is not a sparrow, a robin or a blue jay.",
+     "children": [
+      "It is an average of the birds a person has seen."
+     ]
+    }
+   ],
+   "17:9": [
+    {
+     "text": "**Not all birds are like robins, blue jays, or sparrows**. **Owls and penguins are also birds**.",
+     "children": [
+      "**These variations represent differences in typicality**."
+     ]
+    },
+    {
+     "text": "In **Rosch (1975)**, participants **saw a category title (e.g. birds), and a list of about 50 members of the category**. They **were asked to rate the extent to which each member represented the category title**.",
+     "children": [
+      "A rating of 1 meant a very good example, and a rating of 7 meant a poor example."
+     ]
+    },
+    {
+     "text": "For the category **birds**, sparrow was rated 1.18, owl 2.96, penguin 4.53 and bat 6.15. For the category **furniture**, chair and sofa were rated 1.04, china closet 2.59, mirror 4.39 and telephone 6.68. People agree that some members are better examples of a category than others.",
+     "children": []
+    }
+   ],
+   "17:10": [
+    {
+     "text": "**High prototypicality** means that a **category member closely resembles the category prototype**. It is a **“typical” member**.",
+     "children": [
+      "**For the category “bird,”** a high-prototypicality member is a **robin**."
+     ]
+    },
+    {
+     "text": "**Low prototypicality** means that a **category member does not closely resemble the category prototype**. **For the category “bird,”** a low-prototypicality member is an **ostrich**.",
+     "children": [
+      "Both are birds, but the robin is much closer to the average bird."
+     ]
+    }
+   ],
+   "17:11": [
+    {
+     "text": "**Prototypicality is related to family resemblance**.",
+     "children": [
+      "In **Rosch and Mervis’s (1975)** study, the instructions asked participants to list as many characteristics and attributes as they could for each of several common objects, such as chair, sofa, mirror and telephone."
+     ]
+    },
+    {
+     "text": "**Chairs, sofas, tables, and other “more prototypical” items of furniture share many characteristics with one another, whereas a mirror or a telephone share relatively few**.",
+     "children": [
+      "Items with high prototypicality are the ones with high family resemblance."
+     ]
+    },
+    {
+     "text": "**This will become important when we consider arguments about how to model categorical knowledge (e.g., connectionist networks)**.",
+     "children": []
+    }
+   ],
+   "17:12": [
+    {
+     "text": "The **typicality effect** is that **prototypical objects are processed preferentially**.",
+     "children": [
+      "In a **sentence verification task**, participants answer yes or no to sentences such as **“An apple is a fruit”** and **“A pomegranate is a fruit.”**"
+     ]
+    },
+    {
+     "text": "**Faster responses were made to prototypical items**.",
+     "children": [
+      "Reaction time was about 520 milliseconds for a high-prototypicality item such as apple and about 650 milliseconds for a low-prototypicality item such as pomegranate."
+     ]
+    },
+    {
+     "text": "**Further, when asked to list as many objects in a category as possible, participants tend to list the most prototypical members first**.",
+     "children": []
+    }
+   ],
+   "17:13": [
+    {
+     "text": "**Prototypical category members are more affected by a priming stimulus**. Participants **heard the prime (e.g. “green”)**. **Two seconds later, they saw a pair of colors side by side**.",
+     "children": [
+      "They **were asked to press a key as quickly as possible if the two were the same**."
+     ]
+    },
+    {
+     "text": "When the two colors were the same and were **good examples** of green, the reaction time for “same” was **610 milliseconds**. When the two colors were the same and were **poor examples** of green, the reaction time was **780 milliseconds**.",
+     "children": [
+      "After the prime, the good examples were judged faster than the poor examples."
+     ]
+    }
+   ],
+   "17:14": [
+    {
+     "text": "Hearing the word “green” leads a person to form a **prototype for green**.",
+     "children": [
+      "This prototype is a good, typical green."
+     ]
+    },
+    {
+     "text": "A pair of good green examples is a **good match** to that prototype, so the person responds quickly. A pair of light green examples is a **poor match** to the prototype, so the person responds more slowly.",
+     "children": [
+      "The priming result therefore fits the prototype approach."
+     ]
+    }
+   ],
+   "17:15": [
+    {
+     "text": "In the **exemplar approach**, a **concept is represented by multiple examples rather than a single averaged prototype**. The **examples are actual category members, not abstract averages**.",
+     "children": [
+      "**To categorize, compare the new item to stored examples**."
+     ]
+    },
+    {
+     "text": "**This approach can explain Rosch’s results**. **Objects that are like more of the exemplars are classified faster**.",
+     "children": [
+      "A sparrow is like many stored birds, so it is classified quickly."
+     ]
+    },
+    {
+     "text": "The exemplar approach is **similar to the prototype view** in that **representing a category is not defining it**. It is **different** in that the **representation is not abstract**.",
+     "children": [
+      "It consists of **descriptions of specific examples**."
+     ]
+    }
+   ],
+   "17:16": [
+    {
+     "text": "The exemplar approach **explains the typicality effect**. It also **takes into account atypical cases**.",
+     "children": [
+      "**Rather than comparing a penguin to an “average” bird, we remember that there are some birds that don’t fly**."
+     ]
+    },
+    {
+     "text": "It **deals with variable categories**, in which the members differ a great deal from one another.",
+     "children": []
+    },
+    {
+     "text": "**Which approach do we use? We may use both**.",
+     "children": [
+      "**Exemplars may work best for small categories**, and **prototypes may work best for larger categories**."
+     ]
+    }
+   ],
+   "17:17": [
+    {
+     "text": "**Rosch’s research indicates that there are different levels of categories**.",
+     "children": [
+      "The **superordinate level (or global level)** is a general category such as **“furniture.”** The **basic level** is a category such as **“table.”** The **subordinate level (or specific level)** is a category such as **“kitchen table.”**"
+     ]
+    },
+    {
+     "text": "Two questions follow. **Is this just an intuitive description of different levels of categories, or is this how concepts are organized in the mind?** **Also, what is “basic” about the “basic level”?** The evidence shows that the basic level is special in the mind.",
+     "children": [
+      "Going above it loses a lot of information, going below it gains only a little, and people name objects at the basic level."
+     ]
+    }
+   ],
+   "17:18": [
+    {
+     "text": "In **Rosch and colleagues (1976)**, participants **were asked to list as many features as they could that would be common to all or most of the objects in the category**.",
+     "children": [
+      "They listed about 3 common features for the global category furniture, about 9 for the basic category table and about 10.3 for the specific category kitchen table."
+     ]
+    },
+    {
+     "text": "**Going above basic level results in a large loss of information**.",
+     "children": [
+      "**Many fewer features are shared by members of the category “furniture” than by members of the category “table.”**"
+     ]
+    },
+    {
+     "text": "**Going below basic level results in little gain of information**.",
+     "children": [
+      "**“Kitchen tables” do not have a ton more in common with one another than “tables.”** The basic level is the level at which a category name carries a lot of information without becoming overly specific."
+     ]
+    }
+   ],
+   "17:19": [
+    {
+     "text": "Two objects are shown, an electric guitar and a fish, with the instruction **“Quick, name these objects.”** Most people say “guitar” and “fish.”",
+     "children": []
+    },
+    {
+     "text": "These names are basic-level names.",
+     "children": [
+      "A person could have said “instrument” or “Stratocaster” for the first object and “animal” or “trout” for the second, but those are not the names that come to mind first."
+     ]
+    }
+   ],
+   "17:20": [
+    {
+     "text": "**When participants are asked to name these objects, they named them by their basic level name**. They said **guitar, rather than Stratocaster (specific) or instrument (global)**.",
+     "children": [
+      "They said **fish, rather than trout or animal**."
+     ]
+    },
+    {
+     "text": "This is further evidence that the basic level is special.",
+     "children": [
+      "It is the level people use first when they name an object."
+     ]
+    }
+   ],
+   "17:21": [
+    {
+     "text": "**Rosch’s experiments were carried out on college undergraduates**.",
+     "children": [
+      "The result was that **there is a category level, which they called “basic,” that reflects college undergraduates’ everyday experience**."
+     ]
+    },
+    {
+     "text": "**Coley, Medin & Atran (1997)** **asked both undergraduates and horticulturalists to walk around campus and name as specifically as possible 44 different plants**.",
+     "children": [
+      "**75% of the undergraduates used “trees.”** **Horticulturalists used “specific” categories instead, such as “oak.”**"
+     ]
+    },
+    {
+     "text": "People of the **Guatemalan Itzaj culture call an oak tree an “oak” and not a tree**. **For people who speak their language, “oak” behaves like a basic-level category**.",
+     "children": [
+      "The level that is basic therefore depends on a person’s experience and culture."
+     ]
+    }
+   ],
+   "17:22": [
+    {
+     "text": "**Tanaka and Taylor (1991)** **asked bird experts and non-experts to name pictures of objects**.",
+     "children": [
+      "**Experts responded by specifying the birds’ species**, with names such as “sparrow” and “robin.” Non-experts mostly responded with the basic-level name “bird.”"
+     ]
+    },
+    {
+     "text": "**Experts had learned to pay attention to features of birds that non-experts were unaware of**.",
+     "children": [
+      "Their knowledge changed the level at which they named the birds."
+     ]
+    },
+    {
+     "text": "**People’s knowledge and properties of objects are both important factors in categorization**.",
+     "children": []
+    }
+   ],
+   "17:23": [
+    {
+     "text": "In the semantic network approach, **concepts are arranged in networks that represent the way concepts are organized in the mind**.",
+     "children": []
+    },
+    {
+     "text": "In the model of **Collins and Quillian (1969)**, a **node** is a **category or concept**.",
+     "children": [
+      "**Concepts are linked by structured pointers** such as **“is a”** and **“has.”** For example, a canary “is a” bird, and a bird “has” feathers."
+     ]
+    },
+    {
+     "text": "The network is a **model for how concepts and properties are associated in the mind**. It is a **hierarchical model, more specific to more general**.",
+     "children": [
+      "Canary is below bird, bird is below animal, and animal is below living thing."
+     ]
+    }
+   ],
+   "17:24": [
+    {
+     "text": "**Inheritance** means that **lower-level items share properties of higher-level items**.",
+     "children": [
+      "A canary is a bird, so a canary has the properties of birds."
+     ]
+    },
+    {
+     "text": "**Cognitive economy** means that **shared properties are only stored at higher-level nodes**.",
+     "children": [
+      "**Including “can fly” for every node would be inefficient**, so “can fly” is stored once at the node for bird."
+     ]
+    },
+    {
+     "text": "**Exceptions are stored at lower nodes**.",
+     "children": [
+      "For example, **“ostrich” would have the property “can’t fly.”**"
+     ]
+    }
+   ],
+   "17:25": [
+    {
+     "text": "**Given the network’s hierarchical organization, general concepts are at the top, and specific ones at the bottom**.",
+     "children": []
+    },
+    {
+     "text": "This gives a **testable prediction**.",
+     "children": [
+      "**The time it takes for a person to retrieve information about a concept should be determined by the distance that must be traveled through the network**."
+     ]
+    },
+    {
+     "text": "The prediction was supported.",
+     "children": [
+      "**It takes longer to answer “yes” to “A canary is an animal” compared to “A canary is a bird.”** Response time rose with the number of levels to be traversed, both for category statements and for property statements such as “A canary can sing,” “A canary can fly” and “A canary has skin.”"
+     ]
+    }
+   ],
+   "17:26": [
+    {
+     "text": "**Spreading activation** is a property of semantic networks. **Activation is the arousal level of a node**.",
+     "children": [
+      "**When a node is activated, activity spreads out along all connected links**."
+     ]
+    },
+    {
+     "text": "**Concepts that receive activation are primed and more easily accessed from memory**.",
+     "children": [
+      "For example, activating “robin” sends activation to “bird,” and from there it spreads to “canary,” “ostrich” and “animal,” which are then primed."
+     ]
+    }
+   ],
+   "17:27": [
+    {
+     "text": "**Meyer & Schvaneveldt tested for “spreading activation” with a lexical decision task using pairs of words**. In a lexical decision task, a person decides as quickly as possible whether the letter strings are real words.",
+     "children": [
+      "Some pairs were two nonwords, some had one nonword, some were two unrelated words such as chair and money, and some were two related words such as bread and wheat."
+     ]
+    },
+    {
+     "text": "**People were faster to respond to related pairs than unrelated pairs**. Reaction time was about 855 milliseconds for words that were associated and about 940 milliseconds for words that were not associated.",
+     "children": [
+      "Reading the first word spread activation to related words, so the second word was easier to access."
+     ]
+    },
+    {
+     "text": "**Many studies involving semantic priming have produced similar results**.",
+     "children": []
+    }
+   ],
+   "17:28": [
+    {
+     "text": "The model of Collins and Quillian **cannot explain typicality effects**. The **typicality effect** is that **reaction times for statements about an object are faster for more typical members of a category**.",
+     "children": [
+      "**The model instead predicts equal fast reaction times to both “canary” and “ostrich,” as they are one node away from “bird.”**"
+     ]
+    },
+    {
+     "text": "The idea of **cognitive economy** is also questioned.",
+     "children": [
+      "There is **some evidence that people store specific properties of concepts right at the node for the concept**."
+     ]
+    },
+    {
+     "text": "**Some sentence-verification results are problematic for the model**.",
+     "children": [
+      "**“A pig is a mammal” is slower than “A pig is an animal.”** In the network, mammal is closer to pig than animal is, so the model predicts the opposite."
+     ]
+    }
+   ],
+   "17:29": [
+    {
+     "text": "The **connectionist approach** is a **“new” (late 80’s) approach to networks**.",
+     "children": [
+      "It is based on **criticism of structured networks** and on **advances in understanding how information is represented in the brain**."
+     ]
+    },
+    {
+     "text": "**Connectionism** is **an approach to creating computer models for representing cognitive processes**.",
+     "children": [
+      "It is **also called parallel distributed processing**, because **knowledge is represented in the distributed activity of many units**."
+     ]
+    },
+    {
+     "text": "**Weights determine at each connection how strongly an incoming signal will activate the next unit**.",
+     "children": []
+    }
+   ],
+   "17:30": [
+    {
+     "text": "**Units** are **inspired by the neurons in the brain**. **Patterns of activity in these units represent concepts and their properties**.",
+     "children": [
+      "The **lines** are **connections that transfer activation between the units**, and they are **inspired by axons**."
+     ]
+    },
+    {
+     "text": "**Input units** are **units activated by stimuli from the environment**. Hidden units lie between the input units and the output units.",
+     "children": [
+      "**Output units receive input from hidden units**."
+     ]
+    },
+    {
+     "text": "A **connection weight** determines **how signals sent from one unit either increase or decrease the activity in the next unit**.",
+     "children": []
+    }
+   ],
+   "17:31": [
+    {
+     "text": "**High connection weights result in a strong tendency to excite the next unit**.",
+     "children": [
+      "**Negative connection weights can decrease excitation or inhibit activation of the receiving unit**."
+     ]
+    },
+    {
+     "text": "**Activation of units in a network depends on two things**. One is **the signal that originates in the input units**.",
+     "children": [
+      "The other is **the connection weights throughout the network**."
+     ]
+    },
+    {
+     "text": "**A stimulus is represented by the pattern of activity that is distributed across the other units**.",
+     "children": [
+      "The pattern across the units is what stands for the stimulus."
+     ]
+    }
+   ],
+   "17:32": [
+    {
+     "text": "**For the network to operate properly, the connection weights have to be adjusted via a learning process**.",
+     "children": []
+    },
+    {
+     "text": "Learning occurs in steps. The **network responds to a stimulus**. It **produces a “guess.”** It is **provided with the correct response**.",
+     "children": [
+      "It then **modifies weights to increase the match between its response and the correct response**."
+     ]
+    }
+   ],
+   "17:33": [
+    {
+     "text": "The **error signal** is the **difference between the actual activity of each output unit and the correct activity**. In **back-propagation**, the **error signal is transmitted back through the circuit**.",
+     "children": [
+      "This **indicates how weights should be changed to allow the output signal to match the correct signal**."
+     ]
+    },
+    {
+     "text": "**The process repeats until the error signal is zero**. There is **initially weak and undifferentiated activation of property units, with many errors**.",
+     "children": [
+      "**Error signals are then sent back**, and **changes are made in connection weights**."
+     ]
+    },
+    {
+     "text": "**Each learning experience causes only a small change in the connection weights**, so learning is gradual.",
+     "children": []
+    }
+   ],
+   "17:34": [
+    {
+     "text": "The activity of the hidden units changes as the network learns.",
+     "children": [
+      "Activity in the hidden units is shown for three concepts, rose, daisy and canary, after **0, 250, 750 and 2,500 learning trials**."
+     ]
+    },
+    {
+     "text": "At 0 trials, the patterns of activity for the three concepts look alike. As learning continues, the patterns become different. By 2,500 trials, rose and daisy have similar patterns, and canary has a different pattern.",
+     "children": [
+      "The network has learned to represent similar concepts with similar patterns of activity."
+     ]
+    }
+   ],
+   "17:35": [
+    {
+     "text": "**In connectionist networks, information about each concept is contained in the distributed pattern of activity across a number of units**.",
+     "children": []
+    },
+    {
+     "text": "**The operation of connectionist networks is not totally disrupted by damage**.",
+     "children": [
+      "**Graceful degradation** means that **disruption of performance occurs gradually as parts of the system are damaged**."
+     ]
+    },
+    {
+     "text": "**Connectionist networks can explain generalization of learning**.",
+     "children": [
+      "The **slow learning process creates a network capable of handling a wide range of inputs**."
+     ]
+    }
+   ],
+   "17:36": [],
+   "17:37": [
+    {
+     "text": "**Different areas of the brain may be specialized to process information about different categories**.",
+     "children": [
+      "There is a **double dissociation for the categories “living things” and “nonliving things.”** Some patients have trouble with living things and not with nonliving things, and other patients show the reverse."
+     ]
+    },
+    {
+     "text": "Each side of the dissociation is a **category-specific memory impairment**, which is an impairment in which a person loses the ability to identify one type of object and keeps the ability to identify other types.",
+     "children": []
+    },
+    {
+     "text": "**Do different semantic categories “live” in different parts of the brain?** The areas involved are **mostly in the temporal lobe**, and the approaches that follow give different answers about how category knowledge is laid out.",
+     "children": []
+    }
+   ],
+   "17:38": [
+    {
+     "text": "The **sensory-functional hypothesis** states that **our ability to differentiate living things and artifacts depends on a semantic memory system that distinguishes sensory attributes and a system that distinguishes function**.",
+     "children": [
+      "An artifact is a human-made object."
+     ]
+    },
+    {
+     "text": "It **predicts** that **a patient who can’t identify living things should have a more general impairment processing sensory attributes**.",
+     "children": []
+    },
+    {
+     "text": "The reason is that **animals and other natural kinds are more strongly associated with their sensory attributes, whereas artifacts are more strongly associated with their uses**. Ratings fit this.",
+     "children": [
+      "Animals were rated higher than artifacts on color and motion, and artifacts were rated higher than animals on performed action."
+     ]
+    }
+   ],
+   "17:39": [
+    {
+     "text": "The **sensory-functional hypothesis predicts an association between deficits in processing of sensory attributes and deficits in recognizing animals (but not artifacts)**.",
+     "children": []
+    },
+    {
+     "text": "**Warrington and Shallice found evidence for this (Patients K.C. and E.W.)**. Both patients performed at about 90 percent correct for nonanimals, which were nonliving things, fruits and vegetables, and much lower for living animals.",
+     "children": [
+      "**Other studies confirmed this, and further found an association between functional attributes and artifacts**."
+     ]
+    },
+    {
+     "text": "**But there are a number of exceptions to this overall pattern**, so the hypothesis does not explain every patient.",
+     "children": []
+    }
+   ],
+   "17:40": [
+    {
+     "text": "The **semantic category approach** proposes that there are **specific neural circuits in the brain for specific categories**.",
+     "children": [
+      "These circuits are **distributed over a number of different cortical areas**."
+     ]
+    },
+    {
+     "text": "**There may be a limited number of categories that are innately determined because of their importance for survival**.",
+     "children": []
+    },
+    {
+     "text": "A different possibility is that the unusual impairments are haphazard results of strokes that people have late in life.",
+     "children": [
+      "One reported case, for example, was a category-specific naming deficit for medical terms after a hemorrhage."
+     ]
+    }
+   ],
+   "17:41": [
+    {
+     "text": "The **multiple factors approach** **looks at how concepts are divided up within a category rather than identifying specific brain areas or networks for different concepts**.",
+     "children": []
+    },
+    {
+     "text": "**Mechanical devices (e.g. musical instruments) overlap with artifacts**, because they **involve performing actions**, and with **animals**, because they **involve sound and motion**.",
+     "children": [
+      "As a result, **mechanical devices have a widely distributed semantic representation**, in **regions important for the representation of both living things and artifacts**."
+     ]
+    },
+    {
+     "text": "For this reason, **patients may be able to identify mechanical devices even if they perform poorly for other types of artifacts**.",
+     "children": []
+    }
+   ],
+   "17:42": [
+    {
+     "text": "**Another differentiating factor between animals and artifacts is crowding**. **Crowding** occurs **when different concepts within a category share many properties**.",
+     "children": [
+      "For example, **“animals” all share “eyes,” “legs,” and “the ability to move.”** **In contrast, artifacts share fewer properties**."
+     ]
+    },
+    {
+     "text": "**Patients with category-specific impairments may not have a category impairment at all**.",
+     "children": [
+      "**Patients may have difficulty recognizing living things because they have difficulty distinguishing between items that share similar features**."
+     ]
+    }
+   ],
+   "17:43": [
+    {
+     "text": "In the **embodied approach**, **our knowledge of concepts is based on reactivation of sensory and motor processes that occur when we interact with the object**.",
+     "children": []
+    },
+    {
+     "text": "When we use a hammer, **different sensory areas are activated due to the hammer’s size and shape**, and **motor areas are activated that are involved in carrying out actions involved in using a hammer**.",
+     "children": [
+      "**When we see a hammer, or see the word “hammer,” the same areas get activated**."
+     ]
+    },
+    {
+     "text": "This shows an **interaction between action and perception**.",
+     "children": [
+      "In brain imaging, different motor areas are active for leg and foot actions, for arm and hand actions, and for face and mouth actions."
+     ]
+    }
+   ],
+   "17:44": [
+    {
+     "text": "**The three approaches agree: information about concepts is distributed across many structures in the brain**.",
+     "children": []
+    },
+    {
+     "text": "**The approaches differ in their emphasis on the type of information that is most important**. The **category-specific approach**, which is the semantic category approach, emphasizes **specialized areas of the brain and networks connecting them**. The **multiple-factor approach** emphasizes **the role of many different features and properties**.",
+     "children": [
+      "The **embodied approach** emphasizes **activity caused by the sensory and motor properties of objects**."
+     ]
+    }
+   ]
   },
   "21": {
    "15:1": [],
@@ -15356,7 +23005,603 @@ window.THIRD_PART = {
      "children": []
     }
    ],
-   "16:45": []
+   "16:45": [],
+   "17:1": [],
+   "17:2": [
+    {
+     "text": "**Conceptual knowledge** is knowledge that lets us **recognize objects and events** and **make inferences about their properties**.",
+     "children": []
+    },
+    {
+     "text": "A **concept** is a **mental representation** that is used for many cognitive functions. It can be the meaning of an object, an event or an abstract idea.",
+     "children": []
+    },
+    {
+     "text": "**Categorization** is the process of **placing things into groups called categories**. A **category** is all the possible examples of a concept.",
+     "children": [
+      "Our knowledge of the world is organized in categories."
+     ]
+    }
+   ],
+   "17:3": [
+    {
+     "text": "The category **“cat”** includes tabbies, Siamese cats, Persian cats and wild cats.",
+     "children": []
+    },
+    {
+     "text": "**Identifying something as a cat lets a person assume many things about it**, such as its anatomy and behavior.",
+     "children": [
+      "So each new cat does not have to be treated as one of a kind."
+     ]
+    }
+   ],
+   "17:4": [
+    {
+     "text": "Categories **help us understand individual cases we have not met before**.",
+     "children": []
+    },
+    {
+     "text": "Categories are **“pointers to knowledge.”** They **give general information about an item**, and they let us **notice the special characteristics of a particular item**.",
+     "children": []
+    },
+    {
+     "text": "**Without categories, we would have a very hard time dealing with the world.**",
+     "children": [
+      "Every object would have to be learned about separately."
+     ]
+    }
+   ],
+   "17:5": [
+    {
+     "text": "A cat with its whiskers cut off is **still a cat**. A person who meows, purrs and sleeps a lot is **still not a cat**.",
+     "children": []
+    },
+    {
+     "text": "These answers seem obvious, but **explaining why is very hard**.",
+     "children": [
+      "No single property decides whether something belongs to the category."
+     ]
+    }
+   ],
+   "17:6": [
+    {
+     "text": "The **definitional approach** decides category membership by **whether the object meets the definition of the category**.",
+     "children": []
+    },
+    {
+     "text": "It **works for some things, such as geometric objects**. It **does not work well for natural objects and human-made objects**.",
+     "children": []
+    },
+    {
+     "text": "This is because **not all members of everyday categories have the same defining features**.",
+     "children": [
+      "Chairs come in very different forms, and no one definition covers all of them."
+     ]
+    }
+   ],
+   "17:7": [
+    {
+     "text": "**Wittgenstein** proposed **family resemblance** because **definitions often do not include all members of a category**.",
+     "children": []
+    },
+    {
+     "text": "In family resemblance, **things in a category resemble one another in a number of ways**. This **allows some variation within a category**.",
+     "children": []
+    },
+    {
+     "text": "So categorization may be based on **how similar an object is to a standard representation of the category**.",
+     "children": []
+    }
+   ],
+   "17:8": [
+    {
+     "text": "A **prototype** is a representation of the **“typical” member of a category**. It is an **average of the category members a person has encountered**.",
+     "children": []
+    },
+    {
+     "text": "In the **prototype approach**, **membership in a category is decided by comparing the object to the prototype**.",
+     "children": [
+      "The prototype for “bird” is an average bird and not any one real bird."
+     ]
+    }
+   ],
+   "17:9": [
+    {
+     "text": "Robins and sparrows are birds, and so are owls and penguins. These differences are **differences in typicality**.",
+     "children": []
+    },
+    {
+     "text": "In **Rosch (1975)**, people saw a category title, such as birds, and a list of about 50 members. They **rated how well each member represented the category**.",
+     "children": [
+      "A rating of 1 meant a very good example, and 7 meant a poor example."
+     ]
+    },
+    {
+     "text": "For **birds**, sparrow was rated 1.18 and bat 6.15. For **furniture**, chair and sofa were rated 1.04 and telephone 6.68.",
+     "children": [
+      "So some members are better examples of a category than others."
+     ]
+    }
+   ],
+   "17:10": [
+    {
+     "text": "**High prototypicality** means a member **closely resembles the category prototype**. For “bird,” a **robin** is a high-prototypicality member.",
+     "children": []
+    },
+    {
+     "text": "**Low prototypicality** means a member **does not closely resemble the prototype**. For “bird,” an **ostrich** is a low-prototypicality member.",
+     "children": []
+    }
+   ],
+   "17:11": [
+    {
+     "text": "**Prototypicality is related to family resemblance.** In **Rosch and Mervis (1975)**, people listed the characteristics of common objects such as chair, sofa, mirror and telephone.",
+     "children": []
+    },
+    {
+     "text": "**More prototypical items of furniture, such as chairs and sofas, share many characteristics with one another.** A mirror or a telephone shares relatively few.",
+     "children": [
+      "So the items with high prototypicality are the ones with high family resemblance."
+     ]
+    }
+   ],
+   "17:12": [
+    {
+     "text": "The **typicality effect** is that **prototypical objects are processed preferentially**, which means faster and before other objects.",
+     "children": []
+    },
+    {
+     "text": "In a **sentence verification task**, people answer yes or no to sentences such as “An apple is a fruit.” **Responses are faster for prototypical items**, such as apple, than for items such as pomegranate.",
+     "children": []
+    },
+    {
+     "text": "When people list as many members of a category as they can, they **list the most prototypical members first**.",
+     "children": []
+    }
+   ],
+   "17:13": [
+    {
+     "text": "**Prototypical category members are more affected by a priming stimulus.** People heard a prime, such as “green,” and two seconds later saw two colors side by side.",
+     "children": [
+      "They pressed a key as quickly as possible if the two colors were the same."
+     ]
+    },
+    {
+     "text": "For two **good examples** of green, the “same” response took **610 milliseconds**. For two **poor examples** of green, it took **780 milliseconds**.",
+     "children": [
+      "So after the prime, the good examples were judged faster than the poor examples."
+     ]
+    }
+   ],
+   "17:14": [
+    {
+     "text": "Hearing “green” leads a person to form a **prototype for green**, which is a typical green.",
+     "children": []
+    },
+    {
+     "text": "Two good green examples are a **good match** to the prototype, so the response is fast. Two light green examples are a **poor match**, so the response is slower.",
+     "children": []
+    }
+   ],
+   "17:15": [
+    {
+     "text": "In the **exemplar approach**, a concept is represented by **multiple examples** and not by a single averaged prototype. The **examples are actual category members**.",
+     "children": []
+    },
+    {
+     "text": "To categorize, a person **compares the new item to the stored examples**. Objects that are like more of the exemplars are classified faster, which **explains Rosch’s results**.",
+     "children": []
+    },
+    {
+     "text": "The exemplar approach is like the prototype approach because neither defines the category. It is different because its representation is **not abstract**.",
+     "children": [
+      "It is made of descriptions of specific examples."
+     ]
+    }
+   ],
+   "17:16": [
+    {
+     "text": "The exemplar approach **explains the typicality effect** and **takes atypical cases into account**. We do not compare a penguin to an average bird. We remember that some birds do not fly.",
+     "children": []
+    },
+    {
+     "text": "It also **deals with variable categories**, which are categories whose members differ a lot from one another.",
+     "children": []
+    },
+    {
+     "text": "People **may use both approaches**. **Exemplars may work best for small categories**, and **prototypes may work best for larger categories**.",
+     "children": []
+    }
+   ],
+   "17:17": [
+    {
+     "text": "**Rosch’s research** indicates that categories have **different levels**.",
+     "children": []
+    },
+    {
+     "text": "The **superordinate level**, or global level, is a category such as “furniture.” The **basic level** is a category such as “table.” The **subordinate level**, or specific level, is a category such as “kitchen table.”",
+     "children": []
+    },
+    {
+     "text": "The levels are **how concepts are organized in the mind**, and not only a description. The basic level is the level where a name **carries a lot of information without being overly specific**.",
+     "children": [
+      "Going above it loses a lot of information, and going below it gains only a little."
+     ]
+    }
+   ],
+   "17:18": [
+    {
+     "text": "In **Rosch and colleagues (1976)**, people **listed the features that were common to all or most objects in a category**.",
+     "children": [
+      "They listed about 3 features for furniture, about 9 for table and about 10.3 for kitchen table."
+     ]
+    },
+    {
+     "text": "**Going above the basic level loses a lot of information.** Members of “furniture” share many fewer features than members of “table.”",
+     "children": []
+    },
+    {
+     "text": "**Going below the basic level gains little information.** Kitchen tables do not have much more in common than tables do.",
+     "children": []
+    }
+   ],
+   "17:19": [
+    {
+     "text": "When people are asked to quickly name an electric guitar and a fish, most say **“guitar”** and **“fish.”**",
+     "children": [
+      "These are basic-level names."
+     ]
+    }
+   ],
+   "17:20": [
+    {
+     "text": "When people name objects, they **use the basic-level name**. They say **guitar**, not Stratocaster (specific) or instrument (global).",
+     "children": [
+      "They say **fish**, not trout or animal."
+     ]
+    }
+   ],
+   "17:21": [
+    {
+     "text": "**Rosch’s experiments used college undergraduates.** The level they called “basic” **reflects undergraduates’ everyday experience**.",
+     "children": []
+    },
+    {
+     "text": "**Coley, Medin and Atran (1997)** asked undergraduates and horticulturalists to **name 44 plants as specifically as possible**. **75 percent of the undergraduates said “trees.”** The horticulturalists used specific names such as “oak.”",
+     "children": []
+    },
+    {
+     "text": "In the **Guatemalan Itzaj culture**, an oak tree is called an “oak” and not a tree. For them, **“oak” behaves like a basic-level category**.",
+     "children": [
+      "So which level is basic depends on experience and culture."
+     ]
+    }
+   ],
+   "17:22": [
+    {
+     "text": "**Tanaka and Taylor (1991)** asked **bird experts and non-experts** to name pictures of objects.",
+     "children": []
+    },
+    {
+     "text": "**Experts named the species of the birds**, such as “sparrow” or “robin.” Non-experts mostly said “bird.”",
+     "children": [
+      "Experts had learned to pay attention to features of birds that non-experts were unaware of."
+     ]
+    },
+    {
+     "text": "So **both a person’s knowledge and the properties of objects are important in categorization**.",
+     "children": []
+    }
+   ],
+   "17:23": [
+    {
+     "text": "In a **semantic network**, **concepts are arranged in networks that represent how concepts are organized in the mind**.",
+     "children": []
+    },
+    {
+     "text": "In the model of **Collins and Quillian (1969)**, a **node** is a category or concept. Nodes are **linked by pointers such as “is a” and “has.”**",
+     "children": []
+    },
+    {
+     "text": "The model is **hierarchical**. It goes from **more specific concepts to more general ones**, such as canary, bird, animal.",
+     "children": []
+    }
+   ],
+   "17:24": [
+    {
+     "text": "**Inheritance** means that **lower-level items share the properties of higher-level items**.",
+     "children": []
+    },
+    {
+     "text": "**Cognitive economy** means that **shared properties are stored only at higher-level nodes**. Storing “can fly” at every bird would be inefficient, so it is stored once at “bird.”",
+     "children": []
+    },
+    {
+     "text": "**Exceptions are stored at lower nodes.** For example, “ostrich” has the property “can’t fly.”",
+     "children": []
+    }
+   ],
+   "17:25": [
+    {
+     "text": "In the network, **general concepts are at the top and specific ones are at the bottom**.",
+     "children": []
+    },
+    {
+     "text": "The model predicts that the **time to retrieve information depends on the distance traveled through the network**.",
+     "children": []
+    },
+    {
+     "text": "This was found. **“A canary is an animal” takes longer to verify than “A canary is a bird.”**",
+     "children": [
+      "Response time rose with the number of levels that had to be traversed."
+     ]
+    }
+   ],
+   "17:26": [
+    {
+     "text": "**Activation** is the **arousal level of a node**. In **spreading activation**, when a node is activated, **activity spreads out along all connected links**.",
+     "children": []
+    },
+    {
+     "text": "**Concepts that receive activation are primed**, so they are **more easily accessed from memory**.",
+     "children": [
+      "Activating “robin” spreads activation to “bird” and then primes “canary,” “ostrich” and “animal.”"
+     ]
+    }
+   ],
+   "17:27": [
+    {
+     "text": "**Meyer and Schvaneveldt** tested spreading activation with a **lexical decision task** using **pairs of words**.",
+     "children": [
+      "In a lexical decision task, a person decides as quickly as possible whether the letter strings are real words."
+     ]
+    },
+    {
+     "text": "**People responded faster to related pairs**, such as bread and wheat, **than to unrelated pairs**, such as chair and money.",
+     "children": [
+      "This is because the first word spread activation to related words."
+     ]
+    },
+    {
+     "text": "Many studies of **semantic priming** have found similar results.",
+     "children": []
+    }
+   ],
+   "17:28": [
+    {
+     "text": "The model of **Collins and Quillian** **cannot explain typicality effects**. It predicts equally fast responses for “canary” and “ostrich,” because both are one node away from “bird.”",
+     "children": []
+    },
+    {
+     "text": "**Cognitive economy** is doubted. There is evidence that people **store specific properties right at the node for the concept**.",
+     "children": []
+    },
+    {
+     "text": "**Some sentence-verification results do not fit.** “A pig is a mammal” is verified more slowly than “A pig is an animal.”",
+     "children": [
+      "The model predicts the opposite, because mammal is closer to pig in the network."
+     ]
+    }
+   ],
+   "17:29": [
+    {
+     "text": "The **connectionist approach** came in the late 1980s. It grew from **criticism of structured networks** and from **advances in understanding how the brain represents information**.",
+     "children": []
+    },
+    {
+     "text": "**Connectionism** is an approach to **creating computer models of cognitive processes**. It is also called **parallel distributed processing**.",
+     "children": [
+      "Knowledge is represented in the **distributed activity of many units**."
+     ]
+    },
+    {
+     "text": "**Weights** determine, at each connection, **how strongly an incoming signal will activate the next unit**.",
+     "children": []
+    }
+   ],
+   "17:30": [
+    {
+     "text": "**Units** are inspired by **neurons**. **Patterns of activity in the units represent concepts and their properties.**",
+     "children": []
+    },
+    {
+     "text": "The **lines** are **connections that transfer activation between units**. They are inspired by axons.",
+     "children": []
+    },
+    {
+     "text": "**Input units** are activated by stimuli from the environment. **Output units** receive input from the **hidden units**, which lie in between.",
+     "children": []
+    },
+    {
+     "text": "A **connection weight** determines how a signal from one unit **increases or decreases the activity of the next unit**.",
+     "children": []
+    }
+   ],
+   "17:31": [
+    {
+     "text": "**High connection weights** give a **strong tendency to excite the next unit**. **Negative connection weights** can **decrease excitation or inhibit** the receiving unit.",
+     "children": []
+    },
+    {
+     "text": "The activation of units depends on two things. They are **the signal from the input units** and **the connection weights throughout the network**.",
+     "children": []
+    },
+    {
+     "text": "**A stimulus is represented by the pattern of activity distributed across the other units.**",
+     "children": []
+    }
+   ],
+   "17:32": [
+    {
+     "text": "For the network to work, **the connection weights have to be adjusted through a learning process**.",
+     "children": []
+    },
+    {
+     "text": "The network **responds to a stimulus** and **produces a guess**. It is then **given the correct response**.",
+     "children": [
+      "It **modifies its weights** so that its response matches the correct response more closely."
+     ]
+    }
+   ],
+   "17:33": [
+    {
+     "text": "The **error signal** is the **difference between the actual activity of each output unit and the correct activity**.",
+     "children": []
+    },
+    {
+     "text": "In **back-propagation**, the **error signal is sent back through the circuit**. It shows **how the weights should be changed** so the output matches the correct signal.",
+     "children": []
+    },
+    {
+     "text": "The process **repeats until the error signal is zero**. **Each learning experience changes the weights only a little.**",
+     "children": [
+      "At first the property units are weakly activated and there are many errors."
+     ]
+    }
+   ],
+   "17:34": [
+    {
+     "text": "The activity of the **hidden units** changes as the network learns. It is shown for rose, daisy and canary after **0, 250, 750 and 2,500 learning trials**.",
+     "children": []
+    },
+    {
+     "text": "At the start, the three patterns look alike. After many trials, **rose and daisy have similar patterns, and canary has a different pattern**.",
+     "children": [
+      "So the network comes to represent similar concepts with similar patterns of activity."
+     ]
+    }
+   ],
+   "17:35": [
+    {
+     "text": "In a connectionist network, **information about each concept is in the distributed pattern of activity across many units**.",
+     "children": []
+    },
+    {
+     "text": "**Damage does not totally disrupt the network.** **Graceful degradation** means that **performance is disrupted gradually as parts of the system are damaged**.",
+     "children": []
+    },
+    {
+     "text": "Connectionist networks can explain **generalization of learning**. The slow learning process creates a network that can **handle a wide range of inputs**.",
+     "children": []
+    }
+   ],
+   "17:36": [],
+   "17:37": [
+    {
+     "text": "**Different areas of the brain may be specialized for different categories.** There is a **double dissociation for “living things” and “nonliving things.”**",
+     "children": [
+      "Some patients have trouble with living things only, and others have trouble with nonliving things only."
+     ]
+    },
+    {
+     "text": "Each side of the dissociation is a **category-specific memory impairment**, in which a person cannot identify one type of object but can identify other types.",
+     "children": []
+    },
+    {
+     "text": "So different areas may be specialized for different categories, **mostly in the temporal lobe**. The approaches disagree about how category knowledge is arranged.",
+     "children": []
+    }
+   ],
+   "17:38": [
+    {
+     "text": "The **sensory-functional hypothesis** states that we tell **living things** from **artifacts** using one system for **sensory attributes** and one system for **function**.",
+     "children": [
+      "An artifact is a human-made object."
+     ]
+    },
+    {
+     "text": "It predicts that **a patient who cannot identify living things should have a more general impairment in processing sensory attributes**.",
+     "children": []
+    },
+    {
+     "text": "This is because **animals are more strongly associated with their sensory attributes**, and **artifacts are more strongly associated with their uses**.",
+     "children": []
+    }
+   ],
+   "17:39": [
+    {
+     "text": "The hypothesis predicts that **deficits in processing sensory attributes go with deficits in recognizing animals**, but not artifacts.",
+     "children": []
+    },
+    {
+     "text": "**Warrington and Shallice** found evidence for this in **patients K.C. and E.W.** Both patients did much worse with living animals than with nonanimals.",
+     "children": [
+      "Other studies confirmed this and also linked functional attributes with artifacts."
+     ]
+    },
+    {
+     "text": "But there are **a number of exceptions** to this pattern.",
+     "children": []
+    }
+   ],
+   "17:40": [
+    {
+     "text": "The **semantic category approach** proposes **specific neural circuits in the brain for specific categories**. The circuits are **distributed over a number of cortical areas**.",
+     "children": []
+    },
+    {
+     "text": "**A limited number of categories may be innately determined**, because they are important for survival.",
+     "children": [
+      "Another possibility is that unusual impairments are haphazard results of strokes late in life."
+     ]
+    }
+   ],
+   "17:41": [
+    {
+     "text": "The **multiple factors approach** looks at **how concepts are divided up within a category**. It does not look for specific brain areas for different concepts.",
+     "children": []
+    },
+    {
+     "text": "**Mechanical devices**, such as musical instruments, **overlap with artifacts** because they involve performing actions. They **overlap with animals** because they involve sound and motion.",
+     "children": []
+    },
+    {
+     "text": "So mechanical devices have a **widely distributed semantic representation**, which means the knowledge about them is spread over many brain regions. **Patients may identify mechanical devices even if they do poorly with other artifacts.**",
+     "children": []
+    }
+   ],
+   "17:42": [
+    {
+     "text": "**Crowding** occurs **when different concepts within a category share many properties**. Animals all share eyes, legs and the ability to move. **Artifacts share fewer properties.**",
+     "children": []
+    },
+    {
+     "text": "So **patients with category-specific impairments may not have a category impairment at all**.",
+     "children": [
+      "They may have difficulty with living things because they have difficulty **telling apart items that share similar features**."
+     ]
+    }
+   ],
+   "17:43": [
+    {
+     "text": "In the **embodied approach**, our knowledge of a concept is based on **reactivating the sensory and motor processes** that occur when we interact with the object.",
+     "children": []
+    },
+    {
+     "text": "When we use a hammer, **sensory areas** respond to its size and shape, and **motor areas** carry out the actions of using it.",
+     "children": [
+      "**When we see a hammer or the word “hammer,” the same areas are activated.**"
+     ]
+    },
+    {
+     "text": "So there is an **interaction between action and perception**.",
+     "children": []
+    }
+   ],
+   "17:44": [
+    {
+     "text": "The three approaches agree that **information about concepts is distributed across many structures in the brain**.",
+     "children": []
+    },
+    {
+     "text": "They differ in which kind of information they treat as most important.",
+     "children": [
+      "The **category-specific approach**, which is the semantic category approach, emphasizes **specialized areas of the brain and the networks connecting them**.",
+      "The **multiple-factor approach** emphasizes **many different features and properties**.",
+      "The **embodied approach** emphasizes **activity caused by the sensory and motor properties of objects**."
+     ]
+    }
+   ]
   },
   "22": {
    "15:1": [],
@@ -16480,7 +24725,603 @@ window.THIRD_PART = {
      "children": []
     }
    ],
-   "16:45": []
+   "16:45": [],
+   "17:1": [],
+   "17:2": [
+    {
+     "text": "**Conceptual knowledge** is knowledge that lets us **recognize objects and events** and **make inferences about their properties**.",
+     "children": []
+    },
+    {
+     "text": "A **concept** is a **mental representation** that is used for many cognitive functions. It can be the meaning of an object, an event or an abstract idea.",
+     "children": []
+    },
+    {
+     "text": "**Categorization** is the process of **placing things into groups called categories**. A **category** is all the possible examples of a concept.",
+     "children": [
+      "Our knowledge of the world is organized in categories."
+     ]
+    }
+   ],
+   "17:3": [
+    {
+     "text": "The category **“cat”** includes tabbies, Siamese cats, Persian cats and wild cats.",
+     "children": []
+    },
+    {
+     "text": "**Identifying something as a cat lets a person assume many things about it**, such as its anatomy and behavior.",
+     "children": [
+      "So each new cat does not have to be treated as one of a kind."
+     ]
+    }
+   ],
+   "17:4": [
+    {
+     "text": "Categories **help us understand individual cases we have not met before**.",
+     "children": []
+    },
+    {
+     "text": "Categories are **“pointers to knowledge.”** They **give general information about an item**, and they let us **notice the special characteristics of a particular item**.",
+     "children": []
+    },
+    {
+     "text": "**Without categories, we would have a very hard time dealing with the world.**",
+     "children": [
+      "Every object would have to be learned about separately."
+     ]
+    }
+   ],
+   "17:5": [
+    {
+     "text": "A cat with its whiskers cut off is **still a cat**. A person who meows, purrs and sleeps a lot is **still not a cat**.",
+     "children": []
+    },
+    {
+     "text": "These answers seem obvious, but **explaining why is very hard**.",
+     "children": [
+      "No single property decides whether something belongs to the category."
+     ]
+    }
+   ],
+   "17:6": [
+    {
+     "text": "The **definitional approach** decides category membership by **whether the object meets the definition of the category**.",
+     "children": []
+    },
+    {
+     "text": "It **works for some things, such as geometric objects**. It **does not work well for natural objects and human-made objects**.",
+     "children": []
+    },
+    {
+     "text": "This is because **not all members of everyday categories have the same defining features**.",
+     "children": [
+      "Chairs come in very different forms, and no one definition covers all of them."
+     ]
+    }
+   ],
+   "17:7": [
+    {
+     "text": "**Wittgenstein** proposed **family resemblance** because **definitions often do not include all members of a category**.",
+     "children": []
+    },
+    {
+     "text": "In family resemblance, **things in a category resemble one another in a number of ways**. This **allows some variation within a category**.",
+     "children": []
+    },
+    {
+     "text": "So categorization may be based on **how similar an object is to a standard representation of the category**.",
+     "children": []
+    }
+   ],
+   "17:8": [
+    {
+     "text": "A **prototype** is a representation of the **“typical” member of a category**. It is an **average of the category members a person has encountered**.",
+     "children": []
+    },
+    {
+     "text": "In the **prototype approach**, **membership in a category is decided by comparing the object to the prototype**.",
+     "children": [
+      "The prototype for “bird” is an average bird and not any one real bird."
+     ]
+    }
+   ],
+   "17:9": [
+    {
+     "text": "Robins and sparrows are birds, and so are owls and penguins. These differences are **differences in typicality**.",
+     "children": []
+    },
+    {
+     "text": "In **Rosch (1975)**, people saw a category title, such as birds, and a list of about 50 members. They **rated how well each member represented the category**.",
+     "children": [
+      "A rating of 1 meant a very good example, and 7 meant a poor example."
+     ]
+    },
+    {
+     "text": "For **birds**, sparrow was rated 1.18 and bat 6.15. For **furniture**, chair and sofa were rated 1.04 and telephone 6.68.",
+     "children": [
+      "So some members are better examples of a category than others."
+     ]
+    }
+   ],
+   "17:10": [
+    {
+     "text": "**High prototypicality** means a member **closely resembles the category prototype**. For “bird,” a **robin** is a high-prototypicality member.",
+     "children": []
+    },
+    {
+     "text": "**Low prototypicality** means a member **does not closely resemble the prototype**. For “bird,” an **ostrich** is a low-prototypicality member.",
+     "children": []
+    }
+   ],
+   "17:11": [
+    {
+     "text": "**Prototypicality is related to family resemblance.** In **Rosch and Mervis (1975)**, people listed the characteristics of common objects such as chair, sofa, mirror and telephone.",
+     "children": []
+    },
+    {
+     "text": "**More prototypical items of furniture, such as chairs and sofas, share many characteristics with one another.** A mirror or a telephone shares relatively few.",
+     "children": [
+      "So the items with high prototypicality are the ones with high family resemblance."
+     ]
+    }
+   ],
+   "17:12": [
+    {
+     "text": "The **typicality effect** is that **prototypical objects are processed preferentially**, which means faster and before other objects.",
+     "children": []
+    },
+    {
+     "text": "In a **sentence verification task**, people answer yes or no to sentences such as “An apple is a fruit.” **Responses are faster for prototypical items**, such as apple, than for items such as pomegranate.",
+     "children": []
+    },
+    {
+     "text": "When people list as many members of a category as they can, they **list the most prototypical members first**.",
+     "children": []
+    }
+   ],
+   "17:13": [
+    {
+     "text": "**Prototypical category members are more affected by a priming stimulus.** People heard a prime, such as “green,” and two seconds later saw two colors side by side.",
+     "children": [
+      "They pressed a key as quickly as possible if the two colors were the same."
+     ]
+    },
+    {
+     "text": "For two **good examples** of green, the “same” response took **610 milliseconds**. For two **poor examples** of green, it took **780 milliseconds**.",
+     "children": [
+      "So after the prime, the good examples were judged faster than the poor examples."
+     ]
+    }
+   ],
+   "17:14": [
+    {
+     "text": "Hearing “green” leads a person to form a **prototype for green**, which is a typical green.",
+     "children": []
+    },
+    {
+     "text": "Two good green examples are a **good match** to the prototype, so the response is fast. Two light green examples are a **poor match**, so the response is slower.",
+     "children": []
+    }
+   ],
+   "17:15": [
+    {
+     "text": "In the **exemplar approach**, a concept is represented by **multiple examples** and not by a single averaged prototype. The **examples are actual category members**.",
+     "children": []
+    },
+    {
+     "text": "To categorize, a person **compares the new item to the stored examples**. Objects that are like more of the exemplars are classified faster, which **explains Rosch’s results**.",
+     "children": []
+    },
+    {
+     "text": "The exemplar approach is like the prototype approach because neither defines the category. It is different because its representation is **not abstract**.",
+     "children": [
+      "It is made of descriptions of specific examples."
+     ]
+    }
+   ],
+   "17:16": [
+    {
+     "text": "The exemplar approach **explains the typicality effect** and **takes atypical cases into account**. We do not compare a penguin to an average bird. We remember that some birds do not fly.",
+     "children": []
+    },
+    {
+     "text": "It also **deals with variable categories**, which are categories whose members differ a lot from one another.",
+     "children": []
+    },
+    {
+     "text": "People **may use both approaches**. **Exemplars may work best for small categories**, and **prototypes may work best for larger categories**.",
+     "children": []
+    }
+   ],
+   "17:17": [
+    {
+     "text": "**Rosch’s research** indicates that categories have **different levels**.",
+     "children": []
+    },
+    {
+     "text": "The **superordinate level**, or global level, is a category such as “furniture.” The **basic level** is a category such as “table.” The **subordinate level**, or specific level, is a category such as “kitchen table.”",
+     "children": []
+    },
+    {
+     "text": "The levels are **how concepts are organized in the mind**, and not only a description. The basic level is the level where a name **carries a lot of information without being overly specific**.",
+     "children": [
+      "Going above it loses a lot of information, and going below it gains only a little."
+     ]
+    }
+   ],
+   "17:18": [
+    {
+     "text": "In **Rosch and colleagues (1976)**, people **listed the features that were common to all or most objects in a category**.",
+     "children": [
+      "They listed about 3 features for furniture, about 9 for table and about 10.3 for kitchen table."
+     ]
+    },
+    {
+     "text": "**Going above the basic level loses a lot of information.** Members of “furniture” share many fewer features than members of “table.”",
+     "children": []
+    },
+    {
+     "text": "**Going below the basic level gains little information.** Kitchen tables do not have much more in common than tables do.",
+     "children": []
+    }
+   ],
+   "17:19": [
+    {
+     "text": "When people are asked to quickly name an electric guitar and a fish, most say **“guitar”** and **“fish.”**",
+     "children": [
+      "These are basic-level names."
+     ]
+    }
+   ],
+   "17:20": [
+    {
+     "text": "When people name objects, they **use the basic-level name**. They say **guitar**, not Stratocaster (specific) or instrument (global).",
+     "children": [
+      "They say **fish**, not trout or animal."
+     ]
+    }
+   ],
+   "17:21": [
+    {
+     "text": "**Rosch’s experiments used college undergraduates.** The level they called “basic” **reflects undergraduates’ everyday experience**.",
+     "children": []
+    },
+    {
+     "text": "**Coley, Medin and Atran (1997)** asked undergraduates and horticulturalists to **name 44 plants as specifically as possible**. **75 percent of the undergraduates said “trees.”** The horticulturalists used specific names such as “oak.”",
+     "children": []
+    },
+    {
+     "text": "In the **Guatemalan Itzaj culture**, an oak tree is called an “oak” and not a tree. For them, **“oak” behaves like a basic-level category**.",
+     "children": [
+      "So which level is basic depends on experience and culture."
+     ]
+    }
+   ],
+   "17:22": [
+    {
+     "text": "**Tanaka and Taylor (1991)** asked **bird experts and non-experts** to name pictures of objects.",
+     "children": []
+    },
+    {
+     "text": "**Experts named the species of the birds**, such as “sparrow” or “robin.” Non-experts mostly said “bird.”",
+     "children": [
+      "Experts had learned to pay attention to features of birds that non-experts were unaware of."
+     ]
+    },
+    {
+     "text": "So **both a person’s knowledge and the properties of objects are important in categorization**.",
+     "children": []
+    }
+   ],
+   "17:23": [
+    {
+     "text": "In a **semantic network**, **concepts are arranged in networks that represent how concepts are organized in the mind**.",
+     "children": []
+    },
+    {
+     "text": "In the model of **Collins and Quillian (1969)**, a **node** is a category or concept. Nodes are **linked by pointers such as “is a” and “has.”**",
+     "children": []
+    },
+    {
+     "text": "The model is **hierarchical**. It goes from **more specific concepts to more general ones**, such as canary, bird, animal.",
+     "children": []
+    }
+   ],
+   "17:24": [
+    {
+     "text": "**Inheritance** means that **lower-level items share the properties of higher-level items**.",
+     "children": []
+    },
+    {
+     "text": "**Cognitive economy** means that **shared properties are stored only at higher-level nodes**. Storing “can fly” at every bird would be inefficient, so it is stored once at “bird.”",
+     "children": []
+    },
+    {
+     "text": "**Exceptions are stored at lower nodes.** For example, “ostrich” has the property “can’t fly.”",
+     "children": []
+    }
+   ],
+   "17:25": [
+    {
+     "text": "In the network, **general concepts are at the top and specific ones are at the bottom**.",
+     "children": []
+    },
+    {
+     "text": "The model predicts that the **time to retrieve information depends on the distance traveled through the network**.",
+     "children": []
+    },
+    {
+     "text": "This was found. **“A canary is an animal” takes longer to verify than “A canary is a bird.”**",
+     "children": [
+      "Response time rose with the number of levels that had to be traversed."
+     ]
+    }
+   ],
+   "17:26": [
+    {
+     "text": "**Activation** is the **arousal level of a node**. In **spreading activation**, when a node is activated, **activity spreads out along all connected links**.",
+     "children": []
+    },
+    {
+     "text": "**Concepts that receive activation are primed**, so they are **more easily accessed from memory**.",
+     "children": [
+      "Activating “robin” spreads activation to “bird” and then primes “canary,” “ostrich” and “animal.”"
+     ]
+    }
+   ],
+   "17:27": [
+    {
+     "text": "**Meyer and Schvaneveldt** tested spreading activation with a **lexical decision task** using **pairs of words**.",
+     "children": [
+      "In a lexical decision task, a person decides as quickly as possible whether the letter strings are real words."
+     ]
+    },
+    {
+     "text": "**People responded faster to related pairs**, such as bread and wheat, **than to unrelated pairs**, such as chair and money.",
+     "children": [
+      "This is because the first word spread activation to related words."
+     ]
+    },
+    {
+     "text": "Many studies of **semantic priming** have found similar results.",
+     "children": []
+    }
+   ],
+   "17:28": [
+    {
+     "text": "The model of **Collins and Quillian** **cannot explain typicality effects**. It predicts equally fast responses for “canary” and “ostrich,” because both are one node away from “bird.”",
+     "children": []
+    },
+    {
+     "text": "**Cognitive economy** is doubted. There is evidence that people **store specific properties right at the node for the concept**.",
+     "children": []
+    },
+    {
+     "text": "**Some sentence-verification results do not fit.** “A pig is a mammal” is verified more slowly than “A pig is an animal.”",
+     "children": [
+      "The model predicts the opposite, because mammal is closer to pig in the network."
+     ]
+    }
+   ],
+   "17:29": [
+    {
+     "text": "The **connectionist approach** came in the late 1980s. It grew from **criticism of structured networks** and from **advances in understanding how the brain represents information**.",
+     "children": []
+    },
+    {
+     "text": "**Connectionism** is an approach to **creating computer models of cognitive processes**. It is also called **parallel distributed processing**.",
+     "children": [
+      "Knowledge is represented in the **distributed activity of many units**."
+     ]
+    },
+    {
+     "text": "**Weights** determine, at each connection, **how strongly an incoming signal will activate the next unit**.",
+     "children": []
+    }
+   ],
+   "17:30": [
+    {
+     "text": "**Units** are inspired by **neurons**. **Patterns of activity in the units represent concepts and their properties.**",
+     "children": []
+    },
+    {
+     "text": "The **lines** are **connections that transfer activation between units**. They are inspired by axons.",
+     "children": []
+    },
+    {
+     "text": "**Input units** are activated by stimuli from the environment. **Output units** receive input from the **hidden units**, which lie in between.",
+     "children": []
+    },
+    {
+     "text": "A **connection weight** determines how a signal from one unit **increases or decreases the activity of the next unit**.",
+     "children": []
+    }
+   ],
+   "17:31": [
+    {
+     "text": "**High connection weights** give a **strong tendency to excite the next unit**. **Negative connection weights** can **decrease excitation or inhibit** the receiving unit.",
+     "children": []
+    },
+    {
+     "text": "The activation of units depends on two things. They are **the signal from the input units** and **the connection weights throughout the network**.",
+     "children": []
+    },
+    {
+     "text": "**A stimulus is represented by the pattern of activity distributed across the other units.**",
+     "children": []
+    }
+   ],
+   "17:32": [
+    {
+     "text": "For the network to work, **the connection weights have to be adjusted through a learning process**.",
+     "children": []
+    },
+    {
+     "text": "The network **responds to a stimulus** and **produces a guess**. It is then **given the correct response**.",
+     "children": [
+      "It **modifies its weights** so that its response matches the correct response more closely."
+     ]
+    }
+   ],
+   "17:33": [
+    {
+     "text": "The **error signal** is the **difference between the actual activity of each output unit and the correct activity**.",
+     "children": []
+    },
+    {
+     "text": "In **back-propagation**, the **error signal is sent back through the circuit**. It shows **how the weights should be changed** so the output matches the correct signal.",
+     "children": []
+    },
+    {
+     "text": "The process **repeats until the error signal is zero**. **Each learning experience changes the weights only a little.**",
+     "children": [
+      "At first the property units are weakly activated and there are many errors."
+     ]
+    }
+   ],
+   "17:34": [
+    {
+     "text": "The activity of the **hidden units** changes as the network learns. It is shown for rose, daisy and canary after **0, 250, 750 and 2,500 learning trials**.",
+     "children": []
+    },
+    {
+     "text": "At the start, the three patterns look alike. After many trials, **rose and daisy have similar patterns, and canary has a different pattern**.",
+     "children": [
+      "So the network comes to represent similar concepts with similar patterns of activity."
+     ]
+    }
+   ],
+   "17:35": [
+    {
+     "text": "In a connectionist network, **information about each concept is in the distributed pattern of activity across many units**.",
+     "children": []
+    },
+    {
+     "text": "**Damage does not totally disrupt the network.** **Graceful degradation** means that **performance is disrupted gradually as parts of the system are damaged**.",
+     "children": []
+    },
+    {
+     "text": "Connectionist networks can explain **generalization of learning**. The slow learning process creates a network that can **handle a wide range of inputs**.",
+     "children": []
+    }
+   ],
+   "17:36": [],
+   "17:37": [
+    {
+     "text": "**Different areas of the brain may be specialized for different categories.** There is a **double dissociation for “living things” and “nonliving things.”**",
+     "children": [
+      "Some patients have trouble with living things only, and others have trouble with nonliving things only."
+     ]
+    },
+    {
+     "text": "Each side of the dissociation is a **category-specific memory impairment**, in which a person cannot identify one type of object but can identify other types.",
+     "children": []
+    },
+    {
+     "text": "So different areas may be specialized for different categories, **mostly in the temporal lobe**. The approaches disagree about how category knowledge is arranged.",
+     "children": []
+    }
+   ],
+   "17:38": [
+    {
+     "text": "The **sensory-functional hypothesis** states that we tell **living things** from **artifacts** using one system for **sensory attributes** and one system for **function**.",
+     "children": [
+      "An artifact is a human-made object."
+     ]
+    },
+    {
+     "text": "It predicts that **a patient who cannot identify living things should have a more general impairment in processing sensory attributes**.",
+     "children": []
+    },
+    {
+     "text": "This is because **animals are more strongly associated with their sensory attributes**, and **artifacts are more strongly associated with their uses**.",
+     "children": []
+    }
+   ],
+   "17:39": [
+    {
+     "text": "The hypothesis predicts that **deficits in processing sensory attributes go with deficits in recognizing animals**, but not artifacts.",
+     "children": []
+    },
+    {
+     "text": "**Warrington and Shallice** found evidence for this in **patients K.C. and E.W.** Both patients did much worse with living animals than with nonanimals.",
+     "children": [
+      "Other studies confirmed this and also linked functional attributes with artifacts."
+     ]
+    },
+    {
+     "text": "But there are **a number of exceptions** to this pattern.",
+     "children": []
+    }
+   ],
+   "17:40": [
+    {
+     "text": "The **semantic category approach** proposes **specific neural circuits in the brain for specific categories**. The circuits are **distributed over a number of cortical areas**.",
+     "children": []
+    },
+    {
+     "text": "**A limited number of categories may be innately determined**, because they are important for survival.",
+     "children": [
+      "Another possibility is that unusual impairments are haphazard results of strokes late in life."
+     ]
+    }
+   ],
+   "17:41": [
+    {
+     "text": "The **multiple factors approach** looks at **how concepts are divided up within a category**. It does not look for specific brain areas for different concepts.",
+     "children": []
+    },
+    {
+     "text": "**Mechanical devices**, such as musical instruments, **overlap with artifacts** because they involve performing actions. They **overlap with animals** because they involve sound and motion.",
+     "children": []
+    },
+    {
+     "text": "So mechanical devices have a **widely distributed semantic representation**, which means the knowledge about them is spread over many brain regions. **Patients may identify mechanical devices even if they do poorly with other artifacts.**",
+     "children": []
+    }
+   ],
+   "17:42": [
+    {
+     "text": "**Crowding** occurs **when different concepts within a category share many properties**. Animals all share eyes, legs and the ability to move. **Artifacts share fewer properties.**",
+     "children": []
+    },
+    {
+     "text": "So **patients with category-specific impairments may not have a category impairment at all**.",
+     "children": [
+      "They may have difficulty with living things because they have difficulty **telling apart items that share similar features**."
+     ]
+    }
+   ],
+   "17:43": [
+    {
+     "text": "In the **embodied approach**, our knowledge of a concept is based on **reactivating the sensory and motor processes** that occur when we interact with the object.",
+     "children": []
+    },
+    {
+     "text": "When we use a hammer, **sensory areas** respond to its size and shape, and **motor areas** carry out the actions of using it.",
+     "children": [
+      "**When we see a hammer or the word “hammer,” the same areas are activated.**"
+     ]
+    },
+    {
+     "text": "So there is an **interaction between action and perception**.",
+     "children": []
+    }
+   ],
+   "17:44": [
+    {
+     "text": "The three approaches agree that **information about concepts is distributed across many structures in the brain**.",
+     "children": []
+    },
+    {
+     "text": "They differ in which kind of information they treat as most important.",
+     "children": [
+      "The **category-specific approach**, which is the semantic category approach, emphasizes **specialized areas of the brain and the networks connecting them**.",
+      "The **multiple-factor approach** emphasizes **many different features and properties**.",
+      "The **embodied approach** emphasizes **activity caused by the sensory and motor properties of objects**."
+     ]
+    }
+   ]
   }
  },
  "questionVersions": {
@@ -18727,6 +27568,1442 @@ window.THIRD_PART = {
     ],
     "correct": 0
    }
+  },
+  "9201": {
+   "college": {
+    "stem": "Which process places things into groups called categories?",
+    "options": [
+     "Categorization.",
+     "Back-propagation.",
+     "Spreading activation.",
+     "Sentence verification."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What does categorization do?",
+    "options": [
+     "It places things into groups called categories.",
+     "It changes the connection weights in a network.",
+     "It spreads activity between linked nodes.",
+     "It stores exceptions to a rule at lower nodes."
+    ],
+    "correct": 0
+   }
+  },
+  "9202": {
+   "college": {
+    "stem": "Which term names a mental representation used for a variety of cognitive functions?",
+    "options": [
+     "A concept.",
+     "A category.",
+     "A prototype.",
+     "An exemplar."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What is a concept?",
+    "options": [
+     "A mental representation.",
+     "A connection weight.",
+     "A list of all examples.",
+     "A level in a hierarchy."
+    ],
+    "correct": 0
+   }
+  },
+  "9203": {
+   "college": {
+    "stem": "In what sense are categories “pointers to knowledge”?",
+    "options": [
+     "A category supplies a wealth of general information about an item.",
+     "A category records every property separately for each item.",
+     "A category applies only to objects that have strict definitions.",
+     "A category stops people from noticing what is unusual."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What do categories give us about an item?",
+    "options": [
+     "A wealth of general information.",
+     "A single defining feature.",
+     "A connection weight.",
+     "A reaction time."
+    ],
+    "correct": 0
+   }
+  },
+  "9204": {
+   "college": {
+    "stem": "What is the main problem with deciding everyday category membership by definition?",
+    "options": [
+     "Members of everyday categories do not all share the same defining features.",
+     "Members of everyday categories all share exactly the same features.",
+     "Everyday categories contain one member and no more.",
+     "Definitions can be written for natural objects alone."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "For which kind of thing does the definitional approach work well?",
+    "options": [
+     "Geometric objects.",
+     "Natural objects.",
+     "Human-made objects.",
+     "Living things."
+    ],
+    "correct": 0
+   }
+  },
+  "9205": {
+   "college": {
+    "stem": "Which thinker proposed family resemblance as a way to deal with the limits of definitions?",
+    "options": [
+     "Wittgenstein.",
+     "Rosch.",
+     "Collins and Quillian.",
+     "Tanaka and Taylor."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Who proposed family resemblance?",
+    "options": [
+     "Wittgenstein.",
+     "Rosch.",
+     "Meyer and Schvaneveldt.",
+     "Warrington and Shallice."
+    ],
+    "correct": 0
+   }
+  },
+  "9206": {
+   "college": {
+    "stem": "Which statement describes family resemblance?",
+    "options": [
+     "Members of a category resemble one another in a number of ways.",
+     "Members of a category all share a single defining feature.",
+     "Members of a category are stored together at one node.",
+     "Members of a category are always named at one level."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Does family resemblance allow variation within a category?",
+    "options": [
+     "Yes, it allows some variation.",
+     "No, every member must be identical.",
+     "Only for geometric objects.",
+     "Only for artifacts."
+    ],
+    "correct": 0
+   }
+  },
+  "9207": {
+   "college": {
+    "stem": "Which description fits a prototype?",
+    "options": [
+     "An average of category members encountered in the past, standing for the typical member.",
+     "One actual category member that was encountered in the past and stored.",
+     "A definition listing the features that every member has to have.",
+     "A property stored at the highest node of a semantic network."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "A prototype represents what kind of member of a category?",
+    "options": [
+     "The typical member.",
+     "The rarest member.",
+     "The first member seen.",
+     "The largest member."
+    ],
+    "correct": 0
+   }
+  },
+  "9208": {
+   "college": {
+    "stem": "What task did Rosch (1975) give participants?",
+    "options": [
+     "Rating how well each listed member represented the category title.",
+     "Listing features common to all or most objects in a category.",
+     "Naming pictures of birds at the most specific level possible.",
+     "Deciding whether two letter strings were both real words."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In Rosch (1975), what did people rate?",
+    "options": [
+     "How well each member represented the category.",
+     "How fast they could read each word.",
+     "How many features each object had.",
+     "How often they had seen each object."
+    ],
+    "correct": 0
+   }
+  },
+  "9209": {
+   "college": {
+    "stem": "In the bird ratings of Rosch (1975), which member received the rating closest to “very good”?",
+    "options": [
+     "Sparrow, at 1.18.",
+     "Owl, at 2.96.",
+     "Penguin, at 4.53.",
+     "Bat, at 6.15."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In Rosch (1975), which was rated the best example of a bird?",
+    "options": [
+     "Sparrow.",
+     "Bat.",
+     "Penguin.",
+     "Owl."
+    ],
+    "correct": 0
+   }
+  },
+  "9210": {
+   "college": {
+    "stem": "Which pairing of bird and prototypicality is correct?",
+    "options": [
+     "Robin is high-prototypicality, and ostrich is low-prototypicality.",
+     "Ostrich is high-prototypicality, and robin is low-prototypicality.",
+     "Robin is high-prototypicality, and sparrow is low-prototypicality.",
+     "Penguin is high-prototypicality, and robin is low-prototypicality."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which bird is a low-prototypicality member of the category “bird”?",
+    "options": [
+     "Ostrich.",
+     "Robin.",
+     "Sparrow.",
+     "Blue jay."
+    ],
+    "correct": 0
+   }
+  },
+  "9211": {
+   "college": {
+    "stem": "What did Rosch and Mervis (1975) find when people listed characteristics of items of furniture?",
+    "options": [
+     "More prototypical items shared many characteristics with one another.",
+     "More prototypical items shared few characteristics with one another.",
+     "More prototypical items were named at the global level.",
+     "More prototypical items were stored as exceptions."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which items of furniture share many characteristics with one another?",
+    "options": [
+     "Chairs, sofas and tables.",
+     "Mirrors and telephones.",
+     "Only kitchen tables.",
+     "None of them."
+    ],
+    "correct": 0
+   }
+  },
+  "9212": {
+   "college": {
+    "stem": "Which statement gives the typicality effect?",
+    "options": [
+     "Prototypical objects are processed preferentially.",
+     "Prototypical objects are processed more slowly.",
+     "Atypical objects are listed first in a category.",
+     "Atypical objects are named at the basic level."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In the typicality effect, which objects are processed preferentially?",
+    "options": [
+     "Prototypical objects.",
+     "Atypical objects.",
+     "Geometric objects.",
+     "Unfamiliar objects."
+    ],
+    "correct": 0
+   }
+  },
+  "9213": {
+   "college": {
+    "stem": "Two true sentences are shown, “An apple is a fruit” and “A pomegranate is a fruit.” Which is verified faster, and why?",
+    "options": [
+     "The apple sentence, because apple is a more prototypical fruit.",
+     "The pomegranate sentence, because pomegranate is less common.",
+     "Neither sentence, because both of them are true statements.",
+     "The pomegranate sentence, because it takes longer to read."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which is verified faster in a sentence verification task?",
+    "options": [
+     "“An apple is a fruit.”",
+     "“A pomegranate is a fruit.”",
+     "Both take the same time.",
+     "Whichever is read second."
+    ],
+    "correct": 0
+   }
+  },
+  "9214": {
+   "college": {
+    "stem": "Participants heard “green” and then judged whether two colors were the same. Which result was found?",
+    "options": [
+     "Good examples of green were judged in 610 milliseconds, and poor examples in 780.",
+     "Poor examples of green were judged in 610 milliseconds, and good examples in 780.",
+     "Good examples and poor examples of green were both judged in 610 milliseconds.",
+     "Different colors were judged faster than either pair of green colors."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "After the prime “green,” which pair was judged “same” faster?",
+    "options": [
+     "Two good examples of green.",
+     "Two poor examples of green.",
+     "Two different colors.",
+     "They were all equal."
+    ],
+    "correct": 0
+   }
+  },
+  "9215": {
+   "college": {
+    "stem": "In the exemplar approach, what stands for a concept in memory?",
+    "options": [
+     "Multiple examples that are actual members of the category.",
+     "A single prototype that averages the category members.",
+     "A definition that every member of the category meets.",
+     "One node placed at the top of a network hierarchy."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What are exemplars?",
+    "options": [
+     "Actual category members.",
+     "Abstract averages.",
+     "Definitions.",
+     "Connection weights."
+    ],
+    "correct": 0
+   }
+  },
+  "9216": {
+   "college": {
+    "stem": "Which statement correctly contrasts the prototype and exemplar approaches?",
+    "options": [
+     "A prototype is an abstract average, and exemplars are specific examples.",
+     "A prototype is a specific example, and exemplars are abstract averages.",
+     "The prototype approach defines a category, and the exemplar approach cannot.",
+     "The prototype approach uses nodes, and the exemplar approach uses weights."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which approach uses an average of category members?",
+    "options": [
+     "The prototype approach.",
+     "The exemplar approach.",
+     "The definitional approach.",
+     "The embodied approach."
+    ],
+    "correct": 0
+   }
+  },
+  "9217": {
+   "college": {
+    "stem": "How does the exemplar approach deal with an atypical bird such as a penguin?",
+    "options": [
+     "It remembers that there are some birds that do not fly.",
+     "It compares the penguin with an average bird and rejects it.",
+     "It stores the penguin at the superordinate level.",
+     "It decides the penguin fails the definition of a bird."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which approach takes atypical cases, such as penguins, into account?",
+    "options": [
+     "The exemplar approach.",
+     "The definitional approach.",
+     "The semantic category approach.",
+     "The sensory-functional hypothesis."
+    ],
+    "correct": 0
+   }
+  },
+  "9218": {
+   "college": {
+    "stem": "For which sizes of category might each approach work best?",
+    "options": [
+     "Exemplars for small categories, and prototypes for larger categories.",
+     "Exemplars for larger categories, and prototypes for small categories.",
+     "Exemplars for artifacts, and prototypes for living things.",
+     "Exemplars for experts, and prototypes for non-experts."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which may work best for small categories?",
+    "options": [
+     "Exemplars.",
+     "Prototypes.",
+     "Definitions.",
+     "Hidden units."
+    ],
+    "correct": 0
+   }
+  },
+  "9219": {
+   "college": {
+    "stem": "Which sequence runs from the superordinate level to the basic level to the subordinate level?",
+    "options": [
+     "Furniture, table, kitchen table.",
+     "Kitchen table, table, furniture.",
+     "Table, furniture, kitchen table.",
+     "Furniture, kitchen table, table."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which is a basic-level category?",
+    "options": [
+     "Table.",
+     "Furniture.",
+     "Kitchen table.",
+     "Living thing."
+    ],
+    "correct": 0
+   }
+  },
+  "9220": {
+   "college": {
+    "stem": "How many common features did participants in Rosch and colleagues (1976) list at each level?",
+    "options": [
+     "About 3 for furniture, about 9 for table and about 10.3 for kitchen table.",
+     "About 9 for furniture, about 3 for table and about 10.3 for kitchen table.",
+     "About 10.3 for furniture, about 9 for table and about 3 for kitchen table.",
+     "About 3 for furniture, about 10.3 for table and about 9 for kitchen table."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In Rosch and colleagues (1976), about how many common features were listed for “table”?",
+    "options": [
+     "About 9.",
+     "About 3.",
+     "About 6.",
+     "About 10.3."
+    ],
+    "correct": 0
+   }
+  },
+  "9221": {
+   "college": {
+    "stem": "What makes the basic level special in the findings of Rosch and colleagues (1976)?",
+    "options": [
+     "Moving above it loses a lot of information, and moving below it gains little.",
+     "Moving above it gains a lot of information, and moving below it loses little.",
+     "It has fewer common features than either of the other two levels.",
+     "It is the one level that experts and non-experts never use."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What happens when you go above the basic level?",
+    "options": [
+     "A large loss of information.",
+     "A large gain of information.",
+     "No change in information.",
+     "A small gain of information."
+    ],
+    "correct": 0
+   }
+  },
+  "9222": {
+   "college": {
+    "stem": "Shown a picture of an electric guitar and asked to name it, what do most people say?",
+    "options": [
+     "Guitar, the basic-level name.",
+     "Stratocaster, the specific name.",
+     "Instrument, the global name.",
+     "Artifact, the category name."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Most people name objects at which level?",
+    "options": [
+     "The basic level.",
+     "The global level.",
+     "The specific level.",
+     "No particular level."
+    ],
+    "correct": 0
+   }
+  },
+  "9223": {
+   "college": {
+    "stem": "What did Coley, Medin and Atran (1997) observe when two groups named plants on campus?",
+    "options": [
+     "Most undergraduates said “trees,” and horticulturalists gave specific names such as “oak.”",
+     "Most horticulturalists said “trees,” and undergraduates gave specific names such as “oak.”",
+     "Both groups gave specific names such as “oak” for nearly every one of the plants.",
+     "Both groups gave the global name “plant” for nearly every one of the plants."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In Coley, Medin and Atran (1997), what did 75 percent of the undergraduates call the plants?",
+    "options": [
+     "Trees.",
+     "Oaks.",
+     "Plants.",
+     "Flowers."
+    ],
+    "correct": 0
+   }
+  },
+  "9224": {
+   "college": {
+    "stem": "In the Guatemalan Itzaj culture, which term acts as a basic-level category?",
+    "options": [
+     "“Oak.”",
+     "“Tree.”",
+     "“Plant.”",
+     "“Living thing.”"
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What do people of the Guatemalan Itzaj culture call an oak tree?",
+    "options": [
+     "An oak.",
+     "A tree.",
+     "A plant.",
+     "A bush."
+    ],
+    "correct": 0
+   }
+  },
+  "9225": {
+   "college": {
+    "stem": "What difference did Tanaka and Taylor (1991) find between bird experts and non-experts?",
+    "options": [
+     "Experts specified the species, and non-experts mostly used “bird.”",
+     "Experts mostly used “bird,” and non-experts specified the species.",
+     "Experts and non-experts both specified the species.",
+     "Experts and non-experts both used the word “animal.”"
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In Tanaka and Taylor (1991), how did bird experts name the pictures?",
+    "options": [
+     "By the species of the bird.",
+     "By the word “bird.”",
+     "By the word “animal.”",
+     "By the color of the bird."
+    ],
+    "correct": 0
+   }
+  },
+  "9226": {
+   "college": {
+    "stem": "What does a node stand for in the semantic network of Collins and Quillian (1969)?",
+    "options": [
+     "A category or concept.",
+     "A connection weight.",
+     "An error signal.",
+     "A priming stimulus."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In Collins and Quillian (1969), concepts are linked by what?",
+    "options": [
+     "Pointers such as “is a” and “has.”",
+     "Weights that are adjusted by learning.",
+     "Ratings from 1 to 7.",
+     "Sensory and motor areas."
+    ],
+    "correct": 0
+   }
+  },
+  "9227": {
+   "college": {
+    "stem": "Which statement describes cognitive economy in a semantic network?",
+    "options": [
+     "A shared property is stored only at a higher-level node.",
+     "A shared property is stored at every node in the network.",
+     "An exception is stored only at the highest node.",
+     "A property is stored in the connection weights."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Where is “can fly” stored in the semantic network?",
+    "options": [
+     "At the node for bird.",
+     "At every bird’s node.",
+     "At the node for living thing.",
+     "Nowhere in the network."
+    ],
+    "why": "Cognitive economy means shared properties are only stored at higher-level nodes. “Can fly” is stored once at the node for bird and is not repeated at every bird.",
+    "correct": 0
+   }
+  },
+  "9228": {
+   "college": {
+    "stem": "How does the semantic network handle the fact that an ostrich cannot fly?",
+    "options": [
+     "The exception is stored at the lower node for ostrich.",
+     "The exception is stored at the node for bird.",
+     "The exception is stored at the node for animal.",
+     "The exception is stored at the top of the network."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Where are exceptions stored in the semantic network?",
+    "options": [
+     "At lower nodes.",
+     "At higher nodes.",
+     "At the top node.",
+     "In the weights."
+    ],
+    "correct": 0
+   }
+  },
+  "9229": {
+   "college": {
+    "stem": "What determines retrieval time in the Collins and Quillian (1969) model?",
+    "options": [
+     "The distance that must be traveled through the network.",
+     "The typicality of the category member in question.",
+     "The number of letters in the words of the sentence.",
+     "Nothing, because every statement takes the same time."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In the semantic network, a longer distance means what?",
+    "options": [
+     "A longer response time.",
+     "A shorter response time.",
+     "No change in response time.",
+     "A more typical member."
+    ],
+    "correct": 0
+   }
+  },
+  "9230": {
+   "college": {
+    "stem": "Which of these statements took the longest to verify in the test of the semantic network?",
+    "options": [
+     "“A canary is an animal,” which is two levels away.",
+     "“A canary is a bird,” which is one level away.",
+     "“A canary is a canary,” which is at the same node.",
+     "None, because all three took the same time."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which is verified faster?",
+    "options": [
+     "“A canary is a bird.”",
+     "“A canary is an animal.”",
+     "Both take the same time.",
+     "“A canary is a living thing.”"
+    ],
+    "correct": 0
+   }
+  },
+  "9231": {
+   "college": {
+    "stem": "Which statement describes spreading activation?",
+    "options": [
+     "Activating a node sends activity along all the links connected to it.",
+     "Changing a weight brings the error signal down to zero.",
+     "Damaging a network lowers its performance gradually.",
+     "Naming an object brings its basic-level name to mind."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What happens to concepts that receive activation?",
+    "options": [
+     "They are primed and more easily accessed.",
+     "They are erased and must be learned again.",
+     "They become less typical of the category.",
+     "They move to a higher node in the network."
+    ],
+    "correct": 0
+   }
+  },
+  "9232": {
+   "college": {
+    "stem": "What did the lexical decision task of Meyer and Schvaneveldt show?",
+    "options": [
+     "Responses were faster for related pairs than for unrelated pairs.",
+     "Responses were faster for unrelated pairs than for related pairs.",
+     "Responses were equally fast for related and unrelated pairs.",
+     "Responses were fastest when both items were nonwords."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In Meyer and Schvaneveldt, which word pairs got faster responses?",
+    "options": [
+     "Related pairs.",
+     "Unrelated pairs.",
+     "Nonword pairs.",
+     "All were equal."
+    ],
+    "correct": 0
+   }
+  },
+  "9233": {
+   "college": {
+    "stem": "Why is the typicality effect a problem for the model of Collins and Quillian?",
+    "options": [
+     "Canary and ostrich are both one node from bird, so it predicts equal times.",
+     "Canary is two nodes from bird, so it predicts slower times for canary.",
+     "Typical members are stored at higher nodes than atypical members.",
+     "Atypical members are left out of the network altogether."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Can the Collins and Quillian model explain typicality effects?",
+    "options": [
+     "No, it cannot.",
+     "Yes, fully.",
+     "Only for birds.",
+     "Only for artifacts."
+    ],
+    "correct": 0
+   }
+  },
+  "9234": {
+   "college": {
+    "stem": "Which finding goes against the prediction of the Collins and Quillian model?",
+    "options": [
+     "“A pig is a mammal” is verified more slowly than “A pig is an animal.”",
+     "“A canary is an animal” is verified more slowly than “A canary is a bird.”",
+     "“A canary has skin” is verified more slowly than “A canary can sing.”",
+     "“A canary is a bird” is verified more slowly than “A canary is a canary.”"
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which is verified more slowly, against the model’s prediction?",
+    "options": [
+     "“A pig is a mammal.”",
+     "“A pig is an animal.”",
+     "“A canary is a bird.”",
+     "“A canary is a canary.”"
+    ],
+    "correct": 0
+   }
+  },
+  "9235": {
+   "college": {
+    "stem": "Which description fits connectionism?",
+    "options": [
+     "An approach to creating computer models of cognitive processes.",
+     "An approach that defines categories by their necessary features.",
+     "An approach that places each concept at a node in a hierarchy.",
+     "An approach that explains concepts by motor actions alone."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What is another name for connectionism?",
+    "options": [
+     "Parallel distributed processing.",
+     "Spreading activation theory.",
+     "Cognitive economy theory.",
+     "Family resemblance theory."
+    ],
+    "correct": 0
+   }
+  },
+  "9236": {
+   "college": {
+    "stem": "What represents a stimulus in a connectionist network?",
+    "options": [
+     "A pattern of activity distributed across the units.",
+     "A single unit that stands for that stimulus.",
+     "A definition of the category it belongs to.",
+     "A distance between two nodes in a hierarchy."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In a connectionist network, is a stimulus represented by one unit or by a pattern across units?",
+    "options": [
+     "A pattern of activity across units.",
+     "One single unit for each stimulus.",
+     "One connection weight in the network.",
+     "One node at the top of a hierarchy."
+    ],
+    "correct": 0
+   }
+  },
+  "9237": {
+   "college": {
+    "stem": "What is the effect of a negative connection weight?",
+    "options": [
+     "It can decrease excitation or inhibit the receiving unit.",
+     "It gives a strong tendency to excite the next unit.",
+     "It sends the error signal back through the circuit.",
+     "It stores an exception at a lower node."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What do high connection weights do?",
+    "options": [
+     "Strongly excite the next unit.",
+     "Inhibit the next unit.",
+     "Send the error signal back.",
+     "Leave the next unit unchanged."
+    ],
+    "correct": 0
+   }
+  },
+  "9238": {
+   "college": {
+    "stem": "In a connectionist network, what is the error signal?",
+    "options": [
+     "The difference between each output unit’s actual activity and the correct activity.",
+     "The difference between the activity of input units and of hidden units.",
+     "The number of levels traveled between two nodes in a network.",
+     "The time needed to verify that a sentence is true."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "The error signal compares the network’s output with what?",
+    "options": [
+     "The correct activity.",
+     "The input units.",
+     "The hidden units.",
+     "The prime."
+    ],
+    "correct": 0
+   }
+  },
+  "9239": {
+   "college": {
+    "stem": "Which statement describes back-propagation?",
+    "options": [
+     "The error signal is sent back through the circuit to show how weights should change.",
+     "Activation is sent forward from one node along all of its connected links.",
+     "Properties are passed down from higher-level nodes to lower-level nodes.",
+     "Performance is lowered gradually as units in the system are damaged."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In back-propagation, what is sent back through the circuit?",
+    "options": [
+     "The error signal.",
+     "The input stimulus.",
+     "The category name.",
+     "The prototype."
+    ],
+    "correct": 0
+   }
+  },
+  "9240": {
+   "college": {
+    "stem": "Why is learning in a connectionist network slow?",
+    "options": [
+     "Each learning experience causes only a small change in the weights.",
+     "Each learning experience sets every weight to its final value.",
+     "The weights are fixed and cannot be changed by experience.",
+     "The error signal is zero from the first learning trial."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "How much does each learning experience change the connection weights?",
+    "options": [
+     "Only a little.",
+     "Completely.",
+     "Not at all.",
+     "By a large amount."
+    ],
+    "correct": 0
+   }
+  },
+  "9241": {
+   "college": {
+    "stem": "Which statement describes graceful degradation?",
+    "options": [
+     "Performance is disrupted gradually as parts of the system are damaged.",
+     "Performance stops completely as soon as one unit is damaged.",
+     "Performance improves as parts of the system are damaged.",
+     "Performance depends on the distance between two nodes."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "When a connectionist network is damaged, how is performance disrupted?",
+    "options": [
+     "Gradually.",
+     "All at once.",
+     "Not at all.",
+     "Only in the input units."
+    ],
+    "correct": 0
+   }
+  },
+  "9242": {
+   "college": {
+    "stem": "For which pair of categories do patients show a double dissociation?",
+    "options": [
+     "Living things and nonliving things.",
+     "Typical members and atypical members.",
+     "Basic-level names and specific names.",
+     "Input units and output units."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What is an impairment for one category of objects called?",
+    "options": [
+     "A category-specific memory impairment.",
+     "A graceful degradation of the system.",
+     "A typicality effect in verification.",
+     "A spreading activation in a network."
+    ],
+    "correct": 0
+   }
+  },
+  "9243": {
+   "college": {
+    "stem": "According to the sensory-functional hypothesis, what does distinguishing living things from artifacts depend on?",
+    "options": [
+     "One system for sensory attributes and one system for function.",
+     "One definition for living things and one for artifacts.",
+     "The number of nodes between the two categories.",
+     "The motor areas used to handle each object."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "The sensory-functional hypothesis is about telling apart which two kinds of things?",
+    "options": [
+     "Living things and artifacts.",
+     "Experts and non-experts.",
+     "Input units and output units.",
+     "Prototypes and exemplars."
+    ],
+    "correct": 0
+   }
+  },
+  "9244": {
+   "college": {
+    "stem": "In the sensory-functional hypothesis, which attributes are artifacts most strongly associated with?",
+    "options": [
+     "Their uses.",
+     "Their colors.",
+     "Their motion.",
+     "Their sounds."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Animals are more strongly associated with which attributes?",
+    "options": [
+     "Sensory attributes.",
+     "Their uses.",
+     "Their names.",
+     "Their definitions."
+    ],
+    "correct": 0
+   }
+  },
+  "9245": {
+   "college": {
+    "stem": "Which researchers reported evidence for the sensory-functional hypothesis from patients K.C. and E.W.?",
+    "options": [
+     "Warrington and Shallice.",
+     "Collins and Quillian.",
+     "Meyer and Schvaneveldt.",
+     "Tanaka and Taylor."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Patients K.C. and E.W. did worse with which kind of thing?",
+    "options": [
+     "Living animals.",
+     "Nonliving things.",
+     "Fruits.",
+     "Vegetables."
+    ],
+    "why": "Patients K.C. and E.W. were about 90 percent correct for nonanimals and much lower for living animals. Warrington and Shallice found evidence for the hypothesis in these two patients.",
+    "correct": 0
+   }
+  },
+  "9246": {
+   "college": {
+    "stem": "Which statement describes crowding?",
+    "options": [
+     "Concepts within a category share many properties.",
+     "Categories are stored in the same brain area.",
+     "Units in a network have the same weight.",
+     "Levels of a hierarchy have the same name."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which share more properties with one another, animals or artifacts?",
+    "options": [
+     "Animals.",
+     "Artifacts.",
+     "They share the same number.",
+     "Neither shares any."
+    ],
+    "correct": 0
+   }
+  },
+  "9247": {
+   "college": {
+    "stem": "How does crowding explain a patient’s trouble with living things?",
+    "options": [
+     "The patient has difficulty telling apart items that share similar features.",
+     "The patient has lost the single brain area that stores living things.",
+     "The patient cannot process the functional attributes of any object.",
+     "The patient names all living things at the basic level only."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "According to crowding, do patients with trouble naming living things always have a category impairment?",
+    "options": [
+     "No, they may not have one at all.",
+     "Yes, they always have one.",
+     "Only if they are experts.",
+     "Only for artifacts."
+    ],
+    "correct": 0
+   }
+  },
+  "9248": {
+   "college": {
+    "stem": "Why can some patients identify mechanical devices although they do poorly with other artifacts?",
+    "options": [
+     "Mechanical devices have a widely distributed semantic representation.",
+     "Mechanical devices are stored in one small area of the brain.",
+     "Mechanical devices are named only at the specific level.",
+     "Mechanical devices share no properties with animals."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Mechanical devices overlap with which two kinds of things?",
+    "options": [
+     "Artifacts and animals.",
+     "Fruits and vegetables.",
+     "Trees and oaks.",
+     "Nodes and links."
+    ],
+    "correct": 0
+   }
+  },
+  "9249": {
+   "college": {
+    "stem": "What is the central claim of the embodied approach?",
+    "options": [
+     "Concept knowledge is based on reactivating sensory and motor processes.",
+     "Concept knowledge is based on the definition of each category.",
+     "Concept knowledge is stored at one node for each concept.",
+     "Concept knowledge is innate for a small set of categories."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In the embodied approach, which processes are reactivated?",
+    "options": [
+     "Sensory and motor processes.",
+     "Only language processes.",
+     "Only memory for definitions.",
+     "No processes at all."
+    ],
+    "correct": 0
+   }
+  },
+  "9250": {
+   "college": {
+    "stem": "According to the embodied approach, what does reading the word “hammer” do?",
+    "options": [
+     "It activates the same sensory and motor areas as using a hammer.",
+     "It activates areas for reading and no other areas of the brain.",
+     "It activates one node for “hammer” and nothing beyond that.",
+     "It activates motor areas only if a hammer is picked up."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "When we see a hammer, are the same areas activated as when we use one?",
+    "options": [
+     "Yes, the same areas.",
+     "No, different areas.",
+     "No areas are active.",
+     "Only visual areas."
+    ],
+    "correct": 0
+   }
+  },
+  "9251": {
+   "college": {
+    "stem": "What do the category-specific, multiple-factor and embodied approaches have in common?",
+    "options": [
+     "They hold that concept information is distributed across many brain structures.",
+     "They hold that concept information is stored in one area of the temporal lobe.",
+     "They hold that concept information takes the form of definitions.",
+     "They hold that concept information cannot be studied in patients."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Do the three approaches agree that concept information is distributed across the brain?",
+    "options": [
+     "Yes, they agree on this.",
+     "No, they all disagree.",
+     "Only two of them agree.",
+     "They do not address it."
+    ],
+    "correct": 0
+   }
+  },
+  "9252": {
+   "college": {
+    "stem": "What does the semantic category approach propose about the brain?",
+    "options": [
+     "Specific neural circuits for specific categories.",
+     "One neural circuit shared by all categories.",
+     "No involvement of the brain in categories.",
+     "Specific weights for each letter of a word."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In the semantic category approach, why might a few categories be innately determined?",
+    "options": [
+     "Because of their importance for survival.",
+     "Because they share the most properties.",
+     "Because they are learned at the basic level.",
+     "Because they have the fewest members."
+    ],
+    "why": "In the semantic category approach, there may be a limited number of categories that are innately determined because of their importance for survival.",
+    "correct": 0
+   }
+  },
+  "9253": {
+   "college": {
+    "stem": "Which study had bird experts and non-experts name pictures of objects?",
+    "options": [
+     "Tanaka and Taylor (1991).",
+     "Coley, Medin and Atran (1997).",
+     "Rosch and colleagues (1976).",
+     "Collins and Quillian (1969)."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which study is about bird experts?",
+    "options": [
+     "Tanaka and Taylor (1991).",
+     "Coley, Medin and Atran (1997).",
+     "Rosch (1975).",
+     "Rosch and Mervis (1975)."
+    ],
+    "correct": 0
+   }
+  },
+  "9254": {
+   "college": {
+    "stem": "Which study had participants list the features common to all or most objects in a category?",
+    "options": [
+     "Rosch and colleagues (1976).",
+     "Rosch (1975).",
+     "Tanaka and Taylor (1991).",
+     "Collins and Quillian (1969)."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which study found about 3, 9 and 10.3 common features at three levels?",
+    "options": [
+     "Rosch and colleagues (1976).",
+     "Rosch (1975).",
+     "Rosch and Mervis (1975).",
+     "Coley, Medin and Atran (1997)."
+    ],
+    "correct": 0
+   }
+  },
+  "9255": {
+   "college": {
+    "stem": "In which study did participants list the characteristics of single objects such as chair, sofa, mirror and telephone?",
+    "options": [
+     "Rosch and Mervis (1975).",
+     "Rosch (1975).",
+     "Rosch and colleagues (1976).",
+     "Tanaka and Taylor (1991)."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which study had people list the characteristics of chair, sofa, mirror and telephone?",
+    "options": [
+     "Rosch and Mervis (1975).",
+     "Rosch (1975).",
+     "Rosch and colleagues (1976).",
+     "Collins and Quillian (1969)."
+    ],
+    "correct": 0
+   }
+  },
+  "9256": {
+   "college": {
+    "stem": "The semantic network model of Collins and Quillian is dated to which year?",
+    "options": [
+     "1969.",
+     "1975.",
+     "1976.",
+     "1991."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which year goes with Collins and Quillian?",
+    "options": [
+     "1969.",
+     "1975.",
+     "1991.",
+     "1997."
+    ],
+    "correct": 0
+   }
+  },
+  "9257": {
+   "college": {
+    "stem": "Which of the three approaches summarized together emphasizes activity caused by the sensory and motor properties of objects?",
+    "options": [
+     "The embodied approach.",
+     "The category-specific approach.",
+     "The multiple-factor approach.",
+     "The definitional approach."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which approach emphasizes many different features and properties?",
+    "options": [
+     "The multiple-factor approach.",
+     "The category-specific approach.",
+     "The embodied approach.",
+     "The exemplar approach."
+    ],
+    "why": "The multiple-factor approach emphasizes the role of many different features and properties. The category-specific approach emphasizes specialized brain areas, and the embodied approach emphasizes sensory and motor activity.",
+    "correct": 0
+   }
+  },
+  "9258": {
+   "college": {
+    "stem": "Which units in a connectionist network respond directly to stimuli from the environment?",
+    "options": [
+     "Input units.",
+     "Hidden units.",
+     "Output units.",
+     "Connection weights."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Output units receive their input from which units?",
+    "options": [
+     "Hidden units.",
+     "Input units.",
+     "Other output units.",
+     "No units at all."
+    ],
+    "why": "Output units receive input from hidden units. Input units are activated by stimuli from the environment.",
+    "correct": 0
+   }
+  },
+  "9259": {
+   "college": {
+    "stem": "Once a connectionist network has produced a guess and been given the correct response, what happens next?",
+    "options": [
+     "Its weights are modified so its response matches the correct response more closely.",
+     "Its correct response is stored at a single node, and learning stops for that stimulus.",
+     "Its hidden units that produced the wrong guess are removed from the network.",
+     "Its guess is repeated until the stimulus is taken away from the input units."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "What does a connectionist network change when it learns?",
+    "options": [
+     "Its connection weights.",
+     "Its number of units.",
+     "Its input stimulus.",
+     "Its correct response."
+    ],
+    "correct": 0
+   }
+  },
+  "9260": {
+   "college": {
+    "stem": "How do the hidden-unit activity patterns for rose, daisy and canary compare after 2,500 learning trials?",
+    "options": [
+     "Rose and daisy are similar to each other, and canary is different.",
+     "Rose and canary are similar to each other, and daisy is different.",
+     "All three are the same, as they were before learning began.",
+     "All three are completely different from one another."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Before any learning trials, how do the hidden-unit patterns for rose, daisy and canary compare?",
+    "options": [
+     "They look alike.",
+     "They are all different.",
+     "Rose and daisy match only.",
+     "Canary is the strongest."
+    ],
+    "why": "At 0 learning trials, the patterns of activity in the hidden units for rose, daisy and canary look alike. By 2,500 trials, rose and daisy are similar and canary is different.",
+    "correct": 0
+   }
+  },
+  "9261": {
+   "college": {
+    "stem": "What allows connectionist networks to explain generalization of learning?",
+    "options": [
+     "A slow learning process that creates a network able to handle a wide range of inputs.",
+     "A fast learning process that stores each input at a separate node of its own.",
+     "A stored definition for each of the categories the network has learned.",
+     "A rule that fixes the weights after the first learning trial."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Can connectionist networks explain generalization of learning?",
+    "options": [
+     "Yes, they can handle a wide range of inputs.",
+     "No, they handle only the trained inputs.",
+     "Only if there are no hidden units.",
+     "Only for living things."
+    ],
+    "correct": 0
+   }
+  },
+  "9262": {
+   "college": {
+    "stem": "Which finding is a problem for the idea of cognitive economy?",
+    "options": [
+     "People appear to store specific properties right at the node for a concept.",
+     "People appear to store every property only at the top node of the network.",
+     "People take longer to verify statements that require more levels.",
+     "People respond faster to related word pairs than to unrelated pairs."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Is there evidence against cognitive economy?",
+    "options": [
+     "Yes, people seem to store properties at the concept’s own node.",
+     "No, every sentence-verification finding supports the idea.",
+     "Yes, people seem to store no properties at any node at all.",
+     "No, the idea has never been tested with response times."
+    ],
+    "correct": 0
+   }
+  },
+  "9263": {
+   "college": {
+    "stem": "How does the exemplar approach account for the results Rosch reported?",
+    "options": [
+     "Objects that resemble more of the stored exemplars are classified faster.",
+     "Objects that resemble fewer of the stored exemplars are classified faster.",
+     "Objects are checked against a definition, which typical ones meet sooner.",
+     "Objects that are typical are stored at higher nodes of a network."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "In the exemplar approach, which objects are classified faster?",
+    "options": [
+     "Objects that are like more of the exemplars.",
+     "Objects that are like fewer of the exemplars.",
+     "Objects that fit a definition exactly.",
+     "Objects that are named at the global level."
+    ],
+    "correct": 0
+   }
+  },
+  "9264": {
+   "college": {
+    "stem": "In a listing task, people name as many members of a category as they can. Which members tend to come first?",
+    "options": [
+     "The most prototypical members.",
+     "The least prototypical members.",
+     "The most recently learned members.",
+     "The members with the longest names."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Which members of a category do people list first?",
+    "options": [
+     "The most prototypical ones.",
+     "The least prototypical ones.",
+     "The most unusual ones.",
+     "The most specific ones."
+    ],
+    "correct": 0
+   }
+  },
+  "9265": {
+   "college": {
+    "stem": "Which statement best describes the evidence on the sensory-functional hypothesis?",
+    "options": [
+     "There is supporting evidence, along with a number of exceptions.",
+     "There is supporting evidence, and no exceptions are known.",
+     "There is no supporting evidence from any patient study.",
+     "There is no patient evidence to compare it with."
+    ],
+    "correct": 0
+   },
+   "simple": {
+    "stem": "Are there exceptions to the pattern predicted by the sensory-functional hypothesis?",
+    "options": [
+     "Yes, there are a number of exceptions.",
+     "No, every patient fits the pattern.",
+     "Yes, but only for artifacts.",
+     "No patients have been tested."
+    ],
+    "correct": 0
+   }
   }
  },
  "likely": [
@@ -18746,15 +29023,6 @@ window.THIRD_PART = {
   9037,
   9038,
   9039,
-  9043,
-  9044,
-  9045,
-  9046,
-  9004,
-  9005,
-  9010,
-  9013,
-  9015,
   9105,
   9108,
   9109,
@@ -18771,15 +29039,22 @@ window.THIRD_PART = {
   9138,
   9139,
   9141,
-  9142,
-  9143,
-  9144,
-  9145,
-  9146,
-  9148,
-  9149,
-  9150,
-  9151
+  9205,
+  9208,
+  9209,
+  9214,
+  9220,
+  9221,
+  9223,
+  9225,
+  9226,
+  9229,
+  9232,
+  9233,
+  9240,
+  9245,
+  9253,
+  9254
  ]
 };
 

@@ -9,6 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import ltm_content, ltm_aids, ltm_testbank, ltm_question_versions, ltm_versions
 import enc_content, enc_aids, enc_testbank, enc_question_versions, enc_versions
+import kn_content, kn_aids, kn_testbank, kn_question_versions, kn_versions
 
 ROOT = Path(__file__).resolve().parents[3]
 COLLECTIONS = [dict(id=15, number='16', title='Long-Term Memory: Structure', file='Chapter-6-psyc301.pdf',
@@ -18,16 +19,20 @@ COLLECTIONS = [dict(id=15, number='16', title='Long-Term Memory: Structure', fil
                dict(id=16, number='17', title='Long-Term Memory: Encoding, Retrieval, and Consolidation', file='Chapter-7-psyc301.pdf',
                     sourcePdf='sources/CogPsych_Ch07_LTM_Encoding_F26.pdf', media='media/ltm-encoding',
                     content=enc_content, versions=enc_versions, aids=enc_aids, testbank=enc_testbank, questionVersions=enc_question_versions,
-                    testbankSource='testbank-source-ch07.json', chapter=7, firstQuestion=9101, firstQa=9100)]
+                    testbankSource='testbank-source-ch07.json', chapter=7, firstQuestion=9101, firstQa=9100),
+               dict(id=17, number='18', title='Knowledge', file='CogPsych_Ch09 F26.pdf',
+                    sourcePdf='sources/CogPsych_Ch09_Knowledge_F26.pdf', media='media/knowledge',
+                    content=kn_content, versions=kn_versions, aids=kn_aids, testbank=kn_testbank, questionVersions=kn_question_versions,
+                    testbankSource='testbank-source-ch09.json', chapter=9, firstQuestion=9201, firstQa=9200)]
 BANNED = ['coworkers', 'need not', 'the lecture says', 'the lecture gives', 'the lecture describes', 'the slide', 'pictured', 'thus', 'hence']
 
 VERSIONS = {'A': 'Original', '6': 'Version 6 · natural teaching', '10': 'Version 10 · teaching notes', '12': 'Version 12 · detailed teaching notes',
             '14': 'Version 14 · balanced teaching notes', '16': 'Version 16 · natural teaching notes', '18': 'Version 18 · teaching scripts', '20': 'Version 20 · natural teaching transcript', '21': 'Version 21 · natural teaching notes with following slides',
             '22': 'Version 22 · natural teaching notes with researchers and years'}
 # Home page headline for Module III. Rewrite it when a lecture is added so it covers every lecture.
-HERO = dict(title=['Long-term memory.', 'Stored, encoded, retrieved, consolidated.'],
-            text='Module III covers the structure of long-term memory, and how memories are encoded, retrieved, consolidated and reconsolidated. Original slides sit beside teaching explanations, personal notes, and practice. More lectures are added here as they arrive.')
-bank = dict(hero=HERO, revision='module3-12', modules=[], lectureNumbers={}, lectureQuizSize=50, practiceTestSize=0,
+HERO = dict(title=['Long-term memory', 'and knowledge.'],
+            text='Module III covers the structure of long-term memory, how memories are encoded, retrieved and consolidated, and how knowledge is organized into concepts and categories. Original slides sit beside teaching explanations, personal notes, and practice.')
+bank = dict(hero=HERO, revision='module3-16', modules=[], lectureNumbers={}, lectureQuizSize=50, practiceTestSize=0,
             collections=[], questions=[], topics=[], coreReview=[], experiments=[], versions=VERSIONS,
             scripts={k: {} for k in ('6', '10', '12', '14', '16', '18', '20', '21', '22')}, questionVersions={}, likely=[])
 aids = dict(ask=[], cards=[], cardsV4=[], contrasts=[], contrastsV2=[], contrastsV3=[], contrastsV21=[], explainers=[], topicsV4=[],
@@ -137,7 +142,8 @@ for c in COLLECTIONS:
         bank['questionVersions'][str(qid)] = alt
         ranked.append((2 * (question['page'] in core) + 1.5 * (question['kind'] in ('researcher', 'design')), -i, qid))
     assert set(c['questionVersions'].V) == set(range(len(src.QUESTIONS)))
-    bank['likely'] += [qid for _, _, qid in sorted(ranked, reverse=True)[:25]]
+    # The ranked practice set stays near 50 questions in total, shared equally by the lectures.
+    bank['likely'] += [qid for _, _, qid in sorted(ranked, reverse=True)[:max(10, 50 // len(COLLECTIONS))]]
     # Workspace aids.
     A = c['aids']
     topic_pages = {t: pgs for t, pgs in src.TOPICS}

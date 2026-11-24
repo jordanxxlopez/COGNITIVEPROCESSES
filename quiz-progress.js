@@ -9,8 +9,13 @@
  function version(){return window.PsycQuestionVersions?.current||'original'}
  // Module III shares the Module II set names (m2all, m2quick, ...), so its saved sets get their own slot.
  const thirdIds=new Set(window.THIRD_PART?.modules||[]);
+ // The slot name includes the number of Module III lectures, so a set saved before a lecture was added is kept
+ // in the backup but a new set, covering every lecture, starts.
+ const thirdSlot='|module3-'+thirdIds.size;
+ // A new Module III set is stamped with the current slot. A set made earlier keeps its own slot.
+ const stamp=()=>{if(valid(quiz)&&isThird(quiz)&&String(quiz.kind).startsWith('m2')&&!quiz.thirdSlot)quiz.thirdSlot=thirdSlot};
  const isThird=q=>q?thirdIds.has(q.items?.[0]?.module):window.PsycModule3?.scope()===3;
- function key(kind,v=version(),q=null){return (kind.startsWith('m2')?v:'archive')+'|'+kind+(kind.startsWith('m2')&&isThird(q)?'|module3':'')}
+ function key(kind,v=version(),q=null){return (kind.startsWith('m2')?v:'archive')+'|'+kind+(kind.startsWith('m2')&&isThird(q)?(q?(q.thirdSlot||'|module3'):thirdSlot):'')}
  function load(){for(const k of [KEY,BACKUP])try{const x=JSON.parse(localStorage.getItem(k)||'null');if(x?.schema===1&&x.sessions&&x.updated>=data.updated)data=x}catch{}}
  load();
  function store(){
@@ -47,7 +52,7 @@
   let normalized=kind;
   if(kind.startsWith('module')&&window.SECOND_HALF?.modules.includes(selected))normalized=kind==='module10'?'m2quick':'m2lecture-'+selected;
   if(restore(normalized)){view='quiz';render();window.scrollTo(0,0);return}
-  const result=oldStart.apply(this,arguments);if(valid(quiz)){quiz.questionVersion=version();checkpoint()}return result;
+  const before=quiz;const result=oldStart.apply(this,arguments);if(valid(quiz)){if(quiz!==before)stamp();quiz.questionVersion=version();checkpoint()}return result;
  };
  const oldRender=render;
  render=function(){
@@ -61,7 +66,7 @@
     fresh.onclick=()=>{
      // Keep the previous attempt before starting another, including completed results.
      checkpoint();data.history=data.history||{};const k=key(quiz.kind,version(),quiz);(data.history[k]??=[]).push(copy(quiz));
-     const kind=quiz.kind;quiz=null;oldStart(kind);if(valid(quiz))quiz.questionVersion=version();checkpoint();render();
+     const kind=quiz.kind;quiz=null;oldStart(kind);stamp();if(valid(quiz))quiz.questionVersion=version();checkpoint();render();
     };
     const exportButton=document.createElement('button');exportButton.type='button';exportButton.textContent='Export quiz backup';
     exportButton.onclick=()=>{checkpoint();const a=document.createElement('a');const url=URL.createObjectURL(new Blob([JSON.stringify(data)],{type:'application/json'}));a.href=url;a.download='psyc301-quiz-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
@@ -76,7 +81,7 @@
   if(kind?.startsWith('m2')){quiz=null;state.quiz=null}
   queueMicrotask(()=>{
    if(kind?.startsWith('m2')){
-    if(!restore(kind)&&wasQuiz){oldStart(kind);if(valid(quiz))quiz.questionVersion=version()}
+    if(!restore(kind)&&wasQuiz){oldStart(kind);stamp();if(valid(quiz))quiz.questionVersion=version()}
     if(wasQuiz)view='quiz';render();
    }checkpoint();
   });

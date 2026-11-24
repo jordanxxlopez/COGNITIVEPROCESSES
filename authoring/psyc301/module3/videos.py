@@ -390,9 +390,11 @@ def main():
     byte-identical. Pass a clip-id prefix (for example L17) to re-encode those clips."""
     import sys
     import videos_enc
+    import videos_kn
     force = sys.argv[1] if len(sys.argv) > 1 else None
     sets = [(CLIPS, 'Long-term memory', 'Stimulus video (long-term memory)', 'authoring/psyc301/module3/videos.py'),
-            (videos_enc.CLIPS, videos_enc.GROUP, 'Stimulus video (encoding and retrieval)', 'authoring/psyc301/module3/videos_enc.py')]
+            (videos_enc.CLIPS, videos_enc.GROUP, 'Stimulus video (encoding and retrieval)', 'authoring/psyc301/module3/videos_enc.py'),
+            (videos_kn.CLIPS, videos_kn.GROUP, 'Stimulus video (knowledge)', 'authoring/psyc301/module3/videos_kn.py')]
     manifest = []
     for clips, group, kind, source in sets:
         for clip_id, title, build, refs, method in clips:
@@ -404,7 +406,7 @@ def main():
             manifest.append(dict(id=clip_id, title=title, group=group, refs=refs, kind=kind, duration=round(sum(s for _, s in frames)),
                                  method=method, source=source, params={}, file=f'psyc301-videos/clips/{clip_id}.mp4',
                                  poster=f'psyc301-videos/posters/{clip_id}.jpg', fps=60))
-    (OUT / 'module3-clips.js').write_text('// Module III stimulus videos (Collections 16 and 17, slides 15:x and 16:x). Built by authoring/psyc301/module3/videos.py.\n'
+    (OUT / 'module3-clips.js').write_text('// Module III stimulus videos (Collections 16 to 18, slides 15:x, 16:x and 17:x). Built by authoring/psyc301/module3/videos.py.\n'
                                           '(function(){ if(!window.PsycVideos) return; const extra = ' + json.dumps(manifest, ensure_ascii=False, indent=1)
                                           + ';\n window.PsycVideos.clips.push(...extra); })();\n', encoding='utf8')
     print(len(manifest), 'clips in module3-clips.js')

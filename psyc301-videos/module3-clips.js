@@ -1,4 +1,4 @@
-// Module III stimulus videos (Collections 16 and 17, slides 15:x and 16:x). Built by authoring/psyc301/module3/videos.py.
+// Module III stimulus videos (Collections 16 to 18, slides 15:x, 16:x and 17:x). Built by authoring/psyc301/module3/videos.py.
 (function(){ if(!window.PsycVideos) return; const extra = [
  {
   "id": "L16-serial-position",
@@ -360,6 +360,198 @@
   "params": {},
   "file": "psyc301-videos/clips/L17-reconsolidation.mp4",
   "poster": "psyc301-videos/posters/L17-reconsolidation.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-rosch-ratings",
+  "title": "Rosch (1975) · Typicality ratings",
+  "group": "Knowledge",
+  "refs": [
+   "17:9",
+   "17:10"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 21,
+  "method": "The rating scale and the eight ratings are the ones shown in the slide figure. Members are placed one at a time.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-rosch-ratings.mp4",
+  "poster": "psyc301-videos/posters/L18-rosch-ratings.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-typicality-effect",
+  "title": "Sentence verification · The typicality effect",
+  "group": "Knowledge",
+  "refs": [
+   "17:12"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 14,
+  "method": "The two example sentences from the slide, then bars that redraw the approximate reaction times from the slide figure.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-typicality-effect.mp4",
+  "poster": "psyc301-videos/posters/L18-typicality-effect.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-color-priming",
+  "title": "Priming with a color name · Good and poor examples",
+  "group": "Knowledge",
+  "refs": [
+   "17:13",
+   "17:14"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 25,
+  "method": "The prime, the two-second gap and three kinds of color pair, with the reaction times given on the slide. The exact colors are illustrative.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-color-priming.mp4",
+  "poster": "psyc301-videos/posters/L18-color-priming.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-basic-level",
+  "title": "Rosch and colleagues (1976) · The basic level",
+  "group": "Knowledge",
+  "refs": [
+   "17:17",
+   "17:18",
+   "17:19",
+   "17:20"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 23,
+  "method": "The table of common features from the slide, built one level at a time, followed by the two naming examples. The objects are named in text and are not drawn.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-basic-level.mp4",
+  "poster": "psyc301-videos/posters/L18-basic-level.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-experts-naming",
+  "title": "Coley, Medin and Atran (1997), Tanaka and Taylor (1991) · Knowledge and naming",
+  "group": "Knowledge",
+  "refs": [
+   "17:21",
+   "17:22"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 16,
+  "method": "The plant-naming results as stated on the slide, then bars that redraw the approximate values from the Tanaka and Taylor figure.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-experts-naming.mp4",
+  "poster": "psyc301-videos/posters/L18-experts-naming.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-semantic-network",
+  "title": "Collins and Quillian (1969) · Network and response time",
+  "group": "Knowledge",
+  "refs": [
+   "17:23",
+   "17:24",
+   "17:25"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 18,
+  "method": "One branch of the network from the slide figure (living thing, animal, bird, canary), then the approximate response times from the slide graph.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-semantic-network.mp4",
+  "poster": "psyc301-videos/posters/L18-semantic-network.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-lexical-decision",
+  "title": "Meyer and Schvaneveldt · Lexical decision task",
+  "group": "Knowledge",
+  "refs": [
+   "17:26",
+   "17:27"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 17,
+  "method": "The four example pairs from the slide, one at a time, then bars that redraw the approximate reaction times from the slide figure. The display timing is illustrative.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-lexical-decision.mp4",
+  "poster": "psyc301-videos/posters/L18-lexical-decision.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-connectionist-network",
+  "title": "Connectionist network · From stimulus to back-propagation",
+  "group": "Knowledge",
+  "refs": [
+   "17:30",
+   "17:31",
+   "17:32",
+   "17:33"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 24,
+  "method": "A schematic network with input, hidden and output units and captions for each step of learning described on the slides. The number of units is illustrative, and no real weights are computed.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-connectionist-network.mp4",
+  "poster": "psyc301-videos/posters/L18-connectionist-network.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-hidden-unit-learning",
+  "title": "Connectionist network · Learning in the hidden units",
+  "group": "Knowledge",
+  "refs": [
+   "17:34"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 19,
+  "method": "Bar patterns for rose, daisy and canary after 0, 250, 750 and 2,500 learning trials. The bar heights are illustrative and show the trend in the slide figure, not its exact values.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-hidden-unit-learning.mp4",
+  "poster": "psyc301-videos/posters/L18-hidden-unit-learning.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-sensory-functional",
+  "title": "Sensory-functional hypothesis · Ratings and patients",
+  "group": "Knowledge",
+  "refs": [
+   "17:38",
+   "17:39"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 16,
+  "method": "Bars redraw the approximate ratings for animals and artifacts and the approximate percent correct for patients K.C. and E.W. from the slide figures.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-sensory-functional.mp4",
+  "poster": "psyc301-videos/posters/L18-sensory-functional.jpg",
+  "fps": 60
+ },
+ {
+  "id": "L18-three-approaches",
+  "title": "Three approaches to concepts in the brain",
+  "group": "Knowledge",
+  "refs": [
+   "17:44",
+   "17:40",
+   "17:41",
+   "17:43"
+  ],
+  "kind": "Stimulus video (knowledge)",
+  "duration": 16,
+  "method": "The summary from the slide, built one approach at a time.",
+  "source": "authoring/psyc301/module3/videos_kn.py",
+  "params": {},
+  "file": "psyc301-videos/clips/L18-three-approaches.mp4",
+  "poster": "psyc301-videos/posters/L18-three-approaches.jpg",
   "fps": 60
  }
 ];
